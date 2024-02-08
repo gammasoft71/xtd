@@ -234,6 +234,10 @@ xtdc run
 
 ![Screenshot](/pictures/examples/hello_world_tunit.png)
 
+### Visual Studio Output
+
+![Screenshot](/pictures/examples/hello_world_tunit_vs.png)
+
 ## More examples
 
 [Examples](https://github.com/gammasoft71/xtd/tree/master/examples/README.md) provides over 750 examples to help you use xtd, grouped by libraries and topics.

@@ -447,27 +447,30 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 <div class="ttc" id="agroup__keywords_html_ga1048ddb398815fec3ab669a0eaee09b4"><div class="ttname"><a href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a></div><div class="ttdeci">#define assembly_product_(product)</div><div class="ttdoc">Sets the assembly product information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_product_attribute.h:70</div></div>
 <div class="ttc" id="agroup__keywords_html_ga33cf23f5ce8f9e2223dcb37d414f03b3"><div class="ttname"><a href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a></div><div class="ttdeci">#define assembly_title_(title)</div><div class="ttdoc">Sets the assembly title information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_title_attribute.h:69</div></div>
 <div class="ttc" id="agroup__keywords_html_ga3514dd1eece9d6c77e86331ef05e61dd"><div class="ttname"><a href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a></div><div class="ttdeci">#define assembly_description_(description)</div><div class="ttdoc">Sets the assembly description information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_description_attribute.h:73</div></div>
 <div class="ttc" id="agroup__keywords_html_ga3e5f438101ab9588f3e24c7ebd9dcd05"><div class="ttname"><a href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a></div><div class="ttdeci">#define assembly_culture_(culture)</div><div class="ttdoc">Sets the assembly culture information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_culture_attribute.h:72</div></div>
 <div class="ttc" id="agroup__keywords_html_ga48f60b6fa94cd6b17b95266a06fc69b7"><div class="ttname"><a href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a></div><div class="ttdeci">#define assembly_version_(version)</div><div class="ttdoc">Sets the assembly version information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_version_attribute.h:75</div></div>
+<div class="ttc" id="agroup__keywords_html_ga74c3c67b3fff0e9c75dbf571469802f8"><div class="ttname"><a href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a></div><div class="ttdeci">#define assembly_guid_(guid)</div><div class="ttdoc">Sets the assembly guid information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_guid_attribute.h:70</div></div>
 <div class="ttc" id="agroup__keywords_html_ga7cf5a2fbc4a6d1fadc9c7e51472fcc36"><div class="ttname"><a href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a></div><div class="ttdeci">#define assembly_trademark_(trademark)</div><div class="ttdoc">Sets the assembly trademark information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_trademark_attribute.h:68</div></div>
 <div class="ttc" id="agroup__keywords_html_gaa9d9362b8802d11f00781c6293d6a2a1"><div class="ttname"><a href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a></div><div class="ttdeci">#define assembly_company_(company)</div><div class="ttdoc">Sets the assembly company information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_company_attribute.h:72</div></div>
 <div class="ttc" id="agroup__keywords_html_gacd21bf2a172183b6091bf93ac4d4e0c7"><div class="ttname"><a href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a></div><div class="ttdeci">#define assembly_configuration_(configuration)</div><div class="ttdoc">Sets the assembly configuration information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_configuration_attribute.h:72</div></div>
@@ -580,21 +583,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -704,21 +709,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -828,21 +835,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -952,21 +961,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1076,21 +1087,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1200,21 +1213,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1324,21 +1339,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1448,21 +1465,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1572,21 +1591,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1696,21 +1717,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1820,21 +1843,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1944,21 +1969,23 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// Information about this assembly is defined by the following attributes.</span></div>
 <div class="line"><span class="comment">// Change them to the values specific to your project.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with manual assembly information&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a>(<span class="stringliteral">&quot;Forms with CMake assembly information&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a>(<span class="stringliteral">&quot;This example shows how to use xtd assembly informations&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;Debug&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_manual_assembly_info&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a>(<span class="stringliteral">&quot;form_with_cmake_assembly_info&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a>(<span class="stringliteral">&quot;Copyright © Gammasoft 2024&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following GUID is for the ID of the typelib if this project is exposed to COM</span></div>
 <div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a>(<span class="stringliteral">&quot;9b363484-3d19-40a5-b5ac-eeebd391163b&quot;</span>);</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;.</span></div>
 <div class="line"><span class="comment">// In not specify or empty or &quot;*&quot; the cmake project version is used.</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -3796,7 +3823,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 29 2024 13:37:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Feb 8 2024 21:21:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
