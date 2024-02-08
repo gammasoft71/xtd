@@ -346,11 +346,15 @@ xtdc run
 
 ## Gallery
 
+### Minesweeper
+
 [![minesweeper](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/minesweeper.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/README.md)
 
 [minesweeper (on Windows)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/README.md)
 
 ______________________________________________________________________________________________
+
+### Game of Life
 
 [![game_of_life](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/game_of_life.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/game_of_life/README.md)
 
@@ -358,11 +362,15 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________
 
+### xtdc-gui
+
 [![xtdc-gui](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtdc-gui.png)](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md)
 
 [xtdc-gui - Create a new project (on macOS)](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc-gui/README.md)
 
 ______________________________________________________________________________________________
+
+### Calculator
 
 [![calculator](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/calculator.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/calculator/README.md)
 
@@ -370,11 +378,15 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________
 
+### Stopwatch
+
 [![stopwatch](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/stopwatch.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_form/README.md)
 
 [stopwatch (on Windows)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/stopwatch_form/README.md)
 
 ______________________________________________________________________________________________
+
+### Painting
 
 [![painting](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/painting.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)
 
