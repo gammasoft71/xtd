@@ -164,15 +164,31 @@ fi
 #_______________________________________________________________________________
 #                             Copy install manifest files to xtd share directory
 if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
-  cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt "$cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt"
-  cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt "$cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt"
-  cp build/Release/install_manifest.txt "$cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt"
-  cp build/Debug/install_manifest.txt "$cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt"
+  if test -f build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt; then
+    cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt "$cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt"
+  fi
+  if test -f build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt; then
+    cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt "$cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt"
+  fi
+  if test -f build/Release/install_manifest.txt; then
+    cp build/Release/install_manifest.txt "$cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt"
+  fi
+  if test -f build/Debug/install_manifest.txt; then
+    cp build/Debug/install_manifest.txt "$cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt"
+  fi
 else
-  sudo cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt
-  sudo cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt
-  sudo cp build/Release/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt
-  sudo cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt
+  if test -f build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt; then
+    sudo cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt
+  fi
+  if test -f build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt; then
+    sudo cp build/3rdparty/wxwidgets/build_cmake/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/wxwidgets_debug_install_manifest.txt
+  fi
+  if test -f build/Release/install_manifest.txt; then
+    sudo cp build/Release/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt
+  fi
+  if test -f build/Debug/install_manifest.txt; then
+    sudo cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt
+  fi
 fi
 
 #_______________________________________________________________________________
