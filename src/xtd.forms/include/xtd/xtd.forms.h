@@ -373,3 +373,5 @@
 #include "forms/vertical_control_layout_style.h"
 #include "forms/vertical_control_layout_style_collection.h"
 #include "forms/vertical_layout_panel.h"
+#include "forms/xtd_about_box.h"
+#include "forms/xtd_about_dialog.h"
