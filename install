@@ -4,4 +4,5 @@
 # Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.
 
 export xtd_version=0.2.0
-scripts/install/install.sh "$@"
+scripts/install/install.sh "$@" 2>&1 | tee install.log
+mv install.log build/install.log
