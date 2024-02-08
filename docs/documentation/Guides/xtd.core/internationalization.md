@@ -1,5 +1,7 @@
 # Internationalization
 
+![international](/pictures/international.png)
+
 ## Overview
 
 Xtd uses a number of user-readable strings, such as "open" or "save", which need to be translated into the user's language if it's different from English.
