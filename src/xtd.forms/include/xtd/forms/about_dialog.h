@@ -6,6 +6,7 @@
 #include "component.h"
 #include "dialog_appearance.h"
 #include "iwin32_window.h"
+#include "tab_control.h"
 #include <xtd/drawing/icon>
 #include <xtd/delegate>
 #include <xtd/ustring>
@@ -48,6 +49,8 @@ namespace xtd {
       using documenter_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       /// @brief Represents a translator collection.
       using translator_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
+      
+      using user_tab_page_collection = tab_control::tab_page_collection;
       /// @}
       
       /// @name Constructors
@@ -172,6 +175,15 @@ namespace xtd {
       /// @return Current about_dialog instance.
       about_dialog& translators(const translator_collection& translators);
       
+      /// @brief Gets the collection of user tab pages in this about box.
+      /// @return A xtd::forms::about_dialog::user_tab_page_collection that contains the control objects in this about box.
+      /// @remarks This property is used to add user tab pages in this about dialog.
+      user_tab_page_collection& user_tab_pages() noexcept;
+      /// @brief Gets the collection of user tab pages in this about box.
+      /// @return A xtd::forms::about_dialog::user_tab_page_collection that contains the control objects in this about box.
+      /// @remarks This property is used to add user tab pages in this about dialog.
+      const user_tab_page_collection& user_tab_pages() const noexcept;
+
       /// @brief Gets the product version.
       /// @return The product version.
       xtd::ustring version() const noexcept;

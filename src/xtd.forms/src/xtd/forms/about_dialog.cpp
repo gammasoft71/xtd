@@ -132,7 +132,7 @@ namespace {
     }
     
     using form::show;
-    void show(const iwin32_window* owner, const xtd::drawing::image& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const xtd::ustring& license) {
+    void show(const iwin32_window* owner, const xtd::drawing::image& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const xtd::ustring& license, const about_dialog::user_tab_page_collection& user_pages) {
       if (visible()) {
         activate();
         return;
@@ -147,7 +147,7 @@ namespace {
         picture_box_icon_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
       label_name_.height(static_cast<int32>(30 * name.split({'\n'}).size()));
       label_name_.text(name);
-      if (has_credit || has_license) {
+      if (has_credit || has_license || user_pages.size()) {
         controls().push_back_range({tab_control_about_, label_name_, picture_box_icon_});
         tab_control_about_.tab_pages().push_back(tab_page_about_);
         tab_page_about_.controls().push_back(panel_about_);
@@ -218,6 +218,9 @@ namespace {
         text_box_license_.text(license);
       }
       
+      for (const auto& user_page : user_pages)
+        tab_control_about_.tab_pages().push_back(user_page);
+      
       /** @todo Activate the following commment if about dialog must be modal on Windows.
       if (show_modal_) {
         auto o = owner;
@@ -250,7 +253,9 @@ namespace {
 }
 
 struct about_dialog::data {
+  shared_ptr<about_dialog_standard> dialog;
   xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
+  intptr handle = 0;
   xtd::drawing::image icon;
   xtd::ustring name;
   xtd::ustring version;
@@ -261,11 +266,10 @@ struct about_dialog::data {
   xtd::ustring website_label;
   author_collection authors;
   documenter_collection documenters;
+  user_tab_page_collection user_tab_pages;
   translator_collection translators;
   artist_collection artists;
   xtd::ustring license;
-  shared_ptr<about_dialog_standard> dialog;
-  intptr handle = 0;
 };
 
 about_dialog::about_dialog() : data_(std::make_shared<data>()) {
@@ -388,6 +392,14 @@ about_dialog& about_dialog::name(const xtd::ustring& name) {
   return *this;
 }
 
+about_dialog::user_tab_page_collection& about_dialog::user_tab_pages() noexcept {
+  return data_->user_tab_pages;
+}
+
+const about_dialog::user_tab_page_collection& about_dialog::user_tab_pages() const noexcept {
+  return data_->user_tab_pages;
+}
+
 const about_dialog::translator_collection& about_dialog::translators() const noexcept {
   return data_->translators;
 }
@@ -458,21 +470,15 @@ void about_dialog::reset() noexcept {
 void about_dialog::show() {
   if (data_->dialog_appearance == xtd::forms::dialog_appearance::system) native::about_dialog::show(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
   else {
-    if (!data_->dialog) {
-      data_->dialog = make_shared<about_dialog_standard>();
-      data_->dialog->form_closed += [data = data_.get()] {data->dialog.reset();};
-    }
-    data_->dialog->show(nullptr, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
+    if (!data_->dialog) data_->dialog = make_shared<about_dialog_standard>();
+    data_->dialog->show(nullptr, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license, data_->user_tab_pages);
   }
 }
 
 void about_dialog::show(const iwin32_window& owner) {
   if (data_->dialog_appearance == xtd::forms::dialog_appearance::system) native::about_dialog::show(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
   else {
-    if (!data_->dialog) {
-      data_->dialog = make_shared<about_dialog_standard>();
-      data_->dialog->form_closed += [data = data_.get()] {data->dialog.reset();};
-    }
-    data_->dialog->show(&owner, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
+    if (!data_->dialog) data_->dialog = make_shared<about_dialog_standard>();
+    data_->dialog->show(&owner, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license, data_->user_tab_pages);
   }
 }
