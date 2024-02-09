@@ -84,6 +84,7 @@ add_sources(
   src/xtd/forms/tests/status_bar_panel_style_tests.cpp
   src/xtd/forms/tests/system_information_tests.cpp
   src/xtd/forms/tests/tab_alignment_tests.cpp
+  src/xtd/forms/tests/tab_control_tests.cpp
   src/xtd/forms/tests/text_format_flags_tests.cpp
   src/xtd/forms/tests/tick_style_tests.cpp
   src/xtd/forms/tests/toggle_button_tests.cpp 
