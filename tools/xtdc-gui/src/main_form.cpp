@@ -887,7 +887,7 @@ void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd
   // Picture or Output
   if (item.picture() != xtd::drawing::image::empty)
     update_open_xtd_examples_picture(item.picture());
-  else if (not item.output().empty())
+  else if (!item.output().empty())
     update_open_xtd_examples_output(item.output());
   else
     update_open_xtd_examples_picture(images::from_name(context, drawing::size{ 1024, 1024 }));
@@ -907,7 +907,7 @@ void main_form::update_open_xtd_examples_description(const xtd::ustring& descrip
       xtd::ustring link = it->str(2);        // () contents
       // Todo: if it's not a link, maybe a file e.g ../../CMakeLists.txt
       // open a google search in xtd documentation for now...
-      if (not link.starts_with("http"))
+      if (!link.starts_with("http"))
         link = xtd::ustring::format("https://www.google.com/search?q={}+site:https://gammasoft71.github.io/xtd/reference_guides/latest", title);
       // Replace all markdown links [title](url) with title
       text = text.replace(whole, title);
