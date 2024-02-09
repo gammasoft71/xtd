@@ -25,7 +25,7 @@ namespace xtd::native::macos {
       }
 
       pclose(file_stream);
-      return result;
+      return result.c_str();
     }
 
   private:
