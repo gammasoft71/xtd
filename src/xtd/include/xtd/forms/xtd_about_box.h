@@ -3,8 +3,8 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/static>
-#include "iwin32_window.h"
-#include "../forms_export.h"
+#include <xtd/forms/iwin32_window>
+#include "../export.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,12 +16,12 @@ namespace xtd {
     /// @par Namespace
     /// xtd::forms
     /// @par Library
-    /// xtd.forms
+    /// xtd
     /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrates the use of xtd_about_box dialog.
     /// @include xtd_about_box.cpp
-    class forms_export_ xtd_about_box final static_ {
+    class export_ xtd_about_box final static_ {
     public:
       /// @name Methods
       

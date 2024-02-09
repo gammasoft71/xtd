@@ -1,16 +1,23 @@
-#include "../../../include/xtd/forms/about_dialog.h"
+#include "../../../include/xtd/system_report.h"
 #include "../../../include/xtd/forms/xtd_about_dialog.h"
-#include "../../../include/xtd/forms/properties/resources.h"
+#include <xtd/forms/properties/resources>
+#include <xtd/forms/about_dialog>
+#include <xtd/forms/tab_page>
+#include <xtd/forms/text_box>
 #include <xtd/environment>
 
 using namespace xtd;
 using namespace xtd::forms;
 
 struct xtd_about_dialog::data {
-  xtd::forms::about_dialog dialog;
+  about_dialog dialog;
+  tab_page informations_tag_page;
+  text_box text_reports_text_box;
 };
 
 xtd_about_dialog::xtd_about_dialog() : data_(std::make_shared<data>()) {
+  data_->informations_tag_page.text("Informations");
+
   data_->dialog.icon(properties::resources::xtd());
   data_->dialog.name("About xtd");
   data_->dialog.version(environment::version().to_string(2));
@@ -32,6 +39,16 @@ xtd_about_dialog::xtd_about_dialog() : data_(std::make_shared<data>()) {
                         "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n"
                         "\n"
                         "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n");
+  data_->dialog.user_tab_pages().push_back(data_->informations_tag_page);
+  
+  data_->text_reports_text_box.dock(dock_style::fill);
+  data_->text_reports_text_box.font({drawing::font_family::generic_monospace(), data_->text_reports_text_box.font().size()});
+  data_->text_reports_text_box.multiline(true);
+  data_->text_reports_text_box.parent(data_->informations_tag_page);
+  data_->text_reports_text_box.read_only(true);
+  data_->text_reports_text_box.text(system_report::to_string());
+  data_->text_reports_text_box.word_wrap(false);
+
 }
 
 void xtd_about_dialog::show() {
