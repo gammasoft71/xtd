@@ -596,6 +596,7 @@ namespace xtd::forms::tests {
       form.controls().push_back(control);
       assert::are_equal(1_sz, form.controls().size(), csf_);
       assert::are_equal(control, form.controls()[0].get(), csf_);
+      assert::are_equal(form, control.parent(), csf_);
       assert::is_not_zero(control.handle(), csf_);
     }
     
@@ -2697,6 +2698,65 @@ namespace xtd::forms::tests {
       auto initial_handle = control.handle();
       control.recreate_handle();
       assert::are_not_equal(initial_handle, control.handle(), csf_);
+    }
+    
+    void test_method_(controls_add_controls_with_controls_push_back) {
+      forms::form form;
+      control_for_test control;
+      control_for_test control1;
+      control_for_test control2;
+      control_for_test control3;
+      
+      control.parent(form);
+      
+      control.controls().push_back_range({control1, control2, control3});
+      assert::are_equal(3, control.controls().size(), csf_);
+      assert::is_not_zero(control1.handle(), csf_);
+      assert::is_not_zero(control2.handle(), csf_);
+      assert::is_not_zero(control3.handle(), csf_);
+      assert::are_equal(control, control1.parent(), csf_);
+      assert::are_equal(control, control2.parent(), csf_);
+      assert::are_equal(control, control3.parent(), csf_);
+      assert::are_equal(control1, control.controls()[0].get(), csf_);
+      assert::are_equal(control2, control.controls()[1].get(), csf_);
+      assert::are_equal(control3, control.controls()[2].get(), csf_);
+    }
+    
+    void test_method_(controls_add_controls_with_control_parent_and_controls_push_back) {
+      forms::form form;
+      control_for_test control;
+      control_for_test control1;
+      control_for_test control2;
+      control_for_test control3;
+      
+      control.parent(form);
+      control1.parent(control);
+      control.controls().push_back_range({control1, control2, control3});
+      assert::are_equal(3, control.controls().size(), csf_);
+      assert::is_not_zero(control1.handle(), csf_);
+      assert::is_not_zero(control2.handle(), csf_);
+      assert::is_not_zero(control3.handle(), csf_);
+      assert::are_equal(control, control1.parent(), csf_);
+      assert::are_equal(control, control2.parent(), csf_);
+      assert::are_equal(control, control3.parent(), csf_);
+      assert::are_equal(control1, control.controls()[0].get(), csf_);
+      assert::are_equal(control2, control.controls()[1].get(), csf_);
+      assert::are_equal(control3, control.controls()[2].get(), csf_);
+    }
+
+    void test_method_(controls_remove_controls) {
+      forms::form form;
+      control_for_test control;
+      control_for_test control1;
+      control_for_test control2;
+      control_for_test control3;
+      control.parent(form);
+      
+      control.controls().push_back_range({control1, control2, control3});
+      control2.parent(nullptr);
+      assert::are_equal(2, control.controls().size(), csf_);
+      assert::are_same(control1, control.controls()[0].get(), csf_);
+      assert::are_same(control3, control.controls()[1].get(), csf_);
     }
   };
 }
