@@ -186,6 +186,16 @@ namespace xtd {
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
         std::optional<value_type> operator [](const xtd::ustring& name);
         /// @}
+        
+        /// @name Methodss
+        
+        /// @{
+        iterator insert(const_iterator pos, const value_type& value) override;
+        
+        void insert_at(size_t index, const value_type& value) override;
+        
+        void push_back(const value_type& value) override;
+        /// @}
       };
       
       /// @name Constructors

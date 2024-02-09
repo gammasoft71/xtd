@@ -116,6 +116,24 @@ optional<control::control_collection::value_type> control::control_collection::o
   return {};
 }
 
+control::control_collection::iterator control::control_collection::insert(const_iterator pos, const value_type& value) {
+  for (auto it = begin(); it != end(); ++it)
+    if (it->get() == value.get()) return it;
+  return base::insert(pos, value);
+}
+
+void control::control_collection::insert_at(size_t index, const value_type& value) {
+  for (auto it = begin(); it != end(); ++it)
+    if (it->get() == value.get()) return;
+  base::insert_at(index, value);
+}
+
+void control::control_collection::push_back(const value_type& value) {
+  for (auto it = begin(); it != end(); ++it)
+    if (it->get() == value.get()) return;
+  base::push_back(value);
+}
+
 struct control::data {
   anchor_styles anchor = anchor_styles::top | anchor_styles::left;
   forms::padding anchoring;
