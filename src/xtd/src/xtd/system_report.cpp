@@ -275,30 +275,42 @@ const xtd::environment::xtd_library_collection& system_report::xtd_libraries() n
 }
 
 ustring system_report::to_json() noexcept {
+  return to_json(reports::all);
+}
+
+ustring system_report::to_json(reports reports) noexcept {
   return "(The JSON report is not yet implemented)";
 }
 
 ustring system_report::to_string() noexcept {
+  return to_string(reports::all);
+}
+
+ustring system_report::to_string(reports reports) noexcept {
   int32 indent = 0;
   ustring report;
-  report += generate_stack_trace_string_report(indent);
-  report += generate_libraries_string_report(indent);
-  report += generate_processor_string_report(indent);
-  report += generate_operating_system_string_report(indent);
-  report += generate_compiler_string_report(indent);
-  report += generate_language_string_report(indent);
-  report += generate_locale_string_report(indent);
-  report += generate_toolkit_string_report(indent);
-  report += generate_environment_variables_string_report(indent);
-  report += generate_special_folders_string_report(indent);
-  report += generate_system_colors_string_report(indent);
-  report += generate_generic_font_families_string_report(indent);
-  report += generate_system_fonts_string_report(indent);
-  report += generate_screens_report(indent);
-  report += generate_system_informations_string_report(indent);
+  if ((reports & system_report::reports::stack_trace) == system_report::reports::stack_trace) report += generate_stack_trace_string_report(indent);
+  if ((reports & system_report::reports::libraries) == system_report::reports::libraries) report += generate_libraries_string_report(indent);
+  if ((reports & system_report::reports::processor) == system_report::reports::processor) report += generate_processor_string_report(indent);
+  if ((reports & system_report::reports::operating_system) == system_report::reports::operating_system) report += generate_operating_system_string_report(indent);
+  if ((reports & system_report::reports::compiler) == system_report::reports::compiler) report += generate_compiler_string_report(indent);
+  if ((reports & system_report::reports::language) == system_report::reports::language) report += generate_language_string_report(indent);
+  if ((reports & system_report::reports::locale) == system_report::reports::locale) report += generate_locale_string_report(indent);
+  if ((reports & system_report::reports::toolkit) == system_report::reports::toolkit) report += generate_toolkit_string_report(indent);
+  if ((reports & system_report::reports::environment_variables) == system_report::reports::environment_variables) report += generate_environment_variables_string_report(indent);
+  if ((reports & system_report::reports::special_folders) == system_report::reports::special_folders) report += generate_special_folders_string_report(indent);
+  if ((reports & system_report::reports::system_colors) == system_report::reports::system_colors) report += generate_system_colors_string_report(indent);
+  if ((reports & system_report::reports::generic_font_families) == system_report::reports::generic_font_families) report += generate_generic_font_families_string_report(indent);
+  if ((reports & system_report::reports::system_fonts) == system_report::reports::system_fonts) report += generate_system_fonts_string_report(indent);
+  if ((reports & system_report::reports::screens) == system_report::reports::screens) report += generate_screens_report(indent);
+  if ((reports & system_report::reports::system_informations) == system_report::reports::system_informations) report += generate_system_informations_string_report(indent);
   return report;
 }
 
 ustring system_report::to_xml() noexcept {
+  return to_xml(reports::all);
+}
+
+ustring system_report::to_xml(reports reports) noexcept {
   return "(The XML report is not yet implemented)";
 }
