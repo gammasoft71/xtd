@@ -51,6 +51,13 @@ control& tab_page::parent(const control& parent) {
   return *this;
 }
 
+control& tab_page::parent(std::nullptr_t) {
+  if (!parent()) return *this;
+  auto it = find(as<tab_control>(parent().value().get()).tab_pages().begin(), as<tab_control>(parent().value().get()).tab_pages().end(), *this);
+  if (it != as<tab_control>(parent().value().get()).tab_pages().end()) as<tab_control>(const_cast<control&>(parent().value().get())).tab_pages().erase(it);
+  return *this;
+}
+
 control& tab_page::text(const ustring& text) {
   if (control::text() == text) return *this;
   if (is_handle_created() && parent().has_value()) native::tab_page::text(handle(), text);
