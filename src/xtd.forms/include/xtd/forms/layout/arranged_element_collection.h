@@ -231,10 +231,10 @@ namespace xtd {
         
         /// @brief Checks whether the container is sorted.
         /// @return true if container is sorted; otherwise false.
-        bool sorted() const noexcept {return sorted_;}
+        virtual bool sorted() const noexcept {return sorted_;}
         /// @brief Sets the container is sorted.
         /// @param value true if container is sorted; otherwise false.
-        void sorted(bool value) {
+        virtual void sorted(bool value) {
           if (sorted_ != value) {
             sorted_ = value;
             if (sorted_) sort();
@@ -242,7 +242,7 @@ namespace xtd {
         }
         
         /// @brief clears the contents.
-        void clear() noexcept {
+        virtual void clear() noexcept {
           iterator it = begin();
           while (it != end())
             it = erase(it);
@@ -251,7 +251,7 @@ namespace xtd {
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param value The element to insert.
-        iterator insert(const_iterator pos, const value_type& value) {
+        virtual iterator insert(const_iterator pos, const value_type& value) {
           size_t index = pos - begin();
           inserting_ = true;
           iterator result = collection_.insert(pos, value);
@@ -265,7 +265,7 @@ namespace xtd {
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param value The element to insert.
-        iterator insert(const_iterator pos, const value_type&& value) {
+        virtual iterator insert(const_iterator pos, const value_type&& value) {
           size_t index = pos - begin();
           inserting_ = true;
           iterator result = collection_.insert(pos, value);
@@ -280,7 +280,7 @@ namespace xtd {
         /// @brief Inserts specified element at specified index.
         /// @param pos The index before which the content will be inserted.
         /// @param value The element to insert.
-        void insert_at(size_t index, const value_type& value) {
+        virtual void insert_at(size_t index, const value_type& value) {
           if (index > size()) throw argument_out_of_range_exception {csf_};
           insert(begin() + index, value);
         }
@@ -315,7 +315,7 @@ namespace xtd {
         
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
-        iterator erase(iterator pos) {
+        virtual iterator erase(iterator pos) {
           item_removed(pos - begin(), *pos);
           erasing_ = true;
           iterator result = collection_.erase(pos);
@@ -324,8 +324,8 @@ namespace xtd {
         }
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
-        iterator erase(const_iterator pos) {
-          item_removed(pos - begin(), *pos);
+        virtual iterator erase(const_iterator pos) {
+          item_removed(pos - begin(), *reinterpret_cast<iterator&>(pos));
           erasing_ = true;
           iterator result = collection_.erase(pos);
           erasing_ = false;
@@ -335,7 +335,7 @@ namespace xtd {
         /// @brief Erases elements at specified range.
         /// @param first The first iterator range which the content will be erased.
         /// @param first The last iterator range which the content will be erased.
-        iterator erase(iterator first, iterator last) {
+        virtual iterator erase(iterator first, iterator last) {
           iterator result = end();
           for (iterator it = first; it <= last; ++it)
             result = erase(it);
@@ -344,8 +344,8 @@ namespace xtd {
         /// @brief Erases elements at specified range.
         /// @param first The first iterator range which the content will be erased.
         /// @param first The last iterator range which the content will be erased.
-        iterator erase(const_iterator first, const_iterator last) {
-          iterator result = this->bend();
+        virtual iterator erase(const_iterator first, const_iterator last) {
+          iterator result = end();
           for (const_iterator it = first; it <= last; ++it)
             result = erase(it);
           return result;
@@ -353,19 +353,19 @@ namespace xtd {
         
         /// @brief Erases element at specified index.
         /// @param pos The index which the content will be erased.
-        void erase_at(size_t index) {
+        virtual void erase_at(size_t index) {
           if (index > size()) throw argument_out_of_range_exception {csf_};
           erase(begin() + index);
         }
         
         /// @brief Removes the last element of the container.
-        void pop_back() {
+        virtual void pop_back() {
           if (size() != 0) erase_at(size() - 1);
         }
         
         /// @brief Adds an element to the end.
         /// @param item The element to add.
-        void push_back(const value_type& item) {
+        virtual void push_back(const value_type& item) {
           collection_.push_back(item);
           size_t index = collection_.size() - 1;
           (*this)[index].owner = this;
@@ -375,7 +375,7 @@ namespace xtd {
         }
         /// @brief Adds an element to the end.
         /// @param item The element to add.
-        void push_back(value_type&& item) {
+        virtual void push_back(value_type&& item) {
           collection_.push_back(item);
           size_t index = collection_.size() - 1;
           (*this)[index].owner = this;
@@ -386,19 +386,19 @@ namespace xtd {
         
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        void push_back_range(const arranged_element_collection& collection) {
+        virtual void push_back_range(const arranged_element_collection& collection) {
           for (value_type item : collection)
             push_back(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        void push_back_range(const std::vector<value_type>& collection) {
+        virtual void push_back_range(const std::vector<value_type>& collection) {
           for (value_type item : collection)
             push_back(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        void push_back_range(const std::initializer_list<value_type>& collection) {
+        virtual void push_back_range(const std::initializer_list<value_type>& collection) {
           for (value_type item : collection)
             push_back(item);
         }
@@ -418,7 +418,7 @@ namespace xtd {
         }
         
         /// @brief Sorts the content.
-        void sort() {
+        virtual void sort() {
           sorter_t sorter;
           sorter(begin(), end());
         }
