@@ -26,9 +26,9 @@ xtd_about_dialog::xtd_about_dialog() : data_(std::make_shared<data>()) {
   data_->dialog.website("https://gammasoft71.github.io/xtd/");
   data_->dialog.website_label("xtd website");
   data_->dialog.copyright("Copyright (c) 2024 Gammasoft.\nAll rights reserved.");
-  data_->dialog.authors({"Gammasoft", "Contributors"});
-  data_->dialog.documenters({"Gammasoft"});
-  data_->dialog.translators({"Gammasoft", "Contributors"});
+  data_->dialog.authors({"Gammasoft", "Arsero", "Bader", "bigplayszn", "Fireblaze-A47", "GermanAizek", "jimorc", "jopadan", "MCCLXXXVII", "niansa", "yfiumefreddo"});
+  data_->dialog.documenters({"Gammasoft", "Arsero"});
+  data_->dialog.translators({"Gammasoft", "Bader", "qingyiwebt"});
   data_->dialog.artists({"Gammasoft"});
   data_->dialog.license("MIT License\n"
                         "\n"
