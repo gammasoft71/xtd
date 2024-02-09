@@ -2,6 +2,7 @@
 #include <xtd/forms/properties/resources>
 #include <xtd/forms/form>
 #include <xtd/forms/tab_control>
+#include <xtd/forms/tab_page>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -113,7 +114,7 @@ namespace xtd::forms::tests {
       assert::are_equal(tab_alignment::top, tab_control.alignment(), csf_);
     }
     
-    void test_method_(alignment_without_parent) {
+    void test_method_(alignment_without_form) {
       tab_control_for_test tab_control;
       tab_control.alignment(tab_alignment::left);
       assert::are_equal(tab_alignment::left, tab_control.alignment(), csf_);
@@ -147,7 +148,7 @@ namespace xtd::forms::tests {
       assert::are_equal(1, tab_control.image_list().images().size(), csf_);
     }
     
-    void test_method_(image_list_without_parent) {
+    void test_method_(image_list_without_form) {
       tab_control_for_test tab_control;
       
       forms::image_list image_list;
@@ -176,10 +177,136 @@ namespace xtd::forms::tests {
     void test_method_(selected_index) {
       forms::form form;
       tab_control_for_test tab_control;
+      forms::tab_page tab_page1;
       tab_control.parent(form);
       
       assert::throws<argument_out_of_range_exception>([&]{tab_control.selected_index(0);}, csf_);
-      //assert::are_equal(0, tab_control.selected_index(), csf_);
+      tab_control.tab_pages().push_back(tab_page1);
+      tab_control.selected_index(0);
+      assert::are_equal(0, tab_control.selected_index(), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{tab_control.selected_index(1);}, csf_);
+    }
+    
+    void test_method_(selected_index_without_form) {
+      tab_control_for_test tab_control;
+      forms::tab_page tab_page1;
+      
+      assert::throws<argument_out_of_range_exception>([&]{tab_control.selected_index(0);}, csf_);
+      tab_control.tab_pages().push_back(tab_page1);
+      tab_control.selected_index(0);
+      assert::are_equal(0, tab_control.selected_index(), csf_);
+      assert::throws<argument_out_of_range_exception>([&]{tab_control.selected_index(1);}, csf_);
+    }
+    
+    void test_method_(tab_pages_add_pages_with_tab_pages_push_back) {
+      forms::form form;
+      tab_control_for_test tab_control;
+      forms::tab_page tab_page1;
+      forms::tab_page tab_page2;
+      forms::tab_page tab_page3;
+      tab_control.parent(form);
+      
+      tab_control.tab_pages().push_back_range({tab_page1, tab_page2, tab_page3});
+      assert::are_equal(3, tab_control.tab_pages().size(), csf_);
+      assert::is_not_zero(tab_page1.handle(), csf_);
+      assert::is_not_zero(tab_page2.handle(), csf_);
+      assert::is_not_zero(tab_page3.handle(), csf_);
+      assert::are_equal(tab_control, tab_page1.parent(), csf_);
+      assert::are_equal(tab_control, tab_page2.parent(), csf_);
+      assert::are_equal(tab_control, tab_page3.parent(), csf_);
+      assert::are_equal(tab_page1, tab_control.tab_pages()[0].get(), csf_);
+      assert::are_equal(tab_page2, tab_control.tab_pages()[1].get(), csf_);
+      assert::are_equal(tab_page3, tab_control.tab_pages()[2].get(), csf_);
+    }
+    
+    void test_method_(tab_pages_add_pages_with_tab_pages_push_back_without_form) {
+      tab_control_for_test tab_control;
+      forms::tab_page tab_page1;
+      forms::tab_page tab_page2;
+      forms::tab_page tab_page3;
+      
+      tab_control.tab_pages().push_back_range({tab_page1, tab_page2, tab_page3});
+      assert::are_equal(3, tab_control.tab_pages().size(), csf_);
+      assert::is_zero(tab_page1.handle(), csf_);
+      assert::is_zero(tab_page2.handle(), csf_);
+      assert::is_zero(tab_page3.handle(), csf_);
+      assert::is_null(tab_page1.parent(), csf_);
+      assert::is_null(tab_page2.parent(), csf_);
+      assert::is_null(tab_page3.parent(), csf_);
+      assert::are_equal(tab_page1, tab_control.tab_pages()[0].get(), csf_);
+      assert::are_equal(tab_page2, tab_control.tab_pages()[1].get(), csf_);
+      assert::are_equal(tab_page3, tab_control.tab_pages()[2].get(), csf_);
+    }
+
+    void test_method_(tab_pages_add_pages_with_tab_page_parent) {
+      forms::form form;
+      tab_control_for_test tab_control;
+      forms::tab_page tab_page1;
+      forms::tab_page tab_page2;
+      forms::tab_page tab_page3;
+      tab_control.parent(form);
+      
+      tab_page1.parent(tab_control);
+      tab_page2.parent(tab_control);
+      tab_page3.parent(tab_control);
+      assert::are_equal(3, tab_control.tab_pages().size(), csf_);
+      assert::is_not_zero(tab_page1.handle(), csf_);
+      assert::is_not_zero(tab_page2.handle(), csf_);
+      assert::is_not_zero(tab_page3.handle(), csf_);
+      assert::are_equal(tab_control, tab_page1.parent(), csf_);
+      assert::are_equal(tab_control, tab_page2.parent(), csf_);
+      assert::are_equal(tab_control, tab_page3.parent(), csf_);
+      assert::are_same(tab_page1, tab_control.tab_pages()[0].get(), csf_);
+      assert::are_same(tab_page2, tab_control.tab_pages()[1].get(), csf_);
+      assert::are_same(tab_page3, tab_control.tab_pages()[2].get(), csf_);
+    }
+
+    void test_method_(tab_pages_remove_pages_with_tab_page_parent) {
+      forms::form form;
+      tab_control_for_test tab_control;
+      forms::tab_page tab_page1;
+      forms::tab_page tab_page2;
+      forms::tab_page tab_page3;
+      tab_control.parent(form);
+      
+      tab_control.tab_pages().push_back_range({tab_page1, tab_page2, tab_page3});
+      tab_page2.parent(nullptr);
+      assert::are_equal(2, tab_control.tab_pages().size(), csf_);
+      assert::are_same(tab_page1, tab_control.tab_pages()[0].get(), csf_);
+      assert::are_same(tab_page3, tab_control.tab_pages()[1].get(), csf_);
+      assert::is_null(tab_page2.parent(), csf_);
+    }
+
+    void test_method_(tab_pages_remove_pages_with_tab_pages_eraqe_at) {
+      forms::form form;
+      tab_control_for_test tab_control;
+      forms::tab_page tab_page1;
+      forms::tab_page tab_page2;
+      forms::tab_page tab_page3;
+      tab_control.parent(form);
+      
+      tab_control.tab_pages().push_back_range({tab_page1, tab_page2, tab_page3});
+      tab_control.tab_pages().erase_at(1);
+      assert::are_equal(2, tab_control.tab_pages().size(), csf_);
+      assert::are_same(tab_page1, tab_control.tab_pages()[0].get(), csf_);
+      assert::are_same(tab_page3, tab_control.tab_pages()[1].get(), csf_);
+      assert::is_null(tab_page2.parent(), csf_);
+    }
+
+    void test_method_(tab_pages_remove_pages_with_tab_pages_clear) {
+      forms::form form;
+      tab_control_for_test tab_control;
+      forms::tab_page tab_page1;
+      forms::tab_page tab_page2;
+      forms::tab_page tab_page3;
+      tab_control.parent(form);
+      
+      tab_control.tab_pages().push_back_range({tab_page1, tab_page2, tab_page3});
+      tab_control.tab_pages().clear();
+      assert::are_equal(0, tab_control.tab_pages().size(), csf_);
+      assert::is_null(tab_page1.parent(), csf_);
+      assert::is_null(tab_page2.parent(), csf_);
+      assert::is_null(tab_page3.parent(), csf_);
     }
   };
 }
