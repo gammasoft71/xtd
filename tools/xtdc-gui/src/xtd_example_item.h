@@ -96,11 +96,11 @@ namespace xtdc_gui {
       xtd::ustring output = "";
       for (const xtd::ustring& line : contents) {
         if (line.empty()) continue;
-        if (not found_output and line.to_lower().starts_with("# output")) {
+        if (!found_output && line.to_lower().starts_with("# output")) {
           found_output = true;
           continue;
         } else if (found_output) {
-          if (line.starts_with("#") or line.starts_with("```") or line.starts_with("![")) continue; // skip other # ``` sections and ![Screenshots]
+          if (line.starts_with("#") || line.starts_with("```") || line.starts_with("![")) continue; // skip other # ``` sections and ![Screenshots]
           output += line + '\n';
         }
       }
