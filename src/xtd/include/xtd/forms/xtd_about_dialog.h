@@ -2,10 +2,10 @@
 /// @brief Contains xtd::forms::xtd_about_dialog dialog.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "layout/arranged_element_collection.h"
-#include "component.h"
-#include "dialog_appearance.h"
-#include "iwin32_window.h"
+#include <xtd/forms/layout/arranged_element_collection>
+#include <xtd/forms/component.h>
+#include <xtd/forms/dialog_appearance>
+#include <xtd/forms/iwin32_window>
 #include <xtd/drawing/icon>
 #include <xtd/delegate>
 #include <xtd/ustring>
@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Namespace
     /// xtd::forms
     /// @par Library
-    /// xtd.forms
+    /// xtd
     /// @ingroup xtd_forms dialogs
     /// @par Examples
     /// The following code example demonstrates the use of xtd_about_dialog dialog.
