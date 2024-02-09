@@ -37,7 +37,7 @@ namespace countries_example {
         country_emoticon_label.text(any_cast<forms::country>(countries_list_box.selected_item().tag()).emoticon());
         country_code_label.text(ustring::format("Codes : {} ({}) / {}", any_cast<forms::country>(countries_list_box.selected_item().tag()).alpha_3_code(), any_cast<forms::country>(countries_list_box.selected_item().tag()).alpha_2_code(), any_cast<forms::country>(countries_list_box.selected_item().tag()).numeric_code()));
       };
-      countries_list_box.selected_item(countries::brazil().name());
+      countries_list_box.selected_item(countries::belgium().name());
       
       country_panel.parent(*this);
       country_panel.location({220, 10});
