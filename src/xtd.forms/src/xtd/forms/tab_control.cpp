@@ -123,6 +123,7 @@ size_t tab_control::selected_index() const noexcept {
 
 tab_control& tab_control::selected_index(size_t selected_index) {
   if (data_->selected_index == selected_index) return *this;
+  if (selected_index >= tab_pages().size()) throw argument_out_of_range_exception {csf_};
   data_->selected_index = selected_index;
   if (is_handle_created()) native::tab_control::selected_index(handle(), data_->selected_index);
   on_selected_index_changed(event_args::empty);
