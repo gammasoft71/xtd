@@ -53,7 +53,7 @@ echo  "Using up to ${build_cores} build cores"
 
 echo "Installing needed packages and libraries..."
 case "$OSTYPE" in
-  *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gtk3-devel gsound-devel gtk3-devel -y;;
+  *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gtk3-devel gsound-devel gtk3-devel libuuid-devel -y;;
   "CLANGARM64") pacman -S -yy --noconfirm base-devel git mingw-w64-clang-aarch64-cmake mingw-w64-clang-aarch64-doxygen mingw-w64-clang-aarch64-gcc-compat mingw-w64-clang-aarch64-gtk3 mingw-w64-clang-aarch64-make mingw-w64-clang-aarch64-wxwidgets3.2-msw;;
   "CLANG32") pacman -S -yy --noconfirm base-devel git mingw-w64-clang-i686-cmake mingw-w64-clang-i686-doxygen mingw-w64-clang-i686-gcc-compat mingw-w64-clang-i686-gtk3 mingw-w64-clang-i686-make mingw-w64-clang-i686-wxwidgets3.2-msw;;
   "CLANG64") pacman -S -yy --noconfirm base-devel git mingw-w64-clang-x86_64-cmake mingw-w64-clang-x86_64-doxygen mingw-w64-clang-x86_64-gcc-compat mingw-w64-clang-x86_64-gtk3 mingw-w64-clang-x86_64-make mingw-w64-clang-x86_64-wxwidgets3.2-msw;;
