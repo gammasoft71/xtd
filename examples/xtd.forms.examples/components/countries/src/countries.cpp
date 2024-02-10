@@ -4,6 +4,7 @@
 #include <xtd/forms/label>
 #include <xtd/forms/list_box>
 #include <xtd/forms/picture_box>
+#include <xtd/diagnostics/debug>
 #include <xtd/drawing/system_colors>
 #include <xtd/startup>
 
@@ -58,7 +59,7 @@ namespace countries_example {
       country_emoticon_label.parent(country_panel);
       country_emoticon_label.font({country_emoticon_label.font(), 64});
       country_emoticon_label.location({10, 350});
-      country_emoticon_label.auto_size(true);
+      country_emoticon_label.size({80, 80});
       
       country_code_label.parent(country_panel);
       country_code_label.location({10, 445});
