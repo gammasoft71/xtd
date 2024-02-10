@@ -56,10 +56,11 @@ namespace countries_example {
       country_flag_squared_picture_box.location({10, 212});
       country_flag_squared_picture_box.size({128, 128});
       
+      country_emoticon_label.flat_style(xtd::forms::flat_style::system);
       country_emoticon_label.parent(country_panel);
       country_emoticon_label.font({country_emoticon_label.font(), 64});
       country_emoticon_label.location({10, 350});
-      country_emoticon_label.size({80, 80});
+      country_emoticon_label.auto_size(true);
       
       country_code_label.parent(country_panel);
       country_code_label.location({10, 445});
