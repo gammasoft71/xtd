@@ -95,7 +95,7 @@ namespace xtdc_command {
     void create_main(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
         "#include \"Frame1.h\"",
-        "#include <wx/app>",
+        "#include <wx/app.h>",
         "",
         xtd::ustring::format("namespace {} {{", name),
         "  // Represent the application",
