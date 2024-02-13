@@ -6,7 +6,7 @@
 
 ## [xtd.core](xtd.core.examples/README.md)
 
-[xtd.core.examples](xtd.core.examples/README.md) contains xtd.core examples library examples (CLI).
+[xtd.core.examples](xtd.core.examples/README.md) contains xtd.core library examples (CLI).
 
 * [Hello Worlds](xtd.core.examples/hello_worlds/README.md) contains xtd.core "Hello, World!" examples.
 * [Bit Converter](xtd.core.examples/bit_converter/README.md) contains bit converter examples.
