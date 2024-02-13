@@ -31,7 +31,7 @@
 
 ## [Console](console/README.md)
 
-* [console_background_color](console/console_background_color/README.md) shows how to use [xtd::console::background_color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1background__color.html) method.
+* [console_background_color](console/console_background_color/README.md) shows how to use [xtd::console::background_color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a16386e533bc0bbb8cc4dfb4b079c828a) property.
 * [console_beep](console/console_beep/README.md) shows how to use [xtd::console::beep](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2) method.
 * [console_buffer](console/console_buffer/README.md) shows how to use [xtd::console::buffer_height](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a4088b3aa84f6a10b4e2c8c72db095eaa) and [xtd::console::buffer_width](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#ad055fc0fad3ebe72948916a088cd8790) methods.
 * [console_clear](console/console_clear/README.md) shows how to use [xtd::console::clear](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a) method.
