@@ -16,17 +16,15 @@ Open "Command Prompt" or "Terminal". Navigate to the folder that contains the pr
 xtdc run
 ```
 
-* If action1 is called without param
-
 ## Output
+
+* If action1 is called without param
 
 ```
 Hello, World!
 ```
 
 * If Action1 is called with any param
-
-## Output
 
 ### Windows :
 
