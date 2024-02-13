@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "core_export.h"
+#include "core_namespace_aliases.h"
 #include "self.h"
 /// @cond
 #define __XTD_VALUE_TYPE_NATIVE__
