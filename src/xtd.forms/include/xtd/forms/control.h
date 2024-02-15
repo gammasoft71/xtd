@@ -792,20 +792,49 @@ namespace xtd {
       
       int32 compare_to(const control& value) const noexcept override;
       
+      /// @brief A factory to create a specified control.
+      /// @return New control created.
+      static control create();
+      /// @brief A factory to create a specified control with specified location.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @return New control created.
+      static control create(const drawing::point& location);
+      /// @brief A factory to create a specified control with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @return New control created.
+      static control create(const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create a specified control with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      static control create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static control create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create a specified control with specified parent.
+      /// @param parent The parent that contains the new created control.
+      /// @return New control created.
+      static control create(const control& paren);
       /// @brief A factory to create a specified control with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      static control create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      
+      static control create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create a specified control with specified parent, location, and size.
+      /// @param parent The parent that contains the new created control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @return New control created.
+      static control create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create a specified control with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param name The name of the control.
+      /// @return New control created.
+      static control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+
       /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
       /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.
       /// @remarks create_control does not create a control handle if the control's visible property is false. You can either call the create_control method or access the handle property to create the control's handle regardless of the control's visibility, but in this case, no window handles are created for the control's children.

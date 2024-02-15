@@ -853,19 +853,57 @@ int32 control::compare_to(const control& value) const noexcept {
   return this < &value ? -1 : (this > &value ? 1 : 0);
 }
 
+control control::create() {
+  return control {};
+}
+
+control control::create(const drawing::point& location) {
+  auto result = control {};
+  result.location(location);
+  return result;
+}
+
+control control::create(const drawing::point& location, const drawing::size& size) {
+  auto result = control {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 control control::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = control {};
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+control control::create(const control& parent) {
+  auto result = control {};
+  result.parent(parent);
+  return result;
+}
+
+control control::create(const control& parent, const drawing::point& location) {
+  auto result = control {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+control control::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = control {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 control control::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = control {};
   result.parent(parent);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
