@@ -401,6 +401,10 @@ void form::close() {
   if (is_handle_created() && data_->previous_screen) native::form::close(handle());
 }
 
+form form::create() {
+  return form {};
+}
+
 form form::create(const xtd::ustring& text, const drawing::size& size, const xtd::ustring& name) {
   auto result = form {};
   result.text(text);
