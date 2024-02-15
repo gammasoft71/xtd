@@ -61,7 +61,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::font_picker with specified color, location, size, and name.
       /// @param font The selected font.
       /// @param color The color selected by the user. If a color is not selected.

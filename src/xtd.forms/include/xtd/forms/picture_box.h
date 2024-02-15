@@ -93,7 +93,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::picture_box with specified location, size, and name.
       /// @param image The image that is displayed by picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.

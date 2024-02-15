@@ -79,7 +79,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::tab_page with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::tab_page.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::tab_page.

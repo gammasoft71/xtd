@@ -349,7 +349,6 @@ namespace xtd {
       /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::monthly_bolded_dates property.
       void add_monthly_bolded_date(const xtd::date_time& date);
       
-      using control::create;
       /// @brief A factory to create an xtd::forms::month_calendar with specified location, size, and name.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.

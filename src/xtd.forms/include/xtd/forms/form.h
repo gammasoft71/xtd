@@ -331,7 +331,6 @@ namespace xtd {
       /// @remarks When a form is closed, all resources created within the object are closed and the form is disposed. You can prevent the closing of a form at run time by handling the closing event and setting the cancel property of the cancel_event_args passed as a parameter to your event handler. If the form you are closing is the startup form of your application, your application ends.
       void close();
       
-      using control::create;
       /// @brief A factory to create an xtd::forms::form with specified text, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.

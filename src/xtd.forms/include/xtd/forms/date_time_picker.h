@@ -79,7 +79,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::date_time_picker with specified color, location, size, and name.
       /// @param value The date and time value assign to the control.
       /// @param min_date The minimum date and time that can be selected in the control.

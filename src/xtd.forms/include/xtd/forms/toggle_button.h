@@ -112,7 +112,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::toggle_button with specified text, three_state, check_state, location ,size, and name.
       /// @param text A string that represent text of the xtd::forms::toggle_button.
       /// @param three_state true if the toggle_button is able to display three check states; otherwise, false.

@@ -105,7 +105,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::numeric_up_down with specified location, size, and name.
       /// @param value The numeric value of the numeric_up_down control.
       /// @param minimum The minimum allowed value for the spin box. The default value is 0.

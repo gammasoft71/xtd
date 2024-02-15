@@ -1592,87 +1592,13 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(create_with_default_arguments) {
-      auto control = forms::control::create<control_for_test>();
+      auto control = control_for_test {};
       assert::is_null(control.parent(), csf_);
       assert::is_zero(control.handle(), csf_);
       assert::is_empty(control.text(), csf_);
       assert::are_equal(drawing::point(0, 0), control.location(), csf_);
       assert::are_equal(drawing::size(0, 0), control.size(), csf_);
       assert::is_empty(control.name(), csf_);
-    }
-    
-    void test_method_(create_with_parent_default_arguments) {
-      forms::form form;
-      auto control = forms::control::create<control_for_test>(form);
-      assert::are_same(form, control.parent().value().get(), csf_);
-      assert::is_not_zero(control.handle(), csf_);
-      assert::is_empty(control.text(), csf_);
-      assert::are_equal(drawing::point(0, 0), control.location(), csf_);
-      assert::are_equal(drawing::size(0, 0), control.size(), csf_);
-      assert::is_empty(control.name(), csf_);
-    }
-    
-    void test_method_(create_with_arguments) {
-      auto control = forms::control::create<control_for_test>(drawing::point(10, 20), drawing::size(100, 50), "control_for_test1");
-      assert::is_null(control.parent(), csf_);
-      assert::is_zero(control.handle(), csf_);
-      assert::is_empty(control.text(), csf_);
-      assert::are_equal(drawing::point(10, 20), control.location(), csf_);
-      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
-      assert::are_equal("control_for_test1", control.name(), csf_);
-    }
-    
-    void test_method_(create_with_parent_and_arguments) {
-      forms::form form;
-      auto control = forms::control::create<control_for_test>(form, drawing::point(10, 20), drawing::size(100, 50), "control_for_test1");
-      assert::are_same(form, control.parent().value().get(), csf_);
-      assert::is_not_zero(control.handle(), csf_);
-      assert::is_empty(control.text(), csf_);
-      assert::are_equal(drawing::point(10, 20), control.location(), csf_);
-      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
-      assert::are_equal("control_for_test1", control.name(), csf_);
-    }
-    
-    void test_method_(create_with_text_and_default_arguments) {
-      auto control = forms::control::create<control_for_test>("my_text");
-      assert::is_null(control.parent(), csf_);
-      assert::is_zero(control.handle(), csf_);
-      assert::are_equal("my_text", control.text(), csf_);
-      assert::are_equal(drawing::point(0, 0), control.location(), csf_);
-      assert::are_equal(drawing::size(0, 0), control.size(), csf_);
-      assert::is_empty(control.name(), csf_);
-    }
-    
-    void test_method_(create_with_parent_text_and_default_arguments) {
-      forms::form form;
-      auto control = forms::control::create<control_for_test>(form, "my_text");
-      assert::are_same(form, control.parent().value().get(), csf_);
-      assert::is_not_zero(control.handle(), csf_);
-      assert::are_equal("my_text", control.text(), csf_);
-      assert::are_equal(drawing::point(0, 0), control.location(), csf_);
-      assert::are_equal(drawing::size(0, 0), control.size(), csf_);
-      assert::is_empty(control.name(), csf_);
-    }
-    
-    void test_method_(create_with_text_and_arguments) {
-      auto control = forms::control::create<control_for_test>("my_text", drawing::point(10, 20), drawing::size(100, 50), "control_for_test1");
-      assert::is_null(control.parent(), csf_);
-      assert::is_zero(control.handle(), csf_);
-      assert::are_equal("my_text", control.text(), csf_);
-      assert::are_equal(drawing::point(10, 20), control.location(), csf_);
-      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
-      assert::are_equal("control_for_test1", control.name(), csf_);
-    }
-    
-    void test_method_(create_with_parent_text_and_arguments) {
-      forms::form form;
-      auto control = forms::control::create<control_for_test>(form, "my_text", drawing::point(10, 20), drawing::size(100, 50), "control_for_test1");
-      assert::are_same(form, control.parent().value().get(), csf_);
-      assert::is_not_zero(control.handle(), csf_);
-      assert::are_equal("my_text", control.text(), csf_);
-      assert::are_equal(drawing::point(10, 20), control.location(), csf_);
-      assert::are_equal(drawing::size(100, 50), control.size(), csf_);
-      assert::are_equal("control_for_test1", control.name(), csf_);
     }
     
     void test_method_(from_child_handle) {
