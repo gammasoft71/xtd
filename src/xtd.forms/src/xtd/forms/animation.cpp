@@ -66,6 +66,10 @@ animation& animation::running(bool value) {
   return *this;
 }
 
+animation animation::create() {
+  return animation {};
+}
+
 animation animation::create(uint32 frames_per_second) {
   auto result = animation {};
   result.frames_per_second(frames_per_second);
