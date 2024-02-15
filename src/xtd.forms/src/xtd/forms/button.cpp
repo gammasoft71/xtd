@@ -77,12 +77,67 @@ control& button::dialog_result(forms::dialog_result dialog_result) {
   return *this;
 }
 
+button button::create() {
+  return button {};
+}
+
+button button::create(const xtd::ustring& text) {
+  auto result = button {};
+  result.text(text);
+  return result;
+}
+
+button button::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = button {};
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+button button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = button {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 button button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = button {};
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+button button::create(const control& parent) {
+  auto result = button {};
+  result.parent(parent);
+  return result;
+}
+
+button button::create(const control& parent, const xtd::ustring& text) {
+  auto result = button {};
+  result.parent(parent);
+  result.text(text);
+  return result;
+}
+
+button button::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+  auto result = button {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+button button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = button {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -90,8 +145,8 @@ button button::create(const control& parent, const xtd::ustring& text, const dra
   auto result = button {};
   result.parent(parent);
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
