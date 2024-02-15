@@ -45,12 +45,67 @@ color_picker& color_picker::color(const drawing::color& value) {
   return *this;
 }
 
+color_picker color_picker::create() {
+  return color_picker {};
+}
+
+color_picker color_picker::create(const xtd::drawing::color& color) {
+  auto result = color_picker {};
+  result.color(color);
+  return result;
+}
+
+color_picker color_picker::create(const xtd::drawing::color& color, const drawing::point& location) {
+  auto result = color_picker {};
+  result.color(color);
+  result.location(location);
+  return result;
+}
+
+color_picker color_picker::create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size) {
+  auto result = color_picker {};
+  result.color(color);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 color_picker color_picker::create(const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = color_picker {};
   result.color(color);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+color_picker color_picker::create(const control& parent) {
+  auto result = color_picker {};
+  result.parent(parent);
+  return result;
+}
+
+color_picker color_picker::create(const control& parent, const xtd::drawing::color& color) {
+  auto result = color_picker {};
+  result.parent(parent);
+  result.color(color);
+  return result;
+}
+
+color_picker color_picker::create(const control& parent, const xtd::drawing::color& color, const drawing::point& location) {
+  auto result = color_picker {};
+  result.parent(parent);
+  result.color(color);
+  result.location(location);
+  return result;
+}
+
+color_picker color_picker::create(const control& parent, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size) {
+  auto result = color_picker {};
+  result.parent(parent);
+  result.color(color);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -58,8 +113,8 @@ color_picker color_picker::create(const control& parent, const xtd::drawing::col
   auto result = color_picker {};
   result.parent(parent);
   result.color(color);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
