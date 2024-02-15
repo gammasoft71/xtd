@@ -141,13 +141,87 @@ void combo_box::begin_update() {
   if (is_handle_created()) native::combo_box::begin_update(handle());
 }
 
+combo_box combo_box::create() {
+  return combo_box {};
+}
+
+combo_box combo_box::create(const object_collection& items) {
+  auto result = combo_box {};
+  result.items(items);
+  return result;
+}
+
+combo_box combo_box::create(const object_collection& items, size_t selected_index) {
+  auto result = combo_box {};
+  result.items(items);
+  result.selected_index(selected_index);
+  return result;
+}
+
+combo_box combo_box::create(const object_collection& items, size_t selected_index, const drawing::point& location) {
+  auto result = combo_box {};
+  result.items(items);
+  result.selected_index(selected_index);
+  result.location(location);
+  return result;
+}
+
+combo_box combo_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+  auto result = combo_box {};
+  result.items(items);
+  result.selected_index(selected_index);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 combo_box combo_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = combo_box {};
   result.items(items);
   result.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+combo_box combo_box::create(const control& parent) {
+  auto result = combo_box {};
+  result.parent(parent);
+  return result;
+}
+
+combo_box combo_box::create(const control& parent, const object_collection& items) {
+  auto result = combo_box {};
+  result.parent(parent);
+  result.items(items);
+  return result;
+}
+
+combo_box combo_box::create(const control& parent, const object_collection& items, size_t selected_index) {
+  auto result = combo_box {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  return result;
+}
+
+combo_box combo_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location) {
+  auto result = combo_box {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  result.location(location);
+  return result;
+}
+
+combo_box combo_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+  auto result = combo_box {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -156,8 +230,8 @@ combo_box combo_box::create(const control& parent, const object_collection& item
   result.parent(parent);
   result.items(items);
   result.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
