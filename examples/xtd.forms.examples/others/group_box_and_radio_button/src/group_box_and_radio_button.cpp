@@ -29,17 +29,17 @@ public:
   }
   
 private:
-  horizontal_layout_panel layout_panel = create<horizontal_layout_panel>(*this);
-  group_box group_box1 = create<group_box>(layout_panel, "Group 1");
-  vertical_layout_panel layout_panel_group_box1 = create<vertical_layout_panel>(group_box1);
-  radio_button radio_button1 = create<radio_button>(layout_panel_group_box1, "radio 1");
-  radio_button radio_button2 = create<radio_button>(layout_panel_group_box1, "radio 2");
-  radio_button radio_button3 = create<radio_button>(layout_panel_group_box1, "radio 3");
-  group_box group_box2 = create<group_box>(layout_panel, "Group 2");
-  vertical_layout_panel layout_panel_group_box2 = create<vertical_layout_panel>(group_box2);
-  radio_button radio_button4 = create<radio_button>(layout_panel_group_box2, "radio 4");
-  radio_button radio_button5 = create<radio_button>(layout_panel_group_box2, "radio 5");
-  radio_button radio_button6 = create<radio_button>(layout_panel_group_box2, "radio 6");
+  horizontal_layout_panel layout_panel = horizontal_layout_panel::create(*this);
+  group_box group_box1 = group_box::create(layout_panel, "Group 1");
+  vertical_layout_panel layout_panel_group_box1 = vertical_layout_panel::create(group_box1);
+  radio_button radio_button1 = radio_button::create(layout_panel_group_box1, "radio 1");
+  radio_button radio_button2 = radio_button::create(layout_panel_group_box1, "radio 2");
+  radio_button radio_button3 = radio_button::create(layout_panel_group_box1, "radio 3");
+  group_box group_box2 = group_box::create(layout_panel, "Group 2");
+  vertical_layout_panel layout_panel_group_box2 = vertical_layout_panel::create(group_box2);
+  radio_button radio_button4 = radio_button::create(layout_panel_group_box2, "radio 4");
+  radio_button radio_button5 = radio_button::create(layout_panel_group_box2, "radio 5");
+  radio_button radio_button6 = radio_button::create(layout_panel_group_box2, "radio 6");
 };
 
 auto main()->int {
