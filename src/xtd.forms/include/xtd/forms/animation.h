@@ -75,6 +75,9 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::animation.
+      /// @return New xtd::forms::animation created.
+      static animation create();
       /// @brief A factory to create an xtd::forms::animation with specified the number of frame per seconds.
       /// @param frames_per_second The number of frame per seconds of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
