@@ -47,6 +47,7 @@ The following example demonstates the different ways to display a [xtd::forms::f
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace example {
@@ -96,7 +97,7 @@ namespace example {
       
       button_modal.text("Show modal");
       button_modal.click += [&] {
-        auto dialog = control::create<form>("dialog show modal", {}, {250, 100});
+        auto dialog = form::create("dialog show modal", size {250, 100});
         dialog.show_dialog(*this);
       };
       
@@ -114,7 +115,7 @@ namespace example {
       
       button_sheet_modal.text("Show sheet modal");
       button_sheet_modal.click += [&] {
-        auto dialog = control::create<form>("dialog show sheet modal", {}, {250, 100});
+        auto dialog = form::create("dialog show sheet modal", size {250, 100});
         dialog.key_up += [&](object & control, key_event_args & e) {
           if (e.key_code() == keys::escape) as<form&>(control).close();
         };
