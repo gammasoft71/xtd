@@ -160,6 +160,17 @@ check_box check_box::create(const xtd::ustring& text, bool three_state, xtd::for
   return result;
 }
 
+check_box check_box::create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = check_box {};
+  result.text(text);
+  result.three_state(three_state);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 check_box check_box::create(const control& parent) {
   auto result = check_box {};
   result.parent(parent);
