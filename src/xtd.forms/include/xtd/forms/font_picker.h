@@ -69,7 +69,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::font_picker.
       /// @return New xtd::forms::font_picker created.
       static font_picker create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::font_picker with specified parent, color, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::font_picker with specified parent, color, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::font_picker.
       /// @param font The selected font.
       /// @param color The color selected by the user. If a color is not selected.

@@ -45,7 +45,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::h_scroll_bar.
       /// @return New xtd::forms::h_scroll_bar created.
       static h_scroll_bar create(int32 value, int32 minimum = 0, int32 maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::h_scroll_bar with specified parent, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::h_scroll_bar with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::h_scroll_bar.
       /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
       /// @param minimum The lower limit of values of the scrollable range.

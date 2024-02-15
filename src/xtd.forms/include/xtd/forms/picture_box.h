@@ -100,7 +100,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
       static picture_box create(const xtd::drawing::image& image, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::picture_box with specified parent, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param image The image that is displayed by picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.

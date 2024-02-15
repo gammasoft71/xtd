@@ -88,7 +88,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::date_time_picker.
       /// @return New xtd::forms::date_time_picker created.
       static date_time_picker create(const xtd::date_time& value, const xtd::date_time& min_date = xtd::date_time::min_value, const xtd::date_time& max_date = xtd::date_time::max_value, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, color, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, color, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
       /// @param value The date and time value assign to the control.
       /// @param min_date The minimum date and time that can be selected in the control.

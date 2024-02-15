@@ -134,7 +134,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::progress_bar.
       /// @return New xtd::forms::progress_bar created.
       static progress_bar create(int32 value, int32 minimum = 0, int32 maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::progress_bar.
       /// @param value The position within the range of the progress bar.
       /// @param minimum The minimum value of the range.

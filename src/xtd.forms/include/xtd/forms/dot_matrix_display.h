@@ -138,7 +138,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::dot_matrix_display.
       /// @return New xtd::forms::dot_matrix_display created.
       static dot_matrix_display create(const dots_collection& dots, bool show_back_dot = true, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::dot_matrix_display with specified parent, color, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::dot_matrix_display with specified parent, color, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::dot_matrix_display.
       /// @param dots A dots_collection that represent all dots status.
       /// @param show_back_dot true if background dots are shown; otherwise false.

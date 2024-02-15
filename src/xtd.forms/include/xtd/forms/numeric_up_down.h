@@ -114,7 +114,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::numeric_up_down.
       /// @return New xtd::forms::numeric_up_down created.
       static numeric_up_down create(double value, double minimum = 0, double maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::numeric_up_down with specified parent, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::numeric_up_down with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::numeric_up_down.
       /// @param value The numeric value of the numeric_up_down control.
       /// @param minimum The minimum allowed value for the spin box. The default value is 0.
