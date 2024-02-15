@@ -98,6 +98,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(create) {
@@ -161,6 +166,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(create_with_text) {
@@ -224,6 +234,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(create_with_text_and_location) {
@@ -287,6 +302,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(create_with_text_location_and_size) {
@@ -353,6 +373,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(create_with_text_location_size_and_name) {
@@ -419,6 +444,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
 
     void test_method_(create_with_parent) {
@@ -483,6 +513,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(create_with_parent_and_text) {
@@ -547,6 +582,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(create_with_parent_text_and_location) {
@@ -611,6 +651,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(create_with_parent_text_location_and_size) {
@@ -678,6 +723,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(create_with_parent_text_location_size_and_name) {
@@ -745,6 +795,11 @@ namespace xtd::forms::tests {
       assert::are_equal(-1, button.image_index(), csf_);
       assert::are_equal(image_list::empty, button.image_list(), csf_);
       assert::are_equal(content_alignment::middle_center, button.text_align(), csf_);
+      
+      assert::is_false(button.auto_repeat(), csf_);
+      assert::are_equal(300, button.auto_repeat_delay(), csf_);
+      assert::are_equal(100, button.auto_repeat_interval(), csf_);
+      assert::are_equal(dialog_result::none, button.dialog_result(), csf_);
     }
     
     void test_method_(perform_click_form_button) {
