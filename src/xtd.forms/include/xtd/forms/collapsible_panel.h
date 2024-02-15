@@ -85,7 +85,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
       static collapsible_panel create(const xtd::ustring& text, bool expanded = false, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, text, exapended, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::collapsible_panel with specified parent, text, exapended, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::collapsible_panel.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.

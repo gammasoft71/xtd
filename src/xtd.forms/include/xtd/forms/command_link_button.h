@@ -78,7 +78,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
       static command_link_button create(const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::command_link_button.
@@ -86,7 +86,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
       static command_link_button create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, supplementary_text, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::command_link_button with specified parent, text, supplementary_text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::command_link_button.
       /// @param text A string that represent text of the xtd::forms::command_link_button.
       /// @param supplementary_text A string that represent supplementary text.

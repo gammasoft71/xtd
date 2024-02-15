@@ -156,7 +156,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, check_state, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, check_state, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::light_button.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
       /// @param check_state One of the check_state enumeration values.
@@ -165,7 +165,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::light_button.
       /// @return New xtd::forms::light_button created.
       static light_button create(const xtd::ustring& text, bool three_state = false, xtd::forms::check_state check_state = xtd::forms::check_state::unchecked, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, check_state, location ,size, and name.
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, check_state, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::light_button.
       /// @param text A string that represent text of the xtd::forms::light_button.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.

@@ -189,14 +189,14 @@ namespace xtd {
       /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void begin_update();
       
-      /// @brief A factory to create an xtd::forms::checked_list_box with specified items, selected_index, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::checked_list_box with specified items, selected_index, location, size, and name.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::checked_list_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
       static checked_list_box create(const object_collection& items, size_t selected_index = object_collection::npos, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::checked_list_box with specified parent, items, selected_index, location ,size, and name.
+      /// @brief A factory to create an xtd::forms::checked_list_box with specified parent, items, selected_index, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::checked_list_box.
       /// @param items The checked_list_box::object_collection collection representing the items in the checked_list_box.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::checked_list_box::object_collection::npos is returned if no item is selected.
