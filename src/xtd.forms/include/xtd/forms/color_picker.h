@@ -62,7 +62,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::color_picker with specified color, location, size, and name.
       /// @param color The color selected by the user. If a color is not selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::color_picker.

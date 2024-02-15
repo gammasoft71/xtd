@@ -130,7 +130,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::dot_matrix_display with specified color, location, size, and name.
       /// @param dots A dots_collection that represent all dots status.
       /// @param show_back_dot true if background dots are shown; otherwise false.

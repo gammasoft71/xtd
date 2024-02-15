@@ -144,7 +144,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::domain_up_down with specified items, selected_index, location ,size, and name.
       /// @param items A choice::object_collection representing the items in the domain_up_down.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.

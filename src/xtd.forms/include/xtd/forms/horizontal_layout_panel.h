@@ -56,7 +56,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      //using control::create;
       /// @brief A factory to create an xtd::forms::horizontal_layout_panel with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::horizontal_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::horizontal_layout_panel.

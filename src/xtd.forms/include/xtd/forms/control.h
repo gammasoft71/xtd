@@ -805,66 +805,6 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       static control create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create a specified control with specified location, size, and name.
-      /// @param location A xtd::drawing::point that represent location of the control.
-      /// @param size A xtd::drawing::size that represent size of the control.
-      /// @param name The name of the control.
-      /// @return New control created.
-      template<typename control_t>
-      static control_t create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string) {
-        control_t item;
-        if (location != drawing::point {-1, -1}) item.location(location);
-        if (size != drawing::size {-1, -1}) item.size(size);
-        item.name(name);
-        return item;
-      }
-      /// @brief A factory to create a specified control with specified parent, location, size, and name.
-      /// @param parent The parent that contains the new created control.
-      /// @param location A xtd::drawing::point that represent location of the control.
-      /// @param size A xtd::drawing::size that represent size of the control.
-      /// @param name The name of the control.
-      /// @return New control created.
-      template<typename control_t>
-      static control_t create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string) {
-        control_t item;
-        item.parent(parent);
-        if (location != drawing::point {-1, -1}) item.location(location);
-        if (size != drawing::size {-1, -1}) item.size(size);
-        item.name(name);
-        return item;
-      }
-      /// @brief A factory to create a specified control with specified text, location ,size back_color and fore_color.
-      /// @param text A string that represent text of the control.
-      /// @param location A xtd::drawing::point that represent location of the control.
-      /// @param size A xtd::drawing::size that represent size of the control.
-      /// @param name The name of the control.
-      /// @return New control created.
-      template<typename control_t>
-      static control_t create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string) {
-        control_t item;
-        item.text(text);
-        if (location != drawing::point {-1, -1}) item.location(location);
-        if (size != drawing::size {-1, -1}) item.size(size);
-        item.name(name);
-        return item;
-      }
-      /// @brief A factory to create a specified control with specified parent, text, location, size, and name.
-      /// @param parent The parent that contains the new created control.
-      /// @param text A string that represent text of the control.
-      /// @param location A xtd::drawing::point that represent location of the control.
-      /// @param size A xtd::drawing::size that represent size of the control.
-      /// @param name The name of the control.
-      /// @return New control created.
-      template<typename control_t>
-      static control_t create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string) {
-        control_t item;
-        item.parent(parent);
-        item.text(text);
-        if (location != drawing::point {-1, -1}) item.location(location);
-        if (size != drawing::size {-1, -1}) item.size(size);
-        item.name(name);
-        return item;
-      }
       
       /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
       /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.

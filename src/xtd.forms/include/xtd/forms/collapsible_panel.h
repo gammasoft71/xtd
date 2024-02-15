@@ -78,7 +78,6 @@ namespace xtd {
       /// @remarks Collapsing the collapsible_panel is equivalent to setting the expanded property to false. After the collapse method is called, the expanded property returns a value of false until the expand method is called.
       void collapse();
       
-      using control::create;
       /// @brief A factory to create an xtd::forms::collapsible_panel with specified text, expanded, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::collapsible_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::collapsible_panel.

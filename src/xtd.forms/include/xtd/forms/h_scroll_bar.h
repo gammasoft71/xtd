@@ -36,7 +36,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::h_scroll_bar with specified location, size, and name.
       /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
       /// @param minimum The lower limit of values of the scrollable range.

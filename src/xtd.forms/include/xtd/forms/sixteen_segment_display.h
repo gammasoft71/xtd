@@ -48,7 +48,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::sixteen_segment_display with specified color, location, size, and name.
       /// @param segments A dots_collection that represent all dots status.
       /// @param show_back_segment true if background segments are shown; otherwise false

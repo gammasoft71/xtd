@@ -156,7 +156,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, check_state, location ,size, and name.
       /// @param text A string that represent text of the xtd::forms::light_button.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.

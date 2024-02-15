@@ -75,7 +75,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      using control::create;
       /// @brief A factory to create an xtd::forms::animation with specified text, location, size, and name.
       /// @param frames_per_second The number if frame per seconds of the xtd::forms::animation.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::animation.
