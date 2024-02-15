@@ -94,13 +94,87 @@ void choice::begin_update() {
   if (is_handle_created()) native::choice::begin_update(handle());
 }
 
+choice choice::create() {
+  return choice {};
+}
+
+choice choice::create(const object_collection& items) {
+  auto result = choice {};
+  result.items(items);
+  return result;
+}
+
+choice choice::create(const object_collection& items, size_t selected_index) {
+  auto result = choice {};
+  result.items(items);
+  result.selected_index(selected_index);
+  return result;
+}
+
+choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location) {
+  auto result = choice {};
+  result.items(items);
+  result.selected_index(selected_index);
+  result.location(location);
+  return result;
+}
+
+choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+  auto result = choice {};
+  result.items(items);
+  result.selected_index(selected_index);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 choice choice::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = choice {};
   result.items(items);
   result.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+choice choice::create(const control& parent) {
+  auto result = choice {};
+  result.parent(parent);
+  return result;
+}
+
+choice choice::create(const control& parent, const object_collection& items) {
+  auto result = choice {};
+  result.parent(parent);
+  result.items(items);
+  return result;
+}
+
+choice choice::create(const control& parent, const object_collection& items, size_t selected_index) {
+  auto result = choice {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  return result;
+}
+
+choice choice::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location) {
+  auto result = choice {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  result.location(location);
+  return result;
+}
+
+choice choice::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
+  auto result = choice {};
+  result.parent(parent);
+  result.items(items);
+  result.selected_index(selected_index);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -109,8 +183,8 @@ choice choice::create(const control& parent, const object_collection& items, siz
   result.parent(parent);
   result.items(items);
   result.selected_index(selected_index);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
