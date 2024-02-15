@@ -30,20 +30,66 @@ control& command_link_button::texts(const xtd::ustring& text, const xtd::ustring
   return this->text(ustring::format("{}{}{}", text, environment::new_line(), supplementary_text));
 }
 
+command_link_button command_link_button::create() {
+  return command_link_button {};
+}
+
+command_link_button command_link_button::create(const xtd::ustring& text) {
+  auto result = command_link_button {};
+  result.text(text);
+  return result;
+}
+
+command_link_button command_link_button::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = command_link_button {};
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+command_link_button command_link_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = command_link_button {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 command_link_button command_link_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = command_link_button {};
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+command_link_button command_link_button::create(const xtd::ustring& text, const xtd::ustring& supplementary_text) {
+  auto result = command_link_button {};
+  result.texts(text, supplementary_text);
+  return result;
+}
+
+command_link_button command_link_button::create(const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location) {
+  auto result = command_link_button {};
+  result.texts(text, supplementary_text);
+  result.location(location);
+  return result;
+}
+
+command_link_button command_link_button::create(const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location, const drawing::size& size) {
+  auto result = command_link_button {};
+  result.texts(text, supplementary_text);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 command_link_button command_link_button::create(const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = command_link_button {};
   result.texts(text, supplementary_text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
@@ -52,9 +98,39 @@ command_link_button command_link_button::create(const control& parent, const xtd
   auto result = command_link_button {};
   result.parent(parent);
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+command_link_button command_link_button::create(const control& parent) {
+  auto result = command_link_button {};
+  result.parent(parent);
+  return result;
+}
+
+command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const xtd::ustring& supplementary_text) {
+  auto result = command_link_button {};
+  result.parent(parent);
+  result.texts(text, supplementary_text);
+  return result;
+}
+
+command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location) {
+  auto result = command_link_button {};
+  result.parent(parent);
+  result.texts(text, supplementary_text);
+  result.location(location);
+  return result;
+}
+
+command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location, const drawing::size& size) {
+  auto result = command_link_button {};
+  result.parent(parent);
+  result.texts(text, supplementary_text);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -62,8 +138,8 @@ command_link_button command_link_button::create(const control& parent, const xtd
   auto result = command_link_button {};
   result.parent(parent);
   result.texts(text, supplementary_text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
