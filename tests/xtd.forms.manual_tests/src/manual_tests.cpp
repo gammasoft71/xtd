@@ -11,5 +11,5 @@ public:
 };
 
 auto main()->int {
-  xtd::forms::application::run(form1 {});
+  application::run(form1 {});
 }
