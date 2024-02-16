@@ -5,10 +5,12 @@
 #include <xtd/forms/native/button_styles>
 #include <xtd/forms/native/control>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/size_f>
 #include <xtd/forms/window_messages>
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 struct command_link_button::data {
@@ -30,6 +32,22 @@ forms::auto_size_mode command_link_button::auto_size_mode() const noexcept {
 command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode value) {
   set_auto_size_mode(value);
   return *this;
+}
+
+xtd::ustring& command_link_button::main_text() const noexcept {
+  return get<0>(data_->texts);
+}
+
+command_link_button& command_link_button::main_text(const xtd::ustring& value) {
+  return texts({value, get<1>(data_->texts)});
+}
+
+xtd::ustring& command_link_button::supplementary_text() const noexcept {
+  return get<1>(data_->texts);
+}
+
+command_link_button& command_link_button::supplementary_text(const xtd::ustring& value) {
+  return texts({get<0>(data_->texts), value});
 }
 
 xtd::ustring& command_link_button::text() const noexcept {
@@ -55,8 +73,10 @@ std::tuple<xtd::ustring, xtd::ustring> command_link_button::texts() const noexce
 }
 
 command_link_button& command_link_button::texts(const tuple<ustring, ustring>& texts) {
+  if (data_->texts == texts) return *this;
   data_->texts = texts;
   data_->text = ustring::format("{}{}{}", get<0>(texts), environment::new_line(), get<1>(texts));
+  if (is_handle_created()) native::command_link_button::texts(handle(), data_->texts);
   return *this;
 }
 
@@ -228,7 +248,7 @@ void command_link_button::on_handle_created(const event_args& e) {
 }
 
 drawing::size command_link_button::measure_control() const noexcept {
-  auto size = button_base::measure_control();
+  auto size = drawing::size::ceiling(screen::create_graphics().measure_string(data_->text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces))) + drawing::size(31, 1);
   if (size.height() < default_size().height()) size.height(default_size().height());
   return size;
 }
