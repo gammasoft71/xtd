@@ -60,10 +60,6 @@ control& command_link_button::texts(const tuple<ustring, ustring>& texts) {
   return *this;
 }
 
-control& command_link_button::texts(const ustring& text, const ustring& supplementary_text) {
-  return texts({text, supplementary_text});
-}
-
 command_link_button command_link_button::create() {
   return command_link_button {};
 }
@@ -98,30 +94,30 @@ command_link_button command_link_button::create(const xtd::ustring& text, const 
   return result;
 }
 
-command_link_button command_link_button::create(const xtd::ustring& text, const xtd::ustring& supplementary_text) {
+command_link_button command_link_button::create(const std::tuple<xtd::ustring, xtd::ustring>& texts) {
   auto result = command_link_button {};
-  result.texts(text, supplementary_text);
+  result.texts(texts);
   return result;
 }
 
-command_link_button command_link_button::create(const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location) {
+command_link_button command_link_button::create(const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location) {
   auto result = command_link_button {};
-  result.texts(text, supplementary_text);
+  result.texts(texts);
   result.location(location);
   return result;
 }
 
-command_link_button command_link_button::create(const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location, const drawing::size& size) {
+command_link_button command_link_button::create(const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size) {
   auto result = command_link_button {};
-  result.texts(text, supplementary_text);
+  result.texts(texts);
   result.location(location);
   result.size(size);
   return result;
 }
 
-command_link_button command_link_button::create(const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+command_link_button command_link_button::create(const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = command_link_button {};
-  result.texts(text, supplementary_text);
+  result.texts(texts);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -168,38 +164,42 @@ command_link_button command_link_button::create(const control& parent, const xtd
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const xtd::ustring& supplementary_text) {
+command_link_button command_link_button::create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts) {
   auto result = command_link_button {};
   result.parent(parent);
-  result.texts(text, supplementary_text);
+  result.texts(texts);
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location) {
+command_link_button command_link_button::create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location) {
   auto result = command_link_button {};
   result.parent(parent);
-  result.texts(text, supplementary_text);
+  result.texts(texts);
   result.location(location);
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location, const drawing::size& size) {
+command_link_button command_link_button::create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size) {
   auto result = command_link_button {};
   result.parent(parent);
-  result.texts(text, supplementary_text);
+  result.texts(texts);
   result.location(location);
   result.size(size);
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const xtd::ustring& supplementary_text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+command_link_button command_link_button::create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = command_link_button {};
   result.parent(parent);
-  result.texts(text, supplementary_text);
+  result.texts(texts);
   result.location(location);
   result.size(size);
   result.name(name);
   return result;
+}
+
+void command_link_button::set_texts(const ustring& text, const ustring& supplementary_text) {
+  texts({text, supplementary_text});
 }
 
 forms::create_params command_link_button::create_params() const noexcept {
