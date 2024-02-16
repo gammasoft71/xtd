@@ -22,6 +22,22 @@ namespace xtd::drawing::tests {
       assert::are_equal("GradientInactiveCaption", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
     }
 
+    void test_method_(from_known_color_to_hsl) {
+      assert::are_equal("hsl(0, 100%, 50%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::red)), csf_);
+      assert::are_equal("hsl(210, 100%, 56%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
+      assert::are_equal("hsl(0, 0%, 83%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
+      assert::are_equal("hsl(0, 61%, 53%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::active_text)), csf_);
+      assert::are_equal("hsl(0, 0%, 60%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
+    }
+
+    void test_method_(from_known_color_to_hsla) {
+      assert::are_equal("hsl(0, 100%, 50%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::red)), csf_);
+      assert::are_equal("hsl(210, 100%, 56%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
+      assert::are_equal("hsl(0, 0%, 83%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
+      assert::are_equal("hsl(0, 61%, 53%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::active_text)), csf_);
+      assert::are_equal("hsl(0, 0%, 60%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
+    }
+
     void test_method_(from_known_color_to_html) {
       assert::are_equal("Red", color_translator::to_html(color::from_known_color(xtd::drawing::known_color::red)), csf_);
       assert::are_equal("DodgerBlue", color_translator::to_html(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
@@ -44,6 +60,14 @@ namespace xtd::drawing::tests {
       assert::are_equal("LightGray", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
       assert::are_equal("ActiveText", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::active_text)), csf_);
       assert::are_equal("GradientInactiveCaption", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
+    }
+
+    void test_method_(from_known_color_to_win32) {
+      assert::are_equal(255, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::red)), csf_);
+      assert::are_equal(16748574, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
+      assert::are_equal(13882323, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
+      assert::are_equal(4013776, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::active_text)), csf_);
+      assert::are_equal(10132122, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
     }
   };
 }
