@@ -95,7 +95,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(0x34, c.g(), csf_);
       assert::are_equal(0x56, c.b(), csf_);
       assert::are_equal(0, c.handle(), csf_);
-      assert::are_equal("FF123456", c.name(), csf_);
+      assert::are_equal("ff123456", c.name(), csf_);
       
       assert::are_equal("color [a=255, r=18, g=52, b=86]", c.to_string(), csf_);
       
@@ -120,7 +120,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(0x0, c.g(), csf_);
       assert::are_equal(0xFF, c.b(), csf_);
       assert::are_equal(0, c.handle(), csf_);
-      assert::are_equal("200000FF", c.name(), csf_);
+      assert::are_equal("200000ff", c.name(), csf_);
       
       assert::are_equal("color [a=32, r=0, g=0, b=255]", c.to_string(), csf_);
       
@@ -170,7 +170,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(0x00, c.g(), csf_);
       assert::are_equal(0xFF, c.b(), csf_);
       assert::are_equal(0, c.handle(), csf_);
-      assert::are_equal("FF0000FF", c.name(), csf_);
+      assert::are_equal("ff0000ff", c.name(), csf_);
       
       assert::are_equal(240, c.get_hue(), csf_);
       assert::are_equal(1.0f, c.get_saturation(), csf_);
@@ -199,7 +199,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(0xE0, c.g(), csf_);
       assert::are_equal(0xB5, c.b(), csf_);
       assert::are_equal(0, c.handle(), csf_);
-      assert::are_equal("FFA3E0B5", c.name(), csf_);
+      assert::are_equal("ffa3e0b5", c.name(), csf_);
       
       assert::are_equal(138.0f, c.get_hue(), 0.5f, csf_);
       assert::are_equal(0.50f, c.get_saturation(), 0.005f, csf_);

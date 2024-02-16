@@ -191,7 +191,7 @@ bool color::is_light() const noexcept {
 }
 
 bool color::is_named_color() const noexcept {
-  return name_ != ustring::format("{:X8}", argb_) && name_ != "0";
+  return name_ != ustring::format("{:x8}", argb_) && name_ != "0";
 }
 
 bool color::is_system_color() const noexcept {
@@ -565,12 +565,12 @@ known_color color::to_known_color() const noexcept {
 
 ustring color::to_string() const noexcept {
   if (empty_) return "color [empty]";
-  if (name_ != ustring::format("{:X8}", argb_) && name_ != "0") return ustring::format("color [{0}]", name());
+  if (name_ != ustring::format("{:x8}", argb_) && name_ != "0") return ustring::format("color [{0}]", name());
   return ustring::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
 }
 
-color::color(uint32 argb) : argb_(argb), name_(argb ? ustring::format("{:X8}", argb) : "0"), empty_(false) {
+color::color(uint32 argb) : argb_(argb), name_(argb ? ustring::format("{:x8}", argb) : "0"), empty_(false) {
 }
 
-color::color(intptr handle) : handle_(handle), name_(ustring::format("{:X}h", handle)), empty_(false) {
+color::color(intptr handle) : handle_(handle), name_(ustring::format("{:x}h", handle)), empty_(false) {
 }
