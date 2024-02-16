@@ -12,6 +12,7 @@
 #include <xtd/static.h>
 #include <xtd/drawing/image.h>
 #include <xtd/forms_native_export.h>
+#include <tuple>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -47,6 +48,11 @@ namespace xtd {
         /// @param align A bitwise combination of the content alignment flags.
         /// @warning Internal use only
         static void image_align(intptr control, uint32 align);
+        /// @brief Sets text and supplementary text.
+        /// @param control Command link button window handle.
+        /// @param texts A tuple of two strings that represent control text and supplementary text.
+        /// @warning Internal use only
+        static void texts(intptr control, const std::tuple<ustring, ustring>& texts);
         /// @}
       };
     }
