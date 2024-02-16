@@ -4,7 +4,9 @@
 #include <xtd/forms/native/content_alignment>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
+#include <xtd/convert_string.h>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms::native;
 
@@ -34,4 +36,13 @@ void command_link_button::image_align(intptr control, uint32 align) {
     case CA_BOTTOMCENTER: static_cast<wxCommandLinkButton*>(reinterpret_cast<wx_command_link_button*>(control)->control())->SetBitmapPosition(wxBOTTOM); break;
     case CA_BOTTOMRIGHT: static_cast<wxCommandLinkButton*>(reinterpret_cast<wx_command_link_button*>(control)->control())->SetBitmapPosition(wxRIGHT); break;
   }
+}
+
+void command_link_button::texts(intptr control, const std::tuple<ustring, ustring>& texts) {
+  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  static_cast<wxCommandLinkButton*>(reinterpret_cast<control_handler*>(control)->control())->SetMainLabelAndNote(convert_string::to_wstring(get<0>(texts)), convert_string::to_wstring(get<1>(texts)));
 }

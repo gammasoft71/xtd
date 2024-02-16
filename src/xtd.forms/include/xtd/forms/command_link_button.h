@@ -7,6 +7,7 @@
 #include "ibutton_control.h"
 #include "timer.h"
 #include <xtd/environment>
+#include <tuple>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -34,6 +35,8 @@ namespace xtd {
     /// The following code example demonstrates the use of command link button control.
     /// @include command_link_button.cpp
     class forms_export_ command_link_button : public button_base {
+      struct data;
+
     public:
       /// @name Constructors
       
@@ -52,11 +55,29 @@ namespace xtd {
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is grow_only.
       virtual command_link_button& auto_size_mode(forms::auto_size_mode value);
-      
+
+      /// @brief Gets the text associated with this control.
+      /// @return The text associated with this control.
+      xtd::ustring& text() const noexcept override;
+      /// @brief Sets the text associated with this control.
+      /// @param text The text associated with this control.
+      /// @return Current control.
+      /// @remarks Is equivalent to calling the texts property with what's before first "\n" as text and after first "\n" as supplementary_text.
+      xtd::forms::control& text(const xtd::ustring& value) override;
+
+      /// @brief Gets text and supplementary text.
+      /// @return A tuple of two strings that represent control text and supplementary text.
+      virtual std::tuple<xtd::ustring, xtd::ustring> texts() const noexcept;
+      /// @brief Sets text and supplementary text.
+      /// @param texts A tuple of two strings that represent control text and supplementary text.
+      /// @return This current instance.
+      /// @remarks Is equivalent to calling text property with text and supplementary_text separated by "\n".
+      virtual control& texts(const std::tuple<xtd::ustring, xtd::ustring>& texts);
       /// @brief Sets text and supplementary text.
       /// @param text A string that represent control text
       /// @param supplementary_text A string that represent supplementary text.
-      /// @remarks Is equivalent to call text property with text and supplementary_text separated by "\n".
+      /// @return This current instance.
+      /// @remarks Is equivalent to calling text property with text and supplementary_text separated by "\n".
       virtual control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
       /// @}
       
@@ -189,6 +210,9 @@ namespace xtd {
       drawing::size measure_control() const noexcept override;
       void on_handle_created(const event_args& e) override;
       /// @}
+
+    private:
+      std::shared_ptr<data> data_;
     };
   }
 }

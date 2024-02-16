@@ -7,10 +7,16 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-command_link_button::command_link_button() {
+struct command_link_button::data {
+  tuple<ustring, ustring> texts;
+  ustring text;
+};
+
+command_link_button::command_link_button() : data_ {make_shared<data>()} {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   text_align(content_alignment::middle_left);
@@ -26,8 +32,36 @@ command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode v
   return *this;
 }
 
-control& command_link_button::texts(const xtd::ustring& text, const xtd::ustring& supplementary_text) {
-  return this->text(ustring::format("{}{}{}", text, environment::new_line(), supplementary_text));
+xtd::ustring& command_link_button::text() const noexcept {
+  return data_->text;
+}
+
+xtd::forms::control& command_link_button::text(const xtd::ustring& value) {
+  data_->text = value;
+  auto text1 = value;
+  auto text2 = ustring::empty_string;
+  auto index = text1.find_first_of("\n");
+  if (index != ustring::npos) {
+    text2 = text1.substring(index+1);
+    text1 = text1.remove(index);
+  }
+  data_->texts = make_tuple(text1, text2);
+
+  return *this;
+}
+
+std::tuple<xtd::ustring, xtd::ustring> command_link_button::texts() const noexcept {
+  return data_->texts;
+}
+
+control& command_link_button::texts(const tuple<ustring, ustring>& texts) {
+  data_->texts = texts;
+  data_->text = ustring::format("{}{}{}", get<0>(texts), environment::new_line(), get<1>(texts));
+  return *this;
+}
+
+control& command_link_button::texts(const ustring& text, const ustring& supplementary_text) {
+  return texts({text, supplementary_text});
 }
 
 command_link_button command_link_button::create() {
@@ -177,6 +211,7 @@ forms::create_params command_link_button::create_params() const noexcept {
 
 void command_link_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
+  native::command_link_button::texts(handle(), data_->texts);
   if (image() != drawing::image::empty || (image_list().images().size() && image_index() > -1)) {
     if (flat_style() == flat_style::system) {
       native::command_link_button::image(handle(), image() != drawing::image::empty ? image() : image_list().images()[image_index()]);
