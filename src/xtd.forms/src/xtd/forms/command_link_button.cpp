@@ -54,7 +54,7 @@ std::tuple<xtd::ustring, xtd::ustring> command_link_button::texts() const noexce
   return data_->texts;
 }
 
-control& command_link_button::texts(const tuple<ustring, ustring>& texts) {
+command_link_button& command_link_button::texts(const tuple<ustring, ustring>& texts) {
   data_->texts = texts;
   data_->text = ustring::format("{}{}{}", get<0>(texts), environment::new_line(), get<1>(texts));
   return *this;
@@ -196,6 +196,10 @@ command_link_button command_link_button::create(const control& parent, const std
   result.size(size);
   result.name(name);
   return result;
+}
+
+control& command_link_button::texts(const ustring& text, const ustring& supplementary_text) {
+  return texts({text, supplementary_text});
 }
 
 void command_link_button::set_texts(const ustring& text, const ustring& supplementary_text) {

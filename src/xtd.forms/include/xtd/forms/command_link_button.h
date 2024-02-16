@@ -72,7 +72,7 @@ namespace xtd {
       /// @param texts A tuple of two strings that represent control text and supplementary text.
       /// @return This current instance.
       /// @remarks Is equivalent to calling text property with text and supplementary_text separated by "\n".
-      virtual control& texts(const std::tuple<xtd::ustring, xtd::ustring>& texts);
+      virtual command_link_button& texts(const std::tuple<xtd::ustring, xtd::ustring>& texts);
       /// @}
       
       /// @name Methods
@@ -187,7 +187,16 @@ namespace xtd {
       /// @param supplementary_text A string that represent supplementary text.
       /// @return This current instance.
       /// @remarks Is equivalent to calling text property with text and supplementary_text separated by "\n".
-      virtual void set_texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
+      void set_texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
+
+      /// @brief Sets text and supplementary text.
+      /// @param text A string that represent control text
+      /// @param supplementary_text A string that represent supplementary text.
+      /// @return This current instance.
+      /// @remarks Is equivalent to calling text property with text and supplementary_text separated by "\n".
+      /// @deprecated Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0")]]
+      control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
       /// @}
       
     protected:
