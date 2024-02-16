@@ -34,41 +34,33 @@ command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode v
   return *this;
 }
 
-xtd::ustring& command_link_button::main_text() const noexcept {
+ustring& command_link_button::main_text() const noexcept {
   return get<0>(data_->texts);
 }
 
-command_link_button& command_link_button::main_text(const xtd::ustring& value) {
+command_link_button& command_link_button::main_text(const ustring& value) {
   return texts({value, get<1>(data_->texts)});
 }
 
-xtd::ustring& command_link_button::supplementary_text() const noexcept {
+ustring& command_link_button::supplementary_text() const noexcept {
   return get<1>(data_->texts);
 }
 
-command_link_button& command_link_button::supplementary_text(const xtd::ustring& value) {
+command_link_button& command_link_button::supplementary_text(const ustring& value) {
   return texts({get<0>(data_->texts), value});
 }
 
-xtd::ustring& command_link_button::text() const noexcept {
+ustring& command_link_button::text() const noexcept {
   return data_->text;
 }
 
-xtd::forms::control& command_link_button::text(const xtd::ustring& value) {
-  data_->text = value;
-  auto text1 = value;
-  auto text2 = ustring::empty_string;
-  auto index = text1.find_first_of("\n");
-  if (index != ustring::npos) {
-    text2 = text1.substring(index+1);
-    text1 = text1.remove(index);
-  }
-  data_->texts = make_tuple(text1, text2);
-
-  return *this;
+control& command_link_button::text(const ustring& value) {
+  auto separator_index = value.find_first_of("\n");
+  if (separator_index == ustring::npos) return texts({value, ustring::empty_string});
+  return texts({value.remove(separator_index), value.substring(separator_index + 1)});
 }
 
-std::tuple<xtd::ustring, xtd::ustring> command_link_button::texts() const noexcept {
+tuple<ustring, ustring> command_link_button::texts() const noexcept {
   return data_->texts;
 }
 
@@ -77,6 +69,7 @@ command_link_button& command_link_button::texts(const tuple<ustring, ustring>& t
   data_->texts = texts;
   data_->text = ustring::format("{}{}{}", get<0>(texts), environment::new_line(), get<1>(texts));
   if (is_handle_created()) native::command_link_button::texts(handle(), data_->texts);
+  on_text_changed(event_args::empty);
   return *this;
 }
 
@@ -84,20 +77,20 @@ command_link_button command_link_button::create() {
   return command_link_button {};
 }
 
-command_link_button command_link_button::create(const xtd::ustring& text) {
+command_link_button command_link_button::create(const ustring& text) {
   auto result = command_link_button {};
   result.text(text);
   return result;
 }
 
-command_link_button command_link_button::create(const xtd::ustring& text, const drawing::point& location) {
+command_link_button command_link_button::create(const ustring& text, const point& location) {
   auto result = command_link_button {};
   result.text(text);
   result.location(location);
   return result;
 }
 
-command_link_button command_link_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+command_link_button command_link_button::create(const ustring& text, const point& location, const drawing::size& size) {
   auto result = command_link_button {};
   result.text(text);
   result.location(location);
@@ -105,7 +98,7 @@ command_link_button command_link_button::create(const xtd::ustring& text, const 
   return result;
 }
 
-command_link_button command_link_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+command_link_button command_link_button::create(const ustring& text, const point& location, const drawing::size& size, const ustring& name) {
   auto result = command_link_button {};
   result.text(text);
   result.location(location);
@@ -114,20 +107,20 @@ command_link_button command_link_button::create(const xtd::ustring& text, const 
   return result;
 }
 
-command_link_button command_link_button::create(const std::tuple<xtd::ustring, xtd::ustring>& texts) {
+command_link_button command_link_button::create(const tuple<ustring, ustring>& texts) {
   auto result = command_link_button {};
   result.texts(texts);
   return result;
 }
 
-command_link_button command_link_button::create(const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location) {
+command_link_button command_link_button::create(const tuple<ustring, ustring>& texts, const point& location) {
   auto result = command_link_button {};
   result.texts(texts);
   result.location(location);
   return result;
 }
 
-command_link_button command_link_button::create(const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size) {
+command_link_button command_link_button::create(const tuple<ustring, ustring>& texts, const point& location, const drawing::size& size) {
   auto result = command_link_button {};
   result.texts(texts);
   result.location(location);
@@ -135,7 +128,7 @@ command_link_button command_link_button::create(const std::tuple<xtd::ustring, x
   return result;
 }
 
-command_link_button command_link_button::create(const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+command_link_button command_link_button::create(const tuple<ustring, ustring>& texts, const point& location, const drawing::size& size, const ustring& name) {
   auto result = command_link_button {};
   result.texts(texts);
   result.location(location);
@@ -150,14 +143,14 @@ command_link_button command_link_button::create(const control& parent) {
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const xtd::ustring& text) {
+command_link_button command_link_button::create(const control& parent, const ustring& text) {
   auto result = command_link_button {};
   result.parent(parent);
   result.text(text);
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+command_link_button command_link_button::create(const control& parent, const ustring& text, const point& location) {
   auto result = command_link_button {};
   result.parent(parent);
   result.text(text);
@@ -165,7 +158,7 @@ command_link_button command_link_button::create(const control& parent, const xtd
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+command_link_button command_link_button::create(const control& parent, const ustring& text, const point& location, const drawing::size& size) {
   auto result = command_link_button {};
   result.parent(parent);
   result.text(text);
@@ -174,7 +167,7 @@ command_link_button command_link_button::create(const control& parent, const xtd
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+command_link_button command_link_button::create(const control& parent, const ustring& text, const point& location, const drawing::size& size, const ustring& name) {
   auto result = command_link_button {};
   result.parent(parent);
   result.text(text);
@@ -184,14 +177,14 @@ command_link_button command_link_button::create(const control& parent, const xtd
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts) {
+command_link_button command_link_button::create(const control& parent, const tuple<ustring, ustring>& texts) {
   auto result = command_link_button {};
   result.parent(parent);
   result.texts(texts);
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location) {
+command_link_button command_link_button::create(const control& parent, const tuple<ustring, ustring>& texts, const point& location) {
   auto result = command_link_button {};
   result.parent(parent);
   result.texts(texts);
@@ -199,7 +192,7 @@ command_link_button command_link_button::create(const control& parent, const std
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size) {
+command_link_button command_link_button::create(const control& parent, const tuple<ustring, ustring>& texts, const point& location, const drawing::size& size) {
   auto result = command_link_button {};
   result.parent(parent);
   result.texts(texts);
@@ -208,7 +201,7 @@ command_link_button command_link_button::create(const control& parent, const std
   return result;
 }
 
-command_link_button command_link_button::create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+command_link_button command_link_button::create(const control& parent, const tuple<ustring, ustring>& texts, const point& location, const drawing::size& size, const ustring& name) {
   auto result = command_link_button {};
   result.parent(parent);
   result.texts(texts);
@@ -236,9 +229,9 @@ forms::create_params command_link_button::create_params() const noexcept {
 void command_link_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   native::command_link_button::texts(handle(), data_->texts);
-  if (image() != drawing::image::empty || (image_list().images().size() && image_index() > -1)) {
+  if (image() != image::empty || (image_list().images().size() && image_index() > -1)) {
     if (flat_style() == flat_style::system) {
-      native::command_link_button::image(handle(), image() != drawing::image::empty ? image() : image_list().images()[image_index()]);
+      native::command_link_button::image(handle(), image() != image::empty ? image() : image_list().images()[image_index()]);
       native::command_link_button::image_align(handle(), static_cast<uint32>(image_align()));
     }
     if (image_align() != content_alignment::middle_center) native::control::text(handle(), text());
