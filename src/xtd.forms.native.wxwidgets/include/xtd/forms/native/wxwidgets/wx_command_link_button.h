@@ -43,6 +43,7 @@ namespace xtd {
             static_cast<wxCommandLinkButton*>(control())->SetLabel(wxString(xtd::convert_string::to_wstring(create_params.caption)));
             if (!xtd::environment::os_version().is_windows_platform() || (xtd::environment::os_version().is_windows_platform() && application::dark_mode_enabled()))
               static_cast<wxCommandLinkButton*>(control())->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(xtd::drawing::system_images::from_name("go-next", xtd::drawing::size(16, 16)).handle())));
+            static_cast<wxCommandLinkButton*>(control())->SetPosition(wxPoint(create_params.location.x(), create_params.location.y()));
           }
           #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
