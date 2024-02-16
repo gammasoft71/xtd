@@ -114,7 +114,7 @@ public:
     switch_button2.location({130, 210});
     
     command_link_button1.parent(tab_page_buttons);
-    command_link_button1.texts("Command link button", "Information");
+    command_link_button1.texts({"Command link button", "Information"});
     command_link_button1.location({10, 250});
     
     up_down_button1.parent(tab_page_buttons);
