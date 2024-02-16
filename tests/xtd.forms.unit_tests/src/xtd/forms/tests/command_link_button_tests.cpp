@@ -1,0 +1,766 @@
+#include <xtd/diagnostics/debugger>
+#include <xtd/forms/command_link_button>
+#include <xtd/forms/form>
+#include <xtd/tunit/assert>
+#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/test_method_attribute>
+
+using namespace xtd;
+using namespace xtd::drawing;
+using namespace xtd::forms;
+using namespace xtd::tunit;
+
+namespace xtd::forms::tests {
+  class test_class_(command_link_button_tests) {
+    class command_link_button_for_test : public command_link_button {
+    public:
+      command_link_button_for_test() = default;
+      
+      using command_link_button::default_back_color;
+      using command_link_button::default_cursor;
+      using command_link_button::default_font;
+      using command_link_button::default_fore_color;
+      using command_link_button::default_size;
+    };
+    
+    void test_method_(constructor) {
+      command_link_button_for_test command_link_button;
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::are_equal(command_link_button.default_size().height(), command_link_button.bottom(), csf_);
+      assert::are_equal(drawing::rectangle({0, 0}, command_link_button.default_size()), command_link_button.bounds(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal(drawing::rectangle({0, 0}, command_link_button.default_size()), command_link_button.client_rectangle(), csf_);
+      assert::are_equal(command_link_button.default_size(), command_link_button.client_size(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_false(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.default_back_color(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.default_cursor(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.default_font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.default_fore_color(), csf_);
+      assert::are_equal(command_link_button.default_size(), command_link_button.default_size(), csf_);
+      assert::are_equal(drawing::rectangle({0, 0}, command_link_button.default_size()), command_link_button.display_rectangle(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_zero(command_link_button.handle(), csf_);
+      assert::are_equal(command_link_button.default_size().height(), command_link_button.height(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_false(command_link_button.is_handle_created(), csf_);
+      assert::is_zero(command_link_button.left(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_zero(command_link_button.native_handle(), csf_);
+      assert::is_empty(command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::is_null(command_link_button.parent(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::are_equal(command_link_button.default_size().width(), command_link_button.right(), csf_);
+      assert::are_equal(command_link_button.default_size(), command_link_button.size(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::is_empty(command_link_button.text(), csf_);
+      assert::is_zero(command_link_button.toolkit_handle(), csf_);
+      assert::is_zero(command_link_button.top(), csf_);
+      assert::is_null(command_link_button.top_level_control(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(command_link_button.default_size().width(), command_link_button.width(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(create) {
+      auto command_link_button = forms::command_link_button::create();
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_false(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_zero(command_link_button.handle(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_false(command_link_button.is_handle_created(), csf_);
+      assert::is_zero(command_link_button.left(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_zero(command_link_button.native_handle(), csf_);
+      assert::is_empty(command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::is_null(command_link_button.parent(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::is_empty(command_link_button.text(), csf_);
+      assert::is_zero(command_link_button.toolkit_handle(), csf_);
+      assert::is_zero(command_link_button.top(), csf_);
+      assert::is_null(command_link_button.top_level_control(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(create_with_text) {
+      auto command_link_button = forms::command_link_button::create("new text");
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_false(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_zero(command_link_button.handle(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_false(command_link_button.is_handle_created(), csf_);
+      assert::is_zero(command_link_button.left(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_zero(command_link_button.native_handle(), csf_);
+      assert::is_empty(command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::is_null(command_link_button.parent(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::are_equal("new text", command_link_button.text(), csf_);
+      assert::is_zero(command_link_button.toolkit_handle(), csf_);
+      assert::is_zero(command_link_button.top(), csf_);
+      assert::is_null(command_link_button.top_level_control(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(create_with_text_and_location) {
+      auto command_link_button = forms::command_link_button::create("new text", drawing::point {10, 20});
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_false(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_zero(command_link_button.handle(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_false(command_link_button.is_handle_created(), csf_);
+      assert::are_equal(10, command_link_button.left(), csf_);
+      assert::are_equal(point {10, 20}, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_zero(command_link_button.native_handle(), csf_);
+      assert::is_empty(command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::is_null(command_link_button.parent(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::are_equal("new text", command_link_button.text(), csf_);
+      assert::is_zero(command_link_button.toolkit_handle(), csf_);
+      assert::are_equal(20, command_link_button.top(), csf_);
+      assert::is_null(command_link_button.top_level_control(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(create_with_text_location_and_size) {
+      auto command_link_button = forms::command_link_button::create("new text", drawing::point {10, 20}, drawing::size {30, 40});
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_false(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_zero(command_link_button.handle(), csf_);
+      assert::are_equal(40, command_link_button.height(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_false(command_link_button.is_handle_created(), csf_);
+      assert::are_equal(10, command_link_button.left(), csf_);
+      assert::are_equal(point {10, 20}, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_zero(command_link_button.native_handle(), csf_);
+      assert::is_empty(command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::is_null(command_link_button.parent(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::are_equal(drawing::size {30, 40}, command_link_button.size(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::are_equal("new text", command_link_button.text(), csf_);
+      assert::is_zero(command_link_button.toolkit_handle(), csf_);
+      assert::are_equal(20, command_link_button.top(), csf_);
+      assert::is_null(command_link_button.top_level_control(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(30, command_link_button.width(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(create_with_text_location_size_and_name) {
+      auto command_link_button = forms::command_link_button::create("new text", {10, 20}, {30, 40}, "command_link_button");
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_false(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_zero(command_link_button.handle(), csf_);
+      assert::are_equal(40, command_link_button.height(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_false(command_link_button.is_handle_created(), csf_);
+      assert::are_equal(10, command_link_button.left(), csf_);
+      assert::are_equal(point {10, 20}, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_zero(command_link_button.native_handle(), csf_);
+      assert::are_equal("command_link_button", command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::is_null(command_link_button.parent(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::are_equal(drawing::size {30, 40}, command_link_button.size(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::are_equal("new text", command_link_button.text(), csf_);
+      assert::is_zero(command_link_button.toolkit_handle(), csf_);
+      assert::are_equal(20, command_link_button.top(), csf_);
+      assert::is_null(command_link_button.top_level_control(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(30, command_link_button.width(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+
+    void test_method_(create_with_parent) {
+      auto form = forms::form::create();
+      auto command_link_button = forms::command_link_button::create(form);
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_true(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_not_zero(command_link_button.handle(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_true(command_link_button.is_handle_created(), csf_);
+      assert::is_zero(command_link_button.left(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_not_zero(command_link_button.native_handle(), csf_);
+      assert::is_empty(command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::are_same(form, command_link_button.parent().value().get(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::is_empty(command_link_button.text(), csf_);
+      assert::is_not_zero(command_link_button.toolkit_handle(), csf_);
+      assert::is_zero(command_link_button.top(), csf_);
+      assert::are_same(form, command_link_button.top_level_control().value().get(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(create_with_parent_and_text) {
+      auto form = forms::form::create();
+      auto command_link_button = forms::command_link_button::create(form, "new text");
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_true(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_not_zero(command_link_button.handle(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_true(command_link_button.is_handle_created(), csf_);
+      assert::is_zero(command_link_button.left(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_not_zero(command_link_button.native_handle(), csf_);
+      assert::is_empty(command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::are_same(form, command_link_button.parent().value().get(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::are_equal("new text", command_link_button.text(), csf_);
+      assert::is_not_zero(command_link_button.toolkit_handle(), csf_);
+      assert::is_zero(command_link_button.top(), csf_);
+      assert::are_same(form, command_link_button.top_level_control().value().get(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(create_with_parent_text_and_location) {
+      auto form = forms::form::create();
+      auto command_link_button = forms::command_link_button::create(form, "new text", drawing::point {10, 20});
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_true(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_not_zero(command_link_button.handle(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_true(command_link_button.is_handle_created(), csf_);
+      assert::are_equal(10, command_link_button.left(), csf_);
+      assert::are_equal(point {10, 20}, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_not_zero(command_link_button.native_handle(), csf_);
+      assert::is_empty(command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::are_same(form, command_link_button.parent().value().get(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::are_equal("new text", command_link_button.text(), csf_);
+      assert::is_not_zero(command_link_button.toolkit_handle(), csf_);
+      assert::are_equal(20, command_link_button.top(), csf_);
+      assert::are_same(form, command_link_button.top_level_control().value().get(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(create_with_parent_text_location_and_size) {
+      auto form = forms::form::create();
+      auto command_link_button = forms::command_link_button::create(form, "new text", drawing::point {10, 20}, drawing::size {30, 40});
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_true(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_not_zero(command_link_button.handle(), csf_);
+      assert::are_equal(40, command_link_button.height(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_true(command_link_button.is_handle_created(), csf_);
+      assert::are_equal(10, command_link_button.left(), csf_);
+      assert::are_equal(point {10, 20}, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_not_zero(command_link_button.native_handle(), csf_);
+      assert::is_empty(command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::are_same(form, command_link_button.parent().value().get(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::are_equal(drawing::size {30, 40}, command_link_button.size(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::are_equal("new text", command_link_button.text(), csf_);
+      assert::is_not_zero(command_link_button.toolkit_handle(), csf_);
+      assert::are_equal(20, command_link_button.top(), csf_);
+      assert::are_same(form, command_link_button.top_level_control().value().get(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(30, command_link_button.width(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(create_with_parent_text_location_size_and_name) {
+      auto form = forms::form::create();
+      auto command_link_button = forms::command_link_button::create(form, "new text", {10, 20}, {30, 40}, "command_link_button");
+      assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor(), csf_);
+      assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point(), csf_);
+      assert::is_false(command_link_button.auto_size(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color(), csf_);
+      assert::are_equal(drawing::image::empty, command_link_button.background_image(), csf_);
+      assert::are_equal(image_layout::tile, command_link_button.background_image_layout(), csf_);
+      assert::is_false(command_link_button.can_focus(), csf_);
+      assert::is_true(command_link_button.can_raise_events(), csf_);
+      assert::is_true(command_link_button.can_select(), csf_);
+      assert::are_equal("Gammasoft", command_link_button.company_name(), csf_);
+      assert::is_null(command_link_button.context_menu(), csf_);
+      assert::are_equal(forms::control_appearance::system, command_link_button.control_appearance(), csf_);
+      assert::is_empty(command_link_button.controls(), csf_);
+      assert::is_true(command_link_button.created(), csf_);
+      assert::are_equal(forms::cursors::default_cursor(), command_link_button.cursor(), csf_);
+      assert::are_equal(forms::dock_style::none, command_link_button.dock(), csf_);
+      assert::is_false(command_link_button.double_buffered(), csf_);
+      assert::is_true(command_link_button.enabled(), csf_);
+      assert::is_false(command_link_button.focused(), csf_);
+      assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font(), csf_);
+      assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color(), csf_);
+      assert::is_not_zero(command_link_button.handle(), csf_);
+      assert::are_equal(40, command_link_button.height(), csf_);
+      assert::is_false(command_link_button.invoke_required(), csf_);
+      assert::is_true(command_link_button.is_handle_created(), csf_);
+      assert::are_equal(10, command_link_button.left(), csf_);
+      assert::are_equal(point {10, 20}, command_link_button.location(), csf_);
+      assert::are_equal(forms::padding(3), command_link_button.margin(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.maximum_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_client_size(), csf_);
+      assert::are_equal(drawing::size::empty, command_link_button.minimum_size(), csf_);
+      assert::is_not_zero(command_link_button.native_handle(), csf_);
+      assert::are_equal("command_link_button", command_link_button.name(), csf_);
+      assert::are_equal(forms::padding(0), command_link_button.padding(), csf_);
+      assert::are_same(form, command_link_button.parent().value().get(), csf_);
+      assert::are_equal("xtd", command_link_button.product_name(), csf_);
+      assert::is_not_zero(command_link_button.region().handle(), csf_);
+      assert::are_equal(drawing::size {30, 40}, command_link_button.size(), csf_);
+      assert::is_empty(command_link_button.style_sheet().theme().name(), csf_);
+      assert::is_true(command_link_button.tab_stop(), csf_);
+      assert::is_false(command_link_button.tag().has_value(), csf_);
+      assert::are_equal("new text", command_link_button.text(), csf_);
+      assert::is_not_zero(command_link_button.toolkit_handle(), csf_);
+      assert::are_equal(20, command_link_button.top(), csf_);
+      assert::are_same(form, command_link_button.top_level_control().value().get(), csf_);
+      assert::is_true(command_link_button.visible(), csf_);
+      assert::are_equal(30, command_link_button.width(), csf_);
+      assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls(), csf_);
+      assert::are_equal(keys::none, forms::control::modifier_keys(), csf_);
+      assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons(), csf_);
+      // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
+      // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position(), csf_);
+      
+      assert::is_false(command_link_button.auto_ellipsis(), csf_);
+      assert::are_equal(flat_button_appearance(), command_link_button.flat_appearance(), csf_);
+      assert::are_equal(flat_style::system, command_link_button.flat_style(), csf_);
+      assert::are_equal(image::empty, command_link_button.image(), csf_);
+      assert::are_equal(content_alignment::middle_center, command_link_button.image_align(), csf_);
+      assert::are_equal(-1, command_link_button.image_index(), csf_);
+      assert::are_equal(image_list::empty, command_link_button.image_list(), csf_);
+      assert::are_equal(content_alignment::middle_left, command_link_button.text_align(), csf_);
+    }
+    
+    void test_method_(set_client_size) {
+      form form;
+      command_link_button_for_test command_link_button;
+      command_link_button.parent(form);
+      command_link_button.client_size({100, 50});
+      assert::are_equal(drawing::size(100, 50), command_link_button.client_size(), csf_);
+    }
+    
+    void test_method_(set_size) {
+      form form;
+      command_link_button_for_test command_link_button;
+      command_link_button.parent(form);
+      command_link_button.size({100, 50});
+      assert::are_equal(drawing::size(100, 50), command_link_button.size(), csf_);
+    }
+  };
+}

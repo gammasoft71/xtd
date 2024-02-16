@@ -28,6 +28,7 @@ add_sources(
   src/xtd/forms/tests/color_box_styles_tests.cpp
   src/xtd/forms/tests/combo_box_style_tests.cpp
   src/xtd/forms/tests/combo_box_tests.cpp
+  src/xtd/forms/tests/command_link_button_tests.cpp 
   src/xtd/forms/tests/content_alignment_tests.cpp
   src/xtd/forms/tests/control_appearance_tests.cpp
   src/xtd/forms/tests/control_styles_tests.cpp
