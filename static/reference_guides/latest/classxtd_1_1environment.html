@@ -221,7 +221,7 @@ Inheritance diagram for xtd::environment:</div>
 <div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:72</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb"><div class="ttname"><a href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">xtd::uri_components::query</a></div><div class="ttdeci">@ query</div><div class="ttdoc">The xtd::uri::query data.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> system_report.h:17</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a> class to retrieve information such as command-line arguments, the exit code, environment variable settings, contents of the call stack, time since last system boot, and the version of the xtd framework. </dd></dl>
 </div><table class="memberdecls">
@@ -900,6 +900,8 @@ The maximum size of the command-line buffer is not set to a specific number of c
   </table>
   </dd>
 </dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a1">test_forms.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1344,7 +1346,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
 <dl class="section remark"><dt>Remarks</dt><dd>To retrieve all environment variables along with their values, call the <a class="el" href="classxtd_1_1environment.html#a5c67466099588c734c8fcf782dd69fb3" title="Retrieves all environment variable names and their values from the current process.">xtd::environment::get_environment_variables</a> method. </dd>
 <dd>
 Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
 
 </div>
 </div>
@@ -1416,7 +1418,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The names and values for the environment variables are stored as key-value pairs in the returned std::map. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
 
 </div>
 </div>
@@ -1453,6 +1455,8 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string (""). </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a2">test_forms.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1699,7 +1703,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
 
 <p>Gets the newline string defined for this environment. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="event_8cpp-example.html#a7">event.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="event_8cpp-example.html#a7">event.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#a35">test_forms.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -2063,7 +2067,7 @@ In addition, on Windows systems only, the xtd::environment::set_environment_vari
 If the value argument is not empty and the environment variable named by the variable argument does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified. </dd>
 <dd>
 If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
 
 </div>
 </div>
@@ -2322,7 +2326,7 @@ If value is empty and the environment variable named by variable exists, the env
 <dl class="section remark"><dt>Remarks</dt><dd>The user_interactive method reports false for a Os process or a service like IIS that runs without a user interface. If this property is false, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with. </dd>
 <dd>
 Return always true for now. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>check if process is an operating system process or service process... </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>check if process is an operating system process or service process... </dd></dl>
 
 </div>
 </div>
@@ -2505,7 +2509,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 8 2024 21:21:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 16 2024 17:11:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
