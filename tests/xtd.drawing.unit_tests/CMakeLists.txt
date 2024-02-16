@@ -30,6 +30,7 @@ add_sources(
   src/xtd/drawing/tests/applications_system_images_tests.cpp
   src/xtd/drawing/tests/categories_system_images_tests.cpp
   src/xtd/drawing/tests/color_tests.cpp
+  src/xtd/drawing/tests/color_translator_tests.cpp
   src/xtd/drawing/tests/copy_pixel_operation_tests.cpp
   src/xtd/drawing/tests/dash_style_tests.cpp
   src/xtd/drawing/tests/devices_system_images_tests.cpp
