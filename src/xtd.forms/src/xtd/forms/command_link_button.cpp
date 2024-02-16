@@ -94,6 +94,36 @@ command_link_button command_link_button::create(const xtd::ustring& text, const 
   return result;
 }
 
+command_link_button command_link_button::create(const control& parent) {
+  auto result = command_link_button {};
+  result.parent(parent);
+  return result;
+}
+
+command_link_button command_link_button::create(const control& parent, const xtd::ustring& text) {
+  auto result = command_link_button {};
+  result.parent(parent);
+  result.text(text);
+  return result;
+}
+
+command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+  auto result = command_link_button {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = command_link_button {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 command_link_button command_link_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = command_link_button {};
   result.parent(parent);
@@ -101,12 +131,6 @@ command_link_button command_link_button::create(const control& parent, const xtd
   result.location(location);
   result.size(size);
   result.name(name);
-  return result;
-}
-
-command_link_button command_link_button::create(const control& parent) {
-  auto result = command_link_button {};
-  result.parent(parent);
   return result;
 }
 
