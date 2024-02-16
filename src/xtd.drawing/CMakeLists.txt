@@ -36,6 +36,8 @@ add_sources(
   include/xtd/drawing/categories_system_images.h
   include/xtd/drawing/color.h
   include/xtd/drawing/color
+  include/xtd/drawing/color_translator.h
+  include/xtd/drawing/color_translator
   include/xtd/drawing/colors.h
   include/xtd/drawing/colors
   include/xtd/drawing/copy_pixel_operation.h
@@ -240,6 +242,7 @@ add_sources(
   src/xtd/drawing/buffered_graphics_context.cpp
   src/xtd/drawing/categories_system_images.cpp
   src/xtd/drawing/color.cpp
+  src/xtd/drawing/color_translator.cpp
   src/xtd/drawing/colors.cpp
   src/xtd/drawing/cyan_colors.cpp
   src/xtd/drawing/font.cpp

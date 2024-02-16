@@ -59,6 +59,7 @@
 #include "drawing/buffered_graphics_context.h"
 #include "drawing/categories_system_images.h"
 #include "drawing/color.h"
+#include "drawing/color_translator.h"
 #include "drawing/colors.h"
 #include "drawing/copy_pixel_operation.h"
 #include "drawing/cyan_colors.h"
