@@ -14,7 +14,7 @@ namespace command_link_button_example {
       client_size({300, 300});
       
       command_link_button1.parent(*this);
-      command_link_button1.texts("Command link", "width supplementary text");
+      command_link_button1.texts({"Command link", "width supplementary text"});
       // same as
       //command_link_button1.text("Command link\nwidth supplementary text");
       command_link_button1.location({30, 30});
