@@ -44,6 +44,13 @@ namespace xtd {
           /// @}
         };
         
+        /// @name Fields
+        
+        /// @{
+        /// @brief Represents an empty item that value is equal to xtd::ustring::empty_string and tag has no vlaue.
+        static const item empty;
+        /// @}
+
         /// @name Constructors
         
         /// @{

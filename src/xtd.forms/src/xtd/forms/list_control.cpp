@@ -7,6 +7,8 @@ struct list_control::data {
   size_t selected_index = npos;
 };
 
+const list_control::item list_control::item::empty;
+
 list_control::item::item(const xtd::ustring& value) : value_(value) {
 }
 
