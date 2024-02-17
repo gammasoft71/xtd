@@ -13,6 +13,36 @@ namespace xtd::drawing::tests {
       assert::are_equal("#ff6347", color_translator::to_hex(color::from_argb(255, 255, 99, 71)), csf_);
       assert::are_equal("#ff6347", color_translator::to_hex(color::from_argb(128, 255, 99, 71)), csf_);
     }
+    
+    void test_method_(from_argb_to_hsl) {
+      assert::are_equal("hsl(9, 100%, 64%)", color_translator::to_hsl(color::from_argb(255, 255, 99, 71)), csf_);
+      assert::are_equal("hsl(9, 100%, 64%)", color_translator::to_hsl(color::from_argb(128, 255, 99, 71)), csf_);
+    }
+    
+    void test_method_(from_argb_to_hsla) {
+      assert::are_equal("hsl(9, 100%, 64%, 1)", color_translator::to_hsla(color::from_argb(255, 255, 99, 71)), csf_);
+      assert::are_equal("hsl(9, 100%, 64%, 0.502)", color_translator::to_hsla(color::from_argb(128, 255, 99, 71)), csf_);
+    }
+    
+    void test_method_(from_argb_to_html) {
+      assert::are_equal("#ff6347", color_translator::to_html(color::from_argb(255, 255, 99, 71)), csf_);
+      assert::are_equal("rgba(255, 99, 71, 0.502)", color_translator::to_html(color::from_argb(128, 255, 99, 71)), csf_);
+    }
+    
+    void test_method_(from_argb_to_rgb) {
+      assert::are_equal("rgb(255, 99, 71)", color_translator::to_rgb(color::from_argb(255, 255, 99, 71)), csf_);
+      assert::are_equal("rgb(255, 99, 71)", color_translator::to_rgb(color::from_argb(128, 255, 99, 71)), csf_);
+    }
+    
+    void test_method_(from_argb_to_rgba) {
+      assert::are_equal("rgba(255, 99, 71, 1)", color_translator::to_rgba(color::from_argb(255, 255, 99, 71)), csf_);
+      assert::are_equal("rgba(255, 99, 71, 0.502)", color_translator::to_rgba(color::from_argb(128, 255, 99, 71)), csf_);
+    }
+    
+    void test_method_(from_argb_to_win32) {
+      assert::are_equal(4678655, color_translator::to_win32(color::from_argb(255, 255, 99, 71)), csf_);
+      assert::are_equal(4678655, color_translator::to_win32(color::from_argb(128, 255, 99, 71)), csf_);
+    }
 
     void test_method_(from_known_color_to_hex) {
       assert::are_equal("Red", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::red)), csf_);
