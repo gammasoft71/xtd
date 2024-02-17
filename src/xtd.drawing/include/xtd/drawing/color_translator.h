@@ -61,6 +61,7 @@ namespace xtd {
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The Windows color value.
       static int32 to_win32(const xtd::drawing::color& value) noexcept;
+      /// @}
     };
   }
 }
