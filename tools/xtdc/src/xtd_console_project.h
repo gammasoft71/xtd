@@ -24,7 +24,7 @@ namespace xtdc_command {
   private:
     void create_cmakelists_txt(const xtd::ustring& name) const {
       std::vector<xtd::ustring> lines {
-        "cmake_minimum_required(VERSION 3.5)",
+        "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
         xtd::ustring::format("project({})", name),
@@ -65,7 +65,7 @@ namespace xtdc_command {
 
     void create_xtd_console_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "cmake_minimum_required(VERSION 3.5)",
+        "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
         xtd::ustring::format("project({})", name),
@@ -124,7 +124,7 @@ namespace xtdc_command {
     
     void generate_xtd_console_cmakelists_txt(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines;
-      lines.push_back("cmake_minimum_required(VERSION 3.5)");
+      lines.push_back("cmake_minimum_required(VERSION 3.20)");
       lines.push_back("");
       lines.push_back("# Project");
       lines.push_back(xtd::ustring::format("project({})", name));
