@@ -6,6 +6,7 @@
 #include "bitmap.h"
 #include "size.h"
 #include <xtd/static>
+#include <xtd/target_id>
 #include <map>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

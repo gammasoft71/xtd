@@ -21,6 +21,7 @@
 #include "program_exit_event_handler.h"
 #include "signal_cancel_event_handler.h"
 #include "static.h"
+#include "target_id.h"
 #include "target_type.h"
 #include "toolkit.h"
 #include "ustring.h"
@@ -52,8 +53,52 @@
 // | __XTD_FORMS_RESOURCES_PATH__   | ${XTD_FORMS_INSTALL_PATH}/share/xtd/resources"   |
 // | __XTD_TUNIT_INCLUDE_PATH__     | ${XTD_TUNIT_INSTALL_PATH}/include"               |
 // | __XTD_TUNIT_LIB_PATH__         | ${XTD_TUNIT_INSTALL_PATH}/lib"                   |
-#if !defined(__XTD_INCLUDE_PATH__) || !defined(__XTD_LIB_PATH__) || !defined(__XTD_CONSOLE_INCLUDE_PATH__) || !defined(__XTD_CONSOLE_LIB_PATH__) || !defined(__XTD_DRAWING_INCLUDE_PATH__) || !defined(__XTD_DRAWING_LIB_PATH__) || !defined(__XTD_DRAWING_RESOURCES_PATH__) || !defined(__XTD_FORMS_INCLUDE_PATH__) || !defined(__XTD_FORMS_LIB_PATH__) || !defined(__XTD_FORMS_RESOURCES_PATH__) || !defined(__XTD_TUNIT_INCLUDE_PATH__) || !defined(__XTD_TUNIT_LIB_PATH__)
-#error "Some variables (like __XTD_INCLUDE_PATH__) are not defined. This is probably because you are not using CMake to generate your project. See the following link for more information: https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.cmake/Overview..."
+#if !defined(__XTD_INCLUDE_PATH__)
+#define __XTD_INCLUDE_PATH__ ""
+#endif
+
+#if !defined(__XTD_LIB_PATH__)
+#define __XTD_LIB_PATH__ ""
+#endif
+
+#if !defined(__XTD_CONSOLE_INCLUDE_PATH__)
+#define __XTD_CONSOLE_INCLUDE_PATH__ ""
+#endif
+
+#if !defined(__XTD_CONSOLE_LIB_PATH__)
+#define __XTD_CONSOLE_LIB_PATH__ ""
+#endif
+
+#if !defined(__XTD_DRAWING_INCLUDE_PATH__)
+#define __XTD_DRAWING_INCLUDE_PATH__ ""
+#endif
+
+#if !defined(__XTD_DRAWING_LIB_PATH__)
+#define __XTD_DRAWING_LIB_PATH__ ""
+#endif
+
+#if !defined(__XTD_DRAWING_RESOURCES_PATH__)
+#define __XTD_DRAWING_RESOURCES_PATH__ ""
+#endif
+
+#if !defined(__XTD_FORMS_INCLUDE_PATH__)
+#define __XTD_FORMS_INCLUDE_PATH__ ""
+#endif
+
+#if !defined(__XTD_FORMS_LIB_PATH__)
+#define __XTD_FORMS_LIB_PATH__ ""
+#endif
+
+#if !defined(__XTD_FORMS_RESOURCES_PATH__)
+#define __XTD_FORMS_RESOURCES_PATH__ ""
+#endif
+
+#if !defined(__XTD_TUNIT_INCLUDE_PATH__)
+#define __XTD_TUNIT_INCLUDE_PATH__ ""
+#endif
+
+#if !defined(__XTD_TUNIT_LIB_PATH__)
+#define __XTD_TUNIT_LIB_PATH__ ""
 #endif
 /// @endcond
 
