@@ -29,6 +29,7 @@
 #include <utility>
 #include <vector>
 #include <xtd/optional.h>
+#include <xtd/target_id>
 #include <xtd/ustring>
 
 /// @cond
@@ -567,7 +568,7 @@ struct __tunit_value_printer<char_t, char_traits_t, std::unordered_set<value_t>>
   }
 };
 
-#if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_TEST_APPLICATION__
+#if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__ || __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_UNKNOWN__
 template <typename char_t, typename char_traits_t, typename type_t>
 std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
   __tunit_value_printer<char_t, char_traits_t, type_t>::print(os, value);
