@@ -29,6 +29,23 @@
 ///
 /// @section ExtendedColors Extended colors
 ///
+/// @subsection AppleColors Apple colors
+///
+/// Shows xtd::drawing::apple_colors fields.
+///
+/// | Name    | Value                               | ARGB value (in hexa) | Color                                  |
+/// | ------- | ----------------------------------- | -------------------- | -------------------------------------- |
+/// | Black   | xtd::drawing::apple_colors::black   | 0xFF000000           |  @image html apple_colors_black.png    |
+/// | Blue    | xtd::drawing::apple_colors::blue    | 0xFF0000FF           |  @image html apple_colors_blue.png     |
+/// | Cyan    | xtd::drawing::apple_colors::cyan    | 0xFF21FFFF           |  @image html apple_colors_cyan.png     |
+/// | Green   | xtd::drawing::apple_colors::green   | 0xFF21FF06           |  @image html apple_colors_green.png    |
+/// | Magenta | xtd::drawing::apple_colors::magenta | 0xFFFB02FF           |  @image html apple_colors_magenta.png  |
+/// | Orange  | xtd::drawing::apple_colors::orange  | 0xFFFD8008           |  @image html apple_colors_orange.png   |
+/// | Purple  | xtd::drawing::apple_colors::purple  | 0xFF800080           |  @image html apple_colors_purple.png   |
+/// | Red     | xtd::drawing::apple_colors::red     | 0xFFFB0207           |  @image html apple_colors_red.png      |
+/// | Yellow  | xtd::drawing::apple_colors::yellow  | 0xFFFFFF0A           |  @image html apple_colors_yellow.png   |
+/// | White   | xtd::drawing::apple_colors::white   | 0xFFFFFFFF           |  @image html apple_colors_white.png    |
+///
 /// @subsection BlueColors Blue colors
 ///
 /// Shows xtd::drawing::blue_colors fields.
@@ -74,6 +91,61 @@
 /// | Bisque          | xtd::drawing::brown_colors::bisque          | 0xFFFFE4C4           |  @image html colors_bisque.png           |
 /// | Blanched Almond | xtd::drawing::brown_colors::blanched_almond | 0xFFFFEBCD           |  @image html colors_blanched_almond.png  |
 /// | Cornsilk        | xtd::drawing::brown_colors::cornsilk        | 0xFFFFF8DC           |  @image html colors_cornsilk.png         |
+///
+/// @subsection CrayonsColors Crayons colors
+///
+/// Shows xtd::drawing::crayons_colors fields.
+///
+/// | Name       | Value                                    | ARGB value (in hexa) | Color                                       |
+/// | ---------- | ---------------------------------------- | -------------------- | ------------------------------------------- |
+/// | Licorice   | xtd::drawing::crayons_colors::licorice   | 0xFF000000           |  @image html crayons_colors_licorice.png    |
+/// | Lead       | xtd::drawing::crayons_colors::lead       | 0xFF191919           |  @image html crayons_colors_lead.png        |
+/// | Tungsten   | xtd::drawing::crayons_colors::tungsten   | 0xFF333333           |  @image html crayons_colors_tungsten.png    |
+/// | Iron       | xtd::drawing::crayons_colors::iron       | 0xFF4C4C4C           |  @image html crayons_colors_iron.png        |
+/// | Steel      | xtd::drawing::crayons_colors::steel      | 0xFF666666           |  @image html crayons_colors_steel.png       |
+/// | Tin        | xtd::drawing::crayons_colors::tin        | 0xFF7F7F7F           |  @image html crayons_colors_tin.png         |
+/// | Nickel     | xtd::drawing::crayons_colors::nickel     | 0xFF808080           |  @image html crayons_colors_nickel.png      |
+/// | Aluminium  | xtd::drawing::crayons_colors::aluminium  | 0xFF999999           |  @image html crayons_colors_aluminium.png   |
+/// | Magnesium  | xtd::drawing::crayons_colors::magnesium  | 0xFFB3B3B3           |  @image html crayons_colors_magnesium.png   |
+/// | Silver     | xtd::drawing::crayons_colors::silver     | 0xFFCCCCCC           |  @image html crayons_colors_silver.png      |
+/// | Mercury    | xtd::drawing::crayons_colors::mercury    | 0xFFE6E6E6           |  @image html crayons_colors_mercury.png     |
+/// | Snow       | xtd::drawing::crayons_colors::snow       | 0xFFFFFFFF           |  @image html crayons_colors_snow.png        |
+/// | Cayenne    | xtd::drawing::crayons_colors::cayenne    | 0xFF800002           |  @image html crayons_colors_cayenne.png     |
+/// | Mocha      | xtd::drawing::crayons_colors::mocha      | 0xFF804003           |  @image html crayons_colors_mocha.png       |
+/// | Asparagus  | xtd::drawing::crayons_colors::asparagus  | 0xFF808004           |  @image html crayons_colors_asparagus.png   |
+/// | Fern       | xtd::drawing::crayons_colors::fern       | 0xFF408002           |  @image html crayons_colors_fern.png        |
+/// | Clover     | xtd::drawing::crayons_colors::clover     | 0xFF118002           |  @image html crayons_colors_clover.png      |
+/// | Moss       | xtd::drawing::crayons_colors::moss       | 0xFF118040           |  @image html crayons_colors_moss.png        |
+/// | Teal       | xtd::drawing::crayons_colors::teal       | 0xFF108080           |  @image html crayons_colors_teal.png        |
+/// | Ocean      | xtd::drawing::crayons_colors::ocean      | 0xFF074080           |  @image html crayons_colors_ocean.png       |
+/// | Midnight   | xtd::drawing::crayons_colors::midnight   | 0xFF000080           |  @image html crayons_colors_midnight.png    |
+/// | Eggplant   | xtd::drawing::crayons_colors::eggplant   | 0xFF400080           |  @image html crayons_colors_eggplant.png    |
+/// | Plum       | xtd::drawing::crayons_colors::plum       | 0xFF800080           |  @image html crayons_colors_plum.png        |
+/// | Maroon     | xtd::drawing::crayons_colors::maroon     | 0xFF800040           |  @image html crayons_colors_maroon.png      |
+/// | Maraschino | xtd::drawing::crayons_colors::maraschino | 0xFFFB0207           |  @image html crayons_colors_maraschino.png  |
+/// | Tangerine  | xtd::drawing::crayons_colors::tangerine  | 0xFFFD8008           |  @image html crayons_colors_tangerine.png   |
+/// | Lemon      | xtd::drawing::crayons_colors::lemon      | 0xFFFFFF0A           |  @image html crayons_colors_lemon.png       |
+/// | Lime       | xtd::drawing::crayons_colors::lime       | 0xFF80FF08           |  @image html crayons_colors_lime.png        |
+/// | Spring     | xtd::drawing::crayons_colors::spring     | 0xFF21FF06           |  @image html crayons_colors_spring.png      |
+/// | Sea foam   | xtd::drawing::crayons_colors::sea_foam   | 0xFF21FF80           |  @image html crayons_colors_sea_foam.png    |
+/// | Turquoise  | xtd::drawing::crayons_colors::turquoise  | 0xFF21FFFF           |  @image html crayons_colors_turquoise.png   |
+/// | Aqua       | xtd::drawing::crayons_colors::aqua       | 0xFF0F80FF           |  @image html crayons_colors_aqua.png        |
+/// | Blueberry  | xtd::drawing::crayons_colors::blueberry  | 0xFF0000FF           |  @image html crayons_colors_blueberry.png   |
+/// | Grape      | xtd::drawing::crayons_colors::grape      | 0xFF8000FF           |  @image html crayons_colors_grape.png       |
+/// | Magenta    | xtd::drawing::crayons_colors::magenta    | 0xFFFB02FF           |  @image html crayons_colors_magenta.png     |
+/// | Strawberry | xtd::drawing::crayons_colors::strawberry | 0xFFFB0280           |  @image html crayons_colors_strawberry.png  |
+/// | Salmon     | xtd::drawing::crayons_colors::salmon     | 0xFFFC6666           |  @image html crayons_colors_salmon.png      |
+/// | Cantaloupe | xtd::drawing::crayons_colors::cantaloupe | 0xFFFECC66           |  @image html crayons_colors_cantaloupe.png  |
+/// | Banana     | xtd::drawing::crayons_colors::banana     | 0xFFFFFF66           |  @image html crayons_colors_banana.png      |
+/// | Honeydew   | xtd::drawing::crayons_colors::honeydew   | 0xFFCCFF66           |  @image html crayons_colors_honeydew.png    |
+/// | Flora      | xtd::drawing::crayons_colors::flora      | 0xFF66FF66           |  @image html crayons_colors_flora.png       |
+/// | Spindrift  | xtd::drawing::crayons_colors::spindrift  | 0xFF66FFCC           |  @image html crayons_colors_spindrift.png   |
+/// | Ice        | xtd::drawing::crayons_colors::ice        | 0xFF66FFFF           |  @image html crayons_colors_ice.png         |
+/// | Sky        | xtd::drawing::crayons_colors::sky        | 0xFF66CCFF           |  @image html crayons_colors_sky.png         |
+/// | Orchid     | xtd::drawing::crayons_colors::orchid     | 0xFF6666FF           |  @image html crayons_colors_orchid.png      |
+/// | Lavendar   | xtd::drawing::crayons_colors::lavendar   | 0xFFCC66FF           |  @image html crayons_colors_lavendar.png    |
+/// | Bubblegum  | xtd::drawing::crayons_colors::bubblegum  | 0xFFFC66FF           |  @image html crayons_colors_bubblegum.png   |
+/// | Carnation  | xtd::drawing::crayons_colors::carnation  | 0xFFFC6FCF           |  @image html crayons_colors_carnation.png   |
 ///
 /// @subsection CyanColors Cyan colors
 ///
@@ -247,7 +319,7 @@
 /// | Lemon Chiffon          | xtd::drawing::yellow_colors::lemon_chiffon          | 0xFFFFFACD           |  @image html colors_lemon_chiffon.png           |
 /// | Light Yellow           | xtd::drawing::yellow_colors::light_yellow           | 0xFFFFFFE0           |  @image html colors_light_yellow.png            |
 ///
-/// @subsection AllColors All colors
+/// @subsection WebColors Web colors
 ///
 /// Shows xtd::drawing::colors fields.
 ///
