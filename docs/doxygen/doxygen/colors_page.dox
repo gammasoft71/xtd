@@ -4,9 +4,10 @@
 /// @page ColorsPage Colors
 /// @brief Contains colors.
 ///
-/// Shows xtd::drawing::color fields.
-///
 /// @section BasicColors Basic colors
+///
+/// Shows xtd::drawing::basic_colors fields.
+///
 /// | Name    | Value                               | ARGB value (in hexa) | Color                            |
 /// | ------- | ----------------------------------- | -------------------- | -------------------------------- |
 /// | White   | xtd::drawing::basic_colors::white   | 0xFFFFFFFF           |  @image html colors_white.png    |
@@ -30,6 +31,8 @@
 ///
 /// @subsection BlueColors Blue colors
 ///
+/// Shows xtd::drawing::blue_colors fields.
+///
 /// | Name             | Value                                       | ARGB value (in hexa) | Color                                     |
 /// | ---------------- | ------------------------------------------- | -------------------- | ----------------------------------------- |
 /// | Midnight Blue    | xtd::drawing::blue_colors::midnight_blue    | 0xFF191970           |  @image html colors_midnight_blue.png     |
@@ -49,6 +52,8 @@
 /// | Powder Blue      | xtd::drawing::blue_colors::powder_blue      | 0xFFB0E0E6           |  @image html colors_powder_blue.png       |
 ///
 /// @subsection BrownColors Brown colors
+///
+/// Shows xtd::drawing::brown_colors fields.
 ///
 /// | Name            | Value                                       | ARGB value (in hexa) | Color                                    |
 /// | --------------- | ------------------------------------------- | -------------------- | ---------------------------------------- |
@@ -72,6 +77,8 @@
 ///
 /// @subsection CyanColors Cyan colors
 ///
+/// Shows xtd::drawing::cyan_colors fields.
+///
 /// | Name             | Value                                       | ARGB value (in hexa) | Color                                     |
 /// | ---------------- | ------------------------------------------- | -------------------- | ----------------------------------------- |
 /// | Teal             | xtd::drawing::cyan_colors::teal             | 0xFF008080           |  @image html colors_teal.png              |
@@ -89,6 +96,8 @@
 ///
 /// @subsection GrayColors Gray colors
 ///
+/// Shows xtd::drawing::gray_colors fields.
+///
 /// | Name             | Value                                       | ARGB value (in hexa) | Color                                     |
 /// | ---------------- | ------------------------------------------- | -------------------- | ----------------------------------------- |
 /// | Black            | xtd::drawing::gray_colors::black            | 0xFF000000           |  @image html colors_black.png             |
@@ -103,6 +112,8 @@
 /// | Gainsboro        | xtd::drawing::gray_colors::gainsboro        | 0xFFDCDCDC           |  @image html colors_gainsboro.png         |
 ///
 /// @subsection GreenColors Green colors
+///
+/// Shows xtd::drawing::green_colors fields.
 ///
 /// | Name                | Value                                           | ARGB value (in hexa) | Color                                        |
 /// | ------------------- | ----------------------------------------------- | -------------------- | -------------------------------------------- |
@@ -129,6 +140,8 @@
 ///
 /// @subsection OrangeColors Orange colors
 ///
+/// Shows xtd::drawing::orange_colors fields.
+///
 /// | Name        | Value                                    | ARGB value (in hexa) | Color                                |
 /// | ----------- | ---------------------------------------- | -------------------- | ------------------------------------ |
 /// | Orange Red  | xtd::drawing::orange_colors::orange_red  | 0xFFFF4500           |  @image html colors_orange_red.png   |
@@ -138,6 +151,8 @@
 /// | Orange      | xtd::drawing::orange_colors::orange      | 0xFFFFA500           |  @image html colors_orange.png       |
 ///
 /// @subsection PinkColors Pink colors
+///
+/// Shows xtd::drawing::pink_colors fields.
 ///
 /// | Name              | Value                                        | ARGB value (in hexa) | Color                                      |
 /// | ----------------- | -------------------------------------------- | -------------------- | ------------------------------------------ |
@@ -149,6 +164,8 @@
 /// | Pink              | xtd::drawing::pink_colors::pink              | 0xFFFFC0CB           |  @image html colors_pink.png               |
 ///
 /// @subsection PurpleColors Purple colors
+///
+/// Shows xtd::drawing::purple_colors fields.
 ///
 /// | Name              | Value                                        | ARGB value (in hexa) | Color                                      |
 /// | ----------------- | -------------------------------------------- | -------------------- | ------------------------------------------ |
@@ -174,6 +191,8 @@
 ///
 /// @subsection RedColors Red colors
 ///
+/// Shows xtd::drawing::red_colors fields.
+///
 /// | Name         | Value                                  | ARGB value (in hexa) | Color                                 |
 /// | ------------ | -------------------------------------- | -------------------- | ------------------------------------- |
 /// | Dark Red     | xtd::drawing::red_colors::dark_red     | 0xFF8B0000           |  @image html colors_dark_red.png      |
@@ -187,6 +206,8 @@
 /// | Light Salmon | xtd::drawing::red_colors::light_salmon | 0xFFFFA07A           |  @image html colors_light_salmon.png  |
 ///
 /// @subsection whiteColors White colors
+///
+/// Shows xtd::drawing::white_colors fields.
 ///
 /// | Name           | Value                                      | ARGB value (in hexa) | Color                                   |
 /// | -------------- | ------------------------------------------ | -------------------- | --------------------------------------- |
@@ -210,6 +231,8 @@
 ///
 /// @subsection YellowColors Yellow colors
 ///
+/// Shows xtd::drawing::yellow_colors fields.
+///
 /// | Name                   | Value                                               | ARGB value (in hexa) | Color                                           |
 /// | ---------------------- | --------------------------------------------------- | -------------------- | ----------------------------------------------- |
 /// | Dark Khaki             | xtd::drawing::yellow_colors::dark_khaki             | 0xFFBDB76B           |  @image html colors_dark_khaki.png              |
@@ -225,6 +248,8 @@
 /// | Light Yellow           | xtd::drawing::yellow_colors::light_yellow           | 0xFFFFFFE0           |  @image html colors_light_yellow.png            |
 ///
 /// @subsection AllColors All colors
+///
+/// Shows xtd::drawing::colors fields.
 ///
 /// | Name                   | Value                                        | ARGB value (in hexa) | Color                                           |
 /// | ---------------------- | -------------------------------------------- | -------------------- | ----------------------------------------------- |
