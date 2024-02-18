@@ -19,6 +19,8 @@ add_sources(
   include/xtd/drawing/basic_colors
   include/xtd/drawing/bitmap.h
   include/xtd/drawing/bitmap
+  include/xtd/drawing/apple_colors.h
+  include/xtd/drawing/apple_colors
   include/xtd/drawing/black_colors.h
   include/xtd/drawing/black_colors
   include/xtd/drawing/blue_colors.h
@@ -234,6 +236,7 @@ add_sources(
   src/xtd/drawing/applications_system_images.cpp
   src/xtd/drawing/basic_colors.cpp
   src/xtd/drawing/bitmap.cpp
+  src/xtd/drawing/apple_colors.cpp
   src/xtd/drawing/blue_colors.cpp
   src/xtd/drawing/brown_colors.cpp
   src/xtd/drawing/brush.cpp
