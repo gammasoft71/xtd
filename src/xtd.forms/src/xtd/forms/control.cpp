@@ -1511,7 +1511,7 @@ void control::resume_layout() {
 
 void control::resume_layout(bool perform_layout) {
   set_state(state::layout_deferred, false);
-  native::control::resume_layout(handle());
+  if (is_handle_created()) native::control::resume_layout(handle());
   if (perform_layout) this->perform_layout();
 }
 
@@ -1569,7 +1569,7 @@ void control::show() {
 
 void control::suspend_layout() {
   set_state(state::layout_deferred, true);
-  native::control::suspend_layout(handle());
+  if (is_handle_created()) native::control::suspend_layout(handle());
 }
 
 ustring control::to_string() const noexcept {
