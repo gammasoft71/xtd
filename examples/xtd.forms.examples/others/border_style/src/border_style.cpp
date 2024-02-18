@@ -17,7 +17,6 @@ namespace border_style_example {
   class form1 : public form {
   public:
     static auto main() {
-      application::enable_system_controls();
       application::run(form1 {});
     }
     
