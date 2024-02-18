@@ -289,33 +289,7 @@ color color::from_hsl(float hue, float saturation, float lightness) noexcept {
 
 color color::from_known_color(known_color color) {
   switch (color) {
-    case known_color::active_border: return drawing::color {color::from_handle(native::system_colors::active_border()), color};
-    case known_color::active_caption: return drawing::color {color::from_handle(native::system_colors::active_caption()), color};
-    case known_color::active_caption_text: return drawing::color {color::from_handle(native::system_colors::active_caption_text()), color};
-    case known_color::app_workspace: return drawing::color {color::from_handle(native::system_colors::app_workspace()), color};
-    case known_color::control: return drawing::color {color::from_handle(native::system_colors::control()), color};
-    case known_color::control_dark: return drawing::color {color::from_handle(native::system_colors::control_dark()), color};
-    case known_color::control_dark_dark: return drawing::color {color::from_handle(native::system_colors::control_dark_dark()), color};
-    case known_color::control_light: return drawing::color {color::from_handle(native::system_colors::control_light()), color};
-    case known_color::control_light_light: return drawing::color {color::from_handle(native::system_colors::control_light_light()), color};
-    case known_color::control_text: return drawing::color {color::from_handle(native::system_colors::control_text()), color};
-    case known_color::desktop: return drawing::color {color::from_handle(native::system_colors::desktop()), color};
-    case known_color::gray_text: return drawing::color {color::from_handle(native::system_colors::gray_text()), color};
-    case known_color::highlight: return drawing::color {color::from_handle(native::system_colors::highlight()), color};
-    case known_color::highlight_text: return drawing::color {color::from_handle(native::system_colors::highlight_text()), color};
-    case known_color::hot_track: return drawing::color {color::from_handle(native::system_colors::hot_track()), color};
-    case known_color::inactive_border: return drawing::color {color::from_handle(native::system_colors::inactive_border()), color};
-    case known_color::inactive_caption: return drawing::color {color::from_handle(native::system_colors::inactive_caption()), color};
-    case known_color::inactive_caption_text: return drawing::color {color::from_handle(native::system_colors::inactive_caption_text()), color};
-    case known_color::info: return drawing::color {color::from_handle(native::system_colors::info()), color};
-    case known_color::info_text: return drawing::color {color::from_handle(native::system_colors::info_text()), color};
-    case known_color::menu: return drawing::color {color::from_handle(native::system_colors::menu()), color};
-    case known_color::menu_text: return drawing::color {color::from_handle(native::system_colors::menu_text()), color};
-    case known_color::scroll_bar: return drawing::color {color::from_handle(native::system_colors::scroll_bar()), color};
-    case known_color::shadow_text: return drawing::color {color::from_handle(native::system_colors::shadow_text()), color};
-    case known_color::window: return drawing::color {color::from_handle(native::system_colors::window()), color};
-    case known_color::window_frame: return drawing::color {color::from_handle(native::system_colors::window_frame()), color};
-    case known_color::window_text: return drawing::color {color::from_handle(native::system_colors::window_text()), color};
+      // "Web" colors
     case known_color::transparent: return drawing::color {color::from_argb(0x00FFFFFF), color};
     case known_color::alice_blue: return drawing::color {color::from_argb(0xFFF0F8FF), color};
     case known_color::antique_white: return drawing::color {color::from_argb(0xFFFAEBD7), color};
@@ -458,6 +432,8 @@ color color::from_known_color(known_color color) {
     case known_color::white_smoke: return drawing::color {color::from_argb(0xFFF5F5F5), color};
     case known_color::yellow: return drawing::color {color::from_argb(0xFFFFFF00), color};
     case known_color::yellow_green: return drawing::color {color::from_argb(0xFF9ACD32), color};
+
+      // Apple colors
     case known_color::apple_black: return drawing::color {color::from_argb(0xFF000000), color};
     case known_color::apple_blue: return drawing::color {color::from_argb(0xFF0000FF), color};
     case known_color::apple_brown: return drawing::color {color::from_argb(0xFF996633), color};
@@ -469,20 +445,100 @@ color color::from_known_color(known_color color) {
     case known_color::apple_red: return drawing::color {color::from_argb(0xFFFB0207), color};
     case known_color::apple_yellow: return drawing::color {color::from_argb(0xFFFFFF0A), color};
     case known_color::apple_white: return drawing::color {color::from_argb(0xFFFFFFFF), color};
+
+      // Crayons colors
+    case known_color::crayons_licorice: return drawing::color {color::from_argb(0xFF000000), color};
+    case known_color::crayons_lead: return drawing::color {color::from_argb(0xFF191919), color};
+    case known_color::crayons_tungsten: return drawing::color {color::from_argb(0xFF333333), color};
+    case known_color::crayons_iron: return drawing::color {color::from_argb(0xFF4C4C4C), color};
+    case known_color::crayons_steel: return drawing::color {color::from_argb(0xFF666666), color};
+    case known_color::crayons_tin: return drawing::color {color::from_argb(0xFF7F7F7F), color};
+    case known_color::crayons_nickel: return drawing::color {color::from_argb(0xFF808080), color};
+    case known_color::crayons_aluminium: return drawing::color {color::from_argb(0xFF999999), color};
+    case known_color::crayons_magnesium: return drawing::color {color::from_argb(0xFFB3B3B3), color};
+    case known_color::crayons_silver: return drawing::color {color::from_argb(0xFFCCCCCC), color};
+    case known_color::crayons_mercury: return drawing::color {color::from_argb(0xFFE6E6E6), color};
+    case known_color::crayons_snow: return drawing::color {color::from_argb(0xFFFFFFFF), color};
+    case known_color::crayons_cayenne: return drawing::color {color::from_argb(0xFF800002), color};
+    case known_color::crayons_mocha: return drawing::color {color::from_argb(0xFF804003), color};
+    case known_color::crayons_asparagus: return drawing::color {color::from_argb(0xFF808004), color};
+    case known_color::crayons_fern: return drawing::color {color::from_argb(0xFF408002), color};
+    case known_color::crayons_clover: return drawing::color {color::from_argb(0xFF118002), color};
+    case known_color::crayons_moss: return drawing::color {color::from_argb(0xFF118040), color};
+    case known_color::crayons_teal: return drawing::color {color::from_argb(0xFF108080), color};
+    case known_color::crayons_ocean: return drawing::color {color::from_argb(0xFF074080), color};
+    case known_color::crayons_midnight: return drawing::color {color::from_argb(0xFF000080), color};
+    case known_color::crayons_eggplant: return drawing::color {color::from_argb(0xFF400080), color};
+    case known_color::crayons_plum: return drawing::color {color::from_argb(0xFF800080), color};
+    case known_color::crayons_maroon: return drawing::color {color::from_argb(0xFF800040), color};
+    case known_color::crayons_maraschino: return drawing::color {color::from_argb(0xFFFB0207), color};
+    case known_color::crayons_tangerine: return drawing::color {color::from_argb(0xFFFD8008), color};
+    case known_color::crayons_lemon: return drawing::color {color::from_argb(0xFFFFFF0A), color};
+    case known_color::crayons_lime: return drawing::color {color::from_argb(0xFF80FF08), color};
+    case known_color::crayons_spring: return drawing::color {color::from_argb(0xFF21FF06), color};
+    case known_color::crayons_sea_foam: return drawing::color {color::from_argb(0xFF21FF80), color};
+    case known_color::crayons_turquoise: return drawing::color {color::from_argb(0xFF21FFFF), color};
+    case known_color::crayons_aqua: return drawing::color {color::from_argb(0xFF0F80FF), color};
+    case known_color::crayons_blueberry: return drawing::color {color::from_argb(0xFF0000FF), color};
+    case known_color::crayons_grape: return drawing::color {color::from_argb(0xFF8000FF), color};
+    case known_color::crayons_magenta: return drawing::color {color::from_argb(0xFFFB02FF), color};
+    case known_color::crayons_strawberry: return drawing::color {color::from_argb(0xFFFB0280), color};
+    case known_color::crayons_salmon: return drawing::color {color::from_argb(0xFFFC6666), color};
+    case known_color::crayons_cantaloupe: return drawing::color {color::from_argb(0xFFFECC66), color};
+    case known_color::crayons_banana: return drawing::color {color::from_argb(0xFFFFFF66), color};
+    case known_color::crayons_honeydew: return drawing::color {color::from_argb(0xFFCCFF66), color};
+    case known_color::crayons_flora: return drawing::color {color::from_argb(0xFF66FF66), color};
+    case known_color::crayons_spindrift: return drawing::color {color::from_argb(0xFF66FFCC), color};
+    case known_color::crayons_ice: return drawing::color {color::from_argb(0xFF66FFFF), color};
+    case known_color::crayons_sky: return drawing::color {color::from_argb(0xFF66CCFF), color};
+    case known_color::crayons_orchid: return drawing::color {color::from_argb(0xFF6666FF), color};
+    case known_color::crayons_lavendar: return drawing::color {color::from_argb(0xFFCC66FF), color};
+    case known_color::crayons_bubblegum: return drawing::color {color::from_argb(0xFFFC66FF), color};
+    case known_color::crayons_carnation: return drawing::color {color::from_argb(0xFFFC6FCF), color};
+
+      // "System" colors
+    case known_color::accent: return drawing::color {color::from_handle(native::system_colors::accent()), color};
+    case known_color::accent_text: return drawing::color {color::from_handle(native::system_colors::accent_text()), color};
+    case known_color::active_border: return drawing::color {color::from_handle(native::system_colors::active_border()), color};
+    case known_color::active_caption: return drawing::color {color::from_handle(native::system_colors::active_caption()), color};
+    case known_color::active_caption_text: return drawing::color {color::from_handle(native::system_colors::active_caption_text()), color};
+    case known_color::active_text: return drawing::color {color::from_handle(native::system_colors::active_text()), color};
+    case known_color::app_workspace: return drawing::color {color::from_handle(native::system_colors::app_workspace()), color};
     case known_color::button_face: return drawing::color {color::from_handle(native::system_colors::button_face()), color};
     case known_color::button_highlight: return drawing::color {color::from_handle(native::system_colors::button_highlight()), color};
     case known_color::button_shadow: return drawing::color {color::from_handle(native::system_colors::button_shadow()), color};
+    case known_color::control: return drawing::color {color::from_handle(native::system_colors::control()), color};
+    case known_color::control_dark: return drawing::color {color::from_handle(native::system_colors::control_dark()), color};
+    case known_color::control_dark_dark: return drawing::color {color::from_handle(native::system_colors::control_dark_dark()), color};
+    case known_color::control_light: return drawing::color {color::from_handle(native::system_colors::control_light()), color};
+    case known_color::control_light_light: return drawing::color {color::from_handle(native::system_colors::control_light_light()), color};
+    case known_color::control_text: return drawing::color {color::from_handle(native::system_colors::control_text()), color};
+    case known_color::desktop: return drawing::color {color::from_handle(native::system_colors::desktop()), color};
     case known_color::gradient_active_caption: return drawing::color {color::from_handle(native::system_colors::gradient_active_caption()), color};
     case known_color::gradient_inactive_caption: return drawing::color {color::from_handle(native::system_colors::gradient_inactive_caption()), color};
+    case known_color::gray_text: return drawing::color {color::from_handle(native::system_colors::gray_text()), color};
+    case known_color::highlight: return drawing::color {color::from_handle(native::system_colors::highlight()), color};
+    case known_color::highlight_text: return drawing::color {color::from_handle(native::system_colors::highlight_text()), color};
+    case known_color::hot_track: return drawing::color {color::from_handle(native::system_colors::hot_track()), color};
+    case known_color::inactive_border: return drawing::color {color::from_handle(native::system_colors::inactive_border()), color};
+    case known_color::inactive_caption: return drawing::color {color::from_handle(native::system_colors::inactive_caption()), color};
+    case known_color::inactive_caption_text: return drawing::color {color::from_handle(native::system_colors::inactive_caption_text()), color};
+    case known_color::info: return drawing::color {color::from_handle(native::system_colors::info()), color};
+    case known_color::info_text: return drawing::color {color::from_handle(native::system_colors::info_text()), color};
+    case known_color::link_text: return drawing::color {color::from_handle(native::system_colors::link_text()), color};
+    case known_color::menu: return drawing::color {color::from_handle(native::system_colors::menu()), color};
     case known_color::menu_bar: return drawing::color {color::from_handle(native::system_colors::menu_bar()), color};
     case known_color::menu_highlight: return drawing::color {color::from_handle(native::system_colors::menu_highlight()), color};
-    case known_color::accent: return drawing::color {color::from_handle(native::system_colors::accent()), color};
-    case known_color::accent_text: return drawing::color {color::from_handle(native::system_colors::accent_text()), color};
+    case known_color::menu_text: return drawing::color {color::from_handle(native::system_colors::menu_text()), color};
+    case known_color::scroll_bar: return drawing::color {color::from_handle(native::system_colors::scroll_bar()), color};
+    case known_color::shadow_text: return drawing::color {color::from_handle(native::system_colors::shadow_text()), color};
     case known_color::text_box: return drawing::color {color::from_handle(native::system_colors::text_box()), color};
     case known_color::text_box_text: return drawing::color {color::from_handle(native::system_colors::text_box_text()), color};
-    case known_color::active_text: return drawing::color {color::from_handle(native::system_colors::active_text()), color};
-    case known_color::link_text: return drawing::color {color::from_handle(native::system_colors::link_text()), color};
     case known_color::visited_text: return drawing::color {color::from_handle(native::system_colors::visited_text()), color};
+    case known_color::window: return drawing::color {color::from_handle(native::system_colors::window()), color};
+    case known_color::window_frame: return drawing::color {color::from_handle(native::system_colors::window_frame()), color};
+    case known_color::window_text: return drawing::color {color::from_handle(native::system_colors::window_text()), color};
+
     default: throw xtd::argument_exception {"know_color invalid"_t, csf_};
   }
 }
