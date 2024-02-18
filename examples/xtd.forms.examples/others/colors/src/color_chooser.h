@@ -24,7 +24,7 @@ namespace colors_example {
     class color_panel final : public xtd::forms::user_control {
     public:
       color_panel() {
-        size({200, 30});
+        size({200, 40});
         color(xtd::drawing::color::empty);
       }
       
