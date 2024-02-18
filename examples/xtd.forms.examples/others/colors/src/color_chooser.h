@@ -59,8 +59,10 @@ namespace colors_example {
       colors_choice.dock(xtd::forms::dock_style::top);
       colors_choice.items().push_back_range({
         {"Basic - xtd::drawing::basic_colors", &xtd::drawing::basic_colors::get_colors},
+        {"Apple - xtd::drawing::apple_colors", &xtd::drawing::apple_colors::get_colors},
         {"Blue - xtd::drawing::blue_colors", &xtd::drawing::blue_colors::get_colors},
         {"Brown - xtd::drawing::brown_colors", &xtd::drawing::brown_colors::get_colors},
+        {"Crayons - xtd::drawing::crayons_colors", &xtd::drawing::crayons_colors::get_colors},
         {"Cyan - xtd::drawing::cyan_colors", &xtd::drawing::cyan_colors::get_colors},
         {"Gray - xtd::drawing::gray_colors", &xtd::drawing::gray_colors::get_colors},
         {"Green - xtd::drawing::green_colors", &xtd::drawing::green_colors::get_colors},
@@ -70,10 +72,8 @@ namespace colors_example {
         {"Red - xtd::drawing::red_colors", &xtd::drawing::red_colors::get_colors},
         {"White - xtd::drawing::white_colors", &xtd::drawing::white_colors::get_colors},
         {"Yellow - xtd::drawing::yellow_colors", &xtd::drawing::yellow_colors::get_colors},
-        {"Colors - xtd::drawing::colors", &xtd::drawing::colors::get_colors},
+        {"Web - xtd::drawing::colors", &xtd::drawing::colors::get_colors},
         {"System - xtd::drawing::system_colors", &xtd::drawing::system_colors::get_colors},
-        {"Apple - xtd::drawing::apple_colors", &xtd::drawing::apple_colors::get_colors},
-        {"Crayons - xtd::drawing::crayons_colors", &xtd::drawing::crayons_colors::get_colors},
       });
       colors_choice.selected_index_changed += [&] {
         auto index = selected_index();
@@ -87,7 +87,7 @@ namespace colors_example {
         else selected_index(colors_.size() - 1);
         
       };
-      colors_choice.selected_index(12);
+      colors_choice.selected_index(0);
 
       main_panel.dock(xtd::forms::dock_style::fill);
       main_panel.auto_scroll(true);
