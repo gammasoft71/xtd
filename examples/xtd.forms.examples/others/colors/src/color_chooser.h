@@ -1,3 +1,4 @@
+#include <xtd/drawing/apple_colors>
 #include <xtd/drawing/colors>
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/user_control>
@@ -38,9 +39,12 @@ namespace colors_example {
       fore_color(xtd::drawing::system_colors::window_text());
       auto_scroll(true);
       
+      for (auto iterator = xtd::drawing::apple_colors::get_colors().rbegin(); iterator != xtd::drawing::apple_colors::get_colors().rend(); ++iterator)
+        add_color_panel(*iterator);
+
       for (auto iterator = xtd::drawing::system_colors::get_colors().rbegin(); iterator != xtd::drawing::system_colors::get_colors().rend(); ++iterator)
         add_color_panel(*iterator);
-        
+      
       for (auto iterator = xtd::drawing::colors::get_colors().rbegin(); iterator != xtd::drawing::colors::get_colors().rend(); ++iterator)
         add_color_panel(*iterator);
     }
