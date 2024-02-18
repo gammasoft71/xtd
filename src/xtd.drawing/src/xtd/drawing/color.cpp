@@ -467,8 +467,8 @@ color color::from_known_color(known_color color) {
     case known_color::apple_orange: return drawing::color {color::from_argb(0xFFFD8008), color};
     case known_color::apple_purple: return drawing::color {color::from_argb(0xFF800080), color};
     case known_color::apple_red: return drawing::color {color::from_argb(0xFFFB0207), color};
-    case known_color::apple_yellow: return drawing::color {color::from_argb(0xFFFFFFF0A), color};
-    case known_color::apple_white: return drawing::color {color::from_argb(0xFFFFFFFFF), color};
+    case known_color::apple_yellow: return drawing::color {color::from_argb(0xFFFFFF0A), color};
+    case known_color::apple_white: return drawing::color {color::from_argb(0xFFFFFFFF), color};
     case known_color::button_face: return drawing::color {color::from_handle(native::system_colors::button_face()), color};
     case known_color::button_highlight: return drawing::color {color::from_handle(native::system_colors::button_highlight()), color};
     case known_color::button_shadow: return drawing::color {color::from_handle(native::system_colors::button_shadow()), color};
