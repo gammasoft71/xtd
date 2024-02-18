@@ -6,7 +6,6 @@ include(../scripts/cmake/xtd_commands.cmake)
 include(../scripts/cmake/xtd_version.cmake)
 
 add_sources(
-  doxygen/doxygen/apple_colors_page.dox
   doxygen/doxygen/cmake_build_options_page.dox
   doxygen/doxygen/cmake_commands_page.dox
   doxygen/doxygen/colors_page.dox
