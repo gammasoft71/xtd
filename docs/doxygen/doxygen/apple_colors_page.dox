@@ -1,0 +1,21 @@
+/// @file
+/// @brief Contains Apple colors page.
+
+/// @page AppleColorsPage Apple colors
+/// @brief Contains Appple colors.
+///
+/// Shows xtd::drawing::color fields.
+///
+/// @section AppleColors Apple colors
+/// | Name    | Value                               | ARGB value (in hexa) | Color                                  |
+/// | ------- | ----------------------------------- | -------------------- | -------------------------------------- |
+/// | Black   | xtd::drawing::apple_colors::black   | 0xFF000000           |  @image html apple_colors_black.png    |
+/// | Blue    | xtd::drawing::apple_colors::blue    | 0xFF0000FF           |  @image html apple_colors_blue.png     |
+/// | Cyan    | xtd::drawing::apple_colors::cyan    | 0xFF21FFFF           |  @image html apple_colors_cyan.png     |
+/// | Green   | xtd::drawing::apple_colors::green   | 0xFF21FF06           |  @image html apple_colors_green.png    |
+/// | Magenta | xtd::drawing::apple_colors::magenta | 0xFFFB02FF           |  @image html apple_colors_magenta.png  |
+/// | Orange  | xtd::drawing::apple_colors::orange  | 0xFFFD8008           |  @image html apple_colors_orange.png   |
+/// | Purple  | xtd::drawing::apple_colors::purple  | 0xFF800080           |  @image html apple_colors_purple.png   |
+/// | Red     | xtd::drawing::apple_colors::red     | 0xFFFB0207           |  @image html apple_colors_red.png      |
+/// | Yellow  | xtd::drawing::apple_colors::yellow  | 0xFFFFFF0A           |  @image html apple_colors_yellow.png   |
+/// | White   | xtd::drawing::apple_colors::white   | 0xFFFFFFFF           |  @image html apple_colors_white.png    |
