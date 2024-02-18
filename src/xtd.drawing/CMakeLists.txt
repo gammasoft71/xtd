@@ -44,6 +44,8 @@ add_sources(
   include/xtd/drawing/colors
   include/xtd/drawing/copy_pixel_operation.h
   include/xtd/drawing/copy_pixel_operation
+  include/xtd/drawing/crayons_colors.h
+  include/xtd/drawing/crayons_colors
   include/xtd/drawing/cyan_colors.h
   include/xtd/drawing/cyan_colors
   include/xtd/drawing/dash_style.h
@@ -247,6 +249,7 @@ add_sources(
   src/xtd/drawing/color.cpp
   src/xtd/drawing/color_translator.cpp
   src/xtd/drawing/colors.cpp
+  src/xtd/drawing/crayons_colors.cpp
   src/xtd/drawing/cyan_colors.cpp
   src/xtd/drawing/font.cpp
   src/xtd/drawing/font_family.cpp
