@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "abcdefghiklmnoprstuw",
   8: "abcdefghijklmnopqrstuvwxyz",
   9: "acdefiklmnrstuvwx",
-  10: "acdfilmstx"
+  10: "cdfilmstx"
 };
 
 var indexSectionNames =
