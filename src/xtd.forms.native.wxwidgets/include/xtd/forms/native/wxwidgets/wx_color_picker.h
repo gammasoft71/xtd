@@ -35,7 +35,7 @@ namespace xtd {
         static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
-          if ((style & CC_ALPHACOLOR) == CC_ALPHACOLOR) style |= wxCLRP_SHOW_ALPHA;
+          if ((style & CC_ALPHACOLOR) == CC_ALPHACOLOR) wx_style |= wxCLRP_SHOW_ALPHA;
 
           return wx_style;
         }
