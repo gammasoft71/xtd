@@ -4,9 +4,8 @@
 /// @page AppleColorsPage Apple colors
 /// @brief Contains Appple colors.
 ///
-/// Shows xtd::drawing::color fields.
+/// Shows xtd::drawing::apple_colors fields.
 ///
-/// @section AppleColors Apple colors
 /// | Name    | Value                               | ARGB value (in hexa) | Color                                  |
 /// | ------- | ----------------------------------- | -------------------- | -------------------------------------- |
 /// | Black   | xtd::drawing::apple_colors::black   | 0xFF000000           |  @image html apple_colors_black.png    |
