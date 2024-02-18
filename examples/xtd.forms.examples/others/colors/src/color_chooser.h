@@ -76,6 +76,7 @@ namespace colors_example {
         {"System - xtd::drawing::system_colors", &xtd::drawing::system_colors::get_colors},
       });
       colors_choice.selected_index_changed += [&] {
+        suspend_layout();
         auto index = selected_index();
         selected_index(npos);
         colors_.clear();
@@ -85,7 +86,7 @@ namespace colors_example {
         if (index == npos || colors_.size() == 0) return;
         if (index < colors_.size()) selected_index(index);
         else selected_index(colors_.size() - 1);
-        
+        resume_layout();
       };
       colors_choice.selected_index(0);
 
