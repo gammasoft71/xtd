@@ -1,8 +1,10 @@
 #include <xtd/drawing/drawing_2d/hatch_brush>
+#include <xtd/drawing/color_translator>
 #include <xtd/forms/control_paint>
 #include <xtd/forms/label>
 #include <xtd/forms/numeric_up_down>
 #include <xtd/forms/panel>
+#include <xtd/forms/text_box>
 #include <xtd/forms/track_bar>
 #include <xtd/forms/user_control>
 
@@ -10,121 +12,178 @@ namespace colors_example {
   class color_editor final : public xtd::forms::user_control {
   public:
     color_editor() {
-      border_style(xtd::forms::border_style::fixed_3d);
-      size({300, 400});
-      minimum_size(size());
+      size({300, 550});
       
-      label_alpha.parent(*this);
-      label_alpha.location({10, 15});
-      label_alpha.auto_size(true);
-      label_alpha.text("A");
+      alpha_label_.parent(*this);
+      alpha_label_.location({55, 15});
+      alpha_label_.auto_size(true);
+      alpha_label_.text("A");
       
-      track_bar_alpha.parent(*this);
-      track_bar_alpha.location({40, 12});
-      track_bar_alpha.auto_size(false);
-      track_bar_alpha.maximum(255);
-      track_bar_alpha.size({190, 25});
-      track_bar_alpha.tick_style(xtd::forms::tick_style::none);
-      track_bar_alpha.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
-      track_bar_alpha.value_changed += [&] {
-        color(xtd::drawing::color::from_argb(xtd::as<unsigned char>(track_bar_alpha.value()), color_.r(), color_.g(), color_.b()));
+      alpha_track_bar_.parent(*this);
+      alpha_track_bar_.location({85, 12});
+      alpha_track_bar_.auto_size(false);
+      alpha_track_bar_.maximum(255);
+      alpha_track_bar_.size({100, 25});
+      alpha_track_bar_.tick_style(xtd::forms::tick_style::none);
+      alpha_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
+      alpha_track_bar_.value_changed += [&] {
+        if (color_.a() != xtd::as<unsigned char>(alpha_track_bar_.value())) color(xtd::drawing::color::from_argb(xtd::as<unsigned char>(alpha_track_bar_.value()), color_.r(), color_.g(), color_.b()));
       };
       
-      numeric_up_down_alpha.parent(*this);
-      numeric_up_down_alpha.bounds({240, 12, 50, 20});
-      numeric_up_down_alpha.minimum(0);
-      numeric_up_down_alpha.maximum(255);
-      numeric_up_down_alpha.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-      numeric_up_down_alpha.value_changed += [&] {
-        color(xtd::drawing::color::from_argb(xtd::as<unsigned char>(numeric_up_down_alpha.value()), color_.r(), color_.g(), color_.b()));
+      alpha_numeric_up_down_.parent(*this);
+      alpha_numeric_up_down_.bounds({200, 12, 50, 20});
+      alpha_numeric_up_down_.minimum(0);
+      alpha_numeric_up_down_.maximum(255);
+      alpha_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
+      alpha_numeric_up_down_.value_changed += [&] {
+        if (color_.a() != xtd::as<unsigned char>(alpha_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(xtd::as<unsigned char>(alpha_numeric_up_down_.value()), color_.r(), color_.g(), color_.b()));
       };
       
-      label_red.parent(*this);
-      label_red.location({10, 60});
-      label_red.auto_size(true);
-      label_red.text("R");
+      red_label_.parent(*this);
+      red_label_.location({55, 60});
+      red_label_.auto_size(true);
+      red_label_.text("R");
       
-      track_bar_red.parent(*this);
-      track_bar_red.location({40, 57});
-      track_bar_red.auto_size(false);
-      track_bar_red.maximum(255);
-      track_bar_red.size({190, 25});
-      track_bar_red.tick_style(xtd::forms::tick_style::none);
-      track_bar_red.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
-      track_bar_red.value_changed += [&] {
-        color(xtd::drawing::color::from_argb(color_.a(), xtd::as<unsigned char>(track_bar_red.value()), color_.g(), color_.b()));
+      red_track_bar_.parent(*this);
+      red_track_bar_.location({85, 57});
+      red_track_bar_.auto_size(false);
+      red_track_bar_.maximum(255);
+      red_track_bar_.size({100, 25});
+      red_track_bar_.tick_style(xtd::forms::tick_style::none);
+      red_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
+      red_track_bar_.value_changed += [&] {
+        if (color_.r() != xtd::as<unsigned char>(red_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), xtd::as<unsigned char>(red_track_bar_.value()), color_.g(), color_.b()));
       };
       
-      numeric_up_down_red.parent(*this);
-      numeric_up_down_red.bounds({240, 57, 50, 20});
-      numeric_up_down_red.minimum(0);
-      numeric_up_down_red.maximum(255);
-      numeric_up_down_red.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-      numeric_up_down_red.value_changed += [&] {
-        color(xtd::drawing::color::from_argb(color_.a(), xtd::as<unsigned char>(numeric_up_down_red.value()), color_.g(), color_.b()));
+      red_numeric_up_down_.parent(*this);
+      red_numeric_up_down_.bounds({200, 57, 50, 20});
+      red_numeric_up_down_.minimum(0);
+      red_numeric_up_down_.maximum(255);
+      red_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
+      red_numeric_up_down_.value_changed += [&] {
+        if (color_.r() != xtd::as<unsigned char>(red_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), xtd::as<unsigned char>(red_numeric_up_down_.value()), color_.g(), color_.b()));
       };
       
-      label_green.parent(*this);
-      label_green.location({10, 105});
-      label_green.auto_size(true);
-      label_green.text("G");
+      green_label_.parent(*this);
+      green_label_.location({55, 105});
+      green_label_.auto_size(true);
+      green_label_.text("G");
       
-      track_bar_green.parent(*this);
-      track_bar_green.location({40, 102});
-      track_bar_green.auto_size(false);
-      track_bar_green.maximum(255);
-      track_bar_green.size({190, 25});
-      track_bar_green.tick_style(xtd::forms::tick_style::none);
-      track_bar_green.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
-      track_bar_green.value_changed += [&] {
-        color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<unsigned char>(track_bar_green.value()), color_.b()));
+      green_track_bar_.parent(*this);
+      green_track_bar_.location({85, 102});
+      green_track_bar_.auto_size(false);
+      green_track_bar_.maximum(255);
+      green_track_bar_.size({100, 25});
+      green_track_bar_.tick_style(xtd::forms::tick_style::none);
+      green_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
+      green_track_bar_.value_changed += [&] {
+        if (color_.g() != xtd::as<unsigned char>(green_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<unsigned char>(green_track_bar_.value()), color_.b()));
       };
       
-      numeric_up_down_green.parent(*this);
-      numeric_up_down_green.bounds({240, 102, 50, 20});
-      numeric_up_down_green.minimum(0);
-      numeric_up_down_green.maximum(255);
-      numeric_up_down_green.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-      numeric_up_down_green.value_changed += [&] {
-        color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<unsigned char>(numeric_up_down_green.value()), color_.b()));
+      green_numeric_up_down_.parent(*this);
+      green_numeric_up_down_.bounds({200, 102, 50, 20});
+      green_numeric_up_down_.minimum(0);
+      green_numeric_up_down_.maximum(255);
+      green_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
+      green_numeric_up_down_.value_changed += [&] {
+        if (color_.g() != xtd::as<unsigned char>(green_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<unsigned char>(green_numeric_up_down_.value()), color_.b()));
       };
       
-      label_blue.parent(*this);
-      label_blue.location({10, 150});
-      label_blue.auto_size(true);
-      label_blue.text("B");
+      blue_label_.parent(*this);
+      blue_label_.location({55, 150});
+      blue_label_.auto_size(true);
+      blue_label_.text("B");
       
-      track_bar_blue.parent(*this);
-      track_bar_blue.location({40, 147});
-      track_bar_blue.auto_size(false);
-      track_bar_blue.maximum(255);
-      track_bar_blue.size({190, 25});
-      track_bar_blue.tick_style(xtd::forms::tick_style::none);
-      track_bar_blue.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
-      track_bar_blue.value_changed += [&] {
-        color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<unsigned char>(track_bar_blue.value())));
+      blue_track_bar_.parent(*this);
+      blue_track_bar_.location({85, 147});
+      blue_track_bar_.auto_size(false);
+      blue_track_bar_.maximum(255);
+      blue_track_bar_.size({100, 25});
+      blue_track_bar_.tick_style(xtd::forms::tick_style::none);
+      blue_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
+      blue_track_bar_.value_changed += [&] {
+        if (color_.b() != xtd::as<unsigned char>(blue_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<unsigned char>(blue_track_bar_.value())));
       };
       
-      numeric_up_down_blue.parent(*this);
-      numeric_up_down_blue.bounds({240, 147, 50, 20});
-      numeric_up_down_blue.minimum(0);
-      numeric_up_down_blue.maximum(255);
-      numeric_up_down_blue.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-      numeric_up_down_blue.value_changed += [&] {
-        color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<unsigned char>(numeric_up_down_blue.value())));
+      blue_numeric_up_down_.parent(*this);
+      blue_numeric_up_down_.bounds({200, 147, 50, 20});
+      blue_numeric_up_down_.minimum(0);
+      blue_numeric_up_down_.maximum(255);
+      blue_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
+      blue_numeric_up_down_.value_changed += [&] {
+        if (color_.b() != xtd::as<unsigned char>(blue_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<unsigned char>(blue_numeric_up_down_.value())));
       };
       
-      panel_color_box.parent(*this);
-      panel_color_box.location({55, 195});
-      panel_color_box.size({190, 190});
-      panel_color_box.double_buffered(true);
-      panel_color_box.border_style(xtd::forms::border_style::fixed_3d);
-      panel_color_box.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right | xtd::forms::anchor_styles::bottom);
-      panel_color_box.paint += [&](xtd::object& sender, xtd::forms::paint_event_args& e) {
+      color_box_panel_.parent(*this);
+      color_box_panel_.location({55, 195});
+      color_box_panel_.size({190, 190});
+      color_box_panel_.double_buffered(true);
+      color_box_panel_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right | xtd::forms::anchor_styles::bottom);
+      color_box_panel_.paint += [&](xtd::object& sender, xtd::forms::paint_event_args& e) {
         e.graphics().fill_rectangle(xtd::drawing::drawing_2d::hatch_brush(xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x54, 0x54, 0x54), xtd::drawing::color::from_argb(0xA8, 0xA8, 0xA8)), e.clip_rectangle());
         e.graphics().fill_rectangle(xtd::drawing::solid_brush(color_), e.clip_rectangle());
-        xtd::forms::control_paint::draw_border(panel_color_box, e.graphics(), panel_color_box.border_style(), panel_color_box.border_sides(), xtd::forms::application::style_sheet().system_colors().control_text(), e.clip_rectangle());
+        xtd::forms::control_paint::draw_border(color_box_panel_, e.graphics(), color_box_panel_.border_style(), color_box_panel_.border_sides(), xtd::forms::application::style_sheet().system_colors().control_text(), e.clip_rectangle());
       };
+      
+      hex_label_.parent(*this);
+      hex_label_.location({55, 397});
+      hex_label_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom);
+      hex_label_.auto_size(true);
+      hex_label_.text("HEX :");
+      
+      hsl_label_.parent(*this);
+      hsl_label_.location({55, 427});
+      hsl_label_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom);
+      hsl_label_.auto_size(true);
+      hsl_label_.text("HSL :");
+      
+      html_label_.parent(*this);
+      html_label_.location({55, 457});
+      html_label_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom);
+      html_label_.auto_size(true);
+      html_label_.text("HTML :");
+      
+      rgb_label_.parent(*this);
+      rgb_label_.location({55, 487});
+      rgb_label_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom);
+      rgb_label_.auto_size(true);
+      rgb_label_.text("RGB :");
+      
+      win32_label_.parent(*this);
+      win32_label_.location({55, 517});
+      win32_label_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom);
+      win32_label_.auto_size(true);
+      win32_label_.text("Win32 :");
+      
+      hex_ltext_box_.parent(*this);
+      hex_ltext_box_.location({110, 395});
+      hex_ltext_box_.width(140);
+      hex_ltext_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
+      hex_ltext_box_.read_only(true);
+
+      hsl_text_box_.parent(*this);
+      hsl_text_box_.location({110, 425});
+      hsl_text_box_.width(140);
+      hsl_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
+      hsl_text_box_.read_only(true);
+
+      html_text_box_.parent(*this);
+      html_text_box_.location({110, 455});
+      html_text_box_.width(140);
+      html_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
+      html_text_box_.read_only(true);
+
+      rgb_text_box_.parent(*this);
+      rgb_text_box_.location({110, 485});
+      rgb_text_box_.width(140);
+      rgb_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
+      rgb_text_box_.read_only(true);
+
+      win32_text_box_.parent(*this);
+      win32_text_box_.location({110, 515});
+      win32_text_box_.width(140);
+      win32_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
+      win32_text_box_.read_only(true);
     }
     
     void color(const xtd::drawing::color& value) {
@@ -138,37 +197,52 @@ namespace colors_example {
     
   protected:
     void on_color_changed(const xtd::event_args& e) {
-      panel_color_box.invalidate();
-      track_bar_alpha.value(color_.a());
-      numeric_up_down_alpha.value(color_.a());
-      track_bar_red.value(color_.r());
-      numeric_up_down_red.value(color_.r());
-      track_bar_green.value(color_.g());
-      numeric_up_down_green.value(color_.g());
-      track_bar_blue.value(color_.b());
-      numeric_up_down_blue.value(color_.b());
+      color_box_panel_.invalidate();
+      alpha_track_bar_.value(color_.a());
+      alpha_numeric_up_down_.value(color_.a());
+      red_track_bar_.value(color_.r());
+      red_numeric_up_down_.value(color_.r());
+      green_track_bar_.value(color_.g());
+      green_numeric_up_down_.value(color_.g());
+      blue_track_bar_.value(color_.b());
+      blue_numeric_up_down_.value(color_.b());
       color_changed(*this, e);
+      hex_ltext_box_.text(xtd::drawing::color_translator::to_hex(color_));
+      hsl_text_box_.text(color_.a() == 255 ? xtd::drawing::color_translator::to_hsl(color_) : xtd::drawing::color_translator::to_hsla(color_));
+      html_text_box_.text(xtd::drawing::color_translator::to_html(color_));
+      rgb_text_box_.text(color_.a() == 255 ? xtd::drawing::color_translator::to_rgb(color_) : xtd::drawing::color_translator::to_rgba(color_));
+      win32_text_box_.text(xtd::ustring::format("{0} (0x{0:x6})", xtd::drawing::color_translator::to_win32(color_)));
     }
     
   private:
   
     void on_argb_changed() {
-      color(xtd::drawing::color::from_argb(xtd::as<unsigned char>(track_bar_alpha.value()), xtd::as<unsigned char>(track_bar_red.value()), xtd::as<unsigned char>(track_bar_green.value()), xtd::as<unsigned char>(track_bar_blue.value())));
+      color(xtd::drawing::color::from_argb(xtd::as<unsigned char>(alpha_track_bar_.value()), xtd::as<unsigned char>(red_track_bar_.value()), xtd::as<unsigned char>(green_track_bar_.value()), xtd::as<unsigned char>(blue_track_bar_.value())));
     }
     
-    xtd::forms::label label_alpha;
-    xtd::forms::label label_red;
-    xtd::forms::label label_green;
-    xtd::forms::label label_blue;
-    xtd::forms::track_bar track_bar_alpha;
-    xtd::forms::track_bar track_bar_red;
-    xtd::forms::track_bar track_bar_green;
-    xtd::forms::track_bar track_bar_blue;
-    xtd::forms::numeric_up_down numeric_up_down_alpha;
-    xtd::forms::numeric_up_down numeric_up_down_red;
-    xtd::forms::numeric_up_down numeric_up_down_green;
-    xtd::forms::numeric_up_down numeric_up_down_blue;
-    xtd::forms::panel panel_color_box;
+    xtd::forms::label alpha_label_;
+    xtd::forms::label red_label_;
+    xtd::forms::label green_label_;
+    xtd::forms::label blue_label_;
+    xtd::forms::track_bar alpha_track_bar_;
+    xtd::forms::track_bar red_track_bar_;
+    xtd::forms::track_bar green_track_bar_;
+    xtd::forms::track_bar blue_track_bar_;
+    xtd::forms::numeric_up_down alpha_numeric_up_down_;
+    xtd::forms::numeric_up_down red_numeric_up_down_;
+    xtd::forms::numeric_up_down green_numeric_up_down_;
+    xtd::forms::numeric_up_down blue_numeric_up_down_;
+    xtd::forms::panel color_box_panel_;
+    xtd::forms::label hex_label_;
+    xtd::forms::label hsl_label_;
+    xtd::forms::label html_label_;
+    xtd::forms::label rgb_label_;
+    xtd::forms::label win32_label_;
+    xtd::forms::text_box hex_ltext_box_;
+    xtd::forms::text_box hsl_text_box_;
+    xtd::forms::text_box html_text_box_;
+    xtd::forms::text_box rgb_text_box_;
+    xtd::forms::text_box win32_text_box_;
     xtd::drawing::color color_ = xtd::drawing::color::empty;
   };
 }
