@@ -222,8 +222,10 @@ forms::create_params label::create_params() const noexcept {
   create_params.class_name("label");
   create_params.style(create_params.style() | SS_LEFT);
   
-  if (border_style() == xtd::forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style() != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (control_appearance() == forms::control_appearance::system) {
+    if (border_style() == xtd::forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+    else if (border_style() != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  }
 
   if (data_->flat_style != xtd::forms::flat_style::system) create_params.style(create_params.style() | SS_OWNERDRAW);
   

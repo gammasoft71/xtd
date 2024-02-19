@@ -212,8 +212,10 @@ forms::create_params list_box::create_params() const noexcept {
   // Do not use native control sort
   //if (data_->sorted) create_params.style(create_params.style() | LBS_SORT);
   
-  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (control_appearance() == forms::control_appearance::system) {
+    if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+    else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  }
   
   return create_params;
 }
