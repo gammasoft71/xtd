@@ -134,8 +134,10 @@ forms::create_params picture_box::create_params() const noexcept {
   create_params.class_name("picturebox");
   create_params.style(create_params.style() | SS_BITMAP);
   
-  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (control_appearance() == forms::control_appearance::system) {
+    if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+    else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  }
   
   switch (data_->size_mode) {
     case picture_box_size_mode::normal: create_params.style(create_params.style() | SS_BITMAP_NORMAL); break;

@@ -159,8 +159,10 @@ text_box_base::text_box_base() : data_(std::make_shared<data>()) {
 forms::create_params text_box_base::create_params() const noexcept {
   auto create_params = control::create_params();
   
-  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (control_appearance() == forms::control_appearance::system) {
+    if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+    else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  }
   
   if (accepts_tab()) create_params.style(create_params.style() | ES_WANTTAB);
   if (multiline()) create_params.style(create_params.style() | ES_MULTILINE);

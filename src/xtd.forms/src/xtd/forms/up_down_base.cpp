@@ -54,8 +54,10 @@ up_down_base::up_down_base() : data_(std::make_shared<data>()) {
 forms::create_params up_down_base::create_params() const noexcept {
   auto create_params = container_control::create_params();
   
-  if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (control_appearance() == forms::control_appearance::system) {
+    if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+    else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  }
   
   return create_params;
 }
