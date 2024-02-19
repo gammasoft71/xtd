@@ -70,10 +70,10 @@ namespace colors_example {
         {"Pink - xtd::drawing::pink_colors", &xtd::drawing::pink_colors::get_colors},
         {"Purple - xtd::drawing::purple_colors", &xtd::drawing::purple_colors::get_colors},
         {"Red - xtd::drawing::red_colors", &xtd::drawing::red_colors::get_colors},
-        {"System - xtd::drawing::system_colors", &xtd::drawing::system_colors::get_colors},     
-        {"Web - xtd::drawing::colors", &xtd::drawing::colors::get_colors},
         {"White - xtd::drawing::white_colors", &xtd::drawing::white_colors::get_colors},
         {"Yellow - xtd::drawing::yellow_colors", &xtd::drawing::yellow_colors::get_colors},
+        {"Web - xtd::drawing::colors", &xtd::drawing::colors::get_colors},
+        {"System - xtd::drawing::system_colors", &xtd::drawing::system_colors::get_colors},
       });
       colors_choice.selected_index_changed += [&] {
         suspend_layout();
