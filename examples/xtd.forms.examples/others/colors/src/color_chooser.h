@@ -138,8 +138,7 @@ namespace colors_example {
     void on_selected_index_changed(const xtd::event_args& e) {
       if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(main_panel_.back_color());
       if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->fore_color(main_panel_.fore_color());
-      if (selected_index_ == npos)
-        selected_color(xtd::drawing::color::empty);
+      if (selected_index_ == npos) selected_color(xtd::drawing::color::empty);
       else {
         colors_[colors_.size() - 1 - selected_index_]->back_color(xtd::drawing::system_colors::accent());
         colors_[colors_.size() - 1 - selected_index_]->fore_color(xtd::drawing::system_colors::accent_text());

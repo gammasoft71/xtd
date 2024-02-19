@@ -121,7 +121,7 @@ namespace colors_example {
       color_box_panel_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right | xtd::forms::anchor_styles::bottom);
       color_box_panel_.paint += [&](xtd::object& sender, xtd::forms::paint_event_args& e) {
         e.graphics().fill_rectangle(xtd::drawing::drawing_2d::hatch_brush(xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x54, 0x54, 0x54), xtd::drawing::color::from_argb(0xA8, 0xA8, 0xA8)), e.clip_rectangle());
-        e.graphics().fill_rectangle(xtd::drawing::solid_brush(color_), e.clip_rectangle());
+        if (color_ != xtd::drawing::color::empty) e.graphics().fill_rectangle(xtd::drawing::solid_brush(color_), e.clip_rectangle());
         xtd::forms::control_paint::draw_border(color_box_panel_, e.graphics(), color_box_panel_.border_style(), color_box_panel_.border_sides(), xtd::forms::application::style_sheet().system_colors().control_text(), e.clip_rectangle());
       };
       
@@ -196,7 +196,7 @@ namespace colors_example {
     xtd::event<color_editor, xtd::event_handler> color_changed;
     
   protected:
-    void on_color_changed(const xtd::event_args& e) {
+    virtual void on_color_changed(const xtd::event_args& e) {
       color_box_panel_.invalidate();
       alpha_track_bar_.value(color_.a());
       alpha_numeric_up_down_.value(color_.a());
@@ -206,12 +206,12 @@ namespace colors_example {
       green_numeric_up_down_.value(color_.g());
       blue_track_bar_.value(color_.b());
       blue_numeric_up_down_.value(color_.b());
-      color_changed(*this, e);
       hex_ltext_box_.text(xtd::drawing::color_translator::to_hex(color_));
-      hsl_text_box_.text(color_.a() == 255 ? xtd::drawing::color_translator::to_hsl(color_) : xtd::drawing::color_translator::to_hsla(color_));
+      hsl_text_box_.text(xtd::drawing::color_translator::to_hsl(color_, true));
       html_text_box_.text(xtd::drawing::color_translator::to_html(color_));
-      rgb_text_box_.text(color_.a() == 255 ? xtd::drawing::color_translator::to_rgb(color_) : xtd::drawing::color_translator::to_rgba(color_));
+      rgb_text_box_.text(xtd::drawing::color_translator::to_rgb(color_, true));
       win32_text_box_.text(xtd::ustring::format("{0} (0x{0:x6})", xtd::drawing::color_translator::to_win32(color_)));
+      color_changed(*this, e);
     }
     
   private:
