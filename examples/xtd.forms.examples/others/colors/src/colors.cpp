@@ -10,21 +10,22 @@ namespace colors_example {
   public:
     main_form() {
       text("Colors example");
-      start_position(form_start_position::manual);
-      location({300, 200});
-      client_size({640, 420});
-      
+      client_size({700, 590});
+      minimum_client_size({700, 590});
+
       colors.parent(*this);
+      colors.border_style(xtd::forms::border_style::rounded);
       colors.location({10, 10});
-      colors.size({300, 400});
+      colors.size({300, 570});
       colors.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);
       colors.selected_color_changed += [&] {
         editor.color(colors.selected_color());
       };
       
       editor.parent(*this);
-      editor.location({330, 10});
-      editor.size({300, 400});
+      editor.border_style(xtd::forms::border_style::rounded);
+      editor.location({320, 10});
+      editor.size({370, 570});
       editor.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       
       colors.selected_index(0ul);

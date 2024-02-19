@@ -50,14 +50,12 @@ namespace colors_example {
     
   public:
     color_chooser() {
-      border_style(xtd::forms::border_style::fixed_3d);
-      back_color(xtd::drawing::system_colors::window());
-      fore_color(xtd::drawing::system_colors::window_text());
-      controls().push_back_range({main_panel, colors_choice});
-      padding(4);
+      size({300, 550});
+      controls().push_back_range({main_panel_, colors_choice_});
 
-      colors_choice.dock(xtd::forms::dock_style::top);
-      colors_choice.items().push_back_range({
+      colors_choice_.location({10, 10});
+      colors_choice_.width(280);
+      colors_choice_.items().push_back_range({
         {"Apple - xtd::drawing::apple_colors", &xtd::drawing::apple_colors::get_colors},    
         {"Basic - xtd::drawing::basic_colors", &xtd::drawing::basic_colors::get_colors},
         {"Blue - xtd::drawing::blue_colors", &xtd::drawing::blue_colors::get_colors},
@@ -75,39 +73,31 @@ namespace colors_example {
         {"Web - xtd::drawing::colors", &xtd::drawing::colors::get_colors},
         {"System - xtd::drawing::system_colors", &xtd::drawing::system_colors::get_colors},
       });
-      colors_choice.selected_index_changed += [&] {
-        suspend_layout();
-        auto index = selected_index();
-        selected_index(npos);
-        colors_.clear();
-        auto colors = std::any_cast<const std::vector<xtd::drawing::color>&(*)() noexcept>(colors_choice.selected_item().tag());
-        for (auto iterator = colors().rbegin(); iterator != colors().rend(); ++iterator)
-          add_color_panel(*iterator);
-        if (index == npos || colors_.size() == 0) return;
-        if (index < colors_.size()) selected_index(index);
-        else selected_index(colors_.size() - 1);
-        resume_layout();
-      };
-      colors_choice.selected_index(0);
+      colors_choice_.selected_index_changed += {*this, &color_chooser::on_colors_choice_selected_index_changed};
+      colors_choice_.selected_index(0);
 
-      main_panel.dock(xtd::forms::dock_style::fill);
-      main_panel.auto_scroll(true);
+      main_panel_.location({10, 40});
+      //main_panel_.padding(2);
+      //main_panel_.border_style(xtd::forms::border_style::fixed_single);
+      main_panel_.back_color(xtd::drawing::system_colors::window());
+      main_panel_.fore_color(xtd::drawing::system_colors::window_text());
+      main_panel_.size({280, 500});
+      main_panel_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
+      main_panel_.auto_scroll(true);
     }
     
     size_t selected_index() const {return selected_index_;}
     void selected_index(size_t value) {
-      if (selected_index_ != value) {
-        selected_index_ = value;
-        on_selected_index_changed(xtd::event_args::empty);
-      }
+      if (selected_index_ == value) return;
+      selected_index_ = value;
+      on_selected_index_changed(xtd::event_args::empty);
     }
     
     const xtd::drawing::color& selected_color() const {return selected_color_;}
     void selected_color(const xtd::drawing::color& value) {
-      if (selected_color_ != value) {
-        selected_color_ = value;
-        on_selected_color_changed(xtd::event_args::empty);
-      }
+      if (selected_color_ == value) return;
+      selected_color_ = value;
+      on_selected_color_changed(xtd::event_args::empty);
     }
     
     xtd::event<color_chooser, xtd::event_handler> selected_index_changed;
@@ -122,15 +112,32 @@ namespace colors_example {
       color_panel->color(color);
       color_panel->tag(colors_.size());
       colors_.push_back(color_panel);
-      main_panel.controls().push_back(*color_panel);
-      color_panel->click += [&](xtd::object & sender, const xtd::event_args & e) {
-        selected_index(colors_.size() - 1 - std::any_cast<size_t>(xtd::as<control>(sender).tag()));
-      };
+      main_panel_.controls().push_back(*color_panel);
+      color_panel->click += {*this, &color_chooser::on_color_panel_click};
+    }
+    
+    void on_colors_choice_selected_index_changed(xtd::object & sender, const xtd::event_args & e) {
+      suspend_layout();
+      auto index = selected_index();
+      selected_index(npos);
+      colors_.clear();
+      auto colors = std::any_cast<const std::vector<xtd::drawing::color>&(*)() noexcept>(colors_choice_.selected_item().tag());
+      for (auto iterator = colors().rbegin(); iterator != colors().rend(); ++iterator)
+        add_color_panel(*iterator);
+      if (index == npos || colors_.size() == 0) return;
+      if (index < colors_.size()) selected_index(index);
+      else selected_index(colors_.size() - 1);
+      resume_layout();
+    }
+    
+    void on_color_panel_click(xtd::object & sender, const xtd::event_args & e) {
+      selected_index(npos);
+      selected_index(colors_.size() - 1 - std::any_cast<size_t>(xtd::as<control>(sender).tag()));
     }
     
     void on_selected_index_changed(const xtd::event_args& e) {
-      if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(back_color());
-      if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->fore_color(fore_color());
+      if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(main_panel_.back_color());
+      if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->fore_color(main_panel_.fore_color());
       if (selected_index_ == npos)
         selected_color(xtd::drawing::color::empty);
       else {
@@ -154,8 +161,8 @@ namespace colors_example {
     size_t previous_selected_index_ = npos;
     size_t selected_index_ = npos;
     xtd::drawing::color selected_color_ = xtd::drawing::color::empty;
-    xtd::forms::choice colors_choice;
-    xtd::forms::panel main_panel;
+    xtd::forms::choice colors_choice_;
+    xtd::forms::panel main_panel_;
     std::vector<std::shared_ptr<color_panel>> colors_;
   };
 }
