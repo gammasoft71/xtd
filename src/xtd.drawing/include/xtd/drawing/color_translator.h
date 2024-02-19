@@ -37,6 +37,12 @@ namespace xtd {
       /// @return The string that represents the HSL color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g. "hsl(9, 100%, 64%)").
       static xtd::ustring to_hsl(const xtd::drawing::color& value) noexcept;
+      /// @brief Translates the specified xtd::drawing::color structure to an HSL string color representation.
+      /// @param value The xtd::drawing::color structure to translate.
+      /// @param auto_hsla If true and alpha channel is not 100% use HSLA; otherwise always use HSL.
+      /// @return The string that represents the HSL color.
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g. "hsl(9, 100%, 64%)").
+      static xtd::ustring to_hsl(const xtd::drawing::color& value, bool auto_hsla) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an HSLA string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HSL color.
@@ -52,6 +58,12 @@ namespace xtd {
       /// @return The string that represents the RGB color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g."rgb(255, 99, 71)").
       static xtd::ustring to_rgb(const xtd::drawing::color& value) noexcept;
+      /// @brief Translates the specified xtd::drawing::color structure to an RGB string color representation.
+      /// @param value The xtd::drawing::color structure to translate.
+      /// @param auto_rgba If true and alpha channel is not 100% use RGB; otherwise always use RGB.
+      /// @return The string that represents the RGB color.
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g."rgb(255, 99, 71)").
+      static xtd::ustring to_rgb(const xtd::drawing::color& value, bool auto_rgba) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an RGBA string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the RGBA color.

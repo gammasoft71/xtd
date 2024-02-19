@@ -19,6 +19,11 @@ ustring color_translator::to_hex(const color& value) noexcept {
 }
 
 ustring color_translator::to_hsl(const color& value) noexcept {
+  return to_hsl(value, false);
+}
+
+ustring color_translator::to_hsl(const color& value, bool auto_hsla) noexcept {
+  if (auto_hsla && value.a() < 255) return to_hsla(value);
   return ustring::format("hsl({}, {}%, {}%)", as<int32>(value.get_hue()), as<int32>(value.get_saturation() * 100), as<int32>(value.get_lightness() * 100));
 }
 
@@ -31,6 +36,11 @@ ustring color_translator::to_html(const color& value) noexcept {
 }
 
 ustring color_translator::to_rgb(const color& value) noexcept {
+  return to_rgb(value, false);;
+}
+
+ustring color_translator::to_rgb(const color& value, bool auto_rgba) noexcept {
+  if (auto_rgba && value.a() < 255) return to_rgba(value);
   return ustring::format("rgb({}, {}, {})", value.r(), value.g(), value.b());
 }
 
