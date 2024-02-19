@@ -27,6 +27,20 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      static xtd::drawing::color from_hex(const xtd::ustring& text);
+      
+      static xtd::drawing::color from_hsl(const xtd::ustring& text);
+      
+      static xtd::drawing::color from_hsla(const xtd::ustring& text);
+      
+      static xtd::drawing::color from_html(const xtd::ustring& text);
+
+      static xtd::drawing::color from_rgb(const xtd::ustring& text);
+      
+      static xtd::drawing::color from_rgba(const xtd::ustring& text);
+      
+      static xtd::drawing::color from_win32(int32 value);
+
       /// @brief Translates the specified xtd::drawing::color structure to an HEX string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HEX color.
@@ -35,19 +49,35 @@ namespace xtd {
       /// @brief Translates the specified xtd::drawing::color structure to an HSL string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HSL color.
-      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g. "hsl(9, 100%, 64%)").
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSL color (e.g. "hsl(9, 100%, 64%)").
       static xtd::ustring to_hsl(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an HSL string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @param auto_hsla If true and alpha channel is not 100% use HSLA; otherwise always use HSL.
       /// @return The string that represents the HSL color.
-      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g. "hsl(9, 100%, 64%)").
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSL color (e.g. "hsl(9, 100%, 64%)").
       static xtd::ustring to_hsl(const xtd::drawing::color& value, bool auto_hsla) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an HSLA string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HSL color.
-      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g. "hsl(9, 100%, 64%, 0.6)").
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSLA color (e.g. "hsla(9, 100%, 64%, 0.6)").
       static xtd::ustring to_hsla(const xtd::drawing::color& value) noexcept;
+      /// @brief Translates the specified xtd::drawing::color structure to an HSV string color representation.
+      /// @param value The xtd::drawing::color structure to translate.
+      /// @return The string that represents the HSL color.
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSV color (e.g. "hsl(9, 100%, 64%)").
+      static xtd::ustring to_hsv(const xtd::drawing::color& value) noexcept;
+      /// @brief Translates the specified xtd::drawing::color structure to an HSV string color representation.
+      /// @param value The xtd::drawing::color structure to translate.
+      /// @param auto_hsva If true and alpha channel is not 100% use HSLA; otherwise always use HSL.
+      /// @return The string that represents the HSL color.
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSV color (e.g. "hsl(9, 100%, 64%)").
+      static xtd::ustring to_hsv(const xtd::drawing::color& value, bool auto_hsva) noexcept;
+      /// @brief Translates the specified xtd::drawing::color structure to an HSVA string color representation.
+      /// @param value The xtd::drawing::color structure to translate.
+      /// @return The string that represents the HSL color.
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSVA color (e.g. "hsva(9, 100%, 64%, 0.6)").
+      static xtd::ustring to_hsva(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an HTML string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HTML color.
@@ -56,23 +86,38 @@ namespace xtd {
       /// @brief Translates the specified xtd::drawing::color structure to an RGB string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the RGB color.
-      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g."rgb(255, 99, 71)").
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a RGB color (e.g."rgb(255, 99, 71)").
       static xtd::ustring to_rgb(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an RGB string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @param auto_rgba If true and alpha channel is not 100% use RGB; otherwise always use RGB.
       /// @return The string that represents the RGB color.
-      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g."rgb(255, 99, 71)").
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a RGB color (e.g."rgb(255, 99, 71)").
       static xtd::ustring to_rgb(const xtd::drawing::color& value, bool auto_rgba) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an RGBA string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the RGBA color.
-      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g."rgba(255, 99, 71, 0.5)").
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a RGBA color (e.g."rgba(255, 99, 71, 0.5)").
       static xtd::ustring to_rgba(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to a Windows color.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The Windows color value.
       static int32 to_win32(const xtd::drawing::color& value) noexcept;
+      
+    private:
+      inline static constexpr int32 win32_red_shift = 0;
+      inline static constexpr int32 win32_green_shift = 8;
+      inline static constexpr int32 win32_blue_shift = 16;
+      static xtd::ustring from_name(const xtd::drawing::color& value);
+      static bool try_parse_hex_color(const xtd::ustring& text, xtd::drawing::color& result) noexcept;
+      static bool try_parse_hsl_color(const xtd::ustring& text, xtd::drawing::color& result) noexcept;
+      static bool try_parse_hsla_color(const xtd::ustring& text, xtd::drawing::color& result) noexcept;
+      static bool try_parse_hsv_color(const xtd::ustring& text, xtd::drawing::color& result) noexcept;
+      static bool try_parse_hsva_color(const xtd::ustring& text, xtd::drawing::color& result) noexcept;
+      static bool try_parse_html_color(const xtd::ustring& text, xtd::drawing::color& result) noexcept;
+      static bool try_parse_named_color(const xtd::ustring& text, xtd::drawing::color& result) noexcept;
+      static bool try_parse_rgb_color(const xtd::ustring& text, xtd::drawing::color& result) noexcept;
+      static bool try_parse_rgba_color(const xtd::ustring& text, xtd::drawing::color& result) noexcept;
       /// @}
     };
   }
