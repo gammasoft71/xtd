@@ -30,17 +30,17 @@ namespace xtd {
       /// @brief Translates the specified xtd::drawing::color structure to an HEX string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HEX color.
-      /// @remarks This method translates a xtd::drawing::color structure to a string representation of an HEX color. This is the commonly used name of a color, such as "red", "blue", or "green", and not string representation of a numeric color value, such as "#ff6347".
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g. "#ff6347").
       static xtd::ustring to_hex(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an HSL string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HSL color.
-      /// @remarks This method translates a xtd::drawing::color structure to a string representation of an HSL color. This is the commonly used name of a color, such as "red", "blue", or "green", and not string representation of a numeric color value, such as "hsl(9, 100%, 64%)".
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g. "hsl(9, 100%, 64%)").
       static xtd::ustring to_hsl(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an HSLA string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HSL color.
-      /// @remarks This method translates a xtd::drawing::color structure to a string representation of an HSLA color. This is the commonly used name of a color, such as "red", "blue", or "green", and not string representation of a numeric color value, such as "hsl(9, 100%, 64%, 0.6)".
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g. "hsl(9, 100%, 64%, 0.6)").
       static xtd::ustring to_hsla(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an HTML string color representation.
       /// @param value The xtd::drawing::color structure to translate.
@@ -50,12 +50,12 @@ namespace xtd {
       /// @brief Translates the specified xtd::drawing::color structure to an RGB string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the RGB color.
-      /// @remarks This method translates a xtd::drawing::color structure to a string representation of an RGB color. This is the commonly used name of a color, such as "red", "blue", or "green", and not string representation of a numeric color value, such as "rgb(255, 99, 71)".
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g."rgb(255, 99, 71)").
       static xtd::ustring to_rgb(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an RGBA string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the RGBA color.
-      /// @remarks This method translates a xtd::drawing::color structure to a string representation of an RGBA color. This is the commonly used name of a color, such as "red", "blue", or "green", and not string representation of a numeric color value, such as "rgba(255, 99, 71, 0.5)".
+      /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g."rgba(255, 99, 71, 0.5)").
       static xtd::ustring to_rgba(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to a Windows color.
       /// @param value The xtd::drawing::color structure to translate.

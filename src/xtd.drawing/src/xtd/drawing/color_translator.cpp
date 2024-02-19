@@ -15,7 +15,7 @@ namespace {
 }
 
 ustring color_translator::to_hex(const color& value) noexcept {
-  return value.is_named_color() ? from_name(value) : ustring::format("#{:x2}{:x2}{:x2}", value.r(), value.g(), value.b());
+  return ustring::format("#{:x2}{:x2}{:x2}", value.r(), value.g(), value.b());
 }
 
 ustring color_translator::to_hsl(const color& value) noexcept {
@@ -23,19 +23,19 @@ ustring color_translator::to_hsl(const color& value) noexcept {
 }
 
 ustring color_translator::to_hsla(const color& value) noexcept {
-  return ustring::format("hsl({}, {}%, {}%, {:G3})", as<int32>(value.get_hue()), as<int32>(value.get_saturation() * 100), as<int32>(value.get_lightness() * 100), value.a() / 255.0);
+  return ustring::format("hsla({}, {}%, {}%, {:G3})", as<int32>(value.get_hue()), as<int32>(value.get_saturation() * 100), as<int32>(value.get_lightness() * 100), value.a() / 255.0);
 }
 
 ustring color_translator::to_html(const color& value) noexcept {
-  return value.a() != 255 ? to_rgba(value) : to_hex(value);
+  return value.is_named_color() ? from_name(value) : (value.a() != 255 ? to_rgba(value) : to_hex(value));
 }
 
 ustring color_translator::to_rgb(const color& value) noexcept {
-  return value.is_named_color() ? from_name(value) : ustring::format("rgb({}, {}, {})", value.r(), value.g(), value.b());
+  return ustring::format("rgb({}, {}, {})", value.r(), value.g(), value.b());
 }
 
 ustring color_translator::to_rgba(const color& value) noexcept {
-  return value.is_named_color() ? from_name(value) : ustring::format("rgba({}, {}, {}, {:G3})", value.r(), value.g(), value.b(), value.a() / 255.0);
+  return ustring::format("rgba({}, {}, {}, {:G3})", value.r(), value.g(), value.b(), value.a() / 255.0);
 }
 
 int32 color_translator::to_win32(const xtd::drawing::color& value) noexcept {

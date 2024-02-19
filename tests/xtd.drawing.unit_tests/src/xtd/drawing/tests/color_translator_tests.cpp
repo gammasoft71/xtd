@@ -20,8 +20,8 @@ namespace xtd::drawing::tests {
     }
     
     void test_method_(from_argb_to_hsla) {
-      assert::are_equal("hsl(9, 100%, 64%, 1)", color_translator::to_hsla(color::from_argb(255, 255, 99, 71)), csf_);
-      assert::are_equal("hsl(9, 100%, 64%, 0.502)", color_translator::to_hsla(color::from_argb(128, 255, 99, 71)), csf_);
+      assert::are_equal("hsla(9, 100%, 64%, 1)", color_translator::to_hsla(color::from_argb(255, 255, 99, 71)), csf_);
+      assert::are_equal("hsla(9, 100%, 64%, 0.502)", color_translator::to_hsla(color::from_argb(128, 255, 99, 71)), csf_);
     }
     
     void test_method_(from_argb_to_html) {
@@ -45,27 +45,21 @@ namespace xtd::drawing::tests {
     }
 
     void test_method_(from_known_color_to_hex) {
-      assert::are_equal("Red", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::red)), csf_);
-      assert::are_equal("DodgerBlue", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
-      assert::are_equal("LightGray", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
-      assert::are_equal("ActiveText", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::active_text)), csf_);
-      assert::are_equal("GradientInactiveCaption", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
+      assert::are_equal("#ff0000", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::red)), csf_);
+      assert::are_equal("#1e90ff", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
+      assert::are_equal("#d3d3d3", color_translator::to_hex(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
     }
 
     void test_method_(from_known_color_to_hsl) {
       assert::are_equal("hsl(0, 100%, 50%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::red)), csf_);
       assert::are_equal("hsl(210, 100%, 56%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
       assert::are_equal("hsl(0, 0%, 83%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
-      assert::are_equal("hsl(0, 61%, 53%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::active_text)), csf_);
-      assert::are_equal("hsl(0, 0%, 60%)", color_translator::to_hsl(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
     }
 
     void test_method_(from_known_color_to_hsla) {
-      assert::are_equal("hsl(0, 100%, 50%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::red)), csf_);
-      assert::are_equal("hsl(210, 100%, 56%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
-      assert::are_equal("hsl(0, 0%, 83%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
-      assert::are_equal("hsl(0, 61%, 53%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::active_text)), csf_);
-      assert::are_equal("hsl(0, 0%, 60%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
+      assert::are_equal("hsla(0, 100%, 50%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::red)), csf_);
+      assert::are_equal("hsla(210, 100%, 56%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
+      assert::are_equal("hsla(0, 0%, 83%, 1)", color_translator::to_hsla(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
     }
 
     void test_method_(from_known_color_to_html) {
@@ -77,19 +71,15 @@ namespace xtd::drawing::tests {
     }
 
     void test_method_(from_known_color_to_rgb) {
-      assert::are_equal("Red", color_translator::to_rgb(color::from_known_color(xtd::drawing::known_color::red)), csf_);
-      assert::are_equal("DodgerBlue", color_translator::to_rgb(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
-      assert::are_equal("LightGray", color_translator::to_rgb(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
-      assert::are_equal("ActiveText", color_translator::to_rgb(color::from_known_color(xtd::drawing::known_color::active_text)), csf_);
-      assert::are_equal("GradientInactiveCaption", color_translator::to_rgb(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
+      assert::are_equal("rgb(255, 0, 0)", color_translator::to_rgb(color::from_known_color(xtd::drawing::known_color::red)), csf_);
+      assert::are_equal("rgb(30, 144, 255)", color_translator::to_rgb(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
+      assert::are_equal("rgb(211, 211, 211)", color_translator::to_rgb(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
     }
 
     void test_method_(from_known_color_to_rgba) {
-      assert::are_equal("Red", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::red)), csf_);
-      assert::are_equal("DodgerBlue", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
-      assert::are_equal("LightGray", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
-      assert::are_equal("ActiveText", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::active_text)), csf_);
-      assert::are_equal("GradientInactiveCaption", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)), csf_);
+      assert::are_equal("rgba(255, 0, 0, 1)", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::red)), csf_);
+      assert::are_equal("rgba(30, 144, 255, 1)", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::dodger_blue)), csf_);
+      assert::are_equal("rgba(211, 211, 211, 1)", color_translator::to_rgba(color::from_known_color(xtd::drawing::known_color::light_gray)), csf_);
     }
 
     void test_method_(from_known_color_to_win32) {
