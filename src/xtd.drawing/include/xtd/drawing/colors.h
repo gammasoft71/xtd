@@ -21,7 +21,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing drawing colors
     /// @remarks The color objects returned by this class are immutable, meaning their properties cannot be changed.
     class drawing_export_ colors final static_ {
     public:

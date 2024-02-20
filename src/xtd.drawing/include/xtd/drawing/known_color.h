@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing drawing colors
     /// @see xtd::drawing::color
     enum class known_color {
       // 0 - reserved for "not a known color"

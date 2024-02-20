@@ -9,12 +9,16 @@
 /// @brief collections definitions.
 /// @ingroup system
 
+/// @defgroup colors colors
+/// @brief Represents color definitions.
+/// @ingroup drawing
+
 /// @defgroup components components
 /// @brief Components are objects that an application uses in conjunction with another window.
 /// @ingroup gui
 
 /// @defgroup containers containers
-/// @brief Containers are  container for other controls.
+/// @brief Containers are container for other controls.
 /// @ingroup gui
 
 /// @defgroup controls controls
