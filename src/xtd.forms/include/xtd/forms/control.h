@@ -834,6 +834,198 @@ namespace xtd {
       /// @param name The name of the control.
       /// @return New control created.
       static control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create a specified control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create() {
+        control_t item;
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified location.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const drawing::point& location) {
+        control_t item;
+        item.location(location);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const drawing::point& location, const drawing::size& size) {
+        control_t item;
+        item.location(location);
+        item.size(size);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param name The name of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+        control_t item;
+        item.location(location);
+        item.size(size);
+        item.name(name);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified parent.
+      /// @param parent The parent that contains the new created control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const control& parent) {
+        control_t item;
+        item.parent(parent);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified parent, and location.
+      /// @param parent The parent that contains the new created control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const control& parent, const drawing::point& location) {
+        control_t item;
+        item.parent(parent);
+        item.location(location);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified parent, location, and size.
+      /// @param parent The parent that contains the new created control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const control& parent, const drawing::point& location, const drawing::size& size) {
+        control_t item;
+        item.parent(parent);
+        item.location(location);
+        item.size(size);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param name The name of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+        control_t item;
+        item.parent(parent);
+        item.location(location);
+        item.size(size);
+        item.name(name);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified text.
+      /// @param text A string that represent text of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const xtd::ustring& text) {
+        control_t item;
+        item.text(text);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified text, and location.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const xtd::ustring& text, const drawing::point& location) {
+        control_t item;
+        item.text(text);
+        item.location(location);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified text, location, and size.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+        control_t item;
+        item.text(text);
+        item.location(location);
+        item.size(size);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified text, location,size, and name.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param name The name of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+        control_t item;
+        item.text(text);
+        item.location(location);
+        item.size(size);
+        item.name(name);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified parent, and text.
+      /// @param parent The parent that contains the new created control.
+      /// @param text A string that represent text of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const control& parent, const xtd::ustring& text) {
+        control_t item;
+        item.parent(parent);
+        item.text(text);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified parent, text, and location.
+      /// @param parent The parent that contains the new created control.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+        control_t item;
+        item.parent(parent);
+        item.text(text);
+        item.location(location);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified parent, text, location, and size.
+      /// @param parent The parent that contains the new created control.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+        control_t item;
+        item.parent(parent);
+        item.text(text);
+        item.location(location);
+        item.size(size);
+        return item;
+      }
+      /// @brief A factory to create a specified control with specified parent, text, location, size, and name.
+      /// @param parent The parent that contains the new created control.
+      /// @param text A string that represent text of the control.
+      /// @param location A xtd::drawing::point that represent location of the control.
+      /// @param size A xtd::drawing::size that represent size of the control.
+      /// @param name The name of the control.
+      /// @return New control created.
+      template<typename control_t>
+      static control_t create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+        control_t item;
+        item.parent(parent);
+        item.text(text);
+        item.location(location);
+        item.size(size);
+        item.name(name);
+        return item;
+      }
 
       /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
       /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.
