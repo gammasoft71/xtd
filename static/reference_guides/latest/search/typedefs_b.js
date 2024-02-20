@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['magenta_5fcolors_0',['magenta_colors',['../group__drawing.html#ga93fe9c12f0db7ff77ce77110a1f0e430',1,'xtd::drawing']]],
+  ['magenta_5fcolors_0',['magenta_colors',['../group__colors.html#ga93fe9c12f0db7ff77ce77110a1f0e430',1,'xtd::drawing']]],
   ['main_5fmenu_5fref_1',['main_menu_ref',['../classxtd_1_1forms_1_1form.html#a288dbba26aafa32f55ed924e5fc29445',1,'xtd::forms::form']]],
   ['margin_2',['margin',['../group__style__sheets.html#ga6e27be4676daa69a3f7135b9a9391017',1,'xtd::forms::style_sheets']]],
   ['menu_5fitem_5fcollection_3',['menu_item_collection',['../classxtd_1_1forms_1_1menu.html#a7434673bc425c4f9b9e5a965195e81d2',1,'xtd::forms::menu']]],

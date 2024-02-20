@@ -342,7 +342,7 @@ var searchData=
   ['expressionless_5fface_339',['expressionless_face',['../classxtd_1_1forms_1_1emoticons.html#a0058a6a3520483f1b68e08c5ae851a72',1,'xtd::forms::emoticons']]],
   ['exsel_340',['exsel',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea4e94d941c8b169755652c101776717d4',1,'xtd::forms']]],
   ['extended_341',['extended',['../group__xtd__drawing.html#gga9e8366816379505a879f17e5b0ce7be2ad3e78e3d3b68cb0fbd9f66dcaef93cea',1,'xtd::drawing::imaging']]],
-  ['extended_5fcolors_342',['extended_colors',['../group__drawing.html#gab61979abd08f9b1a4a9b528f54879237',1,'xtd::drawing']]],
+  ['extended_5fcolors_342',['extended_colors',['../group__colors.html#gab61979abd08f9b1a4a9b528f54879237',1,'xtd::drawing']]],
   ['extended_5fcolors_2eh_343',['extended_colors.h',['../extended__colors_8h.html',1,'']]],
   ['extension_344',['extension',['../classxtd_1_1io_1_1file__system__info.html#a9b5e207d2b394016e08250dc85f2ce47',1,'xtd::io::file_system_info']]],
   ['external_5fleading_345',['external_leading',['../group__xtd__forms.html#gga12b406a1ff6df3c0af717121e6c37257a90bf2916e4195a77c85ed90ad68de137',1,'xtd::forms']]],

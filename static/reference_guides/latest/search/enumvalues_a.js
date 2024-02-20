@@ -7,5 +7,5 @@ var searchData=
   ['keep_5falive_5fvalues_4',['keep_alive_values',['../group__xtd__core.html#ggafcb65e427e8409a46ea4ddaee074a5b2a2c7ad16cf67c088f4ed62e9195ec4feb',1,'xtd::net::sockets']]],
   ['keep_5fdelimiter_5',['keep_delimiter',['../group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67409182289af813f14c338992cb93c4',1,'xtd']]],
   ['key_5fcode_6',['key_code',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea3e8d9bc161b0b2ac45005f7c269c84bb',1,'xtd::forms']]],
-  ['khaki_7',['khaki',['../group__xtd__drawing.html#ggabb6249e3fb8a4388778157257e99049ba12284913bfe16bebd8bc809573f0387a',1,'xtd::drawing']]]
+  ['khaki_7',['khaki',['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba12284913bfe16bebd8bc809573f0387a',1,'xtd::drawing']]]
 ];
