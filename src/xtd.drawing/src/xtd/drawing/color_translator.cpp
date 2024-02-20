@@ -28,6 +28,20 @@ color color_translator::from_hsla(const ustring& text) {
   return result;
 }
 
+color color_translator::from_hsv(const ustring& text) {
+  auto result = color::empty;
+  if (ustring::is_empty(text)) return result;
+  if (try_parse_hsv_color(text, result) == false) throw format_exception {csf_};
+  return result;
+}
+
+color color_translator::from_hsva(const ustring& text) {
+  auto result = color::empty;
+  if (ustring::is_empty(text)) return result;
+  if (try_parse_hsva_color(text, result) == false) throw format_exception {csf_};
+  return result;
+}
+
 color color_translator::from_html(const ustring& text) {
   auto result = color::empty;
   if (ustring::is_empty(text)) return result;
@@ -50,11 +64,15 @@ color color_translator::from_rgba(const ustring& text) {
 }
 
 color color_translator::from_win32(int32 value) {
-  auto result = color::empty;
-  return result;
+  return color::from_argb(as<byte>((value >> win32_red_shift) & 0xFF), as<byte>((value >> win32_green_shift) & 0xFF), as<byte>((value >> win32_blue_shift) & 0xFF));
 }
 
 ustring color_translator::to_hex(const color& value) noexcept {
+  return to_hex(value, false);
+}
+
+ustring color_translator::to_hex(const color& value, bool auto_alpha) noexcept {
+  if (auto_alpha && value.a() < 255) return ustring::format("#{:x2}{:x2}{:x2}{:x2}", value.r(), value.g(), value.b(), value.a());
   return ustring::format("#{:x2}{:x2}{:x2}", value.r(), value.g(), value.b());
 }
 
