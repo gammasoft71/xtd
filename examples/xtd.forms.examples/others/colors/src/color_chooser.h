@@ -50,7 +50,7 @@ namespace colors_example {
     
   public:
     color_chooser() {
-      size({300, 550});
+      size({300, 250});
       controls().push_back_range({main_panel_, colors_choice_});
 
       colors_choice_.location({10, 10});
@@ -81,7 +81,7 @@ namespace colors_example {
       //main_panel_.border_style(xtd::forms::border_style::fixed_single);
       main_panel_.back_color(xtd::drawing::system_colors::window());
       main_panel_.fore_color(xtd::drawing::system_colors::window_text());
-      main_panel_.size({280, 500});
+      main_panel_.size({280, 200});
       main_panel_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
       main_panel_.auto_scroll(true);
     }

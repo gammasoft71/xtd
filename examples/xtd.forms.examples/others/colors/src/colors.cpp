@@ -10,13 +10,13 @@ namespace colors_example {
   public:
     main_form() {
       text("Colors example");
-      client_size({700, 590});
-      minimum_client_size({700, 590});
+      client_size({750, 630});
+      minimum_client_size({750, 630});
 
       colors.parent(*this);
       colors.border_style(xtd::forms::border_style::rounded);
       colors.location({10, 10});
-      colors.size({300, 570});
+      colors.size({300, 610});
       colors.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);
       colors.selected_color_changed += [&] {
         editor.color(colors.selected_color());
@@ -25,7 +25,7 @@ namespace colors_example {
       editor.parent(*this);
       editor.border_style(xtd::forms::border_style::rounded);
       editor.location({320, 10});
-      editor.size({370, 570});
+      editor.size({420, 610});
       editor.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       
       colors.selected_index(0ul);

@@ -7,12 +7,13 @@
 #include <xtd/forms/text_box>
 #include <xtd/forms/track_bar>
 #include <xtd/forms/user_control>
+#include <xtd/int32>
 
 namespace colors_example {
   class color_editor final : public xtd::forms::user_control {
   public:
     color_editor() {
-      size({300, 550});
+      size({300, 580});
       
       alpha_label_.parent(*this);
       alpha_label_.location({55, 15});
@@ -137,20 +138,26 @@ namespace colors_example {
       hsl_label_.auto_size(true);
       hsl_label_.text("HSL :");
       
+      hsv_label_.parent(*this);
+      hsv_label_.location({55, 457});
+      hsv_label_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom);
+      hsv_label_.auto_size(true);
+      hsv_label_.text("HSV :");
+
       html_label_.parent(*this);
-      html_label_.location({55, 457});
+      html_label_.location({55, 487});
       html_label_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom);
       html_label_.auto_size(true);
       html_label_.text("HTML :");
       
       rgb_label_.parent(*this);
-      rgb_label_.location({55, 487});
+      rgb_label_.location({55, 517});
       rgb_label_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom);
       rgb_label_.auto_size(true);
       rgb_label_.text("RGB :");
       
       win32_label_.parent(*this);
-      win32_label_.location({55, 517});
+      win32_label_.location({55, 547});
       win32_label_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom);
       win32_label_.auto_size(true);
       win32_label_.text("Win32 :");
@@ -159,31 +166,85 @@ namespace colors_example {
       hex_ltext_box_.location({110, 395});
       hex_ltext_box_.width(140);
       hex_ltext_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      hex_ltext_box_.read_only(true);
+      hex_ltext_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+        if (e.key_code() != xtd::forms::keys::enter) return;
+        try {
+          color(xtd::drawing::color_translator::from_hex(hex_ltext_box_.text()));
+        } catch(...) {
+        }
+      };
 
       hsl_text_box_.parent(*this);
       hsl_text_box_.location({110, 425});
       hsl_text_box_.width(140);
       hsl_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      hsl_text_box_.read_only(true);
+      hsl_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+        if (e.key_code() != xtd::forms::keys::enter) return;
+        try {
+          color(xtd::drawing::color_translator::from_hsl(hsl_text_box_.text()));
+        } catch(...) {
+          try {
+            color(xtd::drawing::color_translator::from_hsla(hsl_text_box_.text()));
+          } catch(...) {
+          }
+        }
+      };
+
+      hsv_text_box_.parent(*this);
+      hsv_text_box_.location({110, 455});
+      hsv_text_box_.width(140);
+      hsv_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
+      hsv_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+        if (e.key_code() != xtd::forms::keys::enter) return;
+        try {
+          color(xtd::drawing::color_translator::from_hsv(hsv_text_box_.text()));
+        } catch(...) {
+          try {
+            color(xtd::drawing::color_translator::from_hsva(hsv_text_box_.text()));
+          } catch(...) {
+          }
+        }
+      };
 
       html_text_box_.parent(*this);
-      html_text_box_.location({110, 455});
+      html_text_box_.location({110, 485});
       html_text_box_.width(140);
       html_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      html_text_box_.read_only(true);
+      html_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+        if (e.key_code() != xtd::forms::keys::enter) return;
+        try {
+          color(xtd::drawing::color_translator::from_html(html_text_box_.text()));
+        } catch(...) {
+        }
+      };
 
       rgb_text_box_.parent(*this);
-      rgb_text_box_.location({110, 485});
+      rgb_text_box_.location({110, 515});
       rgb_text_box_.width(140);
       rgb_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      rgb_text_box_.read_only(true);
+      rgb_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+        if (e.key_code() != xtd::forms::keys::enter) return;
+        try {
+          color(xtd::drawing::color_translator::from_rgb(rgb_text_box_.text()));
+        } catch(...) {
+          try {
+            color(xtd::drawing::color_translator::from_rgba(rgb_text_box_.text()));
+          } catch(...) {
+          }
+        }
+      };
 
       win32_text_box_.parent(*this);
-      win32_text_box_.location({110, 515});
+      win32_text_box_.location({110, 545});
       win32_text_box_.width(140);
       win32_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      win32_text_box_.read_only(true);
+      win32_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+        if (e.key_code() != xtd::forms::keys::enter) return;
+        try {
+          color(xtd::drawing::color_translator::from_win32(xtd::int32_object::parse(win32_text_box_.text(), xtd::number_styles::hex_number)));
+        } catch(...) {
+        }
+      };
     }
     
     void color(const xtd::drawing::color& value) {
@@ -206,11 +267,12 @@ namespace colors_example {
       green_numeric_up_down_.value(color_.g());
       blue_track_bar_.value(color_.b());
       blue_numeric_up_down_.value(color_.b());
-      hex_ltext_box_.text(xtd::drawing::color_translator::to_hex(color_));
+      hex_ltext_box_.text(xtd::drawing::color_translator::to_hex(color_, true));
       hsl_text_box_.text(xtd::drawing::color_translator::to_hsl(color_, true));
+      hsv_text_box_.text(xtd::drawing::color_translator::to_hsv(color_, true));
       html_text_box_.text(xtd::drawing::color_translator::to_html(color_));
       rgb_text_box_.text(xtd::drawing::color_translator::to_rgb(color_, true));
-      win32_text_box_.text(xtd::ustring::format("{0} (0x{0:x6})", xtd::drawing::color_translator::to_win32(color_)));
+      win32_text_box_.text(xtd::ustring::format("0x{:x6}", xtd::drawing::color_translator::to_win32(color_)));
       color_changed(*this, e);
     }
     
@@ -235,11 +297,13 @@ namespace colors_example {
     xtd::forms::panel color_box_panel_;
     xtd::forms::label hex_label_;
     xtd::forms::label hsl_label_;
+    xtd::forms::label hsv_label_;
     xtd::forms::label html_label_;
     xtd::forms::label rgb_label_;
     xtd::forms::label win32_label_;
     xtd::forms::text_box hex_ltext_box_;
     xtd::forms::text_box hsl_text_box_;
+    xtd::forms::text_box hsv_text_box_;
     xtd::forms::text_box html_text_box_;
     xtd::forms::text_box rgb_text_box_;
     xtd::forms::text_box win32_text_box_;
