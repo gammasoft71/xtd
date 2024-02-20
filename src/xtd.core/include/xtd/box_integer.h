@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "box.h"
+#include "number_styles.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -43,11 +44,30 @@ namespace xtd {
     box_integer& operator =(const box_integer&) = default;
     /// @endcond
     
+    /// @name Fields
+    
+    /// @{
     /// @brief Represents the largest possible value of type_t. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<type_t>::max().
     static constexpr type_t max_value = std::numeric_limits<type_t>::max();
     /// @brief Represents the smallest possible value of type_t. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<type_t>::lowest().
     static constexpr type_t min_value = std::numeric_limits<type_t>::lowest();
+    /// @}
+    
+    /// @name Methods
+    
+    /// @{
+    using box<type_t>::parse;
+    /// @brief Converts the string to its type_t equivalent.
+    /// @param value A string containing a type_t to convert.
+    /// @return A type_t equivalent to the number contained in value.
+    static type_t parse(const xtd::ustring& value, xtd::number_styles styles) {return xtd::parse<type_t>(value, styles);}
+    using box<type_t>::try_parse;
+    /// @brief Converts the string to its type_t equivalent.
+    /// @param value A string containing a type_t to convert.
+    /// @return A type_t equivalent to the number contained in value.
+    static bool parse(const xtd::ustring& value, type_t& result, xtd::number_styles styles) {return xtd::try_parse<type_t>(value, result, styles);}
+    /// @}
   };
 }
