@@ -32,7 +32,7 @@ namespace xtd {
       /// @name Constructors
 
       /// @{
-      /// @brief Create a xtd::threaing::lock_guard object and acquires an exclusive lock on the specified obj.
+      /// @brief Create a xtd::threading::lock_guard object and acquires an exclusive lock on the specified obj.
       /// @param obj The object on which to acquire the monitor lock.
       /// @remarks When the xtd::threading::lock_guard destroyed it releases the exclusive lock specified in the constructor.
       template<typename object_t>
