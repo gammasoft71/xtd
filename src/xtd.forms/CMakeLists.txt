@@ -772,6 +772,7 @@ add_sources(
   src/xtd/forms/color_picker.cpp
   src/xtd/forms/combo_box.cpp
   src/xtd/forms/command_link_button.cpp
+  src/xtd/forms/command_link_buttons.cpp
   src/xtd/forms/common_dialog.cpp
   src/xtd/forms/component.cpp
   src/xtd/forms/container_control.cpp
