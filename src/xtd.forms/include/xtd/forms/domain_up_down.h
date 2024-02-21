@@ -144,21 +144,78 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief A factory to create an xtd::forms::domain_up_down with specified items, selected_index, location, size, and name.
+      /// @brief A factory to create an xtd::forms::domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create();
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified items.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const object_collection& items);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified items, and selected_index.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const object_collection& items, size_t selected_index);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified items, selected_index, and location.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const object_collection& items, size_t selected_index, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified items, selected_index, location, and size.
       /// @param items A choice::object_collection representing the items in the domain_up_down.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::domain_up_down.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::domain_up_down.
       /// @return New xtd::forms::domain_up_down created.
-      static domain_up_down create(const object_collection& items, size_t selected_index = object_collection::npos, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::domain_up_down with specified parent, items, selected_index, location, size, and name.
+      static domain_up_down create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified items, selected_index, location, size, and name.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::domain_up_down.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::domain_up_down.
+      /// @param name The name of the xtd::forms::domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const control& parent);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified parent, and items.
+      /// @param parent The parent that contains the new created xtd::forms::domain_up_down.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const control& parent, const object_collection& items);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified parent, items, and selected_index.
+      /// @param parent The parent that contains the new created xtd::forms::domain_up_down.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const control& parent, const object_collection& items, size_t selected_index);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified parent, items, selected_index, and location.
+      /// @param parent The parent that contains the new created xtd::forms::domain_up_down.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified parent, items, selected_index, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::domain_up_down.
       /// @param items A choice::object_collection representing the items in the domain_up_down.
       /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::domain_up_down.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::domain_up_down.
       /// @return New xtd::forms::domain_up_down created.
-      static domain_up_down create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static domain_up_down create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::domain_up_down with specified parent, items, selected_index, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::domain_up_down.
+      /// @param items A choice::object_collection representing the items in the domain_up_down.
+      /// @param selected_index A zero-based index of the currently selected item. The xtd::forms::domain_up_down::object_collection::npos is returned if no item is selected.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::domain_up_down.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::domain_up_down.
+      /// @param name The name of the xtd::forms::domain_up_down.
+      /// @return New xtd::forms::domain_up_down created.
+      static domain_up_down create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
       /// @name Events
