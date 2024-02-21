@@ -100,6 +100,21 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::button.
       /// @return New xtd::forms::button created.
       static button create();
+      /// @brief A factory to create an xtd::forms::button with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
+      /// @return New xtd::forms::button created.
+      static button create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::button with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
+      /// @return New xtd::forms::button created.
+      static button create(const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::button with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
+      /// @param name The name of the xtd::forms::button.
+      /// @return New xtd::forms::button created.
+      static button create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::button with specified text.
       /// @param text A string that represent text of the xtd::forms::button.
       /// @return New xtd::forms::button created.
@@ -126,6 +141,24 @@ namespace xtd {
       /// @param parent The parent that contains the new created xtd::forms::button.
       /// @return New xtd::forms::button created.
       static button create(const control& parent);
+      /// @brief A factory to create an xtd::forms::button with specified parent, location.
+      /// @param parent The parent that contains the new created xtd::forms::button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
+      /// @return New xtd::forms::button created.
+      static button create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::button with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
+      /// @return New xtd::forms::button created.
+      static button create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::button with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::button.
+      /// @param name The name of the xtd::forms::button.
+      /// @return New xtd::forms::button created.
+      static button create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::button with specified parent, and text.
       /// @param parent The parent that contains the new created xtd::forms::button.
       /// @param text A string that represent text of the xtd::forms::button.

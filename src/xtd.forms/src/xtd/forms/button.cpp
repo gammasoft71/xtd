@@ -81,6 +81,27 @@ button button::create() {
   return button {};
 }
 
+button button::create(const drawing::point& location) {
+  auto result = button {};
+  result.location(location);
+  return result;
+}
+
+button button::create(const drawing::point& location, const drawing::size& size) {
+  auto result = button {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+button button::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = button {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 button button::create(const xtd::ustring& text) {
   auto result = button {};
   result.text(text);
@@ -114,6 +135,27 @@ button button::create(const xtd::ustring& text, const drawing::point& location, 
 button button::create(const control& parent) {
   auto result = button {};
   result.parent(parent);
+  return result;
+}
+
+button button::create(const control& parent, const drawing::point& location) {
+  auto result = button {};
+  result.location(location);
+  return result;
+}
+
+button button::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = button {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+button button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = button {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
