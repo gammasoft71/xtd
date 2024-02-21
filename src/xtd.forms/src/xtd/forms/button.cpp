@@ -140,12 +140,14 @@ button button::create(const control& parent) {
 
 button button::create(const control& parent, const drawing::point& location) {
   auto result = button {};
+  result.parent(parent);
   result.location(location);
   return result;
 }
 
 button button::create(const control& parent, const drawing::point& location, const drawing::size& size) {
   auto result = button {};
+  result.parent(parent);
   result.location(location);
   result.size(size);
   return result;
@@ -153,6 +155,7 @@ button button::create(const control& parent, const drawing::point& location, con
 
 button button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = button {};
+  result.parent(parent);
   result.location(location);
   result.size(size);
   result.name(name);
