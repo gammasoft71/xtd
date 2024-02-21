@@ -220,6 +220,7 @@
 #include "forms/known_themed_color.h"
 #include "forms/label.h"
 #include "forms/label_renderer.h"
+#include "forms/labels.h"
 #include "forms/lcd_label.h"
 #include "forms/lcd_style.h"
 #include "forms/left_right_alignment.h"
