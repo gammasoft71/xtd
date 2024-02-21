@@ -764,6 +764,7 @@ add_sources(
   src/xtd/forms/buttons.cpp
   src/xtd/forms/check_box.cpp
   src/xtd/forms/check_box_renderer.cpp
+  src/xtd/forms/check_boxes.cpp
   src/xtd/forms/checked_list_box.cpp
   src/xtd/forms/choice.cpp
   src/xtd/forms/collapsible_panel.cpp
