@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/labels.h"
+#include "../../../include/xtd/forms/system_texts.h"
 
 using namespace xtd;
 using namespace xtd::forms;
