@@ -98,9 +98,54 @@ choice choice::create() {
   return choice {};
 }
 
+choice choice::create(const drawing::point& location) {
+  auto result = choice {};
+  result.location(location);
+  return result;
+}
+
+choice choice::create(const drawing::point& location, const drawing::size& size) {
+  auto result = choice {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+choice choice::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = choice {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 choice choice::create(const object_collection& items) {
   auto result = choice {};
   result.items(items);
+  return result;
+}
+
+choice choice::create(const object_collection& items, const drawing::point& location) {
+  auto result = choice {};
+  result.items(items);
+  result.location(location);
+  return result;
+}
+
+choice choice::create(const object_collection& items, const drawing::point& location, const drawing::size& size) {
+  auto result = choice {};
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+choice choice::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = choice {};
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
@@ -144,10 +189,61 @@ choice choice::create(const control& parent) {
   return result;
 }
 
+choice choice::create(const control& parent, const drawing::point& location) {
+  auto result = choice {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+choice choice::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = choice {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+choice choice::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = choice {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 choice choice::create(const control& parent, const object_collection& items) {
   auto result = choice {};
   result.parent(parent);
   result.items(items);
+  return result;
+}
+
+choice choice::create(const control& parent, const object_collection& items, const drawing::point& location) {
+  auto result = choice {};
+  result.parent(parent);
+  result.items(items);
+  result.location(location);
+  return result;
+}
+
+choice choice::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size) {
+  auto result = choice {};
+  result.parent(parent);
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+choice choice::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = choice {};
+  result.parent(parent);
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
