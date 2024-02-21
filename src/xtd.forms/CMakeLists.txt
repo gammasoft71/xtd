@@ -759,6 +759,7 @@ add_sources(
   src/xtd/forms/button.cpp
   src/xtd/forms/button_base.cpp
   src/xtd/forms/button_renderer.cpp
+  src/xtd/forms/buttons.cpp
   src/xtd/forms/check_box.cpp
   src/xtd/forms/check_box_renderer.cpp
   src/xtd/forms/checked_list_box.cpp
