@@ -70,6 +70,27 @@ animation animation::create() {
   return animation {};
 }
 
+animation animation::create(const drawing::point& location) {
+  auto result = animation {};
+  result.location(location);
+  return result;
+}
+
+animation animation::create(const drawing::point& location, const drawing::size& size) {
+  auto result = animation {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+animation animation::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = animation {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 animation animation::create(uint32 frames_per_second) {
   auto result = animation {};
   result.frames_per_second(frames_per_second);
@@ -103,6 +124,30 @@ animation animation::create(uint32 frames_per_second, const drawing::point& loca
 animation animation::create(const control& parent) {
   auto result = animation {};
   result.parent(parent);
+  return result;
+}
+
+animation animation::create(const control& parent, const drawing::point& location) {
+  auto result = animation {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+animation animation::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = animation {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+animation animation::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = animation {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
