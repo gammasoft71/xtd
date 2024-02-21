@@ -333,6 +333,8 @@ add_sources(
   include/xtd/forms/label
   include/xtd/forms/label_renderer.h
   include/xtd/forms/label_renderer
+  include/xtd/forms/labels.h
+  include/xtd/forms/labels
   include/xtd/forms/lcd_label.h
   include/xtd/forms/lcd_label
   include/xtd/forms/lcd_style.h
@@ -821,6 +823,7 @@ add_sources(
   src/xtd/forms/input_dialog.cpp
   src/xtd/forms/label.cpp
   src/xtd/forms/label_renderer.cpp
+  src/xtd/forms/labels.cpp
   src/xtd/forms/lcd_label.cpp
   src/xtd/forms/light_button.cpp
   src/xtd/forms/link_area.cpp
