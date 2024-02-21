@@ -77,9 +77,9 @@ checked_list_box::checked_index_collection checked_list_box::checked_indices() c
 }
 
 checked_list_box::checked_item_collection checked_list_box::checked_items() const noexcept {
-  auto itms = checked_item_collection {};
-  copy_if(data_->items.begin(), data_->items.end(), itms.end(), [&](auto item) {return item.checked();});
-  return itms;
+  auto items = checked_item_collection {};
+  copy_if(data_->items.begin(), data_->items.end(), back_inserter(items), [&](auto item) {return item.checked();});
+  return items;
 }
 
 checked_list_box::object_collection& checked_list_box::items() noexcept {
