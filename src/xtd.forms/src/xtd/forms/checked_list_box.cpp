@@ -153,9 +153,54 @@ checked_list_box checked_list_box::create() {
   return checked_list_box {};
 }
 
+checked_list_box checked_list_box::create(const drawing::point& location) {
+  auto result = checked_list_box {};
+  result.location(location);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const drawing::point& location, const drawing::size& size) {
+  auto result = checked_list_box {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = checked_list_box {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 checked_list_box checked_list_box::create(const object_collection& items) {
   auto result = checked_list_box {};
   result.items(items);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const object_collection& items, const drawing::point& location) {
+  auto result = checked_list_box {};
+  result.items(items);
+  result.location(location);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size) {
+  auto result = checked_list_box {};
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = checked_list_box {};
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
@@ -199,10 +244,61 @@ checked_list_box checked_list_box::create(const control& parent) {
   return result;
 }
 
+checked_list_box checked_list_box::create(const control& parent, const drawing::point& location) {
+  auto result = checked_list_box {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = checked_list_box {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = checked_list_box {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items) {
   auto result = checked_list_box {};
   result.parent(parent);
   result.items(items);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, const drawing::point& location) {
+  auto result = checked_list_box {};
+  result.parent(parent);
+  result.items(items);
+  result.location(location);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size) {
+  auto result = checked_list_box {};
+  result.parent(parent);
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+checked_list_box checked_list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = checked_list_box {};
+  result.parent(parent);
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
