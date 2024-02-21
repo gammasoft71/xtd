@@ -126,6 +126,64 @@ check_box check_box::create(const xtd::ustring& text) {
   return result;
 }
 
+check_box check_box::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = check_box {};
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+check_box check_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = check_box {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+check_box check_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = check_box {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state check_state) {
+  auto result = check_box {};
+  result.text(text);
+  result.check_state(check_state);
+  return result;
+}
+
+check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location) {
+  auto result = check_box {};
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  return result;
+}
+
+check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+  auto result = check_box {};
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = check_box {};
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 check_box check_box::create(const xtd::ustring& text, bool three_state) {
   auto result = check_box {};
   result.text(text);
@@ -184,6 +242,71 @@ check_box check_box::create(const control& parent, const xtd::ustring& text) {
   return result;
 }
 
+check_box check_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+  auto result = check_box {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+check_box check_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = check_box {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+check_box check_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = check_box {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state) {
+  auto result = check_box {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  return result;
+}
+
+check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location) {
+  auto result = check_box {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  return result;
+}
+
+check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
+  auto result = check_box {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = check_box {};
+  result.parent(parent);
+  result.text(text);
+  result.check_state(check_state);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 check_box check_box::create(const control& parent, const xtd::ustring& text, bool three_state) {
   auto result = check_box {};
   result.parent(parent);
@@ -227,78 +350,6 @@ check_box check_box::create(const control& parent, const xtd::ustring& text, boo
   result.parent(parent);
   result.text(text);
   result.three_state(three_state);
-  result.check_state(check_state);
-  result.location(location);
-  result.size(size);
-  result.name(name);
-  return result;
-}
-
-check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state check_state) {
-  auto result = check_box {};
-  result.text(text);
-  result.check_state(check_state);
-  return result;
-}
-
-check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location) {
-  auto result = check_box {};
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  return result;
-}
-
-check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
-  auto result = check_box {};
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  result.size(size);
-  return result;
-}
-
-check_box check_box::create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  auto result = check_box {};
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  result.size(size);
-  result.name(name);
-  return result;
-}
-
-check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state) {
-  auto result = check_box {};
-  result.parent(parent);
-  result.text(text);
-  result.check_state(check_state);
-  return result;
-}
-
-check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location) {
-  auto result = check_box {};
-  result.parent(parent);
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  return result;
-}
-
-check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size) {
-  auto result = check_box {};
-  result.parent(parent);
-  result.text(text);
-  result.check_state(check_state);
-  result.location(location);
-  result.size(size);
-  return result;
-}
-
-check_box check_box::create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  auto result = check_box {};
-  result.parent(parent);
-  result.text(text);
   result.check_state(check_state);
   result.location(location);
   result.size(size);
