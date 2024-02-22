@@ -82,15 +82,69 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::date_time_picker.
       /// @return New xtd::forms::date_time_picker created.
       static date_time_picker create();
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::date_time_picker with specified value.
       /// @param value The date and time value assign to the control.
       /// @return New xtd::forms::date_time_picker created.
       static date_time_picker create(const xtd::date_time& value);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified value, and location.
+      /// @param value The date and time value assign to the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const xtd::date_time& value, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified value, location, and size.
+      /// @param value The date and time value assign to the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const xtd::date_time& value, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified value, location, size, and name.
+      /// @param value The date and time value assign to the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const xtd::date_time& value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::date_time_picker with specified value, and minimum date.
       /// @param value The date and time value assign to the control.
       /// @param min_date The minimum date and time that can be selected in the control.
       /// @return New xtd::forms::date_time_picker created.
       static date_time_picker create(const xtd::date_time& value, const xtd::date_time& min_date);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified value, minimum date, and location.
+      /// @param value The date and time value assign to the control.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified value, minimum date, location, and size.
+      /// @param value The date and time value assign to the control.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified value, minimum date, location, size, and name.
+      /// @param value The date and time value assign to the control.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::date_time_picker with specified value, minimum date, and maximum date.
       /// @param value The date and time value assign to the control.
       /// @param min_date The minimum date and time that can be selected in the control.
@@ -131,17 +185,89 @@ namespace xtd {
       /// @param name The name of the xtd::forms::date_time_picker.
       /// @return New xtd::forms::date_time_picker created.
       static date_time_picker create(const control& parent);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, and value.
       /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
       /// @param value The date and time value assign to the control.
       /// @return New xtd::forms::date_time_picker created.
       static date_time_picker create(const control& parent, const xtd::date_time& value);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, value, and location.
+      /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
+      /// @param value The date and time value assign to the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const control& parent, const xtd::date_time& value, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, value, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
+      /// @param value The date and time value assign to the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const control& parent, const xtd::date_time& value, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, value, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
+      /// @param value The date and time value assign to the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const control& parent, const xtd::date_time& value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, value, and minimum date.
       /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
       /// @param value The date and time value assign to the control.
       /// @param min_date The minimum date and time that can be selected in the control.
       /// @return New xtd::forms::date_time_picker created.
       static date_time_picker create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, value, minimum date, and location.
+      /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
+      /// @param value The date and time value assign to the control.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, value, minimum date, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
+      /// @param value The date and time value assign to the control.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, value, minimum date, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
+      /// @param value The date and time value assign to the control.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::date_time_picker.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::date_time_picker.
+      /// @param name The name of the xtd::forms::date_time_picker.
+      /// @return New xtd::forms::date_time_picker created.
+      static date_time_picker create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::date_time_picker with specified parent, value, minimum date, and maximum date.
       /// @param parent The parent that contains the new created xtd::forms::date_time_picker.
       /// @param value The date and time value assign to the control.
