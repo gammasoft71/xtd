@@ -59,6 +59,10 @@
 /// @brief forms definitions.
 /// @ingroup gui
 
+/// @defgroup images images
+/// @brief Represents images definitions.
+/// @ingroup drawing
+
 /// @defgroup interfaces interfaces
 /// @brief Interfaces definitions.
 

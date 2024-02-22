@@ -21,7 +21,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing images
     /// @remarks Each property of the images class returns a xtd::drawing::image used to display a Windows system-wide images.
     class drawing_export_ international_system_images final : private system_images_base {
     public:
