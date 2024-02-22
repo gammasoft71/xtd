@@ -115,15 +115,69 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::toggle_button.
       /// @return New xtd::forms::toggle_button created.
       static toggle_button create();
+      /// @brief A factory to create an xtd::forms::toggle_button with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::toggle_button.
+      /// @return New xtd::forms::toggle_button created.
+      static toggle_button create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::toggle_button with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::toggle_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::toggle_button.
+      /// @return New xtd::forms::toggle_button created.
+      static toggle_button create(const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::toggle_button with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::toggle_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::toggle_button.
+      /// @param name The name of the xtd::forms::toggle_button.
+      /// @return New xtd::forms::toggle_button created.
+      static toggle_button create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::toggle_button with specified text.
       /// @param text A string that represent text of the xtd::forms::toggle_button.
       /// @return New xtd::forms::toggle_button created.
       static toggle_button create(const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::toggle_button with specified text, and location.
+      /// @param text A string that represent text of the xtd::forms::toggle_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::toggle_button.
+      /// @return New xtd::forms::toggle_button created.
+      static toggle_button create(const xtd::ustring& text, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::toggle_button with specified text, location, and size.
+      /// @param text A string that represent text of the xtd::forms::toggle_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::toggle_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::toggle_button.
+      /// @return New xtd::forms::toggle_button created.
+      static toggle_button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::toggle_button with specified text, location, size, and name.
+      /// @param text A string that represent text of the xtd::forms::toggle_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::toggle_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::toggle_button.
+      /// @param name The name of the xtd::forms::toggle_button.
+      /// @return New xtd::forms::toggle_button created.
+      static toggle_button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::toggle_button with specified text, and check_state.
       /// @param text A string that represent text of the xtd::forms::toggle_button.
       /// @param check_state One of the check_state enumeration values.
       /// @return New xtd::forms::toggle_button created.
       static toggle_button create(const xtd::ustring& text, xtd::forms::check_state check_state);
+      /// @brief A factory to create an xtd::forms::toggle_button with specified text, check_state, and location.
+      /// @param text A string that represent text of the xtd::forms::toggle_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::toggle_button.
+      /// @return New xtd::forms::toggle_button created.
+      static toggle_button create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::toggle_button with specified text, check_state, location, and size.
+      /// @param text A string that represent text of the xtd::forms::toggle_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::toggle_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::toggle_button.
+      /// @return New xtd::forms::toggle_button created.
+      static toggle_button create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::toggle_button with specified text, check_state, location, size, and name.
+      /// @param text A string that represent text of the xtd::forms::toggle_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::toggle_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::toggle_button.
+      /// @param name The name of the xtd::forms::toggle_button.
+      /// @return New xtd::forms::toggle_button created.
+      static toggle_button create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @brief A factory to create an xtd::forms::toggle_button with specified text, three_state, and check_state.
       /// @param text A string that represent text of the xtd::forms::toggle_button.
       /// @param three_state true if the toggle_button is able to display three check states; otherwise, false.
