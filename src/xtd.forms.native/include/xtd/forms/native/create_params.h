@@ -60,7 +60,7 @@ namespace xtd {
         /// @brief Gets or sets the initial location of the control.
         /// @return The xtd::drawing::point that represents the initial location of the control.
         /// @warning Internal use only
-        drawing::point location = {-1, -1};
+        drawing::point location;
         
         /// @brief Gets or sets additional parameter information needed to create the control.
         /// @return An intptr that holds additional parameter information needed to create the control.
@@ -81,7 +81,7 @@ namespace xtd {
         /// @brief Gets or sets the initial size of the control.
         /// @return The xtd::drawing::size that represents the initial size of the control.
         /// @warning Internal use only
-        drawing::size size = {-1, -1};
+        drawing::size size;
         /// @}
       };
     }
