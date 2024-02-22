@@ -24,7 +24,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing images
     class drawing_export_ icon : public xtd::object, public xtd::iequatable<icon> {
       struct data;
       

@@ -43,7 +43,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing images
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
     class drawing_export_ image : public xtd::object, public xtd::iequatable<image> {
       struct data;
