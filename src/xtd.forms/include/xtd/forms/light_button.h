@@ -156,6 +156,93 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create();
+      /// @brief A factory to create an xtd::forms::light_button with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::light_button with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create( const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::light_button with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @param name The name of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::light_button with specified text.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, and location.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& tex, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, location, and size.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, location, size, and name.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @param name The name of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, and check_state.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text, xtd::forms::check_state check_state);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, check_state, and location.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, check_state, location, and size.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, check_state, location, size, and name.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @param name The name of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, and check_state.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param check_state One of the check_state enumeration values.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, check_state, and location.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, check_state, location, and size.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, check_state, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::light_button.
       /// @param three_state true if the check_box is able to display three check states; otherwise, false.
@@ -164,7 +251,109 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
       /// @param name The name of the xtd::forms::light_button.
       /// @return New xtd::forms::light_button created.
-      static light_button create(const xtd::ustring& text, bool three_state = false, xtd::forms::check_state check_state = xtd::forms::check_state::unchecked, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static light_button create(const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @param name The name of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, and text.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, and location.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, const drawing::point& location);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @param name The name of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, and check_state,.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, check_state, and location.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, check_state, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, check_state, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @param name The name of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, and check_state.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param check_state One of the check_state enumeration values.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, check_state, and location.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location);
+      /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, check_state, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::light_button.
+      /// @param text A string that represent text of the xtd::forms::light_button.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param check_state One of the check_state enumeration values.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
+      /// @return New xtd::forms::light_button created.
+      static light_button create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, check_state, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::light_button.
       /// @param text A string that represent text of the xtd::forms::light_button.
@@ -174,7 +363,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
       /// @param name The name of the xtd::forms::light_button.
       /// @return New xtd::forms::light_button created.
-      static light_button create(const control& parent, const xtd::ustring& text, bool three_state = false, xtd::forms::check_state check_state = xtd::forms::check_state::unchecked, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static light_button create(const control& parent, const xtd::ustring& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
       /// @name Events
