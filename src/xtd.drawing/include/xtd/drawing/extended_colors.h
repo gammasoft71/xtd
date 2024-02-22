@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing colors
+    /// @ingroup xtd_drawing colors
     using extended_colors = xtd::drawing::colors;
   }
 }

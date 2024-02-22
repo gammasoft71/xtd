@@ -21,7 +21,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing brushes
     /// @image html solid_brush.png
     /// @par Examples
     /// The following code example demonstrates the use of solid_brush class.

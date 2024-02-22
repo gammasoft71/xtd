@@ -25,7 +25,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing colors
+    /// @ingroup xtd_drawing colors
     /// @remarks Named colors are represented by using the properties of the xtd::drawing::color structure. For more information about these colors, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">see Colors by Name</a>.
     /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). Each of the four components is a number from 0 through 255, with 0 representing no intensity and 255 representing full intensity. The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. To determine the alpha, red, green, or blue component of a color, use the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, or xtd::drawing::color::b property, respectively. You can create a custom color by using one of the xtd::drawing::color::from_argb methods
     /// @par Examples

@@ -21,7 +21,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing brushes
+    /// @ingroup xtd_drawing brushes
     /// @image html texture_brush1.png
     /// @par Examples
     /// The following code example demonstrates the use of texture_brush class.
