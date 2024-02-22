@@ -13,7 +13,7 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief Specifies the type of fill a xtd::drawing::pen object uses to fill lines.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

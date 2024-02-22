@@ -13,7 +13,7 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief Specifies the available cap styles with which a xtd::drawing::pen object can end a line.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

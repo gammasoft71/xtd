@@ -32,7 +32,7 @@ namespace xtd {
       /// @par Inheritance
       /// xtd::object → xtd::drawing::drawing_2d::matrix
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing

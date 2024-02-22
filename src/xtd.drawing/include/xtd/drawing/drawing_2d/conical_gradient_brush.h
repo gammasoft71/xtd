@@ -25,10 +25,10 @@ namespace xtd {
       /// @par Inheritance
       /// xtd::object → xtd::drawing::brush → xtd::drawing::drawing_2d::conical_gradient_brush
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing drawing
+      /// @ingroup xtd_drawing drawing brushes
       /// @image html conical_gradient_brush.png
       /// @par Examples
       /// The following code example demonstrates the use of conical_gradient_brush class.

@@ -14,7 +14,7 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief Describes the location and color of a transition point in a gradient.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing

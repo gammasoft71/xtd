@@ -5,6 +5,10 @@
 /// @brief application definitions.
 /// @ingroup gui
 
+/// @defgroup brushes brushes
+/// @brief Represents Brushes used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths..
+/// @ingroup drawing
+
 /// @defgroup collections collections
 /// @brief collections definitions.
 /// @ingroup system

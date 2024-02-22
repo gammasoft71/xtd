@@ -1,14 +1,17 @@
 #include <iostream>
+#include <xtd/drawing/drawing_2d/hatch_brush.h>
 #include <xtd/drawing/bitmap>
 #include <xtd/drawing/color>
 #include <xtd/io/file>
 #include <xtd/io/path>
+#include <xtd/console>
 #include <xtd/ustring>
 //#include "logo.xpm"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::drawing::drawing_2d;
 
 void to_ppm(const xtd::ustring& filename, const xtd::drawing::bitmap& bitmap, const color& transparent_color = color::white) {
   std::vector<xtd::ustring> lines;
@@ -36,10 +39,11 @@ auto main()->int {
   //to_ppm("/Users/yves/Desktop/test.png");
   //bitmap img = bitmap(logo_xpm);
   //to_ppm("/Users/yves/Desktop/logo.ppm", img, color::magenta);
-  cout << ustring::format("color = {}", color::light(color::light(color::from_argb(128, 128, 128)))) << endl;
-  cout << ustring::format("color = {}", color::light(color::from_argb(128, 128, 128))) << endl;
-  cout << ustring::format("color = {}", color::from_argb(128, 128, 128)) << endl;
-  cout << ustring::format("color = {}", color::dark(color::from_argb(128, 128, 128))) << endl;
-  cout << ustring::format("color = {}", color::dark(color::dark(color::from_argb(128, 128, 128)))) << endl;
-  image img = image::empty;
+  
+  for (auto hatch : enum_object<>::get_values<hatch_style>()) {
+    auto bmp = bitmap {200, 100};
+    auto g = graphics::from_image(bmp);
+    g.fill_rectangle(hatch_brush {hatch, color::white, color::dark_blue}, rectangle {{0, 0}, bmp.size()});
+    bmp.save(ustring::format("hatch_brush_{}.png", hatch));
+  }
 }

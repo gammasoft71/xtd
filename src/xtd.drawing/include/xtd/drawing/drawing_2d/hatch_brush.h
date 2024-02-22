@@ -21,11 +21,11 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief Defines a rectangular xtd::drawing::brush with a hatch style, a foreground color, and a background color. This class cannot be inherited.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing drawing
-      /// @remarks The following illustration shows a rectangle filled with a diagonal brick hatch pattern.
+      /// @ingroup xtd_drawing drawing brushes
+      /// @remarks The following illustration shows a rectangle filled with the xtd::drawing::drawing_2d::hatch_style::diagonal_brick hatch pattern.
       /// @image html hatch_brush.png
       /// @par Examples
       /// The following code example demonstrates the use of hatch_brush class.

@@ -14,7 +14,7 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief Represents a collection of xtd::drawing::drawing_2d::gradient_stop objects that can be individually accessed by index.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
