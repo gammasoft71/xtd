@@ -173,22 +173,18 @@ If use_tab_stops is true, the <a class="el" href="classxtd_1_1forms_1_1checked__
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Checked list box example&quot;</span>);</div>
 <div class="line">      client_size({200, 240});</div>
 <div class="line">      </div>
-<div class="line">      checked_list_box1.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      checked_list_box1.location({20, 20});</div>
-<div class="line">      checked_list_box1.size({160, 200});</div>
 <div class="line">      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);</div>
-<div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt;= 10; ++index)</div>
 <div class="line">        checked_list_box1.items().push_back({ustring::format(<span class="stringliteral">&quot;Item {}&quot;</span>, index), index % 2 != 0});</div>
 <div class="line">      checked_list_box1.selected_index(0);</div>
-<div class="line">      </div>
 <div class="line">      checked_list_box1.item_check += [](<span class="keywordtype">object</span> &amp; sender, <a class="code hl_class" href="classxtd_1_1forms_1_1item__check__event__args.html">item_check_event_args</a> &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
 <div class="line">        cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;item_check, index={}, new_value={}, current_value={}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.index(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.new_value(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.current_value()) &lt;&lt; endl;</div>
 <div class="line">      };</div>
+<div class="line">      cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;checked items = {}&quot;</span>, checked_list_box1.checked_items()) &lt;&lt; endl;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1 = checked_list_box::create(*<span class="keyword">this</span>, {20, 20}, {160, 200});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -306,9 +302,27 @@ Classes</h2></td></tr>
 <tr class="memitem:a9e38d9f03228b26c62d2b8da08e545ce"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a9e38d9f03228b26c62d2b8da08e545ce">create</a> ()</td></tr>
 <tr class="memdesc:a9e38d9f03228b26c62d2b8da08e545ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>.  <br /></td></tr>
 <tr class="separator:a9e38d9f03228b26c62d2b8da08e545ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac777e7977d6b92af630e1b624e4ee7df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#ac777e7977d6b92af630e1b624e4ee7df">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>)</td></tr>
+<tr class="memdesc:ac777e7977d6b92af630e1b624e4ee7df"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified location.  <br /></td></tr>
+<tr class="separator:ac777e7977d6b92af630e1b624e4ee7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39059eef9fada2f6270920cf7fbc7004"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a39059eef9fada2f6270920cf7fbc7004">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a39059eef9fada2f6270920cf7fbc7004"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified location, and size.  <br /></td></tr>
+<tr class="separator:a39059eef9fada2f6270920cf7fbc7004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7bc590b9e55ef64f1de2659b454b6b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a5e7bc590b9e55ef64f1de2659b454b6b">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:a5e7bc590b9e55ef64f1de2659b454b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified location, size, and name.  <br /></td></tr>
+<tr class="separator:a5e7bc590b9e55ef64f1de2659b454b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f43a615ef86b6cd78850db87613ffe9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a1f43a615ef86b6cd78850db87613ffe9">create</a> (const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>)</td></tr>
 <tr class="memdesc:a1f43a615ef86b6cd78850db87613ffe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified items.  <br /></td></tr>
 <tr class="separator:a1f43a615ef86b6cd78850db87613ffe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f781e09faaeed19ee53231059dce8d1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a1f781e09faaeed19ee53231059dce8d1">create</a> (const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>)</td></tr>
+<tr class="memdesc:a1f781e09faaeed19ee53231059dce8d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified items, and location.  <br /></td></tr>
+<tr class="separator:a1f781e09faaeed19ee53231059dce8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c020358b7cde13a2902bd292189aa8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#ad6c020358b7cde13a2902bd292189aa8">create</a> (const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:ad6c020358b7cde13a2902bd292189aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified items, location, and size.  <br /></td></tr>
+<tr class="separator:ad6c020358b7cde13a2902bd292189aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f2f47f217698fce6a3fa9ecc16ecea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#af9f2f47f217698fce6a3fa9ecc16ecea">create</a> (const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:af9f2f47f217698fce6a3fa9ecc16ecea"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified items, location, size, and name.  <br /></td></tr>
+<tr class="separator:af9f2f47f217698fce6a3fa9ecc16ecea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af221f71293bb33cc4463ad97f3fa3446"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#af221f71293bb33cc4463ad97f3fa3446">create</a> (const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a47ad9dc9386ec77b8e136ec539973b7d">selected_index</a>)</td></tr>
 <tr class="memdesc:af221f71293bb33cc4463ad97f3fa3446"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified items, and selected_index.  <br /></td></tr>
 <tr class="separator:af221f71293bb33cc4463ad97f3fa3446"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -324,9 +338,27 @@ Classes</h2></td></tr>
 <tr class="memitem:a9409882155028b11cf3dc74e297b3fe8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a9409882155028b11cf3dc74e297b3fe8">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>)</td></tr>
 <tr class="memdesc:a9409882155028b11cf3dc74e297b3fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent.  <br /></td></tr>
 <tr class="separator:a9409882155028b11cf3dc74e297b3fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0ad1dc591e8a26db0e90d5f56bcd098"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#ab0ad1dc591e8a26db0e90d5f56bcd098">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>)</td></tr>
+<tr class="memdesc:ab0ad1dc591e8a26db0e90d5f56bcd098"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, and location.  <br /></td></tr>
+<tr class="separator:ab0ad1dc591e8a26db0e90d5f56bcd098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6f9e8dfbdcd42bae8baa27f6fa6135"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a3a6f9e8dfbdcd42bae8baa27f6fa6135">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a3a6f9e8dfbdcd42bae8baa27f6fa6135"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, location, and size.  <br /></td></tr>
+<tr class="separator:a3a6f9e8dfbdcd42bae8baa27f6fa6135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02451fa575ac57b70264fe1a2956499"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#ab02451fa575ac57b70264fe1a2956499">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:ab02451fa575ac57b70264fe1a2956499"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, location, size, and name.  <br /></td></tr>
+<tr class="separator:ab02451fa575ac57b70264fe1a2956499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3bb6d012ab59287a14a9690baaf5253"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#ab3bb6d012ab59287a14a9690baaf5253">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>)</td></tr>
 <tr class="memdesc:ab3bb6d012ab59287a14a9690baaf5253"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, and items.  <br /></td></tr>
 <tr class="separator:ab3bb6d012ab59287a14a9690baaf5253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab91c02023e31826d91567ca3db3b1ee1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#ab91c02023e31826d91567ca3db3b1ee1">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>)</td></tr>
+<tr class="memdesc:ab91c02023e31826d91567ca3db3b1ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, items, and location.  <br /></td></tr>
+<tr class="separator:ab91c02023e31826d91567ca3db3b1ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177848dbf7b5b5dcd82f7d9c5dc479af"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a177848dbf7b5b5dcd82f7d9c5dc479af">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a177848dbf7b5b5dcd82f7d9c5dc479af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, items, location, and size.  <br /></td></tr>
+<tr class="separator:a177848dbf7b5b5dcd82f7d9c5dc479af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a785bf95612ab6d30702609585a07b2ef"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a785bf95612ab6d30702609585a07b2ef">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:a785bf95612ab6d30702609585a07b2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, items, location, size, and name.  <br /></td></tr>
+<tr class="separator:a785bf95612ab6d30702609585a07b2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a433037044d0d15f4ab97bc7af89c3461"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a433037044d0d15f4ab97bc7af89c3461">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a47ad9dc9386ec77b8e136ec539973b7d">selected_index</a>)</td></tr>
 <tr class="memdesc:a433037044d0d15f4ab97bc7af89c3461"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, items, and selected_index.  <br /></td></tr>
 <tr class="separator:a433037044d0d15f4ab97bc7af89c3461"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1150,14 +1182,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a3392903158b0d1b81ff99cf84a94d278">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>)</td></tr>
 <tr class="memdesc:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, and text.  <br /></td></tr>
 <tr class="separator:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, and location.  <br /></td></tr>
-<tr class="separator:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, and size.  <br /></td></tr>
-<tr class="separator:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#aaecd2fa1b0009f58ad33af6ef383699e">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, and location.  <br /></td></tr>
+<tr class="separator:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a9b9598f6857da6e15f0e93140b27a295">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, and size.  <br /></td></tr>
+<tr class="separator:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
 <tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
 <tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, size, and name.  <br /></td></tr>
@@ -1629,7 +1661,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a9e38d9f03228b26c62d2b8da08e545ce" name="a9e38d9f03228b26c62d2b8da08e545ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e38d9f03228b26c62d2b8da08e545ce">&#9670;&#160;</a></span>create() <span class="overload">[1/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e38d9f03228b26c62d2b8da08e545ce">&#9670;&#160;</a></span>create() <span class="overload">[1/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1657,7 +1689,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a9409882155028b11cf3dc74e297b3fe8" name="a9409882155028b11cf3dc74e297b3fe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9409882155028b11cf3dc74e297b3fe8">&#9670;&#160;</a></span>create() <span class="overload">[2/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9409882155028b11cf3dc74e297b3fe8">&#9670;&#160;</a></span>create() <span class="overload">[2/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1691,8 +1723,167 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="ab0ad1dc591e8a26db0e90d5f56bcd098" name="ab0ad1dc591e8a26db0e90d5f56bcd098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0ad1dc591e8a26db0e90d5f56bcd098">&#9670;&#160;</a></span>create() <span class="overload">[3/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, and location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a3a6f9e8dfbdcd42bae8baa27f6fa6135" name="a3a6f9e8dfbdcd42bae8baa27f6fa6135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a6f9e8dfbdcd42bae8baa27f6fa6135">&#9670;&#160;</a></span>create() <span class="overload">[4/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="ab02451fa575ac57b70264fe1a2956499" name="ab02451fa575ac57b70264fe1a2956499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab02451fa575ac57b70264fe1a2956499">&#9670;&#160;</a></span>create() <span class="overload">[5/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="ab3bb6d012ab59287a14a9690baaf5253" name="ab3bb6d012ab59287a14a9690baaf5253"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3bb6d012ab59287a14a9690baaf5253">&#9670;&#160;</a></span>create() <span class="overload">[3/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3bb6d012ab59287a14a9690baaf5253">&#9670;&#160;</a></span>create() <span class="overload">[6/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1737,8 +1928,188 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="ab91c02023e31826d91567ca3db3b1ee1" name="ab91c02023e31826d91567ca3db3b1ee1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab91c02023e31826d91567ca3db3b1ee1">&#9670;&#160;</a></span>create() <span class="overload">[7/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, items, and location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">items</td><td>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85" title="Represents the collection of items in a checked_list_box.">checked_list_box::object_collection</a> collection representing the items in the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a177848dbf7b5b5dcd82f7d9c5dc479af" name="a177848dbf7b5b5dcd82f7d9c5dc479af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177848dbf7b5b5dcd82f7d9c5dc479af">&#9670;&#160;</a></span>create() <span class="overload">[8/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, items, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">items</td><td>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85" title="Represents the collection of items in a checked_list_box.">checked_list_box::object_collection</a> collection representing the items in the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a785bf95612ab6d30702609585a07b2ef" name="a785bf95612ab6d30702609585a07b2ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785bf95612ab6d30702609585a07b2ef">&#9670;&#160;</a></span>create() <span class="overload">[9/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, items, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">items</td><td>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85" title="Represents the collection of items in a checked_list_box.">checked_list_box::object_collection</a> collection representing the items in the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a433037044d0d15f4ab97bc7af89c3461" name="a433037044d0d15f4ab97bc7af89c3461"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a433037044d0d15f4ab97bc7af89c3461">&#9670;&#160;</a></span>create() <span class="overload">[4/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a433037044d0d15f4ab97bc7af89c3461">&#9670;&#160;</a></span>create() <span class="overload">[10/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1791,7 +2162,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a1e02e4b0810003d403c29f9481fa1ccc" name="a1e02e4b0810003d403c29f9481fa1ccc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e02e4b0810003d403c29f9481fa1ccc">&#9670;&#160;</a></span>create() <span class="overload">[5/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e02e4b0810003d403c29f9481fa1ccc">&#9670;&#160;</a></span>create() <span class="overload">[11/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1851,7 +2222,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a02d5f1ed626329ca2254bf8ce5a4b6fc" name="a02d5f1ed626329ca2254bf8ce5a4b6fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02d5f1ed626329ca2254bf8ce5a4b6fc">&#9670;&#160;</a></span>create() <span class="overload">[6/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a02d5f1ed626329ca2254bf8ce5a4b6fc">&#9670;&#160;</a></span>create() <span class="overload">[12/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1918,7 +2289,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a6700d24f3dc778249503131aaada93da" name="a6700d24f3dc778249503131aaada93da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6700d24f3dc778249503131aaada93da">&#9670;&#160;</a></span>create() <span class="overload">[7/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6700d24f3dc778249503131aaada93da">&#9670;&#160;</a></span>create() <span class="overload">[13/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1991,8 +2362,142 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="ac777e7977d6b92af630e1b624e4ee7df" name="ac777e7977d6b92af630e1b624e4ee7df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac777e7977d6b92af630e1b624e4ee7df">&#9670;&#160;</a></span>create() <span class="overload">[14/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a39059eef9fada2f6270920cf7fbc7004" name="a39059eef9fada2f6270920cf7fbc7004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39059eef9fada2f6270920cf7fbc7004">&#9670;&#160;</a></span>create() <span class="overload">[15/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a5e7bc590b9e55ef64f1de2659b454b6b" name="a5e7bc590b9e55ef64f1de2659b454b6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7bc590b9e55ef64f1de2659b454b6b">&#9670;&#160;</a></span>create() <span class="overload">[16/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a1f43a615ef86b6cd78850db87613ffe9" name="a1f43a615ef86b6cd78850db87613ffe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f43a615ef86b6cd78850db87613ffe9">&#9670;&#160;</a></span>create() <span class="overload">[8/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f43a615ef86b6cd78850db87613ffe9">&#9670;&#160;</a></span>create() <span class="overload">[17/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2026,8 +2531,167 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="a1f781e09faaeed19ee53231059dce8d1" name="a1f781e09faaeed19ee53231059dce8d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f781e09faaeed19ee53231059dce8d1">&#9670;&#160;</a></span>create() <span class="overload">[18/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified items, and location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85" title="Represents the collection of items in a checked_list_box.">checked_list_box::object_collection</a> collection representing the items in the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="ad6c020358b7cde13a2902bd292189aa8" name="ad6c020358b7cde13a2902bd292189aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c020358b7cde13a2902bd292189aa8">&#9670;&#160;</a></span>create() <span class="overload">[19/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified items, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85" title="Represents the collection of items in a checked_list_box.">checked_list_box::object_collection</a> collection representing the items in the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="af9f2f47f217698fce6a3fa9ecc16ecea" name="af9f2f47f217698fce6a3fa9ecc16ecea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f2f47f217698fce6a3fa9ecc16ecea">&#9670;&#160;</a></span>create() <span class="overload">[20/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> xtd::forms::checked_list_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified items, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85" title="Represents the collection of items in a checked_list_box.">checked_list_box::object_collection</a> collection representing the items in the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="af221f71293bb33cc4463ad97f3fa3446" name="af221f71293bb33cc4463ad97f3fa3446"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af221f71293bb33cc4463ad97f3fa3446">&#9670;&#160;</a></span>create() <span class="overload">[9/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af221f71293bb33cc4463ad97f3fa3446">&#9670;&#160;</a></span>create() <span class="overload">[21/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2073,7 +2737,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a5b3bad2f7134808fc54584d5731c1508" name="a5b3bad2f7134808fc54584d5731c1508"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b3bad2f7134808fc54584d5731c1508">&#9670;&#160;</a></span>create() <span class="overload">[10/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b3bad2f7134808fc54584d5731c1508">&#9670;&#160;</a></span>create() <span class="overload">[22/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2126,7 +2790,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a18115f01a8a6b3010c3fce618226d63f" name="a18115f01a8a6b3010c3fce618226d63f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18115f01a8a6b3010c3fce618226d63f">&#9670;&#160;</a></span>create() <span class="overload">[11/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a18115f01a8a6b3010c3fce618226d63f">&#9670;&#160;</a></span>create() <span class="overload">[23/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2186,7 +2850,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a9b53e78e06180074b9b63cb26fe40e36" name="a9b53e78e06180074b9b63cb26fe40e36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b53e78e06180074b9b63cb26fe40e36">&#9670;&#160;</a></span>create() <span class="overload">[12/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b53e78e06180074b9b63cb26fe40e36">&#9670;&#160;</a></span>create() <span class="overload">[24/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3022,7 +3686,7 @@ Items whose check_state is set to indeterminate appear with a check mark in the 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 20 2024 20:58:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Feb 22 2024 10:39:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

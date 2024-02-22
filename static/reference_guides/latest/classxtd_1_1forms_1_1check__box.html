@@ -175,37 +175,27 @@ The three_state property determines whether the control supports two or three st
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Check box example&quot;</span>);</div>
-<div class="line">      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
 <div class="line">      check_box1.click += [&amp;] {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box1.location({30, 30});</div>
-<div class="line">      check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
 <div class="line">      check_box2.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box2.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box2.location({30, 60});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      check_box3.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box3.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
-<div class="line">      check_box3.three_state(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
 <div class="line">      check_box4.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box4.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box4.location({30, 120});</div>
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
@@ -214,16 +204,14 @@ The three_state property determines whether the control supports two or three st
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box5.location({30, 150});</div>
-<div class="line">      check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 30});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 60});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;indeterminate&quot;</span>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a>, {30, 90});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 120});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 150});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -235,6 +223,9 @@ The three_state property determines whether the control supports two or three st
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a6af4447091dec74038a54c6b9f5f8760"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760">xtd::forms::application::enable_visual_styles</a></div><div class="ttdeci">static void enable_visual_styles()</div><div class="ttdoc">Enables visual styles for the application.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c"><div class="ttname"><a href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a></div><div class="ttdeci">@ checked</div><div class="ttdoc">The control is checked.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2"><div class="ttname"><a href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a></div><div class="ttdeci">@ indeterminate</div><div class="ttdoc">The control is indeterminate. An indeterminate control generally has a shaded appearance.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e"><div class="ttname"><a href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a></div><div class="ttdeci">@ unchecked</div><div class="ttdoc">The control is unchecked.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -299,9 +290,39 @@ The three_state property determines whether the control supports two or three st
 <tr class="memitem:a4ea6c5b267a975f471f8b323cddee1ed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a4ea6c5b267a975f471f8b323cddee1ed">create</a> ()</td></tr>
 <tr class="memdesc:a4ea6c5b267a975f471f8b323cddee1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>.  <br /></td></tr>
 <tr class="separator:a4ea6c5b267a975f471f8b323cddee1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8bf14006ed847d5401690e1f76a050"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#afb8bf14006ed847d5401690e1f76a050">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:afb8bf14006ed847d5401690e1f76a050"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified location.  <br /></td></tr>
+<tr class="separator:afb8bf14006ed847d5401690e1f76a050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba56ff6b24c61dff4a31d8ab5280a0df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#aba56ff6b24c61dff4a31d8ab5280a0df">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:aba56ff6b24c61dff4a31d8ab5280a0df"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified location, and size.  <br /></td></tr>
+<tr class="separator:aba56ff6b24c61dff4a31d8ab5280a0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae46c6db17ce6ebba5b26fa805df906c7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ae46c6db17ce6ebba5b26fa805df906c7">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:ae46c6db17ce6ebba5b26fa805df906c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified location, size, and name.  <br /></td></tr>
+<tr class="separator:ae46c6db17ce6ebba5b26fa805df906c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1e00f3526177add76a1ac90c8e6ea10"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ad1e00f3526177add76a1ac90c8e6ea10">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>)</td></tr>
 <tr class="memdesc:ad1e00f3526177add76a1ac90c8e6ea10"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text.  <br /></td></tr>
 <tr class="separator:ad1e00f3526177add76a1ac90c8e6ea10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1ccb4152d8ec2b601dd455af78fc0f9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ad1ccb4152d8ec2b601dd455af78fc0f9">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:ad1ccb4152d8ec2b601dd455af78fc0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, and location.  <br /></td></tr>
+<tr class="separator:ad1ccb4152d8ec2b601dd455af78fc0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c030f3b796071a12d43b6d080a131a1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a3c030f3b796071a12d43b6d080a131a1">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a3c030f3b796071a12d43b6d080a131a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, location, and size.  <br /></td></tr>
+<tr class="separator:a3c030f3b796071a12d43b6d080a131a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b4f7dd42858c1b530b6698261d50378"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a1b4f7dd42858c1b530b6698261d50378">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:a1b4f7dd42858c1b530b6698261d50378"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, location, size, and name.  <br /></td></tr>
+<tr class="separator:a1b4f7dd42858c1b530b6698261d50378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b64a0c38448134305e6a4bee46b9866"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a4b64a0c38448134305e6a4bee46b9866">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>)</td></tr>
+<tr class="memdesc:a4b64a0c38448134305e6a4bee46b9866"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, and check_state.  <br /></td></tr>
+<tr class="separator:a4b64a0c38448134305e6a4bee46b9866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8759a49874b331cad78cdb6f9acde74"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ad8759a49874b331cad78cdb6f9acde74">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:ad8759a49874b331cad78cdb6f9acde74"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, check_state, and location.  <br /></td></tr>
+<tr class="separator:ad8759a49874b331cad78cdb6f9acde74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51db9c4d38012226cdaefae796d2583c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a51db9c4d38012226cdaefae796d2583c">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a51db9c4d38012226cdaefae796d2583c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, check_state, location, and size.  <br /></td></tr>
+<tr class="separator:a51db9c4d38012226cdaefae796d2583c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4917fd8b7bb74dc1c9de85bc28617358"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a4917fd8b7bb74dc1c9de85bc28617358">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:a4917fd8b7bb74dc1c9de85bc28617358"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, check_state, location, size, and name.  <br /></td></tr>
+<tr class="separator:a4917fd8b7bb74dc1c9de85bc28617358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad55b33b16cff229b9db445e586245a11"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ad55b33b16cff229b9db445e586245a11">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, bool <a class="el" href="classxtd_1_1forms_1_1check__box.html#aae55b5ea4a53d88f2d999b1a5d2513ef">three_state</a>)</td></tr>
 <tr class="memdesc:ad55b33b16cff229b9db445e586245a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, and three_state.  <br /></td></tr>
 <tr class="separator:ad55b33b16cff229b9db445e586245a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -320,9 +341,39 @@ The three_state property determines whether the control supports two or three st
 <tr class="memitem:a2a8af70a591fbac24ff07b1f9ca58f63"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a2a8af70a591fbac24ff07b1f9ca58f63">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>)</td></tr>
 <tr class="memdesc:a2a8af70a591fbac24ff07b1f9ca58f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent.  <br /></td></tr>
 <tr class="separator:a2a8af70a591fbac24ff07b1f9ca58f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91637c20c0c22206e5af76a237b75f38"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a91637c20c0c22206e5af76a237b75f38">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:a91637c20c0c22206e5af76a237b75f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, and location.  <br /></td></tr>
+<tr class="separator:a91637c20c0c22206e5af76a237b75f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16728c9f200e5bf3b0c074eef687bb24"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a16728c9f200e5bf3b0c074eef687bb24">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a16728c9f200e5bf3b0c074eef687bb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, location, and size.  <br /></td></tr>
+<tr class="separator:a16728c9f200e5bf3b0c074eef687bb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718edf5a9d654d8587b1f67eaef80d9d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a718edf5a9d654d8587b1f67eaef80d9d">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:a718edf5a9d654d8587b1f67eaef80d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, location, size, and name.  <br /></td></tr>
+<tr class="separator:a718edf5a9d654d8587b1f67eaef80d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2254093eab12a075665b6082ad1b02f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ae2254093eab12a075665b6082ad1b02f">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>)</td></tr>
 <tr class="memdesc:ae2254093eab12a075665b6082ad1b02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, and text.  <br /></td></tr>
 <tr class="separator:ae2254093eab12a075665b6082ad1b02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bd25cde3052f3d1606451e85f8af9f4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a5bd25cde3052f3d1606451e85f8af9f4">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:a5bd25cde3052f3d1606451e85f8af9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, and location.  <br /></td></tr>
+<tr class="separator:a5bd25cde3052f3d1606451e85f8af9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab7db43563e8303501cfba90716c2cde"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#aab7db43563e8303501cfba90716c2cde">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:aab7db43563e8303501cfba90716c2cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, location, and size.  <br /></td></tr>
+<tr class="separator:aab7db43563e8303501cfba90716c2cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e43fb4635721fb79a305fccaffb5e5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a28e43fb4635721fb79a305fccaffb5e5">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:a28e43fb4635721fb79a305fccaffb5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, location, size, and name.  <br /></td></tr>
+<tr class="separator:a28e43fb4635721fb79a305fccaffb5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a341b8dd24f4f61dc44691dd3a6b7e7b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a341b8dd24f4f61dc44691dd3a6b7e7b5">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>)</td></tr>
+<tr class="memdesc:a341b8dd24f4f61dc44691dd3a6b7e7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, and check_state.  <br /></td></tr>
+<tr class="separator:a341b8dd24f4f61dc44691dd3a6b7e7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c55561829744637f8a23ec3753f9ecf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a9c55561829744637f8a23ec3753f9ecf">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:a9c55561829744637f8a23ec3753f9ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, check_state, and location.  <br /></td></tr>
+<tr class="separator:a9c55561829744637f8a23ec3753f9ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71518657daf6735c406f5ea6bec93af8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a71518657daf6735c406f5ea6bec93af8">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a71518657daf6735c406f5ea6bec93af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, check_state, location, and size.  <br /></td></tr>
+<tr class="separator:a71518657daf6735c406f5ea6bec93af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0dc7d4d1dc867120e70b79111c5a6fb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ae0dc7d4d1dc867120e70b79111c5a6fb">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:ae0dc7d4d1dc867120e70b79111c5a6fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, check_state, location, size, and name.  <br /></td></tr>
+<tr class="separator:ae0dc7d4d1dc867120e70b79111c5a6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4f16bd80aab320fb9107f8505c698cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ab4f16bd80aab320fb9107f8505c698cf">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, bool <a class="el" href="classxtd_1_1forms_1_1check__box.html#aae55b5ea4a53d88f2d999b1a5d2513ef">three_state</a>)</td></tr>
 <tr class="memdesc:ab4f16bd80aab320fb9107f8505c698cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, and three_state.  <br /></td></tr>
 <tr class="separator:ab4f16bd80aab320fb9107f8505c698cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -338,30 +389,6 @@ The three_state property determines whether the control supports two or three st
 <tr class="memitem:a54f50730a5319d5c891a1f9b57f59869"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a54f50730a5319d5c891a1f9b57f59869">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, bool <a class="el" href="classxtd_1_1forms_1_1check__box.html#aae55b5ea4a53d88f2d999b1a5d2513ef">three_state</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
 <tr class="memdesc:a54f50730a5319d5c891a1f9b57f59869"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, three_state, check_state, location, size, and name.  <br /></td></tr>
 <tr class="separator:a54f50730a5319d5c891a1f9b57f59869"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b64a0c38448134305e6a4bee46b9866"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a4b64a0c38448134305e6a4bee46b9866">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>)</td></tr>
-<tr class="memdesc:a4b64a0c38448134305e6a4bee46b9866"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, and check_state.  <br /></td></tr>
-<tr class="separator:a4b64a0c38448134305e6a4bee46b9866"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8759a49874b331cad78cdb6f9acde74"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ad8759a49874b331cad78cdb6f9acde74">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
-<tr class="memdesc:ad8759a49874b331cad78cdb6f9acde74"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, check_state, and location.  <br /></td></tr>
-<tr class="separator:ad8759a49874b331cad78cdb6f9acde74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51db9c4d38012226cdaefae796d2583c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a51db9c4d38012226cdaefae796d2583c">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
-<tr class="memdesc:a51db9c4d38012226cdaefae796d2583c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, check_state, location, and size.  <br /></td></tr>
-<tr class="separator:a51db9c4d38012226cdaefae796d2583c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4917fd8b7bb74dc1c9de85bc28617358"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a4917fd8b7bb74dc1c9de85bc28617358">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:a4917fd8b7bb74dc1c9de85bc28617358"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, check_state, location, size, and name.  <br /></td></tr>
-<tr class="separator:a4917fd8b7bb74dc1c9de85bc28617358"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a341b8dd24f4f61dc44691dd3a6b7e7b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a341b8dd24f4f61dc44691dd3a6b7e7b5">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>)</td></tr>
-<tr class="memdesc:a341b8dd24f4f61dc44691dd3a6b7e7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, and check_state.  <br /></td></tr>
-<tr class="separator:a341b8dd24f4f61dc44691dd3a6b7e7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c55561829744637f8a23ec3753f9ecf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a9c55561829744637f8a23ec3753f9ecf">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
-<tr class="memdesc:a9c55561829744637f8a23ec3753f9ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, check_state, and location.  <br /></td></tr>
-<tr class="separator:a9c55561829744637f8a23ec3753f9ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71518657daf6735c406f5ea6bec93af8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a71518657daf6735c406f5ea6bec93af8">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
-<tr class="memdesc:a71518657daf6735c406f5ea6bec93af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, check_state, location, and size.  <br /></td></tr>
-<tr class="separator:a71518657daf6735c406f5ea6bec93af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0dc7d4d1dc867120e70b79111c5a6fb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#ae0dc7d4d1dc867120e70b79111c5a6fb">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">xtd::forms::check_state</a> <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866">check_state</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:ae0dc7d4d1dc867120e70b79111c5a6fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, check_state, location, size, and name.  <br /></td></tr>
-<tr class="separator:ae0dc7d4d1dc867120e70b79111c5a6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected properties</h2></td></tr>
 <tr class="memitem:a4cc5afee2287effa4b51f3bd8c00f806"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1create__params.html">forms::create_params</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1check__box.html#a4cc5afee2287effa4b51f3bd8c00f806">create_params</a> () const noexcept override</td></tr>
@@ -1162,14 +1189,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a3392903158b0d1b81ff99cf84a94d278">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>)</td></tr>
 <tr class="memdesc:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, and text.  <br /></td></tr>
 <tr class="separator:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, and location.  <br /></td></tr>
-<tr class="separator:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, and size.  <br /></td></tr>
-<tr class="separator:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#aaecd2fa1b0009f58ad33af6ef383699e">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, and location.  <br /></td></tr>
+<tr class="separator:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a9b9598f6857da6e15f0e93140b27a295">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, and size.  <br /></td></tr>
+<tr class="separator:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
 <tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
 <tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, size, and name.  <br /></td></tr>
@@ -1435,37 +1462,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Check box example&quot;</span>);</div>
-<div class="line">      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
 <div class="line">      check_box1.click += [&amp;] {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box1.location({30, 30});</div>
-<div class="line">      check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
 <div class="line">      check_box2.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box2.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box2.location({30, 60});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      check_box3.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box3.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
-<div class="line">      check_box3.three_state(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
 <div class="line">      check_box4.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box4.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box4.location({30, 120});</div>
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
@@ -1474,16 +1491,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box5.location({30, 150});</div>
-<div class="line">      check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 30});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 60});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;indeterminate&quot;</span>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a>, {30, 90});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 120});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 150});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1534,37 +1549,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Check box example&quot;</span>);</div>
-<div class="line">      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
 <div class="line">      check_box1.click += [&amp;] {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box1.location({30, 30});</div>
-<div class="line">      check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
 <div class="line">      check_box2.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box2.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box2.location({30, 60});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      check_box3.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box3.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
-<div class="line">      check_box3.three_state(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
 <div class="line">      check_box4.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box4.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box4.location({30, 120});</div>
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
@@ -1573,16 +1578,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box5.location({30, 150});</div>
-<div class="line">      check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 30});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 60});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;indeterminate&quot;</span>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a>, {30, 90});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 120});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 150});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1669,37 +1672,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Check box example&quot;</span>);</div>
-<div class="line">      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
 <div class="line">      check_box1.click += [&amp;] {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box1.location({30, 30});</div>
-<div class="line">      check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
 <div class="line">      check_box2.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box2.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box2.location({30, 60});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      check_box3.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box3.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
-<div class="line">      check_box3.three_state(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
 <div class="line">      check_box4.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box4.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box4.location({30, 120});</div>
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
@@ -1708,16 +1701,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box5.location({30, 150});</div>
-<div class="line">      check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 30});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 60});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;indeterminate&quot;</span>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a>, {30, 90});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 120});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 150});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1850,7 +1841,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div><div class="memdoc">
 
 <p>Gets the state of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>One of the check_state enumeration values. The default value is unchecked. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. The default value is unchecked. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the three_state property is set to false, the check_state property value can only be set to <a class="el" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2" title="The control is indeterminate. An indeterminate control generally has a shaded appearance.">check_state::indeterminate</a> in code and not by u ser interaction. </dd>
 <dd>
 The following table describes the <a class="el" href="group__xtd__forms.html#gaf920635f1980a82e3a8f9117bd068238" title="Specifies the appearance of a control.">xtd::forms::appearance</a> of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> control in its different states for the normal and button style control <a class="el" href="classxtd_1_1forms_1_1check__box.html#a04207817daf0f16eee9762b0b045a0b2" title="Gets the value that determines the appearance of a check_box control.">check_box::appearance</a>. <table class="markdownTable">
@@ -1876,37 +1867,27 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Check box example&quot;</span>);</div>
-<div class="line">      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
 <div class="line">      check_box1.click += [&amp;] {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box1.location({30, 30});</div>
-<div class="line">      check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
 <div class="line">      check_box2.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box2.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box2.location({30, 60});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      check_box3.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box3.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
-<div class="line">      check_box3.three_state(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
 <div class="line">      check_box4.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box4.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box4.location({30, 120});</div>
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
@@ -1915,16 +1896,14 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box5.location({30, 150});</div>
-<div class="line">      check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 30});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 60});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;indeterminate&quot;</span>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a>, {30, 90});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 120});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 150});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1965,7 +1944,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <p>Sets the state of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. The default value is unchecked. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. The default value is unchecked. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1992,37 +1971,27 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Check box example&quot;</span>);</div>
-<div class="line">      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
 <div class="line">      check_box1.click += [&amp;] {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box1.location({30, 30});</div>
-<div class="line">      check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
 <div class="line">      check_box2.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box2.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box2.location({30, 60});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      check_box3.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box3.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
-<div class="line">      check_box3.three_state(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
 <div class="line">      check_box4.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box4.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box4.location({30, 120});</div>
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
@@ -2031,16 +2000,14 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box5.location({30, 150});</div>
-<div class="line">      check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 30});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 60});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;indeterminate&quot;</span>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a>, {30, 90});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 120});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 150});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -2090,37 +2057,27 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Check box example&quot;</span>);</div>
-<div class="line">      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
 <div class="line">      check_box1.click += [&amp;] {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box1.location({30, 30});</div>
-<div class="line">      check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
 <div class="line">      check_box2.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box2.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box2.location({30, 60});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      check_box3.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box3.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
-<div class="line">      check_box3.three_state(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
 <div class="line">      check_box4.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box4.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box4.location({30, 120});</div>
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
@@ -2129,16 +2086,14 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box5.location({30, 150});</div>
-<div class="line">      check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 30});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 60});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;indeterminate&quot;</span>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a>, {30, 90});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 120});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 150});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -2188,7 +2143,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a4ea6c5b267a975f471f8b323cddee1ed" name="a4ea6c5b267a975f471f8b323cddee1ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ea6c5b267a975f471f8b323cddee1ed">&#9670;&#160;</a></span>create() <span class="overload">[1/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea6c5b267a975f471f8b323cddee1ed">&#9670;&#160;</a></span>create() <span class="overload">[1/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2216,7 +2171,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a2a8af70a591fbac24ff07b1f9ca58f63" name="a2a8af70a591fbac24ff07b1f9ca58f63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a8af70a591fbac24ff07b1f9ca58f63">&#9670;&#160;</a></span>create() <span class="overload">[2/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a8af70a591fbac24ff07b1f9ca58f63">&#9670;&#160;</a></span>create() <span class="overload">[2/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2250,8 +2205,167 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 
 </div>
 </div>
+<a id="a91637c20c0c22206e5af76a237b75f38" name="a91637c20c0c22206e5af76a237b75f38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91637c20c0c22206e5af76a237b75f38">&#9670;&#160;</a></span>create() <span class="overload">[3/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, and location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a16728c9f200e5bf3b0c074eef687bb24" name="a16728c9f200e5bf3b0c074eef687bb24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16728c9f200e5bf3b0c074eef687bb24">&#9670;&#160;</a></span>create() <span class="overload">[4/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a718edf5a9d654d8587b1f67eaef80d9d" name="a718edf5a9d654d8587b1f67eaef80d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a718edf5a9d654d8587b1f67eaef80d9d">&#9670;&#160;</a></span>create() <span class="overload">[5/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="ae2254093eab12a075665b6082ad1b02f" name="ae2254093eab12a075665b6082ad1b02f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2254093eab12a075665b6082ad1b02f">&#9670;&#160;</a></span>create() <span class="overload">[3/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2254093eab12a075665b6082ad1b02f">&#9670;&#160;</a></span>create() <span class="overload">[6/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2297,7 +2411,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="ab4f16bd80aab320fb9107f8505c698cf" name="ab4f16bd80aab320fb9107f8505c698cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4f16bd80aab320fb9107f8505c698cf">&#9670;&#160;</a></span>create() <span class="overload">[4/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f16bd80aab320fb9107f8505c698cf">&#9670;&#160;</a></span>create() <span class="overload">[7/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2350,7 +2464,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a1991aa58f448215ecd6d953bc5daaea7" name="a1991aa58f448215ecd6d953bc5daaea7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1991aa58f448215ecd6d953bc5daaea7">&#9670;&#160;</a></span>create() <span class="overload">[5/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1991aa58f448215ecd6d953bc5daaea7">&#9670;&#160;</a></span>create() <span class="overload">[8/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2401,7 +2515,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2410,7 +2524,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a487f0e64b1b2996070872bb1c2ae9c77" name="a487f0e64b1b2996070872bb1c2ae9c77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a487f0e64b1b2996070872bb1c2ae9c77">&#9670;&#160;</a></span>create() <span class="overload">[6/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a487f0e64b1b2996070872bb1c2ae9c77">&#9670;&#160;</a></span>create() <span class="overload">[9/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2467,7 +2581,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
   </table>
   </dd>
@@ -2477,7 +2591,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="acc18dc757c4c0498f1df56037809b8af" name="acc18dc757c4c0498f1df56037809b8af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc18dc757c4c0498f1df56037809b8af">&#9670;&#160;</a></span>create() <span class="overload">[7/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acc18dc757c4c0498f1df56037809b8af">&#9670;&#160;</a></span>create() <span class="overload">[10/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2540,7 +2654,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
   </table>
@@ -2551,7 +2665,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a54f50730a5319d5c891a1f9b57f59869" name="a54f50730a5319d5c891a1f9b57f59869"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54f50730a5319d5c891a1f9b57f59869">&#9670;&#160;</a></span>create() <span class="overload">[8/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a54f50730a5319d5c891a1f9b57f59869">&#9670;&#160;</a></span>create() <span class="overload">[11/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2620,7 +2734,187 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a5bd25cde3052f3d1606451e85f8af9f4" name="a5bd25cde3052f3d1606451e85f8af9f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bd25cde3052f3d1606451e85f8af9f4">&#9670;&#160;</a></span>create() <span class="overload">[12/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, and location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="aab7db43563e8303501cfba90716c2cde" name="aab7db43563e8303501cfba90716c2cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab7db43563e8303501cfba90716c2cde">&#9670;&#160;</a></span>create() <span class="overload">[13/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a28e43fb4635721fb79a305fccaffb5e5" name="a28e43fb4635721fb79a305fccaffb5e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28e43fb4635721fb79a305fccaffb5e5">&#9670;&#160;</a></span>create() <span class="overload">[14/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create a <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified parent, text, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
@@ -2632,7 +2926,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a341b8dd24f4f61dc44691dd3a6b7e7b5" name="a341b8dd24f4f61dc44691dd3a6b7e7b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a341b8dd24f4f61dc44691dd3a6b7e7b5">&#9670;&#160;</a></span>create() <span class="overload">[9/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a341b8dd24f4f61dc44691dd3a6b7e7b5">&#9670;&#160;</a></span>create() <span class="overload">[15/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2676,7 +2970,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2685,7 +2979,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a9c55561829744637f8a23ec3753f9ecf" name="a9c55561829744637f8a23ec3753f9ecf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c55561829744637f8a23ec3753f9ecf">&#9670;&#160;</a></span>create() <span class="overload">[10/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c55561829744637f8a23ec3753f9ecf">&#9670;&#160;</a></span>create() <span class="overload">[16/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2735,7 +3029,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
   </table>
   </dd>
@@ -2745,7 +3039,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a71518657daf6735c406f5ea6bec93af8" name="a71518657daf6735c406f5ea6bec93af8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71518657daf6735c406f5ea6bec93af8">&#9670;&#160;</a></span>create() <span class="overload">[11/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a71518657daf6735c406f5ea6bec93af8">&#9670;&#160;</a></span>create() <span class="overload">[17/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2801,7 +3095,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
   </table>
@@ -2812,7 +3106,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="ae0dc7d4d1dc867120e70b79111c5a6fb" name="ae0dc7d4d1dc867120e70b79111c5a6fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0dc7d4d1dc867120e70b79111c5a6fb">&#9670;&#160;</a></span>create() <span class="overload">[12/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0dc7d4d1dc867120e70b79111c5a6fb">&#9670;&#160;</a></span>create() <span class="overload">[18/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2874,7 +3168,141 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="afb8bf14006ed847d5401690e1f76a050" name="afb8bf14006ed847d5401690e1f76a050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb8bf14006ed847d5401690e1f76a050">&#9670;&#160;</a></span>create() <span class="overload">[19/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="aba56ff6b24c61dff4a31d8ab5280a0df" name="aba56ff6b24c61dff4a31d8ab5280a0df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba56ff6b24c61dff4a31d8ab5280a0df">&#9670;&#160;</a></span>create() <span class="overload">[20/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="ae46c6db17ce6ebba5b26fa805df906c7" name="ae46c6db17ce6ebba5b26fa805df906c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46c6db17ce6ebba5b26fa805df906c7">&#9670;&#160;</a></span>create() <span class="overload">[21/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
@@ -2886,7 +3314,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="ad1e00f3526177add76a1ac90c8e6ea10" name="ad1e00f3526177add76a1ac90c8e6ea10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1e00f3526177add76a1ac90c8e6ea10">&#9670;&#160;</a></span>create() <span class="overload">[13/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e00f3526177add76a1ac90c8e6ea10">&#9670;&#160;</a></span>create() <span class="overload">[22/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2921,7 +3349,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="ad55b33b16cff229b9db445e586245a11" name="ad55b33b16cff229b9db445e586245a11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad55b33b16cff229b9db445e586245a11">&#9670;&#160;</a></span>create() <span class="overload">[14/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad55b33b16cff229b9db445e586245a11">&#9670;&#160;</a></span>create() <span class="overload">[23/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2967,7 +3395,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a219087ff206cd51749cd20e180bb0a49" name="a219087ff206cd51749cd20e180bb0a49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a219087ff206cd51749cd20e180bb0a49">&#9670;&#160;</a></span>create() <span class="overload">[15/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a219087ff206cd51749cd20e180bb0a49">&#9670;&#160;</a></span>create() <span class="overload">[24/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3011,7 +3439,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3020,7 +3448,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a0798ee4ab1d510d1f9bca3131197b010" name="a0798ee4ab1d510d1f9bca3131197b010"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0798ee4ab1d510d1f9bca3131197b010">&#9670;&#160;</a></span>create() <span class="overload">[16/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0798ee4ab1d510d1f9bca3131197b010">&#9670;&#160;</a></span>create() <span class="overload">[25/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3070,7 +3498,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
   </table>
   </dd>
@@ -3080,7 +3508,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a918e96e97cf5eef501dff9466d9be16c" name="a918e96e97cf5eef501dff9466d9be16c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a918e96e97cf5eef501dff9466d9be16c">&#9670;&#160;</a></span>create() <span class="overload">[17/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a918e96e97cf5eef501dff9466d9be16c">&#9670;&#160;</a></span>create() <span class="overload">[26/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3136,7 +3564,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
   </table>
@@ -3147,7 +3575,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a30b34c7111edde1e9b889ce239a0695e" name="a30b34c7111edde1e9b889ce239a0695e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30b34c7111edde1e9b889ce239a0695e">&#9670;&#160;</a></span>create() <span class="overload">[18/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a30b34c7111edde1e9b889ce239a0695e">&#9670;&#160;</a></span>create() <span class="overload">[27/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3209,7 +3637,166 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="ad1ccb4152d8ec2b601dd455af78fc0f9" name="ad1ccb4152d8ec2b601dd455af78fc0f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1ccb4152d8ec2b601dd455af78fc0f9">&#9670;&#160;</a></span>create() <span class="overload">[28/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, and location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a3c030f3b796071a12d43b6d080a131a1" name="a3c030f3b796071a12d43b6d080a131a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c030f3b796071a12d43b6d080a131a1">&#9670;&#160;</a></span>create() <span class="overload">[29/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a1b4f7dd42858c1b530b6698261d50378" name="a1b4f7dd42858c1b530b6698261d50378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b4f7dd42858c1b530b6698261d50378">&#9670;&#160;</a></span>create() <span class="overload">[30/34]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1check__box.html">check_box</a> xtd::forms::check_box::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> with specified text, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
@@ -3221,7 +3808,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a4b64a0c38448134305e6a4bee46b9866" name="a4b64a0c38448134305e6a4bee46b9866"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b64a0c38448134305e6a4bee46b9866">&#9670;&#160;</a></span>create() <span class="overload">[19/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b64a0c38448134305e6a4bee46b9866">&#9670;&#160;</a></span>create() <span class="overload">[31/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3258,7 +3845,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3267,7 +3854,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="ad8759a49874b331cad78cdb6f9acde74" name="ad8759a49874b331cad78cdb6f9acde74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8759a49874b331cad78cdb6f9acde74">&#9670;&#160;</a></span>create() <span class="overload">[20/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8759a49874b331cad78cdb6f9acde74">&#9670;&#160;</a></span>create() <span class="overload">[32/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3310,7 +3897,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
@@ -3322,7 +3909,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a51db9c4d38012226cdaefae796d2583c" name="a51db9c4d38012226cdaefae796d2583c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51db9c4d38012226cdaefae796d2583c">&#9670;&#160;</a></span>create() <span class="overload">[21/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a51db9c4d38012226cdaefae796d2583c">&#9670;&#160;</a></span>create() <span class="overload">[33/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3371,7 +3958,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
   </table>
   </dd>
@@ -3381,7 +3968,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div>
 </div>
 <a id="a4917fd8b7bb74dc1c9de85bc28617358" name="a4917fd8b7bb74dc1c9de85bc28617358"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4917fd8b7bb74dc1c9de85bc28617358">&#9670;&#160;</a></span>create() <span class="overload">[22/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4917fd8b7bb74dc1c9de85bc28617358">&#9670;&#160;</a></span>create() <span class="overload">[34/34]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3436,7 +4023,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
-    <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
+    <tr><td class="paramname">check_state</td><td>One of the <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a>. </td></tr>
@@ -3937,37 +4524,27 @@ The on_checked_changed method also allows derived classes to handle the event wi
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Check box example&quot;</span>);</div>
-<div class="line">      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
 <div class="line">      check_box1.click += [&amp;] {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box1.location({30, 30});</div>
-<div class="line">      check_box1.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
 <div class="line">      check_box2.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box2.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box2.location({30, 60});</div>
-<div class="line">      </div>
+<div class="line"> </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      check_box3.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box3.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
-<div class="line">      check_box3.three_state(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
 <div class="line">      check_box4.check_state_changed += [&amp;] {</div>
 <div class="line">        check_box4.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
-<div class="line">      check_box4.location({30, 120});</div>
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
@@ -3976,16 +4553,14 @@ The on_checked_changed method also allows derived classes to handle the event wi
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">      };</div>
-<div class="line">      check_box5.location({30, 150});</div>
-<div class="line">      check_box5.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 30});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 60});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box3 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;indeterminate&quot;</span>, <span class="keyword">true</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2">xtd::forms::check_state::indeterminate</a>, {30, 90});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box4 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;checked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a3793ea52a7be2d7deafd858fda50775c">xtd::forms::check_state::checked</a>, {30, 120});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box5 = check_box::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;unchecked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866aad91a1da588ce256d30b1af38f78f84e">xtd::forms::check_state::unchecked</a>, {30, 150});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -4131,7 +4706,7 @@ The on_checked_changed method also allows derived classes to handle the event wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 20 2024 20:58:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Feb 22 2024 10:39:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

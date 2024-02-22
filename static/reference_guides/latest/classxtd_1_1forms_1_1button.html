@@ -178,38 +178,21 @@ You can change the button's appearance. For example, to make it appear flat for 
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Button example&quot;</span>);</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.text(<span class="stringliteral">&quot;Button 1&quot;</span>);</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.location({50, 50});</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
 <div class="line">        label1.text(ustring::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      button2.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      button2.text(<span class="stringliteral">&quot;Button 2&quot;</span>);</div>
-<div class="line">      button2.location({50, 100});</div>
-<div class="line">      button2.auto_repeat(<span class="keyword">true</span>);</div>
-<div class="line">      button2.size({200, 75});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>.auto_repeat(<span class="keyword">true</span>);</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>.click += [&amp;] {</div>
 <div class="line">        label2.text(ustring::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
 <div class="line">      };</div>
-<div class="line">      </div>
-<div class="line">      label1.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      label1.text(<span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>);</div>
-<div class="line">      label1.location({50, 200});</div>
-<div class="line">      label1.width(200);</div>
-<div class="line">      </div>
-<div class="line">      label2.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      label2.text(<span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>);</div>
-<div class="line">      label2.location({50, 230});</div>
-<div class="line">      label2.width(200);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label2;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button1 = button::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Button 1&quot;</span>, {50, 50});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a> = button::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Button 2&quot;</span>, {50, 100}, {200, 75});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1 = label::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, {50, 200}, {200, 23});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label2 = label::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>, {50, 230}, {200, 23});</div>
 <div class="line">    <span class="keywordtype">int</span> button1_clicked = 0;</div>
 <div class="line">    <span class="keywordtype">int</span> button2_clicked = 0;</div>
 <div class="line">  };</div>
@@ -242,48 +225,34 @@ You can change the button's appearance. For example, to make it appear flat for 
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Bitmap button example&quot;</span>);</div>
-<div class="line">    controls().push_back_range({<a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>, label1, label2});</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.location({50, 50});</div>
-<div class="line">    button1.image(image::from_data(gammasoft_16x16_xpm));</div>
-<div class="line">    button1.image_align(content_alignment::middle_center);</div>
-<div class="line">    button1.click += [&amp;] {</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.image(image::from_data(gammasoft_16x16_xpm));</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.image_align(content_alignment::middle_center);</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
 <div class="line">      label1.text(ustring::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
 <div class="line">    };</div>
 <div class="line"> </div>
-<div class="line">    button2.auto_repeat(<span class="keyword">true</span>);</div>
-<div class="line">    button2.location({50, 100});</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>.size({200, 75});</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>.auto_repeat(<span class="keyword">true</span>);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>.image(image::from_data(gammasoft_64x64_xpm));</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>.image_align(content_alignment::middle_center);</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>.click += [&amp;] {</div>
 <div class="line">      label2.text(ustring::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
 <div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    label1.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    label1.text(<span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>);</div>
-<div class="line">    label1.location({50, 200});</div>
-<div class="line">    label1.width(200);</div>
-<div class="line">    </div>
-<div class="line">    label2.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    label2.text(<span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>);</div>
-<div class="line">    label2.location({50, 230});</div>
-<div class="line">    label2.width(200);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a>;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label2;</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button1 = button::create(*<span class="keyword">this</span>, <a class="code hl_class" href="classxtd_1_1drawing_1_1point.html">point</a> {50, 50});</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a9870a0015497f91ec6ab5722f8d9da51">button2</a> = button::create(*<span class="keyword">this</span>, <a class="code hl_class" href="classxtd_1_1drawing_1_1point.html">point</a> {50, 100}, {200, 75});</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1 = label::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, {50, 200}, {200, 23});</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label2 = label::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>, {50, 230}, {200, 23});</div>
 <div class="line">  <span class="keywordtype">int</span> button1_clicked = 0;</div>
 <div class="line">  <span class="keywordtype">int</span> button2_clicked = 0;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="comment">//application::enable_system_controls();</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1point_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1point.html">xtd::drawing::point</a></div><div class="ttdoc">Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...</div><div class="ttdef"><b>Definition</b> point.h:54</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.h:11</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_box_8cpp-example.html#_a2">about_box.cpp</a>, <a class="el" href="about_dialog_8cpp-example.html#_a6">about_dialog.cpp</a>, <a class="el" href="about_dialog_from_executing_assembly_informations_8cpp-example.html#_a2">about_dialog_from_executing_assembly_informations.cpp</a>, <a class="el" href="about_dialog_system_8cpp-example.html#_a18">about_dialog_system.cpp</a>, <a class="el" href="anchors_8cpp-example.html#_a1">anchors.cpp</a>, <a class="el" href="application_and_assert_8cpp-example.html#_a3">application_and_assert.cpp</a>, <a class="el" href="application_and_exception_8cpp-example.html#_a5">application_and_exception.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#_a14">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#_a14">application_enable_light_mode.cpp</a>, <a class="el" href="application_events_8cpp-example.html#_a2">application_events.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#_a1">application_use_wait_cursor.cpp</a>, <a class="el" href="assert_box_8cpp-example.html#_a3">assert_box.cpp</a>, <a class="el" href="assert_dialog_8cpp-example.html#_a5">assert_dialog.cpp</a>, <a class="el" href="background_worker_8cpp-example.html#_a4">background_worker.cpp</a>, <a class="el" href="bitmap_button_8cpp-example.html#_a1">bitmap_button.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#_a1">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#_a6">busy_dialog.cpp</a>, <a class="el" href="button_8cpp-example.html#_a1">button.cpp</a>, <a class="el" href="button2_8cpp-example.html#_a0">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#_a0">button3.cpp</a>, <a class="el" href="button_appearance_8cpp-example.html#_a10">button_appearance.cpp</a>, <a class="el" href="button_images_8cpp-example.html#_a1">button_images.cpp</a>, <a class="el" href="button_renderer_8cpp-example.html#_a16">button_renderer.cpp</a>, <a class="el" href="button_with_style_sheet_8cpp-example.html#_a1">button_with_style_sheet.cpp</a>, <a class="el" href="calculator_8cpp-example.html#_a8">calculator.cpp</a>, <a class="el" href="change_color_8cpp-example.html#_a3">change_color.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#_a11">change_parent.cpp</a>, <a class="el" href="circular_form_8cpp-example.html#_a7">circular_form.cpp</a>, <a class="el" href="collapsible_panel_8cpp-example.html#_a2">collapsible_panel.cpp</a>, <a class="el" href="color_box_8cpp-example.html#_a1">color_box.cpp</a>, <a class="el" href="color_dialog_8cpp-example.html#_a8">color_dialog.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#_a1">control_with_name_operator.cpp</a>, <a class="el" href="debug_form_8cpp-example.html#_a2">debug_form.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#_a4">debug_message_box.cpp</a>, <a class="el" href="debug_message_dialog_8cpp-example.html#_a4">debug_message_dialog.cpp</a>, <a class="el" href="demo_8cpp-example.html#_a36">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#_a1">dialog.cpp</a>, <a class="el" href="enable_debug_8cpp-example.html#_a1">enable_debug.cpp</a>, <a class="el" href="exception_box_8cpp-example.html#_a4">exception_box.cpp</a>, <a class="el" href="exception_dialog_8cpp-example.html#_a6">exception_dialog.cpp</a>, <a class="el" href="find_box_8cpp-example.html#_a2">find_box.cpp</a>, <a class="el" href="find_dialog_8cpp-example.html#_a8">find_dialog.cpp</a>, <a class="el" href="flat_button_8cpp-example.html#_a3">flat_button.cpp</a>, <a class="el" href="folder_browser_box_8cpp-example.html#_a1">folder_browser_box.cpp</a>, <a class="el" href="folder_browser_dialog_8cpp-example.html#_a3">folder_browser_dialog.cpp</a>, <a class="el" href="font_box_8cpp-example.html#_a3">font_box.cpp</a>, <a class="el" href="font_dialog_8cpp-example.html#_a4">font_dialog.cpp</a>, <a class="el" href="form_8cpp-example.html#_a2">form.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#_a2">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#_a2">form_background_image.cpp</a>, <a class="el" href="form_resize_8cpp-example.html#_a2">form_resize.cpp</a>, <a class="el" href="form_show_8cpp-example.html#_a6">form_show.cpp</a>, <a class="el" href="form_show_hide_8cpp-example.html#_a1">form_show_hide.cpp</a>, <a class="el" href="form_window_state_8cpp-example.html#_a1">form_window_state.cpp</a>, <a class="el" href="forms_timer_8cpp-example.html#_a7">forms_timer.cpp</a>, <a class="el" href="hello_world_message_box_8cpp-example.html#_a1">hello_world_message_box.cpp</a>, <a class="el" href="hello_world_say_8cpp-example.html#_a1">hello_world_say.cpp</a>, <a class="el" href="image_list_8cpp-example.html#_a5">image_list.cpp</a>, <a class="el" href="images_8cpp-example.html#_a4">images.cpp</a>, <a class="el" href="images2_8cpp-example.html#_a5">images2.cpp</a>, <a class="el" href="images3_8cpp-example.html#_a5">images3.cpp</a>, <a class="el" href="input_box_8cpp-example.html#_a1">input_box.cpp</a>, <a class="el" href="input_dialog_8cpp-example.html#_a3">input_dialog.cpp</a>, <a class="el" href="input_dialog_multiline_8cpp-example.html#_a7">input_dialog_multiline.cpp</a>, <a class="el" href="input_dialog_password_8cpp-example.html#_a7">input_dialog_password.cpp</a>, <a class="el" href="message_box_8cpp-example.html#_a1">message_box.cpp</a>, <a class="el" href="message_box_appearance_8cpp-example.html#_a4">message_box_appearance.cpp</a>, <a class="el" href="message_dialog_8cpp-example.html#_a3">message_dialog.cpp</a>, <a class="el" href="message_dialog_show_sheet_8cpp-example.html#_a4">message_dialog_show_sheet.cpp</a>, <a class="el" href="open_file_box_8cpp-example.html#_a2">open_file_box.cpp</a>, <a class="el" href="open_file_dialog_8cpp-example.html#_a3">open_file_dialog.cpp</a>, <a class="el" href="owner_button_8cpp-example.html#_a0">owner_button.cpp</a>, <a class="el" href="painting_8cpp-example.html#_a17">painting.cpp</a>, <a class="el" href="popup_form_8cpp-example.html#_a1">popup_form.cpp</a>, <a class="el" href="popup_panel_8cpp-example.html#_a1">popup_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#_a5">process_form.cpp</a>, <a class="el" href="progress_box_8cpp-example.html#_a2">progress_box.cpp</a>, <a class="el" href="progress_dialog_8cpp-example.html#_a3">progress_dialog.cpp</a>, <a class="el" href="replace_box_8cpp-example.html#_a3">replace_box.cpp</a>, <a class="el" href="replace_dialog_8cpp-example.html#_a12">replace_dialog.cpp</a>, <a class="el" href="save_file_box_8cpp-example.html#_a1">save_file_box.cpp</a>, <a class="el" href="save_file_dialog_8cpp-example.html#_a3">save_file_dialog.cpp</a>, <a class="el" href="send_message_to_form_8cpp-example.html#_a3">send_message_to_form.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#_a14">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#_a14">some_system_controls.cpp</a>, <a class="el" href="stopwatch_form_8cpp-example.html#_a6">stopwatch_form.cpp</a>, <a class="el" href="system_sound_8cpp-example.html#_a4">system_sound.cpp</a>, <a class="el" href="themes_8cpp-example.html#_a14">themes.cpp</a>, <a class="el" href="timers_timer_synchronizing_object_8cpp-example.html#_a7">timers_timer_synchronizing_object.cpp</a>, <a class="el" href="trace_form_8cpp-example.html#_a1">trace_form.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#_a5">trace_message_box.cpp</a>, <a class="el" href="trace_message_dialog_8cpp-example.html#_a4">trace_message_dialog.cpp</a>, <a class="el" href="track_bar2_8cpp-example.html#_a3">track_bar2.cpp</a>, <a class="el" href="translator_8cpp-example.html#_a1">translator.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#_a8">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#_a6">tutorial_communicate.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#_a2">use_wait_cursor.cpp</a>, <a class="el" href="user_dialog_8cpp-example.html#_a3">user_dialog.cpp</a>, and <a class="el" href="user_dialog_show_sheet_8cpp-example.html#_a3">user_dialog_show_sheet.cpp</a>.</dd>
@@ -368,6 +337,15 @@ You can change the button's appearance. For example, to make it appear flat for 
 <tr class="memitem:a6a8437802231381f5f91dee9d8c3415e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">create</a> ()</td></tr>
 <tr class="memdesc:a6a8437802231381f5f91dee9d8c3415e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>.  <br /></td></tr>
 <tr class="separator:a6a8437802231381f5f91dee9d8c3415e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8700b52572bcf83b936354d7522bf71e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#a8700b52572bcf83b936354d7522bf71e">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:a8700b52572bcf83b936354d7522bf71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified location.  <br /></td></tr>
+<tr class="separator:a8700b52572bcf83b936354d7522bf71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8def824a57a0d723d1e3fe665593f82e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#a8def824a57a0d723d1e3fe665593f82e">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a8def824a57a0d723d1e3fe665593f82e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified location, and size.  <br /></td></tr>
+<tr class="separator:a8def824a57a0d723d1e3fe665593f82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad319a909a15ca412884540f85503def7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#ad319a909a15ca412884540f85503def7">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:ad319a909a15ca412884540f85503def7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified location, size, and name.  <br /></td></tr>
+<tr class="separator:ad319a909a15ca412884540f85503def7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97ed4bccbd6375971761cce9260b538a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#a97ed4bccbd6375971761cce9260b538a">create</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>)</td></tr>
 <tr class="memdesc:a97ed4bccbd6375971761cce9260b538a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified text.  <br /></td></tr>
 <tr class="separator:a97ed4bccbd6375971761cce9260b538a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -383,6 +361,15 @@ You can change the button's appearance. For example, to make it appear flat for 
 <tr class="memitem:a352d9241f7b8d1379c451ca2948af00d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#a352d9241f7b8d1379c451ca2948af00d">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>)</td></tr>
 <tr class="memdesc:a352d9241f7b8d1379c451ca2948af00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified parent,.  <br /></td></tr>
 <tr class="separator:a352d9241f7b8d1379c451ca2948af00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fddfc544db18a5fa0fe702094f3f657"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#a4fddfc544db18a5fa0fe702094f3f657">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:a4fddfc544db18a5fa0fe702094f3f657"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified parent, location.  <br /></td></tr>
+<tr class="separator:a4fddfc544db18a5fa0fe702094f3f657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0475c29a622ca755ea580a3fbd88936"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#ae0475c29a622ca755ea580a3fbd88936">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:ae0475c29a622ca755ea580a3fbd88936"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified parent, location, and size.  <br /></td></tr>
+<tr class="separator:ae0475c29a622ca755ea580a3fbd88936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74583ec1be70ad5c0f7e4f068aaa50e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#a74583ec1be70ad5c0f7e4f068aaa50e3">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:a74583ec1be70ad5c0f7e4f068aaa50e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified parent, location, size, and name.  <br /></td></tr>
+<tr class="separator:a74583ec1be70ad5c0f7e4f068aaa50e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3af42e67dea8df6768c6e560ba2fcd97"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1button.html#a3af42e67dea8df6768c6e560ba2fcd97">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>)</td></tr>
 <tr class="memdesc:a3af42e67dea8df6768c6e560ba2fcd97"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified parent, and text.  <br /></td></tr>
 <tr class="separator:a3af42e67dea8df6768c6e560ba2fcd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1158,14 +1145,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a3392903158b0d1b81ff99cf84a94d278">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>)</td></tr>
 <tr class="memdesc:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, and text.  <br /></td></tr>
 <tr class="separator:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, and location.  <br /></td></tr>
-<tr class="separator:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, and size.  <br /></td></tr>
-<tr class="separator:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#aaecd2fa1b0009f58ad33af6ef383699e">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, and location.  <br /></td></tr>
+<tr class="separator:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a9b9598f6857da6e15f0e93140b27a295">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, and size.  <br /></td></tr>
+<tr class="separator:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
 <tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
 <tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, size, and name.  <br /></td></tr>
@@ -1693,7 +1680,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a6a8437802231381f5f91dee9d8c3415e" name="a6a8437802231381f5f91dee9d8c3415e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a8437802231381f5f91dee9d8c3415e">&#9670;&#160;</a></span>create() <span class="overload">[1/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a8437802231381f5f91dee9d8c3415e">&#9670;&#160;</a></span>create() <span class="overload">[1/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1723,7 +1710,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a352d9241f7b8d1379c451ca2948af00d" name="a352d9241f7b8d1379c451ca2948af00d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a352d9241f7b8d1379c451ca2948af00d">&#9670;&#160;</a></span>create() <span class="overload">[2/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a352d9241f7b8d1379c451ca2948af00d">&#9670;&#160;</a></span>create() <span class="overload">[2/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1757,8 +1744,167 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="a4fddfc544db18a5fa0fe702094f3f657" name="a4fddfc544db18a5fa0fe702094f3f657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fddfc544db18a5fa0fe702094f3f657">&#9670;&#160;</a></span>create() <span class="overload">[3/16]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a> xtd::forms::button::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified parent, location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="ae0475c29a622ca755ea580a3fbd88936" name="ae0475c29a622ca755ea580a3fbd88936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0475c29a622ca755ea580a3fbd88936">&#9670;&#160;</a></span>create() <span class="overload">[4/16]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a> xtd::forms::button::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified parent, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a74583ec1be70ad5c0f7e4f068aaa50e3" name="a74583ec1be70ad5c0f7e4f068aaa50e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74583ec1be70ad5c0f7e4f068aaa50e3">&#9670;&#160;</a></span>create() <span class="overload">[5/16]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a> xtd::forms::button::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified parent, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a3af42e67dea8df6768c6e560ba2fcd97" name="a3af42e67dea8df6768c6e560ba2fcd97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3af42e67dea8df6768c6e560ba2fcd97">&#9670;&#160;</a></span>create() <span class="overload">[3/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af42e67dea8df6768c6e560ba2fcd97">&#9670;&#160;</a></span>create() <span class="overload">[6/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1804,7 +1950,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a317a46182b8354bfbf724cfb3456b350" name="a317a46182b8354bfbf724cfb3456b350"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a317a46182b8354bfbf724cfb3456b350">&#9670;&#160;</a></span>create() <span class="overload">[4/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a317a46182b8354bfbf724cfb3456b350">&#9670;&#160;</a></span>create() <span class="overload">[7/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1857,7 +2003,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a7fa323cd7b43baaf37d8ebbdc613b82c" name="a7fa323cd7b43baaf37d8ebbdc613b82c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fa323cd7b43baaf37d8ebbdc613b82c">&#9670;&#160;</a></span>create() <span class="overload">[5/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fa323cd7b43baaf37d8ebbdc613b82c">&#9670;&#160;</a></span>create() <span class="overload">[8/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1917,7 +2063,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="aecaed89d47f9d9b2c2bc7f7a85973254" name="aecaed89d47f9d9b2c2bc7f7a85973254"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecaed89d47f9d9b2c2bc7f7a85973254">&#9670;&#160;</a></span>create() <span class="overload">[6/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aecaed89d47f9d9b2c2bc7f7a85973254">&#9670;&#160;</a></span>create() <span class="overload">[9/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1983,8 +2129,142 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="a8700b52572bcf83b936354d7522bf71e" name="a8700b52572bcf83b936354d7522bf71e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8700b52572bcf83b936354d7522bf71e">&#9670;&#160;</a></span>create() <span class="overload">[10/16]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a> xtd::forms::button::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a8def824a57a0d723d1e3fe665593f82e" name="a8def824a57a0d723d1e3fe665593f82e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8def824a57a0d723d1e3fe665593f82e">&#9670;&#160;</a></span>create() <span class="overload">[11/16]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a> xtd::forms::button::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="ad319a909a15ca412884540f85503def7" name="ad319a909a15ca412884540f85503def7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad319a909a15ca412884540f85503def7">&#9670;&#160;</a></span>create() <span class="overload">[12/16]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1button.html">button</a> xtd::forms::button::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> with specified location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a97ed4bccbd6375971761cce9260b538a" name="a97ed4bccbd6375971761cce9260b538a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97ed4bccbd6375971761cce9260b538a">&#9670;&#160;</a></span>create() <span class="overload">[7/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a97ed4bccbd6375971761cce9260b538a">&#9670;&#160;</a></span>create() <span class="overload">[13/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2019,7 +2299,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a720fde30be31b0d9dc51cf3f0fd07e0f" name="a720fde30be31b0d9dc51cf3f0fd07e0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a720fde30be31b0d9dc51cf3f0fd07e0f">&#9670;&#160;</a></span>create() <span class="overload">[8/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a720fde30be31b0d9dc51cf3f0fd07e0f">&#9670;&#160;</a></span>create() <span class="overload">[14/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2065,7 +2345,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a1c040346c3ffa560f7b68ac3445dafb1" name="a1c040346c3ffa560f7b68ac3445dafb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c040346c3ffa560f7b68ac3445dafb1">&#9670;&#160;</a></span>create() <span class="overload">[9/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c040346c3ffa560f7b68ac3445dafb1">&#9670;&#160;</a></span>create() <span class="overload">[15/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2118,7 +2398,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a183e5e1f0f53c535ce80ac68cee3e5cc" name="a183e5e1f0f53c535ce80ac68cee3e5cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a183e5e1f0f53c535ce80ac68cee3e5cc">&#9670;&#160;</a></span>create() <span class="overload">[10/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a183e5e1f0f53c535ce80ac68cee3e5cc">&#9670;&#160;</a></span>create() <span class="overload">[16/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2733,7 +3013,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 20 2024 20:58:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Feb 22 2024 10:39:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

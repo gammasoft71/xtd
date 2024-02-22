@@ -170,22 +170,18 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Checked list box example&quot;</span>);</div>
 <div class="line">      client_size({200, 240});</div>
 <div class="line">      </div>
-<div class="line">      checked_list_box1.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      checked_list_box1.location({20, 20});</div>
-<div class="line">      checked_list_box1.size({160, 200});</div>
 <div class="line">      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);</div>
-<div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt;= 10; ++index)</div>
 <div class="line">        checked_list_box1.items().push_back({ustring::format(<span class="stringliteral">&quot;Item {}&quot;</span>, index), index % 2 != 0});</div>
 <div class="line">      checked_list_box1.selected_index(0);</div>
-<div class="line">      </div>
 <div class="line">      checked_list_box1.item_check += [](<span class="keywordtype">object</span> &amp; sender, <a class="code hl_class" href="classxtd_1_1forms_1_1item__check__event__args.html">item_check_event_args</a> &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
 <div class="line">        cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;item_check, index={}, new_value={}, current_value={}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.index(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.new_value(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.current_value()) &lt;&lt; endl;</div>
 <div class="line">      };</div>
+<div class="line">      cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;checked items = {}&quot;</span>, checked_list_box1.checked_items()) &lt;&lt; endl;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1 = checked_list_box::create(*<span class="keyword">this</span>, {20, 20}, {160, 200});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -214,16 +210,10 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Choice example&quot;</span>);</div>
 <div class="line">      </div>
-<div class="line">      choice1.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      choice1.location({10, 10});</div>
 <div class="line">      choice1.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
 <div class="line">      choice1.selected_index(0);</div>
 <div class="line">      choice1.selected_index_changed += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_choice_click);</div>
 <div class="line">      </div>
-<div class="line">      choice2.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      choice2.location({10, 50});</div>
-<div class="line">      choice2.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
-<div class="line">      choice2.selected_index(0);</div>
 <div class="line">      choice2.selected_index_changed += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_choice_click);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -232,8 +222,8 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">      choice1.selected_index(as&lt;choice&amp;&gt;(sender).selected_index());</div>
 <div class="line">      choice2.selected_index(as&lt;choice&amp;&gt;(sender).selected_index());</div>
 <div class="line">    }</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice1;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice2;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice1 = choice::create(*<span class="keyword">this</span>, {10, 10});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice2 = choice::create(*<span class="keyword">this</span>, {<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>}, 0, {10, 50});</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -297,9 +287,27 @@ You can use these properties to manage the currently selected item in the list, 
 <tr class="memitem:aa40946fd1be0401a11123797cce66ec0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#aa40946fd1be0401a11123797cce66ec0">create</a> ()</td></tr>
 <tr class="memdesc:aa40946fd1be0401a11123797cce66ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>.  <br /></td></tr>
 <tr class="separator:aa40946fd1be0401a11123797cce66ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc760fa785d49aca7646a38f0bdf7b8f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#afc760fa785d49aca7646a38f0bdf7b8f">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:afc760fa785d49aca7646a38f0bdf7b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location.  <br /></td></tr>
+<tr class="separator:afc760fa785d49aca7646a38f0bdf7b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d3f376a70eb652e7ebff50124bd586"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#ab7d3f376a70eb652e7ebff50124bd586">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:ab7d3f376a70eb652e7ebff50124bd586"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location, and size.  <br /></td></tr>
+<tr class="separator:ab7d3f376a70eb652e7ebff50124bd586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b37187829557ec5240cc12403e2384"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#ac0b37187829557ec5240cc12403e2384">create</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:ac0b37187829557ec5240cc12403e2384"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location, size, and name.  <br /></td></tr>
+<tr class="separator:ac0b37187829557ec5240cc12403e2384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8596be36c81ad917709090cec7bce503"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a8596be36c81ad917709090cec7bce503">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>)</td></tr>
 <tr class="memdesc:a8596be36c81ad917709090cec7bce503"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items.  <br /></td></tr>
 <tr class="separator:a8596be36c81ad917709090cec7bce503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a311024a81d1012961abb76999e6ba91d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a311024a81d1012961abb76999e6ba91d">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:a311024a81d1012961abb76999e6ba91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, and location.  <br /></td></tr>
+<tr class="separator:a311024a81d1012961abb76999e6ba91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f859975a23f24465b3e8163f67da100"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a8f859975a23f24465b3e8163f67da100">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a8f859975a23f24465b3e8163f67da100"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, location, and size.  <br /></td></tr>
+<tr class="separator:a8f859975a23f24465b3e8163f67da100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a278f17ea9334a000c79769386663342b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a278f17ea9334a000c79769386663342b">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:a278f17ea9334a000c79769386663342b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, location, size, and name.  <br /></td></tr>
+<tr class="separator:a278f17ea9334a000c79769386663342b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5863086dfb7746707ab811599ffb1c69"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a5863086dfb7746707ab811599ffb1c69">create</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1choice.html#ab2fdcff9659ed89bfc68d939ed61edaa">selected_index</a>)</td></tr>
 <tr class="memdesc:a5863086dfb7746707ab811599ffb1c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, and selected_index.  <br /></td></tr>
 <tr class="separator:a5863086dfb7746707ab811599ffb1c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,9 +323,27 @@ You can use these properties to manage the currently selected item in the list, 
 <tr class="memitem:aa027d91b56af2717d524c7b69832ea00"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#aa027d91b56af2717d524c7b69832ea00">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>)</td></tr>
 <tr class="memdesc:aa027d91b56af2717d524c7b69832ea00"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent.  <br /></td></tr>
 <tr class="separator:aa027d91b56af2717d524c7b69832ea00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aaf99ed89a452f9ebdc80902b6b51cc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a1aaf99ed89a452f9ebdc80902b6b51cc">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:a1aaf99ed89a452f9ebdc80902b6b51cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, and location.  <br /></td></tr>
+<tr class="separator:a1aaf99ed89a452f9ebdc80902b6b51cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375813570fefa8d32cbf55905153fe73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a375813570fefa8d32cbf55905153fe73">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a375813570fefa8d32cbf55905153fe73"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, location, and size.  <br /></td></tr>
+<tr class="separator:a375813570fefa8d32cbf55905153fe73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef1132077ee67db5b875bbb3c02d967"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#aeef1132077ee67db5b875bbb3c02d967">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:aeef1132077ee67db5b875bbb3c02d967"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, location, size, and name.  <br /></td></tr>
+<tr class="separator:aeef1132077ee67db5b875bbb3c02d967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2099af895e4d335cc67d9e7fb5a09b80"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a2099af895e4d335cc67d9e7fb5a09b80">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>)</td></tr>
 <tr class="memdesc:a2099af895e4d335cc67d9e7fb5a09b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, and items.  <br /></td></tr>
 <tr class="separator:a2099af895e4d335cc67d9e7fb5a09b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65231d512d272dffb547d1ece5b6fd21"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a65231d512d272dffb547d1ece5b6fd21">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:a65231d512d272dffb547d1ece5b6fd21"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, and location.  <br /></td></tr>
+<tr class="separator:a65231d512d272dffb547d1ece5b6fd21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd32d4e1e99fb4469f1699e1f01841bb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#acd32d4e1e99fb4469f1699e1f01841bb">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:acd32d4e1e99fb4469f1699e1f01841bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, location, and size.  <br /></td></tr>
+<tr class="separator:acd32d4e1e99fb4469f1699e1f01841bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bbcea5920f3f62b3475187b6e64fe42"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a4bbcea5920f3f62b3475187b6e64fe42">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:a4bbcea5920f3f62b3475187b6e64fe42"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, location, size, and name.  <br /></td></tr>
+<tr class="separator:a4bbcea5920f3f62b3475187b6e64fe42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15c44b7ac4485cc4a37f9fb2200393fa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1choice.html#a15c44b7ac4485cc4a37f9fb2200393fa">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;<a class="el" href="classxtd_1_1forms_1_1choice.html#a983b4c2eb923b5b3c008312327ee9fc8">items</a>, size_t <a class="el" href="classxtd_1_1forms_1_1choice.html#ab2fdcff9659ed89bfc68d939ed61edaa">selected_index</a>)</td></tr>
 <tr class="memdesc:a15c44b7ac4485cc4a37f9fb2200393fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, and selected_index.  <br /></td></tr>
 <tr class="separator:a15c44b7ac4485cc4a37f9fb2200393fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1060,14 +1086,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a3392903158b0d1b81ff99cf84a94d278">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>)</td></tr>
 <tr class="memdesc:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, and text.  <br /></td></tr>
 <tr class="separator:a3392903158b0d1b81ff99cf84a94d278 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, and location.  <br /></td></tr>
-<tr class="separator:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
-<tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
-<tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, and size.  <br /></td></tr>
-<tr class="separator:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#aaecd2fa1b0009f58ad33af6ef383699e">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>)</td></tr>
+<tr class="memdesc:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, and location.  <br /></td></tr>
+<tr class="separator:aaecd2fa1b0009f58ad33af6ef383699e inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a9b9598f6857da6e15f0e93140b27a295">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>)</td></tr>
+<tr class="memdesc:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, and size.  <br /></td></tr>
+<tr class="separator:a9b9598f6857da6e15f0e93140b27a295 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplParams" colspan="2">template&lt;typename control_t &gt; </td></tr>
 <tr class="memitem:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="memTemplItemLeft" align="right" valign="top">static control_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a5faacbac3afa24614c2a956cd678bf95">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85">text</a>, const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>, const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
 <tr class="memdesc:a5faacbac3afa24614c2a956cd678bf95 inherit pub_static_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a specified control with specified parent, text, location, size, and name.  <br /></td></tr>
@@ -1360,7 +1386,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="aa40946fd1be0401a11123797cce66ec0" name="aa40946fd1be0401a11123797cce66ec0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa40946fd1be0401a11123797cce66ec0">&#9670;&#160;</a></span>create() <span class="overload">[1/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa40946fd1be0401a11123797cce66ec0">&#9670;&#160;</a></span>create() <span class="overload">[1/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1388,7 +1414,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="aa027d91b56af2717d524c7b69832ea00" name="aa027d91b56af2717d524c7b69832ea00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa027d91b56af2717d524c7b69832ea00">&#9670;&#160;</a></span>create() <span class="overload">[2/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa027d91b56af2717d524c7b69832ea00">&#9670;&#160;</a></span>create() <span class="overload">[2/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1422,8 +1448,167 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="a1aaf99ed89a452f9ebdc80902b6b51cc" name="a1aaf99ed89a452f9ebdc80902b6b51cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aaf99ed89a452f9ebdc80902b6b51cc">&#9670;&#160;</a></span>create() <span class="overload">[3/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, and location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a375813570fefa8d32cbf55905153fe73" name="a375813570fefa8d32cbf55905153fe73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a375813570fefa8d32cbf55905153fe73">&#9670;&#160;</a></span>create() <span class="overload">[4/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="aeef1132077ee67db5b875bbb3c02d967" name="aeef1132077ee67db5b875bbb3c02d967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef1132077ee67db5b875bbb3c02d967">&#9670;&#160;</a></span>create() <span class="overload">[5/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a2099af895e4d335cc67d9e7fb5a09b80" name="a2099af895e4d335cc67d9e7fb5a09b80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2099af895e4d335cc67d9e7fb5a09b80">&#9670;&#160;</a></span>create() <span class="overload">[3/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2099af895e4d335cc67d9e7fb5a09b80">&#9670;&#160;</a></span>create() <span class="overload">[6/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1468,8 +1653,188 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="a65231d512d272dffb547d1ece5b6fd21" name="a65231d512d272dffb547d1ece5b6fd21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65231d512d272dffb547d1ece5b6fd21">&#9670;&#160;</a></span>create() <span class="overload">[7/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, and location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the choice. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="acd32d4e1e99fb4469f1699e1f01841bb" name="acd32d4e1e99fb4469f1699e1f01841bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd32d4e1e99fb4469f1699e1f01841bb">&#9670;&#160;</a></span>create() <span class="overload">[8/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the choice. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a4bbcea5920f3f62b3475187b6e64fe42" name="a4bbcea5920f3f62b3475187b6e64fe42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bbcea5920f3f62b3475187b6e64fe42">&#9670;&#160;</a></span>create() <span class="overload">[9/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified parent, items, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the choice. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a15c44b7ac4485cc4a37f9fb2200393fa" name="a15c44b7ac4485cc4a37f9fb2200393fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15c44b7ac4485cc4a37f9fb2200393fa">&#9670;&#160;</a></span>create() <span class="overload">[4/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a15c44b7ac4485cc4a37f9fb2200393fa">&#9670;&#160;</a></span>create() <span class="overload">[10/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1522,7 +1887,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a72c2acc596bbd112f576398c4b90ac8b" name="a72c2acc596bbd112f576398c4b90ac8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72c2acc596bbd112f576398c4b90ac8b">&#9670;&#160;</a></span>create() <span class="overload">[5/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a72c2acc596bbd112f576398c4b90ac8b">&#9670;&#160;</a></span>create() <span class="overload">[11/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1582,7 +1947,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a857f347f4c7a02695a524c0610058977" name="a857f347f4c7a02695a524c0610058977"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a857f347f4c7a02695a524c0610058977">&#9670;&#160;</a></span>create() <span class="overload">[6/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a857f347f4c7a02695a524c0610058977">&#9670;&#160;</a></span>create() <span class="overload">[12/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1649,7 +2014,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a8f45ba18b1a8d8bb422461b840ab0841" name="a8f45ba18b1a8d8bb422461b840ab0841"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f45ba18b1a8d8bb422461b840ab0841">&#9670;&#160;</a></span>create() <span class="overload">[7/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f45ba18b1a8d8bb422461b840ab0841">&#9670;&#160;</a></span>create() <span class="overload">[13/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1722,8 +2087,142 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="afc760fa785d49aca7646a38f0bdf7b8f" name="afc760fa785d49aca7646a38f0bdf7b8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc760fa785d49aca7646a38f0bdf7b8f">&#9670;&#160;</a></span>create() <span class="overload">[14/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="ab7d3f376a70eb652e7ebff50124bd586" name="ab7d3f376a70eb652e7ebff50124bd586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7d3f376a70eb652e7ebff50124bd586">&#9670;&#160;</a></span>create() <span class="overload">[15/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="ac0b37187829557ec5240cc12403e2384" name="ac0b37187829557ec5240cc12403e2384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b37187829557ec5240cc12403e2384">&#9670;&#160;</a></span>create() <span class="overload">[16/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a8596be36c81ad917709090cec7bce503" name="a8596be36c81ad917709090cec7bce503"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8596be36c81ad917709090cec7bce503">&#9670;&#160;</a></span>create() <span class="overload">[8/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8596be36c81ad917709090cec7bce503">&#9670;&#160;</a></span>create() <span class="overload">[17/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1757,8 +2256,167 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="a311024a81d1012961abb76999e6ba91d" name="a311024a81d1012961abb76999e6ba91d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a311024a81d1012961abb76999e6ba91d">&#9670;&#160;</a></span>create() <span class="overload">[18/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, and location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the choice. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a8f859975a23f24465b3e8163f67da100" name="a8f859975a23f24465b3e8163f67da100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f859975a23f24465b3e8163f67da100">&#9670;&#160;</a></span>create() <span class="overload">[19/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, location, and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the choice. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
+<a id="a278f17ea9334a000c79769386663342b" name="a278f17ea9334a000c79769386663342b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a278f17ea9334a000c79769386663342b">&#9670;&#160;</a></span>create() <span class="overload">[20/24]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1choice.html">choice</a> xtd::forms::choice::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> with specified items, location, size, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the choice. </td></tr>
+    <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1choice.html" title="Represents a choice control.">xtd::forms::choice</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a5863086dfb7746707ab811599ffb1c69" name="a5863086dfb7746707ab811599ffb1c69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5863086dfb7746707ab811599ffb1c69">&#9670;&#160;</a></span>create() <span class="overload">[9/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5863086dfb7746707ab811599ffb1c69">&#9670;&#160;</a></span>create() <span class="overload">[21/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1804,7 +2462,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a8be68724950c49a487464cc0e4d547aa" name="a8be68724950c49a487464cc0e4d547aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8be68724950c49a487464cc0e4d547aa">&#9670;&#160;</a></span>create() <span class="overload">[10/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8be68724950c49a487464cc0e4d547aa">&#9670;&#160;</a></span>create() <span class="overload">[22/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1857,7 +2515,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="af4df347a1ba44fd9fcf326545756c467" name="af4df347a1ba44fd9fcf326545756c467"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4df347a1ba44fd9fcf326545756c467">&#9670;&#160;</a></span>create() <span class="overload">[11/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af4df347a1ba44fd9fcf326545756c467">&#9670;&#160;</a></span>create() <span class="overload">[23/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1917,7 +2575,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <a id="a7aee1635f432dfacb6fca318688ad445" name="a7aee1635f432dfacb6fca318688ad445"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7aee1635f432dfacb6fca318688ad445">&#9670;&#160;</a></span>create() <span class="overload">[12/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aee1635f432dfacb6fca318688ad445">&#9670;&#160;</a></span>create() <span class="overload">[24/24]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2609,7 +3267,7 @@ Typically, you should not set the client_size of the control. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 20 2024 20:58:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Feb 22 2024 10:39:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
