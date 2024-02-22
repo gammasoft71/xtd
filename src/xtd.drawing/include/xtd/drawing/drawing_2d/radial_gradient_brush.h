@@ -23,7 +23,7 @@ namespace xtd {
       /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing drawing brushes
+      /// @ingroup xtd_drawing brushes
       /// @image html radial_gradient_brush.png
       /// @par Examples
       /// The following code example demonstrates the use of radial_gradient_brush class.

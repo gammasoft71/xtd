@@ -24,7 +24,7 @@ namespace xtd {
       /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing drawing brushes
+      /// @ingroup xtd_drawing brushes
       /// @remarks The following illustration shows a rectangle filled with the xtd::drawing::drawing_2d::hatch_style::diagonal_brick hatch pattern.
       /// @image html hatch_brush.png
       /// @par Examples

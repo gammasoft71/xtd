@@ -20,7 +20,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing brushes
     class drawing_export_ system_brushes final static_ {
     public:
       /// @name Properties
