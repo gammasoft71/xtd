@@ -81,9 +81,54 @@ date_time_picker date_time_picker::create() {
   return  date_time_picker {};
 }
 
+date_time_picker date_time_picker::create(const drawing::point& location) {
+  auto result = date_time_picker {};
+  result.location(location);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const drawing::point& location, const drawing::size& size) {
+  auto result = date_time_picker {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = date_time_picker {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 date_time_picker date_time_picker::create(const xtd::date_time& value) {
   auto result = date_time_picker {};
   result.value(value);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const xtd::date_time& value, const drawing::point& location) {
+  auto result = date_time_picker {};
+  result.value(value);
+  result.location(location);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const xtd::date_time& value, const drawing::point& location, const drawing::size& size) {
+  auto result = date_time_picker {};
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const xtd::date_time& value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = date_time_picker {};
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
@@ -91,6 +136,33 @@ date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd
   auto result = date_time_picker {};
   result.value(value);
   result.min_date(min_date);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location) {
+  auto result = date_time_picker {};
+  result.value(value);
+  result.min_date(min_date);
+  result.location(location);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size) {
+  auto result = date_time_picker {};
+  result.value(value);
+  result.min_date(min_date);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = date_time_picker {};
+  result.value(value);
+  result.min_date(min_date);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
@@ -138,10 +210,61 @@ date_time_picker date_time_picker::create(const control& parent) {
   return result;
 }
 
+date_time_picker date_time_picker::create(const control& parent, const drawing::point& location) {
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value) {
   auto result = date_time_picker {};
   result.parent(parent);
   result.value(value);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const drawing::point& location) {
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const drawing::point& location, const drawing::size& size) {
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
@@ -150,6 +273,36 @@ date_time_picker date_time_picker::create(const control& parent, const xtd::date
   result.parent(parent);
   result.value(value);
   result.min_date(min_date);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location) {
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.value(value);
+  result.min_date(min_date);
+  result.location(location);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size) {
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.value(value);
+  result.min_date(min_date);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = date_time_picker {};
+  result.parent(parent);
+  result.value(value);
+  result.min_date(min_date);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
