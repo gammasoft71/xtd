@@ -13,7 +13,7 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief Specifies how pixels are offset during rendering.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

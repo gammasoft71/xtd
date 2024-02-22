@@ -13,7 +13,7 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief Specifies the quality level to use during compositing.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

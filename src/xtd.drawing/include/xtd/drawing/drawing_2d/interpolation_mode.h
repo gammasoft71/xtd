@@ -13,7 +13,7 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief The xtd::drawing::drawing_2d::interpolation_mode enumeration specifies the algorithm that is used when images are scaled or rotated.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing

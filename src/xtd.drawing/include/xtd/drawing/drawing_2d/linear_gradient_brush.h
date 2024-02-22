@@ -21,10 +21,10 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing drawing
+      /// @ingroup xtd_drawing drawing brushes
       /// @image html linear_gradient_brush.png
       /// @par Examples
       /// The following code example demonstrates the use of linear_gradient_brush class.

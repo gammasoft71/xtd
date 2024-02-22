@@ -325,5 +325,11 @@ namespace xtd::drawing::drawing_2d::tests {
       assert::are_equal("solid_diamond", enum_object<>::to_string(hatch_style::solid_diamond), csf_);
       assert::are_equal(hatch_style::solid_diamond, enum_object<>::parse<hatch_style>("solid_diamond"), csf_);
     }
+    
+    void test_method_(wide_checker_board) {
+      assert::are_equal(53, enum_object<>::to_int32(hatch_style::wide_checker_board), csf_);
+      assert::are_equal("wide_checker_board", enum_object<>::to_string(hatch_style::wide_checker_board), csf_);
+      assert::are_equal(hatch_style::wide_checker_board, enum_object<>::parse<hatch_style>("wide_checker_board"), csf_);
+    }
   };
 }

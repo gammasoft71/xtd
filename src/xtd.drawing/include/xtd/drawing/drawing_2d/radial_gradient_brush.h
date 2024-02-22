@@ -20,10 +20,10 @@ namespace xtd {
     namespace drawing_2d {
       /// @brief Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited.
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing drawing
+      /// @ingroup xtd_drawing drawing brushes
       /// @image html radial_gradient_brush.png
       /// @par Examples
       /// The following code example demonstrates the use of radial_gradient_brush class.

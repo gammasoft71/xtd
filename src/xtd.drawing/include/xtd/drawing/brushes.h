@@ -20,7 +20,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing drawing brushes
     /// @remarks The brushes class contains static read-only properties that return a solid_brush object of the color indicated by the property name. You typically do not have to explicitly dispose of the brush returned by a property in this class, unless it is used to construct a new brush.
     class drawing_export_ brushes final static_ {
     public:

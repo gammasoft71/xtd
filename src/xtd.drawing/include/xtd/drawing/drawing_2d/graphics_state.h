@@ -24,7 +24,7 @@ namespace xtd {
       /// @par Inheritance
       /// xtd::object → xtd::object → xtd::drawing::drawing_2d::graphics_state
       /// @par Namespace
-      /// xtd::drawing::drawing_2d/
+      /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
