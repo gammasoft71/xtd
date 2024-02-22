@@ -122,9 +122,54 @@ domain_up_down domain_up_down::create() {
   return domain_up_down {};
 }
 
+domain_up_down domain_up_down::create(const drawing::point& location) {
+  auto result = domain_up_down {};
+  result.location(location);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const drawing::point& location, const drawing::size& size) {
+  auto result = domain_up_down {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = domain_up_down {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 domain_up_down domain_up_down::create(const object_collection& items) {
   auto result = domain_up_down {};
   result.items(items);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const object_collection& items, const drawing::point& location) {
+  auto result = domain_up_down {};
+  result.items(items);
+  result.location(location);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const object_collection& items, const drawing::point& location, const drawing::size& size) {
+  auto result = domain_up_down {};
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = domain_up_down {};
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
@@ -168,10 +213,61 @@ domain_up_down domain_up_down::create(const control& parent) {
   return result;
 }
 
+domain_up_down domain_up_down::create(const control& parent, const drawing::point& location) {
+  auto result = domain_up_down {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = domain_up_down {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = domain_up_down {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items) {
   auto result = domain_up_down {};
   result.parent(parent);
   result.items(items);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const control& parent, const object_collection& items, const drawing::point& location) {
+  auto result = domain_up_down {};
+  result.parent(parent);
+  result.items(items);
+  result.location(location);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size) {
+  auto result = domain_up_down {};
+  result.parent(parent);
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+domain_up_down domain_up_down::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = domain_up_down {};
+  result.parent(parent);
+  result.items(items);
+  result.location(location);
+  result.size(size);
+  result.name(name);
   return result;
 }
 
