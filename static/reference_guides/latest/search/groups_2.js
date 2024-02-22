@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['debug_0',['debug',['../group__debug.html',1,'']]],
-  ['diagnostics_1',['diagnostics',['../group__diagnostics.html',1,'']]],
-  ['dialogs_2',['dialogs',['../group__dialogs.html',1,'']]],
-  ['drawing_3',['drawing',['../group__drawing.html',1,'']]]
+  ['collections_0',['collections',['../group__collections.html',1,'']]],
+  ['colors_1',['colors',['../group__colors.html',1,'']]],
+  ['components_2',['components',['../group__components.html',1,'']]],
+  ['containers_3',['containers',['../group__containers.html',1,'']]],
+  ['controls_4',['controls',['../group__controls.html',1,'']]]
 ];

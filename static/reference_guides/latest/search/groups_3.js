@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['events_0',['events',['../group__events.html',1,'']]],
-  ['exceptions_1',['exceptions',['../group__exceptions.html',1,'']]]
+  ['debug_0',['debug',['../group__debug.html',1,'']]],
+  ['diagnostics_1',['diagnostics',['../group__diagnostics.html',1,'']]],
+  ['dialogs_2',['dialogs',['../group__dialogs.html',1,'']]],
+  ['drawing_3',['drawing',['../group__drawing.html',1,'']]]
 ];
