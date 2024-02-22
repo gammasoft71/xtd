@@ -828,6 +828,7 @@ add_sources(
   src/xtd/forms/labels.cpp
   src/xtd/forms/lcd_label.cpp
   src/xtd/forms/light_button.cpp
+  src/xtd/forms/light_buttons.cpp
   src/xtd/forms/link_area.cpp
   src/xtd/forms/link_label.cpp
   src/xtd/forms/link_label_clicked_event_args.cpp
@@ -915,6 +916,7 @@ add_sources(
   src/xtd/forms/timer.cpp
   src/xtd/forms/toggle_button.cpp
   src/xtd/forms/toggle_button_renderer.cpp
+  src/xtd/forms/toggle_buttons.cpp
   src/xtd/forms/tool_bar.cpp
   src/xtd/forms/tool_bar_button.cpp
   src/xtd/forms/tool_bar_button_control.h
