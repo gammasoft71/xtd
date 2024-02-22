@@ -1,0 +1,66 @@
+/// @file
+/// @brief Contains brushes page.
+
+/// @page BrushesPage Brushes
+/// @brief Contains brushes.
+///
+/// @section Hatch brush
+///
+/// Shows xtd::drawing::drawing_2d::hatch_style enumerations use by xtd::drawing::drawing_2d::hatch_brush brush.
+///
+/// | Enumeration                                                     | Value | Brush                                                  |
+/// | --------------------------------------------------------------- | ----- | ------------------------------------------------------ |
+/// | xtd::drawing::drawing_2d::hatch_style::horizontal               | 0     |  @image html hatch_brush_horizontal.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::vertical                 | 1     |  @image html hatch_brush_vertical.png                  |
+/// | xtd::drawing::drawing_2d::hatch_style::forward_diagonal         | 2     |  @image html hatch_brush_forward_diagonal.png          |
+/// | xtd::drawing::drawing_2d::hatch_style::backward_diagonal        | 3     |  @image html hatch_brush_backward_diagonal.png         |
+/// | xtd::drawing::drawing_2d::hatch_style::cross                    | 4     |  @image html hatch_brush_cross.png                     |
+/// | xtd::drawing::drawing_2d::hatch_style::diagonal_cross           | 5     |  @image html hatch_brush_diagonal_cross.png            |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_05               | 6     |  @image html hatch_brush_percent_05.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_10               | 7     |  @image html hatch_brush_percent_10.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_20               | 8     |  @image html hatch_brush_percent_20.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_25               | 9     |  @image html hatch_brush_percent_25.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_30               | 10    |  @image html hatch_brush_percent_30.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_40               | 11    |  @image html hatch_brush_percent_40.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_50               | 12    |  @image html hatch_brush_percent_50.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_60               | 13    |  @image html hatch_brush_percent_60.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_70               | 14    |  @image html hatch_brush_percent_70.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_75               | 15    |  @image html hatch_brush_percent_75.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_80               | 16    |  @image html hatch_brush_percent_80.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::percent_90               | 17    |  @image html hatch_brush_percent_90.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::light_downward_diagonal  | 18    |  @image html hatch_brush_light_downward_diagonal.png   |
+/// | xtd::drawing::drawing_2d::hatch_style::light_upward_diagonal    | 19    |  @image html hatch_brush_light_upward_diagonal.png     |
+/// | xtd::drawing::drawing_2d::hatch_style::dark_downward_diagonal   | 20    |  @image html hatch_brush_dark_downward_diagonal.png    |
+/// | xtd::drawing::drawing_2d::hatch_style::dark_upward_diagonal     | 21    |  @image html hatch_brush_dark_upward_diagonal.png      |
+/// | xtd::drawing::drawing_2d::hatch_style::wide_downward_diagonal   | 22    |  @image html hatch_brush_wide_downward_diagonal.png    |
+/// | xtd::drawing::drawing_2d::hatch_style::wide_upward_diagonal     | 23    |  @image html hatch_brush_wide_upward_diagonal.png      |
+/// | xtd::drawing::drawing_2d::hatch_style::light_vertical           | 24    |  @image html hatch_brush_light_vertical.png            |
+/// | xtd::drawing::drawing_2d::hatch_style::light_horizontal         | 25    |  @image html hatch_brush_light_horizontal.png          |
+/// | xtd::drawing::drawing_2d::hatch_style::narrow_vertical          | 26    |  @image html hatch_brush_narrow_vertical.png           |
+/// | xtd::drawing::drawing_2d::hatch_style::narrow_horizontal        | 27    |  @image html hatch_brush_narrow_horizontal.png         |
+/// | xtd::drawing::drawing_2d::hatch_style::dark_vertical            | 28    |  @image html hatch_brush_dark_vertical.png             |
+/// | xtd::drawing::drawing_2d::hatch_style::dark_horizontal          | 29    |  @image html hatch_brush_dark_horizontal.png           |
+/// | xtd::drawing::drawing_2d::hatch_style::dashed_downward_diagonal | 30    |  @image html hatch_brush_dashed_downward_diagonal.png  |
+/// | xtd::drawing::drawing_2d::hatch_style::dashed_upward_diagonal   | 31    |  @image html hatch_brush_dashed_upward_diagonal.png    |
+/// | xtd::drawing::drawing_2d::hatch_style::dashed_horizontal        | 32    |  @image html hatch_brush_dashed_horizontal.png         |
+/// | xtd::drawing::drawing_2d::hatch_style::dashed_vertical          | 33    |  @image html hatch_brush_dashed_vertical.png           |
+/// | xtd::drawing::drawing_2d::hatch_style::small_confetti           | 34    |  @image html hatch_brush_small_confetti.png            |
+/// | xtd::drawing::drawing_2d::hatch_style::large_confetti           | 35    |  @image html hatch_brush_large_confetti.png            |
+/// | xtd::drawing::drawing_2d::hatch_style::zig_zag                  | 36    |  @image html hatch_brush_zig_zag.png                   |
+/// | xtd::drawing::drawing_2d::hatch_style::wave                     | 37    |  @image html hatch_brush_wave.png                      |
+/// | xtd::drawing::drawing_2d::hatch_style::diagonal_brick           | 38    |  @image html hatch_brush_diagonal_brickpng             |
+/// | xtd::drawing::drawing_2d::hatch_style::horizontal_brick         | 39    |  @image html hatch_brush_horizontal_brick.png          |
+/// | xtd::drawing::drawing_2d::hatch_style::weave                    | 40    |  @image html hatch_brush_weave.png                     |
+/// | xtd::drawing::drawing_2d::hatch_style::plaid                    | 41    |  @image html hatch_brush_plaid.png                     |
+/// | xtd::drawing::drawing_2d::hatch_style::divot                    | 42    |  @image html hatch_brush_divot.png                     |
+/// | xtd::drawing::drawing_2d::hatch_style::dotted_grid              | 43    |  @image html hatch_brush_dotted_grid.png               |
+/// | xtd::drawing::drawing_2d::hatch_style::dotted_diamond           | 44    |  @image html hatch_brush_dotted_diamond.png            |
+/// | xtd::drawing::drawing_2d::hatch_style::shingle                  | 45    |  @image html hatch_brush_shingle.png                   |
+/// | xtd::drawing::drawing_2d::hatch_style::trellis                  | 46    |  @image html hatch_brush_trellis.png                   |
+/// | xtd::drawing::drawing_2d::hatch_style::sphere                   | 47    |  @image html hatch_brush_sphere.png                    |
+/// | xtd::drawing::drawing_2d::hatch_style::small_grid               | 48    |  @image html hatch_brush_small_grid.png                |
+/// | xtd::drawing::drawing_2d::hatch_style::small_checker_board      | 49    |  @image html hatch_brush_small_checker_board.png       |
+/// | xtd::drawing::drawing_2d::hatch_style::large_checker_board      | 50    |  @image html hatch_brush_large_checker_board.png       |
+/// | xtd::drawing::drawing_2d::hatch_style::outlined_diamond         | 51    |  @image html hatch_brush_outlined_diamond.png          |
+/// | xtd::drawing::drawing_2d::hatch_style::solid_diamond            | 52    |  @image html hatch_brush_solid_diamond.png             |
+/// | xtd::drawing::drawing_2d::hatch_style::wide_checker_board       | 53    |  @image html hatch_brush_wide_checker_board.png        |
