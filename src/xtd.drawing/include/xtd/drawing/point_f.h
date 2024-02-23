@@ -31,7 +31,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing coordinates
     class drawing_export_ point_f : public xtd::object, public xtd::iequatable<point_f> {
     public:
       /// @name Fields

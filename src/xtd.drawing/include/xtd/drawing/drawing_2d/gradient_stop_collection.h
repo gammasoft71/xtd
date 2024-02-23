@@ -17,7 +17,7 @@ namespace xtd {
       /// xtd::drawing::drawing_2d
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing drawing
+      /// @ingroup xtd_drawing brushes
       using gradient_stop_collection = std::vector<xtd::drawing::drawing_2d::gradient_stop>;
     }
   }

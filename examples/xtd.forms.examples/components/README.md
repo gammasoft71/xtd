@@ -25,7 +25,7 @@
 * [settings](settings_example/README.md) represents settings application.
 * **serial_port** represents a serial port resource.
 * **service_controler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
-* [system_texts](texts/README.md) shows how to used [xtd::forms::system_texts](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1system__texts.html) collection.
+* [texts](texts/README.md) shows how to used [xtd::forms::system_texts](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1system__texts.html) collection.
 * [timer](forms_timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 * [translator](translator/README.md) demonstrates the use of [xtd::forms::translator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html) strings.
 * [translator_with_language](translator_with_language/README.md) demonstrates the use of [xtd::forms::translator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html) strings.
