@@ -1,7 +1,7 @@
+#include <xtd/drawing/texts>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/form>
-#include <xtd/forms/system_texts>
 
 using namespace xtd::forms;
 
@@ -16,7 +16,7 @@ public:
     ok_button.dialog_result(dialog_result::ok);
     ok_button.location({60, 40});
     ok_button.parent(*this);
-    ok_button.text(system_texts::ok());
+    ok_button.text(xtd::drawing::texts::ok());
   }
   
 public:

@@ -27,10 +27,10 @@
 #include <xtd/forms/panel>
 #include <xtd/forms/picture_box>
 #include <xtd/forms/progress_dialog>
-#include <xtd/forms/system_texts>
 #include <xtd/forms/tab_control>
 #include <xtd/forms/tab_page>
 #include <xtd/forms/text_box>
+#include <xtd/drawing/texts>
 
 namespace xtdc_gui {
   /// @brief Represents the main form
@@ -137,12 +137,12 @@ namespace xtdc_gui {
     xtd::forms::menu_item file_create_new_project_menu_item_ {"Create new project", {*this, overload_<>(&main_form::new_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_new_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::cmd_n};
     xtd::forms::menu_item file_open_xtd_examples_menu_item_ {"Open xtd examples", {*this, &main_form::open_xtd_examples}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_open_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::cmd_e};
     xtd::forms::menu_item file_separator1_menu_item_ {"-"};
-    xtd::forms::menu_item file_settings_menu_item_ {xtd::forms::system_texts::settings(), {*this, &main_form::settings}, xtd::forms::shortcut::f2};
+    xtd::forms::menu_item file_settings_menu_item_ {xtd::drawing::texts::settings(), {*this, &main_form::settings}, xtd::forms::shortcut::f2};
     xtd::forms::menu_item file_separator2_menu_item_ {"-"};
-    xtd::forms::menu_item file_exit_menu_item_ {xtd::forms::system_texts::exit(), overload_<>(&xtd::forms::application::exit), xtd::forms::menu_images::file_exit(), xtd::forms::shortcut::alt_f4};
-    xtd::forms::menu_item file_menu_item_ {xtd::forms::system_texts::file(), {file_open_project_menu_item_, file_run_project_menu_item_, file_create_new_project_menu_item_, file_open_xtd_examples_menu_item_, file_separator1_menu_item_, file_settings_menu_item_, file_separator2_menu_item_, file_exit_menu_item_}};
-    xtd::forms::menu_item help_about_menu_item_ {xtd::forms::system_texts::about(), {*this, &main_form::show_about_dialog}, xtd::forms::menu_images::help_about()};
-    xtd::forms::menu_item help_menu_item_ {xtd::forms::system_texts::help(), {help_about_menu_item_}};
+    xtd::forms::menu_item file_exit_menu_item_ {xtd::drawing::texts::exit(), overload_<>(&xtd::forms::application::exit), xtd::forms::menu_images::file_exit(), xtd::forms::shortcut::alt_f4};
+    xtd::forms::menu_item file_menu_item_ {xtd::drawing::texts::file(), {file_open_project_menu_item_, file_run_project_menu_item_, file_create_new_project_menu_item_, file_open_xtd_examples_menu_item_, file_separator1_menu_item_, file_settings_menu_item_, file_separator2_menu_item_, file_exit_menu_item_}};
+    xtd::forms::menu_item help_about_menu_item_ {xtd::drawing::texts::about(), {*this, &main_form::show_about_dialog}, xtd::forms::menu_images::help_about()};
+    xtd::forms::menu_item help_menu_item_ {xtd::drawing::texts::help(), {help_about_menu_item_}};
     xtd::forms::main_menu main_menu_ {file_menu_item_, help_menu_item_};
     
     size_t current_project_type_index_ = std::numeric_limits<size_t>::max();

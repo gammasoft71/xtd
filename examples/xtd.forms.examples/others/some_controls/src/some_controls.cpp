@@ -350,16 +350,16 @@ private:
   main_menu main_menu1 = main_menu::create_standard_items({*this, &form1::on_menu_click});
   
   xtd::forms::tool_bar tool_bar1;
-  tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);
-  tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(system_texts::open(), 1);
-  tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(system_texts::save(), 2);
-  tool_bar_button print_tool_bar_button = tool_bar_button::create_push_button(system_texts::print(), 3);
+  tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::new_(), 0);
+  tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::open(), 1);
+  tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::save(), 2);
+  tool_bar_button print_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::print(), 3);
   tool_bar_button tool_bar1_separator1 = tool_bar_button::create_separator();
-  tool_bar_button cut_tool_bar_button = tool_bar_button::create_push_button(system_texts::cut(), 4);
-  tool_bar_button copy_tool_bar_button = tool_bar_button::create_push_button(system_texts::copy(), 5);
-  tool_bar_button paste_tool_bar_button = tool_bar_button::create_push_button(system_texts::paste(), 6);
+  tool_bar_button cut_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::cut(), 4);
+  tool_bar_button copy_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::copy(), 5);
+  tool_bar_button paste_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::paste(), 6);
   tool_bar_button tool_bar1_separator2 = tool_bar_button::create_stretchable_separator();
-  tool_bar_button help_tool_bar_button = tool_bar_button::create_push_button(system_texts::help(), 7);
+  tool_bar_button help_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::help(), 7);
   
   forms::status_bar status_bar1;
 };

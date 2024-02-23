@@ -1,14 +1,15 @@
+#include <xtd/drawing/texts>
 #include <xtd/forms/application>
 #include <xtd/forms/choice>
 #include <xtd/forms/form>
 #include <xtd/forms/list_box>
 #include <xtd/forms/progress_bar>
-#include <xtd/forms/system_texts>
 #include <xtd/forms/timer>
 #include <xtd/forms/tool_bar>
 #include <xtd/forms/tool_bar_images>
 
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace tool_bar_example {
@@ -73,23 +74,23 @@ namespace tool_bar_example {
     menu_item context_help_index_menu_item {"Help index", {*this, &form1::on_menu_click}};
     menu_item context_help_search_menu_item {"Help search", {*this, &form1::on_menu_click}};
     menu_item context_separator_menu_item {"-"};
-    menu_item context_about_menu_item {system_texts::about(), {*this, &form1::on_menu_click}};
+    menu_item context_about_menu_item {texts::about(), {*this, &form1::on_menu_click}};
     forms::context_menu context_menu1 {context_help_context_menu_item, context_help_index_menu_item, context_help_search_menu_item, context_separator_menu_item, context_about_menu_item};
     
     forms::tool_bar tool_bar1;
     choice choice1;
-    tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);
-    tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(system_texts::open(), 1);
-    tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(system_texts::save(), 2);
-    tool_bar_button print_tool_bar_button = tool_bar_button::create_push_button(system_texts::print(), 3);
+    tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(texts::new_(), 0);
+    tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(texts::open(), 1);
+    tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(texts::save(), 2);
+    tool_bar_button print_tool_bar_button = tool_bar_button::create_push_button(texts::print(), 3);
     tool_bar_button tool_bar1_separator1 = tool_bar_button::create_separator();
-    tool_bar_button cut_tool_bar_button = tool_bar_button::create_push_button(system_texts::cut(), 4);
-    tool_bar_button copy_tool_bar_button = tool_bar_button::create_push_button(system_texts::copy(), 5);
-    tool_bar_button paste_tool_bar_button = tool_bar_button::create_push_button(system_texts::paste(), 6);
+    tool_bar_button cut_tool_bar_button = tool_bar_button::create_push_button(texts::cut(), 4);
+    tool_bar_button copy_tool_bar_button = tool_bar_button::create_push_button(texts::copy(), 5);
+    tool_bar_button paste_tool_bar_button = tool_bar_button::create_push_button(texts::paste(), 6);
     tool_bar_button tool_bar1_separator2 = tool_bar_button::create_separator();
     tool_bar_button choice_tool_bar_button = tool_bar_button::create_control("Items", choice1);
     tool_bar_button tool_bar1_separator3 = tool_bar_button::create_stretchable_separator();
-    tool_bar_button help_tool_bar_button = tool_bar_button::create_drop_down_button(system_texts::help(), 7, context_menu1);
+    tool_bar_button help_tool_bar_button = tool_bar_button::create_drop_down_button(texts::help(), 7, context_menu1);
     
     forms::tool_bar tool_bar2;
     progress_bar progress_bar1;

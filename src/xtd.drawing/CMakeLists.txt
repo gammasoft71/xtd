@@ -140,6 +140,8 @@ add_sources(
   include/xtd/drawing/system_images
   include/xtd/drawing/system_pens.h
   include/xtd/drawing/system_pens
+  include/xtd/drawing/texts.h
+  include/xtd/drawing/texts
   include/xtd/drawing/texture_brush.h
   include/xtd/drawing/texture_brush
   include/xtd/drawing/violet_colors.h
@@ -287,6 +289,7 @@ add_sources(
   src/xtd/drawing/system_images_base.cpp
   src/xtd/drawing/system_images.cpp
   src/xtd/drawing/system_pens.cpp
+  src/xtd/drawing/texts.cpp
   src/xtd/drawing/texture_brush.cpp
   src/xtd/drawing/white_colors.cpp
   src/xtd/drawing/xtd_system_images.cpp

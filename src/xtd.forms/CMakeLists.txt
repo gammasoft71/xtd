@@ -533,6 +533,8 @@ add_sources(
   include/xtd/forms/splitter_style
   include/xtd/forms/status_bar.h
   include/xtd/forms/status_bar
+  include/xtd/forms/system_texts.h
+  include/xtd/forms/system_texts
   include/xtd/forms/status_bar_draw_item_event_args.h
   include/xtd/forms/status_bar_draw_item_event_args
   include/xtd/forms/status_bar_draw_item_event_handler.h
@@ -559,8 +561,6 @@ add_sources(
   include/xtd/forms/switch_button_renderer
   include/xtd/forms/system_information.h
   include/xtd/forms/system_information
-  include/xtd/forms/system_texts.h
-  include/xtd/forms/system_texts
   include/xtd/forms/tab_alignment.h
   include/xtd/forms/tab_alignment
   include/xtd/forms/tab_control.h
@@ -905,7 +905,6 @@ add_sources(
   src/xtd/forms/switch_button.cpp
   src/xtd/forms/switch_button_renderer.cpp
   src/xtd/forms/system_information.cpp
-  src/xtd/forms/system_texts.cpp
   src/xtd/forms/tab_control.cpp
   src/xtd/forms/tab_control_data.h
   src/xtd/forms/tab_page.cpp
