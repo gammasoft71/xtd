@@ -3,7 +3,6 @@
 #include "../../../include/xtd/forms/control.h"
 #include "../../../include/xtd/forms/menu_images.h"
 #include "../../../include/xtd/forms/shortcut.h"
-#include "../../../include/xtd/forms/system_texts.h"
 #include "menu_data.h"
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/context_menu>

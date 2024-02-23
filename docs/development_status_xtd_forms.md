@@ -280,7 +280,6 @@
 | [switch_button](../src/xtd.forms/include/xtd/forms/switch_button.h)                                                           | class        | ![progress](pictures/progress100.png) |
 | [switch_buttonl_renderer](../src/xtd.forms/include/xtd/forms/switch_button_renderer.h)                                        | static class | ![progress](pictures/progress50.png)  |
 | [system_information](../src/xtd.forms/include/xtd/forms/system_information.h)                                                 | class        | ![progress](pictures/progress75.png)  |
-| [system_texts](../src/xtd.forms/include/xtd/forms/system_texts.h)                                                             | static class | ![progress](pictures/progress100.png) |
 | [tab_alignment](../src/xtd.forms/include/xtd/forms/tab_alignment.h)                                                           | enumeration  | ![progress](pictures/progress100.png) |
 | [tab_control](../src/xtd.forms/include/xtd/forms/tab_control.h)                                                               | class        | ![progress](pictures/progress100.png) |
 | [tab_control_renderer](../src/xtd.forms/include/xtd/forms/tab_control_renderer.h)                                             | static class | ![progress](pictures/progress0.png)   |

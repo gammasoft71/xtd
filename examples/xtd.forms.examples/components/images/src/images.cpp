@@ -1,3 +1,4 @@
+#include <xtd/drawing/texts>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/button_images>
@@ -5,7 +6,6 @@
 #include <xtd/forms/form>
 #include <xtd/forms/label>
 #include <xtd/forms/picture_box>
-#include <xtd/forms/system_texts>
 #include <xtd/drawing/system_colors>
 
 using namespace xtd;
@@ -62,7 +62,7 @@ namespace example {
       button_previous.enabled(false);
       button_previous.image(button_images::previous());
       button_previous.image_align(content_alignment::middle_left);
-      button_previous.text(system_texts::previous());
+      button_previous.text(texts::previous());
       button_previous.click += [&] {
         if (current_image_index > 0) --current_image_index;
         update_form();
@@ -73,7 +73,7 @@ namespace example {
       button_next.anchor(anchor_styles::bottom | anchor_styles::right);
       button_next.image(button_images::next());
       button_next.image_align(content_alignment::middle_right);
-      button_next.text(system_texts::next());
+      button_next.text(texts::next());
       button_next.click += [&] {
         if (current_image_index < images::names(choice_context.selected_item().value()).size()) ++current_image_index;
         update_form();

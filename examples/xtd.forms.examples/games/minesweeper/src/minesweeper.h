@@ -97,14 +97,14 @@ namespace minesweeper {
     xtd::forms::menu_item game_separator3_menu_item_ {"-"};
     xtd::forms::menu_item game_best_times_menu_item_ {"Best &times...", {[&] {high_scores_dialog().show_dialog(*this);}}};
     xtd::forms::menu_item game_separator4_menu_item_ {"-"};
-    xtd::forms::menu_item game_exit_menu_item_ {xtd::forms::system_texts::exit(), {overload_<>(xtd::forms::application::exit)}};
+    xtd::forms::menu_item game_exit_menu_item_ {xtd::drawing::texts::exit(), {overload_<>(xtd::forms::application::exit)}};
     xtd::forms::menu_item game_menu_item_ {"&Game", {game_new_game_menu_item_, game_separator1_menu_item_, game_beginner_menu_item_, game_inermediate_menu_item_, game_expert_menu_item_, game_custom_menu_item_, game_separator2_menu_item_, game_marks_menu_item_, game_original_color_menu_item_, game_separator3_menu_item_, game_best_times_menu_item_, game_separator4_menu_item_, game_exit_menu_item_}};
     xtd::forms::menu_item help_content_menu_item_ {"&Contents", {*this, &minesweeper_form::on_help_content_menu_click}, xtd::forms::shortcut::f1};
     xtd::forms::menu_item help_search_menu_item_ {"&Search for Help On...", {[&] {}}};
     xtd::forms::menu_item help_how_to_menu_item_ {"&How to Use Help", {[&] {}}};
     xtd::forms::menu_item help_separator1_menu_item_ {"-"};
-    xtd::forms::menu_item help_about_menu_item_ {xtd::forms::system_texts::about(), {*this, &minesweeper_form::on_about_menu_click}};
-    xtd::forms::menu_item help_menu_item_ {xtd::forms::system_texts::help(), {help_content_menu_item_, help_search_menu_item_, help_how_to_menu_item_, help_separator1_menu_item_, help_about_menu_item_}};
+    xtd::forms::menu_item help_about_menu_item_ {xtd::drawing::texts::about(), {*this, &minesweeper_form::on_about_menu_click}};
+    xtd::forms::menu_item help_menu_item_ {xtd::drawing::texts::help(), {help_content_menu_item_, help_search_menu_item_, help_how_to_menu_item_, help_separator1_menu_item_, help_about_menu_item_}};
     xtd::forms::main_menu main_menu_ {game_menu_item_, help_menu_item_};
     
     xtd::forms::timer stopwatch_timer_;

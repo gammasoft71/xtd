@@ -1,8 +1,8 @@
+#include <xtd/drawing/texts>
 #include <xtd/forms/application>
 #include <xtd/forms/context_menu>
 #include <xtd/forms/form>
 #include <xtd/forms/lcd_label>
-#include <xtd/forms/system_texts>
 #include <xtd/startup>
 
 using namespace xtd;
@@ -48,7 +48,7 @@ public:
   
 private:
   lcd_label label1;
-  menu_item context_exit_menu_item {system_texts::exit(), {*this, &form1::close}};
+  menu_item context_exit_menu_item {texts::exit(), {*this, &form1::close}};
   forms::context_menu context_menu1 {context_exit_menu_item};
   point mouse_location = point::empty;
 };

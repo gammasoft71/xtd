@@ -1,12 +1,13 @@
+#include <xtd/drawing/texts>
 #include <xtd/forms/application>
 #include <xtd/forms/context_menu>
 #include <xtd/forms/form>
 #include <xtd/forms/list_box>
 #include <xtd/forms/menu_images>
 #include <xtd/forms/message_box>
-#include <xtd/forms/system_texts>
 
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace context_menu_example {
@@ -37,34 +38,34 @@ namespace context_menu_example {
     menu_item file_open_recent_file3_menu_item {"Path/File3", {*this, &form1::on_menu_click}};
     menu_item file_open_recent_file4_menu_item {"Path/File4", {*this, &form1::on_menu_click}};
     
-    menu_item file_new_menu_item {system_texts::new_(), {*this, &form1::on_menu_click}, menu_images::file_new()};
+    menu_item file_new_menu_item {texts::new_(), {*this, &form1::on_menu_click}, menu_images::file_new()};
     menu_item file_separator1_menu_item {"-"};
-    menu_item file_open_menu_item {system_texts::open(), {*this, &form1::on_menu_click}, menu_images::file_open()};
+    menu_item file_open_menu_item {texts::open(), {*this, &form1::on_menu_click}, menu_images::file_open()};
     menu_item file_open_recent_menu_item {"Open recent", {file_open_recent_file1_menu_item, file_open_recent_file2_menu_item, file_open_recent_file3_menu_item, file_open_recent_file4_menu_item}};
-    menu_item file_close_menu_item {system_texts::close(), {*this, &form1::on_menu_click}};
+    menu_item file_close_menu_item {texts::close(), {*this, &form1::on_menu_click}};
     menu_item file_separator2_menu_item {"-"};
-    menu_item file_save_menu_item {system_texts::save(), {*this, &form1::on_menu_click}, menu_images::file_save()};
-    menu_item file_save_as_menu_item {system_texts::save_as(), {*this, &form1::on_menu_click}};
+    menu_item file_save_menu_item {texts::save(), {*this, &form1::on_menu_click}, menu_images::file_save()};
+    menu_item file_save_as_menu_item {texts::save_as(), {*this, &form1::on_menu_click}};
     menu_item file_separator3_menu_item {"-"};
     menu_item file_page_setup_menu_item {"Page &Seup...", {*this, &form1::on_menu_click}};
-    menu_item file_print_menu_item {system_texts::print(), {*this, &form1::on_menu_click}, menu_images::file_print()};
-    menu_item file_print_preview_menu_item {system_texts::print_preview(), {*this, &form1::on_menu_click}, menu_images::file_print_preview()};
+    menu_item file_print_menu_item {texts::print(), {*this, &form1::on_menu_click}, menu_images::file_print()};
+    menu_item file_print_preview_menu_item {texts::print_preview(), {*this, &form1::on_menu_click}, menu_images::file_print_preview()};
     menu_item file_separator4_menu_item {"-"};
-    menu_item file_exit_menu_item {system_texts::exit(), {*this, &form1::on_menu_click}, menu_images::file_exit()};
+    menu_item file_exit_menu_item {texts::exit(), {*this, &form1::on_menu_click}, menu_images::file_exit()};
     
-    menu_item edit_undo_menu_item {system_texts::undo(), {*this, &form1::on_menu_click}, menu_images::edit_undo()};
-    menu_item edit_redo_menu_item {system_texts::redo(), {*this, &form1::on_menu_click}, menu_images::edit_redo()};
+    menu_item edit_undo_menu_item {texts::undo(), {*this, &form1::on_menu_click}, menu_images::edit_undo()};
+    menu_item edit_redo_menu_item {texts::redo(), {*this, &form1::on_menu_click}, menu_images::edit_redo()};
     menu_item edit_separator1_menu_item {"-"};
-    menu_item edit_cut_menu_item {system_texts::cut(), {*this, &form1::on_menu_click}, menu_images::edit_cut()};
-    menu_item edit_copy_menu_item {system_texts::copy(), {*this, &form1::on_menu_click}, menu_images::edit_copy()};
-    menu_item edit_paste_menu_item {system_texts::paste(), {*this, &form1::on_menu_click}, menu_images::edit_paste()};
+    menu_item edit_cut_menu_item {texts::cut(), {*this, &form1::on_menu_click}, menu_images::edit_cut()};
+    menu_item edit_copy_menu_item {texts::copy(), {*this, &form1::on_menu_click}, menu_images::edit_copy()};
+    menu_item edit_paste_menu_item {texts::paste(), {*this, &form1::on_menu_click}, menu_images::edit_paste()};
     menu_item edit_separator2_menu_item {"-"};
-    menu_item edit_select_all_menu_item {system_texts::select_all(), {*this, &form1::on_menu_click}};
+    menu_item edit_select_all_menu_item {texts::select_all(), {*this, &form1::on_menu_click}};
     menu_item edit_separator3_menu_item {"-"};
-    menu_item edit_options_menu_item {system_texts::options(), {*this, &form1::on_menu_click}};
+    menu_item edit_options_menu_item {texts::options(), {*this, &form1::on_menu_click}};
     
-    menu_item view_back_menu_item {system_texts::back(), {*this, &form1::on_menu_click}, menu_images::view_back()};
-    menu_item view_forward_menu_item {system_texts::forward(), {*this, &form1::on_menu_click}, menu_images::view_forward()};
+    menu_item view_back_menu_item {texts::back(), {*this, &form1::on_menu_click}, menu_images::view_back()};
+    menu_item view_forward_menu_item {texts::forward(), {*this, &form1::on_menu_click}, menu_images::view_forward()};
     menu_item view_separator1_menu_item {"-"};
     menu_item view_show_menu_item {"Show", {*this, &form1::on_menu_click}};
     menu_item view_hide_menu_item {"Hide", {*this, &form1::on_menu_click}};
@@ -81,13 +82,13 @@ namespace context_menu_example {
     menu_item options_value_h_menu_item {"Value H", {*this, &form1::on_menu_click}, menu_item_kind::radio};
     menu_item options_value_i_menu_item {"Value I", {*this, &form1::on_menu_click}, menu_item_kind::radio};
     
-    menu_item help_about_menu_item {system_texts::about(), {*this, &form1::on_menu_click}};
+    menu_item help_about_menu_item {texts::about(), {*this, &form1::on_menu_click}};
     
-    menu_item file_menu_item {system_texts::file(), {file_new_menu_item, file_separator1_menu_item, file_open_menu_item, file_open_recent_menu_item, file_close_menu_item, file_separator2_menu_item, file_save_menu_item, file_save_as_menu_item, file_separator3_menu_item, file_page_setup_menu_item, file_print_menu_item, file_print_preview_menu_item, file_separator4_menu_item, file_exit_menu_item}};
-    menu_item edit_menu_item {system_texts::edit(), {edit_undo_menu_item, edit_redo_menu_item, edit_separator1_menu_item, edit_cut_menu_item, edit_copy_menu_item, edit_paste_menu_item, edit_separator2_menu_item, edit_select_all_menu_item, edit_separator3_menu_item, edit_options_menu_item}};
-    menu_item view_menu_item {system_texts::view(), {view_back_menu_item, view_forward_menu_item, view_separator1_menu_item, view_show_menu_item, view_hide_menu_item}};
-    menu_item options_menu_item {system_texts::options(), {options_value_a_menu_item, options_value_b_menu_item, options_value_c_menu_item, options_separator1_menu_item, options_value_d_menu_item, options_value_e_menu_item, options_value_f_menu_item, options_separator2_menu_item, options_value_g_menu_item, options_value_h_menu_item, options_value_i_menu_item}};
-    menu_item help_menu_item {system_texts::help(), {help_about_menu_item}};
+    menu_item file_menu_item {texts::file(), {file_new_menu_item, file_separator1_menu_item, file_open_menu_item, file_open_recent_menu_item, file_close_menu_item, file_separator2_menu_item, file_save_menu_item, file_save_as_menu_item, file_separator3_menu_item, file_page_setup_menu_item, file_print_menu_item, file_print_preview_menu_item, file_separator4_menu_item, file_exit_menu_item}};
+    menu_item edit_menu_item {texts::edit(), {edit_undo_menu_item, edit_redo_menu_item, edit_separator1_menu_item, edit_cut_menu_item, edit_copy_menu_item, edit_paste_menu_item, edit_separator2_menu_item, edit_select_all_menu_item, edit_separator3_menu_item, edit_options_menu_item}};
+    menu_item view_menu_item {texts::view(), {view_back_menu_item, view_forward_menu_item, view_separator1_menu_item, view_show_menu_item, view_hide_menu_item}};
+    menu_item options_menu_item {texts::options(), {options_value_a_menu_item, options_value_b_menu_item, options_value_c_menu_item, options_separator1_menu_item, options_value_d_menu_item, options_value_e_menu_item, options_value_f_menu_item, options_separator2_menu_item, options_value_g_menu_item, options_value_h_menu_item, options_value_i_menu_item}};
+    menu_item help_menu_item {texts::help(), {help_about_menu_item}};
     
     forms::context_menu context_menu1 {file_menu_item, edit_menu_item, view_menu_item, options_menu_item, help_menu_item};
     

@@ -8,7 +8,7 @@ using namespace xtd::forms;
 
 auto main()->int {
   main_menu main_menu1 = forms::main_menu::create_standard_items([&](object & sender, const event_args & e) {
-    if (as<menu_item&>(sender).text() == system_texts::exit()) application::exit();
+    if (as<menu_item&>(sender).text() == texts::exit()) application::exit();
   });
   form form_main;
   form_main.size({1024, 768});

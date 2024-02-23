@@ -347,7 +347,7 @@
 /// @image html settings_example_gd.png
 ///
 /// @example texts.cpp
-/// demonstrates the use of xtd::forms::system_texts strings.
+/// demonstrates the use of xtd::drawing::texts strings.
 /// @par Windows
 /// @image html texts_w.png
 /// <br>

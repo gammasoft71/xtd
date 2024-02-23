@@ -1,4 +1,5 @@
 #include <xtd/drawing/system_colors>
+#include <xtd/drawing/texts>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/button_images>
@@ -6,7 +7,6 @@
 #include <xtd/forms/images>
 #include <xtd/forms/label>
 #include <xtd/forms/picture_box>
-#include <xtd/forms/system_texts>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -114,7 +114,7 @@ namespace example {
       button_context_previous.enabled(false);
       button_context_previous.image(button_images::previous(drawing::size {32, 32}));
       button_context_previous.image_align(content_alignment::middle_left);
-      button_context_previous.text(system_texts::previous());
+      button_context_previous.text(texts::previous());
       button_context_previous.bounds({10, 750, 125, 40});
       button_context_previous.click += [&] {
         current_context_index--;
@@ -125,7 +125,7 @@ namespace example {
       button_context_next.auto_repeat(true);
       button_context_next.image(button_images::next(drawing::size {32, 32}));
       button_context_next.image_align(content_alignment::middle_right);
-      button_context_next.text(system_texts::next());
+      button_context_next.text(texts::next());
       button_context_next.bounds({165, 750, 125, 40});
       button_context_next.click += [&] {
         current_context_index++;

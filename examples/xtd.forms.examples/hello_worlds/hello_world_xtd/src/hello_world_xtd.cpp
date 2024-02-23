@@ -1,6 +1,7 @@
 #include <xtd/xtd>
 
 using namespace xtd;
+using namespace drawing;
 using namespace xtd::forms;
 
 namespace hello_world_xtd_example {
@@ -29,12 +30,12 @@ namespace hello_world_xtd_example {
     
     menu_item hello_menu {"&Hello...", {*this, &main_form::on_hello_menu_click}, shortcut::cmd_h};
     menu_item separator_menu {"-"};
-    menu_item exit_menu {system_texts::exit(), {*this, &main_form::on_exit_menu_click}, shortcut::alt_f4};
+    menu_item exit_menu {texts::exit(), {*this, &main_form::on_exit_menu_click}, shortcut::alt_f4};
     
-    menu_item about_menu {system_texts::about(), {*this, &main_form::on_about_menu_click}};
+    menu_item about_menu {texts::about(), {*this, &main_form::on_about_menu_click}};
     
-    menu_item file_menu_item {system_texts::file(), {hello_menu, separator_menu, exit_menu}};
-    menu_item help_menu_item {system_texts::help(), {about_menu}};
+    menu_item file_menu_item {texts::file(), {hello_menu, separator_menu, exit_menu}};
+    menu_item help_menu_item {texts::help(), {about_menu}};
     forms::main_menu main_menu {file_menu_item, help_menu_item};
     
     forms::status_bar status;
