@@ -29,7 +29,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing coordinates
     /// @remarks A rectangle is defined by its width, height, and upper-left corner.
     class drawing_export_ rectangle_f : public xtd::object, public xtd::iequatable<rectangle_f> {
     public:

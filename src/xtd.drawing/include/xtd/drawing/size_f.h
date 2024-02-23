@@ -27,7 +27,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing coordinates
     class drawing_export_ size_f : public xtd::object, public xtd::iequatable<size_f> {
     public:
       /// @name Fields

@@ -170,7 +170,6 @@ namespace xtd {
       
       /// @brief Creates the xtd::drawing::graphics for the image.
       /// @return A xtd::drawing::graphics for the image.
-      /// @ingroup drawing
       graphics create_graphics();
       
       bool equals(const image& image) const noexcept override;
