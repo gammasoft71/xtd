@@ -25,7 +25,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing texts
     /// @remarks Many common formats are provided through the string_format_flags enumeration. string_format objects can be changed.
     class drawing_export_ string_format final : public xtd::object {
     public:

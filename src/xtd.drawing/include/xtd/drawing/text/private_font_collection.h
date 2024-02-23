@@ -19,7 +19,7 @@ namespace xtd {
       /// xtd::drawing::text
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing
+      /// @ingroup xtd_drawing fonts
       /// @remarks The xtd::drawing::text::private_font_collection class allows applications to install a private version of an existing font without the requirement to replace the system version of the font. For example, GDI+ can create a private version of the Arial font in addition to the Arial font that the system uses. xtd::drawing::text::private_font_collection can also be used to install fonts that do not exist in the operating system. This is a temporary font install that does not affect the system-installed collection. To see the installed collection, use the xtd::drawing::text::installed_font_collection class.
       class drawing_export_ private_font_collection final : public font_collection {
       public:
