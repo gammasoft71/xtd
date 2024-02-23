@@ -669,9 +669,9 @@ Classes</h2></td></tr>
 <tr class="memitem:abae9cd28b4ab5e0aa8590f164511dadd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#abae9cd28b4ab5e0aa8590f164511dadd">create_control</a> ()</td></tr>
 <tr class="memdesc:abae9cd28b4ab5e0aa8590f164511dadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the creation of the visible control, including the creation of the handle and any visible child controls.  <br /></td></tr>
 <tr class="separator:abae9cd28b4ab5e0aa8590f164511dadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd513f7ccbc19b4842ab59e9978392a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1graphics.html">drawing::graphics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drawing.html#gadd513f7ccbc19b4842ab59e9978392a7">create_graphics</a> () const</td></tr>
-<tr class="memdesc:gadd513f7ccbc19b4842ab59e9978392a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> for the control.  <br /></td></tr>
-<tr class="separator:gadd513f7ccbc19b4842ab59e9978392a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add513f7ccbc19b4842ab59e9978392a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1graphics.html">drawing::graphics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#add513f7ccbc19b4842ab59e9978392a7">create_graphics</a> () const</td></tr>
+<tr class="memdesc:add513f7ccbc19b4842ab59e9978392a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> for the control.  <br /></td></tr>
+<tr class="separator:add513f7ccbc19b4842ab59e9978392a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1cb213d19c2f27334002116be321ffa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ad1cb213d19c2f27334002116be321ffa">destroy_control</a> ()</td></tr>
 <tr class="memdesc:ad1cb213d19c2f27334002116be321ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the destruction of the visible control, including the destruction of the handle and any visible child controls.  <br /></td></tr>
 <tr class="separator:ad1cb213d19c2f27334002116be321ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3842,6 +3842,27 @@ create_control does not create a control handle if the control's visible propert
 
 </div>
 </div>
+<a id="add513f7ccbc19b4842ab59e9978392a7" name="add513f7ccbc19b4842ab59e9978392a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add513f7ccbc19b4842ab59e9978392a7">&#9670;&#160;</a></span>create_graphics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1drawing_1_1graphics.html">drawing::graphics</a> xtd::forms::control::create_graphics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates the <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> for the control. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> for the control. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The graphics object that you retrieve through the create_graphics method should not normally be retained after the current Windows message has been processed, because anything painted with that object will be erased with the next WM_PAINT message. Therefore you cannot cache the graphics object for reuse, except to use non-visual methods like <a class="el" href="classxtd_1_1drawing_1_1graphics.html#a67cfac297284ea0aadb2b9722d68679e" title="Measures the specified string when drawn with the specified xtd::drawing::font.">xtd::drawing::graphics::measure_string</a>. Instead, you must call create_graphics every time that you want to use the graphics object. </dd></dl>
+
+</div>
+</div>
 <a id="ae8536229d56ee0f70263227162b5ec8a" name="ae8536229d56ee0f70263227162b5ec8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8536229d56ee0f70263227162b5ec8a">&#9670;&#160;</a></span>create_handle()</h2>
 
@@ -5673,7 +5694,7 @@ Use this method when calling a method from a different thread to marshal the cal
 
 <p>Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container. </p>
 <dl class="section return"><dt>Returns</dt><dd>The point that represents the upper-left corner of the control relative to the upper-left corner of its container. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_message_box_8cpp-example.html#a2">debug_message_box.cpp</a>, <a class="el" href="debug_message_dialog_8cpp-example.html#a1">debug_message_dialog.cpp</a>, <a class="el" href="demo_8cpp-example.html#a5">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a3">dialog.cpp</a>, <a class="el" href="enable_changed_event_8cpp-example.html#a1">enable_changed_event.cpp</a>, <a class="el" href="font_changed_event_8cpp-example.html#a1">font_changed_event.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a5">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a5">form_background_image.cpp</a>, <a class="el" href="owner_button_8cpp-example.html#a14">owner_button.cpp</a>, <a class="el" href="screen_8cpp-example.html#a3">screen.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a2">trace_message_box.cpp</a>, <a class="el" href="trace_message_dialog_8cpp-example.html#a1">trace_message_dialog.cpp</a>, and <a class="el" href="wiggly_8cpp-example.html#a13">wiggly.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="color_picker_8cpp-example.html#a4">color_picker.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a2">debug_message_box.cpp</a>, <a class="el" href="debug_message_dialog_8cpp-example.html#a1">debug_message_dialog.cpp</a>, <a class="el" href="demo_8cpp-example.html#a5">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a4">dialog.cpp</a>, <a class="el" href="enable_changed_event_8cpp-example.html#a1">enable_changed_event.cpp</a>, <a class="el" href="font_changed_event_8cpp-example.html#a1">font_changed_event.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a5">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a5">form_background_image.cpp</a>, <a class="el" href="owner_button_8cpp-example.html#a14">owner_button.cpp</a>, <a class="el" href="screen_8cpp-example.html#a3">screen.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a2">trace_message_box.cpp</a>, <a class="el" href="trace_message_dialog_8cpp-example.html#a1">trace_message_dialog.cpp</a>, and <a class="el" href="wiggly_8cpp-example.html#a13">wiggly.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -8926,7 +8947,7 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#a401edfee5bfcb03598eda
 
 <p>Gets the parent container of the control. </p>
 <dl class="section return"><dt>Returns</dt><dd>A control that represents the parent or container control of the control. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="clock_8cpp-example.html#a6">clock.cpp</a>, <a class="el" href="demo_8cpp-example.html#a6">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a4">dialog.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a3">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a3">form_background_image.cpp</a>, <a class="el" href="hello_world_emoticons_8cpp-example.html#a2">hello_world_emoticons.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a11">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a5">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a5">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a5">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a5">lcd_label_with_seven_segment.cpp</a>, and <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a5">lcd_label_with_sixteen_segment.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="clock_8cpp-example.html#a6">clock.cpp</a>, <a class="el" href="color_picker_8cpp-example.html#a2">color_picker.cpp</a>, <a class="el" href="demo_8cpp-example.html#a6">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a5">dialog.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a3">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a3">form_background_image.cpp</a>, <a class="el" href="hello_world_emoticons_8cpp-example.html#a2">hello_world_emoticons.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a11">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a5">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a5">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a5">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a5">lcd_label_with_seven_segment.cpp</a>, and <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a5">lcd_label_with_sixteen_segment.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -10292,7 +10313,7 @@ A common use for the tag property is to store data that is closely associated wi
 <dl class="section return"><dt>Returns</dt><dd>The text associated with this control. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1lcd__label.html#a254433fdf3532bdc36f3bb9743236c85">xtd::forms::lcd_label</a>, <a class="el" href="classxtd_1_1forms_1_1command__link__button.html#a3e1575aa049d67f0c48cf0196ea0c347">xtd::forms::command_link_button</a>, and <a class="el" href="classxtd_1_1forms_1_1text__box.html#ad22e5b141e192e6aad9a391242deba86">xtd::forms::text_box</a>.</p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_events_8cpp-example.html#a3">application_events.cpp</a>, <a class="el" href="button2_8cpp-example.html#a3">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a3">button3.cpp</a>, <a class="el" href="clock_8cpp-example.html#a3">clock.cpp</a>, <a class="el" href="demo_8cpp-example.html#a15">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a2">dialog.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a4">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a4">form_background_image.cpp</a>, <a class="el" href="form_click_8cpp-example.html#a1">form_click.cpp</a>, <a class="el" href="forms_timer_8cpp-example.html#a2">forms_timer.cpp</a>, <a class="el" href="hello_world_emoticons_8cpp-example.html#a6">hello_world_emoticons.cpp</a>, <a class="el" href="hello_world_label_8cpp-example.html#a7">hello_world_label.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a5">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a1">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a1">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a1">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a1">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a1">lcd_label_with_sixteen_segment.cpp</a>, and <a class="el" href="screen_8cpp-example.html#a8">screen.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_events_8cpp-example.html#a3">application_events.cpp</a>, <a class="el" href="button2_8cpp-example.html#a3">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a3">button3.cpp</a>, <a class="el" href="clock_8cpp-example.html#a3">clock.cpp</a>, <a class="el" href="demo_8cpp-example.html#a15">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a3">dialog.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a4">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a4">form_background_image.cpp</a>, <a class="el" href="form_click_8cpp-example.html#a1">form_click.cpp</a>, <a class="el" href="forms_timer_8cpp-example.html#a2">forms_timer.cpp</a>, <a class="el" href="hello_world_emoticons_8cpp-example.html#a6">hello_world_emoticons.cpp</a>, <a class="el" href="hello_world_label_8cpp-example.html#a7">hello_world_label.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a5">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a1">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a1">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a1">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a1">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a1">lcd_label_with_sixteen_segment.cpp</a>, and <a class="el" href="screen_8cpp-example.html#a8">screen.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -10877,7 +10898,7 @@ You must set the standard_click value of <a class="el" href="group__xtd__forms.h
 <div class="ttc" id="aclassxtd_1_1forms_1_1trace__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__form.html">xtd::forms::trace_form</a></div><div class="ttdoc">Represents a form that displays trace form. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> trace_form.h:34</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="clock_8cpp-example.html#a11">clock.cpp</a>, <a class="el" href="demo_8cpp-example.html#a78">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a5">dialog.cpp</a>, <a class="el" href="form2_8cpp-example.html#a6">form2.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a6">form_and_main.cpp</a>, and <a class="el" href="form_background_image_8cpp-example.html#a6">form_background_image.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="clock_8cpp-example.html#a11">clock.cpp</a>, <a class="el" href="demo_8cpp-example.html#a78">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a6">dialog.cpp</a>, <a class="el" href="form2_8cpp-example.html#a6">form2.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a6">form_and_main.cpp</a>, and <a class="el" href="form_background_image_8cpp-example.html#a6">form_background_image.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -12697,7 +12718,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 22 2024 23:29:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 23 2024 21:06:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -122,18 +122,22 @@ $(function() {
 <div class="line">      text(<span class="stringliteral">&quot;Checked list box example&quot;</span>);</div>
 <div class="line">      client_size({200, 240});</div>
 <div class="line">      </div>
+<div class="line">      checked_list_box1.parent(*<span class="keyword">this</span>);</div>
+<div class="line">      checked_list_box1.location({20, 20});</div>
+<div class="line">      checked_list_box1.size({160, 200});</div>
 <div class="line">      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);</div>
+<div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt;= 10; ++index)</div>
 <div class="line">        checked_list_box1.items().push_back({ustring::format(<span class="stringliteral">&quot;Item {}&quot;</span>, index), index % 2 != 0});</div>
 <div class="line">      checked_list_box1.selected_index(0);</div>
+<div class="line">      </div>
 <div class="line">      checked_list_box1.item_check += [](<span class="keywordtype">object</span> &amp; sender, <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1item__check__event__args.html">item_check_event_args</a> &amp; e) {</div>
 <div class="line">        cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;item_check, index={}, new_value={}, current_value={}&quot;</span>, e.index(), e.new_value(), e.current_value()) &lt;&lt; endl;</div>
 <div class="line">      };</div>
-<div class="line">      cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;checked items = {}&quot;</span>, checked_list_box1.checked_items()) &lt;&lt; endl;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1 = checked_list_box::create(*<span class="keyword">this</span>, {20, 20}, {160, 200});</div>
+<div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -149,7 +153,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 22 2024 23:28:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 23 2024 21:06:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -28,7 +28,7 @@ var searchData=
   ['windows_5fdefault_5fbounds_25',['windows_default_bounds',['../group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019a6c979ef535940afb746c094c5f620d3e',1,'xtd::forms']]],
   ['windows_5fdefault_5flocation_26',['windows_default_location',['../group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019ad41625060ccdb3827e47dd675604bd58',1,'xtd::forms']]],
   ['windows_5fshut_5fdown_27',['windows_shut_down',['../group__xtd__forms.html#ggad306a8c86886e96653e8e813745adb62a33504b7a58b65fb232d59bbbd077f834',1,'xtd::forms']]],
-  ['word_28',['word',['../group__xtd__drawing.html#gga4a9aacc71fbf7e6926da08f783acbfd9ac47d187067c6cf953245f128b5fde62a',1,'xtd::drawing']]],
+  ['word_28',['word',['../group__texts.html#gga4a9aacc71fbf7e6926da08f783acbfd9ac47d187067c6cf953245f128b5fde62a',1,'xtd::drawing']]],
   ['word_5fbreak_29',['word_break',['../group__xtd__forms.html#gga12b406a1ff6df3c0af717121e6c37257a87a346d915550504c4ff75b50b023efe',1,'xtd::forms']]],
   ['word_5fellipsis_30',['word_ellipsis',['../group__xtd__forms.html#gga12b406a1ff6df3c0af717121e6c37257aaa7acb5aa74fffe5687b77b350ecd38e',1,'xtd::forms']]],
   ['world_31',['world',['../group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a7d793037a0760186574b0282f2f435e7',1,'xtd::drawing']]],

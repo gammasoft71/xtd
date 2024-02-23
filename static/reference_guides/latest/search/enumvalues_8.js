@@ -63,6 +63,6 @@ var searchData=
   ['irda_60',['irda',['../group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a4606a19a8430c9744580e4d608dbf14c',1,'xtd::net::sockets::irda'],['../group__xtd__core.html#gga33cbc7eb0a0fcda4d9f2a175b8062b23a4606a19a8430c9744580e4d608dbf14c',1,'xtd::net::sockets::irda']]],
   ['is_5fconnected_61',['is_connected',['../group__xtd__core.html#gga0c933b52bdbb9399c8ec4b1dcf3e2e71a54a61d9ecc2aa695bb97d3fd5f10c392',1,'xtd::net::sockets']]],
   ['iso_62',['iso',['../group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3ae906ec779ab4ac6cbfdf30db5cbb3f1c',1,'xtd::net::sockets::iso'],['../group__xtd__core.html#gga33cbc7eb0a0fcda4d9f2a175b8062b23ae906ec779ab4ac6cbfdf30db5cbb3f1c',1,'xtd::net::sockets::iso']]],
-  ['italic_63',['italic',['../group__xtd__drawing.html#gga5622feb39a9d16672cef53957d224571a030c5b6d1e5715105943ac111d9671bf',1,'xtd::drawing']]],
+  ['italic_63',['italic',['../group__fonts.html#gga5622feb39a9d16672cef53957d224571a030c5b6d1e5715105943ac111d9671bf',1,'xtd::drawing']]],
   ['ivory_64',['ivory',['../group__colors.html#ggabb6249e3fb8a4388778157257e99049bac55c68625ca1da0e1d4a922fc8cb373e',1,'xtd::drawing']]]
 ];

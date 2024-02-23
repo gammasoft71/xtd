@@ -106,17 +106,18 @@ $(function() {
 <img src="tool_bar_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/texts&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/choice&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/list_box&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/progress_bar&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/system_texts&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/timer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/tool_bar&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/tool_bar_images&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>tool_bar_example {</div>
@@ -181,23 +182,23 @@ $(function() {
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> context_help_index_menu_item {<span class="stringliteral">&quot;Help index&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> context_help_search_menu_item {<span class="stringliteral">&quot;Help search&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> context_separator_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> context_about_menu_item {system_texts::about(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> context_about_menu_item {texts::about(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1context__menu.html">forms::context_menu</a> context_menu1 {context_help_context_menu_item, context_help_index_menu_item, context_help_search_menu_item, context_separator_menu_item, context_about_menu_item};</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar.html">forms::tool_bar</a> tool_bar1;</div>
 <div class="line">    <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice1;</div>
-<div class="line">    <a id="_a9" name="_a9"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> new_tool_bar_button = tool_bar_button::create_push_button(system_texts::new_(), 0);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> open_tool_bar_button = tool_bar_button::create_push_button(system_texts::open(), 1);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> save_tool_bar_button = tool_bar_button::create_push_button(system_texts::save(), 2);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> print_tool_bar_button = tool_bar_button::create_push_button(system_texts::print(), 3);</div>
+<div class="line">    <a id="_a9" name="_a9"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> new_tool_bar_button = tool_bar_button::create_push_button(texts::new_(), 0);</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> open_tool_bar_button = tool_bar_button::create_push_button(texts::open(), 1);</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> save_tool_bar_button = tool_bar_button::create_push_button(texts::save(), 2);</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> print_tool_bar_button = tool_bar_button::create_push_button(texts::print(), 3);</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> tool_bar1_separator1 = tool_bar_button::create_separator();</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> cut_tool_bar_button = tool_bar_button::create_push_button(system_texts::cut(), 4);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> copy_tool_bar_button = tool_bar_button::create_push_button(system_texts::copy(), 5);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> paste_tool_bar_button = tool_bar_button::create_push_button(system_texts::paste(), 6);</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> cut_tool_bar_button = tool_bar_button::create_push_button(texts::cut(), 4);</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> copy_tool_bar_button = tool_bar_button::create_push_button(texts::copy(), 5);</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> paste_tool_bar_button = tool_bar_button::create_push_button(texts::paste(), 6);</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> tool_bar1_separator2 = tool_bar_button::create_separator();</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> choice_tool_bar_button = tool_bar_button::create_control(<span class="stringliteral">&quot;Items&quot;</span>, choice1);</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> tool_bar1_separator3 = tool_bar_button::create_stretchable_separator();</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> help_tool_bar_button = tool_bar_button::create_drop_down_button(system_texts::help(), 7, context_menu1);</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> help_tool_bar_button = tool_bar_button::create_drop_down_button(texts::help(), 7, context_menu1);</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar.html">forms::tool_bar</a> tool_bar2;</div>
 <div class="line">    <a id="_a10" name="_a10"></a><a class="code hl_class" href="classxtd_1_1forms_1_1progress__bar.html">progress_bar</a> progress_bar1;</div>
@@ -231,13 +232,14 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1tool__bar__button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1tool__bar__button.html">xtd::forms::tool_bar_button</a></div><div class="ttdoc">Represents a toolbar button.</div><div class="ttdef"><b>Definition</b> tool_bar_button.h:40</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1tool__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1tool__bar.html">xtd::forms::tool_bar</a></div><div class="ttdoc">Represents a Windows toolbar.</div><div class="ttdef"><b>Definition</b> tool_bar.h:50</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga31ef740f2c3370ff9e055409ec86e822a7c4f29407893c334a6cb7a87bf045c0d"><div class="ttname"><a href="group__xtd__forms.html#gga31ef740f2c3370ff9e055409ec86e822a7c4f29407893c334a6cb7a87bf045c0d">xtd::forms::tool_bar_text_align::right</a></div><div class="ttdeci">@ right</div><div class="ttdoc">The text is aligned to the right of the toolbar button image.</div></div>
+<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.h:11</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 22 2024 23:28:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 23 2024 21:06:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

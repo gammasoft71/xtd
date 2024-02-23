@@ -107,6 +107,7 @@ $(function() {
 </div>
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/system_colors&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/drawing/texts&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button_images&gt;</span></div>
@@ -114,7 +115,6 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/images&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/picture_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/system_texts&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
@@ -222,7 +222,7 @@ $(function() {
 <div class="line">      button_context_previous.enabled(<span class="keyword">false</span>);</div>
 <div class="line">      button_context_previous.image(button_images::previous(<a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> {32, 32}));</div>
 <div class="line">      button_context_previous.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_context_previous.text(system_texts::previous());</div>
+<div class="line">      button_context_previous.text(texts::previous());</div>
 <div class="line">      button_context_previous.bounds({10, 750, 125, 40});</div>
 <div class="line">      button_context_previous.click += [&amp;] {</div>
 <div class="line">        current_context_index--;</div>
@@ -233,7 +233,7 @@ $(function() {
 <div class="line">      button_context_next.auto_repeat(<span class="keyword">true</span>);</div>
 <div class="line">      button_context_next.image(button_images::next(<a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> {32, 32}));</div>
 <div class="line">      button_context_next.image_align(content_alignment::middle_right);</div>
-<div class="line">      button_context_next.text(system_texts::next());</div>
+<div class="line">      button_context_next.text(texts::next());</div>
 <div class="line">      button_context_next.bounds({165, 750, 125, 40});</div>
 <div class="line">      button_context_next.click += [&amp;] {</div>
 <div class="line">        current_context_index++;</div>
@@ -351,7 +351,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 22 2024 23:28:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 23 2024 21:06:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

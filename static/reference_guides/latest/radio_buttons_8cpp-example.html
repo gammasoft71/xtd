@@ -106,7 +106,8 @@ $(function() {
 <img src="radio_buttons_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/texts&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/group_box&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/radio_buttons&gt;</span></div>
@@ -115,19 +116,20 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keyword">auto</span> form_main = form::create(<span class="stringliteral">&quot;Radio buttons example&quot;</span>);</div>
-<div class="line">  <span class="keyword">auto</span> group_box_alignment = group_box::create(form_main, system_texts::alignment(), {10, 10}, {150, 180});</div>
+<div class="line">  <span class="keyword">auto</span> group_box_alignment = group_box::create(form_main, <a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a997a53e1524baaf75b0f9a0637eb5d11">xtd::drawing::texts::alignment</a>(), {10, 10}, {150, 180});</div>
 <div class="line">  <span class="keyword">auto</span> radio_button_align_left = radio_buttons::align_left(group_box_alignment, <span class="keyword">true</span>, {20, 20});</div>
 <div class="line">  <span class="keyword">auto</span> radio_button_align_right = radio_buttons::align_right(group_box_alignment, <span class="keyword">false</span>, {20, 50});</div>
 <div class="line">  <span class="keyword">auto</span> radio_button_centered = radio_buttons::centered(group_box_alignment, <span class="keyword">false</span>, {20, 80});</div>
 <div class="line">  <span class="keyword">auto</span> radio_button_justified = radio_buttons::justified(group_box_alignment, <span class="keyword">false</span>, {20, 110});</div>
 <div class="line">  application::run(form_main);</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1texts_html_a997a53e1524baaf75b0f9a0637eb5d11"><div class="ttname"><a href="classxtd_1_1drawing_1_1texts.html#a997a53e1524baaf75b0f9a0637eb5d11">xtd::drawing::texts::alignment</a></div><div class="ttdeci">static xtd::ustring alignment()</div><div class="ttdoc">Gets a system-defined text that has a string value of &quot;Alignment&quot;. This field is constant.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 22 2024 23:28:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 23 2024 21:06:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

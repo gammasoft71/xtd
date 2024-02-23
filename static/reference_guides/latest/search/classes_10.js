@@ -74,6 +74,5 @@ var searchData=
   ['system_5fpens_71',['system_pens',['../classxtd_1_1drawing_1_1system__pens.html',1,'xtd::drawing']]],
   ['system_5freport_72',['system_report',['../classxtd_1_1system__report.html',1,'xtd']]],
   ['system_5fsound_73',['system_sound',['../classxtd_1_1media_1_1system__sound.html',1,'xtd::media']]],
-  ['system_5fsounds_74',['system_sounds',['../classxtd_1_1media_1_1system__sounds.html',1,'xtd::media']]],
-  ['system_5ftexts_75',['system_texts',['../classxtd_1_1forms_1_1system__texts.html',1,'xtd::forms']]]
+  ['system_5fsounds_74',['system_sounds',['../classxtd_1_1media_1_1system__sounds.html',1,'xtd::media']]]
 ];

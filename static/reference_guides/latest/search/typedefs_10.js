@@ -38,5 +38,6 @@ var searchData=
   ['system_5fcolor_5fcollection_35',['system_color_collection',['../classxtd_1_1system__report.html#a4736989be941ac1839fb4e53bbaed312',1,'xtd::system_report']]],
   ['system_5ffont_5fcollection_36',['system_font_collection',['../classxtd_1_1system__report.html#af8812364796da910426518d1cfc3d578',1,'xtd::system_report']]],
   ['system_5ffont_5ffamily_5fcollection_37',['system_font_family_collection',['../classxtd_1_1system__report.html#a4f3ce9ce5c324bb6ba8dcfa00d16d0ab',1,'xtd::system_report']]],
-  ['system_5finformation_5fcollection_38',['system_information_collection',['../classxtd_1_1system__report.html#a5c20dbd8436b79d2edfc5e26a6f0a2d4',1,'xtd::system_report']]]
+  ['system_5finformation_5fcollection_38',['system_information_collection',['../classxtd_1_1system__report.html#a5c20dbd8436b79d2edfc5e26a6f0a2d4',1,'xtd::system_report']]],
+  ['system_5ftexts_39',['system_texts',['../namespacextd_1_1forms.html#a6160caa5b5132cdf486e69d58a5f3b24',1,'xtd::forms']]]
 ];

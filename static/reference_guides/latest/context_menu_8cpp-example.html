@@ -106,15 +106,16 @@ $(function() {
 <img src="context_menu_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/texts&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/context_menu&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/list_box&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/menu_images&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/message_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/system_texts&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>context_menu_example {</div>
@@ -145,34 +146,34 @@ $(function() {
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_open_recent_file3_menu_item {<span class="stringliteral">&quot;Path/File3&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_open_recent_file4_menu_item {<span class="stringliteral">&quot;Path/File4&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_new_menu_item {system_texts::new_(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_new()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_new_menu_item {texts::new_(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_new()};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_separator1_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_open_menu_item {system_texts::open(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_open()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_open_menu_item {texts::open(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_open()};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_open_recent_menu_item {<span class="stringliteral">&quot;Open recent&quot;</span>, {file_open_recent_file1_menu_item, file_open_recent_file2_menu_item, file_open_recent_file3_menu_item, file_open_recent_file4_menu_item}};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_close_menu_item {system_texts::close(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_close_menu_item {texts::close(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_separator2_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_save_menu_item {system_texts::save(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_save()};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_save_as_menu_item {system_texts::save_as(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_save_menu_item {texts::save(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_save()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_save_as_menu_item {texts::save_as(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_separator3_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_page_setup_menu_item {<span class="stringliteral">&quot;Page &amp;Seup...&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_print_menu_item {system_texts::print(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_print()};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_print_preview_menu_item {system_texts::print_preview(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_print_preview()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_print_menu_item {texts::print(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_print()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_print_preview_menu_item {texts::print_preview(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_print_preview()};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_separator4_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_exit_menu_item {system_texts::exit(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_exit()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_exit_menu_item {texts::exit(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_exit()};</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_undo_menu_item {system_texts::undo(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_undo()};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_redo_menu_item {system_texts::redo(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_redo()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_undo_menu_item {texts::undo(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_undo()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_redo_menu_item {texts::redo(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_redo()};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_separator1_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_cut_menu_item {system_texts::cut(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_cut()};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_copy_menu_item {system_texts::copy(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_copy()};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_paste_menu_item {system_texts::paste(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_paste()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_cut_menu_item {texts::cut(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_cut()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_copy_menu_item {texts::copy(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_copy()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_paste_menu_item {texts::paste(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_paste()};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_separator2_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_select_all_menu_item {system_texts::select_all(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_select_all_menu_item {texts::select_all(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_separator3_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_options_menu_item {system_texts::options(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_options_menu_item {texts::options(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> view_back_menu_item {system_texts::back(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::view_back()};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> view_forward_menu_item {system_texts::forward(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::view_forward()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> view_back_menu_item {texts::back(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::view_back()};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> view_forward_menu_item {texts::forward(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::view_forward()};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> view_separator1_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> view_show_menu_item {<span class="stringliteral">&quot;Show&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> view_hide_menu_item {<span class="stringliteral">&quot;Hide&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
@@ -189,13 +190,13 @@ $(function() {
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> options_value_h_menu_item {<span class="stringliteral">&quot;Value H&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> options_value_i_menu_item {<span class="stringliteral">&quot;Value I&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> help_about_menu_item {system_texts::about(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> help_about_menu_item {texts::about(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_menu_item {system_texts::file(), {file_new_menu_item, file_separator1_menu_item, file_open_menu_item, file_open_recent_menu_item, file_close_menu_item, file_separator2_menu_item, file_save_menu_item, file_save_as_menu_item, file_separator3_menu_item, file_page_setup_menu_item, file_print_menu_item, file_print_preview_menu_item, file_separator4_menu_item, file_exit_menu_item}};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_menu_item {system_texts::edit(), {edit_undo_menu_item, edit_redo_menu_item, edit_separator1_menu_item, edit_cut_menu_item, edit_copy_menu_item, edit_paste_menu_item, edit_separator2_menu_item, edit_select_all_menu_item, edit_separator3_menu_item, edit_options_menu_item}};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> view_menu_item {system_texts::view(), {view_back_menu_item, view_forward_menu_item, view_separator1_menu_item, view_show_menu_item, view_hide_menu_item}};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> options_menu_item {system_texts::options(), {options_value_a_menu_item, options_value_b_menu_item, options_value_c_menu_item, options_separator1_menu_item, options_value_d_menu_item, options_value_e_menu_item, options_value_f_menu_item, options_separator2_menu_item, options_value_g_menu_item, options_value_h_menu_item, options_value_i_menu_item}};</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> help_menu_item {system_texts::help(), {help_about_menu_item}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> file_menu_item {texts::file(), {file_new_menu_item, file_separator1_menu_item, file_open_menu_item, file_open_recent_menu_item, file_close_menu_item, file_separator2_menu_item, file_save_menu_item, file_save_as_menu_item, file_separator3_menu_item, file_page_setup_menu_item, file_print_menu_item, file_print_preview_menu_item, file_separator4_menu_item, file_exit_menu_item}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> edit_menu_item {texts::edit(), {edit_undo_menu_item, edit_redo_menu_item, edit_separator1_menu_item, edit_cut_menu_item, edit_copy_menu_item, edit_paste_menu_item, edit_separator2_menu_item, edit_select_all_menu_item, edit_separator3_menu_item, edit_options_menu_item}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> view_menu_item {texts::view(), {view_back_menu_item, view_forward_menu_item, view_separator1_menu_item, view_show_menu_item, view_hide_menu_item}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> options_menu_item {texts::options(), {options_value_a_menu_item, options_value_b_menu_item, options_value_c_menu_item, options_separator1_menu_item, options_value_d_menu_item, options_value_e_menu_item, options_value_f_menu_item, options_separator2_menu_item, options_value_g_menu_item, options_value_h_menu_item, options_value_i_menu_item}};</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1menu__item.html">menu_item</a> help_menu_item {texts::help(), {help_about_menu_item}};</div>
 <div class="line">    </div>
 <div class="line">    <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1context__menu.html">forms::context_menu</a> context_menu1 {file_menu_item, edit_menu_item, view_menu_item, options_menu_item, help_menu_item};</div>
 <div class="line">    </div>
@@ -213,13 +214,14 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1list__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1list__box.html">xtd::forms::list_box</a></div><div class="ttdoc">Represents a standard Windows list box.</div><div class="ttdef"><b>Definition</b> list_box.h:31</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1menu__item_html"><div class="ttname"><a href="classxtd_1_1forms_1_1menu__item.html">xtd::forms::menu_item</a></div><div class="ttdoc">Represents an individual item that is displayed within a main_menu or context_menu.</div><div class="ttdef"><b>Definition</b> menu_item.h:28</div></div>
+<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.h:11</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 22 2024 23:28:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 23 2024 21:06:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

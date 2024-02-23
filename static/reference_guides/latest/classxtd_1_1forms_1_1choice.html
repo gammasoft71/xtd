@@ -170,18 +170,22 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Checked list box example&quot;</span>);</div>
 <div class="line">      client_size({200, 240});</div>
 <div class="line">      </div>
+<div class="line">      checked_list_box1.parent(*<span class="keyword">this</span>);</div>
+<div class="line">      checked_list_box1.location({20, 20});</div>
+<div class="line">      checked_list_box1.size({160, 200});</div>
 <div class="line">      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);</div>
+<div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt;= 10; ++index)</div>
 <div class="line">        checked_list_box1.items().push_back({ustring::format(<span class="stringliteral">&quot;Item {}&quot;</span>, index), index % 2 != 0});</div>
 <div class="line">      checked_list_box1.selected_index(0);</div>
+<div class="line">      </div>
 <div class="line">      checked_list_box1.item_check += [](<span class="keywordtype">object</span> &amp; sender, <a class="code hl_class" href="classxtd_1_1forms_1_1item__check__event__args.html">item_check_event_args</a> &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
 <div class="line">        cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;item_check, index={}, new_value={}, current_value={}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.index(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.new_value(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.current_value()) &lt;&lt; endl;</div>
 <div class="line">      };</div>
-<div class="line">      cdebug &lt;&lt; ustring::format(<span class="stringliteral">&quot;checked items = {}&quot;</span>, checked_list_box1.checked_items()) &lt;&lt; endl;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1 = checked_list_box::create(*<span class="keyword">this</span>, {20, 20}, {160, 200});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -210,10 +214,16 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Choice example&quot;</span>);</div>
 <div class="line">      </div>
+<div class="line">      choice1.parent(*<span class="keyword">this</span>);</div>
+<div class="line">      choice1.location({10, 10});</div>
 <div class="line">      choice1.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
 <div class="line">      choice1.selected_index(0);</div>
 <div class="line">      choice1.selected_index_changed += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_choice_click);</div>
 <div class="line">      </div>
+<div class="line">      choice2.parent(*<span class="keyword">this</span>);</div>
+<div class="line">      choice2.location({10, 50});</div>
+<div class="line">      choice2.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
+<div class="line">      choice2.selected_index(0);</div>
 <div class="line">      choice2.selected_index_changed += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_choice_click);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -222,8 +232,8 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">      choice1.selected_index(as&lt;choice&amp;&gt;(sender).selected_index());</div>
 <div class="line">      choice2.selected_index(as&lt;choice&amp;&gt;(sender).selected_index());</div>
 <div class="line">    }</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice1 = choice::create(*<span class="keyword">this</span>, {10, 10});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice2 = choice::create(*<span class="keyword">this</span>, {<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>}, 0, {10, 50});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice1;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice2;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -847,9 +857,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:abae9cd28b4ab5e0aa8590f164511dadd inherit pub_methods_classxtd_1_1forms_1_1control"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#abae9cd28b4ab5e0aa8590f164511dadd">create_control</a> ()</td></tr>
 <tr class="memdesc:abae9cd28b4ab5e0aa8590f164511dadd inherit pub_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the creation of the visible control, including the creation of the handle and any visible child controls.  <br /></td></tr>
 <tr class="separator:abae9cd28b4ab5e0aa8590f164511dadd inherit pub_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd513f7ccbc19b4842ab59e9978392a7 inherit pub_methods_classxtd_1_1forms_1_1control"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1graphics.html">drawing::graphics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drawing.html#gadd513f7ccbc19b4842ab59e9978392a7">create_graphics</a> () const</td></tr>
-<tr class="memdesc:gadd513f7ccbc19b4842ab59e9978392a7 inherit pub_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> for the control.  <br /></td></tr>
-<tr class="separator:gadd513f7ccbc19b4842ab59e9978392a7 inherit pub_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add513f7ccbc19b4842ab59e9978392a7 inherit pub_methods_classxtd_1_1forms_1_1control"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1graphics.html">drawing::graphics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#add513f7ccbc19b4842ab59e9978392a7">create_graphics</a> () const</td></tr>
+<tr class="memdesc:add513f7ccbc19b4842ab59e9978392a7 inherit pub_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> for the control.  <br /></td></tr>
+<tr class="separator:add513f7ccbc19b4842ab59e9978392a7 inherit pub_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1cb213d19c2f27334002116be321ffa inherit pub_methods_classxtd_1_1forms_1_1control"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ad1cb213d19c2f27334002116be321ffa">destroy_control</a> ()</td></tr>
 <tr class="memdesc:ad1cb213d19c2f27334002116be321ffa inherit pub_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the destruction of the visible control, including the destruction of the handle and any visible child controls.  <br /></td></tr>
 <tr class="separator:ad1cb213d19c2f27334002116be321ffa inherit pub_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3267,7 +3277,7 @@ Typically, you should not set the client_size of the control. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 22 2024 23:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 23 2024 21:06:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

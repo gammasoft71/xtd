@@ -106,12 +106,13 @@ $(function() {
 <img src="button_images_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/texts&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button_images&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/system_texts&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>button_images_example {</div>
@@ -124,70 +125,70 @@ $(function() {
 <div class="line">      button_ok.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_ok.image(button_images::ok());</div>
 <div class="line">      button_ok.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_ok.text(system_texts::ok());</div>
+<div class="line">      button_ok.text(texts::ok());</div>
 <div class="line">      button_ok.location({10, 10});</div>
 <div class="line">      button_ok.width(90);</div>
 <div class="line">      </div>
 <div class="line">      button_apply.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_apply.image(button_images::apply());</div>
 <div class="line">      button_apply.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_apply.text(system_texts::apply());</div>
+<div class="line">      button_apply.text(texts::apply());</div>
 <div class="line">      button_apply.location({110, 10});</div>
 <div class="line">      button_apply.width(90);</div>
 <div class="line">      </div>
 <div class="line">      button_cancel.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_cancel.image(button_images::cancel());</div>
 <div class="line">      button_cancel.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_cancel.text(system_texts::cancel());</div>
+<div class="line">      button_cancel.text(texts::cancel());</div>
 <div class="line">      button_cancel.location({210, 10});</div>
 <div class="line">      button_cancel.width(90);</div>
 <div class="line">      </div>
 <div class="line">      button_yes.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_yes.image(button_images::yes());</div>
 <div class="line">      button_yes.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_yes.text(system_texts::yes());</div>
+<div class="line">      button_yes.text(texts::yes());</div>
 <div class="line">      button_yes.location({10, 50});</div>
 <div class="line">      button_yes.width(90);</div>
 <div class="line">      </div>
 <div class="line">      button_no.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_no.image(button_images::no());</div>
 <div class="line">      button_no.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_no.text(system_texts::no());</div>
+<div class="line">      button_no.text(texts::no());</div>
 <div class="line">      button_no.location({110, 50});</div>
 <div class="line">      button_no.width(90);</div>
 <div class="line">      </div>
 <div class="line">      button_add.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_add.image(button_images::add());</div>
 <div class="line">      button_add.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_add.text(system_texts::add());</div>
+<div class="line">      button_add.text(texts::add());</div>
 <div class="line">      button_add.location({10, 90});</div>
 <div class="line">      button_add.width(90);</div>
 <div class="line">      </div>
 <div class="line">      button_remove.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_remove.image(button_images::remove());</div>
 <div class="line">      button_remove.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_remove.text(system_texts::remove());</div>
+<div class="line">      button_remove.text(texts::remove());</div>
 <div class="line">      button_remove.location({110, 90});</div>
 <div class="line">      button_remove.width(90);</div>
 <div class="line">      </div>
 <div class="line">      button_previous.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_previous.image(button_images::previous());</div>
 <div class="line">      button_previous.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_previous.text(system_texts::previous());</div>
+<div class="line">      button_previous.text(texts::previous());</div>
 <div class="line">      button_previous.location({10, 130});</div>
 <div class="line">      button_previous.width(90);</div>
 <div class="line">      </div>
 <div class="line">      button_next.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_next.image(button_images::next());</div>
 <div class="line">      button_next.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_next.text(system_texts::next());</div>
+<div class="line">      button_next.text(texts::next());</div>
 <div class="line">      button_next.location({110, 130});</div>
 <div class="line">      button_next.width(90);</div>
 <div class="line">      </div>
 <div class="line">      button_go_home.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_go_home.image(button_images::from_name(<span class="stringliteral">&quot;go-home&quot;</span>));</div>
 <div class="line">      button_go_home.image_align(content_alignment::middle_left);</div>
-<div class="line">      button_go_home.text(system_texts::home());</div>
+<div class="line">      button_go_home.text(texts::home());</div>
 <div class="line">      button_go_home.location({210, 130});</div>
 <div class="line">      button_go_home.width(90);</div>
 <div class="line">    }</div>
@@ -211,12 +212,13 @@ $(function() {
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
+<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.h:11</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 22 2024 23:28:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Feb 23 2024 21:06:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
