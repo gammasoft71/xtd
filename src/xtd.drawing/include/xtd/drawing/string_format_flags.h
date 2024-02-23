@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing texts
     enum class string_format_flags {
       /// @brief Text is displayed from right to left. text.
       direction_right_to_left = 0b1,

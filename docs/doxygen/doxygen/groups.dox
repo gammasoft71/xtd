@@ -6,15 +6,15 @@
 /// @ingroup gui
 
 /// @defgroup brushes brushes
-/// @brief Represents Brushes used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths..
+/// @brief Represents brushes used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
 /// @ingroup drawing
 
 /// @defgroup collections collections
-/// @brief collections definitions.
+/// @brief Contains collections definitions.
 /// @ingroup system
 
 /// @defgroup colors colors
-/// @brief Represents color definitions.
+/// @brief Contains colors definitions.
 /// @ingroup drawing
 
 /// @defgroup components components
@@ -33,7 +33,7 @@
 /// @brief All needed for debugging and tracing.
 
 /// @defgroup diagnostics diagnostics
-/// @brief diagnostics definitions.
+/// @brief Contains diagnostics definitions.
 /// @ingroup system
 
 /// @defgroup dialogs dialogs
@@ -49,25 +49,29 @@
 /// @brief events are event args and event handler needed to response to window messages.
 
 /// @defgroup exceptions exceptions
-/// @brief Exceptions definitions.
+/// @brief Contains exceptions definitions.
+
+/// @defgroup fonts fonts
+/// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
+/// @ingroup drawing
 
 /// @defgroup format_parse format and parse
 /// @brief All needed for formating or parsing object.
 /// @remarks for more information about format see @ref FormatPage "Format".
 
 /// @defgroup forms forms
-/// @brief forms definitions.
+/// @brief Contains forms definitions.
 /// @ingroup gui
 
 /// @defgroup images images
-/// @brief Represents images definitions.
+/// @brief Contains images definitions.
 /// @ingroup drawing
 
 /// @defgroup interfaces interfaces
-/// @brief Interfaces definitions.
+/// @brief Contains interfaces definitions.
 
 /// @defgroup io io
-/// @brief io definitions.
+/// @brief Contains io definitions.
 /// @ingroup system
 
 /// @defgroup keywords keywords
@@ -83,19 +87,23 @@
 /// @brief Literals can be used to produce integer, float, character, duration and string types.
 
 /// @defgroup media media
-/// @brief media definitions.
+/// @brief Contains media definitions.
 /// @ingroup system
 
 /// @defgroup menus_and_toolbars  menus and toolbars
-/// @brief menus and toolbars definitions.
+/// @brief Contains menus and toolbars definitions.
 /// @ingroup gui
 
 /// @defgroup net net
-/// @brief Network definitions.
+/// @brief Contains network definitions.
 /// @ingroup system
 
+/// @defgroup pens pens
+/// @brief Contains pens definitions.
+/// @ingroup drawing
+
 /// @defgroup renderers renderers
-/// @brief Control renderers definitions.
+/// @brief Contains control renderers definitions.
 /// @ingroup gui
 
 /// @defgroup security security
@@ -109,32 +117,32 @@
 /// @brief System information contains classes that provides informations about the current system environment.
 
 /// @defgroup threading threading
-/// @brief threading definitions.
+/// @brief Contains threading definitions.
 /// @ingroup system
 
 /// @defgroup timers timers
-/// @brief timers definitions.
+/// @brief Contains timers definitions.
 /// @ingroup system
 
 /// @defgroup translate translate
 /// @brief Contains translator definitions.
 
 /// @defgroup types types
-/// @brief Types definitions
+/// @brief Contains types definitions
 
 /// @defgroup tunit unit tests
-/// @brief Unit tests definitions
+/// @brief Contains unit tests definitions
 
 /// @defgroup assertions assertions
-/// @brief Assertions definitions
+/// @brief Contains assertions definitions
 /// @ingroup tunit
 
 /// @defgroup assumptions assumptions
-/// @brief Assumptions definitions
+/// @brief Contains assumptions definitions
 /// @ingroup tunit
 
 /// @defgroup validations validations
-/// @brief validations definitions
+/// @brief Contains validations definitions
 /// @ingroup tunit
 
 /// @defgroup gui forms
@@ -146,6 +154,10 @@
 
 /// @defgroup style_sheets style_sheets
 /// @brief Contains various properties, states, and subcontrols that make it possible to customize the look of control.
+
+/// @defgroup texts texts
+/// @brief Contains texts definitions.
+/// @ingroup drawing
 
 /// @defgroup xtd_core xtd.core
 /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
@@ -164,5 +176,5 @@
 /// @ingroup libraries
 
 /// @defgroup web web
-/// @brief web definitions.
+/// @brief Contains web definitions.
 /// @ingroup system

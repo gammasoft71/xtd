@@ -20,7 +20,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing pens
     /// @remarks The pen objects returned by this class are immutable, meaning their properties cannot be changed.
     class drawing_export_ pens final static_ {
     public:

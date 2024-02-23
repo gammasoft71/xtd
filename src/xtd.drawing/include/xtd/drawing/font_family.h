@@ -34,7 +34,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing fonts
     class drawing_export_ font_family final : public xtd::object, public xtd::iequatable<font_family> {
       struct data;
       

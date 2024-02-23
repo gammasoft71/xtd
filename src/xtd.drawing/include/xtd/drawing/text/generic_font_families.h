@@ -15,7 +15,7 @@ namespace xtd {
       /// xtd::drawing::text
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing
+      /// @ingroup xtd_drawing fonts
       enum class generic_font_families {
         /// @brief A generic Serif font_family object.
         serif = 0,

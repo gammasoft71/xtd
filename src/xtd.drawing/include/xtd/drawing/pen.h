@@ -31,7 +31,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing drawing
+    /// @ingroup xtd_drawing pens
     class drawing_export_ pen final : public xtd::object, public xtd::iequatable<pen> {
       struct data;
       

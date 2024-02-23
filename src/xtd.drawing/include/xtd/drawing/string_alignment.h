@@ -18,7 +18,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing texts
     /// @remarks When used with the line_alignment property, this enumeration sets the vertical alignment for a drawn string. When used with the alignment property, this enumeration sets the horizontal alignment.
     enum class string_alignment {
       /// @brief Specifies the text be aligned near the layout. In a left-to-right layout, the near position is left. In a right-to-left layout, the near position is right.

@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing fonts
     enum class font_style {
       /// @brief Normal text.
       regular = 0,

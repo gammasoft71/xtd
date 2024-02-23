@@ -15,7 +15,7 @@ namespace xtd {
       /// xtd::drawing::text
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing
+      /// @ingroup xtd_drawing texts
       /// @remarks A hot-key prefix allows you to use a keyboard combination (usually CTRL+HotKey or ALT+HotKey) to access functionality represented by text displayed on the screen.
       enum class hotkey_prefix {
         /// @brief No hot-key prefix.

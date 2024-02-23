@@ -13,7 +13,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing
+    /// @ingroup xtd_drawing texts
     enum class string_trimming {
       /// @brief Specifies no trimming.
       none = 0,

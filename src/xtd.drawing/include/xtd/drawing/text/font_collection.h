@@ -17,7 +17,7 @@ namespace xtd {
       /// xtd::drawing::text
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing
+      /// @ingroup xtd_drawing fonts
       /// @remarks The xtd::drawing::text::font_collection allows you to get a list of the font families contained in the collection with its families property. For additional information on fonts and text, including example code, see Using fonts and text.
       class font_collection : public object {
       public:
