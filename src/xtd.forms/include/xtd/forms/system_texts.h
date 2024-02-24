@@ -10,7 +10,6 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a collection of string objects for use by a Windows Forms application.
     /// @deprecated Replaced by xtd::drawing::texts - Will be removed in version 0.4.0
-    //[[deprecated("Replaced by xtd::drawing::texts - Will be removed in version 0.4.0")]]
-    using system_texts = xtd::drawing::texts;
+    using system_texts [[deprecated("Replaced by xtd::drawing::texts - Will be removed in version 0.4.0")]] = xtd::drawing::texts;
   }
 }
