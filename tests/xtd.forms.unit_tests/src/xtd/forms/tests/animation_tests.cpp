@@ -95,7 +95,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(10, animation.frames_per_second(), csf_);
+      assert::are_equal(10u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -157,7 +157,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(10, animation.frames_per_second(), csf_);
+      assert::are_equal(10u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -219,7 +219,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(60, animation.frames_per_second(), csf_);
+      assert::are_equal(60u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -281,7 +281,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(60, animation.frames_per_second(), csf_);
+      assert::are_equal(60u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -346,7 +346,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(60, animation.frames_per_second(), csf_);
+      assert::are_equal(60u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -411,7 +411,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(60, animation.frames_per_second(), csf_);
+      assert::are_equal(60u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -474,7 +474,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(10, animation.frames_per_second(), csf_);
+      assert::are_equal(10u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -537,7 +537,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(60, animation.frames_per_second(), csf_);
+      assert::are_equal(60u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -600,7 +600,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(60, animation.frames_per_second(), csf_);
+      assert::are_equal(60u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -666,7 +666,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(60, animation.frames_per_second(), csf_);
+      assert::are_equal(60u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
     
@@ -732,7 +732,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.elapsed_nanoseconds(), csf_);
       assert::is_zero(animation.elapsed_ticks(), csf_);
       assert::is_zero(animation.frame_counter(), csf_);
-      assert::are_equal(60, animation.frames_per_second(), csf_);
+      assert::are_equal(60u, animation.frames_per_second(), csf_);
       assert::is_false(animation.running(), csf_);
     }
   };
