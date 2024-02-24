@@ -8,7 +8,6 @@
 #include "../image.h"
 #include "../point.h"
 #include "../rectangle.h"
-#include "drawing2d.h"
 #include "hatch_style.h"
 #include <xtd/iequatable>
 #include <array>
@@ -17,7 +16,7 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Defines a rectangular xtd::drawing::brush with a hatch style, a foreground color, and a background color. This class cannot be inherited.
       /// @par Namespace
@@ -83,6 +82,14 @@ namespace xtd {
         
         std::shared_ptr<data> data_;
       };
+    }
+
+    /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @deprecated Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0
+    namespace drawing2d [[deprecated("Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0")]] {
+      /// @brief Defines a rectangular xtd::drawing::brush with a hatch style, a foreground color, and a background color. This class cannot be inherited.
+      /// @deprecated Replaced by xtd::drawing::drawing_2d::hatch_brush - Will be removed in version 0.4.0
+      using hatch_brush [[deprecated("Replaced by xtd::drawing::drawing_2d::hatch_brush - Will be removed in version 0.4.0")]] = xtd::drawing::drawing_2d::hatch_brush;
     }
   }
 }

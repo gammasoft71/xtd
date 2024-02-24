@@ -7,7 +7,6 @@
 #include "../point.h"
 #include "../rectangle.h"
 #include "gradient_stop_collection.h"
-#include "drawing2d.h"
 #include <xtd/iequatable>
 #include <array>
 #include <utility>
@@ -16,7 +15,7 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited.
       /// @par Namespace

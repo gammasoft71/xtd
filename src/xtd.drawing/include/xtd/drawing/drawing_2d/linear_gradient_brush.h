@@ -7,7 +7,6 @@
 #include "../color.h"
 #include "../point.h"
 #include "../rectangle.h"
-#include "drawing2d.h"
 #include "gradient_stop_collection.h"
 #include "linear_gradient_mode.h"
 #include <array>
@@ -17,7 +16,7 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.
       /// @par Namespace
@@ -183,6 +182,14 @@ namespace xtd {
         
         std::shared_ptr<data> data_;
       };
+    }
+
+    /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @deprecated Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0
+    namespace drawing2d [[deprecated("Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0")]] {
+      /// @brief Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.
+      /// @deprecated Replaced by xtd::drawing::drawing_2d::linear_gradient_brush - Will be removed in version 0.4.0
+      using linear_gradient_brush [[deprecated("Replaced by xtd::drawing::drawing_2d::linear_gradient_brush - Will be removed in version 0.4.0")]] = xtd::drawing::drawing_2d::linear_gradient_brush;
     }
   }
 }

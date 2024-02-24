@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../../drawing_export.h"
-#include "drawing2d.h"
 #include <xtd/iequatable>
 #include <xtd/object>
 
@@ -15,7 +14,7 @@ namespace xtd {
     class graphics;
     /// @endcond
     
-    /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Represents the state of a xtd::drawing::graphics object. This object is returned by a call to the xtd::drawing::graphics::save() methods. This class cannot be inherited.
       /// @code

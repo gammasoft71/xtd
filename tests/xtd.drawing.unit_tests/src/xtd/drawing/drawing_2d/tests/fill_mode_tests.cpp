@@ -3,7 +3,7 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace xtd::drawing::drawing2d;
+using namespace xtd::drawing::drawing_2d;
 using namespace xtd::tunit;
 
 namespace xtd::drawing::drawing_2d::tests {
