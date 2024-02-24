@@ -277,7 +277,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.dropped_down(), csf_);
       assert::are_equal(combo_box_style::drop_down, combo_box.drop_down_style(), csf_);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, combo_box.items(), csf_);
-      assert::are_equal(2, combo_box.selected_index(), csf_);
+      assert::are_equal(2u, combo_box.selected_index(), csf_);
       assert::are_equal("Item3", combo_box.selected_item().value(), csf_);
       assert::is_false(combo_box.sorted(), csf_);
     }
@@ -338,7 +338,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.dropped_down(), csf_);
       assert::are_equal(combo_box_style::drop_down, combo_box.drop_down_style(), csf_);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, combo_box.items(), csf_);
-      assert::are_equal(2, combo_box.selected_index(), csf_);
+      assert::are_equal(2u, combo_box.selected_index(), csf_);
       assert::are_equal("Item3", combo_box.selected_item().value(), csf_);
       assert::is_false(combo_box.sorted(), csf_);
     }
@@ -402,7 +402,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.dropped_down(), csf_);
       assert::are_equal(combo_box_style::drop_down, combo_box.drop_down_style(), csf_);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, combo_box.items(), csf_);
-      assert::are_equal(2, combo_box.selected_index(), csf_);
+      assert::are_equal(2u, combo_box.selected_index(), csf_);
       assert::are_equal("Item3", combo_box.selected_item().value(), csf_);
       assert::is_false(combo_box.sorted(), csf_);
     }
@@ -466,7 +466,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.dropped_down(), csf_);
       assert::are_equal(combo_box_style::drop_down, combo_box.drop_down_style(), csf_);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, combo_box.items(), csf_);
-      assert::are_equal(2, combo_box.selected_index(), csf_);
+      assert::are_equal(2u, combo_box.selected_index(), csf_);
       assert::are_equal("Item3", combo_box.selected_item().value(), csf_);
       assert::is_false(combo_box.sorted(), csf_);
     }
@@ -652,7 +652,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.dropped_down(), csf_);
       assert::are_equal(combo_box_style::drop_down, combo_box.drop_down_style(), csf_);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, combo_box.items(), csf_);
-      assert::are_equal(2, combo_box.selected_index(), csf_);
+      assert::are_equal(2u, combo_box.selected_index(), csf_);
       assert::are_equal("Item3", combo_box.selected_item().value(), csf_);
       assert::is_false(combo_box.sorted(), csf_);
     }
@@ -714,7 +714,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.dropped_down(), csf_);
       assert::are_equal(combo_box_style::drop_down, combo_box.drop_down_style(), csf_);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, combo_box.items(), csf_);
-      assert::are_equal(2, combo_box.selected_index(), csf_);
+      assert::are_equal(2u, combo_box.selected_index(), csf_);
       assert::are_equal("Item3", combo_box.selected_item().value(), csf_);
       assert::is_false(combo_box.sorted(), csf_);
     }
@@ -779,7 +779,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.dropped_down(), csf_);
       assert::are_equal(combo_box_style::drop_down, combo_box.drop_down_style(), csf_);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, combo_box.items(), csf_);
-      assert::are_equal(2, combo_box.selected_index(), csf_);
+      assert::are_equal(2u, combo_box.selected_index(), csf_);
       assert::are_equal("Item3", combo_box.selected_item().value(), csf_);
       assert::is_false(combo_box.sorted(), csf_);
     }
@@ -844,7 +844,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.dropped_down(), csf_);
       assert::are_equal(combo_box_style::drop_down, combo_box.drop_down_style(), csf_);
       collection_assert::are_equal({"Item1", "Item2", "Item3"}, combo_box.items(), csf_);
-      assert::are_equal(2, combo_box.selected_index(), csf_);
+      assert::are_equal(2u, combo_box.selected_index(), csf_);
       assert::are_equal("Item3", combo_box.selected_item().value(), csf_);
       assert::is_false(combo_box.sorted(), csf_);
     }

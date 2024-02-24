@@ -2636,7 +2636,7 @@ namespace xtd::forms::tests {
       control.parent(form);
       
       control.controls().push_back_range({control1, control2, control3});
-      assert::are_equal(3, control.controls().size(), csf_);
+      assert::are_equal(3u, control.controls().size(), csf_);
       assert::is_not_zero(control1.handle(), csf_);
       assert::is_not_zero(control2.handle(), csf_);
       assert::is_not_zero(control3.handle(), csf_);
@@ -2658,7 +2658,7 @@ namespace xtd::forms::tests {
       control.parent(form);
       control1.parent(control);
       control.controls().push_back_range({control1, control2, control3});
-      assert::are_equal(3, control.controls().size(), csf_);
+      assert::are_equal(3u, control.controls().size(), csf_);
       assert::is_not_zero(control1.handle(), csf_);
       assert::is_not_zero(control2.handle(), csf_);
       assert::is_not_zero(control3.handle(), csf_);
@@ -2680,7 +2680,7 @@ namespace xtd::forms::tests {
       
       control.controls().push_back_range({control1, control2, control3});
       control2.parent(nullptr);
-      assert::are_equal(2, control.controls().size(), csf_);
+      assert::are_equal(2u, control.controls().size(), csf_);
       assert::are_same(control1, control.controls()[0].get(), csf_);
       assert::are_same(control3, control.controls()[1].get(), csf_);
     }
