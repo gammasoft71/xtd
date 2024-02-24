@@ -33,7 +33,7 @@ namespace xtd {
     /// xtd::forms
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms drawing
+    /// @ingroup xtd_forms
     class forms_export_ control_paint final static_ {
     public:
       /// @name Methods
@@ -83,7 +83,6 @@ namespace xtd {
       
       static void draw_button(const xtd::forms::control& control, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle, xtd::forms::button_state state);
       static void draw_button(const xtd::forms::control& control, xtd::drawing::graphics& graphics, int32 x, int32 y, int32 width, int32 height, xtd::forms::button_state state);
-      
       
       static void draw_border(const xtd::forms::control& control, xtd::drawing::graphics& graphics, xtd::forms::border_style border, xtd::forms::border_sides sides, const xtd::drawing::color& color, const xtd::drawing::rectangle& rect);
       
