@@ -8,6 +8,9 @@
 #include "static.h"
 #include <exception>
 #include <optional>
+#define __XTD_CORE_INTERNAL__
+#include "internal/__show_generic_exception_message.h"
+#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -99,9 +102,9 @@ namespace xtd {
         end_safe_run();
         return exit_code;
       } catch(const std::exception& e) {
-        show_generic_exception_message(e);
+        __show_generic_exception_message__(e);
       } catch(...) {\
-        show_generic_exception_message();
+        __show_generic_exception_message__();
       }
       return 0;
     }
@@ -134,9 +137,6 @@ namespace xtd {
     static int run(xtd::delegate<int(const xtd::collections::specialized::string_vector&)> main_function);
     static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]);
     static int run(int (*main_function)(const xtd::collections::specialized::string_vector&));
-
-    static void show_generic_exception_message(const std::exception& e);
-    static void show_generic_exception_message();
   };
 }
 

@@ -2,10 +2,6 @@
 #include "../../include/xtd/startup.h"
 #include "../../include/xtd/threading/thread.h"
 
-#define __XTD_CORE_INTERNAL__
-#include "../../include/xtd/internal/__show_generic_exception_message.h"
-#undef __XTD_CORE_INTERNAL__
-
 using namespace xtd;
 using namespace xtd::collections::specialized;
 using namespace xtd::threading;
@@ -229,12 +225,4 @@ int startup::run(int (*main_function)(const string_vector&), int argc, char* arg
 int startup::run(int (*main_function)(const string_vector&)) {
   auto args = environment::get_command_line_args();
   return main_function({args.begin() + 1, args.end()});
-}
-
-void startup::show_generic_exception_message(const std::exception& e) {
-  __show_generic_exception_message__(e);
-}
-
-void startup::show_generic_exception_message() {
-  __show_generic_exception_message__();
 }
