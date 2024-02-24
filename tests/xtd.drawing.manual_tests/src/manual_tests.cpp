@@ -20,8 +20,8 @@ void to_ppm(const xtd::ustring& filename, const xtd::drawing::bitmap& bitmap, co
   lines.push_back(xtd::ustring::format("{} {}", bitmap.width(), bitmap.height()));
   lines.push_back("255");
   lines.push_back("");
-  for (int y = 0; y < bitmap.height(); y++) {
-    for (int x = 0; x < bitmap.width(); x++)
+  for (auto y = 0; y < bitmap.height(); y++) {
+    for (auto x = 0; x < bitmap.width(); x++)
       if (bitmap.get_pixel(x, y).a() == 0)
         lines.push_back(ustring::format("{, 3} {, 3} {, 3}", transparent_color.r(), transparent_color.g(), transparent_color.b()));
       else
