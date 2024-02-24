@@ -184,7 +184,7 @@ namespace xtd {
 
     /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     /// @deprecated Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0
-    namespace drawing2d [[deprecated("Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0")]] {
+    namespace [[deprecated("Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0")]] drawing2d {
       /// @brief Specifies the different patterns available for xtd::drawing::drawing2d::hatch_brush objects.
       /// @deprecated Replaced by xtd::drawing::drawing_2d::hatch_style - Will be removed in version 0.4.0
       using hatch_style [[deprecated("Replaced by xtd::drawing::drawing_2d::hatch_style - Will be removed in version 0.4.0")]] = xtd::drawing::drawing_2d::hatch_style;
