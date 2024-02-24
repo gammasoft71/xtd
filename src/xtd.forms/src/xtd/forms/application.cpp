@@ -3,6 +3,7 @@
 #include "../../../include/xtd/forms/exception_box.h"
 #include "../../../include/xtd/forms/message_box.h"
 #include <xtd/diagnostics/assert>
+#include <xtd/diagnostics/debugger>
 #include <xtd/diagnostics/process>
 #include <xtd/diagnostics/stopwatch>
 #include <xtd/io/directory>
@@ -12,17 +13,17 @@
 #include <xtd/forms/native/toolkit>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/window_messages>
+#include <xtd/threading/thread>
 #include <xtd/reflection/assembly>
 #include <xtd/environment>
 #include <xtd/invalid_operation_exception>
 #include <xtd/literals>
 
-using namespace std;
-using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 using namespace xtd::reflection;
+using namespace xtd::threading;
 
 extern std::optional<xtd::toolkit> __xtd_toolkit__;
 
@@ -335,7 +336,8 @@ void application::run() {
 
 void application::run(application_context& context) {
   if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running"_t, csf_);
-  
+  if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) throw invalid_operation_exception {xtd::ustring::format("Cross-thread operation not valid: {}"_t, typeof_<application>().full_name()), csf_};
+
   context.thread_exit += application::on_app_thread_exit;
   native::application::register_message_filter(delegate<bool(intptr, int32, intptr, intptr, intptr)>(message_filter_proc));
   native::application::register_thread_exception(delegate<bool()>(on_app_thread_exception));
@@ -361,7 +363,7 @@ bool application::close_open_forms() {
   }
   
   for (auto open_form : application::open_forms())
-    open_form.get().on_form_closed(form_closed_event_args());
+    open_form.get().on_form_closed(form_closed_event_args {});
     
   return true;
 }
