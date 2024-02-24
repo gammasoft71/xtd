@@ -8,7 +8,6 @@
 #include "../rectangle.h"
 #include "../rectangle_f.h"
 #include "../string_format.h"
-#include "drawing2d.h"
 #include "fill_mode.h"
 #include <xtd/object>
 #include <xtd/ustring>
@@ -20,7 +19,7 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
       /// @code

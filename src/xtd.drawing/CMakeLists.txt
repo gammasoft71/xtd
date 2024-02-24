@@ -157,8 +157,6 @@ add_sources(
   include/xtd/drawing/drawing_2d/compositing_mode
   include/xtd/drawing/drawing_2d/compositing_quality.h
   include/xtd/drawing/drawing_2d/compositing_quality
-  include/xtd/drawing/drawing_2d/drawing2d.h
-  include/xtd/drawing/drawing_2d/drawing2d
   include/xtd/drawing/drawing_2d/fill_mode.h
   include/xtd/drawing/drawing_2d/fill_mode
   include/xtd/drawing/drawing_2d/flush_intention.h
@@ -199,6 +197,12 @@ add_sources(
   include/xtd/drawing/drawing_2d/radial_gradient_brush
   include/xtd/drawing/drawing_2d/smoothing_mode.h
   include/xtd/drawing/drawing_2d/smoothing_mode
+  include/xtd/drawing/drawing2d/hatch_brush.h
+  include/xtd/drawing/drawing2d/hatch_style.h
+  include/xtd/drawing/drawing2d/linear_gradient_brush.h
+  include/xtd/drawing/drawing2d/linear_gradient_mode.h
+  include/xtd/drawing/drawing2d/pen_alignment.h
+  include/xtd/drawing/drawing2d/pen_type.h
   include/xtd/drawing/imaging/bitmap_data.h
   include/xtd/drawing/imaging/bitmap_data
   include/xtd/drawing/imaging/color_palette.h

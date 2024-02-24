@@ -2,16 +2,15 @@
 /// @brief Contains xtd::drawing::drawing_2d::pen_alignment enum class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "drawing2d.h"
 #include <xtd/enum>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
-      /// @brief SSpecifies the alignment of a xtd::drawing::pen object in relation to the theoretical, zero-width line.
+      /// @brief Specifies the alignment of a xtd::drawing::pen object in relation to the theoretical, zero-width line.
       /// @par Namespace
       /// xtd::drawing::drawing_2d
       /// @par Library
@@ -31,6 +30,14 @@ namespace xtd {
         /// @brief Specifies the xtd::drawing::pen is positioned to the right of the theoretical line.
         right = 4,
       };
+    }
+
+    /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @deprecated Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0
+    namespace drawing2d [[deprecated("Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0")]] {
+      /// @brief Specifies the alignment of a xtd::drawing::pen object in relation to the theoretical, zero-width line.
+      /// @deprecated Replaced by xtd::drawing::drawing_2d::pen_alignment - Will be removed in version 0.4.0
+      using pen_alignment [[deprecated("Replaced by xtd::drawing::drawing_2d::pen_alignment - Will be removed in version 0.4.0")]] = xtd::drawing::drawing_2d::pen_alignment;
     }
   }
 }

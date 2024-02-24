@@ -6,7 +6,6 @@
 #include "drawing/drawing_2d/compositing_mode.h"
 #include "drawing/drawing_2d/compositing_quality.h"
 #include "drawing/drawing_2d/conical_gradient_brush.h"
-#include "drawing/drawing_2d/drawing2d.h"
 #include "drawing/drawing_2d/fill_mode.h"
 #include "drawing/drawing_2d/flush_intention.h"
 #include "drawing/drawing_2d/gradient_stop.h"

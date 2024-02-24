@@ -7,7 +7,6 @@
 #include "../point_f.h"
 #include "../rectangle.h"
 #include "../rectangle_f.h"
-#include "drawing2d.h"
 #include "matrix_order.h"
 #include <xtd/iequatable>
 #include <xtd/object>
@@ -23,7 +22,7 @@ namespace xtd {
     class graphics;
     /// @endcond
     
-    /// @brief The xtd::drawing::drawing_2d/ namespace provides advanced two-dimensional and vector graphics functionality.
+    /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inherited.
       /// @code
