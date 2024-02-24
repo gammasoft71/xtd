@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['label_2eh_0',['label.h',['../label_8h.html',1,'(Global Namespace)'],['../style__sheets_2label_8h.html',1,'(Global Namespace)']]],
+  ['label_2eh_0',['label.h',['../style__sheets_2label_8h.html',1,'(Global Namespace)'],['../label_8h.html',1,'(Global Namespace)']]],
   ['label_5frenderer_2eh_1',['label_renderer.h',['../label__renderer_8h.html',1,'']]],
   ['label_5fstate_2eh_2',['label_state.h',['../label__state_8h.html',1,'']]],
   ['labels_2eh_3',['labels.h',['../labels_8h.html',1,'']]],
@@ -17,8 +17,8 @@ var searchData=
   ['light_5fbuttons_2eh_14',['light_buttons.h',['../light__buttons_8h.html',1,'']]],
   ['line_5fcap_2eh_15',['line_cap.h',['../line__cap_8h.html',1,'']]],
   ['line_5fjoin_2eh_16',['line_join.h',['../line__join_8h.html',1,'']]],
-  ['linear_5fgradient_5fbrush_2eh_17',['linear_gradient_brush.h',['../linear__gradient__brush_8h.html',1,'']]],
-  ['linear_5fgradient_5fmode_2eh_18',['linear_gradient_mode.h',['../linear__gradient__mode_8h.html',1,'']]],
+  ['linear_5fgradient_5fbrush_2eh_17',['linear_gradient_brush.h',['../drawing__2d_2linear__gradient__brush_8h.html',1,'(Global Namespace)'],['../drawing2d_2linear__gradient__brush_8h.html',1,'(Global Namespace)']]],
+  ['linear_5fgradient_5fmode_2eh_18',['linear_gradient_mode.h',['../drawing2d_2linear__gradient__mode_8h.html',1,'(Global Namespace)'],['../drawing__2d_2linear__gradient__mode_8h.html',1,'(Global Namespace)']]],
   ['linger_5foption_2eh_19',['linger_option.h',['../linger__option_8h.html',1,'']]],
   ['link_2eh_20',['link.h',['../link_8h.html',1,'']]],
   ['link_5farea_2eh_21',['link_area.h',['../link__area_8h.html',1,'']]],
