@@ -1,5 +1,5 @@
 #include <iostream>
-#include <xtd/drawing/drawing_2d/hatch_brush.h>
+#include <xtd/drawing/drawing_2d/hatch_brush>
 #include <xtd/drawing/bitmap>
 #include <xtd/drawing/color>
 #include <xtd/io/file>
