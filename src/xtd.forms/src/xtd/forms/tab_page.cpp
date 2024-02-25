@@ -65,12 +65,112 @@ control& tab_page::text(const ustring& text) {
   return *this;
 }
 
+tab_page tab_page::create() {
+  return tab_page {};
+}
+
+tab_page tab_page::create(const drawing::point& location) {
+  auto result = tab_page {};
+  result.location(location);
+  return result;
+}
+
+tab_page tab_page::create(const drawing::point& location, const drawing::size& size) {
+  auto result = tab_page {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+tab_page tab_page::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = tab_page {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+tab_page tab_page::create(const xtd::ustring& text) {
+  auto result = tab_page {};
+  result.text(text);
+  return result;
+}
+
+tab_page tab_page::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = tab_page {};
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+tab_page tab_page::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = tab_page {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 tab_page tab_page::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = tab_page {};
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+tab_page tab_page::create(const control& parent) {
+  auto result = tab_page {};
+  result.parent(parent);
+  return result;
+}
+
+tab_page tab_page::create(const control& parent, const drawing::point& location) {
+  auto result = tab_page {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+tab_page tab_page::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = tab_page {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+tab_page tab_page::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = tab_page {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+tab_page tab_page::create(const control& parent, const xtd::ustring& text) {
+  auto result = tab_page {};
+  result.parent(parent);
+  result.text(text);
+  return result;
+}
+
+tab_page tab_page::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+  auto result = tab_page {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+tab_page tab_page::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = tab_page {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -78,8 +178,8 @@ tab_page tab_page::create(const control& parent, const xtd::ustring& text, const
   auto result = tab_page {};
   result.parent(parent);
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
