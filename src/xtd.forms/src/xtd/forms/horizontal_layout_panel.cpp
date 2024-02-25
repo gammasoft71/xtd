@@ -25,19 +25,57 @@ horizontal_layout_panel& horizontal_layout_panel::control_layout_style(const con
   return *this;
 }
 
+horizontal_layout_panel horizontal_layout_panel::create() {
+  return horizontal_layout_panel {};
+}
+
+horizontal_layout_panel horizontal_layout_panel::create(const drawing::point& location) {
+  auto result = horizontal_layout_panel {};
+  result.location(location);
+  return result;
+}
+
+horizontal_layout_panel horizontal_layout_panel::create(const drawing::point& location, const drawing::size& size) {
+  auto result = horizontal_layout_panel {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 horizontal_layout_panel horizontal_layout_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = horizontal_layout_panel {};
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+horizontal_layout_panel horizontal_layout_panel::create(const control& parent) {
+  auto result = horizontal_layout_panel {};
+  result.parent(parent);
+  return result;
+}
+
+horizontal_layout_panel horizontal_layout_panel::create(const control& parent, const drawing::point& location) {
+  auto result = horizontal_layout_panel {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+horizontal_layout_panel horizontal_layout_panel::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = horizontal_layout_panel {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 horizontal_layout_panel horizontal_layout_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = horizontal_layout_panel {};
   result.parent(parent);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
