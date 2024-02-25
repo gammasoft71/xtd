@@ -123,6 +123,134 @@ text_box& text_box::use_system_password_char(bool value) {
   return *this;
 }
 
+void text_box::append_text(const xtd::ustring& value) {
+  if (is_handle_created()) native::text_box::append(handle(), value);
+}
+
+text_box text_box::create() {
+  return text_box {};
+}
+
+text_box text_box::create(const drawing::point& location) {
+  auto result = text_box {};
+  result.location(location);
+  return result;
+}
+
+text_box text_box::create(const drawing::point& location, const drawing::size& size) {
+  auto result = text_box {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+text_box text_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = text_box {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+text_box text_box::create(const xtd::ustring& text) {
+  auto result = text_box {};
+  result.text(text);
+  return result;
+}
+
+text_box text_box::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = text_box {};
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+text_box text_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = text_box {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+text_box text_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = text_box {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+text_box text_box::create(const control& parent) {
+  auto result = text_box {};
+  result.parent(parent);
+  return result;
+}
+
+text_box text_box::create(const control& parent, const drawing::point& location) {
+  auto result = text_box {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+text_box text_box::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = text_box {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+text_box text_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = text_box {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+text_box text_box::create(const control& parent, const xtd::ustring& text) {
+  auto result = text_box {};
+  result.parent(parent);
+  result.text(text);
+  return result;
+}
+
+text_box text_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+  auto result = text_box {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+text_box text_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = text_box {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+text_box text_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = text_box {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+void text_box::select(size_t start, size_t length) {
+  text_box_base::select(start, length);
+  if (is_handle_created()) native::text_box::select(handle(), selection_start(), selection_length());
+}
+
 drawing::color text_box::default_back_color() const noexcept {
   return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().text_box();
 }
@@ -146,15 +274,6 @@ forms::create_params text_box::create_params() const noexcept {
 
 drawing::size text_box::measure_control() const noexcept {
   return drawing::size(client_size().width(), static_cast<int32>(font().get_height()) + 2 + (border_style() == border_style::none ? 0 : 4));
-}
-
-void text_box::append_text(const xtd::ustring& value) {
-  if (is_handle_created()) native::text_box::append(handle(), value);
-}
-
-void text_box::select(size_t start, size_t length) {
-  text_box_base::select(start, length);
-  if (is_handle_created()) native::text_box::select(handle(), selection_start(), selection_length());
 }
 
 void text_box::on_accepts_return_changed(const event_args& e) {
