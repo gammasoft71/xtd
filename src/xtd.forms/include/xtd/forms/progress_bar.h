@@ -125,26 +125,215 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create();
+      /// @brief A factory to create an xtd::forms::progress_bar with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::progress_bar with specified location, size, and name.
-      /// @param value The position within the range of the progress bar.
-      /// @param minimum The minimum value of the range.
-      /// @param maximum The maximum value of the range.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
       /// @param name The name of the xtd::forms::progress_bar.
       /// @return New xtd::forms::progress_bar created.
-      static progress_bar create(int32 value, int32 minimum = 0, int32 maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static progress_bar create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, and location.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, location, and size.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, location, size, and name.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @param name The name of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, and maximum.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, int32 maximum);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, minimum, maximum, and location.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, maximum, location, and size.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, maximum, location, size, and name.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @param name The name of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, minimum, and maximum.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, int32 minimum, int32 maximum);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, minimum, maximum, and location.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, int32 minimum, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, minimum, maximum, location, and size.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified value, minimum, maximum, location, size, and name.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @param name The name of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::progress_bar with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::progress_bar.
-      /// @param value The position within the range of the progress bar.
-      /// @param minimum The minimum value of the range.
-      /// @param maximum The maximum value of the range.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
       /// @param name The name of the xtd::forms::progress_bar.
       /// @return New xtd::forms::progress_bar created.
-      static progress_bar create(const control& parent, int32 value, int32 minimum = 0, int32 maximum = 100, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      
+      static progress_bar create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, and value.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, and location.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @param name The name of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, and maximum.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, int32 maximum);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, maximum, and location.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, maximum, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, maximum, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @param name The name of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, minimum, and maximum.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, int32 minimum, int32 maximum);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, minimum, maximum, and location.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, minimum, maximum, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::progress_bar with specified parent, value, minimum, maximum, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::progress_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::progress_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::progress_bar.
+      /// @param name The name of the xtd::forms::progress_bar.
+      /// @return New xtd::forms::progress_bar created.
+      static progress_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+
       /// @brief Advances the current position of the progress bar by the specified amount.
       /// @param value The amount by which to increment the progress bar's current position.
       /// @remarks The increment method enables you to increment the value of the progress bar by a specific amount. This method of incrementing the progress bar is similar to using the step property with the perform_step method. The value property specifies the current position of the progress_bar. If, after calling the increment method, the value property is greater than the value of the maximum property, the value property remains at the value of the maximum property. If, after calling the increment method with a negative value specified in the value parameter, the Value property is less than the value of the minimum property, the value property remains at the value of the minimum property.

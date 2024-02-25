@@ -107,25 +107,273 @@ progress_bar& progress_bar::value(int32 value) {
   return *this;
 }
 
-progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+progress_bar progress_bar::create() {
+  return progress_bar {};
+}
+
+progress_bar progress_bar::create(const drawing::point& location) {
   auto result = progress_bar {};
+  result.location(location);
+  return result;
+}
+
+progress_bar progress_bar::create(const drawing::point& location, const drawing::size& size) {
+  auto result = progress_bar {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+progress_bar progress_bar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = progress_bar {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value) {
+  auto result = progress_bar {};
+  result.value(value);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, const drawing::point& location) {
+  auto result = progress_bar {};
+  result.value(value);
+  result.location(location);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, const drawing::point& location, const drawing::size& size) {
+  auto result = progress_bar {};
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = progress_bar {};
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, int32 maximum) {
+  auto result = progress_bar {};
+  result.value(value);
+  result.maximum(maximum);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, int32 maximum, const drawing::point& location) {
+  auto result = progress_bar {};
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = progress_bar {};
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = progress_bar {};
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum) {
+  auto result = progress_bar {};
+  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
+  auto result = progress_bar {};
   result.value(value);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = progress_bar {};
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+progress_bar progress_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = progress_bar {};
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, const drawing::point& location) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, const drawing::point& location) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, int32 maximum) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+progress_bar progress_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = progress_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 progress_bar progress_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = progress_bar {};
   result.parent(parent);
+  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
-  result.value(value);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
