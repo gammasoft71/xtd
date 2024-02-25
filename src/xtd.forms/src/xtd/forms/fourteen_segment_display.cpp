@@ -200,7 +200,7 @@ fourteen_segment_display fourteen_segment_display::create(const control& parent,
 }
 
 fourteen_segment_display fourteen_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  fourteen_segment_display item;
+  auto item = fourteen_segment_display {};
   item.parent(parent);
   item.value(segments);
   item.show_back_segment(show_back_segment);
