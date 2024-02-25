@@ -64,6 +64,61 @@ user_control& user_control::border_style(std::nullptr_t) {
   return *this;
 }
 
+user_control user_control::create() {
+  return user_control {};
+}
+
+user_control user_control::create(const drawing::point& location) {
+  auto result = user_control {};
+  result.location(location);
+  return result;
+}
+
+user_control user_control::create(const drawing::point& location, const drawing::size& size) {
+  auto result = user_control {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+user_control user_control::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = user_control {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+user_control user_control::create(const control& parent) {
+  auto result = user_control {};
+  result.parent(parent);
+  return result;
+}
+
+user_control user_control::create(const control& parent, const drawing::point& location) {
+  auto result = user_control {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+user_control user_control::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = user_control {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+user_control user_control::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = user_control {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
 forms::create_params user_control::create_params() const noexcept {
   auto create_params = scrollable_control::create_params();
   
