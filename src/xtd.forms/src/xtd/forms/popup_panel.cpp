@@ -30,19 +30,57 @@ popup_panel& popup_panel::ignore_mouse_messages(bool value) {
   return *this;
 }
 
+popup_panel popup_panel::create() {
+  return popup_panel {};
+}
+
+popup_panel popup_panel::create(const drawing::point& location) {
+  auto result = popup_panel {};
+  result.location(location);
+  return result;
+}
+
+popup_panel popup_panel::create(const drawing::point& location, const drawing::size& size) {
+  auto result = popup_panel {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 popup_panel popup_panel::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = popup_panel {};
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+popup_panel popup_panel::create(const control& parent) {
+  auto result = popup_panel {};
+  result.parent(parent);
+  return result;
+}
+
+popup_panel popup_panel::create(const control& parent, const drawing::point& location) {
+  auto result = popup_panel {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+popup_panel popup_panel::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = popup_panel {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 popup_panel popup_panel::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = popup_panel {};
   result.parent(parent);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
