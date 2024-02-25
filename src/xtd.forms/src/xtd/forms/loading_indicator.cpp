@@ -127,19 +127,57 @@ void loading_indicator::on_timer_tick(object& timer, const xtd::event_args& e) {
   if (control_appearance() == forms::control_appearance::standard) invalidate();
 }
 
+loading_indicator loading_indicator::create() {
+  return loading_indicator {};
+}
+
+loading_indicator loading_indicator::create(const drawing::point& location) {
+  auto result = loading_indicator {};
+  result.location(location);
+  return result;
+}
+
+loading_indicator loading_indicator::create(const drawing::point& location, const drawing::size& size) {
+  auto result = loading_indicator {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 loading_indicator loading_indicator::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = loading_indicator {};
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+loading_indicator loading_indicator::create(const control& parent) {
+  auto result = loading_indicator {};
+  result.parent(parent);
+  return result;
+}
+
+loading_indicator loading_indicator::create(const control& parent, const drawing::point& location) {
+  auto result = loading_indicator {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+loading_indicator loading_indicator::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = loading_indicator {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 loading_indicator loading_indicator::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = loading_indicator {};
   result.parent(parent);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
