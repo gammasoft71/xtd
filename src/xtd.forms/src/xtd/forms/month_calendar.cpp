@@ -290,22 +290,184 @@ void month_calendar::add_monthly_bolded_date(const xtd::date_time& date) {
   data_->monthly_bolded_dates.push_back(date);
 }
 
-month_calendar month_calendar::create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+month_calendar month_calendar::create() {
+  return  month_calendar {};
+}
+
+month_calendar month_calendar::create(const drawing::point& location) {
   auto result = month_calendar {};
-  result.selection_range(selection_range);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  return result;
+}
+
+month_calendar month_calendar::create(const drawing::point& location, const drawing::size& size) {
+  auto result = month_calendar {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+month_calendar month_calendar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = month_calendar {};
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
 
-month_calendar month_calendar::create(const date_time& selection_start, const date_time& selection_end, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+month_calendar month_calendar::create(const forms::selection_range& selection_range) {
   auto result = month_calendar {};
-  result.selection_start(selection_start);
-  result.selection_end(selection_end);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.selection_range(selection_range);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const drawing::point& location) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.location(location);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const xtd::date_time& max_date) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.max_date(max_date);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.max_date(max_date);
+  result.location(location);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.max_date(max_date);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.max_date(max_date);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.min_date(min_date);
+  result.max_date(max_date);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.min_date(min_date);
+  result.max_date(max_date);
+  result.location(location);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.min_date(min_date);
+  result.max_date(max_date);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+month_calendar month_calendar::create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = month_calendar {};
+  result.selection_range(selection_range);
+  result.min_date(min_date);
+  result.max_date(max_date);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const drawing::point& location) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  result.location(location);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -313,19 +475,88 @@ month_calendar month_calendar::create(const control& parent, const forms::select
   auto result = month_calendar {};
   result.parent(parent);
   result.selection_range(selection_range);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
 
-month_calendar month_calendar::create(const control& parent, const date_time& selection_start, const date_time& selection_end, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date) {
   auto result = month_calendar {};
   result.parent(parent);
-  result.selection_start(selection_start);
-  result.selection_end(selection_end);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.selection_range(selection_range);
+  result.max_date(max_date);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  result.max_date(max_date);
+  result.location(location);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  result.max_date(max_date);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  result.max_date(max_date);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  result.min_date(min_date);
+  result.max_date(max_date);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  result.min_date(min_date);
+  result.max_date(max_date);
+  result.location(location);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  result.min_date(min_date);
+  result.max_date(max_date);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+month_calendar month_calendar::create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = month_calendar {};
+  result.parent(parent);
+  result.selection_range(selection_range);
+  result.min_date(min_date);
+  result.max_date(max_date);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
