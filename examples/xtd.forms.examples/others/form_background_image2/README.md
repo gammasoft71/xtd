@@ -7,7 +7,7 @@ demonstrates how to use of [xtd::forms::form](https://gammasoft71.github.io/xtd/
 * [src/form_background_image2.cpp](src/form_background_image2.cpp)
 * [properties/resources.cmake](properties/resources.cmake)
 * [resources/bliss_day.png](resources/bliss_night.png)
-* [resources/bliss_night.png](resources/background_light.png)
+* [resources/bliss_night.png](resources/bliss_light.png)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
