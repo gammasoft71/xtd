@@ -119,13 +119,183 @@ dot_matrix_display& dot_matrix_display::thickness(int32 value) {
   return *this;
 }
 
+dot_matrix_display dot_matrix_display::create() {
+  return dot_matrix_display {};
+}
+
+dot_matrix_display dot_matrix_display::create(const drawing::point& location) {
+  auto result = dot_matrix_display {};
+  result.location(location);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const drawing::point& location, const drawing::size& size) {
+  auto result = dot_matrix_display {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = dot_matrix_display {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots) {
+  auto result = dot_matrix_display {};
+  result.dots(dots);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots, const drawing::point& location) {
+  auto result = dot_matrix_display {};
+  result.dots(dots);
+  result.location(location);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots, const drawing::point& location, const drawing::size& size) {
+  auto result = dot_matrix_display {};
+  result.dots(dots);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = dot_matrix_display {};
+  result.dots(dots);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots, bool show_back_dot) {
+  auto result = dot_matrix_display {};
+  result.dots(dots);
+  result.show_back_dot(show_back_dot);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots, bool show_back_dot, const drawing::point& location) {
+  auto result = dot_matrix_display {};
+  result.dots(dots);
+  result.show_back_dot(show_back_dot);
+  result.location(location);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size) {
+  auto result = dot_matrix_display {};
+  result.dots(dots);
+  result.show_back_dot(show_back_dot);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 dot_matrix_display dot_matrix_display::create(const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = dot_matrix_display {};
   result.dots(dots);
   result.show_back_dot(show_back_dot);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const drawing::point& location) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.dots(dots);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, const drawing::point& location) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.dots(dots);
+  result.location(location);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, const drawing::point& location, const drawing::size& size) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.dots(dots);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.dots(dots);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, bool show_back_dot) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.dots(dots);
+  result.show_back_dot(show_back_dot);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, bool show_back_dot, const drawing::point& location) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.dots(dots);
+  result.show_back_dot(show_back_dot);
+  result.location(location);
+  return result;
+}
+
+dot_matrix_display dot_matrix_display::create(const control& parent, const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size) {
+  auto result = dot_matrix_display {};
+  result.parent(parent);
+  result.dots(dots);
+  result.show_back_dot(show_back_dot);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -134,8 +304,8 @@ dot_matrix_display dot_matrix_display::create(const control& parent, const dots_
   result.parent(parent);
   result.dots(dots);
   result.show_back_dot(show_back_dot);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
