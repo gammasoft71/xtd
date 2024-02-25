@@ -110,6 +110,96 @@ namespace xtd {
       
       /// @{
       void append_text(const xtd::ustring& value) override;
+
+      /// @brief A factory to create an xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create();
+      /// @brief A factory to create an xtd::forms::text_box with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::text_box with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::text_box with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::text_box.
+      /// @param name The name of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::text_box with specified text.
+      /// @param text A string that represent text of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::text_box with specified text, and location.
+      /// @param text A string that represent text of the xtd::forms::text_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const xtd::ustring& text, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::text_box with specified text, location, and size.
+      /// @param text A string that represent text of the xtd::forms::text_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::text_box with specified text, location, size, and name.
+      /// @param text A string that represent text of the xtd::forms::text_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::text_box.
+      /// @param name The name of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::text_box with specified parent,.
+      /// @param parent The parent that contains the new created xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const control& parent);
+      /// @brief A factory to create an xtd::forms::text_box with specified parent, location.
+      /// @param parent The parent that contains the new created xtd::forms::text_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::text_box with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::text_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::text_box with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::text_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::text_box.
+      /// @param name The name of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::text_box with specified parent, and text.
+      /// @param parent The parent that contains the new created xtd::forms::text_box.
+      /// @param text A string that represent text of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const control& parent, const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::text_box with specified parent, text, and location.
+      /// @param parent The parent that contains the new created xtd::forms::text_box.
+      /// @param text A string that represent text of the xtd::forms::text_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const control& parent, const xtd::ustring& text, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::text_box with specified parent, text, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::text_box.
+      /// @param text A string that represent text of the xtd::forms::text_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::text_box with specified parent, text, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::text_box.
+      /// @param text A string that represent text of the xtd::forms::text_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::text_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::text_box.
+      /// @param name The name of the xtd::forms::text_box.
+      /// @return New xtd::forms::text_box created.
+      static text_box create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+
       void select(size_t start, size_t length) override;
       /// @}
       
