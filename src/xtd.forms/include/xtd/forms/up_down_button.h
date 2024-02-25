@@ -94,13 +94,222 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Sets the minimum and maximum values for a track_bar.
+      /// @brief A factory to create an xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create();
+      /// @brief A factory to create an xtd::forms::up_down_button with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @param name The name of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, and location.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, location, and size.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, location, size, and name.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @param name The name of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, and maximum.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, int32 maximum);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, minimum, maximum, and location.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, maximum, location, and size.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, maximum, location, size, and name.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @param name The name of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, minimum, and maximum.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, int32 minimum, int32 maximum);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, minimum, maximum, and location.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, int32 minimum, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, minimum, maximum, location, and size.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified value, minimum, maximum, location, size, and name.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @param name The name of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @param name The name of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, and value.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, and location.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @param name The name of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, and maximum.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, int32 maximum);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, maximum, and location.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, maximum, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, maximum, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @param name The name of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, minimum, and maximum.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, int32 minimum, int32 maximum);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, minimum, maximum, and location.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, minimum, maximum, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::up_down_button with specified parent, value, minimum, maximum, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::up_down_button.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::up_down_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::up_down_button.
+      /// @param name The name of the xtd::forms::up_down_button.
+      /// @return New xtd::forms::up_down_button created.
+      static up_down_button create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      
+      /// @brief Sets the minimum and maximum values for a up_down_button.
       /// @param min_value The lower limit of the range of the track bar.
       /// @param max_value The upper limit of the range of the track bar.
-      /// @remarks You can use this method to set the entire range for the track_bar at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
+      /// @remarks You can use this method to set the entire range for the up_down_button at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
       void set_range(int32 min_value, int32 max_value);
       
-      /// @brief Returns a string that represents the track_bar control.
+      /// @brief Returns a string that represents the up_down_button control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       xtd::ustring to_string() const noexcept override;
