@@ -132,6 +132,11 @@ link_label::link_collection& link_label::links() {
   return data_->links;
 }
 
+link_label& link_label::links(const link_collection& value) {
+  data_->links = value;
+  return *this;
+}
+
 xtd::forms::cursor link_label::override_cursor() const noexcept {
   return data_->override_cursor.value_or(xtd::forms::cursors::hand());
 }
@@ -152,12 +157,146 @@ link_label& link_label::visited_link_color(const xtd::drawing::color& color) {
   return *this;
 }
 
+link_label link_label::create() {
+  return link_label {};
+}
+
+link_label link_label::create(const drawing::point& location) {
+  auto result = link_label {};
+  result.location(location);
+  return result;
+}
+
+link_label link_label::create(const drawing::point& location, const drawing::size& size) {
+  auto result = link_label {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+link_label link_label::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = link_label {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+link_label link_label::create(const xtd::ustring& text) {
+  auto result = link_label {};
+  result.text(text);
+  return result;
+}
+
+link_label link_label::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = link_label {};
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+link_label link_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = link_label {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 link_label link_label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = link_label {};
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+link_label link_label::create(const xtd::ustring& text, const link_collection& links) {
+  auto result = link_label {};
+  result.text(text);
+  result.links(links);
+  return result;
+}
+
+link_label link_label::create(const xtd::ustring& text, const link_collection& links, const drawing::point& location) {
+  auto result = link_label {};
+  result.text(text);
+  result.links(links);
+  result.location(location);
+  return result;
+}
+
+link_label link_label::create(const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size) {
+  auto result = link_label {};
+  result.text(text);
+  result.links(links);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+link_label link_label::create(const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = link_label {};
+  result.text(text);
+  result.links(links);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+link_label link_label::create(const control& parent) {
+  auto result = link_label {};
+  result.parent(parent);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const drawing::point& location) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const xtd::ustring& text) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.text(text);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -165,8 +304,46 @@ link_label link_label::create(const control& parent, const xtd::ustring& text, c
   auto result = link_label {};
   result.parent(parent);
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const xtd::ustring& text, const link_collection& links) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.text(text);
+  result.links(links);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.text(text);
+  result.links(links);
+  result.location(location);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.text(text);
+  result.links(links);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+link_label link_label::create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = link_label {};
+  result.parent(parent);
+  result.text(text);
+  result.links(links);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
