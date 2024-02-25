@@ -44,23 +44,193 @@ control& font_picker::font(const drawing::font& value) {
   return *this;
 }
 
+font_picker font_picker::create() {
+  return font_picker {};
+}
+
+font_picker font_picker::create(const drawing::point& location) {
+  auto result = font_picker {};
+  result.location(location);
+  return result;
+}
+
+font_picker font_picker::create(const drawing::point& location, const drawing::size& size) {
+  auto result = font_picker {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+font_picker font_picker::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = font_picker {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+font_picker font_picker::create(const drawing::font& font) {
+  auto result = font_picker {};
+  result.font(font);
+  return result;
+}
+
+font_picker font_picker::create(const drawing::font& font, const drawing::point& location) {
+  auto result = font_picker {};
+  result.font(font);
+  result.location(location);
+  return result;
+}
+
+font_picker font_picker::create(const drawing::font& font, const drawing::point& location, const drawing::size& size) {
+  auto result = font_picker {};
+  result.font(font);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+font_picker font_picker::create(const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = font_picker {};
+  result.font(font);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+font_picker font_picker::create(const drawing::font& font, const xtd::drawing::color& color) {
+  auto result = font_picker {};
+  result.font(font);
+  result.color(color);
+  return result;
+}
+
+font_picker font_picker::create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location) {
+  auto result = font_picker {};
+  result.font(font);
+  result.color(color);
+  result.location(location);
+  return result;
+}
+
+font_picker font_picker::create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size) {
+  auto result = font_picker {};
+  result.font(font);
+  result.color(color);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 font_picker font_picker::create(const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = font_picker {};
-  result.color(color);
   result.font(font);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.color(color);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent) {
+  auto result = font_picker {};
+  result.parent(parent);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::point& location) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::font& font) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.font(font);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::font& font, const drawing::point& location) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.font(font);
+  result.location(location);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::font& font, const drawing::point& location, const drawing::size& size) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.font(font);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::font& font, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.font(font);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::font& font, const xtd::drawing::color& color) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.font(font);
+  result.color(color);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.font(font);
+  result.color(color);
+  result.location(location);
+  return result;
+}
+
+font_picker font_picker::create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size) {
+  auto result = font_picker {};
+  result.parent(parent);
+  result.font(font);
+  result.color(color);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 font_picker font_picker::create(const control& parent, const drawing::font& font, const xtd::drawing::color& color, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = font_picker {};
   result.parent(parent);
-  result.color(color);
   result.font(font);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.color(color);
+  result.size(size);
   result.name(name);
   return result;
 }
