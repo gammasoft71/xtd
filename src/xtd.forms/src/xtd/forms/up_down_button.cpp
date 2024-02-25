@@ -84,6 +84,278 @@ up_down_button& up_down_button::wrapped(bool value) {
   return *this;
 }
 
+up_down_button up_down_button::create() {
+  return up_down_button {};
+}
+
+up_down_button up_down_button::create(const drawing::point& location) {
+  auto result = up_down_button {};
+  result.location(location);
+  return result;
+}
+
+up_down_button up_down_button::create(const drawing::point& location, const drawing::size& size) {
+  auto result = up_down_button {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+up_down_button up_down_button::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = up_down_button {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value) {
+  auto result = up_down_button {};
+  result.value(value);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, const drawing::point& location) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.location(location);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, const drawing::point& location, const drawing::size& size) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, int32 maximum) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.maximum(maximum);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, int32 maximum, const drawing::point& location) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, int32 minimum, int32 maximum) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+up_down_button up_down_button::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = up_down_button {};
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, const drawing::point& location) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, const drawing::point& location) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, int32 maximum) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, int32 maximum, const drawing::point& location) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, int32 minimum, int32 maximum) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+up_down_button up_down_button::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = up_down_button {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+
 void up_down_button::set_range(int32 min_value, int32 max_value) {
   minimum(min_value);
   maximum(min_value > max_value ? min_value : max_value);
