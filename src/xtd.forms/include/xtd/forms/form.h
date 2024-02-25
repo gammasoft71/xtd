@@ -334,26 +334,57 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::form.
       /// @return New xtd::forms::form created.
       static form create();
-      /// @brief A factory to create an xtd::forms::form with specified text, size, and name.
+      /// @brief A factory to create an xtd::forms::form with specified text.
       /// @param text A string that represent text of the xtd::forms::form.
-      /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
-      /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::form with specified text, and location.
+      /// @param text A string that represent text of the xtd::forms::form.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::form.
+      /// @return New xtd::forms::form created.
+      static form create(const xtd::ustring& text, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::form with specified text, location, and size.
+      /// @param text A string that represent text of the xtd::forms::form.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::form.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
+      /// @return New xtd::forms::form created.
+      static form create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::form with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::form.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::form with specified text, form start position, size, and name.
+      static form create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::form with specified text, and size.
       /// @param text A string that represent text of the xtd::forms::form.
-      /// @param start_position A form_start_position that represents the starting position of the form.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
+      /// @return New xtd::forms::form created.
+      static form create(const xtd::ustring& text, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::form with specified text, size, and name.
+      /// @param text A string that represent text of the xtd::forms::form.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static form create(const xtd::ustring& text, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::form with specified text, and form start position.
+      /// @param text A string that represent text of the xtd::forms::form.
+      /// @param start_position A form_start_position that represents the starting position of the form.
+      /// @return New xtd::forms::form created.
+      static form create(const xtd::ustring& text, form_start_position start_position);
+      /// @brief A factory to create an xtd::forms::form with specified text, form start position, and location.
+      /// @param text A string that represent text of the xtd::forms::form.
+      /// @param start_position A form_start_position that represents the starting position of the form.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::form.
+      /// @return New xtd::forms::form created.
+      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::form with specified text, form start position, location, and size.
+      /// @param text A string that represent text of the xtd::forms::form.
+      /// @param start_position A form_start_position that represents the starting position of the form.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::form.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
+      /// @return New xtd::forms::form created.
+      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::form with specified text, form start position, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::form.
       /// @param start_position A form_start_position that represents the starting position of the form.
@@ -361,8 +392,21 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
-      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      
+      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::form with specified text, form start position, and size.
+      /// @param text A string that represent text of the xtd::forms::form.
+      /// @param start_position A form_start_position that represents the starting position of the form.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
+      /// @return New xtd::forms::form created.
+      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::form with specified text, form start position, size, and name.
+      /// @param text A string that represent text of the xtd::forms::form.
+      /// @param start_position A form_start_position that represents the starting position of the form.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::form.
+      /// @param name The name of the xtd::forms::form.
+      /// @return New xtd::forms::form created.
+      static form create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size, const xtd::ustring& name);
+
       bool pre_process_message(const xtd::forms::message& message) override;
       
       /// @brief Shows the form as a modal dialog box.

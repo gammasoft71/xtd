@@ -405,32 +405,75 @@ form form::create() {
   return form {};
 }
 
-form form::create(const xtd::ustring& text, const drawing::size& size, const xtd::ustring& name) {
+form form::create(const xtd::ustring& text) {
   auto result = form {};
   result.text(text);
-  if (size != drawing::size {-1, -1}) result.size(size);
-  result.name(name);
+  return result;
+}
+
+form form::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(form_start_position::manual);
+  result.location(location);
+  return result;
+}
+
+form form::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(form_start_position::manual);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 form form::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = form {};
   result.text(text);
-  if (location != point {-1, -1}) {
-    result.start_position(form_start_position::manual);
-    result.location(location);
-  }
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.start_position(form_start_position::manual);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
 
-form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size, const xtd::ustring& name) {
+form form::create(const xtd::ustring& text, const drawing::size& size) {
+  auto result = form {};
+  result.text(text);
+  result.size(size);
+  return result;
+}
+
+form form::create(const xtd::ustring& text, const drawing::size& size, const xtd::ustring& name) {
+  auto result = form {};
+  result.text(text);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+form form::create(const xtd::ustring& text, form_start_position start_position) {
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
-  if (size != drawing::size {-1, -1}) result.size(size);
-  result.name(name);
+  return result;
+}
+
+form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  result.location(location);
+  return result;
+}
+
+form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::point& location, const drawing::size& size) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -438,8 +481,25 @@ form form::create(const xtd::ustring& text, form_start_position start_position, 
   auto result = form {};
   result.text(text);
   result.start_position(start_position);
-  if (location != point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  result.size(size);
+  return result;
+}
+
+form form::create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size, const xtd::ustring& name) {
+  auto result = form {};
+  result.text(text);
+  result.start_position(start_position);
+  result.size(size);
   result.name(name);
   return result;
 }
