@@ -84,25 +84,192 @@ seven_segment_display& seven_segment_display::value(forms::segments value) {
   return *this;
 }
 
+seven_segment_display seven_segment_display::create() {
+  return seven_segment_display {};
+}
+
+seven_segment_display seven_segment_display::create(const drawing::point& location) {
+  auto item = seven_segment_display {};
+  item.location(location);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const drawing::point& location, const drawing::size& size) {
+  auto item = seven_segment_display {};
+  item.location(location);
+  item.size(size);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto item = seven_segment_display {};
+  item.location(location);
+  item.size(size);
+  item.name(name);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments) {
+  auto item = seven_segment_display {};
+  item.value(segments);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments, const drawing::point& location) {
+  auto item = seven_segment_display {};
+  item.value(segments);
+  item.location(location);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size) {
+  auto item = seven_segment_display {};
+  item.value(segments);
+  item.location(location);
+  item.size(size);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto item = seven_segment_display {};
+  item.value(segments);
+  item.location(location);
+  item.size(size);
+  item.name(name);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments, bool show_back_segment) {
+  auto item = seven_segment_display {};
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location) {
+  auto item = seven_segment_display {};
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  item.location(location);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size) {
+  auto item = seven_segment_display {};
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  item.location(location);
+  item.size(size);
+  return item;
+}
+
 seven_segment_display seven_segment_display::create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  auto ressult = seven_segment_display {};
-  ressult.value(segments);
-  ressult.show_back_segment(show_back_segment);
-  if (location != drawing::point {-1, -1}) ressult.location(location);
-  if (size != drawing::size {-1, -1}) ressult.size(size);
-  ressult.name(name);
-  return ressult;
+  auto item = seven_segment_display {};
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  item.location(location);
+  item.size(size);
+  item.name(name);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const control& parent) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  return item;
+}
+seven_segment_display seven_segment_display::create(const control& parent, const drawing::point& location) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.location(location);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.location(location);
+  item.size(size);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.location(location);
+  item.size(size);
+  item.name(name);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.value(segments);
+  return item;
+}
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, const drawing::point& location) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.value(segments);
+  item.location(location);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.value(segments);
+  item.location(location);
+  item.size(size);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.value(segments);
+  item.location(location);
+  item.size(size);
+  item.name(name);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  return item;
+}
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  item.location(location);
+  return item;
+}
+
+seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size) {
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  item.location(location);
+  item.size(size);
+  return item;
 }
 
 seven_segment_display seven_segment_display::create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
-  auto ressult = seven_segment_display {};
-  ressult.parent(parent);
-  ressult.value(segments);
-  ressult.show_back_segment(show_back_segment);
-  if (location != drawing::point {-1, -1}) ressult.location(location);
-  if (size != drawing::size {-1, -1}) ressult.size(size);
-  ressult.name(name);
-  return ressult;
+  auto item = seven_segment_display {};
+  item.parent(parent);
+  item.value(segments);
+  item.show_back_segment(show_back_segment);
+  item.location(location);
+  item.size(size);
+  item.name(name);
+  return item;
 }
 
 bool seven_segment_display::get_segments(forms::segments segment) const noexcept {
