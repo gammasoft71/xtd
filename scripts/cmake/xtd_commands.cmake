@@ -2435,3 +2435,17 @@ if (XTD_ENABLE_RUN_REFERENCE_GUIDE AND NOT RUN_REFERENCE_GUIDE_ONLY_ONCE)
     set_target_properties(RUN_REFERENCE_GUIDE PROPERTIES FOLDER commands)
   endif ()
 endif ()
+
+################################################################################
+# Availability versions
+
+# Major 0 to infinite
+# Minor 0 to 999
+# Build 0 to 999
+# for example xtd with major = 1, minor = 12 and build = 23 :
+# #define __XTD_1_12_23__ 1012023
+
+add_definitions(-D__XTD_0_1_0__=1000)
+add_definitions(-D__XTD_0_1_1__=1001)
+add_definitions(-D__XTD_0_1_2__=1002)
+add_definitions(-D__XTD_0_2_0__=2000)
