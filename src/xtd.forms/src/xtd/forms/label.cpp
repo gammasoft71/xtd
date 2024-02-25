@@ -197,12 +197,112 @@ label& label::text_align(content_alignment text_align) {
   return *this;
 }
 
+label label::create() {
+  return label {};
+}
+
+label label::create(const drawing::point& location) {
+  auto result = label {};
+  result.location(location);
+  return result;
+}
+
+label label::create(const drawing::point& location, const drawing::size& size) {
+  auto result = label {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+label label::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = label {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+label label::create(const xtd::ustring& text) {
+  auto result = label {};
+  result.text(text);
+  return result;
+}
+
+label label::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = label {};
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+label label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = label {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 label label::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = label {};
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+label label::create(const control& parent) {
+  auto result = label {};
+  result.parent(parent);
+  return result;
+}
+
+label label::create(const control& parent, const drawing::point& location) {
+  auto result = label {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+label label::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = label {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+label label::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = label {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+label label::create(const control& parent, const xtd::ustring& text) {
+  auto result = label {};
+  result.parent(parent);
+  result.text(text);
+  return result;
+}
+
+label label::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+  auto result = label {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+label label::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = label {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -210,8 +310,8 @@ label label::create(const control& parent, const xtd::ustring& text, const drawi
   auto result = label {};
   result.parent(parent);
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }

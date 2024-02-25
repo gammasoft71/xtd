@@ -119,14 +119,14 @@ namespace xtd {
       /// @return A zero-based index, which represents the image position in an image_list. The default is -1.
       /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
       /// @remarks image_key and image_index are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored. If you set the image_key property, the image_index property is automatically set to -1. Alternatively, if you set the image_index property, the image_key is automatically set to an empty string ("").
-      /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a button control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the button, the image_index value changes to 1.
+      /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a label control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the label, the image_index value changes to 1.
       virtual int32 image_index() const noexcept;
       /// @brief Sets the image list index value of the image displayed on the label control.
       /// @param value A zero-based index, which represents the image position in an image_list. The default is -1.
       /// @return Current label instance.
       /// @remarks When the image_index or image_list properties are set, the Image property is set to its default value, xtd::drawing::image::empty.
       /// @remarks image_key and image_index are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored. If you set the image_key property, the image_index property is automatically set to -1. Alternatively, if you set the image_index property, the image_key is automatically set to an empty string ("").
-      /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a button control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the button, the image_index value changes to 1.
+      /// @remarks If the image_list property value is changed to xtd::forms::image_list::empty, the image_index property returns its default value, -1. However, the assigned image_index value is retained internally and used when another image_list object is assigned to the image_list property. If the new image_list assigned to the image_list property has an imageList::_image_collection::size property value that is less than or equal to the value assigned to the image_index property minus one (to account for the collection being a zero-based index), the image_index property value is adjusted to one less than the size property value. For example, consider a label control whose image_list has three images and whose image_index property is set to 2. If a new image_list that has only two images is assigned to the label, the image_index value changes to 1.
       virtual xtd::forms::label& image_index(int32 value);
       
       /// @brief Gets the image_list that contains the image displayed on a label control.
@@ -156,11 +156,11 @@ namespace xtd {
       /// @return Current label instance.
       virtual xtd::forms::label& shadows(const xtd::forms::shadows& value);
       
-      /// @brief Gets the alignment of the text on the button control.
+      /// @brief Gets the alignment of the text on the label control.
       /// @return One of the content_alignment values. The default is middle_center.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.
       virtual xtd::forms::content_alignment text_align() const noexcept;
-      /// @brief Gets the alignment of the text on the button control.
+      /// @brief Gets the alignment of the text on the label control.
       /// @param text_align One of the content_alignment values. The default is middle_center.
       /// @return Current label instance.
       /// @remarks You can use this property to align the text within a label to match the layout of controls on your form. For example, if your controls are located to the right edge of the labels, you can set the text_align property to one of the right-aligned horizontal alignments (top_right, middle_right, bottom_right) and the text will be aligned with the right edge of the labels to align with your controls.
@@ -170,13 +170,86 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create();
+      /// @brief A factory to create an xtd::forms::label with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::label with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::label with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
+      /// @param name The name of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::label with specified text.
+      /// @param text A string that represent text of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::label with specified text, and location.
+      /// @param text A string that represent text of the xtd::forms::label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const xtd::ustring& text, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::label with specified text, location, and size.
+      /// @param text A string that represent text of the xtd::forms::label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::label with specified text, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::label.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @param name The name of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static label create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::label with specified parent,.
+      /// @param parent The parent that contains the new created xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const control& parent);
+      /// @brief A factory to create an xtd::forms::label with specified parent, location.
+      /// @param parent The parent that contains the new created xtd::forms::label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::label with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::label with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
+      /// @param name The name of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::label with specified parent, and text.
+      /// @param parent The parent that contains the new created xtd::forms::label.
+      /// @param text A string that represent text of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const control& parent, const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::label with specified parent, text, and location.
+      /// @param parent The parent that contains the new created xtd::forms::label.
+      /// @param text A string that represent text of the xtd::forms::label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const control& parent, const xtd::ustring& text, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::label with specified parent, text, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::label.
+      /// @param text A string that represent text of the xtd::forms::label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::label.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
+      /// @return New xtd::forms::label created.
+      static label create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::label with specified parent, text, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::label.
       /// @param text A string that represent text of the xtd::forms::label.
@@ -184,7 +257,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::label.
       /// @param name The name of the xtd::forms::label.
       /// @return New xtd::forms::label created.
-      static label create(const control& parent, const xtd::ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static label create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
       /// @name Events
@@ -212,7 +285,7 @@ namespace xtd {
       xtd::drawing::size measure_control() const noexcept override;
       void on_font_changed(const xtd::event_args& e) override;
       
-      /// @brief Raises the button_base::image_changed event.
+      /// @brief Raises the image_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_image_changed(const xtd::event_args& e);
       
