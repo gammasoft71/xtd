@@ -42,9 +42,6 @@ namespace xtdc_gui {
     /// @brief The main entry point for the application.
     static void main();
     
-  protected:
-    void on_system_colors_changed(const xtd::event_args& e) override;
-    
   private:
     void add_to_create_recent_projects(size_t create_project_items_index);
     void add_to_open_recent_projects(const xtd::ustring& project_path);

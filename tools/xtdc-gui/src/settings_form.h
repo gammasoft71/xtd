@@ -18,7 +18,6 @@ namespace xtdc_gui {
     static void main();
     
   protected:
-    void on_system_colors_changed(const xtd::event_args& e) override;
     void on_form_closed(const xtd::forms::form_closed_event_args& e) override;
 
   private:

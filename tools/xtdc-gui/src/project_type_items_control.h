@@ -130,18 +130,6 @@ namespace xtdc_gui {
     /// @brief This is a special value equal to the maximum value representable by the type size_t.
     static const size_t npos = std::numeric_limits<size_t>::max();
     
-    void on_system_colors_changed(const xtd::event_args& e) {
-      back_color(xtd::forms::application::style_sheet().system_colors().window());
-      for (size_t index = 0; index < project_type_item_controls_.size(); ++index) {
-        project_type_item_controls_[index]->back_color(back_color());
-        project_type_item_controls_[index]->fore_color(fore_color());
-      }
-      if (selected_index_ != npos) {
-        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->back_color(xtd::forms::application::style_sheet().system_colors().accent());
-        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->fore_color(xtd::forms::application::style_sheet().system_colors().accent_text());
-      }
-    }
-    
   private:
     void on_selected_index_changed(const xtd::event_args& e) {
       if (previous_selected_index_ != npos) {
