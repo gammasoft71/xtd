@@ -33,6 +33,219 @@ namespace xtd {
       v_scroll_bar();
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create();
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @param name The name of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, and location.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, location, and size.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, location, size, and name.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @param name The name of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, and maximum.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, int32 maximum);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, minimum, maximum, and location.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, maximum, location, and size.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, maximum, location, size, and name.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @param name The name of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, minimum, and maximum.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, int32 minimum, int32 maximum);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, minimum, maximum, and location.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, int32 minimum, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, minimum, maximum, location, and size.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified value, minimum, maximum, location, size, and name.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @param name The name of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @param name The name of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, and value.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, and location.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @param name The name of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, and maximum.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, int32 maximum);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, maximum, and location.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, maximum, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, maximum, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @param name The name of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, minimum, and maximum.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, int32 minimum, int32 maximum);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, minimum, maximum, and location.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, minimum, maximum, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::v_scroll_bar with specified parent, value, minimum, maximum, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::v_scroll_bar.
+      /// @param value A numeric value that is within the minimum and maximum range. The default value is 0.
+      /// @param minimum The lower limit of values of the scrollable range.
+      /// @param maximum The upper limit of values of the scrollable range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::v_scroll_bar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::v_scroll_bar.
+      /// @param name The name of the xtd::forms::v_scroll_bar.
+      /// @return New xtd::forms::v_scroll_bar created.
+      static v_scroll_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @}
+      
     protected:
       /// @name Protectedd properties
       
