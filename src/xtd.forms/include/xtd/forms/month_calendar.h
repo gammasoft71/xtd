@@ -349,38 +349,232 @@ namespace xtd {
       /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::monthly_bolded_dates property.
       void add_monthly_bolded_date(const xtd::date_time& date);
       
+      /// @brief A factory to create an xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create();
+      /// @brief A factory to create an xtd::forms::month_calendar with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::month_calendar with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, and location.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, location, and size.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, location, size, and name.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::month_calendar with specified location, size, and name.
-      /// @param selection_start A xtd::date_time indicating the first date in the selection range.
-      /// @param selection_end A xtd::date_time indicating the last date in the selection range.
+      static month_calendar create(const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, and minimum date.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, maximum date, and location.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, maximum date, location, and size.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, maximum date, location, size, and name.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const date_time& selection_start, const date_time& selection_end, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, minimum date, and maximum date.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, minimum date, maximum date, and location.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, minimum date, maximum date, location, and size.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified value, minimum date, maximum date, location, size, and name.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::month_calendar with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, and value.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, and location.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
       /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, location, size, and name.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::month_calendar.
-      /// @param selection_start A xtd::date_time indicating the first date in the selection range.
-      /// @param selection_end A xtd::date_time indicating the last date in the selection range.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
-      static month_calendar create(const control& parent, const date_time& selection_start, const date_time& selection_end, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, and maximum date.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, maximum date, and location.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, maximum date, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, maximum date, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, minimum date, and maximum date.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, minimum date, maximum date, and location.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, minimum date, maximum date, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::month_calendar with specified parent, value, minimum date, maximum date, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::month_calendar.
+      /// @param selection_range A xtd::forms::selection_range with the start and end dates of the selected range.
+      /// @param min_date The minimum date and time that can be selected in the control.
+      /// @param max_date The maximum date and time that can be selected in the control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::month_calendar.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::month_calendar.
+      /// @param name The name of the xtd::forms::month_calendar.
+      /// @return New xtd::forms::month_calendar created.
+      static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       
       /// @brief Returns a xtd::forms::month_calendar::hit_test_info with information on which portion of a month calendar control is at a specified x- and y-coordinate.
       /// @param x The xtd::drawing::point::x coordinate of the point to be hit tested.
