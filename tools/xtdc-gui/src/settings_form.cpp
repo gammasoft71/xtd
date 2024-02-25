@@ -68,11 +68,6 @@ settings_form::settings_form() {
   };
 }
 
-void settings_form::on_system_colors_changed(const event_args& e) {
-  form::on_system_colors_changed(e);
-  back_color(xtd::forms::application::style_sheet().system_colors().app_workspace());
-}
-
 void settings_form::on_form_closed(const form_closed_event_args& e) {
   form::on_form_closed(e);
   properties::settings::default_settings().auto_close(auto_close_check_box_.checked()).save();

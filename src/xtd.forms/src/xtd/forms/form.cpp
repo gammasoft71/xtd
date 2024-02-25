@@ -685,10 +685,6 @@ void form::on_resize(const event_args& e) {
   container_control::on_resize(e);
 }
 
-void form::on_system_colors_changed(const event_args& e) {
-  if (can_raise_events()) system_colors_changed(*this, e);
-}
-
 void form::wnd_proc(message& message) {
   switch (message.msg()) {
     case WM_ACTIVATE: wm_activate(message); break;

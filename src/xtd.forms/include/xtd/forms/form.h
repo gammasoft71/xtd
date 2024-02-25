@@ -446,11 +446,6 @@ namespace xtd {
       /// @brief Occurs before the form is closed.
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<form, form_closing_event_handler> form_closing;
-      
-      /// @brief Occurs when the xtd::drwing::system_colors changes.
-      /// @remarks This event is raised if the xtd::drwing::system_colors is changed. For example when automatic dark mode switching on macOS.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-      event<form, event_handler> system_colors_changed;
       /// @}
       
     protected:
@@ -489,10 +484,6 @@ namespace xtd {
       void on_location_changed(const event_args& e) override;
       void on_paint(paint_event_args& e) override;
       void on_region_changed(const event_args& e) override;
-      
-      /// @brief Raises the control::system_colors_changed event.
-      /// @param e An xtd::event_args that contains the event data.
-      virtual void on_system_colors_changed(const event_args& e);
       
       void on_resize(const event_args& e) override;
       void wnd_proc(message& message) override;

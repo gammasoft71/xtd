@@ -1648,6 +1648,11 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<control, event_handler> style_sheet_changed;
       
+      /// @brief Occurs when the xtd::drwing::system_colors changes.
+      /// @remarks This event is raised if the xtd::drwing::system_colors is changed. For example when automatic dark mode switching on macOS.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      event<control, event_handler> system_colors_changed;
+
       /// @brief Occurs when the xtd::forms::control::tab_stop property value changes.
       /// @remarks This event is raised if the xtd::forms::control::tab_stop property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
@@ -1937,6 +1942,10 @@ namespace xtd {
       /// @brief Raises the xtd::forms::control::style_sheet_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_style_sheet_changed(const event_args& e);
+      
+      /// @brief Raises the control::system_colors_changed event.
+      /// @param e An xtd::event_args that contains the event data.
+      virtual void on_system_colors_changed(const event_args& e);
       
       /// @brief Raises the xtd::forms::control::tab_stop_changed event.
       /// @param e An xtd::event_args that contains the event data.

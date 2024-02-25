@@ -1460,6 +1460,22 @@ void control::on_style_sheet_changed(const event_args& e) {
   if (can_raise_events()) style_sheet_changed(*this, e);
 }
 
+void control::on_system_colors_changed(const event_args& e) {
+  for (auto control : controls())
+    control.get().on_system_colors_changed(e);
+  if (data_->back_color && data_->back_color.value().is_system_color()) {
+    auto backup_color = data_->back_color.value();
+    back_color(color::empty);
+    back_color(color::from_name(backup_color.name()));
+  }
+  if (data_->fore_color && data_->fore_color.value().is_system_color()) {
+    auto backup_color = data_->fore_color.value();
+    fore_color(color::empty);
+    fore_color(color::from_name(backup_color.name()));
+  }
+  if (can_raise_events()) system_colors_changed(*this, e);
+}
+
 void control::on_tab_stop_changed(const event_args& e) {
   post_recreate_handle();
   if (can_raise_events()) tab_stop_changed(*this, e);
