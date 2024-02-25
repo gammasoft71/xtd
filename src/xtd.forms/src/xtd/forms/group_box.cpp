@@ -57,12 +57,112 @@ group_box& group_box::flat_style(xtd::forms::flat_style flat_style) {
   return *this;
 }
 
+group_box group_box::create() {
+  return group_box {};
+}
+
+group_box group_box::create(const drawing::point& location) {
+  auto result = group_box {};
+  result.location(location);
+  return result;
+}
+
+group_box group_box::create(const drawing::point& location, const drawing::size& size) {
+  auto result = group_box {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+group_box group_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = group_box {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+group_box group_box::create(const xtd::ustring& text) {
+  auto result = group_box {};
+  result.text(text);
+  return result;
+}
+
+group_box group_box::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = group_box {};
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+group_box group_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = group_box {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 group_box group_box::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = group_box {};
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+group_box group_box::create(const control& parent) {
+  auto result = group_box {};
+  result.parent(parent);
+  return result;
+}
+
+group_box group_box::create(const control& parent, const drawing::point& location) {
+  auto result = group_box {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+group_box group_box::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = group_box {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+group_box group_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = group_box {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+group_box group_box::create(const control& parent, const xtd::ustring& text) {
+  auto result = group_box {};
+  result.parent(parent);
+  result.text(text);
+  return result;
+}
+
+group_box group_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+  auto result = group_box {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+group_box group_box::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = group_box {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -70,8 +170,8 @@ group_box group_box::create(const control& parent, const xtd::ustring& text, con
   auto result = group_box {};
   result.parent(parent);
   result.text(text);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
