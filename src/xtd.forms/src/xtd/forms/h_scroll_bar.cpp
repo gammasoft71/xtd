@@ -24,25 +24,273 @@ xtd::drawing::size h_scroll_bar::default_size() const noexcept {
   return {80, control::default_size().height()};
 }
 
-h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+h_scroll_bar h_scroll_bar::create() {
+  return h_scroll_bar {};
+}
+
+h_scroll_bar h_scroll_bar::create(const drawing::point& location) {
   auto result = h_scroll_bar {};
+  result.location(location);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const drawing::point& location, const drawing::size& size) {
+  auto result = h_scroll_bar {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = h_scroll_bar {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, const drawing::point& location) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  result.location(location);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, const drawing::point& location, const drawing::size& size) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  result.maximum(maximum);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum, const drawing::point& location) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum) {
+  auto result = h_scroll_bar {};
+  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
+  auto result = h_scroll_bar {};
   result.value(value);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = h_scroll_bar {};
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, const drawing::point& location) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, const drawing::point& location) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maximum) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  return result;
+}
+
+h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
+  auto result = h_scroll_bar {};
+  result.parent(parent);
+  result.value(value);
+  result.minimum(minimum);
+  result.maximum(maximum);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = h_scroll_bar {};
   result.parent(parent);
+  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
-  result.value(value);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
