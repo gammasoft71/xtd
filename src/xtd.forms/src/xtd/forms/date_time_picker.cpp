@@ -132,34 +132,34 @@ date_time_picker date_time_picker::create(const xtd::date_time& value, const dra
   return result;
 }
 
-date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& min_date) {
+date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& max_date) {
   auto result = date_time_picker {};
   result.value(value);
-  result.min_date(min_date);
+  result.max_date(max_date);
   return result;
 }
 
-date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location) {
+date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& max_date, const drawing::point& location) {
   auto result = date_time_picker {};
   result.value(value);
-  result.min_date(min_date);
+  result.max_date(max_date);
   result.location(location);
   return result;
 }
 
-date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size) {
+date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size) {
   auto result = date_time_picker {};
   result.value(value);
-  result.min_date(min_date);
+  result.max_date(max_date);
   result.location(location);
   result.size(size);
   return result;
 }
 
-date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+date_time_picker date_time_picker::create(const xtd::date_time& value, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = date_time_picker {};
   result.value(value);
-  result.min_date(min_date);
+  result.max_date(max_date);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -268,38 +268,38 @@ date_time_picker date_time_picker::create(const control& parent, const xtd::date
   return result;
 }
 
-date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date) {
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& max_date) {
   auto result = date_time_picker {};
   result.parent(parent);
   result.value(value);
-  result.min_date(min_date);
+  result.max_date(max_date);
   return result;
 }
 
-date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location) {
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& max_date, const drawing::point& location) {
   auto result = date_time_picker {};
   result.parent(parent);
   result.value(value);
-  result.min_date(min_date);
+  result.max_date(max_date);
   result.location(location);
   return result;
 }
 
-date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size) {
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size) {
   auto result = date_time_picker {};
   result.parent(parent);
   result.value(value);
-  result.min_date(min_date);
+  result.max_date(max_date);
   result.location(location);
   result.size(size);
   return result;
 }
 
-date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+date_time_picker date_time_picker::create(const control& parent, const xtd::date_time& value, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = date_time_picker {};
   result.parent(parent);
   result.value(value);
-  result.min_date(min_date);
+  result.max_date(max_date);
   result.location(location);
   result.size(size);
   result.name(name);
