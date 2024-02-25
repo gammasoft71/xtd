@@ -32,19 +32,46 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::fixed_layout_panel.
+      /// @return New xtd::forms::fixed_layout_panel created.
+      static fixed_layout_panel create();
+      /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
+      /// @return New xtd::forms::fixed_layout_panel created.
+      static fixed_layout_panel create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::fixed_layout_panel.
+      /// @return New xtd::forms::fixed_layout_panel created.
+      static fixed_layout_panel create(const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::fixed_layout_panel.
       /// @param name The name of the xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static fixed_layout_panel create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::fixed_layout_panel.
+      /// @return New xtd::forms::fixed_layout_panel created.
+      static fixed_layout_panel create(const control& parent);
+      /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::fixed_layout_panel.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
+      /// @return New xtd::forms::fixed_layout_panel created.
+      static fixed_layout_panel create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::fixed_layout_panel.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::fixed_layout_panel.
+      /// @return New xtd::forms::fixed_layout_panel created.
+      static fixed_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::fixed_layout_panel with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::fixed_layout_panel.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::fixed_layout_panel.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::fixed_layout_panel.
       /// @param name The name of the xtd::forms::fixed_layout_panel.
       /// @return New xtd::forms::fixed_layout_panel created.
-      static fixed_layout_panel create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static fixed_layout_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
     protected:
