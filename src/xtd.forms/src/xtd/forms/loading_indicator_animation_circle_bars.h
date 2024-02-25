@@ -16,7 +16,8 @@ namespace xtd::forms {
       auto y = -(radius_factor_ / 2.f - 1.f) * height + height / radius_factor_ * 2.f;
       auto w = width;
       auto h = 4.f * height;
-      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(255), color)}, x, y, w, h, height);
+      auto opacity = enabled ? 255 : 64;
+      graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x, y, w, h, height);
       /*
       for (auto n = 0; n < intervals_; n++) {
         auto opacity_index = enabled ? n + 1 : 2;
