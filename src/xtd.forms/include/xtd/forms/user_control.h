@@ -67,6 +67,51 @@ namespace xtd {
       virtual user_control& border_style(std::nullptr_t border_style);
       /// @}
       
+      /// @name Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::user_control.
+      /// @return New xtd::forms::user_control created.
+      static user_control create();
+      /// @brief A factory to create an xtd::forms::user_control with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
+      /// @return New xtd::forms::user_control created.
+      static user_control create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::user_control with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
+      /// @return New xtd::forms::user_control created.
+      static user_control create(const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::user_control with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
+      /// @param name The name of the xtd::forms::user_control.
+      /// @return New xtd::forms::user_control created.
+      static user_control create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::user_control with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::user_control.
+      /// @return New xtd::forms::user_control created.
+      static user_control create(const control& parent);
+      /// @brief A factory to create an xtd::forms::user_control with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::user_control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
+      /// @return New xtd::forms::user_control created.
+      static user_control create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::user_control with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::user_control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
+      /// @return New xtd::forms::user_control created.
+      static user_control create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::user_control with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::user_control.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::user_control.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::user_control.
+      /// @param name The name of the xtd::forms::user_control.
+      /// @return New xtd::forms::user_control created.
+      static user_control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @}
+
     protected:
       /// @name Protected properties
       
