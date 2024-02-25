@@ -1649,7 +1649,7 @@ namespace xtd {
       event<control, event_handler> style_sheet_changed;
       
       /// @brief Occurs when the xtd::drwing::system_colors changes.
-      /// @remarks This event is raised if the xtd::drwing::system_colors is changed. For example when automatic dark mode switching on macOS.
+      /// @remarks This event is raised if the xtd::drawing::system_colors is changed. For example when automatic dark mode switching on macOS.
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<control, event_handler> system_colors_changed;
 
