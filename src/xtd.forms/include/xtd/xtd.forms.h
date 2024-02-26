@@ -333,7 +333,6 @@
 #include "forms/switch_button.h"
 #include "forms/switch_button_renderer.h"
 #include "forms/system_information.h"
-#include "forms/system_texts.h"
 #include "forms/tab_alignment.h"
 #include "forms/tab_control.h"
 #include "forms/tab_page.h"
