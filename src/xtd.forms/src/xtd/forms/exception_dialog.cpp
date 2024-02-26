@@ -23,23 +23,6 @@ namespace {
   class exception_dialog_standard : public form {
   public:
     exception_dialog_standard(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) : exception_(exception) {
-      auto_size(true);
-      auto_size_mode(forms::auto_size_mode::grow_and_shrink);
-      accept_button(button_continue_);
-      cancel_button(button_quit_);
-      controls().push_back_range({panel_top_, panel_bottom_});
-      maximize_box(false);
-      minimize_box(false);
-      show_icon(false);
-      top_most(true);
-      form_border_style(forms::form_border_style::fixed_dialog);
-      start_position(form_start_position::center_screen);
-      this->text(text);
-      form_closed += [&, on_dialog_closed] {
-        on_dialog_closed->invoke(dialog_closed_event_args(dialog_result()));
-        delete on_dialog_closed;
-      };
-      
       panel_top_.location({0, 0});
       panel_top_.size({480, 150});
       panel_top_.controls().push_back_range({picture_box_error_, label_exception_, button_details_, button_continue_, button_quit_});
@@ -82,6 +65,23 @@ namespace {
       text_box_details_.read_only(true);
       text_box_details_.word_wrap(false);
       text_box_details_.text(generate_report());
+
+      auto_size(true);
+      auto_size_mode(forms::auto_size_mode::grow_and_shrink);
+      accept_button(button_continue_);
+      cancel_button(button_quit_);
+      controls().push_back_range({panel_top_, panel_bottom_});
+      maximize_box(false);
+      minimize_box(false);
+      show_icon(false);
+      top_most(true);
+      form_border_style(forms::form_border_style::fixed_dialog);
+      start_position(form_start_position::center_screen);
+      this->text(text);
+      form_closed += [&, on_dialog_closed] {
+        on_dialog_closed->invoke(dialog_closed_event_args(dialog_result()));
+        delete on_dialog_closed;
+      };
     }
     
     using form::show_dialog;
