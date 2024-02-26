@@ -61,7 +61,7 @@ namespace {
 
   bool message_filter_proc(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
     auto current_control = control::from_handle(hwnd);
-    if (current_control.has_value() && (current_control.value().get().name() == __xtd_default_form_name__() || current_control.value().get().name() == __xtd_default_text_box_name__())) return false;
+    if (current_control.has_value() && (current_control.value().get().name() == __xtd_forms_trace_form_base_default_form_name__() || current_control.value().get().name() == __xtd_forms_trace_form_base_default_text_box_name__())) return false;
 
     for (auto message_filter : message_filters)
       if (message_filter.get().pre_filter_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle))) return true;

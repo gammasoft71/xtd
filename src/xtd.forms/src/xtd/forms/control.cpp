@@ -1908,7 +1908,7 @@ void control::do_layout_with_auto_size_mode() {
 }
 
 bool control::is_trace_form_or_control(const ustring& name) {
-  return name == __xtd_default_form_name__() || name == __xtd_default_text_box_name__();
+  return name == __xtd_forms_trace_form_base_default_form_name__() || name == __xtd_forms_trace_form_base_default_text_box_name__();
 }
 
 void control::on_controls_item_added(size_t, control_ref item) {
