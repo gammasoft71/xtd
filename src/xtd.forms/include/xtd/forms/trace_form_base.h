@@ -8,8 +8,8 @@
 #include <xtd/date_time>
 
 /// @cond
-xtd::ustring& __xtd_default_form_name__() noexcept;
-xtd::ustring& __xtd_default_text_box_name__() noexcept;
+xtd::ustring& __xtd_forms_trace_form_base_default_form_name__() noexcept;
+xtd::ustring& __xtd_forms_trace_form_base_default_text_box_name__() noexcept;
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
