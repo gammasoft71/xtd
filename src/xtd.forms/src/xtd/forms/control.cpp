@@ -248,6 +248,7 @@ control& control::auto_size(bool auto_size) {
 }
 
 color control::back_color() const noexcept {
+  if (data_->back_color.has_value()) return data_->back_color.value();
   for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->back_color.has_value() && control->data_->back_color.value() != control->default_back_color()) return control->data_->back_color.value();
   return default_back_color();
@@ -410,6 +411,7 @@ bool control::created() const noexcept {
 }
 
 forms::cursor control::cursor() const noexcept {
+  if (data_->cursor.has_value()) return data_->cursor.value();
   for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->cursor.has_value() && control->data_->cursor.value() != control->default_cursor()) return control->data_->cursor.value();
   return default_cursor();
@@ -479,6 +481,7 @@ bool control::focused() const noexcept {
 }
 
 drawing::font control::font() const noexcept {
+  if (data_->font.has_value()) return data_->font.value();
   for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->font.has_value() && control->data_->font.value() != control->default_font()) return control->data_->font.value();
   return default_font();
@@ -505,6 +508,7 @@ control& control::font(std::nullptr_t) {
 }
 
 color control::fore_color() const noexcept {
+  if (data_->fore_color.has_value()) return data_->fore_color.value();
   for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
     if (control->data_->fore_color.has_value() && control->data_->fore_color.value() != control->default_fore_color()) return control->data_->fore_color.value();
   return default_fore_color();
@@ -1462,7 +1466,7 @@ void control::on_style_sheet_changed(const event_args& e) {
 }
 
 void control::on_system_colors_changed(const event_args& e) {
-  if (data_->back_color /*&& data_->back_color.value().is_system_color()*/) {
+  if (data_->back_color && data_->back_color.value().is_system_color()) {
     auto backup_color = data_->back_color.value();
     back_color(color::from_name(backup_color.name()));
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::style), ustring::format("(on_system_colors_changed) {} : back_color = {} (0x{:x})", to_string(), back_color(), back_color().to_argb()));
