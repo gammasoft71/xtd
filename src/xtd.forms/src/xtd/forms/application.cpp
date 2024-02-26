@@ -34,11 +34,11 @@ struct __init_process_message_box_message__ {
   __init_process_message_box_message__() {
     xtd::diagnostics::process::message_box_message_ = {*this, &__init_process_message_box_message__::__show_message_box__};
   }
-  
+
   void __show_message_box__(const ustring& file_name) {
     xtd::forms::message_box::show(ustring::format("{} cannot find '{}'. Make sure you typed the name correctly, and try again.", xtd::environment::os_version().name(), file_name), file_name, xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon::error);
   }
-  
+
   void __force_compiler_optimizer_to_create_object__() {
   }
 };
@@ -56,19 +56,19 @@ __init_toolkit__ __init_toolkit_value__;
 namespace {
   using message_filter_ref = std::reference_wrapper<imessage_filter>;
   using message_filter_collection = std::vector<message_filter_ref>;
-  
+
   static message_filter_collection message_filters;
-  
+
   bool message_filter_proc(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
     auto current_control = control::from_handle(hwnd);
-    if (current_control.has_value() && (current_control.value().get().name() == __xtd_default_form_name__() || current_control.value().get().name() == __xtd_default_text_box_name__())) return true;
+    if (current_control.has_value() && (current_control.value().get().name() == __xtd_default_form_name__() || current_control.value().get().name() == __xtd_default_text_box_name__())) return false;
 
     for (auto message_filter : message_filters)
       if (message_filter.get().pre_filter_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle))) return true;
 
     for (auto open_form : application::open_forms())
       if (open_form.get().pre_process_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle))) return true;
-    
+
     return false;
   }
 }
@@ -154,7 +154,7 @@ const form_collection application::open_forms() noexcept {
   for (auto control : control::top_level_controls_)
     forms.push_back(static_cast<form&>(control.get()));
   return forms;
-  
+
   /*
   auto forms = form_collection {};
   for (intptr handle : native::application::open_forms()) {
@@ -343,7 +343,7 @@ void application::run(application_context& context) {
   native::application::register_message_filter(delegate<bool(intptr, int32, intptr, intptr, intptr)>(message_filter_proc));
   native::application::register_thread_exception(delegate<bool()>(on_app_thread_exception));
   native::application::register_wnd_proc(delegate<intptr(intptr, int32, intptr, intptr, intptr)>(application::wnd_proc_));
-  
+
   application::message_loop_ = true;
   if (context.main_form().has_value()) context.main_form().value().get().show();
   native::application::run();
@@ -362,10 +362,10 @@ bool application::close_open_forms() {
     open_form.get().on_form_closing(closing_args);
     if (closing_args.cancel()) return false;
   }
-  
+
   for (auto open_form : application::open_forms())
     open_form.get().on_form_closed(form_closed_event_args {});
-    
+
   return true;
 }
 
@@ -419,7 +419,7 @@ void application::wm_app_idle(message& message) {
     raise_idle_ = false;
   }
   if (!idle.is_empty()) native::application::do_idle();
-  
+
   for (auto form : open_forms())
     form.get().wnd_proc(message);
 }
