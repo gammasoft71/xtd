@@ -2026,12 +2026,13 @@ namespace xtd {
       /// @endcond
       
     private:
-      void on_controls_item_added(size_t, control_ref item);
-      void on_controls_item_removed(size_t, control_ref item);
-      void on_parent_size_changed(object& sender, const event_args& e);
       void do_layout_children_with_dock_style();
       void do_layout_with_auto_size_mode();
       void do_layout_with_anchor_styles();
+      static bool is_trace_form_or_control(const ustring& name);
+      void on_controls_item_added(size_t, control_ref item);
+      void on_controls_item_removed(size_t, control_ref item);
+      void on_parent_size_changed(object& sender, const event_args& e);
       void show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const;
       void reflect_message(intptr handle, message& message);
       intptr wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle);

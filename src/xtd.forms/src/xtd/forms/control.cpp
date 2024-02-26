@@ -6,6 +6,7 @@
 #include "../../../include/xtd/forms/form.h"
 #include "../../../include/xtd/forms/message_box.h"
 #include "../../../include/xtd/forms/screen.h"
+#include "../../../include/xtd/forms/trace_form_base.h"
 #include "../../../include/xtd/forms/visual_styles/control_state.h"
 #include <xtd/diagnostics/debug>
 #include <xtd/diagnostics/debugger>
@@ -55,10 +56,6 @@ namespace {
     else if ((message.wparam() & MK_RBUTTON) == MK_RBUTTON) return mouse_buttons::right;
     else if ((message.wparam() & MK_MBUTTON) == MK_MBUTTON) return mouse_buttons::middle;
     return mouse_buttons::none;
-  }
-  
-  bool is_trace_form_or_control(const ustring& name) {
-    return name == "9f5767d6-7a21-4ebe-adfe-2427b2024a55" || name == "d014d407-851c-49c1-a343-3380496a639a";
   }
 }
 
@@ -1112,10 +1109,6 @@ drawing::size control::default_size() const noexcept {
   return native::control::default_size(create_params().class_name());
 }
 
-bool control::get_state(control::state flag) const noexcept {
-  return ((int32)data_->state & (int32)flag) == (int32)flag;
-}
-
 bool control::get_style(control_styles flag) const noexcept {
   return ((int32)data_->style & (int32)flag) == (int32)flag;
 }
@@ -1560,28 +1553,12 @@ void control::set_bounds(int32 x, int32 y, int32 width, int32 height, bounds_spe
   set_bounds_core(x, y, width, height, specified);
 }
 
-void control::set_state(control::state flag, bool value) {
-  data_->state = static_cast<control::state>(value ? (static_cast<int32>(data_->state) | static_cast<int32>(flag)) : (static_cast<int32>(data_->state) & ~ static_cast<int32>(flag)));
-}
-
 void control::set_can_focus(bool value) {
   data_->can_focus = value;
 }
 
 void control::set_text(const xtd::ustring& text) {
   data_->text = text;
-}
-
-void control::set_mouse_buttons(forms::mouse_buttons value) {
-  mouse_buttons_ = value;
-}
-
-void control::set_parent(intptr handle) {
-  data_->parent = handle;
-}
-
-void control::set_style(control_styles flag, bool value) {
-  data_->style = value ? (control_styles)((int32)data_->style | (int32)flag) : (control_styles)((int32)data_->style & ~(int32)flag);
 }
 
 void control::show() {
@@ -1634,88 +1611,8 @@ intptr control::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, 
    */
 }
 
-bool control::on_context_menu_item_click(xtd::forms::context_menu& menu, intptr menu_id) const {
-  return menu.on_item_click(menu_id);
-}
-
 void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const {
   on_context_menu_item_click(menu, native::control::user_context_menu(handle(), menu.handle(), pos));
-}
-
-void control::wnd_proc(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), ustring::format("({}) receive message [{}]", *this, message));
-  switch (message.msg()) {
-    // keyboard events
-    case WM_CHAR:
-    case WM_KEYDOWN:
-    case WM_KEYUP:
-    case WM_SYSCHAR:
-    case WM_SYSKEYDOWN:
-    case WM_SYSKEYUP: wm_key_char(message); break;
-    case WM_KILLFOCUS: wm_kill_focus(message); break;
-    case WM_SETFOCUS: wm_set_focus(message); break;
-    // mouse events
-    case WM_LBUTTONDOWN:
-    case WM_MBUTTONDOWN:
-    case WM_RBUTTONDOWN:
-    case WM_XBUTTONDOWN: wm_mouse_down(message); break;
-    case WM_LBUTTONUP:
-    case WM_MBUTTONUP:
-    case WM_RBUTTONUP:
-    case WM_XBUTTONUP: wm_mouse_up(message); break;
-    case WM_LBUTTONDBLCLK:
-    case WM_MBUTTONDBLCLK:
-    case WM_RBUTTONDBLCLK:
-    case WM_XBUTTONDBLCLK: wm_mouse_double_click(message); break;
-    case WM_MOUSEMOVE: wm_mouse_move(message); break;
-    case WM_MOUSEENTER: wm_mouse_enter(message); break;
-    case WM_MOUSELEAVE: wm_mouse_leave(message); break;
-    case WM_MOUSEHWHEEL:
-    case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
-    // Color events
-    case WM_CTLCOLORDLG:
-    case WM_CTLCOLORMSGBOX:
-    case WM_CTLCOLOR:
-    case WM_CTLCOLORBTN:
-    case WM_CTLCOLORSCROLLBAR:
-    case WM_CTLCOLOREDIT:
-    case WM_CTLCOLORLISTBOX:
-    case WM_CTLCOLORSTATIC: wm_ctlcolor(message); break;
-    case WM_ERASEBKGND: wm_erase_background(message); break;
-    // Scrolling events
-    case WM_HSCROLL:
-    case WM_VSCROLL: wm_scroll(message); break;
-    // System events
-    case WM_CHILDACTIVATE: wm_child_activate(message); break;
-    case WM_COMMAND: wm_command(message); break;
-    case WM_CREATE: wm_create(message); break;
-    case WM_DESTROY: wm_destroy(message); break;
-    case WM_HELP: wm_help(message); break;
-    case WM_MENUCOMMAND: wm_menu_command(message); break;
-    case WM_MOVE: wm_move(message);  break;
-    case WM_NOTIFY: wm_notify(message); break;
-    case WM_PAINT: wm_paint(message); break;
-    case WM_SETTEXT: wm_set_text(message); break;
-    case WM_SHOWWINDOW: wm_show(message); break;
-    case WM_SIZE: wm_size(message); break;
-    case WM_SIZING: wm_sizing(message); break;
-    case WM_STYLE_SHEET_CHANGED: wm_style_sheet_changed(message); break;
-    case WM_APPIDLE: wm_app_idle(message); break;
-    // Reflect events
-    case WM_REFLECT + WM_CTLCOLORDLG:
-    case WM_REFLECT + WM_CTLCOLORMSGBOX:
-    case WM_REFLECT + WM_CTLCOLOR:
-    case WM_REFLECT + WM_CTLCOLORBTN:
-    case WM_REFLECT + WM_CTLCOLORSCROLLBAR:
-    case WM_REFLECT + WM_CTLCOLOREDIT:
-    case WM_REFLECT + WM_CTLCOLORLISTBOX:
-    case WM_REFLECT + WM_CTLCOLORSTATIC: return wm_ctlcolor_control(message); break;
-    case WM_REFLECT + WM_COMMAND: return wm_command_control(message); break;
-    case WM_REFLECT + WM_NOTIFY: wm_notify_control(message);  break;
-    case WM_REFLECT + WM_HSCROLL:
-    case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
-    default: def_wnd_proc(message); break;
-  }
 }
 
 void control::create_handle() {
@@ -1825,27 +1722,104 @@ void control::set_client_size_core(int32 width, int32 height) {
   on_resize(event_args::empty);
 }
 
-void control::on_controls_item_added(size_t, control_ref item) {
-  on_control_added(control_event_args(item.get()));
-  item.get().data_->parent = data_->handle;
-  if (data_->handle)
-    item.get().create_control();
+void control::set_mouse_buttons(forms::mouse_buttons value) {
+  mouse_buttons_ = value;
 }
 
-void control::on_controls_item_removed(size_t, control_ref item) {
-  on_control_removed(control_event_args(item.get()));
-  item.get().data_->parent = 0;
-  item.get().destroy_control();
+void control::set_parent(intptr handle) {
+  data_->parent = handle;
 }
 
-void control::on_parent_size_changed(object& sender, const event_args& e) {
-  if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this))
-    perform_layout();
+void control::set_style(control_styles flag, bool value) {
+  data_->style = value ? (control_styles)((int32)data_->style | (int32)flag) : (control_styles)((int32)data_->style & ~(int32)flag);
 }
 
-void control::post_recreate_handle() noexcept {
-  if (data_->handle)
-    data_->recreate_handle_posted = true;
+void control::wnd_proc(message& message) {
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), ustring::format("({}) receive message [{}]", *this, message));
+  switch (message.msg()) {
+      // keyboard events
+    case WM_CHAR:
+    case WM_KEYDOWN:
+    case WM_KEYUP:
+    case WM_SYSCHAR:
+    case WM_SYSKEYDOWN:
+    case WM_SYSKEYUP: wm_key_char(message); break;
+    case WM_KILLFOCUS: wm_kill_focus(message); break;
+    case WM_SETFOCUS: wm_set_focus(message); break;
+      // mouse events
+    case WM_LBUTTONDOWN:
+    case WM_MBUTTONDOWN:
+    case WM_RBUTTONDOWN:
+    case WM_XBUTTONDOWN: wm_mouse_down(message); break;
+    case WM_LBUTTONUP:
+    case WM_MBUTTONUP:
+    case WM_RBUTTONUP:
+    case WM_XBUTTONUP: wm_mouse_up(message); break;
+    case WM_LBUTTONDBLCLK:
+    case WM_MBUTTONDBLCLK:
+    case WM_RBUTTONDBLCLK:
+    case WM_XBUTTONDBLCLK: wm_mouse_double_click(message); break;
+    case WM_MOUSEMOVE: wm_mouse_move(message); break;
+    case WM_MOUSEENTER: wm_mouse_enter(message); break;
+    case WM_MOUSELEAVE: wm_mouse_leave(message); break;
+    case WM_MOUSEHWHEEL:
+    case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
+      // Color events
+    case WM_CTLCOLORDLG:
+    case WM_CTLCOLORMSGBOX:
+    case WM_CTLCOLOR:
+    case WM_CTLCOLORBTN:
+    case WM_CTLCOLORSCROLLBAR:
+    case WM_CTLCOLOREDIT:
+    case WM_CTLCOLORLISTBOX:
+    case WM_CTLCOLORSTATIC: wm_ctlcolor(message); break;
+    case WM_ERASEBKGND: wm_erase_background(message); break;
+      // Scrolling events
+    case WM_HSCROLL:
+    case WM_VSCROLL: wm_scroll(message); break;
+      // System events
+    case WM_CHILDACTIVATE: wm_child_activate(message); break;
+    case WM_COMMAND: wm_command(message); break;
+    case WM_CREATE: wm_create(message); break;
+    case WM_DESTROY: wm_destroy(message); break;
+    case WM_HELP: wm_help(message); break;
+    case WM_MENUCOMMAND: wm_menu_command(message); break;
+    case WM_MOVE: wm_move(message);  break;
+    case WM_NOTIFY: wm_notify(message); break;
+    case WM_PAINT: wm_paint(message); break;
+    case WM_SETTEXT: wm_set_text(message); break;
+    case WM_SHOWWINDOW: wm_show(message); break;
+    case WM_SIZE: wm_size(message); break;
+    case WM_SIZING: wm_sizing(message); break;
+    case WM_STYLE_SHEET_CHANGED: wm_style_sheet_changed(message); break;
+    case WM_APPIDLE: wm_app_idle(message); break;
+      // Reflect events
+    case WM_REFLECT + WM_CTLCOLORDLG:
+    case WM_REFLECT + WM_CTLCOLORMSGBOX:
+    case WM_REFLECT + WM_CTLCOLOR:
+    case WM_REFLECT + WM_CTLCOLORBTN:
+    case WM_REFLECT + WM_CTLCOLORSCROLLBAR:
+    case WM_REFLECT + WM_CTLCOLOREDIT:
+    case WM_REFLECT + WM_CTLCOLORLISTBOX:
+    case WM_REFLECT + WM_CTLCOLORSTATIC: return wm_ctlcolor_control(message); break;
+    case WM_REFLECT + WM_COMMAND: return wm_command_control(message); break;
+    case WM_REFLECT + WM_NOTIFY: wm_notify_control(message);  break;
+    case WM_REFLECT + WM_HSCROLL:
+    case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
+    default: def_wnd_proc(message); break;
+  }
+}
+
+bool control::get_state(control::state flag) const noexcept {
+  return ((int32)data_->state & (int32)flag) == (int32)flag;
+}
+
+void control::set_state(control::state flag, bool value) {
+  data_->state = static_cast<control::state>(value ? (static_cast<int32>(data_->state) | static_cast<int32>(flag)) : (static_cast<int32>(data_->state) & ~ static_cast<int32>(flag)));
+}
+
+bool control::on_context_menu_item_click(xtd::forms::context_menu& menu, intptr menu_id) const {
+  return menu.on_item_click(menu_id);
 }
 
 void control::do_layout_children_with_dock_style() {
@@ -1910,7 +1884,7 @@ void control::do_layout_with_anchor_styles() {
       left(parent().value().get().client_size().width() - width() - data_->anchoring.right());
     else
       left(parent().value().get().client_size().width() / 2 -  width() / 2);
-      
+    
     if ((data_->anchor & anchor_styles::top) == anchor_styles::top && (data_->anchor & anchor_styles::bottom) != anchor_styles::bottom)
       top(top());
     else if ((data_->anchor & anchor_styles::top) == anchor_styles::top && (data_->anchor & anchor_styles::bottom) == anchor_styles::bottom)
@@ -1931,6 +1905,33 @@ void control::do_layout_with_auto_size_mode() {
       auto_size_size_.height(data_->client_size.height());
     client_size(auto_size_size_);
   }
+}
+
+bool control::is_trace_form_or_control(const ustring& name) {
+  return name == __xtd_default_form_name__() || name == __xtd_default_text_box_name__();
+}
+
+void control::on_controls_item_added(size_t, control_ref item) {
+  on_control_added(control_event_args(item.get()));
+  item.get().data_->parent = data_->handle;
+  if (data_->handle)
+    item.get().create_control();
+}
+
+void control::on_controls_item_removed(size_t, control_ref item) {
+  on_control_removed(control_event_args(item.get()));
+  item.get().data_->parent = 0;
+  item.get().destroy_control();
+}
+
+void control::on_parent_size_changed(object& sender, const event_args& e) {
+  if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this))
+    perform_layout();
+}
+
+void control::post_recreate_handle() noexcept {
+  if (data_->handle)
+    data_->recreate_handle_posted = true;
 }
 
 void control::wm_app_idle(message& message) {
