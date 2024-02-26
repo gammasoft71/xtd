@@ -249,12 +249,12 @@ control& control::auto_size(bool auto_size) {
 
 color control::back_color() const noexcept {
   for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
-    if (control->data_->back_color.has_value()) return control->data_->back_color.value();
+    if (control->data_->back_color.has_value() && control->data_->back_color.value() != control->default_back_color()) return control->data_->back_color.value();
   return default_back_color();
 }
 
 control& control::back_color(const color& color) {
-  if (back_color() == color) return *this;
+  if (data_->back_color.has_value() && data_->back_color == color) return *this;
   data_->back_color = color;
   if (is_handle_created()) native::control::back_color(handle(), data_->back_color.value());
   for (auto& control : controls())
@@ -411,7 +411,7 @@ bool control::created() const noexcept {
 
 forms::cursor control::cursor() const noexcept {
   for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
-    if (control->data_->cursor.has_value()) return control->data_->cursor.value();
+    if (control->data_->cursor.has_value() && control->data_->cursor.value() != control->default_cursor()) return control->data_->cursor.value();
   return default_cursor();
 }
 
@@ -480,7 +480,7 @@ bool control::focused() const noexcept {
 
 drawing::font control::font() const noexcept {
   for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
-    if (control->data_->font.has_value()) return control->data_->font.value();
+    if (control->data_->font.has_value() && control->data_->font.value() != control->default_font()) return control->data_->font.value();
   return default_font();
 }
 
@@ -506,7 +506,7 @@ control& control::font(std::nullptr_t) {
 
 color control::fore_color() const noexcept {
   for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
-    if (control->data_->fore_color.has_value()) return control->data_->fore_color.value();
+    if (control->data_->fore_color.has_value() && control->data_->fore_color.value() != control->default_fore_color()) return control->data_->fore_color.value();
   return default_fore_color();
 }
 
@@ -1088,7 +1088,8 @@ forms::create_params control::create_params() const noexcept {
 }
 
 drawing::color control::default_back_color() const noexcept {
-  return xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control();
+  auto default_color = xtd::forms::style_sheets::style_sheet::current_style_sheet().system_colors().control();
+  return default_color;
 }
 
 forms::cursor control::default_cursor() const noexcept {
@@ -1461,18 +1462,20 @@ void control::on_style_sheet_changed(const event_args& e) {
 }
 
 void control::on_system_colors_changed(const event_args& e) {
-  for (auto control : controls())
-    control.get().on_system_colors_changed(e);
-  if (data_->back_color && data_->back_color.value().is_system_color()) {
+  if (data_->back_color /*&& data_->back_color.value().is_system_color()*/) {
     auto backup_color = data_->back_color.value();
-    back_color(color::empty);
+    back_color(backup_color);
     back_color(color::from_name(backup_color.name()));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::style), ustring::format("(on_system_colors_changed) {} : back_color = {} (0x{:x})", to_string(), back_color(), back_color().to_argb()));
   }
   if (data_->fore_color && data_->fore_color.value().is_system_color()) {
     auto backup_color = data_->fore_color.value();
-    fore_color(color::empty);
+    fore_color(backup_color);
     fore_color(color::from_name(backup_color.name()));
+    if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::style), ustring::format("(on_system_colors_changed) {} : fore_color = {} (0x{:x})", to_string(), fore_color(), fore_color().to_argb()));
   }
+  for (auto control : controls())
+    control.get().on_system_colors_changed(e);
   if (can_raise_events()) system_colors_changed(*this, e);
 }
 
