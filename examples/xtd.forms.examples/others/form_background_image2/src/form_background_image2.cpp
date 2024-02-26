@@ -30,7 +30,6 @@ namespace form_background_image2 {
         process::start(as<ustring>(e.link().link_data()));
       };
 
-      
       for (auto [value, name] : enum_object<>::get_entries<xtd::forms::image_layout>())
         image_layout_choice.items().push_back({name, value});
       image_layout_choice.location({10, 10});
