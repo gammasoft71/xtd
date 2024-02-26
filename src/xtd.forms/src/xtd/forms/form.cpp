@@ -59,10 +59,8 @@ form::form() : data_(std::make_shared<data>()) {
   set_state(state::visible, false);
   set_state(state::top_level, true);
   
-  if (!application::style_sheet().is_system_style_sheet()) {
-    back_color(default_back_color());
-    fore_color(default_fore_color());
-  }
+  back_color(application::style_sheet().is_system_style_sheet() ? system_colors::control() : default_back_color());
+  fore_color(application::style_sheet().is_system_style_sheet() ? system_colors::control_text() : default_fore_color());
   font(default_font());
   create_control();
 }
