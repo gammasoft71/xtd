@@ -10,6 +10,7 @@ const enable_debug enable_debug::key_events {0b100};
 const enable_debug enable_debug::mouse_events {0b1000};
 const enable_debug enable_debug::layout {0b10000};
 const enable_debug enable_debug::workaround {0b100000};
+const enable_debug enable_debug::style {0b1000000};
 const enable_debug enable_debug::all {0b1111111111111111111111111111111111111111111111111111111111111111};
 
 enable_debug enable_debug::operator |(const enable_debug& value) const noexcept {

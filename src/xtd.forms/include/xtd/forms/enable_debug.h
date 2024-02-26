@@ -53,6 +53,8 @@ namespace xtd {
       static const enable_debug layout;
       /// @brief Represent workaround debug.
       static const enable_debug workaround;
+      /// @brief Represent style debug.
+      static const enable_debug style;
       /// @brief Represent all debug.
       static const enable_debug all;
       
