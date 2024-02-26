@@ -5,6 +5,16 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
+ustring& __xtd_default_form_name__() noexcept {
+  static auto value = ustring {"9f5767d6-7a21-4ebe-adfe-2427b2024a55"};
+  return value;
+}
+
+ustring& __xtd_default_text_box_name__() noexcept {
+  static auto value = ustring {"d014d407-851c-49c1-a343-3380496a639a"};
+  return value;
+}
+
 struct trace_form_base::data {
   bool need_header = true;
   bool show_date = true;
@@ -63,9 +73,9 @@ trace_form_base& trace_form_base::show_time(bool value) {
 trace_form_base::trace_form_base(const ustring& text) : data_(std::make_shared<data>()) {
   close_box(false);
   minimize_box(false);
-  name("9f5767d6-7a21-4ebe-adfe-2427b2024a55");
+  name(__xtd_default_form_name__());
   show_in_taskbar(false);
-  data_->text.name("d014d407-851c-49c1-a343-3380496a639a");
+  data_->text.name(__xtd_default_text_box_name__());
   
   dock(dock_style::bottom);
   start_position(form_start_position::manual);

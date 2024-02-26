@@ -7,10 +7,16 @@
 #include <xtd/drawing/font_family>
 #include <xtd/date_time>
 
+/// @cond
+xtd::ustring& __xtd_default_form_name__() noexcept;
+xtd::ustring& __xtd_default_text_box_name__() noexcept;
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    
     /// @brief Represents a base form for debug_form and trace_form forms. This class cannot be instantiated.
     /// @par Header
     /// @code #include <xtd/forms/trace_form_base> @endcode

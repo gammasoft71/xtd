@@ -2,6 +2,7 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/exception_box.h"
 #include "../../../include/xtd/forms/message_box.h"
+#include "../../../include/xtd/forms/trace_form_base.h"
 #include <xtd/diagnostics/assert>
 #include <xtd/diagnostics/debugger>
 #include <xtd/diagnostics/process>
@@ -60,7 +61,7 @@ namespace {
   
   bool message_filter_proc(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
     auto current_control = control::from_handle(hwnd);
-    if (current_control.has_value() && (current_control.value().get().name() == "9f5767d6-7a21-4ebe-adfe-2427b2024a55" || current_control.value().get().name() == "d014d407-851c-49c1-a343-3380496a639a")) return true;
+    if (current_control.has_value() && (current_control.value().get().name() == __xtd_default_form_name__() || current_control.value().get().name() == __xtd_default_text_box_name__())) return true;
 
     for (auto message_filter : message_filters)
       if (message_filter.get().pre_filter_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle))) return true;
