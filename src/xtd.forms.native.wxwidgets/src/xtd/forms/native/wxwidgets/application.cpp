@@ -86,7 +86,7 @@ void application::cleanup() {
 
 bool application::dark_mode_enabled() {
   initialize(); // Must be first
-  return drawing::system_colors::window().get_lightness() < 0.5;
+  return drawing::system_colors::window().is_dark();
   /*
    //the following code check if dark_mode enabled if possible.
    #if defined(__WXMSW__)
