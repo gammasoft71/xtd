@@ -1464,13 +1464,11 @@ void control::on_style_sheet_changed(const event_args& e) {
 void control::on_system_colors_changed(const event_args& e) {
   if (data_->back_color /*&& data_->back_color.value().is_system_color()*/) {
     auto backup_color = data_->back_color.value();
-    back_color(backup_color);
     back_color(color::from_name(backup_color.name()));
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::style), ustring::format("(on_system_colors_changed) {} : back_color = {} (0x{:x})", to_string(), back_color(), back_color().to_argb()));
   }
   if (data_->fore_color && data_->fore_color.value().is_system_color()) {
     auto backup_color = data_->fore_color.value();
-    fore_color(backup_color);
     fore_color(color::from_name(backup_color.name()));
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::style), ustring::format("(on_system_colors_changed) {} : fore_color = {} (0x{:x})", to_string(), fore_color(), fore_color().to_argb()));
   }
