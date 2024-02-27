@@ -223,7 +223,6 @@ void init_dark_mode(xtd::int32 enableDarkMode) {
     DWORD major, minor;
     RtlGetNtVersionNumbers(&major, &minor, &g_buildNumber);
     g_buildNumber &= ~0xF0000000;
-    xtd::diagnostics::trace::write_line("build_number= {}", g_buildNumber);
     if (major == 10 && minor == 0 && CheckBuildNumber(g_buildNumber)) {
       HMODULE hUxtheme = LoadLibraryExW(L"uxtheme.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
       if (hUxtheme) {
