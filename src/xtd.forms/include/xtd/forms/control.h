@@ -262,7 +262,7 @@ namespace xtd {
       /// @warning Set the xtd::forms::control::anchor property after setting the xtd::forms::control::location and xtd::forms::control::size.
       /// @par Notes to Inheritors
       /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
-      virtual control& anchor(anchor_styles anchor);
+      virtual control& anchor(xtd::forms::anchor_styles anchor);
       
       /// @brief Gets where this control is scrolled to in scroll_control_into_view(control).
       /// @return A xtd::drawing::point specifying the scroll location. The default is the upper-left corner of the control.
@@ -290,7 +290,7 @@ namespace xtd {
       /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::back_color property in a derived class, use the base class's xtd::forms::control::back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::back_color property; you can override only one if needed.
-      virtual control& back_color(const drawing::color& color);
+      virtual control& back_color(const xtd::drawing::color& color);
       /// @cond
       virtual control& back_color(std::nullptr_t);
       /// @endcond
@@ -332,7 +332,7 @@ namespace xtd {
       /// @param bounds A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
       /// @return Current control.
       /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus. The Set_bounds_core method is called to set the bounds property. The bounds property is not always changed through its set method so you should override the set_bounds_core method to ensure that your code is executed when the bounds property is set.
-      virtual control& bounds(const drawing::rectangle& bounds);
+      virtual control& bounds(const xtd::drawing::rectangle& bounds);
       
       /// @brief Gets a value indicating whether the control can receive focus.
       /// @return true if the control can receive focus; otherwise, false.
@@ -381,7 +381,7 @@ namespace xtd {
       /// @param client_size A size that represents the dimensions of the client area of the control.
       /// @return Current control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus. The set_client_size_core method is called to set the client_size property. The client_size property is not always changed through its set method so you should override the set_client_size_core method to ensure that your code is executed when the client_size property is set.
-      virtual control& client_size(const drawing::size& client_size);
+      virtual control& client_size(const xtd::drawing::size& client_size);
       
       /// @brief Gets the name of the company or creator of the application containing the control.
       /// @return The company name or creator of the application containing the control.
@@ -410,7 +410,7 @@ namespace xtd {
       /// @Remarks The control appearance determine how the control is drawed :
       /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
       /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
-      virtual control& control_appearance(forms::control_appearance value);
+      virtual control& control_appearance(xtd::forms::control_appearance value);
       
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
@@ -438,7 +438,7 @@ namespace xtd {
       /// @brief Sets the cursor that is displayed when the mouse pointer is over the control.
       /// @param cursor A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
       /// @return Current control.
-      virtual control& cursor(const forms::cursor& cursor);
+      virtual control& cursor(const xtd::forms::cursor& cursor);
       /// @cond
       virtual control& cursor(std::nullptr_t);
       /// @endcond
@@ -465,7 +465,7 @@ namespace xtd {
       /// @note The xtd::forms::control::anchor and xtd::forms::control::dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::dock property in a derived class, use the base class's xtd::forms::control::dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the xtd::forms::control::dock property; you can override only one if needed.
-      virtual control& dock(dock_style dock);
+      virtual control& dock(xtd::forms::dock_style dock);
       
       /// @brief Gets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
       /// @return true if the surface of the control should be drawn using double buffering; otherwise, false.
@@ -493,7 +493,7 @@ namespace xtd {
       /// @brief Sets the font of the text displayed by the control.
       /// @param font The font to apply to the text displayed by the control. The default is the value of the default_font property.
       /// @return Current control.
-      virtual control& font(const drawing::font& font);
+      virtual control& font(const xtd::drawing::font& font);
       /// @cond
       virtual control& font(std::nullptr_t);
       /// @endcond
@@ -504,7 +504,7 @@ namespace xtd {
       /// @brief Sets the foreground color of the control.
       /// @param color The foreground color of the control. The default is the value of the default_fore_color property.
       /// @return Current control.
-      virtual control& fore_color(const drawing::color& color);
+      virtual control& fore_color(const xtd::drawing::color& color);
       /// @cond
       virtual control& fore_color(std::nullptr_t);
       /// @endcond
@@ -545,7 +545,7 @@ namespace xtd {
       /// @brief Sets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
       /// @param location The point that represents the upper-left corner of the control relative to the upper-left corner of its container.
       /// @return Current control.
-      virtual control& location(const drawing::point& location);
+      virtual control& location(const xtd::drawing::point& location);
       
       /// @brief Gets the space between controls.
       /// @return A padding representing the space between controls.
@@ -553,7 +553,7 @@ namespace xtd {
       /// @brief Sets the space between controls.
       /// @param margin A padding representing the space between controls.
       /// @return Current control.
-      virtual control& margin(const forms::padding& margin);
+      virtual control& margin(const xtd::forms::padding& margin);
       
       /// @brief Gets the client size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
@@ -566,7 +566,7 @@ namespace xtd {
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual control& maximum_client_size(const drawing::size& size);
+      virtual control& maximum_client_size(const xtd::drawing::size& size);
       
       /// @brief Gets the size that is the upper limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
@@ -579,7 +579,7 @@ namespace xtd {
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual control& maximum_size(const drawing::size& size);
+      virtual control& maximum_size(const xtd::drawing::size& size);
       
       /// @brief Gets the client size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
@@ -592,7 +592,7 @@ namespace xtd {
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual control& minimum_client_size(const drawing::size& size);
+      virtual control& minimum_client_size(const xtd::drawing::size& size);
       
       /// @brief Gets the size that is the lower limit that xtd::forms::control::get_preferred_size can specify.
       /// @return An ordered pair of type xtd::drawing::size representing the width and height of a rectangle.
@@ -605,7 +605,7 @@ namespace xtd {
       /// @par Examples
       /// The following code shows how to set minimum size, set maximum size, move and resize a form.
       /// @include form_resize.cpp
-      virtual control& minimum_size(const drawing::size& size);
+      virtual control& minimum_size(const xtd::drawing::size& size);
       
       /// @brief Gets a value indicating which of the modifier keys (SHIFT, CTRL, and ALT) is in a pressed state.
       /// @return A bitwise combination of the keys values. The default is none.
@@ -640,7 +640,7 @@ namespace xtd {
       /// @brief Sets padding within the control.
       /// @param padding A padding representing the control's internal spacing characteristics.
       /// @return Current control.
-      virtual control& padding(const forms::padding& padding);
+      virtual control& padding(const xtd::forms::padding& padding);
       
       /// @brief Gets the parent container of the control.
       /// @return A control that represents the parent or container control of the control.
