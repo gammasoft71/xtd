@@ -40,7 +40,7 @@ namespace {
     }
     
     const string title() const {return title_;}
-    credits_item_panel& title(const xtd::ustring& title) {
+    credits_item_panel& title(const ustring& title) {
       if (title_ == title) return *this;
       title_ = title;
       title_label_.text(title);
@@ -89,7 +89,7 @@ namespace {
       picture_box_icon_.dock(dock_style::top);
       
       label_name_.text_align(content_alignment::middle_center);
-      label_name_.font({label_name_.font(), label_name_.font().size() + 4, xtd::drawing::font_style::bold});
+      label_name_.font({label_name_.font(), label_name_.font().size() + 4, font_style::bold});
       label_name_.padding(5);
       label_name_.dock(dock_style::top);
       
@@ -113,7 +113,7 @@ namespace {
       label_version_.dock(dock_style::top);
       
       label_description_.text_align(content_alignment::middle_center);
-      label_description_.font({label_description_.font(), label_description_.font().size() + 2, xtd::drawing::font_style::bold});
+      label_description_.font({label_description_.font(), label_description_.font().size() + 2, font_style::bold});
       label_description_.padding(5);
       label_description_.dock(dock_style::top);
       
@@ -132,7 +132,7 @@ namespace {
     }
     
     using form::show;
-    void show(const iwin32_window* owner, const xtd::drawing::image& icon, const xtd::ustring& name, const xtd::ustring& description, const xtd::ustring& version, const xtd::ustring& long_version, const xtd::ustring& copyright, const xtd::ustring& website, const xtd::ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const xtd::ustring& license, const about_dialog::user_tab_page_collection& user_pages) {
+    void show(const iwin32_window* owner, const image& icon, const ustring& name, const ustring& description, const ustring& version, const ustring& long_version, const ustring& copyright, const ustring& website, const ustring& website_label, const std::vector<ustring>& authors, const std::vector<ustring>& artists, const std::vector<ustring>& documenters, const std::vector<ustring>& translators, const ustring& license, const about_dialog::user_tab_page_collection& user_pages) {
       if (visible()) {
         activate();
         return;
@@ -141,10 +141,10 @@ namespace {
       // if (show_modal_) start_position(form_start_position::center_parent);
       auto has_credit = !(authors.empty() && documenters.empty() && translators.empty() && artists.empty());
       auto has_license = !license.empty();
-      if (icon != xtd::drawing::bitmap::empty)
-        picture_box_icon_.image(xtd::drawing::bitmap(icon, {64, 64}));
+      if (icon != bitmap::empty)
+        picture_box_icon_.image(bitmap {icon, {64, 64}});
       else
-        picture_box_icon_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
+        picture_box_icon_.image(system_images::from_name("xtd-forms", drawing::size {64, 64}));
       label_name_.height(static_cast<int32>(30 * name.split({'\n'}).size()));
       label_name_.text(name);
       if (has_credit || has_license || user_pages.size()) {
@@ -161,14 +161,14 @@ namespace {
       }
       
       if (!version.empty() && !long_version.empty())
-        label_version_.text(xtd::ustring::format("{} ({})", long_version, version));
+        label_version_.text(ustring::format("{} ({})", long_version, version));
       else if (!long_version.empty())
-        label_version_.text(xtd::ustring::format("{}", long_version));
+        label_version_.text(ustring::format("{}", long_version));
       else if (!version.empty())
-        label_version_.text(xtd::ustring::format("({})", version));
+        label_version_.text(ustring::format("({})", version));
         
       label_description_.height(static_cast<int32>(23 * description.split({'\n'}).size()));
-      label_description_.text(xtd::ustring::format("{}", description));
+      label_description_.text(ustring::format("{}", description));
       
       link_label_website_.height(static_cast<int32>(23 * (!website_label.empty() ? website_label : website).split({'\n'}).size()));
       link_label_website_.text(!website_label.empty() ? website_label : website);
@@ -178,7 +178,7 @@ namespace {
       };
       
       label_copyright_.height(static_cast<int32>(23 * copyright.split({'\n'}).size()));
-      label_copyright_.text(xtd::ustring::format("{}", ustring(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
+      label_copyright_.text(ustring::format("{}", ustring(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
       
       if (has_credit) {
         tab_control_about_.tab_pages().push_back(tab_page_credits_);
@@ -254,22 +254,22 @@ namespace {
 
 struct about_dialog::data {
   shared_ptr<about_dialog_standard> dialog;
-  xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::standard;
+  forms::dialog_appearance dialog_appearance = forms::dialog_appearance::standard;
   intptr handle = 0;
-  xtd::drawing::image icon;
-  xtd::ustring name;
-  xtd::ustring version;
-  xtd::ustring long_version;
-  xtd::ustring description;
-  xtd::ustring copyright;
-  xtd::ustring website;
-  xtd::ustring website_label;
+  image icon;
+  ustring name;
+  ustring version;
+  ustring long_version;
+  ustring description;
+  ustring copyright;
+  ustring website;
+  ustring website_label;
   author_collection authors;
   documenter_collection documenters;
   user_tab_page_collection user_tab_pages;
   translator_collection translators;
   artist_collection artists;
-  xtd::ustring license;
+  ustring license;
 };
 
 about_dialog::about_dialog() : data_(std::make_shared<data>()) {
@@ -306,20 +306,20 @@ about_dialog& about_dialog::authors(const author_collection& authors) {
   return *this;
 }
 
-xtd::ustring about_dialog::copyright() const noexcept {
+ustring about_dialog::copyright() const noexcept {
   return data_->copyright;
 }
 
-about_dialog& about_dialog::copyright(const xtd::ustring& copyright) {
+about_dialog& about_dialog::copyright(const ustring& copyright) {
   data_->copyright = copyright;
   return *this;
 }
 
-xtd::ustring about_dialog::description() const noexcept {
+ustring about_dialog::description() const noexcept {
   return data_->description;
 }
 
-about_dialog& about_dialog::description(const xtd::ustring& description) {
+about_dialog& about_dialog::description(const ustring& description) {
   data_->description = description;
   return *this;
 }
@@ -337,57 +337,57 @@ about_dialog& about_dialog::documenters(const documenter_collection& documenters
   return *this;
 }
 
-xtd::forms::dialog_appearance about_dialog::dialog_appearance() const noexcept {
+forms::dialog_appearance about_dialog::dialog_appearance() const noexcept {
   return data_->dialog_appearance;
 }
 
-about_dialog& about_dialog::dialog_appearance(xtd::forms::dialog_appearance dialog_appearance) {
+about_dialog& about_dialog::dialog_appearance(forms::dialog_appearance dialog_appearance) {
   data_->dialog_appearance = dialog_appearance;
   return *this;
 }
 
-xtd::drawing::icon about_dialog::icon() const noexcept {
-  return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon));
+drawing::icon about_dialog::icon() const noexcept {
+  return drawing::icon::from_bitmap(bitmap {data_->icon});
 }
 
-about_dialog& about_dialog::icon(const xtd::drawing::icon& icon) {
+about_dialog& about_dialog::icon(const drawing::icon& icon) {
   data_->icon = icon.to_bitmap();
   return *this;
 }
 
-about_dialog& about_dialog::icon(const xtd::drawing::image& image) {
+about_dialog& about_dialog::icon(const drawing::image& image) {
   data_->icon = image;
   return *this;
 }
 
-about_dialog& about_dialog::icon(const xtd::drawing::bitmap& bitmap) {
+about_dialog& about_dialog::icon(const bitmap& bitmap) {
   data_->icon = bitmap;
   return *this;
 }
 
-xtd::ustring about_dialog::license() const noexcept {
+ustring about_dialog::license() const noexcept {
   return data_->license;
 }
 
-about_dialog& about_dialog::license(const xtd::ustring& license) {
+about_dialog& about_dialog::license(const ustring& license) {
   data_->license = license;
   return *this;
 }
 
-xtd::ustring about_dialog::long_version() const noexcept {
+ustring about_dialog::long_version() const noexcept {
   return data_->long_version;
 }
 
-about_dialog& about_dialog::long_version(const xtd::ustring& long_version) {
+about_dialog& about_dialog::long_version(const ustring& long_version) {
   data_->long_version = long_version;
   return *this;
 }
 
-xtd::ustring about_dialog::name() const noexcept {
+ustring about_dialog::name() const noexcept {
   return data_->name;
 }
 
-about_dialog& about_dialog::name(const xtd::ustring& name) {
+about_dialog& about_dialog::name(const ustring& name) {
   data_->name = name;
   return *this;
 }
@@ -413,36 +413,36 @@ about_dialog& about_dialog::translators(const translator_collection& translators
   return *this;
 }
 
-xtd::ustring about_dialog::version() const noexcept {
+ustring about_dialog::version() const noexcept {
   return data_->version;
 }
 
-about_dialog& about_dialog::version(const xtd::ustring& version) {
+about_dialog& about_dialog::version(const ustring& version) {
   data_->version = version;
   return *this;
 }
 
-xtd::ustring about_dialog::website() const noexcept {
+ustring about_dialog::website() const noexcept {
   return data_->website;
 }
 
-about_dialog& about_dialog::website(const xtd::ustring& website) {
+about_dialog& about_dialog::website(const ustring& website) {
   data_->website = website;
   return *this;
 }
 
-xtd::ustring about_dialog::website_label() const noexcept {
+ustring about_dialog::website_label() const noexcept {
   return data_->website_label;
 }
 
-about_dialog& about_dialog::website_label(const xtd::ustring& website_label) {
+about_dialog& about_dialog::website_label(const ustring& website_label) {
   data_->website_label = website_label;
   return *this;
 }
 
 about_dialog about_dialog::from_executing_assembly_informations() {
   auto result = about_dialog {};
-  auto assembly = xtd::reflection::assembly::get_executing_assembly();
+  auto assembly = assembly::get_executing_assembly();
   result.copyright(assembly.copyright());
   result.description(assembly.description());
   result.long_version(assembly.version());
@@ -452,7 +452,7 @@ about_dialog about_dialog::from_executing_assembly_informations() {
 
 void about_dialog::reset() noexcept {
   data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
-  data_->icon = xtd::drawing::image::empty;
+  data_->icon = image::empty;
   data_->artists.clear();
   data_->authors.clear();
   data_->copyright = "";
@@ -468,7 +468,7 @@ void about_dialog::reset() noexcept {
 }
 
 void about_dialog::show() {
-  if (data_->dialog_appearance == xtd::forms::dialog_appearance::system) native::about_dialog::show(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
+  if (data_->dialog_appearance == dialog_appearance::system) native::about_dialog::show(0, icon::from_bitmap(bitmap {data_->icon}), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
   else {
     if (!data_->dialog) data_->dialog = make_shared<about_dialog_standard>();
     data_->dialog->show(nullptr, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license, data_->user_tab_pages);
@@ -476,7 +476,7 @@ void about_dialog::show() {
 }
 
 void about_dialog::show(const iwin32_window& owner) {
-  if (data_->dialog_appearance == xtd::forms::dialog_appearance::system) native::about_dialog::show(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(data_->icon)), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
+  if (data_->dialog_appearance == dialog_appearance::system) native::about_dialog::show(owner.handle(), icon::from_bitmap(bitmap {data_->icon}), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
   else {
     if (!data_->dialog) data_->dialog = make_shared<about_dialog_standard>();
     data_->dialog->show(&owner, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license, data_->user_tab_pages);
