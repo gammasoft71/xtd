@@ -103,7 +103,7 @@ namespace xtd {
       /// @return The path and executable name for the executable file that started the application.<br><br>
       static xtd::ustring executable_path() noexcept;
       
-      /// @brief Gets the optional main form.
+      /// @brief Gets the optional main form owned by the application.
       /// @return The optional main form.
       /// @remarks The return value doesn't necessarily contain the main form, as an application doesn't always have a main form. In fact, the xtd::forms::application method can be called with the xtd::forms::application_context class, which doesn't contain a main form.
       static std::optional<form_ref> main_form();
