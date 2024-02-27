@@ -41,15 +41,15 @@ namespace xtd {
       /// @name Alias
       
       /// @{
-      /// @brief Represents a author collection.
+      /// @brief Represents an author collection.
       using author_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
-      /// @brief Represents a artist collection.
+      /// @brief Represents an artist collection.
       using artist_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       /// @brief Represents a documenter collection.
       using documenter_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       /// @brief Represents a translator collection.
       using translator_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
-      
+      /// @brief Represents user tab page collection.
       using user_tab_page_collection = tab_control::tab_page_collection;
       /// @}
       
@@ -108,11 +108,11 @@ namespace xtd {
       /// @brief Gets the documentation writers array.
       /// @return The documentation writers array.
       const documenter_collection& documenters() const noexcept;
-      /// @brief Gets the artists array.
-      /// @return The artists array.
+      /// @brief Gets the documentation writers array.
+      /// @return The documentation writers array.
       documenter_collection& documenters() noexcept;
-      /// @brief Sets the documenters array.
-      /// @param documenters The documenters array.
+      /// @brief Sets the documentation writers array.
+      /// @param documenters The documentation writers array.
       /// @return Current about_dialog instance.
       about_dialog& documenters(const documenter_collection& documenters);
       
@@ -212,8 +212,8 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Create a new xtd::forms::about_dialog from executing xtd::reflecction::assembly informations.
-      /// @return New xtd::forms::about_dialog with executing xtd::reflecction::assembly informations.
+      /// @brief Create a new xtd::forms::about_dialog from executing xtd::reflection::assembly informations.
+      /// @return New xtd::forms::about_dialog with executing xtd::reflection::assembly informations.
       static about_dialog from_executing_assembly_informations();
       
       /// @brief Resets all properties to empty string.
@@ -221,7 +221,8 @@ namespace xtd {
       
       /// @brief Runs about dialog box.
       void show();
-      /// @brief Runs about dialog box.
+      /// @brief Runs about dialog box with specified owner.
+      /// @param owner The owner of the about box dialog.
       void show(const iwin32_window& owner);
       /// @}
       
