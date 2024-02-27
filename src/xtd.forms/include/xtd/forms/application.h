@@ -59,7 +59,7 @@ namespace xtd {
       
       /// @brief Gets the application context associate to the application.
       /// @return An application context.
-      /// @remarks The application context can be created by the user and sent to the application when the xtd::application::run method is called.
+      /// @remarks The application context can be created by the user and sent to the application when the xtd::forms::application::run method is called.
       static xtd::forms::application_context& application_context();
       
       /// @brief Gets the path for the application data that is shared among all users.
