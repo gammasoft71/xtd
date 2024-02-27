@@ -73,6 +73,8 @@ namespace {
   }
 }
 
+application_context application::context_run_form_;
+application_context* application::context_ = nullptr;
 #if defined(__XTD_USE_SYSTEM_CONTROLS__)
 bool application::use_system_controls_ = true;
 #else
@@ -145,6 +147,14 @@ xtd::ustring application::executable_path() noexcept {
   return environment::get_command_line_args()[0];
 }
 
+std::optional<form_ref> application::main_form() {
+  if (context_ && context_->main_form().has_value()) 
+    return context_->main_form();
+  if (open_forms().size()) 
+    return open_forms()[0];
+  return {};
+}
+
 bool application::message_loop() noexcept {
   return  message_loop_;
 }
@@ -152,7 +162,7 @@ bool application::message_loop() noexcept {
 const form_collection application::open_forms() noexcept {
   auto forms = form_collection {};
   for (auto control : control::top_level_controls_)
-    forms.push_back(static_cast<form&>(control.get()));
+    forms.push_back(dynamic_cast<form&>(control.get()));
   return forms;
 
   /*
@@ -339,6 +349,7 @@ void application::run(application_context& context) {
   if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running"_t, csf_);
   if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) throw invalid_operation_exception {xtd::ustring::format("Cross-thread operation not valid: {}"_t, typeof_<application>().full_name()), csf_};
 
+  context_ = &context;
   context.thread_exit += application::on_app_thread_exit;
   native::application::register_message_filter(delegate<bool(intptr, int32, intptr, intptr, intptr)>(message_filter_proc));
   native::application::register_thread_exception(delegate<bool()>(on_app_thread_exception));
@@ -352,8 +363,9 @@ void application::run(application_context& context) {
 }
 
 void application::run(const form& form) {
-  auto context = application_context {form};
-  application::run(context);
+  context_run_form_.main_form(form);
+  application::run(context_run_form_);
+  context_run_form_.main_form(nullptr);
 }
 
 bool application::close_open_forms() {
@@ -377,9 +389,9 @@ bool application::on_app_thread_exception() {
   try {
     throw;
   } catch (const std::exception& e) {
-    return (open_forms().size() > 0 ? exception_box::show(open_forms()[0].get(), e, product_name()) : exception_box::show(e, product_name())) == dialog_result::ok;
+    return (main_form().has_value() ? exception_box::show(main_form().value().get(), e, product_name()) : exception_box::show(e, product_name())) == dialog_result::ok;
   } catch (...) {
-    return (open_forms().size() > 0 ? exception_box::show(open_forms()[0].get(), product_name()) : exception_box::show(product_name())) == dialog_result::ok;
+    return (main_form().has_value() ? exception_box::show(main_form().value().get(), product_name()) : exception_box::show(product_name())) == dialog_result::ok;
   }
 }
 
