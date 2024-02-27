@@ -35,7 +35,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing drawing
-      /// @remarks In GDI+ you can store an affine transformation in a xtd::drawing::drawing_2d::matrix object. Because the third column of a matrix that represents an affine transformation is always (0, 0, 1), you specify only the six numbers in the first two columns when you construct a xtd::drawing::drawing_2d::matrix object. The statement xtd::drawing::drawing_2d::matrix myMatrix = new xtd::drawing::drawing_2d::matrix(0, 1, -1, 0, 3, 4) constructs the matrix shown in the following figure.
+      /// @remarks In GDI+ you can store an affine transformation in a xtd::drawing::drawing_2d::matrix object. Because the third column of a matrix that represents an affine transformation is always (0, 0, 1), you specify only the six numbers in the first two columns when you construct a xtd::drawing::drawing_2d::matrix object. The statement xtd::drawing::drawing_2d::matrix myMatrix = xtd::drawing::drawing_2d::matrix {0, 1, -1, 0, 3, 4} constructs the matrix shown in the following figure.
       /// @image html matrix.png
       /// @par Composite Transformations
       /// A composite transformation is a sequence of transformations, one followed by the other. Consider the matrices and transformations in the following list:
