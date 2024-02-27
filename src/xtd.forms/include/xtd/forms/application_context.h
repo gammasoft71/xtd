@@ -37,6 +37,8 @@ namespace xtd {
       /// @}
       
       /// @cond
+      application_context(application_context&&) = default;
+      application_context(const application_context&) = delete;
       ~application_context();
       /// @endcond
       

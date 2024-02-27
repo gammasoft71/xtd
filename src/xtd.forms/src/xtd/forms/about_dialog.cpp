@@ -224,7 +224,7 @@ namespace {
       /** @todo Activate the following commment if about dialog must be modal on Windows.
       if (show_modal_) {
         auto o = owner;
-        if (!o && application::open_forms().size()) o = &application::open_forms()[0].get();
+        if (!o && application::main_form().has_value()) o = &application::main_form().value().get();
         if (o) show_dialog(*o);
         else  show_dialog();
       } else*/ visible(true);

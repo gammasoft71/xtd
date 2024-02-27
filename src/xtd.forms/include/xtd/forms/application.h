@@ -98,6 +98,11 @@ namespace xtd {
       /// @return The path and executable name for the executable file that started the application.<br><br>
       static xtd::ustring executable_path() noexcept;
       
+      /// @brief Gets the optional main form.
+      /// @return The optional main form.
+      /// @remarks The return value doesn't necessarily contain the main form, as an application doesn't always have a main form. In fact, the xtd::forms::application method can be called with the xtd::forms::application_context class, which doesn't contain a main form.
+      static std::optional<form_ref> main_form();
+
       /// @brief Gets a value indicating whether a message loop exists on this thread.
       /// @return true if a message loop exists; otherwise, false.
       static bool message_loop() noexcept;
@@ -404,6 +409,8 @@ namespace xtd {
       static void wm_app_idle(message& message);
       static void wm_quit(message& message);
       
+      static application_context context_run_form_;
+      static application_context* context_;
       static bool use_visual_styles_;
       static bool use_system_controls_;
       static bool use_wait_cursor_;
