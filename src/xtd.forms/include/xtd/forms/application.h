@@ -57,6 +57,11 @@ namespace xtd {
       /// @remarks This method returns false if it is called from a control being hosted within a Web browser. Thus, the control cannot quit the application.
       static bool allow_quit() noexcept;
       
+      /// @brief Gets the application context associate to the application.
+      /// @return An application context.
+      /// @remarks The application context can be created by the user and sent to the application when the xtd::application::run method is called.
+      static xtd::forms::application_context& application_context();
+      
       /// @brief Gets the path for the application data that is shared among all users.
       /// @return The path for the application data that is shared among all users.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
@@ -360,7 +365,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of application run method.
       /// @include application_context.cpp
-      static void run(application_context& context);
+      static void run(xtd::forms::application_context& context);
       
       /// @brief Begins running a standard application message loop on the current thread, and makes the specified form visible.
       /// @param main_form A form that represents the form to make visible.
@@ -409,8 +414,8 @@ namespace xtd {
       static void wm_app_idle(message& message);
       static void wm_quit(message& message);
       
-      static application_context context_run_form_;
-      static application_context* context_;
+      static xtd::forms::application_context internal_context_;
+      static xtd::forms::application_context* context_;
       static bool use_visual_styles_;
       static bool use_system_controls_;
       static bool use_wait_cursor_;
