@@ -14,7 +14,6 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/about_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/reflection/assembly>
 #include <xtd/chrono>
 #include <xtd/literals>
 #include <memory>
@@ -440,14 +439,17 @@ about_dialog& about_dialog::website_label(const ustring& website_label) {
   return *this;
 }
 
-about_dialog about_dialog::from_executing_assembly_informations() {
+about_dialog about_dialog::from_assembly(const assembly& assembly) {
   auto result = about_dialog {};
-  auto assembly = assembly::get_executing_assembly();
   result.copyright(assembly.copyright());
   result.description(assembly.description());
   result.long_version(assembly.version());
   result.name(assembly.title().empty() ? assembly.name() : assembly.title());
   return result;
+}
+
+about_dialog about_dialog::from_executing_assembly_informations() {
+  return from_assembly(assembly::get_executing_assembly());
 }
 
 void about_dialog::reset() noexcept {
