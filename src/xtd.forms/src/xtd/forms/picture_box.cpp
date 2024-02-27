@@ -109,12 +109,112 @@ picture_box& picture_box::size_mode(picture_box_size_mode size_mode) {
   return *this;
 }
 
+picture_box picture_box::create() {
+  return picture_box {};
+}
+
+picture_box picture_box::create(const drawing::point& location) {
+  auto result = picture_box {};
+  result.location(location);
+  return result;
+}
+
+picture_box picture_box::create(const drawing::point& location, const drawing::size& size) {
+  auto result = picture_box {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+picture_box picture_box::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = picture_box {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+picture_box picture_box::create(const xtd::drawing::image& image) {
+  auto result = picture_box {};
+  result.image(image);
+  return result;
+}
+
+picture_box picture_box::create(const xtd::drawing::image& image, const drawing::point& location) {
+  auto result = picture_box {};
+  result.image(image);
+  result.location(location);
+  return result;
+}
+
+picture_box picture_box::create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size) {
+  auto result = picture_box {};
+  result.image(image);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 picture_box picture_box::create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = picture_box {};
   result.image(image);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+picture_box picture_box::create(const control& parent) {
+  auto result = picture_box {};
+  result.parent(parent);
+  return result;
+}
+
+picture_box picture_box::create(const control& parent, const drawing::point& location) {
+  auto result = picture_box {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+picture_box picture_box::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = picture_box {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+picture_box picture_box::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = picture_box {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+picture_box picture_box::create(const control& parent, const xtd::drawing::image& image) {
+  auto result = picture_box {};
+  result.parent(parent);
+  result.image(image);
+  return result;
+}
+
+picture_box picture_box::create(const control& parent, const xtd::drawing::image& image, const drawing::point& location) {
+  auto result = picture_box {};
+  result.parent(parent);
+  result.image(image);
+  result.location(location);
+  return result;
+}
+
+picture_box picture_box::create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size) {
+  auto result = picture_box {};
+  result.parent(parent);
+  result.image(image);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -122,8 +222,8 @@ picture_box picture_box::create(const control& parent, const xtd::drawing::image
   auto result = picture_box {};
   result.parent(parent);
   result.image(image);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }

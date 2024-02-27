@@ -93,21 +93,94 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create();
+      /// @brief A factory to create an xtd::forms::picture_box with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::picture_box with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create( const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::picture_box with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @param name The name of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::picture_box with specified image.
+      /// @param image The image that is displayed by picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const xtd::drawing::image& image);
+      /// @brief A factory to create an xtd::forms::picture_box with specified image, and location.
+      /// @param image The image that is displayed by picture_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const xtd::drawing::image& image, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::picture_box with specified image, location, and size.
+      /// @param image The image that is displayed by picture_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::picture_box with specified image, location, size, and name.
       /// @param image The image that is displayed by picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const xtd::drawing::image& image, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static picture_box create(const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const control& parent);
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const control& parent, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::picture_box with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @param name The name of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, and image.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param image The image that is displayed by picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const control& parent, const xtd::drawing::image& image);
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, image, and location.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param image The image that is displayed by picture_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const control& parent, const xtd::drawing::image& image, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, image, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::picture_box.
+      /// @param image The image that is displayed by picture_box.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
+      /// @return New xtd::forms::picture_box created.
+      static picture_box create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::picture_box with specified parent, image, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::picture_box.
       /// @param image The image that is displayed by picture_box.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @param name The name of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create(const control& parent, const xtd::drawing::image& image, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static picture_box create(const control& parent, const xtd::drawing::image& image, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
     protected:
