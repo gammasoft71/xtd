@@ -92,15 +92,142 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief A factory to create an xtd::forms::radio_button with specified text, three_state, check_state, location, size, and name.
+      /// @brief A factory to create an xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create();
+      /// @brief A factory to create an xtd::forms::radio_button with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::radio_button with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::radio_button with specified location, size, and name.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @param name The name of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::radio_button with specified text.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::radio_button with specified text, and location.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const xtd::ustring& text, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::radio_button with specified text, location, and size.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::radio_button with specified text, location, size, and name.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @param name The name of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::radio_button with specified text, and checked.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param checked true if the check box is checked; otherwise, false.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const xtd::ustring& text, bool checked);
+      /// @brief A factory to create an xtd::forms::radio_button with specified text, checked, and location.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const xtd::ustring& text, bool checked, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::radio_button with specified text, checked, location, and size.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create an xtd::forms::radio_button with specified text, checked, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::radio_button.
       /// @param checked true if the check box is checked; otherwise, false.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
       /// @param name The name of the xtd::forms::radio_button.
       /// @return New xtd::forms::radio_button created.
-      static radio_button create(const xtd::ustring& text, bool checked = false, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, three_state, check_state, location, size, and name.
+      static radio_button create(const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @param name The name of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, and text.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const xtd::ustring& text);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, and location.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const xtd::ustring& text, const drawing::point& location);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, location, size, and name.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @param name The name of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, and checked.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param checked true if the check box is checked; otherwise, false.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const xtd::ustring& text, bool checked);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, checked, and location.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, checked, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::radio_button.
+      /// @param text A string that represent text of the xtd::forms::radio_button.
+      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
+      /// @return New xtd::forms::radio_button created.
+      static radio_button create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size);
+      /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, checked, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::radio_button.
       /// @param text A string that represent text of the xtd::forms::radio_button.
       /// @param checked true if the check box is checked; otherwise, false.
@@ -108,8 +235,8 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
       /// @param name The name of the xtd::forms::radio_button.
       /// @return New xtd::forms::radio_button created.
-      static radio_button create(const control& parent, const xtd::ustring& text, bool checked = false, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      
+      static radio_button create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+
       /// @brief Generates a click event for the control, simulating a click by a user.
       void perform_click();
       

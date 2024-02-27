@@ -93,13 +93,183 @@ radio_button& radio_button::check_align(content_alignment check_align) {
   return *this;
 }
 
+radio_button radio_button::create() {
+  return radio_button {};
+}
+
+radio_button radio_button::create(const drawing::point& location) {
+  auto result = radio_button {};
+  result.location(location);
+  return result;
+}
+
+radio_button radio_button::create(const drawing::point& location, const drawing::size& size) {
+  auto result = radio_button {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+radio_button radio_button::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = radio_button {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+radio_button radio_button::create(const xtd::ustring& text) {
+  auto result = radio_button {};
+  result.text(text);
+  return result;
+}
+
+radio_button radio_button::create(const xtd::ustring& text, const drawing::point& location) {
+  auto result = radio_button {};
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+radio_button radio_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = radio_button {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+radio_button radio_button::create(const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = radio_button {};
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+radio_button radio_button::create(const xtd::ustring& text, bool checked) {
+  auto result = radio_button {};
+  result.text(text);
+  result.checked(checked);
+  return result;
+}
+
+radio_button radio_button::create(const xtd::ustring& text, bool checked, const drawing::point& location) {
+  auto result = radio_button {};
+  result.text(text);
+  result.checked(checked);
+  result.location(location);
+  return result;
+}
+
+radio_button radio_button::create(const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size) {
+  auto result = radio_button {};
+  result.text(text);
+  result.checked(checked);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 radio_button radio_button::create(const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = radio_button {};
   result.text(text);
   result.checked(checked);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent) {
+  auto result = radio_button {};
+  result.parent(parent);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const drawing::point& location) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const xtd::ustring& text) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.text(text);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.text(text);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const xtd::ustring& text, bool checked) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.text(text);
+  result.checked(checked);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.text(text);
+  result.checked(checked);
+  result.location(location);
+  return result;
+}
+
+radio_button radio_button::create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size) {
+  auto result = radio_button {};
+  result.parent(parent);
+  result.text(text);
+  result.checked(checked);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -108,8 +278,8 @@ radio_button radio_button::create(const control& parent, const xtd::ustring& tex
   result.parent(parent);
   result.text(text);
   result.checked(checked);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
