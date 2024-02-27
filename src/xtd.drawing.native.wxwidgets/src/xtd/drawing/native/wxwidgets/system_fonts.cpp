@@ -99,8 +99,7 @@ intptr system_fonts::status_font() {
 intptr system_fonts::tool_font() {
   toolkit::initialize(); // Must be first
   #if defined(__WXOSX__)
-  auto font = new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_SMALL);
-  return reinterpret_cast<intptr>(font);
+  return reinterpret_cast<intptr>(new wxFont(wxOSXSystemFont::wxOSX_SYSTEM_FONT_SMALL));
   #else
   return reinterpret_cast<intptr>(new wxFont(GetDefaultGuiFont()));
   #endif
