@@ -81,19 +81,57 @@ split_container& split_container::splitter_width(int32 splitter_width) {
   return *this;
 }
 
+split_container split_container::create() {
+  return split_container {};
+}
+
+split_container split_container::create(const drawing::point& location) {
+  auto result = split_container {};
+  result.location(location);
+  return result;
+}
+
+split_container split_container::create(const drawing::point& location, const drawing::size& size) {
+  auto result = split_container {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 split_container split_container::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = split_container {};
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+split_container split_container::create(const control& parent) {
+  auto result = split_container {};
+  result.parent(parent);
+  return result;
+}
+
+split_container split_container::create(const control& parent, const drawing::point& location) {
+  auto result = split_container {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+split_container split_container::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = split_container {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
 split_container split_container::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = split_container {};
   result.parent(parent);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }

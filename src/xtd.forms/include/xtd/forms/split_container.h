@@ -88,19 +88,46 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::split_container.
+      /// @return New xtd::forms::split_container created.
+      static split_container create();
+      /// @brief A factory to create an xtd::forms::split_container with specified location.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
+      /// @return New xtd::forms::split_container created.
+      static split_container create(const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::split_container with specified location, and size.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
+      /// @return New xtd::forms::split_container created.
+      static split_container create(const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::split_container with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
       /// @param name The name of the xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static split_container create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::split_container with specified parent.
+      /// @param parent The parent that contains the new created xtd::forms::split_container.
+      /// @return New xtd::forms::split_container created.
+      static split_container create(const control& parent);
+      /// @brief A factory to create an xtd::forms::split_container with specified parent, and location.
+      /// @param parent The parent that contains the new created xtd::forms::split_container.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
+      /// @return New xtd::forms::split_container created.
+      static split_container create(const control& parent, const drawing::point& location);
+      /// @brief A factory to create an xtd::forms::split_container with specified parent, location, and size.
+      /// @param parent The parent that contains the new created xtd::forms::split_container.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
+      /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
+      /// @return New xtd::forms::split_container created.
+      static split_container create(const control& parent, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::split_container with specified parent, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::split_container.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::split_container.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::split_container.
       /// @param name The name of the xtd::forms::split_container.
       /// @return New xtd::forms::split_container created.
-      static split_container create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static split_container create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
     protected:
