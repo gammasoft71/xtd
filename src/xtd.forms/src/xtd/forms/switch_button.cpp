@@ -97,12 +97,112 @@ switch_button& switch_button::show_text(bool value) {
   return *this;
 }
 
+switch_button switch_button::create() {
+  return switch_button {};
+}
+
+switch_button switch_button::create(const drawing::point& location) {
+  auto result = switch_button {};
+  result.location(location);
+  return result;
+}
+
+switch_button switch_button::create(const drawing::point& location, const drawing::size& size) {
+  auto result = switch_button {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+switch_button switch_button::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = switch_button {};
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+switch_button switch_button::create(bool checked) {
+  auto result = switch_button {};
+  result.checked(checked);
+  return result;
+}
+
+switch_button switch_button::create(bool checked, const drawing::point& location) {
+  auto result = switch_button {};
+  result.checked(checked);
+  result.location(location);
+  return result;
+}
+
+switch_button switch_button::create(bool checked, const drawing::point& location, const drawing::size& size) {
+  auto result = switch_button {};
+  result.checked(checked);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
 switch_button switch_button::create(bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = switch_button {};
   result.checked(checked);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
+  return result;
+}
+
+switch_button switch_button::create(const control& parent) {
+  auto result = switch_button {};
+  result.parent(parent);
+  return result;
+}
+
+switch_button switch_button::create(const control& parent, const drawing::point& location) {
+  auto result = switch_button {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+switch_button switch_button::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = switch_button {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+switch_button switch_button::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = switch_button {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  result.name(name);
+  return result;
+}
+
+switch_button switch_button::create(const control& parent, bool checked) {
+  auto result = switch_button {};
+  result.parent(parent);
+  result.checked(checked);
+  return result;
+}
+
+switch_button switch_button::create(const control& parent, bool checked, const drawing::point& location) {
+  auto result = switch_button {};
+  result.parent(parent);
+  result.checked(checked);
+  result.location(location);
+  return result;
+}
+
+switch_button switch_button::create(const control& parent, bool checked, const drawing::point& location, const drawing::size& size) {
+  auto result = switch_button {};
+  result.parent(parent);
+  result.checked(checked);
+  result.location(location);
+  result.size(size);
   return result;
 }
 
@@ -110,8 +210,8 @@ switch_button switch_button::create(const control& parent, bool checked, const d
   auto result = switch_button {};
   result.parent(parent);
   result.checked(checked);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
