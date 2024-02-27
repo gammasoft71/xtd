@@ -17,7 +17,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    class animation_updated_event_args : public xtd::event_args {
+    class animation_updated_event_args : public event_args {
     public:
       /// @name Constructors
       
@@ -30,7 +30,7 @@ namespace xtd {
       /// @{
       /// @brief Gets elepased time in nanoseconds.
       /// @return Elapsed time in nanoseconds
-      xtd::time_span elapsed() const {return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::nanoseconds {elapsed_nanoseconds_}).count()};}
+      time_span elapsed() const {return time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::nanoseconds {elapsed_nanoseconds_}).count()};}
       /// @brief Gets elepased time in milliseconds.
       /// @return Elapsed time in milliseconds
       int64 elapsed_milliseconds() const {return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::nanoseconds {elapsed_nanoseconds_}).count();}

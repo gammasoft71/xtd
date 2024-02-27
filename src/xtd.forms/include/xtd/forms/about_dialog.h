@@ -34,7 +34,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of about_dialog dialog with dialog_styledialog_style to system.
     /// @include about_dialog_system.cpp
-    class forms_export_ about_dialog final : public xtd::forms::component {
+    class forms_export_ about_dialog final : public component {
       struct data;
       
     public:
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief Represents a translator collection.
       using translator_collection = xtd::forms::layout::arranged_element_collection<xtd::ustring>;
       
-      using user_tab_page_collection = xtd::forms::tab_control::tab_page_collection;
+      using user_tab_page_collection = tab_control::tab_page_collection;
       /// @}
       
       /// @name Constructors
@@ -69,25 +69,25 @@ namespace xtd {
       /// @{
       /// @brief Gets the artists array.
       /// @return The artists array.
-      const xtd::forms::about_dialog::artist_collection& artists() const noexcept;
+      const artist_collection& artists() const noexcept;
       /// @brief Gets the artists array.
       /// @return The artists array.
-      xtd::forms::about_dialog::artist_collection& artists() noexcept;
+      artist_collection& artists() noexcept;
       /// @brief Sets the artists array.
       /// @param artists The artists array.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& artists(const xtd::forms::about_dialog::artist_collection& artists);
+      about_dialog& artists(const artist_collection& artists);
       
       /// @brief Gets the authors array.
       /// @return The author array.
-      const xtd::forms::about_dialog::author_collection& authors() const noexcept;
+      const author_collection& authors() const noexcept;
       /// @brief Gets the authors array.
       /// @return The authors array.
-      xtd::forms::about_dialog::author_collection& authors() noexcept;
+      author_collection& authors() noexcept;
       /// @brief Sets the authors array.
       /// @param authors The authors array.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& authors(const xtd::forms::about_dialog::author_collection& authors);
+      about_dialog& authors(const author_collection& authors);
       
       /// @brief Gets the product copyright.
       /// @return The product copyright.
@@ -95,7 +95,7 @@ namespace xtd {
       /// @brief Sets the product description.
       /// @param copyright The description copyright.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& copyright(const xtd::ustring& copyright);
+      about_dialog& copyright(const xtd::ustring& copyright);
       
       /// @brief Gets the product description.
       /// @return The product description.
@@ -103,18 +103,18 @@ namespace xtd {
       /// @brief Sets the product description.
       /// @param description The product description.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& description(const xtd::ustring& description);
+      about_dialog& description(const xtd::ustring& description);
       
       /// @brief Gets the documentation writers array.
       /// @return The documentation writers array.
-      const xtd::forms::about_dialog::documenter_collection& documenters() const noexcept;
+      const documenter_collection& documenters() const noexcept;
       /// @brief Gets the artists array.
       /// @return The artists array.
-      xtd::forms::about_dialog::documenter_collection& documenters() noexcept;
+      documenter_collection& documenters() noexcept;
       /// @brief Sets the documenters array.
       /// @param documenters The documenters array.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& documenters(const xtd::forms::about_dialog::documenter_collection& documenters);
+      about_dialog& documenters(const documenter_collection& documenters);
       
       /// @brief Gets the dialog appearance.
       /// @return One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
@@ -122,7 +122,7 @@ namespace xtd {
       /// @brief Sets the dialog appearance.
       /// @param dialog_appearance One of the xtd::forms::dialog_appearance values. The default value is xtd::forms::dialog_appearance::standard.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
+      about_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
       
       /// @brief Gets the product icon.
       /// @return The product icon.
@@ -130,15 +130,15 @@ namespace xtd {
       /// @brief Sets the product icon.
       /// @param icon The product icon.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& icon(const xtd::drawing::icon& icon);
+      about_dialog& icon(const xtd::drawing::icon& icon);
       /// @brief Sets the product icon.
       /// @param image The product icon.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& icon(const xtd::drawing::image& image);
+      about_dialog& icon(const xtd::drawing::image& image);
       /// @brief Sets the product icon.
       /// @param bitmap The product icon.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& icon(const xtd::drawing::bitmap& bitmap);
+      about_dialog& icon(const xtd::drawing::bitmap& bitmap);
       
       /// @brief Gets the product license.
       /// @return The product license.
@@ -146,7 +146,7 @@ namespace xtd {
       /// @brief Sets the product license.
       /// @param name The product license.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& license(const xtd::ustring& license);
+      about_dialog& license(const xtd::ustring& license);
       
       /// @brief Gets the product long version.
       /// @return The product long version.
@@ -154,7 +154,7 @@ namespace xtd {
       /// @brief Sets the product long version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& long_version(const xtd::ustring& long_version);
+      about_dialog& long_version(const xtd::ustring& long_version);
       
       /// @brief Gets the product name.
       /// @return The product name.
@@ -162,27 +162,27 @@ namespace xtd {
       /// @brief Sets the product name.
       /// @param name The product name.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& name(const xtd::ustring& name);
+      about_dialog& name(const xtd::ustring& name);
       
       /// @brief Gets the translators array.
       /// @return The translators array.
-      const xtd::forms::about_dialog::translator_collection& translators() const noexcept;
+      const translator_collection& translators() const noexcept;
       /// @brief Gets the translators array.
       /// @return The translators array.
-      xtd::forms::about_dialog::translator_collection& translators() noexcept;
+      translator_collection& translators() noexcept;
       /// @brief Sets the translators array.
       /// @param translators The translators array.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& translators(const xtd::forms::about_dialog::translator_collection& translators);
+      about_dialog& translators(const translator_collection& translators);
       
       /// @brief Gets the collection of user tab pages in this about box.
       /// @return A xtd::forms::about_dialog::user_tab_page_collection that contains the control objects in this about box.
       /// @remarks This property is used to add user tab pages in this about dialog.
-      xtd::forms::about_dialog::user_tab_page_collection& user_tab_pages() noexcept;
+      user_tab_page_collection& user_tab_pages() noexcept;
       /// @brief Gets the collection of user tab pages in this about box.
       /// @return A xtd::forms::about_dialog::user_tab_page_collection that contains the control objects in this about box.
       /// @remarks This property is used to add user tab pages in this about dialog.
-      const xtd::forms::about_dialog::user_tab_page_collection& user_tab_pages() const noexcept;
+      const user_tab_page_collection& user_tab_pages() const noexcept;
 
       /// @brief Gets the product version.
       /// @return The product version.
@@ -190,7 +190,7 @@ namespace xtd {
       /// @brief Sets the product version.
       /// @param version The version version.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& version(const xtd::ustring& version);
+      about_dialog& version(const xtd::ustring& version);
       
       /// @brief Gets the product website.
       /// @return The website.
@@ -198,7 +198,7 @@ namespace xtd {
       /// @brief Sets the product website.
       /// @param website The  product website.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& website(const xtd::ustring& website);
+      about_dialog& website(const xtd::ustring& website);
       
       /// @brief Gets the product website label.
       /// @return The product website label.
@@ -206,7 +206,7 @@ namespace xtd {
       /// @brief Sets the product website label.
       /// @param website_label The product website label.
       /// @return Current about_dialog instance.
-      xtd::forms::about_dialog& website_label(const xtd::ustring& website_label);
+      about_dialog& website_label(const xtd::ustring& website_label);
       /// @}
       
       /// @name Methods
@@ -214,7 +214,7 @@ namespace xtd {
       /// @{
       /// @brief Create a new xtd::forms::about_dialog from executing xtd::reflecction::assembly informations.
       /// @return New xtd::forms::about_dialog with executing xtd::reflecction::assembly informations.
-      static xtd::forms::about_dialog from_executing_assembly_informations();
+      static about_dialog from_executing_assembly_informations();
       
       /// @brief Resets all properties to empty string.
       void reset() noexcept;
@@ -222,7 +222,7 @@ namespace xtd {
       /// @brief Runs about dialog box.
       void show();
       /// @brief Runs about dialog box.
-      void show(const xtd::forms::iwin32_window& owner);
+      void show(const iwin32_window& owner);
       /// @}
       
     private:

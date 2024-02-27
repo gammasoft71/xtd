@@ -19,6 +19,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    using animation_updated_event_handler = xtd::delegate<void(object&, const xtd::forms::animation_updated_event_args&)>;
+    using animation_updated_event_handler = xtd::delegate<void(xtd::object&, const xtd::forms::animation_updated_event_args&)>;
   }
 }
