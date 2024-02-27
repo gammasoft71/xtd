@@ -52,21 +52,57 @@ forms::cursor splitter::default_cursor() const noexcept {
   return dock() == dock_style::left || dock() == dock_style::right ? xtd::forms::cursors::vsplit() : xtd::forms::cursors::hsplit();
 }
 
-splitter splitter::create(dock_style dock, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+splitter splitter::create() {
+  return splitter {};
+}
+
+splitter splitter::create(const drawing::point& location) {
   auto result = splitter {};
-  result.dock(dock);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.location(location);
+  return result;
+}
+
+splitter splitter::create(const drawing::point& location, const drawing::size& size) {
+  auto result = splitter {};
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+splitter splitter::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = splitter {};
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
 
-splitter splitter::create(const control& parent, dock_style dock, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+splitter splitter::create(const control& parent) {
   auto result = splitter {};
   result.parent(parent);
-  result.dock(dock);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  return result;
+}
+
+splitter splitter::create(const control& parent, const drawing::point& location) {
+  auto result = splitter {};
+  result.parent(parent);
+  result.location(location);
+  return result;
+}
+
+splitter splitter::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+  auto result = splitter {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
+  return result;
+}
+
+splitter splitter::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+  auto result = splitter {};
+  result.parent(parent);
+  result.location(location);
+  result.size(size);
   result.name(name);
   return result;
 }
