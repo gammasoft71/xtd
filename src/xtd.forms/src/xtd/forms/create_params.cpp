@@ -8,11 +8,11 @@ struct create_params::data {
   xtd::ustring class_name;
   size_t class_style = 0;
   size_t ex_style = 0;
-  drawing::point location = {-1, -1};
+  drawing::point location;
   intptr param = 0;
   intptr parent = 0;
   size_t style = 0;
-  drawing::size size = {-1, -1};
+  drawing::size size;
 };
 
 create_params::create_params() : data_(std::make_shared<data>()) {
