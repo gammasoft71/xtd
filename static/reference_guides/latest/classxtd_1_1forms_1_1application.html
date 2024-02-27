@@ -190,7 +190,7 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main_form::main);</div>
 <div class="ttc" id="aclassxtd_1_1argument__out__of__range__exception_html"><div class="ttname"><a href="classxtd_1_1argument__out__of__range__exception.html">xtd::argument_out_of_range_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is out of range.</div><div class="ttdef"><b>Definition</b> argument_out_of_range_exception.h:20</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a2ce7b0d4da48e314ed0e02a3629b2954"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">xtd::forms::application::main_form</a></div><div class="ttdeci">static std::optional&lt; form_ref &gt; main_form()</div><div class="ttdoc">Gets the optional main form.</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a2ce7b0d4da48e314ed0e02a3629b2954"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">xtd::forms::application::main_form</a></div><div class="ttdeci">static std::optional&lt; form_ref &gt; main_form()</div><div class="ttdoc">Gets the optional main form owned by the application.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a652dfeb393c4deaa7ee4dacfb641ca36"><div class="ttname"><a href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">xtd::forms::message_box::show</a></div><div class="ttdeci">static dialog_result show()</div><div class="ttdoc">Displays a message box.</div></div>
 <div class="ttc" id="aclassxtd_1_1operation__canceled__exception_html"><div class="ttname"><a href="classxtd_1_1operation__canceled__exception.html">xtd::operation_canceled_exception</a></div><div class="ttdoc">The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...</div><div class="ttdef"><b>Definition</b> operation_canceled_exception.h:18</div></div>
@@ -249,7 +249,7 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memdesc:a49b3586e61663ebea48f26784b09f1ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path for the executable file that started the application, including the executable name.  <br /></td></tr>
 <tr class="separator:a49b3586e61663ebea48f26784b09f1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="memItemLeft" align="right" valign="top">static std::optional&lt; <a class="el" href="group__xtd__forms.html#ga17fc36e024d6f766763e4aeb97855b4a">form_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> ()</td></tr>
-<tr class="memdesc:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the optional main form.  <br /></td></tr>
+<tr class="memdesc:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the optional main form owned by the application.  <br /></td></tr>
 <tr class="separator:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ae514ee1ee37c31c89ab5b75d8b71271e">message_loop</a> () noexcept</td></tr>
 <tr class="memdesc:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether a message loop exists on this thread.  <br /></td></tr>
@@ -1117,7 +1117,7 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 </table>
 </div><div class="memdoc">
 
-<p>Gets the optional main form. </p>
+<p>Gets the optional main form owned by the application. </p>
 <dl class="section return"><dt>Returns</dt><dd>The optional main form. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The return value doesn't necessarily contain the main form, as an application doesn't always have a main form. In fact, the <a class="el" href="classxtd_1_1forms_1_1application.html" title="Provides static methods and properties to manage an application, such as methods to start and stop an...">xtd::forms::application</a> method can be called with the <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">xtd::forms::application_context</a> class, which doesn't contain a main form. </dd></dl>
 
@@ -2116,7 +2116,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 27 2024 09:29:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Feb 27 2024 13:36:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
