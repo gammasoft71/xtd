@@ -73,8 +73,8 @@ namespace {
   }
 }
 
-application_context application::context_run_form_;
-application_context* application::context_ = nullptr;
+xtd::forms::application_context application::internal_context_;
+xtd::forms::application_context* application::context_ = &application::internal_context_;
 #if defined(__XTD_USE_SYSTEM_CONTROLS__)
 bool application::use_system_controls_ = true;
 #else
@@ -98,6 +98,10 @@ bool application::allow_quit() noexcept {
   } catch (...) {
     return true;
   }
+}
+
+xtd::forms::application_context& application::application_context() {
+  return *context_;
 }
 
 xtd::ustring application::common_app_data_path() noexcept {
@@ -148,10 +152,7 @@ xtd::ustring application::executable_path() noexcept {
 }
 
 std::optional<form_ref> application::main_form() {
-  if (context_ && context_->main_form().has_value()) 
-    return context_->main_form();
-  if (open_forms().size()) 
-    return open_forms()[0];
+  if (application_context().main_form().has_value()) return application_context().main_form();
   return {};
 }
 
@@ -341,11 +342,10 @@ void application::restart() {
 
 void application::run() {
   __init_process_message_box_message_value__.__force_compiler_optimizer_to_create_object__();
-  auto context = application_context {};
-  application::run(context);
+  application::run(internal_context_);
 }
 
-void application::run(application_context& context) {
+void application::run(xtd::forms::application_context& context) {
   if (application::application::message_loop_ == true) throw invalid_operation_exception("Application already running"_t, csf_);
   if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) throw invalid_operation_exception {xtd::ustring::format("Cross-thread operation not valid: {}"_t, typeof_<application>().full_name()), csf_};
 
@@ -360,12 +360,12 @@ void application::run(application_context& context) {
   native::application::run();
   context.thread_exit -= application::on_app_thread_exit;
   application::message_loop_ = false;
+  internal_context_.main_form(nullptr);
 }
 
 void application::run(const form& form) {
-  context_run_form_.main_form(form);
-  application::run(context_run_form_);
-  context_run_form_.main_form(nullptr);
+  internal_context_.main_form(form);
+  application::run(internal_context_);
 }
 
 bool application::close_open_forms() {
