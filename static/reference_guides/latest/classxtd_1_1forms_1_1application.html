@@ -133,13 +133,13 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">class </span>main_form : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    application::run(main_form());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(<a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>());</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  main_form() {</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;application and exception example&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// uncomment next line to throw error and catch it in main entry point</span></div>
@@ -174,8 +174,8 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line">  <span class="keywordtype">void</span> generate_handled_exception() {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1operation__canceled__exception.html">operation_canceled_exception</a>(<a class="code hl_define" href="group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee">current_stack_frame_</a>);</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">xtd::system_exception</a>&amp; e) {</div>
-<div class="line">      message_box::show(*<span class="keyword">this</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message(), ustring::format(<span class="stringliteral">&quot;Exception {} handled&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.name()));</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">xtd::system_exception</a>&amp; <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>) {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">message_box::show</a>(*<span class="keyword">this</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>.message(), <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;Exception {} handled&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>.name()));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">  <span class="keywordtype">void</span> generate_exception() {<span class="keywordflow">throw</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga0c933b52bdbb9399c8ec4b1dcf3e2e71ae55d43eabeefe5a8271b4a3c898bd18f">invalid_argument</a>(<span class="stringliteral">&quot;Invalid argument&quot;</span>);}</div>
@@ -190,14 +190,17 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main_form::main);</div>
 <div class="ttc" id="aclassxtd_1_1argument__out__of__range__exception_html"><div class="ttname"><a href="classxtd_1_1argument__out__of__range__exception.html">xtd::argument_out_of_range_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is out of range.</div><div class="ttdef"><b>Definition</b> argument_out_of_range_exception.h:20</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a2ce7b0d4da48e314ed0e02a3629b2954"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">xtd::forms::application::main_form</a></div><div class="ttdeci">static std::optional&lt; form_ref &gt; main_form()</div><div class="ttdoc">Gets the optional main form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a652dfeb393c4deaa7ee4dacfb641ca36"><div class="ttname"><a href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">xtd::forms::message_box::show</a></div><div class="ttdeci">static dialog_result show()</div><div class="ttdoc">Displays a message box.</div></div>
 <div class="ttc" id="aclassxtd_1_1operation__canceled__exception_html"><div class="ttname"><a href="classxtd_1_1operation__canceled__exception.html">xtd::operation_canceled_exception</a></div><div class="ttdoc">The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...</div><div class="ttdef"><b>Definition</b> operation_canceled_exception.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:25</div></div>
 <div class="ttc" id="agroup__events_html_ga0b1801aa17fa22ddacfdcccd7b25316b"><div class="ttname"><a href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt;&gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.h:32</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:745</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
 <div class="ttc" id="agroup__keywords_html_gae15b54f63b03b198d02fc94bdd0479ee"><div class="ttname"><a href="group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee">current_stack_frame_</a></div><div class="ttdeci">#define current_stack_frame_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:16</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga0c933b52bdbb9399c8ec4b1dcf3e2e71ae55d43eabeefe5a8271b4a3c898bd18f"><div class="ttname"><a href="group__xtd__core.html#gga0c933b52bdbb9399c8ec4b1dcf3e2e71ae55d43eabeefe5a8271b4a3c898bd18f">xtd::net::sockets::socket_error::invalid_argument</a></div><div class="ttdeci">@ invalid_argument</div><div class="ttdoc">Invalid argument.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">xtd::forms::keys::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
@@ -224,6 +227,9 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:ab1fd54c56d822b952b01a61d40859fb7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ab1fd54c56d822b952b01a61d40859fb7">allow_quit</a> () noexcept</td></tr>
 <tr class="memdesc:ab1fd54c56d822b952b01a61d40859fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the caller can quit this application.  <br /></td></tr>
 <tr class="separator:ab1fd54c56d822b952b01a61d40859fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52af1045fc303d2b79e3ff34b85dbf37"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1application__context.html">xtd::forms::application_context</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a52af1045fc303d2b79e3ff34b85dbf37">application_context</a> ()</td></tr>
+<tr class="memdesc:a52af1045fc303d2b79e3ff34b85dbf37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the application context associate to the application.  <br /></td></tr>
+<tr class="separator:a52af1045fc303d2b79e3ff34b85dbf37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04530a2c8329c8ae4350a532152bdf6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a04530a2c8329c8ae4350a532152bdf6d">common_app_data_path</a> () noexcept</td></tr>
 <tr class="memdesc:a04530a2c8329c8ae4350a532152bdf6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path for the application data that is shared among all users.  <br /></td></tr>
 <tr class="separator:a04530a2c8329c8ae4350a532152bdf6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,6 +248,9 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a49b3586e61663ebea48f26784b09f1ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a49b3586e61663ebea48f26784b09f1ab">executable_path</a> () noexcept</td></tr>
 <tr class="memdesc:a49b3586e61663ebea48f26784b09f1ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path for the executable file that started the application, including the executable name.  <br /></td></tr>
 <tr class="separator:a49b3586e61663ebea48f26784b09f1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="memItemLeft" align="right" valign="top">static std::optional&lt; <a class="el" href="group__xtd__forms.html#ga17fc36e024d6f766763e4aeb97855b4a">form_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> ()</td></tr>
+<tr class="memdesc:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the optional main form.  <br /></td></tr>
+<tr class="separator:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ae514ee1ee37c31c89ab5b75d8b71271e">message_loop</a> () noexcept</td></tr>
 <tr class="memdesc:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether a message loop exists on this thread.  <br /></td></tr>
 <tr class="separator:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -349,10 +358,10 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a4ee49410f3156fd66b61c2567a59388e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">run</a> ()</td></tr>
 <tr class="memdesc:a4ee49410f3156fd66b61c2567a59388e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins running a standard application message loop on the current thread, without a form.  <br /></td></tr>
 <tr class="separator:a4ee49410f3156fd66b61c2567a59388e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab79aa8eba69cde497bae6657cb11eab8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ab79aa8eba69cde497bae6657cb11eab8">run</a> (<a class="el" href="classxtd_1_1forms_1_1application__context.html">application_context</a> &amp;context)</td></tr>
-<tr class="memdesc:ab79aa8eba69cde497bae6657cb11eab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins running a standard application message loop on the current thread, with an <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">application_context</a>.  <br /></td></tr>
-<tr class="separator:ab79aa8eba69cde497bae6657cb11eab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9f33fc4a9bfe8735d80ebabdeb7f3f2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2">run</a> (const <a class="el" href="classxtd_1_1forms_1_1form.html">form</a> &amp;main_form)</td></tr>
+<tr class="memitem:a48e895005934fb08392f4486b84af699"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a48e895005934fb08392f4486b84af699">run</a> (<a class="el" href="classxtd_1_1forms_1_1application__context.html">xtd::forms::application_context</a> &amp;context)</td></tr>
+<tr class="memdesc:a48e895005934fb08392f4486b84af699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins running a standard application message loop on the current thread, with an <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">application_context</a>.  <br /></td></tr>
+<tr class="separator:a48e895005934fb08392f4486b84af699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9f33fc4a9bfe8735d80ebabdeb7f3f2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2">run</a> (const <a class="el" href="classxtd_1_1forms_1_1form.html">form</a> &amp;<a class="el" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>)</td></tr>
 <tr class="memdesc:ad9f33fc4a9bfe8735d80ebabdeb7f3f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins running a standard application message loop on the current thread, and makes the specified form visible.  <br /></td></tr>
 <tr class="separator:ad9f33fc4a9bfe8735d80ebabdeb7f3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -421,6 +430,35 @@ You cannot create an instance of this class. </dd></dl>
 
 </div>
 </div>
+<a id="a52af1045fc303d2b79e3ff34b85dbf37" name="a52af1045fc303d2b79e3ff34b85dbf37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52af1045fc303d2b79e3ff34b85dbf37">&#9670;&#160;</a></span>application_context()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1application__context.html">xtd::forms::application_context</a> &amp; xtd::forms::application::application_context </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the application context associate to the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>An application context. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The application context can be created by the user and sent to the application when the <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a> method is called. </dd></dl>
+
+</div>
+</div>
 <a id="a04530a2c8329c8ae4350a532152bdf6d" name="a04530a2c8329c8ae4350a532152bdf6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a04530a2c8329c8ae4350a532152bdf6d">&#9670;&#160;</a></span>common_app_data_path()</h2>
 
@@ -483,7 +521,6 @@ The path will be different depending on whether the Windows Forms application is
 <div class="line">  textBox1.Text(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;The company name is: {0}&quot;</span>, <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a26fd212234b96addf604e92a153d7559">application::company_name</a>);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a26fd212234b96addf604e92a153d7559"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a26fd212234b96addf604e92a153d7559">xtd::forms::application::company_name</a></div><div class="ttdeci">static xtd::ustring company_name() noexcept</div><div class="ttdoc">Gets the company name associated with the application.</div></div>
-<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:745</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1057,6 +1094,35 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 
 </div>
 </div>
+<a id="a2ce7b0d4da48e314ed0e02a3629b2954" name="a2ce7b0d4da48e314ed0e02a3629b2954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce7b0d4da48e314ed0e02a3629b2954">&#9670;&#160;</a></span>main_form()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::optional&lt; <a class="el" href="group__xtd__forms.html#ga17fc36e024d6f766763e4aeb97855b4a">form_ref</a> &gt; xtd::forms::application::main_form </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the optional main form. </p>
+<dl class="section return"><dt>Returns</dt><dd>The optional main form. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The return value doesn't necessarily contain the main form, as an application doesn't always have a main form. In fact, the <a class="el" href="classxtd_1_1forms_1_1application.html" title="Provides static methods and properties to manage an application, such as methods to start and stop an...">xtd::forms::application</a> method can be called with the <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">xtd::forms::application_context</a> class, which doesn't contain a main form. </dd></dl>
+
+</div>
+</div>
 <a id="ae514ee1ee37c31c89ab5b75d8b71271e" name="ae514ee1ee37c31c89ab5b75d8b71271e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae514ee1ee37c31c89ab5b75d8b71271e">&#9670;&#160;</a></span>message_loop()</h2>
 
@@ -1312,13 +1378,13 @@ If your application was originally supplied command-line options when it first e
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <span class="keyword">auto</span> restart_count = <a class="code hl_function" href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>).empty() ? 0 : <a class="code hl_function" href="group__xtd__core.html#ga8dd4c00484ddac781e23fb7a7a0f5d2e">parse&lt;int&gt;</a>(<a class="code hl_function" href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>));</div>
-<div class="line">  <span class="keyword">auto</span> main_form = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;Restart {} times&quot;</span>, restart_count));</div>
-<div class="line">  <span class="keyword">auto</span> restart_button = <a class="code hl_function" href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">button::create</a>(main_form, <span class="stringliteral">&quot;Restart&quot;</span>, {10, 10});</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;Restart {} times&quot;</span>, restart_count));</div>
+<div class="line">  <span class="keyword">auto</span> restart_button = <a class="code hl_function" href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">button::create</a>(<a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>, <span class="stringliteral">&quot;Restart&quot;</span>, {10, 10});</div>
 <div class="line">  restart_button.<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2">application::restart</a>;</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1environment.html#ab2d3cd3dc81f0073e7891d0d6e81159f">environment::set_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">to_string</a>(restart_count + 1));</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(main_form);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(<a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ab2d3cd3dc81f0073e7891d0d6e81159f"><div class="ttname"><a href="classxtd_1_1environment.html#ab2d3cd3dc81f0073e7891d0d6e81159f">xtd::environment::set_environment_variable</a></div><div class="ttdeci">static void set_environment_variable(const xtd::ustring &amp;variable, const xtd::ustring &amp;value)</div><div class="ttdoc">Creates, modifies, or deletes an environment variable stored in the current process.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_abc571cecc9691249a326323123b98c29"><div class="ttname"><a href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">xtd::environment::get_environment_variable</a></div><div class="ttdeci">static xtd::ustring get_environment_variable(const xtd::ustring &amp;variable)</div><div class="ttdoc">Retrieves the value of an environment variable from the current process.</div></div>
@@ -1358,7 +1424,7 @@ If your application was originally supplied command-line options when it first e
 <p>Begins running a standard application message loop on the current thread, without a form. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>In a Win32-based or Windows Forms application, a message loop is a routine in code that processes user events, such as mouse clicks and keyboard strokes. Every running Windows-based application requires an active message loop, called the main message loop. When the main message loop is closed, the application exits. In Windows Forms, this loop is closed when the exit method is called, or when the exit_thread method is called on the thread that is running the main message loop. </dd>
 <dd>
-Most Windows Forms developers will not need to use this version of the method. You should use the <a class="el" href="classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2" title="Begins running a standard application message loop on the current thread, and makes the specified for...">run(const form&amp;)</a> overload to start an application with a main form, so that the application terminates when the main form is closed. For all other situations, use the <a class="el" href="classxtd_1_1forms_1_1application.html#ab79aa8eba69cde497bae6657cb11eab8" title="Begins running a standard application message loop on the current thread, with an application_context...">run(application_context&amp;)</a> overload, which supports supplying an <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">application_context</a> object for better control over the lifetime of the application. </dd></dl>
+Most Windows Forms developers will not need to use this version of the method. You should use the <a class="el" href="classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2" title="Begins running a standard application message loop on the current thread, and makes the specified for...">run(const form&amp;)</a> overload to start an application with a main form, so that the application terminates when the main form is closed. For all other situations, use the <a class="el" href="classxtd_1_1forms_1_1application.html#a48e895005934fb08392f4486b84af699" title="Begins running a standard application message loop on the current thread, with an application_context...">run(application_context&amp;)</a> overload, which supports supplying an <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">application_context</a> object for better control over the lifetime of the application. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application run method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
@@ -1372,8 +1438,8 @@ Most Windows Forms developers will not need to use this version of the method. Y
 
 </div>
 </div>
-<a id="ab79aa8eba69cde497bae6657cb11eab8" name="ab79aa8eba69cde497bae6657cb11eab8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab79aa8eba69cde497bae6657cb11eab8">&#9670;&#160;</a></span>run() <span class="overload">[2/3]</span></h2>
+<a id="ad9f33fc4a9bfe8735d80ebabdeb7f3f2" name="ad9f33fc4a9bfe8735d80ebabdeb7f3f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f33fc4a9bfe8735d80ebabdeb7f3f2">&#9670;&#160;</a></span>run() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1384,7 +1450,51 @@ Most Windows Forms developers will not need to use this version of the method. Y
         <tr>
           <td class="memname">static void xtd::forms::application::run </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1forms_1_1application__context.html">application_context</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1form.html">form</a> &amp;&#160;</td>
+          <td class="paramname"><em>main_form</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Begins running a standard application message loop on the current thread, and makes the specified form visible. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">main_form</td><td>A form that represents the form to make visible. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Typically, the main function of an application calls this method and passes to it the main window of the application. </dd>
+<dd>
+This method adds an event handler to the main_form parameter for the closed event. The event handler calls <a class="el" href="classxtd_1_1forms_1_1application.html#a7cd6fe69c23173cb2dabae8f6c7a1690" title="Exits the message loop on the current thread and closes all windows on the thread.">xtd::forms::application::exit_thread</a> to clean up the application. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application run method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(<a class="code hl_class" href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a> {});</div>
+<div class="line">}</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a48e895005934fb08392f4486b84af699" name="a48e895005934fb08392f4486b84af699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e895005934fb08392f4486b84af699">&#9670;&#160;</a></span>run() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::run </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1forms_1_1application__context.html">xtd::forms::application_context</a> &amp;&#160;</td>
           <td class="paramname"><em>context</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1429,50 +1539,6 @@ Most Windows Forms developers will not need to use this version of the method. Y
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(context);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application__context_html"><div class="ttname"><a href="classxtd_1_1forms_1_1application__context.html">xtd::forms::application_context</a></div><div class="ttdoc">Specifies the contextual information about an application thread.</div><div class="ttdef"><b>Definition</b> application_context.h:24</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="ad9f33fc4a9bfe8735d80ebabdeb7f3f2" name="ad9f33fc4a9bfe8735d80ebabdeb7f3f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9f33fc4a9bfe8735d80ebabdeb7f3f2">&#9670;&#160;</a></span>run() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::forms::application::run </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1form.html">form</a> &amp;&#160;</td>
-          <td class="paramname"><em>main_form</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Begins running a standard application message loop on the current thread, and makes the specified form visible. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">main_form</td><td>A form that represents the form to make visible. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Typically, the main function of an application calls this method and passes to it the main window of the application. </dd>
-<dd>
-This method adds an event handler to the main_form parameter for the closed event. The event handler calls <a class="el" href="classxtd_1_1forms_1_1application.html#a7cd6fe69c23173cb2dabae8f6c7a1690" title="Exits the message loop on the current thread and closes all windows on the thread.">xtd::forms::application::exit_thread</a> to clean up the application. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application run method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(<a class="code hl_class" href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a> {});</div>
-<div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2050,7 +2116,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 25 2024 21:46:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Feb 27 2024 09:29:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
