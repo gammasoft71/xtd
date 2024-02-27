@@ -51,10 +51,26 @@ timer& timer::interval_milliseconds(int32 interval) {
   return *this;
 }
 
+timer timer::create() {
+  return timer {};
+}
+
+timer timer::create(const time_span& interval) {
+  auto result = timer {};
+  result.interval(interval);
+  return result;
+}
+
 timer timer::create(const time_span& interval, bool enable) {
   auto result = timer {};
   result.interval(interval);
   result.enabled(enable);
+  return result;
+}
+
+timer timer::create(int interval_milliseconds) {
+  auto result = timer {};
+  result.interval_milliseconds(interval_milliseconds);
   return result;
 }
 

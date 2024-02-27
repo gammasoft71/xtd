@@ -84,16 +84,27 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief A factory to create an xtd::forms::timer.
+      /// @return New xtd::forms::timer created.
+      static timer create();
+      /// @brief A factory to create an xtd::forms::timer with specified interval.
+      /// @param interval An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
+      /// @return New xtd::forms::timer created.
+      static timer create(const time_span& interval);
       /// @brief A factory to create an xtd::forms::timer with specified interval, and enable values.
       /// @param interval An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
       /// @param enabled true if the timer is currently enabled; otherwise, false. The default is false.
       /// @return New xtd::forms::timer created.
-      static timer create(const time_span& interval, bool enable = false);
+      static timer create(const time_span& interval, bool enable);
+      /// @brief A factory to create an xtd::forms::timer with specified interval.
+      /// @param interval_milliseconds An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
+      /// @return New xtd::forms::timer created.
+      static timer create(int interval_milliseconds);
       /// @brief A factory to create an xtd::forms::timer with specified interval, and enable values.
       /// @param interval_milliseconds An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @param enabled true if the timer is currently enabled; otherwise, false. The default is false.
       /// @return New xtd::forms::timer created.
-      static timer create(int interval_milliseconds = 100, bool enable = false);
+      static timer create(int interval_milliseconds, bool enable);
 
       /// @brief Stops the timer.
       /// @remarks You can also stop the timer by setting the enabled property to false.
