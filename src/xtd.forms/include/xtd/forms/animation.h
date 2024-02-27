@@ -29,7 +29,7 @@ namespace xtd {
       /// @name Constructors
       
       /// @{
-      /// @brief Initialize a new instance of animation class.
+      /// @brief Initialize a new instance of xtd::forms::animation class.
       animation();
       /// @}
       
