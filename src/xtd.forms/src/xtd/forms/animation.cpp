@@ -4,16 +4,17 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 struct animation::data {
   uint32 frame_counter = 0;
   uint32 frames_per_second = 10;
-  xtd::diagnostics::stopwatch stopwatch;
-  xtd::forms::timer frames_timer;
+  diagnostics::stopwatch stopwatch;
+  timer frames_timer;
 };
 
-animation::animation() : data_(std::make_shared<data>()) {
+animation::animation() : data_(make_shared<data>()) {
   double_buffered(true);
   set_can_focus(false);
   set_style(control_styles::resize_redraw, true);
@@ -70,20 +71,20 @@ animation animation::create() {
   return animation {};
 }
 
-animation animation::create(const drawing::point& location) {
+animation animation::create(const point& location) {
   auto result = animation {};
   result.location(location);
   return result;
 }
 
-animation animation::create(const drawing::point& location, const drawing::size& size) {
+animation animation::create(const point& location, const drawing::size& size) {
   auto result = animation {};
   result.location(location);
   result.size(size);
   return result;
 }
 
-animation animation::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+animation animation::create(const point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = animation {};
   result.location(location);
   result.size(size);
@@ -97,14 +98,14 @@ animation animation::create(uint32 frames_per_second) {
   return result;
 }
 
-animation animation::create(uint32 frames_per_second, const drawing::point& location) {
+animation animation::create(uint32 frames_per_second, const point& location) {
   auto result = animation {};
   result.frames_per_second(frames_per_second);
   result.location(location);
   return result;
 }
 
-animation animation::create(uint32 frames_per_second, const drawing::point& location, const drawing::size& size) {
+animation animation::create(uint32 frames_per_second, const point& location, const drawing::size& size) {
   auto result = animation {};
   result.frames_per_second(frames_per_second);
   result.location(location);
@@ -112,7 +113,7 @@ animation animation::create(uint32 frames_per_second, const drawing::point& loca
   return result;
 }
 
-animation animation::create(uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+animation animation::create(uint32 frames_per_second, const point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = animation {};
   result.frames_per_second(frames_per_second);
   result.location(location);
@@ -127,14 +128,14 @@ animation animation::create(const control& parent) {
   return result;
 }
 
-animation animation::create(const control& parent, const drawing::point& location) {
+animation animation::create(const control& parent, const point& location) {
   auto result = animation {};
   result.parent(parent);
   result.location(location);
   return result;
 }
 
-animation animation::create(const control& parent, const drawing::point& location, const drawing::size& size) {
+animation animation::create(const control& parent, const point& location, const drawing::size& size) {
   auto result = animation {};
   result.parent(parent);
   result.location(location);
@@ -142,7 +143,7 @@ animation animation::create(const control& parent, const drawing::point& locatio
   return result;
 }
 
-animation animation::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+animation animation::create(const control& parent, const point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = animation {};
   result.parent(parent);
   result.location(location);
@@ -158,7 +159,7 @@ animation animation::create(const control& parent, uint32 frames_per_second) {
   return result;
 }
 
-animation animation::create(const control& parent, uint32 frames_per_second, const drawing::point& location) {
+animation animation::create(const control& parent, uint32 frames_per_second, const point& location) {
   auto result = animation {};
   result.parent(parent);
   result.frames_per_second(frames_per_second);
@@ -166,7 +167,7 @@ animation animation::create(const control& parent, uint32 frames_per_second, con
   return result;
 }
 
-animation animation::create(const control& parent, uint32 frames_per_second, const drawing::point& location, const drawing::size& size) {
+animation animation::create(const control& parent, uint32 frames_per_second, const point& location, const drawing::size& size) {
   auto result = animation {};
   result.parent(parent);
   result.frames_per_second(frames_per_second);
@@ -175,7 +176,7 @@ animation animation::create(const control& parent, uint32 frames_per_second, con
   return result;
 }
 
-animation animation::create(const control& parent, uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+animation animation::create(const control& parent, uint32 frames_per_second, const point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = animation {};
   result.parent(parent);
   result.frames_per_second(frames_per_second);
@@ -199,7 +200,7 @@ void animation::on_updated(const animation_updated_event_args& e) {
 
 void animation::on_frames_timer_tick(object& timer, const event_args& e) {
   ++data_->frame_counter;
-  on_updated(animation_updated_event_args(data_->frame_counter, std::chrono::nanoseconds {data_->stopwatch.elapsed_nanoseconds()}));
+  on_updated(animation_updated_event_args(data_->frame_counter, data_->stopwatch.elapsed_nanoseconds()));
   invalidate();
   data_->stopwatch = stopwatch::start_new();
 }
