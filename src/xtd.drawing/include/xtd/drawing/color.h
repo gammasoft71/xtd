@@ -15,6 +15,10 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
+    /// @cond
+    class image;
+    /// @endcond
+    
     /// @brief Represents an ARGB (alpha, red, green, blue) color.
     /// @code
     /// class drawing_export_ color : public xtd::object
@@ -1137,6 +1141,12 @@ namespace xtd {
       /// @brief Returns a invertr version of the specified color.
       /// @param color The color to invert.
       /// @return the inverted color result.
+      /// @remarks Thus, `1.0` will make the color completely inverted, while `0.0` return the original color.
+      static color invert(const color& color, double percent) noexcept;
+
+      /// @brief Returns a invertr version of the specified color.
+      /// @param color The color to invert.
+      /// @return the inverted color result.
       static color invert(const color& color) noexcept;
 
       /// @brief Returns a lighter version of the specified color.
@@ -1271,6 +1281,12 @@ namespace xtd {
       /// @}
       
     private:
+      friend class image;
+      static xtd::byte alpha_blend(xtd::byte fore_componant, xtd::byte back_componant, double percent) noexcept;
+      static xtd::byte brightness(xtd::byte componant, double percent) noexcept;
+      static xtd::byte grayscale(xtd::byte r, xtd::byte g, xtd::byte b) noexcept;
+      static xtd::byte invert(xtd::byte componant, double percent) noexcept;
+
       static constexpr xtd::drawing::known_color start_know_system_colors_range = static_cast<xtd::drawing::known_color>(0xFF01);
       explicit color(uint32 argb);
       explicit color(intptr handle);
