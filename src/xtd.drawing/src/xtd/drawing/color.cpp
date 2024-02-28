@@ -4,6 +4,7 @@
 #include <xtd/drawing/native/system_colors>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/math>
+#include <algorithm>
 #include <map>
 #include <sstream>
 
@@ -206,16 +207,27 @@ xtd::byte color::r() const noexcept {
   return (xtd::byte)((to_argb() & 0x00FF0000) >> 16);
 }
 
+color color::alpha_blend(const color& froe_color, const color& back_color, double alpha) noexcept {
+  return average(froe_color, back_color, alpha, true);
+}
+
 color color::average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {
-  return from_argb(average_alpha ? static_cast<xtd::byte>(color1.a() * (1 - weight) + color2.a() * weight) : static_cast<xtd::byte>(color1.a()), static_cast<xtd::byte>(color1.r() * (1 - weight) + color2.r() * weight), static_cast<xtd::byte>(color1.g() * (1 - weight) + color2.g() * weight), static_cast<xtd::byte>(color1.b() * (1 - weight) + color2.b() * weight));
+  weight = std::clamp(weight, 0.0, 1.0);
+  auto average_componant = [](xtd::byte c1, xtd::byte c2, double weight) {return static_cast<xtd::byte>(c1 * (1 - weight) + c2 * weight);};
+  return from_argb( average_componant(color1.a(), color2.a(), average_alpha ? weight : 1.0), average_componant(color1.r(), color2.r(), weight), average_componant(color1.g(), color2.g(), weight), average_componant(color1.b(), color2.b(), weight));
 }
 
 color color::average(const color& color1, const color& color2, double weight) noexcept {
   return average(color1, color2, weight, false);
 }
 
-color color::dark(const color& color, double weight) noexcept {
-  return color::average(color, drawing::color::black, weight);
+color color::brightness(const color& color, double percent) noexcept {
+  if (percent <= 0.1) return dark(color, percent);
+  return light(color, percent - 0.1);
+}
+
+color color::dark(const color& color, double percent) noexcept {
+  return color::average(color, drawing::color::black, percent);
 }
 
 color color::dark(const color& color) noexcept {
@@ -608,8 +620,28 @@ float color::get_saturation() const noexcept {
   return (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
 }
 
-color color::light(const color& color, double weight) noexcept {
-  return color::average(color, drawing::color::white, weight);
+color color::grayscale(const color& color, double percent) noexcept {
+  /* https://stackoverflow.com/questions/14330/rgb-to-monochrome-conversion
+   auto grayscale = static_cast<xtd::byte>(0.2125 * color.r()) + (0.7154 * color.g()) + (0.0721 * color.b()); : Color FAQ (http://www.poynton.com/notes/colour_and_gamma/ColorFAQ.html)
+   auto grayscale = static_cast<xtd::byte>(0.299 * color.r()) + (0.587 * color.g()) + (0.114 * color.b()); : MSDN (http://msdn.microsoft.com/en-us/library/bb332387.aspx#tbconimagecolorizer_grayscaleconversion)
+   auto grayscale = static_cast<xtd::byte>(0.3 * color.r()) + (0.59 * color.g()) + (0.11 * color.b()); : Wikipedia (http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale)
+   auto grayscale = static_cast<xtd::byte>((306ul * color.r() + 601ul * color.g() + 117ul * color.b()) >> 10); : wxWidgets
+   */
+  percent = std::clamp(percent, 0.0, 1.0);
+  auto grayscale = static_cast<xtd::byte>((percent * 0.299 * color.r()) + (percent * 0.587 * color.g()) + (percent * 0.114 * color.b()));
+  return xtd::drawing::color::from_argb(color.a(), grayscale, grayscale, grayscale);
+}
+
+color color::grayscale(const color& color) noexcept {
+  return grayscale(color, 1.0);
+}
+
+color color::invert(const color& color) noexcept {
+  return color::from_argb(white.to_argb() - color.to_argb());;
+}
+
+color color::light(const color& color, double percent) noexcept {
+  return color::average(color, drawing::color::white, percent);
 }
 
 color color::light(const color& color) noexcept {
