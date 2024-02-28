@@ -51,8 +51,9 @@ namespace xtd {
     public:
       /// @cond
       image();
-      image(const image& image) = default;
-      image& operator =(const image& image) = default;
+      image(image&&) = default;
+      image(const image& image);
+      image& operator =(const image& image);
       ~image();
       /// @endcond
       
@@ -161,13 +162,34 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+
+      /// @brief Returns a blur version of the specified image with radius.
+      /// @param image The image to blured.
+      /// @param radius The radius of the blur, specified as a <length>.
+      /// @return the blured image result.
+      static image blur(const image& image);
       
-      /// @brief Blurs the image whith the specified radius.
-      /// @param radius The radius of the blur, specified as a <length>
-      /// @note No blur effect, if the radius is 0.
-      /// @return The new blurred image.
-      image blur(int32 radius) const;
+      /// @brief Returns a blur version of the specified image with radius.
+      /// @param image The image to blured.
+      /// @param radius The radius of the blur, specified as a <length>.
+      /// @return the blured image result.
+      /// @remarks No blur effect, if the radius is `0`.
+      static image blur(const image& image, int32 radius);
       
+      /// @brief Returns a brightness version of the specified image with percent factor.
+      /// @param image The image to brightness.
+      /// @param percent The percent factor.
+      /// @return The adjusted image result.
+      /// @remarks 0% will make the image completely black. 100% is default and represents the original image. Values over 100% will provide brighter results.
+      static image brightness(const image& image, double percent);
+      
+      /// @brief Returns a brightness version of the specified image with percent factor.
+      /// @param image The image to brightness.
+      /// @param percent The percent factor.
+      /// @return The adjusted image result.
+      /// @remarks 0% will make the image completely black. 100% is default and represents the original image. Values over 100% will provide brighter results.
+      static image invert(const image& image, double percent);
+
       /// @brief Creates the xtd::drawing::graphics for the image.
       /// @return A xtd::drawing::graphics for the image.
       graphics create_graphics();
@@ -237,6 +259,18 @@ namespace xtd {
       /// @remarks The xtd::drawing::image::get_thumbnail_image method works well when the requested thumbnail image has a size of about 120 x 120 pixels. If you request a large thumbnail image (for example, 300 x 300) from an xtd::drawing::image that has an embedded thumbnail, there could be a noticeable loss of quality in the thumbnail image. It might be better to scale the main image (instead of scaling the embedded thumbnail) by calling the xtd::drawing::graphics::draw_image method.
       xtd::drawing::image get_thmbnail_image(int32 thumb_width, int32 thunb_height) noexcept;
       
+      /// @brief Returns a grayscale version of the specified image.
+      /// @param image The image to grayscale.
+      /// @return the grayscale image result.
+      static image grayscale(const image& image);
+      
+      /// @brief Returns a grayscale version of the specified image with percent factor.
+      /// @param image The image to grayscale.
+      /// @param percent The percent factor.
+      /// @return the grayscale image result.
+      /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
+      static image grayscale(const image& image, double percent);
+
       /// @brief Returns a value that indicates whether the pixel format for this xtd::drawing::image contains alpha information.
       /// @param pixfmt The PixelFormat to test.
       /// @return true if pixfmt contains alpha information; otherwise, false.
