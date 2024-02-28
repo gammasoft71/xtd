@@ -52,6 +52,18 @@ struct image::data {
 image::image() : data_(make_shared<data>()) {
 }
 
+image::image(const image& image) : data_(make_shared<data>()) {
+  data_->handle_ = native::image::create(image.handle(), image.width(), image.height());
+  if (data_->handle_) update_properties();
+}
+
+image& image::operator =(const image& image) {
+  data_ = make_shared<data>();
+  data_->handle_ = native::image::create(image.handle(), image.width(), image.height());
+  if (data_->handle_) update_properties();
+  return *this;
+}
+
 image::image(intptr hbitmap) : data_(make_shared<data>()) {
   if (hbitmap) {
     data_->handle_ = hbitmap;
@@ -222,8 +234,38 @@ int32 image::width() const noexcept {
   return data_->size_.width();
 }
 
-image image::blur(int32 radius) const {
-  return image {native::image::blur(handle(), radius)};
+image image::blur(const image& image) {
+  return blur(image, 10);
+}
+
+image image::blur(const image& image, int32 radius) {
+  return drawing::image {native::image::blur(image.handle(), radius)};
+}
+
+image image::brightness(const image& image, double percent) {
+  auto dest = image;
+  auto size = dest.width() * dest.height();
+  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
+  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
+  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
+    *dest_rgb = color::brightness(*src_rgb, percent);
+    *(dest_rgb + 1) = color::brightness(*(src_rgb + 1), percent);
+    *(dest_rgb + 2) = color::brightness(*(src_rgb + 2), percent);
+  }
+  return dest;
+}
+
+image image::invert(const image& image, double percent) {
+  auto dest = image;
+  auto size = dest.width() * dest.height();
+  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
+  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
+  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
+    *dest_rgb = color::invert(*src_rgb, percent);
+    *(dest_rgb + 1) = color::invert(*(src_rgb + 1), percent);
+    *(dest_rgb + 2) = color::invert(*(src_rgb + 2), percent);
+  }
+  return dest;
 }
 
 graphics image::create_graphics() {
@@ -295,6 +337,24 @@ xtd::drawing::imaging::property_item image::get_property_item(int32 propid) {
 
 xtd::drawing::image image::get_thmbnail_image(int32 thumb_width, int32 thunb_height) noexcept {
   return image(*this, thumb_width, thunb_height);
+}
+
+image image::grayscale(const image& image) {
+  return grayscale(image, 100);
+}
+
+image image::grayscale(const image& image, double percent) {
+  auto dest = image;
+  auto size = dest.width() * dest.height();
+  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
+  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
+  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
+    auto grayscale = color::grayscale(*src_rgb, *(src_rgb + 1), *(src_rgb + 2));
+    *dest_rgb = color::alpha_blend(*src_rgb, grayscale, percent);
+    *(dest_rgb + 1) = color::alpha_blend(*(src_rgb + 1), grayscale, percent);
+    *(dest_rgb + 2) = color::alpha_blend(*(src_rgb + 2), grayscale, percent);
+  }
+  return dest;
 }
 
 bool image::is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
