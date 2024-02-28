@@ -1,7 +1,7 @@
 #include <xtd/console>
+#include <xtd/drawing/color>
 
 using namespace xtd;
 
 auto main()->int {
-  console::write_line("Core manual test");
 }
