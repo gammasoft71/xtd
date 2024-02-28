@@ -183,11 +183,11 @@ namespace xtd {
       /// @remarks 0% will make the image completely black. 100% is default and represents the original image. Values over 100% will provide brighter results.
       static image brightness(const image& image, double percent);
       
-      /// @brief Returns a brightness version of the specified image with percent factor.
-      /// @param image The image to brightness.
+      /// @brief Returns an invert version of the specified image with percent factor.
+      /// @param image The image to invert.
       /// @param percent The percent factor.
       /// @return The adjusted image result.
-      /// @remarks 0% will make the image completely black. 100% is default and represents the original image. Values over 100% will provide brighter results.
+      /// @remarks 0% will represents the original image. 100% will provide image with inverted colors.
       static image invert(const image& image, double percent);
 
       /// @brief Creates the xtd::drawing::graphics for the image.
@@ -286,6 +286,13 @@ namespace xtd {
       /// @return true if pixfmt is extended; otherwise, false.
       static bool is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
       
+      /// @brief Returns an opacity level version of the specified image with percent factor.
+      /// @param image The image to change the opacity level.
+      /// @param percent The percent factor.
+      /// @return The adjusted image result.
+      /// @remarks 0% will represents a transparent image. 100% will provide the original image.
+      static image opacity(const image& image, double percent);
+
       /// @brief Rotates, flips, or rotates and flips the xtd::drawing::image.
       /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
       /// @remarks The xtd::drawing::image::rotate_flip method rotates the image clockwise.
