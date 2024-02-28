@@ -624,6 +624,19 @@ namespace xtd {
       static color average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept;
       
       /// @brief Returns the weighted average color between the two given colors.
+      /// @param fore_core The foreground color.
+      /// @param back_color The background color.
+      /// @param alpha The alpha factor
+      /// @return The combined color.
+      /// @remarks The alpha of color1 is conserved.
+      /// @remarks The red, green and blue values are averages using the following formula:
+      /// @code
+      /// color = fore_core * (1 - weight) + back_color * weight;
+      /// @endcode
+      /// @remarks Thus, a weight value of `1.0` will return the background color, while a value of `0.0` will return the foreground color.
+      static color alpha_blend(const color& fore_core, const color& back_color, double alpha) noexcept;
+
+      /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
       /// @param color2 The second color.
       /// @param weight The weighting factor
@@ -633,17 +646,26 @@ namespace xtd {
       /// @code
       /// color = color1 * (1 - weight) + color2 * weight;
       /// @endcode
-      /// @remarks Thus, a weight value of 1.0 will return the second color, while a value of 0.0 will return the first color.
+      /// @remarks Thus, a weight value of `1.0` will return the second color, while a value of `0.0` will return the first color.
       static color average(const color& color1, const color& color2, double weight) noexcept;
       
+      /// @brief Returns a brightness version of the specified color.
+      /// @param color The color to adjust.
+      /// @param percent The brightness factor
+      /// @return the adjusted color result.
+      /// @remarks Thus, a percent value of `1.0` will return the color, while a value of `0.0` will return the xtd::drawing::color::black and a value of `2.0` will return the xtd::drawing::color::white.
+      static color brightness(const color& color, double percent) noexcept;
+
       /// @brief Returns a darker version of the specified color.
       /// @param color The color to dark.
-      /// @return the darker color result.
-      static color dark(const color& color, double weight) noexcept;
+      /// @param percent The darker factor
+      /// @return the adjusted color result.
+      /// @remarks Thus, a percent value of `1.0` will return the xtd::drawing::color::black, while a value of `0.0` will return the color.
+      static color dark(const color& color, double percent) noexcept;
       
       /// @brief Returns a darker version of the specified color.
       /// @param color The color to dark.
-      /// @return the darker color result.
+      /// @return the adjusted color result.
       static color dark(const color& color) noexcept;
       
       bool equals(const color& value) const noexcept override;
@@ -1100,11 +1122,30 @@ namespace xtd {
       /// @endcode
       float get_saturation() const noexcept;
       
+      /// @brief Returns a grayscale version of the specified color.
+      /// @param color The color to grayscale.
+      /// @return the grayscale color result.
+      static color grayscale(const color& color) noexcept;
+      
+      /// @brief Returns a grayscale version of the specified color with percent factor.
+      /// @param color The color to grayscale.
+      /// @param percent The percent factor.
+      /// @return the grayscale color result.
+      /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original color.
+      static color grayscale(const color& color, double percent) noexcept;
+
+      /// @brief Returns a invertr version of the specified color.
+      /// @param color The color to invert.
+      /// @return the inverted color result.
+      static color invert(const color& color) noexcept;
+
       /// @brief Returns a lighter version of the specified color.
       /// @param color The color to light.
-      /// @return the lighter color result.
-      static color light(const color& color, double weight) noexcept;
-      
+      /// @param percent The lighter factor
+      /// @return the adjusted color result.
+      /// @remarks Thus, a weight value of `1.0` will return the xtd::drawing::color::white, while a value of `0.0` will return the color.
+      static color light(const color& color, double percent) noexcept;
+
       /// @brief Returns a lighter version of the specified color.
       /// @param color The color to light.
       /// @return the lighter color result.
