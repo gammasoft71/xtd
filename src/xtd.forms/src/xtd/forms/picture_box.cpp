@@ -76,15 +76,11 @@ std::optional<drawing::image> picture_box::image() const noexcept {
 }
 
 picture_box& picture_box::image(const drawing::image& image) {
-  if (!data_->image.has_value() || data_->image.value().handle() != image.handle()) {
-    if (image == drawing::image::empty)
-      this->image(nullptr);
-    else {
-      data_->image = image;
-      if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::image(handle(), data_->image.value());
-      else invalidate();
-    }
-  }
+  if (data_->image.has_value() && data_->image.value().handle() == image.handle()) return *this;
+  if (image == drawing::image::empty) return this->image(nullptr);
+  data_->image = image;
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::image(handle(), data_->image.value());
+  else invalidate();
   return *this;
 }
 
