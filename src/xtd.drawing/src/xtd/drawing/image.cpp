@@ -256,6 +256,23 @@ image image::brightness(const image& image, double percent) {
   return dest;
 }
 
+image image::disable(const image& image, const color& back_color) {
+  return disable(image, back_color.get_brightness());
+}
+
+image image::disable(const image& image, float brightness) {
+  auto dest = image;
+  auto size = dest.width() * dest.height();
+  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
+  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
+  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
+    *dest_rgb = color::disabled(*src_rgb, brightness);
+    *(dest_rgb + 1) = color::disabled(*(src_rgb + 1), brightness);
+    *(dest_rgb + 2) = color::disabled(*(src_rgb + 2), brightness);
+  }
+  return dest;
+}
+
 image image::invert(const image& image, double percent) {
   auto dest = image;
   auto size = dest.width() * dest.height();
@@ -382,6 +399,12 @@ image image::opacity(const image& image, double percent) {
 
 void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
   native::image::rotate_flip(handle(), static_cast<int32>(rotate_flip_type));
+}
+
+image image::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
+  auto result = drawing::image {image};
+  result.rotate_flip(rotate_flip_type);
+  return result;
 }
 
 void image::save(const ustring& filename) const {

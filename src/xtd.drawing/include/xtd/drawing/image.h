@@ -183,6 +183,18 @@ namespace xtd {
       /// @remarks 0% will make the image completely black. 100% is default and represents the original image. Values over 100% will provide brighter results.
       static image brightness(const image& image, double percent);
       
+      /// @brief Returns a disabled version of the specified image and background color.
+      /// @param image The image to brightness.
+      /// @param back_color The reference background color.
+      /// @return The disabled image result.
+      static image disable(const image& image, const color& back_color);
+      
+      /// @brief Returns a disabled version of the specified image and background color.
+      /// @param image The image to brightness.
+      /// @param brightness The brightness of the reference background color.
+      /// @return The disabled image result.
+      static image disable(const image& image, float brightness);
+      
       /// @brief Returns an invert version of the specified image with percent factor.
       /// @param image The image to invert.
       /// @param percent The percent factor.
@@ -298,6 +310,12 @@ namespace xtd {
       /// @remarks The xtd::drawing::image::rotate_flip method rotates the image clockwise.
       /// @remarks If you wish to draw on an image once it has been rotated, you should always retrieve a new graphics object from the image, otherwise an exception could occur.
       void rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type);
+      
+      /// @brief Rotates, flips, or rotates and flips the xtd::drawing::image.
+      /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
+      /// @remarks The xtd::drawing::image::rotate_flip method rotates the image clockwise.
+      /// @remarks If you wish to draw on an image once it has been rotated, you should always retrieve a new graphics object from the image, otherwise an exception could occur.
+      static image rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type);
       
       /// @brief Saves this xtd::drawing::image to the specified file or stream.
       /// @param filename A string that contains the name of the file to which to save this xtd::drawing::image.
