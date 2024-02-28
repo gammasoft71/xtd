@@ -77,8 +77,7 @@ intptr bitmap::get_hicon() const {
 }
 
 drawing::color bitmap::get_pixel(int32 x, int32 y) const {
-  auto a = 0_u8, r = 0_u8, g = 0_u8, b = 0_u8;
-  native::image::get_pixel(handle(), x, y, a, r, g, b);
+  auto [a, r, g, b] = native::image::get_pixel(handle(), x, y);
   return color::from_argb(a, r, g, b);
 }
 
