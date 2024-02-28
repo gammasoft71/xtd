@@ -340,6 +340,7 @@ intptr image::from_hicon(intptr icon) {
 
 intptr image::get_alpha(intptr image) {
   if (image == 0) return 0;
+  reinterpret_cast<wxImage*>(image)->InitAlpha();
   return reinterpret_cast<intptr>(reinterpret_cast<wxImage*>(image)->GetAlpha());
 }
 
