@@ -340,7 +340,7 @@ intptr image::from_hicon(intptr icon) {
 
 intptr image::get_alpha(intptr image) {
   if (image == 0) return 0;
-  reinterpret_cast<wxImage*>(image)->InitAlpha();
+  if (!reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->InitAlpha();
   return reinterpret_cast<intptr>(reinterpret_cast<wxImage*>(image)->GetAlpha());
 }
 
@@ -371,12 +371,13 @@ intptr image::get_hicon(intptr image) {
 }
 
 std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte> image::get_pixel(intptr image, int32 x, int32 y) {
+  if (!reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->InitAlpha();
   if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1)) return {0, 0, 0, 0};
-  auto a = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->HasAlpha() ? reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) : 255);
+  auto a = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetAlpha(x, y));
   auto r = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetRed(x, y));
   auto g = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetGreen(x, y));
   auto b = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetBlue(x, y));
-  return std::make_tuple(a, r, g, b);
+  return {a, r, g, b};
 }
 
 float image::horizontal_resolution(intptr image) {
@@ -459,7 +460,8 @@ void image::rotate_flip(intptr image, int32 rotate_flip_type) {
 }
 
 void image::set_pixel(intptr image, int32 x, int32 y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
-  if (reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, a);
+  if (!reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->InitAlpha();
+  reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, a);
   reinterpret_cast<wxImage*>(image)->SetRGB(x, y, r, g, b);
 }
 
