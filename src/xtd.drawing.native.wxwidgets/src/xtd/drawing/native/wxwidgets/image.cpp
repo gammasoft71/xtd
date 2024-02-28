@@ -308,7 +308,7 @@ intptr image::create(int32 width, int32 height, int32 stride, int32 format, intp
 intptr image::create(intptr image, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   if (image == 0) return 0;
-  wxImage* result = new wxImage(*reinterpret_cast<wxImage*>(image));
+  wxImage* result = new wxImage(reinterpret_cast<wxImage*>(image)->Copy());
   result->Rescale(width, height, wxIMAGE_QUALITY_HIGH);
   return reinterpret_cast<intptr>(result);
 }
@@ -338,6 +338,16 @@ intptr image::from_hicon(intptr icon) {
   return reinterpret_cast<intptr>(result);
 }
 
+intptr image::get_alpha(intptr image) {
+  if (image == 0) return 0;
+  return reinterpret_cast<intptr>(reinterpret_cast<wxImage*>(image)->GetAlpha());
+}
+
+intptr image::get_data(intptr image) {
+  if (image == 0) return 0;
+  return reinterpret_cast<intptr>(reinterpret_cast<wxImage*>(image)->GetData());
+}
+
 intptr image::get_hbitmap(intptr image) {
   wxBitmap* result = new wxBitmap(*reinterpret_cast<wxImage*>(image));
   return reinterpret_cast<intptr>(result);
@@ -359,14 +369,13 @@ intptr image::get_hicon(intptr image) {
   return reinterpret_cast<intptr>(result);
 }
 
-void image::get_pixel(intptr image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b) {
-  if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1)) a = r = g = b = 0;
-  else {
-    a = reinterpret_cast<wxImage*>(image)->HasAlpha() ? reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) : 255;
-    r = reinterpret_cast<wxImage*>(image)->GetRed(x, y);
-    g = reinterpret_cast<wxImage*>(image)->GetGreen(x, y);
-    b = reinterpret_cast<wxImage*>(image)->GetBlue(x, y);
-  }
+std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte> image::get_pixel(intptr image, int32 x, int32 y) {
+  if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1)) return {0, 0, 0, 0};
+  auto a = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->HasAlpha() ? reinterpret_cast<wxImage*>(image)->GetAlpha(x, y) : 255);
+  auto r = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetRed(x, y));
+  auto g = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetGreen(x, y));
+  auto b = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetBlue(x, y));
+  return std::make_tuple(a, r, g, b);
 }
 
 float image::horizontal_resolution(intptr image) {

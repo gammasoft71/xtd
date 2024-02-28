@@ -409,6 +409,18 @@ namespace xtd {
         /// @warning Internal use only
         static intptr from_hicon(intptr icon);
         
+        /// @brief Get the access to the alpah from this image.
+        /// @param image A handle to an image.
+        /// @return An alpha pointer of the image.
+        /// @warning Internal use only
+        static intptr get_alpha(intptr image);
+        
+        /// @brief Get the access to the data from this image.
+        /// @param image A handle to an image.
+        /// @return A data pointer of the image.
+        /// @warning Internal use only
+        static intptr get_data(intptr image);
+        
         /// @brief Creates a GDI bitmap object from this image.
         /// @param image A handle to an image.
         /// @return A new bitmap handle.
@@ -440,7 +452,7 @@ namespace xtd {
         /// @param g The green component of the color of the specified pixel.
         /// @param b The blue component of the color of the specified pixel.
         /// @warning Internal use only
-        static void get_pixel(intptr image, int32 x, int32 y, xtd::byte& a, xtd::byte& r, xtd::byte& g, xtd::byte& b);
+        static std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte> get_pixel(intptr image, int32 x, int32 y);
         
         /// @brief Gets the horizontal resolution, in pixels per inch, of the image.
         /// @param image The image handle.
