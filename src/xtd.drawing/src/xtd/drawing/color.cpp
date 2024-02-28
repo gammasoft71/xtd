@@ -231,6 +231,14 @@ color color::dark(const color& color) noexcept {
   return color::dark(color, 1.0 / 3);
 }
 
+color color::disabled(const color& fore_color, const color& back_color) noexcept {
+  return disabled(fore_color, back_color.get_brightness());
+}
+
+color color::disabled(const color& fore_color, float brightness) noexcept {
+  return color::from_argb(fore_color.a(), disabled(fore_color.r(), brightness), disabled(fore_color.g(), brightness), disabled(fore_color.b(), brightness));
+}
+
 bool color::equals(const color& value) const noexcept {
   return argb_ == value.argb_ && handle_ == value.handle_ && name_ == value.name_ && empty_ == value.empty_;
 }
@@ -674,8 +682,13 @@ xtd::byte color::alpha_blend(xtd::byte fore_componant, xtd::byte back_componant,
 
 xtd::byte color::brightness(xtd::byte componant, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 2.0);
-  if (percent < 1.0) return alpha_blend(0, componant, percent);
+  if (percent < 1.0) return alpha_blend(componant, 0, 1.0 - percent);
   return alpha_blend(componant, 255, percent - 1.0);
+}
+
+xtd::byte color::disabled(xtd::byte componant, float brightness) noexcept {
+  brightness = std::clamp(brightness, .0f, 1.0f);
+  return alpha_blend(componant, static_cast<xtd::byte>(255 * brightness), 0.4);
 }
 
 xtd::byte color::grayscale(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
