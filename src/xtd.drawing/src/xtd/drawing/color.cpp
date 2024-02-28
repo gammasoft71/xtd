@@ -207,14 +207,12 @@ xtd::byte color::r() const noexcept {
   return (xtd::byte)((to_argb() & 0x00FF0000) >> 16);
 }
 
-color color::alpha_blend(const color& froe_color, const color& back_color, double alpha) noexcept {
-  return average(froe_color, back_color, alpha, true);
+color color::alpha_blend(const color& fore_color, const color& back_color, double alpha) noexcept {;
+  return from_argb(alpha_blend(fore_color.a(), back_color.a(), alpha), alpha_blend(fore_color.r(), back_color.r(), alpha), alpha_blend(fore_color.g(), back_color.g(), alpha), alpha_blend(fore_color.b(), back_color.b(), alpha));
 }
 
 color color::average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {
-  weight = std::clamp(weight, 0.0, 1.0);
-  auto average_componant = [](xtd::byte c1, xtd::byte c2, double weight) {return static_cast<xtd::byte>(c1 * (1 - weight) + c2 * weight);};
-  return from_argb( average_componant(color1.a(), color2.a(), average_alpha ? weight : 1.0), average_componant(color1.r(), color2.r(), weight), average_componant(color1.g(), color2.g(), weight), average_componant(color1.b(), color2.b(), weight));
+  return from_argb(alpha_blend(color1.a(), color2.a(), average_alpha ? weight : 1.0), alpha_blend(color1.r(), color2.r(), weight), alpha_blend(color1.g(), color2.g(), weight), alpha_blend(color1.b(), color2.b(), weight));
 }
 
 color color::average(const color& color1, const color& color2, double weight) noexcept {
@@ -222,12 +220,11 @@ color color::average(const color& color1, const color& color2, double weight) no
 }
 
 color color::brightness(const color& color, double percent) noexcept {
-  if (percent <= 0.1) return dark(color, percent);
-  return light(color, percent - 0.1);
+  return color::from_argb(brightness(color.a(), percent), brightness(color.r(), percent), brightness(color.g(), percent), brightness(color.b(), percent));
 }
 
 color color::dark(const color& color, double percent) noexcept {
-  return color::average(color, drawing::color::black, percent);
+  return color::from_argb(color.a(), brightness(color.r(), percent), brightness(color.g(), percent), brightness(color.b(), percent));
 }
 
 color color::dark(const color& color) noexcept {
@@ -621,27 +618,24 @@ float color::get_saturation() const noexcept {
 }
 
 color color::grayscale(const color& color, double percent) noexcept {
-  /* https://stackoverflow.com/questions/14330/rgb-to-monochrome-conversion
-   auto grayscale = static_cast<xtd::byte>(0.2125 * color.r()) + (0.7154 * color.g()) + (0.0721 * color.b()); : Color FAQ (http://www.poynton.com/notes/colour_and_gamma/ColorFAQ.html)
-   auto grayscale = static_cast<xtd::byte>(0.299 * color.r()) + (0.587 * color.g()) + (0.114 * color.b()); : MSDN (http://msdn.microsoft.com/en-us/library/bb332387.aspx#tbconimagecolorizer_grayscaleconversion)
-   auto grayscale = static_cast<xtd::byte>(0.3 * color.r()) + (0.59 * color.g()) + (0.11 * color.b()); : Wikipedia (http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale)
-   auto grayscale = static_cast<xtd::byte>((306ul * color.r() + 601ul * color.g() + 117ul * color.b()) >> 10); : wxWidgets
-   */
-  percent = std::clamp(percent, 0.0, 1.0);
-  auto grayscale = static_cast<xtd::byte>((percent * 0.299 * color.r()) + (percent * 0.587 * color.g()) + (percent * 0.114 * color.b()));
-  return xtd::drawing::color::from_argb(color.a(), grayscale, grayscale, grayscale);
+  auto grayscale = color::grayscale(color.r(), color.g(), color.b());
+  return alpha_blend(color, xtd::drawing::color::from_argb(color.a(), grayscale, grayscale, grayscale), percent);
 }
 
 color color::grayscale(const color& color) noexcept {
   return grayscale(color, 1.0);
 }
 
+color color::invert(const color& color,  double percent) noexcept {
+  return color::from_argb(color.a(), invert(color.r(), percent), invert(color.g(), percent), invert(color.b(), percent));
+}
+
 color color::invert(const color& color) noexcept {
-  return color::from_argb(white.to_argb() - color.to_argb());;
+  return invert(color, 1.0);
 }
 
 color color::light(const color& color, double percent) noexcept {
-  return color::average(color, drawing::color::white, percent);
+  return color::from_argb(color.a(), brightness(color.r(), percent + 1.0), brightness(color.g(), percent + 1.0), brightness(color.b(), percent + 1.0));
 }
 
 color color::light(const color& color) noexcept {
@@ -671,6 +665,32 @@ ustring color::to_string() const noexcept {
   if (empty_) return "color [empty]";
   if (name_ != ustring::format("{:x8}", argb_) && name_ != "0") return ustring::format("color [{0}]", name());
   return ustring::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
+}
+
+xtd::byte color::alpha_blend(xtd::byte fore_componant, xtd::byte back_componant, double percent) noexcept {
+  percent = std::clamp(percent, 0.0, 1.0);
+  return static_cast<xtd::byte>(fore_componant * (1 - percent) + back_componant * percent);
+}
+
+xtd::byte color::brightness(xtd::byte componant, double percent) noexcept {
+  percent = std::clamp(percent, 0.0, 2.0);
+  if (percent < 1.0) return alpha_blend(0, componant, percent);
+  return alpha_blend(componant, 255, percent - 1.0);
+}
+
+xtd::byte color::grayscale(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
+  /* https://stackoverflow.com/questions/14330/rgb-to-monochrome-conversion
+   auto grayscale = static_cast<xtd::byte>(0.2125 * r) + (0.7154 * g) + (0.0721 * b); : Color FAQ (http://www.poynton.com/notes/colour_and_gamma/ColorFAQ.html)
+   auto grayscale = static_cast<xtd::byte>(0.299 * r) + (0.587 * g) + (0.114 * b); : MSDN (http://msdn.microsoft.com/en-us/library/bb332387.aspx#tbconimagecolorizer_grayscaleconversion)
+   auto grayscale = static_cast<xtd::byte>(0.3 * r) + (0.59 * g) + (0.11 * b); : Wikipedia (http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale)
+   auto grayscale = static_cast<xtd::byte>((306ul * r + 601ul * g + 117ul * b >> 10); : wxWidgets
+   */
+  return static_cast<xtd::byte>((0.299 * r) + (0.587 * g) + (0.114 * b));
+}
+
+xtd::byte color::invert(xtd::byte componant, double percent) noexcept {
+  percent = std::clamp(percent, 0.0, 1.0);
+  return alpha_blend(componant, 255 - componant, percent);
 }
 
 color::color(uint32 argb) : argb_(argb), name_(argb ? ustring::format("{:x8}", argb) : "0"), empty_(false) {
