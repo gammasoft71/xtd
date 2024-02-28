@@ -8,6 +8,7 @@
 #include <xtd/drawing/native/frame_dimension>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/as>
+#include <algorithm>
 #include <iostream>
 #include <memory>
 #include <tuple>
@@ -367,6 +368,16 @@ bool image::is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt
 
 bool image::is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
   return (pixfmt & xtd::drawing::imaging::pixel_format::extended) == xtd::drawing::imaging::pixel_format::extended;
+}
+
+image image::opacity(const image& image, double percent) {
+  percent = std::clamp(percent, .0, 1.0);
+  auto dest = image;
+  auto size = dest.width() * dest.height();
+  char* dest_alpha = reinterpret_cast<char*>(native::image::get_alpha(dest.handle()));
+  for (auto index = 0; index < size; index++, dest_alpha++)
+    *dest_alpha = static_cast<char>(255 * percent);
+  return dest;
 }
 
 void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
