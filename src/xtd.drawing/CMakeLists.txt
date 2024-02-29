@@ -76,6 +76,8 @@ add_sources(
   include/xtd/drawing/icon
   include/xtd/drawing/image.h
   include/xtd/drawing/image
+  include/xtd/drawing/image_transformer.h
+  include/xtd/drawing/image_transformer
   include/xtd/drawing/international_system_images.h
   include/xtd/drawing/international_system_images
   include/xtd/drawing/known_color.h
@@ -267,6 +269,7 @@ add_sources(
   src/xtd/drawing/green_colors.cpp
   src/xtd/drawing/icon.cpp
   src/xtd/drawing/image.cpp
+  src/xtd/drawing/image_transformer.cpp
   src/xtd/drawing/international_system_images.cpp
   src/xtd/drawing/mimetypes_system_images.cpp
   src/xtd/drawing/orange_colors.cpp
