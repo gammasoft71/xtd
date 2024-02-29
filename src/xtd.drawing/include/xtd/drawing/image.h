@@ -163,9 +163,8 @@ namespace xtd {
       
       /// @{
 
-      /// @brief Returns a blur version of the specified image with radius.
+      /// @brief Returns a blur version of the specified image with radius value of 10.
       /// @param image The image to blured.
-      /// @param radius The radius of the blur, specified as a <length>.
       /// @return the blured image result.
       static image blur(const image& image);
       
