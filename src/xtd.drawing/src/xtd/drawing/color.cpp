@@ -156,7 +156,7 @@ const color color::white_smoke = color::from_known_color(known_color::white_smok
 const color color::yellow = color::from_known_color(known_color::yellow);
 const color color::yellow_green = color::from_known_color(known_color::yellow_green);
 
-color::color(const color& color, const known_color& known_color) : argb_(color.argb_), handle_(color.handle_), known_color_(known_color), name_(ustring::format("{}", known_color)), empty_(false) {
+color::color(const color& color, const known_color& known_color) : argb_(color.argb_), handle_(color.handle_), known_color_(known_color), empty_(false) {
 }
 
 xtd::byte color::a() const noexcept {
@@ -192,7 +192,7 @@ bool color::is_light() const noexcept {
 }
 
 bool color::is_named_color() const noexcept {
-  return name_ != ustring::format("{:x8}", argb_) && name_ != "0";
+  return name() != ustring::format("{:x8}", argb_) && name() != "0";
 }
 
 bool color::is_system_color() const noexcept {
@@ -200,7 +200,11 @@ bool color::is_system_color() const noexcept {
 }
 
 xtd::ustring color::name() const noexcept {
-  return name_;
+  if (name_ != ustring::empty_string) return name_;
+  if (known_color_ != static_cast<xtd::drawing::known_color>(0)) return ustring::format("{}", known_color_);
+  if (handle_ != 0) return ustring::format("{:x}h", handle_);
+  if (argb_ != 0) return ustring::format("{:x8}", argb_);
+  return "0";
 }
 
 xtd::byte color::r() const noexcept {
@@ -565,13 +569,13 @@ color color::from_known_color(known_color color) {
 }
 
 color color::from_name(const ustring& name) noexcept {
-  auto key = name.to_lower().replace(" ", "").replace("_", "");
   static auto names = map<ustring, known_color> {};
   if (names.empty()) {
     for (auto entry : enum_object<>::get_entries<known_color>())
       names.insert({entry.second.replace("_", ""), entry.first});
   }
-    
+  
+  auto key = name.to_lower().replace(" ", "").replace("_", "");
   auto it = names.find(key);
   if (it == names.end()) {
     auto result = color {};
@@ -579,6 +583,7 @@ color color::from_name(const ustring& name) noexcept {
     result.name_ = name;
     return result;
   }
+  
   try {
     return color::from_known_color(it->second);
   } catch (...) {
@@ -687,7 +692,7 @@ known_color color::to_known_color() const noexcept {
 
 ustring color::to_string() const noexcept {
   if (empty_) return "color [empty]";
-  if (name_ != ustring::format("{:x8}", argb_) && name_ != "0") return ustring::format("color [{0}]", name());
+  if (name() != ustring::format("{:x8}", argb_) && name() != "0") return ustring::format("color [{0}]", name());
   return ustring::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
 }
 
@@ -728,8 +733,8 @@ std::tuple<xtd::byte, xtd::byte, xtd::byte> color::sepia(xtd::byte r, xtd::byte 
   return {alpha_blend(r, static_cast<xtd::byte>(red), percent), alpha_blend(g, static_cast<xtd::byte>(green), percent), alpha_blend(b, static_cast<xtd::byte>(blue), percent)};
 }
 
-color::color(uint32 argb) : argb_(argb), name_(argb ? ustring::format("{:x8}", argb) : "0"), empty_(false) {
+color::color(uint32 argb) : argb_(argb), empty_(false) {
 }
 
-color::color(intptr handle) : handle_(handle), name_(ustring::format("{:x}h", handle)), empty_(false) {
+color::color(intptr handle) : handle_(handle), empty_(false) {
 }
