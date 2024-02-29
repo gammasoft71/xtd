@@ -338,15 +338,15 @@ intptr image::from_hicon(intptr icon) {
   return reinterpret_cast<intptr>(result);
 }
 
-intptr image::get_alpha(intptr image) {
+xtd::byte* image::get_alpha(intptr image) {
   if (image == 0) return 0;
   if (!reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->InitAlpha();
-  return reinterpret_cast<intptr>(reinterpret_cast<wxImage*>(image)->GetAlpha());
+  return reinterpret_cast<xtd::byte*>(reinterpret_cast<wxImage*>(image)->GetAlpha());
 }
 
-intptr image::get_data(intptr image) {
+xtd::byte* image::get_data(intptr image) {
   if (image == 0) return 0;
-  return reinterpret_cast<intptr>(reinterpret_cast<wxImage*>(image)->GetData());
+  return reinterpret_cast<xtd::byte*>(reinterpret_cast<wxImage*>(image)->GetData());
 }
 
 intptr image::get_hbitmap(intptr image) {
@@ -368,16 +368,6 @@ intptr image::get_hicon(intptr image) {
   icon.CopyFromBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image)));
   result->AddIcon(icon);
   return reinterpret_cast<intptr>(result);
-}
-
-std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte> image::get_pixel(intptr image, int32 x, int32 y) {
-  if (!reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->InitAlpha();
-  if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1)) return {0, 0, 0, 0};
-  auto a = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetAlpha(x, y));
-  auto r = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetRed(x, y));
-  auto g = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetGreen(x, y));
-  auto b = static_cast<xtd::byte>(reinterpret_cast<wxImage*>(image)->GetBlue(x, y));
-  return {a, r, g, b};
 }
 
 float image::horizontal_resolution(intptr image) {
@@ -457,12 +447,6 @@ void image::rotate_flip(intptr image, int32 rotate_flip_type) {
     case RFT_ROTATE_270_FLIP_X: *wx_image = wx_image->Rotate90(); *wx_image = wx_image->Mirror(); break;
     default: break;
   }
-}
-
-void image::set_pixel(intptr image, int32 x, int32 y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
-  if (!reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->InitAlpha();
-  reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, a);
-  reinterpret_cast<wxImage*>(image)->SetRGB(x, y, r, g, b);
 }
 
 void image::set_resolution(intptr image, int32 x_dpi, int32 y_dpi) {
