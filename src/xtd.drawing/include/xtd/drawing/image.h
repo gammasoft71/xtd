@@ -253,24 +253,6 @@ namespace xtd {
       /// @return The xtd::drawing::rectangle_f that represents the bounds of the image, in the specified unit.
       xtd::drawing::rectangle_f get_bounds(xtd::drawing::graphics_unit page_unit) const noexcept;
 
-      /// @brief Gets the image data pointer, which represents the RGB data of the image.
-      /// @return The pointer or data image.
-      /// @remarks This is most often used when doing direct image manipulation. The return value points to an array of characters in RGBRGBRGB... format in the top-to-bottom, left-to-right order, that is the first RGB triplet corresponds to the first pixel of the first row, the second one — to the second pixel of the first row and so on until the end of the first row, with second row following after it and so on.
-      /// @remarks The size of this data is 3 bytes (RGB) * height() * width().
-      /// @remarks If the image has no handle, such as an empty image, this method returns nullptr.
-      /// @warning Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems.
-      /// @remarks To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods.
-      const xtd::byte* get_data() const;
-
-      /// @brief Gets the image data pointer, which represents the RGB data of the image.
-      /// @return The pointer or data image.
-      /// @remarks This is most often used when doing direct image manipulation. The return value points to an array of characters in RGBRGBRGB... format in the top-to-bottom, left-to-right order, that is the first RGB triplet corresponds to the first pixel of the first row, the second one — to the second pixel of the first row and so on until the end of the first row, with second row following after it and so on.
-      /// @remarks The size of this data is 3 bytes (RGB) * height() * width().
-      /// @remarks If the image has no handle, such as an empty image, this method returns nullptr.
-      /// @warning Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems.
-      /// @remarks To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods.
-      xtd::byte* get_data();
-
       /// @brief Returns information about the parameters supported by the specified image encoder.
       /// @param guid A GUID that specifies the image encoder.
       /// @return An xtd::drawing::imaging::encoder_parameters that contains an array of xtd::drawing::imaging::encoder_parameter objects. Each xtd::drawing::imaging::encoder_parameter contains information about one of the parameters supported by the specified image encoder.
@@ -296,7 +278,25 @@ namespace xtd {
       /// @remarks For a list of property item IDs and links to more information, see Id.
       /// @remarks It is difficult to set property items, because the xtd::drawing::imaging::property_item class has no public constructors. One way to work around this restriction is to obtain a xtd::drawing::imaging::property_item by retrieving the xtd::drawing::image::property_item property value or calling the xtd::drawing::image::get_property_item method of an xtd::drawing::image that already has property items. Then you can set the fields of the xtd::drawing::imaging::property_item and pass it to xtd::drawing::image::set_property_item.
       xtd::drawing::imaging::property_item get_property_item(int32 propid);
+ 
+      /// @brief Gets the image data pointer, which represents the RGB data of the image.
+      /// @return The pointer or data image.
+      /// @remarks This is most often used when doing direct image manipulation. The return value points to an array of characters in RGBRGBRGB... format in the top-to-bottom, left-to-right order, that is the first RGB triplet corresponds to the first pixel of the first row, the second one — to the second pixel of the first row and so on until the end of the first row, with second row following after it and so on.
+      /// @remarks The size of this data is 3 bytes (RGB) * height() * width().
+      /// @remarks If the image has no handle, such as an empty image, this method returns nullptr.
+      /// @warning Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems.
+      /// @remarks To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods.
+      const xtd::byte* get_rgb() const;
       
+      /// @brief Gets the image data pointer, which represents the RGB data of the image.
+      /// @return The pointer or data image.
+      /// @remarks This is most often used when doing direct image manipulation. The return value points to an array of characters in RGBRGBRGB... format in the top-to-bottom, left-to-right order, that is the first RGB triplet corresponds to the first pixel of the first row, the second one — to the second pixel of the first row and so on until the end of the first row, with second row following after it and so on.
+      /// @remarks The size of this data is 3 bytes (RGB) * height() * width().
+      /// @remarks If the image has no handle, such as an empty image, this method returns nullptr.
+      /// @warning Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems.
+      /// @remarks To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods.
+      xtd::byte* get_rgb();
+
       /// @brief Returns a thumbnail for this xtd::drawing::image.
       /// @param thbmb_width The width, in pixels, of the requested thumbnail image.
       /// @param thum_height The height, in pixels, of the requested thumbnail image.
