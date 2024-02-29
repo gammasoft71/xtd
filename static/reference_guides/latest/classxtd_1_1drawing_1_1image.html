@@ -103,7 +103,7 @@ Inheritance diagram for xtd::drawing::image:</div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>An abstract base class that provides functionality for the bitmap and metafile descended classes. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#ga0e59557a60ff5461db679dd209b6d3cd">drawing_export_</a> <a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;image&gt;</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a></div><div class="ttdoc">An abstract base class that provides functionality for the bitmap and metafile descended classes.</div><div class="ttdef"><b>Definition</b> image.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a></div><div class="ttdoc">An abstract base class that provides functionality for the bitmap and metafile descended classes.</div><div class="ttdef"><b>Definition</b> image.h:49</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:32</div></div>
 <div class="ttc" id="agroup__keywords_html_ga0e59557a60ff5461db679dd209b6d3cd"><div class="ttname"><a href="group__keywords.html#ga0e59557a60ff5461db679dd209b6d3cd">drawing_export_</a></div><div class="ttdeci">#define drawing_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> drawing_export.h:13</div></div>
@@ -173,15 +173,18 @@ Inheritance diagram for xtd::drawing::image:</div>
 <tr class="separator:aede72dea65624fed9a8676a866a1d2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
-<tr class="memitem:ace2086338d87450be4fee55b0b885076"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#ace2086338d87450be4fee55b0b885076">blur</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> radius) const</td></tr>
-<tr class="memdesc:ace2086338d87450be4fee55b0b885076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blurs the image whith the specified radius.  <br /></td></tr>
-<tr class="separator:ace2086338d87450be4fee55b0b885076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35c36c9ac58d5a2a834f36e17e986f7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1graphics.html">graphics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a35c36c9ac58d5a2a834f36e17e986f7c">create_graphics</a> ()</td></tr>
 <tr class="memdesc:a35c36c9ac58d5a2a834f36e17e986f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> for the image.  <br /></td></tr>
 <tr class="separator:a35c36c9ac58d5a2a834f36e17e986f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5c479b0d5b8593f28dd54024ab9dc0e"><td class="memItemLeft" align="right" valign="top"><a id="ac5c479b0d5b8593f28dd54024ab9dc0e" name="ac5c479b0d5b8593f28dd54024ab9dc0e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1drawing_1_1image.html">image</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>) const noexcept override</td></tr>
 <tr class="separator:ac5c479b0d5b8593f28dd54024ab9dc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac636a38696b873e70836a6bc9d03a73c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#ac636a38696b873e70836a6bc9d03a73c">get_alpha</a> () const</td></tr>
+<tr class="memdesc:ac636a38696b873e70836a6bc9d03a73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image alpha pointer, which represents the alpha data of the image.  <br /></td></tr>
+<tr class="separator:ac636a38696b873e70836a6bc9d03a73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13302ee578f9120cb0f1e5f9ccc9c7b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a13302ee578f9120cb0f1e5f9ccc9c7b9">get_alpha</a> ()</td></tr>
+<tr class="memdesc:a13302ee578f9120cb0f1e5f9ccc9c7b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image alpha pointer, which represents the alpha data of the image.  <br /></td></tr>
+<tr class="separator:a13302ee578f9120cb0f1e5f9ccc9c7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a930671861f3fde49359f3243daebdb9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1rectangle__f.html">xtd::drawing::rectangle_f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a930671861f3fde49359f3243daebdb9a">get_bounds</a> (<a class="el" href="group__xtd__drawing.html#ga35e450ae5d06c5a8ef29e54c607add86">xtd::drawing::graphics_unit</a> page_unit) const noexcept</td></tr>
 <tr class="memdesc:a930671861f3fde49359f3243daebdb9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounds of the image in the specified unit.  <br /></td></tr>
 <tr class="separator:a930671861f3fde49359f3243daebdb9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,6 +197,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a5c0efba51e1364b2a5f63699e5f0e089"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1imaging_1_1property__item.html">xtd::drawing::imaging::property_item</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a5c0efba51e1364b2a5f63699e5f0e089">get_property_item</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> propid)</td></tr>
 <tr class="memdesc:a5c0efba51e1364b2a5f63699e5f0e089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified property item from this <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a>.  <br /></td></tr>
 <tr class="separator:a5c0efba51e1364b2a5f63699e5f0e089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074baabee75944297aa62f3fbd8fabb3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a074baabee75944297aa62f3fbd8fabb3">get_rgb</a> () const</td></tr>
+<tr class="memdesc:a074baabee75944297aa62f3fbd8fabb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image data pointer, which represents the RGB data of the image.  <br /></td></tr>
+<tr class="separator:a074baabee75944297aa62f3fbd8fabb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c3bbae794db6fdfcec7b4c910004a92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a8c3bbae794db6fdfcec7b4c910004a92">get_rgb</a> ()</td></tr>
+<tr class="memdesc:a8c3bbae794db6fdfcec7b4c910004a92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image data pointer, which represents the RGB data of the image.  <br /></td></tr>
+<tr class="separator:a8c3bbae794db6fdfcec7b4c910004a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a6bacdfb6fa3c2168f012ff9c4e06f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a14a6bacdfb6fa3c2168f012ff9c4e06f">get_thmbnail_image</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> thumb_width, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> thunb_height) noexcept</td></tr>
 <tr class="memdesc:a14a6bacdfb6fa3c2168f012ff9c4e06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a thumbnail for this <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a>.  <br /></td></tr>
 <tr class="separator:a14a6bacdfb6fa3c2168f012ff9c4e06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -269,34 +278,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a1ee13700465eead7934f450749b952d7 inherit pub_static_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ace2086338d87450be4fee55b0b885076" name="ace2086338d87450be4fee55b0b885076"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace2086338d87450be4fee55b0b885076">&#9670;&#160;</a></span>blur()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1drawing_1_1image.html">image</a> xtd::drawing::image::blur </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td>
-          <td class="paramname"><em>radius</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Blurs the image whith the specified radius. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">radius</td><td>The radius of the blur, specified as a &lt;length&gt; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>No blur effect, if the radius is 0. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The new blurred image. </dd></dl>
-
-</div>
-</div>
 <a id="a35c36c9ac58d5a2a834f36e17e986f7c" name="a35c36c9ac58d5a2a834f36e17e986f7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35c36c9ac58d5a2a834f36e17e986f7c">&#9670;&#160;</a></span>create_graphics()</h2>
 
@@ -557,6 +538,56 @@ A multiple-resolution image is an image that contains more than one copy of an i
 
 </div>
 </div>
+<a id="a13302ee578f9120cb0f1e5f9ccc9c7b9" name="a13302ee578f9120cb0f1e5f9ccc9c7b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13302ee578f9120cb0f1e5f9ccc9c7b9">&#9670;&#160;</a></span>get_alpha() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> * xtd::drawing::image::get_alpha </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the image alpha pointer, which represents the alpha data of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pointer or alpha image. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The size of this data is 1 byte (alpha) * <a class="el" href="classxtd_1_1drawing_1_1image.html#a949196d571aaa1e0b8a3bbcf59141074" title="Gets the height, in pixels, of this image.">height()</a> * <a class="el" href="classxtd_1_1drawing_1_1image.html#aede72dea65624fed9a8676a866a1d2e8" title="Gets the width, in pixels, of this image.">width()</a>. </dd>
+<dd>
+If the image has no handle, such as an empty image, this method returns nullptr. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods. </dd></dl>
+
+</div>
+</div>
+<a id="ac636a38696b873e70836a6bc9d03a73c" name="ac636a38696b873e70836a6bc9d03a73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac636a38696b873e70836a6bc9d03a73c">&#9670;&#160;</a></span>get_alpha() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> * xtd::drawing::image::get_alpha </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the image alpha pointer, which represents the alpha data of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pointer or alpha image. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The size of this data is 1 byte (alpha) * <a class="el" href="classxtd_1_1drawing_1_1image.html#a949196d571aaa1e0b8a3bbcf59141074" title="Gets the height, in pixels, of this image.">height()</a> * <a class="el" href="classxtd_1_1drawing_1_1image.html#aede72dea65624fed9a8676a866a1d2e8" title="Gets the width, in pixels, of this image.">width()</a>. </dd>
+<dd>
+If the image has no handle, such as an empty image, this method returns nullptr. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods. </dd></dl>
+
+</div>
+</div>
 <a id="a930671861f3fde49359f3243daebdb9a" name="a930671861f3fde49359f3243daebdb9a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a930671861f3fde49359f3243daebdb9a">&#9670;&#160;</a></span>get_bounds()</h2>
 
@@ -727,6 +758,60 @@ A multiple-resolution image is an image that contains more than one copy of an i
 <dl class="section remark"><dt>Remarks</dt><dd>For a list of property item IDs and links to more information, see Id. </dd>
 <dd>
 It is difficult to set property items, because the <a class="el" href="classxtd_1_1drawing_1_1imaging_1_1property__item.html" title="Encapsulates a metadata property to be included in an image file. Not inheritable.">xtd::drawing::imaging::property_item</a> class has no public constructors. One way to work around this restriction is to obtain a <a class="el" href="classxtd_1_1drawing_1_1imaging_1_1property__item.html" title="Encapsulates a metadata property to be included in an image file. Not inheritable.">xtd::drawing::imaging::property_item</a> by retrieving the xtd::drawing::image::property_item property value or calling the <a class="el" href="classxtd_1_1drawing_1_1image.html#a5c0efba51e1364b2a5f63699e5f0e089" title="Gets the specified property item from this xtd::drawing::image.">xtd::drawing::image::get_property_item</a> method of an <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> that already has property items. Then you can set the fields of the <a class="el" href="classxtd_1_1drawing_1_1imaging_1_1property__item.html" title="Encapsulates a metadata property to be included in an image file. Not inheritable.">xtd::drawing::imaging::property_item</a> and pass it to xtd::drawing::image::set_property_item. </dd></dl>
+
+</div>
+</div>
+<a id="a8c3bbae794db6fdfcec7b4c910004a92" name="a8c3bbae794db6fdfcec7b4c910004a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c3bbae794db6fdfcec7b4c910004a92">&#9670;&#160;</a></span>get_rgb() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> * xtd::drawing::image::get_rgb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the image data pointer, which represents the RGB data of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pointer or data image. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This is most often used when doing direct image manipulation. The return value points to an array of characters in RGBRGBRGB... format in the top-to-bottom, left-to-right order, that is the first RGB triplet corresponds to the first pixel of the first row, the second one — to the second pixel of the first row and so on until the end of the first row, with second row following after it and so on. </dd>
+<dd>
+The size of this data is 3 bytes (RGB) * <a class="el" href="classxtd_1_1drawing_1_1image.html#a949196d571aaa1e0b8a3bbcf59141074" title="Gets the height, in pixels, of this image.">height()</a> * <a class="el" href="classxtd_1_1drawing_1_1image.html#aede72dea65624fed9a8676a866a1d2e8" title="Gets the width, in pixels, of this image.">width()</a>. </dd>
+<dd>
+If the image has no handle, such as an empty image, this method returns nullptr. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods. </dd></dl>
+
+</div>
+</div>
+<a id="a074baabee75944297aa62f3fbd8fabb3" name="a074baabee75944297aa62f3fbd8fabb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074baabee75944297aa62f3fbd8fabb3">&#9670;&#160;</a></span>get_rgb() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> * xtd::drawing::image::get_rgb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the image data pointer, which represents the RGB data of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pointer or data image. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This is most often used when doing direct image manipulation. The return value points to an array of characters in RGBRGBRGB... format in the top-to-bottom, left-to-right order, that is the first RGB triplet corresponds to the first pixel of the first row, the second one — to the second pixel of the first row and so on until the end of the first row, with second row following after it and so on. </dd>
+<dd>
+The size of this data is 3 bytes (RGB) * <a class="el" href="classxtd_1_1drawing_1_1image.html#a949196d571aaa1e0b8a3bbcf59141074" title="Gets the height, in pixels, of this image.">height()</a> * <a class="el" href="classxtd_1_1drawing_1_1image.html#aede72dea65624fed9a8676a866a1d2e8" title="Gets the width, in pixels, of this image.">width()</a>. </dd>
+<dd>
+If the image has no handle, such as an empty image, this method returns nullptr. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods. </dd></dl>
 
 </div>
 </div>
@@ -1497,7 +1582,7 @@ The image must be saved to the stream at an offset of zero. If any additional da
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 27 2024 16:05:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Feb 29 2024 22:00:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
