@@ -1320,10 +1320,10 @@ namespace xtd {
       color(const color& color, const xtd::drawing::known_color& know_color);
       
       uint32 argb_ = 0;
+      bool empty_ = true;
       intptr handle_ = 0;
       xtd::drawing::known_color known_color_ = static_cast<xtd::drawing::known_color>(0);
-      xtd::ustring name_ = "0";
-      bool empty_ = true;
+      xtd::ustring name_;
     };
   }
   
