@@ -660,6 +660,15 @@ color color::parse(const ustring& color) noexcept {
   }
 }
 
+color color::sepia(const color& color, double percent) noexcept {
+  auto [r, g, b] = color::sepia(color.r(), color.g(), color.b());
+  return alpha_blend(color, xtd::drawing::color::from_argb(color.a(), r, g, b), percent);
+}
+
+color color::sepia(const color& color) noexcept {
+  return sepia(color, 1.0);
+}
+
 uint32 color::to_argb() const noexcept {
   if (handle_) return native::system_colors::to_argb(handle_);
   return argb_;
@@ -692,18 +701,21 @@ xtd::byte color::disabled(xtd::byte componant, float brightness) noexcept {
 }
 
 xtd::byte color::grayscale(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
-  /* https://stackoverflow.com/questions/14330/rgb-to-monochrome-conversion
-   auto grayscale = static_cast<xtd::byte>(0.2125 * r) + (0.7154 * g) + (0.0721 * b); : Color FAQ (http://www.poynton.com/notes/colour_and_gamma/ColorFAQ.html)
-   auto grayscale = static_cast<xtd::byte>(0.299 * r) + (0.587 * g) + (0.114 * b); : MSDN (http://msdn.microsoft.com/en-us/library/bb332387.aspx#tbconimagecolorizer_grayscaleconversion)
-   auto grayscale = static_cast<xtd::byte>(0.3 * r) + (0.59 * g) + (0.11 * b); : Wikipedia (http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale)
-   auto grayscale = static_cast<xtd::byte>((306ul * r + 601ul * g + 117ul * b >> 10); : wxWidgets
-   */
+  // https://stackoverflow.com/questions/14330/rgb-to-monochrome-conversion
   return static_cast<xtd::byte>((0.299 * r) + (0.587 * g) + (0.114 * b));
 }
 
 xtd::byte color::invert(xtd::byte componant, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 1.0);
   return alpha_blend(componant, 255 - componant, percent);
+}
+
+std::tuple<xtd::byte, xtd::byte, xtd::byte> color::sepia(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
+  // https://www.geeksforgeeks.org/image-processing-in-java-colored-image-to-sepia-image-conversion/
+  auto red = std::clamp(static_cast<int>(0.393 * r + 0.769 * g + 0.189 * b), 0, 255);
+  auto green = std::clamp(static_cast<int>(0.349 * r + 0.686 * g + 0.168 * b), 0, 255);
+  auto blue = std::clamp(static_cast<int>(0.272 * r + 0.534 * g + 0.131 * b), 0, 255);
+  return {static_cast<xtd::byte>(red), static_cast<xtd::byte>(green), static_cast<xtd::byte>(blue)};
 }
 
 color::color(uint32 argb) : argb_(argb), name_(argb ? ustring::format("{:x8}", argb) : "0"), empty_(false) {

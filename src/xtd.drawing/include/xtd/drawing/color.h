@@ -1138,17 +1138,17 @@ namespace xtd {
       /// @endcode
       float get_saturation() const noexcept;
       
-      /// @brief Returns a grayscale version of the specified color.
-      /// @param color The color to grayscale.
-      /// @return The grayscale color result.
-      static color grayscale(const color& color) noexcept;
-      
       /// @brief Returns a grayscale version of the specified color with percent factor.
       /// @param color The color to grayscale.
       /// @param percent The percent factor.
       /// @return The grayscale color result.
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return The original color.
       static color grayscale(const color& color, double percent) noexcept;
+      
+      /// @brief Returns a grayscale version of the specified color.
+      /// @param color The color to grayscale.
+      /// @return The grayscale color result.
+      static color grayscale(const color& color) noexcept;
 
       /// @brief Returns a invertr version of the specified color.
       /// @param color The color to invert.
@@ -1177,6 +1177,18 @@ namespace xtd {
       /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color parse(const xtd::ustring& color) noexcept;
+      
+      /// @brief Returns a sepia version of the specified color with percent factor.
+      /// @param color The color to sepia.
+      /// @param percent The percent factor.
+      /// @return The sepia color result.
+      /// @remarks Thus, `1.0` will make the color completely sepia, while `0.0` return The original color.
+      static color sepia(const color& color, double percent) noexcept;
+
+      /// @brief Returns a sepia version of the specified color.
+      /// @param color The color to sepia.
+      /// @return The sepia color result.
+      static color sepia(const color& color) noexcept;
       
       /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
       /// @return The 32-bit ARGB value of this xtd::drawing::color.
@@ -1299,6 +1311,7 @@ namespace xtd {
       static xtd::byte disabled(xtd::byte componant, float brightness) noexcept;
       static xtd::byte grayscale(xtd::byte r, xtd::byte g, xtd::byte b) noexcept;
       static xtd::byte invert(xtd::byte componant, double percent) noexcept;
+      static std::tuple<xtd::byte, xtd::byte, xtd::byte> sepia(xtd::byte r, xtd::byte g, xtd::byte b) noexcept;
 
       static constexpr xtd::drawing::known_color start_know_system_colors_range = static_cast<xtd::drawing::known_color>(0xFF01);
       explicit color(uint32 argb);

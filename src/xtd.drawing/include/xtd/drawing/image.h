@@ -271,17 +271,17 @@ namespace xtd {
       /// @remarks The xtd::drawing::image::get_thumbnail_image method works well when the requested thumbnail image has a size of about 120 x 120 pixels. If you request a large thumbnail image (for example, 300 x 300) from an xtd::drawing::image that has an embedded thumbnail, there could be a noticeable loss of quality in the thumbnail image. It might be better to scale the main image (instead of scaling the embedded thumbnail) by calling the xtd::drawing::graphics::draw_image method.
       xtd::drawing::image get_thmbnail_image(int32 thumb_width, int32 thunb_height) noexcept;
       
-      /// @brief Returns a grayscale version of the specified image.
-      /// @param image The image to grayscale.
-      /// @return the grayscale image result.
-      static image grayscale(const image& image);
-      
       /// @brief Returns a grayscale version of the specified image with percent factor.
       /// @param image The image to grayscale.
       /// @param percent The percent factor.
       /// @return the grayscale image result.
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
       static image grayscale(const image& image, double percent);
+      
+      /// @brief Returns a grayscale version of the specified image.
+      /// @param image The image to grayscale.
+      /// @return the grayscale image result.
+      static image grayscale(const image& image);
 
       /// @brief Returns a value that indicates whether the pixel format for this xtd::drawing::image contains alpha information.
       /// @param pixfmt The PixelFormat to test.
@@ -317,6 +317,18 @@ namespace xtd {
       /// @remarks If you wish to draw on an image once it has been rotated, you should always retrieve a new graphics object from the image, otherwise an exception could occur.
       static image rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type);
       
+      /// @brief Returns a sepia version of the specified image with percent factor.
+      /// @param image The image to sepia.
+      /// @param percent The percent factor.
+      /// @return the sepia image result.
+      /// @remarks Thus, `1.0` will make the color completely sepia, while `0.0` return the original image.
+      static image sepia(const image& image, double percent);
+      
+      /// @brief Returns a sepia version of the specified image.
+      /// @param image The image to sepia.
+      /// @return the sepia image result.
+      static image sepia(const image& image);
+
       /// @brief Saves this xtd::drawing::image to the specified file or stream.
       /// @param filename A string that contains the name of the file to which to save this xtd::drawing::image.
       /// @remarks If no encoder exists for the file format of the image, the Portable Network Graphics (PNG) encoder is used. When you use the xtd::drawing::image::save method to save a graphic image as a Windows Metafile Format (WMF) or Enhanced Metafile Format (EMF) file, the resulting file is saved as a Portable Network Graphics (PNG) file. This behavior occurs because the GDI+ component of the .NET Framework does not have an encoder that you can use to save files as .wmf or .emf files.
