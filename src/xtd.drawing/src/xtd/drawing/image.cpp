@@ -407,6 +407,24 @@ image image::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rota
   return result;
 }
 
+image image::sepia(const image& image) {
+  return sepia(image, 100);
+}
+
+image image::sepia(const image& image, double percent) {
+  auto dest = image;
+  auto size = dest.width() * dest.height();
+  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
+  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
+  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
+    auto [r, g, b] = color::sepia(*src_rgb, *(src_rgb + 1), *(src_rgb + 2));
+    *dest_rgb = color::alpha_blend(*src_rgb, r, percent);
+    *(dest_rgb + 1) = color::alpha_blend(*(src_rgb + 1), g, percent);
+    *(dest_rgb + 2) = color::alpha_blend(*(src_rgb + 2), b, percent);
+  }
+  return dest;
+}
+
 void image::save(const ustring& filename) const {
   native::image::save(data_->handle_, filename);
 }
