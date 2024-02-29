@@ -260,6 +260,15 @@ image image::brightness(const image& image, double percent) {
   return result;
 }
 
+image image::contrast(const image& image, double percent) {
+  if (image == drawing::image::empty) return image;
+  auto result = image;
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      result.set_pixel(x, y, color::contrast(image.get_pixel(x, y), percent));
+  return result;
+}
+
 image image::disable(const image& image, const color& back_color) {
   return disable(image, back_color.get_brightness());
 }
