@@ -269,11 +269,11 @@ image image::contrast(const image& image, double percent) {
   return result;
 }
 
-image image::disable(const image& image, const color& back_color) {
-  return disable(image, back_color.get_brightness());
+image image::disabled(const image& image, const color& back_color) {
+  return disabled(image, back_color.get_brightness());
 }
 
-image image::disable(const image& image, float brightness) {
+image image::disabled(const image& image, float brightness) {
   if (image == drawing::image::empty) return image;
   auto result = image;
   for (auto y = 0; y < image.height(); ++y)
