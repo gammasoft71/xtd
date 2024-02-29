@@ -495,7 +495,6 @@ drawing::color image::get_pixel(int32 x, int32 y) const {
   return color::from_argb(alpha[pixel], rgb[pixel].r, rgb[pixel].g, rgb[pixel].b);
 }
 
-
 void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
   if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {csf_};
 
