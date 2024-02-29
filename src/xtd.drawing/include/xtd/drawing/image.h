@@ -231,12 +231,46 @@ namespace xtd {
       /// @return The xtd::drawing::image this method creates.
       /// @remarks This method is used for creating a xtd::drawing::image from an XPM (or XBM) image.
       static image from_data(const char* const* bits);
-      
+
+      /// @brief Gets the image alpha pointer, which represents the alpha data of the image.
+      /// @return The pointer or alpha image.
+      /// @remarks The size of this data is 1 byte (alpha) * height() * width().
+      /// @remarks If the image has no handle, such as an empty image, this method returns nullptr.
+      /// @warning Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems.
+      /// @remarks To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods.
+      const xtd::byte* get_alpha() const;
+
+      /// @brief Gets the image alpha pointer, which represents the alpha data of the image.
+      /// @return The pointer or alpha image.
+      /// @remarks The size of this data is 1 byte (alpha) * height() * width().
+      /// @remarks If the image has no handle, such as an empty image, this method returns nullptr.
+      /// @warning Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems.
+      /// @remarks To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods.
+      xtd::byte* get_alpha();
+
       /// @brief Gets the bounds of the image in the specified unit.
       /// @param page_unit One of the xtd::drawing::graphics_unit values indicating the unit of measure for the bounding rectangle.
       /// @return The xtd::drawing::rectangle_f that represents the bounds of the image, in the specified unit.
       xtd::drawing::rectangle_f get_bounds(xtd::drawing::graphics_unit page_unit) const noexcept;
-      
+
+      /// @brief Gets the image data pointer, which represents the RGB data of the image.
+      /// @return The pointer or data image.
+      /// @remarks This is most often used when doing direct image manipulation. The return value points to an array of characters in RGBRGBRGB... format in the top-to-bottom, left-to-right order, that is the first RGB triplet corresponds to the first pixel of the first row, the second one — to the second pixel of the first row and so on until the end of the first row, with second row following after it and so on.
+      /// @remarks The size of this data is 3 bytes (RGB) * height() * width().
+      /// @remarks If the image has no handle, such as an empty image, this method returns nullptr.
+      /// @warning Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems.
+      /// @remarks To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods.
+      const xtd::byte* get_data() const;
+
+      /// @brief Gets the image data pointer, which represents the RGB data of the image.
+      /// @return The pointer or data image.
+      /// @remarks This is most often used when doing direct image manipulation. The return value points to an array of characters in RGBRGBRGB... format in the top-to-bottom, left-to-right order, that is the first RGB triplet corresponds to the first pixel of the first row, the second one — to the second pixel of the first row and so on until the end of the first row, with second row following after it and so on.
+      /// @remarks The size of this data is 3 bytes (RGB) * height() * width().
+      /// @remarks If the image has no handle, such as an empty image, this method returns nullptr.
+      /// @warning Be careful when using this pointer as there is no control and you can exceed its size and create irreparable problems.
+      /// @remarks To access the position of a specific pixel, it's best to use the xtd::drawing::image::get_pixel and xtd::drawing::image::set_pixel methods.
+      xtd::byte* get_data();
+
       /// @brief Returns information about the parameters supported by the specified image encoder.
       /// @param guid A GUID that specifies the image encoder.
       /// @return An xtd::drawing::imaging::encoder_parameters that contains an array of xtd::drawing::imaging::encoder_parameter objects. Each xtd::drawing::imaging::encoder_parameter contains information about one of the parameters supported by the specified image encoder.
@@ -362,6 +396,8 @@ namespace xtd {
       image(const image& image, const rectangle& rect);
       static image from_hicon(intptr hicon);
       void set_pixel_format(imaging::pixel_format value);
+      drawing::color get_pixel(int32 x, int32 y) const;
+      void set_pixel(int32 x, int32 y, const drawing::color& color);
       /// @endcond
       
     private:

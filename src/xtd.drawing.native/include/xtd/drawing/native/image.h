@@ -413,13 +413,13 @@ namespace xtd {
         /// @param image A handle to an image.
         /// @return An alpha pointer of the image.
         /// @warning Internal use only
-        static intptr get_alpha(intptr image);
+        static xtd::byte* get_alpha(intptr image);
         
         /// @brief Get the access to the data from this image.
         /// @param image A handle to an image.
         /// @return A data pointer of the image.
         /// @warning Internal use only
-        static intptr get_data(intptr image);
+        static xtd::byte* get_data(intptr image);
         
         /// @brief Creates a GDI bitmap object from this image.
         /// @param image A handle to an image.
@@ -442,18 +442,7 @@ namespace xtd {
         /// @return A new icon handle.
         /// @warning Internal use only
         static intptr get_hicon(intptr image);
-        
-        /// @brief Gets the color of the specified pixel in the image.
-        /// @param image The image handle.
-        /// @param x The x-coordinate of the pixel to retrieve.
-        /// @param y The y-coordinate of the pixel to retrieve.
-        /// @param a The alpha component of the color of the specified pixel.
-        /// @param r The red component of the color of the specified pixel.
-        /// @param g The green component of the color of the specified pixel.
-        /// @param b The blue component of the color of the specified pixel.
-        /// @warning Internal use only
-        static std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte> get_pixel(intptr image, int32 x, int32 y);
-        
+                
         /// @brief Gets the horizontal resolution, in pixels per inch, of the image.
         /// @param image The image handle.
         /// @return The horizontal resolution, in pixels per inch, of the image.
@@ -534,17 +523,6 @@ namespace xtd {
         /// @param rotate_flip_type A value that specifies the type of rotation and flip to apply to the image (see rotate_flip_types.h for more information).
         /// @warning Internal use only
         static void rotate_flip(intptr image, int32 rotate_flip_type);
-        
-        /// @brief Sets the color of the specified pixel in the image.
-        /// @param image The image handle.
-        /// @param x The x-coordinate of the pixel to retrieve.
-        /// @param y The y-coordinate of the pixel to retrieve.
-        /// @param a The alpha component of the color of the specified pixel.
-        /// @param r The red component of the color of the specified pixel.
-        /// @param g The green component of the color of the specified pixel.
-        /// @param b The blue component of the color of the specified pixel.
-        /// @warning Internal use only
-        static void set_pixel(intptr image, int32 x, int32 y, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b);
         
         /// @brief Sets the resolution for this bitmap.
         /// @param image The image handle.

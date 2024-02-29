@@ -20,6 +20,12 @@ using namespace xtd::drawing;
 image image::empty;
 
 namespace {
+  struct rgb {
+    xtd::byte r;
+    xtd::byte g;
+    xtd::byte b;
+  };
+  
   xtd::drawing::imaging::image_format to_image_format(size_t raw_fomat) {
     static auto raw_formats = map<size_t, xtd::drawing::imaging::image_format> {{IFM_BMP, imaging::image_format::bmp()}, {IFM_EMF, imaging::image_format::emf()}, {IFM_EXIF, imaging::image_format::exif()}, {IFM_GIF, imaging::image_format::gif()}, {IFM_ICO, imaging::image_format::ico()}, {IFM_JPEG, imaging::image_format::jpeg()}, {IFM_MEMORY_BMP, imaging::image_format::memory_bmp()}, {IFM_PNG, imaging::image_format::png()}, {IFM_TIFF, imaging::image_format::tiff()}, {IFM_WMF, imaging::image_format::wmf()}, {IFM_MEMORY_GIF, imaging::image_format::memory_gif()}, {IFM_MEMORY_ICO, imaging::image_format::memory_ico()}, {IFM_MEMORY_JPEG, imaging::image_format::memory_jpeg()}, {IFM_MEMORY_PNG, imaging::image_format::memory_png()}, {IFM_MEMORY_TIFF, imaging::image_format::memory_tiff()}, {IFM_CUR, imaging::image_format::cur()}, {IFM_MEMORY_CUR, imaging::image_format::memory_cur()}, {IFM_XBM, imaging::image_format::xbm()}, {IFM_MEMORY_XBM, imaging::image_format::memory_xbm()}, {IFM_XPM, imaging::image_format::xpm()}, {IFM_MEMORY_XPM, imaging::image_format::memory_xpm()}, {IFM_PNM, imaging::image_format::pnm()}, {IFM_MEMORY_PNM, imaging::image_format::memory_pnm()}, {IFM_PCX, imaging::image_format::pcx()}, {IFM_MEMORY_PCX, imaging::image_format::memory_pcx()}, {IFM_PICT, imaging::image_format::pict()}, {IFM_MEMORY_PICT, imaging::image_format::memory_pict()}, {IFM_ICON, imaging::image_format::icon()}, {IFM_MEMORY_ICON, imaging::image_format::memory_icon()}, {IFM_MACCUR, imaging::image_format::cursor()}, {IFM_MEMORY_MACCUR, imaging::image_format::memory_cursor()}, {IFM_ANI, imaging::image_format::ani()}, {IFM_IIF, imaging::image_format::iif()}, {IFM_TGA, imaging::image_format::tga()}};
     auto it = raw_formats.find(raw_fomat);
@@ -34,6 +40,8 @@ namespace {
 }
 
 struct image::data {
+  xtd::byte* alpha = nullptr;
+  xtd::byte* data = nullptr;
   imaging::image_flags flags_ = imaging::image_flags::none;
   map<xtd::guid, size_t> frame_dimensions = {{xtd::drawing::imaging::frame_dimension::page().guid(), 1}};
   intptr handle_ = 0;
@@ -244,17 +252,12 @@ image image::blur(const image& image, int32 radius) {
 }
 
 image image::brightness(const image& image, double percent) {
-  auto dest = image;
-  auto size = dest.width() * dest.height();
-  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
-  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
-  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    auto color = color::brightness(color::from_argb(*src_rgb, *(src_rgb + 1), *(src_rgb + 2)), percent);
-    *dest_rgb = color.r();
-    *(dest_rgb + 1) = color.g();
-    *(dest_rgb + 2) = color.b();
-  }
-  return dest;
+  if (image == drawing::image::empty) return image;
+  auto result = image;
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      result.set_pixel(x, y, color::brightness(image.get_pixel(x, y), percent));
+  return result;
 }
 
 image image::disable(const image& image, const color& back_color) {
@@ -262,31 +265,21 @@ image image::disable(const image& image, const color& back_color) {
 }
 
 image image::disable(const image& image, float brightness) {
-  auto dest = image;
-  auto size = dest.width() * dest.height();
-  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
-  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
-  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    auto color = color::disabled(color::from_argb(*src_rgb, *(src_rgb + 1), *(src_rgb + 2)), brightness);
-    *dest_rgb = color.r();
-    *(dest_rgb + 1) = color.g();
-    *(dest_rgb + 2) = color.b();
-  }
-  return dest;
+  if (image == drawing::image::empty) return image;
+  auto result = image;
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      result.set_pixel(x, y, color::disabled(image.get_pixel(x, y), brightness));
+  return result;
 }
 
 image image::invert(const image& image, double percent) {
-  auto dest = image;
-  auto size = dest.width() * dest.height();
-  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
-  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
-  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    auto color = color::invert(color::from_argb(*src_rgb, *(src_rgb + 1), *(src_rgb + 2)), percent);
-    *dest_rgb = color.r();
-    *(dest_rgb + 1) = color.g();
-    *(dest_rgb + 2) = color.b();
-  }
-  return dest;
+  if (image == drawing::image::empty) return image;
+  auto result = image;
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      result.set_pixel(x, y, color::invert(image.get_pixel(x, y), percent));
+  return result;
 }
 
 graphics image::create_graphics() {
@@ -327,8 +320,24 @@ image image::from_data(const char* const* bits) {
   return image {bits};
 }
 
+const xtd::byte* image::get_alpha() const {
+  return data_->alpha;
+}
+
+xtd::byte* image::get_alpha() {
+  return data_->alpha;
+}
+
 xtd::drawing::rectangle_f image::get_bounds(graphics_unit page_unit) const noexcept {
   return rectangle_f {0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size_.width()), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size_.height()), page_unit, 1.0f, native::image::screen_dpi())};
+}
+
+const xtd::byte* image::get_data() const {
+  return data_->data;
+}
+
+xtd::byte* image::get_data() {
+  return data_->data;
 }
 
 xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) const noexcept {
@@ -365,17 +374,12 @@ image image::grayscale(const image& image) {
 }
 
 image image::grayscale(const image& image, double percent) {
-  auto dest = image;
-  auto size = dest.width() * dest.height();
-  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
-  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
-  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    auto color = color::grayscale(color::from_argb(*src_rgb, *(src_rgb + 1), *(src_rgb + 2)), percent);
-    *dest_rgb = color.r();
-    *(dest_rgb + 1) = color.g();
-    *(dest_rgb + 2) = color.b();
-  }
-  return dest;
+  if (image == drawing::image::empty) return image;
+  auto result = image;
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      result.set_pixel(x, y, color::grayscale(image.get_pixel(x, y), percent));
+  return result;
 }
 
 bool image::is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
@@ -391,13 +395,12 @@ bool image::is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt)
 }
 
 image image::opacity(const image& image, double percent) {
-  percent = std::clamp(percent, .0, 1.0);
-  auto dest = image;
-  auto size = dest.width() * dest.height();
-  char* dest_alpha = reinterpret_cast<char*>(native::image::get_alpha(dest.handle()));
-  for (auto index = 0; index < size; index++, dest_alpha++)
-    *dest_alpha = static_cast<char>(255 * percent);
-  return dest;
+  if (image == drawing::image::empty) return image;
+  auto result = image;
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      result.set_pixel(x, y, color::from_argb(255 * percent, image.get_pixel(x, y)));
+  return result;
 }
 
 void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
@@ -415,17 +418,12 @@ image image::sepia(const image& image) {
 }
 
 image image::sepia(const image& image, double percent) {
-  auto dest = image;
-  auto size = dest.width() * dest.height();
-  char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
-  char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
-  for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    auto color = color::sepia(color::from_argb(*src_rgb, *(src_rgb + 1), *(src_rgb + 2)), percent);
-    *dest_rgb = color.r();
-    *(dest_rgb + 1) = color.g();
-    *(dest_rgb + 2) = color.b();
-  }
-  return dest;
+  if (image == drawing::image::empty) return image;
+  auto result = image;
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      result.set_pixel(x, y, color::sepia(image.get_pixel(x, y), percent));
+  return result;
 }
 
 void image::save(const ustring& filename) const {
@@ -452,6 +450,8 @@ void image::set_pixel_format(imaging::pixel_format value) {
 }
 
 void image::update_properties() {
+  data_->alpha = native::image::get_alpha(handle());
+  data_->data = native::image::get_data(handle());
   data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
   
   data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
@@ -485,3 +485,23 @@ void image::update_properties() {
   
   data_->vertical_resolution_ = native::image::vertical_resolution(data_->handle_);
 }
+
+drawing::color image::get_pixel(int32 x, int32 y) const {
+  if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {csf_};
+
+  auto alpha = get_alpha();
+  auto rgb = reinterpret_cast<const ::rgb*>(get_data());
+  auto pixel = y * width() + x;
+  return color::from_argb(alpha[pixel], rgb[pixel].r, rgb[pixel].g, rgb[pixel].b);
+}
+
+
+void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
+  if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {csf_};
+
+  auto alpha = get_alpha();
+  auto rgb = reinterpret_cast<::rgb*>(get_data());
+  auto pixel = y * width() + x;
+  alpha[pixel] = color.a();
+  rgb[pixel] = {color.r(), color.g(), color.b()};
+  }

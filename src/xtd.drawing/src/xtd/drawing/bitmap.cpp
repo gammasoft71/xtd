@@ -77,8 +77,7 @@ intptr bitmap::get_hicon() const {
 }
 
 drawing::color bitmap::get_pixel(int32 x, int32 y) const {
-  auto [a, r, g, b] = native::image::get_pixel(handle(), x, y);
-  return color::from_argb(a, r, g, b);
+  return image::get_pixel(x, y);
 }
 
 bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format) {
@@ -110,7 +109,7 @@ void bitmap::make_transparent(const color& transparent_color) {
 }
 
 void bitmap::set_pixel(int32 x, int32 y, const drawing::color& color) {
-  native::image::set_pixel(handle(), x, y, color.a(), color.r(), color.g(), color.b());
+  image::set_pixel(x, y, color);
 }
 
 void bitmap::set_resolution(int32 x_dpi, int32 y_dpi) {
