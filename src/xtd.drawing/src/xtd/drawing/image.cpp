@@ -243,54 +243,6 @@ int32 image::width() const noexcept {
   return data_->size_.width();
 }
 
-image image::blur(const image& image) {
-  return blur(image, 10);
-}
-
-image image::blur(const image& image, int32 radius) {
-  return drawing::image {native::image::blur(image.handle(), radius)};
-}
-
-image image::brightness(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
-  auto result = image;
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::brightness(image.get_pixel(x, y), percent));
-  return result;
-}
-
-image image::contrast(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
-  auto result = image;
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::contrast(image.get_pixel(x, y), percent));
-  return result;
-}
-
-image image::disabled(const image& image, const color& back_color) {
-  return disabled(image, back_color.get_brightness());
-}
-
-image image::disabled(const image& image, float brightness) {
-  if (image == drawing::image::empty) return image;
-  auto result = image;
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::disabled(image.get_pixel(x, y), brightness));
-  return result;
-}
-
-image image::invert(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
-  auto result = image;
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::invert(image.get_pixel(x, y), percent));
-  return result;
-}
-
 graphics image::create_graphics() {
   return graphics::from_image(*this);
 }
@@ -378,19 +330,6 @@ xtd::drawing::image image::get_thmbnail_image(int32 thumb_width, int32 thunb_hei
   return image(*this, thumb_width, thunb_height);
 }
 
-image image::grayscale(const image& image) {
-  return grayscale(image, 100);
-}
-
-image image::grayscale(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
-  auto result = image;
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::grayscale(image.get_pixel(x, y), percent));
-  return result;
-}
-
 bool image::is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept {
   return (pixfmt & xtd::drawing::imaging::pixel_format::alpha) == xtd::drawing::imaging::pixel_format::alpha;
 }
@@ -403,36 +342,8 @@ bool image::is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt)
   return (pixfmt & xtd::drawing::imaging::pixel_format::extended) == xtd::drawing::imaging::pixel_format::extended;
 }
 
-image image::opacity(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
-  auto result = image;
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::from_argb(255 * percent, image.get_pixel(x, y)));
-  return result;
-}
-
 void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
   native::image::rotate_flip(handle(), static_cast<int32>(rotate_flip_type));
-}
-
-image image::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
-  auto result = drawing::image {image};
-  result.rotate_flip(rotate_flip_type);
-  return result;
-}
-
-image image::sepia(const image& image) {
-  return sepia(image, 100);
-}
-
-image image::sepia(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
-  auto result = image;
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::sepia(image.get_pixel(x, y), percent));
-  return result;
 }
 
 void image::save(const ustring& filename) const {
@@ -513,3 +424,7 @@ void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
   alpha[pixel] = color.a();
   rgb[pixel] = {color.r(), color.g(), color.b()};
   }
+
+image image::blur(const image& image, int32 radius) {
+  return drawing::image {native::image::blur(image.handle(), radius)};
+}
