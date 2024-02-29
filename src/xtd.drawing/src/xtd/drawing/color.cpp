@@ -230,6 +230,17 @@ color color::brightness(const color& color, double percent) noexcept {
   return percent < 1.0 ? alpha_blend(color, color::black, 1.0 - percent) : alpha_blend(color, color::white, percent - 1.0);
 }
 
+color color::contrast(const color& color, double percent) noexcept {
+  // https://efundies.com/adjust-the-contrast-of-an-image-in-c/
+  if (percent < .0) percent = 0;
+ 
+  auto r = std::clamp(((((color.r() / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0);
+  auto g = std::clamp(((((color.g() / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0);
+  auto b = std::clamp(((((color.b() / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0);
+  
+  return from_argb(color.a(), static_cast<xtd::byte>(r), static_cast<xtd::byte>(g), static_cast<xtd::byte>(b));
+}
+
 color color::dark(const color& color, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 1.0);
   return brightness(color, percent);
@@ -677,10 +688,10 @@ color color::parse(const ustring& color) noexcept {
 color color::sepia(const color& color, double percent) noexcept {
   // https://www.geeksforgeeks.org/image-processing-in-java-colored-image-to-sepia-image-conversion/
   percent = std::clamp(percent, 0.0, 1.0);
-  auto r = std::clamp(static_cast<int>(0.393 * color.r() + 0.769 * color.g() + 0.189 * color.b()), 0, 255);
-  auto g = std::clamp(static_cast<int>(0.349 * color.r() + 0.686 * color.g() + 0.168 * color.b()), 0, 255);
-  auto b = std::clamp(static_cast<int>(0.272 * color.r() + 0.534 * color.g() + 0.131 * color.b()), 0, 255);
-  return alpha_blend(color, color::from_argb(color.a(), r, g, b), percent);
+  auto r = std::clamp(0.393 * color.r() + 0.769 * color.g() + 0.189 * color.b(), .0, 255.0);
+  auto g = std::clamp(0.349 * color.r() + 0.686 * color.g() + 0.168 * color.b(), .0, 255.0);
+  auto b = std::clamp(0.272 * color.r() + 0.534 * color.g() + 0.131 * color.b(), .0, 255.0);
+  return alpha_blend(color, color::from_argb(color.a(), static_cast<xtd::byte>(r), static_cast<xtd::byte>(g), static_cast<xtd::byte>(b)), percent);
 }
 
 color color::sepia(const color& color) noexcept {
