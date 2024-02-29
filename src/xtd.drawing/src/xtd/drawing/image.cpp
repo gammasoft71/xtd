@@ -370,10 +370,10 @@ image image::grayscale(const image& image, double percent) {
   char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
   char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
   for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    auto [r, g, b] = color::grayscale(*src_rgb, *(src_rgb + 1), *(src_rgb + 2));
-    *dest_rgb = color::alpha_blend(*src_rgb, r, percent);
-    *(dest_rgb + 1) = color::alpha_blend(*(src_rgb + 1), g, percent);
-    *(dest_rgb + 2) = color::alpha_blend(*(src_rgb + 2), b, percent);
+    auto [r, g, b] = color::grayscale(*src_rgb, *(src_rgb + 1), *(src_rgb + 2), percent);
+    *dest_rgb = r;
+    *(dest_rgb + 1) = g;
+    *(dest_rgb + 2) = b;
   }
   return dest;
 }
@@ -420,10 +420,10 @@ image image::sepia(const image& image, double percent) {
   char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
   char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
   for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    auto [r, g, b] = color::sepia(*src_rgb, *(src_rgb + 1), *(src_rgb + 2));
-    *dest_rgb = color::alpha_blend(*src_rgb, r, percent);
-    *(dest_rgb + 1) = color::alpha_blend(*(src_rgb + 1), g, percent);
-    *(dest_rgb + 2) = color::alpha_blend(*(src_rgb + 2), b, percent);
+    auto [r, g, b] = color::sepia(*src_rgb, *(src_rgb + 1), *(src_rgb + 2), percent);
+    *dest_rgb = r;
+    *(dest_rgb + 1) = g;
+    *(dest_rgb + 2) = b;
   }
   return dest;
 }

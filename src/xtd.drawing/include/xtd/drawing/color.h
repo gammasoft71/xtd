@@ -1305,13 +1305,14 @@ namespace xtd {
       /// @}
       
     private:
-      friend class image;
       static xtd::byte alpha_blend(xtd::byte fore_componant, xtd::byte back_componant, double percent) noexcept;
+
+      friend class image;
       static std::tuple<xtd::byte, xtd::byte, xtd::byte> brightness(xtd::byte r, xtd::byte g, xtd::byte b, double percent) noexcept;
       static std::tuple<xtd::byte, xtd::byte, xtd::byte> disabled(xtd::byte r, xtd::byte g, xtd::byte b, float brightness) noexcept;
-      static std::tuple<xtd::byte, xtd::byte, xtd::byte> grayscale(xtd::byte r, xtd::byte g, xtd::byte b) noexcept;
+      static std::tuple<xtd::byte, xtd::byte, xtd::byte> grayscale(xtd::byte r, xtd::byte g, xtd::byte b, double percent) noexcept;
       static std::tuple<xtd::byte, xtd::byte, xtd::byte> invert(xtd::byte r, xtd::byte g, xtd::byte b, double percent) noexcept;
-      static std::tuple<xtd::byte, xtd::byte, xtd::byte> sepia(xtd::byte r, xtd::byte g, xtd::byte b) noexcept;
+      static std::tuple<xtd::byte, xtd::byte, xtd::byte> sepia(xtd::byte r, xtd::byte g, xtd::byte b, double percent) noexcept;
 
       static constexpr xtd::drawing::known_color start_know_system_colors_range = static_cast<xtd::drawing::known_color>(0xFF01);
       explicit color(uint32 argb);

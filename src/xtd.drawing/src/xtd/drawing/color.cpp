@@ -630,8 +630,8 @@ float color::get_saturation() const noexcept {
 }
 
 color color::grayscale(const color& color, double percent) noexcept {
-  auto [r, g, b] = color::grayscale(color.r(), color.g(), color.b());
-  return alpha_blend(color, xtd::drawing::color::from_argb(color.a(), r, g, b), percent);
+  auto [r, g, b] = color::grayscale(color.r(), color.g(), color.b(), percent);
+  return xtd::drawing::color::from_argb(color.a(), r, g, b);
 }
 
 color color::grayscale(const color& color) noexcept {
@@ -668,8 +668,8 @@ color color::parse(const ustring& color) noexcept {
 }
 
 color color::sepia(const color& color, double percent) noexcept {
-  auto [r, g, b] = color::sepia(color.r(), color.g(), color.b());
-  return alpha_blend(color, xtd::drawing::color::from_argb(color.a(), r, g, b), percent);
+  auto [r, g, b] = color::sepia(color.r(), color.g(), color.b(), percent);
+  return xtd::drawing::color::from_argb(color.a(), r, g, b);
 }
 
 color color::sepia(const color& color) noexcept {
@@ -709,10 +709,10 @@ std::tuple<xtd::byte, xtd::byte, xtd::byte> color::disabled(xtd::byte r, xtd::by
   return {alpha_blend(r, static_cast<xtd::byte>(255 * brightness), 0.4), alpha_blend(g, static_cast<xtd::byte>(255 * brightness), 0.4), alpha_blend(b, static_cast<xtd::byte>(255 * brightness), 0.4)};
 }
 
-std::tuple<xtd::byte, xtd::byte, xtd::byte> color::grayscale(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
+std::tuple<xtd::byte, xtd::byte, xtd::byte> color::grayscale(xtd::byte r, xtd::byte g, xtd::byte b, double percent) noexcept {
   // https://stackoverflow.com/questions/14330/rgb-to-monochrome-conversion
   auto grayscale = static_cast<xtd::byte>((0.299 * r) + (0.587 * g) + (0.114 * b));
-  return {grayscale, grayscale, grayscale};
+  return {alpha_blend(r, grayscale, percent), alpha_blend(g, grayscale, percent), alpha_blend(b, grayscale, percent)};
 }
 
 std::tuple<xtd::byte, xtd::byte, xtd::byte> color::invert(xtd::byte r, xtd::byte g, xtd::byte b, double percent) noexcept {
@@ -720,12 +720,12 @@ std::tuple<xtd::byte, xtd::byte, xtd::byte> color::invert(xtd::byte r, xtd::byte
   return {alpha_blend(r, 255 - r, percent), alpha_blend(g, 255 - g, percent), alpha_blend(b, 255 - b, percent)};
 }
 
-std::tuple<xtd::byte, xtd::byte, xtd::byte> color::sepia(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
+std::tuple<xtd::byte, xtd::byte, xtd::byte> color::sepia(xtd::byte r, xtd::byte g, xtd::byte b, double percent) noexcept {
   // https://www.geeksforgeeks.org/image-processing-in-java-colored-image-to-sepia-image-conversion/
   auto red = std::clamp(static_cast<int>(0.393 * r + 0.769 * g + 0.189 * b), 0, 255);
   auto green = std::clamp(static_cast<int>(0.349 * r + 0.686 * g + 0.168 * b), 0, 255);
   auto blue = std::clamp(static_cast<int>(0.272 * r + 0.534 * g + 0.131 * b), 0, 255);
-  return {static_cast<xtd::byte>(red), static_cast<xtd::byte>(green), static_cast<xtd::byte>(blue)};
+  return {alpha_blend(r, static_cast<xtd::byte>(red), percent), alpha_blend(g, static_cast<xtd::byte>(green), percent), alpha_blend(b, static_cast<xtd::byte>(blue), percent)};
 }
 
 color::color(uint32 argb) : argb_(argb), name_(argb ? ustring::format("{:x8}", argb) : "0"), empty_(false) {
