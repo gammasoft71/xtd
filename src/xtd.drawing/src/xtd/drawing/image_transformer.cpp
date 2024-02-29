@@ -96,11 +96,15 @@ image image_transformer::grayscale(const image& image, double percent) {
   return result;
 }
 
-image image_transformer::opacity(const image& image, double percent) {
-  auto result = image;
+void image_transformer::opacity(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::from_argb(255 * percent, image.get_pixel(x, y)));
+      image.set_pixel(x, y, color::from_argb(255 * percent, image.get_pixel(x, y)));
+}
+
+image image_transformer::opacity(const image& image, double percent) {
+  auto result = image;
+  opacity(result, percent);
   return result;
 }
 
