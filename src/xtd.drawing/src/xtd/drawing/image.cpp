@@ -425,6 +425,8 @@ void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
   rgb[pixel] = {color.r(), color.g(), color.b()};
   }
 
-image image::blur(const image& image, int32 radius) {
-  return drawing::image {native::image::blur(image.handle(), radius)};
+void image::blur(int32 radius) {
+  if (*this == drawing::image::empty) return;
+  data_->handle_ = {native::image::blur(handle(), radius)};
+  update_properties();
 }

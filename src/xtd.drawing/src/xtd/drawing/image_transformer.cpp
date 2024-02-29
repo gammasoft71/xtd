@@ -2,25 +2,37 @@
 
 using namespace xtd::drawing;
 
+void image_transformer::blur(image& image) {
+  blur(image, 10);
+}
+
 image image_transformer::blur(const image& image) {
   return blur(image, 10);
 }
 
+void image_transformer::blur(image& image, int32 radius) {
+  image.blur(radius);
+}
+
 image image_transformer::blur(const image& image, int32 radius) {
-  return drawing::image {xtd::drawing::image::blur(image, radius)};
+  auto result = image;
+  blur(result, radius);
+  return result;
+}
+
+void image_transformer::brightness(image& image, double percent) {
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      image.set_pixel(x, y, color::brightness(image.get_pixel(x, y), percent));
 }
 
 image image_transformer::brightness(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
   auto result = image;
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::brightness(image.get_pixel(x, y), percent));
+  brightness(result, percent);
   return result;
 }
 
 image image_transformer::contrast(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
   auto result = image;
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
@@ -33,7 +45,6 @@ image image_transformer::disabled(const image& image, const color& back_color) {
 }
 
 image image_transformer::disabled(const image& image, float brightness) {
-  if (image == drawing::image::empty) return image;
   auto result = image;
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
@@ -42,7 +53,6 @@ image image_transformer::disabled(const image& image, float brightness) {
 }
 
 image image_transformer::invert(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
   auto result = image;
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
@@ -55,7 +65,6 @@ image image_transformer::grayscale(const image& image) {
 }
 
 image image_transformer::grayscale(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
   auto result = image;
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
@@ -64,7 +73,6 @@ image image_transformer::grayscale(const image& image, double percent) {
 }
 
 image image_transformer::opacity(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
   auto result = image;
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
@@ -73,7 +81,7 @@ image image_transformer::opacity(const image& image, double percent) {
 }
 
 image image_transformer::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
-  auto result = drawing::image {image};
+  auto result = image;
   result.rotate_flip(rotate_flip_type);
   return result;
 }
@@ -83,7 +91,6 @@ image image_transformer::sepia(const image& image) {
 }
 
 image image_transformer::sepia(const image& image, double percent) {
-  if (image == drawing::image::empty) return image;
   auto result = image;
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)

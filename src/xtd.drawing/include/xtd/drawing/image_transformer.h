@@ -31,21 +31,34 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Returns a blur version of the specified image with radius value of 10.
-      /// @param image The image to blured.
-      /// @return the blured image result.
+      /// @brief Blur the specified image with a radius value of 10.
+      /// @param image The image to blur.
+      static void blur(xtd::drawing::image& image);
+      /// @brief Returns a new blurred image of the specified image with a radius value of 10.
+      /// @param image The image to blur.
+      /// @return The transformed image.
       static xtd::drawing::image blur(const xtd::drawing::image& image);
-      /// @brief Returns a blur version of the specified image with radius.
-      /// @param image The image to blured.
-      /// @param radius The radius of the blur, specified as a <length>.
-      /// @return the blured image result.
-      /// @remarks No blur effect, if the radius is `0`.
+      /// @brief Blur the specified image with the specified radius.
+      /// @param image The image to blur.
+      /// @param radius The radius of the blur in pixels.
+      /// @remarks If the radius is `0`, there will be no blurring.
+      static void blur(xtd::drawing::image& image, int32 radius);
+      /// @brief Returns a new blurred image of the specified image with the specified radius.
+      /// @param image The image to blur.
+      /// @param radius The radius of the blur in pixels.
+      /// @return The transformed image.
+      /// @remarks If the radius is `0`, there will be no blurring.
       static xtd::drawing::image blur(const xtd::drawing::image& image, int32 radius);
-      
-      /// @brief Returns a brightness version of the specified image with percent factor.
+
+      /// @brief Change the brightness of the specified image with specified percent.
       /// @param image The image to brightness.
-      /// @param percent The percent factor.
-      /// @return The adjusted image result.
+      /// @param percent The percent factor in %.
+      /// @remarks 0% will make the image completely black. 100% is default and represents the original image. Values over 100% will provide brighter results.
+      static void brightness(xtd::drawing::image& image, double percent);
+      /// @brief Returns a new image with brightness changed of the specified image with specified percent.
+      /// @param image The image to brightness.
+      /// @param percent The percent factor in %.
+      /// @return The transformed image.
       /// @remarks 0% will make the image completely black. 100% is default and represents the original image. Values over 100% will provide brighter results.
       static xtd::drawing::image brightness(const xtd::drawing::image& image, double percent);
       
@@ -77,12 +90,12 @@ namespace xtd {
       /// @brief Returns a grayscale version of the specified image with percent factor.
       /// @param image The image to grayscale.
       /// @param percent The percent factor.
-      /// @return the grayscale image result.
+      /// @return The grayscale image result.
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
       static xtd::drawing::image grayscale(const xtd::drawing::image& image, double percent);
       /// @brief Returns a grayscale version of the specified image.
       /// @param image The image to grayscale.
-      /// @return the grayscale image result.
+      /// @return The grayscale image result.
       static xtd::drawing::image grayscale(const xtd::drawing::image& image);
       
       /// @brief Returns an opacity level version of the specified image with percent factor.
@@ -101,12 +114,12 @@ namespace xtd {
       /// @brief Returns a sepia version of the specified image with percent factor.
       /// @param image The image to sepia.
       /// @param percent The percent factor.
-      /// @return the sepia image result.
+      /// @return The sepia image result.
       /// @remarks Thus, `1.0` will make the color completely sepia, while `0.0` return the original image.
       static xtd::drawing::image sepia(const xtd::drawing::image& image, double percent);
       /// @brief Returns a sepia version of the specified image.
       /// @param image The image to sepia.
-      /// @return the sepia image result.
+      /// @return The sepia image result.
       static xtd::drawing::image sepia(const xtd::drawing::image& image);
       /// @}
     };

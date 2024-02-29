@@ -326,7 +326,7 @@ namespace xtd {
       
     private:
       friend class image_transformer;
-      static image blur(const image& image, int32 radius);
+      void blur(int32 radius);
       void update_properties();
       
       std::shared_ptr<data> data_;
