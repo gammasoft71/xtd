@@ -249,9 +249,10 @@ image image::brightness(const image& image, double percent) {
   char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
   char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
   for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    *dest_rgb = color::brightness(*src_rgb, percent);
-    *(dest_rgb + 1) = color::brightness(*(src_rgb + 1), percent);
-    *(dest_rgb + 2) = color::brightness(*(src_rgb + 2), percent);
+    auto [r, g, b] = color::brightness(*src_rgb, *(src_rgb + 1), *(src_rgb + 2), percent);
+    *dest_rgb = r;
+    *(dest_rgb + 1) = g;
+    *(dest_rgb + 2) = b;
   }
   return dest;
 }
@@ -266,9 +267,10 @@ image image::disable(const image& image, float brightness) {
   char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
   char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
   for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    *dest_rgb = color::disabled(*src_rgb, brightness);
-    *(dest_rgb + 1) = color::disabled(*(src_rgb + 1), brightness);
-    *(dest_rgb + 2) = color::disabled(*(src_rgb + 2), brightness);
+    auto [r, g, b] = color::disabled(*src_rgb, *(src_rgb + 1), *(src_rgb + 2), brightness);
+    *dest_rgb = r;
+    *(dest_rgb + 1) = g;
+    *(dest_rgb + 2) = b;
   }
   return dest;
 }
@@ -279,9 +281,10 @@ image image::invert(const image& image, double percent) {
   char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
   char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
   for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    *dest_rgb = color::invert(*src_rgb, percent);
-    *(dest_rgb + 1) = color::invert(*(src_rgb + 1), percent);
-    *(dest_rgb + 2) = color::invert(*(src_rgb + 2), percent);
+    auto [r, g, b] = color::invert(*src_rgb, *(src_rgb + 1), *(src_rgb + 2), percent);
+    *dest_rgb = r;
+    *(dest_rgb + 1) = g;
+    *(dest_rgb + 2) = b;
   }
   return dest;
 }
@@ -367,10 +370,10 @@ image image::grayscale(const image& image, double percent) {
   char* src_rgb = reinterpret_cast<char*>(native::image::get_data(image.handle()));
   char* dest_rgb = reinterpret_cast<char*>(native::image::get_data(dest.handle()));
   for (auto index = 0; index < size; index++, dest_rgb += 3, src_rgb += 3) {
-    auto grayscale = color::grayscale(*src_rgb, *(src_rgb + 1), *(src_rgb + 2));
-    *dest_rgb = color::alpha_blend(*src_rgb, grayscale, percent);
-    *(dest_rgb + 1) = color::alpha_blend(*(src_rgb + 1), grayscale, percent);
-    *(dest_rgb + 2) = color::alpha_blend(*(src_rgb + 2), grayscale, percent);
+    auto [r, g, b] = color::grayscale(*src_rgb, *(src_rgb + 1), *(src_rgb + 2));
+    *dest_rgb = color::alpha_blend(*src_rgb, r, percent);
+    *(dest_rgb + 1) = color::alpha_blend(*(src_rgb + 1), g, percent);
+    *(dest_rgb + 2) = color::alpha_blend(*(src_rgb + 2), b, percent);
   }
   return dest;
 }
