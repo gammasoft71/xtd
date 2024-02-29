@@ -41,7 +41,7 @@ namespace {
 
 struct image::data {
   xtd::byte* alpha = nullptr;
-  xtd::byte* data = nullptr;
+  xtd::byte* rgb = nullptr;
   imaging::image_flags flags_ = imaging::image_flags::none;
   map<xtd::guid, size_t> frame_dimensions = {{xtd::drawing::imaging::frame_dimension::page().guid(), 1}};
   intptr handle_ = 0;
@@ -332,14 +332,6 @@ xtd::drawing::rectangle_f image::get_bounds(graphics_unit page_unit) const noexc
   return rectangle_f {0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size_.width()), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size_.height()), page_unit, 1.0f, native::image::screen_dpi())};
 }
 
-const xtd::byte* image::get_data() const {
-  return data_->data;
-}
-
-xtd::byte* image::get_data() {
-  return data_->data;
-}
-
 xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) const noexcept {
   auto result = xtd::drawing::imaging::encoder_parameters {};
   for (auto encoder_parameter : data_->encoder_parameter_list_.params()) {
@@ -363,6 +355,14 @@ xtd::drawing::imaging::property_item image::get_property_item(int32 propid) {
   for (auto property_tiem : data_->property_items_)
     if (property_tiem.id() == propid) return property_tiem;
   throw argument_exception {csf_};
+}
+
+const xtd::byte* image::get_rgb() const {
+  return data_->rgb;
+}
+
+xtd::byte* image::get_rgb() {
+  return data_->rgb;
 }
 
 xtd::drawing::image image::get_thmbnail_image(int32 thumb_width, int32 thunb_height) noexcept {
@@ -451,7 +451,7 @@ void image::set_pixel_format(imaging::pixel_format value) {
 
 void image::update_properties() {
   data_->alpha = native::image::get_alpha(handle());
-  data_->data = native::image::get_data(handle());
+  data_->rgb = native::image::get_data(handle());
   data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
   
   data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
@@ -490,7 +490,7 @@ drawing::color image::get_pixel(int32 x, int32 y) const {
   if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {csf_};
 
   auto alpha = get_alpha();
-  auto rgb = reinterpret_cast<const ::rgb*>(get_data());
+  auto rgb = reinterpret_cast<const ::rgb*>(get_rgb());
   auto pixel = y * width() + x;
   return color::from_argb(alpha[pixel], rgb[pixel].r, rgb[pixel].g, rgb[pixel].b);
 }
@@ -499,7 +499,7 @@ void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
   if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {csf_};
 
   auto alpha = get_alpha();
-  auto rgb = reinterpret_cast<::rgb*>(get_data());
+  auto rgb = reinterpret_cast<::rgb*>(get_rgb());
   auto pixel = y * width() + x;
   alpha[pixel] = color.a();
   rgb[pixel] = {color.r(), color.g(), color.b()};
