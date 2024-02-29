@@ -136,17 +136,30 @@ namespace xtd {
       /// @remarks `0.0` will represents a transparent image. `1.0` will provide the original image.
       static xtd::drawing::image opacity(const xtd::drawing::image& image, double percent);
       
+      /// @brief Rotates, flips, or rotates and flips of the specified image with specified rotate flip type.
+      /// @param image The image to be rotated, flipped or rotated and flipped.
+      /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
+      /// @remarks The xtd::drawing::image::rotate_flip method rotates the image clockwise.
+      static void rotate_flip(xtd::drawing::image& image, xtd::drawing::rotate_flip_type rotate_flip_type);
       /// @brief Creates a new image with rotations, flips, or rotations and flips of the specified image with specified rotate flip type.
       /// @param image The image to be rotated, flipped or rotated and flipped.
       /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
       /// @return The transformed image.
       /// @remarks The xtd::drawing::image::rotate_flip method rotates the image clockwise.
       static xtd::drawing::image rotate_flip(const xtd::drawing::image& image, xtd::drawing::rotate_flip_type rotate_flip_type);
-      
+
+      /// @brief Transforms into sepia colors of the specified image.
+      /// @param image The image to be transformed into sepia.
+      static void sepia(xtd::drawing::image& image);
       /// @brief Creates a new image with sepia colors of the specified image.
       /// @param image The image to be transformed into sepia.
       /// @return The transformed image.
       static xtd::drawing::image sepia(const xtd::drawing::image& image);
+      /// @brief Transforms into sepia colors of the specified image with specified percent factor.
+      /// @param image The image to be transformed into sepia.
+      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @remarks Thus, `1.0` will make the color completely sepia, while `0.0` return the original image.
+      static void sepia(xtd::drawing::image& image, double percent);
       /// @brief Creates a new image with sepia colors of the specified image with specified percent factor.
       /// @param image The image to be transformed into sepia.
       /// @param percent The percent factor in % (from 0.0 to 1.0).

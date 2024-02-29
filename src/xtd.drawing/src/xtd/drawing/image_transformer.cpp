@@ -108,20 +108,32 @@ image image_transformer::opacity(const image& image, double percent) {
   return result;
 }
 
+void image_transformer::rotate_flip(image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
+  image.rotate_flip(rotate_flip_type);
+}
+
 image image_transformer::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
   auto result = image;
-  result.rotate_flip(rotate_flip_type);
+  rotate_flip(result, rotate_flip_type);
   return result;
+}
+
+void image_transformer::sepia(image& image) {
+  sepia(image, 100);
 }
 
 image image_transformer::sepia(const image& image) {
   return sepia(image, 100);
 }
 
-image image_transformer::sepia(const image& image, double percent) {
-  auto result = image;
+void image_transformer::sepia(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      result.set_pixel(x, y, color::sepia(image.get_pixel(x, y), percent));
+      image.set_pixel(x, y, color::sepia(image.get_pixel(x, y), percent));
+}
+
+image image_transformer::sepia(const image& image, double percent) {
+  auto result = image;
+  sepia(result, percent);
   return result;
 }
