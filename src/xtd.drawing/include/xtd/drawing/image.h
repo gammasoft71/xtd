@@ -183,6 +183,13 @@ namespace xtd {
       /// @remarks 0% will make the image completely black. 100% is default and represents the original image. Values over 100% will provide brighter results.
       static image brightness(const image& image, double percent);
       
+      /// @brief Returns a contrasted version of the specified image with percent factor.
+      /// @param image The image to change contrast.
+      /// @param percent The percent factor.
+      /// @return The contrasted image result.
+      /// @remarks Thus, `1.0` return the original image. while other will make a contrasted image.
+      static image contrast(const image& image, double percent);
+
       /// @brief Returns a disabled version of the specified image and background color.
       /// @param image The image to brightness.
       /// @param back_color The reference background color.
