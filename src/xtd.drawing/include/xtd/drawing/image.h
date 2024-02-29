@@ -194,13 +194,13 @@ namespace xtd {
       /// @param image The image to brightness.
       /// @param back_color The reference background color.
       /// @return The disabled image result.
-      static image disable(const image& image, const color& back_color);
+      static image disabled(const image& image, const color& back_color);
       
       /// @brief Returns a disabled version of the specified image and background color.
       /// @param image The image to brightness.
       /// @param brightness The brightness of the reference background color.
       /// @return The disabled image result.
-      static image disable(const image& image, float brightness);
+      static image disabled(const image& image, float brightness);
       
       /// @brief Returns an invert version of the specified image with percent factor.
       /// @param image The image to invert.
