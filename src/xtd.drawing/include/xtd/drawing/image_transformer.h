@@ -25,18 +25,16 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing image
+    /// @ingroup xtd_drawing images
     class drawing_export_ image_transformer final static_ {
     public:
       /// @name Methods
       
       /// @{
-      
       /// @brief Returns a blur version of the specified image with radius value of 10.
       /// @param image The image to blured.
       /// @return the blured image result.
       static xtd::drawing::image blur(const xtd::drawing::image& image);
-      
       /// @brief Returns a blur version of the specified image with radius.
       /// @param image The image to blured.
       /// @param radius The radius of the blur, specified as a <length>.
@@ -63,7 +61,6 @@ namespace xtd {
       /// @param back_color The reference background color.
       /// @return The disabled image result.
       static xtd::drawing::image disabled(const xtd::drawing::image& image, const color& back_color);
-      
       /// @brief Returns a disabled version of the specified image and background color.
       /// @param image The image to brightness.
       /// @param brightness The brightness of the reference background color.
@@ -83,7 +80,6 @@ namespace xtd {
       /// @return the grayscale image result.
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
       static xtd::drawing::image grayscale(const xtd::drawing::image& image, double percent);
-      
       /// @brief Returns a grayscale version of the specified image.
       /// @param image The image to grayscale.
       /// @return the grayscale image result.
@@ -108,7 +104,6 @@ namespace xtd {
       /// @return the sepia image result.
       /// @remarks Thus, `1.0` will make the color completely sepia, while `0.0` return the original image.
       static xtd::drawing::image sepia(const xtd::drawing::image& image, double percent);
-      
       /// @brief Returns a sepia version of the specified image.
       /// @param image The image to sepia.
       /// @return the sepia image result.

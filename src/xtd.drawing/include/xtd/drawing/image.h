@@ -163,7 +163,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-
       /// @brief Creates the xtd::drawing::graphics for the image.
       /// @return A xtd::drawing::graphics for the image.
       graphics create_graphics();
