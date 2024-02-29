@@ -57,47 +57,73 @@ namespace xtd {
       static void brightness(xtd::drawing::image& image, double percent);
       /// @brief Returns a new image with brightness changed of the specified image with specified percent.
       /// @param image The image to brightness.
-      /// @param percent The percent factor in %.
+      /// @param percent The percent factor in % (from 0.0 to 1.0).
       /// @return The transformed image.
       /// @remarks 0% will make the image completely black. 100% is default and represents the original image. Values over 100% will provide brighter results.
       static xtd::drawing::image brightness(const xtd::drawing::image& image, double percent);
       
-      /// @brief Returns a contrasted version of the specified image with percent factor.
+      /// @brief Change contrast of the specified image with specified percent factor.
       /// @param image The image to change contrast.
-      /// @param percent The percent factor.
-      /// @return The contrasted image result.
-      /// @remarks Thus, `1.0` return the original image. while other will make a contrasted image.
+      /// @param percent The percent factor int % (from 0.0 to 1.0).
+      /// @remarks Thus, `1.0` returns the original image, while the other values give a contrasting image.
+      static void contrast(xtd::drawing::image& image, double percent);
+      /// @brief Returns a new contrasting image of the specified image with specified percent factor.
+      /// @param image The image to change contrast.
+      /// @param percent The percent factor int % (from 0.0 to 1.0).
+      /// @return The transformed image.
+      /// @remarks Thus, `1.0` returns the original image, while the other values give a contrasting image.
       static xtd::drawing::image contrast(const xtd::drawing::image& image, double percent);
       
-      /// @brief Returns a disabled version of the specified image and background color.
-      /// @param image The image to brightness.
+      /// @brief Disable the specified image with specified reference background color.
+      /// @param image The image to disble.
       /// @param back_color The reference background color.
-      /// @return The disabled image result.
+      static void disabled(xtd::drawing::image& image, const color& back_color);
+      /// @brief Returns a new disabled image of the specified image with specified reference background color.
+      /// @param image The image to disble.
+      /// @param back_color The reference background color.
+      /// @return The transformed image.
       static xtd::drawing::image disabled(const xtd::drawing::image& image, const color& back_color);
-      /// @brief Returns a disabled version of the specified image and background color.
-      /// @param image The image to brightness.
+      /// @brief Disabled the specified image with specified brightness.
+      /// @param image The image to dissable.
       /// @param brightness The brightness of the reference background color.
-      /// @return The disabled image result.
+      static void disabled(xtd::drawing::image& image, float brightness);
+      /// @brief Returns a new disabled image of the specified image with specified brightness.
+      /// @param image The image to dissable.
+      /// @param brightness The brightness of the reference background color.
+      /// @return The transformed image.
       static xtd::drawing::image disabled(const xtd::drawing::image& image, float brightness);
-      
-      /// @brief Returns an invert version of the specified image with percent factor.
-      /// @param image The image to invert.
-      /// @param percent The percent factor.
-      /// @return The adjusted image result.
+
+      /// @brief Inverted colors of the specified image with specified percent factor.
+      /// @param image The image to invert colors.
+      /// @param percent The percent factor int % (from 0.0 to 1.0).
+      /// @remarks 0% will represents the original image. 100% will provide image with inverted colors.
+      static void invert(xtd::drawing::image& image, double percent);
+      /// @brief Returns an new image with inverted colors of the specified image with specified percent factor.
+      /// @param image The image to invert colors.
+      /// @param percent The percent factor int % (from 0.0 to 1.0).
+      /// @return The transformed image.
       /// @remarks 0% will represents the original image. 100% will provide image with inverted colors.
       static xtd::drawing::image invert(const xtd::drawing::image& image, double percent);
-      
-      /// @brief Returns a grayscale version of the specified image with percent factor.
-      /// @param image The image to grayscale.
-      /// @param percent The percent factor.
-      /// @return The grayscale image result.
+
+      /// @brief Returns a new image with grayscale colors of the specified image.
+      /// @param image The image to be transformed into grayscale.
+      static void grayscale(xtd::drawing::image& image);
+      /// @brief Transform into grayscale of the specified image.
+      /// @param image The image to be transformed into grayscale.
+      /// @return The transformed image.
+      static xtd::drawing::image grayscale(const xtd::drawing::image& image);
+      /// @brief Transform into grayscale of the specified image with specified percent factor.
+      /// @param image The image to be transformed into grayscale.
+      /// @param percent The percent factor int % (from 0.0 to 1.0).
+      /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
+      static void grayscale(xtd::drawing::image& image, double percent);
+      /// @brief Returns a new image with grayscale colors of the specified image with specified percent factor.
+      /// @param image The image to be transformed into grayscale.
+      /// @param percent The percent factor int % (from 0.0 to 1.0).
+      /// @return The transformed image.
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
       static xtd::drawing::image grayscale(const xtd::drawing::image& image, double percent);
-      /// @brief Returns a grayscale version of the specified image.
-      /// @param image The image to grayscale.
-      /// @return The grayscale image result.
-      static xtd::drawing::image grayscale(const xtd::drawing::image& image);
-      
+
       /// @brief Returns an opacity level version of the specified image with percent factor.
       /// @param image The image to change the opacity level.
       /// @param percent The percent factor.
