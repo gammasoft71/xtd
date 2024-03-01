@@ -147,6 +147,18 @@ namespace xtd {
       /// @return The transformed image.
       /// @remarks The xtd::drawing::image::rotate_flip method rotates the image clockwise.
       static xtd::drawing::image rotate_flip(const xtd::drawing::image& image, xtd::drawing::rotate_flip_type rotate_flip_type);
+      
+      /// @brief Change the saturate of the specified image with specified percent factor.
+      /// @param image The image to change saturation.
+      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @remarks Thus, `1.0` returns the original image, while the other values give a saturate image.
+      static void saturate(xtd::drawing::image& image, double percent);
+      /// @brief Creates a new saturate image of the specified image with specified percent factor.
+      /// @param image The image to change saturation.
+      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @return The transformed image.
+      /// @remarks Thus, `1.0` returns the original image, while the other values give a saturate image.
+      static xtd::drawing::image saturate(const xtd::drawing::image& image, double percent);
 
       /// @brief Transforms into sepia colors of the specified image.
       /// @param image The image to be transformed into sepia.
