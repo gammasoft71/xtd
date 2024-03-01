@@ -84,6 +84,14 @@ image image_transformer::grayscale(const image& image, double percent) {
   return result;
 }
 
+void image_transformer::invert(image& image) {
+  invert(image, 1.0);
+}
+
+image image_transformer::invert(const image& image) {
+  return invert(image, 1.0);
+}
+
 void image_transformer::invert(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
