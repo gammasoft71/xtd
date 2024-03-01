@@ -139,31 +139,37 @@ image::image(const char* const* bits) : data_(make_shared<data>()) {
 }
 
 image::image(int32 width, int32 height) : data_(make_shared<data>()) {
+  if (width < 1 || height < 1) throw argument_exception {csf_};
   data_->handle_ = native::image::create(width, height);
   update_properties();
 }
 
 image::image(int32 width, int32 height, float horizontal_resolution, float vertical_resolution) : data_(make_shared<data>()) {
+  if (width < 1 || height < 1) throw argument_exception {csf_};
   data_->handle_ = native::image::create(width, height, horizontal_resolution, vertical_resolution);
   update_properties();
 }
 
 image::image(int32 width, int32 height, xtd::drawing::imaging::pixel_format format) {
+  if (width < 1 || height < 1) throw argument_exception {csf_};
   data_->handle_ = native::image::create(width, height, as<int32>(format));
   update_properties();
 }
 
 image::image(int32 width, int32 height, int32 stride, xtd::drawing::imaging::pixel_format format, intptr scan0) {
+  if (width < 1 || height < 1) throw argument_exception {csf_};
   data_->handle_ = native::image::create(width, height, stride, as<int32>(format), scan0);
   update_properties();
 }
 
 image::image(const image& image, int32 width, int32 height) : data_(make_shared<data>()) {
+  if (width < 1 || height < 1) throw argument_exception {csf_};
   data_->handle_ = native::image::create(image.handle(), width, height);
   update_properties();
 }
 
 image::image(const image& image, const rectangle& rect) : data_(make_shared<data>()) {
+  if (rect.left() < 0 || rect.top() < 0 || rect.width() < 1 || rect.height() < 1) throw argument_exception {csf_};
   data_->handle_ = native::image::create(image.handle(), rect.left(), rect.top(), rect.width(), rect.height());
   update_properties();
 }
