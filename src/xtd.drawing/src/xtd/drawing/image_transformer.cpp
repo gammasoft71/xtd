@@ -3,6 +3,18 @@
 
 using namespace xtd::drawing;
 
+void image_transformer::bi_tonal(image& image, int32 threshold, const color& upper_color, const color& lower_color) {
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      image.set_pixel(x, y, color_transformer::bi_tonal(image.get_pixel(x, y), threshold, upper_color, lower_color));
+}
+
+image image_transformer::bi_tonal(const image& image, int32 threshold, const color& upper_color, const color& lower_color) {
+  auto result = image;
+  image_transformer::bi_tonal(result, threshold, upper_color, lower_color);
+  return result;
+}
+
 void image_transformer::blur(image& image, int32 radius) {
   image.blur(radius);
 }
