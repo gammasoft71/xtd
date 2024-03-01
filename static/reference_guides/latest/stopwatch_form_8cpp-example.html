@@ -107,6 +107,7 @@ $(function() {
 </div>
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stopwatch&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_transformer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -131,7 +132,7 @@ $(function() {
 <div class="line">    watch_panel.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    watch_panel.border_style(forms::border_style::bevel_inset);</div>
 <div class="line">    watch_panel.bounds({20, 10, 235, 50});</div>
-<div class="line">    watch_panel.back_color(color::average(color::black, color::lime, 0.25));</div>
+<div class="line">    watch_panel.back_color(color_transformer::average(color::black, color::lime, 0.25));</div>
 <div class="line">    watch_panel.fore_color(color::lime);</div>
 <div class="line">    </div>
 <div class="line">    watch.parent(watch_panel);</div>
@@ -221,7 +222,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 29 2024 23:51:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Mar 1 2024 21:54:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

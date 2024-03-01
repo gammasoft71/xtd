@@ -106,7 +106,8 @@ $(function() {
 <img src="sixteen_segment_display_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_transformer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/sixteen_segment_display&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/timer&gt;</span></div>
@@ -132,7 +133,7 @@ $(function() {
 <div class="line">      sixteen_segment_display1.value(chase[counter++ % chase.size()]);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
-<div class="line">    back_color(color::average(color::black, sixteen_segment_display1.fore_color(), 0.20));</div>
+<div class="line">    back_color(color_transformer::average(color::black, sixteen_segment_display1.fore_color(), 0.20));</div>
 <div class="line">    text(<span class="stringliteral">&quot;Sixteen segment display example&quot;</span>);</div>
 <div class="line">    resize += [&amp;] {</div>
 <div class="line">      sixteen_segment_display1.left((client_size().width() - sixteen_segment_display1.width()) / 2);</div>
@@ -188,7 +189,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 29 2024 23:51:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Mar 1 2024 21:54:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
