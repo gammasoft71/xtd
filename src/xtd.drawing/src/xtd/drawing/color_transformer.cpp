@@ -18,6 +18,11 @@ color color_transformer::average(const color& color1, const color& color2, doubl
   return color::from_argb(alpha_blend(color1.a(), color2.a(), average_alpha ? weight : 1.0), alpha_blend(color1.r(), color2.r(), weight), alpha_blend(color1.g(), color2.g(), weight), alpha_blend(color1.b(), color2.b(), weight));
 }
 
+color color_transformer::bi_tonal(const drawing::color& color, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) noexcept {
+  if (color.r() + color.g() + color.b() <= threshold) return lower_color;
+  return upper_color;
+}
+
 color color_transformer::brightness(const color& color, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 2.0);
   return percent < 1.0 ? alpha_blend(color, color::black, 1.0 - percent) : alpha_blend(color, color::white, percent - 1.0);
@@ -124,6 +129,5 @@ color color_transformer::sepia(const color& color, double percent) noexcept {
 }
 
 color color_transformer::threshold(const color& color, int32 threshold) noexcept {
-  if (color.r() + color.g() + color.b() <= threshold) return color::black;
-  return color::white;
+  return bi_tonal(color, threshold, color::white, color::black);
 }

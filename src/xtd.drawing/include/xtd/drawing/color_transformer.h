@@ -60,7 +60,15 @@ namespace xtd {
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
       static color average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept;
-      
+
+      /// @brief Creates a new lower or upper color of the specified color with specified threshold, upper color, and lower color.
+      /// @param color The color to threshold.
+      /// @param threshold The threshold value (from 0 to 765).
+      /// @param upper_color The color used when RGB color is upper the threshold value.
+      /// @param lower_color The color used when RGB color is under or equal the threshold value.
+      /// @return The new color.
+      static color bi_tonal(const drawing::color& color, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) noexcept;
+
       /// @brief Creates a new color with brightness changed of the specified color with specified percent.
       /// @param color The color to brightness.
       /// @param percent The percent factor in % (from 0.0 to 2.0).
@@ -153,7 +161,7 @@ namespace xtd {
       /// @remarks Thus, `1.0` will make the color completely sepia, while `0.0` return the original color.
       static color sepia(const color& color, double percent) noexcept;
 
-      /// @brief Creates a new black and white color of the specified color with specified threshold.
+      /// @brief Creates a new black or white color of the specified color with specified threshold.
       /// @param color The color to threshold.
       /// @param threshold The threshold value (from 0 to 765).
       /// @return The new color.

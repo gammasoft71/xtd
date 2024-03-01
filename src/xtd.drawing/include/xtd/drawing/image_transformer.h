@@ -31,6 +31,20 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Transforms into lower and upper colors of the specified image with specified threshold, upper color and lower color.
+      /// @param image The image to convert into lower and upper colors.
+      /// @param threshold The threshold value (from 0 to 765).
+      /// @param upper_color The color used when RGB color is upper the threshold value.
+      /// @param lower_color The color used when RGB color is under or equal the threshold value.
+      static void bi_tonal(xtd::drawing::image& image, int32 threshold, const color& upper_color, const color& lower_color);
+      /// @brief Creates a new lower and upper image of the specified image with specified threshold, upper color and lower color.
+      /// @param image The image to convert into lower and upper colors.
+      /// @param threshold The threshold value (from 0 to 765).
+      /// @param upper_color The color used when RGB color is upper the threshold value.
+      /// @param lower_color The color used when RGB color is under or equal the threshold value.
+      /// @return The transformed image.
+      static xtd::drawing::image bi_tonal(const xtd::drawing::image& image, int32 threshold, const color& upper_color, const color& lower_color);
+
       /// @brief Blur the specified image with the specified radius.
       /// @param image The image to blur.
       /// @param radius The radius of the blur in pixels.
@@ -200,11 +214,11 @@ namespace xtd {
       static xtd::drawing::image sepia(const xtd::drawing::image& image, double percent);
 
       /// @brief Transforms into black and white colors of the specified image with specified threshold.
-      /// @param image The image to convert into black and white.
+      /// @param image The image to convert into black and white colors.
       /// @param threshold The threshold value (from 0 to 765).
       static void threshold(xtd::drawing::image& image, int32 threshold);
       /// @brief Creates a new black and white image of the specified image with specified threshold.
-      /// @param image The image to convert into black and white.
+      /// @param image The image to convert into black and white colors.
       /// @param threshold The threshold value (from 0 to 765).
       /// @return The transformed image.
       static xtd::drawing::image threshold(const xtd::drawing::image& image, int32 threshold);
