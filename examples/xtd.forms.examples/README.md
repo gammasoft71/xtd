@@ -245,7 +245,7 @@
 * [fill_ellipse](drawing/fill_ellipse/README.md) shows how to fill ellipse in paint event.
 * [fill_rectangle](drawing/fill_rectangle/README.md) shows how to fill rectangle in paint event.
 * [fill_rounded_rectangle](drawing/fill_rounded_rectangle/README.md) shows how to fill rounded rectangle in paint event.
-* [image_transformer](drawing/image_transformer/README.md) shows how to use [xtd::drawing::graphics::image_transformer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image_1_1transformer.html) class.
+* [image_transformer](drawing/image_transformer/README.md) shows how to use [xtd::drawing::graphics::image_transformer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image__transformer.html) class.
 
 ## [Games](games/README.md)
 
