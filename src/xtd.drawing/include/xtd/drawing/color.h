@@ -1153,6 +1153,12 @@ namespace xtd {
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original color.
       static color grayscale(const color& color, double percent) noexcept;
 
+      /// @brief Creates a new color with rotated hue of the specified image with specified angle.
+      /// @param color The color to rotate hue.
+      /// @param angle The angle in degrees (form 0 to 360).
+      /// @return The new color.
+      static color hue_rotate(const color& color, int angle) noexcept;
+
       /// @brief Creates a new inverted color of the specified color.
       /// @param color The color to invert.
       /// @return The new color.

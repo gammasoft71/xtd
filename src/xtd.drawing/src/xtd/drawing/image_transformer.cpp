@@ -76,6 +76,18 @@ image image_transformer::grayscale(const image& image, double percent) {
   return result;
 }
 
+void image_transformer::hue_rotate(image& image, int angle) {
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      image.set_pixel(x, y, color::hue_rotate(image.get_pixel(x, y), angle));
+}
+
+image image_transformer::hue_rotate(const image& image, int angle) {
+  auto result = image;
+  hue_rotate(result, angle);
+  return result;
+}
+
 void image_transformer::invert(image& image) {
   invert(image, 1.0);
 }
