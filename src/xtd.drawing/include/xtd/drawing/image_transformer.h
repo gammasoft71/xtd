@@ -150,12 +150,12 @@ namespace xtd {
       
       /// @brief Change the saturate of the specified image with specified percent factor.
       /// @param image The image to change saturation.
-      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @param percent The percent factor in %.
       /// @remarks Thus, `1.0` returns the original image, while the other values give a saturate image.
       static void saturate(xtd::drawing::image& image, double percent);
       /// @brief Creates a new saturate image of the specified image with specified percent factor.
       /// @param image The image to change saturation.
-      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @param percent The percent factor in %.
       /// @return The transformed image.
       /// @remarks Thus, `1.0` returns the original image, while the other values give a saturate image.
       static xtd::drawing::image saturate(const xtd::drawing::image& image, double percent);
