@@ -223,6 +223,7 @@
 
 * [user_dialog](user_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) as dialog.
 * [user_dialog_show_sheet](user_dialogs/user_dialog_show_sheet/README.md) demonstrates the use of [xtd::forms::form](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1form.html) as dialog.
+* [about_dialog_with_user_pages](user_dialogs/about_dialog_with_user_pages/README.md) demonstrates how to add custom tab page to [xtd::forms::about_dialog](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1about__dialog.html) dialog.
 
 ## [User Controls](user_controls/README.md)
 
