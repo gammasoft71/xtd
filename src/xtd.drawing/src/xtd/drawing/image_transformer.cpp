@@ -118,6 +118,18 @@ image image_transformer::rotate_flip(const image& image, xtd::drawing::rotate_fl
   return result;
 }
 
+void image_transformer::saturate(image& image, double percent) {
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      image.set_pixel(x, y, color::saturate(image.get_pixel(x, y), percent));
+}
+
+image image_transformer::saturate(const image& image, double percent) {
+  auto result = image;
+  saturate(result, percent);
+  return result;
+}
+
 void image_transformer::sepia(image& image) {
   sepia(image, 100);
 }

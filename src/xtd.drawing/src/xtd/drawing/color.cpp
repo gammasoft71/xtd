@@ -685,6 +685,25 @@ color color::parse(const ustring& color) noexcept {
   }
 }
 
+color color::saturate(const color& color, double percent) noexcept {
+  if (percent < .0) percent = 0;
+
+  auto r = color.r() / 255.0;
+  auto g = color.g() / 255.0;
+  auto b = color.b() / 255.0;
+  
+  auto gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;
+  auto saturated_r = gray + (r - gray) * percent;
+  auto saturated_g = gray + (g - gray) * percent;
+  auto saturated_b = gray + (b - gray) * percent;
+  
+  saturated_r = std::clamp(saturated_r, 0.0, 1.0);
+  saturated_g = std::clamp(saturated_g, 0.0, 1.0);
+  saturated_b = std::clamp(saturated_b, 0.0, 1.0);
+
+  return from_argb(color.a(), static_cast<int>(saturated_r * 255), static_cast<int>(saturated_g * 255), static_cast<int>(saturated_b * 255));
+}
+
 color color::sepia(const color& color, double percent) noexcept {
   // https://www.geeksforgeeks.org/image-processing-in-java-colored-image-to-sepia-image-conversion/
   percent = std::clamp(percent, 0.0, 1.0);

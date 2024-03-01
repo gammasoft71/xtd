@@ -659,8 +659,7 @@ namespace xtd {
       /// @return The adjusted color result.
       /// @remarks Thus, a percent value of `1.0` will return the color, while a value of `0.0` will return the xtd::drawing::color::black and a value of `2.0` will return the xtd::drawing::color::white.
       static color brightness(const color& color, double percent) noexcept;
-      
-      
+            
       /// @brief Returns a contrasted version of the specified color.
       /// @param color The color to adjust.
       /// @param percent The contrast factor
@@ -1186,6 +1185,13 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color parse(const xtd::ustring& color) noexcept;
       
+      /// @brief Creates a new color with saturation changed of the specified color.
+      /// @param color The color to adjust.
+      /// @param percent The saturatiob factor
+      /// @return The saturation color result.
+      /// @remarks Thus, `1.0` return the original color. while other will make a saturate color.
+      static color saturate(const color& color, double percent) noexcept;
+
       /// @brief Returns a sepia version of the specified color with percent factor.
       /// @param color The color to sepia.
       /// @param percent The percent factor.
