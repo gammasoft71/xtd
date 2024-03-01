@@ -428,7 +428,9 @@ void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
   auto rgb = reinterpret_cast<::rgb*>(get_rgb());
   auto pixel = y * width() + x;
   alpha[pixel] = color.a();
-  rgb[pixel] = {color.r(), color.g(), color.b()};
+  rgb[pixel].r = color.r();
+  rgb[pixel].g = color.g();
+  rgb[pixel].b = color.b();
   }
 
 void image::blur(int32 radius) {
