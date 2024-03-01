@@ -247,7 +247,7 @@ color color::dark(const color& color) noexcept {
 
 color color::dark(const color& color, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 1.0);
-  return brightness(color, percent);
+  return alpha_blend(color, color::black, percent);
 }
 
 color color::disabled(const color& fore_color, const color& back_color) noexcept {
@@ -682,7 +682,7 @@ color color::light(const color& color) noexcept {
 
 color color::light(const color& color, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 1.0);
-  return brightness(color, percent + 1.0);
+  return alpha_blend(color, color::white, percent);
 }
 
 color color::parse(const ustring& color) noexcept {
