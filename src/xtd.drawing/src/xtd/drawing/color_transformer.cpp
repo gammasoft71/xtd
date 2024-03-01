@@ -19,6 +19,7 @@ color color_transformer::average(const color& color1, const color& color2, doubl
 }
 
 color color_transformer::bi_tonal(const drawing::color& color, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) noexcept {
+  threshold = std::clamp(threshold, 0, 765);
   if (color.r() + color.g() + color.b() <= threshold) return lower_color;
   return upper_color;
 }
