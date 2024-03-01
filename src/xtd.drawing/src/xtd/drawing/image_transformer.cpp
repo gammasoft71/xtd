@@ -120,6 +120,16 @@ image image_transformer::opacity(const image& image, double percent) {
   return result;
 }
 
+void image_transformer::resize(xtd::drawing::image& image, const xtd::drawing::size& size) {
+  image = xtd::drawing::image {image, size.width(), size.height()};
+}
+
+xtd::drawing::image image_transformer::resize(const xtd::drawing::image& image, const xtd::drawing::size& size) {
+  auto result = image;
+  resize(result, size);
+  return result;
+}
+
 void image_transformer::rotate_flip(image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
   image.rotate_flip(rotate_flip_type);
 }

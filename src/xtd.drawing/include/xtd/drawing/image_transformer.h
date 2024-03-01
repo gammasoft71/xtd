@@ -145,7 +145,17 @@ namespace xtd {
       /// @return The transformed image.
       /// @remarks `0.0` will represents a transparent image. `1.0` will provide the original image.
       static xtd::drawing::image opacity(const xtd::drawing::image& image, double percent);
-      
+
+      /// @brief Resize image with of the specified image with specified size.
+      /// @param image The image to change the size.
+      /// @param size The new size.
+      static void resize(xtd::drawing::image& image, const xtd::drawing::size& size);
+      /// @brief Creates a new image with new size of the specified image with specified size.
+      /// @param image The image to change the size.
+      /// @param size The new size.
+      /// @return The transformed image.
+      static xtd::drawing::image resize(const xtd::drawing::image& image, const xtd::drawing::size& size);
+
       /// @brief Rotates, flips, or rotates and flips of the specified image with specified rotate flip type.
       /// @param image The image to be rotated, flipped or rotated and flipped.
       /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
