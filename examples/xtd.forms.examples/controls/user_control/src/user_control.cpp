@@ -1,3 +1,4 @@
+#include <xtd/drawing/color_transformer>
 #include <xtd/drawing/system_brushes>
 #include <xtd/forms/application>
 #include <xtd/forms/form>
@@ -33,14 +34,14 @@ namespace user_control_example {
     void on_paint(paint_event_args& e) override {
       user_control::on_paint(e);
       auto status_rectangle = rectangle {1, 1, 28, 28};
-      e.graphics().fill_rectangle(solid_brush {color::dark(back_color())}, status_rectangle);
+      e.graphics().fill_rectangle(solid_brush {color_transformer::dark(back_color())}, status_rectangle);
       auto status_string = std::map<operation_status, ustring> {{operation_status::none, u8""}, {operation_status::running, u8"☞"}, {operation_status::succeed, u8"√"}, {operation_status::failed, u8"X"}} [status()];
       auto status_brush = solid_brush(std::map<operation_status, color> {{operation_status::none, fore_color()}, {operation_status::running, color::yellow}, {operation_status::succeed, color::green}, {operation_status::failed, color::red}} [status()]);
       e.graphics().draw_string(status_string, drawing::font {default_font(), 18, font_style::italic}, status_brush, status_rectangle, string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));
-      e.graphics().draw_line(pen(color::dark(color::dark(back_color()))), status_rectangle.location(), point {status_rectangle.width(), 1});
-      e.graphics().draw_line(pen(color::dark(color::dark(back_color()))), status_rectangle.location(), point {1, status_rectangle.height()});
-      e.graphics().draw_line(pen(color::light(color::light(back_color()))), point {1, status_rectangle.height()}, point {status_rectangle.width(), status_rectangle.height()});
-      e.graphics().draw_line(pen(color::light(color::light(back_color()))), point {status_rectangle.width(), 1}, point {status_rectangle.width(), status_rectangle.height()});
+      e.graphics().draw_line(pen(color_transformer::dark(color_transformer::dark(back_color()))), status_rectangle.location(), point {status_rectangle.width(), 1});
+      e.graphics().draw_line(pen(color_transformer::dark(color_transformer::dark(back_color()))), status_rectangle.location(), point {1, status_rectangle.height()});
+      e.graphics().draw_line(pen(color_transformer::light(color_transformer::light(back_color()))), point {1, status_rectangle.height()}, point {status_rectangle.width(), status_rectangle.height()});
+      e.graphics().draw_line(pen(color_transformer::light(color_transformer::light(back_color()))), point {status_rectangle.width(), 1}, point {status_rectangle.width(), status_rectangle.height()});
       e.graphics().draw_string(text(), default_font(), system_brushes::control_text(), 35, e.graphics().measure_string(text(), default_font()).height() / 2);
     }
     

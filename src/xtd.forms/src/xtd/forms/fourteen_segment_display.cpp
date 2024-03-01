@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/fourteen_segment_display.h"
+#include <xtd/drawing/color_transformer.h>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -212,14 +213,14 @@ fourteen_segment_display fourteen_segment_display::create(const control& parent,
 
 void fourteen_segment_display::draw_back_digit(drawing::graphics& graphics) {
   seven_segment_display::draw_back_digit(graphics);
-  draw_segment_g1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_g2(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_h(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_i(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_j(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_k(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_l(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_m(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_g1(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_g2(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_h(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_i(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_j(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_k(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_l(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_m(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
 }
 
 void fourteen_segment_display::draw_segment_g(drawing::graphics& graphics, const drawing::color& color) {

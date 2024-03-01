@@ -1,4 +1,5 @@
 #include <xtd/diagnostics/stopwatch>
+#include <xtd/drawing/color_transformer>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/form>
@@ -23,7 +24,7 @@ public:
     watch_panel.parent(*this);
     watch_panel.border_style(forms::border_style::bevel_inset);
     watch_panel.bounds({20, 10, 235, 50});
-    watch_panel.back_color(color::average(color::black, color::lime, 0.25));
+    watch_panel.back_color(color_transformer::average(color::black, color::lime, 0.25));
     watch_panel.fore_color(color::lime);
     
     watch.parent(watch_panel);

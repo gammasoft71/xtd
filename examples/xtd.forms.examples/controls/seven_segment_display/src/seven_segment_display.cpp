@@ -1,3 +1,4 @@
+#include <xtd/drawing/color_transformer>
 #include <xtd/forms/Application>
 #include <xtd/forms/form>
 #include <xtd/forms/seven_segment_display>
@@ -24,7 +25,7 @@ public:
       seven_segment_display1.value(chase[counter++ % chase.size()]);
     };
     
-    back_color(color::average(color::black, seven_segment_display1.fore_color(), 0.20));
+    back_color(color_transformer::average(color::black, seven_segment_display1.fore_color(), 0.20));
     text("Seven segment display example");
     resize += [&] {
       seven_segment_display1.left((client_size().width() - seven_segment_display1.width()) / 2);

@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/sixteen_segment_display.h"
+#include <xtd/drawing/color_transformer>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -211,10 +212,10 @@ sixteen_segment_display sixteen_segment_display::create(const control& parent, x
 
 void sixteen_segment_display::draw_back_digit(drawing::graphics& graphics) {
   fourteen_segment_display::draw_back_digit(graphics);
-  draw_segment_a1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_a2(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_d1(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_d2(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_a1(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_a2(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_d1(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_d2(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
 }
 
 void sixteen_segment_display::draw_segment_a(drawing::graphics& graphics, const drawing::color& color) {
