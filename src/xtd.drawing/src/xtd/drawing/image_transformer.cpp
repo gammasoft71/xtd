@@ -64,18 +64,6 @@ image image_transformer::disabled(const image& image, float brightness) {
   return result;
 }
 
-void image_transformer::invert(image& image, double percent) {
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x)
-      image.set_pixel(x, y, color::invert(image.get_pixel(x, y), percent));
-}
-
-image image_transformer::invert(const image& image, double percent) {
-  auto result = image;
-  invert(result, percent);
-  return result;
-}
-
 void image_transformer::grayscale(image& image) {
   grayscale(image, 100);
 }
@@ -93,6 +81,18 @@ void image_transformer::grayscale(image& image, double percent) {
 image image_transformer::grayscale(const image& image, double percent) {
   auto result = image;
   grayscale(result, percent);
+  return result;
+}
+
+void image_transformer::invert(image& image, double percent) {
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      image.set_pixel(x, y, color::invert(image.get_pixel(x, y), percent));
+}
+
+image image_transformer::invert(const image& image, double percent) {
+  auto result = image;
+  invert(result, percent);
   return result;
 }
 
