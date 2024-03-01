@@ -1,6 +1,6 @@
 # image_transformer
 
-shows how to draw ellipse in paint event using [xtd::drawing::graphics::image_transformer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image_1_1transformer.html).
+shows how to use [xtd::drawing::graphics::image_transformer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image_1_1transformer.html) class.
 
 ## Sources
 
