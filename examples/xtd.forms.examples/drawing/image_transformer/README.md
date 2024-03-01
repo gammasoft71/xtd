@@ -1,6 +1,6 @@
 # image_transformer
 
-shows how to use [xtd::drawing::graphics::image_transformer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image_1_1transformer.html) class.
+shows how to use [xtd::drawing::graphics::image_transformer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image__transformer.html) class.
 
 ## Sources
 
