@@ -215,14 +215,14 @@ color color::alpha_blend(const color& fore_color, const color& back_color, doubl
   return average(fore_color, back_color, alpha);
 }
 
+color color::average(const color& color1, const color& color2, double weight) noexcept {
+  return average(color1, color2, weight, false);
+}
+
 color color::average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {
   weight = std::clamp(weight, 0.0, 1.0);
   auto alpha_blend = [](xtd::byte fore_componant, xtd::byte back_componant, double percent) {return static_cast<xtd::byte>(fore_componant * (1 - percent) + back_componant * percent);};
   return from_argb(alpha_blend(color1.a(), color2.a(), average_alpha ? weight : 1.0), alpha_blend(color1.r(), color2.r(), weight), alpha_blend(color1.g(), color2.g(), weight), alpha_blend(color1.b(), color2.b(), weight));
-}
-
-color color::average(const color& color1, const color& color2, double weight) noexcept {
-  return average(color1, color2, weight, false);
 }
 
 color color::brightness(const color& color, double percent) noexcept {
@@ -231,7 +231,7 @@ color color::brightness(const color& color, double percent) noexcept {
 }
 
 color color::contrast(const color& color, double percent) noexcept {
-  // https://efundies.com/adjust-the-contrast-of-an-image-in-c/
+  // From https://efundies.com/adjust-the-contrast-of-an-image-in-c/
   if (percent < .0) percent = 0;
  
   auto r = std::clamp(((((color.r() / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0);
@@ -241,13 +241,13 @@ color color::contrast(const color& color, double percent) noexcept {
   return from_argb(color.a(), static_cast<xtd::byte>(r), static_cast<xtd::byte>(g), static_cast<xtd::byte>(b));
 }
 
+color color::dark(const color& color) noexcept {
+  return color::dark(color, 1.0 / 3);
+}
+
 color color::dark(const color& color, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 1.0);
   return brightness(color, percent);
-}
-
-color color::dark(const color& color) noexcept {
-  return color::dark(color, 1.0 / 3);
 }
 
 color color::disabled(const color& fore_color, const color& back_color) noexcept {
@@ -646,15 +646,19 @@ float color::get_saturation() const noexcept {
   return (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
 }
 
+color color::grayscale(const color& color) noexcept {
+  return grayscale(color, 1.0);
+}
+
 color color::grayscale(const color& color, double percent) noexcept {
-  // https://stackoverflow.com/questions/14330/rgb-to-monochrome-conversion
+  // From https://stackoverflow.com/questions/14330/rgb-to-monochrome-conversion
   percent = std::clamp(percent, 0.0, 1.0);
   auto grayscale = static_cast<xtd::byte>((0.299 * color.r()) + (0.587 * color.g()) + (0.114 * color.b()));
   return alpha_blend(color, color::from_argb(color.a(), grayscale, grayscale, grayscale), percent);
 }
 
-color color::grayscale(const color& color) noexcept {
-  return grayscale(color, 1.0);
+color color::invert(const color& color) noexcept {
+  return invert(color, 1.0);
 }
 
 color color::invert(const color& color,  double percent) noexcept {
@@ -662,17 +666,13 @@ color color::invert(const color& color,  double percent) noexcept {
   return alpha_blend(color, color::from_argb(color.a(), 255 - color.r(), 255 - color.g(), 255 - color.b()), percent);
 }
 
-color color::invert(const color& color) noexcept {
-  return invert(color, 1.0);
+color color::light(const color& color) noexcept {
+  return color::light(color, 1.0 / 3);
 }
 
 color color::light(const color& color, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 1.0);
   return brightness(color, percent + 1.0);
-}
-
-color color::light(const color& color) noexcept {
-  return color::light(color, 1.0 / 3);
 }
 
 color color::parse(const ustring& color) noexcept {
@@ -704,17 +704,17 @@ color color::saturate(const color& color, double percent) noexcept {
   return from_argb(color.a(), static_cast<int>(saturated_r * 255), static_cast<int>(saturated_g * 255), static_cast<int>(saturated_b * 255));
 }
 
+color color::sepia(const color& color) noexcept {
+  return sepia(color, 1.0);
+}
+
 color color::sepia(const color& color, double percent) noexcept {
-  // https://www.geeksforgeeks.org/image-processing-in-java-colored-image-to-sepia-image-conversion/
+  // From https://www.geeksforgeeks.org/image-processing-in-java-colored-image-to-sepia-image-conversion/
   percent = std::clamp(percent, 0.0, 1.0);
   auto r = std::clamp(0.393 * color.r() + 0.769 * color.g() + 0.189 * color.b(), .0, 255.0);
   auto g = std::clamp(0.349 * color.r() + 0.686 * color.g() + 0.168 * color.b(), .0, 255.0);
   auto b = std::clamp(0.272 * color.r() + 0.534 * color.g() + 0.131 * color.b(), .0, 255.0);
   return alpha_blend(color, color::from_argb(color.a(), static_cast<xtd::byte>(r), static_cast<xtd::byte>(g), static_cast<xtd::byte>(b)), percent);
-}
-
-color color::sepia(const color& color) noexcept {
-  return sepia(color, 1.0);
 }
 
 uint32 color::to_argb() const noexcept {
