@@ -615,19 +615,6 @@ namespace xtd {
       
       /// @{
       /// @brief Returns the weighted average color between the two given colors.
-      /// @param color1 The first color.
-      /// @param color2 The second color.
-      /// @param weight The weighting factor
-      /// @param average_alpha if true alpha was compute to; otherwise the alpha result is the alpha of color1
-      /// @return The average color.
-      /// @remarks The alpha, red, green and blue values are averages using the following formula:
-      /// @code
-      /// color = color1 * (1 - weight) + color2 * weight;
-      /// @endcode
-      /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
-      static color average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept;
-      
-      /// @brief Returns the weighted average color between the two given colors.
       /// @param fore_core The foreground color.
       /// @param back_color The background color.
       /// @param alpha The alpha factor
@@ -639,7 +626,19 @@ namespace xtd {
       /// @endcode
       /// @remarks Thus, a weight value of `1.0` will return the background color, while a value of `0.0` will return the foreground color.
       static color alpha_blend(const color& fore_core, const color& back_color, double alpha) noexcept;
-
+      
+      /// @brief Returns the weighted average color between the two given colors.
+      /// @param color1 The first color.
+      /// @param color2 The second color.
+      /// @param weight The weighting factor
+      /// @param average_alpha if true alpha was compute to; otherwise the alpha result is the alpha of color1
+      /// @return The average color.
+      /// @remarks The alpha, red, green and blue values are averages using the following formula:
+      /// @code
+      /// color = color1 * (1 - weight) + color2 * weight;
+      /// @endcode
+      /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
+      static color average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept;
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
       /// @param color2 The second color.
@@ -653,42 +652,40 @@ namespace xtd {
       /// @remarks Thus, a weight value of `1.0` will return the second color, while a value of `0.0` will return the first color.
       static color average(const color& color1, const color& color2, double weight) noexcept;
       
-      /// @brief Returns a brightness version of the specified color.
-      /// @param color The color to adjust.
-      /// @param percent The brightness factor
-      /// @return The adjusted color result.
-      /// @remarks Thus, a percent value of `1.0` will return the color, while a value of `0.0` will return the xtd::drawing::color::black and a value of `2.0` will return the xtd::drawing::color::white.
+      /// @brief Creates a new color with brightness changed of the specified color with specified percent.
+      /// @param color The color to brightness.
+      /// @param percent The percent factor in % (from 0.0 to 2.0).
+      /// @return The new color.
+      /// @remarks 0.0` will make the color completely black. `1.0` is default and represents the original color. Values over `1.0` will provide brighter results.
       static color brightness(const color& color, double percent) noexcept;
             
-      /// @brief Returns a contrasted version of the specified color.
-      /// @param color The color to adjust.
-      /// @param percent The contrast factor
-      /// @return The contrasted color result.
-      /// @remarks Thus, `1.0` return the original color. while other will make a contrasted color.
+      /// @brief Creates a new contrasting color of the specified image with specified percent factor.
+      /// @param color The color to change contrast.
+      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @return The new color.
+      /// @remarks Thus, `1.0` returns the original image, while the other values give a contrasting image.
       static color contrast(const color& color, double percent) noexcept;
       
-      /// @brief Returns a darker version of the specified color.
+      /// @brief Creates a new darker color of the specified color with specified percent factor.
       /// @param color The color to dark.
-      /// @param percent The darker factor
-      /// @return The adjusted color result.
+      /// @param percent The darker factor in % (from 0.0 to 1.0).
+      /// @return The new color.
       /// @remarks Thus, a percent value of `1.0` will return the xtd::drawing::color::black, while a value of `0.0` will return the color.
       static color dark(const color& color, double percent) noexcept;
-      
-      /// @brief Returns a darker version of the specified color.
+      /// @brief Creates a new darker color of the specified color with 33% factor.
       /// @param color The color to dark.
-      /// @return The adjusted color result.
+      /// @return The new color.
       static color dark(const color& color) noexcept;
       
-      /// @brief Returns a disabled version of the specified color.
+      /// @brief Creates a new disabled color of the specified color with specified reference background color.
       /// @param fore_color The fore color to disabled.
       /// @param back_color The reference background color.
-      /// @return The disabled color result.
+      /// @return The new color.
       static color disabled(const color& fore_color, const color& back_color) noexcept;
-      
-      /// @brief Returns a disabled version of the specified color.
+      /// @brief Creates a new disabled color of the specified color with specified brightness.
       /// @param fore_color The fore color to disabled.
       /// @param brightness The brightness of the reference backgroung color.
-      /// @return The disabled color result.
+      /// @return The new color.
       static color disabled(const color& fore_color, float brightness) noexcept;
 
       bool equals(const color& value) const noexcept override;
@@ -1145,17 +1142,16 @@ namespace xtd {
       /// @endcode
       float get_saturation() const noexcept;
       
-      /// @brief Returns a grayscale version of the specified color with percent factor.
+      /// @brief Creates a new gray color of the specified color.
+      /// @param color The color to grayscale.
+      /// @return The new color.
+      static color grayscale(const color& color) noexcept;
+      /// @brief Creates a new gray color of the specified image with specified percent factor.
       /// @param color The color to grayscale.
       /// @param percent The percent factor.
-      /// @return The grayscale color result.
+      /// @return The new color.
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original color.
       static color grayscale(const color& color, double percent) noexcept;
-      
-      /// @brief Returns a grayscale version of the specified color.
-      /// @param color The color to grayscale.
-      /// @return The grayscale color result.
-      static color grayscale(const color& color) noexcept;
 
       /// @brief Returns a invertr version of the specified color.
       /// @param color The color to invert.

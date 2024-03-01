@@ -93,18 +93,6 @@ namespace xtd {
       /// @return The transformed image.
       static xtd::drawing::image disabled(const xtd::drawing::image& image, float brightness);
 
-      /// @brief Inverts colors of the specified image with specified percent factor.
-      /// @param image The image to invert colors.
-      /// @param percent The percent factor in % (from 0.0 to 1.0).
-      /// @remarks `0.0` will represents the original image. `1.0` will provide image with inverted colors.
-      static void invert(xtd::drawing::image& image, double percent);
-      /// @brief Creates a new image with inverted colors of the specified image with specified percent factor.
-      /// @param image The image to invert colors.
-      /// @param percent The percent factor in % (from 0.0 to 1.0).
-      /// @return The transformed image.
-      /// @remarks `0.0` will represents the original image. `1.0` will provide image with inverted colors.
-      static xtd::drawing::image invert(const xtd::drawing::image& image, double percent);
-
       /// @brief Transforms into grayscale of the specified image.
       /// @param image The image to be transformed into grayscale.
       static void grayscale(xtd::drawing::image& image);
@@ -123,6 +111,18 @@ namespace xtd {
       /// @return The transformed image.
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
       static xtd::drawing::image grayscale(const xtd::drawing::image& image, double percent);
+
+      /// @brief Inverts colors of the specified image with specified percent factor.
+      /// @param image The image to invert colors.
+      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @remarks `0.0` will represents the original image. `1.0` will provide image with inverted colors.
+      static void invert(xtd::drawing::image& image, double percent);
+      /// @brief Creates a new image with inverted colors of the specified image with specified percent factor.
+      /// @param image The image to invert colors.
+      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @return The transformed image.
+      /// @remarks `0.0` will represents the original image. `1.0` will provide image with inverted colors.
+      static xtd::drawing::image invert(const xtd::drawing::image& image, double percent);
 
       /// @brief Changes the opacity level of the specified image with specified percent factor.
       /// @param image The image to change the opacity level.
