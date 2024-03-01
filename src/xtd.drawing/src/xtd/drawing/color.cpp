@@ -657,6 +657,16 @@ color color::grayscale(const color& color, double percent) noexcept {
   return alpha_blend(color, color::from_argb(color.a(), grayscale, grayscale, grayscale), percent);
 }
 
+color color::hue_rotate(const color& color, int angle) noexcept {
+  angle = std::clamp(angle, 0, 360);
+
+  auto h = static_cast<int>(color.get_hue());
+  h = (h + angle) % 360;
+  if (h < 0) h += 360;
+
+  return color::from_hsl(static_cast<float>(h), color.get_saturation(), color.get_lightness());
+}
+
 color color::invert(const color& color) noexcept {
   return invert(color, 1.0);
 }

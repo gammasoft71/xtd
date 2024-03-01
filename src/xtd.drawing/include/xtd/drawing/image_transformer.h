@@ -105,6 +105,16 @@ namespace xtd {
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
       static xtd::drawing::image grayscale(const xtd::drawing::image& image, double percent);
 
+      /// @brief Rotate hue colors of the specified image with specified angle.
+      /// @param image The image to rotate hue colors.
+      /// @param angle The angle in degrees (form 0 to 360).
+      static void hue_rotate(xtd::drawing::image& image, int angle);
+      /// @brief Creates a new image with rotated hue colors of the specified image with specified angle.
+      /// @param image The image to rotate hue colors.
+      /// @param angle The angle in degrees (form 0 to 360).
+      /// @return The transformed image.
+      static xtd::drawing::image hue_rotate(const xtd::drawing::image& image, int angle);
+
       /// @brief Inverts colors of the specified image.
       /// @param image The image to invert colors.
       static void invert(xtd::drawing::image& image);
