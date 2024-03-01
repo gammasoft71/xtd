@@ -81,23 +81,23 @@ h_scroll_bar h_scroll_bar::create(int32 value, const drawing::point& location, c
 
 h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum) {
   auto result = h_scroll_bar {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum, const drawing::point& location) {
   auto result = h_scroll_bar {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
 
 h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
   auto result = h_scroll_bar {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -105,8 +105,8 @@ h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum, const drawing::poi
 
 h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = h_scroll_bar {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -115,26 +115,26 @@ h_scroll_bar h_scroll_bar::create(int32 value, int32 maximum, const drawing::poi
 
 h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum) {
   auto result = h_scroll_bar {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
   auto result = h_scroll_bar {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
 
 h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
   auto result = h_scroll_bar {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -142,9 +142,9 @@ h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum, con
 
 h_scroll_bar h_scroll_bar::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = h_scroll_bar {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -218,16 +218,16 @@ h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, const draw
 h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maximum) {
   auto result = h_scroll_bar {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location) {
   auto result = h_scroll_bar {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
@@ -235,8 +235,8 @@ h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maxi
 h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
   auto result = h_scroll_bar {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -245,8 +245,8 @@ h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maxi
 h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = h_scroll_bar {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -256,18 +256,18 @@ h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 maxi
 h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum) {
   auto result = h_scroll_bar {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
   auto result = h_scroll_bar {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
@@ -275,9 +275,9 @@ h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 mini
 h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
   auto result = h_scroll_bar {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -286,9 +286,9 @@ h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 mini
 h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = h_scroll_bar {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);

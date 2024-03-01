@@ -155,23 +155,23 @@ numeric_up_down numeric_up_down::create(double value, const drawing::point& loca
 
 numeric_up_down numeric_up_down::create(double value, double maximum) {
   auto result = numeric_up_down {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 numeric_up_down numeric_up_down::create(double value, double maximum, const drawing::point& location) {
   auto result = numeric_up_down {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
 
 numeric_up_down numeric_up_down::create(double value, double maximum, const drawing::point& location, const drawing::size& size) {
   auto result = numeric_up_down {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -179,8 +179,8 @@ numeric_up_down numeric_up_down::create(double value, double maximum, const draw
 
 numeric_up_down numeric_up_down::create(double value, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = numeric_up_down {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -189,26 +189,26 @@ numeric_up_down numeric_up_down::create(double value, double maximum, const draw
 
 numeric_up_down numeric_up_down::create(double value, double minimum, double maximum) {
   auto result = numeric_up_down {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 numeric_up_down numeric_up_down::create(double value, double minimum, double maximum, const drawing::point& location) {
   auto result = numeric_up_down {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
 
 numeric_up_down numeric_up_down::create(double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size) {
   auto result = numeric_up_down {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -216,9 +216,9 @@ numeric_up_down numeric_up_down::create(double value, double minimum, double max
 
 numeric_up_down numeric_up_down::create(double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = numeric_up_down {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -292,16 +292,16 @@ numeric_up_down numeric_up_down::create(const control& parent, double value, con
 numeric_up_down numeric_up_down::create(const control& parent, double value, double maximum) {
   auto result = numeric_up_down {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 numeric_up_down numeric_up_down::create(const control& parent, double value, double maximum, const drawing::point& location) {
   auto result = numeric_up_down {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
@@ -309,8 +309,8 @@ numeric_up_down numeric_up_down::create(const control& parent, double value, dou
 numeric_up_down numeric_up_down::create(const control& parent, double value, double maximum, const drawing::point& location, const drawing::size& size) {
   auto result = numeric_up_down {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -319,8 +319,8 @@ numeric_up_down numeric_up_down::create(const control& parent, double value, dou
 numeric_up_down numeric_up_down::create(const control& parent, double value, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = numeric_up_down {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -330,18 +330,18 @@ numeric_up_down numeric_up_down::create(const control& parent, double value, dou
 numeric_up_down numeric_up_down::create(const control& parent, double value, double minimum, double maximum) {
   auto result = numeric_up_down {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 numeric_up_down numeric_up_down::create(const control& parent, double value, double minimum, double maximum, const drawing::point& location) {
   auto result = numeric_up_down {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
@@ -349,9 +349,9 @@ numeric_up_down numeric_up_down::create(const control& parent, double value, dou
 numeric_up_down numeric_up_down::create(const control& parent, double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size) {
   auto result = numeric_up_down {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -360,9 +360,9 @@ numeric_up_down numeric_up_down::create(const control& parent, double value, dou
 numeric_up_down numeric_up_down::create(const control& parent, double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = numeric_up_down {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
