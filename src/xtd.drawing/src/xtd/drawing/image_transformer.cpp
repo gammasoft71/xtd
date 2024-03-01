@@ -1,3 +1,4 @@
+#include "../../../include/xtd/drawing/color_transformer.h"
 #include "../../../include/xtd/drawing/image_transformer.h"
 
 using namespace xtd::drawing;
@@ -15,7 +16,7 @@ image image_transformer::blur(const image& image, int32 radius) {
 void image_transformer::brightness(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      image.set_pixel(x, y, color::brightness(image.get_pixel(x, y), percent));
+      image.set_pixel(x, y, color_transformer::brightness(image.get_pixel(x, y), percent));
 }
 
 image image_transformer::brightness(const image& image, double percent) {
@@ -27,7 +28,7 @@ image image_transformer::brightness(const image& image, double percent) {
 void image_transformer::contrast(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      image.set_pixel(x, y, color::contrast(image.get_pixel(x, y), percent));
+      image.set_pixel(x, y, color_transformer::contrast(image.get_pixel(x, y), percent));
 }
 
 image image_transformer::contrast(const image& image, double percent) {
@@ -47,7 +48,7 @@ image image_transformer::disabled(const image& image, const color& back_color) {
 void image_transformer::disabled(image& image, float brightness) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      image.set_pixel(x, y, color::disabled(image.get_pixel(x, y), brightness));
+      image.set_pixel(x, y, color_transformer::disabled(image.get_pixel(x, y), brightness));
 }
 
 image image_transformer::disabled(const image& image, float brightness) {
@@ -67,7 +68,7 @@ image image_transformer::grayscale(const image& image) {
 void image_transformer::grayscale(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      image.set_pixel(x, y, color::grayscale(image.get_pixel(x, y), percent));
+      image.set_pixel(x, y, color_transformer::grayscale(image.get_pixel(x, y), percent));
 }
 
 image image_transformer::grayscale(const image& image, double percent) {
@@ -79,7 +80,7 @@ image image_transformer::grayscale(const image& image, double percent) {
 void image_transformer::hue_rotate(image& image, int angle) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      image.set_pixel(x, y, color::hue_rotate(image.get_pixel(x, y), angle));
+      image.set_pixel(x, y, color_transformer::hue_rotate(image.get_pixel(x, y), angle));
 }
 
 image image_transformer::hue_rotate(const image& image, int angle) {
@@ -99,7 +100,7 @@ image image_transformer::invert(const image& image) {
 void image_transformer::invert(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      image.set_pixel(x, y, color::invert(image.get_pixel(x, y), percent));
+      image.set_pixel(x, y, color_transformer::invert(image.get_pixel(x, y), percent));
 }
 
 image image_transformer::invert(const image& image, double percent) {
@@ -143,7 +144,7 @@ image image_transformer::rotate_flip(const image& image, xtd::drawing::rotate_fl
 void image_transformer::saturate(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      image.set_pixel(x, y, color::saturate(image.get_pixel(x, y), percent));
+      image.set_pixel(x, y, color_transformer::saturate(image.get_pixel(x, y), percent));
 }
 
 image image_transformer::saturate(const image& image, double percent) {
@@ -163,11 +164,23 @@ image image_transformer::sepia(const image& image) {
 void image_transformer::sepia(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x)
-      image.set_pixel(x, y, color::sepia(image.get_pixel(x, y), percent));
+      image.set_pixel(x, y, color_transformer::sepia(image.get_pixel(x, y), percent));
 }
 
 image image_transformer::sepia(const image& image, double percent) {
   auto result = image;
   sepia(result, percent);
+  return result;
+}
+
+void image_transformer::threshold(image& image, int32 threshold) {
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x)
+      image.set_pixel(x, y, color_transformer::threshold(image.get_pixel(x, y), threshold));
+}
+
+image image_transformer::threshold(const image& image, int32 threshold) {
+  auto result = image;
+  image_transformer::threshold(result, threshold);
   return result;
 }

@@ -1,3 +1,4 @@
+#include <xtd/drawing/color_transformer>
 #include <xtd/forms/application>
 #include <xtd/forms/dot_matrix_display>
 #include <xtd/forms/form>
@@ -24,7 +25,7 @@ public:
       dot_matrix_display1.set_dots(chase[counter++ % chase.size()]);
     };
     
-    back_color(color::average(color::black, dot_matrix_display1.fore_color(), 0.20));
+    back_color(color_transformer::average(color::black, dot_matrix_display1.fore_color(), 0.20));
     text("Dot matrix display example");
     resize += [&] {
       dot_matrix_display1.left((client_size().width() - dot_matrix_display1.width()) / 2);

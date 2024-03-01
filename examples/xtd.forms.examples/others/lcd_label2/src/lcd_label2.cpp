@@ -1,6 +1,7 @@
 #define DEBUG
 #include <xtd/diagnostics/debug>
 #include <xtd/diagnostics/stopwatch>
+#include <xtd/drawing/color_transformer>
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/forms/lcd_label>
@@ -27,7 +28,7 @@ auto main()->int {
   label.parent(form_main);
   label.dock(dock_style::fill);
   label.fore_color(color::blue);
-  label.back_color(color::average(color::black, label.fore_color(), 0.05));
+  label.back_color(color_transformer::average(color::black, label.fore_color(), 0.05));
   label.text("  0.0");
   
   timer.tick += [&] {

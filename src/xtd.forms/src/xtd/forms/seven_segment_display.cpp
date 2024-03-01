@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/seven_segment_display.h"
+#include <xtd/drawing/color_transformer>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -345,7 +346,7 @@ void seven_segment_display::set_client_size_core(int32 width, int32 height) {
 }
 
 void seven_segment_display::draw_back_digit(drawing::graphics& graphics) {
-  auto color = enabled() ? drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()) : back_color();
+  auto color = enabled() ? drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()) : back_color();
   draw_segment_a(graphics, color);
   draw_segment_b(graphics, color);
   draw_segment_c(graphics, color);

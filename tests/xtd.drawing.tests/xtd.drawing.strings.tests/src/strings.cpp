@@ -1,4 +1,5 @@
 #include <xtd/drawing/drawing_2d/linear_gradient_brush>
+#include <xtd/drawing/color_transformer>
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/application>
 #include <xtd/forms/check_box>
@@ -184,8 +185,8 @@ private:
   const xtd::drawing::font bold_font = xtd::drawing::font(system_fonts::default_font(), 32, font_style::bold);
   
   void draw_grid(const rectangle& rect, drawing::graphics& graphics, const drawing::size& grid_size = drawing::size(5, 5)) {
-    auto color1 = back_color().is_dark() ? color::light(back_color()) : color::dark(back_color());
-    auto color2 = fore_color().is_dark() ? color::light(fore_color()) : color::dark(fore_color());
+    auto color1 = back_color().is_dark() ? color_transformer::light(back_color()) : color_transformer::dark(back_color());
+    auto color2 = fore_color().is_dark() ? color_transformer::light(fore_color()) : color_transformer::dark(fore_color());
     for (auto x = rect.left(); x < rect.right(); x += grid_size.width())
       graphics.draw_line(pen(color1, 1), point(x, rect.top()), point(x, rect.bottom()));
     for (auto y = rect.top(); y < rect.bottom(); y += grid_size.height())

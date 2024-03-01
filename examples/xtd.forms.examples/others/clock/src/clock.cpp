@@ -1,3 +1,4 @@
+#include <xtd/drawing/color_transformer>
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/forms/lcd_label>
@@ -27,7 +28,7 @@ auto main()->int {
   label.auto_size(true);
   
   label.fore_color(color::lime);
-  label.back_color(color::average(color::black, label.fore_color(), 0.20));
+  label.back_color(color_transformer::average(color::black, label.fore_color(), 0.20));
   label.segment_style(segment_style::modern);
   label.show_back_digit(false);
   label.text(date_time::now().to_long_time_string());

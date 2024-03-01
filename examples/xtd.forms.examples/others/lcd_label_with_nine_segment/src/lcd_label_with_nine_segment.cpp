@@ -1,3 +1,4 @@
+#include <xtd/drawing/color_transformer>
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/forms/lcd_label>
@@ -18,7 +19,7 @@ auto main()->int {
   label.parent(form_main);
   label.dock(dock_style::fill);
   label.fore_color(color::yellow);
-  label.back_color(color::average(color::black, label.fore_color(), 0.05));
+  label.back_color(color_transformer::average(color::black, label.fore_color(), 0.05));
   label.lcd_style(forms::lcd_style::nine_segment_display);
   label.text(ustring::format("{}", label.valid_characters()[index]));
   

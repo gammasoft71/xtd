@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/dot_matrix_display.h"
+#include <xtd/drawing/color_transformer>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -356,7 +357,7 @@ void dot_matrix_display::on_paint(paint_event_args& e) {
   for (auto y = 0_sz; y < data_->dots.size(); ++y) {
     for (auto x = 0_sz; x < data_->dots[y].size(); ++x) {
       if (data_->dots[y][x]) draw_dot(e.graphics(), fore_color(), {as<int32>(x), as<int32>(y)});
-      else if (data_->show_back_dot) draw_dot(e.graphics(), drawing::color::average(back_dot_color(), back_color(), data_->back_dot_opacity), {as<int32>(x), as<int32>(y)});
+      else if (data_->show_back_dot) draw_dot(e.graphics(), drawing::color_transformer::average(back_dot_color(), back_color(), data_->back_dot_opacity), {as<int32>(x), as<int32>(y)});
     }
   }
   control::on_paint(e);

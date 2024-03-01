@@ -198,6 +198,16 @@ namespace xtd {
       /// @return The transformed image.
       /// @remarks Thus, `1.0` will make the color completely sepia, while `0.0` return the original image.
       static xtd::drawing::image sepia(const xtd::drawing::image& image, double percent);
+
+      /// @brief Transforms into black and white colors of the specified image with specified threshold.
+      /// @param image The image to convert into black and white.
+      /// @param threshold The threshold value (from 0 to 765).
+      static void threshold(xtd::drawing::image& image, int32 threshold);
+      /// @brief Creates a new black and white image of the specified image with specified threshold.
+      /// @param image The image to convert into black and white.
+      /// @param threshold The threshold value (from 0 to 765).
+      /// @return The transformed image.
+      static xtd::drawing::image threshold(const xtd::drawing::image& image, int32 threshold);
       /// @}
     };
   }

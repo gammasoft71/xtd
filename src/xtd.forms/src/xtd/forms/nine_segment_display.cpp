@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/nine_segment_display.h"
+#include <xtd/drawing/color_transformer>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -212,8 +213,8 @@ nine_segment_display nine_segment_display::create(const control& parent, xtd::fo
 
 void nine_segment_display::draw_back_digit(drawing::graphics& graphics) {
   seven_segment_display::draw_back_digit(graphics);
-  draw_segment_h(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
-  draw_segment_i(graphics, drawing::color::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_h(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
+  draw_segment_i(graphics, drawing::color_transformer::average(back_segment_color(), back_color(), back_segment_opacity()));
 }
 
 void nine_segment_display::draw_segment_h(drawing::graphics& graphics, const drawing::color& color) {
