@@ -112,6 +112,13 @@ namespace xtd {
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
       static xtd::drawing::image grayscale(const xtd::drawing::image& image, double percent);
 
+      /// @brief Inverts colors of the specified image.
+      /// @param image The image to invert colors.
+      static void invert(xtd::drawing::image& image);
+      /// @brief Creates a new image with inverted colors of the specified image.
+      /// @param image The image to invert colors.
+      /// @return The transformed image.
+      static xtd::drawing::image invert(const xtd::drawing::image& image);
       /// @brief Inverts colors of the specified image with specified percent factor.
       /// @param image The image to invert colors.
       /// @param percent The percent factor in % (from 0.0 to 1.0).
