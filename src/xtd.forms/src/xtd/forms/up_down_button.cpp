@@ -141,23 +141,23 @@ up_down_button up_down_button::create(int32 value, const drawing::point& locatio
 
 up_down_button up_down_button::create(int32 value, int32 maximum) {
   auto result = up_down_button {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 up_down_button up_down_button::create(int32 value, int32 maximum, const drawing::point& location) {
   auto result = up_down_button {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
 
 up_down_button up_down_button::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
   auto result = up_down_button {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -165,8 +165,8 @@ up_down_button up_down_button::create(int32 value, int32 maximum, const drawing:
 
 up_down_button up_down_button::create(int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = up_down_button {};
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -175,26 +175,26 @@ up_down_button up_down_button::create(int32 value, int32 maximum, const drawing:
 
 up_down_button up_down_button::create(int32 value, int32 minimum, int32 maximum) {
   auto result = up_down_button {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 up_down_button up_down_button::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
   auto result = up_down_button {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
 
 up_down_button up_down_button::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
   auto result = up_down_button {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -202,9 +202,9 @@ up_down_button up_down_button::create(int32 value, int32 minimum, int32 maximum,
 
 up_down_button up_down_button::create(int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = up_down_button {};
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -278,16 +278,16 @@ up_down_button up_down_button::create(const control& parent, int32 value, const 
 up_down_button up_down_button::create(const control& parent, int32 value, int32 maximum) {
   auto result = up_down_button {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 up_down_button up_down_button::create(const control& parent, int32 value, int32 maximum, const drawing::point& location) {
   auto result = up_down_button {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
@@ -295,8 +295,8 @@ up_down_button up_down_button::create(const control& parent, int32 value, int32 
 up_down_button up_down_button::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size) {
   auto result = up_down_button {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -305,8 +305,8 @@ up_down_button up_down_button::create(const control& parent, int32 value, int32 
 up_down_button up_down_button::create(const control& parent, int32 value, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = up_down_button {};
   result.parent(parent);
-  result.value(value);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -316,18 +316,18 @@ up_down_button up_down_button::create(const control& parent, int32 value, int32 
 up_down_button up_down_button::create(const control& parent, int32 value, int32 minimum, int32 maximum) {
   auto result = up_down_button {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   return result;
 }
 
 up_down_button up_down_button::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location) {
   auto result = up_down_button {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   return result;
 }
@@ -335,9 +335,9 @@ up_down_button up_down_button::create(const control& parent, int32 value, int32 
 up_down_button up_down_button::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size) {
   auto result = up_down_button {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   return result;
@@ -346,9 +346,9 @@ up_down_button up_down_button::create(const control& parent, int32 value, int32 
 up_down_button up_down_button::create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
   auto result = up_down_button {};
   result.parent(parent);
-  result.value(value);
   result.minimum(minimum);
   result.maximum(maximum);
+  result.value(value);
   result.location(location);
   result.size(size);
   result.name(name);
