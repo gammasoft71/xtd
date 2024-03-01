@@ -31,13 +31,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Blur the specified image with a radius value of 10.
-      /// @param image The image to blur.
-      static void blur(xtd::drawing::image& image);
-      /// @brief Creates a new blurred image of the specified image with a radius value of 10.
-      /// @param image The image to blur.
-      /// @return The transformed image.
-      static xtd::drawing::image blur(const xtd::drawing::image& image);
       /// @brief Blur the specified image with the specified radius.
       /// @param image The image to blur.
       /// @param radius The radius of the blur in pixels.

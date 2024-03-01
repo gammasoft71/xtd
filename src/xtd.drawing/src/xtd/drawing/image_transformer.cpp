@@ -2,14 +2,6 @@
 
 using namespace xtd::drawing;
 
-void image_transformer::blur(image& image) {
-  blur(image, 10);
-}
-
-image image_transformer::blur(const image& image) {
-  return blur(image, 10);
-}
-
 void image_transformer::blur(image& image, int32 radius) {
   image.blur(radius);
 }
