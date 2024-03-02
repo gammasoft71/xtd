@@ -77,7 +77,7 @@ namespace xtd {
       /// @brief Create a new image with the specified color that will be added/removed from the specified image with the specified percent.
       /// @param image The image to update.
       /// @param color The color to add / remove
-      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @param percent The percent factor in % (from 0.0 to 2.0).
       /// @return The converted image.
       static xtd::drawing::image color(const xtd::drawing::image& image, const xtd::drawing::color& color, double percent);
 

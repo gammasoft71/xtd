@@ -30,7 +30,7 @@ color color_converter::brightness(const drawing::color& color, double percent) n
 }
 
 xtd::drawing::color color_converter::color(const xtd::drawing::color& color, const xtd::drawing::color& value, double percent) noexcept {
-  percent = std::clamp(percent, 0.0, 1.0);
+  percent = std::clamp(percent - 1.0, -1.0, 1.0);
   auto r = std::clamp(static_cast<int32>(color.r()) + value.r(), 0, 255);
   auto g = std::clamp(static_cast<int32>(color.g()) + value.g(), 0, 255);
   auto b = std::clamp(static_cast<int32>(color.b()) + value.b(), 0, 255);

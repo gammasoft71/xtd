@@ -79,7 +79,7 @@ namespace xtd {
       /// @brief Create a new color with specified value that will be added/removed from the specified color with specified percent.
       /// @param color The color to update.
       /// @param value The value to add / remove
-      /// @param percent The percent factor in % (from -1.0 to 1.0).
+      /// @param percent The percent factor in % (from 0.0 to 2.0).
       /// @return The new color.
       static xtd::drawing::color color(const xtd::drawing::color& color, const xtd::drawing::color& value, double percent) noexcept;
 

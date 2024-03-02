@@ -207,7 +207,7 @@ namespace image_converter_example {
       bitonal_lower_color_picker.color(color::white);
       radius_blur_track_bar.value(0);
       percent_brightness_track_bar.value(100);
-      percent_color_track_bar.value(0);
+      percent_color_track_bar.value(100);
       color_color_color_picker.color(color::red);
       percent_contrast_track_bar.value(100);
       disabled_switch_button.checked(false);
@@ -255,8 +255,8 @@ namespace image_converter_example {
     
     panel color_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_color_label = label::create(color_panel, "Percent", {10, 14}, {70, 23});
-    track_bar percent_color_track_bar = track_bar::create(color_panel, 0, 0, 100, {80, 10}, {200, 25});
-    numeric_up_down percent_color_numeric_up_down = numeric_up_down::create(color_panel, 0, 0, 100, {290, 10}, {110, 25});
+    track_bar percent_color_track_bar = track_bar::create(color_panel, 100, 0, 200, {80, 10}, {200, 25});
+    numeric_up_down percent_color_numeric_up_down = numeric_up_down::create(color_panel, 100, 0, 200, {290, 10}, {110, 25});
     label color_color_label = label::create(color_panel, "Color", {10, 54}, {50, 23});
     color_picker color_color_color_picker = color_picker::create(color_panel, color::red, {70, 50});
 

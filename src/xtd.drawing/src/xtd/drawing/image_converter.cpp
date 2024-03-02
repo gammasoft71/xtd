@@ -125,7 +125,7 @@ image image_converter::brightness(const image& image, double percent) {
 }
 
 void image_converter::color(xtd::drawing::image& image, const xtd::drawing::color& color, double percent) {
-  percent = std::clamp(percent, 0.0, 1.0);
+  percent = std::clamp(percent - 1.0, -1.0, 1.0);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
