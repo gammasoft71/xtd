@@ -1,7 +1,7 @@
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/control.h"
 #include "../../../include/xtd/forms/screen.h"
-#include <xtd/drawing/color_transformer.h>
+#include <xtd/drawing/color_converter.h>
 #include <xtd/as>
 #include <xtd/math>
 
@@ -233,7 +233,7 @@ namespace {
 }
 
 color control_paint::average(const color& color1, const color& color2, double weight, bool average_alpha) {
-  return color_transformer::average(color1, color2, weight, average_alpha);
+  return color_converter::average(color1, color2, weight, average_alpha);
 }
 
 color control_paint::average(const color& color1, const color& color2, double weight) {
@@ -245,7 +245,7 @@ color control_paint::dark(const xtd::drawing::color& base_color) {
 }
 
 color control_paint::dark(const color& base_color, double perc_of_dark_dark) {
-  return color_transformer::dark(base_color, perc_of_dark_dark);
+  return color_converter::dark(base_color, perc_of_dark_dark);
 }
 
 color control_paint::dark_dark(const color& base_color) {
@@ -338,7 +338,7 @@ xtd::drawing::color control_paint::light(const xtd::drawing::color& base_color) 
 }
 
 xtd::drawing::color control_paint::light(const xtd::drawing::color& base_color, double perc_of_light_light) {
-  return color_transformer::light(base_color, perc_of_light_light);
+  return color_converter::light(base_color, perc_of_light_light);
 }
 
 xtd::drawing::color control_paint::light_light(const xtd::drawing::color& base_color) {

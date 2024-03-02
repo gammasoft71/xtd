@@ -1,5 +1,5 @@
 #include "../../../include/xtd/drawing/color.h"
-#include "../../../include/xtd/drawing/color_transformer.h"
+#include "../../../include/xtd/drawing/color_converter.h"
 #include <xtd/argument_exception>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_colors>
@@ -212,19 +212,19 @@ xtd::byte color::r() const noexcept {
   return (xtd::byte)((to_argb() & 0x00FF0000) >> 16);
 }
 color color::average(const color& color1, const color& color2, double weight) noexcept {
-  return color_transformer::average(color1, color2, weight);
+  return color_converter::average(color1, color2, weight);
 }
 
 color color::average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {
-  return color_transformer::average(color1, color2, weight, average_alpha);
+  return color_converter::average(color1, color2, weight, average_alpha);
 }
 
 color color::dark(const color& color) noexcept {
-  return color_transformer::dark(color);
+  return color_converter::dark(color);
 }
 
 color color::dark(const color& color, double percent) noexcept {
-  return color_transformer::dark(color, percent);
+  return color_converter::dark(color, percent);
 }
 
 bool color::equals(const color& value) const noexcept {
@@ -615,11 +615,11 @@ float color::get_saturation() const noexcept {
 }
 
 color color::light(const color& color) noexcept {
-  return color_transformer::light(color);
+  return color_converter::light(color);
 }
 
 color color::light(const color& color, double percent) noexcept {
-  return color_transformer::light(color, percent);
+  return color_converter::light(color, percent);
 }
 
 color color::parse(const ustring& color) noexcept {

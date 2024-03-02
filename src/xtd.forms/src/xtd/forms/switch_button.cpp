@@ -1,7 +1,7 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/switch_button.h"
-#include <xtd/drawing/color_transformer>
+#include <xtd/drawing/color_converter>
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -237,14 +237,14 @@ void switch_button::on_handle_created(const event_args& e) {
 
 void switch_button::on_paint(paint_event_args& e) {
   auto button_back_color = data_->checked ? checked_back_color() : application::style_sheet().system_colors().gray_text();
-  auto text_color = data_->checked ? fore_color() : drawing::color_transformer::average(button_back_color, fore_color(), .33);
+  auto text_color = data_->checked ? fore_color() : drawing::color_converter::average(button_back_color, fore_color(), .33);
   auto sld_color = this->slider_color();
   auto text = data_->checked ? "ON" : "OFF";
   
   if (!enabled()) {
-    button_back_color = drawing::color_transformer::average(back_color(), button_back_color, .33);
-    text_color = drawing::color_transformer::average(button_back_color, text_color, .33);
-    sld_color = drawing::color_transformer::average(button_back_color, sld_color, .33);
+    button_back_color = drawing::color_converter::average(back_color(), button_back_color, .33);
+    text_color = drawing::color_converter::average(button_back_color, text_color, .33);
+    sld_color = drawing::color_converter::average(button_back_color, sld_color, .33);
   }
   
   if (data_->rounded) {
