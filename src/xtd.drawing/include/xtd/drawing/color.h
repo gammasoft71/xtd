@@ -625,8 +625,8 @@ namespace xtd {
       /// color = color1 * (1 - weight) + color2 * weight;
       /// @endcode
       /// @remarks Thus, a weight value of `1.0` will return the second color, while a value of `0.0` will return the first color.
-      /// @deprecated Replaced by xtd::drawing::color_transformer::average - Will be removed in version 0.4.0
-      [[deprecated("Replaced by xtd::drawing::color_transformer::average - Will be removed in version 0.4.0")]]
+      /// @deprecated Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0")]]
       static color average(const color& color1, const color& color2, double weight) noexcept;
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
@@ -639,15 +639,15 @@ namespace xtd {
       /// color = color1 * (1 - weight) + color2 * weight;
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
-      /// @deprecated Replaced by xtd::drawing::color_transformer::average - Will be removed in version 0.4.0
-      [[deprecated("Replaced by xtd::drawing::color_transformer::average - Will be removed in version 0.4.0")]]
+      /// @deprecated Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0")]]
       static color average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept;
       
       /// @brief Creates a new darker color of the specified color with 33% factor.
       /// @param color The color to dark.
       /// @return The new color.
-      /// @deprecated Replaced by xtd::drawing::color_transformer::dark - Will be removed in version 0.4.0
-      [[deprecated("Replaced by xtd::drawing::color_transformer::dark - Will be removed in version 0.4.0")]]
+      /// @deprecated Replaced by xtd::drawing::color_converter::dark - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::drawing::color_converter::dark - Will be removed in version 0.4.0")]]
       static color dark(const color& color) noexcept;
       /// @brief Creates a new darker color of the specified color with specified percent factor.
       /// @param color The color to dark.
@@ -1113,16 +1113,16 @@ namespace xtd {
       /// @brief Creates a new lighter color of the specified color with 33% factor.
       /// @param color The color to light.
       /// @return The new color.
-      /// @deprecated Replaced by xtd::drawing::color_transformer::light - Will be removed in version 0.4.0
-      [[deprecated("Replaced by xtd::drawing::color_transformer::light - Will be removed in version 0.4.0")]]
+      /// @deprecated Replaced by xtd::drawing::color_converter::light - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::drawing::color_converter::light - Will be removed in version 0.4.0")]]
       static color light(const color& color) noexcept;
       /// @brief Creates a new lighter color of the specified color with specified percent factor.
       /// @param color The color to light.
       /// @param percent The lighter factor in % (from 0.0 to 1.0).
       /// @return The new color.
       /// @remarks Thus, a percent value of `1.0` will return the xtd::drawing::color::black, while a value of `0.0` will return the color.
-      /// @deprecated Replaced by xtd::drawing::color_transformer::light - Will be removed in version 0.4.0
-      [[deprecated("Replaced by xtd::drawing::color_transformer::light - Will be removed in version 0.4.0")]]
+      /// @deprecated Replaced by xtd::drawing::color_converter::light - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::drawing::color_converter::light - Will be removed in version 0.4.0")]]
       static color light(const color& color, double percent) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the specified name.

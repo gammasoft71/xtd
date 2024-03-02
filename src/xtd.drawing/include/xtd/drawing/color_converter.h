@@ -12,7 +12,7 @@ namespace xtd {
   namespace drawing {
     /// @brief Transforme colors to and from xtd::drawing::color class. This class cannot be inherited.
     /// @code
-    /// class drawing_export_ color_transformer final static_
+    /// class drawing_export_ color_converter final static_
     /// @endcode
     /// @par Inheritance
     /// xtd::static_object → xtd::drawing::image_converter
@@ -21,7 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing colors
-    class drawing_export_ color_transformer final static_ {
+    class drawing_export_ color_converter final static_ {
     public:
       /// @brief Returns the weighted average color between the two given colors.
       /// @param fore_core The foreground color.

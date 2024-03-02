@@ -1,6 +1,6 @@
 #include "../../../include/xtd/forms/box_renderer.h"
 #include <xtd/drawing/drawing_2d/linear_gradient_brush>
-#include <xtd/drawing/color_transformer>
+#include <xtd/drawing/color_converter>
 #include <xtd/argument_exception>
 #include <xtd/as>
 #include <xtd/is>
@@ -47,11 +47,11 @@ void box_renderer::draw_line_top(graphics& graphics, const rectangle& bounds, co
   auto color1 = border_color.top();
   auto color2 = border_color.top();
   if (border_style.top() == border_type::inset || border_style.top() == border_type::groove) {
-    color1 = color_transformer::dark(color1);
-    color2 = color_transformer::light(color2);
+    color1 = color_converter::dark(color1);
+    color2 = color_converter::light(color2);
   } else if (border_style.top() == border_type::outset || border_style.top() == border_type::ridge || border_style.top() == border_type::theme) {
-    color1 = color_transformer::light(color1);
-    color2 = color_transformer::dark(color2);
+    color1 = color_converter::light(color1);
+    color2 = color_converter::dark(color2);
   }
   
   auto pen_width1 = as<float>(border_width.top().get_pixels(bounds));
@@ -105,11 +105,11 @@ void box_renderer::draw_line_right(graphics& graphics, const rectangle& bounds, 
   auto color1 = border_color.right();
   auto color2 = border_color.right();
   if (border_style.right() == border_type::inset || border_style.right() == border_type::groove || border_style.right() == border_type::theme) {
-    color1 = color_transformer::light(color1);
-    color2 = color_transformer::dark(color2);
+    color1 = color_converter::light(color1);
+    color2 = color_converter::dark(color2);
   } else if (border_style.right() == border_type::outset || border_style.right() == border_type::ridge) {
-    color1 = color_transformer::dark(color1);
-    color2 = color_transformer::light(color2);
+    color1 = color_converter::dark(color1);
+    color2 = color_converter::light(color2);
   }
   
   auto pen_width1 = as<float>(border_width.right().get_pixels(bounds));
@@ -163,11 +163,11 @@ void box_renderer::draw_line_bottom(graphics& graphics, const rectangle& bounds,
   auto color1 = border_color.bottom();
   auto color2 = border_color.bottom();
   if (border_style.bottom() == border_type::inset || border_style.bottom() == border_type::groove || border_style.top() == border_type::theme) {
-    color1 = color_transformer::light(color1);
-    color2 = color_transformer::dark(color2);
+    color1 = color_converter::light(color1);
+    color2 = color_converter::dark(color2);
   } else if (border_style.bottom() == border_type::outset || border_style.bottom() == border_type::ridge) {
-    color1 = color_transformer::dark(color1);
-    color2 = color_transformer::light(color2);
+    color1 = color_converter::dark(color1);
+    color2 = color_converter::light(color2);
   }
   
   auto pen_width1 = as<float>(border_width.bottom().get_pixels(bounds));
@@ -221,11 +221,11 @@ void box_renderer::draw_line_left(graphics& graphics, const rectangle& bounds, c
   auto color1 = border_color.left();
   auto color2 = border_color.left();
   if (border_style.left() == border_type::inset || border_style.left() == border_type::groove) {
-    color1 = color_transformer::dark(color1);
-    color2 = color_transformer::light(color2);
+    color1 = color_converter::dark(color1);
+    color2 = color_converter::light(color2);
   } else if (border_style.left() == border_type::outset || border_style.left() == border_type::ridge || border_style.left() == border_type::theme) {
-    color1 = color_transformer::light(color1);
-    color2 = color_transformer::dark(color2);
+    color1 = color_converter::light(color1);
+    color2 = color_converter::dark(color2);
   }
   
   auto pen_width1 = as<float>(border_width.left().get_pixels(bounds));
