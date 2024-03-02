@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &quot;<a class="code" href="buffered__graphics__context_8h.html">drawing/buffered_graphics_context.h</a>&quot;</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#include &quot;<a class="code" href="categories__system__images_8h.html">drawing/categories_system_images.h</a>&quot;</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#include &quot;<a class="code" href="color_8h.html">drawing/color.h</a>&quot;</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#include &quot;<a class="code" href="color__transformer_8h.html">drawing/color_transformer.h</a>&quot;</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#include &quot;<a class="code" href="color__converter_8h.html">drawing/color_converter.h</a>&quot;</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#include &quot;<a class="code" href="color__translator_8h.html">drawing/color_translator.h</a>&quot;</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#include &quot;<a class="code" href="colors_8h.html">drawing/colors.h</a>&quot;</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#include &quot;<a class="code" href="copy__pixel__operation_8h.html">drawing/copy_pixel_operation.h</a>&quot;</span></div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#include &quot;<a class="code" href="green__colors_8h.html">drawing/green_colors.h</a>&quot;</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#include &quot;<a class="code" href="icon_8h.html">drawing/icon.h</a>&quot;</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#include &quot;<a class="code" href="image_8h.html">drawing/image.h</a>&quot;</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#include &quot;<a class="code" href="image__transformer_8h.html">drawing/image_transformer.h</a>&quot;</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#include &quot;<a class="code" href="image__converter_8h.html">drawing/image_converter.h</a>&quot;</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#include &quot;<a class="code" href="international__system__images_8h.html">drawing/international_system_images.h</a>&quot;</span></div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#include &quot;<a class="code" href="known__color_8h.html">drawing/known_color.h</a>&quot;</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#include &quot;<a class="code" href="magenta__colors_8h.html">drawing/magenta_colors.h</a>&quot;</span></div>
@@ -220,8 +220,8 @@ $(function() {
 <div class="ttc" id="abuffered__graphics__context_8h_html"><div class="ttname"><a href="buffered__graphics__context_8h.html">buffered_graphics_context.h</a></div><div class="ttdoc">Contains xtd::drawing::buffered_graphics_context class.</div></div>
 <div class="ttc" id="acategories__system__images_8h_html"><div class="ttname"><a href="categories__system__images_8h.html">categories_system_images.h</a></div><div class="ttdoc">Contains xtd::drawing::categories_system_images factory.</div></div>
 <div class="ttc" id="acolor_8h_html"><div class="ttname"><a href="color_8h.html">color.h</a></div><div class="ttdoc">Contains xtd::drawing::color class.</div></div>
+<div class="ttc" id="acolor__converter_8h_html"><div class="ttname"><a href="color__converter_8h.html">color_converter.h</a></div><div class="ttdoc">Contains xtd::drawing::color class.</div></div>
 <div class="ttc" id="acolor__palette_8h_html"><div class="ttname"><a href="color__palette_8h.html">color_palette.h</a></div><div class="ttdoc">Contains xtd::drawing::imaging::color_palette class.</div></div>
-<div class="ttc" id="acolor__transformer_8h_html"><div class="ttname"><a href="color__transformer_8h.html">color_transformer.h</a></div><div class="ttdoc">Contains xtd::drawing::color class.</div></div>
 <div class="ttc" id="acolor__translator_8h_html"><div class="ttname"><a href="color__translator_8h.html">color_translator.h</a></div><div class="ttdoc">Contains xtd::drawing::color_translator factory.</div></div>
 <div class="ttc" id="acolors_8h_html"><div class="ttname"><a href="colors_8h.html">colors.h</a></div><div class="ttdoc">Contains xtd::drawing::colors factory.</div></div>
 <div class="ttc" id="acompositing__mode_8h_html"><div class="ttname"><a href="compositing__mode_8h.html">compositing_mode.h</a></div><div class="ttdoc">Contains xtd::drawing::drawing_2d::compositing_mode enum class.</div></div>
@@ -264,10 +264,10 @@ $(function() {
 <div class="ttc" id="ahotkey__prefix_8h_html"><div class="ttname"><a href="hotkey__prefix_8h.html">hotkey_prefix.h</a></div><div class="ttdoc">Contains xtd::drawing::text::hotkey_prefix enum class.</div></div>
 <div class="ttc" id="aicon_8h_html"><div class="ttname"><a href="icon_8h.html">icon.h</a></div><div class="ttdoc">Contains xtd::drawing::icon class.</div></div>
 <div class="ttc" id="aimage_8h_html"><div class="ttname"><a href="image_8h.html">image.h</a></div><div class="ttdoc">Contains xtd::drawing::image class.</div></div>
+<div class="ttc" id="aimage__converter_8h_html"><div class="ttname"><a href="image__converter_8h.html">image_converter.h</a></div><div class="ttdoc">Contains xtd::drawing::image_converter class.</div></div>
 <div class="ttc" id="aimage__flags_8h_html"><div class="ttname"><a href="image__flags_8h.html">image_flags.h</a></div><div class="ttdoc">Contains xtd::drawing::imaging::image_flags class.</div></div>
 <div class="ttc" id="aimage__format_8h_html"><div class="ttname"><a href="image__format_8h.html">image_format.h</a></div><div class="ttdoc">Contains xtd::drawing::imaging::image_format class.</div></div>
 <div class="ttc" id="aimage__lock__mode_8h_html"><div class="ttname"><a href="image__lock__mode_8h.html">image_lock_mode.h</a></div><div class="ttdoc">Contains xtd::drawing::imaging::image_lock_mode class.</div></div>
-<div class="ttc" id="aimage__transformer_8h_html"><div class="ttname"><a href="image__transformer_8h.html">image_transformer.h</a></div><div class="ttdoc">Contains xtd::drawing::image_transformer class.</div></div>
 <div class="ttc" id="ainstalled__font__collection_8h_html"><div class="ttname"><a href="installed__font__collection_8h.html">installed_font_collection.h</a></div><div class="ttdoc">Contains xtd::drawing::text::installed_font_collection class.</div></div>
 <div class="ttc" id="ainternational__system__images_8h_html"><div class="ttname"><a href="international__system__images_8h.html">international_system_images.h</a></div><div class="ttdoc">Contains xtd::drawing::international_system_images factory.</div></div>
 <div class="ttc" id="ainterpolation__mode_8h_html"><div class="ttname"><a href="interpolation__mode_8h.html">interpolation_mode.h</a></div><div class="ttdoc">Contains xtd::drawing::drawing_2d::interpolation_mode enum class.</div></div>
@@ -323,7 +323,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 1 2024 21:54:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Mar 2 2024 20:38:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
