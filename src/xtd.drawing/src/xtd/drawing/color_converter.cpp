@@ -4,15 +4,15 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 
-color color_converter::alpha_blend(const color& fore_color, const color& back_color, double alpha) noexcept {;
+color color_converter::alpha_blend(const drawing::color& fore_color, const drawing::color& back_color, double alpha) noexcept {;
   return average(fore_color, back_color, alpha);
 }
 
-color color_converter::average(const color& color1, const color& color2, double weight) noexcept {
+color color_converter::average(const drawing::color& color1, const drawing::color& color2, double weight) noexcept {
   return average(color1, color2, weight, false);
 }
 
-color color_converter::average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept {
+color color_converter::average(const drawing::color& color1, const drawing::color& color2, double weight, bool average_alpha) noexcept {
   weight = std::clamp(weight, 0.0, 1.0);
   auto alpha_blend = [](xtd::byte fore_componant, xtd::byte back_componant, double percent) {return static_cast<xtd::byte>(fore_componant * (1 - percent) + back_componant * percent);};
   return color::from_argb(alpha_blend(color1.a(), color2.a(), average_alpha ? weight : 1.0), alpha_blend(color1.r(), color2.r(), weight), alpha_blend(color1.g(), color2.g(), weight), alpha_blend(color1.b(), color2.b(), weight));
@@ -24,12 +24,19 @@ color color_converter::bi_tonal(const drawing::color& color, int32 threshold, co
   return upper_color;
 }
 
-color color_converter::brightness(const color& color, double percent) noexcept {
+color color_converter::brightness(const drawing::color& color, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 2.0);
   return percent < 1.0 ? alpha_blend(color, color::black, 1.0 - percent) : alpha_blend(color, color::white, percent - 1.0);
 }
 
-color color_converter::contrast(const color& color, double percent) noexcept {
+xtd::drawing::color color_converter::color(const xtd::drawing::color& color, const xtd::drawing::color& value, double percent) noexcept {
+  auto r = std::clamp(static_cast<int32>(color.r()) + value.r(), 0, 255);
+  auto g = std::clamp(static_cast<int32>(color.g()) + value.g(), 0, 255);
+  auto b = std::clamp(static_cast<int32>(color.b()) + value.b(), 0, 255);
+  return alpha_blend(color, drawing::color::from_argb(color.a(), static_cast<xtd::byte>(r), static_cast<xtd::byte>(g), static_cast<xtd::byte>(b)), percent);
+}
+
+color color_converter::contrast(const drawing::color& color, double percent) noexcept {
   // From https://efundies.com/adjust-the-contrast-of-an-image-in-c/
   if (percent < .0) percent = 0;
   
@@ -40,36 +47,36 @@ color color_converter::contrast(const color& color, double percent) noexcept {
   return color::from_argb(color.a(), static_cast<xtd::byte>(r), static_cast<xtd::byte>(g), static_cast<xtd::byte>(b));
 }
 
-color color_converter::dark(const color& color) noexcept {
+color color_converter::dark(const drawing::color& color) noexcept {
   return color::dark(color, 1.0 / 3);
 }
 
-color color_converter::dark(const color& color, double percent) noexcept {
+color color_converter::dark(const drawing::color& color, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 1.0);
   return alpha_blend(color, color::black, percent);
 }
 
-color color_converter::disabled(const color& fore_color, const color& back_color) noexcept {
+color color_converter::disabled(const drawing::color& fore_color, const drawing::color& back_color) noexcept {
   return disabled(fore_color, back_color.get_brightness());
 }
 
-color color_converter::disabled(const color& fore_color, float brightness) noexcept {
+color color_converter::disabled(const drawing::color& fore_color, float brightness) noexcept {
   brightness = std::clamp(brightness, .0f, 1.0f);
   return alpha_blend(fore_color, color::from_argb(0xFF000000 + (0xFFFFFF * brightness)), 0.4);
 }
 
-color color_converter::grayscale(const color& color) noexcept {
+color color_converter::grayscale(const drawing::color& color) noexcept {
   return grayscale(color, 1.0);
 }
 
-color color_converter::grayscale(const color& color, double percent) noexcept {
+color color_converter::grayscale(const drawing::color& color, double percent) noexcept {
   // From https://stackoverflow.com/questions/14330/rgb-to-monochrome-conversion
   percent = std::clamp(percent, 0.0, 1.0);
   auto grayscale = static_cast<xtd::byte>((0.299 * color.r()) + (0.587 * color.g()) + (0.114 * color.b()));
   return alpha_blend(color, color::from_argb(color.a(), grayscale, grayscale, grayscale), percent);
 }
 
-color color_converter::hue_rotate(const color& color, int angle) noexcept {
+color color_converter::hue_rotate(const drawing::color& color, int angle) noexcept {
   angle = std::clamp(angle, 0, 360);
   
   auto h = static_cast<int>(color.get_hue());
@@ -79,25 +86,25 @@ color color_converter::hue_rotate(const color& color, int angle) noexcept {
   return color::from_hsl(static_cast<float>(h), color.get_saturation(), color.get_lightness());
 }
 
-color color_converter::invert(const color& color) noexcept {
+color color_converter::invert(const drawing::color& color) noexcept {
   return invert(color, 1.0);
 }
 
-color color_converter::invert(const color& color,  double percent) noexcept {
+color color_converter::invert(const drawing::color& color,  double percent) noexcept {
   percent = std::clamp(percent, 0.0, 1.0);
   return alpha_blend(color, color::from_argb(color.a(), 255 - color.r(), 255 - color.g(), 255 - color.b()), percent);
 }
 
-color color_converter::light(const color& color) noexcept {
+color color_converter::light(const drawing::color& color) noexcept {
   return light(color, 1.0 / 3);
 }
 
-color color_converter::light(const color& color, double percent) noexcept {
+color color_converter::light(const drawing::color& color, double percent) noexcept {
   percent = std::clamp(percent, 0.0, 1.0);
   return alpha_blend(color, color::white, percent);
 }
 
-color color_converter::saturate(const color& color, double percent) noexcept {
+color color_converter::saturate(const drawing::color& color, double percent) noexcept {
   if (percent < .0) percent = 0;
   
   auto r = color.r() / 255.0;
@@ -116,11 +123,11 @@ color color_converter::saturate(const color& color, double percent) noexcept {
   return color::from_argb(color.a(), static_cast<int>(saturated_r * 255), static_cast<int>(saturated_g * 255), static_cast<int>(saturated_b * 255));
 }
 
-color color_converter::sepia(const color& color) noexcept {
+color color_converter::sepia(const drawing::color& color) noexcept {
   return sepia(color, 1.0);
 }
 
-color color_converter::sepia(const color& color, double percent) noexcept {
+color color_converter::sepia(const drawing::color& color, double percent) noexcept {
   // From https://www.geeksforgeeks.org/image-processing-in-java-colored-image-to-sepia-image-conversion/
   percent = std::clamp(percent, 0.0, 1.0);
   auto r = std::clamp(0.393 * color.r() + 0.769 * color.g() + 0.189 * color.b(), .0, 255.0);
@@ -129,6 +136,6 @@ color color_converter::sepia(const color& color, double percent) noexcept {
   return alpha_blend(color, color::from_argb(color.a(), static_cast<xtd::byte>(r), static_cast<xtd::byte>(g), static_cast<xtd::byte>(b)), percent);
 }
 
-color color_converter::threshold(const color& color, int32 threshold) noexcept {
+color color_converter::threshold(const drawing::color& color, int32 threshold) noexcept {
   return bi_tonal(color, threshold, color::white, color::black);
 }
