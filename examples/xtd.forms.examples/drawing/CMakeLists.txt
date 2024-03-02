@@ -13,5 +13,5 @@ add_projects(
   fill_ellipse
   fill_rectangle
   fill_rounded_rectangle
-  image_transformer
+  image_converter
 )
