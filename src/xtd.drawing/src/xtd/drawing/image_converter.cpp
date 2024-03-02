@@ -77,7 +77,7 @@ namespace {
   }
 }
 
-void image_converter::bi_tonal(image& image, int32 threshold, const color& upper_color, const color& lower_color) {
+void image_converter::bi_tonal(image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
   threshold = std::clamp(threshold, 0, 765);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -90,7 +90,7 @@ void image_converter::bi_tonal(image& image, int32 threshold, const color& upper
     }
 }
 
-image image_converter::bi_tonal(const image& image, int32 threshold, const color& upper_color, const color& lower_color) {
+image image_converter::bi_tonal(const image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
   auto result = image;
   image_converter::bi_tonal(result, threshold, upper_color, lower_color);
   return result;
@@ -124,6 +124,27 @@ image image_converter::brightness(const image& image, double percent) {
   return result;
 }
 
+void image_converter::color(xtd::drawing::image& image, const xtd::drawing::color& color, double percent) {
+  if (percent < 0.0) percent = 0.0;
+  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x) {
+      auto pixel = y * image.width() + x;
+      auto r = std::clamp(static_cast<int32>(rgb[pixel].r) + color.r(), 0, 255);
+      auto g = std::clamp(static_cast<int32>(rgb[pixel].g) + color.g(), 0, 255);
+      auto b = std::clamp(static_cast<int32>(rgb[pixel].b) + color.b(), 0, 255);
+      rgb[pixel].r = alpha_blend(rgb[pixel].r, static_cast<byte>(r), percent);
+      rgb[pixel].g = alpha_blend(rgb[pixel].g, static_cast<byte>(g), percent);
+      rgb[pixel].b = alpha_blend(rgb[pixel].b, static_cast<byte>(b), percent);
+    }
+}
+
+xtd::drawing::image image_converter::color(const xtd::drawing::image& image, const xtd::drawing::color& color, double percent) {
+  auto result = image;
+  image_converter::color(result, color, percent);
+  return result;
+}
+
 void image_converter::contrast(image& image, double percent) {
   if (percent < 0.0) percent = 0.0;
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
@@ -145,11 +166,11 @@ image image_converter::contrast(const image& image, double percent) {
   return result;
 }
 
-void image_converter::disabled(image& image, const color& back_color) {
+void image_converter::disabled(image& image, const drawing::color& back_color) {
   disabled(image, back_color.get_brightness());
 }
 
-image image_converter::disabled(const image& image, const color& back_color) {
+image image_converter::disabled(const image& image, const drawing::color& back_color) {
   return disabled(image, back_color.get_brightness());
 }
 

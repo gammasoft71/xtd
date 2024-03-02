@@ -76,6 +76,13 @@ namespace xtd {
       /// @remarks 0.0` will make the color completely black. `1.0` is default and represents the original color. Values over `1.0` will provide brighter results.
       static xtd::drawing::color brightness(const xtd::drawing::color& color, double percent) noexcept;
       
+      /// @brief Create a new color with specified value that will be added/removed from the specified color with specified percent.
+      /// @param color The color to update.
+      /// @param value The value to add / remove
+      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @return The new color.
+      static xtd::drawing::color color(const xtd::drawing::color& color, const xtd::drawing::color& value, double percent) noexcept;
+
       /// @brief Creates a new contrasting color of the specified color with specified percent factor.
       /// @param color The color to change contrast.
       /// @param percent The percent factor in % (from 0.0 to 1.0).
