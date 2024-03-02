@@ -36,14 +36,14 @@ namespace xtd {
       /// @param threshold The threshold value (from 0 to 765).
       /// @param upper_color The color used when RGB color is upper the threshold value.
       /// @param lower_color The color used when RGB color is under or equal the threshold value.
-      static void bi_tonal(xtd::drawing::image& image, int32 threshold, const color& upper_color, const color& lower_color);
+      static void bitonal(xtd::drawing::image& image, int32 threshold, const color& upper_color, const color& lower_color);
       /// @brief Creates a new lower and upper image of the specified image with specified threshold, upper color and lower color.
       /// @param image The image to convert into lower and upper colors.
       /// @param threshold The threshold value (from 0 to 765).
       /// @param upper_color The color used when RGB color is upper the threshold value.
       /// @param lower_color The color used when RGB color is under or equal the threshold value.
       /// @return The converted image.
-      static xtd::drawing::image bi_tonal(const xtd::drawing::image& image, int32 threshold, const color& upper_color, const color& lower_color);
+      static xtd::drawing::image bitonal(const xtd::drawing::image& image, int32 threshold, const color& upper_color, const color& lower_color);
 
       /// @brief Blur the specified image with the specified radius.
       /// @param image The image to blur.

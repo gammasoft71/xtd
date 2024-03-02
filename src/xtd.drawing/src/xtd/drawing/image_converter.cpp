@@ -77,7 +77,7 @@ namespace {
   }
 }
 
-void image_converter::bi_tonal(image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
+void image_converter::bitonal(image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
   threshold = std::clamp(threshold, 0, 765);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -90,9 +90,9 @@ void image_converter::bi_tonal(image& image, int32 threshold, const drawing::col
     }
 }
 
-image image_converter::bi_tonal(const image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
+image image_converter::bitonal(const image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
   auto result = image;
-  image_converter::bi_tonal(result, threshold, upper_color, lower_color);
+  image_converter::bitonal(result, threshold, upper_color, lower_color);
   return result;
 }
 
@@ -125,7 +125,7 @@ image image_converter::brightness(const image& image, double percent) {
 }
 
 void image_converter::color(xtd::drawing::image& image, const xtd::drawing::color& color, double percent) {
-  if (percent < 0.0) percent = 0.0;
+  percent = std::clamp(percent, 0.0, 1.0);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
@@ -363,7 +363,7 @@ image image_converter::sepia(const image& image, double percent) {
 }
 
 void image_converter::threshold(image& image, int32 threshold) {
-  bi_tonal(image, threshold, color::white, color::black);
+  bitonal(image, threshold, color::white, color::black);
 }
 
 image image_converter::threshold(const image& image, int32 threshold) {

@@ -67,7 +67,7 @@ namespace xtd {
       /// @param upper_color The color used when RGB color is upper the threshold value.
       /// @param lower_color The color used when RGB color is under or equal the threshold value.
       /// @return The new color.
-      static xtd::drawing::color bi_tonal(const drawing::color& color, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) noexcept;
+      static xtd::drawing::color bitonal(const drawing::color& color, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) noexcept;
 
       /// @brief Creates a new color with brightness changed of the specified color with specified percent.
       /// @param color The color to brightness.
@@ -79,7 +79,7 @@ namespace xtd {
       /// @brief Create a new color with specified value that will be added/removed from the specified color with specified percent.
       /// @param color The color to update.
       /// @param value The value to add / remove
-      /// @param percent The percent factor in % (from 0.0 to 1.0).
+      /// @param percent The percent factor in % (from -1.0 to 1.0).
       /// @return The new color.
       static xtd::drawing::color color(const xtd::drawing::color& color, const xtd::drawing::color& value, double percent) noexcept;
 

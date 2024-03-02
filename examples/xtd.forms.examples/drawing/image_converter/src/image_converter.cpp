@@ -26,7 +26,7 @@ namespace image_converter_example {
       maximize_box(false);
       client_size({630, 440});
       
-      bi_tonal_panel.dock(xtd::forms::dock_style::fill);
+      bitonal_panel.dock(xtd::forms::dock_style::fill);
       blur_panel.dock(xtd::forms::dock_style::fill);
       brightness_panel.dock(xtd::forms::dock_style::fill);
       color_panel.dock(xtd::forms::dock_style::fill);
@@ -46,18 +46,18 @@ namespace image_converter_example {
       effect_choice.selected_value_changed += {*this, &form1::on_input_change};
       picture_choice.selected_value_changed += {*this, &form1::on_input_change};
 
-      bi_tonal_threshold_numeric_up_down.value_changed += [&] {bi_tonal_threshold_track_bar.value(as<int32>(bi_tonal_threshold_numeric_up_down.value()));};
-      bi_tonal_threshold_track_bar.value_changed += [&] {
-        bi_tonal_threshold_numeric_up_down.value(bi_tonal_threshold_track_bar.value());
-        adjusted_image = image_converter::bi_tonal(original_image(), bi_tonal_threshold_track_bar.value(), bi_tonal_upper_color_picker.color(), bi_tonal_lower_color_picker.color());
+      bitonal_threshold_numeric_up_down.value_changed += [&] {bitonal_threshold_track_bar.value(as<int32>(bitonal_threshold_numeric_up_down.value()));};
+      bitonal_threshold_track_bar.value_changed += [&] {
+        bitonal_threshold_numeric_up_down.value(bitonal_threshold_track_bar.value());
+        adjusted_image = image_converter::bitonal(original_image(), bitonal_threshold_track_bar.value(), bitonal_upper_color_picker.color(), bitonal_lower_color_picker.color());
         adjusted_picture_panel.invalidate();
       };
-      bi_tonal_upper_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::bi_tonal(original_image(), bi_tonal_threshold_track_bar.value(), bi_tonal_upper_color_picker.color(), bi_tonal_lower_color_picker.color());
+      bitonal_upper_color_picker.color_picker_changed += [&] {
+        adjusted_image = image_converter::bitonal(original_image(), bitonal_threshold_track_bar.value(), bitonal_upper_color_picker.color(), bitonal_lower_color_picker.color());
         adjusted_picture_panel.invalidate();
       };
-      bi_tonal_lower_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::bi_tonal(original_image(), bi_tonal_threshold_track_bar.value(), bi_tonal_upper_color_picker.color(), bi_tonal_lower_color_picker.color());
+      bitonal_lower_color_picker.color_picker_changed += [&] {
+        adjusted_image = image_converter::bitonal(original_image(), bitonal_threshold_track_bar.value(), bitonal_upper_color_picker.color(), bitonal_lower_color_picker.color());
         adjusted_picture_panel.invalidate();
       };
 
@@ -186,7 +186,7 @@ namespace image_converter_example {
     
   private:
     void on_input_change() {
-      bi_tonal_panel.visible(effect_choice.selected_item() == "bitonal");
+      bitonal_panel.visible(effect_choice.selected_item() == "bitonal");
       blur_panel.visible(effect_choice.selected_item() == "blur");
       brightness_panel.visible(effect_choice.selected_item() == "brightness");
       color_panel.visible(effect_choice.selected_item() == "color");
@@ -202,9 +202,9 @@ namespace image_converter_example {
       sepia_panel.visible(effect_choice.selected_item().value() == "sepia");
       threshold_panel.visible(effect_choice.selected_item().value() == "threshold");
       
-      bi_tonal_threshold_track_bar.value(382);
-      bi_tonal_upper_color_picker.color(color::red);
-      bi_tonal_lower_color_picker.color(color::white);
+      bitonal_threshold_track_bar.value(382);
+      bitonal_upper_color_picker.color(color::red);
+      bitonal_lower_color_picker.color(color::white);
       radius_blur_track_bar.value(0);
       percent_brightness_track_bar.value(100);
       percent_color_track_bar.value(0);
@@ -224,7 +224,7 @@ namespace image_converter_example {
       threshold_threshold_track_bar.value(382);
       
       original_image_ = as<bitmap>(picture_choice.selected_item().tag());
-      if (effect_choice.selected_item() == "bitonal") adjusted_image = image_converter::bi_tonal(original_image(), bi_tonal_threshold_track_bar.value(), bi_tonal_upper_color_picker.color(), bi_tonal_lower_color_picker.color());
+      if (effect_choice.selected_item() == "bitonal") adjusted_image = image_converter::bitonal(original_image(), bitonal_threshold_track_bar.value(), bitonal_upper_color_picker.color(), bitonal_lower_color_picker.color());
       else if (effect_choice.selected_item() == "threshold") adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());
       else adjusted_image = original_image();
       adjusted_picture_panel.invalidate();
@@ -234,14 +234,14 @@ namespace image_converter_example {
     image original_image_ = properties::resources::pineapple();
     image adjusted_image = properties::resources::pineapple();
 
-    panel bi_tonal_panel = panel::create(*this, {0, 0}, {630, 150});
-    label bi_tonal_threshold_label = label::create(bi_tonal_panel, "Threshold", {10, 14}, {70, 23});
-    track_bar bi_tonal_threshold_track_bar = track_bar::create(bi_tonal_panel, 382, 0, 765, {80, 10}, {200, 25});
-    numeric_up_down bi_tonal_threshold_numeric_up_down = numeric_up_down::create(bi_tonal_panel, 382, 0, 765, {290, 10}, {110, 25});
-    label bi_tonal_upper_label = label::create(bi_tonal_panel, "Upper", {10, 54}, {50, 23});
-    color_picker bi_tonal_upper_color_picker = color_picker::create(bi_tonal_panel, color::red, {70, 50});
-    label bi_tonal_lower_label = label::create(bi_tonal_panel, "Lower", {200, 54}, {50, 23});
-    color_picker bi_tonal_lower_color_picker = color_picker::create(bi_tonal_panel, color::white, {260, 50});
+    panel bitonal_panel = panel::create(*this, {0, 0}, {630, 150});
+    label bitonal_threshold_label = label::create(bitonal_panel, "Threshold", {10, 14}, {70, 23});
+    track_bar bitonal_threshold_track_bar = track_bar::create(bitonal_panel, 382, 0, 765, {80, 10}, {200, 25});
+    numeric_up_down bitonal_threshold_numeric_up_down = numeric_up_down::create(bitonal_panel, 382, 0, 765, {290, 10}, {110, 25});
+    label bitonal_upper_label = label::create(bitonal_panel, "Upper", {10, 54}, {50, 23});
+    color_picker bitonal_upper_color_picker = color_picker::create(bitonal_panel, color::red, {70, 50});
+    label bitonal_lower_label = label::create(bitonal_panel, "Lower", {200, 54}, {50, 23});
+    color_picker bitonal_lower_color_picker = color_picker::create(bitonal_panel, color::white, {260, 50});
 
     panel blur_panel = panel::create(*this, {0, 0}, {630, 150});
     label radius_blur_label = label::create(blur_panel, "Radius", {10, 34}, {50, 23});
