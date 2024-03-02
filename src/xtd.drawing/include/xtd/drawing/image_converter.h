@@ -15,7 +15,7 @@ namespace xtd {
     class bitmap;
     /// @endcond
     
-    /// @brief Transforme images to and from xtd::drawing::image class. This class cannot be inherited.
+    /// @brief Converts images to and from xtd::drawing::image class. This class cannot be inherited.
     /// @code
     /// class drawing_export_ image_converter final static_
     /// @endcode
@@ -31,7 +31,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Transforms into lower and upper colors of the specified image with specified threshold, upper color and lower color.
+      /// @brief Converts into lower and upper colors of the specified image with specified threshold, upper color and lower color.
       /// @param image The image to convert into lower and upper colors.
       /// @param threshold The threshold value (from 0 to 765).
       /// @param upper_color The color used when RGB color is upper the threshold value.
@@ -100,14 +100,14 @@ namespace xtd {
       /// @return The transformed image.
       static xtd::drawing::image disabled(const xtd::drawing::image& image, float brightness);
 
-      /// @brief Transforms into grayscale of the specified image.
+      /// @brief Converts into grayscale of the specified image.
       /// @param image The image to be transformed into grayscale.
       static void grayscale(xtd::drawing::image& image);
       /// @brief Creates a new image with grayscale colors of the specified image.
       /// @param image The image to be transformed into grayscale.
       /// @return The transformed image.
       static xtd::drawing::image grayscale(const xtd::drawing::image& image);
-      /// @brief Transforms into grayscale of the specified image with specified percent factor.
+      /// @brief Converts into grayscale of the specified image with specified percent factor.
       /// @param image The image to be transformed into grayscale.
       /// @param percent The percent factor in % (from 0.0 to 1.0).
       /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
@@ -194,14 +194,14 @@ namespace xtd {
       /// @remarks Thus, `1.0` returns the original image, while the other values give a saturate image.
       static xtd::drawing::image saturate(const xtd::drawing::image& image, double percent);
 
-      /// @brief Transforms into sepia colors of the specified image.
+      /// @brief Converts into sepia colors of the specified image.
       /// @param image The image to be transformed into sepia.
       static void sepia(xtd::drawing::image& image);
       /// @brief Creates a new image with sepia colors of the specified image.
       /// @param image The image to be transformed into sepia.
       /// @return The transformed image.
       static xtd::drawing::image sepia(const xtd::drawing::image& image);
-      /// @brief Transforms into sepia colors of the specified image with specified percent factor.
+      /// @brief Converts into sepia colors of the specified image with specified percent factor.
       /// @param image The image to be transformed into sepia.
       /// @param percent The percent factor in % (from 0.0 to 1.0).
       /// @remarks Thus, `1.0` will make the color completely sepia, while `0.0` return the original image.
@@ -213,7 +213,7 @@ namespace xtd {
       /// @remarks Thus, `1.0` will make the color completely sepia, while `0.0` return the original image.
       static xtd::drawing::image sepia(const xtd::drawing::image& image, double percent);
 
-      /// @brief Transforms into black and white colors of the specified image with specified threshold.
+      /// @brief Converts into black and white colors of the specified image with specified threshold.
       /// @param image The image to convert into black and white colors.
       /// @param threshold The threshold value (from 0 to 765).
       static void threshold(xtd::drawing::image& image, int32 threshold);
