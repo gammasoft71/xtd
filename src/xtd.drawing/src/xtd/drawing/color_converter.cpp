@@ -18,7 +18,7 @@ color color_converter::average(const drawing::color& color1, const drawing::colo
   return color::from_argb(alpha_blend(color1.a(), color2.a(), average_alpha ? weight : 1.0), alpha_blend(color1.r(), color2.r(), weight), alpha_blend(color1.g(), color2.g(), weight), alpha_blend(color1.b(), color2.b(), weight));
 }
 
-color color_converter::bi_tonal(const drawing::color& color, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) noexcept {
+color color_converter::bitonal(const drawing::color& color, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) noexcept {
   threshold = std::clamp(threshold, 0, 765);
   if (color.r() + color.g() + color.b() <= threshold) return lower_color;
   return upper_color;
@@ -30,6 +30,7 @@ color color_converter::brightness(const drawing::color& color, double percent) n
 }
 
 xtd::drawing::color color_converter::color(const xtd::drawing::color& color, const xtd::drawing::color& value, double percent) noexcept {
+  percent = std::clamp(percent, 0.0, 1.0);
   auto r = std::clamp(static_cast<int32>(color.r()) + value.r(), 0, 255);
   auto g = std::clamp(static_cast<int32>(color.g()) + value.g(), 0, 255);
   auto b = std::clamp(static_cast<int32>(color.b()) + value.b(), 0, 255);
@@ -137,5 +138,5 @@ color color_converter::sepia(const drawing::color& color, double percent) noexce
 }
 
 color color_converter::threshold(const drawing::color& color, int32 threshold) noexcept {
-  return bi_tonal(color, threshold, color::white, color::black);
+  return bitonal(color, threshold, color::white, color::black);
 }
