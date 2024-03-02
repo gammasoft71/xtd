@@ -79,7 +79,7 @@
 #include "drawing/green_colors.h"
 #include "drawing/icon.h"
 #include "drawing/image.h"
-#include "drawing/image_transformer.h"
+#include "drawing/image_converter.h"
 #include "drawing/international_system_images.h"
 #include "drawing/known_color.h"
 #include "drawing/magenta_colors.h"

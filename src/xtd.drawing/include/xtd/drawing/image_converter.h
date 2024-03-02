@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::image_transformer class.
+/// @brief Contains xtd::drawing::image_converter class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.h"
@@ -17,16 +17,16 @@ namespace xtd {
     
     /// @brief Transforme images to and from xtd::drawing::image class. This class cannot be inherited.
     /// @code
-    /// class drawing_export_ image_transformer final static_
+    /// class drawing_export_ image_converter final static_
     /// @endcode
     /// @par Inheritance
-    /// xtd::static_object → xtd::drawing::image_transformer
+    /// xtd::static_object → xtd::drawing::image_converter
     /// @par Namespace
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing images
-    class drawing_export_ image_transformer final static_ {
+    class drawing_export_ image_converter final static_ {
     public:
       /// @name Methods
       

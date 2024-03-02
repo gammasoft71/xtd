@@ -1,5 +1,5 @@
 #include "../../../include/xtd/drawing/color_transformer.h"
-#include "../../../include/xtd/drawing/image_transformer.h"
+#include "../../../include/xtd/drawing/image_converter.h"
 #include <xtd/math>
 #include <algorithm>
 #include <tuple>
@@ -77,7 +77,7 @@ namespace {
   }
 }
 
-void image_transformer::bi_tonal(image& image, int32 threshold, const color& upper_color, const color& lower_color) {
+void image_converter::bi_tonal(image& image, int32 threshold, const color& upper_color, const color& lower_color) {
   threshold = std::clamp(threshold, 0, 765);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -90,23 +90,23 @@ void image_transformer::bi_tonal(image& image, int32 threshold, const color& upp
     }
 }
 
-image image_transformer::bi_tonal(const image& image, int32 threshold, const color& upper_color, const color& lower_color) {
+image image_converter::bi_tonal(const image& image, int32 threshold, const color& upper_color, const color& lower_color) {
   auto result = image;
-  image_transformer::bi_tonal(result, threshold, upper_color, lower_color);
+  image_converter::bi_tonal(result, threshold, upper_color, lower_color);
   return result;
 }
 
-void image_transformer::blur(image& image, int32 radius) {
+void image_converter::blur(image& image, int32 radius) {
   image.blur(radius);
 }
 
-image image_transformer::blur(const image& image, int32 radius) {
+image image_converter::blur(const image& image, int32 radius) {
   auto result = image;
   blur(result, radius);
   return result;
 }
 
-void image_transformer::brightness(image& image, double percent) {
+void image_converter::brightness(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 2.0);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -118,13 +118,13 @@ void image_transformer::brightness(image& image, double percent) {
     }
 }
 
-image image_transformer::brightness(const image& image, double percent) {
+image image_converter::brightness(const image& image, double percent) {
   auto result = image;
   brightness(result, percent);
   return result;
 }
 
-void image_transformer::contrast(image& image, double percent) {
+void image_converter::contrast(image& image, double percent) {
   if (percent < 0.0) percent = 0.0;
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -139,21 +139,21 @@ void image_transformer::contrast(image& image, double percent) {
     }
 }
 
-image image_transformer::contrast(const image& image, double percent) {
+image image_converter::contrast(const image& image, double percent) {
   auto result = image;
   contrast(result, percent);
   return result;
 }
 
-void image_transformer::disabled(image& image, const color& back_color) {
+void image_converter::disabled(image& image, const color& back_color) {
   disabled(image, back_color.get_brightness());
 }
 
-image image_transformer::disabled(const image& image, const color& back_color) {
+image image_converter::disabled(const image& image, const color& back_color) {
   return disabled(image, back_color.get_brightness());
 }
 
-void image_transformer::disabled(image& image, float brightness) {
+void image_converter::disabled(image& image, float brightness) {
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
@@ -164,21 +164,21 @@ void image_transformer::disabled(image& image, float brightness) {
     }
 }
 
-image image_transformer::disabled(const image& image, float brightness) {
+image image_converter::disabled(const image& image, float brightness) {
   auto result = image;
   disabled(result, brightness);
   return result;
 }
 
-void image_transformer::grayscale(image& image) {
+void image_converter::grayscale(image& image) {
   grayscale(image, 100);
 }
 
-image image_transformer::grayscale(const image& image) {
+image image_converter::grayscale(const image& image) {
   return grayscale(image, 100);
 }
 
-void image_transformer::grayscale(image& image, double percent) {
+void image_converter::grayscale(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 1.0);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -191,13 +191,13 @@ void image_transformer::grayscale(image& image, double percent) {
     }
 }
 
-image image_transformer::grayscale(const image& image, double percent) {
+image image_converter::grayscale(const image& image, double percent) {
   auto result = image;
   grayscale(result, percent);
   return result;
 }
 
-void image_transformer::hue_rotate(image& image, int angle) {
+void image_converter::hue_rotate(image& image, int angle) {
   angle = std::clamp(angle, 0, 360);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -213,21 +213,21 @@ void image_transformer::hue_rotate(image& image, int angle) {
     }
 }
 
-image image_transformer::hue_rotate(const image& image, int angle) {
+image image_converter::hue_rotate(const image& image, int angle) {
   auto result = image;
   hue_rotate(result, angle);
   return result;
 }
 
-void image_transformer::invert(image& image) {
+void image_converter::invert(image& image) {
   invert(image, 1.0);
 }
 
-image image_transformer::invert(const image& image) {
+image image_converter::invert(const image& image) {
   return invert(image, 1.0);
 }
 
-void image_transformer::invert(image& image, double percent) {
+void image_converter::invert(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 1.0);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -239,13 +239,13 @@ void image_transformer::invert(image& image, double percent) {
     }
 }
 
-image image_transformer::invert(const image& image, double percent) {
+image image_converter::invert(const image& image, double percent) {
   auto result = image;
   invert(result, percent);
   return result;
 }
 
-void image_transformer::opacity(image& image, double percent) {
+void image_converter::opacity(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 1.0);
   auto alpha = image.get_alpha();
   for (auto y = 0; y < image.height(); ++y)
@@ -255,33 +255,33 @@ void image_transformer::opacity(image& image, double percent) {
     }
 }
 
-image image_transformer::opacity(const image& image, double percent) {
+image image_converter::opacity(const image& image, double percent) {
   auto result = image;
   opacity(result, percent);
   return result;
 }
 
-void image_transformer::resize(xtd::drawing::image& image, const xtd::drawing::size& size) {
+void image_converter::resize(xtd::drawing::image& image, const xtd::drawing::size& size) {
   image = xtd::drawing::image {image, size.width(), size.height()};
 }
 
-xtd::drawing::image image_transformer::resize(const xtd::drawing::image& image, const xtd::drawing::size& size) {
+xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, const xtd::drawing::size& size) {
   auto result = image;
   resize(result, size);
   return result;
 }
 
-void image_transformer::rotate_flip(image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
+void image_converter::rotate_flip(image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
   image.rotate_flip(rotate_flip_type);
 }
 
-image image_transformer::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
+image image_converter::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
   auto result = image;
   rotate_flip(result, rotate_flip_type);
   return result;
 }
 
-void image_transformer::saturate(image& image, double percent) {
+void image_converter::saturate(image& image, double percent) {
   if (percent < .0) percent = 0;  
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -306,21 +306,21 @@ void image_transformer::saturate(image& image, double percent) {
     }
 }
 
-image image_transformer::saturate(const image& image, double percent) {
+image image_converter::saturate(const image& image, double percent) {
   auto result = image;
   saturate(result, percent);
   return result;
 }
 
-void image_transformer::sepia(image& image) {
+void image_converter::sepia(image& image) {
   sepia(image, 100);
 }
 
-image image_transformer::sepia(const image& image) {
+image image_converter::sepia(const image& image) {
   return sepia(image, 100);
 }
 
-void image_transformer::sepia(image& image, double percent) {
+void image_converter::sepia(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 1.0);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -335,18 +335,18 @@ void image_transformer::sepia(image& image, double percent) {
     }
 }
 
-image image_transformer::sepia(const image& image, double percent) {
+image image_converter::sepia(const image& image, double percent) {
   auto result = image;
   sepia(result, percent);
   return result;
 }
 
-void image_transformer::threshold(image& image, int32 threshold) {
+void image_converter::threshold(image& image, int32 threshold) {
   bi_tonal(image, threshold, color::white, color::black);
 }
 
-image image_transformer::threshold(const image& image, int32 threshold) {
+image image_converter::threshold(const image& image, int32 threshold) {
   auto result = image;
-  image_transformer::threshold(result, threshold);
+  image_converter::threshold(result, threshold);
   return result;
 }

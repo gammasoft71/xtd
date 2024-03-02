@@ -15,7 +15,7 @@ namespace xtd {
     /// class drawing_export_ color_transformer final static_
     /// @endcode
     /// @par Inheritance
-    /// xtd::static_object → xtd::drawing::image_transformer
+    /// xtd::static_object → xtd::drawing::image_converter
     /// @par Namespace
     /// xtd::drawing
     /// @par Library

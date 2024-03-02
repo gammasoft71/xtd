@@ -31,7 +31,7 @@ namespace xtd {
   namespace drawing {
     /// @cond
     class bitmap;
-    class image_transformer;
+    class image_converter;
     /// @endcond
     
     /// @brief An abstract base class that provides functionality for the bitmap and metafile descended classes.
@@ -325,7 +325,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      friend class image_transformer;
+      friend class image_converter;
       void blur(int32 radius);
       void update_properties();
       
