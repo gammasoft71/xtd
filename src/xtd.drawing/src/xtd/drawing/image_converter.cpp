@@ -225,9 +225,9 @@ void image_converter::disabled(image& image, float brightness) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      rgb[pixel].r = alpha_blend(rgb[pixel].r, 255 * brightness, 0.4);
-      rgb[pixel].g = alpha_blend(rgb[pixel].g, 255 * brightness, 0.4);
-      rgb[pixel].b = alpha_blend(rgb[pixel].b, 255 * brightness, 0.4);
+      rgb[pixel].r = alpha_blend(rgb[pixel].r, static_cast<xtd::byte>(255 * brightness), 0.4);
+      rgb[pixel].g = alpha_blend(rgb[pixel].g, static_cast<xtd::byte>(255 * brightness), 0.4);
+      rgb[pixel].b = alpha_blend(rgb[pixel].b, static_cast<xtd::byte>(255 * brightness), 0.4);
     }
 }
 
@@ -271,7 +271,7 @@ void image_converter::hue_rotate(image& image, int angle) {
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
       auto [h, s, l] = to_hsl(rgb[pixel].r, rgb[pixel].g, rgb[pixel].b);
-      h = (static_cast<int>(h) + angle) % 360;
+      h = static_cast<float>((static_cast<int>(h) + angle) % 360);
       if (h < 0) h += 360;
       auto [r, g, b] = from_hsl(h, s, l);
       rgb[pixel].r = r;
@@ -318,7 +318,7 @@ void image_converter::opacity(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      alpha[pixel] = 255 * percent;
+      alpha[pixel] = static_cast<xtd::byte>(255 * percent);
     }
 }
 
@@ -367,9 +367,9 @@ void image_converter::saturate(image& image, double percent) {
       saturated_g = std::clamp(saturated_g, 0.0, 1.0);
       saturated_b = std::clamp(saturated_b, 0.0, 1.0);
 
-      rgb[pixel].r = static_cast<int>(saturated_r * 255);
-      rgb[pixel].g = static_cast<int>(saturated_g * 255);
-      rgb[pixel].b = static_cast<int>(saturated_b * 255);
+      rgb[pixel].r = static_cast<xtd::byte>(saturated_r * 255);
+      rgb[pixel].g = static_cast<xtd::byte>(saturated_g * 255);
+      rgb[pixel].b = static_cast<xtd::byte>(saturated_b * 255);
     }
 }
 
