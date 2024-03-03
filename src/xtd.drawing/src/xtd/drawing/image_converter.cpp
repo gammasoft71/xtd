@@ -145,6 +145,29 @@ xtd::drawing::image image_converter::color(const xtd::drawing::image& image, con
   return result;
 }
 
+void image_converter::color_extraction(xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept {
+  threshold = std::clamp(threshold, 0, 765);
+  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x) {
+      auto pixel = y * image.width() + x;
+
+      int extraction_total_rgb = extraction_color.r() + extraction_color.g() + extraction_color.b();
+      int total_rgb = rgb[pixel].r + rgb[pixel].g + rgb[pixel].b;
+      if (math::abs(total_rgb - extraction_total_rgb) >= threshold) {
+        rgb[pixel].r = other_pixels_color.r();
+        rgb[pixel].g = other_pixels_color.g();
+        rgb[pixel].b = other_pixels_color.b();
+      }
+    }
+}
+
+xtd::drawing::image image_converter::color_extraction(const xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept {
+  auto result = image;
+  color_extraction(result, threshold, extraction_color, other_pixels_color);
+  return result;
+}
+
 void image_converter::contrast(image& image, double percent) {
   if (percent < 0.0) percent = 0.0;
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());

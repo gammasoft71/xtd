@@ -1,4 +1,6 @@
 #include "../../../include/xtd/drawing/color_converter.h"
+#include <xtd/byte_object.h>
+#include <xtd/math>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -19,7 +21,7 @@ color color_converter::average(const drawing::color& color1, const drawing::colo
 }
 
 color color_converter::bitonal(const drawing::color& color, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) noexcept {
-  threshold = std::clamp(threshold, 0, 765);
+  threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
   if (color.r() + color.g() + color.b() <= threshold) return lower_color;
   return upper_color;
 }
@@ -35,6 +37,13 @@ xtd::drawing::color color_converter::color(const xtd::drawing::color& color, con
   auto g = std::clamp(static_cast<int32>(color.g()) + value.g(), 0, 255);
   auto b = std::clamp(static_cast<int32>(color.b()) + value.b(), 0, 255);
   return alpha_blend(color, drawing::color::from_argb(color.a(), static_cast<xtd::byte>(r), static_cast<xtd::byte>(g), static_cast<xtd::byte>(b)), percent);
+}
+
+xtd::drawing::color color_converter::color_extraction(const xtd::drawing::color& color, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_color) noexcept {
+  threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
+  int extraction_total_rgb = extraction_color.r() + extraction_color.g() + extraction_color.b();
+  int total_rgb = color.r() + color.g() + color.b();
+  return math::abs(total_rgb - extraction_total_rgb) >= threshold ? other_color : color;
 }
 
 color color_converter::contrast(const drawing::color& color, double percent) noexcept {
