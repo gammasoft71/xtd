@@ -3,6 +3,7 @@
 #include "../../include/xtd/argument_out_of_range_exception.h"
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/char_object.h"
+#include "../../include/xtd/char32_object.h"
 #include "../../include/xtd/invalid_operation_exception.h"
 #include "../../include/xtd/uri_format_exception.h"
 #include "../../include/xtd/uri_template_match_exception.h"
@@ -182,9 +183,9 @@ bool uri::check_scheme_name(const ustring& scheme) {
   for (auto c : as<u32string>(scheme)) {
     if (first) {
       first = false;
-      if (!char_object::is_letter(c)) return false;
+      if (!char32_object::is_letter(c)) return false;
     } else {
-      if (!char_object::is_letter_or_digit(c) && c != '.' && c != '+' && c != '-') return false;
+      if (!char32_object::is_letter_or_digit(c) && c != '.' && c != '+' && c != '-') return false;
     }
   }
   
