@@ -162,7 +162,7 @@ namespace image_converter_example {
       resize_width_numeric_up_down.value_changed += [&] {resize_width_track_bar.value(as<int32>(resize_width_numeric_up_down.value()));};
       resize_width_track_bar.value_changed += [&] {
         resize_width_numeric_up_down.value(resize_width_track_bar.value());
-        if (resize_maintain_aspect_ratio_check_box.checked()) resize_height_numeric_up_down.value(resize_width_track_bar.value());
+        if (resize_maintain_aspect_ratio_check_box.checked()) resize_height_numeric_up_down.value(as<int>(resize_width_track_bar.value() / resize_aspect_ratio));
         adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});
         adjusted_picture_panel.invalidate();
       };
@@ -170,7 +170,7 @@ namespace image_converter_example {
       resize_height_numeric_up_down.value_changed += [&] {resize_height_track_bar.value(as<int32>(resize_height_numeric_up_down.value()));};
       resize_height_track_bar.value_changed += [&] {
         resize_height_numeric_up_down.value(resize_height_track_bar.value());
-        if (resize_maintain_aspect_ratio_check_box.checked()) resize_width_numeric_up_down.value(resize_height_track_bar.value());
+        if (resize_maintain_aspect_ratio_check_box.checked()) resize_width_numeric_up_down.value(as<int>(resize_height_track_bar.value() * resize_aspect_ratio));
         adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});
         adjusted_picture_panel.invalidate();
       };
@@ -240,9 +240,9 @@ namespace image_converter_example {
       threshold_bitonal_track_bar.value(382);
       upper_color_bitonal_color_picker.color(color::red);
       lower_color_bitonal_color_picker.color(color::white);
-      radius_blur_track_bar.value(0);
-      percent_brightness_track_bar.value(100);
-      percent_color_track_bar.value(100);
+      radius_blur_track_bar.value(10);
+      percent_brightness_track_bar.value(125);
+      percent_color_track_bar.value(200);
       color_color_color_picker.color(color::red);
       threshold_color_extraction_track_bar.value(50);
       extraction_color_color_extraction_color_picker.color(color::green);
@@ -250,24 +250,38 @@ namespace image_converter_example {
       threshold_color_substitution_track_bar.value(50);
       source_color_color_substitution_color_picker.color(color::green);
       new_color_color_substitution_color_picker.color(color::blue);
-      percent_contrast_track_bar.value(100);
-      disabled_switch_button.checked(false);
-      percent_grayscale_track_bar.value(0);
-      percent_hue_rotate_track_bar.value(0);
-      percent_invert_track_bar.value(0);
-      percent_opacity_track_bar.value(100);
-      resize_width_track_bar.value(original_image().size().width());
-      resize_height_track_bar.value(original_image().size().height());
+      percent_contrast_track_bar.value(200);
+      disabled_switch_button.checked(true);
+      percent_grayscale_track_bar.value(100);
+      percent_hue_rotate_track_bar.value(90);
+      percent_invert_track_bar.value(100);
+      percent_opacity_track_bar.value(50);
+      resize_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
+      resize_width_track_bar.value(original_image().size().width() / 2);
+      resize_width_track_bar.value(original_image().size().height() / 2);
       resize_maintain_aspect_ratio_check_box.checked(true);
-      rotate_flip_choice.selected_index(0);
-      percent_saturate_track_bar.value(100);
-      percent_sepia_track_bar.value(0);
+      rotate_flip_choice.selected_index(2);
+      percent_saturate_track_bar.value(300);
+      percent_sepia_track_bar.value(100);
       threshold_threshold_track_bar.value(382);
       
       original_image_ = as<bitmap>(picture_choice.selected_item().tag());
       if (effect_choice.selected_item() == "bitonal") adjusted_image = image_converter::bitonal(original_image(), threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color());
+      else if (effect_choice.selected_item() == "blur") adjusted_image = image_converter::blur(original_image(), radius_blur_track_bar.value());
+      else if (effect_choice.selected_item() == "brightness") adjusted_image = image_converter::brightness(original_image(), percent_brightness_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "color") adjusted_image = image_converter::color(original_image(), color_color_color_picker.color(), percent_color_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "color-extraction") adjusted_image = image_converter::color_extraction(original_image(), threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color());
       else if (effect_choice.selected_item() == "color-substitution") adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
+      else if (effect_choice.selected_item() == "contrast") adjusted_image = image_converter::contrast(original_image(), percent_contrast_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "disabled") adjusted_image = disabled_switch_button.checked() ? bitmap {image_converter::disabled(original_image(), adjusted_picture_panel.back_color())} : original_image();
+      else if (effect_choice.selected_item() == "grayscale") adjusted_image = image_converter::grayscale(original_image(), percent_grayscale_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_converter::hue_rotate(original_image(), percent_hue_rotate_track_bar.value());
+      else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), percent_invert_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), percent_opacity_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "resize") adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});
+      else if (effect_choice.selected_item() == "rotate-flip") adjusted_image = image_converter::rotate_flip(original_image(), as<rotate_flip_type>(rotate_flip_choice.selected_item().tag()));
+      else if (effect_choice.selected_item() == "saturate") adjusted_image = image_converter::saturate(original_image(), percent_saturate_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "sepia") adjusted_image = image_converter::sepia(original_image(), percent_sepia_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "threshold") adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());
       else adjusted_image = original_image();
       adjusted_picture_panel.invalidate();
@@ -276,6 +290,7 @@ namespace image_converter_example {
     const image& original_image() const {return original_image_;}
     image original_image_ = properties::resources::pineapple();
     image adjusted_image = properties::resources::pineapple();
+    double resize_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
 
     panel bitonal_panel = panel::create(*this, {0, 0}, {630, 150});
     label threshold_bitonal_label = label::create(bitonal_panel, "Threshold", {10, 14}, {70, 23});
@@ -288,18 +303,18 @@ namespace image_converter_example {
 
     panel blur_panel = panel::create(*this, {0, 0}, {630, 150});
     label radius_blur_label = label::create(blur_panel, "Radius", {10, 34}, {50, 23});
-    track_bar radius_blur_track_bar = track_bar::create(blur_panel, 0, 0, 100, {60, 30}, {200, 25});
-    numeric_up_down radius_blur_numeric_up_down = numeric_up_down::create(blur_panel, 0, 0, 100, {270, 30}, {130, 25});
+    track_bar radius_blur_track_bar = track_bar::create(blur_panel, 10, 0, 100, {60, 30}, {200, 25});
+    numeric_up_down radius_blur_numeric_up_down = numeric_up_down::create(blur_panel, 10, 0, 100, {270, 30}, {130, 25});
     
     panel brightness_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_brightness_label = label::create(brightness_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_brightness_track_bar = track_bar::create(brightness_panel, 100, 0, 200, {80, 30}, {200, 25});
-    numeric_up_down percent_brightness_numeric_up_down = numeric_up_down::create(brightness_panel, 100, 0, 200, {290, 30}, {110, 25});
+    track_bar percent_brightness_track_bar = track_bar::create(brightness_panel, 125, 0, 200, {80, 30}, {200, 25});
+    numeric_up_down percent_brightness_numeric_up_down = numeric_up_down::create(brightness_panel, 125, 0, 200, {290, 30}, {110, 25});
     
     panel color_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_color_label = label::create(color_panel, "Percent", {10, 14}, {70, 23});
-    track_bar percent_color_track_bar = track_bar::create(color_panel, 100, 0, 200, {80, 10}, {200, 25});
-    numeric_up_down percent_color_numeric_up_down = numeric_up_down::create(color_panel, 100, 0, 200, {290, 10}, {110, 25});
+    track_bar percent_color_track_bar = track_bar::create(color_panel, 200, 0, 200, {80, 10}, {200, 25});
+    numeric_up_down percent_color_numeric_up_down = numeric_up_down::create(color_panel, 200, 0, 200, {290, 10}, {110, 25});
     label color_color_label = label::create(color_panel, "Color", {10, 54}, {50, 23});
     color_picker color_color_color_picker = color_picker::create(color_panel, color::red, {70, 50});
 
@@ -323,32 +338,32 @@ namespace image_converter_example {
 
     panel contrast_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_contrast_label = label::create(contrast_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_contrast_track_bar = track_bar::create(contrast_panel, 100, 0, 400, {80, 30}, {200, 25});
-    numeric_up_down percent_contrast_numeric_up_down = numeric_up_down::create(contrast_panel, 100, 0, 400, {290, 30}, {110, 25});
+    track_bar percent_contrast_track_bar = track_bar::create(contrast_panel, 200, 0, 400, {80, 30}, {200, 25});
+    numeric_up_down percent_contrast_numeric_up_down = numeric_up_down::create(contrast_panel, 200, 0, 400, {290, 30}, {110, 25});
 
     panel disabled_panel = panel::create(*this, {0, 0}, {630, 150});
     label disabled_label = label::create(disabled_panel, "Disabled", {10, 34}, {60, 23});
-    switch_button disabled_switch_button = switch_button::create(disabled_panel, {70, 30});
+    switch_button disabled_switch_button = switch_button::create(disabled_panel, true, {70, 30});
     
     panel grayscale_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_bgrayscale_label = label::create(grayscale_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_grayscale_track_bar = track_bar::create(grayscale_panel, 0, 0, 100, {80, 30}, {200, 25});
-    numeric_up_down percent_grayscale_numeric_up_down = numeric_up_down::create(grayscale_panel, 0, 0, 100, {290, 30}, {110, 25});
+    track_bar percent_grayscale_track_bar = track_bar::create(grayscale_panel, 100, 0, 100, {80, 30}, {200, 25});
+    numeric_up_down percent_grayscale_numeric_up_down = numeric_up_down::create(grayscale_panel, 100, 0, 100, {290, 30}, {110, 25});
     
     panel hue_rotate_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_bhue_rotate_label = label::create(hue_rotate_panel, "Angle", {10, 34}, {70, 23});
-    track_bar percent_hue_rotate_track_bar = track_bar::create(hue_rotate_panel, 0, 0, 360, {80, 30}, {200, 25});
-    numeric_up_down percent_hue_rotate_numeric_up_down = numeric_up_down::create(hue_rotate_panel, 0, 0, 360, {290, 30}, {110, 25});
+    track_bar percent_hue_rotate_track_bar = track_bar::create(hue_rotate_panel, 90, 0, 360, {80, 30}, {200, 25});
+    numeric_up_down percent_hue_rotate_numeric_up_down = numeric_up_down::create(hue_rotate_panel, 90, 0, 360, {290, 30}, {110, 25});
     
     panel invert_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_invert_label = label::create(invert_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_invert_track_bar = track_bar::create(invert_panel, 0, 0, 100, {80, 30}, {200, 25});
-    numeric_up_down percent_invert_numeric_up_down = numeric_up_down::create(invert_panel, 0, 0, 100, {290, 30}, {110, 25});
+    track_bar percent_invert_track_bar = track_bar::create(invert_panel, 100, 0, 100, {80, 30}, {200, 25});
+    numeric_up_down percent_invert_numeric_up_down = numeric_up_down::create(invert_panel, 100, 0, 100, {290, 30}, {110, 25});
     
     panel opacity_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_opacity_label = label::create(opacity_panel, "Percent", {10, 34}, {70, 34});
-    track_bar percent_opacity_track_bar = track_bar::create(opacity_panel, 0, 0, 100, {80, 30}, {200, 25});
-    numeric_up_down percent_opacity_numeric_up_down = numeric_up_down::create(opacity_panel, 0, 0, 100, {290, 30}, {110, 25});
+    track_bar percent_opacity_track_bar = track_bar::create(opacity_panel, 50, 0, 100, {80, 30}, {200, 25});
+    numeric_up_down percent_opacity_numeric_up_down = numeric_up_down::create(opacity_panel, 50, 0, 100, {290, 30}, {110, 25});
     
     panel resize_panel = panel::create(*this, {0, 0}, {630, 150});
     label resize_width_label = label::create(resize_panel, "Width", {10, 14}, {50, 23});
@@ -361,17 +376,17 @@ namespace image_converter_example {
     
     panel rotate_flip_panel = panel::create(*this, {0, 0}, {630, 150});
     label rotate_flip_label = label::create(rotate_flip_panel, "Rotate-flip", {10, 34}, {80, 23});
-    choice rotate_flip_choice = choice::create(rotate_flip_panel, {{"rotate_none_flip_none", rotate_flip_type::rotate_none_flip_none}, {"rotate_90_flip_none", rotate_flip_type::rotate_90_flip_none}, {"rotate_180_flip_none", rotate_flip_type::rotate_180_flip_none}, {"rotate_270_flip_none", rotate_flip_type::rotate_270_flip_none}, {"rotate_none_flip_x", rotate_flip_type::rotate_none_flip_x}, {"rotate_90_flip_x", rotate_flip_type::rotate_90_flip_x}, {"rotate_180_flip_x", rotate_flip_type::rotate_180_flip_x}, {"rotate_270_flip_x", rotate_flip_type::rotate_270_flip_x}, {"rotate_none_flip_y", rotate_flip_type::rotate_none_flip_y}, {"rotate_90_flip_y", rotate_flip_type::rotate_90_flip_y}, {"rotate_180_flip_y", rotate_flip_type::rotate_180_flip_y}, {"rotate_270_flip_y", rotate_flip_type::rotate_270_flip_y}, {"rotate_none_flip_xy", rotate_flip_type::rotate_none_flip_xy}, {"rotate_90_flip_xy", rotate_flip_type::rotate_90_flip_xy}, {"rotate_180_flip_xy", rotate_flip_type::rotate_180_flip_xy}, {"rotate_270_flip_xy", rotate_flip_type::rotate_270_flip_xy}}, 0, {100, 30}, {180, 25});
+    choice rotate_flip_choice = choice::create(rotate_flip_panel, {{"rotate_none_flip_none", rotate_flip_type::rotate_none_flip_none}, {"rotate_90_flip_none", rotate_flip_type::rotate_90_flip_none}, {"rotate_180_flip_none", rotate_flip_type::rotate_180_flip_none}, {"rotate_270_flip_none", rotate_flip_type::rotate_270_flip_none}, {"rotate_none_flip_x", rotate_flip_type::rotate_none_flip_x}, {"rotate_90_flip_x", rotate_flip_type::rotate_90_flip_x}, {"rotate_180_flip_x", rotate_flip_type::rotate_180_flip_x}, {"rotate_270_flip_x", rotate_flip_type::rotate_270_flip_x}, {"rotate_none_flip_y", rotate_flip_type::rotate_none_flip_y}, {"rotate_90_flip_y", rotate_flip_type::rotate_90_flip_y}, {"rotate_180_flip_y", rotate_flip_type::rotate_180_flip_y}, {"rotate_270_flip_y", rotate_flip_type::rotate_270_flip_y}, {"rotate_none_flip_xy", rotate_flip_type::rotate_none_flip_xy}, {"rotate_90_flip_xy", rotate_flip_type::rotate_90_flip_xy}, {"rotate_180_flip_xy", rotate_flip_type::rotate_180_flip_xy}, {"rotate_270_flip_xy", rotate_flip_type::rotate_270_flip_xy}}, 2, {100, 30}, {180, 25});
     
     panel saturate_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_saturate_label = label::create(saturate_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_saturate_track_bar = track_bar::create(saturate_panel, 100, 0, 400, {80, 30}, {200, 25});
-    numeric_up_down percent_saturate_numeric_up_down = numeric_up_down::create(saturate_panel, 100, 0, 400, {290, 30}, {110, 25});
+    track_bar percent_saturate_track_bar = track_bar::create(saturate_panel, 300, 0, 400, {80, 30}, {200, 25});
+    numeric_up_down percent_saturate_numeric_up_down = numeric_up_down::create(saturate_panel, 300, 0, 400, {290, 30}, {110, 25});
     
     panel sepia_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_sepia_label = label::create(sepia_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_sepia_track_bar = track_bar::create(sepia_panel, 0, 0, 100, {80, 30}, {200, 25});
-    numeric_up_down percent_sepia_numeric_up_down = numeric_up_down::create(sepia_panel, 0, 0, 100, {290, 30}, {110, 25});
+    track_bar percent_sepia_track_bar = track_bar::create(sepia_panel, 100, 0, 100, {80, 30}, {200, 25});
+    numeric_up_down percent_sepia_numeric_up_down = numeric_up_down::create(sepia_panel, 100, 0, 100, {290, 30}, {110, 25});
     
     panel threshold_panel = panel::create(*this, {0, 0}, {630, 150});
     label threshold_threshold_label = label::create(threshold_panel, "Threshold", {10, 34}, {70, 23});
