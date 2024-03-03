@@ -25,7 +25,7 @@ namespace image_converter_example {
       text("Image transformations example");
       form_border_style(forms::form_border_style::fixed_3d);
       maximize_box(false);
-      client_size({630, 440});
+      client_size({730, 525});
       
       threshold_bitonal_track_bar.tick_style(tick_style::none);
       radius_blur_track_bar.tick_style(tick_style::none);
@@ -34,6 +34,9 @@ namespace image_converter_example {
       threshold_color_extraction_track_bar.tick_style(tick_style::none);
       threshold_color_substitution_track_bar.tick_style(tick_style::none);
       percent_contrast_track_bar.tick_style(tick_style::none);
+      percent_red_gamma_correction_track_bar.tick_style(tick_style::none);
+      percent_green_gamma_correction_track_bar.tick_style(tick_style::none);
+      percent_blue_gamma_correction_track_bar.tick_style(tick_style::none);
       percent_grayscale_track_bar.tick_style(tick_style::none);
       percent_hue_rotate_track_bar.tick_style(tick_style::none);
       percent_invert_track_bar.tick_style(tick_style::none);
@@ -52,6 +55,7 @@ namespace image_converter_example {
       color_substitution_panel.dock(xtd::forms::dock_style::fill);
       contrast_panel.dock(xtd::forms::dock_style::fill);
       disabled_panel.dock(xtd::forms::dock_style::fill);
+      gamma_correction_panel.dock(xtd::forms::dock_style::fill);
       grayscale_panel.dock(xtd::forms::dock_style::fill);
       hue_rotate_panel.dock(xtd::forms::dock_style::fill);
       invert_panel.dock(xtd::forms::dock_style::fill);
@@ -154,7 +158,7 @@ namespace image_converter_example {
         adjusted_image = image_converter::grayscale(original_image(), percent_grayscale_track_bar.value() / 100.0);
         adjusted_picture_panel.invalidate();
       };
-      
+
       percent_hue_rotate_numeric_up_down.value_changed += [&] {percent_hue_rotate_track_bar.value(as<int32>(percent_hue_rotate_numeric_up_down.value()));};
       percent_hue_rotate_track_bar.value_changed += [&] {
         percent_hue_rotate_numeric_up_down.value(percent_hue_rotate_track_bar.value());
@@ -244,6 +248,7 @@ namespace image_converter_example {
       color_substitution_panel.visible(effect_choice.selected_item() == "color-substitution");
       contrast_panel.visible(effect_choice.selected_item() == "contrast");
       disabled_panel.visible(effect_choice.selected_item() == "disabled");
+      gamma_correction_panel.visible(effect_choice.selected_item() == "gamma-correction");
       grayscale_panel.visible(effect_choice.selected_item() == "grayscale");
       hue_rotate_panel.visible(effect_choice.selected_item().value() == "hue-rotate");
       invert_panel.visible(effect_choice.selected_item().value() == "invert");
@@ -277,7 +282,7 @@ namespace image_converter_example {
       resize_width_track_bar.value(original_image().size().width() / 2);
       resize_width_track_bar.value(original_image().size().height() / 2);
       resize_maintain_aspect_ratio_check_box.checked(true);
-      rotate_flip_choice.selected_index(2);
+      rotate_flip_choice.selected_index(6);
       percent_saturate_track_bar.value(300);
       percent_sepia_track_bar.value(100);
       threshold_threshold_track_bar.value(382);
@@ -309,114 +314,125 @@ namespace image_converter_example {
     image adjusted_image = properties::resources::pineapple();
     double resize_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
 
-    panel bitonal_panel = panel::create(*this, {0, 0}, {630, 150});
-    label threshold_bitonal_label = label::create(bitonal_panel, "Threshold", {10, 14}, {70, 23});
-    track_bar threshold_bitonal_track_bar = track_bar::create(bitonal_panel, 382, 0, 3 * byte_object::max_value, {80, 10}, {200, 25});
-    numeric_up_down threshold_bitonal_numeric_up_down = numeric_up_down::create(bitonal_panel, 382, 0, 3 * byte_object::max_value, {290, 10}, {110, 25});
-    label upper_color_bitonal_label = label::create(bitonal_panel, "Upper", {10, 54}, {50, 23});
-    color_picker upper_color_bitonal_color_picker = color_picker::create(bitonal_panel, color::green, {70, 50});
-    label lower_color_bitonal_label = label::create(bitonal_panel, "Lower", {200, 54}, {50, 23});
-    color_picker lower_color_bitonal_color_picker = color_picker::create(bitonal_panel, color::white, {260, 50});
+    panel bitonal_panel = panel::create(*this, {0, 0}, {730, 170});
+    label threshold_bitonal_label = label::create(bitonal_panel, "Threshold", {10, 34}, {70, 23});
+    track_bar threshold_bitonal_track_bar = track_bar::create(bitonal_panel, 382, 0, 3 * byte_object::max_value, {80, 30}, {200, 25});
+    numeric_up_down threshold_bitonal_numeric_up_down = numeric_up_down::create(bitonal_panel, 382, 0, 3 * byte_object::max_value, {290, 30}, {110, 25});
+    label upper_color_bitonal_label = label::create(bitonal_panel, "Upper", {10, 74}, {50, 23});
+    color_picker upper_color_bitonal_color_picker = color_picker::create(bitonal_panel, color::green, {70, 70});
+    label lower_color_bitonal_label = label::create(bitonal_panel, "Lower", {200, 74}, {70, 23});
+    color_picker lower_color_bitonal_color_picker = color_picker::create(bitonal_panel, color::white, {260, 70});
 
-    panel blur_panel = panel::create(*this, {0, 0}, {630, 150});
-    label radius_blur_label = label::create(blur_panel, "Radius", {10, 34}, {50, 23});
-    track_bar radius_blur_track_bar = track_bar::create(blur_panel, 10, 0, 100, {60, 30}, {200, 25});
-    numeric_up_down radius_blur_numeric_up_down = numeric_up_down::create(blur_panel, 10, 0, 100, {270, 30}, {130, 25});
+    panel blur_panel = panel::create(*this, {0, 0}, {730, 170});
+    label radius_blur_label = label::create(blur_panel, "Radius", {10, 54}, {50, 23});
+    track_bar radius_blur_track_bar = track_bar::create(blur_panel, 10, 0, 100, {60, 50}, {200, 25});
+    numeric_up_down radius_blur_numeric_up_down = numeric_up_down::create(blur_panel, 10, 0, 100, {270, 50}, {130, 25});
     
-    panel brightness_panel = panel::create(*this, {0, 0}, {630, 150});
-    label percent_brightness_label = label::create(brightness_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_brightness_track_bar = track_bar::create(brightness_panel, 125, 0, 200, {80, 30}, {200, 25});
-    numeric_up_down percent_brightness_numeric_up_down = numeric_up_down::create(brightness_panel, 125, 0, 200, {290, 30}, {110, 25});
+    panel brightness_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_brightness_label = label::create(brightness_panel, "Percent", {10, 54}, {70, 23});
+    track_bar percent_brightness_track_bar = track_bar::create(brightness_panel, 125, 0, 200, {80, 50}, {200, 25});
+    numeric_up_down percent_brightness_numeric_up_down = numeric_up_down::create(brightness_panel, 125, 0, 200, {290, 50}, {110, 25});
     
-    panel color_panel = panel::create(*this, {0, 0}, {630, 150});
-    label percent_color_label = label::create(color_panel, "Percent", {10, 14}, {70, 23});
-    track_bar percent_color_track_bar = track_bar::create(color_panel, 200, 0, 200, {80, 10}, {200, 25});
-    numeric_up_down percent_color_numeric_up_down = numeric_up_down::create(color_panel, 200, 0, 200, {290, 10}, {110, 25});
-    label color_color_label = label::create(color_panel, "Color", {10, 54}, {50, 23});
-    color_picker color_color_color_picker = color_picker::create(color_panel, color::red, {70, 50});
+    panel color_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_color_label = label::create(color_panel, "Percent", {10, 34}, {70, 23});
+    track_bar percent_color_track_bar = track_bar::create(color_panel, 200, 0, 200, {80, 30}, {200, 25});
+    numeric_up_down percent_color_numeric_up_down = numeric_up_down::create(color_panel, 200, 0, 200, {290, 30}, {110, 25});
+    label color_color_label = label::create(color_panel, "Color", {10, 74}, {50, 23});
+    color_picker color_color_color_picker = color_picker::create(color_panel, color::red, {70, 70});
 
-    panel color_extraction_panel = panel::create(*this, {0, 0}, {630, 150});
-    label threshold_color_extraction_label = label::create(color_extraction_panel, "Threshold", {10, 14}, {70, 23});
-    track_bar threshold_color_extraction_track_bar = track_bar::create(color_extraction_panel, 50, 0, 3 * byte_object::max_value, {80, 10}, {200, 25});
-    numeric_up_down threshold_color_extraction_numeric_up_down = numeric_up_down::create(color_extraction_panel, 50, 0, 3 * byte_object::max_value, {290, 10}, {110, 25});
-    label extraction_color_color_extraction_label = label::create(color_extraction_panel, "Extraction color", {10, 54}, {100, 23});
-    color_picker extraction_color_color_extraction_color_picker = color_picker::create(color_extraction_panel, color::green, {120, 50});
-    label other_pixels_color_color_extraction_label = label::create(color_extraction_panel, "Other pixels color", {250, 54}, {110, 23});
-    color_picker other_pixels_color_color_extraction_color_picker = color_picker::create(color_extraction_panel, color::white, {370, 50});
+    panel color_extraction_panel = panel::create(*this, {0, 0}, {730, 170});
+    label threshold_color_extraction_label = label::create(color_extraction_panel, "Threshold", {10, 34}, {70, 23});
+    track_bar threshold_color_extraction_track_bar = track_bar::create(color_extraction_panel, 50, 0, 3 * byte_object::max_value, {80, 30}, {200, 25});
+    numeric_up_down threshold_color_extraction_numeric_up_down = numeric_up_down::create(color_extraction_panel, 50, 0, 3 * byte_object::max_value, {290, 30}, {110, 25});
+    label extraction_color_color_extraction_label = label::create(color_extraction_panel, "Extraction color", {10, 74}, {100, 23});
+    color_picker extraction_color_color_extraction_color_picker = color_picker::create(color_extraction_panel, color::green, {120, 70});
+    label other_pixels_color_color_extraction_label = label::create(color_extraction_panel, "Other pixels color", {250, 74}, {110, 23});
+    color_picker other_pixels_color_color_extraction_color_picker = color_picker::create(color_extraction_panel, color::white, {370, 70});
 
-    panel color_substitution_panel = panel::create(*this, {0, 0}, {630, 150});
-    label threshold_color_substitution_label = label::create(color_substitution_panel, "Threshold", {10, 14}, {70, 23});
-    track_bar threshold_color_substitution_track_bar = track_bar::create(color_substitution_panel, 50, 0, 3 * byte_object::max_value, {80, 10}, {200, 25});
-    numeric_up_down threshold_color_substitution_numeric_up_down = numeric_up_down::create(color_substitution_panel, 50, 0, 3 * byte_object::max_value, {290, 10}, {110, 25});
-    label source_color_color_substitution_label = label::create(color_substitution_panel, "Extraction color", {10, 54}, {100, 23});
-    color_picker source_color_color_substitution_color_picker = color_picker::create(color_substitution_panel, color::green, {120, 50});
-    label new_color_color_substitution_label = label::create(color_substitution_panel, "Other pixels color", {250, 54}, {110, 23});
-    color_picker new_color_color_substitution_color_picker = color_picker::create(color_substitution_panel, color::blue, {370, 50});
+    panel color_substitution_panel = panel::create(*this, {0, 0}, {730, 170});
+    label threshold_color_substitution_label = label::create(color_substitution_panel, "Threshold", {10, 34}, {70, 23});
+    track_bar threshold_color_substitution_track_bar = track_bar::create(color_substitution_panel, 50, 0, 3 * byte_object::max_value, {80, 30}, {200, 25});
+    numeric_up_down threshold_color_substitution_numeric_up_down = numeric_up_down::create(color_substitution_panel, 50, 0, 3 * byte_object::max_value, {290, 30}, {110, 25});
+    label source_color_color_substitution_label = label::create(color_substitution_panel, "Extraction color", {10, 74}, {100, 23});
+    color_picker source_color_color_substitution_color_picker = color_picker::create(color_substitution_panel, color::green, {120, 70});
+    label new_color_color_substitution_label = label::create(color_substitution_panel, "Other pixels color", {250, 74}, {110, 23});
+    color_picker new_color_color_substitution_color_picker = color_picker::create(color_substitution_panel, color::blue, {370, 70});
 
-    panel contrast_panel = panel::create(*this, {0, 0}, {630, 150});
-    label percent_contrast_label = label::create(contrast_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_contrast_track_bar = track_bar::create(contrast_panel, 200, 0, 400, {80, 30}, {200, 25});
-    numeric_up_down percent_contrast_numeric_up_down = numeric_up_down::create(contrast_panel, 200, 0, 400, {290, 30}, {110, 25});
+    panel contrast_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_contrast_label = label::create(contrast_panel, "Percent", {10, 54}, {70, 23});
+    track_bar percent_contrast_track_bar = track_bar::create(contrast_panel, 200, 0, 400, {80, 50}, {200, 25});
+    numeric_up_down percent_contrast_numeric_up_down = numeric_up_down::create(contrast_panel, 200, 0, 400, {290, 50}, {110, 25});
 
-    panel disabled_panel = panel::create(*this, {0, 0}, {630, 150});
-    label disabled_label = label::create(disabled_panel, "Disabled", {10, 34}, {60, 23});
-    switch_button disabled_switch_button = switch_button::create(disabled_panel, true, {70, 30});
+    panel disabled_panel = panel::create(*this, {0, 0}, {730, 170});
+    label disabled_label = label::create(disabled_panel, "Disabled", {10, 54}, {60, 23});
+    switch_button disabled_switch_button = switch_button::create(disabled_panel, true, {70, 50});
     
-    panel grayscale_panel = panel::create(*this, {0, 0}, {630, 150});
-    label percent_bgrayscale_label = label::create(grayscale_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_grayscale_track_bar = track_bar::create(grayscale_panel, 100, 0, 100, {80, 30}, {200, 25});
-    numeric_up_down percent_grayscale_numeric_up_down = numeric_up_down::create(grayscale_panel, 100, 0, 100, {290, 30}, {110, 25});
+    panel gamma_correction_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_red_bgamma_correction_label = label::create(gamma_correction_panel, "Red", {10, 14}, {70, 23});
+    track_bar percent_red_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 100, 0, 100, {80, 10}, {200, 25});
+    numeric_up_down percent_red_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 100, 0, 100, {290, 10}, {110, 25});
+    label percent_green_bgamma_correction_label = label::create(gamma_correction_panel, "Green", {10, 54}, {70, 23});
+    track_bar percent_green_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 100, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down percent_green_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 100, 0, 100, {290, 50}, {110, 25});
+    label percent_blue_bgamma_correction_label = label::create(gamma_correction_panel, "Blue", {10, 94}, {70, 23});
+    track_bar percent_blue_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 100, 0, 100, {80, 90}, {200, 25});
+    numeric_up_down percent_blue_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 100, 0, 100, {290, 90}, {110, 25});
+
+    panel grayscale_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_bgrayscale_label = label::create(grayscale_panel, "Percent", {10, 54}, {70, 23});
+    track_bar percent_grayscale_track_bar = track_bar::create(grayscale_panel, 100, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down percent_grayscale_numeric_up_down = numeric_up_down::create(grayscale_panel, 100, 0, 100, {290, 50}, {110, 25});
+
+    panel hue_rotate_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_bhue_rotate_label = label::create(hue_rotate_panel, "Angle", {10, 54}, {70, 23});
+    track_bar percent_hue_rotate_track_bar = track_bar::create(hue_rotate_panel, 90, 0, 360, {80, 50}, {200, 25});
+    numeric_up_down percent_hue_rotate_numeric_up_down = numeric_up_down::create(hue_rotate_panel, 90, 0, 360, {290, 50}, {110, 25});
     
-    panel hue_rotate_panel = panel::create(*this, {0, 0}, {630, 150});
-    label percent_bhue_rotate_label = label::create(hue_rotate_panel, "Angle", {10, 34}, {70, 23});
-    track_bar percent_hue_rotate_track_bar = track_bar::create(hue_rotate_panel, 90, 0, 360, {80, 30}, {200, 25});
-    numeric_up_down percent_hue_rotate_numeric_up_down = numeric_up_down::create(hue_rotate_panel, 90, 0, 360, {290, 30}, {110, 25});
+    panel invert_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_invert_label = label::create(invert_panel, "Percent", {10, 54}, {70, 23});
+    track_bar percent_invert_track_bar = track_bar::create(invert_panel, 100, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down percent_invert_numeric_up_down = numeric_up_down::create(invert_panel, 100, 0, 100, {290, 50}, {110, 25});
     
-    panel invert_panel = panel::create(*this, {0, 0}, {630, 150});
-    label percent_invert_label = label::create(invert_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_invert_track_bar = track_bar::create(invert_panel, 100, 0, 100, {80, 30}, {200, 25});
-    numeric_up_down percent_invert_numeric_up_down = numeric_up_down::create(invert_panel, 100, 0, 100, {290, 30}, {110, 25});
+    panel opacity_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_opacity_label = label::create(opacity_panel, "Percent", {10, 54}, {70, 34});
+    track_bar percent_opacity_track_bar = track_bar::create(opacity_panel, 50, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down percent_opacity_numeric_up_down = numeric_up_down::create(opacity_panel, 50, 0, 100, {290, 50}, {110, 25});
     
-    panel opacity_panel = panel::create(*this, {0, 0}, {630, 150});
-    label percent_opacity_label = label::create(opacity_panel, "Percent", {10, 34}, {70, 34});
-    track_bar percent_opacity_track_bar = track_bar::create(opacity_panel, 50, 0, 100, {80, 30}, {200, 25});
-    numeric_up_down percent_opacity_numeric_up_down = numeric_up_down::create(opacity_panel, 50, 0, 100, {290, 30}, {110, 25});
+    panel resize_panel = panel::create(*this, {0, 0}, {730, 170});
+    label resize_width_label = label::create(resize_panel, "Width", {10, 34}, {50, 23});
+    track_bar resize_width_track_bar = track_bar::create(resize_panel, original_image().size().width(), 1, original_image().size().width() * 2, {60, 30}, {200, 25});
+    numeric_up_down resize_width_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().width(), 1, original_image().size().width() * 2, {270, 30}, {130, 25});
+    label resize_height_label = label::create(resize_panel, "Height", {10, 74}, {50, 23});
+    track_bar resize_height_track_bar = track_bar::create(resize_panel, original_image().size().height(), 1, original_image().size().height() * 2, {60, 70}, {200, 25});
+    numeric_up_down resize_height_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().height(), 1, original_image().size().height() * 2, {270, 70}, {130, 25});
+    check_box resize_maintain_aspect_ratio_check_box = check_box::create(resize_panel, "Maintain aspect ratio", check_state::checked, {420, 54}, {150, 23});
     
-    panel resize_panel = panel::create(*this, {0, 0}, {630, 150});
-    label resize_width_label = label::create(resize_panel, "Width", {10, 14}, {50, 23});
-    track_bar resize_width_track_bar = track_bar::create(resize_panel, original_image().size().width(), 1, original_image().size().width() * 2, {60, 10}, {200, 25});
-    numeric_up_down resize_width_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().width(), 1, original_image().size().width() * 2, {270, 10}, {130, 25});
-    label resize_height_label = label::create(resize_panel, "Height", {10, 54}, {50, 23});
-    track_bar resize_height_track_bar = track_bar::create(resize_panel, original_image().size().height(), 1, original_image().size().height() * 2, {60, 50}, {200, 25});
-    numeric_up_down resize_height_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().height(), 1, original_image().size().height() * 2, {270, 50}, {130, 25});
-    check_box resize_maintain_aspect_ratio_check_box = check_box::create(resize_panel, "Maintain aspect ratio", check_state::checked, {420, 34}, {150, 23});
+    panel rotate_flip_panel = panel::create(*this, {0, 0}, {730, 170});
+    label rotate_flip_label = label::create(rotate_flip_panel, "Rotate-flip", {10, 54}, {80, 23});
+    choice rotate_flip_choice = choice::create(rotate_flip_panel, {{"rotate_none_flip_none", rotate_flip_type::rotate_none_flip_none}, {"rotate_90_flip_none", rotate_flip_type::rotate_90_flip_none}, {"rotate_180_flip_none", rotate_flip_type::rotate_180_flip_none}, {"rotate_270_flip_none", rotate_flip_type::rotate_270_flip_none}, {"rotate_none_flip_x", rotate_flip_type::rotate_none_flip_x}, {"rotate_90_flip_x", rotate_flip_type::rotate_90_flip_x}, {"rotate_180_flip_x", rotate_flip_type::rotate_180_flip_x}, {"rotate_270_flip_x", rotate_flip_type::rotate_270_flip_x}, {"rotate_none_flip_y", rotate_flip_type::rotate_none_flip_y}, {"rotate_90_flip_y", rotate_flip_type::rotate_90_flip_y}, {"rotate_180_flip_y", rotate_flip_type::rotate_180_flip_y}, {"rotate_270_flip_y", rotate_flip_type::rotate_270_flip_y}, {"rotate_none_flip_xy", rotate_flip_type::rotate_none_flip_xy}, {"rotate_90_flip_xy", rotate_flip_type::rotate_90_flip_xy}, {"rotate_180_flip_xy", rotate_flip_type::rotate_180_flip_xy}, {"rotate_270_flip_xy", rotate_flip_type::rotate_270_flip_xy}}, 6, {100, 50}, {180, 25});
     
-    panel rotate_flip_panel = panel::create(*this, {0, 0}, {630, 150});
-    label rotate_flip_label = label::create(rotate_flip_panel, "Rotate-flip", {10, 34}, {80, 23});
-    choice rotate_flip_choice = choice::create(rotate_flip_panel, {{"rotate_none_flip_none", rotate_flip_type::rotate_none_flip_none}, {"rotate_90_flip_none", rotate_flip_type::rotate_90_flip_none}, {"rotate_180_flip_none", rotate_flip_type::rotate_180_flip_none}, {"rotate_270_flip_none", rotate_flip_type::rotate_270_flip_none}, {"rotate_none_flip_x", rotate_flip_type::rotate_none_flip_x}, {"rotate_90_flip_x", rotate_flip_type::rotate_90_flip_x}, {"rotate_180_flip_x", rotate_flip_type::rotate_180_flip_x}, {"rotate_270_flip_x", rotate_flip_type::rotate_270_flip_x}, {"rotate_none_flip_y", rotate_flip_type::rotate_none_flip_y}, {"rotate_90_flip_y", rotate_flip_type::rotate_90_flip_y}, {"rotate_180_flip_y", rotate_flip_type::rotate_180_flip_y}, {"rotate_270_flip_y", rotate_flip_type::rotate_270_flip_y}, {"rotate_none_flip_xy", rotate_flip_type::rotate_none_flip_xy}, {"rotate_90_flip_xy", rotate_flip_type::rotate_90_flip_xy}, {"rotate_180_flip_xy", rotate_flip_type::rotate_180_flip_xy}, {"rotate_270_flip_xy", rotate_flip_type::rotate_270_flip_xy}}, 2, {100, 30}, {180, 25});
+    panel saturate_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_saturate_label = label::create(saturate_panel, "Percent", {10, 54}, {70, 23});
+    track_bar percent_saturate_track_bar = track_bar::create(saturate_panel, 300, 0, 400, {80, 50}, {200, 25});
+    numeric_up_down percent_saturate_numeric_up_down = numeric_up_down::create(saturate_panel, 300, 0, 400, {290, 50}, {110, 25});
     
-    panel saturate_panel = panel::create(*this, {0, 0}, {630, 150});
-    label percent_saturate_label = label::create(saturate_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_saturate_track_bar = track_bar::create(saturate_panel, 300, 0, 400, {80, 30}, {200, 25});
-    numeric_up_down percent_saturate_numeric_up_down = numeric_up_down::create(saturate_panel, 300, 0, 400, {290, 30}, {110, 25});
+    panel sepia_panel = panel::create(*this, {0, 0}, {730, 170});
+    label percent_sepia_label = label::create(sepia_panel, "Percent", {10, 54}, {70, 23});
+    track_bar percent_sepia_track_bar = track_bar::create(sepia_panel, 100, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down percent_sepia_numeric_up_down = numeric_up_down::create(sepia_panel, 100, 0, 100, {290, 50}, {110, 25});
     
-    panel sepia_panel = panel::create(*this, {0, 0}, {630, 150});
-    label percent_sepia_label = label::create(sepia_panel, "Percent", {10, 34}, {70, 23});
-    track_bar percent_sepia_track_bar = track_bar::create(sepia_panel, 100, 0, 100, {80, 30}, {200, 25});
-    numeric_up_down percent_sepia_numeric_up_down = numeric_up_down::create(sepia_panel, 100, 0, 100, {290, 30}, {110, 25});
+    panel threshold_panel = panel::create(*this, {0, 0}, {730, 170});
+    label threshold_threshold_label = label::create(threshold_panel, "Threshold", {10, 54}, {70, 23});
+    track_bar threshold_threshold_track_bar = track_bar::create(threshold_panel, 382, 0, 3 * byte_object::max_value, {80, 50}, {200, 25});
+    numeric_up_down threshold_threshold_numeric_up_down = numeric_up_down::create(threshold_panel, 382, 0, 3 * byte_object::max_value, {290, 50}, {110, 25});
     
-    panel threshold_panel = panel::create(*this, {0, 0}, {630, 150});
-    label threshold_threshold_label = label::create(threshold_panel, "Threshold", {10, 34}, {70, 23});
-    track_bar threshold_threshold_track_bar = track_bar::create(threshold_panel, 382, 0, 3 * byte_object::max_value, {80, 30}, {200, 25});
-    numeric_up_down threshold_threshold_numeric_up_down = numeric_up_down::create(threshold_panel, 382, 0, 3 * byte_object::max_value, {290, 30}, {110, 25});
-    
-    panel picures_panel = panel::create(*this, {0, 0}, {630, 350});
+    panel picures_panel = panel::create(*this, {0, 0}, {630, 400});
     label effect_label = label::create(picures_panel, "Effect", {10, 14}, {50, 23});
-    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "grayscale", "hue-rotate", "invert", "opacity", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
+    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
     choice picture_choice = choice::create(picures_panel, {{"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 1, {280, 10});
-    panel original_picture_panel = panel::create(picures_panel, {10, 40}, {300, 300});
-    panel adjusted_picture_panel = panel::create(picures_panel, {320, 40}, {300, 300});
+    panel original_picture_panel = panel::create(picures_panel, {10, 40}, {350, 350});
+    panel adjusted_picture_panel = panel::create(picures_panel, {370, 40}, {350, 350});
   };
 }
 auto main()->int {
