@@ -79,7 +79,7 @@ color color_converter::disabled(const drawing::color& fore_color, const drawing:
 
 color color_converter::disabled(const drawing::color& fore_color, float brightness) noexcept {
   brightness = std::clamp(brightness, .0f, 1.0f);
-  return alpha_blend(fore_color, color::from_argb(0xFF000000 + (0xFFFFFF * brightness)), 0.4);
+  return alpha_blend(fore_color, color::from_argb(0xFF000000 + static_cast<int32>(0xFFFFFF * brightness)), 0.4);
 }
 
 color color_converter::grayscale(const drawing::color& color) noexcept {
@@ -137,7 +137,7 @@ color color_converter::saturate(const drawing::color& color, double percent) noe
   saturated_g = std::clamp(saturated_g, 0.0, 1.0);
   saturated_b = std::clamp(saturated_b, 0.0, 1.0);
   
-  return color::from_argb(color.a(), static_cast<int>(saturated_r * 255), static_cast<int>(saturated_g * 255), static_cast<int>(saturated_b * 255));
+  return color::from_argb(color.a(), static_cast<xtd::byte>(saturated_r * 255), static_cast<xtd::byte>(saturated_g * 255), static_cast<xtd::byte>(saturated_b * 255));
 }
 
 color color_converter::sepia(const drawing::color& color) noexcept {
