@@ -32,6 +32,7 @@ namespace image_converter_example {
       brightness_panel.dock(xtd::forms::dock_style::fill);
       color_panel.dock(xtd::forms::dock_style::fill);
       color_extraction_panel.dock(xtd::forms::dock_style::fill);
+      color_substitution_panel.dock(xtd::forms::dock_style::fill);
       contrast_panel.dock(xtd::forms::dock_style::fill);
       disabled_panel.dock(xtd::forms::dock_style::fill);
       grayscale_panel.dock(xtd::forms::dock_style::fill);
@@ -102,7 +103,22 @@ namespace image_converter_example {
         adjusted_image = image_converter::color_extraction(original_image(), threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color());
         adjusted_picture_panel.invalidate();
       };
-
+      
+      threshold_color_substitution_numeric_up_down.value_changed += [&] {threshold_color_substitution_track_bar.value(as<int32>(threshold_color_substitution_numeric_up_down.value()));};
+      threshold_color_substitution_track_bar.value_changed += [&] {
+        threshold_color_substitution_numeric_up_down.value(threshold_color_substitution_track_bar.value());
+        adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
+        adjusted_picture_panel.invalidate();
+      };
+      source_color_color_substitution_color_picker.color_picker_changed += [&] {
+        adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
+        adjusted_picture_panel.invalidate();
+      };
+      new_color_color_substitution_color_picker.color_picker_changed += [&] {
+        adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
+        adjusted_picture_panel.invalidate();
+      };
+      
       percent_contrast_numeric_up_down.value_changed += [&] {percent_contrast_track_bar.value(as<int32>(percent_contrast_numeric_up_down.value()));};
       percent_contrast_track_bar.value_changed += [&] {
         percent_contrast_numeric_up_down.value(percent_contrast_track_bar.value());
@@ -208,6 +224,7 @@ namespace image_converter_example {
       brightness_panel.visible(effect_choice.selected_item() == "brightness");
       color_panel.visible(effect_choice.selected_item() == "color");
       color_extraction_panel.visible(effect_choice.selected_item() == "color-extraction");
+      color_substitution_panel.visible(effect_choice.selected_item() == "color-substitution");
       contrast_panel.visible(effect_choice.selected_item() == "contrast");
       disabled_panel.visible(effect_choice.selected_item() == "disabled");
       grayscale_panel.visible(effect_choice.selected_item() == "grayscale");
@@ -227,9 +244,12 @@ namespace image_converter_example {
       percent_brightness_track_bar.value(100);
       percent_color_track_bar.value(100);
       color_color_color_picker.color(color::red);
-      threshold_color_extraction_track_bar.value(382);
+      threshold_color_extraction_track_bar.value(50);
       extraction_color_color_extraction_color_picker.color(color::green);
       other_pixels_color_color_extraction_color_picker.color(color::white);
+      threshold_color_substitution_track_bar.value(50);
+      source_color_color_substitution_color_picker.color(color::green);
+      new_color_color_substitution_color_picker.color(color::blue);
       percent_contrast_track_bar.value(100);
       disabled_switch_button.checked(false);
       percent_grayscale_track_bar.value(0);
@@ -246,6 +266,8 @@ namespace image_converter_example {
       
       original_image_ = as<bitmap>(picture_choice.selected_item().tag());
       if (effect_choice.selected_item() == "bitonal") adjusted_image = image_converter::bitonal(original_image(), threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color());
+      else if (effect_choice.selected_item() == "color-extraction") adjusted_image = image_converter::color_extraction(original_image(), threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color());
+      else if (effect_choice.selected_item() == "color-substitution") adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
       else if (effect_choice.selected_item() == "threshold") adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());
       else adjusted_image = original_image();
       adjusted_picture_panel.invalidate();
@@ -283,12 +305,21 @@ namespace image_converter_example {
 
     panel color_extraction_panel = panel::create(*this, {0, 0}, {630, 150});
     label threshold_color_extraction_label = label::create(color_extraction_panel, "Threshold", {10, 14}, {70, 23});
-    track_bar threshold_color_extraction_track_bar = track_bar::create(color_extraction_panel, 382, 0, 3 * byte_object::max_value, {80, 10}, {200, 25});
-    numeric_up_down threshold_color_extraction_numeric_up_down = numeric_up_down::create(color_extraction_panel, 382, 0, 3 * byte_object::max_value, {290, 10}, {110, 25});
+    track_bar threshold_color_extraction_track_bar = track_bar::create(color_extraction_panel, 50, 0, 3 * byte_object::max_value, {80, 10}, {200, 25});
+    numeric_up_down threshold_color_extraction_numeric_up_down = numeric_up_down::create(color_extraction_panel, 50, 0, 3 * byte_object::max_value, {290, 10}, {110, 25});
     label extraction_color_color_extraction_label = label::create(color_extraction_panel, "Extraction color", {10, 54}, {100, 23});
-    color_picker extraction_color_color_extraction_color_picker = color_picker::create(color_extraction_panel, color::red, {120, 50});
+    color_picker extraction_color_color_extraction_color_picker = color_picker::create(color_extraction_panel, color::green, {120, 50});
     label other_pixels_color_color_extraction_label = label::create(color_extraction_panel, "Other pixels color", {250, 54}, {110, 23});
     color_picker other_pixels_color_color_extraction_color_picker = color_picker::create(color_extraction_panel, color::white, {370, 50});
+
+    panel color_substitution_panel = panel::create(*this, {0, 0}, {630, 150});
+    label threshold_color_substitution_label = label::create(color_substitution_panel, "Threshold", {10, 14}, {70, 23});
+    track_bar threshold_color_substitution_track_bar = track_bar::create(color_substitution_panel, 50, 0, 3 * byte_object::max_value, {80, 10}, {200, 25});
+    numeric_up_down threshold_color_substitution_numeric_up_down = numeric_up_down::create(color_substitution_panel, 50, 0, 3 * byte_object::max_value, {290, 10}, {110, 25});
+    label source_color_color_substitution_label = label::create(color_substitution_panel, "Extraction color", {10, 54}, {100, 23});
+    color_picker source_color_color_substitution_color_picker = color_picker::create(color_substitution_panel, color::green, {120, 50});
+    label new_color_color_substitution_label = label::create(color_substitution_panel, "Other pixels color", {250, 54}, {110, 23});
+    color_picker new_color_color_substitution_color_picker = color_picker::create(color_substitution_panel, color::blue, {370, 50});
 
     panel contrast_panel = panel::create(*this, {0, 0}, {630, 150});
     label percent_contrast_label = label::create(contrast_panel, "Percent", {10, 34}, {70, 23});
@@ -349,9 +380,9 @@ namespace image_converter_example {
     
     panel picures_panel = panel::create(*this, {0, 0}, {630, 350});
     label effect_label = label::create(picures_panel, "Effect", {10, 14}, {50, 23});
-    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "contrast", "disabled", "grayscale", "hue-rotate", "invert", "opacity", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
+    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "grayscale", "hue-rotate", "invert", "opacity", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
-    choice picture_choice = choice::create(picures_panel, {{"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 0, {280, 10});
+    choice picture_choice = choice::create(picures_panel, {{"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 1, {280, 10});
     panel original_picture_panel = panel::create(picures_panel, {10, 40}, {300, 300});
     panel adjusted_picture_panel = panel::create(picures_panel, {320, 40}, {300, 300});
   };

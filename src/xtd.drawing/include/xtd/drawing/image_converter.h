@@ -96,6 +96,20 @@ namespace xtd {
       /// @return The converted image.
       static xtd::drawing::image color_extraction(const xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept;
 
+      /// @brief Replaces the specified source color with the new color.
+      /// @param image The image to filter.
+      /// @param threshold The threshold value (from 0 to 765).
+      /// @param source_color The source color.
+      /// @param new_color The new color.
+      static void color_substitution(xtd::drawing::image& image, int32 threshold, const drawing::color& source_color, const xtd::drawing::color& new_color) noexcept;
+      /// @brief Creates a new image where the specified source color is replaced by the new color.
+      /// @param image The image to filter.
+      /// @param threshold The threshold value (from 0 to 765).
+      /// @param source_color The source color.
+      /// @param new_color The new color.
+      /// @return The converted image.
+      static xtd::drawing::image color_substitution(const xtd::drawing::image& image, int32 threshold, const drawing::color& source_color, const xtd::drawing::color& new_color) noexcept;
+
       /// @brief Change the contrast of the specified image with specified percent factor.
       /// @param image The image to change contrast.
       /// @param percent The percent factor in % (from 0.0 to 1.0).
