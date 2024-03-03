@@ -71,15 +71,30 @@ namespace xtd {
       
       /// @brief Add / remove the specified color from the specified image with the specified percent.
       /// @param image The image to update.
-      /// @param color The color to add / remove
+      /// @param color The color to add / remove.
       /// @param percent The percent factor in % (from 0.0 to 1.0).
       static void color(xtd::drawing::image& image, const xtd::drawing::color& color, double percent);
       /// @brief Create a new image with the specified color that will be added/removed from the specified image with the specified percent.
       /// @param image The image to update.
-      /// @param color The color to add / remove
+      /// @param color The color to add / remove.
       /// @param percent The percent factor in % (from 0.0 to 2.0).
       /// @return The converted image.
       static xtd::drawing::image color(const xtd::drawing::image& image, const xtd::drawing::color& color, double percent);
+
+      /// @brief Filters image with specified color and replaces all other colors with other specified color.
+      /// @param image The image to filter color.
+      /// @param threshold The threshold value (from 0 to 765).
+      /// @param extraction_color The extraction color.
+      /// @param other_pixels_color The other pixels color.
+      /// @return The converted image.
+      static void color_extraction(xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept;
+      /// @brief Creates a new filtered image with specified color and replaces all other colors with other specified color.
+      /// @param image The image to filter color.
+      /// @param threshold The threshold value (from 0 to 765).
+      /// @param extraction_color The extraction color.
+      /// @param other_pixels_color The other pixels color.
+      /// @return The converted image.
+      static xtd::drawing::image color_extraction(const xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept;
 
       /// @brief Change the contrast of the specified image with specified percent factor.
       /// @param image The image to change contrast.

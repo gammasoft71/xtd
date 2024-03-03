@@ -82,7 +82,15 @@ namespace xtd {
       /// @param percent The percent factor in % (from 0.0 to 2.0).
       /// @return The new color.
       static xtd::drawing::color color(const xtd::drawing::color& color, const xtd::drawing::color& value, double percent) noexcept;
-
+      
+      /// @brief Creates a new filteredcolor from specified color and replaces other color with other specified color.
+      /// @param color The color to filter.
+      /// @param threshold The threshold value (from 0 to 765).
+      /// @param extraction_color The color to extract.
+      /// @param other_color The other color.
+      /// @return The new color.
+      static xtd::drawing::color color_extraction(const xtd::drawing::color& color, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_color) noexcept;
+      
       /// @brief Creates a new contrasting color of the specified color with specified percent factor.
       /// @param color The color to change contrast.
       /// @param percent The percent factor in % (from 0.0 to 1.0).
