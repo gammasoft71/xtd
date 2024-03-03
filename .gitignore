@@ -53,6 +53,7 @@ examples/xtd.forms.examples/applications/application_with_cmake_assembly_info/pr
 examples/xtd.forms.examples/common_controls/picture_box/properties/resources.h
 examples/xtd.forms.examples/components/settings_example/properties/settings.h
 examples/xtd.forms.examples/controls/picture_box/properties/resources.h
+examples/xtd.forms.examples/drawing/image_converter/properties/resources.h
 examples/xtd.forms.examples/games/game_of_life/properties/startup.cpp
 examples/xtd.forms.examples/games/minesweeper/properties/startup.cpp
 examples/xtd.forms.examples/games/minesweeper/properties/settings.h
@@ -106,4 +107,3 @@ tools/xtdc/properties/resources.h
 tools/xtdc-gui/properties/assembly_info.cpp
 tools/xtdc-gui/properties/startup.cpp
 tools/xtdc-gui/properties/settings.h
-examples/xtd.forms.examples/drawing/image_converter/properties/resources.h
