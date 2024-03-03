@@ -27,6 +27,23 @@ namespace image_converter_example {
       maximize_box(false);
       client_size({630, 440});
       
+      threshold_bitonal_track_bar.tick_style(tick_style::none);
+      radius_blur_track_bar.tick_style(tick_style::none);
+      percent_brightness_track_bar.tick_style(tick_style::none);
+      percent_color_track_bar.tick_style(tick_style::none);
+      threshold_color_extraction_track_bar.tick_style(tick_style::none);
+      threshold_color_substitution_track_bar.tick_style(tick_style::none);
+      percent_contrast_track_bar.tick_style(tick_style::none);
+      percent_grayscale_track_bar.tick_style(tick_style::none);
+      percent_hue_rotate_track_bar.tick_style(tick_style::none);
+      percent_invert_track_bar.tick_style(tick_style::none);
+      percent_opacity_track_bar.tick_style(tick_style::none);
+      resize_width_track_bar.tick_style(tick_style::none);
+      resize_height_track_bar.tick_style(tick_style::none);
+      percent_saturate_track_bar.tick_style(tick_style::none);
+      percent_sepia_track_bar.tick_style(tick_style::none);
+      threshold_threshold_track_bar.tick_style(tick_style::none);
+
       bitonal_panel.dock(xtd::forms::dock_style::fill);
       blur_panel.dock(xtd::forms::dock_style::fill);
       brightness_panel.dock(xtd::forms::dock_style::fill);
