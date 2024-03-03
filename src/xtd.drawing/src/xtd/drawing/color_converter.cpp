@@ -46,6 +46,13 @@ xtd::drawing::color color_converter::color_extraction(const xtd::drawing::color&
   return math::abs(total_rgb - extraction_total_rgb) >= threshold ? other_color : color;
 }
 
+xtd::drawing::color color_converter::color_substitution(const xtd::drawing::color& color, int32 threshold, const drawing::color& source_color, const xtd::drawing::color& new_color) noexcept {
+  threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
+  int source_total_rgb = source_color.r() + source_color.g() + source_color.b();
+  int total_rgb = color.r() + color.g() + color.b();
+  return math::abs(total_rgb - source_total_rgb) < threshold ? new_color : color;
+}
+
 color color_converter::contrast(const drawing::color& color, double percent) noexcept {
   // From https://efundies.com/adjust-the-contrast-of-an-image-in-c/
   if (percent < .0) percent = 0;
