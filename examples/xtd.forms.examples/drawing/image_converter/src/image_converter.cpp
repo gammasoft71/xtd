@@ -22,7 +22,7 @@ namespace image_converter_example {
   class form1 : public form {
   public:
     form1() {
-      text("Image transformations example");
+      text("Image conversions example");
       form_border_style(forms::form_border_style::fixed_3d);
       maximize_box(false);
       client_size({730, 525});
