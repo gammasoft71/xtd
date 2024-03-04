@@ -301,15 +301,11 @@ namespace image_converter_example {
       percent_invert_track_bar.value(100);
       percent_opacity_track_bar.value(50);
       rescale_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
-      rescale_maintain_aspect_ratio_check_box.checked(false);
-      rescale_width_track_bar.value(original_image().size().width() / 5 * 4);
-      rescale_height_track_bar.value(original_image().size().height() / 5 * 4);
       rescale_maintain_aspect_ratio_check_box.checked(true);
+      rescale_width_track_bar.value(original_image().size().width() / 5 * 4);
       resize_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
-      resize_maintain_aspect_ratio_check_box.checked(false);
-      resize_width_track_bar.value(original_image().size().width() / 5 * 4);
-      resize_height_track_bar.value(original_image().size().height() / 5 * 4);
       resize_maintain_aspect_ratio_check_box.checked(true);
+      resize_width_track_bar.value(original_image().size().width() / 5 * 4);
       rotate_flip_choice.selected_index(6);
       percent_saturate_track_bar.value(300);
       percent_sepia_track_bar.value(100);
