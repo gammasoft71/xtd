@@ -73,6 +73,7 @@ image& image::operator =(const image& image) {
   auto graphics = result.create_graphics();
   graphics.draw_image(image, rectangle({0, 0, image.width(), image.height()}));
   move_handle(result);
+  update_properties();
   return *this;
 }
 
