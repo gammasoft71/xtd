@@ -243,11 +243,32 @@ void graphics::draw_image(intptr handle, intptr image, float x, float y) {
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
+void graphics::draw_image(intptr handle, intptr image, float x, float y, float width, float height) {
+  if (!handle) return;
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+  auto img = reinterpret_cast<wxImage*>(image);
+  if (width < img->GetWidth()) *img = img->GetSubImage({0, 0, static_cast<int>(width), img->GetHeight()});
+  if (height < img->GetHeight()) *img = img->GetSubImage({0, 0, img->GetWidth(), static_cast<int>(height)});
+  if (width > img->GetWidth() || height > img->GetHeight()) *img = img->Resize({static_cast<int>(width), static_cast<int>(height)}, {});
+  wxBitmap bitmap = wxBitmap(*img);
+
+  graphics.DrawBitmap(bitmap, x, y, width, height);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+}
+
 void graphics::draw_image_disabled(intptr handle, intptr image, float x, float y, float brightness) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<xtd::byte>(255 * brightness));
   graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(), bitmap.GetHeight());
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
+}
+
+void graphics::draw_image_disabled(intptr handle, intptr image, float x, float y, float width, float height, float brightness) {
+  if (!handle) return;
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+  wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<xtd::byte>(255 * brightness));
+  graphics.DrawBitmap(bitmap.GetSubBitmap({0, 0, static_cast<int>(width), static_cast<int>(height)}), x, y, width, height);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
