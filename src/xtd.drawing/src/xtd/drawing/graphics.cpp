@@ -392,7 +392,7 @@ void graphics::draw_image(const xtd::drawing::image& image, int32 x, int32 y, in
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {
   if (size_f {width, height} == size_f {image.size()}) native::graphics::draw_image(handle(), image.handle(), to_pixels(x), to_pixels(y));
-  else native::graphics::draw_image(handle(), bitmap(image, size(as<int32>(to_pixels(width)), as<int32>(to_pixels(height)))).handle(), to_pixels(x), to_pixels(y));
+  else native::graphics::draw_image(handle(), image.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
 void graphics::draw_image(const image& image, int32 x, int32 y) {

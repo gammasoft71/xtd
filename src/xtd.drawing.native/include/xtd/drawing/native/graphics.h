@@ -162,7 +162,26 @@ namespace xtd {
         /// @warning Internal use only
         static void draw_image(intptr handle, intptr image, float x, float y);
         
-        /// @brief Draws the specified dosabled image at the specified location and size.
+        /// @brief Draws the specified image, using its original physical size, at the specified location.
+        /// @param handle The graphics handle.
+        /// @param image An image handle to draw.
+        /// @param x The x-coordinate of the upper-left corner of the drawn image.
+        /// @param y The y-coordinate of the upper-left corner of the drawn image.
+        /// @param width Width of the bounding rectangle that defines the image.
+        /// @param height Height of the bounding rectangle that defines the image.
+        /// @warning Internal use only
+        static void draw_image(intptr handle, intptr image, float x, float y, float width, float height);
+
+        /// @brief Draws the specified dosabled image at the specified location, and brightness.
+        /// @param handle The graphics handle.
+        /// @param image An image handle to draw.
+        /// @param x The x-coordinate of the upper-left corner of the drawn image.
+        /// @param y The y-coordinate of the upper-left corner of the drawn image.
+        /// @param brightness The image brightness from 0.0 to 1.0.
+        /// @warning Internal use only
+        static void draw_image_disabled(intptr handle, intptr image, float x, float y, float brightness);
+
+        /// @brief Draws the specified dosabled image at the specified location, size, and brightness.
         /// @param handle The graphics handle.
         /// @param image An image handle to draw.
         /// @param x The x-coordinate of the upper-left corner of the drawn image.
@@ -171,8 +190,8 @@ namespace xtd {
         /// @param height Height of the bounding rectangle that defines the image.
         /// @param brightness The image brightness from 0.0 to 1.0.
         /// @warning Internal use only
-        static void draw_image_disabled(intptr handle, intptr image, float x, float y, float brightness);
-        
+        static void draw_image_disabled(intptr handle, intptr image, float x, float y, float width, float height, float brightness);
+
         /// @brief Draws a line connecting the two points specified by the coordinate pairs.
         /// @param handle The graphics handle.
         /// @param pen A pen handle that determines the color, width, and style of the line.
