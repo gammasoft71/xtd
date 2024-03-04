@@ -585,6 +585,51 @@ namespace xtd {
       /// @remarks This method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call this method to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
       void draw_image(const xtd::drawing::image& image, float x, float y);
       
+      /// @brief Draws the specified protion of the specified xtd::drawing::image at the specified location and with the specified size.
+      /// @param image xtd::drawing::image to draw.
+      /// @param rect xtd::drawing::rectangle structure that specifies the location and size of the drawn image.
+      /// @remarks The image represented by the image object is scaled to the dimensions of the rect rectangle.
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& dest_rect, const xtd::drawing::rectangle& src_rect);
+      /// @brief Draws the specified protion of the specified xtd::drawing::image at the specified location and with the specified size.
+      /// @param image xtd::drawing::image to draw.
+      /// @param rect xtd::drawing::rectangle_f structure that specifies the location and size of the drawn image.
+      /// @remarks The image represented by the image object is scaled to the dimensions of the rect rectangle.
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, const xtd::drawing::rectangle_f& src_rect);
+      /// @brief Draws the specified protion of the specified xtd::drawing::image, using its original physical size, at the specified location.
+      /// @param image xtd::drawing::image to draw.
+      /// @param point xtd::drawing::point structure that represents the location of the upper-left corner of the drawn image.
+      /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
+      /// @remarks This method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call this method to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::point& dest_point, const xtd::drawing::rectangle& src_rect);
+      /// @brief Draws the specified protion of the specified xtd::drawing::image, using its original physical size, at the specified location.
+      /// @param image xtd::drawing::image to draw.
+      /// @param point xtd::drawing::point_f structure that represents the location of the upper-left corner of the drawn image.
+      /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
+      /// @remarks This method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call this method to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& dest_point, const xtd::drawing::rectangle_f& src_rect);
+      /// @brief Draws the specified protion of the specified xtd::drawing::image at the specified location and with the specified size.
+      /// @param image xtd::drawing::image to draw.
+      /// @param rect xtd::drawing::rectangle structure that specifies the location and size of the drawn image.
+      /// @remarks The image represented by the image object is scaled to the dimensions of the rect rectangle.
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& dest_rect, int32 src_x, int32 src_y, int32 srd_width, int32 src_height);
+      /// @brief Draws the specified protion of the specified xtd::drawing::image at the specified location and with the specified size.
+      /// @param image xtd::drawing::image to draw.
+      /// @param rect xtd::drawing::rectangle_f structure that specifies the location and size of the drawn image.
+      /// @remarks The image represented by the image object is scaled to the dimensions of the rect rectangle.
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, float src_x, float src_y, float srd_width, float src_height);
+      /// @brief Draws the specified protion of the specified xtd::drawing::image, using its original physical size, at the specified location.
+      /// @param image xtd::drawing::image to draw.
+      /// @param point xtd::drawing::point structure that represents the location of the upper-left corner of the drawn image.
+      /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
+      /// @remarks This method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call this method to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::point& dest_point, int32 src_x, int32 src_y, int32 srd_width, int32 src_height);
+      /// @brief Draws the specified protion of the specified xtd::drawing::image, using its original physical size, at the specified location.
+      /// @param image xtd::drawing::image to draw.
+      /// @param point xtd::drawing::point_f structure that represents the location of the upper-left corner of the drawn image.
+      /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
+      /// @remarks This method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call this method to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
+      void draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& dest_point, float src_x, float src_y, float srd_width, float src_height);
+
       /// @brief Draws a specified image using its original physical size at a specified location.
       /// @param image xtd::drawing::image to draw.
       /// @param point xtd::drawing::point structure that specifies the upper-left corner of the drawn image.
@@ -1340,7 +1385,7 @@ namespace xtd {
       
       explicit graphics(intptr handle);
       graphics(intptr handle, const drawing::region& region);
-      void draw_image_disabled(const xtd::drawing::image& image, float x, float y, float brightness);
+      void draw_image_disabled(const xtd::drawing::image& image, float x, float y, float width, float height, float brightness);
       
       std::shared_ptr<data> data_;
     };

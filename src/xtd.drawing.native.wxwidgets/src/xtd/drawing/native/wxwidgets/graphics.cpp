@@ -235,32 +235,23 @@ void graphics::draw_ellipse(intptr handle, intptr pen, float x, float y, float w
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_image(intptr handle, intptr image, float x, float y) {
-  if (!handle) return;
-  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-  wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image));
-  graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(), bitmap.GetHeight());
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
-}
-
 void graphics::draw_image(intptr handle, intptr image, float x, float y, float width, float height) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-  auto img = reinterpret_cast<wxImage*>(image);
-  if (width < img->GetWidth()) *img = img->GetSubImage({0, 0, static_cast<int>(width), img->GetHeight()});
-  if (height < img->GetHeight()) *img = img->GetSubImage({0, 0, img->GetWidth(), static_cast<int>(height)});
-  if (width > img->GetWidth() || height > img->GetHeight()) *img = img->Resize({static_cast<int>(width), static_cast<int>(height)}, {});
-  wxBitmap bitmap = wxBitmap(*img);
-
+  wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image));
   graphics.DrawBitmap(bitmap, x, y, width, height);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_image_disabled(intptr handle, intptr image, float x, float y, float brightness) {
+void graphics::draw_image(intptr handle, intptr image, float dest_x, float dest_y, float dest_width, float dest_height, float src_x, float src_y, float src_width, float src_height) {
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-  wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<xtd::byte>(255 * brightness));
-  graphics.DrawBitmap(bitmap, x, y, bitmap.GetWidth(), bitmap.GetHeight());
+  auto new_image = *reinterpret_cast<wxImage*>(image);
+  if (src_x + src_width <= new_image.GetWidth()) new_image = reinterpret_cast<wxImage*>(image)->GetSubImage({static_cast<int>(src_x), 0, static_cast<int>(src_width), new_image.GetHeight()});
+  if (src_y + src_height <= new_image.GetHeight()) new_image = reinterpret_cast<wxImage*>(image)->GetSubImage({0, static_cast<int>(src_y), new_image.GetWidth(), static_cast<int>(src_height)});
+  if (src_width > new_image.GetWidth() || src_height > new_image.GetHeight()) new_image = new_image.Resize({static_cast<int>(src_width), static_cast<int>(src_height)}, {});
+  wxBitmap bitmap = wxBitmap(new_image);
+  graphics.DrawBitmap(bitmap, dest_x, dest_y, dest_width, dest_height);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -268,7 +259,7 @@ void graphics::draw_image_disabled(intptr handle, intptr image, float x, float y
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<xtd::byte>(255 * brightness));
-  graphics.DrawBitmap(bitmap.GetSubBitmap({0, 0, static_cast<int>(width), static_cast<int>(height)}), x, y, width, height);
+  graphics.DrawBitmap(bitmap, x, y, width, height);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 

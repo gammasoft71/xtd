@@ -61,10 +61,9 @@ region graphics::clip() const noexcept {
 }
 
 graphics& graphics::clip(const xtd::drawing::region value) {
-  if (data_->clip != value) {
-    data_->clip = value;
-    native::graphics::clip(handle(), data_->clip.handle());
-  }
+  if (data_->clip == value) return *this;
+  data_->clip = value;
+  native::graphics::clip(handle(), data_->clip.handle());
   return *this;
 }
 
@@ -78,11 +77,10 @@ xtd::drawing::drawing_2d::compositing_mode graphics::compositing_mode() const no
 }
 
 graphics& graphics::compositing_mode(xtd::drawing::drawing_2d::compositing_mode value) {
-  if (data_->compositing_mode != value) {
-    data_->compositing_mode = value;
-    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception {csf_};
-    native::graphics::compositing_mode(handle(), static_cast<int32>(data_->compositing_mode));
-  }
+  if (data_->compositing_mode == value) return *this;
+  data_->compositing_mode = value;
+  if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception {csf_};
+  native::graphics::compositing_mode(handle(), static_cast<int32>(data_->compositing_mode));
   return *this;
 }
 
@@ -91,10 +89,9 @@ xtd::drawing::drawing_2d::compositing_quality graphics::compositing_quality() co
 }
 
 graphics& graphics::compositing_quality(xtd::drawing::drawing_2d::compositing_quality value) {
-  if (data_->compositing_quality != value) {
-    data_->compositing_quality = value;
-    native::graphics::compositing_quality(handle(), static_cast<int32>(data_->compositing_quality));
-  }
+  if (data_->compositing_quality == value) return *this;
+  data_->compositing_quality = value;
+  native::graphics::compositing_quality(handle(), static_cast<int32>(data_->compositing_quality));
   return *this;
 }
 
@@ -115,10 +112,9 @@ xtd::drawing::drawing_2d::interpolation_mode graphics::interpolation_mode() cons
 }
 
 graphics& graphics::interpolation_mode(xtd::drawing::drawing_2d::interpolation_mode value) noexcept {
-  if (data_->interpolation_mode != value) {
-    data_->interpolation_mode = value;
-    native::graphics::interpolation_mode(handle(), static_cast<int32>(data_->interpolation_mode));
-  }
+  if (data_->interpolation_mode == value) return *this;
+  data_->interpolation_mode = value;
+  native::graphics::interpolation_mode(handle(), static_cast<int32>(data_->interpolation_mode));
   return *this;
 }
 
@@ -145,10 +141,9 @@ xtd::drawing::drawing_2d::pixel_offset_mode graphics::pixel_offset_mode() const 
 }
 
 graphics& graphics::pixel_offset_mode(xtd::drawing::drawing_2d::pixel_offset_mode value) noexcept {
-  if (data_->pixel_offset_mode != value) {
-    data_->pixel_offset_mode = value;
-    native::graphics::pixel_offset_mode(handle(), static_cast<int32>(data_->pixel_offset_mode));
-  }
+  if (data_->pixel_offset_mode == value)  return *this;
+  data_->pixel_offset_mode = value;
+  native::graphics::pixel_offset_mode(handle(), static_cast<int32>(data_->pixel_offset_mode));
   return *this;
 }
 
@@ -156,10 +151,9 @@ xtd::drawing::drawing_2d::smoothing_mode graphics::smoothing_mode() const noexce
   return data_->smoothing_mode;
 }
 graphics& graphics::smoothing_mode(xtd::drawing::drawing_2d::smoothing_mode value) noexcept {
-  if (data_->smoothing_mode != value) {
-    data_->smoothing_mode = value;
-    native::graphics::smoothing_mode(handle(), static_cast<int32>(data_->smoothing_mode));
-  }
+  if (data_->smoothing_mode == value) return *this;
+  data_->smoothing_mode = value;
+  native::graphics::smoothing_mode(handle(), static_cast<int32>(data_->smoothing_mode));
   return *this;
 }
 
@@ -168,10 +162,9 @@ int32 graphics::text_contrast() const noexcept {
 }
 
 graphics& graphics::text_contrast(int32 value) noexcept {
-  if (data_->text_contrast != value) {
-    data_->text_contrast = value;
-    native::graphics::text_contrast(handle(), data_->text_contrast);
-  }
+  if (data_->text_contrast == value) return *this;
+  data_->text_contrast = value;
+  native::graphics::text_contrast(handle(), data_->text_contrast);
   return *this;
 }
 
@@ -180,11 +173,10 @@ xtd::drawing::text::text_rendering_hint graphics::text_rendering_hint() const no
 }
 
 graphics& graphics::text_rendering_hint(xtd::drawing::text::text_rendering_hint value) {
-  if (data_->text_rendering_hint != value) {
-    data_->text_rendering_hint = value;
-    if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception {csf_};
-    native::graphics::text_rendering_hint(handle(), static_cast<int32>(data_->text_rendering_hint));
-  }
+  if (data_->text_rendering_hint == value) return *this;
+  data_->text_rendering_hint = value;
+  if (data_->text_rendering_hint == xtd::drawing::text::text_rendering_hint::clear_type_grid_fit && data_->compositing_mode == xtd::drawing::drawing_2d::compositing_mode::source_copy) throw argument_exception {csf_};
+  native::graphics::text_rendering_hint(handle(), static_cast<int32>(data_->text_rendering_hint));
   return *this;
 }
 
@@ -248,10 +240,16 @@ void graphics::draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectan
 }
 
 void graphics::draw_arc(const pen& pen, int32 x, int32 y, int32 width, int32 height, int32 start_angle, int32 sweep_angle) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
+  if (start_angle < 0 || start_angle > 360) throw argument_exception {csf_};
+  if (sweep_angle < 0 || sweep_angle > 360) throw argument_exception {csf_};
   draw_arc(pen, as<float>(x), as<float>(y), as<float>(width), as<float>(height), as<float>(start_angle), as<float>(sweep_angle));
 }
 
 void graphics::draw_arc(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
+  if (start_angle < 0 || start_angle > 360) throw argument_exception {csf_};
+  if (sweep_angle < 0 || sweep_angle > 360) throw argument_exception {csf_};
   native::graphics::draw_arc(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), start_angle, sweep_angle);
 }
 
@@ -355,6 +353,7 @@ void graphics::draw_ellipse(const pen& pen, int32 x, int32 y, int32 width, int32
 }
 
 void graphics::draw_ellipse(const xtd::drawing::pen& pen, float x, float y, float width, float height) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
   native::graphics::draw_ellipse(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
@@ -391,8 +390,8 @@ void graphics::draw_image(const xtd::drawing::image& image, int32 x, int32 y, in
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {
-  if (size_f {width, height} == size_f {image.size()}) native::graphics::draw_image(handle(), image.handle(), to_pixels(x), to_pixels(y));
-  else native::graphics::draw_image(handle(), image.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
+  native::graphics::draw_image(handle(), image.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
 void graphics::draw_image(const image& image, int32 x, int32 y) {
@@ -401,6 +400,40 @@ void graphics::draw_image(const image& image, int32 x, int32 y) {
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y) {
   draw_image(image, as<int32>(x), as<int32>(y));
+}
+
+void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& dest_rect, const xtd::drawing::rectangle& src_rect) {
+  draw_image(image, dest_rect, src_rect.x(), src_rect.y(), src_rect.width(), src_rect.height());
+}
+
+void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, const xtd::drawing::rectangle_f& src_rect) {
+  draw_image(image, dest_rect, src_rect.x(), src_rect.y(), src_rect.width(), src_rect.height());
+}
+
+void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point& dest_point, const xtd::drawing::rectangle& src_rect) {
+  draw_image(image, dest_point, src_rect.x(), src_rect.y(), src_rect.width(), src_rect.height());
+}
+
+void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& dest_point, const xtd::drawing::rectangle_f& src_rect) {
+  draw_image(image, dest_point, src_rect.x(), src_rect.y(), src_rect.width(), src_rect.height());
+}
+
+void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& dest_rect, int32 src_x, int32 src_y, int32 src_width, int32 src_height) {
+  draw_image(image, rectangle_f {static_cast<float>(dest_rect.x()), static_cast<float>(dest_rect.y()), static_cast<float>(dest_rect.width()), static_cast<float>(dest_rect.height())}, static_cast<float>(src_x), static_cast<float>(src_y), static_cast<float>(src_width), static_cast<float>(src_height));
+}
+
+void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, float src_x, float src_y, float src_width, float src_height) {
+  if (dest_rect.width() <= 0 || dest_rect.height() <= 0) throw argument_exception {csf_};
+  if (src_width <= 0 || src_height <= 0) throw argument_exception {csf_};
+  native::graphics::draw_image(handle(), image.handle(), dest_rect.x(), dest_rect.y(), dest_rect.width(), dest_rect.height(), src_x, src_y, src_width, src_height);
+}
+
+void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point& dest_point, int32 src_x, int32 src_y, int32 src_width, int32 src_height) {
+  draw_image(image, rectangle_f {static_cast<float>(dest_point.x()), static_cast<float>(dest_point.y()), static_cast<float>(image.width()), static_cast<float>(image.height())}, static_cast<float>(src_x), static_cast<float>(src_y), static_cast<float>(src_width), static_cast<float>(src_height));
+}
+
+void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& dest_point, float src_x, float src_y, float src_width, float src_height) {
+  draw_image(image, rectangle_f {dest_point.x(), dest_point.y(), static_cast<float>(image.width()), static_cast<float>(image.height())}, src_x, src_y, src_width, src_height);
 }
 
 void graphics::draw_image_unscaled(const xtd::drawing::image& image, const xtd::drawing::point& point) {
@@ -426,8 +459,9 @@ void graphics::draw_image_unscaled_and_clipped(const xtd::drawing::image& image,
   clip(backup_clip);
 }
 
-void graphics::draw_image_disabled(const image& image, float x, float y, float brightness) {
-  native::graphics::draw_image_disabled(handle(), image.handle(), to_pixels(x), to_pixels(y), brightness);
+void graphics::draw_image_disabled(const image& image, float x, float y, float width, float height, float brightness) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
+  native::graphics::draw_image_disabled(handle(), image.handle(), to_pixels(x), to_pixels(y), width, height, brightness);
 }
 
 void graphics::draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& pt1, const point& pt2) {
@@ -475,6 +509,9 @@ void graphics::draw_pie(const xtd::drawing::pen& pen, int32 x, int32 y, int32 wi
 }
 
 void graphics::draw_pie(const xtd::drawing::pen& pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
+  if (start_angle < 0 || start_angle > 360) throw argument_exception {csf_};
+  if (sweep_angle < 0 || sweep_angle > 360) throw argument_exception {csf_};
   native::graphics::draw_pie(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), start_angle, sweep_angle);
 }
 
@@ -519,6 +556,7 @@ void graphics::draw_rectangle(const pen& pen, int32 x, int32 y, int32 width, int
 }
 
 void graphics::draw_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
   native::graphics::draw_rectangle(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
@@ -555,6 +593,7 @@ void graphics::draw_rounded_rectangle(const pen& pen, int32 x, int32 y, int32 wi
 }
 
 void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, float x, float y, float width, float height, float radius) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
   native::graphics::draw_rounded_rectangle(handle(), pen.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), to_pixels(radius));
 }
 
@@ -636,6 +675,7 @@ void graphics::fill_ellipse(const brush& brush, int32 x, int32 y, int32 width, i
 }
 
 void graphics::fill_ellipse(const xtd::drawing::brush& brush, float x, float y, float width, float height) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
   native::graphics::fill_ellipse(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
@@ -656,6 +696,9 @@ void graphics::fill_pie(const brush& brush, int32 x, int32 y, int32 width, int32
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, float x, float y, float width, float height, float start_angle, float sweep_angle) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
+  if (start_angle < 0 || start_angle > 360) throw argument_exception {csf_};
+  if (sweep_angle < 0 || sweep_angle > 360) throw argument_exception {csf_};
   native::graphics::fill_pie(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), start_angle, sweep_angle);
 }
 
@@ -692,6 +735,7 @@ void graphics::fill_rectangle(const brush& brush, int32 x, int32 y, int32 width,
 }
 
 void graphics::fill_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
   native::graphics::fill_rectangle(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
 }
 
@@ -724,6 +768,7 @@ void graphics::fill_rounded_rectangle(const brush& brush, int32 x, int32 y, int3
 }
 
 void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, float x, float y, float width, float height, float radius) {
+  if (width <= 0 || height <= 0) throw argument_exception {csf_};
   native::graphics::fill_rounded_rectangle(handle(), brush.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height), to_pixels(radius));
 }
 
