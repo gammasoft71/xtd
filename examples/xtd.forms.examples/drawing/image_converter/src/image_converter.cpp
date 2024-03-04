@@ -41,6 +41,8 @@ namespace image_converter_example {
       percent_hue_rotate_track_bar.tick_style(tick_style::none);
       percent_invert_track_bar.tick_style(tick_style::none);
       percent_opacity_track_bar.tick_style(tick_style::none);
+      rescale_width_track_bar.tick_style(tick_style::none);
+      rescale_height_track_bar.tick_style(tick_style::none);
       resize_width_track_bar.tick_style(tick_style::none);
       resize_height_track_bar.tick_style(tick_style::none);
       percent_saturate_track_bar.tick_style(tick_style::none);
@@ -60,6 +62,7 @@ namespace image_converter_example {
       hue_rotate_panel.dock(xtd::forms::dock_style::fill);
       invert_panel.dock(xtd::forms::dock_style::fill);
       opacity_panel.dock(xtd::forms::dock_style::fill);
+      rescale_panel.dock(xtd::forms::dock_style::fill);
       resize_panel.dock(xtd::forms::dock_style::fill);
       rotate_flip_panel.dock(xtd::forms::dock_style::fill);
       saturate_panel.dock(xtd::forms::dock_style::fill);
@@ -180,6 +183,22 @@ namespace image_converter_example {
         adjusted_picture_panel.invalidate();
       };
       
+      rescale_width_numeric_up_down.value_changed += [&] {rescale_width_track_bar.value(as<int32>(rescale_width_numeric_up_down.value()));};
+      rescale_width_track_bar.value_changed += [&] {
+        rescale_width_numeric_up_down.value(rescale_width_track_bar.value());
+        if (rescale_maintain_aspect_ratio_check_box.checked()) rescale_height_numeric_up_down.value(as<int>(rescale_width_track_bar.value() / rescale_aspect_ratio));
+        adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
+        adjusted_picture_panel.invalidate();
+      };
+      
+      rescale_height_numeric_up_down.value_changed += [&] {rescale_height_track_bar.value(as<int32>(rescale_height_numeric_up_down.value()));};
+      rescale_height_track_bar.value_changed += [&] {
+        rescale_height_numeric_up_down.value(rescale_height_track_bar.value());
+        if (rescale_maintain_aspect_ratio_check_box.checked()) rescale_width_numeric_up_down.value(as<int>(rescale_height_track_bar.value() * rescale_aspect_ratio));
+        adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
+        adjusted_picture_panel.invalidate();
+      };
+
       resize_width_numeric_up_down.value_changed += [&] {resize_width_track_bar.value(as<int32>(resize_width_numeric_up_down.value()));};
       resize_width_track_bar.value_changed += [&] {
         resize_width_numeric_up_down.value(resize_width_track_bar.value());
@@ -253,12 +272,15 @@ namespace image_converter_example {
       hue_rotate_panel.visible(effect_choice.selected_item().value() == "hue-rotate");
       invert_panel.visible(effect_choice.selected_item().value() == "invert");
       opacity_panel.visible(effect_choice.selected_item().value() == "opacity");
+      rescale_panel.visible(effect_choice.selected_item().value() == "rescale");
       resize_panel.visible(effect_choice.selected_item().value() == "resize");
       rotate_flip_panel.visible(effect_choice.selected_item().value() == "rotate-flip");
       saturate_panel.visible(effect_choice.selected_item().value() == "saturate");
       sepia_panel.visible(effect_choice.selected_item().value() == "sepia");
       threshold_panel.visible(effect_choice.selected_item().value() == "threshold");
-      
+  
+      original_image_ = as<bitmap>(picture_choice.selected_item().tag());
+
       threshold_bitonal_track_bar.value(382);
       upper_color_bitonal_color_picker.color(color::red);
       lower_color_bitonal_color_picker.color(color::white);
@@ -278,6 +300,11 @@ namespace image_converter_example {
       percent_hue_rotate_track_bar.value(90);
       percent_invert_track_bar.value(100);
       percent_opacity_track_bar.value(50);
+      rescale_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
+      rescale_maintain_aspect_ratio_check_box.checked(false);
+      rescale_width_track_bar.value(original_image().size().width() / 5 * 4);
+      rescale_height_track_bar.value(original_image().size().height() / 5 * 4);
+      rescale_maintain_aspect_ratio_check_box.checked(true);
       resize_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
       resize_maintain_aspect_ratio_check_box.checked(false);
       resize_width_track_bar.value(original_image().size().width() / 5 * 4);
@@ -288,7 +315,6 @@ namespace image_converter_example {
       percent_sepia_track_bar.value(100);
       threshold_threshold_track_bar.value(382);
       
-      original_image_ = as<bitmap>(picture_choice.selected_item().tag());
       if (effect_choice.selected_item() == "bitonal") adjusted_image = image_converter::bitonal(original_image(), threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color());
       else if (effect_choice.selected_item() == "blur") adjusted_image = image_converter::blur(original_image(), radius_blur_track_bar.value());
       else if (effect_choice.selected_item() == "brightness") adjusted_image = image_converter::brightness(original_image(), percent_brightness_track_bar.value() / 100.0);
@@ -301,6 +327,7 @@ namespace image_converter_example {
       else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_converter::hue_rotate(original_image(), percent_hue_rotate_track_bar.value());
       else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), percent_invert_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), percent_opacity_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});
       else if (effect_choice.selected_item() == "resize") adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});
       else if (effect_choice.selected_item() == "rotate-flip") adjusted_image = image_converter::rotate_flip(original_image(), as<rotate_flip_type>(rotate_flip_choice.selected_item().tag()));
       else if (effect_choice.selected_item() == "saturate") adjusted_image = image_converter::saturate(original_image(), percent_saturate_track_bar.value() / 100.0);
@@ -313,6 +340,7 @@ namespace image_converter_example {
     const image& original_image() const {return original_image_;}
     image original_image_ = properties::resources::pineapple();
     image adjusted_image = properties::resources::pineapple();
+    double rescale_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
     double resize_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
 
     panel bitonal_panel = panel::create(*this, {0, 0}, {730, 170});
@@ -399,6 +427,15 @@ namespace image_converter_example {
     track_bar percent_opacity_track_bar = track_bar::create(opacity_panel, 50, 0, 100, {80, 50}, {200, 25});
     numeric_up_down percent_opacity_numeric_up_down = numeric_up_down::create(opacity_panel, 50, 0, 100, {290, 50}, {110, 25});
     
+    panel rescale_panel = panel::create(*this, {0, 0}, {730, 170});
+    label rescale_width_label = label::create(rescale_panel, "Width", {10, 34}, {50, 23});
+    track_bar rescale_width_track_bar = track_bar::create(rescale_panel, original_image().size().width(), 1, original_image().size().width() * 2, {60, 30}, {200, 25});
+    numeric_up_down rescale_width_numeric_up_down = numeric_up_down::create(rescale_panel, original_image().size().width(), 1, original_image().size().width() * 2, {270, 30}, {130, 25});
+    label rescale_height_label = label::create(rescale_panel, "Height", {10, 74}, {50, 23});
+    track_bar rescale_height_track_bar = track_bar::create(rescale_panel, original_image().size().height(), 1, original_image().size().height() * 2, {60, 70}, {200, 25});
+    numeric_up_down rescale_height_numeric_up_down = numeric_up_down::create(rescale_panel, original_image().size().height(), 1, original_image().size().height() * 2, {270, 70}, {130, 25});
+    check_box rescale_maintain_aspect_ratio_check_box = check_box::create(rescale_panel, "Maintain aspect ratio", check_state::checked, {420, 54}, {150, 23});
+    
     panel resize_panel = panel::create(*this, {0, 0}, {730, 170});
     label resize_width_label = label::create(resize_panel, "Width", {10, 34}, {50, 23});
     track_bar resize_width_track_bar = track_bar::create(resize_panel, original_image().size().width(), 1, original_image().size().width() * 2, {60, 30}, {200, 25});
@@ -407,7 +444,7 @@ namespace image_converter_example {
     track_bar resize_height_track_bar = track_bar::create(resize_panel, original_image().size().height(), 1, original_image().size().height() * 2, {60, 70}, {200, 25});
     numeric_up_down resize_height_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().height(), 1, original_image().size().height() * 2, {270, 70}, {130, 25});
     check_box resize_maintain_aspect_ratio_check_box = check_box::create(resize_panel, "Maintain aspect ratio", check_state::checked, {420, 54}, {150, 23});
-    
+
     panel rotate_flip_panel = panel::create(*this, {0, 0}, {730, 170});
     label rotate_flip_label = label::create(rotate_flip_panel, "Rotate-flip", {10, 54}, {80, 23});
     choice rotate_flip_choice = choice::create(rotate_flip_panel, {{"rotate_none_flip_none", rotate_flip_type::rotate_none_flip_none}, {"rotate_90_flip_none", rotate_flip_type::rotate_90_flip_none}, {"rotate_180_flip_none", rotate_flip_type::rotate_180_flip_none}, {"rotate_270_flip_none", rotate_flip_type::rotate_270_flip_none}, {"rotate_none_flip_x", rotate_flip_type::rotate_none_flip_x}, {"rotate_90_flip_x", rotate_flip_type::rotate_90_flip_x}, {"rotate_180_flip_x", rotate_flip_type::rotate_180_flip_x}, {"rotate_270_flip_x", rotate_flip_type::rotate_270_flip_x}, {"rotate_none_flip_y", rotate_flip_type::rotate_none_flip_y}, {"rotate_90_flip_y", rotate_flip_type::rotate_90_flip_y}, {"rotate_180_flip_y", rotate_flip_type::rotate_180_flip_y}, {"rotate_270_flip_y", rotate_flip_type::rotate_270_flip_y}, {"rotate_none_flip_xy", rotate_flip_type::rotate_none_flip_xy}, {"rotate_90_flip_xy", rotate_flip_type::rotate_90_flip_xy}, {"rotate_180_flip_xy", rotate_flip_type::rotate_180_flip_xy}, {"rotate_270_flip_xy", rotate_flip_type::rotate_270_flip_xy}}, 6, {100, 50}, {180, 25});
@@ -429,7 +466,7 @@ namespace image_converter_example {
     
     panel picures_panel = panel::create(*this, {0, 0}, {630, 400});
     label effect_label = label::create(picures_panel, "Effect", {10, 14}, {50, 23});
-    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
+    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "rescale", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
     choice picture_choice = choice::create(picures_panel, {{"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 1, {280, 10});
     panel original_picture_panel = panel::create(picures_panel, {10, 40}, {350, 350});

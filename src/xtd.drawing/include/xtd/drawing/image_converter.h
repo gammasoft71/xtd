@@ -201,11 +201,21 @@ namespace xtd {
       /// @remarks `0.0` will represents a transparent image. `1.0` will provide the original image.
       static xtd::drawing::image opacity(const xtd::drawing::image& image, double percent);
 
+      /// @brief Rescale image with of the specified image with specified size.
+      /// @param image The image to change the size.
+      /// @param size The new size.
+      static void rescale(xtd::drawing::image& image, const xtd::drawing::size& size);
+      /// @brief Creates a new resacaling image with new size of the specified image with specified size.
+      /// @param image The image to change the size.
+      /// @param size The new size.
+      /// @return The converted image.
+      static xtd::drawing::image rescale(const xtd::drawing::image& image, const xtd::drawing::size& size);
+
       /// @brief Resize image with of the specified image with specified size.
       /// @param image The image to change the size.
       /// @param size The new size.
       static void resize(xtd::drawing::image& image, const xtd::drawing::size& size);
-      /// @brief Creates a new image with new size of the specified image with specified size.
+      /// @brief Creates a new resized image with new size of the specified image with specified size.
       /// @param image The image to change the size.
       /// @param size The new size.
       /// @return The converted image.

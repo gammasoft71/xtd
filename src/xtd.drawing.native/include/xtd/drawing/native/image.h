@@ -283,14 +283,12 @@ namespace xtd {
         /// @name Protected methods
         
         /// @{
-        
         /// @brief Blurs the image whith the specified radius.
         /// @param image The image handle.
         /// @param radius The radius of the blur, specified as a <length>
         /// @note No blur effect, if the radius is 0.
-        /// @return The new blurred image handle.
         /// @warning Internal use only
-        static intptr blur(intptr handle, int32 radius);
+        static void blur(intptr handle, int32 radius);
         
         /// @brief Gets the color palette used for the image.
         /// @param image The image handle.
@@ -375,22 +373,6 @@ namespace xtd {
         /// @return A new image handle.
         /// @warning Internal use only
         static intptr create(int32 width, int32 height, int32 stride, int32 format, intptr scan0);
-        /// @brief Creates and rescales an image from specified image, and size.
-        /// @param image The image source handle.
-        /// @param width The width for the new image.
-        /// @param height The height for the new image.
-        /// @return A new image handle.
-        /// @warning Internal use only
-        static intptr create(intptr image, int32 width, int32 height);
-        /// @brief Creates and crops an image from specified image, position and size.
-        /// @param image The image source handle.
-        /// @param left The left for the new image.
-        /// @param top The top of for new image.
-        /// @param width The width for the new image.
-        /// @param height The height for the new image.
-        /// @return A new image handle.
-        /// @warning Internal use only
-        static intptr create(intptr image, int32 left, int32 top, int32 width, int32 height);
         
         /// @brief Destroys the image.
         /// @param image The image handle to destroy.
@@ -504,20 +486,14 @@ namespace xtd {
         /// @return The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
         static size_t raw_format(intptr image);
-        
-        /// @brief Gets the width and height, in pixels, of the image.
+
+        /// @brief Rescale the image.
         /// @param image The image handle.
-        /// @param width The width, in pixels, of the image.
-        /// @param height The height, in pixels, of the image.
+        /// @param width The width for the new image.
+        /// @param height The height for the new image.
         /// @warning Internal use only
-        static void size(intptr image, int32& width, int32& height);
-        
-        /// @brief Gets the vertical resolution, in pixels per inch, of the image.
-        /// @param image The image handle.
-        /// @return The vertical resolution, in pixels per inch, of the image.
-        /// @warning Internal use only
-        static float vertical_resolution(intptr image);
-        
+        static void rescale(intptr image, int32 width, int32 height);
+
         /// @brief Rotates, flips, or rotates and flips the image.
         /// @param image The image handle.
         /// @param rotate_flip_type A value that specifies the type of rotation and flip to apply to the image (see rotate_flip_types.h for more information).
@@ -553,6 +529,13 @@ namespace xtd {
         /// @warning Internal use only
         static float screen_dpi();
         
+        /// @brief Gets the width and height, in pixels, of the image.
+        /// @param image The image handle.
+        /// @param width The width, in pixels, of the image.
+        /// @param height The height, in pixels, of the image.
+        /// @warning Internal use only
+        static void size(intptr image, int32& width, int32& height);
+
         /// @brief Unlocks this Bitmap from system memory.
         /// @param image The image handle.
         /// @param image_data_height The pixel height of the bitmap object. Also sometimes referred to as the number of scan lines.
@@ -562,6 +545,12 @@ namespace xtd {
         /// @param image_data_stride The stride width (also called scan width), in bytes, of the bitmap.
         /// @param image_data_width The pixel width of the bitmap. This can also be thought of as the number of pixels in one scan line.
         static void unlock_bits(intptr image, int32& image_data_height, int32& image_data_pixel_format, int32& image_data_reserved, intptr& image_data_scan0, int32& image_data_stride, int32& image_data_width);
+        
+        /// @brief Gets the vertical resolution, in pixels per inch, of the image.
+        /// @param image The image handle.
+        /// @return The vertical resolution, in pixels per inch, of the image.
+        /// @warning Internal use only
+        static float vertical_resolution(intptr image);
         /// @}
       };
     }

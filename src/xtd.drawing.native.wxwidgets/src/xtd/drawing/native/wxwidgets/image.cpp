@@ -192,11 +192,10 @@ namespace {
   }
 }
 
-intptr image::blur(intptr handle, int32 radius) {
+void image::blur(intptr handle, int32 radius) {
   toolkit::initialize(); // Must be first
-  if (handle == 0) return 0;
-  wxImage* result = new wxImage(reinterpret_cast<wxImage*>(handle)->Blur(radius));
-  return reinterpret_cast<intptr>(result);
+  if (handle == 0) return;
+  *reinterpret_cast<wxImage*>(handle) = reinterpret_cast<wxImage*>(handle)->Blur(radius);
 }
 
 void image::color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags) {
@@ -305,21 +304,6 @@ intptr image::create(int32 width, int32 height, int32 stride, int32 format, intp
   return reinterpret_cast<intptr>(result);
 }
 
-intptr image::create(intptr image, int32 width, int32 height) {
-  toolkit::initialize(); // Must be first
-  if (image == 0) return 0;
-  wxImage* result = new wxImage(reinterpret_cast<wxImage*>(image)->Copy());
-  result->Rescale(width, height, wxIMAGE_QUALITY_HIGH);
-  return reinterpret_cast<intptr>(result);
-}
-
-intptr image::create(intptr image, int32 left, int32 top, int32 width, int32 height) {
-  toolkit::initialize(); // Must be first
-  if (image == 0) return 0;
-  wxImage* result = new wxImage(reinterpret_cast<wxImage*>(image)->GetSubImage({left, top, width, height}));
-  return reinterpret_cast<intptr>(result);
-}
-
 void image::destroy(intptr image) {
   reinterpret_cast<wxImage*>(image)->Destroy();
   delete reinterpret_cast<wxImage*>(image);
@@ -401,7 +385,9 @@ void image::physical_dimension(intptr image, int32& width, int32& height) {
 
 size_t image::pixel_format(intptr image) {
   /// @todo see how to get pixel format with wxWidgets.
-  return 0;
+  size_t result = 0; // pixel_format::dont_care
+  if (reinterpret_cast<wxImage*>(image)->HasAlpha()) result += 0x00040000; // pixel_format::alpha
+  return result;
 }
 
 std::vector<int32> image::property_id_list(intptr image) {
@@ -418,20 +404,10 @@ size_t image::raw_format(intptr image) {
   return to_raw_format(reinterpret_cast<wxImage*>(image)->GetType());
 }
 
-void image::size(intptr image, int32& width, int32& height) {
-  width = reinterpret_cast<wxImage*>(image)->GetWidth();
-  height = reinterpret_cast<wxImage*>(image)->GetHeight();
-}
-
-float image::vertical_resolution(intptr image) {
-  if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONY))
-    return 96.0f;
-  float vertical_resolution = xtd::ustring::parse<float>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONY).c_str().AsWChar()));
-  if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
-    return vertical_resolution;
-  if (xtd::ustring::parse<int32>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
-    vertical_resolution *= 2.54f;
-  return vertical_resolution;
+void image::rescale(intptr image, int32 width, int32 height) {
+  toolkit::initialize(); // Must be first
+  if (image == 0) return;
+  reinterpret_cast<wxImage*>(image)->Rescale(width, height, wxIMAGE_QUALITY_HIGH);
 }
 
 void image::rotate_flip(intptr image, int32 rotate_flip_type) {
@@ -447,10 +423,6 @@ void image::rotate_flip(intptr image, int32 rotate_flip_type) {
     case RFT_ROTATE_270_FLIP_X: *wx_image = wx_image->Rotate90(); *wx_image = wx_image->Mirror(); break;
     default: break;
   }
-}
-
-void image::set_resolution(intptr image, int32 x_dpi, int32 y_dpi) {
-  /// @todo see how to set image resolution with wxWidgets.
 }
 
 void image::save(intptr image, const ustring& filename) {
@@ -470,6 +442,26 @@ float image::screen_dpi() {
   return static_cast<float>(wxDisplay::GetStdPPIValue());
 }
 
+void image::set_resolution(intptr image, int32 x_dpi, int32 y_dpi) {
+  /// @todo see how to set image resolution with wxWidgets.
+}
+
+void image::size(intptr image, int32& width, int32& height) {
+  width = reinterpret_cast<wxImage*>(image)->GetWidth();
+  height = reinterpret_cast<wxImage*>(image)->GetHeight();
+}
+
 void image::unlock_bits(intptr image, int32& image_data_height, int32& image_data_pixel_format, int32& image_data_reserved, intptr& image_data_scan0, int32& image_data_stride, int32& image_data_width) {
   /// @todo see how to implement unlock bits with wxWidgets.
+}
+
+float image::vertical_resolution(intptr image) {
+  if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONY))
+    return 96.0f;
+  float vertical_resolution = xtd::ustring::parse<float>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONY).c_str().AsWChar()));
+  if (!reinterpret_cast<wxImage*>(image)->HasOption(wxIMAGE_OPTION_RESOLUTIONUNIT))
+    return vertical_resolution;
+  if (xtd::ustring::parse<int32>(xtd::convert_string::to_string(reinterpret_cast<wxImage*>(image)->GetOption(wxIMAGE_OPTION_RESOLUTIONUNIT).c_str().AsWChar())) == wxIMAGE_RESOLUTION_CM)
+    vertical_resolution *= 2.54f;
+  return vertical_resolution;
 }
