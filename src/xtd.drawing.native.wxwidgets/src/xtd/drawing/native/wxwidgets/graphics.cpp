@@ -247,8 +247,8 @@ void graphics::draw_image(intptr handle, intptr image, float dest_x, float dest_
   if (!handle) return;
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   auto new_image = *reinterpret_cast<wxImage*>(image);
-  if (src_x + src_width <= new_image.GetWidth()) new_image = reinterpret_cast<wxImage*>(image)->GetSubImage({static_cast<int>(src_x), 0, static_cast<int>(src_width), new_image.GetHeight()});
-  if (src_y + src_height <= new_image.GetHeight()) new_image = reinterpret_cast<wxImage*>(image)->GetSubImage({0, static_cast<int>(src_y), new_image.GetWidth(), static_cast<int>(src_height)});
+  if (src_x + src_width <= new_image.GetWidth()) new_image = new_image.GetSubImage({static_cast<int>(src_x), 0, static_cast<int>(src_width), new_image.GetHeight()});
+  if (src_y + src_height <= new_image.GetHeight()) new_image = new_image.GetSubImage({0, static_cast<int>(src_y), new_image.GetWidth(), static_cast<int>(src_height)});
   if (src_width > new_image.GetWidth() || src_height > new_image.GetHeight()) new_image = new_image.Resize({static_cast<int>(src_width), static_cast<int>(src_height)}, {});
   wxBitmap bitmap = wxBitmap(new_image);
   graphics.DrawBitmap(bitmap, dest_x, dest_y, dest_width, dest_height);
