@@ -318,7 +318,7 @@ void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::draw
 }
 
 void control_paint::draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32 x, int32 y, float brightness) {
-  graphics.draw_image_disabled(image, static_cast<float>(x), static_cast<float>(y), brightness);
+  graphics.draw_image_disabled(image, static_cast<float>(x), static_cast<float>(y), static_cast<float>(image.width()), static_cast<float>(image.height()), brightness);
 }
 
 void control_paint::draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32 x, int32 y, const xtd::drawing::color& background) {
