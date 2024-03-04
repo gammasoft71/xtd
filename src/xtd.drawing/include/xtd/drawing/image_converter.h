@@ -121,7 +121,17 @@ namespace xtd {
       /// @return The converted image.
       /// @remarks Thus, `1.0` returns the original image, while the other values give a contrasting image.
       static xtd::drawing::image contrast(const xtd::drawing::image& image, double percent);
-      
+  
+      /// @brief Crops image with of the specified image with specified recatngle.
+      /// @param image The image to change the size.
+      /// @param size The new size.
+      static void crop(xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle);
+      /// @brief Creates a new cropped image of the specified image with specified rectangle.
+      /// @param image The image to crop.
+      /// @param rectangle The rectangle of the crop.
+      /// @return The converted image.
+      static xtd::drawing::image crop(const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle);
+
       /// @brief Disable the specified image with specified reference background color.
       /// @param image The image to disble.
       /// @param back_color The reference background color.

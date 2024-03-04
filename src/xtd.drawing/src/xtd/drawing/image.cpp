@@ -442,12 +442,12 @@ void image::blur(int32 radius) {
   update_properties();
 }
 
-void image::crop(int32 left, int32 top, int32 width, int32 height) {
+void image::crop(int32 x, int32 y, int32 width, int32 height) {
   if (*this == drawing::image::empty) return;
-  if (left < 0 || top < 0 || (left + width) > this->width() || (top + height) > this->height()) throw argument_exception {csf_};
+  if (x < 0 || y < 0 || (x + width) > this->width() || (y + height) > this->height()) throw argument_exception {csf_};
   auto result = image {width, height};
-  auto graphics = create_graphics();
-  graphics.draw_image(*this, rectangle({left, top, width, height}));
+  auto graphics = result.create_graphics();
+  graphics.draw_image(*this, rectangle {0, 0, width, height}, rectangle {x, y, width, height});
   *this = result;
 }
 
@@ -466,6 +466,6 @@ void image::resize(int32 width, int32 height) {
   if (*this == drawing::image::empty) return;
   auto result = image {width, height};
   auto graphics = result.create_graphics();
-  graphics.draw_image(*this, rectangle({0, 0, width, height}));
+  graphics.draw_image(*this, rectangle {0, 0, width, height}, rectangle {0, 0, width, height});
   *this = result;
 }
