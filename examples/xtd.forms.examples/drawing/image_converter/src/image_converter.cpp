@@ -256,7 +256,6 @@ namespace image_converter_example {
       effect_choice.selected_item("bitonal");
     }
     
-    
   private:
     void on_input_change() {
       bitonal_panel.visible(effect_choice.selected_item() == "bitonal");
