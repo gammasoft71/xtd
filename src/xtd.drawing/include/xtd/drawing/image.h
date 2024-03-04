@@ -327,6 +327,10 @@ namespace xtd {
     private:
       friend class image_converter;
       void blur(int32 radius);
+      void crop(int32 left, int32 top, int32 width, int32 height);
+      void move_handle(const image& image);
+      void rescale(int32 width, int32 height);
+      void resize(int32 width, int32 height);
       void update_properties();
       
       std::shared_ptr<data> data_;

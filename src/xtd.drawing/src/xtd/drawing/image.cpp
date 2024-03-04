@@ -61,23 +61,24 @@ struct image::data {
 image::image() : data_(make_shared<data>()) {
 }
 
-image::image(const image& image) : data_(make_shared<data>()) {
-  data_->handle_ = native::image::create(image.handle(), image.width(), image.height());
-  if (data_->handle_) update_properties();
+image::image(const image& image) {
+  *this = image;
 }
 
 image& image::operator =(const image& image) {
   data_ = make_shared<data>();
-  data_->handle_ = native::image::create(image.handle(), image.width(), image.height());
-  if (data_->handle_) update_properties();
+  if (image == image::empty) return *this;
+  
+  auto result = xtd::drawing::image {image.width(), image.height()};
+  auto graphics = result.create_graphics();
+  graphics.draw_image(image, rectangle({0, 0, image.width(), image.height()}));
+  move_handle(result);
   return *this;
 }
 
 image::image(intptr hbitmap) : data_(make_shared<data>()) {
-  if (hbitmap) {
-    data_->handle_ = hbitmap;
-    update_properties();
-  }
+  if (hbitmap) data_->handle_ = hbitmap;
+  update_properties();
 }
 
 image::image(const ustring& filename) : data_(make_shared<data>()) {
@@ -164,13 +165,15 @@ image::image(int32 width, int32 height, int32 stride, xtd::drawing::imaging::pix
 
 image::image(const image& image, int32 width, int32 height) : data_(make_shared<data>()) {
   if (width < 1 || height < 1) throw argument_exception {csf_};
-  data_->handle_ = native::image::create(image.handle(), width, height);
+  *this = image;
+  rescale(width, height);
   update_properties();
 }
 
 image::image(const image& image, const rectangle& rect) : data_(make_shared<data>()) {
   if (rect.left() < 0 || rect.top() < 0 || rect.width() < 1 || rect.height() < 1) throw argument_exception {csf_};
-  data_->handle_ = native::image::create(image.handle(), rect.left(), rect.top(), rect.width(), rect.height());
+  *this = image;
+  crop(rect.left(), rect.top(), rect.width(), rect.height());
   update_properties();
 }
 
@@ -376,6 +379,7 @@ void image::set_pixel_format(imaging::pixel_format value) {
 }
 
 void image::update_properties() {
+  if (!data_->handle_) return;
   data_->alpha = native::image::get_alpha(handle());
   data_->rgb = native::image::get_data(handle());
   data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
@@ -428,13 +432,39 @@ void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
   auto rgb = reinterpret_cast<::rgb*>(get_rgb());
   auto pixel = y * width() + x;
   alpha[pixel] = color.a();
-  rgb[pixel].r = color.r();
-  rgb[pixel].g = color.g();
-  rgb[pixel].b = color.b();
+  rgb[pixel] = {color.r(), color.g(), color.b()};
   }
 
 void image::blur(int32 radius) {
   if (*this == drawing::image::empty) return;
-  data_->handle_ = {native::image::blur(handle(), radius)};
+  native::image::blur(this->handle(), radius);
   update_properties();
+}
+
+void image::crop(int32 left, int32 top, int32 width, int32 height) {
+  if (*this == drawing::image::empty) return;
+  if (left < 0 || top < 0 || (left + width) > this->width() || (top + height) > this->height()) throw argument_exception {csf_};
+  auto result = image {width, height};
+  auto graphics = create_graphics();
+  graphics.draw_image(*this, rectangle({left, top, width, height}));
+  *this = result;
+}
+
+void image::move_handle(const image& image) {
+  *data_ = *image.data_;
+  image.data_->handle_ = 0;
+}
+
+void image::rescale(int32 width, int32 height) {
+  if (*this == drawing::image::empty) return;
+  native::image::rescale(this->handle(), width, height);
+  update_properties();
+}
+
+void image::resize(int32 width, int32 height) {
+  if (*this == drawing::image::empty) return;
+  auto result = image {width, height};
+  auto graphics = result.create_graphics();
+  graphics.draw_image(*this, rectangle({0, 0, width, height}));
+  *this = result;
 }

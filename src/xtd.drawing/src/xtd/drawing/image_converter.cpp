@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <tuple>
 
+// Most of the algorithms come from https://www.programmingalgorithms.com/category/image-processing/
+
 using namespace xtd::drawing;
 namespace {
   struct rgb {
@@ -47,7 +49,7 @@ namespace {
     
     return (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
   }
-
+  
   float get_lightness(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
     return (static_cast<float>(xtd::math::max(xtd::math::max(r, g), b)) + static_cast<float>(xtd::math::min(xtd::math::min(r, g), b))) / 2.0f / 255.0f;
   }
@@ -84,9 +86,10 @@ void image_converter::bitonal(image& image, int32 threshold, const drawing::colo
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
       auto lower = rgb[pixel].r + rgb[pixel].g + rgb[pixel].b <= threshold;
-      rgb[pixel].r = lower ? lower_color.r() : upper_color.r();
-      rgb[pixel].g = lower ? lower_color.g() : upper_color.g();
-      rgb[pixel].b = lower ? lower_color.b() : upper_color.b();
+      auto bitonal_r = lower ? lower_color.r() : upper_color.r();
+      auto bitonal_g = lower ? lower_color.g() : upper_color.g();
+      auto bitonal_b = lower ? lower_color.b() : upper_color.b();
+      rgb[pixel] = {bitonal_r, bitonal_g, bitonal_b};
     }
 }
 
@@ -112,9 +115,10 @@ void image_converter::brightness(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      rgb[pixel].r = percent < 1.0 ? alpha_blend(rgb[pixel].r, 0, 1.0 - percent) : alpha_blend(rgb[pixel].r, 255, percent - 1.0);
-      rgb[pixel].g = percent < 1.0 ? alpha_blend(rgb[pixel].g, 0, 1.0 - percent) : alpha_blend(rgb[pixel].g, 255, percent - 1.0);
-      rgb[pixel].b = percent < 1.0 ? alpha_blend(rgb[pixel].b, 0, 1.0 - percent) : alpha_blend(rgb[pixel].b, 255, percent - 1.0);
+      auto brightness_r = percent < 1.0 ? alpha_blend(rgb[pixel].r, 0, 1.0 - percent) : alpha_blend(rgb[pixel].r, 255, percent - 1.0);
+      auto brightness_g = percent < 1.0 ? alpha_blend(rgb[pixel].g, 0, 1.0 - percent) : alpha_blend(rgb[pixel].g, 255, percent - 1.0);
+      auto brightness_b = percent < 1.0 ? alpha_blend(rgb[pixel].b, 0, 1.0 - percent) : alpha_blend(rgb[pixel].b, 255, percent - 1.0);
+      rgb[pixel] = {brightness_r, brightness_g, brightness_b};
     }
 }
 
@@ -130,12 +134,10 @@ void image_converter::color(xtd::drawing::image& image, const xtd::drawing::colo
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      auto r = std::clamp(static_cast<int32>(rgb[pixel].r) + color.r(), 0, 255);
-      auto g = std::clamp(static_cast<int32>(rgb[pixel].g) + color.g(), 0, 255);
-      auto b = std::clamp(static_cast<int32>(rgb[pixel].b) + color.b(), 0, 255);
-      rgb[pixel].r = alpha_blend(rgb[pixel].r, static_cast<byte>(r), percent);
-      rgb[pixel].g = alpha_blend(rgb[pixel].g, static_cast<byte>(g), percent);
-      rgb[pixel].b = alpha_blend(rgb[pixel].b, static_cast<byte>(b), percent);
+      auto color_r = alpha_blend(rgb[pixel].r, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].r) + color.r(), 0, 255)), percent);
+      auto color_g = alpha_blend(rgb[pixel].g, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].g) + color.g(), 0, 255)), percent);
+      auto color_b = alpha_blend(rgb[pixel].b, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].b) + color.b(), 0, 255)), percent);
+      rgb[pixel] = {color_r, color_g, color_b};
     }
 }
 
@@ -151,14 +153,9 @@ void image_converter::color_extraction(xtd::drawing::image& image, int32 thresho
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      
       int extraction_total_rgb = extraction_color.r() + extraction_color.g() + extraction_color.b();
       int total_rgb = rgb[pixel].r + rgb[pixel].g + rgb[pixel].b;
-      if (math::abs(total_rgb - extraction_total_rgb) >= threshold) {
-        rgb[pixel].r = other_pixels_color.r();
-        rgb[pixel].g = other_pixels_color.g();
-        rgb[pixel].b = other_pixels_color.b();
-      }
+      if (math::abs(total_rgb - extraction_total_rgb) >= threshold) rgb[pixel] = {other_pixels_color.r(), other_pixels_color.g(), other_pixels_color.b()};
     }
 }
 
@@ -174,14 +171,9 @@ void image_converter::color_substitution(xtd::drawing::image& image, int32 thres
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      
       int source_total_rgb = source_color.r() + source_color.g() + source_color.b();
       int total_rgb = rgb[pixel].r + rgb[pixel].g + rgb[pixel].b;
-      if (math::abs(total_rgb - source_total_rgb) < threshold) {
-        rgb[pixel].r = new_color.r();
-        rgb[pixel].g = new_color.g();
-        rgb[pixel].b = new_color.b();
-      }
+      if (math::abs(total_rgb - source_total_rgb) < threshold) rgb[pixel] = {new_color.r(), new_color.g(), new_color.b()};
     }
 }
 
@@ -197,12 +189,10 @@ void image_converter::contrast(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      auto r = std::clamp(((((rgb[pixel].r / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0);
-      auto g = std::clamp(((((rgb[pixel].g / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0);
-      auto b = std::clamp(((((rgb[pixel].b / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0);
-      rgb[pixel].r = static_cast<byte>(r);
-      rgb[pixel].g = static_cast<byte>(g);
-      rgb[pixel].b = static_cast<byte>(b);
+      auto contrast_r = static_cast<byte>(std::clamp(((((rgb[pixel].r / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0));
+      auto contrast_g = static_cast<byte>(std::clamp(((((rgb[pixel].g / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0));
+      auto contrast_b = static_cast<byte>(std::clamp(((((rgb[pixel].b / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0));
+      rgb[pixel] = {contrast_r, contrast_g, contrast_b};
     }
 }
 
@@ -225,9 +215,10 @@ void image_converter::disabled(image& image, float brightness) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      rgb[pixel].r = alpha_blend(rgb[pixel].r, static_cast<xtd::byte>(255 * brightness), 0.4);
-      rgb[pixel].g = alpha_blend(rgb[pixel].g, static_cast<xtd::byte>(255 * brightness), 0.4);
-      rgb[pixel].b = alpha_blend(rgb[pixel].b, static_cast<xtd::byte>(255 * brightness), 0.4);
+      auto disabled_r = alpha_blend(rgb[pixel].r, static_cast<xtd::byte>(255 * brightness), 0.4);
+      auto disabled_g = alpha_blend(rgb[pixel].g, static_cast<xtd::byte>(255 * brightness), 0.4);
+      auto disabled_b = alpha_blend(rgb[pixel].b, static_cast<xtd::byte>(255 * brightness), 0.4);
+      rgb[pixel] = {disabled_r, disabled_g, disabled_b};
     }
 }
 
@@ -252,9 +243,10 @@ void image_converter::grayscale(image& image, double percent) {
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
       auto grayscale = static_cast<xtd::byte>((0.299 * rgb[pixel].r) + (0.587 * rgb[pixel].g) + (0.114 * rgb[pixel].b));
-      rgb[pixel].r = alpha_blend(rgb[pixel].r, grayscale, percent);
-      rgb[pixel].g = alpha_blend(rgb[pixel].g, grayscale, percent);
-      rgb[pixel].b = alpha_blend(rgb[pixel].b, grayscale, percent);
+      auto graysclae_r = alpha_blend(rgb[pixel].r, grayscale, percent);
+      auto grayscale_g = alpha_blend(rgb[pixel].g, grayscale, percent);
+      auto grayscale_b = alpha_blend(rgb[pixel].b, grayscale, percent);
+      rgb[pixel] = {graysclae_r, grayscale_g, grayscale_b};
     }
 }
 
@@ -273,10 +265,8 @@ void image_converter::hue_rotate(image& image, int angle) {
       auto [h, s, l] = to_hsl(rgb[pixel].r, rgb[pixel].g, rgb[pixel].b);
       h = static_cast<float>((static_cast<int>(h) + angle) % 360);
       if (h < 0) h += 360;
-      auto [r, g, b] = from_hsl(h, s, l);
-      rgb[pixel].r = r;
-      rgb[pixel].g = g;
-      rgb[pixel].b = b;
+      auto [hue_rotate_r, hue_rotate_g, hue_rotate_b] = from_hsl(h, s, l);
+      rgb[pixel] = {hue_rotate_r, hue_rotate_g, hue_rotate_b};
     }
 }
 
@@ -300,9 +290,10 @@ void image_converter::invert(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      rgb[pixel].r = alpha_blend(rgb[pixel].r, 255 - rgb[pixel].r, percent);
-      rgb[pixel].g = alpha_blend(rgb[pixel].g, 255 - rgb[pixel].g, percent);
-      rgb[pixel].b = alpha_blend(rgb[pixel].b, 255 - rgb[pixel].b, percent);
+      auto invert_r = alpha_blend(rgb[pixel].r, 255 - rgb[pixel].r, percent);
+      auto invert_g = alpha_blend(rgb[pixel].g, 255 - rgb[pixel].g, percent);
+      auto invert_b = alpha_blend(rgb[pixel].b, 255 - rgb[pixel].b, percent);
+      rgb[pixel] = {invert_r, invert_g, invert_b};
     }
 }
 
@@ -318,7 +309,8 @@ void image_converter::opacity(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      alpha[pixel] = static_cast<xtd::byte>(255 * percent);
+      auto opacity_a = static_cast<xtd::byte>(255 * percent);
+      alpha[pixel] = opacity_a;
     }
 }
 
@@ -328,8 +320,18 @@ image image_converter::opacity(const image& image, double percent) {
   return result;
 }
 
+void image_converter::rescale(xtd::drawing::image& image, const xtd::drawing::size& size) {
+  image.rescale(size.width(), size.height());
+}
+
+xtd::drawing::image image_converter::rescale(const xtd::drawing::image& image, const xtd::drawing::size& size) {
+  auto result = image;
+  rescale(result, size);
+  return result;
+}
+
 void image_converter::resize(xtd::drawing::image& image, const xtd::drawing::size& size) {
-  image = xtd::drawing::image {image, size.width(), size.height()};
+  image.resize(size.width(), size.height());
 }
 
 xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, const xtd::drawing::size& size) {
@@ -349,7 +351,7 @@ image image_converter::rotate_flip(const image& image, xtd::drawing::rotate_flip
 }
 
 void image_converter::saturate(image& image, double percent) {
-  if (percent < .0) percent = 0;  
+  if (percent < .0) percent = 0;
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
@@ -357,19 +359,11 @@ void image_converter::saturate(image& image, double percent) {
       auto r = rgb[pixel].r / 255.0;
       auto g = rgb[pixel].g / 255.0;
       auto b = rgb[pixel].b / 255.0;
-      
       auto gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;
-      auto saturated_r = gray + (r - gray) * percent;
-      auto saturated_g = gray + (g - gray) * percent;
-      auto saturated_b = gray + (b - gray) * percent;
-      
-      saturated_r = std::clamp(saturated_r, 0.0, 1.0);
-      saturated_g = std::clamp(saturated_g, 0.0, 1.0);
-      saturated_b = std::clamp(saturated_b, 0.0, 1.0);
-
-      rgb[pixel].r = static_cast<xtd::byte>(saturated_r * 255);
-      rgb[pixel].g = static_cast<xtd::byte>(saturated_g * 255);
-      rgb[pixel].b = static_cast<xtd::byte>(saturated_b * 255);
+      auto saturated_r = static_cast<xtd::byte>(std::clamp(gray + (r - gray) * percent, 0.0, 1.0) * 255);
+      auto saturated_g = static_cast<xtd::byte>(std::clamp(gray + (g - gray) * percent, 0.0, 1.0) * 255);
+      auto saturated_b = static_cast<xtd::byte>(std::clamp(gray + (b - gray) * percent, 0.0, 1.0) * 255);
+      rgb[pixel] = {saturated_r, saturated_g, saturated_b};
     }
 }
 
@@ -393,12 +387,10 @@ void image_converter::sepia(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
-      auto r = std::clamp(0.393 * rgb[pixel].r + 0.769 * rgb[pixel].g + 0.189 * rgb[pixel].b, .0, 255.0);
-      auto g = std::clamp(0.349 * rgb[pixel].r + 0.686 * rgb[pixel].g + 0.168 * rgb[pixel].b, .0, 255.0);
-      auto b = std::clamp(0.272 * rgb[pixel].r + 0.534 * rgb[pixel].g + 0.131 * rgb[pixel].b, .0, 255.0);
-      rgb[pixel].r = alpha_blend(rgb[pixel].r, static_cast<byte>(r), percent);
-      rgb[pixel].g = alpha_blend(rgb[pixel].g, static_cast<byte>(g), percent);
-      rgb[pixel].b = alpha_blend(rgb[pixel].b, static_cast<byte>(b), percent);
+      auto sepia_r = alpha_blend(rgb[pixel].r, static_cast<byte>(std::clamp(0.393 * rgb[pixel].r + 0.769 * rgb[pixel].g + 0.189 * rgb[pixel].b, .0, 255.0)), percent);
+      auto sepia_g = alpha_blend(rgb[pixel].g, static_cast<byte>(std::clamp(0.349 * rgb[pixel].r + 0.686 * rgb[pixel].g + 0.168 * rgb[pixel].b, .0, 255.0)), percent);
+      auto sepia_b = alpha_blend(rgb[pixel].b, static_cast<byte>(std::clamp(0.272 * rgb[pixel].r + 0.534 * rgb[pixel].g + 0.131 * rgb[pixel].b, .0, 255.0)), percent);
+      rgb[pixel] = {sepia_r, sepia_g, sepia_b};
     }
 }
 
