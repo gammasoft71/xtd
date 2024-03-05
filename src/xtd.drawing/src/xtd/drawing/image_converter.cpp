@@ -238,6 +238,33 @@ image image_converter::disabled(const image& image, float brightness) {
   return result;
 }
 
+void image_converter::drop_shadow(xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color) {
+  auto shadow = xtd::drawing::image {image.width(), image.height()};
+  auto graphics = shadow.create_graphics();
+  if (!blur)
+    graphics.clear(color);
+  else {
+    for (auto y = 0; y < shadow.height(); ++y)
+      for (auto x = 0; x < shadow.width(); ++x) {
+        if (x % 2 == 0 && y % 2 == 0) graphics.draw_point(pen {color.is_dark() ? color_converter::light(color) : color_converter::dark(color), 1}, point {x, y});
+        if (x % 2 && y % 2) graphics.draw_point(pen {color.is_light() ? color_converter::light(color) : color_converter::dark(color), 1}, point {x, y});
+      }
+    shadow.blur(blur);
+  }
+  
+  auto result = xtd::drawing::image {image.width() + math::abs(horizontal_shadow), image.height() + math::abs(vertical_shadow)};
+  graphics = result.create_graphics();
+  graphics.draw_image(shadow, horizontal_shadow <= 0 ? 0 : horizontal_shadow, vertical_shadow <= 0 ? 0 : vertical_shadow);
+  graphics.draw_image(image, horizontal_shadow > 0 ? 0 : horizontal_shadow, vertical_shadow > 0 ? 0 : vertical_shadow);
+  image = result;
+}
+
+xtd::drawing::image image_converter::drop_shadow(const xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color) {
+  auto result = image;
+  drop_shadow(result, horizontal_shadow, vertical_shadow, blur, color);
+  return result;
+}
+
 void image_converter::grayscale(image& image) {
   grayscale(image, 100);
 }
