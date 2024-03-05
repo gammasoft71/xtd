@@ -239,16 +239,26 @@ image image_converter::disabled(const image& image, float brightness) {
 }
 
 void image_converter::drop_shadow(xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color) {
-  auto shadow = image;
-  if (!blur) image_converter::bitonal(shadow, 0, color, color);
-  else {
-    image_converter::bitonal(shadow, 382, color, color.is_dark() ? color_converter::light(color, 0.2) : color_converter::dark(color, 0.2));
-    image_converter::blur(shadow, blur);
+  if (!blur) {
+    auto shadow = image;
+    image_converter::bitonal(shadow, 0, color, color);
+    auto result = xtd::drawing::image {image.width() + math::abs(horizontal_shadow), image.height() + math::abs(vertical_shadow)};
+    auto graphics = result.create_graphics();
+    graphics.draw_image(shadow, horizontal_shadow <= 0 ? 0 : horizontal_shadow, vertical_shadow <= 0 ? 0 : vertical_shadow);
+    graphics.draw_image(image, horizontal_shadow > 0 ? 0 : horizontal_shadow, vertical_shadow > 0 ? 0 : vertical_shadow);
+    image = result;
+    return;
   }
-  
+
+  auto shadow = xtd::drawing::image {image.width() + math::abs(horizontal_shadow), image.height() + math::abs(vertical_shadow)};
+  auto bitonal_image = image;
+  image_converter::bitonal(bitonal_image, 382, color, color.is_dark() ? color_converter::light(color, 0.01) : color_converter::dark(color, 0.01));
+  auto graphics = shadow.create_graphics();
+  graphics.draw_image(bitonal_image, horizontal_shadow > 0 ? horizontal_shadow * 3 / 4 : horizontal_shadow / 4 , vertical_shadow > 0 ? vertical_shadow * 3/ 4 : vertical_shadow / 4);
+  image_converter::blur(shadow, blur);
   auto result = xtd::drawing::image {image.width() + math::abs(horizontal_shadow), image.height() + math::abs(vertical_shadow)};
-  auto graphics = result.create_graphics();
-  graphics.draw_image(shadow, horizontal_shadow <= 0 ? 0 : horizontal_shadow, vertical_shadow <= 0 ? 0 : vertical_shadow);
+  graphics = result.create_graphics();
+  graphics.draw_image(shadow, 0, 0);
   graphics.draw_image(image, horizontal_shadow > 0 ? 0 : horizontal_shadow, vertical_shadow > 0 ? 0 : vertical_shadow);
   image = result;
 }
