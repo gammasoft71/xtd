@@ -1,10 +1,13 @@
 #include "../properties/resources.h"
 #include <xtd/drawing/drawing_2d/hatch_brush>
+#include <xtd/drawing/brushes>
+#include <xtd/drawing/system_brushes>
 #include <xtd/drawing/image_converter>
 #include <xtd/forms/application>
 #include <xtd/forms/check_box>
 #include <xtd/forms/choice>
 #include <xtd/forms/color_picker>
+#include <xtd/forms/control_paint>
 #include <xtd/forms/form>
 #include <xtd/forms/label>
 #include <xtd/forms/numeric_up_down>
@@ -34,6 +37,7 @@ namespace image_converter_example {
       threshold_color_extraction_track_bar.tick_style(tick_style::none);
       threshold_color_substitution_track_bar.tick_style(tick_style::none);
       percent_contrast_track_bar.tick_style(tick_style::none);
+      radius_drop_shadow_track_bar.tick_style(tick_style::none);
       percent_red_gamma_correction_track_bar.tick_style(tick_style::none);
       percent_green_gamma_correction_track_bar.tick_style(tick_style::none);
       percent_blue_gamma_correction_track_bar.tick_style(tick_style::none);
@@ -57,6 +61,7 @@ namespace image_converter_example {
       color_substitution_panel.dock(xtd::forms::dock_style::fill);
       contrast_panel.dock(xtd::forms::dock_style::fill);
       disabled_panel.dock(xtd::forms::dock_style::fill);
+      drop_shadow_panel.dock(xtd::forms::dock_style::fill);
       gamma_correction_panel.dock(xtd::forms::dock_style::fill);
       grayscale_panel.dock(xtd::forms::dock_style::fill);
       hue_rotate_panel.dock(xtd::forms::dock_style::fill);
@@ -155,6 +160,29 @@ namespace image_converter_example {
         adjusted_picture_panel.invalidate();
       };
       
+      radius_drop_shadow_numeric_up_down.value_changed += [&] {radius_drop_shadow_track_bar.value(as<int32>(radius_drop_shadow_numeric_up_down.value()));};
+      radius_drop_shadow_track_bar.value_changed += [&] {
+        radius_drop_shadow_numeric_up_down.value(radius_drop_shadow_track_bar.value());
+        adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
+        adjusted_picture_panel.invalidate();
+      };
+      horizontal_drop_shadow_numeric_up_down.value_changed += [&] {horizontal_drop_shadow_track_bar.value(as<int32>(horizontal_drop_shadow_numeric_up_down.value()));};
+      horizontal_drop_shadow_track_bar.value_changed += [&] {
+        horizontal_drop_shadow_numeric_up_down.value(horizontal_drop_shadow_track_bar.value());
+        adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
+        adjusted_picture_panel.invalidate();
+      };
+      vertical_drop_shadow_numeric_up_down.value_changed += [&] {vertical_drop_shadow_track_bar.value(as<int32>(vertical_drop_shadow_numeric_up_down.value()));};
+      vertical_drop_shadow_track_bar.value_changed += [&] {
+        vertical_drop_shadow_numeric_up_down.value(vertical_drop_shadow_track_bar.value());
+        adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
+        adjusted_picture_panel.invalidate();
+      };
+      color_drop_shadow_color_picker.color_picker_changed += [&] {
+        adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
+        adjusted_picture_panel.invalidate();
+      };
+
       percent_grayscale_numeric_up_down.value_changed += [&] {percent_grayscale_track_bar.value(as<int32>(percent_grayscale_numeric_up_down.value()));};
       percent_grayscale_track_bar.value_changed += [&] {
         percent_grayscale_numeric_up_down.value(percent_grayscale_track_bar.value());
@@ -243,14 +271,27 @@ namespace image_converter_example {
       
       original_picture_panel.double_buffered(true);
       original_picture_panel.paint += [&](object& sender, paint_event_args& e) {
-        e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
+        if (background_choice.selected_item() == "checker") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
+        else if (background_choice.selected_item() == "control") e.graphics().fill_rectangle(system_brushes::control(), e.clip_rectangle());
+        else if (background_choice.selected_item() == "black") e.graphics().fill_rectangle(brushes::black(), e.clip_rectangle());
+        else if (background_choice.selected_item() == "white") e.graphics().fill_rectangle(brushes::white(), e.clip_rectangle());
         e.graphics().draw_image(original_image(), rectangle {{(original_picture_panel.width() - original_image().width()) / 2, (original_picture_panel.height() - original_image().height()) / 2}, original_image().size()});
+        control_paint::draw_border_from_back_color(original_picture_panel, e.graphics(), xtd::forms::border_style::theme, xtd::forms::border_sides::all, original_picture_panel.back_color(), rectangle::add(e.clip_rectangle(), -1, -1));
       };
       
       adjusted_picture_panel.double_buffered(true);
       adjusted_picture_panel.paint += [&](object& sender, paint_event_args& e) {
-        e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
+        if (background_choice.selected_item() == "checker") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
+        else if (background_choice.selected_item() == "control") e.graphics().fill_rectangle(system_brushes::control(), e.clip_rectangle());
+        else if (background_choice.selected_item() == "black") e.graphics().fill_rectangle(brushes::black(), e.clip_rectangle());
+        else if (background_choice.selected_item() == "white") e.graphics().fill_rectangle(brushes::white(), e.clip_rectangle());
         e.graphics().draw_image(adjusted_image, rectangle {{(adjusted_picture_panel.width() - adjusted_image.width()) / 2, (adjusted_picture_panel.height() - adjusted_image.height()) / 2}, adjusted_image.size()});
+        control_paint::draw_border_from_back_color(adjusted_picture_panel, e.graphics(), xtd::forms::border_style::theme, xtd::forms::border_sides::all, adjusted_picture_panel.back_color(), rectangle::add(e.clip_rectangle(), -1, -1));
+      };
+      
+      background_choice.selected_value_changed += [&] {
+        original_picture_panel.invalidate();
+        adjusted_picture_panel.invalidate();
       };
       
       effect_choice.selected_item("bitonal");
@@ -266,6 +307,7 @@ namespace image_converter_example {
       color_substitution_panel.visible(effect_choice.selected_item() == "color-substitution");
       contrast_panel.visible(effect_choice.selected_item() == "contrast");
       disabled_panel.visible(effect_choice.selected_item() == "disabled");
+      drop_shadow_panel.visible(effect_choice.selected_item() == "drop-shadow");
       gamma_correction_panel.visible(effect_choice.selected_item() == "gamma-correction");
       grayscale_panel.visible(effect_choice.selected_item() == "grayscale");
       hue_rotate_panel.visible(effect_choice.selected_item().value() == "hue-rotate");
@@ -295,6 +337,10 @@ namespace image_converter_example {
       new_color_color_substitution_color_picker.color(color::blue);
       percent_contrast_track_bar.value(200);
       disabled_switch_button.checked(true);
+      radius_drop_shadow_track_bar.value(10);
+      horizontal_drop_shadow_track_bar.value(8);
+      vertical_drop_shadow_track_bar.value(8);
+      color_drop_shadow_color_picker.color(color::black);
       percent_grayscale_track_bar.value(100);
       percent_hue_rotate_track_bar.value(90);
       percent_invert_track_bar.value(100);
@@ -318,6 +364,7 @@ namespace image_converter_example {
       else if (effect_choice.selected_item() == "color-substitution") adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
       else if (effect_choice.selected_item() == "contrast") adjusted_image = image_converter::contrast(original_image(), percent_contrast_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "disabled") adjusted_image = disabled_switch_button.checked() ? bitmap {image_converter::disabled(original_image(), adjusted_picture_panel.back_color())} : original_image();
+      else if (effect_choice.selected_item() == "drop-shadow") adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
       else if (effect_choice.selected_item() == "grayscale") adjusted_image = image_converter::grayscale(original_image(), percent_grayscale_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_converter::hue_rotate(original_image(), percent_hue_rotate_track_bar.value());
       else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), percent_invert_track_bar.value() / 100.0);
@@ -391,6 +438,19 @@ namespace image_converter_example {
     label disabled_label = label::create(disabled_panel, "Disabled", {10, 54}, {60, 23});
     switch_button disabled_switch_button = switch_button::create(disabled_panel, true, {70, 50});
     
+    panel drop_shadow_panel = panel::create(*this, {0, 0}, {730, 170});
+    label horizontal_drop_shadow_label = label::create(drop_shadow_panel, "Horizontal", {10, 14}, {70, 23});
+    track_bar horizontal_drop_shadow_track_bar = track_bar::create(drop_shadow_panel, 8, -50, 50, {80, 10}, {160, 25});
+    numeric_up_down horizontal_drop_shadow_numeric_up_down = numeric_up_down::create(drop_shadow_panel, 8, -50, 50, {250, 10}, {110, 25});
+    label vertical_drop_shadow_label = label::create(drop_shadow_panel, "Vertical", {375, 14}, {70, 23});
+    track_bar vertical_drop_shadow_track_bar = track_bar::create(drop_shadow_panel, 8, -50, 50, {440, 10}, {160, 25});
+    numeric_up_down vertical_drop_shadow_numeric_up_down = numeric_up_down::create(drop_shadow_panel, 8, -50, 50, {610, 10}, {110, 25});
+    label radius_drop_shadow_label = label::create(drop_shadow_panel, "Radius", {10, 54}, {70, 23});
+    track_bar radius_drop_shadow_track_bar = track_bar::create(drop_shadow_panel, 10, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down radius_drop_shadow_numeric_up_down = numeric_up_down::create(drop_shadow_panel, 10, 0, 100, {290, 50}, {110, 25});
+    label color_drop_shadow_label = label::create(drop_shadow_panel, "Color", {10, 94}, {50, 23});
+    color_picker color_drop_shadow_color_picker = color_picker::create(drop_shadow_panel, color::black, {70, 90});
+
     panel gamma_correction_panel = panel::create(*this, {0, 0}, {730, 170});
     label percent_red_bgamma_correction_label = label::create(gamma_correction_panel, "Red", {10, 14}, {70, 23});
     track_bar percent_red_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 100, 0, 100, {80, 10}, {200, 25});
@@ -461,9 +521,11 @@ namespace image_converter_example {
     
     panel picures_panel = panel::create(*this, {0, 0}, {630, 400});
     label effect_label = label::create(picures_panel, "Effect", {10, 14}, {50, 23});
-    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "rescale", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
+    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "drop-shadow", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "rescale", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
     choice picture_choice = choice::create(picures_panel, {{"ball", properties::resources::ball()}, {"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 0, {280, 10});
+    label background_label = label::create(picures_panel, "Bacground", {430, 14}, {50, 23});
+    choice background_choice = choice::create(picures_panel, {"checker", "control", "white", "black"}, 0, {490, 10});
     panel original_picture_panel = panel::create(picures_panel, {10, 40}, {350, 350});
     panel adjusted_picture_panel = panel::create(picures_panel, {370, 40}, {350, 350});
   };
