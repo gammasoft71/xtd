@@ -271,7 +271,7 @@ namespace image_converter_example {
       
       original_picture_panel.double_buffered(true);
       original_picture_panel.paint += [&](object& sender, paint_event_args& e) {
-        if (background_choice.selected_item() == "checker") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
+        if (background_choice.selected_item() =="checker-board") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
         else if (background_choice.selected_item() == "control") e.graphics().fill_rectangle(system_brushes::control(), e.clip_rectangle());
         else if (background_choice.selected_item() == "black") e.graphics().fill_rectangle(brushes::black(), e.clip_rectangle());
         else if (background_choice.selected_item() == "white") e.graphics().fill_rectangle(brushes::white(), e.clip_rectangle());
@@ -281,7 +281,7 @@ namespace image_converter_example {
       
       adjusted_picture_panel.double_buffered(true);
       adjusted_picture_panel.paint += [&](object& sender, paint_event_args& e) {
-        if (background_choice.selected_item() == "checker") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
+        if (background_choice.selected_item() == "checker-board") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
         else if (background_choice.selected_item() == "control") e.graphics().fill_rectangle(system_brushes::control(), e.clip_rectangle());
         else if (background_choice.selected_item() == "black") e.graphics().fill_rectangle(brushes::black(), e.clip_rectangle());
         else if (background_choice.selected_item() == "white") e.graphics().fill_rectangle(brushes::white(), e.clip_rectangle());
@@ -524,8 +524,8 @@ namespace image_converter_example {
     choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "drop-shadow", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "rescale", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
     choice picture_choice = choice::create(picures_panel, {{"ball", properties::resources::ball()}, {"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 0, {280, 10});
-    label background_label = label::create(picures_panel, "Bacground", {430, 14}, {50, 23});
-    choice background_choice = choice::create(picures_panel, {"checker", "control", "white", "black"}, 0, {490, 10});
+    label background_label = label::create(picures_panel, "Bacground", {430, 14}, {70, 23});
+    choice background_choice = choice::create(picures_panel, {"checker-board", "control", "white", "black"}, 0, {510, 10});
     panel original_picture_panel = panel::create(picures_panel, {10, 40}, {350, 350});
     panel adjusted_picture_panel = panel::create(picures_panel, {370, 40}, {350, 350});
   };
