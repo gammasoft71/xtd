@@ -469,3 +469,5 @@
 /// | White Smoke            | xtd::drawing::colors::white_smoke            | 0xFFF5F5F5           |  @image html colors_white_smoke.png             |
 /// | Yellow                 | xtd::drawing::colors::yellow                 | 0xFFFFFF00           |  @image html colors_yellow.png                  |
 /// | Yellow Green           | xtd::drawing::colors::yellow_green           | 0xFF9ACD32           |  @image html colors_yellow_green.png            |
+///
+/// @remarks Run the [colors](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/colors/README.md) example to see xtd::drawing::apple_colors, xtd::drawing::basic_colors, xtd::drawing::blue_colors, xtd::drawing::brown_colors, xtd::drawing::crayons_colors, xtd::drawing::cyan_colors, xtd::drawing::gray_colors, xtd::drawing::green_colors, xtd::drawing::orange_colors, xtd::drawing::pink_colors, xtd::drawing::purple_colors, xtd::drawing::red_colors, xtd::drawing::white_colors, xtd::drawing::yellow_colors, xtd::drawing::colors, and xtd::drawing::system_colors in action.

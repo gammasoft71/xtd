@@ -19,6 +19,7 @@ add_sources(
   doxygen/doxygen/forms_appearances_page.dox
   doxygen/doxygen/groups.dox
   doxygen/doxygen/images_appearances_page.dox
+  doxygen/doxygen/image_conversions_appearances_page.dox
   doxygen/doxygen/license_page.dox
   doxygen/doxygen/main_page.dox
   doxygen/doxygen/menus_ans_toolbars_appearances_page.dox

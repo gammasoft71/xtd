@@ -22,3 +22,5 @@
 /// | Light                  |  @image html form_trace_form_w.png   |  @image html form_trace_form_m.png   |  @image html form_trace_form_g.png   |
 /// | Dark                   |  @image html form_trace_form_wd.png  |  @image html form_trace_form_md.png  |  @image html form_trace_form_gd.png  |
 ///
+///
+/// @remarks Run the [forms](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/forms/README.md) examples to see xtd::forms::form in action.

@@ -4,7 +4,7 @@
 /// @page BrushesPage Brushes
 /// @brief Contains brushes.
 ///
-/// @section Hatch brush
+/// @section HatchBrushSection Hatch brush
 ///
 /// Shows xtd::drawing::drawing_2d::hatch_style enumerations use by xtd::drawing::drawing_2d::hatch_brush brush.
 ///

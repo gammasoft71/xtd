@@ -202,3 +202,4 @@
 /// | Light                    |  @image html control_v_scroll_bar_w.png   |  @image html control_v_scroll_bar_m.png   |  @image html control_v_scroll_bar_g.png   |
 /// | Dark                     |  @image html control_v_scroll_bar_wd.png  |  @image html control_v_scroll_bar_md.png  |  @image html control_v_scroll_bar_gd.png  |
 ///
+/// @remarks Run the [controls](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/controls/README.md) examples to see xtd::forms controls in action.

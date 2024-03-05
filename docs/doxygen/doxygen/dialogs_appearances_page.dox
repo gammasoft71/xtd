@@ -100,4 +100,4 @@
 /// | Light                         |  @image html dialog_trace_message_box_w.png   |  @image html dialog_trace_message_box_m.png   |  @image html dialog_trace_message_box_g.png   |
 /// | Dark                          |  @image html dialog_trace_message_box_wd.png  |  @image html dialog_trace_message_box_md.png  |  @image html dialog_trace_message_box_gd.png  |
 ///
-
+/// @remarks Run the [dialogs](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/dialogs/README.md) examples to see xtd::forms dialogs in action.
