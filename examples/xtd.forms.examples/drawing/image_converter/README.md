@@ -5,6 +5,7 @@ shows how to use [xtd::drawing::graphics::image_converter](https://gammasoft71.g
 ## Sources
 
 * [properties/resources.cmake](properties/resources.cmake)
+* [resources/ball.png](resources/ball.png)
 * [resources/pineapple.jpg](resources/pineapple.jpg)
 * [resources/rose.jpg](resources/rose.jpg)
 * [src/image_converter.cpp](src/image_converter.cpp)
