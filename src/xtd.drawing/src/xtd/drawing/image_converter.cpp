@@ -242,7 +242,7 @@ void image_converter::drop_shadow(xtd::drawing::image& image, int32 horizontal_s
   auto shadow = image;
   if (!blur) image_converter::bitonal(shadow, 0, color, color);
   else {
-    image_converter::bitonal(shadow, 382, color, color.is_dark() ? color_converter::light(color, 0.01) : color_converter::dark(color, 0.01));
+    image_converter::bitonal(shadow, 382, color, color.is_dark() ? color_converter::light(color, 0.2) : color_converter::dark(color, 0.2));
     image_converter::blur(shadow, blur);
   }
   
