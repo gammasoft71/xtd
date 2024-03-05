@@ -256,3 +256,5 @@
 /// | Yemen                                                | xtd::forms::countries::yemen                                                |  @image html ye.png   |
 /// | Zambia                                               | xtd::forms::countries::zambia                                               |  @image html zm.png   |
 /// | Zimbabwe                                             | xtd::forms::countries::zimbabwe                                             |  @image html zw.png   |
+///
+/// @remarks Run the [countries](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/components/countries/README.md) example to see xtd::forms::country, and xtd::forms::countries in action.

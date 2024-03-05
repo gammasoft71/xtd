@@ -46,3 +46,5 @@
 /// | Wait                       | xtd::forms::cursors::wait_cursor       |  @image html wait_cursor_w.png        |  @image html wait_cursor_m.png        |  @image html wait_cursor_g.png        |
 /// | Zoom in                    | xtd::forms::cursors::zoom_in           |  @image html zoom_in_w.png            |  @image html zoom_in_m.png            |  @image html zoom_in_g.png            |
 /// | Zoom out                   | xtd::forms::cursors::zoom_out          |  @image html zoom_out_w.png           |  @image html zoom_out_m.png           |  @image html zoom_out_g.png           |
+///
+/// @remarks Run the [cursors](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/components/cursors/README.md) example to see xtd::forms::cursor, and xtd::forms::cursors in action.

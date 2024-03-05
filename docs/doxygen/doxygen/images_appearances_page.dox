@@ -413,3 +413,4 @@
 /// | "xtd-strings"     |  @image html system_images_xtd-strings_w.png      |  @image html system_images_xtd-strings_wd.png      |  @image html system_images_xtd-strings_m.png      |  @image html system_images_xtd-strings_md.png      |  @image html system_images_xtd-strings_g.png      |  @image html system_images_xtd-strings_gd.png      |
 /// | "xtd-cmake"       |  @image html system_images_xtd-cmake_w.png        |  @image html system_images_xtd-cmake_wd.png        |  @image html system_images_xtd-cmake_m.png        |  @image html system_images_xtd-cmake_md.png        |  @image html system_images_xtd-cmake_g.png        |  @image html system_images_xtd-cmake_gd.png        |
 ///
+/// @remarks Run the [images](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/components/images/README.md) example to see xtd::drawing::system_images in action.

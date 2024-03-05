@@ -32,3 +32,4 @@
 /// | Light                |  @image html menus_and_toolbars_tool_bar_w.png   |  @image html menus_and_toolbars_tool_bar_m.png   |  @image html menus_and_toolbars_tool_bar_g.png   |
 /// | Dark                 |  @image html menus_and_toolbars_tool_bar_wd.png  |  @image html menus_and_toolbars_tool_bar_md.png  |  @image html menus_and_toolbars_tool_bar_gd.png  |
 ///
+/// @remarks Run the [menus and toolars](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/menus_and_toolbars/README.md) examples to see xtd::forms menus and toolbars in action.

@@ -1,0 +1,39 @@
+/// @file
+/// @brief Contains image conversions page.
+
+/// @page imageConversionsPage Image conversions
+/// @brief Contains image conversions.
+///
+/// @section OriginalImageSection Original image
+///
+/// @image html ball.png
+///
+/// @section ImageConverterSection Image converter
+///
+/// Displays conversions made with xtd::drawing::image_converter methods.
+///
+/// | Image onvert method                               | Converted image                         |
+/// | ------------------------------------------------- | --------------------------------------- |
+/// | xtd::drawing::image_converter::bitonal            | @image html ball_bitonal.png            |
+/// | xtd::drawing::image_converter::blur               | @image html ball_blur.png               |
+/// | xtd::drawing::image_converter::brightness         | @image html ball_brightness.png         |
+/// | xtd::drawing::image_converter::color              | @image html ball_color.png              |
+/// | xtd::drawing::image_converter::color_extraction   | @image html ball_color_extraction.png   |
+/// | xtd::drawing::image_converter::color_substitution | @image html ball_color_substitution.png |
+/// | xtd::drawing::image_converter::contrast           | @image html ball_contrast.png           |
+/// | xtd::drawing::image_converter::crop               | @image html ball_crop.png               |
+/// | xtd::drawing::image_converter::disabled           | @image html ball_disabled.png           |
+/// | xtd::drawing::image_converter::drop_shadow        | @image html ball_drop_shadow.png        |
+/// | xtd::drawing::image_converter::grayscale          | @image html ball_grayscale.png          |
+/// | xtd::drawing::image_converter::hue_rotate         | @image html ball_hue_rotate.png         |
+/// | xtd::drawing::image_converter::invert             | @image html ball_invert.png             |
+/// | xtd::drawing::image_converter::opacity            | @image html ball_opacity.png            |
+/// | xtd::drawing::image_converter::rescale            | @image html ball_rescale.png            |
+/// | xtd::drawing::image_converter::resize             | @image html ball_resize.png             |
+/// | xtd::drawing::image_converter::rotate_flip        | @image html ball_rotate_flip.png        |
+/// | xtd::drawing::image_converter::saturate           | @image html ball_saturate.png           |
+/// | xtd::drawing::image_converter::sepia              | @image html ball_sepia.png              |
+/// | xtd::drawing::image_converter::threshold          | @image html ball_threshold.png          |
+///
+/// @remarks The appearance shown above is just a small sample of what can be done with conversion methods. Simply change one or more parameters to get a different result.
+/// @remarks Run the [image_convert](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/drawing/image_converter/README.md) example to see xtd::drawing::image_converter in action.
