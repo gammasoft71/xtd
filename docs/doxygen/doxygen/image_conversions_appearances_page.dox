@@ -36,4 +36,4 @@
 /// | xtd::drawing::image_converter::threshold          | @image html ball_threshold.png          |
 ///
 /// @remarks The appearance shown above is just a small sample of what can be done with conversion methods. Simply change one or more parameters to get a different result.
-/// @remarks Run the [image_convert](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/drawing/image_converter/README.md) example to see xtd::drawing::image_converter in action.
+/// @remarks Run the [image_converter](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/drawing/image_converter/README.md) example to see xtd::drawing::image_converter in action.
