@@ -151,6 +151,21 @@ namespace xtd {
       /// @return The converted image.
       static xtd::drawing::image disabled(const xtd::drawing::image& image, float brightness);
 
+      /// @brief Add drop shadow to the specified image, with specified horizontal and vertical shadow, blur radius, and the shadow color.
+      /// @param image The image to add drop shadow.
+      /// @param horizontal_shadow Specifies a pixel value for the horizontal shadow in pixels. Negative values place the shadow to the left of the image.
+      /// @param vertical_shadow Specifies a pixel value for the vertical shadow in pixels. Negative values place the shadow to the left of the image.
+      /// @param blur Adds a blur effect to the shadow in pixels. A larger value will create more blur (the shadow becomes bigger and lighter). Negative values are not allowed. If no value is specified, 0 is used (the shadow's edge is sharp).
+      /// @param color Adds a color to the shadow.
+      static void drop_shadow(xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color);
+      /// @brief Create a new imgae with drop shadow with the specified image, horizontal and vertical shadow, blur radius, and the shadow color.
+      /// @param image The image to add drop shadow.
+      /// @param horizontal_shadow Specifies a pixel value for the horizontal shadow in pixels. Negative values place the shadow to the left of the image.
+      /// @param vertical_shadow Specifies a pixel value for the vertical shadow in pixels. Negative values place the shadow to the left of the image.
+      /// @param blur Adds a blur effect to the shadow in pixels. A larger value will create more blur (the shadow becomes bigger and lighter). Negative values are not allowed. If no value is specified, 0 is used (the shadow's edge is sharp).
+      /// @param color Adds a color to the shadow.
+      static xtd::drawing::image drop_shadow(const xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color);
+
       /// @brief Converts into grayscale of the specified image.
       /// @param image The image to be transformed into grayscale.
       static void grayscale(xtd::drawing::image& image);
