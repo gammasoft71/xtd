@@ -228,12 +228,16 @@ $(function() {
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>      <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1drawing_1_1image__converter.html">image_converter</a>;</div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>      <span class="keywordtype">void</span> blur(<a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> radius);</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>      <span class="keywordtype">void</span> update_properties();</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>      </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      std::shared_ptr&lt;data&gt; data_;</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    };</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  }</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>}</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>      <span class="keywordtype">void</span> crop(<a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> x, <a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> y, <a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> width, <a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> height);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>      <span class="keywordtype">void</span> move_handle(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>&amp; <a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>);</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      <span class="keywordtype">void</span> rescale(<a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> width, <a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> height);</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>      <span class="keywordtype">void</span> resize(<a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> width, <a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> height);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>      <span class="keywordtype">void</span> update_properties();</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>      </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>      std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    };</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  }</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1bitmap_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a></div><div class="ttdoc">Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes....</div><div class="ttdef"><b>Definition</b> bitmap.h:26</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></div><div class="ttdoc">Represents an ARGB (alpha, red, green, blue) color.</div><div class="ttdef"><b>Definition</b> color.h:49</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1graphics_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a></div><div class="ttdoc">Defines an object used to draw lines and curves. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> graphics.h:70</div></div>
@@ -298,7 +302,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 3 2024 22:05:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 5 2024 12:08:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
