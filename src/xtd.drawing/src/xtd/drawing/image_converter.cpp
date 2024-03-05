@@ -239,21 +239,15 @@ image image_converter::disabled(const image& image, float brightness) {
 }
 
 void image_converter::drop_shadow(xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color) {
-  auto shadow = xtd::drawing::image {image.width(), image.height()};
-  auto graphics = shadow.create_graphics();
-  if (!blur)
-    graphics.clear(color);
+  auto shadow = image;
+  if (!blur) image_converter::bitonal(shadow, 0, color, color);
   else {
-    for (auto y = 0; y < shadow.height(); ++y)
-      for (auto x = 0; x < shadow.width(); ++x) {
-        if (x % 2 == 0 && y % 2 == 0) graphics.draw_point(pen {color.is_dark() ? color_converter::light(color) : color_converter::dark(color), 1}, point {x, y});
-        if (x % 2 && y % 2) graphics.draw_point(pen {color.is_light() ? color_converter::light(color) : color_converter::dark(color), 1}, point {x, y});
-      }
-    shadow.blur(blur);
+    image_converter::bitonal(shadow, 382, color, color.is_dark() ? color_converter::light(color, 0.01) : color_converter::dark(color, 0.01));
+    image_converter::blur(shadow, blur);
   }
   
   auto result = xtd::drawing::image {image.width() + math::abs(horizontal_shadow), image.height() + math::abs(vertical_shadow)};
-  graphics = result.create_graphics();
+  auto graphics = result.create_graphics();
   graphics.draw_image(shadow, horizontal_shadow <= 0 ? 0 : horizontal_shadow, vertical_shadow <= 0 ? 0 : vertical_shadow);
   graphics.draw_image(image, horizontal_shadow > 0 ? 0 : horizontal_shadow, vertical_shadow > 0 ? 0 : vertical_shadow);
   image = result;
