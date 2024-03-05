@@ -287,10 +287,10 @@ namespace image_converter_example {
       percent_brightness_track_bar.value(125);
       percent_color_track_bar.value(200);
       color_color_color_picker.color(color::red);
-      threshold_color_extraction_track_bar.value(50);
+      threshold_color_extraction_track_bar.value(260);
       extraction_color_color_extraction_color_picker.color(color::green);
       other_pixels_color_color_extraction_color_picker.color(color::white);
-      threshold_color_substitution_track_bar.value(50);
+      threshold_color_substitution_track_bar.value(260);
       source_color_color_substitution_color_picker.color(color::green);
       new_color_color_substitution_color_picker.color(color::blue);
       percent_contrast_track_bar.value(200);
@@ -366,8 +366,8 @@ namespace image_converter_example {
 
     panel color_extraction_panel = panel::create(*this, {0, 0}, {730, 170});
     label threshold_color_extraction_label = label::create(color_extraction_panel, "Threshold", {10, 34}, {70, 23});
-    track_bar threshold_color_extraction_track_bar = track_bar::create(color_extraction_panel, 50, 0, 3 * byte_object::max_value, {80, 30}, {200, 25});
-    numeric_up_down threshold_color_extraction_numeric_up_down = numeric_up_down::create(color_extraction_panel, 50, 0, 3 * byte_object::max_value, {290, 30}, {110, 25});
+    track_bar threshold_color_extraction_track_bar = track_bar::create(color_extraction_panel, 260, 0, 3 * byte_object::max_value, {80, 30}, {200, 25});
+    numeric_up_down threshold_color_extraction_numeric_up_down = numeric_up_down::create(color_extraction_panel, 260, 0, 3 * byte_object::max_value, {290, 30}, {110, 25});
     label extraction_color_color_extraction_label = label::create(color_extraction_panel, "Extraction color", {10, 74}, {100, 23});
     color_picker extraction_color_color_extraction_color_picker = color_picker::create(color_extraction_panel, color::green, {120, 70});
     label other_pixels_color_color_extraction_label = label::create(color_extraction_panel, "Other pixels color", {250, 74}, {110, 23});
@@ -375,8 +375,8 @@ namespace image_converter_example {
 
     panel color_substitution_panel = panel::create(*this, {0, 0}, {730, 170});
     label threshold_color_substitution_label = label::create(color_substitution_panel, "Threshold", {10, 34}, {70, 23});
-    track_bar threshold_color_substitution_track_bar = track_bar::create(color_substitution_panel, 50, 0, 3 * byte_object::max_value, {80, 30}, {200, 25});
-    numeric_up_down threshold_color_substitution_numeric_up_down = numeric_up_down::create(color_substitution_panel, 50, 0, 3 * byte_object::max_value, {290, 30}, {110, 25});
+    track_bar threshold_color_substitution_track_bar = track_bar::create(color_substitution_panel, 260, 0, 3 * byte_object::max_value, {80, 30}, {200, 25});
+    numeric_up_down threshold_color_substitution_numeric_up_down = numeric_up_down::create(color_substitution_panel, 260, 0, 3 * byte_object::max_value, {290, 30}, {110, 25});
     label source_color_color_substitution_label = label::create(color_substitution_panel, "Extraction color", {10, 74}, {100, 23});
     color_picker source_color_color_substitution_color_picker = color_picker::create(color_substitution_panel, color::green, {120, 70});
     label new_color_color_substitution_label = label::create(color_substitution_panel, "Other pixels color", {250, 74}, {110, 23});
@@ -463,7 +463,7 @@ namespace image_converter_example {
     label effect_label = label::create(picures_panel, "Effect", {10, 14}, {50, 23});
     choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "rescale", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
-    choice picture_choice = choice::create(picures_panel, {{"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 1, {280, 10});
+    choice picture_choice = choice::create(picures_panel, {{"ball", properties::resources::ball()}, {"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 0, {280, 10});
     panel original_picture_panel = panel::create(picures_panel, {10, 40}, {350, 350});
     panel adjusted_picture_panel = panel::create(picures_panel, {370, 40}, {350, 350});
   };
