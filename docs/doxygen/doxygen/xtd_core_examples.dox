@@ -29,7 +29,7 @@
 /// Shows how to use xtd::collections::vector_list class.
 ///
 /// @example console_background_color.cpp
-/// Shows how to use xtd::console::background_color method.
+/// Shows how to use xtd::console::background_color property.
 ///
 /// @example console_beep.cpp
 /// Shows how to use xtd::console::beep method.

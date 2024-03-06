@@ -517,6 +517,9 @@
 /// @example test_class_without_helpers.cpp
 /// Shows how to use xtd::tunit::test_class class without helpers.
 ///
+/// @example test_tunit.cpp
+/// Is used to test xtd::tunit.
+///
 /// @example console_unit_test.cpp
 /// Shows how to use generic xtd::tunit::console_unit_test class.
 ///
