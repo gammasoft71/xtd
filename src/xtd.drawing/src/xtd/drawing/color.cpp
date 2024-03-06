@@ -571,6 +571,18 @@ color color::from_name(const ustring& name) noexcept {
   }
 }
 
+xtd::drawing::color color::from_yuv(float y, float u, float v) noexcept {
+  y = std::clamp(y, 0.0f, 1.0f);
+  u = std::clamp(u, -0.5f, 0.5f);
+  v = std::clamp(v, -0.5f, 0.5f);
+  
+  auto r = static_cast<xtd::byte>(y + 1.4075f * (v - 128));
+  auto g = static_cast<xtd::byte>(y - 0.3455f * (u - 128) - (0.7169f * (v - 128)));
+  auto b = static_cast<xtd::byte>(y + 1.7790f * (u - 128));
+  
+  return from_argb(r, g, b);
+}
+
 float color::get_brightness() const noexcept {
   // .net version (see https://referencesource.microsoft.com/#System.Drawing/commonui/System/Drawing/color.cs,9103fd761ca562ae)
   //return ((float)max(max(r(), g()), b()) + (float)min(min(r(), g()), b())) / 255.0 / 2.0;
@@ -612,6 +624,18 @@ float color::get_saturation() const noexcept {
   if (max == min) return 0.0f;
   
   return (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
+}
+
+float color::get_u() const noexcept {
+  return r() * -.168736f + g() * -.331264f + b() * .500000f + 128;
+}
+
+float color::get_v() const noexcept {
+  return r() * .500000f + g() * -.418688f + b() * -.081312f + 128;
+}
+
+float color::get_y() const noexcept {
+  return r() * .299000f + g() * .587000f + b() * .114000f;
 }
 
 color color::light(const color& color) noexcept {

@@ -869,12 +869,14 @@ namespace xtd {
       /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
       /// @param saturation The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
       /// @param brightness The xtd::drawing::color lightness. The brightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color from_hsb(float hue, float saturation, float brightness) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the three HSL component (hue, saturation, and lightness) values.
       /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
       /// @param saturation The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
       /// @param lightness The xtd::drawing::color lightness. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color from_hsl(float hue, float saturation, float lightness) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
@@ -953,6 +955,13 @@ namespace xtd {
       /// @endcode
       static xtd::drawing::color from_name(const xtd::ustring& name) noexcept;
       
+      /// @brief Creates a xtd::drawing::color class from the three YUV components (luma and choma) values.
+      /// @param y The Y'UV `Y` value of this xtd::drawing::color. The y ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      /// @param u The Y'UV `U` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
+      /// @param v The Y'UV `V` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      static xtd::drawing::color from_yuv(float y, float u, float v) noexcept;
+
       /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
       /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
       /// @par Examples
@@ -1109,7 +1118,19 @@ namespace xtd {
       /// }
       /// @endcode
       float get_saturation() const noexcept;
-      
+
+      /// @brief Gets the Y'UV color model `U` (chroma) value for this xtd::drawing::color structure.
+      /// @return The Y'UV `U` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
+      float get_u() const noexcept;
+
+      /// @brief Gets the Y'UV color model `V` (chroma) value for this xtd::drawing::color structure.
+      /// @return The Y'UV `V` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
+      float get_v() const noexcept;
+
+      /// @brief Gets the Y'UV color model `Y` (luma) value for this xtd::drawing::color structure.
+      /// @return The Y'UV `Y` value of this xtd::drawing::color. The y ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      float get_y() const noexcept;
+
       /// @brief Creates a new lighter color of the specified color with 33% factor.
       /// @param color The color to light.
       /// @return The new color.
