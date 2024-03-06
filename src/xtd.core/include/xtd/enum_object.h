@@ -299,6 +299,9 @@ namespace xtd {
   template<>
   class enum_object<std::nullptr_t> static_ {
   public:
+    /// @name Static methods
+    
+    /// @{
     /// @brief Retrieves an array of the std::pair<enum_t, xtd::ustring> of the constants in a specified enumeration.
     /// @return A xtd::ustring array of the values and names of the constants in enumType.
     template<typename enum_t>

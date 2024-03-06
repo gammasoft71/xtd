@@ -62,15 +62,6 @@ namespace xtd {
     /// @include object_equals.cpp
     bool equals(const object& obj) const noexcept;
     
-    /// @brief Determines whether the specified object instances are considered equal.
-    /// @param object_a The first object to compare.
-    /// @param object_b The second object to compare.
-    /// @return true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false.
-    /// @par Examples
-    /// The following code example compares different objects.
-    /// @include object_equals2.cpp
-    static bool equals(const object& object_a, const object& object_b) noexcept;
-    
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
     virtual size_t get_hash_code() const noexcept;
@@ -90,15 +81,6 @@ namespace xtd {
     template<typename object_t>
     std::unique_ptr<object_t> memberwise_clone() const noexcept {return std::make_unique<object_t>(dynamic_cast<const object_t&>(*this));}
     
-    /// @brief Determines whether the specified object instances are the same instance.
-    /// @param object_a The first object to compare.
-    /// @param object_b The second object to compare.
-    /// @return true if object_a is the same instance as object_b or if both are null references; otherwise, false.
-    /// @par Examples
-    /// The following code example uses reference_equals to determine if two objects are the same instance.
-    /// @include object_reference_equals.cpp
-    static bool reference_equals(const object& object_a, const object& object_b) noexcept;
-    
     /// @brief Returns a sxd::ustring that represents the current object.
     /// @return A string that represents the current object.
     /// @par Examples
@@ -107,6 +89,28 @@ namespace xtd {
     virtual xtd::ustring to_string() const noexcept;
     /// @}
     
+    /// @name Static methods
+    
+    /// @{
+    /// @brief Determines whether the specified object instances are considered equal.
+    /// @param object_a The first object to compare.
+    /// @param object_b The second object to compare.
+    /// @return true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false.
+    /// @par Examples
+    /// The following code example compares different objects.
+    /// @include object_equals2.cpp
+    static bool equals(const object& object_a, const object& object_b) noexcept;
+    
+    /// @brief Determines whether the specified object instances are the same instance.
+    /// @param object_a The first object to compare.
+    /// @param object_b The second object to compare.
+    /// @return true if object_a is the same instance as object_b or if both are null references; otherwise, false.
+    /// @par Examples
+    /// The following code example uses reference_equals to determine if two objects are the same instance.
+    /// @include object_reference_equals.cpp
+    static bool reference_equals(const object& object_a, const object& object_b) noexcept;
+    /// @}
+
     /// @cond
     template<typename object_t>
     bool equals(const iequatable<object_t>& obj) const noexcept {

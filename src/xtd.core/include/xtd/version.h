@@ -222,19 +222,6 @@ namespace xtd {
     
     bool equals(const version& v) const noexcept override;
     
-    /// @brief Converts the string representation of a version number to an equivalent Version object.
-    /// @param input A string that contains a version number to convert.
-    /// @return An object that is equivalent to the version number specified in the input parameter.
-    /// @exception xtd::argument_out_of_range_exception A major, minor, build, or revision component is less than zero.
-    /// @exception xtd::format_exception At least one component of input does not parse to an integer.
-    /// @exception xtd::overflow_exception At least one component of input represents a number greater than std::numeric_limits<int32>::max().
-    /// @remarks The input parameter must have the following format:
-    /// @verbatim major.minor[.build[.revision]] @endverbatim
-    /// @remarks where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in the specified order and must be separated by periods
-    /// @warning Because the string representation of a version number must conform to a recognized pattern, applications should always use exception handling when calling the xtd::version::parse method to parse user input. Alternatively, you can call the xtd::version::try_parse method to parse the string representation of a version number and return a value that indicates whether the parse operation succeeded.
-    /// @remarks The xtd::version::parse method is a convenience method; it is equivalent to calling the xtd::version(const ustring&) constructor.
-    static version parse(const xtd::ustring& input);
-    
     /// @brief Converts the value of the current xtd::version object to its equivalent xtd::ustring representation.
     /// @return The xtd::ustring representation of the values of the major, minor, build, and revision components of the current xtd::version object, as depicted in the following format. Each component is separated by a period character ('.'). Square brackets ('[' and ']') indicate a component that will not appear in the return value if the component is not defined:
     /// @verbatim major.minor[.build[.revision]] @endverbatim
@@ -253,7 +240,24 @@ namespace xtd {
     /// For example, if you create xtd::version object using the constructor xtd::version(1,3,5), xtd::version::to_string(2) returns "1.3" and xtd::version::to_string(4) throws an exception.
     /// @exception xtd::argument_exception field_count is more than 4<br>-or-<br>field_count is more than the number of components defined in the current xtd::version object.
     xtd::ustring to_string(size_t field_count) const;
+    /// @}
     
+    /// @name Static methods
+    
+    /// @{
+    /// @brief Converts the string representation of a version number to an equivalent Version object.
+    /// @param input A string that contains a version number to convert.
+    /// @return An object that is equivalent to the version number specified in the input parameter.
+    /// @exception xtd::argument_out_of_range_exception A major, minor, build, or revision component is less than zero.
+    /// @exception xtd::format_exception At least one component of input does not parse to an integer.
+    /// @exception xtd::overflow_exception At least one component of input represents a number greater than std::numeric_limits<int32>::max().
+    /// @remarks The input parameter must have the following format:
+    /// @verbatim major.minor[.build[.revision]] @endverbatim
+    /// @remarks where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in the specified order and must be separated by periods
+    /// @warning Because the string representation of a version number must conform to a recognized pattern, applications should always use exception handling when calling the xtd::version::parse method to parse user input. Alternatively, you can call the xtd::version::try_parse method to parse the string representation of a version number and return a value that indicates whether the parse operation succeeded.
+    /// @remarks The xtd::version::parse method is a convenience method; it is equivalent to calling the xtd::version(const ustring&) constructor.
+    static version parse(const xtd::ustring& input);
+
     /// @brief Tries to convert the string representation of a version number to an equivalent xtd::version object, and returns a value that indicates whether the conversion succeeded.
     /// @param input A string that contains a version number to convert.
     /// @param result When this method returns, contains the xtd::version equivalent of the number that is contained in input, if the conversion succeeded. If input is empty, or if the conversion fails, result is empty when the method returns.

@@ -120,19 +120,6 @@ namespace xtd {
       int32 compare_to(const event_wait_handle& value) const noexcept override;
       
       bool equals(const event_wait_handle& value) const noexcept override;
-      
-      /// @brief Opens the specified named synchronization event, if it already exists.
-      /// @param name The name of the synchronization object to be opened and shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
-      /// @return An object that represents the named system event.
-      /// @exception xtd::threading::wait_handle_cannot_be_opened_exception A synchronization object with the provided name cannot be opened. It may not exist, or a synchronization object of a different type might have the same name. In some cases, this exception may be thrown for invalid names.
-      /// @exception xtd::argument_exception name is an empty string.
-      /// @exception xtd::io_io_exception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
-      /// @exception xtd::io::path_too_long_exception The name is too long. Length restrictions may depend on the operating system or configuration.
-      /// @remarks The name may be prefixed with Global\ or Local\ to specify a namespace. When the Global namespace is specified, the synchronization object may be shared with any processes on the system. When the Local namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session.
-      /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, a xtd::threading::wait_handle_cannot_be_opened_exception is thrown
-      /// @remarks The xtd::threading::event_wait_handle::open_existing method tries to open the specified named system event. To create the system event when it does not already exist, use one of the xtd::threading::event_wait_handle constructors that has a name parameter.
-      /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::event_wait_handle object, even though the objects that are returned represent the same named system event.
-      static event_wait_handle open_existing(const ustring& name);
 
       /// @brief Sets the state of the event to nonsignaled, causing threads to block.
       /// @return true if the operation succeeds; otherwise, false.
@@ -146,7 +133,24 @@ namespace xtd {
       /// @warning There is no guarantee that every call to the xtd::threading::auto_reset_event::set method will release a thread. If two calls are too close together, so that the second call occurs before a thread has been released, only one thread is released. It's as if the second call did not happen. Also, if xtd::threading::auto_reset_event::set is called when there are no threads waiting and the xtd::threading::auto_reset_event is already signaled, the call has no effect.
       /// @remarks For an xtd::threading::event_wait_handle with xtd::threading::event_reset_mode::manual_reset (including xtd::threading:::manual_reset_event), calling the Set method leaves the wait handle in a signaled state until its xtd::threading::event_wait_handle::reset method is called.
       bool set();
+      /// @}
+
+      /// @name Static methods
       
+      /// @{
+      /// @brief Opens the specified named synchronization event, if it already exists.
+      /// @param name The name of the synchronization object to be opened and shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
+      /// @return An object that represents the named system event.
+      /// @exception xtd::threading::wait_handle_cannot_be_opened_exception A synchronization object with the provided name cannot be opened. It may not exist, or a synchronization object of a different type might have the same name. In some cases, this exception may be thrown for invalid names.
+      /// @exception xtd::argument_exception name is an empty string.
+      /// @exception xtd::io_io_exception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
+      /// @exception xtd::io::path_too_long_exception The name is too long. Length restrictions may depend on the operating system or configuration.
+      /// @remarks The name may be prefixed with Global\ or Local\ to specify a namespace. When the Global namespace is specified, the synchronization object may be shared with any processes on the system. When the Local namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session.
+      /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, a xtd::threading::wait_handle_cannot_be_opened_exception is thrown
+      /// @remarks The xtd::threading::event_wait_handle::open_existing method tries to open the specified named system event. To create the system event when it does not already exist, use one of the xtd::threading::event_wait_handle constructors that has a name parameter.
+      /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::event_wait_handle object, even though the objects that are returned represent the same named system event.
+      static event_wait_handle open_existing(const ustring& name);
+
       /// @brief Opens the specified named synchronization event, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be opened and shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
       /// @param result When this method returns, contains a The xtd::threading::event_wait_handle object that represents the named synchronization event if the call succeeded, or null if the call failed. This parameter is treated as uninitialized.

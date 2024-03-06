@@ -143,12 +143,6 @@ namespace xtd {
     
     bool equals(const guid& g) const noexcept override;
     
-    /// @brief Initializes a new instance of the xtd::guid structure.
-    /// @return A new GUID object.
-    /// @remarks This is a convenient static method that you can call to get a new guid.
-    /// @remarks The chance that the value of the new guid will be all zeros or equal to any other guid is very low. You can determine whether a GUID consists of all zeros by comparing it to guid::empty().
-    static guid new_guid() noexcept;
-    
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return A 16-element byte array.
     const std::vector<xtd::byte>& to_byte_array() const noexcept;
@@ -177,6 +171,16 @@ namespace xtd {
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
     ustring to_string(ustring format) const;
+    /// @}
+
+    /// @name Static methods
+    
+    /// @{
+    /// @brief Initializes a new instance of the xtd::guid structure.
+    /// @return A new GUID object.
+    /// @remarks This is a convenient static method that you can call to get a new guid.
+    /// @remarks The chance that the value of the new guid will be all zeros or equal to any other guid is very low. You can determine whether a GUID consists of all zeros by comparing it to guid::empty().
+    static guid new_guid() noexcept;
     /// @}
     
   private:

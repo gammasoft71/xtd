@@ -143,6 +143,24 @@ namespace xtd {
       /// @return  A byte array.
       std::vector<xtd::byte> get_address_bytes() const;
       
+      /// @brief Maps the xtd::net::ip_address object to an IPv4 address.
+      /// @return An IPv4 address.
+      /// @remarks Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt.
+      ip_address map_to_ip_v4() const noexcept;
+      
+      /// @brief Maps the xtd::net::ip_address object to an IPv6 address.
+      /// @return An IPv6 address.
+      /// @remarks Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt.
+      ip_address map_to_ip_v6() const noexcept;
+      
+      /// @brief Converts an Internet address to its standard notation.
+      /// @return A string that contains the IP address in either IPv4 dotted-quad or in IPv6 colon-hexadecimal notation.
+      ustring to_string() const noexcept override;
+      /// @}
+
+      /// @name Static methods
+      
+      /// @{
       /// @brief Converts a Double value from host byte order to network byte order.
       /// @param host The number to convert, expressed in host byte order.
       /// @return A Double value, expressed in network byte order.
@@ -203,16 +221,6 @@ namespace xtd {
       /// @param address An IP address.
       /// @return bool true if address is the loopback address; otherwise, false.
       static bool is_loopback(const ip_address& address);
-      
-      /// @brief Maps the xtd::net::ip_address object to an IPv4 address.
-      /// @return An IPv4 address.
-      /// @remarks Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt.
-      ip_address map_to_ip_v4() const noexcept;
-      
-      /// @brief Maps the xtd::net::ip_address object to an IPv6 address.
-      /// @return An IPv6 address.
-      /// @remarks Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt.
-      ip_address map_to_ip_v6() const noexcept;
       
       /// @brief Converts a Double value from network byte order to host byte order.
       /// @param network The number to convert, expressed in network byte order.
@@ -278,17 +286,13 @@ namespace xtd {
       /// @remarks The number of parts (each part is separated by a period) in str determines how the IP address is constructed. A one part address is stored directly in the network address. A two part address, convenient for specifying a class A address, puts the leading part in the first byte and the trailing part in the right-most three bytes of the network address. A three part address, convenient for specifying a class B address, puts the first part in the first byte, the second part in the second byte, and the final part in the right-most two bytes of the network address.
       static ip_address parse(const ustring& str);
       
-      /// @brief Converts an Internet address to its standard notation.
-      /// @return A string that contains the IP address in either IPv4 dotted-quad or in IPv6 colon-hexadecimal notation.
-      ustring to_string() const noexcept override;
-      
       /// @brief Determines whether a string is a valid IP address.
       /// @param str The string to validate.
       /// @param address The xtd::net::ip_address version of the string.
       /// @return bool true if str is a valid IP address; otherwise, false.
       static bool try_parse(const ustring& str, ip_address& address) noexcept;
       /// @}
-      
+
     private:
       friend xtd::net::sockets::socket;
       static constexpr size_t number_of_numbers_ = 8;

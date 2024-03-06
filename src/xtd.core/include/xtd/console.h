@@ -49,7 +49,7 @@ namespace xtd {
     static std::ostream out;
     /// @}
     
-    /// @name Properties
+    /// @name Static properties
     
     /// @{
     /// @brief Gets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
@@ -267,7 +267,7 @@ namespace xtd {
     static void window_width(int32 width);
     /// @}
     
-    /// @name Events
+    /// @name Static events
     
     /// @{
     /// @brief Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
@@ -282,7 +282,7 @@ namespace xtd {
     static event<console, console_cancel_event_handler> cancel_key_press;
     /// @}
     
-    /// @name Methods
+    /// @name Static methods
     
     /// @{
     /// @brief Plays the sound of a beep through the console speaker.

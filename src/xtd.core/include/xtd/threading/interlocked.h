@@ -37,6 +37,9 @@ namespace xtd {
     /// @include interlocked.cpp
     class core_export_ interlocked static_ {
     public:
+      /// @name Static methods
+
+      /// @{
       /// @brief Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
       /// @param value The value to be added to the integer at location.
@@ -196,8 +199,7 @@ namespace xtd {
       /// @param location The 64-bit value to be loaded.
       /// @return The loaded value.
       static int64 read(int64& location) noexcept;
-      
-    private:
+      /// @}
     };
   }
 }

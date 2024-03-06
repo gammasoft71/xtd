@@ -61,11 +61,6 @@ namespace xtd {
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
       virtual void flush();
       
-      /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_writer object.
-      /// @param reader The TextReader object to synchronize.
-      /// @return text_writer A thread-safe text_writer object.
-      static synchronized_text_writer synchronised(text_writer& writer) noexcept;
-      
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
@@ -218,7 +213,16 @@ namespace xtd {
       template<typename ... args_t>
       void write_line(const xtd::ustring& fmt, args_t&& ... args) noexcept {write_line(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
       /// @}
+
+      /// @name Static methods
       
+      /// {
+      /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_writer object.
+      /// @param reader The TextReader object to synchronize.
+      /// @return text_writer A thread-safe text_writer object.
+      static synchronized_text_writer synchronised(text_writer& writer) noexcept;
+      /// @}
+
     protected:
       /// @name Protected constructors
       

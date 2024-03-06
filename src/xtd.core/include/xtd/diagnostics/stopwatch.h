@@ -53,16 +53,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets the frequency of the timer as the number of nanoseconds per second. This field is read-only.
-      /// @return The frequency of the timer as the number of nanoseconds per second.
-      static int64 frequency() noexcept;
-      
-      /// @brief Indicates whether the timer is based on a high-resolution performance counter. This field is read-only.
-      /// @return true if the timer is based on a high-resolution performance count; otherwise, false.
-      /// @remarks The timer used by the xtd::diagnostics::stopwatch class depends on the system hardware and operating system. xtd::diagnostics::stopwatch::is_high_resolution is true if the xtd::diagnostics::stopwatch timer is based on a high-resolution performance counter. Otherwise, xtd::diagnostics::stopwatch::is_high_resolution is false, which indicates that the xtd::diagnostics::stopwatch timer is based on the system timer.
-      /// @remarks Returns always true
-      static bool is_high_resolution() noexcept;
-      
       /// @brief Gets the total elapsed time measured by the current instance.
       /// @return A std::chrono::nanoseconds representing the total elapsed time measured by the current instance.
       /// @remarks This property represents the number of elapsed nanoseconds in the underlying timer mechanism. A nanosecond is the smallest unit of time that the stopwatch timer can measure. Use the Frequency field to convert the ElapsedTicks value into a number of seconds.
@@ -108,25 +98,23 @@ namespace xtd {
       bool is_running() const noexcept;
       /// @}
       
+      /// @name Static properties
+      
+      /// @{
+      /// @brief Gets the frequency of the timer as the number of nanoseconds per second. This field is read-only.
+      /// @return The frequency of the timer as the number of nanoseconds per second.
+      static int64 frequency() noexcept;
+      
+      /// @brief Indicates whether the timer is based on a high-resolution performance counter. This field is read-only.
+      /// @return true if the timer is based on a high-resolution performance count; otherwise, false.
+      /// @remarks The timer used by the xtd::diagnostics::stopwatch class depends on the system hardware and operating system. xtd::diagnostics::stopwatch::is_high_resolution is true if the xtd::diagnostics::stopwatch timer is based on a high-resolution performance counter. Otherwise, xtd::diagnostics::stopwatch::is_high_resolution is false, which indicates that the xtd::diagnostics::stopwatch timer is based on the system timer.
+      /// @remarks Returns always true
+      static bool is_high_resolution() noexcept;
+      /// @}
+      
       /// @name Methods
       
       /// @{
-      /// @brief Gets the current number of nanoseconds in the timer mechanism.
-      /// @return A std::chrono::nanoseconds representing the nanosecond counter value of the underlying timer mechanism.
-      static std::chrono::nanoseconds get_timestamp() noexcept;
-      
-      /// @brief Gets the current number of nanoseconds in the timer mechanism, in milliseconds.
-      /// @return A long integer representing the millisecond counter value of the underlying timer mechanism.
-      static int64 get_timestamp_milliseconds() noexcept;
-      
-      /// @brief Gets the current number of nanoseconds in the timer mechanism, in nanoseconds.
-      /// @return A long integer representing the nanosecond counter value of the underlying timer mechanism.
-      static int64 get_timestamp_nanoseconds() noexcept;
-      
-      /// @brief Gets the current number of nanoseconds in the timer mechanism, in ticks.
-      /// @return A long integer representing the ticks counter value of the underlying timer mechanism.
-      static int64 get_timestamp_ticks() noexcept;
-      
       /// @brief Stops time interval measurement and resets the elapsed time to zero.
       /// @remarks A xtd::diagnostics::stopwatch instance calculates and retains the cumulative elapsed time across multiple time intervals, until the instance is reset. Use xtd::diagnostics::stopwatch::stop to stop the current interval measurement and retain the cumulative elapsed time value. Use xtd::diagnostics::stopwatch::reset to stop any interval measurement in progress and clear the elapsed time value.
       void reset() noexcept;
@@ -159,6 +147,26 @@ namespace xtd {
       /// The following example initializes a xtd::diagnostics::stopwatch instance by using a simple class constructor.
       /// @include stopwatch_constructor.cpp
       void stop() noexcept;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Gets the current number of nanoseconds in the timer mechanism.
+      /// @return A std::chrono::nanoseconds representing the nanosecond counter value of the underlying timer mechanism.
+      static std::chrono::nanoseconds get_timestamp() noexcept;
+      
+      /// @brief Gets the current number of nanoseconds in the timer mechanism, in milliseconds.
+      /// @return A long integer representing the millisecond counter value of the underlying timer mechanism.
+      static int64 get_timestamp_milliseconds() noexcept;
+      
+      /// @brief Gets the current number of nanoseconds in the timer mechanism, in nanoseconds.
+      /// @return A long integer representing the nanosecond counter value of the underlying timer mechanism.
+      static int64 get_timestamp_nanoseconds() noexcept;
+      
+      /// @brief Gets the current number of nanoseconds in the timer mechanism, in ticks.
+      /// @return A long integer representing the ticks counter value of the underlying timer mechanism.
+      static int64 get_timestamp_ticks() noexcept;
       /// @}
       
     private:

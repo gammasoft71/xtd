@@ -36,7 +36,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ file static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Appends lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.

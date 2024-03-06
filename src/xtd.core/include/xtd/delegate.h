@@ -164,6 +164,24 @@ namespace xtd {
     /// @include delegate_begin_invoke.cpp
     result_t invoke() const {return operator()();}
     
+    /// @brief Determines whether this instance and another specified delegateType object have the same value.
+    /// @param value The delegateType to compare.
+    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
+    bool equals(const delegate& delegate) const noexcept override {
+      if (data_->functions.size() != delegate.data_->functions.size())
+        return false;
+      
+      for (size_t i = 0; i < data_->functions.size(); i++)
+        if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
+          return false;
+      
+      return true;
+    }
+    /// @}
+
+    /// @name Static methods
+    
+    /// @{
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
     /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
@@ -188,20 +206,6 @@ namespace xtd {
       for (const function_t& function : b.data_->functions)
         result.data_->functions.push_back(function);
       return result;
-    }
-    
-    /// @brief Determines whether this instance and another specified delegateType object have the same value.
-    /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool equals(const delegate& delegate) const noexcept override {
-      if (data_->functions.size() != delegate.data_->functions.size())
-        return false;
-        
-      for (size_t i = 0; i < data_->functions.size(); i++)
-        if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
-          return false;
-          
-      return true;
     }
     
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
@@ -598,7 +602,29 @@ namespace xtd {
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
     result_t invoke(arguments_t... arguments) const {return operator()(arguments...);}
-
+    
+    /// @brief Determines whether this instance and another specified delegateType object have the same value.
+    /// @param value The delegateType to compare.
+    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
+    bool equals(const delegate& delegate) const noexcept override {
+      if (data_->functions.size() != delegate.data_->functions.size() || data_->no_arguments_functions.size() != delegate.data_->no_arguments_functions.size())
+        return false;
+      
+      for (size_t i = 0; i < data_->no_arguments_functions.size(); i++)
+        if (!are_equals(data_->no_arguments_functions[i], delegate.data_->no_arguments_functions[i]))
+          return false;
+      
+      for (size_t i = 0; i < data_->functions.size(); i++)
+        if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
+          return false;
+      
+      return true;
+    }
+    /// @}
+    
+    /// @name Static methods
+    
+    /// @{
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delegates The array of delegates to combine.
     /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
@@ -627,24 +653,6 @@ namespace xtd {
       for (const function_t& function : b.data_->functions)
         result.data_->functions.push_back(function);
       return result;
-    }
-    
-    /// @brief Determines whether this instance and another specified delegateType object have the same value.
-    /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
-    bool equals(const delegate& delegate) const noexcept override {
-      if (data_->functions.size() != delegate.data_->functions.size() || data_->no_arguments_functions.size() != delegate.data_->no_arguments_functions.size())
-        return false;
-        
-      for (size_t i = 0; i < data_->no_arguments_functions.size(); i++)
-        if (!are_equals(data_->no_arguments_functions[i], delegate.data_->no_arguments_functions[i]))
-          return false;
-          
-      for (size_t i = 0; i < data_->functions.size(); i++)
-        if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
-          return false;
-          
-      return true;
     }
     
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.

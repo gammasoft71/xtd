@@ -91,6 +91,32 @@ namespace xtd {
       /// @remarks You to call this method in the destructor of the inherited class.
       virtual void close();
       
+      /// @brief Blocks the current thread until the current xtd::threading::wait_handle receives a signal.
+      /// @return true if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns.
+      /// @exception xtd::object_closed_exception the handle is invalid
+      /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
+      virtual bool wait_one();
+      
+      /// @brief Blocks the current thread until the current xtd::threading::wait_handle receives a signal, using 32-bit signed integer to measure the time interval.
+      /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::infinite (-1) to wait indefinitely.
+      /// @return if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns.
+      /// @exception xtd::object_closed_exception the handle is invalid
+      /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
+      /// @exception xtd::argument_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
+      virtual bool wait_one(int32 milliseconds_timeout);
+      
+      /// @brief Blocks the current thread until the current instance receives a signal, using a xtd::time_span to measure the time interval.
+      /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
+      /// @return true if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns.
+      /// @exception xtd::object_closed_exception the handle is invalid
+      /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
+      /// @exception xtd::argument_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
+      virtual bool wait_one(const time_span& timeout);
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief Signals one xtd::threading::wait_handle and waits on another.
       /// @param to_signal The xtd::threading::wait_handle to signal.
       /// @param to_wait The xtd::threading::wait_handle to wait on.
@@ -144,7 +170,7 @@ namespace xtd {
           wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
         return wait_all(wait_handle_pointers, milliseconds_timeout);
       }
-
+      
       /// @brief Waits for all the elements in the specified collection to receive a signal, using a xtd::time_span value to measure the time interval.
       /// @param wait_handles A xtd::threading::wait_handle collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object.
       /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds, to wait indefinitely.
@@ -192,30 +218,8 @@ namespace xtd {
       /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
       template<typename collection_t>
       static size_t wait_any(const collection_t& wait_handles, const time_span& timeout) {return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));}
-      
-      /// @brief Blocks the current thread until the current xtd::threading::wait_handle receives a signal.
-      /// @return true if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns.
-      /// @exception xtd::object_closed_exception the handle is invalid
-      /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
-      virtual bool wait_one();
-      
-      /// @brief Blocks the current thread until the current xtd::threading::wait_handle receives a signal, using 32-bit signed integer to measure the time interval.
-      /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::infinite (-1) to wait indefinitely.
-      /// @return if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns.
-      /// @exception xtd::object_closed_exception the handle is invalid
-      /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
-      /// @exception xtd::argument_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
-      virtual bool wait_one(int32 milliseconds_timeout);
-      
-      /// @brief Blocks the current thread until the current instance receives a signal, using a xtd::time_span to measure the time interval.
-      /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
-      /// @return true if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns.
-      /// @exception xtd::object_closed_exception the handle is invalid
-      /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
-      /// @exception xtd::argument_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
-      virtual bool wait_one(const time_span& timeout);
       /// @}
-      
+
       /// @cond
       template <typename... items_t>
       static size_t wait_all(items_t... items) {return wait_all(timeout::infinite, items...);}

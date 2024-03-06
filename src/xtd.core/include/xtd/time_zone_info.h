@@ -129,7 +129,7 @@ namespace xtd {
       uint32 week() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Defines a time change that uses a fixed-date rule (that is, a time change that occurs on a specific day of a specific month).
@@ -292,10 +292,6 @@ namespace xtd {
     /// @remarks The time zone identifier is a key string that uniquely identifies a particular time zone. It can be passed as a parameter to the FindSystemTimeZoneById method to retrieve a particular time zone from the registry.
     const ustring& id() const noexcept;
     
-    /// @brief Gets a time_zone_info object that represents the local time zone.
-    /// @return time_zone_info An object that represents the local time zone.
-    static const time_zone_info& local() noexcept;
-    
     /// @brief Gets the display name for the time zone's standard time.
     /// @return The display name of the time zone's standard time.
     /// @remarks The display name is localized based on the culture installed with the Windows operating system.
@@ -307,13 +303,40 @@ namespace xtd {
     /// @return bool true if the time zone supports daylight saving time; otherwise, false.
     /// @remarks The value of the SupportsDaylightSavingTime property for the local time zone returned by the time_zone_info.Local property reflects the setting of the Control Panel Date and Time application's checkbox that defines whether the system automatically adjusts for daylight saving time. If it is unchecked, or if no checkbox is displayed for a time zone, the value of this property is false.
     bool supports_daylight_saving_time() const noexcept;
+    /// @}
+
+    /// @name Static properties
     
+    /// @{
+    /// @brief Gets a time_zone_info object that represents the local time zone.
+    /// @return time_zone_info An object that represents the local time zone.
+    static const time_zone_info& local() noexcept;
+
     /// @brief Gets a time_zone_info object that represents the Coordinated Universal Time (UTC) zone.
     /// @return time_zone_info An object that represents the Coordinated Universal Time (UTC) zone.
     static const time_zone_info& utc() noexcept;
     /// @}
     
     /// @name Methods
+    
+    /// @{
+    int32 compare_to(const time_zone_info& tzi) const noexcept override;
+    
+    bool equals(const time_zone_info& tzi) const noexcept override;
+    
+    /// @brief Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::time_zone_info object.
+    /// @return An array of objects for this time zone.
+    std::vector<adjustement_rule> get_adjustement_rules() const noexcept;
+    
+    /// @brief Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current xtd::time_zone_info object.
+    /// @param date_time A date and time value.
+    /// @return true if the date_time parameter is a daylight saving time; otherwise, false.
+    bool is_daylight_saving_time(const xtd::date_time& date_time) const noexcept;
+    
+    xtd::ustring to_string() const noexcept override;
+    /// @}
+
+    /// @name Static methods
     
     /// @{
     /// @brief Converts the specified date and time to Coordinated Universal Time (UTC).
@@ -326,8 +349,6 @@ namespace xtd {
     /// @brief Returns a sorted collection of all the time zones about which information is available on the local system.
     /// @return An read-only Array of time_zone_info objects.
     static const std::list<time_zone_info>& get_system_time_zones() noexcept;
-    
-    int32 compare_to(const time_zone_info& tzi) const noexcept override;
     
     /// @brief Converts a time to the time in a particular time zone.
     /// @param date_time The date and time to convert.
@@ -371,25 +392,12 @@ namespace xtd {
     /// @return The Coordinated Universal Time (UTC) that corresponds to the date_time parameter. The xtd::date_time value's xtd::date_time::kind property is always set to xtd::date_time_kind::utc.
     static xtd::date_time convert_to_utc(const xtd::date_time& date_time);
     
-    bool equals(const time_zone_info& tzi) const noexcept override;
-    
-    /// @brief Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::time_zone_info object.
-    /// @return An array of objects for this time zone.
-    std::vector<adjustement_rule> get_adjustement_rules() const noexcept;
-    
-    /// @brief Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current xtd::time_zone_info object.
-    /// @param date_time A date and time value.
-    /// @return true if the date_time parameter is a daylight saving time; otherwise, false.
-    bool is_daylight_saving_time(const xtd::date_time& date_time) const noexcept;
-    
     /// @brief Retrieves a time_zone_info object from the registry based on its identifier.
     /// @param id The time zone identifier, which corresponds to the Id property.
     /// @return An object whose identifier is the value of the id parameter.
     /// @exception ArgumentNullException The id parameter is null.
     /// @exception TimeZoneNotFoundException The time zone identifier specified by id was not found. This means that a registry key whose name matches id does not exist, or that the key exists but does not contain any time zone data.
     static time_zone_info time_find_system_time_zone_by_id(const ustring& id);
-    
-    xtd::ustring to_string() const noexcept override;
     /// @}
     
   private:

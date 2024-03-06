@@ -14,16 +14,25 @@ namespace xtd {
   /// @ingroup xtd_core
   template <typename... args_t>
   struct non_const_overload {
+    /// @name Operators
+    
+    /// @{
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
     template <typename result_t, typename type_t>
     constexpr auto operator()(result_t (type_t::*method)(args_t...)) const noexcept -> decltype(method) {return method;}
+    /// @}
+    
+    /// @name Static methods
+    
+    /// @{
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
     template <typename result_t, typename type_t>
     static constexpr auto of(result_t (type_t::*method)(args_t...)) noexcept -> decltype(method) {return method;}
+    /// @}
   };
   
   /// @brief Represents class that use to determine one of const overloaded methods.
@@ -32,7 +41,7 @@ namespace xtd {
   /// @ingroup xtd_core
   template <typename... args_t>
   struct const_overload {
-    /// @name Ooperators
+    /// @name Operators
     
     /// @{
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
@@ -42,7 +51,7 @@ namespace xtd {
     constexpr auto operator()(result_t (type_t::*method)(args_t...) const) const noexcept -> decltype(method) {return method;}
     /// @}
     
-    /// @name Methods
+    /// @name static methods
     
     /// @{
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
@@ -76,7 +85,7 @@ namespace xtd {
     constexpr auto operator()(result_t (*method)(args_t...)) const noexcept -> decltype(method) {return method;}
     /// @}
     
-    /// @name Methods
+    /// @name Static methods
     
     /// @{
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.

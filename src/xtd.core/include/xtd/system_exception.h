@@ -105,10 +105,6 @@ namespace xtd {
     /// @return A string represent a link to Help file associated with exception
     virtual const xtd::ustring& help_link() const noexcept;
     
-    /// @brief Gets or sets if the generation of the stack trace is enabled.
-    static bool enable_stack_trace() noexcept;
-    static void enable_stack_trace(bool enable) noexcept;
-    
     /// @brief Gets error associate to the exception
     /// @return An error_code represent a Error associate to the exception
     virtual std::error_code error_code() const noexcept;
@@ -150,6 +146,17 @@ namespace xtd {
     const char* what() const noexcept override;
     /// @}
     
+    /// @name Static methods
+    
+    /// @{
+    /// @brief Gets if the generation of the stack trace is enabled.
+    /// @return triue if stack trace enabled; otherwhise false.
+    static bool enable_stack_trace() noexcept;
+    /// @brief Sets if the generation of the stack trace is enabled.
+    /// @paran enable triue if stack trace enabled; otherwhise false.
+    static void enable_stack_trace(bool enable) noexcept;
+    /// @}
+
   private:
     system_exception(const xtd::ustring& message, const std::exception* inner_exception, const std::error_code& error, const xtd::ustring& help_link, const xtd::diagnostics::stack_frame& information);
     xtd::ustring stack_trace_to_string() const noexcept;

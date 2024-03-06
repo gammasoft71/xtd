@@ -306,6 +306,66 @@ namespace xtd {
     
     bool equals(const time_span& value) const noexcept override;
     
+    /// @brief Returns a new xtd::time_spam object which value is the result of multiplication of this instance and the specified factor.
+    /// @param factor The value to be multiplied by.
+    /// @return A double that represents the value of this instance multiplied by the value of factor.
+    double multiply(const time_span& ts) const noexcept;
+    /// @brief Returns a new xtd::time_spam object which value is the result of multiplication of this instance and the specified factor.
+    /// @param factor The value to be multiplied by.
+    /// @return A new object that represents the value of this instance multiplied by the value of factor.
+    time_span multiply(double factor) const noexcept;
+
+    /// @brief Returns a new xtd::time_spam object whose value is the negated value of this instance.
+    /// @return A new object with the same numeric value as this instance, but with the opposite sign.
+    /// @exception xtd::overflow_exception The negated value of this instance cannot be represented by a xtd::time_spam; that is, the value of this instance is xtd::time_spam::min_value.
+    time_span negate() const;
+
+    /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent.
+    /// @param value A string that specifies the time interval to convert.
+    /// @return A time interval that corresponds to value.
+    /// @exception xtd::format_exception value has an invalid format.
+    /// @exception value represents a number that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>At least one of the days, hours, minutes, or seconds components is outside its valid range.
+    static time_span parse(const ustring& value);
+    
+    /// @brief Returns a new xtd::time_span object whose value is the difference between the specified xtd::time_span object and this instance.
+    /// @param ts The time interval to be subtracted.
+    /// @return A new time interval whose value is the result of the value of this instance minus the value of ts.
+    /// @remarks The return value is a new xtd::time_span; the original xtd::time_span is not modified.
+    time_span subtract(const time_span& ts) const noexcept;
+
+    xtd::ustring to_string() const noexcept override;
+    /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format.
+    /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
+    /// @exception xtd::format_exception The format parameter is not recognized or is not supported.
+    /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::ustring::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
+    /// @remarks The formatting codes for xtd::time_span::to_string (const xtd::ustring&) are listed below:
+    /// | Format | Print                                                                                                                       |
+    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+    /// | 'c'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
+    /// | 'd'    | write absolute value of days d                                                                                              |
+    /// | 'D'    | write absolute value of days dd                                                                                              |
+    /// | 'f'    | write duration d.h.mm.ss.ticks                                                                                              |
+    /// | 'F'    | write duration d.hh.mm.ss.ticks                                                                                             |
+    /// | 'g'    | write duration with optional ticks d.h.mm.ss.ticks                                                                          |
+    /// | 'G'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
+    /// | 'h'    | write absolute value of hours h                                                                                             |
+    /// | 'H'    | write absolute value of hours hh                                                                                            |
+    /// | 'l'    | write absolute value of milliseconds                                                                                        |
+    /// | 'L'    | write absolute value of milliseconds fixed at 3 digits                                                                      |
+    /// | 'm'    | write absolute value of minutes m                                                                                           |
+    /// | 'M'    | write absolute value of minutes mm                                                                                          |
+    /// | 'o'    | write optional minus sign                                                                                                   |
+    /// | 'o'    | write minus or plus sign                                                                                                    |
+    /// | 's'    | write absolute value of seconds s                                                                                           |
+    /// | 'S'    | write absolute value of seconds ss                                                                                          |
+    /// | 't'    | write absolute value of ticks                                                                                               |
+    /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
+    ustring to_string(const ustring& format) const;
+    /// @}
+    
+    /// @name Static methods
+    
+    /// @{
     /// @brief Returns a value that indicates whether two specified instances of xtd::time_span are equal.
     /// @param t1 The first time interval to compare.
     /// @param t2 The second time interval to compare.
@@ -417,7 +477,7 @@ namespace xtd {
     /// @param value A number of seconds.
     /// @return An object that represents value.
     static time_span from_seconds(std::chrono::seconds value);
-
+    
     /// @brief Returns a xtd::time_spam that represents a specified time, where the specification is in units of ticks.
     /// @param value A number of ticks that represent a time.
     /// @return An object that represents value.
@@ -427,63 +487,7 @@ namespace xtd {
     /// @return An object that represents value.
     /// @remarks This is a convenience method with the same behavior as the xtd::time_spam.xtd::time_spam (int64) constructor. A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond.
     static time_span from_ticks(xtd::ticks value);
-    
-    /// @brief Returns a new xtd::time_spam object which value is the result of multiplication of this instance and the specified factor.
-    /// @param factor The value to be multiplied by.
-    /// @return A double that represents the value of this instance multiplied by the value of factor.
-    double multiply(const time_span& ts) const noexcept;
-    /// @brief Returns a new xtd::time_spam object which value is the result of multiplication of this instance and the specified factor.
-    /// @param factor The value to be multiplied by.
-    /// @return A new object that represents the value of this instance multiplied by the value of factor.
-    time_span multiply(double factor) const noexcept;
 
-    /// @brief Returns a new xtd::time_spam object whose value is the negated value of this instance.
-    /// @return A new object with the same numeric value as this instance, but with the opposite sign.
-    /// @exception xtd::overflow_exception The negated value of this instance cannot be represented by a xtd::time_spam; that is, the value of this instance is xtd::time_spam::min_value.
-    time_span negate() const;
-
-    /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent.
-    /// @param value A string that specifies the time interval to convert.
-    /// @return A time interval that corresponds to value.
-    /// @exception xtd::format_exception value has an invalid format.
-    /// @exception value represents a number that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>At least one of the days, hours, minutes, or seconds components is outside its valid range.
-    static time_span parse(const ustring& value);
-    
-    /// @brief Returns a new xtd::time_span object whose value is the difference between the specified xtd::time_span object and this instance.
-    /// @param ts The time interval to be subtracted.
-    /// @return A new time interval whose value is the result of the value of this instance minus the value of ts.
-    /// @remarks The return value is a new xtd::time_span; the original xtd::time_span is not modified.
-    time_span subtract(const time_span& ts) const noexcept;
-
-    xtd::ustring to_string() const noexcept override;
-    /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format.
-    /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
-    /// @exception xtd::format_exception The format parameter is not recognized or is not supported.
-    /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::ustring::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
-    /// @remarks The formatting codes for xtd::time_span::to_string (const xtd::ustring&) are listed below:
-    /// | Format | Print                                                                                                                       |
-    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
-    /// | 'c'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
-    /// | 'd'    | write absolute value of days d                                                                                              |
-    /// | 'D'    | write absolute value of days dd                                                                                              |
-    /// | 'f'    | write duration d.h.mm.ss.ticks                                                                                              |
-    /// | 'F'    | write duration d.hh.mm.ss.ticks                                                                                             |
-    /// | 'g'    | write duration with optional ticks d.h.mm.ss.ticks                                                                          |
-    /// | 'G'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
-    /// | 'h'    | write absolute value of hours h                                                                                             |
-    /// | 'H'    | write absolute value of hours hh                                                                                            |
-    /// | 'l'    | write absolute value of milliseconds                                                                                        |
-    /// | 'L'    | write absolute value of milliseconds fixed at 3 digits                                                                      |
-    /// | 'm'    | write absolute value of minutes m                                                                                           |
-    /// | 'M'    | write absolute value of minutes mm                                                                                          |
-    /// | 'o'    | write optional minus sign                                                                                                   |
-    /// | 'o'    | write minus or plus sign                                                                                                    |
-    /// | 's'    | write absolute value of seconds s                                                                                           |
-    /// | 'S'    | write absolute value of seconds ss                                                                                          |
-    /// | 't'    | write absolute value of ticks                                                                                               |
-    /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
-    ustring to_string(const ustring& format) const;
-    
     /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent and returns a value that indicates whether the conversion succeeded.
     /// @param value A string that specifies the time interval to convert.
     /// @param result When this method returns, contains an object that represents the time interval specified by value, or xtd::time_span::zero if the conversion failed.

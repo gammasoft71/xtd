@@ -101,7 +101,7 @@ namespace xtd {
       static char volume_separator_char() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Changes the extension of a path string.
@@ -258,6 +258,7 @@ namespace xtd {
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
       static bool is_path_rooted(const xtd::ustring& path);
+      /// @}
       
     private:
       static int32 __get_index_path_rooted(const xtd::ustring& path);

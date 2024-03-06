@@ -389,16 +389,6 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& no_delay(bool value);
         
-        /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).
-        /// @return true if the operating system and network adaptors support the IPv4 protocol; otherwise, false.
-        /// @remarks The operating system may support both IPv4 and IPv6 protocols.
-        static bool os_supports_ip_v4() noexcept;
-        
-        /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).
-        /// @return true if the operating system and network adaptors support the IPv6 protocol; otherwise, false.
-        /// @remarks The operating system may support both IPv4 and IPv6 protocols.
-        static bool os_supports_ip_v6() noexcept;
-        
         /// @brief Gets the protocol type of the xtd::net::sockets::socket.
         /// @return One of the xtd::net::sockets::protocol_type values.
         /// @remarks The xtd::net::sockets::socket::protocol_type property is set when the xtd::net::sockets::socket is created, and specifies the protocol used by that xtd::net::sockets::socket.
@@ -504,7 +494,21 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& ttl(xtd::byte value);
         /// @}
+
+        /// @name Static properties
         
+        /// @{
+        /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).
+        /// @return true if the operating system and network adaptors support the IPv4 protocol; otherwise, false.
+        /// @remarks The operating system may support both IPv4 and IPv6 protocols.
+        static bool os_supports_ip_v4() noexcept;
+        
+        /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).
+        /// @return true if the operating system and network adaptors support the IPv6 protocol; otherwise, false.
+        /// @remarks The operating system may support both IPv4 and IPv6 protocols.
+        static bool os_supports_ip_v6() noexcept;
+        /// @}
+
         /// @name Methods
         
         /// @{
@@ -1250,23 +1254,6 @@ namespace xtd {
         
         size_t receive_message_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::net::sockets::ip_packet_information& ip_packet_information);
         
-        /// @brief Determines the status of one or more sockets.
-        /// @param check_read An array of xtd::net::sockets::socket instances to check for readability.
-        /// @param check_write An array of xtd::net::sockets::socket instances to check for writability.
-        /// @param check_error An array of xtd::net::sockets::socket instances to check for errors.
-        /// @param microseconds The time-out value, in microseconds. A -1 value indicates an infinite time-out.
-        /// @return 0 if the timeout expired; otherwise, the total number of sockets returned in the lists.
-        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
-        /// @remarks xtd::net::sockets::socket::select is a static method that determines the status of one or more xtd::net::sockets::socket instances. You must place one or more sockets into an array before you can use the xtd::net::sockets::socket::select method. Check for readability by calling xtd::net::sockets::socket::select with the array as the check_read parameter. To check your sockets for writability, use the check_write parameter. For detecting error conditions, use check_error. After calling xtd::net::sockets::socket::select, the array will be filled with only those sockets that satisfy the conditions.
-        /// @remarks If you are in a listening state, readability means that a call to xtd::net::sockets::socket::accept will succeed without blocking. If you have already accepted the connection, readability means that data is available for reading. In these cases, all receive operations will succeed without blocking. Readability can also indicate whether the remote xtd::net::sockets::socket has shut down the connection; in that case a call to xtd::net::sockets::socket::::receive will return immediately, with zero bytes returned.
-        /// @remarks xtd::net::sockets::socket::select returns when at least one of the sockets of interest (the sockets in the check_read, check_write, and check_error lists) meets its specified criteria, or the microseconds parameter is exceeded, whichever comes first. Setting microseconds to -1 specifies an infinite time-out.
-        /// @remarks If you make a nonblocking call to xtd::net::sockets::socket::connect, writability means that you have connected successfully. If you already have a connection established, writability means that all send operations will succeed without blocking.
-        /// @remarks If you have made a non-blocking call to xtd::net::sockets::socket::connect, the check_error parameter identifies sockets that have not connected successfully.
-        /// @remarks Use the xtd::net::sockets::socket::poll method if you only want to determine the status of a single xtd::net::sockets::socket.
-        /// @note This method cannot detect certain kinds of connection problems, such as a broken network cable, or that the remote host was shut down ungracefully. You must attempt to send or receive data to detect these kinds of errors.
-        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        static size_t select(std::vector<socket>& check_read, std::vector<socket>& check_write, std::vector<socket>& check_error, int32 microseconds);
-        
         /// @brief Sends data to a connected xtd::net::sockets::socket.
         /// @param buffer An array of type byte that contains the data to be sent.
         /// @return The number of bytes sent to the xtd::net::sockets::socket.
@@ -1549,6 +1536,27 @@ namespace xtd {
         void shutdown(xtd::net::sockets::socket_shutdown how);
         /// @}
         
+        /// @name Static methods
+        
+        /// @{
+        /// @brief Determines the status of one or more sockets.
+        /// @param check_read An array of xtd::net::sockets::socket instances to check for readability.
+        /// @param check_write An array of xtd::net::sockets::socket instances to check for writability.
+        /// @param check_error An array of xtd::net::sockets::socket instances to check for errors.
+        /// @param microseconds The time-out value, in microseconds. A -1 value indicates an infinite time-out.
+        /// @return 0 if the timeout expired; otherwise, the total number of sockets returned in the lists.
+        /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
+        /// @remarks xtd::net::sockets::socket::select is a static method that determines the status of one or more xtd::net::sockets::socket instances. You must place one or more sockets into an array before you can use the xtd::net::sockets::socket::select method. Check for readability by calling xtd::net::sockets::socket::select with the array as the check_read parameter. To check your sockets for writability, use the check_write parameter. For detecting error conditions, use check_error. After calling xtd::net::sockets::socket::select, the array will be filled with only those sockets that satisfy the conditions.
+        /// @remarks If you are in a listening state, readability means that a call to xtd::net::sockets::socket::accept will succeed without blocking. If you have already accepted the connection, readability means that data is available for reading. In these cases, all receive operations will succeed without blocking. Readability can also indicate whether the remote xtd::net::sockets::socket has shut down the connection; in that case a call to xtd::net::sockets::socket::::receive will return immediately, with zero bytes returned.
+        /// @remarks xtd::net::sockets::socket::select returns when at least one of the sockets of interest (the sockets in the check_read, check_write, and check_error lists) meets its specified criteria, or the microseconds parameter is exceeded, whichever comes first. Setting microseconds to -1 specifies an infinite time-out.
+        /// @remarks If you make a nonblocking call to xtd::net::sockets::socket::connect, writability means that you have connected successfully. If you already have a connection established, writability means that all send operations will succeed without blocking.
+        /// @remarks If you have made a non-blocking call to xtd::net::sockets::socket::connect, the check_error parameter identifies sockets that have not connected successfully.
+        /// @remarks Use the xtd::net::sockets::socket::poll method if you only want to determine the status of a single xtd::net::sockets::socket.
+        /// @note This method cannot detect certain kinds of connection problems, such as a broken network cable, or that the remote host was shut down ungracefully. You must attempt to send or receive data to detect these kinds of errors.
+        /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
+        static size_t select(std::vector<socket>& check_read, std::vector<socket>& check_write, std::vector<socket>& check_error, int32 microseconds);
+        /// @}
+
       private:
         static xtd::net::sockets::socket_error get_last_error_();
         std::shared_ptr<xtd::iasync_result> begin_connect_(std::shared_ptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const std::any& state);

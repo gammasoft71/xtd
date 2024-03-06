@@ -413,15 +413,6 @@ namespace xtd {
     /// @endcode
     uint32 month() const noexcept;
     
-    /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the local time.
-    /// @return An object whose value is the current local date and time.
-    /// @par Examples
-    /// The following example uses the xtd::date_time::now and xtd::date_time::utc_now properties to retrieve the current local date and time and the current universal coordinated (UTC) date and time. It then uses the formatting conventions of a number of locale to display the strings, along with the values of the their xtd::datte_time::kind properties.
-    /// @include date_time_now.cpp
-    /// @remarks The xtd::date_time::now property returns a xtd::date_time value that represents the current date and time on the local computer. Note that there is a difference between a xtd::date_time value, which represents the number of ticks that have elapsed since midnight of January 1, 0001, and the string representation of that xtd::date_time value, which expresses a date and time value in a culture-specific-specific format. For information on formatting date and time values, see the to_string method. The following example displays the short date and time string in a number of culture-specific formats.
-    /// @include date_time_now2.cpp
-    static date_time now() noexcept;
-    
     /// @brief Gets the seconds component of the date represented by this instance.
     /// @return The seconds component, expressed as a value between 0 and 59.
     /// @par Examples
@@ -473,25 +464,6 @@ namespace xtd {
     /// @remarks Unlike the xtd::date_time::date property. which returns a xtd::date_time value that represents a date without its time component, the xtd::date_time::time_of_day property returns a xtd::time_span value that represents a xtd::date_time value's time component.
     /// @remarks If you want to display the time of day or retrieve the string representation of the time of day of a xtd::date_time value, you can instead call an overload of the ToString method that has a format parameter or use the composite formatting feature with the "t" or "T" standard format string.
     xtd::time_span time_of_day() const noexcept;
-    
-    /// @brief Gets the current date.
-    /// @return An object that is set to today's date, with the time component set to 00:00:00.
-    /// @par Examples
-    /// The following example uses the xtd::date_time::date property to retrieve the current date. It also illustrates how a xtd::date_time value can be formatted using some of the standard date and time format strings. Note that the output produced by the third call to the xtd::date_time::to_string(const xtd::ustring&) method uses the g format specifier to include the time component, which is zero.
-    /// @include date_time_today.cpp
-    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property returns xtd::date_time_kind::local.
-    /// @remarks Because it returns the current date without the current time, the xtd::date_time::today property is suitable for use in applications that work with dates only. In contrast, the xtd::date_time::time_of_day property returns the current time without the current date, and the xtd::date_timextd::date_timextd::date_time::now property returns both the current date and the current time.
-    static date_time today() noexcept;
-    
-    /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).
-    /// @return An object whose value is the current UTC date and time.
-    /// @par Examples
-    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
-    /// @include date_time_specify_king.cpp
-    /// @remarks The resolution of this property depends on the system timer, which depends on the underlying operating system. It tends to be between 0.5 and 15 milliseconds.
-    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property returns xtd::date_time_kind::utc.
-    /// @remarks An alternative to using xtd::date_time::utc_now is xtd::date_time_offset::utc_now. While the former indicates that a date and time value is Coordinated Universal Time (UTC) by assigning xtd::date_time_kind::utc to its xtd::date_time::kind property, the latter assigns the date and time value the UTC time's offset (equal to xtd::ticks(0)).
-    static date_time utc_now() noexcept;
     
     /// @brief Gets the year component of the date represented by this instance.
     /// @return The year, between 1 and 9999.
@@ -630,121 +602,7 @@ namespace xtd {
     
     int32 compare_to(const date_time& value) const noexcept override;
     
-    /// @brief Returns the number of days in the specified month and year.
-    /// @param year The year.
-    /// @param month The month (one of xtd::month_of_year values).
-    /// @return The number of days in month for the specified year.<br>
-    /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
-    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12.<br>-or-<br>year is less than 1 or greater than 9999.
-    /// @par Examples
-    /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
-    /// @include date_time_days_in_month.cpp
-    /// @par Examples
-    /// The following example displays the number of days in each month of a year specified in an integer array.
-    /// @include date_time_days_in_month2.cpp
-    /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
-    static int32 days_in_month(uint32 year, month_of_year month);
-    
-    /// @brief Returns the number of days in the specified month and year.
-    /// @param year The year.
-    /// @param month The month (a number ranging from 1 to 12).
-    /// @return The number of days in month for the specified year.<br>
-    /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
-    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12.<br>-or-<br>year is less than 1 or greater than 9999.
-    /// @par Examples
-    /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
-    /// @include date_time_days_in_month.cpp
-    /// @par Examples
-    /// The following example displays the number of days in each month of a year specified in an integer array.
-    /// @include date_time_days_in_month2.cpp
-    /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
-    static int32 days_in_month(uint32 year, uint32 month);
-    
     bool equals(const date_time&) const noexcept override;
-    
-    /// @brief Deserializes a 64-bit binary value and recreates an original serialized xtd::date_time object.
-    /// @param date_data A 64-bit signed integer that encodes the xtd::date_time::kind property in a 2-bit field and the xtd::date_time::ticks property in a 62-bit field.
-    /// @return An object that is equivalent to the xtd::date_time object that was serialized by the xtd::date_time::to_binary() method.
-    /// @exception xtd::argument_exception date_data is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
-    /// @remarks Use the xtd::date_time::to_binary method to convert the value of the current xtd::date_time object to a binary value. Subsequently, use the binary value and the xtd::date_time::from_binary method to recreate the original xtd::date_time object.
-    /// @note In some cases, the xtd::date_time value returned by the xtd::date_time::from_binary method is not identical to the original xtd::date_time value supplied to the xtd::date_time::to_binary method.
-    static date_time from_binary(int64 date_data);
-    
-    /// @brief Converts the specified Windows file time to an equivalent local time.
-    /// @param file_time A Windows file time expressed in ticks.
-    /// @return An object that represents the local time equivalent of the date and time represented by the file_time parameter.
-    /// @exception xtd::argument_out_of_range_exception file_time is less than 0 or represents a time greater than xtd::date_time:::max_value.
-    /// @par Examples
-    /// The following example demonstrates the xtd::date_time::from_file_time method.
-    /// @code
-    /// xtd::ticks file_age(int64 file_creation_time) {
-    ///   xtd::date_time now = xtd::date_time::now();
-    ///   try {
-    ///     xtd::date_time fcreation_fime = xtd::date_time::from_file_time(file_creation_time);
-    ///     xtd::ticks file_age = now.subtract(fcreation_time);
-    ///     return file_age;
-    ///   } catch (const xtd::argument_out_of_range_exception&) {
-    ///     // file_creation_time is not valid, so re-throw the exception.
-    ///     throw;
-    ///   }
-    /// }
-    /// @endcode
-    /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
-    /// @remarks The file_time parameter specifies a file time expressed in 100-nanosecond ticks.
-    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property is xtd::date_time_kind::local.
-    static date_time from_file_time(int64 file_time);
-    /// @brief Converts the specified Windows file time to an equivalent UTC time.
-    /// @param file_time A Windows file time expressed in ticks.
-    /// @return An object that represents the UTC time equivalent of the date and time represented by the file_time parameter.
-    /// @exception xtd::argument_out_of_range_exception file_time is less than 0 or represents a time greater than xtd::date_time:::max_value.
-    /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
-    /// @remarks The file_time parameter specifies a file time expressed in 100-nanosecond ticks.
-    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property is xtd::date_time:::utc.
-    static date_time from_file_time_utc(int64 file_time);
-    
-    /// @brief Converts the specified xtd::time_span to an equivalent unspecified time.
-    /// @param value A time interval from the start of the Clock's epoch.
-    /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
-    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
-    static date_time from_duration(const time_span& value);
-    /// @brief Converts the specified xtd::time_span to an equivalent to Coordinated Universal Time (UTC) or local time..
-    /// @param value A time interval from the start of the Clock's epoch.
-    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
-    /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
-    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
-    static date_time from_duration(const time_span& value, date_time_kind kind);
-
-    /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent unspecified time.
-    /// @param value A time interval from the start of the Clock's epoch.
-    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
-    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
-    /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
-    static date_time from_time_t(std::time_t value);
-    /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent to Coordinated Universal Time (UTC) or local time.
-    /// @param value A time interval from the start of the Clock's epoch.
-    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
-    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
-    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
-    /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
-    static date_time from_time_t(std::time_t value, date_time_kind kind);
-    
-    /// @brief Converts the specified <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> to an equivalent unspecified time.
-    /// @param value A <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> struct.
-    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
-    /// @exception xtd::argument_out_of_range_exception value.ttm_year is less than 1 or greater than 9999.<br>-or-<br>tvalue.tm_mon is less than 1 or greater than 12.<br>-or-<br>value.tm_mday is less than 1 or greater than the number of days in month.<br>-or-<br>value.tm_hour is less than 0 or greater than 23.<br>-or-<br>value.tm_min is less than 0 or greater than 59<br>-or-<br>vale.tm_sec is less than 0 or greater than 59.
-    /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
-    static date_time from_tm(const std::tm& value);
-    /// @brief Converts the specified <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a><a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> to an equivalent to Coordinated Universal Time (UTC) or local time.
-    /// @param value A <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> struct.
-    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
-    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
-    /// @exception xtd::argument_out_of_range_exception value.ttm_year is less than 1 or greater than 9999.<br>-or-<br>tvalue.tm_mon is less than 1 or greater than 12.<br>-or-<br>value.tm_mday is less than 1 or greater than the number of days in month.<br>-or-<br>value.tm_hour is less than 0 or greater than 23.<br>-or-<br>value.tm_min is less than 0 or greater than 59<br>-or-<br>vale.tm_sec is less than 0 or greater than 59.
-    /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
-    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
-    static date_time from_tm(const std::tm& value, date_time_kind kind);
     
     /// @brief Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
     /// @return A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
@@ -755,99 +613,6 @@ namespace xtd {
     /// @remarks This method determines whether the current xtd::date_time value falls within the daylight saving time range of the local time zone, which is returned by the xtd::time_zone_info::local property. You can determine whether a time zone supports daylight saving time by retrieving the value of its xtd::time_zone_info::supports_daylight_saving_time property. For time zones that observe daylight saving time, you can determine when the transition to and from daylight saving time occurs by retrieving the xtd::time_zone_info::adjustment_rule array returned by the time zone's xtd::time_zone_info::get_adjustmen_rules property.
     /// @remarks If the current xtd::date_time value represents either an ambiguous or an invalid time in the local time zone, the method returns false.
     bool is_daylight_saving_time() const noexcept;
-    
-    /// @brief Returns an indication whether the specified year is a leap year.
-    /// @param year A 4-digit year.
-    /// @return true if year is a leap year; otherwise, false.
-    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.
-    static bool is_leap_year(uint32 year);
-    
-    /// @brief Converts the string representation of a date and time to its xtd::date_time equivalent by using the conventions of the current culture.
-    /// @param s A string that contains a date and time to convert. See The string to parse for more information.
-    /// @return An object that is equivalent to the date and time contained in s.
-    /// @exception xtd::format_exception s does not contain a valid string representation of a date and time.
-    /// @remarks If s contains time zone information, this method returns a xtd::date_time value whose xtd::date_time::kind property is xtd::date_time_kind::local and converts the date and time in s to local time. Otherwise, it performs no time zone conversion and returns a xtd::date_time value whose Kind property is DateTimeKind.Unspecified.
-    /// @remarks This overload attempts to parse s by using the formatting conventions of the current culture. The current culture is indicated by the CurrentCulture property. To parse a string using the formatting conventions of a specific culture, call the Parse(String, IFormatProvider) or the Parse(String, IFormatProvider, DateTimeStyles) overloads.
-    /// @remarks This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style.
-    static date_time parse(const xtd::ustring& s);
-    
-    /// @brief Creates a new xtd::date_time object that has the same number of ticks as the specified xtd::date_time, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified xtd::date_time_kind value.
-    /// @param value A date and time.
-    /// @param kind One of the enumeration values that indicates whether the new object represents local time, UTC, or neither.
-    /// @return A new object that has the same number of ticks as the object represented by the value parameter and the xtd::date_time_kind value specified by the kind parameter.
-    /// @par Examples
-    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
-    /// @include date_time_specify_kind.cpp
-    static date_time specify_kind(const date_time& value, date_time_kind kind);
-    
-    /// @brief Returns a xtd::ustring that represents the current xtd::date_time.
-    /// @param format Format-control String.
-    /// @param value The xtd::date_time object to format.
-    /// @return A xtd::ustring that represents the current xtd::date_time.
-    /// @par Examples
-    /// The foloowwing example shows how to use xtd::date_time::sprintf with differentt formats.
-    /// @include date_time_sprintf.cpp
-    /// @remarks The formatting codes for sprintf are listed below:
-    /// | Format | Print                                                                                                                       |
-    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
-    /// | \%a    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
-    /// | \%A    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
-    /// | \%b    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
-    /// | \%B    | writes full month name, e.g. October (locale dependent).                                                                    |
-    /// | \%c    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
-    /// | \%C    | writes first 2 digits of year as a decimal number (range [00,99]).                                                          |
-    /// | \%d    | writes day of the month as a decimal number (range [01,31]).                                                                |
-    /// | \%D    | equivalent to "%m/%d/%y".                                                                                                   |
-    /// | \%e    | writes day of the month as a decimal number (range [1,31]).                                                                 |
-    /// | \%Ec   | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
-    /// | \%EC   | Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP            |
-    /// | \%Ex   | writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
-    /// | \%EX   | writes alternative time representation (locale dependent).                                                                  |
-    /// | \%Ey   | writes year as offset from locale's alternative calendar period %EC.                                                        |
-    /// | \%EY   | writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
-    /// | \%F    | equivalent to "%Y-%m-%d" (the ISO 8601 date format).                                                                        |
-    /// | \%g    | writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).           |
-    /// | \%G    | writes ISO 8601 week-based year, i.e. the year that contains the specified week.                                            |
-    /// | \%h    | synonym of b.                                                                                                               |
-    /// | \%H    | writes hour as a decimal number, 24 hour clock (range [00-23]).                                                             |
-    /// | \%I    | writes hour as a decimal number, 12 hour clock (range [01,12]).                                                             |
-    /// | \%j    | writes day of the year as a decimal number (range [001,366]).                                                               |
-    /// | \%m    | writes month as a decimal number (range [01,12]).                                                                           |
-    /// | \%M    | writes minute as a decimal number (range [00,59]).                                                                          |
-    /// | \%Od   | writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.           |
-    /// | \%Oe   | writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.           |
-    /// | \%OH   | writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.                |
-    /// | \%OI   | writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.                 |
-    /// | \%Om   | writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.                                  |
-    /// | \%OM   | writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.                               |
-    /// | \%OS   | writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.                               |
-    /// | \%Ou   | writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.              |
-    /// | \%OU   | writes week of the year, as by %U, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%OV   | writes week of the year, as by %V, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%Ow   | writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.               |
-    /// | \%OW   | writes week of the year, as by %W, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%Oy   | writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.                  |
-    /// | \%p    | writes localized a.m. or p.m. (locale dependent).                                                                           |
-    /// | \%r    | writes localized 12-hour clock time (locale dependent).                                                                     |
-    /// | \%R    | equivalent to "%H:%M".                                                                                                      |
-    /// | \%S    | writes second as a decimal number (range [00,60]).                                                                          |
-    /// | \%T    | equivalent to "%H:%M:%S" (the ISO 8601 time format)                                                                         |
-    /// | \%u    | writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).                                      |
-    /// | \%U    | writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).                          |
-    /// | \%V    | writes ISO 8601 week of the year (range [01,53]).                                                                           |
-    /// | \%w    | writes weekday as a decimal number, where Sunday is 0 (range [0-6]).                                                        |
-    /// | \%W    | writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).                          |
-    /// | \%x    | writes localized date representation (locale dependent).                                                                    |
-    /// | \%X    | writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).                                       |
-    /// | \%y    | writes last 2 digits of year as a decimal number (range [00,99]).                                                           |
-    /// | \%Y    | writes year as a decimal number, e.g. 2017.                                                                                 |
-    /// | \%z    | writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available. |
-    /// | \%Z    | writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.     |
-    /// | \%\%   | writes literal %. The full conversion specification must be %%.                                                             |
-    /// | \%n    | writes newline character.                                                                                                   |
-    /// | \%t    | writes horizontal tab character.                                                                                            |
-    /// @remarks See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.
-    static xtd::ustring sprintf(const ustring& format, const date_time& value);
     
     /// @brief Returns a new xtd::time_span that subtracts the specified date and time from the value of this instance.
     /// @param value The date and time value to subtract.
@@ -1024,7 +789,246 @@ namespace xtd {
     /// | xtd::date_time_kind::local       | The current xtd::date_time object is converted to UTC.                                                                                  |
     /// | xtd::date_time_kind::unspecified | The current xtd::date_time object is assumed to be a local time, and the conversion is performed as if xtd::date_time::kind were Local. |
     date_time to_universal_time() const;
+    /// @}
+
+    /// @name Static methods
     
+    /// @{
+    /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the local time.
+    /// @return An object whose value is the current local date and time.
+    /// @par Examples
+    /// The following example uses the xtd::date_time::now and xtd::date_time::utc_now properties to retrieve the current local date and time and the current universal coordinated (UTC) date and time. It then uses the formatting conventions of a number of locale to display the strings, along with the values of the their xtd::datte_time::kind properties.
+    /// @include date_time_now.cpp
+    /// @remarks The xtd::date_time::now property returns a xtd::date_time value that represents the current date and time on the local computer. Note that there is a difference between a xtd::date_time value, which represents the number of ticks that have elapsed since midnight of January 1, 0001, and the string representation of that xtd::date_time value, which expresses a date and time value in a culture-specific-specific format. For information on formatting date and time values, see the to_string method. The following example displays the short date and time string in a number of culture-specific formats.
+    /// @include date_time_now2.cpp
+    static date_time now() noexcept;
+    
+    /// @brief Gets the current date.
+    /// @return An object that is set to today's date, with the time component set to 00:00:00.
+    /// @par Examples
+    /// The following example uses the xtd::date_time::date property to retrieve the current date. It also illustrates how a xtd::date_time value can be formatted using some of the standard date and time format strings. Note that the output produced by the third call to the xtd::date_time::to_string(const xtd::ustring&) method uses the g format specifier to include the time component, which is zero.
+    /// @include date_time_today.cpp
+    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property returns xtd::date_time_kind::local.
+    /// @remarks Because it returns the current date without the current time, the xtd::date_time::today property is suitable for use in applications that work with dates only. In contrast, the xtd::date_time::time_of_day property returns the current time without the current date, and the xtd::date_timextd::date_timextd::date_time::now property returns both the current date and the current time.
+    static date_time today() noexcept;
+    
+    /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).
+    /// @return An object whose value is the current UTC date and time.
+    /// @par Examples
+    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
+    /// @include date_time_specify_king.cpp
+    /// @remarks The resolution of this property depends on the system timer, which depends on the underlying operating system. It tends to be between 0.5 and 15 milliseconds.
+    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property returns xtd::date_time_kind::utc.
+    /// @remarks An alternative to using xtd::date_time::utc_now is xtd::date_time_offset::utc_now. While the former indicates that a date and time value is Coordinated Universal Time (UTC) by assigning xtd::date_time_kind::utc to its xtd::date_time::kind property, the latter assigns the date and time value the UTC time's offset (equal to xtd::ticks(0)).
+    static date_time utc_now() noexcept;
+    
+    /// @brief Returns the number of days in the specified month and year.
+    /// @param year The year.
+    /// @param month The month (one of xtd::month_of_year values).
+    /// @return The number of days in month for the specified year.<br>
+    /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
+    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12.<br>-or-<br>year is less than 1 or greater than 9999.
+    /// @par Examples
+    /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
+    /// @include date_time_days_in_month.cpp
+    /// @par Examples
+    /// The following example displays the number of days in each month of a year specified in an integer array.
+    /// @include date_time_days_in_month2.cpp
+    /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
+    static int32 days_in_month(uint32 year, month_of_year month);
+    
+    /// @brief Returns the number of days in the specified month and year.
+    /// @param year The year.
+    /// @param month The month (a number ranging from 1 to 12).
+    /// @return The number of days in month for the specified year.<br>
+    /// For example, if month equals 2 for February, the return value is 28 or 29 depending upon whether year is a leap year.
+    /// @exception xtd::argument_out_of_range_exception month is less than 1 or greater than 12.<br>-or-<br>year is less than 1 or greater than 9999.
+    /// @par Examples
+    /// The following example demonstrates how to use the xtd::date_time::days_in_month method to determine the number of days in July 2001, February 1998 (a non-leap year), and February 1996 (a leap year).
+    /// @include date_time_days_in_month.cpp
+    /// @par Examples
+    /// The following example displays the number of days in each month of a year specified in an integer array.
+    /// @include date_time_days_in_month2.cpp
+    /// @remarks The xtd::date_time::days_in_month method always interprets month and year as the month and year of the Gregorian calendar.
+    static int32 days_in_month(uint32 year, uint32 month);
+    
+    /// @brief Deserializes a 64-bit binary value and recreates an original serialized xtd::date_time object.
+    /// @param date_data A 64-bit signed integer that encodes the xtd::date_time::kind property in a 2-bit field and the xtd::date_time::ticks property in a 62-bit field.
+    /// @return An object that is equivalent to the xtd::date_time object that was serialized by the xtd::date_time::to_binary() method.
+    /// @exception xtd::argument_exception date_data is less than xtd::date_time::min_value or greater than xtd::date_time::max_value.
+    /// @remarks Use the xtd::date_time::to_binary method to convert the value of the current xtd::date_time object to a binary value. Subsequently, use the binary value and the xtd::date_time::from_binary method to recreate the original xtd::date_time object.
+    /// @note In some cases, the xtd::date_time value returned by the xtd::date_time::from_binary method is not identical to the original xtd::date_time value supplied to the xtd::date_time::to_binary method.
+    static date_time from_binary(int64 date_data);
+    
+    /// @brief Converts the specified Windows file time to an equivalent local time.
+    /// @param file_time A Windows file time expressed in ticks.
+    /// @return An object that represents the local time equivalent of the date and time represented by the file_time parameter.
+    /// @exception xtd::argument_out_of_range_exception file_time is less than 0 or represents a time greater than xtd::date_time:::max_value.
+    /// @par Examples
+    /// The following example demonstrates the xtd::date_time::from_file_time method.
+    /// @code
+    /// xtd::ticks file_age(int64 file_creation_time) {
+    ///   xtd::date_time now = xtd::date_time::now();
+    ///   try {
+    ///     xtd::date_time fcreation_fime = xtd::date_time::from_file_time(file_creation_time);
+    ///     xtd::ticks file_age = now.subtract(fcreation_time);
+    ///     return file_age;
+    ///   } catch (const xtd::argument_out_of_range_exception&) {
+    ///     // file_creation_time is not valid, so re-throw the exception.
+    ///     throw;
+    ///   }
+    /// }
+    /// @endcode
+    /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
+    /// @remarks The file_time parameter specifies a file time expressed in 100-nanosecond ticks.
+    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property is xtd::date_time_kind::local.
+    static date_time from_file_time(int64 file_time);
+    /// @brief Converts the specified Windows file time to an equivalent UTC time.
+    /// @param file_time A Windows file time expressed in ticks.
+    /// @return An object that represents the UTC time equivalent of the date and time represented by the file_time parameter.
+    /// @exception xtd::argument_out_of_range_exception file_time is less than 0 or represents a time greater than xtd::date_time:::max_value.
+    /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
+    /// @remarks The file_time parameter specifies a file time expressed in 100-nanosecond ticks.
+    /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property is xtd::date_time:::utc.
+    static date_time from_file_time_utc(int64 file_time);
+    
+    /// @brief Converts the specified xtd::time_span to an equivalent unspecified time.
+    /// @param value A time interval from the start of the Clock's epoch.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
+    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    static date_time from_duration(const time_span& value);
+    /// @brief Converts the specified xtd::time_span to an equivalent to Coordinated Universal Time (UTC) or local time..
+    /// @param value A time interval from the start of the Clock's epoch.
+    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the file_time parameter.
+    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    static date_time from_duration(const time_span& value, date_time_kind kind);
+    
+    /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent unspecified time.
+    /// @param value A time interval from the start of the Clock's epoch.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
+    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
+    static date_time from_time_t(std::time_t value);
+    /// @brief Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent to Coordinated Universal Time (UTC) or local time.
+    /// @param value A time interval from the start of the Clock's epoch.
+    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
+    /// @exception xtd::argument_out_of_range_exception value is less than xtd::date_time:::min_value or represents a time greater than xtd::date_time:::max_value.
+    /// @remarks <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
+    static date_time from_time_t(std::time_t value, date_time_kind kind);
+    
+    /// @brief Converts the specified <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> to an equivalent unspecified time.
+    /// @param value A <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> struct.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
+    /// @exception xtd::argument_out_of_range_exception value.ttm_year is less than 1 or greater than 9999.<br>-or-<br>tvalue.tm_mon is less than 1 or greater than 12.<br>-or-<br>value.tm_mday is less than 1 or greater than the number of days in month.<br>-or-<br>value.tm_hour is less than 0 or greater than 23.<br>-or-<br>value.tm_min is less than 0 or greater than 59<br>-or-<br>vale.tm_sec is less than 0 or greater than 59.
+    /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
+    static date_time from_tm(const std::tm& value);
+    /// @brief Converts the specified <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a><a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> to an equivalent to Coordinated Universal Time (UTC) or local time.
+    /// @param value A <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> struct.
+    /// @param kind One of the enumeration values that indicates whether ticks specifies a local time, Coordinated Universal Time (UTC), or neither.
+    /// @return An object that represents the unspecified time equivalent of the date and time represented by the value parameter.
+    /// @exception xtd::argument_out_of_range_exception value.ttm_year is less than 1 or greater than 9999.<br>-or-<br>tvalue.tm_mon is less than 1 or greater than 12.<br>-or-<br>value.tm_mday is less than 1 or greater than the number of days in month.<br>-or-<br>value.tm_hour is less than 0 or greater than 23.<br>-or-<br>value.tm_min is less than 0 or greater than 59<br>-or-<br>vale.tm_sec is less than 0 or greater than 59.
+    /// @remarks <a href="https://en.cppreference.com/w/c/chrono/tm">std::tm</a> is a structure holding a calendar date and time broken down into its components. is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
+    /// @remarks See <a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for more information.
+    static date_time from_tm(const std::tm& value, date_time_kind kind);
+    
+    /// @brief Returns an indication whether the specified year is a leap year.
+    /// @param year A 4-digit year.
+    /// @return true if year is a leap year; otherwise, false.
+    /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.
+    static bool is_leap_year(uint32 year);
+    
+    /// @brief Converts the string representation of a date and time to its xtd::date_time equivalent by using the conventions of the current culture.
+    /// @param s A string that contains a date and time to convert. See The string to parse for more information.
+    /// @return An object that is equivalent to the date and time contained in s.
+    /// @exception xtd::format_exception s does not contain a valid string representation of a date and time.
+    /// @remarks If s contains time zone information, this method returns a xtd::date_time value whose xtd::date_time::kind property is xtd::date_time_kind::local and converts the date and time in s to local time. Otherwise, it performs no time zone conversion and returns a xtd::date_time value whose Kind property is DateTimeKind.Unspecified.
+    /// @remarks This overload attempts to parse s by using the formatting conventions of the current culture. The current culture is indicated by the CurrentCulture property. To parse a string using the formatting conventions of a specific culture, call the Parse(String, IFormatProvider) or the Parse(String, IFormatProvider, DateTimeStyles) overloads.
+    /// @remarks This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style.
+    static date_time parse(const xtd::ustring& s);
+    
+    /// @brief Creates a new xtd::date_time object that has the same number of ticks as the specified xtd::date_time, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified xtd::date_time_kind value.
+    /// @param value A date and time.
+    /// @param kind One of the enumeration values that indicates whether the new object represents local time, UTC, or neither.
+    /// @return A new object that has the same number of ticks as the object represented by the value parameter and the xtd::date_time_kind value specified by the kind parameter.
+    /// @par Examples
+    /// The following example uses the xtd::date_time::specify_kind method to demonstrate how the xtd::date_time::kind property influences the xtd::date_time::to_local_time and xtd::date_time::to_universal_time conversion methods.
+    /// @include date_time_specify_kind.cpp
+    static date_time specify_kind(const date_time& value, date_time_kind kind);
+    
+    /// @brief Returns a xtd::ustring that represents the current xtd::date_time.
+    /// @param format Format-control String.
+    /// @param value The xtd::date_time object to format.
+    /// @return A xtd::ustring that represents the current xtd::date_time.
+    /// @par Examples
+    /// The foloowwing example shows how to use xtd::date_time::sprintf with differentt formats.
+    /// @include date_time_sprintf.cpp
+    /// @remarks The formatting codes for sprintf are listed below:
+    /// | Format | Print                                                                                                                       |
+    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+    /// | \%a    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
+    /// | \%A    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
+    /// | \%b    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
+    /// | \%B    | writes full month name, e.g. October (locale dependent).                                                                    |
+    /// | \%c    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
+    /// | \%C    | writes first 2 digits of year as a decimal number (range [00,99]).                                                          |
+    /// | \%d    | writes day of the month as a decimal number (range [01,31]).                                                                |
+    /// | \%D    | equivalent to "%m/%d/%y".                                                                                                   |
+    /// | \%e    | writes day of the month as a decimal number (range [1,31]).                                                                 |
+    /// | \%Ec   | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
+    /// | \%EC   | Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP            |
+    /// | \%Ex   | writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
+    /// | \%EX   | writes alternative time representation (locale dependent).                                                                  |
+    /// | \%Ey   | writes year as offset from locale's alternative calendar period %EC.                                                        |
+    /// | \%EY   | writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
+    /// | \%F    | equivalent to "%Y-%m-%d" (the ISO 8601 date format).                                                                        |
+    /// | \%g    | writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).           |
+    /// | \%G    | writes ISO 8601 week-based year, i.e. the year that contains the specified week.                                            |
+    /// | \%h    | synonym of b.                                                                                                               |
+    /// | \%H    | writes hour as a decimal number, 24 hour clock (range [00-23]).                                                             |
+    /// | \%I    | writes hour as a decimal number, 12 hour clock (range [01,12]).                                                             |
+    /// | \%j    | writes day of the year as a decimal number (range [001,366]).                                                               |
+    /// | \%m    | writes month as a decimal number (range [01,12]).                                                                           |
+    /// | \%M    | writes minute as a decimal number (range [00,59]).                                                                          |
+    /// | \%Od   | writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.           |
+    /// | \%Oe   | writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.           |
+    /// | \%OH   | writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.                |
+    /// | \%OI   | writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.                 |
+    /// | \%Om   | writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.                                  |
+    /// | \%OM   | writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.                               |
+    /// | \%OS   | writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.                               |
+    /// | \%Ou   | writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.              |
+    /// | \%OU   | writes week of the year, as by %U, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
+    /// | \%OV   | writes week of the year, as by %V, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
+    /// | \%Ow   | writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.               |
+    /// | \%OW   | writes week of the year, as by %W, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
+    /// | \%Oy   | writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.                  |
+    /// | \%p    | writes localized a.m. or p.m. (locale dependent).                                                                           |
+    /// | \%r    | writes localized 12-hour clock time (locale dependent).                                                                     |
+    /// | \%R    | equivalent to "%H:%M".                                                                                                      |
+    /// | \%S    | writes second as a decimal number (range [00,60]).                                                                          |
+    /// | \%T    | equivalent to "%H:%M:%S" (the ISO 8601 time format)                                                                         |
+    /// | \%u    | writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).                                      |
+    /// | \%U    | writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).                          |
+    /// | \%V    | writes ISO 8601 week of the year (range [01,53]).                                                                           |
+    /// | \%w    | writes weekday as a decimal number, where Sunday is 0 (range [0-6]).                                                        |
+    /// | \%W    | writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).                          |
+    /// | \%x    | writes localized date representation (locale dependent).                                                                    |
+    /// | \%X    | writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).                                       |
+    /// | \%y    | writes last 2 digits of year as a decimal number (range [00,99]).                                                           |
+    /// | \%Y    | writes year as a decimal number, e.g. 2017.                                                                                 |
+    /// | \%z    | writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available. |
+    /// | \%Z    | writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.     |
+    /// | \%\%   | writes literal %. The full conversion specification must be %%.                                                             |
+    /// | \%n    | writes newline character.                                                                                                   |
+    /// | \%t    | writes horizontal tab character.                                                                                            |
+    /// @remarks See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.
+    static xtd::ustring sprintf(const ustring& format, const date_time& value);
+
     /// @brief Converts the specified string representation of a date and time to its xtd::date_time equivalent and returns a value that indicates whether the conversion succeeded.
     /// @param s A string containing a date and time to convert.
     /// @param result When this method returns, contains the xtd::date_time value equivalent to the date and time contained in s, if the conversion succeeded, or xtd::date_time::min_value if the conversion failed. The conversion fails if the s parameter is an empty string (""), or does not contain a valid string representation of a date and time.
