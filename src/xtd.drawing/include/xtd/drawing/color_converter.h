@@ -127,7 +127,14 @@ namespace xtd {
       /// @param brightness The brightness of the reference backgroung color.
       /// @return The new color.
       static xtd::drawing::color disabled(const xtd::drawing::color& fore_color, float brightness) noexcept;
-      
+      /// @brief Creates a new gamma corrected color of the specified color with specified r, g, b corrections.
+      /// @param color The color to grayscale.
+      /// @param r The red correction from 0.1 to 5.
+      /// @param g The green correction from 0.1 to 5.
+      /// @param b The blue correction from 0.1 to 5.
+      /// @return The new color.
+      static xtd::drawing::color gamma_correction(const xtd::drawing::color& color, double r, double g, double b) noexcept;
+
       /// @brief Creates a new gray color of the specified color.
       /// @param color The color to grayscale.
       /// @return The new color.

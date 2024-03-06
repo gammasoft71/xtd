@@ -269,6 +269,27 @@ xtd::drawing::image image_converter::drop_shadow(const xtd::drawing::image& imag
   return result;
 }
 
+void image_converter::gamma_correction(xtd::drawing::image &image, double r, double g, double b) {
+  r = std::clamp(r, .1, 5.0);
+  g = std::clamp(g, .1, 5.0);
+  b = std::clamp(b, .1, 5.0);
+  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  for (auto y = 0; y < image.height(); ++y)
+    for (auto x = 0; x < image.width(); ++x) {
+      auto pixel = y * image.width() + x;
+      auto gamma_correction_r = static_cast<xtd::byte>(math::min(255, static_cast<int32>((255.0 * math::pow(rgb[pixel].r / 255.0, 1.0 / r)) + 0.5)));
+      auto gamma_correction_g = static_cast<xtd::byte>(math::min(255, static_cast<int32>((255.0 * math::pow(rgb[pixel].g / 255.0, 1.0 / g)) + 0.5)));
+      auto gamma_correction_b = static_cast<xtd::byte>(math::min(255, static_cast<int32>((255.0 * math::pow(rgb[pixel].b / 255.0, 1.0 / b)) + 0.5)));
+      rgb[pixel] = {gamma_correction_r, gamma_correction_g, gamma_correction_b};
+    }
+}
+
+image image_converter::gamma_correction(const image& image, double r, double g, double b) {
+  auto result = image;
+  gamma_correction(result, r, g, b);
+  return result;
+}
+
 void image_converter::grayscale(image& image) {
   grayscale(image, 100);
 }

@@ -2,9 +2,10 @@
 #include <xtd/byte_object.h>
 #include <xtd/math>
 
+// Most of the algorithms come from https://www.programmingalgorithms.com/category/image-processing/
+
 using namespace xtd;
 using namespace xtd::drawing;
-
 
 color color_converter::alpha_blend(const drawing::color& fore_color, const drawing::color& back_color, double alpha) noexcept {;
   return average(fore_color, back_color, alpha);
@@ -80,6 +81,13 @@ color color_converter::disabled(const drawing::color& fore_color, const drawing:
 color color_converter::disabled(const drawing::color& fore_color, float brightness) noexcept {
   brightness = std::clamp(brightness, .0f, 1.0f);
   return alpha_blend(fore_color, color::from_argb(0xFF000000 + static_cast<int32>(0xFFFFFF * brightness)), 0.4);
+}
+
+xtd::drawing::color color_converter::gamma_correction(const xtd::drawing::color& color, double r, double g, double b) noexcept {
+  r = std::clamp(r, .1, 5.0);
+  g = std::clamp(g, .1, 5.0);
+  b = std::clamp(b, .1, 5.0);
+  return xtd::drawing::color::from_argb(color.a(), static_cast<xtd::byte>(math::min(255, static_cast<int32>((255.0 * math::pow(color.r() / 255.0, 1.0 / r)) + 0.5))), static_cast<xtd::byte>(math::min(255, static_cast<int32>((255.0 * math::pow(color.g() / 255.0, 1.0 / g)) + 0.5))), static_cast<xtd::byte>(math::min(255, static_cast<int32>((255.0 * math::pow(color.b() / 255.0, 1.0 / b)) + 0.5))));
 }
 
 color color_converter::grayscale(const drawing::color& color) noexcept {
