@@ -1,4 +1,4 @@
-#include <xtd/drawing/color_transformer>
+#include <xtd/drawing/color_converter>
 #include <xtd/forms/application>
 #include <xtd/forms/fourteen_segment_display>
 #include <xtd/forms/form>
@@ -25,7 +25,7 @@ public:
       fourteen_segment_display1.value(chase[counter++ % chase.size()]);
     };
     
-    back_color(color_transformer::average(color::black, fourteen_segment_display1.fore_color(), 0.20));
+    back_color(color_converter::average(color::black, fourteen_segment_display1.fore_color(), 0.20));
     text("Fourteen segment display example");
     resize += [&] {
       fourteen_segment_display1.left((client_size().width() - fourteen_segment_display1.width()) / 2);
