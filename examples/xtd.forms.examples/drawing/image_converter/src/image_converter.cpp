@@ -301,20 +301,14 @@ namespace image_converter_example {
       
       original_picture_panel.double_buffered(true);
       original_picture_panel.paint += [&](object& sender, paint_event_args& e) {
-        if (background_choice.selected_item() =="checker-board") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
-        else if (background_choice.selected_item() == "control") e.graphics().fill_rectangle(system_brushes::control(), e.clip_rectangle());
-        else if (background_choice.selected_item() == "black") e.graphics().fill_rectangle(brushes::black(), e.clip_rectangle());
-        else if (background_choice.selected_item() == "white") e.graphics().fill_rectangle(brushes::white(), e.clip_rectangle());
+        fill_background(e.graphics(), e.clip_rectangle());
         e.graphics().draw_image(original_image(), rectangle {{(original_picture_panel.width() - original_image().width()) / 2, (original_picture_panel.height() - original_image().height()) / 2}, original_image().size()});
         control_paint::draw_border_from_back_color(original_picture_panel, e.graphics(), xtd::forms::border_style::theme, xtd::forms::border_sides::all, original_picture_panel.back_color(), rectangle::add(e.clip_rectangle(), -1, -1));
       };
       
       adjusted_picture_panel.double_buffered(true);
       adjusted_picture_panel.paint += [&](object& sender, paint_event_args& e) {
-        if (background_choice.selected_item() == "checker-board") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
-        else if (background_choice.selected_item() == "control") e.graphics().fill_rectangle(system_brushes::control(), e.clip_rectangle());
-        else if (background_choice.selected_item() == "black") e.graphics().fill_rectangle(brushes::black(), e.clip_rectangle());
-        else if (background_choice.selected_item() == "white") e.graphics().fill_rectangle(brushes::white(), e.clip_rectangle());
+        fill_background(e.graphics(), e.clip_rectangle());
         e.graphics().draw_image(adjusted_image, rectangle {{(adjusted_picture_panel.width() - adjusted_image.width()) / 2, (adjusted_picture_panel.height() - adjusted_image.height()) / 2}, adjusted_image.size()});
         control_paint::draw_border_from_back_color(adjusted_picture_panel, e.graphics(), xtd::forms::border_style::theme, xtd::forms::border_sides::all, adjusted_picture_panel.back_color(), rectangle::add(e.clip_rectangle(), -1, -1));
       };
@@ -328,6 +322,13 @@ namespace image_converter_example {
     }
     
   private:
+    void fill_background(xtd::drawing::graphics& g, const xtd::drawing::rectangle& rectangle) {
+      if (background_choice.selected_item() == "checker-board") g.fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, rectangle);
+      else if (background_choice.selected_item() == "control") g.fill_rectangle(system_brushes::control(), rectangle);
+      else if (background_choice.selected_item() == "black") g.fill_rectangle(brushes::black(), rectangle);
+      else if (background_choice.selected_item() == "white") g.fill_rectangle(brushes::white(), rectangle);
+    }
+    
     void reset_inputs() {
       original_image_ = as<bitmap>(picture_choice.selected_item().tag());
       
