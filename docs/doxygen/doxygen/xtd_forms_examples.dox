@@ -376,6 +376,21 @@
 /// <br>
 /// @image html translator_gd.png
 ///
+/// @example translator_with_language.cpp
+/// demonstrates the use of xtd::forms::translator strings.
+/// @par Windows
+/// @image html translator_with_language_w.png
+/// <br>
+/// @image html translator_with_language_wd.png
+/// @par macOS
+/// @image html translator_with_language_m.png
+/// <br>
+/// @image html translator_with_language_md.png
+/// @par Gnome
+/// @image html translator_with_language_g.png
+/// <br>
+/// @image html translator_with_language_gd.png
+///
 /// @example use_wait_cursor.cpp
 /// Shows how to create an use_wait_cursor with  xtd::forms::application class.
 /// @par Windows
@@ -525,6 +540,21 @@
 /// @image html animation_g.png
 /// <br>
 /// @image html animation_gd.png
+///
+/// @example bitmap_button.cpp
+/// demonstrates the use of xtd::forms::button control with image.
+/// @par Windows
+/// @image html bitmap_button_w.png
+/// <br>
+/// @image html bitmap_button_wd.png
+/// @par macOS
+/// @image html bitmap_button_m.png
+/// <br>
+/// @image html bitmap_button_md.png
+/// @par Gnome
+/// @image html bitmap_button_g.png
+/// <br>
+/// @image html bitmap_button_gd.png
 ///
 /// @example button.cpp
 /// demonstrates the use of xtd::forms::button control.
@@ -1831,6 +1861,36 @@
 /// <br>
 /// @image html fill_rounded_rectangle_gd.png
 ///
+/// @example image_converter.cpp
+/// shows how to use xtd::drawing::graphics::image_converter class.
+/// @par Windows
+/// @image html image_converter_w.png
+/// <br>
+/// @image html image_converter_wd.png
+/// @par macOS
+/// @image html image_converter_m.png
+/// <br>
+/// @image html image_converter_md.png
+/// @par Gnome
+/// @image html image_converter_g.png
+/// <br>
+/// @image html image_converter_gd.png
+///
+/// @example application_add_message_filter.cpp
+/// Shows how to create an application with  xtd::forms::application::add_message_filter method.
+/// @par Windows
+/// @image html application_add_message_filter_w.png
+/// <br>
+/// @image html application_add_message_filter_wd.png
+/// @par macOS
+/// @image html application_add_message_filter_m.png
+/// <br>
+/// @image html application_add_message_filter_md.png
+/// @par Gnome
+/// @image html application_add_message_filter_g.png
+/// <br>
+/// @image html application_add_message_filter_gd.png
+///
 /// @example application_application_exit.cpp
 /// Shows how to create an application with  xtd::forms::application::application_exit event.
 /// @par Windows
@@ -1935,6 +1995,21 @@
 /// @image html form_click_g.png
 /// <br>
 /// @image html form_click_gd.png
+///
+/// @example form_custom_event.cpp
+/// demonstrates how to create custom event with form.
+/// @par Windows
+/// @image html form_custom_event_w.png
+/// <br>
+/// @image html form_custom_event_wd.png
+/// @par macOS
+/// @image html form_custom_event_m.png
+/// <br>
+/// @image html form_custom_event_md.png
+/// @par Gnome
+/// @image html form_custom_event_g.png
+/// <br>
+/// @image html form_custom_event_gd.png
 ///
 /// @example form_paint.cpp
 /// demonstrates paint event with form.
@@ -2401,20 +2476,20 @@
 /// <br>
 /// @image html auto_scroll_gd.png
 ///
-/// @example bitmap_button.cpp
+/// @example bitmap_button_with_text.cpp
 /// demonstrates the use of xtd::forms::button control with image.
 /// @par Windows
-/// @image html bitmap_button_w.png
+/// @image html bitmap_button_with_text_w.png
 /// <br>
-/// @image html bitmap_button_wd.png
+/// @image html bitmap_button_with_text_wd.png
 /// @par macOS
-/// @image html bitmap_button_m.png
+/// @image html bitmap_button_with_text_m.png
 /// <br>
-/// @image html bitmap_button_md.png
+/// @image html bitmap_button_with_text_md.png
 /// @par Gnome
-/// @image html bitmap_button_g.png
+/// @image html bitmap_button_with_text_g.png
 /// <br>
-/// @image html bitmap_button_gd.png
+/// @image html bitmap_button_with_text_gd.png
 ///
 /// @example border_style.cpp
 /// demonstrates the use of xtd::forms::label::border_style property.
@@ -3540,6 +3615,21 @@
 /// @image html toggle_light_g.png
 /// <br>
 /// @image html toggle_light_gd.png
+///
+/// @example about_dialog_with_user_pages.cpp
+/// demonstrates how to add custom tab page to xtd::forms::about_dialog dialog.
+/// @par Windows
+/// @image html about_dialog_with_user_pages_w.png
+/// <br>
+/// @image html about_dialog_with_user_pages_wd.png
+/// @par macOS
+/// @image html about_dialog_with_user_pages_m.png
+/// <br>
+/// @image html about_dialog_with_user_pages_md.png
+/// @par Gnome
+/// @image html about_dialog_with_user_pages_g.png
+/// <br>
+/// @image html about_dialog_with_user_pages_gd.png
 ///
 /// @example user_dialog.cpp
 /// demonstrates the use of xtd::forms::form as dialog.
