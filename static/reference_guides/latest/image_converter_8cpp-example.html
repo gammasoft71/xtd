@@ -145,10 +145,12 @@ $(function() {
 <div class="line">      threshold_color_extraction_track_bar.tick_style(tick_style::none);</div>
 <div class="line">      threshold_color_substitution_track_bar.tick_style(tick_style::none);</div>
 <div class="line">      percent_contrast_track_bar.tick_style(tick_style::none);</div>
+<div class="line">      horizontal_drop_shadow_track_bar.tick_style(tick_style::none);</div>
+<div class="line">      vertical_drop_shadow_track_bar.tick_style(tick_style::none);</div>
 <div class="line">      radius_drop_shadow_track_bar.tick_style(tick_style::none);</div>
-<div class="line">      percent_red_gamma_correction_track_bar.tick_style(tick_style::none);</div>
-<div class="line">      percent_green_gamma_correction_track_bar.tick_style(tick_style::none);</div>
-<div class="line">      percent_blue_gamma_correction_track_bar.tick_style(tick_style::none);</div>
+<div class="line">      red_correction_gamma_correction_track_bar.tick_style(tick_style::none);</div>
+<div class="line">      green_correction_gamma_correction_track_bar.tick_style(tick_style::none);</div>
+<div class="line">      blue_correction_gamma_correction_track_bar.tick_style(tick_style::none);</div>
 <div class="line">      percent_grayscale_track_bar.tick_style(tick_style::none);</div>
 <div class="line">      percent_hue_rotate_track_bar.tick_style(tick_style::none);</div>
 <div class="line">      percent_invert_track_bar.tick_style(tick_style::none);</div>
@@ -160,6 +162,13 @@ $(function() {
 <div class="line">      percent_saturate_track_bar.tick_style(tick_style::none);</div>
 <div class="line">      percent_sepia_track_bar.tick_style(tick_style::none);</div>
 <div class="line">      threshold_threshold_track_bar.tick_style(tick_style::none);</div>
+<div class="line">      </div>
+<div class="line">      red_correction_gamma_correction_numeric_up_down.decimal_place(1);</div>
+<div class="line">      red_correction_gamma_correction_numeric_up_down.increment(.1);</div>
+<div class="line">      green_correction_gamma_correction_numeric_up_down.decimal_place(1);</div>
+<div class="line">      green_correction_gamma_correction_numeric_up_down.increment(.1);</div>
+<div class="line">      blue_correction_gamma_correction_numeric_up_down.decimal_place(1);</div>
+<div class="line">      blue_correction_gamma_correction_numeric_up_down.increment(.1);</div>
 <div class="line"> </div>
 <div class="line">      bitonal_panel.dock(<a id="a1" name="a1"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">xtd::forms::dock_style::fill</a>);</div>
 <div class="line">      blur_panel.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">xtd::forms::dock_style::fill</a>);</div>
@@ -183,8 +192,8 @@ $(function() {
 <div class="line">      threshold_panel.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">xtd::forms::dock_style::fill</a>);</div>
 <div class="line">      picures_panel.border_sides(<a id="a2" name="a2"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#gga56260d6433849c6fa239714c85a1d45da71f262d796bed1ab30e8a2d5a8ddee6f">xtd::forms::border_sides::bottom</a>).border_style(<a id="a3" name="a3"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6a99f74c03db9bc34e90ad3ede856995d3">xtd::forms::border_style::inset</a>).dock(<a id="a4" name="a4"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619ab28354b543375bfa94dabaeda722927f">xtd::forms::dock_style::top</a>);</div>
 <div class="line">      </div>
-<div class="line">      effect_choice.selected_value_changed += {*<span class="keyword">this</span>, &amp;form1::on_input_change};</div>
-<div class="line">      picture_choice.selected_value_changed += {*<span class="keyword">this</span>, &amp;form1::on_input_change};</div>
+<div class="line">      effect_choice.selected_value_changed += {*<span class="keyword">this</span>, &amp;form1::on_effect_choice_selected_value_changed};</div>
+<div class="line">      picture_choice.selected_value_changed += {*<span class="keyword">this</span>, &amp;form1::on_picture_choice_selected_value_changed};</div>
 <div class="line"> </div>
 <div class="line">      threshold_bitonal_numeric_up_down.value_changed += [&amp;] {threshold_bitonal_track_bar.value(as&lt;int32&gt;(threshold_bitonal_numeric_up_down.value()));};</div>
 <div class="line">      threshold_bitonal_track_bar.value_changed += [&amp;] {</div>
@@ -288,6 +297,27 @@ $(function() {
 <div class="line">      };</div>
 <div class="line">      color_drop_shadow_color_picker.color_picker_changed += [&amp;] {</div>
 <div class="line">        adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());</div>
+<div class="line">        adjusted_picture_panel.invalidate();</div>
+<div class="line">      };</div>
+<div class="line"> </div>
+<div class="line">      red_correction_gamma_correction_numeric_up_down.value_changed += [&amp;] {red_correction_gamma_correction_track_bar.value(as&lt;int32&gt;(red_correction_gamma_correction_numeric_up_down.value() * 10));};</div>
+<div class="line">      red_correction_gamma_correction_track_bar.value_changed += [&amp;] {</div>
+<div class="line">        red_correction_gamma_correction_numeric_up_down.value(red_correction_gamma_correction_track_bar.value() / 10.0);</div>
+<div class="line">        adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);</div>
+<div class="line">        adjusted_picture_panel.invalidate();</div>
+<div class="line">      };</div>
+<div class="line"> </div>
+<div class="line">      green_correction_gamma_correction_numeric_up_down.value_changed += [&amp;] {green_correction_gamma_correction_track_bar.value(as&lt;int32&gt;(green_correction_gamma_correction_numeric_up_down.value() * 10));};</div>
+<div class="line">      green_correction_gamma_correction_track_bar.value_changed += [&amp;] {</div>
+<div class="line">        green_correction_gamma_correction_numeric_up_down.value(green_correction_gamma_correction_track_bar.value() / 10.0);</div>
+<div class="line">        adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);</div>
+<div class="line">        adjusted_picture_panel.invalidate();</div>
+<div class="line">      };</div>
+<div class="line"> </div>
+<div class="line">      blue_correction_gamma_correction_numeric_up_down.value_changed += [&amp;] {blue_correction_gamma_correction_track_bar.value(as&lt;int32&gt;(blue_correction_gamma_correction_numeric_up_down.value() * 10));};</div>
+<div class="line">      blue_correction_gamma_correction_track_bar.value_changed += [&amp;] {</div>
+<div class="line">        blue_correction_gamma_correction_numeric_up_down.value(blue_correction_gamma_correction_track_bar.value() / 10.0);</div>
+<div class="line">        adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);</div>
 <div class="line">        adjusted_picture_panel.invalidate();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
@@ -406,7 +436,80 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">void</span> on_input_change() {</div>
+<div class="line">    <span class="keywordtype">void</span> reset_inputs() {</div>
+<div class="line">      original_image_ = as&lt;bitmap&gt;(picture_choice.selected_item().tag());</div>
+<div class="line">      </div>
+<div class="line">      threshold_bitonal_track_bar.value(382);</div>
+<div class="line">      upper_color_bitonal_color_picker.color(color::red);</div>
+<div class="line">      lower_color_bitonal_color_picker.color(color::white);</div>
+<div class="line">      radius_blur_track_bar.value(10);</div>
+<div class="line">      percent_brightness_track_bar.value(125);</div>
+<div class="line">      percent_color_track_bar.value(200);</div>
+<div class="line">      color_color_color_picker.color(color::red);</div>
+<div class="line">      threshold_color_extraction_track_bar.value(260);</div>
+<div class="line">      extraction_color_color_extraction_color_picker.color(color::green);</div>
+<div class="line">      other_pixels_color_color_extraction_color_picker.color(color::white);</div>
+<div class="line">      threshold_color_substitution_track_bar.value(260);</div>
+<div class="line">      source_color_color_substitution_color_picker.color(color::green);</div>
+<div class="line">      new_color_color_substitution_color_picker.color(color::blue);</div>
+<div class="line">      percent_contrast_track_bar.value(200);</div>
+<div class="line">      disabled_switch_button.checked(<span class="keyword">true</span>);</div>
+<div class="line">      radius_drop_shadow_track_bar.value(10);</div>
+<div class="line">      horizontal_drop_shadow_track_bar.value(8);</div>
+<div class="line">      vertical_drop_shadow_track_bar.value(8);</div>
+<div class="line">      color_drop_shadow_color_picker.color(color::black);</div>
+<div class="line">      red_correction_gamma_correction_track_bar.value(20);</div>
+<div class="line">      green_correction_gamma_correction_track_bar.value(16);</div>
+<div class="line">      blue_correction_gamma_correction_track_bar.value(8);</div>
+<div class="line">      percent_grayscale_track_bar.value(100);</div>
+<div class="line">      percent_hue_rotate_track_bar.value(90);</div>
+<div class="line">      percent_invert_track_bar.value(100);</div>
+<div class="line">      percent_opacity_track_bar.value(50);</div>
+<div class="line">      rescale_aspect_ratio = as&lt;double&gt;(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width()) / original_image().size().height();</div>
+<div class="line">      rescale_maintain_aspect_ratio_check_box.checked(<span class="keyword">true</span>);</div>
+<div class="line">      rescale_width_track_bar.value(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width() / 5 * 4);</div>
+<div class="line">      resize_aspect_ratio = as&lt;double&gt;(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width()) / original_image().size().height();</div>
+<div class="line">      resize_maintain_aspect_ratio_check_box.checked(<span class="keyword">true</span>);</div>
+<div class="line">      resize_width_track_bar.value(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width() / 5 * 4);</div>
+<div class="line">      rotate_flip_choice.selected_index(6);</div>
+<div class="line">      percent_saturate_track_bar.value(300);</div>
+<div class="line">      percent_sepia_track_bar.value(100);</div>
+<div class="line">      threshold_threshold_track_bar.value(382);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> update_pictures() {</div>
+<div class="line">      original_picture_panel.invalidate();</div>
+<div class="line"> </div>
+<div class="line">      <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;bitonal&quot;</span>) adjusted_image = image_converter::bitonal(original_image(), threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color());</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;blur&quot;</span>) adjusted_image = image_converter::blur(original_image(), radius_blur_track_bar.value());</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;brightness&quot;</span>) adjusted_image = image_converter::brightness(original_image(), percent_brightness_track_bar.value() / 100.0);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;color&quot;</span>) adjusted_image = image_converter::color(original_image(), color_color_color_picker.color(), percent_color_track_bar.value() / 100.0);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;color-extraction&quot;</span>) adjusted_image = image_converter::color_extraction(original_image(), threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color());</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;color-substitution&quot;</span>) adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;contrast&quot;</span>) adjusted_image = image_converter::contrast(original_image(), percent_contrast_track_bar.value() / 100.0);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;disabled&quot;</span>) adjusted_image = disabled_switch_button.checked() ? <a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">bitmap</a> {image_converter::disabled(original_image(), adjusted_picture_panel.back_color())} : original_image();</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;drop-shadow&quot;</span>) adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;gamma-correction&quot;</span>) adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;grayscale&quot;</span>) adjusted_image = image_converter::grayscale(original_image(), percent_grayscale_track_bar.value() / 100.0);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;hue-rotate&quot;</span>)adjusted_image = image_converter::hue_rotate(original_image(), percent_hue_rotate_track_bar.value());</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;invert&quot;</span>) adjusted_image = image_converter::invert(original_image(), percent_invert_track_bar.value() / 100.0);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;opacity&quot;</span>) adjusted_image = image_converter::opacity(original_image(), percent_opacity_track_bar.value() / 100.0);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;rescale&quot;</span>) adjusted_image = image_converter::rescale(original_image(), {resize_width_track_bar.value(), rescale_height_track_bar.value()});</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;resize&quot;</span>) adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;rotate-flip&quot;</span>) adjusted_image = image_converter::rotate_flip(original_image(), as&lt;rotate_flip_type&gt;(rotate_flip_choice.selected_item().tag()));</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;saturate&quot;</span>) adjusted_image = image_converter::saturate(original_image(), percent_saturate_track_bar.value() / 100.0);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;sepia&quot;</span>) adjusted_image = image_converter::sepia(original_image(), percent_sepia_track_bar.value() / 100.0);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;threshold&quot;</span>) adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());</div>
+<div class="line">      <span class="keywordflow">else</span> adjusted_image = original_image();</div>
+<div class="line">      adjusted_picture_panel.invalidate();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> on_picture_choice_selected_value_changed() {</div>
+<div class="line">      original_image_ = as&lt;bitmap&gt;(picture_choice.selected_item().tag());</div>
+<div class="line">      update_pictures();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> on_effect_choice_selected_value_changed() {</div>
 <div class="line">      bitonal_panel.visible(effect_choice.selected_item() == <span class="stringliteral">&quot;bitonal&quot;</span>);</div>
 <div class="line">      blur_panel.visible(effect_choice.selected_item() == <span class="stringliteral">&quot;blur&quot;</span>);</div>
 <div class="line">      brightness_panel.visible(effect_choice.selected_item() == <span class="stringliteral">&quot;brightness&quot;</span>);</div>
@@ -427,64 +530,9 @@ $(function() {
 <div class="line">      saturate_panel.visible(effect_choice.selected_item().value() == <span class="stringliteral">&quot;saturate&quot;</span>);</div>
 <div class="line">      sepia_panel.visible(effect_choice.selected_item().value() == <span class="stringliteral">&quot;sepia&quot;</span>);</div>
 <div class="line">      threshold_panel.visible(effect_choice.selected_item().value() == <span class="stringliteral">&quot;threshold&quot;</span>);</div>
-<div class="line">  </div>
-<div class="line">      original_image_ = as&lt;bitmap&gt;(picture_choice.selected_item().tag());</div>
 <div class="line"> </div>
-<div class="line">      threshold_bitonal_track_bar.value(382);</div>
-<div class="line">      upper_color_bitonal_color_picker.color(color::red);</div>
-<div class="line">      lower_color_bitonal_color_picker.color(color::white);</div>
-<div class="line">      radius_blur_track_bar.value(10);</div>
-<div class="line">      percent_brightness_track_bar.value(125);</div>
-<div class="line">      percent_color_track_bar.value(200);</div>
-<div class="line">      color_color_color_picker.color(color::red);</div>
-<div class="line">      threshold_color_extraction_track_bar.value(260);</div>
-<div class="line">      extraction_color_color_extraction_color_picker.color(color::green);</div>
-<div class="line">      other_pixels_color_color_extraction_color_picker.color(color::white);</div>
-<div class="line">      threshold_color_substitution_track_bar.value(260);</div>
-<div class="line">      source_color_color_substitution_color_picker.color(color::green);</div>
-<div class="line">      new_color_color_substitution_color_picker.color(color::blue);</div>
-<div class="line">      percent_contrast_track_bar.value(200);</div>
-<div class="line">      disabled_switch_button.checked(<span class="keyword">true</span>);</div>
-<div class="line">      radius_drop_shadow_track_bar.value(10);</div>
-<div class="line">      horizontal_drop_shadow_track_bar.value(8);</div>
-<div class="line">      vertical_drop_shadow_track_bar.value(8);</div>
-<div class="line">      color_drop_shadow_color_picker.color(color::black);</div>
-<div class="line">      percent_grayscale_track_bar.value(100);</div>
-<div class="line">      percent_hue_rotate_track_bar.value(90);</div>
-<div class="line">      percent_invert_track_bar.value(100);</div>
-<div class="line">      percent_opacity_track_bar.value(50);</div>
-<div class="line">      rescale_aspect_ratio = as&lt;double&gt;(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width()) / original_image().size().height();</div>
-<div class="line">      rescale_maintain_aspect_ratio_check_box.checked(<span class="keyword">true</span>);</div>
-<div class="line">      rescale_width_track_bar.value(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width() / 5 * 4);</div>
-<div class="line">      resize_aspect_ratio = as&lt;double&gt;(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width()) / original_image().size().height();</div>
-<div class="line">      resize_maintain_aspect_ratio_check_box.checked(<span class="keyword">true</span>);</div>
-<div class="line">      resize_width_track_bar.value(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width() / 5 * 4);</div>
-<div class="line">      rotate_flip_choice.selected_index(6);</div>
-<div class="line">      percent_saturate_track_bar.value(300);</div>
-<div class="line">      percent_sepia_track_bar.value(100);</div>
-<div class="line">      threshold_threshold_track_bar.value(382);</div>
-<div class="line">      </div>
-<div class="line">      <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;bitonal&quot;</span>) adjusted_image = image_converter::bitonal(original_image(), threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color());</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;blur&quot;</span>) adjusted_image = image_converter::blur(original_image(), radius_blur_track_bar.value());</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;brightness&quot;</span>) adjusted_image = image_converter::brightness(original_image(), percent_brightness_track_bar.value() / 100.0);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;color&quot;</span>) adjusted_image = image_converter::color(original_image(), color_color_color_picker.color(), percent_color_track_bar.value() / 100.0);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;color-extraction&quot;</span>) adjusted_image = image_converter::color_extraction(original_image(), threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color());</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;color-substitution&quot;</span>) adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;contrast&quot;</span>) adjusted_image = image_converter::contrast(original_image(), percent_contrast_track_bar.value() / 100.0);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;disabled&quot;</span>) adjusted_image = disabled_switch_button.checked() ? <a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">bitmap</a> {image_converter::disabled(original_image(), adjusted_picture_panel.back_color())} : original_image();</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;drop-shadow&quot;</span>) adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;grayscale&quot;</span>) adjusted_image = image_converter::grayscale(original_image(), percent_grayscale_track_bar.value() / 100.0);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;hue-rotate&quot;</span>)adjusted_image = image_converter::hue_rotate(original_image(), percent_hue_rotate_track_bar.value());</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;invert&quot;</span>) adjusted_image = image_converter::invert(original_image(), percent_invert_track_bar.value() / 100.0);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;opacity&quot;</span>) adjusted_image = image_converter::opacity(original_image(), percent_opacity_track_bar.value() / 100.0);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;rescale&quot;</span>) adjusted_image = image_converter::rescale(original_image(), {resize_width_track_bar.value(), rescale_height_track_bar.value()});</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;resize&quot;</span>) adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;rotate-flip&quot;</span>) adjusted_image = image_converter::rotate_flip(original_image(), as&lt;rotate_flip_type&gt;(rotate_flip_choice.selected_item().tag()));</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;saturate&quot;</span>) adjusted_image = image_converter::saturate(original_image(), percent_saturate_track_bar.value() / 100.0);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;sepia&quot;</span>) adjusted_image = image_converter::sepia(original_image(), percent_sepia_track_bar.value() / 100.0);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;threshold&quot;</span>) adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());</div>
-<div class="line">      <span class="keywordflow">else</span> adjusted_image = original_image();</div>
-<div class="line">      adjusted_picture_panel.invalidate();</div>
+<div class="line">      reset_inputs();</div>
+<div class="line">      update_pictures();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">const</span> <a id="_a14" name="_a14"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>&amp; original_image()<span class="keyword"> const </span>{<span class="keywordflow">return</span> original_image_;}</div>
@@ -560,15 +608,15 @@ $(function() {
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1color__picker.html">color_picker</a> color_drop_shadow_color_picker = color_picker::create(drop_shadow_panel, color::black, {70, 90});</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> gamma_correction_panel = panel::create(*<span class="keyword">this</span>, {0, 0}, {730, 170});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> percent_red_bgamma_correction_label = label::create(gamma_correction_panel, <span class="stringliteral">&quot;Red&quot;</span>, {10, 14}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> percent_red_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 100, 0, 100, {80, 10}, {200, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> percent_red_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 100, 0, 100, {290, 10}, {110, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> percent_green_bgamma_correction_label = label::create(gamma_correction_panel, <span class="stringliteral">&quot;Green&quot;</span>, {10, 54}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> percent_green_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 100, 0, 100, {80, 50}, {200, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> percent_green_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 100, 0, 100, {290, 50}, {110, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> percent_blue_bgamma_correction_label = label::create(gamma_correction_panel, <span class="stringliteral">&quot;Blue&quot;</span>, {10, 94}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> percent_blue_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 100, 0, 100, {80, 90}, {200, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> percent_blue_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 100, 0, 100, {290, 90}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> red_correction_gamma_correction_label = label::create(gamma_correction_panel, <span class="stringliteral">&quot;Red&quot;</span>, {10, 14}, {70, 23});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> red_correction_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 20, 1, 50, {80, 10}, {200, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> red_correction_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 2.0, 0.1, 5.0, {290, 10}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> green_correction_bgamma_correction_label = label::create(gamma_correction_panel, <span class="stringliteral">&quot;Green&quot;</span>, {10, 54}, {70, 23});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> green_correction_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 16, 1, 50, {80, 50}, {200, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> green_correction_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 1.6, 0.1, 5.0, {290, 50}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> blue_correction_bgamma_correction_label = label::create(gamma_correction_panel, <span class="stringliteral">&quot;Blue&quot;</span>, {10, 94}, {70, 23});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> blue_correction_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 8, 1, 50, {80, 90}, {200, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> blue_correction_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 0.8, 0.1, 5.0, {290, 90}, {110, 25});</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> grayscale_panel = panel::create(*<span class="keyword">this</span>, {0, 0}, {730, 170});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> percent_bgrayscale_label = label::create(grayscale_panel, <span class="stringliteral">&quot;Percent&quot;</span>, {10, 54}, {70, 23});</div>
@@ -674,7 +722,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 12:10:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Mar 6 2024 15:23:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

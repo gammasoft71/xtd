@@ -151,6 +151,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af5852ff6da0e9a6c1726d8428ee4ccdc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1color__converter.html#af5852ff6da0e9a6c1726d8428ee4ccdc">disabled</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;fore_color, float <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#a7db4ee9b325b7d70206bc11df6ccdeb9">brightness</a>) noexcept</td></tr>
 <tr class="memdesc:af5852ff6da0e9a6c1726d8428ee4ccdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new disabled color of the specified color with specified brightness.  <br /></td></tr>
 <tr class="separator:af5852ff6da0e9a6c1726d8428ee4ccdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af975821f37a5cea1b68c2ef20fcb3126"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1color__converter.html#af975821f37a5cea1b68c2ef20fcb3126">gamma_correction</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>, double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4b43b0aee35624cd95b910189b3dc231">r</a>, double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d">g</a>, double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memdesc:af975821f37a5cea1b68c2ef20fcb3126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new gamma corrected color of the specified color with specified r, g, b corrections.  <br /></td></tr>
+<tr class="separator:af975821f37a5cea1b68c2ef20fcb3126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab45e94a797f4db35dbbc721615faa7bc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1color__converter.html#ab45e94a797f4db35dbbc721615faa7bc">grayscale</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>) noexcept</td></tr>
 <tr class="memdesc:ab45e94a797f4db35dbbc721615faa7bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new gray color of the specified color.  <br /></td></tr>
 <tr class="separator:ab45e94a797f4db35dbbc721615faa7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -870,6 +873,66 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 
 </div>
 </div>
+<a id="af975821f37a5cea1b68c2ef20fcb3126" name="af975821f37a5cea1b68c2ef20fcb3126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af975821f37a5cea1b68c2ef20fcb3126">&#9670;&#160;</a></span>gamma_correction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::drawing::color_converter::gamma_correction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new gamma corrected color of the specified color with specified r, g, b corrections. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The color to grayscale. </td></tr>
+    <tr><td class="paramname">r</td><td>The red correction from 0.1 to 5. </td></tr>
+    <tr><td class="paramname">g</td><td>The green correction from 0.1 to 5. </td></tr>
+    <tr><td class="paramname">b</td><td>The blue correction from 0.1 to 5. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new color. </dd></dl>
+
+</div>
+</div>
 <a id="ab45e94a797f4db35dbbc721615faa7bc" name="ab45e94a797f4db35dbbc721615faa7bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab45e94a797f4db35dbbc721615faa7bc">&#9670;&#160;</a></span>grayscale() <span class="overload">[1/2]</span></h2>
 
@@ -1343,7 +1406,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 12:11:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Mar 6 2024 15:23:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
