@@ -254,6 +254,28 @@ namespace xtd {
       /// | @image html ball.png | @image html ball_drop_shadow.png |
       static xtd::drawing::image drop_shadow(const xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color);
 
+      /// @brief Change the gamma of the specified image with specified r, g, ad b corrections.
+      /// @param image The image to change the gamma.
+      /// @param r The red correction from 0.1 to 5.
+      /// @param g The green correction from 0.1 to 5.
+      /// @param b The blue correction from 0.1 to 5.
+      /// @par Appearance
+      /// | Original             | Converted                             |
+      /// | -------------------- | ------------------------------------- |
+      /// | @image html ball.png | @image html ball_gamma_correction.png |
+      static void gamma_correction(xtd::drawing::image& image, double r, double g, double b);
+      /// @brief Creates a new image with gamma correction of the specified image with specified r, g, ad b corrections.
+      /// @param image The image to change the gamma.
+      /// @param r The red correction from 0.1 to 5.
+      /// @param g The green correction from 0.1 to 5.
+      /// @param b The blue correction from 0.1 to 5.
+      /// @return The converted image.
+      /// @par Appearance
+      /// | Original             | Converted                             |
+      /// | -------------------- | ------------------------------------- |
+      /// | @image html ball.png | @image html ball_gamma_correction.png |
+      static xtd::drawing::image gamma_correction(const xtd::drawing::image& image, double r, double g, double b);
+
       /// @brief Converts into grayscale of the specified image.
       /// @param image The image to be transformed into grayscale.
       /// @par Appearance
