@@ -1,5 +1,6 @@
 #include "../../../include/xtd/drawing/color_converter.h"
 #include "../../../include/xtd/drawing/image_converter.h"
+#include <xtd/byte_object>
 #include <xtd/math>
 #include <algorithm>
 #include <tuple>
@@ -80,7 +81,7 @@ namespace {
 }
 
 void image_converter::bitonal(image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
-  threshold = std::clamp(threshold, 0, 765);
+  threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
@@ -148,7 +149,7 @@ xtd::drawing::image image_converter::color(const xtd::drawing::image& image, con
 }
 
 void image_converter::color_extraction(xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept {
-  threshold = std::clamp(threshold, 0, 765);
+  threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
@@ -166,7 +167,7 @@ xtd::drawing::image image_converter::color_extraction(const xtd::drawing::image&
 }
 
 void image_converter::color_substitution(xtd::drawing::image& image, int32 threshold, const drawing::color& source_color, const xtd::drawing::color& new_color) noexcept {
-  threshold = std::clamp(threshold, 0, 765);
+  threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
   auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
