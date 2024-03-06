@@ -482,224 +482,7 @@ namespace xtd {
     /// @name Methods
     
     /// @{
-    /// @brief Gets the class name of the object_t.
-    /// @return The class name of the object_t.
-    /// @remarks For example, the name of the ustring type is ustring.
-    /// @deprecated Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0
-    template<typename object_t>
-    [[deprecated("Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0")]]
-    static ustring class_name() {return get_class_name(full_class_name<object_t>());}
-    
-    /// @brief Gets the class name of the specified object.
-    /// @return The class name of the specified object.
-    /// @remarks For example, the name of the ustring type is ustring.
-    /// @deprecated Replaced by typeof_(object).name() - Will be removed in version 0.4.0
-    template<typename object_t>
-    [[deprecated("Replaced by typeof_(object).name() - Will be removed in version 0.4.0")]]
-    static ustring class_name(const object_t& object) {return get_class_name(full_class_name(object));}
-    
-    /// @brief Gets the class name of the specified object.
-    /// @return The class name of the specified object.
-    /// @remarks For example, the name of the ustring type is ustring.
-    /// @deprecated Replaced by typeof_(info).name() - Will be removed in version 0.4.0
-    [[deprecated("Replaced by typeof_(info).name() - Will be removed in version 0.4.0")]]
-    static ustring class_name(const std::type_info& info);
-    
-    using std::basic_string<value_type>::compare;
-    /// @brief Compares two specified string objects and returns an integer that indicates their relative position in the sort order.
-    /// @param str_a The first string to compare.
-    /// @param str_b The second string to compare.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
-    /// | Value             | Condition                                                     |
-    /// | ----------------- | ------------------------------------------------------------- |
-    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
-    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
-    /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int32 compare(const ustring& str_a, const ustring& str_b) noexcept;
-    /// @brief Compares two specified string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
-    /// @param str_a The first string to compare.
-    /// @param str_b The second string to compare.
-    /// @param ignore_case true to ignore case during the comparison; otherwise, false.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
-    /// | Value             | Condition                                                     |
-    /// | ----------------- | ------------------------------------------------------------- |
-    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
-    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
-    /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int32 compare(const ustring& str_a, const ustring& str_b, bool ignore_case) noexcept;
-    
-    /// @brief Compares two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
-    /// @param str_a The first string to compare.
-    /// @param str_b The second string to compare.
-    /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
-    /// | Value             | Condition                                                     |
-    /// | ----------------- | ------------------------------------------------------------- |
-    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
-    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
-    /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int32 compare(const ustring& str_a, const ustring& str_b, xtd::string_comparison comparison_type) noexcept;
-    /// @brief Compares substrings of two specified string objects and returns an integer that indicates their relative position in the sort order.
-    /// @param str_a The first string to use in the comparison.
-    /// @param index_a The position of the substring within str_a.
-    /// @param str_b The second string to use in the comparison.
-    /// @param index_b The position of the substring within str_b.
-    /// @param length The maximum number of characters in the substrings to compare
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
-    /// | Value             | Condition                                                     |
-    /// | ----------------- | ------------------------------------------------------------- |
-    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
-    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
-    /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int32 compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length) noexcept;
-    /// @brief Compares substrings of two specified string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
-    /// @param str_a The first string to use in the comparison.
-    /// @param index_a The position of the substring within str_a.
-    /// @param str_b The second string to use in the comparison.
-    /// @param index_b The position of the substring within str_b.
-    /// @param length The maximum number of characters in the substrings to compare
-    /// @param ignore_case true to ignore case during the comparison; otherwise, false.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
-    /// | Value             | Condition                                                     |
-    /// | ----------------- | ------------------------------------------------------------- |
-    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
-    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
-    /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int32 compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, bool ignore_case) noexcept;
-    /// @brief Compares substrings of two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
-    /// @param str_a The first string to use in the comparison.
-    /// @param index_a The position of the substring within str_a.
-    /// @param str_b The second string to use in the comparison.
-    /// @param index_b The position of the substring within str_b.
-    /// @param length The maximum number of characters in the substrings to compare
-    /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
-    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
-    /// | Value             | Condition                                                     |
-    /// | ----------------- | ------------------------------------------------------------- |
-    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
-    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
-    /// | Greater than zero | str_a follows str_b in the sort order.                        |
-    static int32 compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept;
-    
     int32 compare_to(const ustring& tzi) const noexcept override;
-    
-    /// @brief Concatenates four specified instances of string.
-    /// @param str_a The first string to concatenate.
-    /// @param str_b The second string to concatenate.
-    /// @param str_c The third string to concatenate.
-    /// @param str_d The fourth string to concatenate.
-    /// @return The concatenation of str_a, str_b, str_c and str_d.
-    static ustring concat(const ustring& str_a, const ustring& str_b, const ustring& str_c, const ustring& str_d) noexcept;
-    
-    /// @brief Concatenates four specified instances of object.
-    /// @param obj_a The first object to concatenate.
-    /// @param obj_b The second object to concatenate.
-    /// @param obj_c The third object to concatenate.
-    /// @param obj_d The fourth object to concatenate.
-    /// @return The concatenation of obj_a, obj_b, obj_c and obj_d.
-    template<typename object_a_t, typename object_b_t, typename object_c_t, typename object_d_t>
-    static ustring concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c, object_d_t obj_d) noexcept {
-      return format("{}{}{}{}", obj_a, obj_b, obj_c, obj_d);
-    }
-    
-    /// @brief Concatenates three specified instances of string.
-    /// @param str_a The first string to concatenate.
-    /// @param str_b The second string to concatenate.
-    /// @param str_c The third string to concatenate.
-    /// @return string The concatenation of str_a, str_b and str_c.
-    static ustring concat(const ustring& str_a, const ustring& str_b, const ustring& str_c) noexcept;
-    
-    /// @brief Concatenates three specified instances of object.
-    /// @param obj_a The first object to concatenate.
-    /// @param obj_b The second object to concatenate.
-    /// @param obj_c The third object to concatenate.
-    /// @return The concatenation of obj_a, obj_b and obj_c.
-    template<typename object_a_t, typename object_b_t, typename object_c_t>
-    static ustring concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c) noexcept {
-      return format("{}{}{}", obj_a, obj_b, obj_c);
-    }
-    
-    /// @brief Concatenates two specified instances of string.
-    /// @param str_a The first string to concatenate.
-    /// @param str_b The second string to concatenate.
-    /// @return string The concatenation of str_a and str_b.
-    static ustring concat(const ustring& str_a, const ustring& str_b) noexcept;
-    
-    /// @brief Concatenates two specified instances of object.
-    /// @param obj_a The first object to concatenate.
-    /// @param obj_b The second object to concatenate.
-    /// @return The concatenation of obj_a and obj_b.
-    template<typename object_a_t, typename object_b_t>
-    static ustring concat(object_a_t obj_a, object_b_t obj_b) noexcept {
-      return format("{}{}", obj_a, obj_b);
-    }
-    
-    /// @brief Concatenates the elements of a specified string array.
-    /// @param values An array of string instances.
-    /// @return The concatenated elements of values.
-    static ustring concat(const std::vector<ustring>& values) noexcept;
-    
-    /// @cond
-    static ustring concat(const std::vector<const value_type*>& values) noexcept;
-#if defined(__cpp_lib_char8_t)
-    static ustring concat(const std::vector<const char8*>& values) noexcept;
-#endif
-    static ustring concat(const std::initializer_list<ustring>& values) noexcept;
-    static ustring concat(const std::initializer_list<const value_type*>& values) noexcept;
-#if defined(__cpp_lib_char8_t)
-    static ustring concat(const std::initializer_list<const char8*>& values) noexcept;
-#endif
-    /// @endcond
-    
-    /// @brief Concatenates the string representations of the elements in a specified object array.
-    /// @param args An object array that contains the elements to concatenate.
-    /// @return The concatenated string representations of the values of the elements in args.
-    template<typename object_t>
-    static ustring concat(const std::vector<object_t>& args) noexcept {
-      ustring result;
-      for (const auto& arg : args)
-        result += format("{}", arg);
-      return result;
-    }
-    
-    /// @cond
-    template<typename object_t>
-    static ustring concat(const std::initializer_list<object_t>& args) noexcept {
-      ustring result;
-      for (const auto& arg : args)
-        result += format("{}", arg);
-      return result;
-    }
-    /// @endcond
-    
-    /// @brief Creates the string representation of a specified object.
-    /// @param value The object to represent.
-    /// @return The string representation of the value of arg.
-    template<typename value_t>
-    static ustring concat(value_t value) noexcept {
-      return format("{}", value);
-    }
-    
-    /// @brief Gets demangled string of name,.
-    /// @param name The name to demangle.
-    /// @return The demangled string of name.
-    /// @par Examples
-    /// The following example shows how to use xtd::ustring::demangle.
-    /// @code #include <xtd/xtd>
-    ///
-    /// using namespace xtd;
-    ///
-    /// auto main()->int {
-    ///   console::write_line("name = {}", typeid(xtd::date_time).name());
-    ///   console::write_line("demangled name = {}", ustring::demangle(typeid(xtd::date_time).name()));
-    /// }
-    ///
-    /// // This code produces the following output on macOS :
-    /// //
-    /// // name = N3xtd9date_timeE
-    /// // demangled name = xtd::date_time
-    /// @endcode
-    static ustring demangle(const ustring& name);
     
     /// @brief Returns a value indicating whether a specified substring occurs within this string.
     /// @param value The string to seek.
@@ -734,111 +517,6 @@ namespace xtd {
     /// @param comparison_type One of the enumeration values that determines how this string and value are compared.
     /// @return bool true if value matches the end of the specified string; otherwise, false.
     bool ends_with(const ustring& value, xtd::string_comparison comparison_type) const noexcept;
-    
-    /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
-    /// @param fmt A composite format string.
-    /// @param args arguments list to write using format.
-    /// @return string formatted.
-    /// @ingroup format_parse
-    /// @remarks for more information about format see @ref FormatPage "Format".
-    template<typename ...args_t>
-    static ustring format(const ustring& fmt, args_t&& ... args) {
-      ustring result;
-      size_t index = 0;
-      std::vector<__format_information<char>> formats;
-      auto begin_format_iterator =  fmt.end();
-      auto end_format_iterator =  fmt.end();
-      for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
-        if (*iterator == '{') {
-          if (++iterator == fmt.end())
-            __throw_ustring_format_exception_open_bracket(__FILE__, __LINE__, __func__);
-          if (*iterator == '{')
-            result += *iterator;
-          else {
-            begin_format_iterator = iterator;
-            while (iterator != fmt.end() && *iterator != '}') ++iterator;
-            if (iterator == fmt.end())
-              __throw_ustring_format_exception_open_bracket(__FILE__, __LINE__, __func__);
-            end_format_iterator = iterator;
-            __format_information<char> fi;
-            fi.location = result.size();
-            std::string format_str {begin_format_iterator, end_format_iterator};
-            if (format_str.size() == 0)
-              fi.index = index++;
-            else {
-              size_t index_alignment_separator = ustring(format_str).index_of(',');
-              size_t index_format_separator = ustring(format_str).index_of(u':');
-              
-              if (index_alignment_separator != std::string::npos && index_format_separator != std::string::npos && index_alignment_separator > index_format_separator)
-                index_alignment_separator = std::string::npos;
-                
-              if (index_alignment_separator != std::string::npos)
-                fi.alignment = format_str.substr(index_alignment_separator + 1, index_format_separator != std::string::npos ? index_format_separator - index_alignment_separator - 1 : std::string::npos);
-                
-              if (index_format_separator != std::string::npos)
-                fi.format = format_str.substr(index_format_separator + 1);
-                
-              if (index_alignment_separator == 0 || index_format_separator == 0)
-                fi.index = index++;
-              else {
-                std::string index_str;
-                if (index_alignment_separator != std::string::npos)
-                  index_str = format_str.substr(0, index_alignment_separator);
-                else if (index_format_separator != std::string::npos)
-                  index_str = format_str.substr(0, index_format_separator);
-                else
-                  index_str = std::move(format_str);
-                try {
-                  for (auto c : index_str)
-                    if (!std::isdigit(c)) __throw_ustring_format_exception_start_colon(__FILE__, __LINE__, __func__);
-                  fi.index = std::stoi(index_str);
-                } catch (...) {
-                  __throw_ustring_format_exception_start_colon(__FILE__, __LINE__, __func__);
-                }
-              }
-            }
-            formats.push_back(fi);
-          }
-        } else if (*iterator == '}') {
-          if (++iterator == fmt.end()) {
-            __throw_ustring_format_exception_close_bracket(__FILE__, __LINE__, __func__);
-            break;
-          }
-          if (*iterator != '}') {
-            __throw_ustring_format_exception_close_bracket(__FILE__, __LINE__, __func__);
-            break;
-          }
-          result += *iterator;
-        } else
-          result += *iterator;
-      }
-      
-      __ustring_extract_format_arg(result, formats, std::forward<args_t>(args)...);
-      return result.c_str();
-    }
-    
-    /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
-    /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
-    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
-    /// @deprecated Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0
-    template<typename object_t>
-    [[deprecated("Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0")]]
-    static ustring full_class_name() {return demangle(typeid(object_t).name());}
-    
-    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
-    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
-    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
-    /// @deprecated Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0
-    template<typename object_t>
-    [[deprecated("Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0")]]
-    static ustring full_class_name(const object_t& object) {return demangle(typeid(object).name());}
-    
-    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
-    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
-    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
-    /// @deprecated Replaced by typeof_(info).full_name() - Will be removed in version 0.4.0
-    [[deprecated("Replaced by typeof_(info).full_name() - Will be removed in version 0.4.0")]]
-    static ustring full_class_name(const std::type_info& info);
     
     /// @brief Returns the hash code for this string.
     /// @return A hash code.
@@ -917,61 +595,6 @@ namespace xtd {
     /// @deprecated Replaced by xtd::ustring::is_empty(const xtd::ustring&) - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::ustring::is_empty(const xtd::ustring&) - Will be removed in version 0.4.0")]]
     bool is_empty() const noexcept {return is_empty(*this);}
-    
-    /// @brief Indicates whether the specifeid string is an empty string ("").
-    /// @param string The xtd::ustring to check if empty.
-    /// @return true if the value parameter is null or an empty string (""); otherwise, false.
-    static bool is_empty(const xtd::ustring& string) noexcept;
-    
-    /// @brief Concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
-    /// @param separator A string separator.
-    /// @param values An array of Object.
-    /// @return A string consisting of the elements of value interspersed with the separator string.
-    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
-    /// @remarks stream << operator is called on each object to generate the content.
-    template<typename collection_t>
-    static ustring join(const ustring separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
-    
-    /// @brief Concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
-    /// @param separator A string separator.
-    /// @param values An array of Object.
-    /// @param start_index The first array element in value to use.
-    /// @return A string consisting of the elements of value interspersed with the separator string.
-    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
-    /// @remarks stream << operator is called on each object to generate the content.
-    template<typename collection_t>
-    static ustring join(const ustring& separator, const collection_t& values, size_t index) noexcept {return join(separator, values, index, values.size() - index);}
-    
-    /// @brief Concatenates a specified separator string between each element of a specified Object array, yielding a single concatenated string.
-    /// @param separator A string separator.
-    /// @param values An array of Object.
-    /// @param start_index The first array element in value to use.
-    /// @param count The number of elements of value to use.
-    /// @return A string consisting of the elements of value interspersed with the separator string.
-    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
-    /// @remarks stream << operator is called on each object to generate the content.
-    template<typename collection_t>
-    static ustring join(const ustring& separator, const collection_t& values, size_t index, size_t count) noexcept {
-      size_t i = 0;
-      ustring result;
-      for (const auto& item : values) {
-        if (i >= index) {
-          if (i != index) result += separator;
-          result += format("{}", item);
-        }
-        if (++i >= index + count) break;
-      }
-      return result;
-    }
-    
-    /// @cond
-    template<typename value_t>
-    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values) noexcept {return join(separator, std::vector<value_t>(values));}
-    template<typename value_t>
-    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values, size_t index) noexcept {return join(separator, std::vector<value_t>(values), index);}
-    template<typename value_t>
-    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values, size_t index, size_t count) noexcept {return join(separator, std::vector<value_t>(values), index, count);}
-    /// @endcond
     
     /// @brief Reports the index of the last occurrence of the specified character in this tring.
     /// @param value An unicode character to seek
@@ -1076,14 +699,6 @@ namespace xtd {
     /// @remarks for more information see <a href=https://en.cppreference.com/w/cpp/io/manip/quoted>std::quoted</a>.
     ustring quoted(value_type delimiter, value_type escape) const;
     
-    /// @brief Converts a string into a value_t type.
-    /// @param str Ax xtd::ustring to convert to value_t
-    /// @return The value_t object parsed.
-    template<typename value_t>
-    static value_t parse(const ustring& str) {
-      return xtd::parse<value_t>(str);
-    }
-    
     /// @brief Deletes all the characters from this string beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
     /// @return A new string object that is equivalent to this string less the removed characters.
@@ -1161,68 +776,6 @@ namespace xtd {
     /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified string, the corresponding array element contains empty string.
     /// @remarks If there are more than count substrings in the specified string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified string are returned in the last element of the return value.
     std::vector<ustring> split(const std::vector<value_type>& separators, size_t count) const noexcept;
-    
-    /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
-    /// @param fmt A composite format string.
-    /// @param args arguments list to write using format.
-    /// @return string formatted.
-    /// @ingroup format_parse
-    /// @remarks A format specifier follows this prototype:
-    /// @remarks %[flags][width][.precision][length]specifier
-    /// | specifier | Output                                                                                                                                                   | Example      |
-    /// | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-    /// | d or i    | Signed decimal integer                                                                                                                                   | 392          |
-    /// | u         | Unsigned decimal integer                                                                                                                                 | 7235         |
-    /// | o         | Unsigned octal                                                                                                                                           | 610          |
-    /// | x         | Unsigned hexadecimal integer                                                                                                                             | 7fa          |
-    /// | X         | Unsigned hexadecimal integer (uppercase)                                                                                                                 | 7FA          |
-    /// | f         | Decimal floating point, lowercase                                                                                                                        | 392.65       |
-    /// | F         | Decimal floating point, lowercase (uppercase)                                                                                                            | 392.65       |
-    /// | e         | Scientific notation (mantissa/exponent), lowercase                                                                                                       | 3.9265e+2    |
-    /// | E         | Scientific notation (mantissa/exponent), uppercase                                                                                                       | 3.9265E+2    |
-    /// | g         | Use the shortest representation: %e or %f                                                                                                                | 392.65       |
-    /// | G         | Use the shortest representation: %E or %F                                                                                                                | 392.65       |
-    /// | a         | Hexadecimal floating point, lowercase                                                                                                                    | -0xc.90fep-2 |
-    /// | A         | Hexadecimal floating point, uppercase                                                                                                                    | -0XC.90FEP-2 |
-    /// | c         | Character                                                                                                                                                | a            |
-    /// | s         | string of characters                                                                                                                                     | sample       |
-    /// | p         | Pointer address                                                                                                                                          | b8000000     |
-    /// | n         | Nothing printed. The corresponding argument must be a pointer to a signed int. The number of characters written so far is stored in the pointed location |              |
-    /// | %         | A % followed by another % character will write a single % to the stream.                                                                                 | %            |
-    /// @remarks The format specifier can also contain sub-specifiers: flags, width, .precision and modifiers (in that order), which are optional and follow these specifications:
-    /// | flags   | description                                                                                                                                                                                                                                                                                                 |
-    /// | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    /// | -       | Left-justify within the given field width; Right justification is the default (see width sub-specifier).                                                                                                                                                                                                    |
-    /// | +       | Forces to prefix the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign.                                                                                                                                                    |
-    /// | (space) | If no sign is going to be written, a blank space is inserted before the value.                                                                                                                                                                                                                              |
-    /// | #       | Used with o, x or X specifiers the value is prefixed with 0, 0x or 0X respectively for values different than zero. Used with a, A, e, E, f, F, g or G it forces the written output to contain a decimal point even if no more digits follow. By default, if no digits follow, no decimal point is written. |
-    /// | 0       | Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier).                                                                                                                                                                                                 |
-    ///
-    /// | width    | description                                                                                                                                                                                          |
-    /// | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    /// | (number) | Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger. |
-    /// | *        | The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                        |
-    ///
-    /// | .precision | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-    /// | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    /// | .number    | For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0. For a, A, e, E, f and F specifiers: this is the number of digits to be printed after the decimal point (by default, this is 6). For g and G specifiers: This is the maximum number of significant digits to be printed. For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. If the period is specified without an explicit value for precision, 0 is assumed. |
-    /// | .*         | The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-    /// @remarks The length sub-specifier modifies the length of the data type. This is a chart showing the types used to interpret the corresponding arguments with and without length specifier (if a different type is used, the proper type promotion or conversion is performed, if allowed):
-    /// | length | d i           | u o x X                | f F e E g G a A | c     | s        | p     | n               |
-    /// | ------ | ------------- | ---------------------- | --------------- | ----- | -------- | ----- | --------------- |
-    /// | (none) | int           | unsigned int           | double          | int   | char8*   | void* | int*            |
-    /// | hh     | signed char8  | unsigned char8         |                 |       |          |       | unsigned char8* |
-    /// | h      | short int     | unsigned short int     |                 |       |          |       | short int*      |
-    /// | l      | long int      | unsigned long int      |                 | win_t | wchar*   |       | long int*       |
-    /// | ll     | long long int | unsigned long long int |                 |       |          |       | long long int*  |
-    /// | j      | intmax_t      | uintmax_t              |                 |       |          |       | intmax_t*       |
-    /// | z      | size_t        | size_t                 |                 |       |          |       | size_t*         |
-    /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*      |
-    /// | L      |               |                        | long double     |       |          |       |                 |
-    /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
-    /// @remarks you can use std::string or std::wstring with format param %%s.
-    template<typename ... args_t>
-    static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(fmt.c_str(), convert_param(std::forward<args_t>(args)) ...);}
     
     /// @brief Determines whether the beginning of this instance of xtd::ustring matches a specified xtd::ustring.
     /// @param value A xtd::ustring to compare to.
@@ -1345,6 +898,457 @@ namespace xtd {
     /// @param trim_chars An array of characters to remove.
     /// @return The xtd::ustring that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified xtd::ustring.
     ustring trim_start(const std::vector<value_type>& trim_chars) const noexcept;
+    /// @}
+    
+    /// @name Static methods
+    
+    /// @{
+    /// @brief Gets the class name of the object_t.
+    /// @return The class name of the object_t.
+    /// @remarks For example, the name of the ustring type is ustring.
+    /// @deprecated Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0
+    template<typename object_t>
+    [[deprecated("Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0")]]
+    static ustring class_name() {return get_class_name(full_class_name<object_t>());}
+    
+    /// @brief Gets the class name of the specified object.
+    /// @return The class name of the specified object.
+    /// @remarks For example, the name of the ustring type is ustring.
+    /// @deprecated Replaced by typeof_(object).name() - Will be removed in version 0.4.0
+    template<typename object_t>
+    [[deprecated("Replaced by typeof_(object).name() - Will be removed in version 0.4.0")]]
+    static ustring class_name(const object_t& object) {return get_class_name(full_class_name(object));}
+    
+    /// @brief Gets the class name of the specified object.
+    /// @return The class name of the specified object.
+    /// @remarks For example, the name of the ustring type is ustring.
+    /// @deprecated Replaced by typeof_(info).name() - Will be removed in version 0.4.0
+    [[deprecated("Replaced by typeof_(info).name() - Will be removed in version 0.4.0")]]
+    static ustring class_name(const std::type_info& info);
+    
+    using std::basic_string<value_type>::compare;
+    /// @brief Compares two specified string objects and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to compare.
+    /// @param str_b The second string to compare.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
+    /// | Value             | Condition                                                     |
+    /// | ----------------- | ------------------------------------------------------------- |
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
+    static int32 compare(const ustring& str_a, const ustring& str_b) noexcept;
+    /// @brief Compares two specified string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to compare.
+    /// @param str_b The second string to compare.
+    /// @param ignore_case true to ignore case during the comparison; otherwise, false.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
+    /// | Value             | Condition                                                     |
+    /// | ----------------- | ------------------------------------------------------------- |
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
+    static int32 compare(const ustring& str_a, const ustring& str_b, bool ignore_case) noexcept;
+    
+    /// @brief Compares two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to compare.
+    /// @param str_b The second string to compare.
+    /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
+    /// | Value             | Condition                                                     |
+    /// | ----------------- | ------------------------------------------------------------- |
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
+    static int32 compare(const ustring& str_a, const ustring& str_b, xtd::string_comparison comparison_type) noexcept;
+    /// @brief Compares substrings of two specified string objects and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to use in the comparison.
+    /// @param index_a The position of the substring within str_a.
+    /// @param str_b The second string to use in the comparison.
+    /// @param index_b The position of the substring within str_b.
+    /// @param length The maximum number of characters in the substrings to compare
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
+    /// | Value             | Condition                                                     |
+    /// | ----------------- | ------------------------------------------------------------- |
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
+    static int32 compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length) noexcept;
+    /// @brief Compares substrings of two specified string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to use in the comparison.
+    /// @param index_a The position of the substring within str_a.
+    /// @param str_b The second string to use in the comparison.
+    /// @param index_b The position of the substring within str_b.
+    /// @param length The maximum number of characters in the substrings to compare
+    /// @param ignore_case true to ignore case during the comparison; otherwise, false.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
+    /// | Value             | Condition                                                     |
+    /// | ----------------- | ------------------------------------------------------------- |
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
+    static int32 compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, bool ignore_case) noexcept;
+    /// @brief Compares substrings of two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to use in the comparison.
+    /// @param index_a The position of the substring within str_a.
+    /// @param str_b The second string to use in the comparison.
+    /// @param index_b The position of the substring within str_b.
+    /// @param length The maximum number of characters in the substrings to compare
+    /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
+    /// | Value             | Condition                                                     |
+    /// | ----------------- | ------------------------------------------------------------- |
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
+    static int32 compare(const ustring& str_a, size_t index_a, const ustring& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept;
+    
+    /// @brief Concatenates four specified instances of string.
+    /// @param str_a The first string to concatenate.
+    /// @param str_b The second string to concatenate.
+    /// @param str_c The third string to concatenate.
+    /// @param str_d The fourth string to concatenate.
+    /// @return The concatenation of str_a, str_b, str_c and str_d.
+    static ustring concat(const ustring& str_a, const ustring& str_b, const ustring& str_c, const ustring& str_d) noexcept;
+    
+    /// @brief Concatenates four specified instances of object.
+    /// @param obj_a The first object to concatenate.
+    /// @param obj_b The second object to concatenate.
+    /// @param obj_c The third object to concatenate.
+    /// @param obj_d The fourth object to concatenate.
+    /// @return The concatenation of obj_a, obj_b, obj_c and obj_d.
+    template<typename object_a_t, typename object_b_t, typename object_c_t, typename object_d_t>
+    static ustring concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c, object_d_t obj_d) noexcept {
+      return format("{}{}{}{}", obj_a, obj_b, obj_c, obj_d);
+    }
+    
+    /// @brief Concatenates three specified instances of string.
+    /// @param str_a The first string to concatenate.
+    /// @param str_b The second string to concatenate.
+    /// @param str_c The third string to concatenate.
+    /// @return string The concatenation of str_a, str_b and str_c.
+    static ustring concat(const ustring& str_a, const ustring& str_b, const ustring& str_c) noexcept;
+    
+    /// @brief Concatenates three specified instances of object.
+    /// @param obj_a The first object to concatenate.
+    /// @param obj_b The second object to concatenate.
+    /// @param obj_c The third object to concatenate.
+    /// @return The concatenation of obj_a, obj_b and obj_c.
+    template<typename object_a_t, typename object_b_t, typename object_c_t>
+    static ustring concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c) noexcept {
+      return format("{}{}{}", obj_a, obj_b, obj_c);
+    }
+    
+    /// @brief Concatenates two specified instances of string.
+    /// @param str_a The first string to concatenate.
+    /// @param str_b The second string to concatenate.
+    /// @return string The concatenation of str_a and str_b.
+    static ustring concat(const ustring& str_a, const ustring& str_b) noexcept;
+    
+    /// @brief Concatenates two specified instances of object.
+    /// @param obj_a The first object to concatenate.
+    /// @param obj_b The second object to concatenate.
+    /// @return The concatenation of obj_a and obj_b.
+    template<typename object_a_t, typename object_b_t>
+    static ustring concat(object_a_t obj_a, object_b_t obj_b) noexcept {
+      return format("{}{}", obj_a, obj_b);
+    }
+    
+    /// @brief Concatenates the elements of a specified string array.
+    /// @param values An array of string instances.
+    /// @return The concatenated elements of values.
+    static ustring concat(const std::vector<ustring>& values) noexcept;
+    
+    /// @cond
+    static ustring concat(const std::vector<const value_type*>& values) noexcept;
+#if defined(__cpp_lib_char8_t)
+    static ustring concat(const std::vector<const char8*>& values) noexcept;
+#endif
+    static ustring concat(const std::initializer_list<ustring>& values) noexcept;
+    static ustring concat(const std::initializer_list<const value_type*>& values) noexcept;
+#if defined(__cpp_lib_char8_t)
+    static ustring concat(const std::initializer_list<const char8*>& values) noexcept;
+#endif
+    /// @endcond
+    
+    /// @brief Concatenates the string representations of the elements in a specified object array.
+    /// @param args An object array that contains the elements to concatenate.
+    /// @return The concatenated string representations of the values of the elements in args.
+    template<typename object_t>
+    static ustring concat(const std::vector<object_t>& args) noexcept {
+      ustring result;
+      for (const auto& arg : args)
+        result += format("{}", arg);
+      return result;
+    }
+    
+    /// @cond
+    template<typename object_t>
+    static ustring concat(const std::initializer_list<object_t>& args) noexcept {
+      ustring result;
+      for (const auto& arg : args)
+        result += format("{}", arg);
+      return result;
+    }
+    /// @endcond
+    
+    /// @brief Creates the string representation of a specified object.
+    /// @param value The object to represent.
+    /// @return The string representation of the value of arg.
+    template<typename value_t>
+    static ustring concat(value_t value) noexcept {
+      return format("{}", value);
+    }
+    
+    /// @brief Gets demangled string of name,.
+    /// @param name The name to demangle.
+    /// @return The demangled string of name.
+    /// @par Examples
+    /// The following example shows how to use xtd::ustring::demangle.
+    /// @code #include <xtd/xtd>
+    ///
+    /// using namespace xtd;
+    ///
+    /// auto main()->int {
+    ///   console::write_line("name = {}", typeid(xtd::date_time).name());
+    ///   console::write_line("demangled name = {}", ustring::demangle(typeid(xtd::date_time).name()));
+    /// }
+    ///
+    /// // This code produces the following output on macOS :
+    /// //
+    /// // name = N3xtd9date_timeE
+    /// // demangled name = xtd::date_time
+    /// @endcode
+    static ustring demangle(const ustring& name);
+    
+    /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
+    /// @param fmt A composite format string.
+    /// @param args arguments list to write using format.
+    /// @return string formatted.
+    /// @ingroup format_parse
+    /// @remarks for more information about format see @ref FormatPage "Format".
+    template<typename ...args_t>
+    static ustring format(const ustring& fmt, args_t&& ... args) {
+      ustring result;
+      size_t index = 0;
+      std::vector<__format_information<char>> formats;
+      auto begin_format_iterator =  fmt.end();
+      auto end_format_iterator =  fmt.end();
+      for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
+        if (*iterator == '{') {
+          if (++iterator == fmt.end())
+            __throw_ustring_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+          if (*iterator == '{')
+            result += *iterator;
+          else {
+            begin_format_iterator = iterator;
+            while (iterator != fmt.end() && *iterator != '}') ++iterator;
+            if (iterator == fmt.end())
+              __throw_ustring_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+            end_format_iterator = iterator;
+            __format_information<char> fi;
+            fi.location = result.size();
+            std::string format_str {begin_format_iterator, end_format_iterator};
+            if (format_str.size() == 0)
+              fi.index = index++;
+            else {
+              size_t index_alignment_separator = ustring(format_str).index_of(',');
+              size_t index_format_separator = ustring(format_str).index_of(u':');
+              
+              if (index_alignment_separator != std::string::npos && index_format_separator != std::string::npos && index_alignment_separator > index_format_separator)
+                index_alignment_separator = std::string::npos;
+                
+              if (index_alignment_separator != std::string::npos)
+                fi.alignment = format_str.substr(index_alignment_separator + 1, index_format_separator != std::string::npos ? index_format_separator - index_alignment_separator - 1 : std::string::npos);
+                
+              if (index_format_separator != std::string::npos)
+                fi.format = format_str.substr(index_format_separator + 1);
+                
+              if (index_alignment_separator == 0 || index_format_separator == 0)
+                fi.index = index++;
+              else {
+                std::string index_str;
+                if (index_alignment_separator != std::string::npos)
+                  index_str = format_str.substr(0, index_alignment_separator);
+                else if (index_format_separator != std::string::npos)
+                  index_str = format_str.substr(0, index_format_separator);
+                else
+                  index_str = std::move(format_str);
+                try {
+                  for (auto c : index_str)
+                    if (!std::isdigit(c)) __throw_ustring_format_exception_start_colon(__FILE__, __LINE__, __func__);
+                  fi.index = std::stoi(index_str);
+                } catch (...) {
+                  __throw_ustring_format_exception_start_colon(__FILE__, __LINE__, __func__);
+                }
+              }
+            }
+            formats.push_back(fi);
+          }
+        } else if (*iterator == '}') {
+          if (++iterator == fmt.end()) {
+            __throw_ustring_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+            break;
+          }
+          if (*iterator != '}') {
+            __throw_ustring_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+            break;
+          }
+          result += *iterator;
+        } else
+          result += *iterator;
+      }
+      
+      __ustring_extract_format_arg(result, formats, std::forward<args_t>(args)...);
+      return result.c_str();
+    }
+    
+    /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
+    /// @deprecated Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0
+    template<typename object_t>
+    [[deprecated("Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0")]]
+    static ustring full_class_name() {return demangle(typeid(object_t).name());}
+    
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
+    /// @deprecated Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0
+    template<typename object_t>
+    [[deprecated("Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0")]]
+    static ustring full_class_name(const object_t& object) {return demangle(typeid(object).name());}
+    
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
+    /// @deprecated Replaced by typeof_(info).full_name() - Will be removed in version 0.4.0
+    [[deprecated("Replaced by typeof_(info).full_name() - Will be removed in version 0.4.0")]]
+    static ustring full_class_name(const std::type_info& info);
+    
+    /// @brief Indicates whether the specifeid string is an empty string ("").
+    /// @param string The xtd::ustring to check if empty.
+    /// @return true if the value parameter is null or an empty string (""); otherwise, false.
+    static bool is_empty(const xtd::ustring& string) noexcept;
+    
+    /// @brief Concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
+    /// @param separator A string separator.
+    /// @param values An array of Object.
+    /// @return A string consisting of the elements of value interspersed with the separator string.
+    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
+    /// @remarks stream << operator is called on each object to generate the content.
+    template<typename collection_t>
+    static ustring join(const ustring separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
+    
+    /// @brief Concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
+    /// @param separator A string separator.
+    /// @param values An array of Object.
+    /// @param start_index The first array element in value to use.
+    /// @return A string consisting of the elements of value interspersed with the separator string.
+    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
+    /// @remarks stream << operator is called on each object to generate the content.
+    template<typename collection_t>
+    static ustring join(const ustring& separator, const collection_t& values, size_t index) noexcept {return join(separator, values, index, values.size() - index);}
+    
+    /// @brief Concatenates a specified separator string between each element of a specified Object array, yielding a single concatenated string.
+    /// @param separator A string separator.
+    /// @param values An array of Object.
+    /// @param start_index The first array element in value to use.
+    /// @param count The number of elements of value to use.
+    /// @return A string consisting of the elements of value interspersed with the separator string.
+    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
+    /// @remarks stream << operator is called on each object to generate the content.
+    template<typename collection_t>
+    static ustring join(const ustring& separator, const collection_t& values, size_t index, size_t count) noexcept {
+      size_t i = 0;
+      ustring result;
+      for (const auto& item : values) {
+        if (i >= index) {
+          if (i != index) result += separator;
+          result += format("{}", item);
+        }
+        if (++i >= index + count) break;
+      }
+      return result;
+    }
+    
+    /// @cond
+    template<typename value_t>
+    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values) noexcept {return join(separator, std::vector<value_t>(values));}
+    template<typename value_t>
+    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values, size_t index) noexcept {return join(separator, std::vector<value_t>(values), index);}
+    template<typename value_t>
+    static ustring join(const ustring& separator, const std::initializer_list<value_t>& values, size_t index, size_t count) noexcept {return join(separator, std::vector<value_t>(values), index, count);}
+    /// @endcond
+    
+    /// @brief Converts a string into a value_t type.
+    /// @param str Ax xtd::ustring to convert to value_t
+    /// @return The value_t object parsed.
+    template<typename value_t>
+    static value_t parse(const ustring& str) {
+      return xtd::parse<value_t>(str);
+    }
+    
+    /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
+    /// @param fmt A composite format string.
+    /// @param args arguments list to write using format.
+    /// @return string formatted.
+    /// @ingroup format_parse
+    /// @remarks A format specifier follows this prototype:
+    /// @remarks %[flags][width][.precision][length]specifier
+    /// | specifier | Output                                                                                                                                                   | Example      |
+    /// | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+    /// | d or i    | Signed decimal integer                                                                                                                                   | 392          |
+    /// | u         | Unsigned decimal integer                                                                                                                                 | 7235         |
+    /// | o         | Unsigned octal                                                                                                                                           | 610          |
+    /// | x         | Unsigned hexadecimal integer                                                                                                                             | 7fa          |
+    /// | X         | Unsigned hexadecimal integer (uppercase)                                                                                                                 | 7FA          |
+    /// | f         | Decimal floating point, lowercase                                                                                                                        | 392.65       |
+    /// | F         | Decimal floating point, lowercase (uppercase)                                                                                                            | 392.65       |
+    /// | e         | Scientific notation (mantissa/exponent), lowercase                                                                                                       | 3.9265e+2    |
+    /// | E         | Scientific notation (mantissa/exponent), uppercase                                                                                                       | 3.9265E+2    |
+    /// | g         | Use the shortest representation: %e or %f                                                                                                                | 392.65       |
+    /// | G         | Use the shortest representation: %E or %F                                                                                                                | 392.65       |
+    /// | a         | Hexadecimal floating point, lowercase                                                                                                                    | -0xc.90fep-2 |
+    /// | A         | Hexadecimal floating point, uppercase                                                                                                                    | -0XC.90FEP-2 |
+    /// | c         | Character                                                                                                                                                | a            |
+    /// | s         | string of characters                                                                                                                                     | sample       |
+    /// | p         | Pointer address                                                                                                                                          | b8000000     |
+    /// | n         | Nothing printed. The corresponding argument must be a pointer to a signed int. The number of characters written so far is stored in the pointed location |              |
+    /// | %         | A % followed by another % character will write a single % to the stream.                                                                                 | %            |
+    /// @remarks The format specifier can also contain sub-specifiers: flags, width, .precision and modifiers (in that order), which are optional and follow these specifications:
+    /// | flags   | description                                                                                                                                                                                                                                                                                                 |
+    /// | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    /// | -       | Left-justify within the given field width; Right justification is the default (see width sub-specifier).                                                                                                                                                                                                    |
+    /// | +       | Forces to prefix the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign.                                                                                                                                                    |
+    /// | (space) | If no sign is going to be written, a blank space is inserted before the value.                                                                                                                                                                                                                              |
+    /// | #       | Used with o, x or X specifiers the value is prefixed with 0, 0x or 0X respectively for values different than zero. Used with a, A, e, E, f, F, g or G it forces the written output to contain a decimal point even if no more digits follow. By default, if no digits follow, no decimal point is written. |
+    /// | 0       | Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier).                                                                                                                                                                                                 |
+    ///
+    /// | width    | description                                                                                                                                                                                          |
+    /// | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    /// | (number) | Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger. |
+    /// | *        | The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                        |
+    ///
+    /// | .precision | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+    /// | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    /// | .number    | For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0. For a, A, e, E, f and F specifiers: this is the number of digits to be printed after the decimal point (by default, this is 6). For g and G specifiers: This is the maximum number of significant digits to be printed. For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. If the period is specified without an explicit value for precision, 0 is assumed. |
+    /// | .*         | The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+    /// @remarks The length sub-specifier modifies the length of the data type. This is a chart showing the types used to interpret the corresponding arguments with and without length specifier (if a different type is used, the proper type promotion or conversion is performed, if allowed):
+    /// | length | d i           | u o x X                | f F e E g G a A | c     | s        | p     | n               |
+    /// | ------ | ------------- | ---------------------- | --------------- | ----- | -------- | ----- | --------------- |
+    /// | (none) | int           | unsigned int           | double          | int   | char8*   | void* | int*            |
+    /// | hh     | signed char8  | unsigned char8         |                 |       |          |       | unsigned char8* |
+    /// | h      | short int     | unsigned short int     |                 |       |          |       | short int*      |
+    /// | l      | long int      | unsigned long int      |                 | win_t | wchar*   |       | long int*       |
+    /// | ll     | long long int | unsigned long long int |                 |       |          |       | long long int*  |
+    /// | j      | intmax_t      | uintmax_t              |                 |       |          |       | intmax_t*       |
+    /// | z      | size_t        | size_t                 |                 |       |          |       | size_t*         |
+    /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*      |
+    /// | L      |               |                        | long double     |       |          |       |                 |
+    /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
+    /// @remarks you can use std::string or std::wstring with format param %%s.
+    template<typename ... args_t>
+    static ustring sprintf(const ustring& fmt, args_t&& ... args) noexcept {return __sprintf(fmt.c_str(), convert_param(std::forward<args_t>(args)) ...);}
     
     /// @brief Try to convert a string into a value_t type.
     /// @param str An xtd::ustring to convert to value_t

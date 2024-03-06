@@ -44,7 +44,7 @@ namespace xtd {
       using listener_collection = xtd::diagnostics::trace_listener_collection;
       /// @}
       
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief Gets whether Flush should be called on the Listeners after every write.
@@ -108,7 +108,7 @@ namespace xtd {
       static void use_global_lock(bool use_global_lock) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.

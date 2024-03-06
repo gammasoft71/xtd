@@ -83,7 +83,7 @@ namespace xtd {
       using thread_vector = std::vector<thread>;
 
     public:
-      /// @name Methods
+      /// @name Static methods
 
       /// @{
       /// @brief Close all resources and worker threads.

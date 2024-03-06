@@ -43,6 +43,9 @@ namespace xtd {
     box_char& operator =(const box_char&) = default;
     /// @endcond
     
+    /// @name static methods
+    
+    /// @{
     /// @brief Returns true if c is an ASCII character ([ U+0000..U+007F ]).
     /// @param c The character to analyze.
     /// @return true if c is an ASCII character; false otherwise.
@@ -197,5 +200,6 @@ namespace xtd {
     /// @param c The Unicode character to convert.
     /// @return The uppercase equivalent of c, or the unchanged value of c if c is already uppercase, has no uppercase equivalent, or is not alphabetic.
     static char to_upper(type_t c) noexcept {return static_cast<type_t>(std::toupper(c));}
+    /// @}
   };
 }

@@ -24,7 +24,7 @@ namespace xtd {
   /// @remarks This class cannot be inherited.
   class convert static_ {
   public:
-    /// @name Methods
+    /// @name Static methods
     
     /// @{
     /// @brief Convert std::any to std::any.

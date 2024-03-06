@@ -80,7 +80,11 @@ namespace xtd {
       /// @return A string containing all characters from the current position to the end of the text_reader.
       /// @exception io::io_exception An I/O error occurs.
       virtual xtd::ustring read_to_end();
+      /// @}
       
+      /// @name Static methods
+      
+      /// @{
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_reader object.
       /// @param reader The text_reader object to synchronize.
       /// @return text_reader A thread-safe text_reader object.

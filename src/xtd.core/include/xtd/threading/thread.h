@@ -101,9 +101,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets the currently running thread.
-      /// @return A xtd::threading::thread that is the representation of the currently running thread.
-      static thread& current_thread() noexcept;
       
       /// @brief Gets the native operating system handle.
       /// @return An intptr representing the native operating system handle.
@@ -150,11 +147,6 @@ namespace xtd {
       /// @remarks A thread is joinable if it started, not stopped and if is not a background thread.
       /// @remarks if the thread is joinable you can call the xtd::threading::thread::join method.
       bool joinable() const noexcept;
-      
-      /// @brief Gets the main thread.
-      /// @return A xtd::threading::thread that is the representation of the main thread.
-      /// @remarks if the thread is not started this method return xtd::threading::thread::invalid_handle.
-      static thread& main_thread();
 
       /// @brief Gets a unique identifier for the current managed thread.
       /// @return An integer that represents a unique identifier for this managed thread.
@@ -204,6 +196,19 @@ namespace xtd {
       xtd::threading::thread_state thread_state() const noexcept;
       /// @}
 
+      /// @name Static properties
+      
+      /// @{
+      /// @brief Gets the currently running thread.
+      /// @return A xtd::threading::thread that is the representation of the currently running thread.
+      static thread& current_thread() noexcept;
+
+      /// @brief Gets the main thread.
+      /// @return A xtd::threading::thread that is the representation of the main thread.
+      /// @remarks if the thread is not started this method return xtd::threading::thread::invalid_handle.
+      static thread& main_thread();
+      /// @}
+
       /// @name Methods
       
       /// @{
@@ -238,6 +243,41 @@ namespace xtd {
       /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents <br>-or-<br> timeout is greater than xtd::int32_object::max_value.
       bool join(const time_span& timeout);
 
+      /// @brief Resumes a thread that has been suspended (Should not be used).
+      /// @exception xtd::threading::thread_state_exception The thread has not been started, is dead, or is not in the suspended state.
+      /// @remarks Works only on Windows operating syetm.
+      /// @warning Do not use the xtd::threading::thread::suspend and xtd::threading::thread::resume methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily.
+      void resume();
+      
+      /// @brief Causes the operating system to change the state of the current instance to xtd::threading::thread_state::running.
+      /// @exception xtd::threading::thread_state_exception The thread has already been started.
+      void start();
+      
+      /// @brief Causes the operating system to change the state of the current instance to xtd::threading::thread_state::running.
+      /// @param obj An object that contains data to be used by the method the thread executes.
+      /// @exception xtd::threading::thread_state_exception The thread has already been started.
+      void start(std::any obj);
+
+      /// @brief Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used).
+      /// @exception xtd::threading::thread_state_exception The thread has not been started or is dead.
+      /// @remarks Works only on Windows operating syetm.
+      /// @warning Do not use the xtd::threading::thread::suspend and xtd::threading::thread::resume methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily.
+      void suspend();
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
+      /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
+      /// @exception xtd::argument_exception The start parameter is empty.
+      static thread start_new(const xtd::threading::thread_start& start);
+      /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
+      /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
+      /// @param obj An object that contains data to be used by the method the thread executes.
+      /// @exception xtd::argument_exception The start parameter is empty.
+      static thread start_new(const xtd::threading::parameterized_thread_start& start, std::any obj);
+
       /// @brief Blocks the calling thread until all joinable threads terminate.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
@@ -258,7 +298,7 @@ namespace xtd {
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks Call xtd::threading::thread_pool::close method to join the end of running worker threads too.
       static bool join_all(const time_span& timeout);
-
+      
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
@@ -283,13 +323,7 @@ namespace xtd {
       /// @remarks If one or more threads are not joinable, they will be skipped.
       template<typename collection_t>
       static bool join_all(const collection_t& threads, const time_span& timeout) {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
-
-      /// @brief Resumes a thread that has been suspended (Should not be used).
-      /// @exception xtd::threading::thread_state_exception The thread has not been started, is dead, or is not in the suspended state.
-      /// @remarks Works only on Windows operating syetm.
-      /// @warning Do not use the xtd::threading::thread::suspend and xtd::threading::thread::resume methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily.
-      void resume();
-
+      
       /// @brief Suspends the current thread for a specified time.
       /// @param milliseconds_timeout The number of milliseconds for which the thread is blocked. Specify zero (0) to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
       /// @exception xtd::argument_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
@@ -299,38 +333,13 @@ namespace xtd {
       /// @param timeout A std::chrono::duration set to the amount of time for which the thread is blocked. Specify zero to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
       /// @exception xtd::argument_exception The value of timeout is negative and is not equal to xtd::threading::timeout::infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
       static void sleep(const time_span& timeout);
-
+      
       /// @brief Causes a thread to wait the number of times defined by the iterations parameter.
       /// @param iterations A 32-bit signed integer that defines how long a thread is to wait.
       /// @remarks The xtd::threading::thread::spin_wait method is useful for implementing locks. Classes in the xtd, such as xtd::threading::monitor and xtd::threading::reader_writer_lock, use this method internally. xtd::threading::thread::spin_wait essentially puts the processor into a very tight loop, with the loop count specified by the iterations parameter. The duration of the wait therefore depends on the speed of the processor.
       /// @remarks Contrast this with the xtd::threading::thread::sleep method. A thread that calls xtd::threading::thread::sleep yields the rest of its current slice of processor time, even if the specified interval is zero. Specifying a non-zero interval for xtd::threading::thread::sleep removes the thread from consideration by the thread scheduler until the time interval has elapsed.
       /// @remarks xtd::threading::thread::spin_wait is not generally useful for ordinary applications. In most cases, you should use the synchronization classes provided by the xtd Framework; for example, call xtd::threading::monitor::enter or a statement that wraps xtd::threading::thread::monitor::enter
       static void spin_wait(int32 iterations);
-      
-      /// @brief Causes the operating system to change the state of the current instance to xtd::threading::thread_state::running.
-      /// @exception xtd::threading::thread_state_exception The thread has already been started.
-      void start();
-      
-      /// @brief Causes the operating system to change the state of the current instance to xtd::threading::thread_state::running.
-      /// @param obj An object that contains data to be used by the method the thread executes.
-      /// @exception xtd::threading::thread_state_exception The thread has already been started.
-      void start(std::any obj);
-      
-      /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
-      /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
-      /// @exception xtd::argument_exception The start parameter is empty.
-      static thread start_new(const xtd::threading::thread_start& start);
-      /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
-      /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
-      /// @param obj An object that contains data to be used by the method the thread executes.
-      /// @exception xtd::argument_exception The start parameter is empty.
-      static thread start_new(const xtd::threading::parameterized_thread_start& start, std::any obj);
-
-      /// @brief Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used).
-      /// @exception xtd::threading::thread_state_exception The thread has not been started or is dead.
-      /// @remarks Works only on Windows operating syetm.
-      /// @warning Do not use the xtd::threading::thread::suspend and xtd::threading::thread::resume methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily.
-      void suspend();
 
       /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.
       /// @return true if the operating system switched execution to another thread; otherwise, false.

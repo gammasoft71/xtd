@@ -105,11 +105,6 @@ namespace xtd {
       return 1;
     }
     
-    /// @brief Converts the string to its type_t equivalent.
-    /// @param value A string containing a type_t to convert.
-    /// @return A type_t equivalent to the number contained in value.
-    static type_t parse(const xtd::ustring& value) {return xtd::parse<type_t>(value);}
-    
     xtd::ustring to_string() const noexcept override {return xtd::ustring::format("{}", value_);}
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
@@ -117,7 +112,16 @@ namespace xtd {
     xtd::ustring to_string(const xtd::ustring& format) const noexcept {
       return xtd::ustring::format(xtd::ustring::format("{{:{}}}", format), value_);
     }
+    /// @}
+
+    /// @name Static methods
     
+    /// @{
+    /// @brief Converts the string to its type_t equivalent.
+    /// @param value A string containing a type_t to convert.
+    /// @return A type_t equivalent to the number contained in value.
+    static type_t parse(const xtd::ustring& value) {return xtd::parse<type_t>(value);}
+
     /// @brief Converts the string to its type_t equivalent. A return value indicates whether the conversion succeeded or failed.
     /// @param value A string containing a type_t to convert.
     /// @param result A type_t equivalent to the number contained in value.

@@ -158,16 +158,6 @@ namespace xtd {
       int32 compare_to(const semaphore& value) const noexcept override;
       
       bool equals(const semaphore& value) const noexcept override;
-      
-      /// @brief Opens the specified named semaphore, if it already exists.
-      /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive.
-      /// @return An object that represents the named system semaphore.
-      /// @exception xtd::argument_exception name is an empty string.
-      /// @exception xtd::io::io_exception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters.<br>-or-<br>There was some other error. The HResult property may provide more information.
-      /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened.
-      /// @remarks The xtd::threading::semaphore::open_existing method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the xtd::threading::semaphore constructors that has a name parameter.
-      /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::semaphore object, even though the objects that are returned represent the same named system semaphore.
-      static semaphore open_existing(const ustring& name);
 
       /// @brief Exits the semaphore and returns the previous count.
       /// @return The count on the semaphore before the xtd::threading::semaphore::release method was called.
@@ -184,6 +174,20 @@ namespace xtd {
       /// @remarks Threads typically use the xtd::threading::wait_handle::wait_one method to enter the semaphore, and they typically use this method overload to exit.
       /// @remarks If a xtd::threading::semaphore_full_exception is thrown by the xtd::threading::release method, it does not necessarily indicate a problem with the calling thread. A programming error in another thread might have caused that thread to exit the semaphore more times than it entered.
       int32 release(int32 release_count);
+      /// @}
+
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Opens the specified named semaphore, if it already exists.
+      /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive.
+      /// @return An object that represents the named system semaphore.
+      /// @exception xtd::argument_exception name is an empty string.
+      /// @exception xtd::io::io_exception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters.<br>-or-<br>There was some other error. The HResult property may provide more information.
+      /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened.
+      /// @remarks The xtd::threading::semaphore::open_existing method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the xtd::threading::semaphore constructors that has a name parameter.
+      /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::semaphore object, even though the objects that are returned represent the same named system semaphore.
+      static semaphore open_existing(const ustring& name);
 
       /// @brief Opens the specified named semaphore, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.

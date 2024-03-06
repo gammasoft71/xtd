@@ -182,11 +182,6 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         std::shared_ptr<xtd::iasync_result> begin_accept_tcp_client(xtd::async_callback callback, const std::any& state);
         
-        /// @brief Creates a new xtd::net::sockets::tcp_listener instance to listen on the specified port.
-        /// @param port The port on which to listen for incoming connection attempts.
-        /// @return xtd::net::sockets::tcp_listener A new xtd::net::sockets::tcp_listener instance to listen on the specified port.
-        static tcp_listener create(uint16 port);
-        
         /// @brief Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host communication.
         /// @param async_result tAn xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_socket(xtd::async_callback, std::any) method.
         /// @return The xtd::net::sockets::socket used to send and receive data.
@@ -246,7 +241,16 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void stop();
         /// @}
+
+        /// @name Static methods
         
+        /// @{
+        /// @brief Creates a new xtd::net::sockets::tcp_listener instance to listen on the specified port.
+        /// @param port The port on which to listen for incoming connection attempts.
+        /// @return xtd::net::sockets::tcp_listener A new xtd::net::sockets::tcp_listener instance to listen on the specified port.
+        static tcp_listener create(uint16 port);
+        /// @}
+
       protected:
         /// @name Protected properties
         

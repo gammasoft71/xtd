@@ -63,7 +63,7 @@ namespace xtd {
     static constexpr type_t positive_infinity = +std::numeric_limits<type_t>::infinity();
     /// @}
     
-    /// @name Methods
+    /// @name Static methods
 
     /// @{
     /// @brief Determines whether the specified value is finite (zero, subnormal, or normal).

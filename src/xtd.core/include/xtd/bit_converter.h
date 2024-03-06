@@ -87,7 +87,7 @@ namespace xtd {
     static constexpr endian endianness = is_little_endian ? endian::little : endian::big;
     /// @}
     
-    /// @name Methods
+    /// @name Static methods
     
     /// @{
     /// @brief Converts the specified double-precision floating point number to a 64-bit signed integer.

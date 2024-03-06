@@ -122,13 +122,6 @@ namespace xtd {
       /// @note xtd::threading::mutex::lock() is usually not called directly: std::unique_lock, std::scoped_lock, and std::lock_guard are used to manage exclusive locking.
       void lock();
 
-      /// @brief Opens an existing named mutex.
-      /// @param name The name of a system-wide named mutex object.
-      /// @return A xtd::threading::mutex object that represents a named system mutex.
-      /// @exception xtd::argument_exception is a zero-length string <br>-or-<br> name is longer than 128 characters
-      /// @exception xtd::io::io_exception An Io error occurred.
-      static mutex open_existing(const ustring& name);
-
       /// @brief Releases the Mutex once.
       /// @exception xtd::object_closed_exception the handle is invalid
       void release_mutex();
@@ -162,12 +155,6 @@ namespace xtd {
       /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns true.
       /// @remarks If try_lock_until is called by a thread that already owns the mutex, the behavior is undefined.
       bool try_lock_until(const date_time& timeout_time) noexcept;
-      
-      /// @brief Opens the specified named mutex, if it already exists, and returns a value that indicates whether the operation succeeded.
-      /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) and (/) are reserved.
-      /// @param result When this method returns, contains a xtd::threading::mutex object that represents the named mutex if the call succeeded.
-      /// @return true if the named mutex was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
-      static bool try_open_existing(const ustring& name, mutex& result) noexcept;
 
       /// @brief Unlocks the mutex.
       /// @remarks The mutex must be locked by the current thread of execution, otherwise, the behavior is undefined.
@@ -176,6 +163,23 @@ namespace xtd {
       void unlock();
       /// @}
       
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Opens an existing named mutex.
+      /// @param name The name of a system-wide named mutex object.
+      /// @return A xtd::threading::mutex object that represents a named system mutex.
+      /// @exception xtd::argument_exception is a zero-length string <br>-or-<br> name is longer than 128 characters
+      /// @exception xtd::io::io_exception An Io error occurred.
+      static mutex open_existing(const ustring& name);
+      
+      /// @brief Opens the specified named mutex, if it already exists, and returns a value that indicates whether the operation succeeded.
+      /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) and (/) are reserved.
+      /// @param result When this method returns, contains a xtd::threading::mutex object that represents the named mutex if the call succeeded.
+      /// @return true if the named mutex was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
+      static bool try_open_existing(const ustring& name, mutex& result) noexcept;
+      /// @}
+
     protected:
       /// @name Protected methods
       

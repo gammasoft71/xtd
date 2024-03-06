@@ -68,7 +68,7 @@ namespace xtd {
     static constexpr double tau = 2.7182818284590451;
     /// @}
     
-    /// @name Methods
+    /// @name Static methods
     
     /// @{
     /// @brief Returns the absolute value of a decimal number

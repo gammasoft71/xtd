@@ -503,6 +503,89 @@ namespace xtd {
     /// @name Methods
     
     /// @{
+   
+    /// @brief Gets the specified components of the current instance using the specified escaping for special characters.
+    /// @param components A bitwise combination of the xtd::uri_components values that specifies which parts of the current instance to return to the caller.
+    /// @param format One of the xtd::uri_format values that controls how special characters are escaped.
+    /// @return string A string that contains the components.
+    /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
+    /// @remarks When query or fragment is specified alone, the return value includes the delimiter. The scheme, user_info, host, port, and Path components do not include the delimiter. For all other xtd::uri_components values, and combinations of values, the delimiters are included in the returned value.
+    /// @remarks The components are returned in the order that they appear in the URI. For example, if scheme is specified, it appears first.
+    /// @remarks When International Resource Identifier (URI) and Internationalized Domain Name (IDN) support are enabled, the number of characters returned in the string increases. Punycode names used to support URI contain only ASCII characters and always start with the xn-- prefix. When URI and IDN are enabled, Unicode surrogate characters are handled correctly by the get_components method.
+    /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
+    xtd::ustring get_components(xtd::uri_components components, xtd::uri_format format) const;
+    
+    /// @brief Gets the specified portion of a xtd::uri instance.
+    /// @param part = One of the xtd::uri_partial values that specifies the end of the URI portion to return.
+    /// @return string A string that contains the specified portion of the xtd::uri instance.
+    /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
+    /// @exception ArgumentException The specified part is not valid.
+    /// @remarks The get_left_part method returns a string containing the leftmost portion of the URI string, ending with the portion specified by part.
+    /// @remarks get_left_part includes delimiters in the following cases:
+    /// @remarks   * scheme includes the scheme delimiter.
+    /// @remarks   * authority does not include the path delimiter.
+    /// @remarks   * Path includes any delimiters in the original URI up to the query or fragment delimiter.
+    /// @remarks   * query includes the Path, plus the query and its delimiter.
+    /// @remarks The following examples show a URI and the results of calling get_left_part with scheme, authority, Path, or query.
+    /// | URI                                         | Scheme  | Autority                | Path                                       | Query                                       |
+    /// | ------------------------------------------- | ------- | ----------------------- | ------------------------------------------ | ------------------------------------------- |
+    /// | http://www.contoso.com/index.htm?date=today | http:// | http://www.contoso.com  | http://www.contoso.com/index.htm           | http://www.contoso.com/index.htm?date=today |
+    /// | http://www.contoso.com/index.htm#main       | http:// | http://www.contoso.com  | http://www.contoso.com/index.htm           | http://www.contoso.com/index.htm            |
+    /// | mailto:user@contoso.com?subject=uri         | mailto: | mailto:user@contoso.com | mailto:user@contoso.com?subject=uri        | <None>                                      |
+    /// | nntp://news.contoso.com/123456@contoso.com  | nntp:// | nntp://news.contoso.com | nntp://news.contoso.com/123456@contoso.com | nntp://news.contoso.com/123456@contoso.com  |
+    /// | news:123456@contoso.com                     | news:   | news:123456@contoso.com | news:123456@contoso.com                    | <None>                                      |
+    /// | file://server/filename.ext                  | file:// | file://server           | file://server/filename.ext                 | file://server/filename.ext                  |
+    xtd::ustring get_left_part(xtd::uri_partial part) const;
+    
+    /// @brief Determines whether the current xtd::uri instance is a base of the specified xtd::uri instance.
+    /// @param uri The specified xtd::uri instance to test.
+    /// @return bool true if the current xtd::uri instance is a base of uri; otherwise, false.
+    /// @exception ArgumentNullException uri is null.
+    /// @remarks IsBaseOf is used to compare the current xtd::uri instance to a specified xtd::uri to determine whether this URI is a base for the specified xtd::uri. When comparing two xtd::uri objects to determine a base relationship, the user information (user_info) is not evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using http://host/path/path/file?query as the base URI, the following table shows whether it is a base for other URIs.
+    /// | URI                                   | http://host/path/path/file?query is base of |
+    /// | ------------------------------------- | ------------------------------------------- |
+    /// | http://host/path/path/file/           | yes                                         |
+    /// | http://host/path/path/#fragment       | yes                                         |
+    /// | http://host/path/path/MoreDir/"       | yes                                         |
+    /// | http://host/path/path/OtherFile?Query | yes                                         |
+    /// | http://host/path/path/                | yes                                         |
+    /// | http://host/path/path/file            | yes                                         |
+    /// | http://host/path/path                 | no                                          |
+    /// | http://host/path/path?query           | no                                          |
+    /// | http://host/path/path#fragment        | no                                          |
+    /// | http://host/path/path2/               | no                                          |
+    /// | http://host/path/path2/MoreDir        | no                                          |
+    /// | http://host/path/File                 | no                                          |
+    bool is_base_of(const xtd::uri& uri) const;
+    
+    /// @brief Indicates whether the string used to construct this xtd::uri was well-formed and is not required to be further escaped.
+    /// @return bool A bool value that is true if the string was well-formed; else false.
+    /// @remarks The string is considered to be well-formed in accordance with RFC 2396 and RFC 2732 by default. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered to be well-formed in accordance with RFC 3986 and RFC 3987
+    /// @remarks The string is considered poorly formed, causing the method to return false, if any of the following conditions occur.
+    /// | Error                                                                                      | Example                                       |
+    /// | ------------------------------------------------------------------------------------------ | --------------------------------------------- |
+    /// | The string is not correctly escaped.                                                       | http://www.contoso.com/path???/file name      |
+    /// | The string is an absolute xtd::uri that represents an implicit file xtd::uri.              | c:\\directory\filename                        |
+    /// | The string is an absolute URI that is missing a slash before the path.                     | file://c:/directory/filename                  |
+    /// | The string contains unescaped backslashes even if they are treated as forward slashes.     | http:\\host/path/file                         |
+    /// | The string represents a hierarchical absolute xtd::uri and does not contain "://".         | www.contoso.com/path/file                     |
+    /// | The parser for the xtd::uri.scheme indicates that the original string was not well-formed. | The example depends on the scheme of the URI. |
+    /// @remarks By default, the string used to construct this xtd::uri are considered well-formed in accordance with RFC 2396 and RFC 2732.
+    /// @remarks When International Resource Identifier (URI) and Internationalized Domain Name (IDN) support are enabled, the string used to construct this xtd::uri are considered well-formed in accordance with RFC 3986 and RFC 3987. Punycode names used to support URI contain only ASCII characters and always start with the xn-- prefix.
+    /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
+    bool is_well_formed_original_string();
+     
+    bool equals(const xtd::uri& uri) const noexcept override;
+    
+    /// @brief Gets a canonical string representation for the specified xtd::uri instance.
+    /// @return string A string instance that contains the unescaped canonical representation of the xtd::uri instance. All characters are unescaped except #, ?, and %.
+    /// @remarks The string returned by this method does not contain port information when the port is the default port for the scheme.
+    xtd::ustring to_string() const noexcept override;
+    /// @}
+    
+    /// @name Methods
+    
+    /// @{
     /// @brief Determines whether the specified scheme name is valid.
     /// @param scheme The scheme name to validate.
     /// @return bool A bool value that is true if the scheme name is valid; otherwise, false.
@@ -540,39 +623,6 @@ namespace xtd {
     /// @remarks The from_hex method converts a character representing a hexadecimal digit (0-9, a-f, A-F) to its decimal value (0 to 15). If digit is not a valid hexadecimal digit, an ArgumentException exception is thrown.
     static int32 from_hex(char digit);
     
-    /// @brief Gets the specified components of the current instance using the specified escaping for special characters.
-    /// @param components A bitwise combination of the xtd::uri_components values that specifies which parts of the current instance to return to the caller.
-    /// @param format One of the xtd::uri_format values that controls how special characters are escaped.
-    /// @return string A string that contains the components.
-    /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks When query or fragment is specified alone, the return value includes the delimiter. The scheme, user_info, host, port, and Path components do not include the delimiter. For all other xtd::uri_components values, and combinations of values, the delimiters are included in the returned value.
-    /// @remarks The components are returned in the order that they appear in the URI. For example, if scheme is specified, it appears first.
-    /// @remarks When International Resource Identifier (URI) and Internationalized Domain Name (IDN) support are enabled, the number of characters returned in the string increases. Punycode names used to support URI contain only ASCII characters and always start with the xn-- prefix. When URI and IDN are enabled, Unicode surrogate characters are handled correctly by the get_components method.
-    /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
-    xtd::ustring get_components(xtd::uri_components components, xtd::uri_format format) const;
-    
-    /// @brief Gets the specified portion of a xtd::uri instance.
-    /// @param part = One of the xtd::uri_partial values that specifies the end of the URI portion to return.
-    /// @return string A string that contains the specified portion of the xtd::uri instance.
-    /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @exception ArgumentException The specified part is not valid.
-    /// @remarks The get_left_part method returns a string containing the leftmost portion of the URI string, ending with the portion specified by part.
-    /// @remarks get_left_part includes delimiters in the following cases:
-    /// @remarks   * scheme includes the scheme delimiter.
-    /// @remarks   * authority does not include the path delimiter.
-    /// @remarks   * Path includes any delimiters in the original URI up to the query or fragment delimiter.
-    /// @remarks   * query includes the Path, plus the query and its delimiter.
-    /// @remarks The following examples show a URI and the results of calling get_left_part with scheme, authority, Path, or query.
-    /// | URI                                         | Scheme  | Autority                | Path                                       | Query                                       |
-    /// | ------------------------------------------- | ------- | ----------------------- | ------------------------------------------ | ------------------------------------------- |
-    /// | http://www.contoso.com/index.htm?date=today | http:// | http://www.contoso.com  | http://www.contoso.com/index.htm           | http://www.contoso.com/index.htm?date=today |
-    /// | http://www.contoso.com/index.htm#main       | http:// | http://www.contoso.com  | http://www.contoso.com/index.htm           | http://www.contoso.com/index.htm            |
-    /// | mailto:user@contoso.com?subject=uri         | mailto: | mailto:user@contoso.com | mailto:user@contoso.com?subject=uri        | <None>                                      |
-    /// | nntp://news.contoso.com/123456@contoso.com  | nntp:// | nntp://news.contoso.com | nntp://news.contoso.com/123456@contoso.com | nntp://news.contoso.com/123456@contoso.com  |
-    /// | news:123456@contoso.com                     | news:   | news:123456@contoso.com | news:123456@contoso.com                    | <None>                                      |
-    /// | file://server/filename.ext                  | file:// | file://server           | file://server/filename.ext                 | file://server/filename.ext                  |
-    xtd::ustring get_left_part(xtd::uri_partial part) const;
-    
     /// @brief Converts a specified character into its hexadecimal equivalent.
     /// @param character The character to convert to hexadecimal representation.
     /// @return string The hexadecimal representation of the specified character.
@@ -586,27 +636,6 @@ namespace xtd {
     /// @exception ArgumentOutOfRangeException index is less than 0 or greater than or equal to the number of characters in pattern.
     static char hex_unescape(const xtd::ustring& pattern, size_t& index);
     
-    /// @brief Determines whether the current xtd::uri instance is a base of the specified xtd::uri instance.
-    /// @param uri The specified xtd::uri instance to test.
-    /// @return bool true if the current xtd::uri instance is a base of uri; otherwise, false.
-    /// @exception ArgumentNullException uri is null.
-    /// @remarks IsBaseOf is used to compare the current xtd::uri instance to a specified xtd::uri to determine whether this URI is a base for the specified xtd::uri. When comparing two xtd::uri objects to determine a base relationship, the user information (user_info) is not evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using http://host/path/path/file?query as the base URI, the following table shows whether it is a base for other URIs.
-    /// | URI                                   | http://host/path/path/file?query is base of |
-    /// | ------------------------------------- | ------------------------------------------- |
-    /// | http://host/path/path/file/           | yes                                         |
-    /// | http://host/path/path/#fragment       | yes                                         |
-    /// | http://host/path/path/MoreDir/"       | yes                                         |
-    /// | http://host/path/path/OtherFile?Query | yes                                         |
-    /// | http://host/path/path/                | yes                                         |
-    /// | http://host/path/path/file            | yes                                         |
-    /// | http://host/path/path                 | no                                          |
-    /// | http://host/path/path?query           | no                                          |
-    /// | http://host/path/path#fragment        | no                                          |
-    /// | http://host/path/path2/               | no                                          |
-    /// | http://host/path/path2/MoreDir        | no                                          |
-    /// | http://host/path/File                 | no                                          |
-    bool is_base_of(const xtd::uri& uri) const;
-    
     /// @brief  Determines whether a specified character is a valid hexadecimal digit.
     /// @param character The character to validate.
     /// @return bool A bool value that is true if the character is a valid hexadecimal digit; otherwise false.
@@ -619,23 +648,6 @@ namespace xtd {
     /// @return bool A bool value that is true if pattern is hexadecimal encoded at the specified location; otherwise, false.
     /// @remarks The is_hex_encoding method checks for hexadecimal encoding that follows the pattern "%hexhex" in a string, where "hex" is a digit from 0 to 9 or a letter from A-F (case-insensitive).
     static bool is_hex_encoding(const xtd::ustring& pattern, size_t index);
-    
-    /// @brief Indicates whether the string used to construct this xtd::uri was well-formed and is not required to be further escaped.
-    /// @return bool A bool value that is true if the string was well-formed; else false.
-    /// @remarks The string is considered to be well-formed in accordance with RFC 2396 and RFC 2732 by default. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered to be well-formed in accordance with RFC 3986 and RFC 3987
-    /// @remarks The string is considered poorly formed, causing the method to return false, if any of the following conditions occur.
-    /// | Error                                                                                      | Example                                       |
-    /// | ------------------------------------------------------------------------------------------ | --------------------------------------------- |
-    /// | The string is not correctly escaped.                                                       | http://www.contoso.com/path???/file name      |
-    /// | The string is an absolute xtd::uri that represents an implicit file xtd::uri.              | c:\\directory\filename                        |
-    /// | The string is an absolute URI that is missing a slash before the path.                     | file://c:/directory/filename                  |
-    /// | The string contains unescaped backslashes even if they are treated as forward slashes.     | http:\\host/path/file                         |
-    /// | The string represents a hierarchical absolute xtd::uri and does not contain "://".         | www.contoso.com/path/file                     |
-    /// | The parser for the xtd::uri.scheme indicates that the original string was not well-formed. | The example depends on the scheme of the URI. |
-    /// @remarks By default, the string used to construct this xtd::uri are considered well-formed in accordance with RFC 2396 and RFC 2732.
-    /// @remarks When International Resource Identifier (URI) and Internationalized Domain Name (IDN) support are enabled, the string used to construct this xtd::uri are considered well-formed in accordance with RFC 3986 and RFC 3987. Punycode names used to support URI contain only ASCII characters and always start with the xn-- prefix.
-    /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
-    bool is_well_formed_original_string();
     
     /// @brief Indicates whether the string is well-formed by attempting to construct a URI with the string and ensures that the string does not require further escaping.
     /// @param uri_string The string used to attempt to construct a xtd::uri.
@@ -661,15 +673,8 @@ namespace xtd {
     /// @remarks You should use this method with care. Unescaping a string that has been previously unescaped can lead to ambiguities and errors.
     /// @remarks Many Web browsers escape spaces inside of URIs into plus ("+") characters; however, the unescape_data_string method does not convert plus characters into spaces because this behavior is not standard across all URI schemes.
     static xtd::ustring unescape_data_string(const xtd::ustring& value);
-    
-    bool equals(const xtd::uri& uri) const noexcept override;
-    
-    /// @brief Gets a canonical string representation for the specified xtd::uri instance.
-    /// @return string A string instance that contains the unescaped canonical representation of the xtd::uri instance. All characters are unescaped except #, ?, and %.
-    /// @remarks The string returned by this method does not contain port information when the port is the default port for the scheme.
-    xtd::ustring to_string() const noexcept override;
     /// @}
-    
+
   private:
     static ustring format_componant(const ustring& str, uri_format format);
     static ustring format_host_componant(const ustring& str, uri_format format);

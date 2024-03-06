@@ -22,6 +22,9 @@ namespace xtd {
   /// @ingroup xtd_core system
   class core_export_ startup final static_ {
   public:
+    /// @name Static methods
+    
+    /// @{
     /// @brief Safely call the specified application's main entry point.
     /// @param main_function The main method to safety call.
     /// @remarks The main_function is called in try and catch. If an exception occurs, a generic message is displayed.
@@ -69,6 +72,7 @@ namespace xtd {
     static int safe_run(main_function_t main_function, int argc, char* argv[]) {
       return internal_safe_run(main_function, argc, argv);
     }
+    /// @}
 
     /// @cond
     static int safe_run(xtd::delegate<void()> main_function, int argc, char* argv[]);

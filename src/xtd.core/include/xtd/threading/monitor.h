@@ -133,7 +133,7 @@ namespace xtd {
       struct static_data;
       
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Acquires an exclusive lock on the specified obj.

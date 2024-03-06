@@ -55,7 +55,7 @@ namespace xtd {
     static constexpr type_t min_value = std::numeric_limits<type_t>::lowest();
     /// @}
     
-    /// @name Methods
+    /// @name Static methods
     
     /// @{
     using box<type_t>::parse;

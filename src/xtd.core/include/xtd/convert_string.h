@@ -21,7 +21,7 @@ namespace xtd {
   /// @remarks To change the encoded format use xtd::text::encoding with xtd::ustring class.
   class convert_string static_ {
   public:
-    /// @name Methods
+    /// @name Static methods
     
     /// @{
     /// @brief Converts std::string to std::string.

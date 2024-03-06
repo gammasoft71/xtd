@@ -21,7 +21,7 @@ namespace xtd {
     /// @ingroup xtd_core net
     class core_export_ dns static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Returns the Internet Protocol (IP) addresses for the specified host.

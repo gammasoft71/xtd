@@ -85,7 +85,7 @@ namespace xtd {
       const ustring& version() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Static ethods
       
       /// @{
       /// @brief Gets the assembly that contains the code that is currently executing.
