@@ -108,7 +108,7 @@ Inheritance diagram for xtd::forms::message:</div>
 You cannot create the message directly. Instead, use the create method. For the sake of efficiency, the message uses its pool of existing Messages instead of instantiating a new one, if possible. However, if a message is not available in the pool, a new one is instantiated. </dd>
 <dd>
 Windows message are simulate on macOS and linux. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="action1_8cpp-example.html#_a1">action1.cpp</a>, <a class="el" href="action2_8cpp-example.html#_a1">action2.cpp</a>, <a class="el" href="action3_8cpp-example.html#_a1">action3.cpp</a>, <a class="el" href="form_and_messages_8cpp-example.html#_a1">form_and_messages.cpp</a>, and <a class="el" href="wnd_proc_8cpp-example.html#_a4">wnd_proc.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="action1_8cpp-example.html#_a1">action1.cpp</a>, <a class="el" href="action2_8cpp-example.html#_a1">action2.cpp</a>, <a class="el" href="action3_8cpp-example.html#_a1">action3.cpp</a>, <a class="el" href="application_add_message_filter_8cpp-example.html#_a3">application_add_message_filter.cpp</a>, <a class="el" href="form_and_messages_8cpp-example.html#_a1">form_and_messages.cpp</a>, and <a class="el" href="wnd_proc_8cpp-example.html#_a4">wnd_proc.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
@@ -309,6 +309,8 @@ template&lt;typename type_t &gt; </div>
 <p>Gets the window handle of the message. </p>
 <dl class="section return"><dt>Returns</dt><dd>The window handle of the message. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Window handle is a value that uniquely identifies a window on the system. This property returns a handle of the window whose window procedure receives this message. It is useful when your code need to interact with some native Windows API functions that expect window handles as parameters. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#a5">application_add_message_filter.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -422,7 +424,7 @@ template&lt;typename type_t &gt; </div>
 
 <p>Gets the ID number for the message. </p>
 <dl class="section return"><dt>Returns</dt><dd>The ID number for the message. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form_and_messages_8cpp-example.html#a2">form_and_messages.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#a4">application_add_message_filter.cpp</a>, and <a class="el" href="form_and_messages_8cpp-example.html#a2">form_and_messages.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -630,7 +632,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 16:49:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Mar 6 2024 12:11:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

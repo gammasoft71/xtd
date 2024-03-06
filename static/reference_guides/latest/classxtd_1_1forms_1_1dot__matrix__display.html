@@ -146,7 +146,7 @@ Inheritance diagram for xtd::forms::dot_matrix_display:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of dot matrix display control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_transformer&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of dot matrix display control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_converter&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/dot_matrix_display&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -173,7 +173,7 @@ Inheritance diagram for xtd::forms::dot_matrix_display:</div>
 <div class="line">      dot_matrix_display1.set_dots(chase[counter++ % chase.size()]);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
-<div class="line">    back_color(color_transformer::average(color::black, dot_matrix_display1.fore_color(), 0.20));</div>
+<div class="line">    back_color(color_converter::average(color::black, dot_matrix_display1.fore_color(), 0.20));</div>
 <div class="line">    text(<span class="stringliteral">&quot;Dot matrix display example&quot;</span>);</div>
 <div class="line">    resize += [&amp;] {</div>
 <div class="line">      dot_matrix_display1.left((client_size().width() - dot_matrix_display1.width()) / 2);</div>
@@ -3643,7 +3643,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 16:49:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Mar 6 2024 12:11:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

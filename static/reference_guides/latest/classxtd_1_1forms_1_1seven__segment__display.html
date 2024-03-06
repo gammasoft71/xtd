@@ -149,7 +149,7 @@ Inheritance diagram for xtd::forms::seven_segment_display:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of seven segment display control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_transformer&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of seven segment display control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_converter&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/Application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/seven_segment_display&gt;</span></div>
@@ -176,7 +176,7 @@ Inheritance diagram for xtd::forms::seven_segment_display:</div>
 <div class="line">      seven_segment_display1.value(chase[counter++ % chase.size()]);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
-<div class="line">    back_color(color_transformer::average(color::black, seven_segment_display1.fore_color(), 0.20));</div>
+<div class="line">    back_color(color_converter::average(color::black, seven_segment_display1.fore_color(), 0.20));</div>
 <div class="line">    text(<span class="stringliteral">&quot;Seven segment display example&quot;</span>);</div>
 <div class="line">    resize += [&amp;] {</div>
 <div class="line">      seven_segment_display1.left((client_size().width() - seven_segment_display1.width()) / 2);</div>
@@ -3902,7 +3902,7 @@ Typically, you should not set the client_size of the control. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 16:49:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Mar 6 2024 12:11:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

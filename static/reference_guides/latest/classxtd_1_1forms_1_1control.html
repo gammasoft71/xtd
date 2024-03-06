@@ -12590,7 +12590,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <dl class="section remark"><dt>Remarks</dt><dd>To determine the size of the resized control, you can cast the sender parameter of the registered control_event_handler method to a control and get its size property (or height and width properties individually). </dd>
 <dd>
 To handle custom layouts, use the <a class="el" href="classxtd_1_1forms_1_1control.html#a4c62d42e86be033a0aa9f897155d9672" title="Occurs when a xtd::forms::control should reposition its child controls.">xtd::forms::control::layout</a> event instead of the <a class="el" href="classxtd_1_1forms_1_1control.html#aea1a435b7c3963a9e39af7aa218778a6" title="Occurs when the xtd::forms::control is resized.">xtd::forms::control::resize</a> event. The <a class="el" href="classxtd_1_1forms_1_1control.html#a4c62d42e86be033a0aa9f897155d9672" title="Occurs when a xtd::forms::control should reposition its child controls.">xtd::forms::control::layout</a> event is raised in response to a <a class="el" href="classxtd_1_1forms_1_1control.html#aea1a435b7c3963a9e39af7aa218778a6" title="Occurs when the xtd::forms::control is resized.">xtd::forms::control::resize</a> event, but also in response to other changes that affect the layout of the control. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of control <a class="el" href="classxtd_1_1forms_1_1control.html#aea1a435b7c3963a9e39af7aa218778a6" title="Occurs when the xtd::forms::control is resized.">xtd::forms::control::resize</a> event. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_transformer&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of control <a class="el" href="classxtd_1_1forms_1_1control.html#aea1a435b7c3963a9e39af7aa218778a6" title="Occurs when the xtd::forms::control is resized.">xtd::forms::control::resize</a> event. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_converter&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/dot_matrix_display&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -12617,7 +12617,7 @@ To handle custom layouts, use the <a class="el" href="classxtd_1_1forms_1_1contr
 <div class="line">      dot_matrix_display1.set_dots(chase[counter++ % chase.size()]);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
-<div class="line">    back_color(color_transformer::average(color::black, dot_matrix_display1.fore_color(), 0.20));</div>
+<div class="line">    back_color(color_converter::average(color::black, dot_matrix_display1.fore_color(), 0.20));</div>
 <div class="line">    text(<span class="stringliteral">&quot;Dot matrix display example&quot;</span>);</div>
 <div class="line">    resize += [&amp;] {</div>
 <div class="line">      dot_matrix_display1.left((client_size().width() - dot_matrix_display1.width()) / 2);</div>
@@ -12776,7 +12776,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 16:49:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Mar 6 2024 12:11:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -106,7 +106,7 @@ $(function() {
 <img src="border_style_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_transformer&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_converter&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/drawing/colors&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/drawing/system_colors&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
@@ -160,8 +160,8 @@ $(function() {
 <div class="line">      colors_chooser.bounds({120, 37, 220, colors_chooser.size().height()});</div>
 <div class="line">      colors_chooser.selected_index_changed += [&amp;] {</div>
 <div class="line">        <span class="keyword">auto</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a> = color::from_name(colors_chooser.selected_item().value());</div>
-<div class="line">        colored_panel.back_color(colors_chooser.selected_item() == <span class="stringliteral">&quot;control&quot;</span> ? <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a> : <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>.<a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#a9ee6f42d4f06aafa9c1ff0001e255f43">is_dark</a>() ? color_transformer::light(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>, .1) :  color_transformer::dark(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>, .1));</div>
-<div class="line">        colored_panel.fore_color(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#a9ee6f42d4f06aafa9c1ff0001e255f43">is_dark</a>() ? color_transformer::light(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>, 2.0 / 3) : color_transformer::dark(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>, 2.0 / 3));</div>
+<div class="line">        colored_panel.back_color(colors_chooser.selected_item() == <span class="stringliteral">&quot;control&quot;</span> ? <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a> : <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>.<a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#a9ee6f42d4f06aafa9c1ff0001e255f43">is_dark</a>() ? color_converter::light(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>, .1) :  color_converter::dark(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>, .1));</div>
+<div class="line">        colored_panel.fore_color(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>.<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#a9ee6f42d4f06aafa9c1ff0001e255f43">is_dark</a>() ? color_converter::light(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>, 2.0 / 3) : color_converter::dark(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>, 2.0 / 3));</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; bordered_label : bordered_labels)</div>
 <div class="line">          bordered_label.back_color(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>);</div>
 <div class="line">      };</div>
@@ -269,7 +269,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 5 2024 16:48:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Mar 6 2024 12:10:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
