@@ -24,6 +24,7 @@
 /// | Crop               | xtd::drawing::image_converter::crop               | @image html ball_crop.png               |
 /// | Disabled           | xtd::drawing::image_converter::disabled           | @image html ball_disabled.png           |
 /// | Drop shadow        | xtd::drawing::image_converter::drop_shadow        | @image html ball_drop_shadow.png        |
+/// | Gamma correction   | xtd::drawing::image_converter::gamma_correction   | @image html ball_gamma_correction.png   |
 /// | Grayscale          | xtd::drawing::image_converter::grayscale          | @image html ball_grayscale.png          |
 /// | Hur rotate         | xtd::drawing::image_converter::hue_rotate         | @image html ball_hue_rotate.png         |
 /// | Invert             | xtd::drawing::image_converter::invert             | @image html ball_invert.png             |
