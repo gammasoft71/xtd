@@ -1,4 +1,4 @@
-#include <xtd/drawing/color_transformer>
+#include <xtd/drawing/color_converter>
 #include <xtd/drawing/colors>
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/application>
@@ -52,8 +52,8 @@ namespace border_style_example {
       colors_chooser.bounds({120, 37, 220, colors_chooser.size().height()});
       colors_chooser.selected_index_changed += [&] {
         auto color = color::from_name(colors_chooser.selected_item().value());
-        colored_panel.back_color(colors_chooser.selected_item() == "control" ? color : color.is_dark() ? color_transformer::light(color, .1) :  color_transformer::dark(color, .1));
-        colored_panel.fore_color(color.is_dark() ? color_transformer::light(color, 2.0 / 3) : color_transformer::dark(color, 2.0 / 3));
+        colored_panel.back_color(colors_chooser.selected_item() == "control" ? color : color.is_dark() ? color_converter::light(color, .1) :  color_converter::dark(color, .1));
+        colored_panel.fore_color(color.is_dark() ? color_converter::light(color, 2.0 / 3) : color_converter::dark(color, 2.0 / 3));
         for (auto& bordered_label : bordered_labels)
           bordered_label.back_color(color);
       };

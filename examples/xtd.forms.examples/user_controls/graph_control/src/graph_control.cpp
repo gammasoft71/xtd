@@ -1,4 +1,4 @@
-#include <xtd/drawing/color_transformer>
+#include <xtd/drawing/color_converter>
 #include <xtd/forms/application>
 #include <xtd/forms/user_control>
 #include <xtd/random>
@@ -115,7 +115,7 @@ public:
     return *this;
   }
   
-  color grid_horizontal_line_color() const noexcept {return grid_horizontal_line_color_.value_or(back_color().is_dark() ? color_transformer::light(back_color()) : color_transformer::dark(back_color()));}
+  color grid_horizontal_line_color() const noexcept {return grid_horizontal_line_color_.value_or(back_color().is_dark() ? color_converter::light(back_color()) : color_converter::dark(back_color()));}
   graph_control& grid_horizontal_line_color(color value) noexcept {
     grid_horizontal_line_color_ = value;
     return *this;
@@ -143,7 +143,7 @@ public:
     return *this;
   }
   
-  color grid_vertical_line_color() const noexcept {return grid_vertical_line_color_.value_or(back_color().is_dark() ? color_transformer::light(back_color()) : color_transformer::dark(back_color()));}
+  color grid_vertical_line_color() const noexcept {return grid_vertical_line_color_.value_or(back_color().is_dark() ? color_converter::light(back_color()) : color_converter::dark(back_color()));}
   graph_control& grid_vertical_line_color(color value) noexcept {
     grid_vertical_line_color_ = value;
     return *this;
@@ -171,7 +171,7 @@ public:
     return *this;
   }
   
-  color x_axis_line_color() const noexcept {return x_axis_line_color_.value_or(fore_color().is_dark() ? color_transformer::light(fore_color()) : color_transformer::dark(fore_color()));}
+  color x_axis_line_color() const noexcept {return x_axis_line_color_.value_or(fore_color().is_dark() ? color_converter::light(fore_color()) : color_converter::dark(fore_color()));}
   graph_control& x_axis_line_color(color value) noexcept {
     x_axis_line_color_ = value;
     return *this;
@@ -193,7 +193,7 @@ public:
     return *this;
   }
   
-  color y_axis_line_color() const noexcept {return y_axis_line_color_.value_or(fore_color().is_dark() ? color_transformer::light(fore_color()) : color_transformer::dark(fore_color()));}
+  color y_axis_line_color() const noexcept {return y_axis_line_color_.value_or(fore_color().is_dark() ? color_converter::light(fore_color()) : color_converter::dark(fore_color()));}
   graph_control& y_axis_line_color(color value) noexcept {
     y_axis_line_color_ = value;
     return *this;
@@ -250,8 +250,8 @@ protected:
   
 private:
   void draw_grid(const rectangle& rect, drawing::graphics& graphics) {
-    auto grid_horizontal_line_color = grid_horizontal_line_color_.value_or(back_color().is_dark() ? color_transformer::light(back_color()) : color_transformer::dark(back_color()));
-    auto grid_vertical_line_color = grid_vertical_line_color_.value_or(back_color().is_dark() ? color_transformer::light(back_color()) : color_transformer::dark(back_color()));
+    auto grid_horizontal_line_color = grid_horizontal_line_color_.value_or(back_color().is_dark() ? color_converter::light(back_color()) : color_converter::dark(back_color()));
+    auto grid_vertical_line_color = grid_vertical_line_color_.value_or(back_color().is_dark() ? color_converter::light(back_color()) : color_converter::dark(back_color()));
     if (grid_horizontal_line_visible_)
       for (auto y = rect.top(); y < rect.bottom(); y += grid_horizontal_line_spacing_)
         graphics.draw_line(pen {grid_horizontal_line_color, grid_horizontal_line_width_}, point(rect.left(), y), point(rect.right(), y));
@@ -261,8 +261,8 @@ private:
   }
   
   void draw_axis(const rectangle& rect, drawing::graphics& graphics) {
-    auto x_axis_line_color = x_axis_line_color_.value_or(fore_color().is_dark() ? color_transformer::light(fore_color()) : color_transformer::dark(fore_color()));
-    auto y_axis_line_color = y_axis_line_color_.value_or(fore_color().is_dark() ? color_transformer::light(fore_color()) : color_transformer::dark(fore_color()));
+    auto x_axis_line_color = x_axis_line_color_.value_or(fore_color().is_dark() ? color_converter::light(fore_color()) : color_converter::dark(fore_color()));
+    auto y_axis_line_color = y_axis_line_color_.value_or(fore_color().is_dark() ? color_converter::light(fore_color()) : color_converter::dark(fore_color()));
     
     if (x_axis_line_visible_) graphics.draw_line(pen {x_axis_line_color, x_axis_line_width_}, rect.left(), rect.top() + rect.height() / 2, rect.width(), rect.top() + rect.height() / 2);
     if (y_axis_line_visible_) graphics.draw_line(pen {y_axis_line_color, y_axis_line_width_}, rect.left() + rect.width() / 2, rect.top(), rect.left() + rect.width() / 2, rect.top() + rect.height());
