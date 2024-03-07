@@ -34,7 +34,7 @@ namespace xtd {
         color_palette& operator =(const color_palette&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets an array of color structures.
@@ -49,7 +49,7 @@ namespace xtd {
         int32 flags() const noexcept {return flags_;}
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const color_palette& value) const noexcept override {return entries_ == value.entries_ && flags_ == value.flags_;}

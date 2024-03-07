@@ -22,7 +22,7 @@ namespace xtd {
     /// @include use_wait_cursor.cpp
     class use_wait_cursor : public object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of use_wait_cursor class.

@@ -32,7 +32,7 @@ namespace xtd {
     /// @include manual_reset_event.cpp
     class manual_reset_event : public event_wait_handle {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       manual_reset_event() = default;

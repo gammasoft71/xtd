@@ -25,7 +25,7 @@ namespace xtd {
   /// 2. Synchronously, by using the xtd::isynchronize_invoke::invoke method. xtd::isynchronize_invoke::invoke starts a process, waits until it completes, and then returns. Use xtd::isynchronize_invoke::invoke when the control's main thread is different from the calling thread to marshal the call to the proper thread.
   class isynchronize_invoke interface_ {
   public:
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets a value indicating whether the caller must call Invoke(Delegate, Object[]) when calling an object that implements this interface.
@@ -34,7 +34,7 @@ namespace xtd {
     virtual bool invoke_required() const noexcept = 0;
     /// @}
 
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Asynchronously executes the delegate on the thread that created this object.

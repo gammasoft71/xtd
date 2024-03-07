@@ -78,7 +78,7 @@ namespace xtd {
   /// @include date_time.cpp
   class core_export_ date_time : public xtd::icomparable<date_time>, public xtd::iequatable<date_time>, public xtd::object {
   public:
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Represents the largest possible value of xtd::date_time. This field is read-only.
@@ -101,7 +101,7 @@ namespace xtd {
     static const date_time min_value;
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the xtd::date_time structure.
@@ -211,7 +211,7 @@ namespace xtd {
     /// @endcond
     
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the date component of this instance.
@@ -496,7 +496,7 @@ namespace xtd {
     uint32 year() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Returns a new xtd::date_time that adds the value of the specified xtd::time_span to the value of this instance.
@@ -791,7 +791,7 @@ namespace xtd {
     date_time to_universal_time() const;
     /// @}
 
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Gets a xtd::date_time object that is set to the current date and time on this computer, expressed as the local time.

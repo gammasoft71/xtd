@@ -64,7 +64,7 @@ namespace xtd {
     
     class forms_export_ message_notifier final : public component {
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       using message_notifier_button_collection = xtd::forms::layout::arranged_element_collection<message_notifier_button_ref>;
       
       message_notifier() = default;

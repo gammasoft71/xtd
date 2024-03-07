@@ -31,7 +31,7 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class toggle_button_renderer static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Draws a box in the specified style_sheet, bounds, control state and background color.

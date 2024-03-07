@@ -21,7 +21,7 @@ namespace xtd {
       /// @remarks The xtd::drawing::text::font_collection allows you to get a list of the font families contained in the collection with its families property. For additional information on fonts and text, including example code, see Using fonts and text.
       class font_collection : public object {
       public:
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the array of FontFamily objects associated with this FontCollection.

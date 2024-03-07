@@ -46,7 +46,7 @@ namespace xtd {
     box_floating_point& operator =(const box_floating_point&) = default;
     /// @endcond
     
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Represents the smallest positive type_t value greater than zero. This field is constant.
@@ -63,7 +63,7 @@ namespace xtd {
     static constexpr type_t positive_infinity = +std::numeric_limits<type_t>::infinity();
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
 
     /// @{
     /// @brief Determines whether the specified value is finite (zero, subnormal, or normal).

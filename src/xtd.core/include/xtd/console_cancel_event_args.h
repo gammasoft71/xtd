@@ -19,7 +19,7 @@ namespace xtd {
   /// @remarks If the cancel property is set to true in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the console_cancel_event_args property is false, and the process terminates.
   class console_cancel_event_args final : public xtd::event_args {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the console_cancel_event_args class.
@@ -35,7 +35,7 @@ namespace xtd {
     console_cancel_event_args& operator =(const console_cancel_event_args&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is false, which terminates the current process.

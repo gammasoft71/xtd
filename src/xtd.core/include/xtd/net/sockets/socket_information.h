@@ -30,7 +30,7 @@ namespace xtd {
       /// @remarks xtd::net::sockets::socket::duplicate_and_close creates a xtd::net::sockets::socket_information instance for use with the xtd::net::sockets::socket::socket constructor.
       class core_export_ socket_information : public xtd::object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::socket_information class.
@@ -43,7 +43,7 @@ namespace xtd {
         socket_information& operator =(const socket_information&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the options for a xtd::net::sockets::socket.

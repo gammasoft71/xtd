@@ -38,7 +38,7 @@ namespace xtd {
     /// @include test_class_without_helpers.cpp
     class tunit_export_ test_class {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Creates a new test_class instance.
@@ -55,7 +55,7 @@ namespace xtd {
       virtual ~test_class() = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the elapsed time of the test class.

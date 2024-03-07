@@ -22,7 +22,7 @@ namespace xtd {
   /// @include guid.cpp
   struct core_export_ guid final : public object, public icomparable<guid>, public xtd::iequatable<guid> {
   public:
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Gets A read-only instance of the xtd::guid structure whose value is all zeros.
@@ -31,7 +31,7 @@ namespace xtd {
     static const guid empty;
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the xtd::guid structure.
@@ -127,7 +127,7 @@ namespace xtd {
     guid& operator =(const guid&) = default;
     /// @endcond
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Compares the current instance with another object of the same type.
@@ -173,7 +173,7 @@ namespace xtd {
     ustring to_string(ustring format) const;
     /// @}
 
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Initializes a new instance of the xtd::guid structure.

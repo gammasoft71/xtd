@@ -22,7 +22,7 @@ namespace xtd {
     /// @include cursors.cpp
     class forms_export_ cursors final static_ {
     public:
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets the cursor that appears when an application starts.
@@ -338,7 +338,7 @@ namespace xtd {
       static cursor zoom_out();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets cursor from name.

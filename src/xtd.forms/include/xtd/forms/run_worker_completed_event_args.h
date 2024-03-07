@@ -26,7 +26,7 @@ namespace xtd {
       run_worker_completed_event_args& operator =(const run_worker_completed_event_args& do_work_event_args) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the DoWorkEventArgs class.
@@ -34,7 +34,7 @@ namespace xtd {
       run_worker_completed_event_args(const std::any& result, std::optional<std::reference_wrapper<std::exception>> exception, bool cancel) : cancel_(cancel), exception_(exception), result_(result) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       bool cancel() const noexcept {return cancel_;}

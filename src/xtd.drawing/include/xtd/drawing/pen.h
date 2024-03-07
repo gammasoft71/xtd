@@ -36,7 +36,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.
@@ -79,7 +79,7 @@ namespace xtd {
       ~pen();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the alignment for this xtd::drawing::pen.
@@ -202,7 +202,7 @@ namespace xtd {
       xtd::drawing::pen& dash_pattern(const std::initializer_list<float>& value);
       /// @endcond
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const xtd::drawing::pen& value) const noexcept override;

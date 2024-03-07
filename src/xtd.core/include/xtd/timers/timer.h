@@ -48,7 +48,7 @@ namespace xtd {
     class core_export_ timer : public object {
       struct data;
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::timers::timer class, and sets all the properties to their initial values.
@@ -76,7 +76,7 @@ namespace xtd {
       ~timer();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a boolean indicating whether the xtd::timers::timer should raise the xtd::timers::timer::elapsed event only once (false) or repeatedly (true).
@@ -155,7 +155,7 @@ namespace xtd {
       timer& synchronizing_object(std::nullptr_t value);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the interval elapses.
@@ -167,7 +167,7 @@ namespace xtd {
       event<timer, elapsed_event_handler> elapsed;
       /// @}
 
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Releases the resources used by the xtd::timers::timer.

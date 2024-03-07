@@ -38,7 +38,7 @@ namespace xtd {
     /// @remarks The trace listeners use the values of the trace class properties indent, indent_size, and  auto_flush to format trace output.
     class core_export_ trace_source : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the Trace_Source class, using the specified name for the source.
@@ -50,7 +50,7 @@ namespace xtd {
       explicit trace_source(const xtd::ustring& name, xtd::diagnostics::source_levels default_levels);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the collection of trace listeners for the trace source.
@@ -79,7 +79,7 @@ namespace xtd {
       void source_switch(const xtd::diagnostics::source_switch& source_switch) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Closes all the trace listeners in the trace listener collection.

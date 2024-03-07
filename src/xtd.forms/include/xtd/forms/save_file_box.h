@@ -31,7 +31,7 @@ namespace xtd {
     /// @include save_file_box.cpp
     class forms_export_ save_file_box final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Displays a save file dialog box in front of a specified window.

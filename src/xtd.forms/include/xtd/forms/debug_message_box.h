@@ -32,7 +32,7 @@ namespace xtd {
     /// @include debug_message_box.cpp
     class debug_message_box static_ {
     public:
-      /// @name static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Displays a message box and write debug with specified text.

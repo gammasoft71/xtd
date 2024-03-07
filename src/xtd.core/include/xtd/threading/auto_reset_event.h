@@ -33,7 +33,7 @@ namespace xtd {
     /// @include auto_reset_event.cpp
     class auto_reset_event : public event_wait_handle {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::threading::auto_reset_event class.

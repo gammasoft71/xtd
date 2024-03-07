@@ -31,7 +31,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::radial_gradient_brush class with default values.
@@ -88,7 +88,7 @@ namespace xtd {
         radial_gradient_brush& operator =(const radial_gradient_brush& value);
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the center point of the radial gradient.
@@ -132,7 +132,7 @@ namespace xtd {
         radial_gradient_brush& radius(float value) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         using brush::equals;

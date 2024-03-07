@@ -58,7 +58,7 @@ namespace xtd {
       all = stack_trace|libraries|processor|operating_system|compiler|language|locale|toolkit|environment_variables|special_folders|system_colors|generic_font_families|system_fonts|screens|system_informations
     };
 
-    /// @name Aliases
+    /// @name Public Aliases
     
     /// @{
     /// @brief Represents an environment variables collection.
@@ -75,7 +75,7 @@ namespace xtd {
     using system_information_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
     /// @}
     
-    /// @name Static properties
+    /// @name Public Static Properties
     
     /// @{
     /// @brief Gets an xtd::compiler object that contains the current compiler identifier and version number.
@@ -145,7 +145,7 @@ namespace xtd {
     static const environment::xtd_library_collection& xtd_libraries() noexcept;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Generates json format string report.

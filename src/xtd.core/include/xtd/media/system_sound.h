@@ -30,7 +30,7 @@ namespace xtd {
       system_sound() = default;
       /// @endcond
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const system_sound& sound) const noexcept override;

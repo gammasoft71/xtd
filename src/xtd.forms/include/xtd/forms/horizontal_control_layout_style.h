@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_forms
     class horizontal_control_layout_style : public control_layout_style, public xtd::iequatable<horizontal_control_layout_style> {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialises a new instance of horizontal control layout style class.
@@ -125,7 +125,7 @@ namespace xtd {
       horizontal_control_layout_style(int32 width, bool expanded, xtd::forms::content_alignment align);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the width value for a control.
@@ -136,7 +136,7 @@ namespace xtd {
       void width(float width);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       using control_layout_style::equals;

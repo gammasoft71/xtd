@@ -19,7 +19,7 @@ namespace xtd {
   /// @include divided_by_zero_exception.cpp
   class divided_by_zero_exception : public arithmetic_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class divided_by_zero_exception

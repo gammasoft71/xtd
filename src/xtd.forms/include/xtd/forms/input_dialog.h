@@ -36,14 +36,14 @@ namespace xtd {
     class forms_export_ input_dialog : public common_dialog {
       struct data;
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the input_dialog class.
       input_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the character casing.
@@ -117,7 +117,7 @@ namespace xtd {
       input_dialog& word_wrap(bool word_wrap);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all properties to empty string.

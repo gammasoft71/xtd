@@ -17,7 +17,7 @@ namespace xtd {
   /// @include platform_not_supported_exception.cpp
   class platform_not_supported_exception : public not_supported_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class platform_not_supported_exception

@@ -64,14 +64,14 @@ namespace xtd {
     };
 
   public:
-    /// @name Aliases
+    /// @name Public Aliases
     
     /// @{
     /// @brief function_t pointer type
     using function_t = std::function <result_t()>;
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes an empty delegate.
@@ -105,7 +105,7 @@ namespace xtd {
     }
     /// @}
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the delegates array
@@ -121,7 +121,7 @@ namespace xtd {
     size_t size() const noexcept {return data_->functions.size();}
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Clear delegates array.
@@ -179,7 +179,7 @@ namespace xtd {
     }
     /// @}
 
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Concatenates the invocation lists of an array of delegates.
@@ -382,7 +382,7 @@ namespace xtd {
     };
 
   public:
-    /// @name Aliases
+    /// @name Public Aliases
     
     /// @{
     /// @brief no_arguments_function_t pointer type
@@ -391,7 +391,7 @@ namespace xtd {
     using function_t = std::function <result_t(arguments_t...)>;
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes an empty delegate.
@@ -540,7 +540,7 @@ namespace xtd {
     }
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the no arguments delegates array
@@ -560,7 +560,7 @@ namespace xtd {
     size_t size() const noexcept {return data_->functions.size() + data_->no_arguments_functions.size();}
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.
@@ -622,7 +622,7 @@ namespace xtd {
     }
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Concatenates the invocation lists of an array of delegates.

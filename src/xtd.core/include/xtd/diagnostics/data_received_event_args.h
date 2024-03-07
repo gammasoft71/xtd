@@ -25,7 +25,7 @@ namespace xtd {
     /// @remarks To asynchronously collect the redirected xtd::diagnostics::process::standard_output or xtd::diagnostics::process::standard_error stream output of a process, you must create a method that handles the redirected stream output events. The event-handler method is called when the process writes to the redirected stream. The event delegate calls your event handler with an instance of xtd::diagnostics::data_received_event_args. The xtd::diagnostics::data_received_event_args::data property contains the text line that the process wrote to the redirected stream.
     class data_received_event_args final : public xtd::event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       /// @{
       
       /// @brief Initializes a new instance of the data_received_event_args class.
@@ -42,7 +42,7 @@ namespace xtd {
       
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       /// @{
       
       /// @brief Gets the line of characters that was written to a redirected Process output stream.

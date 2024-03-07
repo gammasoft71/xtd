@@ -26,7 +26,7 @@ namespace xtd {
     /// @include io_exception.cpp
     class io_exception : public xtd::system_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class io_exception

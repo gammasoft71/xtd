@@ -29,7 +29,7 @@ namespace xtd {
       control_event_args& operator =(control_event_args& control_event_args) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the control_event_args class for the specified control.
@@ -37,13 +37,13 @@ namespace xtd {
       explicit control_event_args(forms::control& control) : control_(&control) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the control object used by this event.
       /// @return The control used by this event.
       forms::control& control() const noexcept {return *control_;}
-      //// @}
+      /// @}
       
     private:
       forms::control* control_ = nullptr;

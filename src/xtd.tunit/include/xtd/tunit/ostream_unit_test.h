@@ -21,7 +21,7 @@ namespace xtd {
     /// @remarks All messages are written on the specified ostream.
     class tunit_export_ ostream_unit_test : public xtd::tunit::unit_test {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new console unit test with ostream specified.
@@ -35,7 +35,7 @@ namespace xtd {
       ostream_unit_test(std::ostream& os, int argc, char* argv[]);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the ostream used by this instance.
@@ -44,7 +44,7 @@ namespace xtd {
       std::ostream& ostream();
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       int count_tests(int32 count) override;

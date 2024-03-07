@@ -17,7 +17,7 @@ namespace xtd {
   /// @include underflow_exception.cpp
   class underflow_exception : public arithmetic_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class underflow_exception

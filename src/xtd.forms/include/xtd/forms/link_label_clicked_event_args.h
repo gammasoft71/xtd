@@ -26,7 +26,7 @@ namespace xtd {
     /// @todo rename to link_label_link_clicked_event_args
     class link_label_clicked_event_args : public xtd::event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialise a new instance of xtd::forms::link_labelc_clicked_event_args class.
@@ -35,7 +35,7 @@ namespace xtd {
       link_label_clicked_event_args(const xtd::forms::link& link, xtd::forms::mouse_buttons button);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Geyts the link clicked.

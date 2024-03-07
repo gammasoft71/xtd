@@ -35,14 +35,14 @@ namespace xtd {
     class forms_export_ menu : public component, public xtd::iequatable<menu> {
       struct data;
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents a collection of menu_item objects.
       using menu_item_collection = layout::arranged_element_collection<menu_item_ref>;
       /// @}
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Specifies that the find_menu_item(int32, intptr) method should search for a handle.
@@ -55,7 +55,7 @@ namespace xtd {
       ~menu();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value representing the window handle for the menu.
@@ -110,7 +110,7 @@ namespace xtd {
       menu& tag(std::any value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const menu&) const noexcept override;

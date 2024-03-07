@@ -35,7 +35,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the combo_box class.
@@ -104,7 +104,7 @@ namespace xtd {
       control& text(const xtd::ustring& text) override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Maintains performance while items are added to the combo_box one at a time by preventing the control from drawing until the EndUpdate() method is called.
@@ -116,7 +116,7 @@ namespace xtd {
       void end_update();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::combo_box.
@@ -265,7 +265,7 @@ namespace xtd {
       static combo_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the drop-down portion of a xtd::forms::combo_box is shown.

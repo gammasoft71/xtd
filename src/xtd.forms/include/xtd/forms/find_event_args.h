@@ -24,7 +24,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::find_event_args class.
@@ -42,7 +42,7 @@ namespace xtd {
       find_event_args& operator =(const find_event_args& other);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the string to find.

@@ -22,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class assembly_file_version_attribute final : public xtd::attribute {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_file_version_attribute class.

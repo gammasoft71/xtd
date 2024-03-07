@@ -31,14 +31,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize a new instance of seven_segment_display class.
       seven_segment_display();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets background segment color.
@@ -93,7 +93,7 @@ namespace xtd {
       virtual seven_segment_display& value(forms::segments value);
       /// @}
 
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Gets if specified xtd::forms::segments combination is on.
@@ -105,7 +105,7 @@ namespace xtd {
       virtual void set_segments(forms::segments segment, bool value);
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::seven_segment_display.

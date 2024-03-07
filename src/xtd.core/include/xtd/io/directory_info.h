@@ -229,14 +229,14 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents the uninitialized xtd::io::directory_info object. This field is constant.
       static const directory_info empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::io::directory_info class on the specified path.
@@ -437,7 +437,7 @@ namespace xtd {
       xtd::io::directory_info root() const;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Creates a directory.

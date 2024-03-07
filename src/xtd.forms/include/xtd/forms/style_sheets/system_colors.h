@@ -31,7 +31,7 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       class forms_export_ system_colors : public xtd::iequatable<system_colors>, public xtd::object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::system_colors class.
@@ -44,7 +44,7 @@ namespace xtd {
         system_colors& operator =(const system_colors&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the accent system color;
@@ -335,7 +335,7 @@ namespace xtd {
         void window_text(const xtd::drawing::color& value) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const system_colors& other) const noexcept override;

@@ -35,7 +35,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the font_dialog class.
@@ -59,7 +59,7 @@ namespace xtd {
       font_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the user can change the character set specified in the Script combo box to display a character set other than the one currently displayed.
@@ -190,7 +190,7 @@ namespace xtd {
       font_dialog& show_help(bool show_help);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all dialog box options to their default values.
@@ -198,7 +198,7 @@ namespace xtd {
       void reset() noexcept override;
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the user clicks the Apply button in the font dialog box.

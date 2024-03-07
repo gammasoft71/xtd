@@ -24,7 +24,7 @@ namespace xtd {
     /// @include barrier_post_phase_exception.cpp
     class barrier_post_phase_exception : public system_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class barrier_post_phase_exception

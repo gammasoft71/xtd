@@ -26,14 +26,14 @@ namespace minesweeper {
     using grid_size = xtd::drawing::size;
     
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initialize a new instance of minesweeper::form_minesweeper form.
     minesweeper_form();
     /// @}
 
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief The main entry point for the game.

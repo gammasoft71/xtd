@@ -30,14 +30,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize a new instance of loading_indicator class.
       loading_indicator();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       using control::control_appearance;
@@ -62,7 +62,7 @@ namespace xtd {
       virtual loading_indicator& running(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Starts animation of the loading indicator.
@@ -71,7 +71,7 @@ namespace xtd {
       void stop();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::loading_indicator.

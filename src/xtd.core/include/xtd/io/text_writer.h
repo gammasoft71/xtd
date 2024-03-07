@@ -33,7 +33,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ text_writer : public xtd::object {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Provides a text_writer with no backing store that can be written to, but not read from.
@@ -42,7 +42,7 @@ namespace xtd {
       static null_text_writer& null() noexcept;
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the line terminator string used by the current text_writer.
@@ -51,7 +51,7 @@ namespace xtd {
       void new_line(const xtd::ustring& new_line) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Closes the xtd::io::text_reader and releases any system resources associated with the text_reader
@@ -214,7 +214,7 @@ namespace xtd {
       void write_line(const xtd::ustring& fmt, args_t&& ... args) noexcept {write_line(xtd::ustring::format(fmt, std::forward<args_t>(args)...));}
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// {
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_writer object.

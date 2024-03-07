@@ -46,7 +46,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief IInitializes a new Font that uses the specified existing xtd::drawing::font and size.
@@ -170,7 +170,7 @@ namespace xtd {
       ~font();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value that indicates whether this xtd::drawing::font is bold.
@@ -269,7 +269,7 @@ namespace xtd {
       graphics_unit unit() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const font& value) const noexcept override;
@@ -303,7 +303,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates a font from the specified Windows handle to a device context.

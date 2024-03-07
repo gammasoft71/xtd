@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Examples
     class control_trace_listener : public xtd::diagnostics::trace_listener {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the control_trace_listener class with specified control_trace.
@@ -33,7 +33,7 @@ namespace xtd {
       ~control_trace_listener() {flush();}
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets icontroll_trace object.
@@ -44,7 +44,7 @@ namespace xtd {
       virtual void control_trace(xtd::forms::icontrol_trace& control_trace) {control_trace_ = &control_trace;}
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void close() override { }
@@ -78,7 +78,7 @@ namespace xtd {
       }
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Create new control_trace_listener.

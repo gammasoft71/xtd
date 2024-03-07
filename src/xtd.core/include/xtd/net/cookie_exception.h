@@ -21,7 +21,7 @@ namespace xtd {
     /// @include cookie_exception.cpp
     class cookie_exception : public format_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class cookie_exception

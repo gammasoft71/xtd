@@ -25,7 +25,7 @@ namespace xtd {
     /// @include key_not_found_exception.cpp
     class key_not_found_exception : public xtd::system_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class key_not_found_exception

@@ -44,7 +44,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialises a new instance of xtd::forms::status_bar_panel class.
@@ -69,7 +69,7 @@ namespace xtd {
       status_bar_panel& operator =(const status_bar_panel&) noexcept = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the alignment of text and icons within the status bar panel.
@@ -208,7 +208,7 @@ namespace xtd {
       status_bar_panel& width(int32 value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Begins the initialization of a xtd::forms::status_bar_panel.
@@ -227,7 +227,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create a control status bar panel with specified text and control.

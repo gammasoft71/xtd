@@ -37,14 +37,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the exception_dialog class.
       exception_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets async dialog_result result after dialog box is closing.
@@ -77,7 +77,7 @@ namespace xtd {
       exception_dialog& text(const xtd::ustring& text);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all properties to empty string.
@@ -94,7 +94,7 @@ namespace xtd {
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the user close an exception dialog box with dialog close button or other dialog buttons.

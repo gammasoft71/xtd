@@ -18,7 +18,7 @@ namespace xtd {
   /// @see xtd::console::beep method.
   class beep final : public object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Plays the sound of a beep through the console speaker.

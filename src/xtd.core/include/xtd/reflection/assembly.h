@@ -29,7 +29,7 @@ namespace xtd {
       assembly& operator =(const assembly&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets company name information.

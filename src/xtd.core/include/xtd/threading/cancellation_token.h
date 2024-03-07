@@ -37,7 +37,7 @@ namespace xtd {
     class core_export_ cancellation_token : public object, public iequatable<cancellation_token> {
       struct data;
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents an empty xtd::threading::cancellation_token value.
@@ -46,7 +46,7 @@ namespace xtd {
       static cancellation_token none;
       /// @}
 
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes the xtd::threading::cancellation_token.
@@ -63,7 +63,7 @@ namespace xtd {
       ~cancellation_token();
       /// @endcond
       
-      /// @name Proeprties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets whether this token is capable of being in the canceled state.
@@ -81,7 +81,7 @@ namespace xtd {
       threading::wait_handle& wait_handle() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const cancellation_token& other) const noexcept;

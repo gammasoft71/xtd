@@ -23,7 +23,7 @@ namespace xtd {
     /// @note Some controls will process certain key strokes on xtd::forms::control::key_down. For example, rich_text_box processes the Enter key before xtd::forms::control::key_press is called. In such cases, you cannot cancel the xtd::forms::control::key_press event, and must cancel the key stroke from xtd::forms::control::key_down instead.
     class key_press_event_args : public event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the KeyPressEventArgs class.
@@ -40,7 +40,7 @@ namespace xtd {
       key_press_event_args& operator =(const key_press_event_args& key_press_event_args) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the xtd::forms::control::key_press event was handled.

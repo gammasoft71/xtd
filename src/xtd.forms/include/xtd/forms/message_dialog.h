@@ -41,14 +41,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the message_dialog class.
       message_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets buttons to display in the message dialog.
@@ -120,7 +120,7 @@ namespace xtd {
       message_dialog& text(const xtd::ustring& text);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all properties to empty string.
@@ -136,7 +136,7 @@ namespace xtd {
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the user clicks the Help button on a common dialog box.

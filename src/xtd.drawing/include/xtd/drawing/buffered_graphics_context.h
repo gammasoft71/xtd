@@ -31,7 +31,7 @@ namespace xtd {
     /// @remarks You can retrieve the xtd::drawing::buffered_graphics_context for the current application domain from the static xtd::drawing::buffered_graphics_manager::current property. For graphically intensive applications such as animation, you can create a dedicated xtd::drawing::buffered_graphics_context using the constructor, but for most applications the xtd::drawing::buffered_graphics_manager::current property will be sufficient.
     class drawing_export_ buffered_graphics_context : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the BufferedGraphicsContext class.
@@ -39,7 +39,7 @@ namespace xtd {
       buffered_graphics_context() = default;
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the maximum size of the buffer to use.
@@ -53,7 +53,7 @@ namespace xtd {
       buffered_graphics_context& maximum_buffer(const xtd::drawing::size& value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void allocate(const xtd::drawing::graphics& target_graphics, const xtd::drawing::rectangle& targat_rectangle);

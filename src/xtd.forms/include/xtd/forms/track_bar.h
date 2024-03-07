@@ -33,7 +33,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the track_bar class.
@@ -41,7 +41,7 @@ namespace xtd {
       track_bar();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value to be added to or subtracted from the value property when the scroll box is moved a large distance.
@@ -124,7 +124,7 @@ namespace xtd {
       virtual track_bar& value(int32 value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Sets the minimum and maximum values for a xtd::forms::track_bar.
@@ -139,7 +139,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::track_bar.
@@ -352,7 +352,7 @@ namespace xtd {
       static track_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.

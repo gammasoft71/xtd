@@ -181,7 +181,7 @@ namespace xtd {
       static xtd::drawing::size size() {return {16, 16};}
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets image object with specified name.

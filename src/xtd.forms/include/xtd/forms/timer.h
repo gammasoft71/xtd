@@ -37,7 +37,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the timer class.
@@ -52,7 +52,7 @@ namespace xtd {
       ~timer();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets whether the timer is running.
@@ -81,7 +81,7 @@ namespace xtd {
       virtual timer& interval_milliseconds(int32 interval);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Stops the timer.
@@ -93,7 +93,7 @@ namespace xtd {
       void stop();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::timer.
@@ -119,7 +119,7 @@ namespace xtd {
       static timer create(int interval_milliseconds, bool enable);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the specified timer interval has elapsed and the timer is enabled.

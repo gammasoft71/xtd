@@ -29,14 +29,14 @@ namespace xtd {
     class core_export_ barrier : public object {
       struct data;
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents the xtd::threading::barrier::post_phase_action delegate.
       using post_phase_action = action<barrier&>;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::threading::barrier class.
@@ -61,7 +61,7 @@ namespace xtd {
       ~barrier();
       ///@endcond
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the number of the barrier's current phase.
@@ -81,7 +81,7 @@ namespace xtd {
       int32 participants_remaining() const;
       /// @}
 
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Notifies the xtd::threading::barrier that there will be an additional participant.

@@ -20,7 +20,7 @@ namespace xtd {
   /// @todo add param_name property and constructors param (param_name is the parameter that cause the exception).
   class argument_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class argument_exception

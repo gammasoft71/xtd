@@ -37,7 +37,7 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::text_renderer.
       class itext_model interface_ {
       public:
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
@@ -73,7 +73,7 @@ namespace xtd {
         virtual xtd::forms::style_sheets::white_space white_space() const noexcept = 0;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Gets the string format of the text.

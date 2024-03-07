@@ -37,7 +37,7 @@ namespace xtd {
     /// @include message_box.cpp
     class forms_export_ message_box final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Displays a message box in front of the specified window.

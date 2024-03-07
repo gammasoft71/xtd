@@ -35,7 +35,7 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::text_renderer.
       class iimage_model interface_ {
       public:
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the alignment of the image.

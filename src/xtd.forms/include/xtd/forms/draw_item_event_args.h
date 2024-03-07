@@ -35,7 +35,7 @@ namespace xtd {
       draw_item_event_args& operator =(const draw_item_event_args& other);
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::draw_item_event_args class for the specified control with the specified font, state, surface to draw on, and the bounds to draw within.
@@ -54,7 +54,7 @@ namespace xtd {
       draw_item_event_args(xtd::drawing::graphics& graphics, const xtd::drawing::font& font, const xtd::drawing::rectangle& rect, size_t index, xtd::forms::draw_item_state state, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_core);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the background color of the item that is being drawn.

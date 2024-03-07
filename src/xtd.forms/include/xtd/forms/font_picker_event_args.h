@@ -30,7 +30,7 @@ namespace xtd {
       font_picker_event_args& operator =(const font_picker_event_args& font_picker_event_args) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the font_picker_event_args class for the specified control.
@@ -39,7 +39,7 @@ namespace xtd {
       explicit font_picker_event_args(const xtd::drawing::font& font, const xtd::drawing::color& color) : color_(color), font_(font) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the xtd::drawing::color that represent the xtd::forms::font_picker::color.
@@ -49,7 +49,7 @@ namespace xtd {
       /// @brief Gets the xtd::drawing::font that represent the xtd::forms::font_picker::font.
       /// @return The xtd::drawing::font that represent the xtd::forms::font_picker::font.
       const xtd::drawing::font& font() const noexcept {return font_;}
-      //// @}
+      /// @}
       
     private:
       xtd::drawing::color color_;

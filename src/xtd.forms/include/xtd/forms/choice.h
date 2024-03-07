@@ -36,14 +36,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the choice class.
       choice();
-      //// @}
+      /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets an object representing the collection of the items contained in this choice.
@@ -84,7 +84,7 @@ namespace xtd {
       control& text(const xtd::ustring& text) override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Maintains performance while items are added to the choice one at a time by preventing the control from drawing until the EndUpdate() method is called.
@@ -96,7 +96,7 @@ namespace xtd {
       void end_update();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::choice.

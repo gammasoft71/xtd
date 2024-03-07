@@ -74,14 +74,14 @@ namespace xtd {
       /// (*) Viewport = the bounds of the element. If the viewport is 50cm wide, 1vw = 0.5cm.
       class forms_export_ length : public xtd::iequatable<length>, public xtd::object {
       public:
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief Provides a xtd::forms::style_sheets::length object with 0 pixels.
         static const length empty;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::length class.
@@ -120,7 +120,7 @@ namespace xtd {
         void unit(length_unit value) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const length& other) const noexcept override;

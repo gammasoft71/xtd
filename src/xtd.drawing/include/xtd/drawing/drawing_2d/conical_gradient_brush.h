@@ -36,7 +36,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::conical_gradient_brush class with default values.
@@ -93,7 +93,7 @@ namespace xtd {
         conical_gradient_brush& operator =(const conical_gradient_brush& value);
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the angle of the gradient.
@@ -127,7 +127,7 @@ namespace xtd {
         xtd::drawing::drawing_2d::conical_gradient_brush& conical_colors(const xtd::drawing::drawing_2d::gradient_stop_collection& conical_colors);
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         using brush::equals;

@@ -33,7 +33,7 @@ namespace xtd {
     /// @include debug_form.cpp
     class debug_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the debug_form class.
@@ -49,7 +49,7 @@ namespace xtd {
       ~debug_form() {xtd::diagnostics::debug::listeners().erase(std::find(xtd::diagnostics::debug::listeners().begin(), xtd::diagnostics::debug::listeners().end(), listener_));}
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets underlying trace listener.
@@ -60,7 +60,7 @@ namespace xtd {
       xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void flush() override {}

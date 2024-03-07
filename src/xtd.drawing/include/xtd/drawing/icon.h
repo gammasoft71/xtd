@@ -35,7 +35,7 @@ namespace xtd {
       static icon empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::drawing::icon class from the specified file name.
@@ -116,7 +116,7 @@ namespace xtd {
       ~icon();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the handle of this icon. This is not a copy of the handle; do not free it.
@@ -136,7 +136,7 @@ namespace xtd {
       int32 width() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const icon& icon) const noexcept override;
@@ -164,7 +164,7 @@ namespace xtd {
       /// @remarks When using this method, you must dispose of the original icon by using the DestroyIcon method in the Windows API to ensure that the resources are released.
       static icon from_handle(intptr handle);
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates a GDI+ xtd::drawing::icon from the specified bitmap.

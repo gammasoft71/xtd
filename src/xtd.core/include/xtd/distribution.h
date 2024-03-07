@@ -27,7 +27,7 @@ namespace xtd {
   class distribution final : public object {
   public:
     using id_collection = std::vector<xtd::ustring>;
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the distribution class, using the specified name, version, code name, decription, identifier, like identifiers array, version string, home url and bug repport url.
@@ -49,7 +49,7 @@ namespace xtd {
     distribution& operator =(const distribution&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets operating system distribution bug repport url.
@@ -89,7 +89,7 @@ namespace xtd {
     const xtd::ustring& version_string() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Converts the value of this distribution object to its equivalent string representation.

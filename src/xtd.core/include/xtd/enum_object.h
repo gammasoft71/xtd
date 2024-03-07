@@ -37,13 +37,13 @@ namespace xtd {
   template<typename enum_t = std::nullptr_t>
   class enum_object : public xtd::object, public xtd::icomparable<enum_object<enum_t>>, public xtd::iequatable<enum_object<enum_t>> {
   public:
-    /// @name Aliases
+    /// @name Public Aliases
     
     /// @{
     using enum_type = enum_t;
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the xtd::enum_object class.
@@ -68,7 +68,7 @@ namespace xtd {
     operator enum_type() const noexcept {return value_;}
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
@@ -88,7 +88,7 @@ namespace xtd {
     }
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     int32 compare_to(const enum_object& value) const noexcept override {
@@ -299,7 +299,7 @@ namespace xtd {
   template<>
   class enum_object<std::nullptr_t> static_ {
   public:
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Retrieves an array of the std::pair<enum_t, xtd::ustring> of the constants in a specified enumeration.

@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_drawing colors
     class drawing_export_ color_translator final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Translates an HEX color representation to a GDI+ xtd::drawing::color structure.

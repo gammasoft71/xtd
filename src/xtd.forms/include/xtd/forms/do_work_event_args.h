@@ -25,7 +25,7 @@ namespace xtd {
       do_work_event_args& operator =(const do_work_event_args& do_work_event_args) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the DoWorkEventArgs class.
@@ -33,7 +33,7 @@ namespace xtd {
       explicit do_work_event_args(const std::any& argument) : argument_(argument) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value that represents the argument of an asynchronous operation.

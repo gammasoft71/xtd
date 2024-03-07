@@ -48,7 +48,7 @@ namespace xtd {
     /// @endcode
     class drawing_export_ color : public xtd::object, public xtd::iequatable<color> {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents a color that is null.
@@ -486,7 +486,7 @@ namespace xtd {
       static constexpr double lightness_threshold = 0.5;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize a new instance of xtd::drawing::color class.
@@ -498,7 +498,7 @@ namespace xtd {
       color& operator =(const color& color) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the alpha component value of this xtd::drawing::color class.
@@ -611,7 +611,7 @@ namespace xtd {
       xtd::byte r() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const color& value) const noexcept override;
@@ -899,7 +899,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Returns the weighted average color between the two given colors.

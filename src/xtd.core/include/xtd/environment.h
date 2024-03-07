@@ -346,7 +346,7 @@ namespace xtd {
       xtd_library& operator =(const xtd_library&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets The inlcude path of the library.
@@ -370,7 +370,7 @@ namespace xtd {
       const xtd::version& version() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       xtd::ustring to_string() const noexcept override;
@@ -389,7 +389,7 @@ namespace xtd {
     /// @brief Represents a xtd libraries collection.
     using xtd_library_collection = std::vector<xtd_library>;
     
-    /// @name Static properties
+    /// @name Public Static Properties
     
     /// @{
     /// @brief Gets the command line for this process.
@@ -565,7 +565,7 @@ namespace xtd {
     static const xtd_library_collection& xtd_libraries() noexcept;
     /// @}
     
-    /// @name Static events
+    /// @name Public Static Events
     
     /// @{
     /// @brief Occurs when a signal is sent to the current process.
@@ -580,7 +580,7 @@ namespace xtd {
     static event<environment, program_exit_event_handler> program_exit;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Causes abnormal program termination unless xtd::signal::abnormal_termination is being caught by a xtd::environment::cancel_signal event.

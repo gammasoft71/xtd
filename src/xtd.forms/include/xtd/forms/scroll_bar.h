@@ -20,7 +20,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value to be added to or subtracted from the xtd::forms::scroll_bar::value property when the scroll box is moved a large distance.
@@ -79,7 +79,7 @@ namespace xtd {
       virtual scroll_bar& value(int32 value);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the scroll box has been moved by either a mouse or keyboard action.

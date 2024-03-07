@@ -15,7 +15,7 @@ namespace xtd {
   /// @ingroup xtd_core events
   class program_exit_event_args final : public xtd::event_args {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the program_exit_event_args class.
@@ -31,7 +31,7 @@ namespace xtd {
     program_exit_event_args& operator =(const program_exit_event_args&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the exit mode.

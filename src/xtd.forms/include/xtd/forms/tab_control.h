@@ -39,14 +39,14 @@ namespace xtd {
       /// @brief Represents a collection of controls.
       class tab_page_collection : public xtd::forms::layout::arranged_element_collection<tab_page_ref> {
       public:
-        /// @name Aliases
+        /// @name Public Aliases
         
         /// @{
         /// @brief Represents the base type of the collection.
         using base = xtd::forms::layout::arranged_element_collection<tab_page_ref>;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Creates a new object xtd::forms::control::tab_page_collection with specified allocator (optional).
@@ -62,7 +62,7 @@ namespace xtd {
         tab_page_collection(tab_page_collection&&) = default;
         /// @endcond
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         using xtd::forms::layout::arranged_element_collection<tab_page_ref>::insert;
@@ -129,21 +129,21 @@ namespace xtd {
         event<tab_page_collection, delegate<iterator(const_iterator pos, const ustring& text, const ustring& name)>> text_inserted;
       };
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
       static const size_t npos = std::numeric_limits<size_t>::max();
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the tab_control class.
       tab_control();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the area of the control (for example, along the top) where the tabs are aligned.
@@ -188,7 +188,7 @@ namespace xtd {
       virtual const tab_page_collection& tab_pages() const noexcept;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::tab_control.
@@ -233,7 +233,7 @@ namespace xtd {
       static tab_control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the selected_index property has changed.

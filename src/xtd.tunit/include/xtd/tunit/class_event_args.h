@@ -17,7 +17,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit events
     class class_event_args : public xtd::tunit::tunit_event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class class_event_args.
@@ -25,7 +25,7 @@ namespace xtd {
       class_event_args(const xtd::tunit::test_class& test_class, const xtd::tunit::unit_test& unit_test) : xtd::tunit::tunit_event_args(unit_test), tc_(test_class) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets current class test.

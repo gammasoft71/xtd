@@ -34,7 +34,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class tunit_export_ unit_test {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of xtd::tunit::unit_test with specified xtd::tunit::event_listener.
@@ -53,7 +53,7 @@ namespace xtd {
       virtual ~unit_test();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the repeat iteration number. A number between 0 and xtd::tunit::unit_test::repeat_iteration_count.
@@ -116,7 +116,7 @@ namespace xtd {
       /// @}
       
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Runs all tests in this unit_test object and prints the result.

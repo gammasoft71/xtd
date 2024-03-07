@@ -31,7 +31,7 @@ namespace xtd {
       item_check_event_args& operator =(const item_check_event_args& item_check_event_args) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the item_check_event_args class.
@@ -41,7 +41,7 @@ namespace xtd {
       item_check_event_args(size_t index, check_state new_value, check_state current_value) : index_(index), new_value_(new_value), current_value_(current_value) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating the current state of the item's check box.

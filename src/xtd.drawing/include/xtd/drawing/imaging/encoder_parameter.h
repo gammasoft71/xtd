@@ -21,7 +21,7 @@ namespace xtd {
       /// @ingroup xtd_drawing
       class encoder_parameter final : public object, public xtd::iequatable<encoder_parameter> {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::imaging::encoder_parameter class with the specified xtd::drawing::imaging::encoder object and one unsigned 8-bit integer. Sets the xtd::drawing::imaging::encoder_parameter::value_type property to xtd::drawing::imaging::encoder_parameter_value_type::value_type_byte, and sets the xtd::drawing::imaging::encoder_parameter::number_of_values property to 1.
@@ -102,7 +102,7 @@ namespace xtd {
         /// @endcond
         
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the Encoder object associated with this xtd::drawing::imaging::encoder_parameter object. The Encoder object encapsulates the globally unique identifier (GUID) that specifies the category (for example Quality, ColorDepth, or Compression) of the parameter stored in this xtd::drawing::imaging::encoder_parameter object.
@@ -126,7 +126,7 @@ namespace xtd {
         const std::vector<xtd::byte>& value() const noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const encoder_parameter& value) const noexcept override;

@@ -29,7 +29,7 @@ namespace xtd {
     /// @remarks See xtd::threading::monitor for more information.
     class core_export_ lock_guard final : public object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
 
       /// @{
       /// @brief Create a xtd::threading::lock_guard object and acquires an exclusive lock on the specified obj.
@@ -43,7 +43,7 @@ namespace xtd {
       ~lock_guard();
       /// @endcond
 
-      /// @name Methods
+      /// @name Public Methods
 
       /// @{
       /// @brief Notifies a thread in the waiting queue of a change in the locked object's state.

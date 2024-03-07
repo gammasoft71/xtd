@@ -102,7 +102,7 @@ namespace xtd {
         xtd::date_time time_;
       };
       
-      /// @name Constructors
+      /// @name Public Constructors
       /// @{
       
       /// @brief Initializes a new instance of the month_calendar class.
@@ -113,7 +113,7 @@ namespace xtd {
       month_calendar();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       /// @{
       
       /// @brief Gets the array of xtd::date_time objects that determines which annual days are displayed in bold.
@@ -314,7 +314,7 @@ namespace xtd {
       month_calendar& trailing_fore_color(const xtd::drawing::color& value);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the date selected in the xtd::forms::month_calendar changes.
@@ -328,7 +328,7 @@ namespace xtd {
       event<month_calendar, xtd::forms::date_range_event_handler> date_selected;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Adds a day that is displayed in bold on an annual basis in the month calendar.
@@ -414,7 +414,7 @@ namespace xtd {
       void update_bolded_dates();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::month_calendar.

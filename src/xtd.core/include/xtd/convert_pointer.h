@@ -27,7 +27,7 @@ namespace xtd {
   /// @remarks This class cannot be inherited.
   class convert_pointer static_ {
   public:
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Casts a type into another type.

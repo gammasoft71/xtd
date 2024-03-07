@@ -24,7 +24,7 @@ namespace xtd {
     template <typename test_class_t>
     class test_class_attribute final {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Creates a new instance of test_class_attribute with specified name.

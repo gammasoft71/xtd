@@ -37,7 +37,7 @@ namespace xtd {
     /// @include interlocked.cpp
     class core_export_ interlocked static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
 
       /// @{
       /// @brief Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.

@@ -36,7 +36,7 @@ namespace xtd {
     class core_export_ cancellation_token_source : public object {
       struct data;
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       cancellation_token_source(int32 milliseconds_delay);
@@ -50,7 +50,7 @@ namespace xtd {
       ~cancellation_token_source();
       /// @endcond
       
-      /// @name Proeprties
+      /// @name Public Properties
       
       /// @{
       bool is_cancellation_requested() const noexcept;
@@ -58,7 +58,7 @@ namespace xtd {
       const cancellation_token& token() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @}

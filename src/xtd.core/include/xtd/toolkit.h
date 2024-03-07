@@ -20,7 +20,7 @@ namespace xtd {
     struct data;
     
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the xtd::toolkit class.
@@ -39,7 +39,7 @@ namespace xtd {
     toolkit& operator =(const toolkit&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the toolkit description.
@@ -55,7 +55,7 @@ namespace xtd {
     const xtd::version& version() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     bool equals(const toolkit& other) const noexcept override;

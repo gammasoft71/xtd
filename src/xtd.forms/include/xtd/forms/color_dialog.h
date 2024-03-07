@@ -36,7 +36,7 @@ namespace xtd {
       /// @ brief Represents an xtd::drawing::color array.
       using colors = std::vector<xtd::drawing::color>;
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the color_dialog class.
@@ -55,7 +55,7 @@ namespace xtd {
       color_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the dialog box shows alpha values and an opacity selector (slider).
@@ -142,7 +142,7 @@ namespace xtd {
       virtual color_dialog& title(const xtd::ustring& value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all options to their default values, the last selected color to black, and the custom colors to their default values.

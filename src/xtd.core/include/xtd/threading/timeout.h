@@ -30,7 +30,7 @@ namespace xtd {
     /// @include timeout.cpp
     class core_export_ timeout static_ {
     public:
-      /// @name Fields
+      /// @name Public Fields
 
       /// @{
       /// @brief A constant used to specify an infinite waiting period. This field is constant.

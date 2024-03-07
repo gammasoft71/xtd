@@ -31,7 +31,7 @@ namespace xtd {
   /// @include object.cpp
   class core_export_ object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of the ultimate base class object
@@ -51,7 +51,7 @@ namespace xtd {
     friend bool operator !=(const iequatable<object_t>& a, const iequatable<object_t>& b) noexcept {return !dynamic_cast<const iequatable<object_t>*>(&b) || !a.equals(dynamic_cast<const iequatable<object_t>&>(b));}
     /// @endcond
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Determines whether the specified object is equal to the current object.
@@ -89,7 +89,7 @@ namespace xtd {
     virtual xtd::ustring to_string() const noexcept;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Determines whether the specified object instances are considered equal.

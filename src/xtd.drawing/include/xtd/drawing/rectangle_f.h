@@ -33,14 +33,14 @@ namespace xtd {
     /// @remarks A rectangle is defined by its width, height, and upper-left corner.
     class drawing_export_ rectangle_f : public xtd::object, public xtd::iequatable<rectangle_f> {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents a xtd::drawing::rectangle_F that has xtd::drawing::rectagle_f::x, xtd::drawing::rectangle_f::y, xtd::drawing::rectangle_f::width and xtd::drawing::rectangle_f::height values set to zero.
       static const rectangle_f empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::drawing::rectagle_f class
@@ -63,7 +63,7 @@ namespace xtd {
       rectangle_f& operator =(const rectangle_f&) noexcept = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the y-coordinate that is the sum of the xtd::drawing::rectangle_f::y and xtd::drawing::rectangle_f::height property values of this xtd::drawing::rectangle_f structure.
@@ -142,7 +142,7 @@ namespace xtd {
       void y(float y) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Adds this xtd::drawing::rectangle_f by the specified amount.
@@ -212,7 +212,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle_f structure. The copy is added by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.

@@ -26,14 +26,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize a new instance of nine_segment_display class.
       nine_segment_display();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Sets thickness of segment.
@@ -46,7 +46,7 @@ namespace xtd {
       seven_segment_display& thickness(int32 value) override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::nine_segment_display.

@@ -22,7 +22,7 @@ namespace xtd {
     /// @remarks The xtd::forms::control::key_press event also occurs when a key is pressed. A xtd::forms::key_press_event_args is passed with each xtd::forms::control::key_press event, and specifies the character that was composed as a result of each key press.
     class key_event_args : public event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the key_event_args class.
@@ -37,7 +37,7 @@ namespace xtd {
       key_event_args& operator =(const xtd::forms::key_event_args& key_event_args) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the ALT key was pressed.

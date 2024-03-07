@@ -27,14 +27,14 @@ namespace xtd {
     /// @include horizontal_layout_panel.cpp
     class horizontal_layout_panel : public panel {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialises a new instance of horizontal layout panel class.
       horizontal_layout_panel() = default;
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets horizontal control layout style for all child controls.
@@ -53,7 +53,7 @@ namespace xtd {
       horizontal_layout_panel& control_layout_style(const control_ref& control, const horizontal_control_layout_style& value);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::horizontal_layout_panel.

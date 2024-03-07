@@ -88,7 +88,7 @@ namespace xtd {
       file_system_info& operator =(const file_system_info&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the attributes for the current file or directory.
@@ -589,7 +589,7 @@ namespace xtd {
       xtd::io::file_system_info& permissions(xtd::io::file_permissions value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Refreshes the state of the object.

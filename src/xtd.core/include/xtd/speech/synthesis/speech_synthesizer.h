@@ -35,7 +35,7 @@ namespace xtd {
         
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::speech::synthesis::speech_synthesizer class.
@@ -47,7 +47,7 @@ namespace xtd {
         ~speech_synthesizer();
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the current speaking state of the xtd::speech::speech_synthesizer object.
@@ -55,7 +55,7 @@ namespace xtd {
         synthesizer_state state() const noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Synchronously speaks the contents of a string.
@@ -76,7 +76,7 @@ namespace xtd {
         void speak_async(xtd::speech::synthesis::prompt& prompt);
         /// @}
         
-        /// @name Events
+        /// @name Public Events
         
         /// @{
         /// @brief Raised when the xtd::speech::synthesis::speech_synthesizer completes the speaking of a prompt.

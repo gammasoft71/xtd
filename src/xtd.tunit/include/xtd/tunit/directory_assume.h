@@ -25,7 +25,7 @@ namespace xtd {
       directory_assume() = delete;
       /// @endcond
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       #if defined(__cpp_lib_filesystem)

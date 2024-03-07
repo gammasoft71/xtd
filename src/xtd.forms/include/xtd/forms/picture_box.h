@@ -33,13 +33,13 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       picture_box();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the border sides for the control.
@@ -90,7 +90,7 @@ namespace xtd {
       picture_box& size_mode(picture_box_size_mode size_mode);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::picture_box.

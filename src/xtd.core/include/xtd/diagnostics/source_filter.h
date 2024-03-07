@@ -27,7 +27,7 @@ namespace xtd {
     /// @note This filter is provided because multiple trace sources can simultaneously use the same trace listener.
     class core_export_ source_filter : public xtd::diagnostics::trace_filter {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::source_filter class, specifying the name of the trace source.
@@ -35,7 +35,7 @@ namespace xtd {
       explicit source_filter(const xtd::ustring& source);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the name of the trace source.
@@ -46,7 +46,7 @@ namespace xtd {
       void source(const xtd::ustring& source) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Determines whether the trace listener should trace the event.

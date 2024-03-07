@@ -25,7 +25,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ stream_writer : public xtd::io::text_writer {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the stream_writer class for the specified file name.
@@ -52,7 +52,7 @@ namespace xtd {
       ~stream_writer();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the xtd::io::stream_writer will flush its buffer to the underlying stream after every call to xtd::io::text_writer::write(char).
@@ -75,7 +75,7 @@ namespace xtd {
       std::optional<std::reference_wrapper<std::ostream>> base_stream() const;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Closes the stream_writer object and the underlying stream, and releases any system resources associated with the reader.

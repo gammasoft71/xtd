@@ -22,7 +22,7 @@ namespace xtd {
     /// @remarks You do not typically inherit directly from the container_control class. form, user_control, and up_down_base classes inherit from container_control.
     class forms_export_ container_control : public scrollable_control {
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the active control on the container control.

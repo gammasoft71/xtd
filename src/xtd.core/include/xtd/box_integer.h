@@ -44,7 +44,7 @@ namespace xtd {
     box_integer& operator =(const box_integer&) = default;
     /// @endcond
     
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Represents the largest possible value of type_t. This field is constant.
@@ -55,7 +55,7 @@ namespace xtd {
     static constexpr type_t min_value = std::numeric_limits<type_t>::lowest();
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     using box<type_t>::parse;

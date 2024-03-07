@@ -21,7 +21,7 @@ namespace xtd {
       /// @ingroup xtd_drawing
       class bitmap_data final : public object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::imaging::bitmap_data class.
@@ -33,7 +33,7 @@ namespace xtd {
         bitmap_data& operator =(const bitmap_data&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the pixel height of the xtd::drawing::bitmap object. Also sometimes referred to as the number of scan lines.

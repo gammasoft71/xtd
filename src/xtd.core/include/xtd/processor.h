@@ -18,7 +18,7 @@ namespace xtd {
   /// @ingroup xtd_core
   class processor final : public object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initialise a new instance oof xtd::processor class.
@@ -34,7 +34,7 @@ namespace xtd {
     processor& operator =(const processor&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets a xtd::platform_id enumeration value that identifies the operating system platform.
@@ -58,7 +58,7 @@ namespace xtd {
     xtd::ustring name() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Converts the value of this processor object to its equivalent string representation.

@@ -39,14 +39,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represent none cursor.
       static cursor none;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the cursor class.
@@ -63,7 +63,7 @@ namespace xtd {
       ~cursor();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the handle of the cursor.
@@ -91,7 +91,7 @@ namespace xtd {
       void tag(std::any tag);
       /// @}
       
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets a cursor object that represents the mouse cursor.

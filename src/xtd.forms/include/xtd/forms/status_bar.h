@@ -49,14 +49,14 @@ namespace xtd {
       class sizing_grip_control;
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents the collection of panels in a xtd::forms::status_bar control.
       using status_bar_panel_collection = xtd::forms::layout::arranged_element_collection<status_bar_panel_ref>;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::status_bar class.
@@ -70,7 +70,7 @@ namespace xtd {
       status_bar();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       dock_style dock() const noexcept override;
@@ -116,7 +116,7 @@ namespace xtd {
       virtual status_bar& sizing_grip(bool value);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::status_bar with specified location, size, and name.
@@ -134,7 +134,7 @@ namespace xtd {
       static status_bar create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when a visual aspect of an owner-drawn status bar control changes.

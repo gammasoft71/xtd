@@ -21,7 +21,7 @@ namespace xtd {
   /// @include console_color4.cpp
   class background_color final : public object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Sets the background color of the console.

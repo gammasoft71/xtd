@@ -29,7 +29,7 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       class forms_export_ theme : public xtd::iequatable<theme>, public xtd::object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::theme class.
@@ -63,7 +63,7 @@ namespace xtd {
         theme& operator =(const theme&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the theme authors.
@@ -95,7 +95,7 @@ namespace xtd {
         void website(const xtd::uri& value) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const theme& other) const noexcept override {return name_ == other.name_ && description_ == other.description_ && authors_ == other.authors_ && website_ == other.website_;}
@@ -107,7 +107,7 @@ namespace xtd {
         xtd::ustring to_css() const noexcept;
         /// @}
         
-        /// @name Static methods
+        /// @name Public Static Methods
         
         /// @{
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified css text.

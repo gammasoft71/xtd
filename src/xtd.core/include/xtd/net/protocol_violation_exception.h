@@ -21,7 +21,7 @@ namespace xtd {
     /// @include protocol_violation_exception.cpp
     class protocol_violation_exception : public format_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class protocol_violation_exception

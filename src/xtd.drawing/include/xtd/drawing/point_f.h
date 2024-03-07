@@ -34,14 +34,14 @@ namespace xtd {
     /// @ingroup xtd_drawing coordinates
     class drawing_export_ point_f : public xtd::object, public xtd::iequatable<point_f> {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents a xtd::drawing::point_f that has xtd::drawing::point_f::x and xtd::drawing::point_f::y values set to zero.
       static const point_f empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::drawing::point_f class
@@ -61,7 +61,7 @@ namespace xtd {
       point_f& operator =(const point_f&) noexcept = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether this xtd::drawing::point_f is empty.
@@ -85,7 +85,7 @@ namespace xtd {
       void y(float y) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const point_f& value) const noexcept override;
@@ -105,7 +105,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Adds the specified xtd::drawing::size to the specified xtd::drawing::point_f.

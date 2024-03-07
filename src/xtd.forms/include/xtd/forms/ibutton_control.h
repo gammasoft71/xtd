@@ -23,7 +23,7 @@ namespace xtd {
     /// Implement this interface in classes that act as button controls. The members of this interface will provide basic button functionality, such as providing a dialog_result to the parent form or the ability to perform a click event, or acting as the default button of a form.
     class ibutton_control interface_  {
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the value returned to the parent form when the button is clicked.
@@ -36,7 +36,7 @@ namespace xtd {
       virtual control& dialog_result(forms::dialog_result dialog_result) = 0;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Notifies a control that it is the default button so that its appearance and behavior is adjusted accordingly.

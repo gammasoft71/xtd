@@ -32,7 +32,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents the collection containing the indexes to the selected items in a list_box.
@@ -42,14 +42,14 @@ namespace xtd {
       using selected_object_collection = std::vector<item>;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the list_box class.
       list_box();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the border sides for the control.
@@ -141,7 +141,7 @@ namespace xtd {
       control& text(const xtd::ustring& text) override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Maintains performance while items are added to the list_box one at a time by preventing the control from drawing until the EndUpdate() method is called.
@@ -153,7 +153,7 @@ namespace xtd {
       void end_update();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::list_box.

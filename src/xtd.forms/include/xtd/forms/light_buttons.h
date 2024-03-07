@@ -21,7 +21,7 @@ namespace xtd {
     /// @include light_buttons.cpp
     class light_buttons final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Create a system-defined light_button that represent abort light_button.

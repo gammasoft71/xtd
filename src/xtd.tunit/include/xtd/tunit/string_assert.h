@@ -30,7 +30,7 @@ namespace xtd {
       string_assert() = delete;
       /// @endcond
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Asserts that two type are equal ignoring case.

@@ -23,7 +23,7 @@ namespace xtd {
     /// @ingroup xtd_drawing brushes
     class drawing_export_ system_brushes final static_ {
     public:
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets a solid_brush that is the color of the accent.
@@ -150,7 +150,7 @@ namespace xtd {
       static xtd::drawing::solid_brush window_text();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of system colors.

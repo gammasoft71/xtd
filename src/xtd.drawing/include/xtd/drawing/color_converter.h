@@ -23,7 +23,7 @@ namespace xtd {
     /// @ingroup xtd_drawing colors
     class drawing_export_ color_converter final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Returns the weighted average color between the two given colors.

@@ -22,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ assembly_copyright_attribute final : public xtd::attribute {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_copyright_attribute class.
@@ -35,7 +35,7 @@ namespace xtd {
       assembly_copyright_attribute(const ustring& copyright, const object& executing_assembly);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets copyright information.

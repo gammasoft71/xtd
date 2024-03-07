@@ -28,14 +28,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the popup_panel class.
       popup_panel();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets ignore mouse messages
@@ -47,7 +47,7 @@ namespace xtd {
       popup_panel& ignore_mouse_messages(bool value);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::popup_panel.

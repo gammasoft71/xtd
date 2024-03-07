@@ -32,7 +32,7 @@ namespace xtd {
       date_range_event_args& operator =(const date_range_event_args& date_range_event_args) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::date_range_event_args class.
@@ -40,7 +40,7 @@ namespace xtd {
       date_range_event_args(const xtd::date_time& start, const xtd::date_time& end) : start_(start), end_(end) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the last date/time value in the range that the user has selected.
@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief Gets the first date/time value in the range that the user has selected.
       /// @return A xtd::date_time that represents the first date in the date range that the user has selected.
       const xtd::date_time& start() const noexcept {return start_;}
-      //// @}
+      /// @}
       
     private:
       xtd::date_time start_;

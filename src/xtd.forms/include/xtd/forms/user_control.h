@@ -26,14 +26,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialises a new instance of user_control class.
       user_control();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the mode by which the user_control automatically resizes itself.
@@ -67,7 +67,7 @@ namespace xtd {
       virtual user_control& border_style(std::nullptr_t border_style);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::user_control.

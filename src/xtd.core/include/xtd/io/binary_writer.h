@@ -36,7 +36,7 @@ namespace xtd {
     /// @remarks When you create a new instance of the xtd::io::binary_writer class, you provide the stream to write to.
     class core_export_ binary_writer : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the binary_writer class for the specified file name.
@@ -54,7 +54,7 @@ namespace xtd {
       ~binary_writer();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Returns the underlying stream.
@@ -63,7 +63,7 @@ namespace xtd {
       std::optional<std::reference_wrapper<std::ostream>> base_stream() const;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Closes the xtd::io::binary_writer object and the underlying stream, and releases any system resources associated with the reader.

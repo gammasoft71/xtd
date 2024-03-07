@@ -39,7 +39,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents an author collection.
@@ -54,7 +54,7 @@ namespace xtd {
       using user_tab_page_collection = tab_control::tab_page_collection;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the about_dialog class.
@@ -65,7 +65,7 @@ namespace xtd {
       ~about_dialog();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the artists array.
@@ -210,7 +210,7 @@ namespace xtd {
       about_dialog& website_label(const xtd::ustring& website_label);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all properties to empty string.
@@ -223,7 +223,7 @@ namespace xtd {
       void show(const iwin32_window& owner);
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Create a new xtd::forms::about_dialog from specified assembly.

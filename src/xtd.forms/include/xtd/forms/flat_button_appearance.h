@@ -23,7 +23,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::flat_button_appearance class.
@@ -36,7 +36,7 @@ namespace xtd {
       flat_button_appearance& operator =(const flat_button_appearance&);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the color of the border around the button.
@@ -112,7 +112,7 @@ namespace xtd {
       flat_button_appearance& mouse_over_back_color(std::nullptr_t color);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const flat_button_appearance& other) const noexcept override;

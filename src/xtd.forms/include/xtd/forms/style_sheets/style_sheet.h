@@ -63,7 +63,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Aliases
+        /// @name Public Aliases
         
         /// @{
         /// @brief Represents a style sheet buttons collection.
@@ -96,14 +96,14 @@ namespace xtd {
         using user_controls_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::user_control>;
         /// @}
         
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief Provides an empty xtd::forms::style_sheets::style_sheet object.
         static const style_sheet empty;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance.
         style_sheet();
@@ -118,7 +118,7 @@ namespace xtd {
         style_sheet& operator =(const style_sheet&);
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the style sheet button for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
@@ -311,7 +311,7 @@ namespace xtd {
         const user_controls_t& user_controls() const noexcept;
         /// @}
         
-        /// @name Static properties
+        /// @name Public Static Properties
         
         /// @{
         /// @brief Gets current xtd::forms::style_sheets::style_sheet style sheet.
@@ -340,13 +340,13 @@ namespace xtd {
         static const style_sheet& system_style_sheet() noexcept;
         /// @}
 
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const style_sheet& other) const noexcept override;
         /// @}
         
-        /// @name Static methods
+        /// @name Public Static Methods
         
         /// @{
         /// @brief Gets the style sheet buttons collection from specified css string.
@@ -406,7 +406,7 @@ namespace xtd {
         static std::tuple<xtd::forms::style_sheets::border_type, int32, int32> to_border_type(xtd::forms::border_style border);
         /// @}
         
-        /// @name Static events
+        /// @name Public Static Events
         
         /// @{
         /// @brief Occurs when the value of the xtd::forms::style_sheets::style_sheet::current_style_sheet property changes.

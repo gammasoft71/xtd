@@ -17,7 +17,7 @@ namespace xtd {
     /// @ingroup xtd_core events
     class elapsed_event_args : public xtd::event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the elapsed_event_args class.
@@ -33,7 +33,7 @@ namespace xtd {
       elapsed_event_args& operator =(const elapsed_event_args&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the date/time when the xtd::timers::timer::elapsed event was raised.

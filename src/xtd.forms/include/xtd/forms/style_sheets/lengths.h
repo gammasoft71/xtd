@@ -30,14 +30,14 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       class forms_export_ lengths : public xtd::iequatable<lengths>, public xtd::object {
       public:
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief Provides a xtd::forms::style_sheets::lengths object with no xtd::forms::style_sheets::lengths.
         static const lengths empty;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::lengths class.
@@ -111,7 +111,7 @@ namespace xtd {
         void top(xtd::forms::style_sheets::length top) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const lengths& other) const noexcept override;

@@ -25,7 +25,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the application_context class with no context.
@@ -42,7 +42,7 @@ namespace xtd {
       ~application_context();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the form to use as context.
@@ -74,7 +74,7 @@ namespace xtd {
       void tag(std::any tag);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Terminates the message loop of the thread.
@@ -83,7 +83,7 @@ namespace xtd {
       void exit_thread();
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the message loop of the thread should be terminated, by calling exit_thread().

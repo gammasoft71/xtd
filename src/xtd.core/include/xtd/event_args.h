@@ -17,7 +17,7 @@ namespace xtd {
   /// @remarks To pass an object that does not contain any data, use the empty field.
   class core_export_ event_args : public object {
   public:
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Provides a value to use with events that do not have event data.
@@ -25,7 +25,7 @@ namespace xtd {
     static const event_args empty;
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the event_args class.

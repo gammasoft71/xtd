@@ -17,7 +17,7 @@ namespace xtd {
     /// @ingroup xtd_forms
     class resources final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.

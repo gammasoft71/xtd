@@ -36,7 +36,7 @@ namespace xtd {
     /// @remarks You can change the value of any process_start_info property up to the time that the process starts. After you start the process, changing these values has no effect.
     class core_export_ process_start_info final : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::process_start_info class without specifying a file name with which to start the process.
@@ -63,7 +63,7 @@ namespace xtd {
       /// @endcond
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the set of command-line arguments to use when starting the application.

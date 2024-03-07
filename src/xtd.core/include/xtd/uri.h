@@ -102,7 +102,7 @@ namespace xtd {
   /// @endcode
   class core_export_ uri : public xtd::iequatable<uri>, public xtd::object {
   public:
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Specifies the characters that separate the communication protocol scheme from the address portion of the URI. This field is read-only.
@@ -211,7 +211,7 @@ namespace xtd {
     inline static const xtd::ustring uri_scheme_nntp = "nntp";
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the xtd::uri class.
@@ -289,7 +289,7 @@ namespace xtd {
     uri(const uri& base_uri, const uri& relative_uri);
     /// @}
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the absolute path of the URI.
@@ -500,7 +500,7 @@ namespace xtd {
     xtd::ustring user_info() const;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
    
@@ -583,7 +583,7 @@ namespace xtd {
     xtd::ustring to_string() const noexcept override;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Determines whether the specified scheme name is valid.

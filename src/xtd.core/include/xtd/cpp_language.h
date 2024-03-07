@@ -23,7 +23,7 @@ namespace xtd {
   /// @remarks For more info about c++ see <a href="https://en.cppreference.com/w/cpp">cppreference</a>.
   class cpp_language final : public object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initialize a new instance of xtd::cpp_language class.
@@ -36,7 +36,7 @@ namespace xtd {
     cpp_language& operator =(const cpp_language&) noexcept = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets if is experimental language
@@ -81,7 +81,7 @@ namespace xtd {
     int32 year() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Converts the value of this operating_system object to its equivalent string representation.

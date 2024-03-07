@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ string_reader : public xtd::io::text_reader {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the stream_reader class for the specified file name.
@@ -32,7 +32,7 @@ namespace xtd {
       explicit string_reader(const xtd::ustring& input);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.

@@ -22,7 +22,7 @@ namespace xtd {
   /// @ingroup xtd_core system
   class core_export_ startup final static_ {
   public:
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Safely call the specified application's main entry point.

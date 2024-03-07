@@ -23,7 +23,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ network_credential : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::net::network_credential class.
@@ -44,7 +44,7 @@ namespace xtd {
       network_credential& operator =(const network_credential&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the domain or computer name that verifies the credentials.

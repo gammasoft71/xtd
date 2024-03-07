@@ -19,7 +19,7 @@ namespace xtd {
     /// @ingroup xtd_core security
     class secure_string final : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::security::secure_string class.
@@ -39,7 +39,7 @@ namespace xtd {
       bool empty() const noexcept;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets underlying encrypted data.
@@ -51,7 +51,7 @@ namespace xtd {
       size_t size() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Gets decrypted data.

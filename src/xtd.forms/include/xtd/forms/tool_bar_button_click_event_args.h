@@ -27,7 +27,7 @@ namespace xtd {
       tool_bar_button_click_event_args& operator =(const tool_bar_button_click_event_args&) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::tool_bar_button_click_event_args class.
@@ -39,7 +39,7 @@ namespace xtd {
       tool_bar_button_click_event_args(const xtd::forms::tool_bar_button& button, intptr handle) : button_(button), handle_(handle) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the xtd::forms::tool_bar_button that was clicked.

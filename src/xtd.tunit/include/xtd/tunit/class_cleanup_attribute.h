@@ -20,7 +20,7 @@ namespace xtd {
     /// @include test_class_without_helpers.cpp
     class class_cleanup_attribute {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Creates new instance of class_cleanup_attribute attribute.

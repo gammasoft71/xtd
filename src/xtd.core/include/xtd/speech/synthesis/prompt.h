@@ -36,7 +36,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::speech::synthesis::speech_synthesizer class.
@@ -51,7 +51,7 @@ namespace xtd {
         prompt& operator =(const prompt&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         bool is_completed() const noexcept;

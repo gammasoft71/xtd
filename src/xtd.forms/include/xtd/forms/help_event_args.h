@@ -23,7 +23,7 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class help_event_args : public event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::help_event_args class.
@@ -36,7 +36,7 @@ namespace xtd {
       help_event_args& operator =(const help_event_args& help_event_args) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the help event was handled.

@@ -53,7 +53,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represent an xtd::forms::ibutton_control reference.
@@ -69,7 +69,7 @@ namespace xtd {
       using tool_bar_ref = std::reference_wrapper<xtd::forms::tool_bar>;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the Form class.
@@ -77,7 +77,7 @@ namespace xtd {
       form();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the button on the form that is clicked when the user presses the ENTER key.
@@ -309,7 +309,7 @@ namespace xtd {
       virtual form& window_state(form_window_state value);
       /// @}
       
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets the currently active form for this application.
@@ -317,7 +317,7 @@ namespace xtd {
       static std::optional<form_ref> active_form() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Activates the form and gives it focus.
@@ -356,7 +356,7 @@ namespace xtd {
       virtual forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::form.
@@ -436,7 +436,7 @@ namespace xtd {
       static form create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the form is activated in code or by the user.

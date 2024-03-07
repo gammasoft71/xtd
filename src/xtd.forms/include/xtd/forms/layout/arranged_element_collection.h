@@ -61,7 +61,7 @@ namespace xtd {
           arranged_element_collection* owner = nullptr;
         };
         
-        /// @name Aliases
+        /// @name Public Aliases
         
         /// @{
         /// @brief Represents the allocator type of the collection.
@@ -88,14 +88,14 @@ namespace xtd {
         using const_reverse_iterator = typename std::vector<value_type>::const_reverse_iterator;
         /// @}
         
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief This is a special value equal to the maximum value representable by the type size_t.
         inline static const size_t npos = std::numeric_limits<size_t>::max();
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Creates a new object xtd::forms::layout::arranged_element_collection with specified allocator (optional).
@@ -126,7 +126,7 @@ namespace xtd {
         bool operator !=(const arranged_element_collection& value) const {return !operator ==(value);}
         /// @endcond
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Returns the associated allocator
@@ -455,7 +455,7 @@ namespace xtd {
         }
         /// @}
         
-        /// @name Events
+        /// @name Public Events
         
         /// @{
         /// @brief Occurs when an item is added to the collection.

@@ -30,7 +30,7 @@ namespace xtd {
       end_point& operator =(const end_point&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the address family to which the endpoint belongs.
@@ -38,7 +38,7 @@ namespace xtd {
       sockets::address_family address_family() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Creates an xtd::net::end_point instance from a socket_address instance.

@@ -66,7 +66,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::tcp_listener class with the specified local endpoint.
@@ -96,7 +96,7 @@ namespace xtd {
         tcp_listener& operator =(const tcp_listener&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlying socket to listen to a specific port.
@@ -136,7 +136,7 @@ namespace xtd {
         xtd::net::sockets::socket server() const noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Accepts a pending connection request.
@@ -242,7 +242,7 @@ namespace xtd {
         void stop();
         /// @}
 
-        /// @name Static methods
+        /// @name Public Static Methods
         
         /// @{
         /// @brief Creates a new xtd::net::sockets::tcp_listener instance to listen on the specified port.

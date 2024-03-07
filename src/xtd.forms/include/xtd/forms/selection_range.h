@@ -35,7 +35,7 @@ namespace xtd {
     /// @remarks The xtd::forms::selection_range is the date or dates selected and highlighted on the xtd::forms::month_calendar control. If only one date is selected, the xtd::forms::selection_range::start and xtd::forms::selection_range::end property values will be equal. The xtd::forms::selection_range can be changed by the user clicking a date while dragging the mouse pointer across the desired dates, or you can set the range in code. For example, you might want to have the user enter a date range into two xtd::forms::text_box controls or two xtd::forms::date_time_picker controls and set the xtd::forms::selection_range based on those dates.
     class forms_export_ selection_range : public object {
     public:
-      /// @Name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::selection_range class.
@@ -55,7 +55,7 @@ namespace xtd {
       /// @endcond
       
       
-      /// @Name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the ending date and time of the selection range.
@@ -75,7 +75,7 @@ namespace xtd {
       virtual selection_range& start(date_time value);
       /// @}
       
-      /// @Name Methods
+      /// @name Public Methods
       /// @{
       xtd::ustring to_string() const noexcept override;
       /// @}

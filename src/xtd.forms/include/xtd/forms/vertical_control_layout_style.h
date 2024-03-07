@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_forms
     class vertical_control_layout_style : public control_layout_style, public xtd::iequatable<vertical_control_layout_style> {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialises a new instance of vertical control layout style class.
@@ -125,7 +125,7 @@ namespace xtd {
       vertical_control_layout_style(int32 height, bool expanded, xtd::forms::content_alignment align);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the height value for a control.
@@ -136,7 +136,7 @@ namespace xtd {
       void height(float height);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       using control_layout_style::equals;

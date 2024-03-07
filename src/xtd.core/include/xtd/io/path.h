@@ -33,7 +33,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ path static_ {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
@@ -101,7 +101,7 @@ namespace xtd {
       static char volume_separator_char() noexcept;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Changes the extension of a path string.

@@ -22,7 +22,7 @@ namespace xtd {
     /// @remarks Each property of the images class returns a xtd::drawing::image used to display a Windows system-wide images.
     class drawing_export_ system_images final : private system_images_base {
     public:
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets system image from specified name.
@@ -1255,7 +1255,7 @@ namespace xtd {
       static std::vector<xtd::drawing::size> sizes() noexcept;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets system image from specified name.

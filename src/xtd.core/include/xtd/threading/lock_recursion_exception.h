@@ -25,7 +25,7 @@ namespace xtd {
     /// @include lock_recursion_exception.cpp
     class lock_recursion_exception : public system_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class lock_recursion_exception

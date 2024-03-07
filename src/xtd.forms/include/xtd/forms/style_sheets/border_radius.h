@@ -30,14 +30,14 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       class forms_export_ border_radius : public xtd::iequatable<border_radius>, public xtd::object {
       public:
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief Provides an empty xtd::forms::style_sheets::border_radius object.
         static const border_radius empty;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_radius class.
@@ -112,7 +112,7 @@ namespace xtd {
         
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const border_radius& other) const noexcept override;

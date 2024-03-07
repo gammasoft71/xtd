@@ -40,7 +40,7 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class forms_export_ button_renderer final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Draws a button in the specified bounds.

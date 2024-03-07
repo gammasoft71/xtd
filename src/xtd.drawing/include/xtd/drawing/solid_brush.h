@@ -31,7 +31,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new xtd::drawing::solid_brush object of the specified color.
@@ -44,7 +44,7 @@ namespace xtd {
       solid_brush& operator =(const solid_brush& value);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the color of this xtd::drawing::solid_brush object.
@@ -56,7 +56,7 @@ namespace xtd {
       xtd::drawing::solid_brush& color(const xtd::drawing::color& value) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       using brush::equals;

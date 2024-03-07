@@ -46,7 +46,7 @@ namespace xtd {
       using thread_collection = std::vector<std::shared_ptr<thread>>;
 
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents an invalid native operating system handle. This field is read-only.
@@ -98,7 +98,7 @@ namespace xtd {
       ~thread();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       
@@ -196,7 +196,7 @@ namespace xtd {
       xtd::threading::thread_state thread_state() const noexcept;
       /// @}
 
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets the currently running thread.
@@ -209,7 +209,7 @@ namespace xtd {
       static thread& main_thread();
       /// @}
 
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Raises a xtd::threading::thread_aborted_exception in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.
@@ -265,7 +265,7 @@ namespace xtd {
       void suspend();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Create and immedialtely start a xtd::threading::thread with specified method.

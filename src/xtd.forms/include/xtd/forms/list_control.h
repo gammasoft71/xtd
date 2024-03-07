@@ -44,14 +44,14 @@ namespace xtd {
           /// @}
         };
         
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief Represents an empty item that value is equal to xtd::ustring::empty_string and tag has no vlaue.
         static const item empty;
         /// @}
 
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the item class.
@@ -74,7 +74,7 @@ namespace xtd {
         virtual ~item() = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the value of the item.
@@ -86,7 +86,7 @@ namespace xtd {
         virtual std::any tag() const noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         int32 compare_to(const item& value) const noexcept override;
@@ -103,21 +103,21 @@ namespace xtd {
         std::any tag_;
       };
       
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents the collection of items in a list_control.
       using object_collection = layout::arranged_element_collection<item, item::sorter>;
       /// @}
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
       static const size_t npos = std::numeric_limits<size_t>::max();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the zero-based index of the currently selected item.
@@ -129,7 +129,7 @@ namespace xtd {
       virtual list_control& selected_index(size_t selected_index) = 0;
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the selected_index property changes.

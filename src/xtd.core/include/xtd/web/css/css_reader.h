@@ -15,7 +15,7 @@ namespace xtd {
     namespace css {
       class css_reader : public object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         css_reader(std::istream& stream) {parse_text(xtd::io::stream_reader(stream).read_to_end());}
@@ -23,7 +23,7 @@ namespace xtd {
         css_reader(const xtd::ustring& text) {parse_text(text);}
         /// @}
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         const xtd::web::css::selector_map& selectors() const noexcept {return selectors_;}

@@ -28,7 +28,7 @@ namespace xtd {
     attribute& operator =(const attribute&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief When implemented in a derived class, gets a unique identifier for this attribute.

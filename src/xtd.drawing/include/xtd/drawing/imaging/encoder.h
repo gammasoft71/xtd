@@ -37,7 +37,7 @@ namespace xtd {
       /// | version           | 24d18c76-814a-41a4-bf53-1c219cccf797 |
       class encoder final : public object, public xtd::iequatable<encoder> {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::imaging::encoder class from the specified globally unique identifier (GUID). The GUID specifies an image encoder parameter category.
@@ -52,7 +52,7 @@ namespace xtd {
         /// @endcond
         
         
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief An Encoder object that is initialized with the globally unique identifier for the chrominance table parameter category.
@@ -216,7 +216,7 @@ namespace xtd {
         static encoder version() noexcept {return encoder(xtd::guid("24d18c76-814a-41a4-bf53-1c219cccf797"));}
         /// @}
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets a globally unique identifier (GUID) that identifies an image encoder parameter category.
@@ -224,7 +224,7 @@ namespace xtd {
         const xtd::guid& guid() const noexcept {return guid_;}
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const encoder& value) const noexcept override {return guid_ == value.guid_;}

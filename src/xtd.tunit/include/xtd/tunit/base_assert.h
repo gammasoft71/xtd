@@ -29,7 +29,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class tunit_export_ base_assert static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Abort current test. This is used by the other assert functions.

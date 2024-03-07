@@ -36,7 +36,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the busy_dialog class.
@@ -46,7 +46,7 @@ namespace xtd {
       ~busy_dialog();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the background color for the dialog.
@@ -116,7 +116,7 @@ namespace xtd {
       busy_dialog& text(const xtd::ustring& text);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Hides busy dialog box.

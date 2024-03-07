@@ -42,7 +42,7 @@ namespace xtd {
       /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_box_model">Box Model</a>.
       class ibox_model interface_ {
       public:
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the background color is used to add background effects to the box.
@@ -126,7 +126,7 @@ namespace xtd {
         virtual std::optional<xtd::forms::style_sheets::length> width() const noexcept = 0;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Gets the computed boder rectangle from specified bounds.

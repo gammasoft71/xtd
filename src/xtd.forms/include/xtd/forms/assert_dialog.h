@@ -34,14 +34,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the assert_dialog class.
       assert_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets async dialog_result result after dialog box is closing.
@@ -73,7 +73,7 @@ namespace xtd {
       assert_dialog& stack_frame(const xtd::diagnostics::stack_frame& value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all properties to empty string.
@@ -92,7 +92,7 @@ namespace xtd {
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the user close an assert dialog box with dialog close button or other dialog buttons.

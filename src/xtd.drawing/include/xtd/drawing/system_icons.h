@@ -27,7 +27,7 @@ namespace xtd {
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
     class system_icons final static_ {
     public:
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets an xtd::drawing::icon object that contains the default application icon (WIN32: IDI_APPLICATION).
@@ -180,7 +180,7 @@ namespace xtd {
       static xtd::drawing::icon xtd_forms_logo(const xtd::drawing::size& size) noexcept;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets system icon from specified name.

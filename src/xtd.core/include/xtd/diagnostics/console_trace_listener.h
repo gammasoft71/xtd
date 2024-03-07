@@ -27,7 +27,7 @@ namespace xtd {
     /// @include console_trace_listener.cpp
     class core_export_ console_trace_listener : public xtd::diagnostics::ostream_trace_listener {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       /// @{
       
       /// @brief Initializes a new instance of the xtd::diagnostics::console_trace_listener class with trace output written to the standard output stream.

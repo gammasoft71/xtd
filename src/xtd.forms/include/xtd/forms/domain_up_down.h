@@ -33,7 +33,7 @@ namespace xtd {
       /// @brief Represent an item contained in the domain_up_down::object_collection collection.
       class item : public object, public icomparable<item>, public xtd::iequatable<item> {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the item class.
@@ -53,7 +53,7 @@ namespace xtd {
         item& operator =(const item& value) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the value of the item.
@@ -65,7 +65,7 @@ namespace xtd {
         virtual std::any tag() const noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         int32 compare_to(const item& value) const noexcept override;
@@ -80,28 +80,28 @@ namespace xtd {
         std::any tag_;
       };
       
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents the collection of items in a list_control.
       using object_collection = layout::arranged_element_collection<item>;
       /// @}
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
       static const size_t npos = std::numeric_limits<size_t>::max();
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the DomainUpDown class.
       domain_up_down();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets an object representing the collection of the items contained in this domain_up_down. Gets an object representing the collection of the items contained in this domain_up_down.
@@ -141,7 +141,7 @@ namespace xtd {
       /// @}
       
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::domain_up_down.
@@ -290,7 +290,7 @@ namespace xtd {
       static domain_up_down create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the selected_item property has been changed.

@@ -17,7 +17,7 @@ namespace xtd {
   /// @include overflow_exception.cpp
   class overflow_exception : public arithmetic_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class overflow_exception

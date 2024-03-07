@@ -35,7 +35,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::threading::spin_lock structure
@@ -52,7 +52,7 @@ namespace xtd {
       spin_lock& operator =(const spin_lock& other) = default;
       ///@endcond
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       ///@brief Gets whether the lock is currently held by any thread.
@@ -69,7 +69,7 @@ namespace xtd {
       bool is_thread_owner_tracking_enabled() const noexcept;
       /// @}
 
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Acquires the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.

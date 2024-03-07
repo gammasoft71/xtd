@@ -12,7 +12,7 @@ namespace xtd {
     namespace css {
       class property : public object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         property() = default;
@@ -25,7 +25,7 @@ namespace xtd {
         operator xtd::ustring() noexcept {return value_;}
         /// @}
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         const xtd::ustring& value() const noexcept {return value_;}
@@ -33,7 +33,7 @@ namespace xtd {
         uintptr value() const noexcept {return xtd::parse<value_t>(value_);}
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool to_boolean() const {return xtd::parse<bool>(value_);}
@@ -54,7 +54,7 @@ namespace xtd {
         uintptr to() const {return xtd::parse<value_t>(value_);}
         /// @}
         
-        /// @name Static methods
+        /// @name Public Static Methods
         
         /// @{
         static property from(bool value) {return property(ustring::format("{}", value));}

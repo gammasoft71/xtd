@@ -21,7 +21,7 @@ namespace xtd {
     /// @include check_boxes.cpp
     class check_boxes final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Create a system-defined check_box that represent abort check_box.

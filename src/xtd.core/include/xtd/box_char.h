@@ -43,7 +43,7 @@ namespace xtd {
     box_char& operator =(const box_char&) = default;
     /// @endcond
     
-    /// @name static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Returns true if c is an ASCII character ([ U+0000..U+007F ]).

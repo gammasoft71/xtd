@@ -36,7 +36,7 @@ namespace xtd {
     /// @ingroup xtd_forms
     class forms_export_ control_paint final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Returns the weighted average color between the two given colors.

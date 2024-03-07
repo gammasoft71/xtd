@@ -26,7 +26,7 @@ namespace xtd {
       virtual ~event_listener() = default;
       /// @endcond
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Occurs when class cleanup is ended.

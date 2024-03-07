@@ -26,7 +26,7 @@ namespace xtd {
     /// @include path_too_long_exception.cpp
     class path_too_long_exception : public xtd::io::io_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class path_too_long_exception

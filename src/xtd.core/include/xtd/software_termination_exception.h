@@ -17,7 +17,7 @@ namespace xtd {
   /// @include software_termination_exception.cpp
   class software_termination_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class software_termination_exception

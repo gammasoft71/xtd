@@ -57,7 +57,7 @@ namespace xtd {
         friend process;
         void set_data(process::data* data) {data_ = data;}
       public:
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Gets a value indicate if the event is empty.
@@ -121,7 +121,7 @@ namespace xtd {
         friend process;
         void set_data(process::data* data) {data_ = data;}
       public:
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Gets a value indicate if the event is empty.
@@ -185,7 +185,7 @@ namespace xtd {
         friend process;
         void set_data(process::data* data) {data_ = data;}
       public:
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Gets a value indicate if the event is empty.
@@ -240,7 +240,7 @@ namespace xtd {
         process::data* data_ = nullptr;
       };
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::process class.
@@ -259,7 +259,7 @@ namespace xtd {
       ~process();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the base priority xof the associated process.
@@ -726,7 +726,7 @@ namespace xtd {
       xtd::date_time start_time() const;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Frees all the resources that are associated with this component.
@@ -772,7 +772,7 @@ namespace xtd {
       process& wait_for_exit(int32 milliseconds);
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Starts the process resource that is specified by the parameter containing process start information (for example, the file name of the process to start) and associates the resource with a new xtd::diagnostics::process component.
@@ -815,7 +815,7 @@ namespace xtd {
       static process start(const ustring& file_name, const ustring& arguments);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when an application writes to its redirected xtd::diagnostics::process::standard_error stream.

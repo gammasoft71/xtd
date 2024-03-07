@@ -13,7 +13,7 @@ namespace xtd {
   /// @ingroup xtd_core exceptions
   class uri_template_match_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class uri_template_match_exception

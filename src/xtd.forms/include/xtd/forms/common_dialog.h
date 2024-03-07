@@ -33,14 +33,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the common_dialog class.
       common_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets async dialog_result result after dialog box is closing.
@@ -57,7 +57,7 @@ namespace xtd {
       common_dialog& tag(const std::any& tag);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief When overridden in a derived class, resets the properties of a common dialog box to their default values.
@@ -87,7 +87,7 @@ namespace xtd {
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the user clicks the Help button on a common dialog box.

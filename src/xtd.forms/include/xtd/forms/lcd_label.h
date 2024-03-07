@@ -45,14 +45,14 @@ namespace xtd {
       class sixteen_segment_display_digit;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialise a new lcd_label class.
       lcd_label();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets background digit color.
@@ -135,7 +135,7 @@ namespace xtd {
       std::vector<char32> valid_characters();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::lcd_label.

@@ -41,7 +41,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialises a new instance of xtd::forms::tool_bar_button class.
@@ -59,7 +59,7 @@ namespace xtd {
       tool_bar_button& operator =(const tool_bar_button&) noexcept = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the control to be displayed in the control toolbar button.
@@ -192,7 +192,7 @@ namespace xtd {
       tool_bar_button& visible(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const tool_bar_button& other) const noexcept override;
@@ -203,7 +203,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create a control toolbar button with specified text and control.

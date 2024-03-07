@@ -37,7 +37,7 @@ namespace xtd {
     class core_export_ stack_frame : public xtd::object, public xtd::iequatable<stack_frame> {
     public:
     
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class.
@@ -86,7 +86,7 @@ namespace xtd {
       /// @endcond
       /// @}
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Return an empty stack frame.
@@ -98,7 +98,7 @@ namespace xtd {
       static constexpr uint32 OFFSET_UNKNOWN = std::numeric_limits<uint32>::max();
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const stack_frame& sf) const noexcept override;

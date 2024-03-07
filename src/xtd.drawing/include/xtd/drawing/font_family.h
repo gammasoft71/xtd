@@ -39,7 +39,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new xtd::drawing::font_family with the specified name.
@@ -65,7 +65,7 @@ namespace xtd {
       font_family& operator =(const font_family& value);
       /// @endcond
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the name of this font_family.
@@ -73,7 +73,7 @@ namespace xtd {
       const xtd::ustring& name() const noexcept;
       /// @}
 
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Returns an array that contains all the font_family objects associated with the current graphics context.
@@ -93,7 +93,7 @@ namespace xtd {
       static font_family generic_serif() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const font_family& value) const noexcept override;

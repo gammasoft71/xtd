@@ -23,7 +23,7 @@ namespace xtd {
     /// @remarks The xtd::forms::link_area::length property specifies the number of characters within the text of the xtd::forms::link_label to include in the link area. The xtd::forms::link_area::start property specifies the first character in the control text to include in the hyperlink. If you want to determine whether a specific xtd::forms::link_area is empty, you can use the xtd::forms::link_area::is_empty property instead of checking the values of the xtd::form::link_area::start and xtd::form::link_area::length properties.
     forms_export_ struct link_area : public object, public xtd::iequatable<link_area> {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::link_area class.
@@ -39,7 +39,7 @@ namespace xtd {
       link_area& operator =(const link_area&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the LinkArea is empty.
@@ -67,7 +67,7 @@ namespace xtd {
       link_area& start(size_t value) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       ///
       /// @{
       bool equals(const link_area&) const noexcept override;

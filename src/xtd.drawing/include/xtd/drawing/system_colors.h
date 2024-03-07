@@ -24,7 +24,7 @@ namespace xtd {
     /// @remarks Better performance is achieved by using the properties of the xtd::drawing::SystemPens or xtd::drawing::SystemBrushes classes rather than creating a new pen or brush based on a value from xtd::drawing::system_colors. For example, if you wanted to get a brush for the face color of a 3-D element, use the SystemBrushes.Control property because it gets a brush that already exists, whereas calling the SolidBrush.#ctor(xtd::drawing::color) constructor with a parameter value of system_colors::Control will create a new brush.
     class drawing_export_ system_colors final static_ {
     public:
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets a xtd::drawing::color structure that is the color used to accent a control.
@@ -206,7 +206,7 @@ namespace xtd {
       static xtd::drawing::color window_text();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of system colors.

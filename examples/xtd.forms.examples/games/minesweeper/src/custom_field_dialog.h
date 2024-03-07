@@ -11,14 +11,14 @@ namespace minesweeper {
   /// @remarks minesweeper::custom_field_dialog is used when user choose Custom from the Game menu.
   class custom_field_dialog final : public xtd::forms::form {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initialize a new instance of minesweeper::custom_field_dialog class.
     custom_field_dialog();
     /// @}
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the custom height for the game area.

@@ -32,7 +32,7 @@ namespace xtd {
     /// @remarks Filters that inherit from the trace_filter class can be used by trace listeners that inherit from the trace_listener class to perform filtering of events being traced. trace_filter contains a single method, should_trace, which takes event data and returns a flag indicating whether the event should be traced.
     class core_export_ trace_filter abstract_ {
     public:
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief When overridden in a derived class, determines whether the trace listener should trace the event.

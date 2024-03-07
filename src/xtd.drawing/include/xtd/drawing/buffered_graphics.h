@@ -31,7 +31,7 @@ namespace xtd {
     /// @remarks The xtd::drawing::buffered_graphics::render method with no arguments draws the contents of the graphics buffer to the surface specified when the buffer was allocated. Other overloads of the xtd::drawing::buffered_graphics::render method allow you to specify a xtd::drawing::graphics object or an xtd::intptr type that points to a device context to which to draw the contents of the graphics buffer.
     class drawing_export_ buffered_graphics : public xtd::object {
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a xtd::drawing::graphics object that outputs to the graphics buffer.
@@ -41,7 +41,7 @@ namespace xtd {
       xtd::drawing::graphics& graphics() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Writes the contents of the graphics buffer to the default device.

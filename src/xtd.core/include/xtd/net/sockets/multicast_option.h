@@ -36,7 +36,7 @@ namespace xtd {
       /// @remarks Use xtd::net::sockets::socket_option_name::drop_membership to drop a multicast group.
       class core_export_ multicast_option : public xtd::object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::multicast_option class.
@@ -61,7 +61,7 @@ namespace xtd {
         multicast_option& operator =(const multicast_option&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the IP address of a multicast group.

@@ -21,7 +21,7 @@ namespace xtd {
     /// @include web_exception.cpp
     class web_exception : public format_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class web_exception

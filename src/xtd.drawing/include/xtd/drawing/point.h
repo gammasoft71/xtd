@@ -53,14 +53,14 @@ namespace xtd {
     /// @endcode
     class drawing_export_ point : public xtd::object, public xtd::iequatable<point> {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents a xtd::drawing::point that has xtd::drawing::point::x and xtd::drawing::point::y values set to zero.
       static const point empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::drawing::point class
@@ -145,7 +145,7 @@ namespace xtd {
       operator point_f() const noexcept;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether this xtd::drawing::point is empty.
@@ -245,7 +245,7 @@ namespace xtd {
       void y(int32 y) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const point& value) const noexcept override;
@@ -280,7 +280,7 @@ namespace xtd {
       static point truncate(const point_f& value) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Adds the specified xtd::drawing::size to the specified xtd::drawing::point.

@@ -26,7 +26,7 @@ namespace xtd {
     /// @include file_format_exception.cpp
     class file_format_exception : public xtd::format_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class file_format_exception

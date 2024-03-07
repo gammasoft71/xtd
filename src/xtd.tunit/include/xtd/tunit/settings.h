@@ -23,7 +23,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class tunit_export_ settings final {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Creates new instance of settings.
@@ -35,7 +35,7 @@ namespace xtd {
       settings& operator =(const settings&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets also run ignored test.
@@ -217,7 +217,7 @@ namespace xtd {
       void enable_stack_trace(bool enable_stack_trace) noexcept;
       /// @}
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets default settings instance.

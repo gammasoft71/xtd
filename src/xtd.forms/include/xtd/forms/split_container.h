@@ -26,14 +26,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the split_container class.
       split_container();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating the horizontal or vertical orientation of the split_container panels.
@@ -85,7 +85,7 @@ namespace xtd {
       virtual split_container& splitter_width(int32 splitter_width);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::split_container.

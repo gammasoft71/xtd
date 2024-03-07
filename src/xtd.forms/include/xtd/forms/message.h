@@ -31,7 +31,7 @@ namespace xtd {
       message& operator =(const message&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the window handle of the message.
@@ -81,7 +81,7 @@ namespace xtd {
       void handle(intptr value);
       /// @endcond
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Gets the lparam value and converts the value to an object.
@@ -99,7 +99,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates a new message.

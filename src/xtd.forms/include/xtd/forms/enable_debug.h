@@ -36,7 +36,7 @@ namespace xtd {
       enable_debug operator +(const enable_debug& value) const  noexcept;
       /// @endcond
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represent none debug.
@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief Represent all debug.
       static const enable_debug all;
       
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets a trace switch to configure debug traces.
@@ -66,13 +66,13 @@ namespace xtd {
       static xtd::diagnostics::trace_switch& trace_switch() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const enable_debug& value) const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets enable_debug flags status.

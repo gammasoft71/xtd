@@ -21,7 +21,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.

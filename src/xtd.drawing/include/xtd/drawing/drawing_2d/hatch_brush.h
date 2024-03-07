@@ -33,7 +33,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::hatch_brush class with the specified xtd::drawing::drawing_2d::hatch_style enumeration and foreground color.
@@ -53,7 +53,7 @@ namespace xtd {
         hatch_brush& operator =(const hatch_brush& value);
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the color of spaces between the hatch lines drawn by this hatch_brush object.
@@ -69,7 +69,7 @@ namespace xtd {
         xtd::drawing::drawing_2d::hatch_style hatch_style() const noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         using brush::equals;

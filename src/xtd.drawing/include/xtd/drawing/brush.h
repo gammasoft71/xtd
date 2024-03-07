@@ -40,7 +40,7 @@ namespace xtd {
       ~brush();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the handle of the brush.
@@ -48,7 +48,7 @@ namespace xtd {
       intptr handle() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const brush& value) const noexcept override;

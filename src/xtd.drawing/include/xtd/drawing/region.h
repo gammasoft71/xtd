@@ -33,7 +33,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new xtd::drawing::region.
@@ -59,7 +59,7 @@ namespace xtd {
       ~region();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the handle of the region.
@@ -67,7 +67,7 @@ namespace xtd {
       intptr handle() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Updates this xtd::drawing::region to contain the portion of the specified xtd::drawing::graphics_path that does not intersect with this xtd::drawing::region.
@@ -290,7 +290,7 @@ namespace xtd {
       void translate(float dx, float dy) noexcept;
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Initializes a new xtd::drawing::region from a handle to the specified existing GDI region.

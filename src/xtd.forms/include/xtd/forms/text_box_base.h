@@ -25,7 +25,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether pressing the TAB key in a multiline text box control types a TAB character in the control instead of moving the focus to the next control in the tab order.
@@ -119,7 +119,7 @@ namespace xtd {
       virtual void append_text(const xtd::ustring& value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Clears all text from the text box control.
@@ -137,7 +137,7 @@ namespace xtd {
       void select_all();
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the value of the accepts_tab property has changed.

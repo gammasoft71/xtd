@@ -47,7 +47,7 @@ namespace xtd {
         };
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Creates a new instance of the network_stream class for the specified xtd::net::sockets::socket.
@@ -62,7 +62,7 @@ namespace xtd {
         network_stream(const xtd::net::sockets::socket& socket, bool owns_socket);
         /// @}
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be read.
