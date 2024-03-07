@@ -258,4 +258,4 @@ private:
 ///   }
 ///   yield break;
 /// }
-/// @encode
+/// @endcode

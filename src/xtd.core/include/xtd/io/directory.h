@@ -28,7 +28,8 @@ namespace xtd {
     /// @ingroup xtd_core io
     /// @par Examples
     /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
-    /// @code #include <xtd/xtd>
+    /// @code 
+    /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
     /// using namespace xtd::io;
@@ -56,7 +57,8 @@ namespace xtd {
     /// @endcode
     /// @par Examples
     /// The following example demonstrates how to move a directory and all its files to a new directory. The original directory no longer exists after it has been moved.
-    /// @code #include <xtd/xtd>
+    /// @code
+    /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
     /// using namespace xtd::io;
@@ -1101,7 +1103,6 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
       /// @endcode
       /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.

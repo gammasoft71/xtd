@@ -313,7 +313,7 @@ namespace xtd {
       /// // The size of UpdatePatch.log is 22778 bytes.
       /// // The size of UpdatePatch.txt is 30 bytes.
       /// // The size of wt3d.ini is 234 bytes.
-      /// //@endcode
+      /// @endcode
       /// @remarks
       /// The value of the Length property is pre-cached if the current instance of the xtd::io::file_info object was returned from any of the following DirectoryInfo methods:
       /// * xtd::io::file_info::get_directories
@@ -403,7 +403,7 @@ namespace xtd {
       /// // results may vary based on the computer/file structure/etc.:
       /// // Add as many lines as you like...
       /// // Add another line to the output...
-      /// @encoode
+      /// @endcode
       xtd::io::stream_writer append_text() const;
       
       /// @brief Copies an existing file to a new file, disallowing the overwriting of an existing file.
@@ -513,7 +513,7 @@ namespace xtd {
       /// // This is the information in the second file:
       /// // Add as many lines as you like...
       /// // Add another line to the output...
-      /// @encode
+      /// @endcode
       /// @remarks Use the xtd::io::file_info::copy_to(ustring, bool) method to allow overwriting of an existing file.
       /// @warning Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior
       xtd::io::file_info copy_to(const xtd::ustring& dest_file_name) const;
@@ -625,7 +625,7 @@ namespace xtd {
       /// // Add another line to the output...
       /// // Add as many lines as you like...
       /// // Add another line to the output...
-      /// @encode
+      /// @endcode
       /// @remarks Use this method to allow or prevent overwriting of an existing file. Use the xtd::io::file_info::copy_to(ustring) method to prevent overwriting of an existing file by default.
       /// @warning Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior
       xtd::io::file_info copy_to(const xtd::ustring& dest_file_name, bool overwrite) const;

@@ -38,13 +38,13 @@ namespace xtd {
       explicit countdown_event(int32 initial_count);
       /// @}
 
-      ///@cond
+      /// @cond
       countdown_event();
       countdown_event(countdown_event&&) = default;
       countdown_event(const countdown_event&) = default;
       countdown_event& operator =(const countdown_event& other);
       ~countdown_event();
-      ///@endcond
+      /// @endcond
 
       /// @name Public Properties
       

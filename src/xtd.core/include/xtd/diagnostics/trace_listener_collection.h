@@ -13,7 +13,8 @@ namespace xtd {
   namespace diagnostics {
     /// @brief Represents a collection of xtd::diagnostics::trace_listener.
     /// @code
-    /// class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> @endcode
+    /// class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>
+    /// @endcode
     /// @par Inheritance
     /// std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> → xtd::diagnostics::trace_listener_collection
     /// @par Header

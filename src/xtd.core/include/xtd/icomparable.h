@@ -31,7 +31,7 @@ namespace xtd {
     virtual int32 compare_to(const type_t& obj) const noexcept = 0;
     /// @}
     
-    ///@cond
+    /// @cond
     friend bool operator <(const type_t& a, const type_t& b) noexcept {return a.compare_to(b) < 0;}
     friend bool operator <=(const type_t& a, const type_t& b) noexcept {return a.compare_to(b) <= 0;}
     friend bool operator >(const type_t& a, const type_t& b) noexcept {return a.compare_to(b) > 0;}
@@ -44,6 +44,6 @@ namespace xtd {
     friend bool operator >(const type_t& a, const icomparable<object_t>& b) noexcept {return dynamic_cast<const type_t*>(&b) && a.compare_to(dynamic_cast<const type_t&>(b)) > 0;}
     template<typename object_t>
     friend bool operator >=(const type_t& a, const icomparable<object_t>& b) noexcept {return dynamic_cast<const type_t*>(&b) && a.compare_to(dynamic_cast<const type_t&>(b)) >= 0;}
-    ///@endcond
+    /// @endcond
   };
 }
