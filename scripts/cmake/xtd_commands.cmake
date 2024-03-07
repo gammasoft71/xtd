@@ -1786,6 +1786,9 @@ macro(write_resources_file_header)
     "  /// @remarks See <a href=https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/resources>Resources</a> for more informations.\n"
     "  class resources final static_ {\n"
     "  public:\n"
+    "    /// @name Static methods\n"
+    "\n"
+    "    /// @{\n"
   )
   
   foreach(RESOURCE_LINE ${PROJECT_RESOURCES})
@@ -1856,6 +1859,7 @@ macro(write_resources_file_header)
   endforeach()
   
   file(APPEND ${RESOURCES_FILE_HEADER}
+    "    /// @}\n"
     "  };\n"
     "}\n"
     "\n"
@@ -1886,16 +1890,16 @@ macro(write_settings_file_header)
     "  /// @remarks See <a href=https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/settings>Settings</a> for more informations.\n"
     "  class settings : public xtd::forms::component {\n"
     "  public:\n"
+    "    /// @name Constructors\n"
+    "\n"
+    "    /// @{\n"
     "    /// @brief Initializes a new instance of the ${TARGET_DEFAULT_NAMESPACE}::properties::settings class.\n"
     "    settings() : ::${TARGET_DEFAULT_NAMESPACE}::properties::settings(true) {}\n"
+    "    /// @}\n"
     "\n"
-    "    /// @brief Gets the default instance of settings.\n"
-    "    /// @return The default instance.\n"
-    "    static ::${TARGET_DEFAULT_NAMESPACE}::properties::settings& default_settings() {\n"
-    "      static ::${TARGET_DEFAULT_NAMESPACE}::properties::settings default_settings;\n"
-    "      return default_settings;\n"
-    "    }\n"
+    "    /// @name Methods\n"
     "\n"
+    "    /// @{\n"
   )
     
   if (PROJECT_USER_SETTINGS)
@@ -1974,6 +1978,18 @@ macro(write_settings_file_header)
 
   file(APPEND ${SETTINGS_FILE_HEADER}
     "    }\n"
+    "    /// @}\n"
+    "\n"
+    "    /// @name Static methods\n"
+    "\n"
+    "    /// @{\n"
+    "    /// @brief Gets the default instance of settings.\n"
+    "    /// @return The default instance.\n"
+    "    static ::${TARGET_DEFAULT_NAMESPACE}::properties::settings& default_settings() {\n"
+    "      static ::${TARGET_DEFAULT_NAMESPACE}::properties::settings default_settings;\n"
+    "      return default_settings;\n"
+    "    }\n"
+    "    /// @}\n"
     "\n"
   )
 
