@@ -22,6 +22,7 @@ namespace xtd {
         static constexpr int32 WM_ACTIVATEAPP = 0x001C;
         #endif
         static constexpr int32 WM_APPIDLE = 0x0401;
+        //static constexpr int32 WM_QUIT = 0x0012;
       public:
         wx_application() = default;
         

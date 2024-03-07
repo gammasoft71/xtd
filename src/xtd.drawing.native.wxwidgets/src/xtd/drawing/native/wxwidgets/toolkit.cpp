@@ -69,6 +69,7 @@ void xtd::drawing::native::toolkit::shutdown(intptr handle) {
   
   wxImage::CleanUpHandlers();
   wxTheApp->OnExit();
+  wxTheApp->CleanUp();
   wxApp::SetInstance(nullptr);
   delete wxTheApp;
 }
