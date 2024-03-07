@@ -32,7 +32,7 @@ namespace xtd {
       class drawing_native_export_ font final static_ {
         friend xtd::drawing::font;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Creates font.

@@ -36,7 +36,7 @@ namespace xtd {
       unnamed_semaphore() = delete;
       friend xtd::threading::semaphore;
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Create named semaphore with specified initial count and maxixum count.

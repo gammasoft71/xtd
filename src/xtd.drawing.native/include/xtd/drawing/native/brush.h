@@ -47,7 +47,7 @@ namespace xtd {
         friend xtd::drawing::solid_brush;
         friend xtd::drawing::texture_brush;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Creates brush.

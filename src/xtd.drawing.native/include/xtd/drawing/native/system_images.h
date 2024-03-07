@@ -33,7 +33,7 @@ namespace xtd {
         friend xtd::drawing::system_images_base;
         friend xtd::drawing::system_images;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Gets system image from specified name and size.

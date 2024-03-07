@@ -32,7 +32,7 @@ namespace xtd {
       class drawing_native_export_ system_colors final static_ {
         friend xtd::drawing::color;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Convert system color to argb.

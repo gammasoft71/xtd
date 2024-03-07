@@ -44,7 +44,7 @@ namespace xtd {
       
     protected:
       friend xtd::threading::interlocked;
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.

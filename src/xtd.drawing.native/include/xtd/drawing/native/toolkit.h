@@ -63,7 +63,7 @@ namespace xtd {
         friend xtd::forms::native::application;
         friend xtd::forms::native::toolkit;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Initiazes toolkit.

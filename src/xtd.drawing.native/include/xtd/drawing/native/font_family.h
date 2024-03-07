@@ -36,7 +36,7 @@ namespace xtd {
         friend xtd::drawing::text::installed_font_collection;
         friend xtd::drawing::font_family;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Creates fontt family from name.

@@ -37,9 +37,16 @@ namespace xtd {
       stack_trace() = delete;
       friend xtd::diagnostics::stack_frame;
     protected:
+      /// @name Protected aliaes
+      
+      /// @{
+      /// @brief Represents a frame object that contains file name,line, column, method name and offset.
       using frame = std::tuple<std::string, size_t, size_t, std::string, size_t>;
+      /// @brief Represents a frame collection.
       using frames = std::vector<frame>;
-      /// @name Protected methods
+      /// @}
+
+      /// @name Protected static methods
       
       /// @{
       /// @brief Play system sound.
