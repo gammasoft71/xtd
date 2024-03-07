@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_drawing images
     class drawing_export_ red_colors final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief A system-defined color object.
@@ -64,7 +64,7 @@ namespace xtd {
       static xtd::drawing::color salmon() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Gets an array of colors.

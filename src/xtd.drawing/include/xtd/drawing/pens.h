@@ -24,7 +24,7 @@ namespace xtd {
     /// @remarks The pen objects returned by this class are immutable, meaning their properties cannot be changed.
     class drawing_export_ pens final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief A system-defined pen object with a width of 1.
@@ -454,7 +454,7 @@ namespace xtd {
       static xtd::drawing::pen yellow_green();
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Gets an array of pens.

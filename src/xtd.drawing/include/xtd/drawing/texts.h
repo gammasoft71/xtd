@@ -23,7 +23,7 @@ namespace xtd {
     /// @include texts.cpp
     class drawing_export_ texts final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief Gets a system-defined text that has a string value of "&Abort". This field is constant.
@@ -202,7 +202,7 @@ namespace xtd {
       static xtd::ustring zoom_to_fit();
       /// }
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Gets an array of texts.

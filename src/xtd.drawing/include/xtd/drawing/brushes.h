@@ -24,7 +24,7 @@ namespace xtd {
     /// @remarks The brushes class contains static read-only properties that return a solid_brush object of the color indicated by the property name.
     class drawing_export_ brushes final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief A system-defined brush object.
@@ -454,7 +454,7 @@ namespace xtd {
       static xtd::drawing::solid_brush yellow_green();
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Gets an array of brushes.

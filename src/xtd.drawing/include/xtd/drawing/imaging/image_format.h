@@ -45,6 +45,14 @@ namespace xtd {
         /// @name Properties
         
         /// @{
+        /// @brief Gets a guid structure that represents this image_format object.
+        /// @return A guid structure that represents this image_format object.
+        const xtd::guid guid() const noexcept {return guid_;}
+        /// @}
+
+        /// @name Static properties
+        
+        /// @{
         /// @brief Gets the bitmap (BMP) image format.
         /// @return An image_format object that indicates the bitmap image format.
         static image_format bmp() noexcept {return image_format(xtd::guid("b96b3cab-0728-11d3-9d7b-0000f81ef32e"));}
@@ -60,10 +68,6 @@ namespace xtd {
         /// @brief Gets the Graphics Interchange Format (GIF) image format.
         /// @return An image_format object that indicates the GIF image format.
         static image_format gif() noexcept {return image_format(xtd::guid("b96b3cb0-0728-11d3-9d7b-0000f81ef32e"));}
-        
-        /// @brief Gets a guid structure that represents this image_format object.
-        /// @return A guid structure that represents this image_format object.
-        const xtd::guid guid() const noexcept {return guid_;}
         
         /// @brief Gets the windows icon (ico) image format.
         /// @return An image_format object that indicates the icon image format.

@@ -89,25 +89,29 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Adds the width and height of one xtd::drawing::size_f class to the width and height of another xtd::drawing::size_f class.
-      /// @param size1 The first xtd::drawing::size_f class to add.
-      /// @param size2 The second xtd::drawing::size_f class to add.
-      /// @return A xtd::drawing::size_f class that is the result of the addition operation.
-      static xtd::drawing::size_f add(const xtd::drawing::size_f& size1, const xtd::drawing::size_f& size2) noexcept;
-      
       bool equals(const xtd::drawing::size_f& value) const noexcept override;
-      
-      /// @brief Returns the result of subtracting specified xtd::drawing::size_f from the specified xtd::drawing::size_f.
-      /// @param sz1 The xtd::drawing::size_f to be subtracted from.
-      /// @param sz2 The xtd::drawing::size_f to subtract from the Size.
-      /// @return The xtd::drawing::size_f that is the result of the subtraction operation.
-      static xtd::drawing::size_f subtract(const xtd::drawing::size_f& sz1, const xtd::drawing::size_f& sz2) noexcept;
       
       /// @brief Creates a human-readable string that represents this xtd::drawing::size_f class.
       /// @return A xtd::ustring that represents this size.
       xtd::ustring to_string() const noexcept override;
       /// @}
       
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Adds the width and height of one xtd::drawing::size_f class to the width and height of another xtd::drawing::size_f class.
+      /// @param size1 The first xtd::drawing::size_f class to add.
+      /// @param size2 The second xtd::drawing::size_f class to add.
+      /// @return A xtd::drawing::size_f class that is the result of the addition operation.
+      static xtd::drawing::size_f add(const xtd::drawing::size_f& size1, const xtd::drawing::size_f& size2) noexcept;
+      
+      /// @brief Returns the result of subtracting specified xtd::drawing::size_f from the specified xtd::drawing::size_f.
+      /// @param sz1 The xtd::drawing::size_f to be subtracted from.
+      /// @param sz2 The xtd::drawing::size_f to subtract from the Size.
+      /// @return The xtd::drawing::size_f that is the result of the subtraction operation.
+      static xtd::drawing::size_f subtract(const xtd::drawing::size_f& sz1, const xtd::drawing::size_f& sz2) noexcept;
+      /// @}
+
       /// @name Operators
       
       /// @{

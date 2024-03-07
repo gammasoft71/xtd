@@ -154,19 +154,6 @@ namespace xtd {
       /// @param height The amount to add this xtd::drawing::rectangle_f verticaly.
       /// @remarks This method adds this rectangle, not a copy of it.
       void add(float width, float height) noexcept;
-      /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle_f structure. The copy is added by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.
-      /// @param rect The xtd::drawing::rectangle_f with which to start. This rectangle is not modified.
-      /// @param x The amount to add the specified rectangle horizontally.
-      /// @param y The amount to add the specified rectangle vertically.
-      /// @return The added xtd::drawing::rectangle_f.
-      /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
-      static rectangle_f add(const rectangle_f& rect, float x, float y) noexcept;
-      /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle_f structure. The copy is added by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.
-      /// @param rect The xtd::drawing::rectangle_f with which to start. This rectangle is not modified.
-      /// @param sz The amount to add the specified rectangle.
-      /// @return The added xtd::drawing::rectangle_f.
-      /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
-      static rectangle_f add(const rectangle_f& rect, const drawing::size_f& sz) noexcept;
       
       /// @brief Determines if the specified point is contained within this xtd::drawing::rectangle_f structure.
       /// @param pt The xtd::drawing::point_f to test.
@@ -187,15 +174,6 @@ namespace xtd {
       
       bool equals(const rectangle_f& value) const noexcept override;
       
-      /// @brief Creates a xtd::drawing::rectangle_f structure with the specified edge locations.
-      /// @param left The x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
-      /// @param top The y-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
-      /// @param right The x-coordinate of the lower-right corner of this xtd::drawing::rectangle_f structure.
-      /// @param bottom The y-coordinate of the lower-right corner of this xtd::drawing::rectangle_f structure.
-      /// @return The new xtd::drawing::rectangle_f that this method creates.
-      /// @remarks This method creates a xtd::drawing::rectangle_f with the specified upper-left and lower-right corners.
-      static rectangle_f from_ltrb(float left, float top, float right, float bottom) noexcept;
-      
       /// @brief Enlarges this xtd::drawing::rectangle_f by the specified amount.
       /// @param sz The amount to inflate this rectangle.
       /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
@@ -206,6 +184,60 @@ namespace xtd {
       /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
       /// @remarks If either x or y is negative, the xtd::drawing::rectangle_f structure is deflated in the corresponding direction.
       void inflate(float width, float height) noexcept;
+      
+      /// @brief Determines if this rectangle intersects with rect.
+      /// @param rect The rectangle to test.
+      /// @return This method returns true if there is any intersection, otherwise false.
+      bool intersects_with(const rectangle_f& rect) const noexcept;
+
+      /// @brief Replaces this xtd::drawing::rectangle_f with the intersection of itself and the specified xtd::drawing::rectangle_f.
+      /// @param rect The xtd::drawing::rectangle_f with which to intersect.
+      void make_intersect(const rectangle_f& rect) noexcept;
+
+      /// @brief Replaces this xtd::drawing::rectangle_f with the union of itself and the specified xtd::drawing::rectangle_f.
+      /// @param rect The xtd::drawing::rectangle_f with which to union.
+      void make_union(const rectangle_f& rect) noexcept;
+      
+      /// @brief Adjusts the location of this rectangle by the specified amount.
+      /// @param pos Amount to offset the location.
+      /// @remarks This method adjusts the location of the upper-left corner horizontally by the x-coordinate of the specified point, and vertically by the y-coordinate of the specified point.
+      void offset(const point_f& pos) noexcept;
+      /// @brief Adjusts the location of this rectangle by the specified amount.
+      /// @param x The horizontal offset.
+      /// @param y The vertical offset.
+      void offset(float x, float y) noexcept;
+      
+      /// @brief Converts the attributes of this xtd::drawing::rectangle_f to a human-readable string.
+      /// @return A string that contains the position, width, and height of this Rectangle structure ¾ for example, {x=20, y=20, width=100, height=50}.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
+      /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle_f structure. The copy is added by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.
+      /// @param rect The xtd::drawing::rectangle_f with which to start. This rectangle is not modified.
+      /// @param x The amount to add the specified rectangle horizontally.
+      /// @param y The amount to add the specified rectangle vertically.
+      /// @return The added xtd::drawing::rectangle_f.
+      /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
+      static rectangle_f add(const rectangle_f& rect, float x, float y) noexcept;
+      /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle_f structure. The copy is added by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.
+      /// @param rect The xtd::drawing::rectangle_f with which to start. This rectangle is not modified.
+      /// @param sz The amount to add the specified rectangle.
+      /// @return The added xtd::drawing::rectangle_f.
+      /// @remarks This method makes a copy of rect, adds the copy, and then returns the added copy.
+      static rectangle_f add(const rectangle_f& rect, const drawing::size_f& sz) noexcept;
+      
+      /// @brief Creates a xtd::drawing::rectangle_f structure with the specified edge locations.
+      /// @param left The x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
+      /// @param top The y-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
+      /// @param right The x-coordinate of the lower-right corner of this xtd::drawing::rectangle_f structure.
+      /// @param bottom The y-coordinate of the lower-right corner of this xtd::drawing::rectangle_f structure.
+      /// @return The new xtd::drawing::rectangle_f that this method creates.
+      /// @remarks This method creates a xtd::drawing::rectangle_f with the specified upper-left and lower-right corners.
+      static rectangle_f from_ltrb(float left, float top, float right, float bottom) noexcept;
+
       /// @brief Creates and returns an enlarged copy of the specified xtd::drawing::rectangle_f structure. The copy is enlarged by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle_f with which to start. This rectangle is not modified.
       /// @param x The amount to inflate the specified rectangle horizontally.
@@ -220,37 +252,17 @@ namespace xtd {
       /// @remarks This method makes a copy of rect, enlarges the copy, and then returns the enlarged copy. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
       static rectangle_f inflate(const rectangle_f& rect, float width, float height) noexcept;
       
-      /// @brief Determines if this rectangle intersects with rect.
-      /// @param rect The rectangle to test.
-      /// @return This method returns true if there is any intersection, otherwise false.
-      bool intersects_with(const rectangle_f& rect) const noexcept;
-      
       /// @brief Returns a third xtd::drawing::rectangle_f structure that represents the intersection of two other xtd::drawing::rectangle_f structures. If there is no intersection, an empty xtd::drawing::rectangle_f is returned.
       /// @param a A rectangle to intersect.
       /// @param b A rectangle to intersect.
       /// @return A xtd::drawing::rectangle_f that represents the intersection of a and b.
       static rectangle_f make_intersect(const rectangle_f& a, const rectangle_f& b) noexcept;
-      /// @brief Replaces this xtd::drawing::rectangle_f with the intersection of itself and the specified xtd::drawing::rectangle_f.
-      /// @param rect The xtd::drawing::rectangle_f with which to intersect.
-      void make_intersect(const rectangle_f& rect) noexcept;
       
       /// @brief Gets a xtd::drawing::rectangle_f structure that contains the union of two xtd::drawing::rectangle_f structures.
       /// @param a A rectangle to union.
       /// @param b A rectangle to union.
       /// @return A xtd::drawing::rectangle_f structure that bounds the union of the two xtd::drawing::rectangle_f structures.
       static rectangle_f make_union(const rectangle_f& a, const rectangle_f& b) noexcept;
-      /// @brief Replaces this xtd::drawing::rectangle_f with the union of itself and the specified xtd::drawing::rectangle_f.
-      /// @param rect The xtd::drawing::rectangle_f with which to union.
-      void make_union(const rectangle_f& rect) noexcept;
-      
-      /// @brief Adjusts the location of this rectangle by the specified amount.
-      /// @param pos Amount to offset the location.
-      /// @remarks This method adjusts the location of the upper-left corner horizontally by the x-coordinate of the specified point, and vertically by the y-coordinate of the specified point.
-      void offset(const point_f& pos) noexcept;
-      /// @brief Adjusts the location of this rectangle by the specified amount.
-      /// @param x The horizontal offset.
-      /// @param y The vertical offset.
-      void offset(float x, float y) noexcept;
       /// @brief Creates and returns an offsetted copy of the specified xtd::drawing::rectangle_f structure. The copy is offsetted by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle_f with which to start. This rectangle is not modified.
       /// @param pos The amount to offset the specified rectangle.
@@ -264,10 +276,6 @@ namespace xtd {
       /// @return The offsetted xtd::drawing::rectangle_f.
       /// @remarks This method makes a copy of rect, offsets the copy, and then returns the offsetted copy.
       static rectangle_f offset(const rectangle_f& rect, float x, float y) noexcept;
-      
-      /// @brief Converts the attributes of this xtd::drawing::rectangle_f to a human-readable string.
-      /// @return A string that contains the position, width, and height of this Rectangle structure ¾ for example, {x=20, y=20, width=100, height=50}.
-      xtd::ustring to_string() const noexcept override;
       /// @}
       
     private:

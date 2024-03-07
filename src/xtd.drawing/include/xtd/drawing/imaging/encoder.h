@@ -52,7 +52,7 @@ namespace xtd {
         /// @endcond
         
         
-        /// @name Fileds
+        /// @name Fields
         
         /// @{
         /// @brief An Encoder object that is initialized with the globally unique identifier for the chrominance table parameter category.

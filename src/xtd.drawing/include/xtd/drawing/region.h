@@ -97,12 +97,6 @@ namespace xtd {
       /// @param region The xtd::drawing::region to exclude from this xtd::drawing::region.
       void exclude(const xtd::drawing::region& region) noexcept;
       
-      /// @brief Initializes a new xtd::drawing::region from a handle to the specified existing GDI region.
-      /// @param hrgn A handle to an existing xtd::drawing::region.
-      /// @return The new xtd::drawing::region.
-      /// @remarks This method creates a new xtd::drawing::region with an interior defined by the existing xtd::drawing::region referred to by the handle in the hrgn parameter.
-      static xtd::drawing::region from_hrgn(intptr hrgn);
-      
       /// @brief Gets a xtd::drawing::rectangle_f structure that represents a rectangle that bounds this xtd::drawing::region on the drawing surface of a xtd::drawing::graphics object.
       /// @param g The xtd::drawing::graphics on which this xtd::drawing::region is drawn.
       /// @return A xtd::drawing::rectangle_f structure that represents the bounding rectangle for this xtd::drawing::region in pixels.
@@ -295,7 +289,17 @@ namespace xtd {
       /// @param dy The amount to offset this xtd::drawing::region vertically.
       void translate(float dx, float dy) noexcept;
       /// @}
+
+      /// @name Static methods
       
+      /// @{
+      /// @brief Initializes a new xtd::drawing::region from a handle to the specified existing GDI region.
+      /// @param hrgn A handle to an existing xtd::drawing::region.
+      /// @return The new xtd::drawing::region.
+      /// @remarks This method creates a new xtd::drawing::region with an interior defined by the existing xtd::drawing::region referred to by the handle in the hrgn parameter.
+      static xtd::drawing::region from_hrgn(intptr hrgn);
+      /// @}
+
     private:
       std::shared_ptr<data> data_;
     };

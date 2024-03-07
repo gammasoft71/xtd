@@ -66,30 +66,6 @@ namespace xtd {
       /// @param format_flag A string_formatFlags enumeration that contains formatting information.
       xtd::drawing::string_format& format_flags(xtd::drawing::string_format_flags format_flag) noexcept;
       
-      /// @brief Gets a generic default string_format object.
-      /// @return The generic default string_format object.
-      /// @remarks The following table shows initial property values for a generic default instance of the string_format class.
-      /// | property       | initial value |
-      /// | -------------- | ------------- |
-      /// | format_flag    | 0             |
-      /// | alignment      | near          |
-      /// | line_alignment | near          |
-      /// | hotkey_prefix  | none          |
-      /// | trimming       | character     |
-      static xtd::drawing::string_format generic_default() noexcept;
-      
-      /// @brief Gets a generic typographic string_format object.
-      /// @return A generic typographic string_format object.
-      /// @remarks The following table shows initial property values for a generic default instance of the string_format class.
-      /// | property       | initial value                                          |
-      /// | -------------- | ------------------------------------------------------ |
-      /// | format_flag    | 0b110000000000100 (no_clip\|fit_black_box\|line_limit) |
-      /// | alignment      | near                                                   |
-      /// | line_alignment | near                                                   |
-      /// | hotkey_prefix  | none                                                   |
-      /// | trimming       | none                                                   |
-      static xtd::drawing::string_format generic_typographic() noexcept;
-      
       /// @brief Gets the HotkeyPrefix object for this string_format object.
       /// @return The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
       /// @remarks In a graphical user interface, a hot key is the underlined letter in a word (usually combined with another key, such as the Alt key) that you can press on the keyboard to activate the functionality that the word represents.
@@ -116,6 +92,34 @@ namespace xtd {
       xtd::drawing::string_format& trimming(xtd::drawing::string_trimming trimming) noexcept;
       /// @}
       
+      /// @name Static properties
+      
+      /// @{
+      /// @brief Gets a generic default string_format object.
+      /// @return The generic default string_format object.
+      /// @remarks The following table shows initial property values for a generic default instance of the string_format class.
+      /// | property       | initial value |
+      /// | -------------- | ------------- |
+      /// | format_flag    | 0             |
+      /// | alignment      | near          |
+      /// | line_alignment | near          |
+      /// | hotkey_prefix  | none          |
+      /// | trimming       | character     |
+      static xtd::drawing::string_format generic_default() noexcept;
+      
+      /// @brief Gets a generic typographic string_format object.
+      /// @return A generic typographic string_format object.
+      /// @remarks The following table shows initial property values for a generic default instance of the string_format class.
+      /// | property       | initial value                                          |
+      /// | -------------- | ------------------------------------------------------ |
+      /// | format_flag    | 0b110000000000100 (no_clip\|fit_black_box\|line_limit) |
+      /// | alignment      | near                                                   |
+      /// | line_alignment | near                                                   |
+      /// | hotkey_prefix  | none                                                   |
+      /// | trimming       | none                                                   |
+      static xtd::drawing::string_format generic_typographic() noexcept;
+      /// @}
+
     private:
       xtd::drawing::text::hotkey_prefix hotkey_prefix_ = xtd::drawing::text::hotkey_prefix::none;
       xtd::drawing::string_format_flags format_flags_ = static_cast<xtd::drawing::string_format_flags>(0);

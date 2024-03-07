@@ -168,30 +168,6 @@ namespace xtd {
       graphics create_graphics();
       
       bool equals(const image& image) const noexcept override;
-      
-      /// @brief Creates an image from the specified file.
-      /// @param filename A string that contains the name of the file from which to create the image.
-      /// @return The xtd::drawing::image this method creates.
-      static image from_file(const xtd::ustring& filename) {return image(filename);}
-      
-      /// @brief Creates a xtd::drawing::bitmap from a handle to a GDI bitmap.
-      /// @param hbitmap The GDI bitmap handle from which to create the xtd::drawing::bitmap.
-      /// @return The xtd::drawing::bitmap this method creates.
-      /// @remarks The xtd::drawing::image::from_hbitmap method makes a copy of the GDI bitmap; so you can release the incoming GDI bitmap using the GDI DeleteObject method immediately after creating the new xtd::drawing::image.
-      static bitmap from_hbitmap(intptr hbitmap);
-      
-      /// @brief Creates an xtd::drawing::image from the specified data stream.
-      /// @param stream A std::istream that contains the data for this xtd::drawing::image.
-      /// @return The xtd::drawing::image this method creates.
-      /// @remarks You must keep the stream open for the lifetime of the xtd::drawing::image.
-      /// @note The xtd::drawing::image class does not support alpha transparency in bitmaps. To enable alpha transparency, use PNG images with 32 bits per pixel.
-      static image from_stream(std::istream& stream);
-      
-      /// @brief Creates an xtd::drawing::image from the specified data pointer.
-      /// @param data A pointer that contains the data for this xtd::drawing::image.
-      /// @return The xtd::drawing::image this method creates.
-      /// @remarks This method is used for creating a xtd::drawing::image from an XPM (or XBM) image.
-      static image from_data(const char* const* bits);
 
       /// @brief Gets the image alpha pointer, which represents the alpha data of the image.
       /// @return The pointer or alpha image.
@@ -227,11 +203,6 @@ namespace xtd {
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the xtd::drawing::imaging::frame_dimension.
       size_t get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const;
       
-      /// @brief Returns the color depth, in number of bits per pixel, of the specified pixel format.
-      /// @param pixfmt The xtd::drawing::imaging::pixel_format member that specifies the format for which to find the size.
-      /// @return The color depth of the specified pixel format.
-      static int32 get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
-      
       /// @brief Gets the specified property item from this xtd::drawing::image.
       /// @param propid The ID of the property item to get.
       /// @return The xtd::drawing::imaging::property_item this method gets.
@@ -266,21 +237,6 @@ namespace xtd {
       /// @remarks The xtd::drawing::image::get_thumbnail_image method works well when the requested thumbnail image has a size of about 120 x 120 pixels. If you request a large thumbnail image (for example, 300 x 300) from an xtd::drawing::image that has an embedded thumbnail, there could be a noticeable loss of quality in the thumbnail image. It might be better to scale the main image (instead of scaling the embedded thumbnail) by calling the xtd::drawing::graphics::draw_image method.
       xtd::drawing::image get_thmbnail_image(int32 thumb_width, int32 thunb_height) noexcept;
 
-      /// @brief Returns a value that indicates whether the pixel format for this xtd::drawing::image contains alpha information.
-      /// @param pixfmt The PixelFormat to test.
-      /// @return true if pixfmt contains alpha information; otherwise, false.
-      static bool is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
-      
-      /// @brief Returns a value that indicates whether the pixel format is 32 bits per pixel.
-      /// @param pixfmt The PixelFormat to test.
-      /// @return true if pixfmt is canonical; otherwise, false.
-      static bool is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
-      
-      /// @brief Returns a value that indicates whether the pixel format is 64 bits per pixel.
-      /// @param pixfmt The PixelFormat to test.
-      /// @return true if pixfmt is extended; otherwise, false.
-      static bool is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
-
       /// @brief Rotates, flips, or rotates and flips the xtd::drawing::image.
       /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
       /// @remarks The xtd::drawing::image::rotate_flip method rotates the image clockwise.
@@ -304,6 +260,54 @@ namespace xtd {
       void save(std::ostream& stream, const xtd::drawing::imaging::image_format& format) const;
       /// @}
       
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Creates an image from the specified file.
+      /// @param filename A string that contains the name of the file from which to create the image.
+      /// @return The xtd::drawing::image this method creates.
+      static image from_file(const xtd::ustring& filename) {return image(filename);}
+      
+      /// @brief Creates a xtd::drawing::bitmap from a handle to a GDI bitmap.
+      /// @param hbitmap The GDI bitmap handle from which to create the xtd::drawing::bitmap.
+      /// @return The xtd::drawing::bitmap this method creates.
+      /// @remarks The xtd::drawing::image::from_hbitmap method makes a copy of the GDI bitmap; so you can release the incoming GDI bitmap using the GDI DeleteObject method immediately after creating the new xtd::drawing::image.
+      static bitmap from_hbitmap(intptr hbitmap);
+      
+      /// @brief Creates an xtd::drawing::image from the specified data stream.
+      /// @param stream A std::istream that contains the data for this xtd::drawing::image.
+      /// @return The xtd::drawing::image this method creates.
+      /// @remarks You must keep the stream open for the lifetime of the xtd::drawing::image.
+      /// @note The xtd::drawing::image class does not support alpha transparency in bitmaps. To enable alpha transparency, use PNG images with 32 bits per pixel.
+      static image from_stream(std::istream& stream);
+      
+      /// @brief Creates an xtd::drawing::image from the specified data pointer.
+      /// @param data A pointer that contains the data for this xtd::drawing::image.
+      /// @return The xtd::drawing::image this method creates.
+      /// @remarks This method is used for creating a xtd::drawing::image from an XPM (or XBM) image.
+      static image from_data(const char* const* bits);
+      
+      /// @brief Returns the color depth, in number of bits per pixel, of the specified pixel format.
+      /// @param pixfmt The xtd::drawing::imaging::pixel_format member that specifies the format for which to find the size.
+      /// @return The color depth of the specified pixel format.
+      static int32 get_pixel_format_size(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
+      
+      /// @brief Returns a value that indicates whether the pixel format for this xtd::drawing::image contains alpha information.
+      /// @param pixfmt The PixelFormat to test.
+      /// @return true if pixfmt contains alpha information; otherwise, false.
+      static bool is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
+      
+      /// @brief Returns a value that indicates whether the pixel format is 32 bits per pixel.
+      /// @param pixfmt The PixelFormat to test.
+      /// @return true if pixfmt is canonical; otherwise, false.
+      static bool is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
+      
+      /// @brief Returns a value that indicates whether the pixel format is 64 bits per pixel.
+      /// @param pixfmt The PixelFormat to test.
+      /// @return true if pixfmt is extended; otherwise, false.
+      static bool is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
+      /// @}
+
     protected:
       /// @cond
       explicit image(intptr hbitmap);

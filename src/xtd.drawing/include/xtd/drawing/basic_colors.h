@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_drawing colors
     class drawing_export_ basic_colors final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief A system-defined color object.
@@ -92,7 +92,7 @@ namespace xtd {
       static xtd::drawing::color yellow() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Gets an array of colors.

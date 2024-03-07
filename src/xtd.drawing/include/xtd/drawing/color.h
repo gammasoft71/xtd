@@ -614,6 +614,294 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const color& value) const noexcept override;
+
+      /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
+      /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
+      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
+      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
+      /// * Uses a brush to paint rectangles.
+      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
+      /// @code
+      /// void known_color_brightness_example2(paint_event_args& e) {
+      ///   graphics g = e.graphics();
+      ///
+      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
+      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
+      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
+      ///
+      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
+      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///
+      ///   // Number of matches found.
+      ///   int count = 0;
+      ///
+      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
+      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
+      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
+      ///     if (some_color.get_brightness() == red_shade.get_brightness())
+      ///       color_matches[count++] = enum_value;
+      ///   }
+      ///
+      ///   // Display the redShade color and its argb value.
+      ///   solid_brush  my_brush1(red_shade);
+      ///   font my_font("Arial", 12);
+      ///   int x = 20;
+      ///   int y = 20;
+      ///   some_color = red_shade;
+      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///
+      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
+      ///   for (int i = 0; i < count; i++) {
+      ///     y += 40;
+      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
+      ///     my_brush1.xtd::drawing::color = some_color;
+      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///   }
+      /// }
+      /// @endcode
+      float get_brightness() const noexcept;
+      
+      /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
+      /// @return The hue, in degrees, of this xtd::drawing::color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
+      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
+      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
+      /// * Uses a brush to paint rectangles.
+      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
+      /// @code
+      /// void known_color_brightness_example2(paint_event_args& e) {
+      ///   graphics g = e.graphics();
+      ///
+      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
+      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
+      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
+      ///
+      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
+      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///
+      ///   // Number of matches found.
+      ///   int count = 0;
+      ///
+      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
+      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
+      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
+      ///     if (some_color.get_brightness() == red_shade.get_brightness())
+      ///       color_matches[count++] = enum_value;
+      ///   }
+      ///
+      ///   // Display the redShade color and its argb value.
+      ///   solid_brush  my_brush1(red_shade);
+      ///   font my_font("Arial", 12);
+      ///   int x = 20;
+      ///   int y = 20;
+      ///   some_color = red_shade;
+      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///
+      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
+      ///   for (int i = 0; i < count; i++) {
+      ///     y += 40;
+      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
+      ///     my_brush1.xtd::drawing::color = some_color;
+      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///   }
+      /// }
+      /// @endcode
+      float get_hue() const noexcept;
+      
+      /// @brief Gets the hue-saturation-lightness (HSL) lightness value for this xtd::drawing::color structure.
+      /// @return The lightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      float get_lightness() const noexcept;
+      
+      /// @brief Gets the hue-saturation-brightness (HSB) saturation value for this xtd::drawing::color structure.
+      /// @return The saturation of this xtd::drawing::color. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
+      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
+      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
+      /// * Uses a brush to paint rectangles.
+      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
+      /// @code
+      /// void known_color_brightness_example2(paint_event_args& e) {
+      ///   graphics g = e.graphics();
+      ///
+      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
+      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
+      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
+      ///
+      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
+      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///
+      ///   // Number of matches found.
+      ///   int count = 0;
+      ///
+      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
+      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
+      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
+      ///     if (some_color.get_brightness() == red_shade.get_brightness())
+      ///       color_matches[count++] = enum_value;
+      ///   }
+      ///
+      ///   // Display the redShade color and its argb value.
+      ///   solid_brush  my_brush1(red_shade);
+      ///   font my_font("Arial", 12);
+      ///   int x = 20;
+      ///   int y = 20;
+      ///   some_color = red_shade;
+      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///
+      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
+      ///   for (int i = 0; i < count; i++) {
+      ///     y += 40;
+      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
+      ///     my_brush1.xtd::drawing::color = some_color;
+      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///   }
+      /// }
+      /// @endcode
+      float get_saturation() const noexcept;
+      
+      /// @brief Gets the Y'UV color model `U` (chroma) value for this xtd::drawing::color structure.
+      /// @return The Y'UV `U` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
+      float get_u() const noexcept;
+      
+      /// @brief Gets the Y'UV color model `V` (chroma) value for this xtd::drawing::color structure.
+      /// @return The Y'UV `V` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
+      float get_v() const noexcept;
+      
+      /// @brief Gets the Y'UV color model `Y` (luma) value for this xtd::drawing::color structure.
+      /// @return The Y'UV `Y` value of this xtd::drawing::color. The y ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      float get_y() const noexcept;
+      
+      /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
+      /// @return The 32-bit ARGB value of this xtd::drawing::color.
+      /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args e, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have a non-zero green component and a zero-value red component, and that are not system colors.
+      /// * During each iteration, saves the xtd::drawing::known_color element - if it matches the criteria - in an array.
+      /// * Uses a brush to paint rectangles.
+      /// Each of the rectangles is painted a xtd::drawing::known_color that matches the criteria stated in the first bullet. The name of the xtd::drawing::known_color and its component values are also displayed.
+      /// This example displays certain known colors, the names of the colors, and their four component values. The xtd::drawing::color::to_argb method is used as a preliminary step to display the component values.
+      /// @code
+      /// void to_argb_to_string_example1(paint_event_args& e) {
+      ///   graphics g = e.graphics();
+      ///   ///
+      ///   // Color structure used for temporary storage.
+      ///   color some_color = color::from_argb(0);
+      ///   ///
+      ///   // Vector to store known_color values that match the criteria.
+      ///   std::vector<known_color> color_matches;
+      ///   ///
+      ///   // Iterate through the KnownColor enums to find all corresponding colors
+      ///   // that have a nonzero green component and zero-value red component and
+      ///   // that are not system colors.
+      ///   for (int enum_value = 0; enum_value <= static_cast<int>(known_color::yellow_green); ++enum_value) {
+      ///     some_color = color::from_known_color(static_cast<known_color>(enum_value));
+      ///     if (some_color.g() != 0 && some_color.r() == 0 && !some_color.is_system_color())
+      ///       color_matches.emplace_back(static_cast<known_color>(enum_value));
+      ///   }
+      ///   solid_brush my_brush1 {some_color};
+      ///   font my_font {"Arial", 9};
+      ///   int x = 40;
+      ///   int y = 40;
+      ///   ///
+      ///   // Iterate through the matches that were found and display each color that
+      ///   // corresponds with the enum value in the array. also display the name of
+      ///   // the known_color and the ARGB components.
+      ///   for (size_t i = 0; i < color_matches.size(); ++i) {
+      ///     // Display the color.
+      ///     some_color = color::from_known_color(color_matches[i]);
+      ///     my_brush1.color(some_color);
+      ///     g.fill_rectangle(my_brush1, x, y, 50, 30);
+      ///     ///
+      ///     // Display known_color name and the four component values. To display the
+      ///     // component values:  Use the to_argb method to get the 32-bit ARGB value
+      ///     // of some_color, which was created from a known_color. Then create a
+      ///     // color structure from the 32-bit ARGB value and set some_color equal to
+      ///     // this new color structure. Then use the to_string method to convert it to
+      ///     // a string.
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black(), x + 55, y);
+      ///     some_color = color::from_argb(some_color.to_argb());
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black(), x + 55, y + 15);
+      ///     y += 40;
+      ///   }
+      /// }
+      /// @endcode
+      uint32 to_argb() const noexcept;
+      
+      /// @brief Gets the xtd::drawing::known_color value of this xtd::drawing::color class.
+      /// @return xtd::drawing::known_color An element of the xtd::drawing::known_color enumeration, if the xtd::drawing::color is created from a predefined color by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, 0.
+      /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. When the xtd::drawing::color::to_known_color method is applied to a xtd::drawing::color structure that is created by using the FromArgb method, xtd::drawing::color::to_known_color returns 0, even if the ARGB value matches the ARGB value of a predefined color. xtd::drawing::color::to_known_color also returns 0 when it is applied to a xtd::drawing::color structure that is created by using the xtd::drawing::color::from_name method with a string name that is not valid.
+      xtd::drawing::known_color to_known_color() const noexcept;
+      
+      /// @brief Creates a human-readable string that represents this color class.
+      /// @return string A string that represents this Size.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
+      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
+      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
+      /// * Uses a brush to paint rectangles.
+      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
+      /// @code
+      /// void known_color_brightness_example2(paint_event_args& e) {
+      ///   graphics g = e.graphics();
+      ///
+      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
+      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
+      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
+      ///
+      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
+      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///
+      ///   // Number of matches found.
+      ///   int count = 0;
+      ///
+      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
+      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
+      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
+      ///     if (some_color.get_brightness() == red_shade.get_brightness())
+      ///       color_matches[count++] = enum_value;
+      ///   }
+      ///
+      ///   // Display the redShade color and its argb value.
+      ///   solid_brush  my_brush1(red_shade);
+      ///   font my_font("Arial", 12);
+      ///   int x = 20;
+      ///   int y = 20;
+      ///   some_color = red_shade;
+      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///
+      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
+      ///   for (int i = 0; i < count; i++) {
+      ///     y += 40;
+      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
+      ///     my_brush1.xtd::drawing::color = some_color;
+      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///   }
+      /// }
+      /// @endcode
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
       /// @param color2 The second color.
@@ -655,8 +943,6 @@ namespace xtd {
       /// @return The new color.
       /// @remarks Thus, a percent value of `1.0` will return the xtd::drawing::color::black, while a value of `0.0` will return the color.
       static color dark(const color& color, double percent) noexcept;
-
-      bool equals(const color& value) const noexcept override;
       
       /// @brief Creates a xtd::drawing::color class from a 32-bit ARGB value.
       /// @param argb A value specifying the 32-bit ARGB value
@@ -962,175 +1248,6 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color from_yuv(float y, float u, float v) noexcept;
 
-      /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
-      /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
-      /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
-      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
-      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
-      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
-      /// * Uses a brush to paint rectangles.
-      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
-      /// @code
-      /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics g = e.graphics();
-      ///
-      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
-      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
-      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
-      ///
-      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
-      ///
-      ///   // Number of matches found.
-      ///   int count = 0;
-      ///
-      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
-      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
-      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
-      ///     if (some_color.get_brightness() == red_shade.get_brightness())
-      ///       color_matches[count++] = enum_value;
-      ///   }
-      ///
-      ///   // Display the redShade color and its argb value.
-      ///   solid_brush  my_brush1(red_shade);
-      ///   font my_font("Arial", 12);
-      ///   int x = 20;
-      ///   int y = 20;
-      ///   some_color = red_shade;
-      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
-      ///
-      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
-      ///   for (int i = 0; i < count; i++) {
-      ///     y += 40;
-      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
-      ///     my_brush1.xtd::drawing::color = some_color;
-      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
-      ///   }
-      /// }
-      /// @endcode
-      float get_brightness() const noexcept;
-      
-      /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
-      /// @return The hue, in degrees, of this xtd::drawing::color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.
-      /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
-      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
-      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
-      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
-      /// * Uses a brush to paint rectangles.
-      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
-      /// @code
-      /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics g = e.graphics();
-      ///
-      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
-      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
-      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
-      ///
-      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
-      ///
-      ///   // Number of matches found.
-      ///   int count = 0;
-      ///
-      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
-      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
-      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
-      ///     if (some_color.get_brightness() == red_shade.get_brightness())
-      ///       color_matches[count++] = enum_value;
-      ///   }
-      ///
-      ///   // Display the redShade color and its argb value.
-      ///   solid_brush  my_brush1(red_shade);
-      ///   font my_font("Arial", 12);
-      ///   int x = 20;
-      ///   int y = 20;
-      ///   some_color = red_shade;
-      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
-      ///
-      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
-      ///   for (int i = 0; i < count; i++) {
-      ///     y += 40;
-      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
-      ///     my_brush1.xtd::drawing::color = some_color;
-      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
-      ///   }
-      /// }
-      /// @endcode
-      float get_hue() const noexcept;
-      
-      /// @brief Gets the hue-saturation-lightness (HSL) lightness value for this xtd::drawing::color structure.
-      /// @return The lightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
-      float get_lightness() const noexcept;
-      
-      /// @brief Gets the hue-saturation-brightness (HSB) saturation value for this xtd::drawing::color structure.
-      /// @return The saturation of this xtd::drawing::color. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
-      /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
-      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
-      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
-      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
-      /// * Uses a brush to paint rectangles.
-      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
-      /// @code
-      /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics g = e.graphics();
-      ///
-      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
-      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
-      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
-      ///
-      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
-      ///
-      ///   // Number of matches found.
-      ///   int count = 0;
-      ///
-      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
-      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
-      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
-      ///     if (some_color.get_brightness() == red_shade.get_brightness())
-      ///       color_matches[count++] = enum_value;
-      ///   }
-      ///
-      ///   // Display the redShade color and its argb value.
-      ///   solid_brush  my_brush1(red_shade);
-      ///   font my_font("Arial", 12);
-      ///   int x = 20;
-      ///   int y = 20;
-      ///   some_color = red_shade;
-      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
-      ///
-      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
-      ///   for (int i = 0; i < count; i++) {
-      ///     y += 40;
-      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
-      ///     my_brush1.xtd::drawing::color = some_color;
-      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
-      ///   }
-      /// }
-      /// @endcode
-      float get_saturation() const noexcept;
-
-      /// @brief Gets the Y'UV color model `U` (chroma) value for this xtd::drawing::color structure.
-      /// @return The Y'UV `U` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
-      float get_u() const noexcept;
-
-      /// @brief Gets the Y'UV color model `V` (chroma) value for this xtd::drawing::color structure.
-      /// @return The Y'UV `V` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
-      float get_v() const noexcept;
-
-      /// @brief Gets the Y'UV color model `Y` (luma) value for this xtd::drawing::color structure.
-      /// @return The Y'UV `Y` value of this xtd::drawing::color. The y ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
-      float get_y() const noexcept;
-
       /// @brief Creates a new lighter color of the specified color with 33% factor.
       /// @param color The color to light.
       /// @return The new color.
@@ -1150,119 +1267,6 @@ namespace xtd {
       /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color parse(const xtd::ustring& color) noexcept;
-      
-      /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
-      /// @return The 32-bit ARGB value of this xtd::drawing::color.
-      /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args e, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
-      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have a non-zero green component and a zero-value red component, and that are not system colors.
-      /// * During each iteration, saves the xtd::drawing::known_color element - if it matches the criteria - in an array.
-      /// * Uses a brush to paint rectangles.
-      /// Each of the rectangles is painted a xtd::drawing::known_color that matches the criteria stated in the first bullet. The name of the xtd::drawing::known_color and its component values are also displayed.
-      /// This example displays certain known colors, the names of the colors, and their four component values. The xtd::drawing::color::to_argb method is used as a preliminary step to display the component values.
-      /// @code
-      /// void to_argb_to_string_example1(paint_event_args& e) {
-      ///   graphics g = e.graphics();
-      ///   ///
-      ///   // Color structure used for temporary storage.
-      ///   color some_color = color::from_argb(0);
-      ///   ///
-      ///   // Vector to store known_color values that match the criteria.
-      ///   std::vector<known_color> color_matches;
-      ///   ///
-      ///   // Iterate through the KnownColor enums to find all corresponding colors
-      ///   // that have a nonzero green component and zero-value red component and
-      ///   // that are not system colors.
-      ///   for (int enum_value = 0; enum_value <= static_cast<int>(known_color::yellow_green); ++enum_value) {
-      ///     some_color = color::from_known_color(static_cast<known_color>(enum_value));
-      ///     if (some_color.g() != 0 && some_color.r() == 0 && !some_color.is_system_color())
-      ///       color_matches.emplace_back(static_cast<known_color>(enum_value));
-      ///   }
-      ///   solid_brush my_brush1 {some_color};
-      ///   font my_font {"Arial", 9};
-      ///   int x = 40;
-      ///   int y = 40;
-      ///   ///
-      ///   // Iterate through the matches that were found and display each color that
-      ///   // corresponds with the enum value in the array. also display the name of
-      ///   // the known_color and the ARGB components.
-      ///   for (size_t i = 0; i < color_matches.size(); ++i) {
-      ///     // Display the color.
-      ///     some_color = color::from_known_color(color_matches[i]);
-      ///     my_brush1.color(some_color);
-      ///     g.fill_rectangle(my_brush1, x, y, 50, 30);
-      ///     ///
-      ///     // Display known_color name and the four component values. To display the
-      ///     // component values:  Use the to_argb method to get the 32-bit ARGB value
-      ///     // of some_color, which was created from a known_color. Then create a
-      ///     // color structure from the 32-bit ARGB value and set some_color equal to
-      ///     // this new color structure. Then use the to_string method to convert it to
-      ///     // a string.
-      ///     g.draw_string(some_color.to_string(), my_font, brushes::black(), x + 55, y);
-      ///     some_color = color::from_argb(some_color.to_argb());
-      ///     g.draw_string(some_color.to_string(), my_font, brushes::black(), x + 55, y + 15);
-      ///     y += 40;
-      ///   }
-      /// }
-      /// @endcode
-      uint32 to_argb() const noexcept;
-      
-      /// @brief Gets the xtd::drawing::known_color value of this xtd::drawing::color class.
-      /// @return xtd::drawing::known_color An element of the xtd::drawing::known_color enumeration, if the xtd::drawing::color is created from a predefined color by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, 0.
-      /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. When the xtd::drawing::color::to_known_color method is applied to a xtd::drawing::color structure that is created by using the FromArgb method, xtd::drawing::color::to_known_color returns 0, even if the ARGB value matches the ARGB value of a predefined color. xtd::drawing::color::to_known_color also returns 0 when it is applied to a xtd::drawing::color structure that is created by using the xtd::drawing::color::from_name method with a string name that is not valid.
-      xtd::drawing::known_color to_known_color() const noexcept;
-      
-      /// @brief Creates a human-readable string that represents this color class.
-      /// @return string A string that represents this Size.
-      /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires xtd::forms::paint_event_args, which is a parameter of the xtd::forms::control::paint event handler. The code performs the following actions:
-      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
-      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
-      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
-      /// * Uses a brush to paint rectangles.
-      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
-      /// @code
-      /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics g = e.graphics();
-      ///
-      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
-      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
-      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
-      ///
-      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
-      ///
-      ///   // Number of matches found.
-      ///   int count = 0;
-      ///
-      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
-      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
-      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
-      ///     if (some_color.get_brightness() == red_shade.get_brightness())
-      ///       color_matches[count++] = enum_value;
-      ///   }
-      ///
-      ///   // Display the redShade color and its argb value.
-      ///   solid_brush  my_brush1(red_shade);
-      ///   font my_font("Arial", 12);
-      ///   int x = 20;
-      ///   int y = 20;
-      ///   some_color = red_shade;
-      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
-      ///
-      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
-      ///   for (int i = 0; i < count; i++) {
-      ///     y += 40;
-      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
-      ///     my_brush1.xtd::drawing::color = some_color;
-      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
-      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
-      ///   }
-      /// }
-      /// @endcode
-      xtd::ustring to_string() const noexcept override;
       /// @}
       
     private:
