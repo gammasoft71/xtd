@@ -193,29 +193,6 @@ Inheritance diagram for xtd::diagnostics::stack_frame:</div>
 <tr class="memdesc:a9675ae4558328c82740671a909b5d479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an empty stack frame.  <br /></td></tr>
 <tr class="separator:a9675ae4558328c82740671a909b5d479"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a4f1c46a03f78c89d139c40ef7b6dcd82"><td class="memItemLeft" align="right" valign="top"><a id="a4f1c46a03f78c89d139c40ef7b6dcd82" name="a4f1c46a03f78c89d139c40ef7b6dcd82"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> &amp;sf) const noexcept override</td></tr>
-<tr class="separator:a4f1c46a03f78c89d139c40ef7b6dcd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7496f96bd9e3f7cd9e79f294aee72ac9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a7496f96bd9e3f7cd9e79f294aee72ac9">get_file_column_number</a> () const noexcept</td></tr>
-<tr class="memdesc:a7496f96bd9e3f7cd9e79f294aee72ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
-<tr class="separator:a7496f96bd9e3f7cd9e79f294aee72ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1832cdfb7233ada545f1af44983843ae"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a1832cdfb7233ada545f1af44983843ae">get_file_line_number</a> () const noexcept</td></tr>
-<tr class="memdesc:a1832cdfb7233ada545f1af44983843ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
-<tr class="separator:a1832cdfb7233ada545f1af44983843ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c7c3064010482060dc20aeb53b48797"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a3c7c3064010482060dc20aeb53b48797">get_file_name</a> () const noexcept</td></tr>
-<tr class="memdesc:a3c7c3064010482060dc20aeb53b48797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file name that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
-<tr class="separator:a3c7c3064010482060dc20aeb53b48797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae946fcdc9bfcf32e2a832815c40eeb08"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">get_method</a> () const noexcept</td></tr>
-<tr class="memdesc:ae946fcdc9bfcf32e2a832815c40eeb08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the method in which the frame is executing.  <br /></td></tr>
-<tr class="separator:ae946fcdc9bfcf32e2a832815c40eeb08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d3c0caad738e5c22c17909a7e8db9ce"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">get_offset</a> () const noexcept</td></tr>
-<tr class="memdesc:a5d3c0caad738e5c22c17909a7e8db9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset from the start of the code for the method that is being executed.  <br /></td></tr>
-<tr class="separator:a5d3c0caad738e5c22c17909a7e8db9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa33a16f44ae88f1f7e6068ec32e376"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5aa33a16f44ae88f1f7e6068ec32e376">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:a5aa33a16f44ae88f1f7e6068ec32e376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a readable representation of the stack trace.  <br /></td></tr>
-<tr class="separator:a5aa33a16f44ae88f1f7e6068ec32e376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a43999f81ef9259a28a3a0a6880da3276"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a43999f81ef9259a28a3a0a6880da3276">stack_frame</a> ()</td></tr>
 <tr class="memdesc:a43999f81ef9259a28a3a0a6880da3276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class.  <br /></td></tr>
@@ -244,6 +221,29 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a25af3522596dfd97dded1fa68d2089a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a25af3522596dfd97dded1fa68d2089a4">stack_frame</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;file_name, <a class="el" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> line_number, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;method_name, <a class="el" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> column_number, <a class="el" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> offset)</td></tr>
 <tr class="memdesc:a25af3522596dfd97dded1fa68d2089a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class that contains only the given file name, line number, column number, method name, and offset.  <br /></td></tr>
 <tr class="separator:a25af3522596dfd97dded1fa68d2089a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
+<tr class="memitem:a4f1c46a03f78c89d139c40ef7b6dcd82"><td class="memItemLeft" align="right" valign="top"><a id="a4f1c46a03f78c89d139c40ef7b6dcd82" name="a4f1c46a03f78c89d139c40ef7b6dcd82"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> &amp;sf) const noexcept override</td></tr>
+<tr class="separator:a4f1c46a03f78c89d139c40ef7b6dcd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7496f96bd9e3f7cd9e79f294aee72ac9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a7496f96bd9e3f7cd9e79f294aee72ac9">get_file_column_number</a> () const noexcept</td></tr>
+<tr class="memdesc:a7496f96bd9e3f7cd9e79f294aee72ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
+<tr class="separator:a7496f96bd9e3f7cd9e79f294aee72ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1832cdfb7233ada545f1af44983843ae"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a1832cdfb7233ada545f1af44983843ae">get_file_line_number</a> () const noexcept</td></tr>
+<tr class="memdesc:a1832cdfb7233ada545f1af44983843ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
+<tr class="separator:a1832cdfb7233ada545f1af44983843ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c7c3064010482060dc20aeb53b48797"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a3c7c3064010482060dc20aeb53b48797">get_file_name</a> () const noexcept</td></tr>
+<tr class="memdesc:a3c7c3064010482060dc20aeb53b48797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file name that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.  <br /></td></tr>
+<tr class="separator:a3c7c3064010482060dc20aeb53b48797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae946fcdc9bfcf32e2a832815c40eeb08"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">get_method</a> () const noexcept</td></tr>
+<tr class="memdesc:ae946fcdc9bfcf32e2a832815c40eeb08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the method in which the frame is executing.  <br /></td></tr>
+<tr class="separator:ae946fcdc9bfcf32e2a832815c40eeb08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3c0caad738e5c22c17909a7e8db9ce"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">get_offset</a> () const noexcept</td></tr>
+<tr class="memdesc:a5d3c0caad738e5c22c17909a7e8db9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset from the start of the code for the method that is being executed.  <br /></td></tr>
+<tr class="separator:a5d3c0caad738e5c22c17909a7e8db9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa33a16f44ae88f1f7e6068ec32e376"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5aa33a16f44ae88f1f7e6068ec32e376">to_string</a> () const noexcept override</td></tr>
+<tr class="memdesc:a5aa33a16f44ae88f1f7e6068ec32e376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a readable representation of the stack trace.  <br /></td></tr>
+<tr class="separator:a5aa33a16f44ae88f1f7e6068ec32e376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -930,7 +930,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 7 2024 10:43:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 17:00:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

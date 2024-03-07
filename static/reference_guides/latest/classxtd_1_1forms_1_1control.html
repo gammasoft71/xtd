@@ -2514,7 +2514,8 @@ Because client coordinates are relative to the upper-left corner of the client a
 </div><div class="memdoc">
 
 <p>Gets control appearance. </p>
-<dl class="section return"><dt>Returns</dt><dd>One of <a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316" title="Specifies the appearance of a control.">xtd::forms::control_appearance</a> values. THe default is <a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316ac00f0c4675b91fb8b918e4079a0b1bac" title="The appearance of the control is determined by current theme of xtd.">xtd::forms::control_appearance::standard</a>. @Remarks The control appearance determine how the control is drawed :<ul>
+<dl class="section return"><dt>Returns</dt><dd>One of <a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316" title="Specifies the appearance of a control.">xtd::forms::control_appearance</a> values. THe default is <a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316ac00f0c4675b91fb8b918e4079a0b1bac" title="The appearance of the control is determined by current theme of xtd.">xtd::forms::control_appearance::standard</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The control appearance determine how the control is drawed :<ul>
 <li>xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.</li>
 <li>xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system. </li>
 </ul>
@@ -2551,14 +2552,15 @@ Because client coordinates are relative to the upper-left corner of the client a
 <p>Sets control appearance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>One of <a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316" title="Specifies the appearance of a control.">xtd::forms::control_appearance</a> values. THe default is <a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316ac00f0c4675b91fb8b918e4079a0b1bac" title="The appearance of the control is determined by current theme of xtd.">xtd::forms::control_appearance::standard</a>. @Remarks The control appearance determine how the control is drawed :<ul>
-<li>xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.</li>
-<li>xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system. </li>
-</ul>
-</td></tr>
+    <tr><td class="paramname">value</td><td>One of <a class="el" href="group__xtd__forms.html#ga5d307293383256b1361069a8e6c57316" title="Specifies the appearance of a control.">xtd::forms::control_appearance</a> values. THe default is <a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316ac00f0c4675b91fb8b918e4079a0b1bac" title="The appearance of the control is determined by current theme of xtd.">xtd::forms::control_appearance::standard</a>. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The control appearance determine how the control is drawed :<ul>
+<li>xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.</li>
+<li>xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system. </li>
+</ul>
+</dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1button__base.html#ad103f0004d6418a83bebebf861186ca9">xtd::forms::button_base</a>, <a class="el" href="classxtd_1_1forms_1_1group__box.html#a9a913199266afb54beb7b09263ecf03c">xtd::forms::group_box</a>, <a class="el" href="classxtd_1_1forms_1_1label.html#a2551c88922acf3df058442ff4e7b8461">xtd::forms::label</a>, <a class="el" href="classxtd_1_1forms_1_1loading__indicator.html#a068558715cbd11181dd7aa22dc5fdf88">xtd::forms::loading_indicator</a>, <a class="el" href="classxtd_1_1forms_1_1button__base.html#a275bdd7360ee5dee16bb52305f014dd6">xtd::forms::button_base</a>, <a class="el" href="classxtd_1_1forms_1_1group__box.html#a275bdd7360ee5dee16bb52305f014dd6">xtd::forms::group_box</a>, <a class="el" href="classxtd_1_1forms_1_1label.html#a275bdd7360ee5dee16bb52305f014dd6">xtd::forms::label</a>, and <a class="el" href="classxtd_1_1forms_1_1loading__indicator.html#a275bdd7360ee5dee16bb52305f014dd6">xtd::forms::loading_indicator</a>.</p>
 
@@ -4891,7 +4893,8 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 <p>Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">child</td><td>The control to search for in the control collection. @param throw_exception true to throw an exception if the control specified in the child parameter is not a control in the <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">control::control_collection</a>; otherwise, false. </td></tr>
+    <tr><td class="paramname">child</td><td>The control to search for in the control collection. </td></tr>
+    <tr><td class="paramname">throw_exception</td><td>true to throw an exception if the control specified in the child parameter is not a control in the <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">control::control_collection</a>; otherwise, false. </td></tr>
   </table>
   </dd>
 </dl>
@@ -12782,7 +12785,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 7 2024 10:43:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 17:00:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

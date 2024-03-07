@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><span class="keyword">namespace </span>console_firework_example {</div>
 <div class="line">  <span class="keyword">class </span>firework <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    firework(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> delay_) : x_(x), y_(y), color_(color), delay_(delay_) {}</div>
+<div class="line">    firework(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> delay_) : x_(x), y_(y), color_(color), delay_(delay_) {}</div>
 <div class="line">    firework(<span class="keyword">const</span> firework&amp; firework) : x_(firework.x_), y_(firework.y_), color_(firework.color_), delay_(firework.delay_) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">int</span> delay() {<span class="keywordflow">return</span> delay_;}</div>
@@ -112,13 +112,13 @@ $(function() {
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">int</span> x_ = 0;</div>
 <div class="line">    <span class="keywordtype">int</span> y_ = 0;</div>
-<div class="line">    <a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color_ = console_color::black;</div>
+<div class="line">    <a class="code hl_enumeration" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color_ = console_color::black;</div>
 <div class="line">    <span class="keywordtype">int</span> delay_ = 0;</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>firework_start : <span class="keyword">public</span> firework {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    firework_start(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
+<div class="line">    firework_start(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
@@ -129,7 +129,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>firework_exploded : <span class="keyword">public</span> firework {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    firework_exploded(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
+<div class="line">    firework_exploded(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_exploded(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
@@ -142,7 +142,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>firework_start_expanded1 : <span class="keyword">public</span> firework {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    firework_start_expanded1(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
+<div class="line">    firework_start_expanded1(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start_expanded1(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
@@ -157,7 +157,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>firework_start_expanded2 : <span class="keyword">public</span> firework {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    firework_start_expanded2(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
+<div class="line">    firework_start_expanded2(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start_expanded2(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
@@ -172,7 +172,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>firework_start_expanded3 : <span class="keyword">public</span> firework {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    firework_start_expanded3(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
+<div class="line">    firework_start_expanded3(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start_expanded3(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
@@ -187,7 +187,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>firework_start_expanded4 : <span class="keyword">public</span> firework {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    firework_start_expanded4(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
+<div class="line">    firework_start_expanded4(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start_expanded4(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
@@ -202,7 +202,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>firework_end : <span class="keyword">public</span> firework {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    firework_end(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
+<div class="line">    firework_end(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code hl_enumeration" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">console_color</a> color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_end(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
@@ -297,13 +297,13 @@ $(function() {
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:166</div></div>
 <div class="ttc" id="agroup__keywords_html_ga8bad3fd3f3b8afda1d635fa70ebaaa8e"><div class="ttname"><a href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a></div><div class="ttdeci">#define abstract_</div><div class="ttdoc">This keyword is used to represents an abstract class.</div><div class="ttdef"><b>Definition</b> abstract.h:23</div></div>
 <div class="ttc" id="agroup__types_html_gaf6b556b49d28b448fc2c5af1d820f3ea"><div class="ttname"><a href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">xtd::ticks</a></div><div class="ttdeci">std::chrono::duration&lt; int64, tick &gt; ticks</div><div class="ttdoc">Represents a tick duration.</div><div class="ttdef"><b>Definition</b> ticks.h:21</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gab60a2a64b74b91771b667e4a079681f2"><div class="ttname"><a href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">xtd::console_color</a></div><div class="ttdeci">console_color</div><div class="ttdoc">Specifies constants that define foreground and background colors for the console.</div><div class="ttdef"><b>Definition</b> console_color.h:18</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
-<div class="ttc" id="anamespacextd_html_ab60a2a64b74b91771b667e4a079681f2"><div class="ttname"><a href="namespacextd.html#ab60a2a64b74b91771b667e4a079681f2">xtd::console_color</a></div><div class="ttdeci">console_color</div><div class="ttdef"><b>Definition</b> console_color.h:19</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 7 2024 10:42:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 17:00:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

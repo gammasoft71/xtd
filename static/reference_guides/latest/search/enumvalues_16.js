@@ -9,7 +9,7 @@ var searchData=
   ['wednesday_6',['wednesday',['../group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2aaae446086f8e81194ed115b566bf2e3d',1,'xtd::wednesday'],['../group__xtd__forms.html#gga108529868f1e8670d0a2cb08f311c36baaae446086f8e81194ed115b566bf2e3d',1,'xtd::forms::wednesday']]],
   ['week_5fnumbers_7',['week_numbers',['../classxtd_1_1forms_1_1month__calendar.html#adbf081e69d9c32aebd315f4b05c69177a7c7da9c7849c25543a6bdd6fea8480b4',1,'xtd::forms::month_calendar']]],
   ['wheat_8',['wheat',['../group__colors.html#ggabb6249e3fb8a4388778157257e99049bad29db4ac8712f5bdb343991281b26db1',1,'xtd::drawing']]],
-  ['white_9',['white',['../namespacextd.html#ab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c',1,'xtd::white'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049bad508fe45cecaf653904a0e774084bb5c',1,'xtd::drawing::white']]],
+  ['white_9',['white',['../group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c',1,'xtd::white'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049bad508fe45cecaf653904a0e774084bb5c',1,'xtd::drawing::white']]],
   ['white_5fsmoke_10',['white_smoke',['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba37ecf1e4670c4944a0f98bcb39728578',1,'xtd::drawing']]],
   ['whiteness_11',['whiteness',['../group__xtd__drawing.html#gga5a8edc9c35f0925441603048859eef6eac1cb7c53bfd3fca053494967faf61d3f',1,'xtd::drawing']]],
   ['wide_5fchecker_5fboard_12',['wide_checker_board',['../group__xtd__drawing.html#ggae7711973ea9941238900716fbd331fccaccca669ee0633af7ab496473b8a66324',1,'xtd::drawing::drawing_2d']]],

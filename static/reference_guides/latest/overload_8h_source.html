@@ -127,26 +127,26 @@ $(function() {
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> result_t&gt;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="structxtd_1_1overload.html#a7360587d3f0a0bb9d203ce62edcc0113">   95</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="structxtd_1_1overload.html#a7360587d3f0a0bb9d203ce62edcc0113">of</a>(result_t (*method)(args_t...)) noexcept -&gt; decltype(method) {<span class="keywordflow">return</span> method;}</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  };</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... args_t&gt;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">inline</span> <span class="keyword">const</span> overload&lt;args_t...&gt; <a class="code hl_define" href="group__xtd__core.html#ga93032605a652548319ef755164012601">overload_</a>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... args_t&gt;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">inline</span> <span class="keyword">const</span> const_overload&lt;args_t...&gt; <a class="code hl_define" href="group__xtd__core.html#ga3faae72dc22c5ec5248d0df67d8124d4">const_overload_</a>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... args_t&gt;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">inline</span> <span class="keyword">const</span> non_const_overload&lt;args_t...&gt; <a class="code hl_define" href="group__xtd__core.html#gab677ff30cf9fc2ac2be398be3c79193f">non_const_overload_</a>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga93032605a652548319ef755164012601">  116</a></span><span class="preprocessor">#define overload_ xtd::overload_</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga3faae72dc22c5ec5248d0df67d8124d4">  124</a></span><span class="preprocessor">#define const_overload_ xtd::const_overload_</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="group__xtd__core.html#gab677ff30cf9fc2ac2be398be3c79193f">  132</a></span><span class="preprocessor">#define non_const_overload_ xtd::non_const_overload_</span></div>
-<div class="ttc" id="agroup__xtd__core_html_ga3faae72dc22c5ec5248d0df67d8124d4"><div class="ttname"><a href="group__xtd__core.html#ga3faae72dc22c5ec5248d0df67d8124d4">const_overload_</a></div><div class="ttdeci">#define const_overload_</div><div class="ttdoc">Helper keyword that use to determine one of const overloaded methods.</div><div class="ttdef"><b>Definition</b> overload.h:124</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga93032605a652548319ef755164012601"><div class="ttname"><a href="group__xtd__core.html#ga93032605a652548319ef755164012601">overload_</a></div><div class="ttdeci">#define overload_</div><div class="ttdoc">Helper keyword that use to determine one of const and non const overloaded methods.</div><div class="ttdef"><b>Definition</b> overload.h:116</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gab677ff30cf9fc2ac2be398be3c79193f"><div class="ttname"><a href="group__xtd__core.html#gab677ff30cf9fc2ac2be398be3c79193f">non_const_overload_</a></div><div class="ttdeci">#define non_const_overload_</div><div class="ttdoc">Helper keyword that use to determine one of non const overloaded methods.</div><div class="ttdef"><b>Definition</b> overload.h:132</div></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  };</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... args_t&gt;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">inline</span> <span class="keyword">const</span> overload&lt;args_t...&gt; <a class="code hl_define" href="group__xtd__core.html#ga93032605a652548319ef755164012601">overload_</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... args_t&gt;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keyword">inline</span> <span class="keyword">const</span> const_overload&lt;args_t...&gt; <a class="code hl_define" href="group__xtd__core.html#ga3faae72dc22c5ec5248d0df67d8124d4">const_overload_</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... args_t&gt;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keyword">inline</span> <span class="keyword">const</span> non_const_overload&lt;args_t...&gt; <a class="code hl_define" href="group__xtd__core.html#gab677ff30cf9fc2ac2be398be3c79193f">non_const_overload_</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga93032605a652548319ef755164012601">  117</a></span><span class="preprocessor">#define overload_ xtd::overload_</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga3faae72dc22c5ec5248d0df67d8124d4">  125</a></span><span class="preprocessor">#define const_overload_ xtd::const_overload_</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="group__xtd__core.html#gab677ff30cf9fc2ac2be398be3c79193f">  133</a></span><span class="preprocessor">#define non_const_overload_ xtd::non_const_overload_</span></div>
+<div class="ttc" id="agroup__xtd__core_html_ga3faae72dc22c5ec5248d0df67d8124d4"><div class="ttname"><a href="group__xtd__core.html#ga3faae72dc22c5ec5248d0df67d8124d4">const_overload_</a></div><div class="ttdeci">#define const_overload_</div><div class="ttdoc">Helper keyword that use to determine one of const overloaded methods.</div><div class="ttdef"><b>Definition</b> overload.h:125</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga93032605a652548319ef755164012601"><div class="ttname"><a href="group__xtd__core.html#ga93032605a652548319ef755164012601">overload_</a></div><div class="ttdeci">#define overload_</div><div class="ttdoc">Helper keyword that use to determine one of const and non const overloaded methods.</div><div class="ttdef"><b>Definition</b> overload.h:117</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gab677ff30cf9fc2ac2be398be3c79193f"><div class="ttname"><a href="group__xtd__core.html#gab677ff30cf9fc2ac2be398be3c79193f">non_const_overload_</a></div><div class="ttdeci">#define non_const_overload_</div><div class="ttdoc">Helper keyword that use to determine one of non const overloaded methods.</div><div class="ttdef"><b>Definition</b> overload.h:133</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 <div class="ttc" id="astructxtd_1_1const__overload_html"><div class="ttname"><a href="structxtd_1_1const__overload.html">xtd::const_overload</a></div><div class="ttdoc">Represents class that use to determine one of const overloaded methods.</div><div class="ttdef"><b>Definition</b> overload.h:43</div></div>
 <div class="ttc" id="astructxtd_1_1const__overload_html_a13c9db2d77ec51e1885cf54b4744972b"><div class="ttname"><a href="structxtd_1_1const__overload.html#a13c9db2d77ec51e1885cf54b4744972b">xtd::const_overload::of</a></div><div class="ttdeci">static constexpr auto of(result_t(type_t::*method)(args_t...) const) noexcept -&gt; decltype(method)</div><div class="ttdoc">Returns a pointer to an overloaded method. The template parameter is the list of the argument types o...</div><div class="ttdef"><b>Definition</b> overload.h:61</div></div>
@@ -161,7 +161,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 7 2024 10:42:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 17:00:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

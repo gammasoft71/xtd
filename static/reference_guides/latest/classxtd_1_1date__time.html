@@ -234,7 +234,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a9af33e7a4b6e3f10f19133e026c1bc0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> ()=default</td></tr>
-<tr class="memdesc:a9af33e7a4b6e3f10f19133e026c1bc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure. @Remarks <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> is initialized by default with <a class="el" href="classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd" title="Represents the smallest possible value of xtd::date_time. This field is read-only.">xtd::date_time::min_value</a>.  <br /></td></tr>
+<tr class="memdesc:a9af33e7a4b6e3f10f19133e026c1bc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure.  <br /></td></tr>
 <tr class="separator:a9af33e7a4b6e3f10f19133e026c1bc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a207d2eb1675847f54a830410446170bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a207d2eb1675847f54a830410446170bc">date_time</a> (<a class="el" href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">int64</a> <a class="el" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>)</td></tr>
 <tr class="memdesc:a207d2eb1675847f54a830410446170bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to a specified number of ticks.  <br /></td></tr>
@@ -506,7 +506,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure. @Remarks <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> is initialized by default with <a class="el" href="classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd" title="Represents the smallest possible value of xtd::date_time. This field is read-only.">xtd::date_time::min_value</a>. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure. </p>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> is initialized by default with <a class="el" href="classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd" title="Represents the smallest possible value of xtd::date_time. This field is read-only.">xtd::date_time::min_value</a>. </dd></dl>
 
 </div>
 </div>
@@ -3955,7 +3956,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
 <dd>
 If the date and time of the current instance is earlier than value, the method returns a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that represents a negative time span. That is, the value of all of its non-zero properties (such as xtd::date_time::days or <a class="el" href="classxtd_1_1date__time.html#a1aba401d57acd3b150c6ac29609025be" title="Gets the number of ticks that represent the date and time of this instance.">xtd::date_time::ticks</a>) is negative. </dd>
 <dd>
-The xtd::date_time::subtract(const xtd::date_time&amp;) method does not consider the value of the <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f" title="Gets a value that indicates whether the time represented by this instance is based on local time,...">xtd::date_time::kind</a> property of the two <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> values when performing the subtraction. Before subtracting <a class="el" href="classxtd_1_1date__time.html#a9af33e7a4b6e3f10f19133e026c1bc0e" title="Initializes a new instance of the xtd::date_time structure. @Remarks xtd::date_time is initialized by...">xtd::date_time::date_time</a> objects, ensure that the objects represent times in the same time zone. Otherwise, the result will include the difference between time zones. </dd></dl>
+The xtd::date_time::subtract(const xtd::date_time&amp;) method does not consider the value of the <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f" title="Gets a value that indicates whether the time represented by this instance is based on local time,...">xtd::date_time::kind</a> property of the two <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> values when performing the subtraction. Before subtracting <a class="el" href="classxtd_1_1date__time.html#a9af33e7a4b6e3f10f19133e026c1bc0e" title="Initializes a new instance of the xtd::date_time structure.">xtd::date_time::date_time</a> objects, ensure that the objects represent times in the same time zone. Otherwise, the result will include the difference between time zones. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The xtd::date_time_offset::subtract(const xtd::date_time_offset&amp;) method does consider the difference between time zones when performing the subtraction. </dd></dl>
 
 </div>
@@ -5366,7 +5367,7 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 7 2024 10:43:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 17:00:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

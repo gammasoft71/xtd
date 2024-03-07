@@ -256,5 +256,5 @@ var searchData=
   ['currency_253',['currency',['../group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686a1af0389838508d7016a9841eb6273962',1,'xtd']]],
   ['custom_254',['custom',['../group__xtd__drawing.html#gga0cbd1157b3472daeb1b4e86722fa2349a8b9035807842a4e4dbe009f3f1478127',1,'xtd::drawing::custom'],['../group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a8b9035807842a4e4dbe009f3f1478127',1,'xtd::forms::custom']]],
   ['custom_5ftarget_255',['custom_target',['../group__xtd__core.html#gga5ecb92392db71dc0bde6ce6588f06912a4428dbc1f663e1961334cf40c7901269',1,'xtd']]],
-  ['cyan_256',['cyan',['../namespacextd.html#ab60a2a64b74b91771b667e4a079681f2a6411532ba4971f378391776a9db629d3',1,'xtd::cyan'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba6411532ba4971f378391776a9db629d3',1,'xtd::drawing::cyan']]]
+  ['cyan_256',['cyan',['../group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a6411532ba4971f378391776a9db629d3',1,'xtd::cyan'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba6411532ba4971f378391776a9db629d3',1,'xtd::drawing::cyan']]]
 ];

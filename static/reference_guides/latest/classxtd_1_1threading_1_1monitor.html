@@ -634,10 +634,11 @@ template&lt;typename object_t &gt; </div>
 <p>Determines whether the current thread holds the lock on the specified object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>The object to test. @return true if the current thread holds the lock on obj; otherwise, false. </td></tr>
+    <tr><td class="paramname">obj</td><td>The object to test. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the current thread holds the lock on obj; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method works only for locks that are acquired by using the methods of the <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> class, or the <a class="el" href="classxtd_1_1threading_1_1lock__guard.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.">xtd::threading::lock_guard</a> class, or by using the <a class="el" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a" title="The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...">lock_</a> keyword, which are implemented with <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a>. </dd>
 <dd>
 Use this method with diagnostic tools, such as the xtd::diagnostics::debug::assert method, to debug locking issues that involve the <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> class. </dd></dl>
@@ -1353,7 +1354,7 @@ The remarks for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a0
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 7 2024 10:43:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 17:00:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

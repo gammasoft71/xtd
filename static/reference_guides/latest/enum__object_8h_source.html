@@ -493,24 +493,24 @@ $(function() {
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>      }</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    }</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>  };</div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>  </div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>  <span class="keyword">inline</span> std::string <a class="code hl_function" href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">to_string</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1enum__object.html">xtd::enum_object&lt;type_t&gt;</a>&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) {</div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>    <span class="keywordflow">return</span> value.<a class="code hl_function" href="classxtd_1_1enum__object.html#a7e0bc388bc8f4ec019e586fb2e5ad998">to_string</a>(fmt);</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>  }</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>}</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> enum_t&gt;</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="keyword">inline</span> std::string __enum_to_string(enum_t value) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1enum__object.html">xtd::enum_object&lt;&gt;::get_name</a>(value);</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>}</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span> </div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>value_t __parse_enum(<span class="keyword">const</span> std::string&amp; str) {</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1enum__object.html">xtd::enum_object&lt;&gt;::parse&lt;value_t&gt;</a>(str);</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>}</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>  };</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>  </div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>  <span class="keyword">inline</span> std::string <a class="code hl_function" href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">to_string</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1enum__object.html">xtd::enum_object&lt;type_t&gt;</a>&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) {</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>    <span class="keywordflow">return</span> value.<a class="code hl_function" href="classxtd_1_1enum__object.html#a7e0bc388bc8f4ec019e586fb2e5ad998">to_string</a>(fmt);</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>  }</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>}</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span> </div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> enum_t&gt;</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span><span class="keyword">inline</span> std::string __enum_to_string(enum_t value) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1enum__object.html">xtd::enum_object&lt;&gt;::get_name</a>(value);</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>}</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span> </div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>value_t __parse_enum(<span class="keyword">const</span> std::string&amp; str) {</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1enum__object.html">xtd::enum_object&lt;&gt;::parse&lt;value_t&gt;</a>(str);</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>}</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span> </div>
 <div class="ttc" id="aclassxtd_1_1attribute_html"><div class="ttname"><a href="classxtd_1_1attribute.html">xtd::attribute</a></div><div class="ttdoc">Represents the base class for custom attributes.</div><div class="ttdef"><b>Definition</b> attribute.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4_html_a00077975f459116eee55deea37ab0557"><div class="ttname"><a href="classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#a00077975f459116eee55deea37ab0557">xtd::enum_object&lt; std::nullptr_t &gt;::get_values_as_int64</a></div><div class="ttdeci">static std::vector&lt; int64 &gt; get_values_as_int64() noexcept</div><div class="ttdoc">Retrieves an array of the values of the constants in a specified enumeration.</div><div class="ttdef"><b>Definition</b> enum_object.h:463</div></div>
 <div class="ttc" id="aclassxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4_html_a04664d4d3a073895c448473d4c1e51cf"><div class="ttname"><a href="classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#a04664d4d3a073895c448473d4c1e51cf">xtd::enum_object&lt; std::nullptr_t &gt;::get_name</a></div><div class="ttdeci">static xtd::ustring get_name(int64 value) noexcept</div><div class="ttdoc">Retrieves the name of the constant in the specified enumeration that has the specified value.</div><div class="ttdef"><b>Definition</b> enum_object.h:407</div></div>
@@ -578,7 +578,7 @@ $(function() {
 <div class="ttc" id="aenum__register_8h_html"><div class="ttname"><a href="enum__register_8h.html">enum_register.h</a></div><div class="ttdoc">Contains xtd::enum_register.</div></div>
 <div class="ttc" id="aenum__set__attribute_8h_html"><div class="ttname"><a href="enum__set__attribute_8h.html">enum_set_attribute.h</a></div><div class="ttdoc">Contains xtd::enum_set_attribute strcut.</div></div>
 <div class="ttc" id="aformat__exception_8h_html"><div class="ttname"><a href="format__exception_8h.html">format_exception.h</a></div><div class="ttdoc">Contains xtd::format_exception exception.</div></div>
-<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1130</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1131</div></div>
 <div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
 <div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
 <div class="ttc" id="agroup__types_html_ga159b2a409f2b3da8165af7a5e32eccf8"><div class="ttname"><a href="group__types.html#ga159b2a409f2b3da8165af7a5e32eccf8">xtd::int16</a></div><div class="ttdeci">int_least16_t int16</div><div class="ttdoc">Represents a 16-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:120</div></div>
@@ -607,7 +607,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 7 2024 10:42:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 17:00:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

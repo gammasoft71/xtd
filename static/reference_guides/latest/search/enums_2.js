@@ -9,7 +9,7 @@ var searchData=
   ['compiler_5fid_6',['compiler_id',['../group__xtd__core.html#gaeb666968a02e2d1ea1aab56ec278ffc9',1,'xtd']]],
   ['compositing_5fmode_7',['compositing_mode',['../group__xtd__drawing.html#gacf43a9559ec2a8a422bccf24aa0613e5',1,'xtd::drawing::drawing_2d']]],
   ['compositing_5fquality_8',['compositing_quality',['../group__xtd__drawing.html#gafd60a6a6d05faefa464a894037aa6562',1,'xtd::drawing::drawing_2d']]],
-  ['console_5fcolor_9',['console_color',['../namespacextd.html#ab60a2a64b74b91771b667e4a079681f2',1,'xtd']]],
+  ['console_5fcolor_9',['console_color',['../group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2',1,'xtd']]],
   ['console_5fkey_10',['console_key',['../group__xtd__core.html#gad94b2f43c7550180321e0ac4b02a4ff2',1,'xtd']]],
   ['console_5fmodifiers_11',['console_modifiers',['../group__xtd__core.html#gacc628237bd3e274afe3d5d836e2db786',1,'xtd']]],
   ['console_5fspecial_5fkey_12',['console_special_key',['../group__xtd__core.html#gaa3d0d07e86f61a82f96e00c5f516622e',1,'xtd']]],

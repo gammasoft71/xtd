@@ -103,7 +103,7 @@ Inheritance diagram for xtd::io::file_info:</div>
 <div class="textblock"><p>Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::fstream objects. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a></div><div class="ttdoc">Provides static methods for the creation, copying, deletion, moving, and opening of files,...</div><div class="ttdef"><b>Definition</b> file_info.h:39</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a></div><div class="ttdoc">Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.</div><div class="ttdef"><b>Definition</b> file_system_info.h:84</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a></div><div class="ttdoc">Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.</div><div class="ttdef"><b>Definition</b> file_system_info.h:85</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> → <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span> </div>
@@ -218,8 +218,17 @@ By default, full read/write access to new files is granted to all users. </dd></
 <tr class="separator:a1a89f4f211bac346357462896a5d97eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
+<tr class="memitem:a55020a4bc32325c6db7f146f532f3d77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1stream__writer.html">xtd::io::stream_writer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1file__info.html#a55020a4bc32325c6db7f146f532f3d77">append_text</a> () const</td></tr>
+<tr class="memdesc:a55020a4bc32325c6db7f146f532f3d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1io_1_1stream__writer.html" title="Implements a xtd::io::text_writer for writing characters to a stream.">xtd::io::stream_writer</a> that appends text to the file represented by this instance of the <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a>.  <br /></td></tr>
+<tr class="separator:a55020a4bc32325c6db7f146f532f3d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b5a5354ad631039eceea1e892a2085c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1file__info.html#a5b5a5354ad631039eceea1e892a2085c">copy_to</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;dest_file_name) const</td></tr>
+<tr class="memdesc:a5b5a5354ad631039eceea1e892a2085c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies an existing file to a new file, disallowing the overwriting of an existing file.  <br /></td></tr>
+<tr class="separator:a5b5a5354ad631039eceea1e892a2085c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2823ddb8e11ae7ebfe5ec4e0266b7608"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1file__info.html#a2823ddb8e11ae7ebfe5ec4e0266b7608">copy_to</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;dest_file_name, bool overwrite) const</td></tr>
+<tr class="memdesc:a2823ddb8e11ae7ebfe5ec4e0266b7608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies an existing file to a new file, allowing the overwriting of an existing file.  <br /></td></tr>
+<tr class="separator:a2823ddb8e11ae7ebfe5ec4e0266b7608"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a346ffb242dc2b87c6f2078108de9362f"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1file__info.html#a346ffb242dc2b87c6f2078108de9362f">create</a> () const</td></tr>
-<tr class="memdesc:a346ffb242dc2b87c6f2078108de9362f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies an existing file to a new file, allowing the overwriting of an existing file.  <br /></td></tr>
+<tr class="memdesc:a346ffb242dc2b87c6f2078108de9362f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a file.  <br /></td></tr>
 <tr class="separator:a346ffb242dc2b87c6f2078108de9362f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa75f914801aa7d552d6745c784298db7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1stream__writer.html">xtd::io::stream_writer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1file__info.html#aa75f914801aa7d552d6745c784298db7">create_text</a> () const</td></tr>
 <tr class="memdesc:aa75f914801aa7d552d6745c784298db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a std::ofstream that writes a new text file.  <br /></td></tr>
@@ -456,14 +465,14 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a346ffb242dc2b87c6f2078108de9362f" name="a346ffb242dc2b87c6f2078108de9362f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a346ffb242dc2b87c6f2078108de9362f">&#9670;&#160;</a></span>create()</h2>
+<a id="a55020a4bc32325c6db7f146f532f3d77" name="a55020a4bc32325c6db7f146f532f3d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55020a4bc32325c6db7f146f532f3d77">&#9670;&#160;</a></span>append_text()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::ofstream xtd::io::file_info::create </td>
+          <td class="memname"><a class="el" href="classxtd_1_1io_1_1stream__writer.html">xtd::io::stream_writer</a> xtd::io::file_info::append_text </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -471,158 +480,281 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a <a class="el" href="classxtd_1_1io_1_1stream__writer.html" title="Implements a xtd::io::text_writer for writing characters to a stream.">xtd::io::stream_writer</a> that appends text to the file represented by this instance of the <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>a new A new std::ofstream. </dd></dl>
+<dl class="section user"><dt>Examplle</dt><dd>The following example appends text to a file and reads from the file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>program {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line">    <span class="keyword">auto</span> fi = <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> {path::combine(path::get_temp_path(), <span class="stringliteral">&quot;MyTest.txt&quot;</span>)};</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// This text is added only once to the file.</span></div>
+<div class="line">    <span class="keywordflow">if</span> (!fi.exists())  {</div>
+<div class="line">      <span class="comment">//Create a file to write to.</span></div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sw = fi.create_text()) {</div>
+<div class="line">        sw.write_line(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
+<div class="line">        sw.write_line(<span class="stringliteral">&quot;And&quot;</span>);</div>
+<div class="line">        sw.write_line(<span class="stringliteral">&quot;Welcome&quot;</span>);</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// This text will always be added, making the file longer over time</span></div>
+<div class="line">    <span class="comment">// if it is not deleted.</span></div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sw = fi.append_text()) {</div>
+<div class="line">      sw.write_line(<span class="stringliteral">&quot;This&quot;</span>);</div>
+<div class="line">      sw.write_line(<span class="stringliteral">&quot;is Extra&quot;</span>);</div>
+<div class="line">      sw.write_line(<span class="stringliteral">&quot;Text&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">//Open the file to read from.</span></div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sr = fi.open_text()) {</div>
+<div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
+<div class="line">        console::write_line(sr.read_line());</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces output similar to the following;</span></div>
+<div class="line"><span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Hello</span></div>
+<div class="line"><span class="comment">// And</span></div>
+<div class="line"><span class="comment">// Welcome</span></div>
+<div class="line"><span class="comment">// This</span></div>
+<div class="line"><span class="comment">// is Extra</span></div>
+<div class="line"><span class="comment">// Text</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//When you run this application a second time, you will see the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Hello</span></div>
+<div class="line"><span class="comment">// And</span></div>
+<div class="line"><span class="comment">// Welcome</span></div>
+<div class="line"><span class="comment">// This</span></div>
+<div class="line"><span class="comment">// is Extra</span></div>
+<div class="line"><span class="comment">// Text</span></div>
+<div class="line"><span class="comment">// This</span></div>
+<div class="line"><span class="comment">// is Extra</span></div>
+<div class="line"><span class="comment">// Text</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates appending text to the end of a file and also displays the result of the append operation to the console. The first time this routine is called, the file is created if it does not exist. After that, the specified text is appended to the file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>program {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(<span class="stringliteral">&quot;temp.txt&quot;</span>);</div>
+<div class="line">     <span class="comment">// Create a writer, ready to add entries to the file.</span></div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> sw = fi.append_text();</div>
+<div class="line">    sw.<a class="code hl_function" href="classxtd_1_1io_1_1text__writer.html#ad9bfc3262634aa04d439143f62e51c0c">write_line</a>(<span class="stringliteral">&quot;Add as many lines as you like...&quot;</span>);</div>
+<div class="line">    sw.<a class="code hl_function" href="classxtd_1_1io_1_1text__writer.html#ad9bfc3262634aa04d439143f62e51c0c">write_line</a>(<span class="stringliteral">&quot;Add another line to the output...&quot;</span>);</div>
+<div class="line">    sw.<a class="code hl_function" href="classxtd_1_1io_1_1stream__writer.html#a30c1b9605a4158a14dfa0892b5eb2d7a">flush</a>();</div>
+<div class="line">    sw.<a class="code hl_function" href="classxtd_1_1io_1_1stream__writer.html#a8b391cfcc3e3ab88f17aac43bb25e8df">close</a>();</div>
+<div class="line">    <span class="comment">// Get the information out of the file and display it.</span></div>
+<div class="line">    <span class="comment">// Remember that the file might have other lines if it already existed.</span></div>
+<div class="line">    ifstream ifs(fi.open_read());</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> sr(ifs);</div>
+<div class="line">    <span class="keywordflow">while</span> (sr.peek() != -1)</div>
+<div class="line">      console::write_line(sr.read_line());</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces output similar to the following;</span></div>
+<div class="line"><span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
+<div class="line"><span class="comment">// Add as many lines as you like...</span></div>
+<div class="line"><span class="comment">// Add another line to the output...</span></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader.html">xtd::io::stream_reader</a></div><div class="ttdoc">Implements a xtd::io::text_reader that reads characters from a byte stream.</div><div class="ttdef"><b>Definition</b> stream_reader.h:26</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1stream__writer_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__writer.html">xtd::io::stream_writer</a></div><div class="ttdoc">Implements a xtd::io::text_writer for writing characters to a stream.</div><div class="ttdef"><b>Definition</b> stream_writer.h:26</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1stream__writer_html_a30c1b9605a4158a14dfa0892b5eb2d7a"><div class="ttname"><a href="classxtd_1_1io_1_1stream__writer.html#a30c1b9605a4158a14dfa0892b5eb2d7a">xtd::io::stream_writer::flush</a></div><div class="ttdeci">void flush() override</div><div class="ttdoc">Clears all buffers for the current writer and causes any buffered data to be written to the underlyin...</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1stream__writer_html_a8b391cfcc3e3ab88f17aac43bb25e8df"><div class="ttname"><a href="classxtd_1_1io_1_1stream__writer.html#a8b391cfcc3e3ab88f17aac43bb25e8df">xtd::io::stream_writer::close</a></div><div class="ttdeci">void close() override</div><div class="ttdoc">Closes the stream_writer object and the underlying stream, and releases any system resources associat...</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1text__writer_html_ad9bfc3262634aa04d439143f62e51c0c"><div class="ttname"><a href="classxtd_1_1io_1_1text__writer.html#ad9bfc3262634aa04d439143f62e51c0c">xtd::io::text_writer::write_line</a></div><div class="ttdeci">void write_line()</div><div class="ttdoc">Writes new line to the text stream.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a5b5a5354ad631039eceea1e892a2085c" name="a5b5a5354ad631039eceea1e892a2085c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b5a5354ad631039eceea1e892a2085c">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> xtd::io::file_info::copy_to </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>dest_file_name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies an existing file to a new file, disallowing the overwriting of an existing file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">desy_file_name</td><td>The name of the new file to copy to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new file with a fully qualified path. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>dest_file_name is empty, contains only white spaces, or contains invalid characters. </td></tr>
+    <tr><td class="paramname">xtd::io_io_exception</td><td>An error occurs, or the destination file already exists and overwrite is false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1security_1_1security__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::security::security_exception</a></td><td>The caller does not have the required permission. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1io_1_1directory__not__found__exception.html" title="The exception that is thrown when part of a file or directory cannot be found.">xtd::io::directory_not_found_exception</a></td><td>The directory specified in dest_file_name does not exist. </td></tr>
+    <tr><td class="paramname">xtd::unauthorized_access_exceptionA</td><td>directory path is passed in, or the file is being moved to a different drive. </td></tr>
+    <tr><td class="paramname">xtd::ioo::path_too_long_exception</td><td>The specified path, file name, or both exceed the system-defined maximum length. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>dest_file_name contains a colon (:) in the middle of the string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates both overloads of the td::io::file_info::copy_to method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>program {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a> = R<span class="stringliteral">&quot;(c:\SoureFile.txt)&quot;;</span></div>
+<div class="line"><span class="stringliteral">    <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> path2 = R</span><span class="stringliteral">&quot;(c:\NewFile.txt)&quot;;</span></div>
+<div class="line"><span class="stringliteral">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi1(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</span></div>
+<div class="line"><span class="stringliteral">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi2(path2);</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">    </span><span class="keywordflow">try</span> {</div>
+<div class="line">      <span class="comment">// Create the source file.</span></div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(ofstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>(fi1.create())) {</div>
+<div class="line">      }</div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">//Ensure that the target file does not exist.</span></div>
+<div class="line">      <span class="keywordflow">if</span> (file::exists(path2)) {</div>
+<div class="line">        fi2.remove();</div>
+<div class="line">      }</div>
+<div class="line"> </div>
+<div class="line">      <span class="comment">//Copy the file.f</span></div>
+<div class="line">   fi1.copy_to(path2);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} was copied to {1}.&quot;</span>, <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>, path2);</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1io_1_1io__exception.html">io_exception</a>&amp; ioex) {</div>
+<div class="line">      console::write_line(ioex.<a class="code hl_function" href="classxtd_1_1system__exception.html#a052e0b18f39fb7bd976bf3bc6d06e324">message</a>());</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
+<div class="line"><span class="comment">// This code produces output similar to the following;</span></div>
+<div class="line"><span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
+<div class="line"><span class="comment">// Add as many lines as you like...</span></div>
+<div class="line"><span class="comment">// Add another line to the output...</span></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1io__exception_html"><div class="ttname"><a href="classxtd_1_1io_1_1io__exception.html">xtd::io::io_exception</a></div><div class="ttdoc">The exception that is thrown when an I/O error occurs.</div><div class="ttdef"><b>Definition</b> io_exception.h:27</div></div>
+<div class="ttc" id="aclassxtd_1_1system__exception_html_a052e0b18f39fb7bd976bf3bc6d06e324"><div class="ttname"><a href="classxtd_1_1system__exception.html#a052e0b18f39fb7bd976bf3bc6d06e324">xtd::system_exception::message</a></div><div class="ttdeci">virtual const xtd::ustring &amp; message() const noexcept</div><div class="ttdoc">Gets message associate to the exception.</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:47</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>program {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line">    <span class="keywordflow">try</span> {</div>
+<div class="line">      <span class="comment">// Create a reference to a file, which might or might not exist.</span></div>
+<div class="line">      <span class="comment">// If it does not exist, it is not yet created.</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(<span class="stringliteral">&quot;temp.txt&quot;</span>);</div>
+<div class="line">      <span class="comment">// Create a writer, ready to add entries to the file.</span></div>
+<div class="line">      ofstream ofs(fi.append_text());</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> sw(ofs);</div>
+<div class="line">      sw.write_line(<span class="stringliteral">&quot;Add as many lines as you like...&quot;</span>);</div>
+<div class="line">      sw.write_line(<span class="stringliteral">&quot;Add another line to the output...&quot;</span>);</div>
+<div class="line">      sw.flush();</div>
+<div class="line">      sw.close();</div>
+<div class="line">      <span class="comment">// Get the information out of the file and display it.</span></div>
+<div class="line">      ifstream ifs(fi.open_read());</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> sr(ifs);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;This is the information in the first file:&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">while</span> (sr.peek() != -1)</div>
+<div class="line">        console::write_line(sr.read_line());</div>
+<div class="line">      <span class="comment">// Copy this file to another file. The file will not be overwritten if it already exists.</span></div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> newfi = fi.<a class="code hl_function" href="classxtd_1_1io_1_1file__info.html#a5b5a5354ad631039eceea1e892a2085c">copy_to</a>(<span class="stringliteral">&quot;newTemp.txt&quot;</span>);</div>
+<div class="line">      <span class="comment">// Get the information out of the new file and display it.</span></div>
+<div class="line">      ifs = newfi.<a class="code hl_function" href="classxtd_1_1io_1_1file__info.html#a9b3abeefd4e4f232fe8d4c3e59f01b45">open_read</a>();</div>
+<div class="line">      sr = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a>(ifs);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0}This is the information in the second file:&quot;</span>, environment::new_line());</div>
+<div class="line">      <span class="keywordflow">while</span> (sr.peek() != -1)</div>
+<div class="line">        console::write_line(sr.read_line());</div>
+<div class="line">    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; e) {</div>
+<div class="line">      console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces output similar to the following;</span></div>
+<div class="line"><span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// This is the information in the first file:</span></div>
+<div class="line"><span class="comment">// Add as many lines as you like...</span></div>
+<div class="line"><span class="comment">// Add another line to the output...</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This is the information in the second file:</span></div>
+<div class="line"><span class="comment">// Add as many lines as you like...</span></div>
+<div class="line"><span class="comment">// Add another line to the output...</span></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file__info_html_a5b5a5354ad631039eceea1e892a2085c"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html#a5b5a5354ad631039eceea1e892a2085c">xtd::io::file_info::copy_to</a></div><div class="ttdeci">xtd::io::file_info copy_to(const xtd::ustring &amp;dest_file_name) const</div><div class="ttdoc">Copies an existing file to a new file, disallowing the overwriting of an existing file.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file__info_html_a9b3abeefd4e4f232fe8d4c3e59f01b45"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html#a9b3abeefd4e4f232fe8d4c3e59f01b45">xtd::io::file_info::open_read</a></div><div class="ttdeci">std::ifstream open_read() const</div><div class="ttdoc">Creates a read-only std::ifstream.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use the xtd::io::file_info::copy_to(ustring, bool) method to allow overwriting of an existing file. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="file_info_8cpp-example.html#a6">file_info.cpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a2823ddb8e11ae7ebfe5ec4e0266b7608" name="a2823ddb8e11ae7ebfe5ec4e0266b7608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2823ddb8e11ae7ebfe5ec4e0266b7608">&#9670;&#160;</a></span>copy_to() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> xtd::io::file_info::copy_to </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>dest_file_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>overwrite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Copies an existing file to a new file, allowing the overwriting of an existing file. </p>
-<pre class="fragment">@brief Creates a xtd::io::stream_writer that appends text to the file represented by this instance of the xtd::io::file_info.
-@return a new A new std::ofstream.
-@par Examplle
-The following example appends text to a file and reads from the file.
-@include file_info_append_text.cpp
-@par Examples
-The following example demonstrates appending text to the end of a file and also displays the result of the append operation to the console. The first time this routine is called, the file is created if it does not exist. After that, the specified text is appended to the file.
-@code
-#include &lt;xtd/xtd&gt;
-
-using namespace std;
-using namespace xtd;
-using namespace xtd::io;
-
-class program {
-/// public:
-  static auto main() {
-    file_info fi("temp.txt");
-     // Create a writer, ready to add entries to the file.
-    stream_writer sw = fi.append_text();
-    sw.write_line("Add as many lines as you like...");
-    sw.write_line("Add another line to the output...");
-    sw.flush();
-    sw.close();
-    // Get the information out of the file and display it.
-    // Remember that the file might have other lines if it already existed.
-    ifstream ifs(fi.open_read());
-    stream_reader sr(ifs);
-    while (sr.peek() != -1)
-      console::write_line(sr.read_line());
-  }
-};
-
-startup_(program::main);
-
-// This code produces output similar to the following;
-// results may vary based on the computer/file structure/etc.:
-// Add as many lines as you like...
-// Add another line to the output...
-@encoode
-</pre><p> <a class="el" href="classxtd_1_1io_1_1stream__writer.html" title="Implements a xtd::io::text_writer for writing characters to a stream.">xtd::io::stream_writer</a> append_text() const; </p><pre class="fragment">@brief Copies an existing file to a new file, disallowing the overwriting of an existing file.
-@param desy_file_name The name of the new file to copy to.
-@return A new file with a fully qualified path.
-@exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
-@exception xtd::io_io_exception An error occurs, or the destination file already exists and overwrite is false.
-@exception xtd::security::security_exception The caller does not have the required permission.
-@exception xtd::io::directory_not_found_exception The directory specified in dest_file_name does not exist.
-@exception xtd::unauthorized_access_exceptionA directory path is passed in, or the file is being moved to a different drive.
-@exception xtd::ioo::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
-@exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
-@par Examples
-The following example demonstrates both overloads of the td::io::file_info::copy_to method.
-@code
-#include &lt;xtd/xtd&gt;
-
-using namespace std;
-using namespace xtd;
-using namespace xtd::io;
-
-class program {
-public:
-  static auto main() {
-    ustring path = R"(c:\SoureFile.txt)";
-    ustring path2 = R"(c:\NewFile.txt)";
-    file_info fi1(path);
-    file_info fi2(path2);
-
-    try {
-      // Create the source file.
-      using_(ofstream s(fi1.create())) {
-      }
-
-      //Ensure that the target file does not exist.
-      if (file::exists(path2)) {
-        fi2.remove();
-      }
-
-      //Copy the file.f
-   fi1.copy_to(path2);
-      console::write_line("{0} was copied to {1}.", path, path2);
-    } catch (const io_exception&amp; ioex) {
-      console::write_line(ioex.message());
-    }
-  }
-};
-
-startup_(program::main);
-// This code produces output similar to the following;
-// results may vary based on the computer/file structure/etc.:
-// Add as many lines as you like...
-// Add another line to the output...
-@endcode
-@par Examples
-The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists.
-@code
-#include &lt;xtd/xtd&gt;
-
-using namespace std;
-using namespace xtd;
-using namespace xtd::io;
-
-class program {
-public:
-  static auto main() {
-    try {
-      // Create a reference to a file, which might or might not exist.
-      // If it does not exist, it is not yet created.
-      file_info fi("temp.txt");
-      // Create a writer, ready to add entries to the file.
-      ofstream ofs(fi.append_text());
-      stream_writer sw(ofs);
-      sw.write_line("Add as many lines as you like...");
-      sw.write_line("Add another line to the output...");
-      sw.flush();
-      sw.close();
-      // Get the information out of the file and display it.
-      ifstream ifs(fi.open_read());
-      stream_reader sr(ifs);
-      console::write_line("This is the information in the first file:");
-      while (sr.peek() != -1)
-        console::write_line(sr.read_line());
-      // Copy this file to another file. The file will not be overwritten if it already exists.
-      file_info newfi = fi.copy_to("newTemp.txt");
-      // Get the information out of the new file and display it.
-      ifs = newfi.open_read();
-      sr = stream_reader(ifs);
-      console::write_line("{0}This is the information in the second file:", environment::new_line());
-      while (sr.peek() != -1)
-        console::write_line(sr.read_line());
-    } catch(const system_exception&amp; e) {
-      console::write_line(e.message());
-    }
-  }
-};
-
-startup_(program::main);
-
-// This code produces output similar to the following;
-// results may vary based on the computer/file structure/etc.:
-//
-// This is the information in the first file:
-// Add as many lines as you like...
-// Add another line to the output...
-
-// This is the information in the second file:
-// Add as many lines as you like...
-// Add another line to the output...
-@encode
-@remarks Use the xtd::io::file_info::copy_to(ustring, bool) method to allow overwriting of an existing file.
-@warning Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior
-</pre><p> <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> copy_to(const xtd::ustring&amp; dest_file_name) const; </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dest_file_name</td><td>The name of the new file to copy to. </td></tr>
     <tr><td class="paramname">overwrite</td><td>true to allow an existing file to be overwritten; otherwise, false. </td></tr>
@@ -680,101 +812,103 @@ startup_(program::main);
 <div class="line"><span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
 <div class="line"><span class="comment">// Add as many lines as you like...</span></div>
 <div class="line"><span class="comment">// Add another line to the output...</span></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1io__exception_html"><div class="ttname"><a href="classxtd_1_1io_1_1io__exception.html">xtd::io::io_exception</a></div><div class="ttdoc">The exception that is thrown when an I/O error occurs.</div><div class="ttdef"><b>Definition</b> io_exception.h:27</div></div>
-<div class="ttc" id="aclassxtd_1_1system__exception_html_a052e0b18f39fb7bd976bf3bc6d06e324"><div class="ttname"><a href="classxtd_1_1system__exception.html#a052e0b18f39fb7bd976bf3bc6d06e324">xtd::system_exception::message</a></div><div class="ttdeci">virtual const xtd::ustring &amp; message() const noexcept</div><div class="ttdoc">Gets message associate to the exception.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:47</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists. <div class="fragment"><div class="line"><span class="preprocessor">    #include &lt;xtd/xtd&gt;</span></div>
-<div class="line">   </div>
-<div class="line">    <span class="keyword">using namespace </span>std;</div>
-<div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
-<div class="line">   </div>
-<div class="line">    <span class="keyword">class </span>program {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">      <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">        <span class="comment">// Create a reference to a file, which might or might not exist.</span></div>
-<div class="line">        <span class="comment">// If it does not exist, it is not yet created.</span></div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(<span class="stringliteral">&quot;temp.txt&quot;</span>);</div>
-<div class="line">        <span class="comment">// Create a writer, ready to add entries to the file.</span></div>
-<div class="line">        ofstream ofs(fi.append_text());</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> sw(ofs);</div>
-<div class="line">        sw.write_line(<span class="stringliteral">&quot;Add as many lines as you like...&quot;</span>);</div>
-<div class="line">        sw.write_line(<span class="stringliteral">&quot;Add another line to the output...&quot;</span>);</div>
-<div class="line">        sw.flush();</div>
-<div class="line">        sw.close();</div>
-<div class="line">        <span class="comment">// Get the information out of the file and display it.</span></div>
-<div class="line">        ifstream ifs(fi.open_read());</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> sr(ifs);</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;This is the information in the first file:&quot;</span>);</div>
-<div class="line">        <span class="keywordflow">while</span> (sr.peek() != -1)</div>
-<div class="line">          console::write_line(sr.read_line());</div>
-<div class="line">        <span class="comment">// Copy this file to another file. The true parameter specifies that the file will be overwritten if it already exists.</span></div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> newfi = fi.copy_to(<span class="stringliteral">&quot;newTemp.txt&quot;</span>, <span class="keyword">true</span>);</div>
-<div class="line">        <span class="comment">// Get the information out of the new file and display it.</span></div>
-<div class="line">        ifs = newfi.<a class="code hl_function" href="classxtd_1_1io_1_1file__info.html#a9b3abeefd4e4f232fe8d4c3e59f01b45">open_read</a>();</div>
-<div class="line">        sr = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a>(ifs);</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;{0}This is the information in the second file:&quot;</span>, environment::new_line());</div>
-<div class="line">        <span class="keywordflow">while</span> (sr.peek() != -1)</div>
-<div class="line">          console::write_line(sr.read_line());</div>
-<div class="line">      }</div>
-<div class="line">    };</div>
-<div class="line">   </div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
-<div class="line">   </div>
-<div class="line">    <span class="comment">// This code produces output similar to the following;</span></div>
-<div class="line">    <span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
-<div class="line">    <span class="comment">//</span></div>
-<div class="line">    <span class="comment">// This is the information in the first file:</span></div>
-<div class="line">    <span class="comment">// Add as many lines as you like...</span></div>
-<div class="line">    <span class="comment">// Add another line to the output...</span></div>
-<div class="line">    <span class="comment">// Add as many lines as you like...</span></div>
-<div class="line">    <span class="comment">// Add another line to the output...</span></div>
-<div class="line">   </div>
-<div class="line">    <span class="comment">// This is the information in the second file:</span></div>
-<div class="line">    <span class="comment">// Add as many lines as you like...</span></div>
-<div class="line">    <span class="comment">// Add another line to the output...</span></div>
-<div class="line">    <span class="comment">// Add as many lines as you like...</span></div>
-<div class="line">    <span class="comment">// Add another line to the output...</span></div>
-<div class="line">    @encode</div>
-<div class="line">    @remarks Use <span class="keyword">this</span> method to allow or prevent overwriting of an existing <a class="code hl_class" href="classxtd_1_1io_1_1file.html">file</a>. Use the xtd::io::file_info::copy_to(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>) method to prevent overwriting of an existing <a class="code hl_class" href="classxtd_1_1io_1_1file.html">file</a> by <span class="keywordflow">default</span>.</div>
-<div class="line">    @warning Whenever possible, avoid <span class="keyword">using </span>short <a class="code hl_class" href="classxtd_1_1io_1_1file.html">file</a> names (such <a class="code hl_function" href="group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7">as</a> XXXXXX~1.XXX) with <span class="keyword">this</span> method. If two files have equivalent <span class="keywordtype">short</span> <a class="code hl_class" href="classxtd_1_1io_1_1file.html">file</a> names then <span class="keyword">this</span> method <a class="code hl_enumvalue" href="group__xtd__core.html#gga36069771a10417b78f9d4a7c08559006a9a4b6f884971dcb4a5172876b335baab">may</a> fail and raise an exception and/or result in undesirable behavior</div>
-<div class="line"><a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> copy_to(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">xtd::ustring</a>&amp; dest_file_name, <span class="keywordtype">bool</span> overwrite) <span class="keyword">const</span>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line">    @brief Creates <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> <a class="code hl_class" href="classxtd_1_1io_1_1file.html">file</a>.</div>
-<div class="line">    @<span class="keywordflow">return</span> A <span class="keyword">new</span> <a class="code hl_class" href="classxtd_1_1io_1_1file.html">file</a>.</div>
-<div class="line">    @par Examples</div>
-<div class="line">    The following example creates <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> reference to <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> <a class="code hl_class" href="classxtd_1_1io_1_1file.html">file</a>, and then creates the <a class="code hl_class" href="classxtd_1_1io_1_1file.html">file</a> on disk <span class="keyword">using </span>xtd::io::file_info.create().</div>
-<div class="line">    @code</div>
-<div class="line">    #include &lt;xtd/xtd&gt;</div>
-<div class="line">   </div>
-<div class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> std;</div>
-<div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line">    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
-<div class="line">   </div>
-<div class="line">    <span class="keyword">class </span>program {</div>
-<div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">      <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">        <span class="comment">// Create a reference to a file.</span></div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(<span class="stringliteral">&quot;temp.txt&quot;</span>);</div>
-<div class="line">        <span class="comment">// Actually create the file.</span></div>
-<div class="line">        ofstream ofs( fi.create());</div>
-<div class="line">        <span class="comment">// Modify the file as required, and then close the file.</span></div>
-<div class="line">        ofs.close();</div>
-<div class="line">        <span class="comment">// Delete the file.</span></div>
-<div class="line">        fi.remove();</div>
-<div class="line">      }</div>
-<div class="line">    };</div>
-<div class="line">   </div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file__info_html_a9b3abeefd4e4f232fe8d4c3e59f01b45"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html#a9b3abeefd4e4f232fe8d4c3e59f01b45">xtd::io::file_info::open_read</a></div><div class="ttdeci">std::ifstream open_read() const</div><div class="ttdoc">Creates a read-only std::ifstream.</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file_html"><div class="ttname"><a href="classxtd_1_1io_1_1file.html">xtd::io::file</a></div><div class="ttdoc">Provides static methods for the creation, copying, deletion, moving, and opening of files,...</div><div class="ttdef"><b>Definition</b> file.h:37</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader.html">xtd::io::stream_reader</a></div><div class="ttdoc">Implements a xtd::io::text_reader that reads characters from a byte stream.</div><div class="ttdef"><b>Definition</b> stream_reader.h:26</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1stream__writer_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream__writer.html">xtd::io::stream_writer</a></div><div class="ttdoc">Implements a xtd::io::text_writer for writing characters to a stream.</div><div class="ttdef"><b>Definition</b> stream_writer.h:26</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga19379a1158ccd320e208b362f11295b7"><div class="ttname"><a href="group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7">xtd::as</a></div><div class="ttdeci">new_type_t as(std::any value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> as.h:37</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gga36069771a10417b78f9d4a7c08559006a9a4b6f884971dcb4a5172876b335baab"><div class="ttname"><a href="group__xtd__core.html#gga36069771a10417b78f9d4a7c08559006a9a4b6f884971dcb4a5172876b335baab">xtd::month_of_year::may</a></div><div class="ttdeci">@ may</div><div class="ttdoc">Indicates may.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div></div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>program {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line">    <span class="comment">// Create a reference to a file, which might or might not exist.</span></div>
+<div class="line">    <span class="comment">// If it does not exist, it is not yet created.</span></div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(<span class="stringliteral">&quot;temp.txt&quot;</span>);</div>
+<div class="line">    <span class="comment">// Create a writer, ready to add entries to the file.</span></div>
+<div class="line">    ofstream ofs(fi.append_text());</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> sw(ofs);</div>
+<div class="line">    sw.write_line(<span class="stringliteral">&quot;Add as many lines as you like...&quot;</span>);</div>
+<div class="line">    sw.write_line(<span class="stringliteral">&quot;Add another line to the output...&quot;</span>);</div>
+<div class="line">    sw.flush();</div>
+<div class="line">    sw.close();</div>
+<div class="line">    <span class="comment">// Get the information out of the file and display it.</span></div>
+<div class="line">    ifstream ifs(fi.open_read());</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> sr(ifs);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;This is the information in the first file:&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">while</span> (sr.peek() != -1)</div>
+<div class="line">      console::write_line(sr.read_line());</div>
+<div class="line">    <span class="comment">// Copy this file to another file. The true parameter specifies that the file will be overwritten if it already exists.</span></div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> newfi = fi.<a class="code hl_function" href="classxtd_1_1io_1_1file__info.html#a5b5a5354ad631039eceea1e892a2085c">copy_to</a>(<span class="stringliteral">&quot;newTemp.txt&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line">    <span class="comment">// Get the information out of the new file and display it.</span></div>
+<div class="line">    ifs = newfi.<a class="code hl_function" href="classxtd_1_1io_1_1file__info.html#a9b3abeefd4e4f232fe8d4c3e59f01b45">open_read</a>();</div>
+<div class="line">    sr = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a>(ifs);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;{0}This is the information in the second file:&quot;</span>, environment::new_line());</div>
+<div class="line">    <span class="keywordflow">while</span> (sr.peek() != -1)</div>
+<div class="line">      console::write_line(sr.read_line());</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces output similar to the following;</span></div>
+<div class="line"><span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// This is the information in the first file:</span></div>
+<div class="line"><span class="comment">// Add as many lines as you like...</span></div>
+<div class="line"><span class="comment">// Add another line to the output...</span></div>
+<div class="line"><span class="comment">// Add as many lines as you like...</span></div>
+<div class="line"><span class="comment">// Add another line to the output...</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This is the information in the second file:</span></div>
+<div class="line"><span class="comment">// Add as many lines as you like...</span></div>
+<div class="line"><span class="comment">// Add another line to the output...</span></div>
+<div class="line"><span class="comment">// Add as many lines as you like...</span></div>
+<div class="line"><span class="comment">// Add another line to the output...</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use this method to allow or prevent overwriting of an existing file. Use the xtd::io::file_info::copy_to(ustring) method to prevent overwriting of an existing file by default. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior </dd></dl>
+
+</div>
+</div>
+<a id="a346ffb242dc2b87c6f2078108de9362f" name="a346ffb242dc2b87c6f2078108de9362f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a346ffb242dc2b87c6f2078108de9362f">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ofstream xtd::io::file_info::create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a file. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new file. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example creates a reference to a file, and then creates the file on disk using <a class="el" href="classxtd_1_1io_1_1file__info.html#a346ffb242dc2b87c6f2078108de9362f" title="Creates a file.">xtd::io::file_info.create()</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>program {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line">    <span class="comment">// Create a reference to a file.</span></div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(<span class="stringliteral">&quot;temp.txt&quot;</span>);</div>
+<div class="line">    <span class="comment">// Actually create the file.</span></div>
+<div class="line">    ofstream ofs( fi.create());</div>
+<div class="line">    <span class="comment">// Modify the file as required, and then close the file.</span></div>
+<div class="line">    ofs.close();</div>
+<div class="line">    <span class="comment">// Delete the file.</span></div>
+<div class="line">    fi.remove();</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example creates a file, adds some text to it, and reads from the file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_reader&gt;</span></div>
@@ -817,7 +951,6 @@ startup_(program::main);
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// This is some text in the file.</span></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1text__writer_html_ad9bfc3262634aa04d439143f62e51c0c"><div class="ttname"><a href="classxtd_1_1io_1_1text__writer.html#ad9bfc3262634aa04d439143f62e51c0c">xtd::io::text_writer::write_line</a></div><div class="ttdeci">void write_line()</div><div class="ttdoc">Writes new line to the text stream.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, full read/write access to new files is granted to all users. </dd>
 <dd>
@@ -1287,9 +1420,8 @@ The xtd::io::file_info::size property is called for a directory. </td></tr>
 <div class="line"><span class="comment">// The size of UpdatePatch.log is 22778 bytes.</span></div>
 <div class="line"><span class="comment">// The size of UpdatePatch.txt is 30 bytes.</span></div>
 <div class="line"><span class="comment">// The size of wt3d.ini is 234 bytes.</span></div>
-<div class="line"><span class="comment">//</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:33</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.h:125</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.h:127</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__info_html_a1a89f4f211bac346357462896a5d97eb"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html#a1a89f4f211bac346357462896a5d97eb">xtd::io::file_info::name</a></div><div class="ttdeci">xtd::ustring name() const override</div><div class="ttdoc">Gets the name of the file.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__info_html_a7bbc1abbd603c19f70d687770961d195"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html#a7bbc1abbd603c19f70d687770961d195">xtd::io::file_info::length</a></div><div class="ttdeci">size_t length() const</div><div class="ttdoc">Gets the size, in bytes, of the current file.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div></div>
@@ -2299,7 +2431,6 @@ There is an open handle on the file, and the operating system is Windows XP or e
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//c:\MyTest.txt was copied to c:\MyTest.txttemp.</span></div>
 <div class="line"><span class="comment">//c:\MyTest.txttemp was successfully deleted.</span></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example creates, closes, and deletes a file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
@@ -2468,7 +2599,7 @@ Pass an empty string ("") to the dest_backup_file_name parameter if you do not w
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 7 2024 10:43:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 17:00:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
