@@ -43,4 +43,4 @@ xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::u
   #endif
   return entries;
 }
-// @endcond
+/// @endcond

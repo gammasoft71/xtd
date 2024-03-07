@@ -26,7 +26,7 @@ namespace xtd {
     virtual bool equals(const type_t&) const noexcept = 0;
     /// @}
     
-    ///@cond
+    /// @cond
     friend bool operator ==(const type_t& a, const type_t& b) noexcept {return a.equals(b);}
     friend bool operator !=(const type_t& a, const type_t& b) noexcept {return !a.equals(b);}
     template<typename object_t>

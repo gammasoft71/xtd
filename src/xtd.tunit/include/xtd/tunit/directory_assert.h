@@ -438,9 +438,9 @@ namespace xtd {
       static void does_not_exist(const char_t* directory, const std::string& message) {does_not_exist(directory, message, xtd::diagnostics::stack_frame::empty());}
       template<typename char_t>
       static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(directory), message, stack_frame);}
-      
-      #if defined(__cpp_lib_filesystem)
       /// @endcond
+
+      #if defined(__cpp_lib_filesystem)
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
