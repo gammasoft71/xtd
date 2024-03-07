@@ -75,7 +75,7 @@ namespace xtd {
     using system_information_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
     /// @}
     
-    /// @name Properties
+    /// @name Static properties
     
     /// @{
     /// @brief Gets an xtd::compiler object that contains the current compiler identifier and version number.
@@ -145,7 +145,7 @@ namespace xtd {
     static const environment::xtd_library_collection& xtd_libraries() noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Static methods
     
     /// @{
     /// @brief Generates json format string report.

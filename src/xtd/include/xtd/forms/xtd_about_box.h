@@ -23,7 +23,7 @@ namespace xtd {
     /// @include xtd_about_box.cpp
     class export_ xtd_about_box final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Displays the xtd about box in front of the specified window.
