@@ -4610,7 +4610,7 @@ namespace xtd {
     static uint64 to_uint64(char32* value);
     static uint64 to_uint64(const wchar* value);
     static uint64 to_uint64(wchar* value);
-    /// @cond
+    /// @endcond
     /// @brief Convert type_t to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.

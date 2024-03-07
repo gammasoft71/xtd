@@ -425,7 +425,6 @@ namespace xtd {
       /// @endcond
       
       #if defined(__cpp_lib_filesystem)
-      /// @endcond
       /// @brief Assumes that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
