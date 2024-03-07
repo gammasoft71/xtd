@@ -25,7 +25,7 @@ namespace xtd {
       string_assume() = delete;
       /// @endcond
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Validates that two type are equal ignoring case.

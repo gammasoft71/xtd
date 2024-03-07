@@ -26,7 +26,7 @@ namespace xtd {
       file_valid() = delete;
       /// @endcond
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Validate that two files are equal.

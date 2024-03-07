@@ -39,7 +39,7 @@ namespace xtd {
       assert() = delete;
       /// @endcond
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Asserts that two type are equal.

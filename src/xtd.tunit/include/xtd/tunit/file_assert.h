@@ -26,7 +26,7 @@ namespace xtd {
       file_assert() = delete;
       /// @endcond
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Asserts that two files are equal.
