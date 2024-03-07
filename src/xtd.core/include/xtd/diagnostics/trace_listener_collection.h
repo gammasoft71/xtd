@@ -25,7 +25,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>, public xtd::iequatable<trace_listener_collection> {
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents the base type of the collection.

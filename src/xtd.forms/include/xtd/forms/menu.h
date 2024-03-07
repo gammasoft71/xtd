@@ -35,7 +35,7 @@ namespace xtd {
     class forms_export_ menu : public component, public xtd::iequatable<menu> {
       struct data;
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents a collection of menu_item objects.

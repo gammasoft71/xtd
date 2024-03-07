@@ -38,7 +38,7 @@ namespace xtd {
     /// @remarks xtd::diagnostics::stack_trace might not report as many method calls as expected, due to code transformations that occur during optimization.
     class core_export_ stack_trace : public xtd::object {
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents a stack_frame collection.

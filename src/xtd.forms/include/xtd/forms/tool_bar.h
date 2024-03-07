@@ -52,7 +52,7 @@ namespace xtd {
       class tool_bar_button_control;
       
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents the base type of the xtd::forms::tool_bar::buttons collection.

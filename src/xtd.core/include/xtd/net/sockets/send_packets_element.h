@@ -38,7 +38,7 @@ namespace xtd {
       /// @remarks The xtd::net::sockets::send_packets_element class is used to enhance the xtd::net::sockets::socket class for use by server applications that use asynchronous network I/O to achieve the highest performance. The xtd::net::sockets::send_packets_element class is used with the xtd::net::sockets::socket_async_event_args::send_packets_elements property to get or set a data buffer or file to be sent using the xtd::net::sockets::socket::send_packets_async method.
       class core_export_ send_packets_element : public xtd::object {
       public:
-        /// @name Alias
+        /// @name Aliases
         
         /// @{
         /// @brief Represent ta std::ifstream reference.

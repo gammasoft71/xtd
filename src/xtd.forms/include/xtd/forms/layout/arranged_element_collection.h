@@ -61,7 +61,7 @@ namespace xtd {
           arranged_element_collection* owner = nullptr;
         };
         
-        /// @name Alias
+        /// @name Aliases
         
         /// @{
         /// @brief Represents the allocator type of the collection.

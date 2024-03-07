@@ -138,7 +138,7 @@ namespace xtd {
       /// @endcond
       
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represent an xtd::forms::context_menu reference.
@@ -148,7 +148,7 @@ namespace xtd {
       /// @brief Represents a collection of controls.
       class control_collection : public xtd::forms::layout::arranged_element_collection<control_ref> {
       public:
-        /// @name Alias
+        /// @name Aliases
         
         /// @{
         /// @brief Represents the base type of the collection.

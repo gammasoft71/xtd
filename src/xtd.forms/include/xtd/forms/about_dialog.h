@@ -39,7 +39,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents an author collection.

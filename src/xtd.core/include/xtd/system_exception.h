@@ -24,7 +24,7 @@ namespace xtd {
   /// @ingroup xtd_core exceptions
   class core_export_ system_exception : public object, public std::exception {
   public:
-    /// @name Alias
+    /// @name Aliases
     
     /// @{
     /// @brief Optional reference wrapper on std::exception

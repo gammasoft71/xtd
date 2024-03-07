@@ -56,7 +56,7 @@ namespace xtd {
     /// @include debug.cpp
     class core_export_ debug static_ {
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents a collection of xtd::diagnostics::trace_listener.

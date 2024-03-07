@@ -32,7 +32,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents the collection containing the indexes to the selected items in a list_box.
