@@ -335,7 +335,7 @@ namespace xtd {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
-    // @endcond
+    /// @endcond
     
   private:
     static bool are_equals(const std::function<result_t()>& fct1, const std::function<result_t()>& fct2) noexcept {
