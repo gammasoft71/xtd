@@ -11,6 +11,7 @@
 #include "assert_error.h"
 #include "ignore_error.h"
 #include <xtd/environment>
+#include <xtd/static>
 #include <xtd/types>
 #include <xtd/typeof>
 #include <xtd/ustring>
@@ -26,13 +27,9 @@ namespace xtd {
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit tunit
-    class tunit_export_ base_assert {
+    class tunit_export_ base_assert static_ {
     public:
-      /// @cond
-      base_assert() = delete;
-      /// @endcond
-      
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Abort current test. This is used by the other assert functions.

@@ -38,10 +38,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets default settings instance.
-      /// @return Default settings instance.
-      static xtd::tunit::settings& default_settings() noexcept;
-      
       /// @brief Gets also run ignored test.
       /// @return true if also run ignored test; otherwise false.
       bool also_run_ignored_tests() const noexcept;
@@ -220,7 +216,15 @@ namespace xtd {
       /// @remarks The default value is false for increase the unit test execution.
       void enable_stack_trace(bool enable_stack_trace) noexcept;
       /// @}
+
+      /// @name Properties
       
+      /// @{
+      /// @brief Gets default settings instance.
+      /// @return Default settings instance.
+      static xtd::tunit::settings& default_settings() noexcept;
+      /// @}
+
     private:
       friend class unit_test;
       friend class ostream_event_listener;

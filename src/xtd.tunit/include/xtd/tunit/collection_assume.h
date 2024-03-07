@@ -25,7 +25,7 @@ namespace xtd {
       collection_assume() = delete;
       /// @endcond
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Assumes that all collection items are of the type supplied or a derived type.

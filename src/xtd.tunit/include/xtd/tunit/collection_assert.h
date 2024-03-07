@@ -26,7 +26,7 @@ namespace xtd {
       collection_assert() = delete;
       /// @endcond
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Asserts that all collection items are of the type supplied or a derived type.

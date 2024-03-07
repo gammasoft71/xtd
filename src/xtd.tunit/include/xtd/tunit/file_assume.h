@@ -25,7 +25,7 @@ namespace xtd {
       file_assume() = delete;
       /// @endcond
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Assumes that two files are equal.
