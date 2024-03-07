@@ -117,12 +117,12 @@ This class filters events based on a specific trace source set by the user. </dd
 <a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html" title="Indicates whether a listener should trace a message based on the source of a trace.">xtd::diagnostics::source_filter</a> overrides the <a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#a13ef467a4576cd42cca6ff5f5073e1ec" title="Determines whether the trace listener should trace the event.">xtd::diagnostics::source_filter::should_trace</a> method and defines a <a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#abc4fd063b5426553cb99de16e1c5d463" title="Gets the name of the trace source.">xtd::diagnostics::source_filter::source</a> property that specifies the name of the trace source to be traced by the listener. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This filter is provided because multiple trace sources can simultaneously use the same trace listener. </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a39c513ca63090d1d9771887d4f8ad336"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#a39c513ca63090d1d9771887d4f8ad336">source_filter</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#abc4fd063b5426553cb99de16e1c5d463">source</a>)</td></tr>
 <tr class="memdesc:a39c513ca63090d1d9771887d4f8ad336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html" title="Indicates whether a listener should trace a message based on the source of a trace.">xtd::diagnostics::source_filter</a> class, specifying the name of the trace source.  <br /></td></tr>
 <tr class="separator:a39c513ca63090d1d9771887d4f8ad336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:abc4fd063b5426553cb99de16e1c5d463"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#abc4fd063b5426553cb99de16e1c5d463">source</a> () const noexcept</td></tr>
 <tr class="memdesc:abc4fd063b5426553cb99de16e1c5d463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the trace source.  <br /></td></tr>
 <tr class="separator:abc4fd063b5426553cb99de16e1c5d463"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,7 +130,7 @@ This class filters events based on a specific trace source set by the user. </dd
 <tr class="memdesc:ae69f63f18cd9ab630aa2b1945ad41991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the trace source.  <br /></td></tr>
 <tr class="separator:ae69f63f18cd9ab630aa2b1945ad41991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a13ef467a4576cd42cca6ff5f5073e1ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#a13ef467a4576cd42cca6ff5f5073e1ec">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#abc4fd063b5426553cb99de16e1c5d463">source</a>, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> id, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, std::any data1, const std::vector&lt; std::any &gt; &amp;data_array) noexcept override</td></tr>
 <tr class="memdesc:a13ef467a4576cd42cca6ff5f5073e1ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the trace listener should trace the event.  <br /></td></tr>
 <tr class="separator:a13ef467a4576cd42cca6ff5f5073e1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -367,7 +367,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:23:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

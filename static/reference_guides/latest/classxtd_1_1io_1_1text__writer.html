@@ -113,15 +113,25 @@ Inheritance diagram for xtd::io::text_writer:</div>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1io.html" title="The xtd::io namespace contains types that allow reading and writing to files and data streams,...">xtd::io</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Fields</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
 <tr class="memitem:a64dc836d10261b6b7c82c0c2a332acfc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1io_1_1null__text__writer.html">null_text_writer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__writer.html#a64dc836d10261b6b7c82c0c2a332acfc">null</a> () noexcept</td></tr>
 <tr class="memdesc:a64dc836d10261b6b7c82c0c2a332acfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a <a class="el" href="classxtd_1_1io_1_1text__writer.html" title="Represents a writer that can write a sequential series of characters.">text_writer</a> with no backing store that can be written to, but not read from.  <br /></td></tr>
 <tr class="separator:a64dc836d10261b6b7c82c0c2a332acfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:aafda2bfa7b8cd609254618aaeaf49782"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1io_1_1synchronized__text__writer.html">synchronized_text_writer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__writer.html#aafda2bfa7b8cd609254618aaeaf49782">synchronised</a> (<a class="el" href="classxtd_1_1io_1_1text__writer.html">text_writer</a> &amp;writer) noexcept</td></tr>
 <tr class="memdesc:aafda2bfa7b8cd609254618aaeaf49782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a thread-safe (synchronized) wrapper around the specified <a class="el" href="classxtd_1_1io_1_1text__writer.html" title="Represents a writer that can write a sequential series of characters.">text_writer</a> object.  <br /></td></tr>
 <tr class="separator:aafda2bfa7b8cd609254618aaeaf49782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:aa2b2f694e3563633e64988daaf4652c0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__writer.html#aa2b2f694e3563633e64988daaf4652c0">new_line</a> () const noexcept</td></tr>
+<tr class="memdesc:aa2b2f694e3563633e64988daaf4652c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the line terminator string used by the current <a class="el" href="classxtd_1_1io_1_1text__writer.html" title="Represents a writer that can write a sequential series of characters.">text_writer</a>.  <br /></td></tr>
+<tr class="separator:aa2b2f694e3563633e64988daaf4652c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e27a6d175cdc9d7db1562c9786f89ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__writer.html#a4e27a6d175cdc9d7db1562c9786f89ca">new_line</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;new_line) noexcept</td></tr>
+<tr class="memdesc:a4e27a6d175cdc9d7db1562c9786f89ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the line terminator string used by the current <a class="el" href="classxtd_1_1io_1_1text__writer.html" title="Represents a writer that can write a sequential series of characters.">text_writer</a>.  <br /></td></tr>
+<tr class="separator:a4e27a6d175cdc9d7db1562c9786f89ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:ab453370d7c0be12e2178b4effbbe22e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__writer.html#ab453370d7c0be12e2178b4effbbe22e0">close</a> ()</td></tr>
 <tr class="memdesc:ab453370d7c0be12e2178b4effbbe22e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the <a class="el" href="classxtd_1_1io_1_1text__reader.html" title="Represents a reader that can read a sequential series of characters.">xtd::io::text_reader</a> and releases any system resources associated with the <a class="el" href="classxtd_1_1io_1_1text__reader.html" title="Represents a reader that can read a sequential series of characters.">text_reader</a>.  <br /></td></tr>
 <tr class="separator:ab453370d7c0be12e2178b4effbbe22e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,14 +229,6 @@ Inheritance diagram for xtd::io::text_writer:</div>
 <tr class="memitem:a3e69af07680ec51d185fc890b4bc2b5e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__writer.html#a3e69af07680ec51d185fc890b4bc2b5e">write_line</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;fmt, args_t &amp;&amp;... args) noexcept</td></tr>
 <tr class="memdesc:a3e69af07680ec51d185fc890b4bc2b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the specified arguments with specified format to the text stream.  <br /></td></tr>
 <tr class="separator:a3e69af07680ec51d185fc890b4bc2b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
-<tr class="memitem:aa2b2f694e3563633e64988daaf4652c0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__writer.html#aa2b2f694e3563633e64988daaf4652c0">new_line</a> () const noexcept</td></tr>
-<tr class="memdesc:aa2b2f694e3563633e64988daaf4652c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the line terminator string used by the current <a class="el" href="classxtd_1_1io_1_1text__writer.html" title="Represents a writer that can write a sequential series of characters.">text_writer</a>.  <br /></td></tr>
-<tr class="separator:aa2b2f694e3563633e64988daaf4652c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e27a6d175cdc9d7db1562c9786f89ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__writer.html#a4e27a6d175cdc9d7db1562c9786f89ca">new_line</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;new_line) noexcept</td></tr>
-<tr class="memdesc:a4e27a6d175cdc9d7db1562c9786f89ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the line terminator string used by the current <a class="el" href="classxtd_1_1io_1_1text__writer.html" title="Represents a writer that can write a sequential series of characters.">text_writer</a>.  <br /></td></tr>
-<tr class="separator:a4e27a6d175cdc9d7db1562c9786f89ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected constructors</h2></td></tr>
 <tr class="memitem:a90b3e80352303d25362d280f2f9b5e33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__writer.html#a90b3e80352303d25362d280f2f9b5e33">text_writer</a> ()=default</td></tr>
@@ -461,7 +463,7 @@ When the <a class="el" href="classxtd_1_1io_1_1text__writer.html#a8d13fc012efd84
 </div><div class="memdoc">
 
 <p>Creates a thread-safe (synchronized) wrapper around the specified <a class="el" href="classxtd_1_1io_1_1text__writer.html" title="Represents a writer that can write a sequential series of characters.">text_writer</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>{ </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">reader</td><td>The TextReader object to synchronize. </td></tr>
   </table>
@@ -1485,7 +1487,7 @@ template&lt;typename value_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -116,7 +116,7 @@ An application can fill a region by using the <a class="el" href="classxtd_1_1dr
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="circular_form_8cpp-example.html#_a2">circular_form.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a169eba2af3c6551d274cc301f303a5e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1region.html#a169eba2af3c6551d274cc301f303a5e0">region</a> ()</td></tr>
 <tr class="memdesc:a169eba2af3c6551d274cc301f303a5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a>.  <br /></td></tr>
 <tr class="separator:a169eba2af3c6551d274cc301f303a5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,12 +130,12 @@ An application can fill a region by using the <a class="el" href="classxtd_1_1dr
 <tr class="memdesc:a3f209d677171ab2a15e76dcbfaf6c6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a> from the specified <a class="el" href="classxtd_1_1drawing_1_1rectangle__f.html" title="Stores a set of four floating-point numbers that represent the location and size of a rectangle....">xtd::drawing::rectangle_f</a> structure.  <br /></td></tr>
 <tr class="separator:a3f209d677171ab2a15e76dcbfaf6c6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:ac5173726cf14c751b9b41fce809df470"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1region.html#ac5173726cf14c751b9b41fce809df470">handle</a> () const noexcept</td></tr>
 <tr class="memdesc:ac5173726cf14c751b9b41fce809df470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the handle of the region.  <br /></td></tr>
 <tr class="separator:ac5173726cf14c751b9b41fce809df470"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a30afee7b100daa91ef3e1df1c6e1aa0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1region.html#a30afee7b100daa91ef3e1df1c6e1aa0b">complement</a> (const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__path.html">xtd::drawing::drawing_2d::graphics_path</a> &amp;<a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dbad6fe1d0be6347b8ef2427fa629c04485">path</a>) noexcept</td></tr>
 <tr class="memdesc:a30afee7b100daa91ef3e1df1c6e1aa0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates this <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a> to contain the portion of the specified xtd::drawing::graphics_path that does not intersect with this <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a>.  <br /></td></tr>
 <tr class="separator:a30afee7b100daa91ef3e1df1c6e1aa0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,6 +283,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:aa1d5870ece124f2b932456be28a364f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1region.html#aa1d5870ece124f2b932456be28a364f9">translate</a> (float dx, float dy) noexcept</td></tr>
 <tr class="memdesc:aa1d5870ece124f2b932456be28a364f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offsets the coordinates of this <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a> by the specified amount.  <br /></td></tr>
 <tr class="separator:aa1d5870ece124f2b932456be28a364f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:a9ac67eb58840dd68e15e9801ecda57de"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1region.html">xtd::drawing::region</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1region.html#a9ac67eb58840dd68e15e9801ecda57de">from_hrgn</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> hrgn)</td></tr>
 <tr class="memdesc:a9ac67eb58840dd68e15e9801ecda57de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a> from a handle to the specified existing GDI region.  <br /></td></tr>
 <tr class="separator:a9ac67eb58840dd68e15e9801ecda57de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2376,7 +2378,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

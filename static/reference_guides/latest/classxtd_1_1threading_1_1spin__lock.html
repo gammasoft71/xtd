@@ -119,7 +119,7 @@ Inheritance diagram for xtd::threading::spin_lock:</div>
 <dd>
 <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> should only be used after you have been determined that doing so will improve an application's performance. It is also important to note that <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> is a value type, for performance reasons. For this reason, you must be very careful not to accidentally copy a <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> instance, as the two instances (the original and the copy) would then be completely independent of one another, which would likely lead to erroneous behavior of the application. If a <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> instance must be passed around, it should be passed by reference rather than by value. </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a58fa5007bcd2bf8644d8dc8ce9b30823"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a58fa5007bcd2bf8644d8dc8ce9b30823">spin_lock</a> ()</td></tr>
 <tr class="memdesc:a58fa5007bcd2bf8644d8dc8ce9b30823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> structure.  <br /></td></tr>
 <tr class="separator:a58fa5007bcd2bf8644d8dc8ce9b30823"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,7 +127,7 @@ Inheritance diagram for xtd::threading::spin_lock:</div>
 <tr class="memdesc:a1564fffb6c9f3ee5ea802e7c8a689323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> structure with the option to track thread IDs to improve debugging.  <br /></td></tr>
 <tr class="separator:a1564fffb6c9f3ee5ea802e7c8a689323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:acdc54498e82b31d71af62424ffbc2cb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1spin__lock.html#acdc54498e82b31d71af62424ffbc2cb8">is_held</a> () const noexcept</td></tr>
 <tr class="memdesc:acdc54498e82b31d71af62424ffbc2cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the lock is currently held by any thread.  <br /></td></tr>
 <tr class="separator:acdc54498e82b31d71af62424ffbc2cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,7 +138,7 @@ Inheritance diagram for xtd::threading::spin_lock:</div>
 <tr class="memdesc:a531972816dbf8084244030140a9db621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether thread ownership tracking is enabled for this instance.  <br /></td></tr>
 <tr class="separator:a531972816dbf8084244030140a9db621"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a24e13fcd4189869a3d23e187b42c792a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a24e13fcd4189869a3d23e187b42c792a">enter</a> (bool &amp;lock_taken)</td></tr>
 <tr class="memdesc:a24e13fcd4189869a3d23e187b42c792a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acquires the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
 <tr class="separator:a24e13fcd4189869a3d23e187b42c792a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -545,7 +545,7 @@ If you call <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

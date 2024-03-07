@@ -113,17 +113,17 @@ Inheritance diagram for xtd::threading::cancellation_token:</div>
 <dl class="section user"><dt>Examples</dt><dd>The following example uses a random number generator to emulate a data collection application that reads 10 integral values from eleven different instruments. A value of zero indicates that the measurement has failed for one instrument, in which case the operation should be cancelled and no overall mean should be computed. To handle the possible cancellation of the operation, the example instantiates a <a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html" title="Signals to a xtd::threading::cancellation_token that it should be canceled.">xtd::threading::cancellation_token_source</a> object that generates a cancellation token that's passed to a xtd::threading::tasks::task_factory object. In turn, the xtd::threading::tasks::task_factory object passes the cancellation token to each of the tasks responsible for collecting readings for a particular instrument. The xtd::threading::tasks::task_factory::continue_when_all&lt;antecedent_result_t,result_t&gt;(std::vector&lt;xtd::threading::tasks::task&lt;antecedent_result_t&gt;&gt;, xtd::func&lt;std::vector&lt;xtd::threading::tasks::task&lt;antecedent_tesult_t&gt;&gt;,TResult&gt;, cancellation_token) method is called to ensure that the mean is computed only after all readings have been gathered successfully. If a task has not completed because it was cancelled, the xtd::threading::tasks::task_factory::continue_when_all method throws an exception. <div class="fragment"></div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">xtd::threading::cancellation_token</a> enables cooperative cancellation between threads, thread pool work items, or xtd::threading::taks::task objects. You create a cancellation token by instantiating a <a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html" title="Signals to a xtd::threading::cancellation_token that it should be canceled.">xtd::threading::cancellation_token_source</a> object, which manages cancellation tokens retrieved from its xtd::threading::cancellation_token_source::token property. You then pass the cancellation token to any number of threads, tasks, or operations that should receive notice of cancellation. The token cannot be used to initiate cancellation. When the owning object calls xtd::threading::cancellation_token_source.cancel, the <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#adfe1681cb1b9e4a8e16a0a294df3db58" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token::is_cancellation_requested</a> property on every copy of the cancellation token is set to true. The objects that receive the notification can respond in whatever manner is appropriate. </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Fields</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
 <tr class="memitem:a7ef52fccdb8b28ce986363f0bcae7e7a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#a7ef52fccdb8b28ce986363f0bcae7e7a">none</a></td></tr>
 <tr class="memdesc:a7ef52fccdb8b28ce986363f0bcae7e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an empty <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">xtd::threading::cancellation_token</a> value.  <br /></td></tr>
 <tr class="separator:a7ef52fccdb8b28ce986363f0bcae7e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a5e0cc24f0b9844dc0856eba991386e3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#a5e0cc24f0b9844dc0856eba991386e3c">cancellation_token</a> (bool canceled)</td></tr>
 <tr class="memdesc:a5e0cc24f0b9844dc0856eba991386e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">xtd::threading::cancellation_token</a>.  <br /></td></tr>
 <tr class="separator:a5e0cc24f0b9844dc0856eba991386e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Proeprties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a2a6dcdd32a8c82b2bb69ecd08ae95b7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#a2a6dcdd32a8c82b2bb69ecd08ae95b7d">can_be_canceled</a> () const noexcept</td></tr>
 <tr class="memdesc:a2a6dcdd32a8c82b2bb69ecd08ae95b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether this token is capable of being in the canceled state.  <br /></td></tr>
 <tr class="separator:a2a6dcdd32a8c82b2bb69ecd08ae95b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,7 +134,7 @@ Inheritance diagram for xtd::threading::cancellation_token:</div>
 <tr class="memdesc:a75f8b7e9438a541b0e736a2b12697766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that is signaled when the token is canceled.  <br /></td></tr>
 <tr class="separator:a75f8b7e9438a541b0e736a2b12697766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:acf04e48b9c03a9f7a7cf1ce12c68f099"><td class="memItemLeft" align="right" valign="top"><a id="acf04e48b9c03a9f7a7cf1ce12c68f099" name="acf04e48b9c03a9f7a7cf1ce12c68f099"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept</td></tr>
 <tr class="separator:acf04e48b9c03a9f7a7cf1ce12c68f099"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -326,7 +326,7 @@ Two empty cancellation tokens are always equal. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -105,7 +105,7 @@ Inheritance diagram for xtd::net::socket_address:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The first 2 bytes of the underlying buffer are reserved for the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> enumerated value. When the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> is used to store a serialized xtd::net::ipend_point, the third and fourth bytes are used to store port number information. The next bytes are used to store the IP address. You can access any information within this underlying byte buffer by referring to its index position; the byte buffer uses zero-based indexing. You can also use the xtd::net::socket_address::family and <a class="el" href="classxtd_1_1net_1_1socket__address.html#ad3584178b7a64c84783853a124ab03b2" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> properties to get the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> value and the buffer size, respectively. To view any of this information as a string, use the <a class="el" href="classxtd_1_1net_1_1socket__address.html#afee4426f1d082620c75f7861fcd1e88a" title="Returns information about the socket address.">xtd::net::socket_address::to_string</a> method. </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a6f1f2b3d35bbc2210ea81b363210826d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#a6f1f2b3d35bbc2210ea81b363210826d">socket_address</a> (<a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a> <a class="el" href="classxtd_1_1net_1_1socket__address.html#ae2ee8c0e19c6313e09ab31ef50c6c819">address_family</a>)</td></tr>
 <tr class="memdesc:a6f1f2b3d35bbc2210ea81b363210826d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> class for the given address family.  <br /></td></tr>
 <tr class="separator:a6f1f2b3d35bbc2210ea81b363210826d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,7 +116,7 @@ Inheritance diagram for xtd::net::socket_address:</div>
 <tr class="memdesc:a1d7ab2f450967159fd78cfb13ae93af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> class using the specified byte buffer .  <br /></td></tr>
 <tr class="separator:a1d7ab2f450967159fd78cfb13ae93af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:ae2ee8c0e19c6313e09ab31ef50c6c819"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#ae2ee8c0e19c6313e09ab31ef50c6c819">address_family</a> () const</td></tr>
 <tr class="memdesc:ae2ee8c0e19c6313e09ab31ef50c6c819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address family to which the endpoint belongs.  <br /></td></tr>
 <tr class="separator:ae2ee8c0e19c6313e09ab31ef50c6c819"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,7 +132,7 @@ Inheritance diagram for xtd::net::socket_address:</div>
 <tr class="memdesc:a28631689f72aadb1a6ec87ec452b6e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified index element in the underlying buffer.  <br /></td></tr>
 <tr class="separator:a28631689f72aadb1a6ec87ec452b6e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:afee4426f1d082620c75f7861fcd1e88a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#afee4426f1d082620c75f7861fcd1e88a">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:afee4426f1d082620c75f7861fcd1e88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns information about the socket address.  <br /></td></tr>
 <tr class="separator:afee4426f1d082620c75f7861fcd1e88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -400,7 +400,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -146,12 +146,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:aba0fa04d97e87bc882a3bca9945c92b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls ExitThreadCore(), which raises the ThreadExit event.  <br /></td></tr>
 <tr class="separator:aba0fa04d97e87bc882a3bca9945c92b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Events</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
 <tr class="memitem:a3dc1fee2312e39f7032b071ed5ee0f54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1application__context.html">application_context</a>, <a class="el" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application__context.html#a3dc1fee2312e39f7032b071ed5ee0f54">thread_exit</a></td></tr>
 <tr class="memdesc:a3dc1fee2312e39f7032b071ed5ee0f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the message loop of the thread should be terminated, by calling <a class="el" href="classxtd_1_1forms_1_1application__context.html#a3e34e98c1ee192c1091cd13dde474bf9" title="Terminates the message loop of the thread.">exit_thread()</a>.  <br /></td></tr>
 <tr class="separator:a3dc1fee2312e39f7032b071ed5ee0f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a565bbabff1f377c8b3a9eb28028d4dfe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application__context.html#a565bbabff1f377c8b3a9eb28028d4dfe">application_context</a> ()</td></tr>
 <tr class="memdesc:a565bbabff1f377c8b3a9eb28028d4dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">application_context</a> class with no context.  <br /></td></tr>
 <tr class="separator:a565bbabff1f377c8b3a9eb28028d4dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,7 +159,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:ad245141a681eec434b9f2987ed1fd029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">application_context</a> class with the specified Form.  <br /></td></tr>
 <tr class="separator:ad245141a681eec434b9f2987ed1fd029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a4be4b23c1063c89e478249e8a36f68f6"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="group__xtd__forms.html#ga6f3a0c556fa94dbc11ae257629355151">const_form_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application__context.html#a4be4b23c1063c89e478249e8a36f68f6">main_form</a> () const noexcept</td></tr>
 <tr class="memdesc:a4be4b23c1063c89e478249e8a36f68f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the form to use as context.  <br /></td></tr>
 <tr class="separator:a4be4b23c1063c89e478249e8a36f68f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,7 +179,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:af3b0cb7790f5544bc8479a965475ac19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an object that contains data about the control.  <br /></td></tr>
 <tr class="separator:af3b0cb7790f5544bc8479a965475ac19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a3e34e98c1ee192c1091cd13dde474bf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application__context.html#a3e34e98c1ee192c1091cd13dde474bf9">exit_thread</a> ()</td></tr>
 <tr class="memdesc:a3e34e98c1ee192c1091cd13dde474bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminates the message loop of the thread.  <br /></td></tr>
 <tr class="separator:a3e34e98c1ee192c1091cd13dde474bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -563,7 +563,7 @@ A common use for the tag property is to store data that is closely associated wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

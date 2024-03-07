@@ -173,7 +173,7 @@ Inheritance diagram for xtd::io::binary_reader:</div>
 <div class="ttc" id="aclassxtd_1_1io_1_1binary__writer_html"><div class="ttname"><a href="classxtd_1_1io_1_1binary__writer.html">xtd::io::binary_writer</a></div><div class="ttdoc">Writes primitive types in binary to a stream and supports writing strings.</div><div class="ttdef"><b>Definition</b> binary_writer.h:37</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1binary__writer_html_ac41c07a8df723bcaed30d973800fe109"><div class="ttname"><a href="classxtd_1_1io_1_1binary__writer.html#ac41c07a8df723bcaed30d973800fe109">xtd::io::binary_writer::write</a></div><div class="ttdeci">virtual void write(bool value)</div><div class="ttdoc">Writes a one-byte boolean value to the current stream, with 0 representing false and 1 representing t...</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:47</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:166</div></div>
 <div class="ttc" id="agroup__keywords_html_ga73249a3d4ad48e36724bccf5f3e48f2f"><div class="ttname"><a href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a></div><div class="ttdeci">#define using_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> using.h:33</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:16</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
@@ -246,7 +246,7 @@ When you create a new instance of the xtd:io::<a class="el" href="classxtd_1_1io
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader_8cpp-example.html#_a4">binary_reader.cpp</a>, <a class="el" href="binary_reader2_8cpp-example.html#_a3">binary_reader2.cpp</a>, and <a class="el" href="binary_reader3_8cpp-example.html#_a3">binary_reader3.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a242c02d60c9b68ad2985596d796e2d77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1binary__reader.html#a242c02d60c9b68ad2985596d796e2d77">binary_reader</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1io_1_1path.html">path</a>)</td></tr>
 <tr class="memdesc:a242c02d60c9b68ad2985596d796e2d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads primitive data types as binary values in a specific encoding.">xtd::io::binary_reader</a> class for the specified file name.  <br /></td></tr>
 <tr class="separator:a242c02d60c9b68ad2985596d796e2d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,7 +254,7 @@ When you create a new instance of the xtd:io::<a class="el" href="classxtd_1_1io
 <tr class="memdesc:a48a53a1cf9b1fcb4d2bbfb3b4219ed0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads primitive data types as binary values in a specific encoding.">xtd::io::binary_reader</a> class for the specified stream.  <br /></td></tr>
 <tr class="separator:a48a53a1cf9b1fcb4d2bbfb3b4219ed0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:acc792e3772745ff8059f6d4600e740a8"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::reference_wrapper&lt; std::istream &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1binary__reader.html#acc792e3772745ff8059f6d4600e740a8">base_stream</a> () const</td></tr>
 <tr class="memdesc:acc792e3772745ff8059f6d4600e740a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying stream.  <br /></td></tr>
 <tr class="separator:acc792e3772745ff8059f6d4600e740a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,7 +262,7 @@ When you create a new instance of the xtd:io::<a class="el" href="classxtd_1_1io
 <tr class="memdesc:a7b27c50a0c887a3d1b55f4f0de392835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the current stream position is at the end of the stream.  <br /></td></tr>
 <tr class="separator:a7b27c50a0c887a3d1b55f4f0de392835"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a1df99b945edbf8c7f348d589370fb1e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1binary__reader.html#a1df99b945edbf8c7f348d589370fb1e9">close</a> ()</td></tr>
 <tr class="memdesc:a1df99b945edbf8c7f348d589370fb1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the <a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads primitive data types as binary values in a specific encoding.">xtd::io::binary_reader</a> object and the underlying stream, and releases any system resources associated with the reader.  <br /></td></tr>
 <tr class="separator:a1df99b945edbf8c7f348d589370fb1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1481,7 +1481,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

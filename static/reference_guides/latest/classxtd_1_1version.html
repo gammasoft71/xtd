@@ -129,7 +129,7 @@ Inheritance diagram for xtd::version:</div>
 <div class="line"><span class="comment">// This code can produce the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Operating System: macOS 11.6.0 (11.6.0.0)</span></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:166</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> numbers consist of two to four components: major, minor, build, and revision. The major and minor components are required; the build and revision components are optional, but the build component is required if the revision component is defined. All defined components must be integers greater than or equal to 0. The format of the version number is as follows (optional components are shown in square brackets ([ and ]): <pre class="fragment">major.minor[.build[.revision]] </pre> </dd>
@@ -211,7 +211,7 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_with_cmake_assembly_info_8cpp-example.html#_a1">application_with_cmake_assembly_info.cpp</a>, <a class="el" href="application_with_manual_assembly_info_8cpp-example.html#_a1">application_with_manual_assembly_info.cpp</a>, <a class="el" href="boxing_8cpp-example.html#_a3">boxing.cpp</a>, and <a class="el" href="version_8cpp-example.html#_a0">version.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a3504954441aa4d0d53ace55b4f518c42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1version.html#a3504954441aa4d0d53ace55b4f518c42">version</a> () noexcept=default</td></tr>
 <tr class="memdesc:a3504954441aa4d0d53ace55b4f518c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class.  <br /></td></tr>
 <tr class="separator:a3504954441aa4d0d53ace55b4f518c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,7 +228,7 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <tr class="memdesc:a857d0621a6d60896e158fc606cde6080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class using the specified major, minor, build and revision values.  <br /></td></tr>
 <tr class="separator:a857d0621a6d60896e158fc606cde6080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:aa7a3bfb1c5089058407f302c39dfd189"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1version.html#aa7a3bfb1c5089058407f302c39dfd189">build</a> () const noexcept</td></tr>
 <tr class="memdesc:aa7a3bfb1c5089058407f302c39dfd189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the build component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
 <tr class="separator:aa7a3bfb1c5089058407f302c39dfd189"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,7 +248,7 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <tr class="memdesc:ae9c70a097280c1c51ecb33d13ab45dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the revision component of the version number for the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object.  <br /></td></tr>
 <tr class="separator:ae9c70a097280c1c51ecb33d13ab45dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:ab77b49d5430810732b4dd085272b5735"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1version.html#ab77b49d5430810732b4dd085272b5735">compare_to</a> (const <a class="el" href="classxtd_1_1version.html">version</a> &amp;<a class="el" href="classxtd_1_1version.html">version</a>) const noexcept override</td></tr>
 <tr class="memdesc:ab77b49d5430810732b4dd085272b5735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to a specified object and returns an indication of their relative values.  <br /></td></tr>
 <tr class="separator:ab77b49d5430810732b4dd085272b5735"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -261,6 +261,8 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <tr class="memitem:a45771bef8474b38a880b14b830393fea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1version.html#a45771bef8474b38a880b14b830393fea">to_string</a> (size_t field_count) const</td></tr>
 <tr class="memdesc:a45771bef8474b38a880b14b830393fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> representation. A specified count indicates the number of components to return.  <br /></td></tr>
 <tr class="separator:a45771bef8474b38a880b14b830393fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:ae1ae6b795c9d521d943e5085b9ece9a7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1version.html">version</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1version.html#ae1ae6b795c9d521d943e5085b9ece9a7">parse</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;input)</td></tr>
 <tr class="memdesc:ae1ae6b795c9d521d943e5085b9ece9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a version number to an equivalent Version object.  <br /></td></tr>
 <tr class="separator:ae1ae6b795c9d521d943e5085b9ece9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1058,7 +1060,7 @@ field_count is more than the number of components defined in the current <a clas
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:23:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

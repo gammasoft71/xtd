@@ -242,7 +242,7 @@ A local semaphore exists only within your process. It can be used by any thread 
 <div class="line"><span class="comment">// thread 3 releases the semaphore.</span></div>
 <div class="line"><span class="comment">// thread 3 previous semaphore count: 2</span></div>
 <div class="line"><span class="comment">// Main thread exits.</span></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:166</div></div>
 <div class="ttc" id="agroup__style__sheets_html_gab2df52e1ee01768696593857d4adc256"><div class="ttname"><a href="group__style__sheets.html#gab2df52e1ee01768696593857d4adc256">xtd::forms::style_sheets::padding</a></div><div class="ttdeci">xtd::forms::style_sheets::lengths padding</div><div class="ttdoc">Padding is used to create space around an element's content, inside of any defined borders.</div><div class="ttdef"><b>Definition</b> padding.h:24</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
@@ -251,7 +251,7 @@ A local semaphore exists only within your process. It can be used by any thread 
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="semaphore_8cpp-example.html#_a0">semaphore.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a5ec7de2efc2a961161ef198b50735923"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1semaphore.html#a5ec7de2efc2a961161ef198b50735923">semaphore</a> ()</td></tr>
 <tr class="memdesc:a5ec7de2efc2a961161ef198b50735923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> class.  <br /></td></tr>
 <tr class="separator:a5ec7de2efc2a961161ef198b50735923"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,7 +280,7 @@ A local semaphore exists only within your process. It can be used by any thread 
 <tr class="memdesc:a3709c280301dd7bb9ee31cd0a31cd9b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">nitializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> class, specifying the initial number of entries and the maximum number of concurrent entries, optionally specifying the name of a system semaphore object, and specifying a variable that receives a value indicating whether a new system semaphore was created.  <br /></td></tr>
 <tr class="separator:a3709c280301dd7bb9ee31cd0a31cd9b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a9005ebcf73d9ee2f23b8c4b70ca7166e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1semaphore.html#a9005ebcf73d9ee2f23b8c4b70ca7166e">handle</a> () const noexcept override</td></tr>
 <tr class="memdesc:a9005ebcf73d9ee2f23b8c4b70ca7166e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
 <tr class="separator:a9005ebcf73d9ee2f23b8c4b70ca7166e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -288,7 +288,7 @@ A local semaphore exists only within your process. It can be used by any thread 
 <tr class="memdesc:aa15c99471106762834b06f16e67151a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the native operating system handle.  <br /></td></tr>
 <tr class="separator:aa15c99471106762834b06f16e67151a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:aa0dd699b9c1eb2f4cf87b4a42fdfa3b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1semaphore.html#aa0dd699b9c1eb2f4cf87b4a42fdfa3b5">close</a> () override</td></tr>
 <tr class="memdesc:aa0dd699b9c1eb2f4cf87b4a42fdfa3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
 <tr class="separator:aa0dd699b9c1eb2f4cf87b4a42fdfa3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -304,6 +304,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:aef9176db04539a533a40b9d7983c182d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1semaphore.html#aef9176db04539a533a40b9d7983c182d">release</a> (<a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> release_count)</td></tr>
 <tr class="memdesc:aef9176db04539a533a40b9d7983c182d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the semaphore a specified number of times and returns the previous count.  <br /></td></tr>
 <tr class="separator:aef9176db04539a533a40b9d7983c182d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:aa201c6395a8678f92bc55bdde6186231"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1semaphore.html">semaphore</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1semaphore.html#aa201c6395a8678f92bc55bdde6186231">open_existing</a> (const <a class="el" href="classxtd_1_1ustring.html">ustring</a> &amp;name)</td></tr>
 <tr class="memdesc:aa201c6395a8678f92bc55bdde6186231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named semaphore, if it already exists.  <br /></td></tr>
 <tr class="separator:aa201c6395a8678f92bc55bdde6186231"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1251,7 +1253,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

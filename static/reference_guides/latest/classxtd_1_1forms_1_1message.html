@@ -111,7 +111,7 @@ Windows message are simulate on macOS and linux. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="action1_8cpp-example.html#_a1">action1.cpp</a>, <a class="el" href="action2_8cpp-example.html#_a1">action2.cpp</a>, <a class="el" href="action3_8cpp-example.html#_a1">action3.cpp</a>, <a class="el" href="application_add_message_filter_8cpp-example.html#_a3">application_add_message_filter.cpp</a>, <a class="el" href="form_and_messages_8cpp-example.html#_a1">form_and_messages.cpp</a>, and <a class="el" href="wnd_proc_8cpp-example.html#_a4">wnd_proc.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:aac71102ad63fba6372c4ba431b7b3ffb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1message.html#aac71102ad63fba6372c4ba431b7b3ffb">hwnd</a> () const noexcept</td></tr>
 <tr class="memdesc:aac71102ad63fba6372c4ba431b7b3ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the window handle of the message.  <br /></td></tr>
 <tr class="separator:aac71102ad63fba6372c4ba431b7b3ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,7 +143,7 @@ Windows message are simulate on macOS and linux. </dd></dl>
 <tr class="memdesc:a32f40d066b93d1911ef1ebeba180ddc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the wparam field of the message.  <br /></td></tr>
 <tr class="separator:a32f40d066b93d1911ef1ebeba180ddc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:ad5a0a20d74679a40e643637ad9572172"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ad5a0a20d74679a40e643637ad9572172"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1message.html#ad5a0a20d74679a40e643637ad9572172">get_lparam</a> () const noexcept</td></tr>
 <tr class="memdesc:ad5a0a20d74679a40e643637ad9572172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lparam value and converts the value to an object.  <br /></td></tr>
@@ -154,6 +154,8 @@ Windows message are simulate on macOS and linux. </dd></dl>
 <tr class="memitem:a0c907979e836b86366e832a273da9b65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1message.html#a0c907979e836b86366e832a273da9b65">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:a0c907979e836b86366e832a273da9b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string that represents the current message.  <br /></td></tr>
 <tr class="separator:a0c907979e836b86366e832a273da9b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:a4c5f9036926453d344bb0270426e5823"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1message.html">message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1message.html#a4c5f9036926453d344bb0270426e5823">create</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1message.html#aac71102ad63fba6372c4ba431b7b3ffb">hwnd</a>, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> <a class="el" href="classxtd_1_1forms_1_1message.html#aa03b92404d32b7b0ebe446408d1d2727">msg</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1message.html#a06840dbec8da266cd42c61b3a3a3910a">wparam</a>, <a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> <a class="el" href="classxtd_1_1forms_1_1message.html#a303bbe885f5bedf8d6552ce4ddc3c9aa">lparam</a>)</td></tr>
 <tr class="memdesc:a4c5f9036926453d344bb0270426e5823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new message.  <br /></td></tr>
 <tr class="separator:a4c5f9036926453d344bb0270426e5823"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -632,7 +634,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

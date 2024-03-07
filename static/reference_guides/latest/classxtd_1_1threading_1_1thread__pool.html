@@ -147,7 +147,7 @@ Inheritance diagram for xtd::threading::thread_pool:</div>
 <div class="line"><span class="comment">// Main thread does some work, then sleeps.</span></div>
 <div class="line"><span class="comment">// Hello from the thread pool.</span></div>
 <div class="line"><span class="comment">// Main thread exits.</span></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:162</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:166</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> If you comment out the call to the <a class="el" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> method, the main thread exits before method runs on the thread pool thread. The thread pool uses background threads, which do not keep the application running if all foreground threads have terminated. (This is a simple example of a race condition.) </dd></dl>
@@ -170,7 +170,7 @@ The thread pool provides new worker threads or I/O completion threads on demand 
 <dl class="section remark"><dt>Remarks</dt><dd>You can use the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a9d286fb4b631f16224678853d0f86669" title="Retrieves the number of idle threads the thread pool maintains in anticipation of new requests....">xtd::threading::thread_pool::get_min_threads</a> method to obtain these minimum values. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>You can use the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a5c3b43e653cf43209dcc846c4f2070f9" title="Sets the number of idle threads the thread pool maintains in anticipation of new requests.">xtd::threading::thread_pool::set_min_threads</a> method to increase the minimum number of threads. However, unnecessarily increasing these values can cause performance problems. If too many tasks start at the same time, all of them might appear to be slow. In most cases the thread pool will perform better with its own algorithm for allocating threads. </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:a67c0921c9e154215c14cf459b9d0f3ed"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e154215c14cf459b9d0f3ed">close</a> ()</td></tr>
 <tr class="memdesc:a67c0921c9e154215c14cf459b9d0f3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close all resources and worker threads.  <br /></td></tr>
 <tr class="separator:a67c0921c9e154215c14cf459b9d0f3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -975,7 +975,7 @@ You can use this method to ensure that all pending threads are closed, and that 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

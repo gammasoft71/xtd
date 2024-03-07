@@ -127,12 +127,12 @@ The pattern for performing an asynchronous socket operation with this class cons
 <dd>
 The lifetime of the new asynchronous socket operation context object is determined by references by the application code and asynchronous I/O references. It is not necessary for the application to retain a reference to an asynchronous socket operation context object after it is submitted as a parameter to one of the asynchronous socket operation methods. It will remain referenced until the completion callback returns. However it is advantageous for the application to retain the reference to the context so that it can be reused for a future asynchronous socket operation. </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Events</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
 <tr class="memitem:a65c79e79a22401e10029936fee2c239d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">xtd::event</a>&lt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__async__event__args.html">socket_async_event_args</a>, xtd::delegate&lt; void(const <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__async__event__args.html">socket_async_event_args</a> &amp;)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__async__event__args.html#a65c79e79a22401e10029936fee2c239d">completed</a></td></tr>
 <tr class="memdesc:a65c79e79a22401e10029936fee2c239d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The event used to complete an asynchronous operation.  <br /></td></tr>
 <tr class="separator:a65c79e79a22401e10029936fee2c239d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:afcf275879500d3f4f44e9acbbef5a4ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__async__event__args.html#afcf275879500d3f4f44e9acbbef5a4ad">socket_async_event_args</a> ()=default</td></tr>
 <tr class="memdesc:afcf275879500d3f4f44e9acbbef5a4ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__async__event__args.html" title="Represents an asynchronous socket operation.">xtd::net::sockets::socket_async_event_args</a> instance.  <br /></td></tr>
 <tr class="separator:afcf275879500d3f4f44e9acbbef5a4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,7 +140,7 @@ The lifetime of the new asynchronous socket operation context object is determin
 <tr class="memdesc:a1cc5080dc2c0825e3bb5d3b3d033fd7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the SocketAsyncEventArgs.  <br /></td></tr>
 <tr class="separator:a1cc5080dc2c0825e3bb5d3b3d033fd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a6e4a76dd4371da9f79a0527d2d654251"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__async__event__args.html#a6e4a76dd4371da9f79a0527d2d654251">accept_socket</a> () const noexcept</td></tr>
 <tr class="memdesc:a6e4a76dd4371da9f79a0527d2d654251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the socket to use or the socket created for accepting a connection with an asynchronous socket method.  <br /></td></tr>
 <tr class="separator:a6e4a76dd4371da9f79a0527d2d654251"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,7 +154,7 @@ The lifetime of the new asynchronous socket operation context object is determin
 <tr class="memdesc:a72b9d7b145864ee350faf92bd7fd38a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the data buffer to use with an asynchronous socket method.  <br /></td></tr>
 <tr class="separator:a72b9d7b145864ee350faf92bd7fd38a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:ae970317d128d919ad058ddab18ffd76f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__async__event__args.html#ae970317d128d919ad058ddab18ffd76f">set_buffer</a> (const std::vector&lt; <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> &gt; &amp;memory_buffer)</td></tr>
 <tr class="memdesc:ae970317d128d919ad058ddab18ffd76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the region of memory to use as a buffer with an asynchronous socket method.  <br /></td></tr>
 <tr class="separator:ae970317d128d919ad058ddab18ffd76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -609,7 +609,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

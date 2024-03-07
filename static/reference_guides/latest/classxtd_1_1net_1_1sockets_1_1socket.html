@@ -136,7 +136,7 @@ The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implem
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="network_stream_8cpp-example.html#_a1">network_stream.cpp</a>, <a class="el" href="socket_tcp_ip_v4_8cpp-example.html#_a1">socket_tcp_ip_v4.cpp</a>, <a class="el" href="socket_tcp_ip_v4_without_thread_8cpp-example.html#_a0">socket_tcp_ip_v4_without_thread.cpp</a>, <a class="el" href="socket_tcp_ip_v6_8cpp-example.html#_a1">socket_tcp_ip_v6.cpp</a>, <a class="el" href="socket_udp_ip_v4_8cpp-example.html#_a1">socket_udp_ip_v4.cpp</a>, and <a class="el" href="socket_udp_ip_v6_8cpp-example.html#_a1">socket_udp_ip_v6.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:ac48927243d1569fdc755b77aceed6dbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#ac48927243d1569fdc755b77aceed6dbb">socket</a> ()</td></tr>
 <tr class="memdesc:ac48927243d1569fdc755b77aceed6dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> class.  <br /></td></tr>
 <tr class="separator:ac48927243d1569fdc755b77aceed6dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,7 +153,7 @@ The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implem
 <tr class="memdesc:a1ba76f070f60a6c940567be2fd6634b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> class using the specified address family, socket type and protocol.  <br /></td></tr>
 <tr class="separator:a1ba76f070f60a6c940567be2fd6634b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a7493f987772d5d275912654357de1ce7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a7493f987772d5d275912654357de1ce7">address_family</a> () const noexcept</td></tr>
 <tr class="memdesc:a7493f987772d5d275912654357de1ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address family of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>.  <br /></td></tr>
 <tr class="separator:a7493f987772d5d275912654357de1ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,14 +259,8 @@ The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implem
 <tr class="memitem:a6e25105cf2422899578dde3c9ba4c1db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a6e25105cf2422899578dde3c9ba4c1db">ttl</a> (<a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> value)</td></tr>
 <tr class="memdesc:a6e25105cf2422899578dde3c9ba4c1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that specifies the Time To Live (TTL) value of Internet Protocol (IP) packets sent by the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>.  <br /></td></tr>
 <tr class="separator:a6e25105cf2422899578dde3c9ba4c1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae47db06aa06e1799fa45d729ab9afdf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#aae47db06aa06e1799fa45d729ab9afdf">os_supports_ip_v4</a> () noexcept</td></tr>
-<tr class="memdesc:aae47db06aa06e1799fa45d729ab9afdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).  <br /></td></tr>
-<tr class="separator:aae47db06aa06e1799fa45d729ab9afdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a462f3fd6d38c01d9af3c18f7f83509af"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a462f3fd6d38c01d9af3c18f7f83509af">os_supports_ip_v6</a> () noexcept</td></tr>
-<tr class="memdesc:a462f3fd6d38c01d9af3c18f7f83509af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).  <br /></td></tr>
-<tr class="separator:a462f3fd6d38c01d9af3c18f7f83509af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a8f290158d500c5096b6f2206050afdc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a8f290158d500c5096b6f2206050afdc2">accept</a> ()</td></tr>
 <tr class="memdesc:a8f290158d500c5096b6f2206050afdc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> for a newly created connection.  <br /></td></tr>
 <tr class="separator:a8f290158d500c5096b6f2206050afdc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -480,6 +474,16 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>receive_message_fro
 <tr class="memitem:a74b32bf6b8bec29ccb0f5aeb954ebde4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a74b32bf6b8bec29ccb0f5aeb954ebde4">shutdown</a> (<a class="el" href="group__xtd__core.html#gaf92aff60cc7fc1f9d63084c9aee30471">xtd::net::sockets::socket_shutdown</a> how)</td></tr>
 <tr class="memdesc:a74b32bf6b8bec29ccb0f5aeb954ebde4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables sends and receives on a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>.  <br /></td></tr>
 <tr class="separator:a74b32bf6b8bec29ccb0f5aeb954ebde4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Properties</h2></td></tr>
+<tr class="memitem:aae47db06aa06e1799fa45d729ab9afdf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#aae47db06aa06e1799fa45d729ab9afdf">os_supports_ip_v4</a> () noexcept</td></tr>
+<tr class="memdesc:aae47db06aa06e1799fa45d729ab9afdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).  <br /></td></tr>
+<tr class="separator:aae47db06aa06e1799fa45d729ab9afdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462f3fd6d38c01d9af3c18f7f83509af"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a462f3fd6d38c01d9af3c18f7f83509af">os_supports_ip_v6</a> () noexcept</td></tr>
+<tr class="memdesc:a462f3fd6d38c01d9af3c18f7f83509af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).  <br /></td></tr>
+<tr class="separator:a462f3fd6d38c01d9af3c18f7f83509af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:a44967176216c1ea2190f4751b57ab77e"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a44967176216c1ea2190f4751b57ab77e">select</a> (std::vector&lt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a> &gt; &amp;check_read, std::vector&lt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a> &gt; &amp;check_write, std::vector&lt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">socket</a> &gt; &amp;check_error, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> microseconds)</td></tr>
 <tr class="memdesc:a44967176216c1ea2190f4751b57ab77e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the status of one or more sockets.  <br /></td></tr>
 <tr class="separator:a44967176216c1ea2190f4751b57ab77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6109,7 +6113,7 @@ Setting this property on a Transmission Control Protocol (TCP) socket is ignored
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 6 2024 15:24:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 7 2024 10:43:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
