@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ tool_bar final static_ {
         friend xtd::forms::tool_bar;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Adds tool bar push button.

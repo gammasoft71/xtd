@@ -35,7 +35,7 @@ namespace xtd {
       class forms_native_export_ timer final static_ {
         friend xtd::forms::timer;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Create and start timer.

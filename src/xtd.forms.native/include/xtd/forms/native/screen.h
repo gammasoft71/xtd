@@ -40,7 +40,7 @@ namespace xtd {
         friend xtd::forms::native::form;
         friend xtd::forms::screen;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Gets number of screens.

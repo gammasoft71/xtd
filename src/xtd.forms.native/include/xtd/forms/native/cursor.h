@@ -36,7 +36,7 @@ namespace xtd {
       class forms_native_export_ cursor final static_ {
         friend xtd::forms::cursor;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Creates cursor.

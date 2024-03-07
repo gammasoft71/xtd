@@ -33,7 +33,7 @@ namespace xtd {
       class forms_native_export_ check_box final static_ {
         friend xtd::forms::check_box;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Sets check state.

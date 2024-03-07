@@ -39,7 +39,7 @@ namespace xtd {
       class forms_native_export_ toolkit final static_ {
         friend struct ::__init_toolkit__;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Gets the name of the toolkit.

@@ -37,7 +37,7 @@ namespace xtd {
         friend xtd::forms::tab_control;
         friend xtd::forms::tab_page;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Deletes specified tab page index.

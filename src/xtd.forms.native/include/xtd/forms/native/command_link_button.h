@@ -35,7 +35,7 @@ namespace xtd {
       class forms_native_export_ command_link_button final static_ {
         friend xtd::forms::command_link_button;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Sets image.

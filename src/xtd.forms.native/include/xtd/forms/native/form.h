@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ form final static_ {
         friend xtd::forms::form;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Activates the form and gives it focus.

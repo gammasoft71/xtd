@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ cursors final static_ {
         friend xtd::forms::cursors;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Gets the cursor that appears when an application starts.

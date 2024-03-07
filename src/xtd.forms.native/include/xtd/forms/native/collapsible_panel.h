@@ -33,7 +33,7 @@ namespace xtd {
       class forms_native_export_ collapsible_panel final static_ {
         friend xtd::forms::collapsible_panel;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.

@@ -33,7 +33,7 @@ namespace xtd {
       class forms_native_export_ panel final static_ {
         friend xtd::forms::panel;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Sets virtual size

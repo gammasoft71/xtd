@@ -36,7 +36,7 @@ namespace xtd {
       class forms_native_export_ system_information final static_ {
         friend xtd::forms::system_information;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Gets the active window tracking delay.

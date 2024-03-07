@@ -38,7 +38,7 @@ namespace xtd {
       class forms_native_export_ busy_dialog final static_ {
         friend xtd::forms::busy_dialog;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Creates and shows busy dialog.
