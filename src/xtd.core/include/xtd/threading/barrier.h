@@ -51,7 +51,7 @@ namespace xtd {
       barrier(int32 participant_count, barrier::post_phase_action post_phase_action);
       /// @}
 
-      ///@cond
+      /// @cond
       template <typename post_phase_action_t>
       barrier(int32 participant_count, post_phase_action_t post_phase_action) : barrier(participant_count, barrier::post_phase_action {post_phase_action}) {}
       barrier();
@@ -59,7 +59,7 @@ namespace xtd {
       barrier(const barrier&) = default;
       barrier& operator =(const barrier& other);
       ~barrier();
-      ///@endcond
+      /// @endcond
 
       /// @name Public Properties
       

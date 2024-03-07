@@ -358,7 +358,7 @@ namespace xtd {
       /// @param name The name of the xtd::forms::progress_bar.
       /// @return New xtd::forms::progress_bar created.
       static progress_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-      ///@}
+      /// @}
       
     protected:
       /// @name Protected properties

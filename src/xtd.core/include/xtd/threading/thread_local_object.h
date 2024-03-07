@@ -75,7 +75,7 @@ namespace xtd {
       }
       /// @}
 
-      ///@cond
+      /// @cond
       template<typename func_t>
       explicit thread_local_object(func_t value_factory) : thread_local_object(func<value_t> {value_factory}) {}
       template<typename func_t>
@@ -83,7 +83,7 @@ namespace xtd {
       thread_local_object(thread_local_object&&) = default;
       thread_local_object(const thread_local_object&) = default;
       thread_local_object& operator =(const thread_local_object& other) = default;
-      ///@endcond
+      /// @endcond
 
       /// @name Public Properties
       

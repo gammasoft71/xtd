@@ -133,7 +133,7 @@ namespace xtd {
       virtual void select(size_t start, size_t length);
       
       /// @brief Selects all text in the text box.
-      ///@remarks This method enables you to select all text within the control. You can use this method in conjunction with the cut method, which requires text to be selected in the control, to cut the entire contents of the control and paste them into the clipboard.
+      /// @remarks This method enables you to select all text within the control. You can use this method in conjunction with the cut method, which requires text to be selected in the control, to cut the entire contents of the control and paste them into the clipboard.
       void select_all();
       /// @}
       

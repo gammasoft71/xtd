@@ -36,7 +36,8 @@ namespace xtd {
     /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
     /// @par Examples
     /// The following example shows how to loop through all the files and directories, querying some information about each entry.
-    /// @code #include <xtd/xtd>
+    /// @code
+    /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
     /// using namespace xtd::io;

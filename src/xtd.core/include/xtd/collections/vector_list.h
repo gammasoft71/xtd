@@ -9,8 +9,7 @@
 namespace xtd {
   namespace collections {
     /// @brief Represents a collection of std::any.
-    /// @code
-    /// using vector_list = std::vector<std::any> @endcode
+    /// @code using vector_list = std::vector<std::any> @endcode
     /// @par Header
     /// @code #include <xtd/collections/vector_list> @endcode
     /// @par Namespace

@@ -284,7 +284,7 @@ namespace xtd {
     /// (GMT+02:00) Athens, Beirut, Istanbul, Minsk
     /// (GMT-02:00) Mid-Atlantic
     /// (GMT-07:00) Mountain Time (US & Canada)
-    ///  @endcode
+    /// @endcode
     const ustring& display_name() const noexcept;
     
     /// @brief Gets the time zone identifier.

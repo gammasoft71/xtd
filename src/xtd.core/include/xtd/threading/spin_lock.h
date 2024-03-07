@@ -46,17 +46,17 @@ namespace xtd {
       spin_lock(bool enable_thread_owner_tracking);
       /// @}
 
-      ///@cond
+      /// @cond
       spin_lock(spin_lock&&) = default;
       spin_lock(const spin_lock&) = default;
       spin_lock& operator =(const spin_lock& other) = default;
-      ///@endcond
+      /// @endcond
 
       /// @name Public Properties
       
       /// @{
-      ///@brief Gets whether the lock is currently held by any thread.
-      ///@return true if the lock is currently held by any thread; otherwise false.
+      /// @brief Gets whether the lock is currently held by any thread.
+      /// @return true if the lock is currently held by any thread; otherwise false.
       bool is_held() const noexcept;
 
       /// @brief Gets whether the lock is held by the current thread.
