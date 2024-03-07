@@ -33,14 +33,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the numeric_up_down class.
       numeric_up_down();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the number of decimal places to display in the spin box (also known as an up-down control). This property doesn't affect the value property.
@@ -102,7 +102,7 @@ namespace xtd {
       virtual numeric_up_down& wrapped(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Sets the minimum and maximum values for a track_bar.
@@ -117,7 +117,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::numeric_up_down.
@@ -330,7 +330,7 @@ namespace xtd {
       static numeric_up_down create(const control& parent, double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the value property has been changed in some way.

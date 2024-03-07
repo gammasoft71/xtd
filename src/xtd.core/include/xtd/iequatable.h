@@ -17,7 +17,7 @@ namespace xtd {
   /// @remarks The icomparable<T> interface defines the compare_to method, which determines the sort order of instances of the implementing type. The iequatable<T> interface defines the equals method, which determines the equality of instances of the implementing type.
   class iequatable interface_ {
   public:
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Indicates whether the current object is equal to another object of the same type.

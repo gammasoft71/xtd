@@ -24,14 +24,14 @@ namespace xtd {
   /// @ingroup xtd_core exceptions
   class core_export_ system_exception : public object, public std::exception {
   public:
-    /// @name Aliases
+    /// @name Public Aliases
     
     /// @{
     /// @brief Optional reference wrapper on std::exception
     using exception_ref = std::optional<std::reference_wrapper<const std::exception>>;
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class system_exception
@@ -94,7 +94,7 @@ namespace xtd {
     system_exception& operator =(const system_exception&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets file path where exception occurred
@@ -134,7 +134,7 @@ namespace xtd {
     virtual xtd::ustring stack_trace() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Returns a string that represents the current exception.
@@ -146,7 +146,7 @@ namespace xtd {
     const char* what() const noexcept override;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Gets if the generation of the stack trace is enabled.

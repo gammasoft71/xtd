@@ -32,7 +32,7 @@ namespace xtd {
       /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_box_model">Box Model</a>.
       class forms_export_ control : public xtd::forms::style_sheets::ibox_model, public xtd::forms::style_sheets::itext_model, public xtd::forms::style_sheets::iimage_model, public xtd::iequatable<control>, public xtd::object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::control class.
@@ -47,7 +47,7 @@ namespace xtd {
         control& operator =(const control&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         bool auto_ellipsis() const noexcept override;
@@ -216,7 +216,7 @@ namespace xtd {
         control& white_space(xtd::forms::style_sheets::white_space value) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const control& other) const noexcept override;
@@ -241,7 +241,7 @@ namespace xtd {
         xtd::drawing::string_format make_string_format() const noexcept override;
         /// @}
 
-        /// @name Static methods
+        /// @name Public Static Methods
         
         /// @{
         /// @brief A factory to create control.

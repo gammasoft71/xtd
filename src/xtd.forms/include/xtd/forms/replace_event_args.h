@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class replace_event_args : public event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::replace_event_args class.
@@ -38,7 +38,7 @@ namespace xtd {
       replace_event_args& operator =(const replace_event_args&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the string to find.

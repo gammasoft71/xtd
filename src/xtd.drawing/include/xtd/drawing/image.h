@@ -58,14 +58,14 @@ namespace xtd {
       ~image();
       /// @endcond
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represent an empty xtd::drawing::image.
       static image empty;
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets attribute flags for the pixel data of this xtd::drawing::image.
@@ -160,7 +160,7 @@ namespace xtd {
       int32 width() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Creates the xtd::drawing::graphics for the image.
@@ -260,7 +260,7 @@ namespace xtd {
       void save(std::ostream& stream, const xtd::drawing::imaging::image_format& format) const;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates an image from the specified file.

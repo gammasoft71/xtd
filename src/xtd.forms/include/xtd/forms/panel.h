@@ -31,14 +31,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialises a new instance of panel class.
       panel();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the mode by which the panel automatically resizes itself.
@@ -72,7 +72,7 @@ namespace xtd {
       virtual panel& border_style(std::nullptr_t border_style);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::panel.

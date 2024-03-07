@@ -38,7 +38,7 @@ namespace xtd {
       switch_base& operator =(const switch_base& value) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the custom switch attributes
@@ -62,7 +62,7 @@ namespace xtd {
       const xtd::ustring& display_name() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const switch_base& value) const noexcept override;

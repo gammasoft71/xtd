@@ -19,7 +19,7 @@ namespace xtd {
   /// @include math.cpp
   class math static_ {
   public:
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Represents the natural logarithmic base, specified by the constant, e. This field is constant.
@@ -68,7 +68,7 @@ namespace xtd {
     static constexpr double tau = 2.7182818284590451;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Returns the absolute value of a decimal number

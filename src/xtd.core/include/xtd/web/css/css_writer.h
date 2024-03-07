@@ -14,7 +14,7 @@ namespace xtd {
     namespace css {
       class css_writer : public object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         css_writer(std::ostream& stream) : text_writer_(new xtd::io::stream_writer(stream)) {}
@@ -25,7 +25,7 @@ namespace xtd {
         ~css_writer() {if (delete_when_destroy_) delete text_writer_;}
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         const xtd::web::css::selector_map& selectors() const noexcept {return selectors_;}
@@ -33,7 +33,7 @@ namespace xtd {
         void selectors(const xtd::web::css::selector_map& selector) {selectors_ = selector;}
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         void write() {

@@ -17,7 +17,7 @@ namespace xtd {
   /// @include not_supported_exception.cpp
   class not_supported_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class not_supported_exception

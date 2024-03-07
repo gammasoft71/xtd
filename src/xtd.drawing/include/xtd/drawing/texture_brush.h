@@ -30,7 +30,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new xtd::drawing::texture_brush object that uses the specified image.
@@ -43,7 +43,7 @@ namespace xtd {
       texture_brush& operator =(const texture_brush& value);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the xtd::drawing::image object associated with this xtd::drawing::texture_brush object.
@@ -54,7 +54,7 @@ namespace xtd {
       texture_brush& image(const drawing::image& image);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       using brush::equals;

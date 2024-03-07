@@ -49,7 +49,7 @@ namespace xtd {
       friend class registered_wait_handle;
       friend class thread;
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents an invalid native operating system handle. This field is read-only.
@@ -62,7 +62,7 @@ namespace xtd {
       /// @remrarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
       static constexpr size_t wait_timeout = std::numeric_limits<size_t>::max();
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::threading::wait_handle class.
@@ -73,7 +73,7 @@ namespace xtd {
       ~wait_handle();
       /// @endcond
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the native operating system handle.
@@ -84,7 +84,7 @@ namespace xtd {
       virtual void handle(intptr value) = 0;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Releases all resources held by the current xtd::threading::wait_handle.
@@ -114,7 +114,7 @@ namespace xtd {
       virtual bool wait_one(const time_span& timeout);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Signals one xtd::threading::wait_handle and waits on another.

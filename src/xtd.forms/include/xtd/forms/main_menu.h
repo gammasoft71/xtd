@@ -37,7 +37,7 @@ namespace xtd {
     /// @include main_menu_create_standard_items.cpp
     class forms_export_ main_menu : public menu {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize a new instance of main_menu class.
@@ -51,7 +51,7 @@ namespace xtd {
       explicit main_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
       /// @endcond
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create a main menu with specified on click event handler.

@@ -15,7 +15,7 @@ namespace xtd {
     /// @include test_class_without_helpers.cpp
     class test_initialize_attribute {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Creates a new instance of test_initialize_attribute with specified name, test_class and method.

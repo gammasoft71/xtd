@@ -36,14 +36,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the group_box class.
       group_box();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets how the group_box behaves when its auto_size property is enabled
@@ -65,7 +65,7 @@ namespace xtd {
       virtual xtd::forms::group_box& flat_style(xtd::forms::flat_style flat_style);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::group_box.

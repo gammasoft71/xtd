@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_forms components
     class images final static_ {
     public:
-      /// @name Static Properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets system image from specified name.
@@ -1256,7 +1256,7 @@ namespace xtd {
       static std::vector<xtd::drawing::size> sizes() noexcept {return drawing::system_images::sizes();}
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Gets image object with specified name.

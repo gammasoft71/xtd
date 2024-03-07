@@ -17,7 +17,7 @@ namespace xtd {
   /// @include access_violation_exception.cpp
   class access_violation_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class access_violation_exception

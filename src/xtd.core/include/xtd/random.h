@@ -37,7 +37,7 @@ namespace xtd {
   /// @include random3.cpp
   class random : public object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the random class, using a default generated seed value
@@ -58,7 +58,7 @@ namespace xtd {
     random& operator =(const random&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the underlying generator
@@ -66,7 +66,7 @@ namespace xtd {
     std::default_random_engine generator() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Returns a nonnegative random number.

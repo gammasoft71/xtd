@@ -64,7 +64,7 @@ namespace xtd {
       control_layout_style& operator =(const control_layout_style& other);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a flag indicating how a control should be sized relative to its containing layout container.
@@ -91,7 +91,7 @@ namespace xtd {
       control_layout_style& align(xtd::forms::content_alignment align);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const control_layout_style& value) const noexcept override;

@@ -31,14 +31,14 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       class forms_export_ shadow : public xtd::iequatable<shadow>, public xtd::object {
       public:
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief Provides a xtd::forms::style_sheets::shadow object with no xtd::forms::style_sheets::shadow.
         static const shadow empty;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::shadow class.
@@ -79,7 +79,7 @@ namespace xtd {
         void radius(int32 value) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const shadow& other) const noexcept override;

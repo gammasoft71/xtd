@@ -26,7 +26,7 @@ namespace xtd {
     /// @include directory_not_found_exception.cpp
     class directory_not_found_exception : public xtd::io::io_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class directory_not_found_exception

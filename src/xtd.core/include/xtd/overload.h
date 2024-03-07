@@ -24,7 +24,7 @@ namespace xtd {
     constexpr auto operator()(result_t (type_t::*method)(args_t...)) const noexcept -> decltype(method) {return method;}
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
@@ -51,7 +51,7 @@ namespace xtd {
     constexpr auto operator()(result_t (type_t::*method)(args_t...) const) const noexcept -> decltype(method) {return method;}
     /// @}
     
-    /// @name static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
@@ -85,7 +85,7 @@ namespace xtd {
     constexpr auto operator()(result_t (*method)(args_t...)) const noexcept -> decltype(method) {return method;}
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.

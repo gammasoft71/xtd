@@ -32,7 +32,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::radial_gradient_brush class with default values.
@@ -137,7 +137,7 @@ namespace xtd {
         linear_gradient_brush& operator =(const linear_gradient_brush& value);
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the angle of the gradient.
@@ -169,7 +169,7 @@ namespace xtd {
         linear_gradient_brush& rectangle(const xtd::drawing::rectangle& value) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         using brush::equals;

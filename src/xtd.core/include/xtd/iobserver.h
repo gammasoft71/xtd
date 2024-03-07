@@ -153,7 +153,7 @@ namespace xtd {
   /// @remarks * No further data. The provider can call the xtd::iobserver::on_completed method to notify the observer that it has finished sending notifications.
   class iobserver interface_ {
   public:
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Notifies the observer that the provider has finished sending push-based notifications.

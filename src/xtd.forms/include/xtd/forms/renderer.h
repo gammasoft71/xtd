@@ -34,7 +34,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       using button_renderer = xtd::delegate<void(xtd::drawing::graphics, const xtd::drawing::rectangle&, const xtd::ustring&, const xtd::drawing::font&, xtd::forms::text_format_flags, const xtd::drawing::image&, const xtd::drawing::rectangle&, bool focused, xtd::forms::visual_styles::push_button_state, const std::optional<xtd::drawing::color>&, const std::optional<xtd::drawing::color>&)>;
@@ -42,13 +42,13 @@ namespace xtd {
       using radio_button_renderer = xtd::delegate<void(xtd::drawing::graphics, const xtd::drawing::rectangle&, const xtd::ustring&, const xtd::drawing::font&, xtd::forms::text_format_flags, const xtd::drawing::image&, const xtd::drawing::rectangle&, bool focused, xtd::forms::visual_styles::radio_button_state, const std::optional<xtd::drawing::color>&, const std::optional<xtd::drawing::color>&)>;
       /// @}
       
-      /// @name Static fields
+      /// @name Public Static Fields
       
       /// @{
       static const renderer empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       renderer();
@@ -60,7 +60,7 @@ namespace xtd {
       renderer& operator =(const renderer&);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       virtual const xtd::ustring& name() const;
@@ -76,7 +76,7 @@ namespace xtd {
       void radio_button_render(radio_button_renderer radio_button_renderer);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);

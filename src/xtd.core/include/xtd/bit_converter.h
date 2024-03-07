@@ -61,7 +61,7 @@ namespace xtd {
       big,
     };
     
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Indicates the xtd::byte order ("endianness") in which data is stored in this computer architecture.
@@ -87,7 +87,7 @@ namespace xtd {
     static constexpr endian endianness = is_little_endian ? endian::little : endian::big;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Converts the specified double-precision floating point number to a 64-bit signed integer.

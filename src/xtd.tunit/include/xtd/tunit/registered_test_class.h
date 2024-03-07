@@ -19,7 +19,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     class tunit_export_ registered_test_class final {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Creates a new registered_test_class instance.

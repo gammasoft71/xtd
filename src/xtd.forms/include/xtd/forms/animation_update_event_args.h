@@ -19,13 +19,13 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class animation_updated_event_args : public event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       animation_updated_event_args(int32 frame_counter, int64 elapsed_nanoseconds) : frame_counter_(frame_counter), elapsed_nanoseconds_(elapsed_nanoseconds) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets elepased time in nanoseconds.

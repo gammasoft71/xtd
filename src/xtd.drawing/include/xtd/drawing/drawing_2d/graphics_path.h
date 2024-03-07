@@ -36,7 +36,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::graphics_path class with a xtd::drawing::drawing_2d::graphics_path::fill_mode value of xtd::drawing::drawing_2d::fill_mode::alternate.
         graphics_path();
@@ -51,7 +51,7 @@ namespace xtd {
         ~graphics_path();
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the handle of the graphics path.
@@ -67,7 +67,7 @@ namespace xtd {
         graphics_path& fill_mode(xtd::drawing::drawing_2d::fill_mode value) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Appends an elliptical arc to the current figure.

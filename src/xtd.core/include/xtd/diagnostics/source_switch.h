@@ -28,7 +28,7 @@ namespace xtd {
     /// @remarks The switch is used to check whether a trace should be propagated or ignored. Each trace_source trace method calls the should_trace method before calling the listeners. If the should_trace method returns false, the trace is ignored and the trace method exits. If the should_trace method returns true, the trace is passed to the listeners.
     class core_export_ source_switch : public xtd::diagnostics::switch_base {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the source_switch class, specifying the name of the source.
@@ -42,7 +42,7 @@ namespace xtd {
       source_switch(const xtd::ustring& display_name, const xtd::ustring& default_switch_value);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the level of the switch.
@@ -55,7 +55,7 @@ namespace xtd {
       void level(xtd::diagnostics::source_levels level);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Determines if trace listeners should be called, based on the trace event type.

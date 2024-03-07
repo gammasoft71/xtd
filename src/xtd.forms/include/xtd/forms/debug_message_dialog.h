@@ -29,14 +29,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the debug_message_dialog class.
       debug_message_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets async dialog_result result after dialog box is closing.
@@ -57,7 +57,7 @@ namespace xtd {
       }
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all properties to empty string.
@@ -99,7 +99,7 @@ namespace xtd {
       }
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the user close a message dialog box with dialog close button or other dialog buttons.

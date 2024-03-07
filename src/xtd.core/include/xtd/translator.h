@@ -26,7 +26,7 @@ namespace xtd {
   /// @include /examples/xtd.forms.examples/components/translator/locale/ru/locale.strings
   class translator final static_ {
   public:
-    /// @name Static properties
+    /// @name Public Static Properties
     
     /// @{
     /// @brief Gets the current application language.
@@ -61,7 +61,7 @@ namespace xtd {
     static xtd::ustring system_language();
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Manually adds a translation for a specified key and language.

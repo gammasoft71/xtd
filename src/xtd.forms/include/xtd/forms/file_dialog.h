@@ -44,14 +44,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the common_dialog class.
       file_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the dialog box automatically adds an extension to a file name if the user omits the extension.
@@ -251,7 +251,7 @@ namespace xtd {
       virtual file_dialog& validate_names(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all properties to their default values.

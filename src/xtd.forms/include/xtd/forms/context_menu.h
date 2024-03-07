@@ -32,7 +32,7 @@ namespace xtd {
     /// @include context_menu.cpp
     class forms_export_ context_menu : public menu {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize context_menu class.

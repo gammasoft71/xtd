@@ -25,7 +25,7 @@ namespace xtd {
     /// @include synchronization_lock_exception.cpp
     class synchronization_lock_exception : public system_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class synchronization_lock_exception

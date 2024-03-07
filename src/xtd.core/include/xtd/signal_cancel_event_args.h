@@ -17,7 +17,7 @@ namespace xtd {
   /// @remarks If the cancel property is set to true in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the signal_cancel_event_args property is false, and the process terminates.
   class signal_cancel_event_args final : public xtd::event_args {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the signal_cancel_event_args class.
@@ -33,7 +33,7 @@ namespace xtd {
     signal_cancel_event_args& operator =(const signal_cancel_event_args&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets a value that indicates whether a signal has interrupted the current process. The default is false, which terminates the current process.

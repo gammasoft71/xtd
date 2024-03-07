@@ -25,14 +25,14 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>, public xtd::iequatable<trace_listener_collection> {
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents the base type of the collection.
       using base = std::vector<value_type>;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified allocator (optional).
@@ -92,7 +92,7 @@ namespace xtd {
       reference operator [](const xtd::ustring& name);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
     private:
       inline static value_type empty_;

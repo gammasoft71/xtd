@@ -28,7 +28,7 @@ namespace xtd {
     /// @ingroup xtd_drawing images
     class drawing_export_ image_converter final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Converts into lower and upper colors of the specified image with specified threshold, upper color and lower color.

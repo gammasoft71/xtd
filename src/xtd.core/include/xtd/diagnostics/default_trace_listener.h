@@ -30,7 +30,7 @@ namespace xtd {
     /// @include default_trace_listener.cpp
     class core_export_ default_trace_listener : public xtd::diagnostics::trace_listener {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the default_trace_listener class with "default" as its xtd::diagnostics::default_trace_listener::name property value.
@@ -54,7 +54,7 @@ namespace xtd {
       /// @endcond
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the application is running in user-interface mode.
@@ -122,7 +122,7 @@ namespace xtd {
       void log_file_name(const xtd::ustring log_file_name) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void close() override;

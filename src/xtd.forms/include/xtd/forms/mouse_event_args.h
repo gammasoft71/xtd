@@ -31,7 +31,7 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class forms_export_ mouse_event_args : public event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the MouseEventArgs class.
@@ -56,7 +56,7 @@ namespace xtd {
       mouse_event_args& operator =(const mouse_event_args& mouse_event_args) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets which mouse button was pressed.

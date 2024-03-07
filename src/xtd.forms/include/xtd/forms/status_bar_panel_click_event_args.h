@@ -27,7 +27,7 @@ namespace xtd {
       status_bar_panel_click_event_args& operator =(const status_bar_panel_click_event_args&) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::status_bar_panel_click_event_args class.
@@ -39,7 +39,7 @@ namespace xtd {
       status_bar_panel_click_event_args(const xtd::forms::status_bar_panel& panel, intptr handle) : panel_(panel), handle_(handle) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the xtd::forms::status_bar_panel that was clicked.

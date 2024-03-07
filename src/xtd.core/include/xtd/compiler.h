@@ -24,7 +24,7 @@ namespace xtd {
   /// @remarks By design, the operating_system class is not a general purpose means of describing an operating system, and you cannot derive a more inclusive type from the operating_system class. If you need a type to contain other information about C++ libraries, create your own type, then include a field of compiler type and any additional fields or methods that you require.
   class compiler final : public object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initialise a new xtd::compiler class.
@@ -41,7 +41,7 @@ namespace xtd {
     compiler& operator =(const compiler&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the build type.
@@ -73,7 +73,7 @@ namespace xtd {
     const xtd::version& version() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Converts the value of this operating_system object to its equivalent string representation.

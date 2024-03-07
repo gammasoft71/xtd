@@ -32,7 +32,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::link class.
@@ -54,7 +54,7 @@ namespace xtd {
       link& operator =(const link&);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a text description of the link.
@@ -134,7 +134,7 @@ namespace xtd {
       link& visited(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const link& other) const noexcept override;

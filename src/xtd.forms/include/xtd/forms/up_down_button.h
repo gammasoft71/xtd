@@ -34,14 +34,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of up_down_button class.
       up_down_button();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the maximum value for the up_down_button control.
@@ -91,7 +91,7 @@ namespace xtd {
       virtual up_down_button& wrapped(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Sets the minimum and maximum values for a up_down_button.
@@ -106,7 +106,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::up_down_button.
@@ -319,7 +319,7 @@ namespace xtd {
       static up_down_button create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.

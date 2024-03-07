@@ -26,7 +26,7 @@ namespace xtd {
       directory_valid() = delete;
       /// @endcond
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       #if defined(__cpp_lib_filesystem)

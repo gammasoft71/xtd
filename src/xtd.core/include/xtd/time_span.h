@@ -25,7 +25,7 @@ namespace xtd {
   /// @include time_span.cpp
   struct time_span : public xtd::object, xtd::iequatable<time_span>, icomparable<time_span> {
   public:
-    /// @name Fields
+    /// @name Public Fields
 
     /// @{
     /// @brief Represents the maximum xtd::time_span value. This field is read-only.
@@ -69,7 +69,7 @@ namespace xtd {
     static const time_span zero;
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the xtd::time_span structure to the specified number of ticks.
@@ -160,7 +160,7 @@ namespace xtd {
     time_span operator --(int);
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the days component of the time interval represented by the current xtd::time_span structure.
@@ -280,7 +280,7 @@ namespace xtd {
 
     /// @}
 
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Returns a new xtd::time_span object whose value is the sum of the specified xtd::time_span object and this instance.
@@ -363,7 +363,7 @@ namespace xtd {
     ustring to_string(const ustring& format) const;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Returns a value that indicates whether two specified instances of xtd::time_span are equal.

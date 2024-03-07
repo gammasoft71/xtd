@@ -19,7 +19,7 @@ namespace xtd {
     /// @ingroup xtd_forms interfaces
     class icontrol_trace interface_ {
     public:
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Write debug or trace message on this instance control.

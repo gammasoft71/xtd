@@ -47,7 +47,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::tcp_client class.
@@ -80,7 +80,7 @@ namespace xtd {
         tcp_client& operator =(const tcp_client&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the amount of data that has been received from the network and is available to be read.
@@ -242,7 +242,7 @@ namespace xtd {
         tcp_client& send_timeout(int32 value);
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Begins an asynchronous request for a remote host connection. The remote host is specified by an xtd::net::ip_address and a port number (uint16).

@@ -30,14 +30,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief initializes a new instance of the text_box class.
       text_box();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether pressing ENTER in a multiline text_box control creates a new line of text in the control or activates the default button for the form.
@@ -106,7 +106,7 @@ namespace xtd {
       virtual text_box& use_system_password_char(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void append_text(const xtd::ustring& value) override;
@@ -114,7 +114,7 @@ namespace xtd {
       void select(size_t start, size_t length) override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::text_box.
@@ -207,7 +207,7 @@ namespace xtd {
       static text_box create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the value of the accepts_return property has changed.

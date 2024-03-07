@@ -24,7 +24,7 @@ namespace xtd {
     /// @todo Check build under Windows with the XTD_BUILD_SHARED_LIBRARIES option enabled.
     class core_export_ assembly_description_attribute final : public xtd::attribute {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_description_attribute class.
@@ -36,7 +36,7 @@ namespace xtd {
       assembly_description_attribute(const ustring& description, const object& executing_assembly);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets decription information.

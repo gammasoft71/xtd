@@ -33,7 +33,7 @@ namespace xtd {
     /// @include stopwatch.cpp
     class core_export_ stopwatch : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::stopwatch class.
@@ -50,7 +50,7 @@ namespace xtd {
       stopwatch& operator =(const stopwatch&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the total elapsed time measured by the current instance.
@@ -98,7 +98,7 @@ namespace xtd {
       bool is_running() const noexcept;
       /// @}
       
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets the frequency of the timer as the number of nanoseconds per second. This field is read-only.
@@ -112,7 +112,7 @@ namespace xtd {
       static bool is_high_resolution() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Stops time interval measurement and resets the elapsed time to zero.
@@ -149,7 +149,7 @@ namespace xtd {
       void stop() noexcept;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets the current number of nanoseconds in the timer mechanism.

@@ -39,7 +39,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the radio_button class.
@@ -47,7 +47,7 @@ namespace xtd {
       radio_button();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value determining the appearance of the radio_button.
@@ -89,7 +89,7 @@ namespace xtd {
       virtual radio_button& check_align(content_alignment check_align);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Generates a click event for the control, simulating a click by a user.
@@ -101,7 +101,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::radio_button.
@@ -250,7 +250,7 @@ namespace xtd {
       static radio_button create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the appearance property value changes.

@@ -24,7 +24,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent bar loading indicator.

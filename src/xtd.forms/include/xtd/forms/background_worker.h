@@ -33,7 +33,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the background_worker class.
@@ -45,7 +45,7 @@ namespace xtd {
       ~background_worker() noexcept;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the application has requested cancellation of a background operation.
@@ -75,7 +75,7 @@ namespace xtd {
       void worker_supports_cancellation(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Requests cancellation of a pending background operation.
@@ -118,7 +118,7 @@ namespace xtd {
       void report_progress(int32 percent_progress, std::any user_state);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when run_worker_async() is called.

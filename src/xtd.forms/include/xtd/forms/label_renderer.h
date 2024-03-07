@@ -34,7 +34,7 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class label_renderer static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Draws a box in the specified bounds, label style, label state and background color.

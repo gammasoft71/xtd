@@ -48,7 +48,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the button class.
@@ -56,7 +56,7 @@ namespace xtd {
       button();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets if this button instance is auto repeat.
@@ -94,7 +94,7 @@ namespace xtd {
       control& dialog_result(forms::dialog_result dialog_result) override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void notify_default(bool value) override;
@@ -102,7 +102,7 @@ namespace xtd {
       void perform_click() override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::button.

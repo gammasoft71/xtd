@@ -30,14 +30,14 @@ namespace xtd {
       /// @ingroup xtd_forms style_sheets
       class forms_export_ border_color : public xtd::iequatable<border_color>, public xtd::object {
       public:
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief Provides an empty xtd::forms::style_sheets::border_color object.
         static const border_color empty;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::border_color class.
@@ -111,7 +111,7 @@ namespace xtd {
         void top(const xtd::drawing::color& top) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const border_color& other) const noexcept override;

@@ -18,7 +18,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ dns_end_point : public xtd::net::end_point {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::net::dns_end_point class with the host name or string representation of an IP address and a port number.
@@ -45,7 +45,7 @@ namespace xtd {
       dns_end_point& operator =(const dns_end_point&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the host name or string representation of the Internet Protocol (IP) address of the host.
@@ -57,7 +57,7 @@ namespace xtd {
       uint16 port() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Returns a string that represents the current object.

@@ -22,7 +22,7 @@ namespace xtd {
     /// @include console_unit_test.cpp
     class tunit_export_ console_unit_test final : public ostream_unit_test {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new console unit test

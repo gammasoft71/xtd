@@ -21,7 +21,7 @@ namespace xtd {
     /// @include labels.cpp
     class labels final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Create a system-defined label that represent abort label

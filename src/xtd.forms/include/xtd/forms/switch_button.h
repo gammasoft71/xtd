@@ -31,14 +31,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// Initialize new instance of switch_button class.
       switch_button();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the checked and the switch_button's appearance are automatically changed when the switch_button is clicked.
@@ -96,7 +96,7 @@ namespace xtd {
       virtual switch_button& show_text(bool value);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::switch_button.
@@ -197,7 +197,7 @@ namespace xtd {
       static switch_button create(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the value of the checked property changes.

@@ -22,7 +22,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the border sides for the control.

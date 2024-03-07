@@ -33,7 +33,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ text_reader : public xtd::object {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Provides a text_reader with no data to read from.
@@ -44,7 +44,7 @@ namespace xtd {
       static null_text_reader& null() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Closes the xtd::io::text_reader and releases any system resources associated with the text_reader
@@ -82,7 +82,7 @@ namespace xtd {
       virtual xtd::ustring read_to_end();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_reader object.
@@ -113,7 +113,7 @@ namespace xtd {
     /// @endcode
     class core_export_ null_text_reader : public xtd::io::text_reader {
     public:
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       int32 read() override;
@@ -133,7 +133,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ synchronized_text_reader : public xtd::io::text_reader {
     public:
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       int32 read() override;

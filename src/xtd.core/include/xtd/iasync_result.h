@@ -21,7 +21,7 @@ namespace xtd {
   /// @note The async_result class is the implementation of xtd::iasync_result that is returned by the begin_invoke method when you use a delegate to call a method asynchronously.
   class iasync_result interface_ {
   public:
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Gets a user-defined object that qualifies or contains information about an asynchronous operation.

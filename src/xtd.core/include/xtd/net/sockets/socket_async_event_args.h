@@ -51,7 +51,7 @@ namespace xtd {
       /// @remarks The lifetime of the new asynchronous socket operation context object is determined by references by the application code and asynchronous I/O references. It is not necessary for the application to retain a reference to an asynchronous socket operation context object after it is submitted as a parameter to one of the asynchronous socket operation methods. It will remain referenced until the completion callback returns. However it is advantageous for the application to retain the reference to the context so that it can be reused for a future asynchronous socket operation.
       class core_export_ socket_async_event_args : public xtd::event_args {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Creates an empty xtd::net::sockets::socket_async_event_args instance.
@@ -68,7 +68,7 @@ namespace xtd {
         explicit socket_async_event_args(bool suppress_execution_context_flow);
         /// @}
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the socket to use or the socket created for accepting a connection with an asynchronous socket method.
@@ -93,7 +93,7 @@ namespace xtd {
         std::vector<xtd::byte>& buffer() noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Sets the region of memory to use as a buffer with an asynchronous socket method.
@@ -118,7 +118,7 @@ namespace xtd {
         void set_buffer(const std::vector<xtd::byte>& buffer, size_t offset, size_t count);
         /// @}
         
-        /// @name Events
+        /// @name Public Events
         
         /// @{
         /// @brief The event used to complete an asynchronous operation.

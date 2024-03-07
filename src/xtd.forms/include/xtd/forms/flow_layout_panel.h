@@ -22,14 +22,14 @@ namespace xtd {
     /// @include flow_layout_panel.cpp
     class flow_layout_panel : public panel {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialises a new instance of fixed layout panel class.
       flow_layout_panel() = default;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::flow_layout_panel.

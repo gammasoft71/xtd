@@ -47,7 +47,7 @@ namespace xtd {
     /// @note To improve performance, you can make xtd::diagnostics::boolean_switch members static in your class.
     class core_export_ boolean_switch : public xtd::diagnostics::switch_base {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       /// @{
       
       /// @brief Initializes a new instance of the xtd::diagnostics::boolean_switch class with the specified display name and description.
@@ -85,7 +85,7 @@ namespace xtd {
       
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       /// @{
       
       /// @brief Gets a value indicating whether the switch is enabled or disabled.

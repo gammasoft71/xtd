@@ -39,14 +39,14 @@ namespace xtd {
       /// @remarks This class is used by xtd::forms::style_sheets::ibox_model.
       class forms_export_ background_image : public xtd::iequatable<background_image>, public xtd::object {
       public:
-        /// @name Fields
+        /// @name Public Fields
         
         /// @{
         /// @brief Provides an empty xtd::forms::style_sheets::background_image object.
         static const background_image empty;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::background_image class.
@@ -107,7 +107,7 @@ namespace xtd {
         background_image& operator =(const background_image&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the angle specifies the gradient direction.
@@ -144,7 +144,7 @@ namespace xtd {
         void image_type(xtd::forms::style_sheets::image_type value) noexcept;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const background_image& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
@@ -152,7 +152,7 @@ namespace xtd {
         xtd::ustring to_string() const noexcept override;
         /// @}
 
-        /// @name Static methods
+        /// @name Public Static Methods
         
         /// @{
         /// @brief Creates a xtd::drawing::brush from specified image data and rectangle.

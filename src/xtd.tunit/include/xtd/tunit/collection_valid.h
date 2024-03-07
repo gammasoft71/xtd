@@ -26,7 +26,7 @@ namespace xtd {
       collection_valid() = delete;
       /// @endcond
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Validates that all collection items are of the type supplied or a derived type.

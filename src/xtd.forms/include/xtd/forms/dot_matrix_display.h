@@ -31,7 +31,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents a dots collection.
@@ -41,14 +41,14 @@ namespace xtd {
       using points_collection =  std::vector<xtd::drawing::point>;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize a new instance of dot_matrix_display class.
       dot_matrix_display();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets background dot color.
@@ -127,7 +127,7 @@ namespace xtd {
       virtual dot_matrix_display& thickness(int32 value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Gets specified dot point status.
@@ -153,7 +153,7 @@ namespace xtd {
       virtual void set_dots(const points_collection& points, bool on);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::dot_matrix_display.

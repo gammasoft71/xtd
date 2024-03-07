@@ -30,7 +30,7 @@ namespace xtd {
     class forms_export_ progress_dialog  final : public component {
       struct data;
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the progress_dialog class.
@@ -41,7 +41,7 @@ namespace xtd {
       ~progress_dialog();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets whether user has clicked on cancel button.
@@ -187,7 +187,7 @@ namespace xtd {
       progress_dialog& value(int32 value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Hides progress dialog box.

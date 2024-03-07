@@ -17,7 +17,7 @@ namespace xtd {
   /// @include interrupt_exception.cpp
   class interrupt_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class interrupt_exception

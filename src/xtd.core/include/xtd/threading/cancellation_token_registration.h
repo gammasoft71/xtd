@@ -26,7 +26,7 @@ namespace xtd {
     class core_export_ cancellation_token_registration : public object {
       struct data;
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @}
@@ -38,12 +38,12 @@ namespace xtd {
       ~cancellation_token_registration();
       /// @endcond
       
-      /// @name Proeprties
+      /// @name Public Properties
       
       /// @{
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @}

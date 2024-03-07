@@ -17,7 +17,7 @@ namespace xtd {
   /// @include operation_canceled_exception.cpp
   class operation_canceled_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class operation_canceled_exception

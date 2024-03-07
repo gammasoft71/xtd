@@ -189,7 +189,7 @@ namespace xtd {
         std::shared_ptr<data> data_;
       };
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.

@@ -17,7 +17,7 @@ namespace xtd {
   /// @include index_out_of_range_exception.cpp
   class index_out_of_range_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class index_out_of_range_exception

@@ -26,14 +26,14 @@ namespace xtd {
     /// @include v_scroll_bar.cpp
     class forms_export_ v_scroll_bar : public scroll_bar {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize a new instance of v_scroll_bar class.
       v_scroll_bar();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::v_scroll_bar.

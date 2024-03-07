@@ -22,7 +22,7 @@ namespace xtd {
       /// @remarks Do not use the xtd::drawing::text::installed_font_collection class to install a font to Windows, macOS or linux. Instead use the GDI add_font_resource function. An xtd::drawing::text::installed_font_collection object sees only fonts that are installed in Windows before the object is created.
       class drawing_export_ installed_font_collection final : public font_collection {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::text::installed_font_collection class.

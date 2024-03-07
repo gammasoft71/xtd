@@ -22,14 +22,14 @@ namespace xtd {
     /// @ingroup xtd_forms
     class forms_export_ padding : public object, public xtd::iequatable<padding> {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Provides a Padding object with no padding.
       static const padding empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the padding class.
@@ -113,7 +113,7 @@ namespace xtd {
       int32 vertical() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const padding& value) const noexcept override;
@@ -124,7 +124,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Computes the sum of the two specified padding values.

@@ -72,7 +72,7 @@ namespace xtd {
       transition_time& operator =(const transition_time&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the day on which the time change occurs.
@@ -129,7 +129,7 @@ namespace xtd {
       uint32 week() const noexcept;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Defines a time change that uses a fixed-date rule (that is, a time change that occurs on a specific day of a specific month).
@@ -192,7 +192,7 @@ namespace xtd {
       adjustement_rule& operator =(const adjustement_rule&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the date when the adjustment rule ceases to be in effect.
@@ -231,7 +231,7 @@ namespace xtd {
       transition_time daylight_transition_start() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const adjustement_rule& ar) const noexcept override;
@@ -254,7 +254,7 @@ namespace xtd {
     time_zone_info& operator =(const time_zone_info&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the time difference between the current time zone's standard time and Coordinated Universal Time (UTC).
@@ -305,7 +305,7 @@ namespace xtd {
     bool supports_daylight_saving_time() const noexcept;
     /// @}
 
-    /// @name Static properties
+    /// @name Public Static Properties
     
     /// @{
     /// @brief Gets a time_zone_info object that represents the local time zone.
@@ -317,7 +317,7 @@ namespace xtd {
     static const time_zone_info& utc() noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     int32 compare_to(const time_zone_info& tzi) const noexcept override;
@@ -336,7 +336,7 @@ namespace xtd {
     xtd::ustring to_string() const noexcept override;
     /// @}
 
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Converts the specified date and time to Coordinated Universal Time (UTC).

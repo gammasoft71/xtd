@@ -33,7 +33,7 @@ namespace xtd {
       /// @ingroup xtd_core
       class core_export_ ip_packet_information : public xtd::object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Creates an empty xtd::net::sockets::ip_packet_information instance.
@@ -46,7 +46,7 @@ namespace xtd {
         ip_packet_information& operator =(const ip_packet_information&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the origin information of the packet that was received as a result of calling the xtd::net::sockets::socket::receive_message_from method or xtd::net::sockets::socket::end_receive_message_from method.

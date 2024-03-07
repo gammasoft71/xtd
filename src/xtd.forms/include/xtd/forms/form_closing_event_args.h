@@ -19,7 +19,7 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class form_closing_event_args : public cancel_event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the form_closing_event_args class.
@@ -35,7 +35,7 @@ namespace xtd {
       form_closing_event_args& operator =(const form_closing_event_args& form_closing_event_args) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value that indicates why the form is being closed.

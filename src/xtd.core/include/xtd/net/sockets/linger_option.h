@@ -31,7 +31,7 @@ namespace xtd {
       /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a xtd::net::sockets::socket when the xtd::net::sockets::socket::linger_state property is not set and for a xtd::net::sockets::tcp_client when the xtd::net::sockets::tcp_client::linger_state property is not set.
       class core_export_ linger_option : public xtd::object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::linger_option class.
@@ -57,7 +57,7 @@ namespace xtd {
         linger_option& operator =(const linger_option&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets a value that indicates whether to linger after the xtd::net::sockets::socket is closed.

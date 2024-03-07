@@ -29,7 +29,7 @@ namespace xtd {
     /// @include about_box.cpp
     class forms_export_ about_box final static_ {
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents an author collection.
@@ -42,7 +42,7 @@ namespace xtd {
       using translator_collection = xtd::forms::about_dialog::translator_collection;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Displays an about box in front of the specified window.

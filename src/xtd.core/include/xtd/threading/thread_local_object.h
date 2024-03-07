@@ -51,7 +51,7 @@ namespace xtd {
       };
 
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes the xtd::threading::thread_local_object instance.
@@ -85,7 +85,7 @@ namespace xtd {
       thread_local_object& operator =(const thread_local_object& other) = default;
       ///@endcond
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets whether xtd::threading::thread_local_object::value is initialized on the current thread.
@@ -126,7 +126,7 @@ namespace xtd {
       }
       /// @}
 
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       ustring to_string() const noexcept override {

@@ -38,7 +38,7 @@ namespace xtd {
       /// @brief Represent an item contained in the checked_list_box::object_collection collection.
       class item : public list_box::item, public xtd::icomparable<item>, public xtd::iequatable<item> {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the item class.
@@ -76,7 +76,7 @@ namespace xtd {
         item& operator =(const item& value) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets a value indicating whether the item is in the checked state.
@@ -89,7 +89,7 @@ namespace xtd {
         virtual forms::check_state check_state() const;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         using list_box::item::compare_to;
@@ -102,7 +102,7 @@ namespace xtd {
         forms::check_state check_state_ = forms::check_state::unchecked;
       };
       
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents the collection of items in a checked_list_box.
@@ -118,7 +118,7 @@ namespace xtd {
       using selected_object_collection = std::vector<item>;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the checked_list_box class.
@@ -126,7 +126,7 @@ namespace xtd {
       checked_list_box();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Collection of checked indexes in this checked_list_box.
@@ -182,7 +182,7 @@ namespace xtd {
       control& text(const xtd::ustring& text) override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Maintains performance while items are added to the checked_list_box one at a time by preventing the control from drawing until the end_update() method is called.
@@ -229,7 +229,7 @@ namespace xtd {
       void set_item_text(size_t index, const xtd::ustring& text);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::checked_list_box.
@@ -378,7 +378,7 @@ namespace xtd {
       static checked_list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the checked state of an item changes.

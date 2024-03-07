@@ -24,7 +24,7 @@ namespace xtd {
     /// @include wait_handle_cannot_be_opened_exception.cpp
     class wait_handle_cannot_be_opened_exception : public system_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class wait_handle_cannot_be_opened_exception

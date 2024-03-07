@@ -146,7 +146,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::socket class.
@@ -185,7 +185,7 @@ namespace xtd {
         socket& operator =(const socket&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the address family of the xtd::net::sockets::socket.
@@ -495,7 +495,7 @@ namespace xtd {
         socket& ttl(xtd::byte value);
         /// @}
 
-        /// @name Static properties
+        /// @name Public Static Properties
         
         /// @{
         /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).
@@ -509,7 +509,7 @@ namespace xtd {
         static bool os_supports_ip_v6() noexcept;
         /// @}
 
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Creates a new xtd::net::sockets::socket for a newly created connection.
@@ -1536,7 +1536,7 @@ namespace xtd {
         void shutdown(xtd::net::sockets::socket_shutdown how);
         /// @}
         
-        /// @name Static methods
+        /// @name Public Static Methods
         
         /// @{
         /// @brief Determines the status of one or more sockets.

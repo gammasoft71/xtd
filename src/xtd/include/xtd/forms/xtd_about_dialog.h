@@ -29,14 +29,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd_about_dialog class.
       xtd_about_dialog();
       /// @}
      
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Runs xtd about dialog box.

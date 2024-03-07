@@ -24,7 +24,7 @@ namespace xtd {
     /// @include thread_state_exception.cpp
     class thread_state_exception : public system_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class thread_state_exception

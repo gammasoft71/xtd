@@ -17,7 +17,7 @@ namespace xtd {
   /// @include time_zone_not_found_exception.cpp
   class time_zone_not_found_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class time_zone_not_found_exception

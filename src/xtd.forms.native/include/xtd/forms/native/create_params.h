@@ -30,7 +30,7 @@ namespace xtd {
       /// @note The constants used to set the style, ex_style, and class_style properties are defined in the xtd.forms.native library as constants.
       /// @warning Internal use only
       struct create_params {
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets or sets the control's initial text.

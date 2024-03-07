@@ -21,7 +21,7 @@ namespace xtd {
     /// @ingroup xtd_core exceptions
     class thread_interrupted_exception : public system_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class thread_interrupted_exception

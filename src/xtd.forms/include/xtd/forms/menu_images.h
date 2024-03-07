@@ -21,7 +21,7 @@ namespace xtd {
     /// @ingroup xtd_forms components
     class menu_images final static_ {
     public:
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief File new image object.

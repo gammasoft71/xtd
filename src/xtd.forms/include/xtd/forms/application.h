@@ -49,7 +49,7 @@ namespace xtd {
     /// @include application_and_exception.cpp
     class forms_export_ application final static_ {
     public:
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets a value indicating whether the caller can quit this application.
@@ -195,7 +195,7 @@ namespace xtd {
       static void use_wait_cursor(bool use_wait_cursor);
       /// @}
       
-      /// @name Static events
+      /// @name Public Static Events
       
       /// @{
       /// @brief Occurs when the application is about to shut down.
@@ -234,7 +234,7 @@ namespace xtd {
       static event<application, delegate<void(const event_args&)>> thread_exit;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Adds a message filter to monitor Windows messages as they are routed to their destinations.

@@ -17,7 +17,7 @@ namespace xtd {
   /// @include format_exception.cpp
   class format_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class format_exception

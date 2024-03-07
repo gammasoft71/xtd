@@ -16,7 +16,7 @@ namespace xtd {
   template <typename type_t>
   class icomparable interface_ {
   public:
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Compares the current instance with another object of the same type.

@@ -17,7 +17,7 @@ namespace xtd {
   /// @include null_pointer_exception.cpp
   class null_pointer_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class null_pointer_exception

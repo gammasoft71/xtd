@@ -23,7 +23,7 @@ namespace xtd {
       /// @ingroup xtd_drawing
       class frame_dimension final : public object, public xtd::iequatable<frame_dimension> {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the FrameDimension class using the specified Guid structure.
@@ -36,7 +36,7 @@ namespace xtd {
         frame_dimension& operator =(const frame_dimension&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets a globally unique identifier (GUID) that represents this frame_dimension object.
@@ -44,7 +44,7 @@ namespace xtd {
         const xtd::guid& guid() const noexcept {return guid_;}
         /// @}
         
-        /// @name Static properties
+        /// @name Public Static Properties
         
         /// @{
         /// @brief Gets the page dimension.
@@ -60,7 +60,7 @@ namespace xtd {
         static frame_dimension time() noexcept {return frame_dimension(xtd::guid("6aedbd6d-3fb5-418a-83a6-7f45229dc872"));}
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const frame_dimension& value) const noexcept override {return guid_ == value.guid_;}

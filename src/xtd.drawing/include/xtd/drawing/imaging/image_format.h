@@ -28,7 +28,7 @@ namespace xtd {
         image_format() = default;
         /// @endcond
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the image_format class by using the specified guid structure.
@@ -42,7 +42,7 @@ namespace xtd {
         image_format& operator =(const image_format&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets a guid structure that represents this image_format object.
@@ -50,7 +50,7 @@ namespace xtd {
         const xtd::guid guid() const noexcept {return guid_;}
         /// @}
 
-        /// @name Static properties
+        /// @name Public Static Properties
         
         /// @{
         /// @brief Gets the bitmap (BMP) image format.
@@ -190,7 +190,7 @@ namespace xtd {
         static image_format tga() noexcept {return image_format(xtd::guid("b96b3ccd-0728-11d3-9d7b-0000f81ef32e"));}
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         int32 compare_to(const image_format& value) const noexcept override {return guid_ < value.guid_ ? -1 : guid_ > value.guid_ ? 1 : 0;}

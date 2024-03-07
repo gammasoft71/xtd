@@ -29,7 +29,7 @@ namespace xtd {
       color_picker_event_args& operator =(const color_picker_event_args& color_picker_event_args) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the color_picker_event_args class for the specified control.
@@ -37,13 +37,13 @@ namespace xtd {
       explicit color_picker_event_args(const xtd::drawing::color& color) : color_(color) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the xtd::drawing::color that represent the xtd::forms::color_picker::color.
       /// @return The xtd::drawing::color that represent the xtd::forms::color_picker::color.
       const xtd::drawing::color& color() const noexcept {return color_;}
-      //// @}
+      /// @}
       
     private:
       xtd::drawing::color color_;

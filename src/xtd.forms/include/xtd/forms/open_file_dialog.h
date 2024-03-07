@@ -27,14 +27,14 @@ namespace xtd {
     /// @include open_file_dialog.cpp
     class forms_export_ open_file_dialog final : public file_dialog {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the open_file_dialog class.
       open_file_dialog() = default;
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Opens the file with read only permission selected by the user.

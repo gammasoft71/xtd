@@ -34,7 +34,7 @@ namespace xtd {
     /// @remarks The xtd::net::ip_address class contains the address of a computer on an IP network.
     class core_export_ ip_address : public xtd::object, public xtd::iequatable<ip_address> {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Provides an IP address that indicates that the server must listen for client activity on all network interfaces. This field is constant.
@@ -61,7 +61,7 @@ namespace xtd {
       static const ip_address none;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::net::ip_address.
@@ -95,7 +95,7 @@ namespace xtd {
       ip_address& operator =(const ip_address&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the address family of the IP address.
@@ -134,7 +134,7 @@ namespace xtd {
       ip_address& scope_id(uint32 value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const ip_address& other) const noexcept override;
@@ -158,7 +158,7 @@ namespace xtd {
       ustring to_string() const noexcept override;
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Converts a Double value from host byte order to network byte order.

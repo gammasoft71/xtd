@@ -25,7 +25,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ stream_reader : public xtd::io::text_reader {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the stream_reader class for the specified file name.
@@ -42,7 +42,7 @@ namespace xtd {
       ~stream_reader();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Returns the underlying stream.
@@ -54,7 +54,7 @@ namespace xtd {
       bool end_of_stream() const;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Closes the stream_reader object and the underlying stream, and releases any system resources associated with the reader.

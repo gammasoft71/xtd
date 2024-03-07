@@ -26,7 +26,7 @@ namespace xtd {
       string_valid() = delete;
       /// @endcond
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Validates that two type are equal ignoring case.

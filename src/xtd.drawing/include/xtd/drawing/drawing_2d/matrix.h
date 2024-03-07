@@ -74,7 +74,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::matrix class as the identity matrix.
         matrix();
@@ -104,7 +104,7 @@ namespace xtd {
         ~matrix();
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets an array of floating-point values that represents the elements of this xtd::drawing::drawing_2d::matrix.
@@ -133,7 +133,7 @@ namespace xtd {
         float offset_y() const;
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const xtd::drawing::drawing_2d::matrix& value) const noexcept override;

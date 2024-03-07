@@ -25,14 +25,14 @@ namespace xtd {
     /// @remarks To draw an image on a Windows Form, you should use one of the draw_image methods.
     class drawing_export_ bitmap : public xtd::drawing::image {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represent an empty bitmap.
       static bitmap empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the bitmap class from the specified existing image.
@@ -100,7 +100,7 @@ namespace xtd {
       explicit bitmap(const xtd::drawing::size& size);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Creates a copy of the section of this xtd::drawing::bitmap defined with a specified rectangle.
@@ -184,7 +184,7 @@ namespace xtd {
       void unlock_bits(const xtd::drawing::imaging::bitmap_data& data);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates a xtd::drawing::bitmap from a Windows handle to an icon.

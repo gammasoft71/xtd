@@ -16,7 +16,7 @@ namespace xtd {
   /// @remarks This class is used by xtd::environment::target_type method.
   class target_type : public object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initialise a new xtd::target_type class.
@@ -30,7 +30,7 @@ namespace xtd {
     target_type& operator =(const target_type&) = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets target id is console application.
@@ -62,7 +62,7 @@ namespace xtd {
     xtd::target_id target_id() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     ustring to_string() const noexcept override;

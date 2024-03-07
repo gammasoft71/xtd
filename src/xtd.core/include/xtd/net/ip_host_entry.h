@@ -23,7 +23,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ ip_host_entry : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::net::ip_host_entry.
@@ -36,7 +36,7 @@ namespace xtd {
       ip_host_entry& operator =(const ip_host_entry&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets List of IP addresses that are associated with a host.

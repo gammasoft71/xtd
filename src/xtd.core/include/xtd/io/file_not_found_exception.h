@@ -26,7 +26,7 @@ namespace xtd {
     /// @include file_not_found_exception.cpp
     class file_not_found_exception : public xtd::io::io_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class file_not_found_exception

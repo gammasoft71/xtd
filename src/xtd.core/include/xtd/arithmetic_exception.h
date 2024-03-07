@@ -19,7 +19,7 @@ namespace xtd {
   /// @include arithmetic_exception.cpp
   class arithmetic_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class arithmetic_exception

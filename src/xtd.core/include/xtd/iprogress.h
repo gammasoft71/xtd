@@ -16,7 +16,7 @@ namespace xtd {
   /// @tparam type_t The type of progress update value. This type parameter is contravariant. That is, you can use either the type you specified or any type that is less derived
   class iprogress interface_ {
   public:
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Reports a progress update.

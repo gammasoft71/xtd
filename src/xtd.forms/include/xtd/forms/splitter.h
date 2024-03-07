@@ -25,14 +25,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the splitter class.
       splitter();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       using xtd::forms::control::dock;
@@ -64,7 +64,7 @@ namespace xtd {
       virtual splitter& splitter_style(xtd::forms::splitter_style splitter_style);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::splitter.

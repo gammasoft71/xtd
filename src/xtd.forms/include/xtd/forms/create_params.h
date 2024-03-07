@@ -28,7 +28,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the create_params class.
@@ -40,7 +40,7 @@ namespace xtd {
       create_params& operator =(const create_params& other);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the control's initial text.
@@ -158,7 +158,7 @@ namespace xtd {
       create_params& y(int32 y);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Returns a string that represents the current object.

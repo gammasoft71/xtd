@@ -94,7 +94,7 @@ namespace xtd {
   /// @endcode
   class version final : public object, public icomparable<version>, public xtd::iequatable<version> {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of the xtd::version class.
@@ -166,7 +166,7 @@ namespace xtd {
     version& operator =(const version&) noexcept = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the value of the build component of the version number for the current xtd::version object.
@@ -200,7 +200,7 @@ namespace xtd {
     int32 revision() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Compares the current xtd::version object to a specified object and returns an indication of their relative values.
@@ -242,7 +242,7 @@ namespace xtd {
     xtd::ustring to_string(size_t field_count) const;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Converts the string representation of a version number to an equivalent Version object.

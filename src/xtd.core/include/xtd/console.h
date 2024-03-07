@@ -32,7 +32,7 @@ namespace xtd {
   /// @include console_in_out.cpp
   class console final static_ {
   public:
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Gets the error output stream. A std::basic_ostream<char_t> that represents the error output stream.
@@ -49,7 +49,7 @@ namespace xtd {
     static std::ostream out;
     /// @}
     
-    /// @name Static properties
+    /// @name Public Static Properties
     
     /// @{
     /// @brief Gets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
@@ -267,7 +267,7 @@ namespace xtd {
     static void window_width(int32 width);
     /// @}
     
-    /// @name Static events
+    /// @name Public Static Events
     
     /// @{
     /// @brief Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
@@ -282,7 +282,7 @@ namespace xtd {
     static event<console, console_cancel_event_handler> cancel_key_press;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Plays the sound of a beep through the console speaker.

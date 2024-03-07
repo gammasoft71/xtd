@@ -11,14 +11,14 @@ namespace minesweeper {
   /// @brief Represent input name dialog that display input name dialog.
   class input_name_dialog final : public xtd::forms::form {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initialize a new instance of minesweeper::input_name_dialog class.
     input_name_dialog();
     /// @}
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the level for which the gammer name is entered.

@@ -24,7 +24,7 @@ namespace xtd {
       assume() = delete;
       /// @endcond
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Assumes that two type are equal.

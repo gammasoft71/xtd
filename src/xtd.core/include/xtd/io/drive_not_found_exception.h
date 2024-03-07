@@ -26,7 +26,7 @@ namespace xtd {
     /// @include drive_not_found_exception.cpp
     class drive_not_found_exception : public xtd::io::io_exception {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Create a new instance of class drive_not_found_exception

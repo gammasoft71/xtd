@@ -39,14 +39,14 @@ namespace xtd {
       country& operator =(const country& other);
       /// @endcond
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Gets an empty country.
       /// @return An empty country
       static const country empty();
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the country alpha 2 code.
@@ -78,7 +78,7 @@ namespace xtd {
       virtual int32 numeric_code() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const country& value) const noexcept override;
@@ -88,7 +88,7 @@ namespace xtd {
       virtual xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets a country from alpha 2 code.

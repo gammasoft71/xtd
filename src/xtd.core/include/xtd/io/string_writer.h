@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ string_writer : public xtd::io::text_writer {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the stream_writer class .
@@ -34,7 +34,7 @@ namespace xtd {
       explicit string_writer(const xtd::ustring& str);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Returns the underlying stream.
@@ -45,7 +45,7 @@ namespace xtd {
       std::ostream& base_stream() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.

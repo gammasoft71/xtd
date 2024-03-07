@@ -38,14 +38,14 @@ namespace xtd {
     /// @remarks xtd::diagnostics::stack_trace might not report as many method calls as expected, due to code transformations that occur during optimization.
     class core_export_ stack_trace : public xtd::object {
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents a stack_frame collection.
       using stack_frame_collection = std::vector<xtd::diagnostics::stack_frame>;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class from the caller's frame.
@@ -206,7 +206,7 @@ namespace xtd {
       /// @endcond
       /// @}
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Defines the default for the number of methods to omit from the stack trace. This field is constant.
@@ -214,7 +214,7 @@ namespace xtd {
       static constexpr size_t METHODS_TO_SKIP = 0;
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the number of frames in the stack trace.
@@ -255,7 +255,7 @@ namespace xtd {
       size_t frame_count() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Gets the specified stack frame.

@@ -46,7 +46,7 @@ namespace xtd {
   /// @remarks xtd::ustring is inherited from std::basic_string<char> and therefore offers the full (immutable) API of std::string.
   class ustring : public object, public xtd::icomparable<ustring>, public std::basic_string<char> {
   public:
-    /// @name Fields
+    /// @name Public Fields
     
     /// @{
     /// @brief Represents the empty string.
@@ -54,7 +54,7 @@ namespace xtd {
     static const ustring empty_string;
     /// @}
     
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initializes a new instance of xtd::ustring.
@@ -479,7 +479,7 @@ namespace xtd {
     ustring substr(size_type index = 0, size_type count = npos) const;
     /// @endcond
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     int32 compare_to(const ustring& tzi) const noexcept override;
@@ -900,7 +900,7 @@ namespace xtd {
     ustring trim_start(const std::vector<value_type>& trim_chars) const noexcept;
     /// @}
     
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Gets the class name of the object_t.

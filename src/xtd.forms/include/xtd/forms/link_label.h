@@ -42,7 +42,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents a link within a link_label control.
@@ -61,7 +61,7 @@ namespace xtd {
         using base = xtd::forms::layout::arranged_element_collection<xtd::forms::link_label::link>;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Creates a new object xtd::forms::control::control_collection with specified allocator (optional).
@@ -94,14 +94,14 @@ namespace xtd {
         /// @}
       };
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new default instance of the xtd::forms::link_label class.
       link_label();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the color used to display an active link.
@@ -221,7 +221,7 @@ namespace xtd {
       link_label& visited_link_color(const xtd::drawing::color& color);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::link_label.
@@ -369,7 +369,7 @@ namespace xtd {
       static link_label create(const control& parent, const xtd::ustring& text, const link_collection& links, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when a link is clicked within the control.

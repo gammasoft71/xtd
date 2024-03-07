@@ -11,7 +11,7 @@ namespace xtd {
     namespace css {
       class selector : public object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         explicit selector(const xtd::ustring& name) : name_(name) {}
@@ -23,7 +23,7 @@ namespace xtd {
         selector& operator =(const selector&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         const xtd::ustring& name() const noexcept {return name_;}

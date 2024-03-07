@@ -22,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ assembly_company_attribute final : public xtd::attribute {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_company_attribute class.
@@ -35,7 +35,7 @@ namespace xtd {
       assembly_company_attribute(const ustring& value, const object& executing_assembly);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets company name information.

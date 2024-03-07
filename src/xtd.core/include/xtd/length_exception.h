@@ -17,7 +17,7 @@ namespace xtd {
   /// @include length_exception.cpp
   class length_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class length_exception

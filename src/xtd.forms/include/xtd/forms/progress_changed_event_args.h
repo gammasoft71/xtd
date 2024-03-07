@@ -25,7 +25,7 @@ namespace xtd {
       progress_changed_event_args& operator =(const progress_changed_event_args&) = default;
       /// @endcond
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the DoWorkEventArgs class.
@@ -33,7 +33,7 @@ namespace xtd {
       progress_changed_event_args(int32 progress_percentage, const std::any& user_state) : progress_percentage_(progress_percentage), user_state_(user_state) {}
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       int32 progress_percentage() const noexcept {return progress_percentage_;}

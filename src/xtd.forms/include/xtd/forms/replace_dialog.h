@@ -37,7 +37,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the replace_dialog class.
@@ -48,7 +48,7 @@ namespace xtd {
       ~replace_dialog();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the string to find.
@@ -116,7 +116,7 @@ namespace xtd {
       replace_dialog& whole_word(bool value);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the user click the find button.
@@ -137,7 +137,7 @@ namespace xtd {
       xtd::event<replace_dialog, xtd::forms::dialog_closed_event_handler> dialog_closed;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Closes the find dialog box.

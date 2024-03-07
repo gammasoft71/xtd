@@ -29,7 +29,7 @@ namespace xtd {
       /// @include socket_exception.cpp
       class socket_exception : public xtd::system_exception {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Create a new instance of class socket_exception

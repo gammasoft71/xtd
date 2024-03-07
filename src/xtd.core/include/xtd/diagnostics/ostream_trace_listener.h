@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_core diagnostics debug
     class core_export_ ostream_trace_listener : public xtd::diagnostics::trace_listener {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::ostream_trace_listener class with a specified ostream.
@@ -36,7 +36,7 @@ namespace xtd {
       /// @endcond
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the underlying stream.
@@ -47,7 +47,7 @@ namespace xtd {
       virtual void ostream(const std::ostream& ostream);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void close() override;

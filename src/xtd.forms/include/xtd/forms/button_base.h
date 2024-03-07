@@ -36,7 +36,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
@@ -118,7 +118,7 @@ namespace xtd {
       virtual button_base& text_align(content_alignment value);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the value of the image property changes.

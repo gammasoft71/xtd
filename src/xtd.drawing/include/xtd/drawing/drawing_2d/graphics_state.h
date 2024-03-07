@@ -34,7 +34,7 @@ namespace xtd {
         graphics_state& operator =(const graphics_state& value) = default;
         /// @endcond
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const graphics_state& value) const noexcept override;

@@ -31,7 +31,7 @@ namespace xtd {
     /// @ingroup xtd_core diagnostics debug
     class core_export_ debugger static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets a value that indicates whether a debugger is attached to the process.

@@ -29,7 +29,7 @@ namespace xtd {
       /// @ingroup xtd_core
       class core_export_ ip_v6_multicast_option : public xtd::object {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::ip_v6_multicast_option class.
@@ -49,7 +49,7 @@ namespace xtd {
         ip_v6_multicast_option& operator =(const ip_v6_multicast_option&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the IP address of a multicast group.

@@ -30,7 +30,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the folder_browser_dialog class.
@@ -41,7 +41,7 @@ namespace xtd {
       folder_browser_dialog();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value that indicates whether the dialog will be automatically upgraded to enable new features.
@@ -93,7 +93,7 @@ namespace xtd {
       folder_browser_dialog& show_new_folder_button(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Resets all options to their default values, the last selected color to black, and the custom colors to their default values.

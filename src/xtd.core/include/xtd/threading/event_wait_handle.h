@@ -39,7 +39,7 @@ namespace xtd {
       struct data;
     
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       event_wait_handle();
@@ -105,14 +105,14 @@ namespace xtd {
       ~event_wait_handle();
       /// @endcond
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       intptr handle() const noexcept override;
       void handle(intptr value) override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void close() override;
@@ -135,7 +135,7 @@ namespace xtd {
       bool set();
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Opens the specified named synchronization event, if it already exists.

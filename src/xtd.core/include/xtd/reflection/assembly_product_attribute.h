@@ -22,7 +22,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class assembly_product_attribute final : public xtd::attribute {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_product_attribute class.

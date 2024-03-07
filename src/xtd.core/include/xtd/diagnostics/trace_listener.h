@@ -34,7 +34,7 @@ namespace xtd {
     /// @note <b>to Inheritors:</b> Inherit from this class to implement a custom listener for the debug and trace classes. At a minimum, you must implement the write and write_line methods. Additionally, you can implement the fail, close and flush methods.
     class core_export_ trace_listener abstract_ {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the trace_listener class.
@@ -57,7 +57,7 @@ namespace xtd {
       explicit trace_listener(const xtd::ustring& name);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the indent level.
@@ -114,7 +114,7 @@ namespace xtd {
       void trace_output_options(trace_options trace_output_options) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief When overridden in a derived class, closes the output stream so it no longer receives tracing or debugging output.

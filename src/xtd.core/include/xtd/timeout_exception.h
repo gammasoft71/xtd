@@ -17,7 +17,7 @@ namespace xtd {
   /// @include timeout_exception.cpp
   class timeout_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class timeout_exception

@@ -52,14 +52,14 @@ namespace xtd {
       class tool_bar_button_control;
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents the base type of the xtd::forms::tool_bar::buttons collection.
       using tool_bar_button_collection = xtd::forms::layout::arranged_element_collection<tool_bar_button_ref>;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::tool_bar class.
@@ -67,7 +67,7 @@ namespace xtd {
       tool_bar();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the value that determines the appearance of a toolbar control and its buttons.
@@ -218,7 +218,7 @@ namespace xtd {
       virtual tool_bar& wrappable(bool value);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when a xtd::forms::tool_bar_button on the xtd::forms::tool_bar is clicked.

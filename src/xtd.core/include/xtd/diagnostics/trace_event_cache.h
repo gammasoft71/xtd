@@ -27,7 +27,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ trace_event_cache : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the trace_event_cache class.
@@ -39,7 +39,7 @@ namespace xtd {
       trace_event_cache& operator =(const trace_event_cache& tec) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the call stack for the current thread.

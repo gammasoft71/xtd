@@ -25,14 +25,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the collapsible_panel class.
       collapsible_panel();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       virtual bool auto_size() const noexcept override;
@@ -71,7 +71,7 @@ namespace xtd {
       /// @endcond
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Collapse the collapsible_panel.
@@ -83,7 +83,7 @@ namespace xtd {
       void expand();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::collapsible_panel.
@@ -232,7 +232,7 @@ namespace xtd {
       static collapsible_panel create(const control& parent, const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the expanded property changes.

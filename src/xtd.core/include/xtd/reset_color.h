@@ -19,7 +19,7 @@ namespace xtd {
   /// @include console_color4.cpp
   class reset_color final : public object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initialize a new insttance of xtd::reset_coloor class.

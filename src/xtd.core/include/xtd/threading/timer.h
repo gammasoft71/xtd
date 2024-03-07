@@ -47,7 +47,7 @@ namespace xtd {
     class core_export_ timer final : public object {
       struct data;
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the timer class with an infinite period and an infinite due time, using the newly created timer object as the state object.
@@ -151,7 +151,7 @@ namespace xtd {
       ~timer();
       /// @endcond
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief changes the start time and the interval between method invocations for a timer, using 32-bit signed integers to measure time intervals.

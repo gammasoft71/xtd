@@ -10,7 +10,7 @@ namespace minesweeper {
   /// @remarks the game contains 480 (30 x 16 cells and 99 mines for expert and custom level.
   class cell final {
   public:
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets a value indicate if cell contains mine.
@@ -57,7 +57,7 @@ namespace minesweeper {
     static int width() noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     /// @brief Clear all cell's values

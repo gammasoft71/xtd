@@ -30,14 +30,14 @@ namespace xtd {
     /// @ingroup xtd_drawing coordinates
     class drawing_export_ size : public xtd::object, public xtd::iequatable<size> {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Gets a xtd::drawing::size class that has a Height and Width value of 0. This field is constant.
       static const xtd::drawing::size empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::drawing::size class that has a Height and Width value of 0.
@@ -57,7 +57,7 @@ namespace xtd {
       operator size_f() const noexcept;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets he vertical component of this xtd::drawing::size class.
@@ -83,7 +83,7 @@ namespace xtd {
       void width(int32 value) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const xtd::drawing::size& value) const noexcept override;
@@ -93,7 +93,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Adds the width and height of one xtd::drawing::size class to the width and height of another size class.

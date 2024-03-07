@@ -22,7 +22,7 @@ namespace xtd {
     /// @include ostream_unit_test.cpp
     class tunit_export_ ostream_event_listener : public xtd::tunit::event_listener {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Creates new instance ostream event lister with ostream specified.
@@ -30,7 +30,7 @@ namespace xtd {
       ostream_event_listener(std::ostream& os) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Occurs when class is ended.

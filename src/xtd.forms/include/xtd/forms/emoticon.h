@@ -28,13 +28,13 @@ namespace xtd {
     class forms_export_ emoticon : public object, public xtd::iequatable<emoticon> {
       struct data;
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents an empty emoticon.
       static const emoticon empty();
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
@@ -114,7 +114,7 @@ namespace xtd {
       emoticon& operator =(const emoticon& other);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets name of emoticon.
@@ -126,7 +126,7 @@ namespace xtd {
       const std::vector<char32>& codepoints() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const emoticon& value) const noexcept override;

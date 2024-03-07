@@ -39,7 +39,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the progress_bar class.
@@ -47,7 +47,7 @@ namespace xtd {
       progress_bar();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets he time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
@@ -122,7 +122,7 @@ namespace xtd {
       virtual progress_bar& value(int32 value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Advances the current position of the progress bar by the specified amount.
@@ -147,7 +147,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::progress_bar.

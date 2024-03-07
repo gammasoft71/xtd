@@ -138,7 +138,7 @@ namespace xtd {
       /// @endcond
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represent an xtd::forms::context_menu reference.
@@ -148,14 +148,14 @@ namespace xtd {
       /// @brief Represents a collection of controls.
       class control_collection : public xtd::forms::layout::arranged_element_collection<control_ref> {
       public:
-        /// @name Aliases
+        /// @name Public Aliases
         
         /// @{
         /// @brief Represents the base type of the collection.
         using base = xtd::forms::layout::arranged_element_collection<control_ref>;
         /// @}
         
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Creates a new object xtd::forms::control::control_collection with specified allocator (optional).
@@ -187,7 +187,7 @@ namespace xtd {
         std::optional<value_type> operator [](const xtd::ustring& name);
         /// @}
         
-        /// @name Methodss
+        /// @name Public Methodss
         
         /// @{
         iterator insert(const_iterator pos, const value_type& value) override;
@@ -198,7 +198,7 @@ namespace xtd {
         /// @}
       };
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::control class with default settings.
@@ -242,7 +242,7 @@ namespace xtd {
       ~control();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
@@ -746,7 +746,7 @@ namespace xtd {
       virtual control& width(int32 width);
       /// @}
       
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
@@ -775,7 +775,7 @@ namespace xtd {
       static xtd::drawing::point mouse_position() noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       using isynchronize_invoke::begin_invoke;
@@ -1007,7 +1007,7 @@ namespace xtd {
       control& operator >>(control& child);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create a specified control.
@@ -1257,7 +1257,7 @@ namespace xtd {
       static std::optional<control_ref> from_handle(intptr handle);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the value of the xtd::forms::control::auto_size property changes.

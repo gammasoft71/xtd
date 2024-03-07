@@ -25,14 +25,14 @@ namespace xtd {
     class forms_export_ splitter_panel : public panel {
       friend class split_container;
     protected:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of splitter_panel.
       splitter_panel() = default;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::splitter_panel.

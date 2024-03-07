@@ -38,7 +38,7 @@ namespace xtd {
       struct data;
 
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the button class.
@@ -46,7 +46,7 @@ namespace xtd {
       command_link_button();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the mode by which the button automatically resizes itself.
@@ -91,7 +91,7 @@ namespace xtd {
       virtual command_link_button& texts(const std::tuple<xtd::ustring, xtd::ustring>& texts);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Sets text and supplementary text.
@@ -111,7 +111,7 @@ namespace xtd {
       control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::command_link_button.

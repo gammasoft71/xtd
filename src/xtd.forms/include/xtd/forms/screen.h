@@ -34,7 +34,7 @@ namespace xtd {
       screen& operator =(const screen&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the number of bits of memory, associated with one pixel of data.
@@ -78,7 +78,7 @@ namespace xtd {
       const drawing::rectangle& working_area() const noexcept;
       /// @}
       
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets an array of all displays on the system.
@@ -91,7 +91,7 @@ namespace xtd {
       static screen primary_screen();
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates the xtd::drawing::graphics for the screen.

@@ -29,7 +29,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a menu_item with a blank caption.
@@ -249,7 +249,7 @@ namespace xtd {
       menu_item(const xtd::ustring& text, const std::vector<menu_item_ref>& items);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value indicating the Windows identifier for this menu item.
@@ -303,7 +303,7 @@ namespace xtd {
       menu_item& text(const xtd::ustring& value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Generates a xtd::forms::menu_item::click event for the xtd::forms::menu_item, simulating a click by a user.
@@ -316,7 +316,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the menu item is clicked or selected using a shortcut key or access key defined for the menu item.

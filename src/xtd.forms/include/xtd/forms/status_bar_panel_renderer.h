@@ -38,7 +38,7 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class forms_export_ status_bar_panel_renderer final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Draws a status bar panel in the specified bounds, button style, button state, background color, text, optional text flags, optional foreground color and optional font.

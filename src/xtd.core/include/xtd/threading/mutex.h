@@ -50,14 +50,14 @@ namespace xtd {
       class named_mutex;
       class unnamed_mutex;
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Rpresents the native handle type.
       using native_handle_type = intptr;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::threading::mutex class with default properties.
@@ -96,7 +96,7 @@ namespace xtd {
       ~mutex();
       /// @endcond
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       intptr handle() const noexcept override;
@@ -107,7 +107,7 @@ namespace xtd {
       native_handle_type native_handle() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void close() override;
@@ -163,7 +163,7 @@ namespace xtd {
       void unlock();
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Opens an existing named mutex.

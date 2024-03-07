@@ -22,7 +22,7 @@ namespace xtd {
       /// @ingroup xtd_drawing
       class encoder_parameters final : public object, public xtd::iequatable<encoder_parameters> {
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::imaging::encoder_parameters class that can contain one xtd::drawing::imaging::encoder_parameter object.
@@ -39,7 +39,7 @@ namespace xtd {
         encoder_parameters& operator =(const encoder_parameters&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets an array of EncoderParameter objects.
@@ -53,7 +53,7 @@ namespace xtd {
         void params(const std::vector<xtd::drawing::imaging::encoder_parameter>& value) noexcept {params_ = value;}
         /// @}
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         bool equals(const encoder_parameters& value) const noexcept override {return params_ == value.params_;}

@@ -35,7 +35,7 @@ namespace xtd {
     /// @include assert_box.cpp
     class forms_export_ assert_box final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Displays a assert box in front of the specified window. The assert box displays an unknown assert.

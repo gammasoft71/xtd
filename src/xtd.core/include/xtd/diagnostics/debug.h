@@ -56,14 +56,14 @@ namespace xtd {
     /// @include debug.cpp
     class core_export_ debug static_ {
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents a collection of xtd::diagnostics::trace_listener.
       using listener_collection = xtd::diagnostics::trace_listener_collection;
       /// @}
       
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
@@ -127,7 +127,7 @@ namespace xtd {
       static void use_global_lock(bool use_global_lock) noexcept;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.

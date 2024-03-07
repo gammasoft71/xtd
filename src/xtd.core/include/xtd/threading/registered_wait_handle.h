@@ -27,7 +27,7 @@ namespace xtd {
     class core_export_ registered_wait_handle final : public object {
       friend class thread_pool;
     public:
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Cancels a registered wait operation issued by the xtd::threading::thread_pool::register_wait_for_single_object method.

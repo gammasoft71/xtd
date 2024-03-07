@@ -28,7 +28,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::forms::shadow class.
@@ -82,7 +82,7 @@ namespace xtd {
       shadow& operator =(const shadow&);
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the shadow color.
@@ -122,7 +122,7 @@ namespace xtd {
       shadow& y(int32 value) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const shadow& other) const noexcept override;

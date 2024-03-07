@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_core
     class core_export_ ip_end_point : public xtd::net::end_point {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Specifies the minimum value that can be assigned to the port property. The min_port value is set to 0x0000. This field is read-only.
@@ -29,7 +29,7 @@ namespace xtd {
       static constexpr uint16 max_port = 0xFFFF;
       /// @
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::net::ip_end_point class.
@@ -50,7 +50,7 @@ namespace xtd {
       ip_end_point& operator =(const ip_end_point&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the IP address of the endpoint.
@@ -69,7 +69,7 @@ namespace xtd {
       ip_end_point& port(uint16 value);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Creates an xtd::net::end_point instance from a xtd::net::socket_address instance.

@@ -47,7 +47,7 @@ namespace xtd {
   class box : public xtd::icomparable<box<type_t>>, public xtd::iequatable<box<type_t>>, public xtd::object {
   public:
     using underlying_type = type_t;
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Initialize a new xtd::box object.
@@ -71,7 +71,7 @@ namespace xtd {
     };
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the underlying value.
@@ -94,7 +94,7 @@ namespace xtd {
     operator type_t() const noexcept {return value_;}
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     bool equals(const box& value) const noexcept override {return value_ == value.value_;}
@@ -114,7 +114,7 @@ namespace xtd {
     }
     /// @}
 
-    /// @name Static methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Converts the string to its type_t equivalent.

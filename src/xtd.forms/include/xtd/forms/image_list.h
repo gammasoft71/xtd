@@ -29,14 +29,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Aliases
+      /// @name Public Aliases
       
       /// @{
       /// @brief Encapsulates the collection of xtd::drawing::image objects in an image_list.
       using image_collection = layout::arranged_element_collection<drawing::image>;
       /// @}
       
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents an image_list empty.
@@ -45,7 +45,7 @@ namespace xtd {
       inline static const size_t npos = image_collection::npos;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialize a new instance ao image_list class.
@@ -58,7 +58,7 @@ namespace xtd {
       image_list& operator =(const image_list&) = default;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the handle of the image list object.
@@ -96,7 +96,7 @@ namespace xtd {
       image_list& tag(const std::any& tag);
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       bool equals(const image_list& value) const noexcept override;

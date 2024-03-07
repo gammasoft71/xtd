@@ -19,7 +19,7 @@ namespace xtd {
     /// @ingroup xtd_forms events
     class dialog_closed_event_args final : public event_args {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the dialog_closed_event_args class.
@@ -29,7 +29,7 @@ namespace xtd {
       explicit dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the dialog_result contains the result when closing dialog.

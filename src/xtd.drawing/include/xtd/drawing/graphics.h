@@ -77,7 +77,7 @@ namespace xtd {
       ~graphics();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a xtd::drawing::region that limits the drawing region of this xtd::drawing::graphics.
@@ -220,7 +220,7 @@ namespace xtd {
       xtd::drawing::rectangle_f visible_clip_bounds() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Clears the entire drawing surface and fills it with the specified background color.
@@ -1336,7 +1336,7 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override {return get_type().full_name();}
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device context.

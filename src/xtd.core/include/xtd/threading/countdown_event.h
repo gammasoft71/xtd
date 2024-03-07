@@ -28,7 +28,7 @@ namespace xtd {
     class core_export_ countdown_event : public object {
       struct data;
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of xtd::threading::countdown_event class with the specified count.
@@ -46,7 +46,7 @@ namespace xtd {
       ~countdown_event();
       ///@endcond
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the number of remaining signals required to set the event.
@@ -75,7 +75,7 @@ namespace xtd {
       xtd::threading::wait_handle& wait_handle();
       /// @}
 
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Increments the xtd::threading::countdown_event's current count by one.

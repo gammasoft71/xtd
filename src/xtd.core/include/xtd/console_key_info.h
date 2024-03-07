@@ -21,7 +21,7 @@ namespace xtd {
   /// @see Console
   class console_key_info final : public object, public xtd::iequatable<console_key_info> {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of console_key_info class.
@@ -45,7 +45,7 @@ namespace xtd {
     console_key_info& operator =(const console_key_info& key_info) noexcept = default;
     /// @endcond
     
-    /// @name Properties
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets the console key represented by the current console_key_info object.
@@ -61,7 +61,7 @@ namespace xtd {
     console_modifiers modifiers() const noexcept;
     /// @}
     
-    /// @name Methods
+    /// @name Public Methods
     
     /// @{
     bool equals(const console_key_info& key_info) const noexcept override;

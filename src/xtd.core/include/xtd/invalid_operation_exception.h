@@ -17,7 +17,7 @@ namespace xtd {
   /// @include invalid_operation_exception.cpp
   class invalid_operation_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class invalid_operation_exception

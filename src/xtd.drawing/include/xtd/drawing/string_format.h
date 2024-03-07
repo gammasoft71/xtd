@@ -29,7 +29,7 @@ namespace xtd {
     /// @remarks Many common formats are provided through the string_format_flags enumeration. string_format objects can be changed.
     class drawing_export_ string_format final : public xtd::object {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new string_format object.
@@ -47,7 +47,7 @@ namespace xtd {
       explicit string_format(xtd::drawing::string_format_flags options);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets horizontal alignment of the string.
@@ -92,7 +92,7 @@ namespace xtd {
       xtd::drawing::string_format& trimming(xtd::drawing::string_trimming trimming) noexcept;
       /// @}
       
-      /// @name Static properties
+      /// @name Public Static Properties
       
       /// @{
       /// @brief Gets a generic default string_format object.

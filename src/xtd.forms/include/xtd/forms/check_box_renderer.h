@@ -29,7 +29,7 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class forms_export_ check_box_renderer final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       static void draw_check_box(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::check_box_state& state) {draw_check_box(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, xtd::drawing::image::empty, xtd::drawing::rectangle(0, 0, 0, 0), false, state, application::style_sheet().system_colors().control(), application::style_sheet().system_colors().control_text());}

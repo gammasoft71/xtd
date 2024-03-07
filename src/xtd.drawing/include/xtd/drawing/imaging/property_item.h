@@ -28,7 +28,7 @@ namespace xtd {
         property_item() = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the ID of the property.

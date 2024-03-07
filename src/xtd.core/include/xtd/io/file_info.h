@@ -38,14 +38,14 @@ namespace xtd {
     /// @remarks By default, full read/write access to new files is granted to all users.
     class core_export_ file_info : public xtd::io::file_system_info {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents the uninitialized xtd::io::file_info object. This field is constant.
       static const file_info empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::io::file_info class, which acts as a wrapper for a file path.
@@ -63,7 +63,7 @@ namespace xtd {
       explicit file_info(const xtd::ustring& file_name);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets an instance of the parent directory.
@@ -361,7 +361,7 @@ namespace xtd {
       xtd::ustring name() const override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Creates a xtd::io::stream_writer that appends text to the file represented by this instance of the xtd::io::file_info.

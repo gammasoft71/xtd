@@ -45,7 +45,7 @@ namespace xtd {
       };
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Creates a new test instance.
@@ -63,7 +63,7 @@ namespace xtd {
       test(const xtd::ustring& name, const std::function<void()>& method, bool ignore, const xtd::diagnostics::stack_frame& stack_frame) noexcept;
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets a value that represent an aborted test.

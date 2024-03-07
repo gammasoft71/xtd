@@ -29,7 +29,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       xtd::forms::control& dock(xtd::forms::dock_style dock) override;

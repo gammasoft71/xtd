@@ -18,7 +18,7 @@ namespace xtd {
   /// @todo move to security namespace
   class xml_syntax_exception : public system_exception {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Create a new instance of class xml_syntax_exception

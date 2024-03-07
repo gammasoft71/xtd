@@ -32,7 +32,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the tab_page class.
@@ -43,7 +43,7 @@ namespace xtd {
       //~tab_page();
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       using panel::auto_scroll;
@@ -76,7 +76,7 @@ namespace xtd {
       control& text(const xtd::ustring& text) override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::tab_page.
@@ -84,7 +84,7 @@ namespace xtd {
       void destroy_handle() override;
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       static tab_page create();

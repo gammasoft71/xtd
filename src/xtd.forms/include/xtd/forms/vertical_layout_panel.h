@@ -28,14 +28,14 @@ namespace xtd {
     /// @include vertical_layout_panel.cpp
     class vertical_layout_panel : public panel {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initialises a new instance of vertical layout panel class.
       vertical_layout_panel() = default;
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets vertical control layout style for all child controls.
@@ -54,7 +54,7 @@ namespace xtd {
       vertical_layout_panel& control_layout_style(const control_ref& control, const vertical_control_layout_style& value);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::vertical_layout_panel.

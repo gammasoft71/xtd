@@ -28,7 +28,7 @@ namespace xtd {
     /// @include replace_box.cpp
     class forms_export_ replace_box final static_ {
     public:
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Displays a replace dialog box.

@@ -29,7 +29,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of settings class.
@@ -40,7 +40,7 @@ namespace xtd {
       ~settings();
       /// @endcond
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Reads a value for specified key. If not found default value is used.

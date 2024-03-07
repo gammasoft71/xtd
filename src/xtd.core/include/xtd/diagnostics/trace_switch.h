@@ -27,7 +27,7 @@ namespace xtd {
     /// @remarks You can set the level of a trace_switch through the application configuration file and then use the configured trace_switch level in your application. Alternately, you can create a trace_switch in your code and set the level directly to instrument a specific section of code.
     class core_export_ trace_switch : public xtd::diagnostics::switch_base {
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::diagnostics::trace_switch class, using the specified display name and description.
@@ -44,7 +44,7 @@ namespace xtd {
       trace_switch(const xtd::ustring& display_name, const xtd::ustring& description, const xtd::ustring& default_switch_value);
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the trace level that determines the messages the switch allows.

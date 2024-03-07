@@ -19,7 +19,7 @@ namespace xtd {
   /// @include console_color4.cpp
   class foreground_color final : public object {
   public:
-    /// @name Constructors
+    /// @name Public Constructors
     
     /// @{
     /// @brief Sets the foreground color of the console.

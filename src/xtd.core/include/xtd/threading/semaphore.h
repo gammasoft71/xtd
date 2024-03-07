@@ -39,7 +39,7 @@ namespace xtd {
       class unnamed_semaphore;
       struct data;
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::threading::semaphore class.
@@ -143,14 +143,14 @@ namespace xtd {
       ~semaphore();
       /// @endcond
 
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       intptr handle() const noexcept override;
       void handle(intptr value) override;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       void close() override;
@@ -176,7 +176,7 @@ namespace xtd {
       int32 release(int32 release_count);
       /// @}
 
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Opens the specified named semaphore, if it already exists.

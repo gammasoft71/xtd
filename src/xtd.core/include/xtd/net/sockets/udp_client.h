@@ -72,7 +72,7 @@ namespace xtd {
         struct data;
         
       public:
-        /// @name Constructors
+        /// @name Public Constructors
         
         /// @{
         /// @brief Initializes a new instance of the xtd::net::sockets::udp_client class
@@ -130,7 +130,7 @@ namespace xtd {
         udp_client& operator =(const udp_client&) = default;
         /// @endcond
         
-        /// @name Properties
+        /// @name Public Properties
         
         /// @{
         /// @brief Gets the amount of data received from the network that is available to read.
@@ -234,7 +234,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         udp_client& ttl(xtd::byte value);
         
-        /// @name Methods
+        /// @name Public Methods
         
         /// @{
         /// @brief Enables or disables Network Address Translation (NAT) traversal on a xtd::net::sockets::udp_client instance.

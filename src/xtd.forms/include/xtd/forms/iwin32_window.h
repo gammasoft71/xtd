@@ -20,7 +20,7 @@ namespace xtd {
     /// @remarks This interface is implemented on objects that expose Win32 HWND handles. The resultant handle can be used with Windows API calls.
     class iwin32_window interface_  {
     public:
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the handle to the window represented by the implementer.

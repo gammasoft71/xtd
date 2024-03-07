@@ -43,14 +43,14 @@ namespace xtd {
     /// @remarks For more advanced shapes, use a xtd::drawing::region object.
     class drawing_export_ rectangle : public xtd::object, public xtd::iequatable<rectangle> {
     public:
-      /// @name Fields
+      /// @name Public Fields
       
       /// @{
       /// @brief Represents a xtd::drawing::rectangle that has xtd::drawing::rectagle::x, xtd::drawing::rectangle::y, xtd::drawing::rectangle::width and xtd::drawing::rectangle::height values set to zero.
       static const rectangle empty;
       /// @}
       
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the xtd::drawing::rectangle class
@@ -74,7 +74,7 @@ namespace xtd {
       operator rectangle_f() const noexcept;
       /// @endcond
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the y-coordinate that is the sum of the xtd::drawing::rectangle::y and xtd::drawing::rectangle::height property values of this xtd::drawing::rectangle structure.
@@ -153,7 +153,7 @@ namespace xtd {
       void y(int32 value) noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Public Methods
       
       /// @{
       /// @brief Adds this xtd::drawing::rectangle by the specified amount.
@@ -223,7 +223,7 @@ namespace xtd {
       /// @remarks If either x or y is negative, the xtd::drawing::rectangle structure is deflated in the corresponding direction.
       void inflate(int32 width, int32 height) noexcept;
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Creates and returns an added copy of the specified xtd::drawing::rectangle structure. The copy is added by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.

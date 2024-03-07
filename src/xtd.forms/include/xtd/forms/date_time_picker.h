@@ -32,14 +32,14 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Constructors
+      /// @name Public Constructors
       
       /// @{
       /// @brief Initializes a new instance of the date_time_picker class.
       date_time_picker();
       /// @}
       
-      /// @name Properties
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets the format of the date and time displayed in the control.
@@ -76,7 +76,7 @@ namespace xtd {
       virtual date_time_picker& value(date_time value);
       /// @}
       
-      /// @name Static methods
+      /// @name Public Static Methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::date_time_picker.
@@ -307,7 +307,7 @@ namespace xtd {
       static date_time_picker create(const control& parent, const xtd::date_time& value, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
       
-      /// @name Events
+      /// @name Public Events
       
       /// @{
       /// @brief Occurs when the drop-down calendar is dismissed and disappears.
