@@ -112,7 +112,7 @@ namespace xtd {
       capital = 0x00000014,
       /// @brief The IME Kana mode key.
       kana_mode = 0x00000015,
-      /// @breif The IME Hanguel mode key. (maintained for compatibility; use HangulMode)
+      /// @brief The IME Hanguel mode key. (maintained for compatibility; use HangulMode)
       hanguel_mode = 0x00000015,
       /// @brief The IME Hangul mode key.
       hangul_mode = 0x00000015,

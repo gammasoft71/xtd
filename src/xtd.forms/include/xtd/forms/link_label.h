@@ -50,11 +50,12 @@ namespace xtd {
       /// @remarks In addition to information related to the link, the properties of the xtd::forms::link_label::link class also help define the text of the xtd::forms::link_label::lLink and its display state. The xtd::forms::link_label::start and xtd::forms::link_label::length properties define the location and length of text from the text of the xtd::forms::link_label control to display as a link. The xtd::forms::link_label::enabled property allows you to display the link as a disabled link, and the xtd::forms::link_label::visited property can alert the user that they already visited the specified link in the current instance of the xtd::forms::link_label.
       /// @remarks You can display multiple links in a single xtd::forms::link_label control. Each xtd::forms::link_label::link is added into the xtd::forms::link_label::link_collection associated with the xtd::forms::link_label control. To obtain the collection of links defined in a xtd::forms::link_label control, use the xtd::forms::link_label::links property.
       using link = xtd::forms::link;
+      /// @}
       
       /// @brief Represents a collection of controls.
       class link_collection : public xtd::forms::layout::arranged_element_collection<xtd::forms::link_label::link> {
       public:
-        /// @name Link
+        /// @name Aliases
         
         /// @{
         /// @brief Represents the base type of the collection.

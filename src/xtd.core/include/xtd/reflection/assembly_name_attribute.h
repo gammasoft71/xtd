@@ -28,6 +28,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::reflection::assembly_name_attribute class.
       /// @param name The name information.
       explicit assembly_name_attribute(const ustring& name);
+      /// @}
       
       /// @cond
       /// Internal used only

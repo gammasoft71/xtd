@@ -57,6 +57,7 @@ namespace xtd {
       static const enable_debug style;
       /// @brief Represent all debug.
       static const enable_debug all;
+      /// @}
       
       /// @name Public Static Properties
       
@@ -82,7 +83,6 @@ namespace xtd {
       /// @param on true if enable_debug flags is on; otherwise false.
       static void set(const enable_debug& flags, bool on);
       /// @}
-      
       
     private:
       explicit enable_debug(uint64 value);

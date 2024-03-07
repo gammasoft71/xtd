@@ -38,6 +38,7 @@ namespace xtd {
       public:
         /// @name Public Constructors
         
+        /// @{
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::graphics_path class with a xtd::drawing::drawing_2d::graphics_path::fill_mode value of xtd::drawing::drawing_2d::fill_mode::alternate.
         graphics_path();
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::graphics_path class with the specified xtd::drawing::drawing_2d::fil_mode enumeration.

@@ -700,6 +700,7 @@ namespace xtd {
     /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
     static void set_environment_variable(const xtd::ustring& variable, const xtd::ustring& value, environment_variable_target target);
+    /// @}
     
     /// @cond
     static void __signal_catcher_check__();

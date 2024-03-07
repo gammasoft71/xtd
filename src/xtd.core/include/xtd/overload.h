@@ -93,6 +93,7 @@ namespace xtd {
     /// @return Pointer to an overloaded method.
     template <typename result_t>
     static constexpr auto of(result_t (*method)(args_t...)) noexcept -> decltype(method) {return method;}
+    /// @}
   };
   
   /// @cond

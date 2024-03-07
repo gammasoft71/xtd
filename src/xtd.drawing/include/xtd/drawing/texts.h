@@ -200,13 +200,14 @@ namespace xtd {
       static xtd::ustring zoom_out();
       /// @brief Gets a system-defined text that has a string value of "Zoom to &Fit". This field is constant.
       static xtd::ustring zoom_to_fit();
-      /// }
+      /// @}
       
       /// @name Public Static Methods
       
       /// @{
       /// @brief Gets an array of texts.
       static const std::vector<xtd::ustring>& get_texts() noexcept;
+      /// @}
     };
   }
 

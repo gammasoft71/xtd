@@ -191,6 +191,7 @@ namespace xtd {
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
       xtd::ustring to_string() const noexcept override;
+      /// @}
       
     private:
       friend class stack_trace;

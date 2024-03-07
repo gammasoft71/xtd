@@ -28,6 +28,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::reflection::assembly_title_attribute class.
       /// @param title The title information.
       explicit assembly_title_attribute(const ustring& title);
+      /// @}
       
       /// @cond
       /// Internal used only

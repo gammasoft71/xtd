@@ -45,6 +45,7 @@ namespace xtd {
       /// @brief Gets an empty country.
       /// @return An empty country
       static const country empty();
+      /// @}
       
       /// @name Public Properties
       
