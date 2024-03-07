@@ -23,7 +23,7 @@ namespace xtd {
     /// @ingroup xtd_drawing pens
     class drawing_export_ system_pens final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief Gets a pen that is the color of the accent.
@@ -187,7 +187,7 @@ namespace xtd {
       static xtd::drawing::pen window_text();
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Gets an array of system colors.

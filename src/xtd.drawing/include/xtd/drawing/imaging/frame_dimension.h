@@ -42,7 +42,11 @@ namespace xtd {
         /// @brief Gets a globally unique identifier (GUID) that represents this frame_dimension object.
         /// @return An xtd::guid structure that contains a GUID that represents this frame_dimension object.
         const xtd::guid& guid() const noexcept {return guid_;}
+        /// @}
         
+        /// @name Static properties
+        
+        /// @{
         /// @brief Gets the page dimension.
         /// @return The page dimension.
         static frame_dimension page() noexcept {return frame_dimension(xtd::guid("7462dc86-6180-4c7e-8e3f-ee7333a7a483"));}

@@ -274,16 +274,6 @@ namespace xtd {
       /// @{
       bool equals(const font& value) const noexcept override;
       
-      /// @brief Creates a font from the specified Windows handle to a device context.
-      /// @param hdc A handle to a device context.
-      /// @return The font this method creates.
-      static font from_hdc(const intptr hdc);
-      
-      /// @brief Creates a font from the specified Windows handle.
-      /// @param hfont A Windows handle to a GDI font.
-      /// @return The font this method creates.
-      static font from_hfont(const intptr hfont);
-      
       /// @brief Returns the line spacing, in pixels, of this font.
       /// @return The line spacing, in pixels, of this font.
       /// @remarks The line spacing of a xtd::drawing::font is the vertical distance between the base lines of two consecutive lines of text. Thus, the line spacing includes the blank space between lines along with the height of the character itself.
@@ -313,6 +303,20 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Creates a font from the specified Windows handle to a device context.
+      /// @param hdc A handle to a device context.
+      /// @return The font this method creates.
+      static font from_hdc(const intptr hdc);
+      
+      /// @brief Creates a font from the specified Windows handle.
+      /// @param hfont A Windows handle to a GDI font.
+      /// @return The font this method creates.
+      static font from_hfont(const intptr hfont);
+      /// @}
+
     private:
       friend class graphics;
       friend class system_fonts;

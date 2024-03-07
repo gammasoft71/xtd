@@ -64,8 +64,16 @@ namespace xtd {
       font_family();
       font_family& operator =(const font_family& value);
       /// @endcond
-      
+
       /// @name Properties
+      
+      /// @{
+      /// @brief Gets the name of this font_family.
+      /// @return A String that represents the name of this font_family.
+      const xtd::ustring& name() const noexcept;
+      /// @}
+
+      /// @name Static properties
       
       /// @{
       /// @brief Returns an array that contains all the font_family objects associated with the current graphics context.
@@ -83,10 +91,6 @@ namespace xtd {
       /// @brief Gets a generic serif font_family.
       /// @return A font_family that represents a generic serif font.
       static font_family generic_serif() noexcept;
-      
-      /// @brief Gets the name of this font_family.
-      /// @return A String that represents the name of this font_family.
-      const xtd::ustring& name() const noexcept;
       /// @}
       
       /// @name Methods

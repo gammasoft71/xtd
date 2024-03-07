@@ -23,6 +23,9 @@ namespace xtd {
     /// @ingroup xtd_drawing colors
     class drawing_export_ color_converter final static_ {
     public:
+      /// @name Static methods
+      
+      /// @{
       /// @brief Returns the weighted average color between the two given colors.
       /// @param fore_core The foreground color.
       /// @param back_color The background color.
@@ -196,6 +199,7 @@ namespace xtd {
       /// @param threshold The threshold value (from 0 to 765).
       /// @return The new color.
       static xtd::drawing::color threshold(const xtd::drawing::color& color, int32 threshold) noexcept;
+      /// @}
     };
   }
 }

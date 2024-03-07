@@ -86,6 +86,16 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const xtd::drawing::size& value) const noexcept override;
+      
+      /// @brief Creates a human-readable string that represents this xtd::drawing::size class.
+      /// @return A xtd::ustring that represents this xtd::drawing::size.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
       /// @brief Adds the width and height of one xtd::drawing::size class to the width and height of another size class.
       /// @param size1 The first xtd::drawing::size class to add.
       /// @param size2 The second xtd::drawing::size class to add.
@@ -96,8 +106,6 @@ namespace xtd {
       /// @param value The xtd::drawing::size_f to convert.
       /// @return The xtd::drawing::size this method converts to.
       static size ceiling(const size_f& value) noexcept;
-      
-      bool equals(const xtd::drawing::size& value) const noexcept override;
       
       /// @brief Converts the specified xtd::drawing::size_f to a xtd::drawing::size object by rounding the xtd::drawing::size_f values to the nearest integer.
       /// @param value The xtd::drawing::size_f to convert.
@@ -110,16 +118,11 @@ namespace xtd {
       /// @return The xtd::drawing::size that is the result of the subtraction operation.
       static xtd::drawing::size subtract(const xtd::drawing::size& sz1, const xtd::drawing::size& sz2) noexcept;
       
-      /// @brief Creates a human-readable string that represents this xtd::drawing::size class.
-      /// @return A xtd::ustring that represents this xtd::drawing::size.
-      xtd::ustring to_string() const noexcept override;
-      
       /// @brief Converts the specified xtd::drawing::size_f to a xtd::drawing::size by truncating the values of the xtd::drawing::size_f.
       /// @param value The xtd::drawing::size_f to convert.
       /// @return The xtd::drawing::size this method converts to.
       static size truncate(const size_f& value) noexcept;
       /// @}
-      
       
       /// @name Operators
       

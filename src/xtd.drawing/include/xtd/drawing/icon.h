@@ -141,17 +141,6 @@ namespace xtd {
       /// @{
       bool equals(const icon& icon) const noexcept override;
       
-      /// @brief Creates a GDI+ xtd::drawing::icon from the specified Windows handle to an icon (HICON).
-      /// @param handle A Windows handle to an icon.
-      /// @return The xtd::drawing::icon this method creates.
-      /// @remarks When using this method, you must dispose of the original icon by using the DestroyIcon method in the Windows API to ensure that the resources are released.
-      static icon from_handle(intptr handle);
-      
-      /// @brief Creates a GDI+ xtd::drawing::icon from the specified bitmap.
-      /// @param bitmap A xtd::drawing::bitmap use to create xtd::drawing::icon.
-      /// @return The xtd::drawing::icon this method creates.
-      static icon from_bitmap(const xtd::drawing::bitmap& bitmap);
-      
       /// @brief Saves this xtd::drawing::icon to the specified output filename.
       /// @param filename The file to save to.
       void save(const xtd::ustring& filename) const;
@@ -169,6 +158,21 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
+      /// @brief Creates a GDI+ xtd::drawing::icon from the specified Windows handle to an icon (HICON).
+      /// @param handle A Windows handle to an icon.
+      /// @return The xtd::drawing::icon this method creates.
+      /// @remarks When using this method, you must dispose of the original icon by using the DestroyIcon method in the Windows API to ensure that the resources are released.
+      static icon from_handle(intptr handle);
+      
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Creates a GDI+ xtd::drawing::icon from the specified bitmap.
+      /// @param bitmap A xtd::drawing::bitmap use to create xtd::drawing::icon.
+      /// @return The xtd::drawing::icon this method creates.
+      static icon from_bitmap(const xtd::drawing::bitmap& bitmap);
+      /// @}
+
     private:
       explicit icon(const bitmap& bitmap);
       

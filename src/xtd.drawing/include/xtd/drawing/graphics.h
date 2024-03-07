@@ -1134,40 +1134,6 @@ namespace xtd {
       /// @remarks A value of xtd::drawing::graphics::flush for the intention parameter specifies that the method return immediately after beginning the flush, while a value of xtd::drawing::drawing_2d::flush_intention::sync specifies that the method wait before returning until any existing operations finish.
       void flush(xtd::drawing::drawing_2d::flush_intention intention);
       
-      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device context.
-      /// @param hdc Handle to a device context.
-      /// @return This method returns a new xtd::drawing::graphics for the specified device context.
-      /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
-      /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
-      static graphics from_hdc(intptr hdc);
-      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device contextand handle to a device.
-      /// @param hdc Handle to a device context.
-      /// @param hdevice Handle to a device.
-      /// @return This method returns a new xtd::drawing::graphics for the specified device context and device.
-      /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
-      /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
-      static graphics from_hdc(intptr hdc, intptr hdevice);
-      
-      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a window.
-      /// @param hwnd Handle to a window.
-      /// @return This method returns a new xtd::drawing::graphics for the specified window handle.
-      static graphics from_hwnd(intptr hwnd);
-      
-      /// @brief Creates a new xtd::drawing::graphics from the specified xtd::drawing::image.
-      /// @param image xtd::drawing::image from which to create the new xtd::drawing::graphics.
-      /// @return This method returns a new xtd::drawing::graphics for the specified Image.
-      /// @remarks If the image has an indexed pixel format, this method throws an exception with the message, "A xtd::drawing::graphics object cannot be created from an image that has an indexed pixel format." The indexed pixel formats are shown in the following list.
-      /// * xtd::drawing::imaging::pixel_format::format_1bpp_indexed
-      /// * xtd::drawing::imaging::pixel_format::format_4bpp_indexed
-      /// * xtd::drawing::imaging::pixel_format::format_8bpp_indexed
-      /// @remarks You can save the indexed image as another format by using the xtd::drawing:image::save(xtd::ustring, xtd::drawing::imaging::image_format) method and then retrieve a xtd::drawing::graphics object for the new image.
-      /// @remarks This method also throws an exception if the image has any of the following pixel formats.
-      /// * xtd::drawing::imaging::pixel_format::undefined
-      /// * xtd::drawing::imaging::pixel_format::dont_care
-      /// * xtd::drawing::imaging::pixel_format::format_16bpp_argb1555
-      /// * xtd::drawing::imaging::pixel_format::format_16bpp_gray_scale
-      static graphics from_image(const xtd::drawing::image& image);
-      
       /// @brief Gets the handle to the device context associated with this xtd::drawing::graphics.
       /// @return Handle to the device context associated with this xtd::drawing::graphics.
       /// @remarks The device context is a Windows structure based on GDI that defines a set of graphical objects and their associated attributes, as well as the graphical modes that affect output. This method returns that device context with the exception of a font. Because a font is not selected, calls to the xtd::drawing::graphics::from_hdc method using a handle returned from the xtd::drawing::graphics::get_hdc method will fail.
@@ -1369,7 +1335,45 @@ namespace xtd {
       
       xtd::ustring to_string() const noexcept override {return get_type().full_name();}
       /// @}
+
+      /// @name Static methods
       
+      /// @{
+      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device context.
+      /// @param hdc Handle to a device context.
+      /// @return This method returns a new xtd::drawing::graphics for the specified device context.
+      /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
+      /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
+      static graphics from_hdc(intptr hdc);
+      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a device contextand handle to a device.
+      /// @param hdc Handle to a device context.
+      /// @param hdevice Handle to a device.
+      /// @return This method returns a new xtd::drawing::graphics for the specified device context and device.
+      /// @remarks Even if the display device has an associated ICM color profile, GDI+ will not use that profile by default. To enable ICM for a xtd::drawing::graphics, construct the xtd::drawing::graphics from an HDC after you pass the HDC (and ICM_ON) to the SetICMMode function. Then any drawing done by the xtd::drawing::graphics will be adjusted according to the ICM profile associated with the display device. Enabling ICM will result in slower performance.
+      /// @remarks The state of the device context (mapping mode, logical unit, and the like) at the time you call xtd::drawing::graphics::from_hdc can affect rendering done by the xtd::drawing::graphics.
+      static graphics from_hdc(intptr hdc, intptr hdevice);
+      
+      /// @brief Creates a new xtd::drawing::graphics from the specified handle to a window.
+      /// @param hwnd Handle to a window.
+      /// @return This method returns a new xtd::drawing::graphics for the specified window handle.
+      static graphics from_hwnd(intptr hwnd);
+      
+      /// @brief Creates a new xtd::drawing::graphics from the specified xtd::drawing::image.
+      /// @param image xtd::drawing::image from which to create the new xtd::drawing::graphics.
+      /// @return This method returns a new xtd::drawing::graphics for the specified Image.
+      /// @remarks If the image has an indexed pixel format, this method throws an exception with the message, "A xtd::drawing::graphics object cannot be created from an image that has an indexed pixel format." The indexed pixel formats are shown in the following list.
+      /// * xtd::drawing::imaging::pixel_format::format_1bpp_indexed
+      /// * xtd::drawing::imaging::pixel_format::format_4bpp_indexed
+      /// * xtd::drawing::imaging::pixel_format::format_8bpp_indexed
+      /// @remarks You can save the indexed image as another format by using the xtd::drawing:image::save(xtd::ustring, xtd::drawing::imaging::image_format) method and then retrieve a xtd::drawing::graphics object for the new image.
+      /// @remarks This method also throws an exception if the image has any of the following pixel formats.
+      /// * xtd::drawing::imaging::pixel_format::undefined
+      /// * xtd::drawing::imaging::pixel_format::dont_care
+      /// * xtd::drawing::imaging::pixel_format::format_16bpp_argb1555
+      /// * xtd::drawing::imaging::pixel_format::format_16bpp_gray_scale
+      static graphics from_image(const xtd::drawing::image& image);
+      /// @}
+
     private:
       friend xtd::drawing::image;
       friend xtd::drawing::region;

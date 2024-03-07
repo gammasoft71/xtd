@@ -115,11 +115,6 @@ namespace xtd {
       bitmap& operator =(const bitmap& bitmap) = default;
       /// @endcond
       
-      /// @brief Creates a xtd::drawing::bitmap from a Windows handle to an icon.
-      /// @param hicon A handle to an icon.
-      /// @return The xtd::drawing::bitmap that this method creates.
-      static bitmap from_hicon(intptr icon);
-      
       /// @brief Creates a GDI bitmap object from this xtd::drawing::bitmap.
       /// @return A handle to the GDI bitmap object that this method creates.
       /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see <a href=https://go.microsoft.com/fwlink/?LinkId=205685>Bitmaps</a> in the Windows GDI documentation.
@@ -189,6 +184,15 @@ namespace xtd {
       void unlock_bits(const xtd::drawing::imaging::bitmap_data& data);
       /// @}
       
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Creates a xtd::drawing::bitmap from a Windows handle to an icon.
+      /// @param hicon A handle to an icon.
+      /// @return The xtd::drawing::bitmap that this method creates.
+      static bitmap from_hicon(intptr icon);
+      /// @}
+
     private:
       bitmap() = default;
     };

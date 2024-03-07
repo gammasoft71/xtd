@@ -88,6 +88,26 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const point_f& value) const noexcept override;
+      
+      /// @brief Translates this xtd::drawing::point_f by the specified amount.
+      /// @param dx The amount to offset the x-coordinate.
+      /// @param dy The amount to offset the y-coordinate.
+      void offset(float dx, float dy) noexcept;
+      
+      /// @brief Translates this xtd::drawing::point_f by the specified xtd::drawing::point_f.
+      /// @param p The xtd::drawing::point used offset this xtd::drawing::point_f.
+      /// @remarks This method adjusts the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of this xtd::drawing::point_f to the sum of the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of this xtd::drawing::point_f and p.
+      void offset(const point_f& pt) noexcept;
+      
+      /// @brief Converts this point to a human-readable string.
+      /// @return An xtd::ustring that represents this xtd::drawing::point.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Methods
+      
+      /// @{
       /// @brief Adds the specified xtd::drawing::size to the specified xtd::drawing::point_f.
       /// @param pt The xtd::drawing::point_f to add.
       /// @param sz The xtd::drawing::size to add.
@@ -111,18 +131,6 @@ namespace xtd {
       /// @return The xtd::drawing::point_f that is the result of the addition operation.
       static point_f add(const point_f& pt1, const point_f& pt2) noexcept;
       
-      bool equals(const point_f& value) const noexcept override;
-      
-      /// @brief Translates this xtd::drawing::point_f by the specified amount.
-      /// @param dx The amount to offset the x-coordinate.
-      /// @param dy The amount to offset the y-coordinate.
-      void offset(float dx, float dy) noexcept;
-      
-      /// @brief Translates this xtd::drawing::point_f by the specified xtd::drawing::point_f.
-      /// @param p The xtd::drawing::point used offset this xtd::drawing::point_f.
-      /// @remarks This method adjusts the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of this xtd::drawing::point_f to the sum of the xtd::drawing::point_f::x and xtd::drawing::point_f::y values of this xtd::drawing::point_f and p.
-      void offset(const point_f& pt) noexcept;
-      
       /// @brief Returns the result of subtracting specified xtd::drawing::size from the specified xtd::drawing::point_f.
       /// @param pt The xtd::drawing::point_f to be subtracted from.
       /// @param sz The xtd::drawing::size to subtract from the xtd::drawing::point.
@@ -145,12 +153,8 @@ namespace xtd {
       /// @param pt2 The xtd::drawing::point_f to subtract from the xtd::drawing::point_f.
       /// @return The xtd::drawing::point_f that is the result of the subtraction operation.
       static point_f subtract(const point_f& pt1, const point_f& pt2) noexcept;
-      
-      /// @brief Converts this point to a human-readable string.
-      /// @return An xtd::ustring that represents this xtd::drawing::point.
-      xtd::ustring to_string() const noexcept override;
       /// @}
-      
+
       /// @name Operators
       
       /// @{
