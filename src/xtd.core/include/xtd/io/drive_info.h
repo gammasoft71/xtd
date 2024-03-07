@@ -138,6 +138,15 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Returns a drive name as a string.
+      /// @return The name of the drive.
+      /// @remarks This method returns the xtd::io::drive_info::name property.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+
+      /// @name Static methods
+      
+      /// @{
       /// @brief Retrieves the drive names of all logical drives on a computer.
       /// @return An array of type xtd::ioo::drive_info that represents the logical drives on a computer.
       /// @exception xtd::unauthorized_access_exception Access to the drive information is denied.
@@ -147,13 +156,8 @@ namespace xtd {
       /// @include drive_info.cpp
       /// @remarks This method retrieves all logical drive names on a computer. You can use this information to iterate through the array and obtain information on the drives using other xtd::io::drive_info methods and properties. Use the xtd::io::drive_info::is_ready property to test whether a drive is ready because using this method on a drive that is not ready will throw a xtd::io::io_exception.
       static std::vector<xtd::io::drive_info> get_drives() noexcept;
-      
-      /// @brief Returns a drive name as a string.
-      /// @return The name of the drive.
-      /// @remarks This method returns the xtd::io::drive_info::name property.
-      xtd::ustring to_string() const noexcept override;
       /// @}
-      
+
     private:
       drive_info() = default;
       
