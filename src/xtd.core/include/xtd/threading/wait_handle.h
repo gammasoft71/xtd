@@ -59,7 +59,7 @@ namespace xtd {
       static const intptr invalid_handle;
       
       /// @brief Indicates that a xtd::threading::wait_handle::wait_any operation timed out before any of the wait handles were signaled. This field is constant.
-      /// @remrarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
+      /// @remarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
       static constexpr size_t wait_timeout = std::numeric_limits<size_t>::max();
       /// @}
       

@@ -390,13 +390,13 @@ namespace xtd {
       
       /// @brief Gets control appearance.
       /// @return One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
-      /// @Remarks The control appearance determine how the control is drawed :
+      /// @remarks The control appearance determine how the control is drawed :
       /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
       /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
       virtual forms::control_appearance control_appearance() const noexcept;
       /// @brief Sets control appearance.
       /// @param value One of xtd::forms::control_appearance values. THe default is xtd::forms::control_appearance::standard.
-      /// @Remarks The control appearance determine how the control is drawed :
+      /// @remarks The control appearance determine how the control is drawed :
       /// * xtd::control::control_appearance::standard : The appearance of the control is determined by current theme of xtd.
       /// * xtd::control::control_appearance::system : The appearance of the control is determined by the user's operating system.
       virtual control& control_appearance(xtd::forms::control_appearance value);
@@ -850,7 +850,7 @@ namespace xtd {
       
       /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
       /// @param child The control to search for in the control collection.
-      /// @@param throw_exception true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, false.
+      /// @param throw_exception true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, false.
       size_t get_child_index(intptr child, bool& throw_exception) const;
       
       /// @brief Conceals the control from the user.

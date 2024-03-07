@@ -22,7 +22,6 @@ namespace xtd {
   /// @remarks The system_report class provides static properties that can be used to get information and creates a string and xml format string reports about the current system environment.
   class export_ system_report final static_ {
   public:
-    /// @enum xtd::system_report::reports
     /// @brief Specifies enumerated constants used by xtd::system_report::to_json, xtd::system_report::to_string and xtd::system_report::to_xml methods to generate reports.
     enum class reports {
       /// @brief Stack trace information.

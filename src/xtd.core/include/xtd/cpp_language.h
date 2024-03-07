@@ -53,7 +53,7 @@ namespace xtd {
     
     /// @brief Gets experimental language id.
     /// @return One of xtd::language_id values.
-    /// @Remarks If is not experimental, the xtd::language_id is the same as xtd::cpp_language::language property.
+    /// @remarks If is not experimental, the xtd::language_id is the same as xtd::cpp_language::language property.
     language_id experimental_language() const noexcept;
     
     /// @brief Gets the month when the cpp language was released.

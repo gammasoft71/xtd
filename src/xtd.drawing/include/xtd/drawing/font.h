@@ -248,7 +248,7 @@ namespace xtd {
       /// @return The em-size of this xtd::drawing::font.
       float size() const noexcept;
       
-      /// @brizef Gets the em-size, in points, of this xtd::drawing::font.
+      /// @brief Gets the em-size, in points, of this xtd::drawing::font.
       /// @return The em-size, in points, of this xtd::drawing::font.
       float size_in_points() const noexcept;
       

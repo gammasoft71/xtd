@@ -12,7 +12,7 @@
 /// @ingroup xtd_core system keywords
 /// @param namespace_name The name of the the namespace. Empty if no namespace.
 /// @param enum_type The name of the enum flags.
-/// @remaks This helper is created to facilitate to set the xtd::enum_set_attribute with the xtd::enum_attribute::flags atribute and the implementation of the following operators for enum flags:
+/// @remarks This helper is created to facilitate to set the xtd::enum_set_attribute with the xtd::enum_attribute::flags atribute and the implementation of the following operators for enum flags:
 /// | Operator | Name                   |
 /// | -------- | ---------------------- |
 /// | ^=       | Bitwise XOR assignment |

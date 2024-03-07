@@ -139,7 +139,7 @@ namespace xtd {
 
       /// @brief Gets a value indicating whether or not a thread belongs to the managed thread pool.
       /// @return true if this thread belongs to the managed thread pool; otherwise, false.
-      /// @rermarks For more information see xtd::threading::thread_pool.
+      /// @remarks For more information see xtd::threading::thread_pool.
       bool is_thread_pool_thread() const noexcept;
       
       /// @brief Gets a value indicating the current thread is joinable.

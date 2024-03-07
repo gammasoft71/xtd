@@ -16,7 +16,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing
-      /// @rremarks By offsetting pixels during rendering, you can improve render quality at the cost of render speed.
+      /// @remarks By offsetting pixels during rendering, you can improve render quality at the cost of render speed.
       enum class pixel_offset_mode {
         /// @brief Specifies the default mode.
         invalid = -1,

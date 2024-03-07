@@ -497,7 +497,7 @@
 /// @subsection BuildOutputDirectorySubSection build_output_directory
 /// @brief Specifies the directory into which runtime target files should be built.
 /// @param OUTPUT_DIRECTORY the directory where runtime target files should be built.
-/// @remark This option is use mainly when a solution as more than one project.
+/// @remarks This option is use mainly when a solution as more than one project.
 /// @par Examples
 /// @code
 ///  cmake_minimum_required(VERSION 3.20)

@@ -105,7 +105,7 @@ namespace xtd {
     
     /// @{
     /// @brief Initializes a new instance of the xtd::date_time structure.
-    /// @Remarks xtd::date_time is initialized by default with xtd::date_time::min_value.
+    /// @remarks xtd::date_time is initialized by default with xtd::date_time::min_value.
     date_time() = default;
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified number of ticks.
     /// @param ticks A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.

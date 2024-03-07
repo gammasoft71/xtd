@@ -181,7 +181,7 @@ namespace xtd {
 
       /// @brief Determines whether the current thread holds the lock on the specified object.
       /// @param obj The object to test.
-      /// @@return true if the current thread holds the lock on obj; otherwise, false.
+      /// @return true if the current thread holds the lock on obj; otherwise, false.
       /// @remarks This method works only for locks that are acquired by using the methods of the xtd::threading::monitor class, or the xtd::threading::lock_guard class, or by using the #lock_ keyword, which are implemented with xtd::threading::monitor.
       /// @remarks Use this method with diagnostic tools, such as the xtd::diagnostics::debug::assert method, to debug locking issues that involve the xtd::threading::monitor class.
       template<typename object_t>
