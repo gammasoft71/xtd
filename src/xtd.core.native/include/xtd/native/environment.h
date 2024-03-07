@@ -42,7 +42,7 @@ namespace xtd {
       friend xtd::environment;
       friend xtd::native::translator;
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Registers the function pointed to by func to be called on quick program termination (via xtd::native::environment::quick_exit).

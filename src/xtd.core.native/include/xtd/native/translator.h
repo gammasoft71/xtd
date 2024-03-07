@@ -31,7 +31,7 @@ namespace xtd {
       translator() = delete;
       friend xtd::translator;
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Gets the system locale.

@@ -36,7 +36,7 @@ namespace xtd {
       condition_variable() = delete;
       friend xtd::threading::monitor;
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Create condition variable.

@@ -58,6 +58,9 @@ namespace xtd {
       friend xtd::native::file;
       friend xtd::native::speech_synthesizer;
     protected:
+      /// @name Protected static methods
+      
+      /// @{
       /// @brief Gets the attributes for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path attribute. (see file_attribute.h)
@@ -118,6 +121,7 @@ namespace xtd {
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
       static int_least32_t set_permissions(const std::string& path, int_least32_t permissions);
+      /// @}
     };
   }
 }

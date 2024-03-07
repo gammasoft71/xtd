@@ -35,7 +35,7 @@ namespace xtd {
       named_event_wait_handle() = delete;
       friend xtd::threading::event_wait_handle;
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Create named event wait handle with specified name, initial count and maxixum count.

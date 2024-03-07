@@ -37,7 +37,7 @@ namespace xtd {
       friend xtd::io::file;
       friend xtd::io::file_info;
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Copy a specified source file to a target file.

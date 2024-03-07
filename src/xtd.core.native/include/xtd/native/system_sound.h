@@ -34,7 +34,7 @@ namespace xtd {
       system_sound() = delete;
       friend xtd::media::system_sound;
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Play system sound.

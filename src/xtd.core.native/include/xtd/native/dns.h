@@ -41,7 +41,7 @@ namespace xtd {
       friend xtd::net::dns;
       friend __using_dns__;
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Closes the file /etc/hosts.

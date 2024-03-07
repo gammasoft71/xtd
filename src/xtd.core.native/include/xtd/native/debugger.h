@@ -43,7 +43,7 @@ namespace xtd {
       friend xtd::diagnostics::debugger;
       friend xtd::diagnostics::default_trace_listener;
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Signals a breakpoint to an attached debugger.

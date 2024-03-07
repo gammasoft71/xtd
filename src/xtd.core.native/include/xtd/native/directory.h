@@ -164,7 +164,7 @@ namespace xtd {
       };
       
     protected:
-      /// @name Protected methods
+      /// @name Protected static methods
       
       /// @{
       /// @brief Creates all directories and subdirectories in the specified path unless they already exist.

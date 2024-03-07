@@ -41,7 +41,7 @@ namespace xtd {
       friend xtd::diagnostics::process;
       friend xtd::native::speech_synthesizer;
     protected:
-      /// @name Protected methods
+      /// @name Protected alias
       
       /// @{
       /// @brief Contains the created process handle and created standard streams :
@@ -51,6 +51,11 @@ namespace xtd {
       /// * [3] : The created istream for the standard output.
       /// * [4] : The created istream for the standard error.
       using started_process = std::tuple<intmax_t, int_least32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>>;
+      /// @}
+
+      /// @name Protected static methods
+      
+      /// @{
       /// @brief Gets the base priority xof the associated process.
       /// @param priority The process handle.
       /// @return The base priority, which is computed from the process priority class of the associated process. (see priority_class.h file).

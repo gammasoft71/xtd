@@ -35,7 +35,7 @@ namespace xtd {
         friend xtd::drawing::icon;
         friend xtd::drawing::image;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Creates an icon from specified filename.
