@@ -58,7 +58,7 @@ namespace xtd {
       all = stack_trace|libraries|processor|operating_system|compiler|language|locale|toolkit|environment_variables|special_folders|system_colors|generic_font_families|system_fonts|screens|system_informations
     };
 
-    /// @name Alias
+    /// @name Aliases
     
     /// @{
     /// @brief Represents an environment variables collection.

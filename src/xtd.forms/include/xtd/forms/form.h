@@ -53,7 +53,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represent an xtd::forms::ibutton_control reference.

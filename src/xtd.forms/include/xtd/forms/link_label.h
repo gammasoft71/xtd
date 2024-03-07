@@ -42,7 +42,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents a link within a link_label control.

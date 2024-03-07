@@ -37,7 +37,7 @@ namespace xtd {
   template<typename enum_t = std::nullptr_t>
   class enum_object : public xtd::object, public xtd::icomparable<enum_object<enum_t>>, public xtd::iequatable<enum_object<enum_t>> {
   public:
-    /// @name Alias
+    /// @name Aliases
     
     /// @{
     using enum_type = enum_t;

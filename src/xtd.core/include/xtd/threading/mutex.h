@@ -50,7 +50,7 @@ namespace xtd {
       class named_mutex;
       class unnamed_mutex;
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Rpresents the native handle type.

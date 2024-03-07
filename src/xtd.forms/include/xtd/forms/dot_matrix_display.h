@@ -31,7 +31,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents a dots collection.

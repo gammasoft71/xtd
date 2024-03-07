@@ -29,7 +29,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Encapsulates the collection of xtd::drawing::image objects in an image_list.

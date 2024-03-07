@@ -64,7 +64,7 @@ namespace xtd {
     };
 
   public:
-    /// @name Alias
+    /// @name Aliases
     
     /// @{
     /// @brief function_t pointer type
@@ -382,7 +382,7 @@ namespace xtd {
     };
 
   public:
-    /// @name Alias
+    /// @name Aliases
     
     /// @{
     /// @brief no_arguments_function_t pointer type

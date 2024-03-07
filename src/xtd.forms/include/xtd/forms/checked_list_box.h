@@ -102,7 +102,7 @@ namespace xtd {
         forms::check_state check_state_ = forms::check_state::unchecked;
       };
       
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents the collection of items in a checked_list_box.

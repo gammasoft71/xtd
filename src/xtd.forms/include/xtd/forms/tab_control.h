@@ -39,7 +39,7 @@ namespace xtd {
       /// @brief Represents a collection of controls.
       class tab_page_collection : public xtd::forms::layout::arranged_element_collection<tab_page_ref> {
       public:
-        /// @name Alias
+        /// @name Aliases
         
         /// @{
         /// @brief Represents the base type of the collection.

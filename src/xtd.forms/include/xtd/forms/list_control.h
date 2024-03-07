@@ -103,7 +103,7 @@ namespace xtd {
         std::any tag_;
       };
       
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents the collection of items in a list_control.

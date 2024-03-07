@@ -49,7 +49,7 @@ namespace xtd {
       class sizing_grip_control;
       
     public:
-      /// @name Alias
+      /// @name Aliases
       
       /// @{
       /// @brief Represents the collection of panels in a xtd::forms::status_bar control.
