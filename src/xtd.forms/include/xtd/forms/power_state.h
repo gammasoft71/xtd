@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::power_state enum class.
-/// @copyhibernate Copyhibernate (c) 2024 Gammasoft. All hibernates reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/enum>
 

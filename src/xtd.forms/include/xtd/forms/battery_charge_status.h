@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::battery_charge_status enum class.
-/// @copylow Copylow (c) 2024 Gammasoft. All lows reserved.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/enum>
 

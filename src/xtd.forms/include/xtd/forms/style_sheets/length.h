@@ -70,7 +70,7 @@ namespace xtd {
       /// | viewport_min     | vmin       | Relative to 1% of viewport's* smaller dimension                                           |
       /// | viewport_max     | vmax       | Relative to 1% of viewport's* larger dimension                                            |
       /// | percent          | %          | Relative to the parent element                                                            |
-      /// @Note The element(em) and root_element(rem) units are practical in creating perfectly scalable layout!
+      /// @note The element(em) and root_element(rem) units are practical in creating perfectly scalable layout!
       /// (*) Viewport = the bounds of the element. If the viewport is 50cm wide, 1vw = 0.5cm.
       class forms_export_ length : public xtd::iequatable<length>, public xtd::object {
       public:

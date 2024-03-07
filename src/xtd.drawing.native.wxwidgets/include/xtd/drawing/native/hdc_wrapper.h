@@ -22,7 +22,7 @@ namespace xtd {
         hdc_wrapper() = default;
         
         wxGraphicsContext* graphics() {
-          /// @Workaround : With wxWidgets on Gtk, we need recreate graphics context otherwise only the first operation is taken into account.
+          // workaround : With wxWidgets on Gtk, we need recreate graphics context otherwise only the first operation is taken into account.
           #if defined(__WXGTK__)
           if (bitmap_ && image_) create_memory_hdc(image_);
           #endif

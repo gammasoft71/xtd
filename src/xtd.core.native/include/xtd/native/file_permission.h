@@ -14,7 +14,7 @@
 /// @brief Console color black.
 /// @par Library
 /// xtd.core.native
-/// @inGROUP xtd_core_native console_color
+/// @ingroup xtd_core_native console_color
 /// @remarks Added specificALLy for xtd.
 /// @warning Internal use only
 constexpr int_least32_t FILE_PERMISSIONS_NONE = 0;

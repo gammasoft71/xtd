@@ -33,7 +33,7 @@ namespace xtd {
       struct data;
       
     public:
-      /// @ brief Represents an xtd::drawing::color array.
+      /// @brief Represents an xtd::drawing::color array.
       using colors = std::vector<xtd::drawing::color>;
       
       /// @name Public Constructors

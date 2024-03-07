@@ -27,7 +27,7 @@ namespace xtd {
     /// xtd.tunit
     /// @ingroup xtd_tunit tunit
     /// @remarks Typically this is a representation a test method in a test class.
-    /// @remakrs This test contains among others: a name that represents the name of the method, a pointer to the method to call and a status on the state of the test.
+    /// @remarks This test contains among others: a name that represents the name of the method, a pointer to the method to call and a status on the state of the test.
     class tunit_export_ test final {
       /// @brief Represents a test status.
       /// @remarks The test status enmeration is know the state of the test.

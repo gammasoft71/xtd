@@ -117,7 +117,6 @@ namespace xtd {
   class core_export_ environment final static_ {
     class signal_catcher;
   public:
-    /// @enum xtd::environment::special_folder
     /// @brief Specifies enumerated constants used to retrieve directory paths to system special folders.
     /// @remarks The system special folders are folders such as Program Files, Programs, System, or Startup, which contain common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
     /// @remarks The xtd::environment::get_folder_path method returns the locations associated with this enumeration. The locations of these folders can have different values on different operating systems, the user can change some of the locations, and the locations are localized.

@@ -42,7 +42,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets the custom switch attributes
-      /// @rettur nA StringDictionary containing the case-insensitive custom attributes for the trace switch.
+      /// @return nA StringDictionary containing the case-insensitive custom attributes for the trace switch.
       const std::map<xtd::ustring, xtd::ustring>& attributes() const noexcept;
       /// @brief Gets the custom switch attributes
       /// @return A StringDictionary containing the case-insensitive custom attributes for the trace switch.
