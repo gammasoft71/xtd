@@ -47,7 +47,7 @@ namespace xtd {
       popup_panel& ignore_mouse_messages(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::popup_panel.

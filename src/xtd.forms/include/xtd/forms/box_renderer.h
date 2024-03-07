@@ -25,11 +25,15 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class forms_export_ box_renderer static_ {
     public:
+      /// @name Static methods
+      
+      /// @{
       /// @brief Draws a box in the specified bounds and style.
       /// @param graphics The Graphics used to draw a box.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the box.
       /// @param box_model The xtd::forms::style_sheets::ibox_model that specifies the style for the box.
       static void draw_box(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::ibox_model& box_model);
+      /// @}
       
     private:
       static xtd::drawing::dash_style border_type_to_dash_style(xtd::forms::style_sheets::border_type value);

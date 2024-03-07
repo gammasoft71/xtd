@@ -92,10 +92,6 @@ namespace xtd {
       /// @return Current form.
       form& accept_button(std::nullptr_t);
       
-      /// @brief Gets the currently active form for this application.
-      /// @return A form that represents the currently active form, or std::optional with no value if there is no active form.
-      static std::optional<form_ref> active_form() noexcept;
-      
       /// @brief Gets the mode by which the form automatically resizes itself.
       /// @return An auto_size_mode enumerated value. The default is grow_only.
       virtual forms::auto_size_mode auto_size_mode() const noexcept;
@@ -313,6 +309,14 @@ namespace xtd {
       virtual form& window_state(form_window_state value);
       /// @}
       
+      /// @name Static properties
+      
+      /// @{
+      /// @brief Gets the currently active form for this application.
+      /// @return A form that represents the currently active form, or std::optional with no value if there is no active form.
+      static std::optional<form_ref> active_form() noexcept;
+      /// @}
+      
       /// @name Methods
       
       /// @{
@@ -330,7 +334,31 @@ namespace xtd {
       /// @brief Closes the form.
       /// @remarks When a form is closed, all resources created within the object are closed and the form is disposed. You can prevent the closing of a form at run time by handling the closing event and setting the cancel property of the cancel_event_args passed as a parameter to your event handler. If the form you are closing is the startup form of your application, your application ends.
       void close();
+
+      bool pre_process_message(const xtd::forms::message& message) override;
       
+      /// @brief Shows the form as a modal dialog box.
+      /// @return One of the dialog_result values.
+      virtual forms::dialog_result show_dialog();
+      /// @brief Shows the form as a modal dialog box with the specified owner.
+      /// @parm owner Any object that implements iwin32_window that represents the top-level window that will own the modal dialog box.
+      /// @return One of the dialog_result values.
+      virtual forms::dialog_result show_dialog(const iwin32_window& owner);
+      
+      /// @brief Shows the form as a sheet dialog box.
+      /// @remarks dialog_result property contains the result when the form will closed.
+      /// @remarks Sheet mode is only available on macOS. For other platform show_dialog is underlying called.
+      virtual void show_sheet(const iwin32_window& owner);
+      
+      /// @brief Shows the form as a modal sheet dialog box.
+      /// @return One of the dialog_result values.
+      /// @remarks Sheet mode is only available on macOS. For other platform show_dialog is underlying called.
+      virtual forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::form.
       /// @return New xtd::forms::form created.
       static form create();
@@ -406,26 +434,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::form.
       /// @return New xtd::forms::form created.
       static form create(const xtd::ustring& text, form_start_position start_position, const drawing::size& size, const xtd::ustring& name);
-
-      bool pre_process_message(const xtd::forms::message& message) override;
-      
-      /// @brief Shows the form as a modal dialog box.
-      /// @return One of the dialog_result values.
-      virtual forms::dialog_result show_dialog();
-      /// @brief Shows the form as a modal dialog box with the specified owner.
-      /// @parm owner Any object that implements iwin32_window that represents the top-level window that will own the modal dialog box.
-      /// @return One of the dialog_result values.
-      virtual forms::dialog_result show_dialog(const iwin32_window& owner);
-      
-      /// @brief Shows the form as a sheet dialog box.
-      /// @remarks dialog_result property contains the result when the form will closed.
-      /// @remarks Sheet mode is only available on macOS. For other platform show_dialog is underlying called.
-      virtual void show_sheet(const iwin32_window& owner);
-      
-      /// @brief Shows the form as a modal sheet dialog box.
-      /// @return One of the dialog_result values.
-      /// @remarks Sheet mode is only available on macOS. For other platform show_dialog is underlying called.
-      virtual forms::dialog_result show_sheet_dialog(const iwin32_window& owner);
       /// @}
       
       /// @name Events

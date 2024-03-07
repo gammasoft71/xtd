@@ -63,15 +63,9 @@ namespace xtd {
       ~cursor();
       /// @endcond
       
-      /// @brief Gets a cursor object that represents the mouse cursor.
-      /// @return A cursor that represents the mouse cursor. The default is cursor::none.
-      /// @remarks Setting the current property changes the cursor currently displayed. The application may or may not continue to listen for mouse events. To signal that the application should not respond to mouse events during a long-running operation, use the application::use_wait_cursor property. In most cases, however, it's better to use a background thread to manage a long-running operation, and leave your user interface accessible to the user.
-      static xtd::forms::cursor current();
-      /// @brief Sets a cursor object that represents the mouse cursor.
-      /// @param cursor A cursor that represents the mouse cursor. The default is cursor::none.
-      /// @remarks Setting the current property changes the cursor currently displayed. The application may or may not continue to listen for mouse events. To signal that the application should not respond to mouse events during a long-running operation, use the application::use_wait_cursor property. In most cases, however, it's better to use a background thread to manage a long-running operation, and leave your user interface accessible to the user.
-      static void current(const xtd::forms::cursor& cursor);
+      /// @name Properties
       
+      /// @{
       /// @brief Gets the handle of the cursor.
       /// @return An intptr that represents the cursor's handle.
       /// @remarks This is not a copy of the handle; do not destroy it.
@@ -81,15 +75,6 @@ namespace xtd {
       /// @return A point representing the cursor hot spot.
       /// @remarks The hot_spot is the point in the cursor that interacts with other elements on the screen.
       drawing::point hot_spot() const noexcept;
-      
-      /// @brief Gets the cursor's position.
-      /// @return A point that represents the cursor's position in screen coordinates.
-      /// @remarks The position property is identical to the control::mouse_position property.
-      static drawing::point position();
-      /// @brief Sets the cursor's position.
-      /// @param position A point that represents the cursor's position in screen coordinates.
-      /// @remarks The position property is identical to the control::mouse_position property.
-      static void position(const drawing::point& position);
       
       /// @brief Gets the size of the cursor object.
       /// @return A size that represents the width and height of the cursor.
@@ -106,6 +91,28 @@ namespace xtd {
       void tag(std::any tag);
       /// @}
       
+      /// @name Static properties
+      
+      /// @{
+      /// @brief Gets a cursor object that represents the mouse cursor.
+      /// @return A cursor that represents the mouse cursor. The default is cursor::none.
+      /// @remarks Setting the current property changes the cursor currently displayed. The application may or may not continue to listen for mouse events. To signal that the application should not respond to mouse events during a long-running operation, use the application::use_wait_cursor property. In most cases, however, it's better to use a background thread to manage a long-running operation, and leave your user interface accessible to the user.
+      static xtd::forms::cursor current();
+      /// @brief Sets a cursor object that represents the mouse cursor.
+      /// @param cursor A cursor that represents the mouse cursor. The default is cursor::none.
+      /// @remarks Setting the current property changes the cursor currently displayed. The application may or may not continue to listen for mouse events. To signal that the application should not respond to mouse events during a long-running operation, use the application::use_wait_cursor property. In most cases, however, it's better to use a background thread to manage a long-running operation, and leave your user interface accessible to the user.
+      static void current(const xtd::forms::cursor& cursor);
+      
+      /// @brief Gets the cursor's position.
+      /// @return A point that represents the cursor's position in screen coordinates.
+      /// @remarks The position property is identical to the control::mouse_position property.
+      static drawing::point position();
+      /// @brief Sets the cursor's position.
+      /// @param position A point that represents the cursor's position in screen coordinates.
+      /// @remarks The position property is identical to the control::mouse_position property.
+      static void position(const drawing::point& position);
+      /// @}
+
       /// @name Methodds
       
       /// @{
@@ -116,6 +123,14 @@ namespace xtd {
       
       bool equals(const cursor& value) const noexcept override;
       
+      /// @brief Returns a string containing the name of the cursor.
+      /// @return A string containing the name of the cursor.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Static methodds
+      
+      /// @{
       /// @brief Create a cursor form a specified bitmap with specified hot spot.
       /// @param bitmap A xtd::drawing::bitmap image will be use by cursor.
       /// @param hot_spot A xtd::drawing::point hot spot location.
@@ -134,10 +149,6 @@ namespace xtd {
       /// @brief Displays the cursor.
       /// @brief The show and hide method calls must be balanced. For every call to the hide method there must be a corresponding call to the show method.
       static void show();
-      
-      /// @brief Returns a string containing the name of the cursor.
-      /// @return A string containing the name of the cursor.
-      xtd::ustring to_string() const noexcept override;
       /// @}
       
     private:

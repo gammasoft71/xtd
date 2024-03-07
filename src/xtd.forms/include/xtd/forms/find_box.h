@@ -28,7 +28,7 @@ namespace xtd {
     /// @include find_box.cpp
     class forms_export_ find_box final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Displays a find dialog box.

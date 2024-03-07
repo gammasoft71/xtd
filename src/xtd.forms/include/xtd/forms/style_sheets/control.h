@@ -221,16 +221,34 @@ namespace xtd {
         /// @{
         bool equals(const control& other) const noexcept override;
         
-        static control create_control() {return control();}
-        
+        /// @brief Gets solid background color.
+        /// @return The solid background color.
         xtd::drawing::color get_solid_background_color() const noexcept;
+        /// @brief Gets the border rectangle from the specified rectangle.
+        /// @return The border rectangle.
         xtd::drawing::rectangle get_border_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
+        /// @brief Gets the fill rectangle from the specified rectangle.
+        /// @return The fill rectangle.
         xtd::drawing::rectangle get_fill_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
+        /// @brief Gets the outline rectangle from the specified rectangle.
+        /// @return The outline rectangle.
         xtd::drawing::rectangle get_outline_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
+        /// @brief Gets the content rectangle from the specified rectangle.
+        /// @return The content rectangle.
         xtd::drawing::rectangle get_content_rectangle(const xtd::drawing::rectangle& bounds) const noexcept override;
+        /// @brief Makes string format.
+        /// @return The string format.
         xtd::drawing::string_format make_string_format() const noexcept override;
         /// @}
+
+        /// @name Static methods
         
+        /// @{
+        /// @brief A factory to create control.
+        /// @return New control created.
+        static control create_control() {return control();}
+        /// @}
+
       private:
         bool auto_ellipsis_ = false;
         xtd::forms::style_sheets::margin margin_ {length(0)};

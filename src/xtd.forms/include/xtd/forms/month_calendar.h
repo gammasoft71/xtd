@@ -349,6 +349,74 @@ namespace xtd {
       /// @remarks To add multiple dates in a single assignment, you can assign an array of xtd::date_time objects to the xtd::forms::month_calendar::monthly_bolded_dates property.
       void add_monthly_bolded_date(const xtd::date_time& date);
       
+      /// @brief Returns a xtd::forms::month_calendar::hit_test_info with information on which portion of a month calendar control is at a specified x- and y-coordinate.
+      /// @param x The xtd::drawing::point::x coordinate of the point to be hit tested.
+      /// @param y The xtd::drawing::point::y coordinate of the point to be hit tested.
+      /// @return A xtd::forms::month_calendar::hit_test_info that contains information about the specified point on the xtd::forms::month_calendar.
+      xtd::forms::month_calendar::hit_test_info hit_test(int32 x, int32 y) const;
+      /// @brief Returns an object with information on which portion of a month calendar control is at a location specified by a xtd::drawing::point.
+      /// @param point A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y coordinates of the point to be hit tested.
+      /// @return A xtd::forms::month_calendar::hit_test_info that contains information about the specified point on the xtd::forms::month_calendar.
+      xtd::forms::month_calendar::hit_test_info hit_test(const xtd::drawing::point& point) const;
+      
+      /// @brief Removes all the annually bold dates.
+      /// @remarks This method clears all dates from the xtd::forms::month_calendar::annually_bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_annually_bolded_date method.
+      /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
+      void remove_all_annually_bolded_dates();
+      
+      /// @brief Removes all the nonrecurring bold dates.
+      /// @remarks This method clears all dates from the xtd::forms::month_calendar::bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_bolded_date method.
+      /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
+      void remove_all_bolded_dates();
+      
+      /// @brief Removes all the monthly bold dates.
+      /// @remarks This method clears all dates from the xtd::forms::month_calendar::monthly_bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_monthly_bolded_date method.
+      /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
+      void remove_all_monthly_bolded_dates();
+      
+      /// @brief Removes the specified date from the list of annually bold dates.
+      /// @param date The date to remove from the date list.
+      /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
+      void remove_annually_bolded_dates(const xtd::date_time& date);
+      
+      /// @brief Removes the specified date from the list of the nonrecurring bold dates.
+      /// @param date The date to remove from the date list.
+      /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
+      void remove_bolded_dates(const xtd::date_time& date);
+      
+      /// @brief Removes the specified date from the list of monthly bold dates.
+      /// @param date The date to remove from the date list.
+      /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
+      void remove_monthly_bolded_dates(const xtd::date_time& date);
+      
+      /// @brief Sets the number of columns and rows of months to display.
+      /// @param x The number of columns.
+      /// @param y The number of rows.
+      /// @exception xtd::arguments x or y is less than 1.
+      void set_calendar_dimensions(int32 x, int32 y);
+      
+      /// @brief Sets a date as the currently selected date.
+      /// @param date The date to be selected.
+      /// @remarks This method sets the xtd::forms::month_calendar::selection_start and the xtd::forms::month_calendar::selection_end properties to the specified date. This method is the functional equivalent of setting the selection range to a single day through the xtd::forms::month_calendar::set_selection_range method or the xtd::forms::month_calendar::selection_range property.
+      void set_date(const xtd::date_time& date);
+      
+      /// @brief Sets the selected dates in a month calendar control to the specified date range.
+      /// @param date1 The beginning date of the selection range.
+      /// @param date2 The end date of the selection range.
+      /// @remarks Using this method is functionally equivalent to setting the xtd::forms::month_calendar::selection_range property. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end property.
+      /// @remarks If you set the date1 parameter greater than the date2 parameter, both dates are set to the date1 value.
+      void set_selection_range(const xtd::date_time& date1, const xtd::date_time& date2);
+      
+      xtd::ustring to_string() const noexcept override;
+      
+      /// @brief Repaints the bold dates to reflect the dates set in the lists of bold dates.
+      /// @remarks Use the xtd::forms::month_calendar::update_bolded_dates method to reflect changes made to xtd::forms::month_calendar::annually_bolded_dates, xtd::forms::month_calendar::monthly_bolded_dates, or xtd::forms::month_calendar::bolded_dates properties, either directly by modifying elements of the array or by using the add or remove methods provided to modify the date lists.
+      void update_bolded_dates();
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
       static month_calendar create();
@@ -575,70 +643,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::month_calendar.
       /// @return New xtd::forms::month_calendar created.
       static month_calendar create(const control& parent, const forms::selection_range& selection_range, const xtd::date_time& min_date, const xtd::date_time& max_date, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-      
-      /// @brief Returns a xtd::forms::month_calendar::hit_test_info with information on which portion of a month calendar control is at a specified x- and y-coordinate.
-      /// @param x The xtd::drawing::point::x coordinate of the point to be hit tested.
-      /// @param y The xtd::drawing::point::y coordinate of the point to be hit tested.
-      /// @return A xtd::forms::month_calendar::hit_test_info that contains information about the specified point on the xtd::forms::month_calendar.
-      xtd::forms::month_calendar::hit_test_info hit_test(int32 x, int32 y) const;
-      /// @brief Returns an object with information on which portion of a month calendar control is at a location specified by a xtd::drawing::point.
-      /// @param point A xtd::drawing::point containing the xtd::drawing::point::x and xtd::drawing::point::y coordinates of the point to be hit tested.
-      /// @return A xtd::forms::month_calendar::hit_test_info that contains information about the specified point on the xtd::forms::month_calendar.
-      xtd::forms::month_calendar::hit_test_info hit_test(const xtd::drawing::point& point) const;
-      
-      /// @brief Removes all the annually bold dates.
-      /// @remarks This method clears all dates from the xtd::forms::month_calendar::annually_bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_annually_bolded_date method.
-      /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
-      void remove_all_annually_bolded_dates();
-      
-      /// @brief Removes all the nonrecurring bold dates.
-      /// @remarks This method clears all dates from the xtd::forms::month_calendar::bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_bolded_date method.
-      /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
-      void remove_all_bolded_dates();
-      
-      /// @brief Removes all the monthly bold dates.
-      /// @remarks This method clears all dates from the xtd::forms::month_calendar::monthly_bolded_dates array. To remove a single date from the bold dates, use the xtd::forms::month_calendar::remove_monthly_bolded_date method.
-      /// @remarks You must call the xtd::forms::month_calendar::update_bolded_dates method to ensure that the display is updated to reflect the removal.
-      void remove_all_monthly_bolded_dates();
-      
-      /// @brief Removes the specified date from the list of annually bold dates.
-      /// @param date The date to remove from the date list.
-      /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
-      void remove_annually_bolded_dates(const xtd::date_time& date);
-      
-      /// @brief Removes the specified date from the list of the nonrecurring bold dates.
-      /// @param date The date to remove from the date list.
-      /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
-      void remove_bolded_dates(const xtd::date_time& date);
-      
-      /// @brief Removes the specified date from the list of monthly bold dates.
-      /// @param date The date to remove from the date list.
-      /// @remarks If the specified date occurs more than once in the date list, only the first date is removed. When comparing dates, only the day and month are used. You must call the xtd::forms::month_calendar::bolded_dates properties method to ensure that the display is updated to reflect the removal.
-      void remove_monthly_bolded_dates(const xtd::date_time& date);
-      
-      /// @brief Sets the number of columns and rows of months to display.
-      /// @param x The number of columns.
-      /// @param y The number of rows.
-      /// @exception xtd::arguments x or y is less than 1.
-      void set_calendar_dimensions(int32 x, int32 y);
-      
-      /// @brief Sets a date as the currently selected date.
-      /// @param date The date to be selected.
-      /// @remarks This method sets the xtd::forms::month_calendar::selection_start and the xtd::forms::month_calendar::selection_end properties to the specified date. This method is the functional equivalent of setting the selection range to a single day through the xtd::forms::month_calendar::set_selection_range method or the xtd::forms::month_calendar::selection_range property.
-      void set_date(const xtd::date_time& date);
-      
-      /// @brief Sets the selected dates in a month calendar control to the specified date range.
-      /// @param date1 The beginning date of the selection range.
-      /// @param date2 The end date of the selection range.
-      /// @remarks Using this method is functionally equivalent to setting the xtd::forms::month_calendar::selection_range property. You can set the start and end dates separately by setting either the xtd::forms::month_calendar::selection_start or xtd::forms::month_calendar::selection_end property.
-      /// @remarks If you set the date1 parameter greater than the date2 parameter, both dates are set to the date1 value.
-      void set_selection_range(const xtd::date_time& date1, const xtd::date_time& date2);
-      
-      xtd::ustring to_string() const noexcept override;
-      
-      /// @brief Repaints the bold dates to reflect the dates set in the lists of bold dates.
-      /// @remarks Use the xtd::forms::month_calendar::update_bolded_dates method to reflect changes made to xtd::forms::month_calendar::annually_bolded_dates, xtd::forms::month_calendar::monthly_bolded_dates, or xtd::forms::month_calendar::bolded_dates properties, either directly by modifying elements of the array or by using the add or remove methods provided to modify the date lists.
-      void update_bolded_dates();
       /// @}
       
     protected:

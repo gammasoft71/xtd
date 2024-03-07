@@ -92,8 +92,20 @@ namespace xtd {
       /// @return Current seven_segment_display.
       virtual seven_segment_display& value(forms::segments value);
       /// @}
-      
+
       /// @name Methods
+      
+      /// @{
+      /// @brief Gets if specified xtd::forms::segments combination is on.
+      /// @return true if xtd::forms::segments combination is on; otherwise false.
+      virtual bool get_segments(forms::segments segment) const noexcept;
+      /// @brief Sets specified xtd::forms::segments combination to on.
+      /// @param segment A xtd::forms::segments combination to set.
+      /// @param on true to set to on; otherwise false.
+      virtual void set_segments(forms::segments segment, bool value);
+      /// @}
+
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::seven_segment_display.
@@ -240,14 +252,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
       static seven_segment_display create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Gets if specified xtd::forms::segments combination is on.
-      /// @return true if xtd::forms::segments combination is on; otherwise false.
-      virtual bool get_segments(forms::segments segment) const noexcept;
-      /// @brief Sets specified xtd::forms::segments combination to on.
-      /// @param segment A xtd::forms::segments combination to set.
-      /// @param on true to set to on; otherwise false.
-      virtual void set_segments(forms::segments segment, bool value);
       /// @}
       
     protected:

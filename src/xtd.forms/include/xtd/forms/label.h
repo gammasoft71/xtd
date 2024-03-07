@@ -167,7 +167,7 @@ namespace xtd {
       virtual xtd::forms::label& text_align(xtd::forms::content_alignment text_align);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::label.

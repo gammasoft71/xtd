@@ -32,7 +32,7 @@ namespace xtd {
     /// @include trace_message_box.cpp
     class trace_message_box static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Displays a message box and write trace with specified text.

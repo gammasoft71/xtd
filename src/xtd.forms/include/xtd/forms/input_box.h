@@ -32,7 +32,7 @@ namespace xtd {
     /// @include input_box.cpp
     class forms_export_ input_box final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Displays an input box in front of the specified window. The input box displays a text value.

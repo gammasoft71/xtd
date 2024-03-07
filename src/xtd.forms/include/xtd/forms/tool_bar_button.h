@@ -195,6 +195,17 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      bool equals(const tool_bar_button& other) const noexcept override;
+      
+      /// @brief Returns a string that represents the xtd::forms::tool_bar_button control.
+      /// @return A xtd::ustring that represents the current xtd::forms::tool_bar_button.
+      /// @remarks The xtd::forms::tool_bar_button::to_string method returns a string that includes the type and the value of the xtd::forms::tool_bar_button::style and xtd::forms::tool_bar_button::text properties.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create a control toolbar button with specified text and control.
       /// @param text The text displayed on the toolbar button.
       /// @param control A xtd::forms::control to be displayed in the control toolbar button.
@@ -257,13 +268,7 @@ namespace xtd {
       /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
       static tool_bar_button create_toggle_button(const xtd::ustring& text, size_t image_index);
-      
-      bool equals(const tool_bar_button& other) const noexcept override;
-      
-      /// @brief Returns a string that represents the xtd::forms::tool_bar_button control.
-      /// @return A xtd::ustring that represents the current xtd::forms::tool_bar_button.
-      /// @remarks The xtd::forms::tool_bar_button::to_string method returns a string that includes the type and the value of the xtd::forms::tool_bar_button::style and xtd::forms::tool_bar_button::text properties.
-      xtd::ustring to_string() const noexcept override;
+      /// @}
       
     private:
       friend xtd::forms::tool_bar;

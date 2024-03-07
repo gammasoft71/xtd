@@ -28,6 +28,9 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class user_control_renderer static_ {
     public:
+      /// @name Static methods
+      
+      /// @{
       /// @brief Draws a box in the specified bounds.
       /// @param graphics The Graphics used to draw a control.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the control.
@@ -59,6 +62,7 @@ namespace xtd {
       /// @param back_color The background color for the control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_user_control(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::control_state control_state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides);
+      /// @}
     };
   }
 }

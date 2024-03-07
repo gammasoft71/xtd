@@ -29,7 +29,7 @@ namespace xtd {
     /// @include folder_browser_box.cpp
     class forms_export_ folder_browser_box final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Displays a folder browser dialog box in front of a specified window.

@@ -53,7 +53,7 @@ namespace xtd {
       horizontal_layout_panel& control_layout_style(const control_ref& control, const horizontal_control_layout_style& value);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::horizontal_layout_panel.

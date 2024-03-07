@@ -105,6 +105,21 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Sets the minimum and maximum values for a track_bar.
+      /// @param min_value The lower limit of the range of the track bar.
+      /// @param max_value The upper limit of the range of the track bar.
+      /// @remarks You can use this method to set the entire range for the track_bar at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
+      void set_range(double min_value, double max_value);
+      
+      /// @brief Returns a string that represents the track_bar control.
+      /// @return A string that represents the current numeric_up_down.
+      /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::numeric_up_down.
       /// @return New xtd::forms::numeric_up_down created.
       static numeric_up_down create();
@@ -313,17 +328,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::numeric_up_down.
       /// @return New xtd::forms::numeric_up_down created.
       static numeric_up_down create(const control& parent, double value, double minimum, double maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Sets the minimum and maximum values for a track_bar.
-      /// @param min_value The lower limit of the range of the track bar.
-      /// @param max_value The upper limit of the range of the track bar.
-      /// @remarks You can use this method to set the entire range for the track_bar at the same time. To set the minimum or maximum values individually, use the minimum and maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
-      void set_range(double min_value, double max_value);
-      
-      /// @brief Returns a string that represents the track_bar control.
-      /// @return A string that represents the current numeric_up_down.
-      /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      xtd::ustring to_string() const noexcept override;
       /// @}
       
       /// @name Events

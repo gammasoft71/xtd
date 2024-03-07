@@ -141,7 +141,7 @@ namespace xtd {
       /// @}
       
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::domain_up_down.

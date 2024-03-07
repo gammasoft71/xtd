@@ -32,7 +32,7 @@ namespace xtd {
     /// @include font_box.cpp
     class forms_export_ font_box final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Displays a font dialog box.

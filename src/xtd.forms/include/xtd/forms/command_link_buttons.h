@@ -21,7 +21,7 @@ namespace xtd {
     /// @include command_link_buttons.cpp
     class command_link_buttons final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Create a system-defined command_link_button that represent abort command_link_button

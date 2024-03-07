@@ -29,6 +29,9 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class panel_renderer static_ {
     public:
+      /// @name Static methods
+      
+      /// @{
       /// @brief Draws a box in the specified bounds, form state and background color.
       /// @param graphics The Graphics used to draw a form.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form.
@@ -38,6 +41,7 @@ namespace xtd {
       /// @param back_color The background color for the form control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_panel(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides);
+      /// @}
     };
   }
 }

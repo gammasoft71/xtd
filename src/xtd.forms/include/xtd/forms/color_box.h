@@ -32,7 +32,7 @@ namespace xtd {
     /// @include color_box.cpp
     class forms_export_ color_box final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Displays a color box in front of the specified window. The color box displays a color.

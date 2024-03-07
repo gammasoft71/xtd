@@ -148,16 +148,20 @@ namespace xtd {
         
         /// @{
         bool equals(const background_image& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
+                
+        xtd::ustring to_string() const noexcept override;
+        /// @}
+
+        /// @name Static methods
         
+        /// @{
         /// @brief Creates a xtd::drawing::brush from specified image data and rectangle.
         /// @param image Contains image data.
         /// @param rect The xtd::drawing::rectangle neeed for linear gradient brush
         /// @return New instance of brush.
         static std::unique_ptr<xtd::drawing::brush> make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect);
-        
-        xtd::ustring to_string() const noexcept override;
         /// @}
-        
+
       private:
         friend class style_sheet;
         xtd::forms::style_sheets::image_type image_type_ = style_sheets::image_type::none;

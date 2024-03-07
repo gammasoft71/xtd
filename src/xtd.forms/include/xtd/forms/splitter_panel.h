@@ -32,7 +32,7 @@ namespace xtd {
       splitter_panel() = default;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::splitter_panel.

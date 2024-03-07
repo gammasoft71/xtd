@@ -58,7 +58,7 @@ namespace xtd {
       control& font(const drawing::font& font) override;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::font_picker.

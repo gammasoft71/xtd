@@ -28,7 +28,7 @@ namespace xtd {
     /// @include progress_box.cpp
     class forms_export_ progress_box final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief Check if the progress dialog is canceled
@@ -45,7 +45,7 @@ namespace xtd {
       static int32 maximum();
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Hides a progress box in front.

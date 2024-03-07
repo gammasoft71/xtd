@@ -76,7 +76,7 @@ namespace xtd {
       virtual date_time_picker& value(date_time value);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::date_time_picker.

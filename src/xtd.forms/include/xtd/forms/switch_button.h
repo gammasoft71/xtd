@@ -96,7 +96,7 @@ namespace xtd {
       virtual switch_button& show_text(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::switch_button.

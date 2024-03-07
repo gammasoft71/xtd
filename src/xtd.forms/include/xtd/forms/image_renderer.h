@@ -32,7 +32,7 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class forms_export_ image_renderer static_ {
     public:
-      /// @name Moethods
+      /// @name Static moethods
       
       /// @{
       /// @brief Draws an image in the specified bounds.

@@ -51,7 +51,7 @@ namespace xtd {
       explicit main_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
       /// @endcond
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create a main menu with specified on click event handler.

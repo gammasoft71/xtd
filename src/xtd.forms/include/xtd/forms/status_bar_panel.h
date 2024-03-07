@@ -215,6 +215,21 @@ namespace xtd {
       /// @remarks This method is used to start the initialization of a component that is used on a form or used by another component. The xtd::forms::status_bar_panel::end_init method ends the initialization. Using the xtd::forms::status_bar_panel::begin_init and xtd::forms::status_bar_panel::end_init methods prevents the control from being used before it is fully initialized.
       void begin_init();
       
+      bool equals(const status_bar_panel& other) const noexcept override;
+      
+      /// @brief Ends the initialization of a xtd::forms::status_bar_panel.
+      /// @remarks This method is used to end the initialization of a component that is used on a form or used by another component. The xtd::forms::status_bar_panel::end_init method ends the initialization. Using the xtd::forms::status_bar_panel::begin_init and xtd::forms::status_bar_panel::end_init methods prevents the control from being used before it is fully initialized.
+      void end_init();
+      
+      /// @brief Returns a string that represents the xtd::forms::status_bar_panel control.
+      /// @return A xtd::ustring that represents the current xtd::forms::status_bar_panel.
+      /// @remarks The xtd::forms::status_bar_panel::to_string method returns a string that includes the type and the value of the xtd::forms::status_bar_panel::style and xtd::forms::status_bar_panel::text properties.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create a control status bar panel with specified text and control.
       /// @param text The text displayed on the status bar panel.
       /// @param control A xtd::forms::control to be displayed in the control status bar panel.
@@ -238,17 +253,7 @@ namespace xtd {
       /// @param image The xtd::drawing::image assigned to the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
       static status_bar_panel create_panel(const xtd::ustring& text, const xtd::drawing::image& image);
-      
-      bool equals(const status_bar_panel& other) const noexcept override;
-      
-      /// @brief Ends the initialization of a xtd::forms::status_bar_panel.
-      /// @remarks This method is used to end the initialization of a component that is used on a form or used by another component. The xtd::forms::status_bar_panel::end_init method ends the initialization. Using the xtd::forms::status_bar_panel::begin_init and xtd::forms::status_bar_panel::end_init methods prevents the control from being used before it is fully initialized.
-      void end_init();
-      
-      /// @brief Returns a string that represents the xtd::forms::status_bar_panel control.
-      /// @return A xtd::ustring that represents the current xtd::forms::status_bar_panel.
-      /// @remarks The xtd::forms::status_bar_panel::to_string method returns a string that includes the type and the value of the xtd::forms::status_bar_panel::style and xtd::forms::status_bar_panel::text properties.
-      xtd::ustring to_string() const noexcept override;
+      /// @}
       
     private:
       friend xtd::forms::status_bar;

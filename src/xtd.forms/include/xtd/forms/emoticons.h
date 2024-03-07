@@ -21,7 +21,7 @@ namespace xtd {
     /// @include emoticons.cpp
     class forms_export_ emoticons final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       // 00080-00FF Latin 1 Supplement
@@ -2589,7 +2589,7 @@ namespace xtd {
       static const xtd::forms::emoticon banjo;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Gets emoticons collection.

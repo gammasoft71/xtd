@@ -94,6 +94,26 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Sets text and supplementary text.
+      /// @param text A string that represent control text
+      /// @param supplementary_text A string that represent supplementary text.
+      /// @return Current control.
+      /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
+      void set_texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
+      
+      /// @brief Sets text and supplementary text.
+      /// @param text A string that represent control text
+      /// @param supplementary_text A string that represent supplementary text.
+      /// @return Current control.
+      /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
+      /// @deprecated Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0")]]
+      control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
+      /// @}
+
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
       static command_link_button create();
@@ -197,22 +217,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::command_link_button.
       /// @return New xtd::forms::command_link_button created.
       static command_link_button create(const control& parent, const std::tuple<xtd::ustring, xtd::ustring>& texts, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Sets text and supplementary text.
-      /// @param text A string that represent control text
-      /// @param supplementary_text A string that represent supplementary text.
-      /// @return Current control.
-      /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
-      void set_texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
-
-      /// @brief Sets text and supplementary text.
-      /// @param text A string that represent control text
-      /// @param supplementary_text A string that represent supplementary text.
-      /// @return Current control.
-      /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
-      /// @deprecated Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0
-      [[deprecated("Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0")]]
-      control& texts(const xtd::ustring& text, const xtd::ustring& supplementary_text);
       /// @}
       
     protected:

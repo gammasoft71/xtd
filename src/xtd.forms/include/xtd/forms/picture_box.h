@@ -90,7 +90,7 @@ namespace xtd {
       picture_box& size_mode(picture_box_size_mode size_mode);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::picture_box.

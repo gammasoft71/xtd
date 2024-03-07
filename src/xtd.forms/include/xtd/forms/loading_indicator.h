@@ -65,6 +65,15 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Starts animation of the loading indicator.
+      void start();
+      /// @brief Stops animation of the loading indicator.
+      void stop();
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
       static loading_indicator create();
@@ -105,11 +114,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::loading_indicator.
       /// @return New xtd::forms::loading_indicator created.
       static loading_indicator create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Starts animation of the loading indicator.
-      void start();
-      /// @brief Stops animation of the loading indicator.
-      void stop();
       /// @}
       
     protected:

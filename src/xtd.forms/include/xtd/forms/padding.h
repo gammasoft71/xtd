@@ -116,17 +116,7 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Computes the sum of the two specified padding values.
-      /// @return A padding that contains the sum of the two specified padding values.
-      static padding add(const padding& p1, const padding& p2);
-      
       bool equals(const padding& value) const noexcept override;
-      
-      /// @brief Subtracts one specified Padding value from another.
-      /// @param p1 A padding.
-      /// @param p2 A padding.
-      /// @return A padding that contains the result of the subtraction of one specified padding value from another.
-      static padding subtract(const padding& p1, const padding& p2);
       
       /// @brief Returns a string that represents the current padding.
       /// @return A string that represents the current padding.
@@ -134,6 +124,20 @@ namespace xtd {
       xtd::ustring to_string() const noexcept override;
       /// @}
       
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Computes the sum of the two specified padding values.
+      /// @return A padding that contains the sum of the two specified padding values.
+      static padding add(const padding& p1, const padding& p2);
+      
+      /// @brief Subtracts one specified Padding value from another.
+      /// @param p1 A padding.
+      /// @param p2 A padding.
+      /// @return A padding that contains the result of the subtraction of one specified padding value from another.
+      static padding subtract(const padding& p1, const padding& p2);
+      /// @}
+
     private:
       bool all_ = true;
       int32 left_ = 0;

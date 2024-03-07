@@ -29,7 +29,7 @@ namespace xtd {
       flow_layout_panel() = default;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::flow_layout_panel.

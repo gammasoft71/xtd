@@ -59,7 +59,7 @@ namespace xtd {
       /// @}
       
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::color_picker.

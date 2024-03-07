@@ -84,20 +84,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Creates a new message.
-      /// @param hwnd The window handle that the message is for.
-      /// @param msg The message ID.The message ID.
-      /// @param wparam The message wparam field.
-      /// @param lparam The message lparam field.
-      /// @return A xtd::forms::message that represents the message that was created.
-      /// @remarks Use the xtd::message::create method to create a xtd::forms::message to wrap a message sent by Windows.
-      static message create(intptr hwnd, int32 msg, intptr wparam, intptr lparam);
-      
-      /// @cond
-      static message create(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result);
-      static message create(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle);
-      /// @endcond
-      
       /// @brief Gets the lparam value and converts the value to an object.
       /// @tparam type The type to use to create an instance. This type must be declared as a structure type.
       /// @return An object that represents an instance of the class specified by the template parameter, with the data from the lparam field of the message.
@@ -112,6 +98,24 @@ namespace xtd {
       /// @return A xtd::ustring that represents the current message.
       xtd::ustring to_string() const noexcept override;
       /// @}
+      
+      /// @name Static methods
+      
+      /// @{
+      /// @brief Creates a new message.
+      /// @param hwnd The window handle that the message is for.
+      /// @param msg The message ID.The message ID.
+      /// @param wparam The message wparam field.
+      /// @param lparam The message lparam field.
+      /// @return A xtd::forms::message that represents the message that was created.
+      /// @remarks Use the xtd::message::create method to create a xtd::forms::message to wrap a message sent by Windows.
+      static message create(intptr hwnd, int32 msg, intptr wparam, intptr lparam);
+      /// @}
+
+      /// @cond
+      static message create(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result);
+      static message create(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle);
+      /// @endcond
       
     private:
       message(intptr hwnd, int32 msg, intptr wparam, intptr lparam);

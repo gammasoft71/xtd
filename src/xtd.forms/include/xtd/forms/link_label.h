@@ -221,7 +221,7 @@ namespace xtd {
       link_label& visited_link_color(const xtd::drawing::color& color);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::link_label.

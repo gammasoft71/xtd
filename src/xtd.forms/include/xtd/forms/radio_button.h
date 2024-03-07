@@ -92,6 +92,18 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Generates a click event for the control, simulating a click by a user.
+      void perform_click();
+      
+      /// @brief Returns a string that represents the progress_bar control.
+      /// @return A string that represents the current progress_bar.
+      /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::radio_button.
       /// @return New xtd::forms::radio_button created.
       static radio_button create();
@@ -236,14 +248,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::radio_button.
       /// @return New xtd::forms::radio_button created.
       static radio_button create(const control& parent, const xtd::ustring& text, bool checked, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Generates a click event for the control, simulating a click by a user.
-      void perform_click();
-      
-      /// @brief Returns a string that represents the progress_bar control.
-      /// @return A string that represents the current progress_bar.
-      /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      xtd::ustring to_string() const noexcept override;
       /// @}
       
       /// @name Events

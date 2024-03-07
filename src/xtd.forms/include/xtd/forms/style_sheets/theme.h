@@ -100,6 +100,16 @@ namespace xtd {
         /// @{
         bool equals(const theme& other) const noexcept override {return name_ == other.name_ && description_ == other.description_ && authors_ == other.authors_ && website_ == other.website_;}
         
+        xtd::ustring to_string() const noexcept override;
+        
+        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
+        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
+        xtd::ustring to_css() const noexcept;
+        /// @}
+        
+        /// @name Static methods
+        
+        /// @{
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified css text.
         /// @param css_text A css xtd::ustring that represents a xtd::forms::style_sheets::theme object.
         /// @param result The xtd::forms::style_sheets::theme class that this method creates.
@@ -112,19 +122,13 @@ namespace xtd {
         /// @exception xtd::argument_exception The text is not a xtd::forms::style_sheets::theme object.
         static theme parse(const xtd::ustring& text);
         
-        xtd::ustring to_string() const noexcept override;
-        
-        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
-        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
-        xtd::ustring to_css() const noexcept;
-        
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified text.
         /// @param text A xtd::ustring that represents a xtd::forms::style_sheets::theme object.
         /// @param result The xtd::forms::style_sheets::theme class that this method creates.
         /// @return true if succeed; otherwise false.
         static bool try_parse(const xtd::ustring& text, theme& result) noexcept;
         /// @}
-        
+
       private:
         xtd::ustring name_;
         xtd::ustring description_;

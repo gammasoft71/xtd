@@ -37,10 +37,6 @@ namespace xtd {
       /// @name Properties
       
       /// @{
-      /// @brief Gets an array of all displays on the system.
-      /// @return An array of type screen, containing all displays on the system.
-      static std::vector<screen> all_screens();
-      
       /// @brief Gets the number of bits of memory, associated with one pixel of data.
       /// @return The number of bits of memory, associated with one pixel of data.
       /// @remarks Typically, the number of bits per pixel for a screen is useful when working with bitmaps.
@@ -74,12 +70,7 @@ namespace xtd {
       /// @remarks If scale factor is equal to 1.0 is a standard display; greater than 1.0 is a high DPI display.
       /// @remarks See get_standard_pixels_per_inch() for more informations.
       double scale_factor() const noexcept;
-      
-      /// @brief Gets the primary display.
-      /// @return The primary display.
-      /// @remarks For a single display system, the primary display is the only display.
-      static screen primary_screen();
-      
+            
       /// @brief Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @return A xtd::drawing::rectangle, representing the working area of the display.
       /// @remarks The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
@@ -87,7 +78,20 @@ namespace xtd {
       const drawing::rectangle& working_area() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Static properties
+      
+      /// @{
+      /// @brief Gets an array of all displays on the system.
+      /// @return An array of type screen, containing all displays on the system.
+      static std::vector<screen> all_screens();
+      
+      /// @brief Gets the primary display.
+      /// @return The primary display.
+      /// @remarks For a single display system, the primary display is the only display.
+      static screen primary_screen();
+      /// @}
+
+      /// @name Static methods
       
       /// @{
       /// @brief Creates the xtd::drawing::graphics for the screen.
