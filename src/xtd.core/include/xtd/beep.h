@@ -35,7 +35,7 @@ namespace xtd {
     /// This example demonstrates the beep method by playing the first few notes of a song through the console speaker.
     /// @include console_song3.cpp
     beep(uint32 frequency, uint32 duration) : frequency_(frequency), duration_(duration) {}
-    // @}
+    /// @}
     
     /// @cond
     friend std::ostream& operator <<(std::ostream& os, const beep& b) {
