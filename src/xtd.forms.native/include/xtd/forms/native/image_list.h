@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ image_list final static_ {
         friend xtd::forms::image_list;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Creates image list.

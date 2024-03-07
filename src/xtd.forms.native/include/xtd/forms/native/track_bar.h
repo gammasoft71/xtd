@@ -33,7 +33,7 @@ namespace xtd {
       class forms_native_export_ track_bar final static_ {
         friend xtd::forms::track_bar;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Sets a value to be added to or subtracted from the value property when the scroll box is moved a large distance.

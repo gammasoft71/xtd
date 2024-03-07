@@ -33,7 +33,7 @@ namespace xtd {
       class forms_native_export_ switch_button final static_ {
         friend xtd::forms::switch_button;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Sets checked.

@@ -40,7 +40,7 @@ namespace xtd {
         friend xtd::forms::open_file_dialog;
         friend xtd::forms::save_file_dialog;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Shows open file dialog.

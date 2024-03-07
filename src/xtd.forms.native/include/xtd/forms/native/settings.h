@@ -37,7 +37,7 @@ namespace xtd {
       class forms_native_export_ settings final static_ {
         friend xtd::forms::settings;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Create settings.

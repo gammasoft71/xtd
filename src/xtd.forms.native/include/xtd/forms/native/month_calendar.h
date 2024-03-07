@@ -35,7 +35,7 @@ namespace xtd {
       class forms_native_export_ month_calendar final static_ {
         friend xtd::forms::month_calendar;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         /// @{
         /// @brief Sets the array of xtd::date_time objects that determines which annual days are displayed in bold.
         /// @param control month calendar handle.

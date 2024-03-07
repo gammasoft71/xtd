@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ domain_up_down final static_ {
         friend xtd::forms::domain_up_down;
       protected:
-        /// @name Protected methods
+        /// @name Protected static methods
         
         /// @{
         /// @brief Maintains performance while items are added to the domain_up_down one at a time by preventing the control from drawing until the end_update() method is called.
