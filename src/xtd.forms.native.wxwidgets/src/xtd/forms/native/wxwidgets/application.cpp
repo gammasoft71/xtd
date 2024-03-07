@@ -71,6 +71,8 @@ namespace {
       delete item;
     __control_handler_to_delete_items__.clear();
   }
+
+  static bool application_initialized = false;
 }
 
 event<wx_application, delegate<bool(intptr, int32, intptr, intptr, intptr)>> wx_application::message_filter_proc;
@@ -81,6 +83,8 @@ bool application::allow_quit() {
 }
 
 void application::cleanup() {
+  if (!application_initialized) return;
+  application_initialized = false;
   drawing::native::toolkit::shutdown(0);
 }
 
@@ -174,9 +178,8 @@ void application::exit() {
 }
 
 void application::initialize() {
-  static bool initialized = false;
-  if (initialized) return;
-  initialized = true;
+  if (application_initialized) return;
+  application_initialized = true;
   
   drawing::native::toolkit::initialize();
   static_cast<wx_application*>(wxApp::GetInstance())->processIdle += process_idle;
@@ -233,9 +236,6 @@ void application::run() {
     __system_color_detection_timer__->Unbind(wxEVT_TIMER, __on_timer_system_color_detection__);
     delete __system_color_detection_timer__;
     #endif
-    
-    wxApp::SetInstance(nullptr);
-    delete wxTheApp;
   }
 }
 
