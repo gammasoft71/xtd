@@ -511,6 +511,7 @@ namespace xtd {
 
     int64 ticks_ = 0;
   };
+  /// @}
 
   template<>
   inline std::string to_string(const time_span& value, const std::string& fmt, const std::locale& loc) {return value.to_string(fmt);}

@@ -76,6 +76,7 @@ namespace xtd {
       public:
         /// @name Public Constructors
         
+        /// @{
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::matrix class as the identity matrix.
         matrix();
         /// @brief Initializes a new instance of the xtd::drawing::drawing_2d::matrix class with the specified elements.

@@ -26,5 +26,5 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = 42;
   /// @endcode
   using uintptr_object = box_integer<uintptr>;
-  ///  @}
+  /// @}
 }

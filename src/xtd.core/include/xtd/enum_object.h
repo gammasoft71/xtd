@@ -610,6 +610,7 @@ namespace xtd {
         return false;
       }
     }
+    /// @}
   };
   /// @}
   

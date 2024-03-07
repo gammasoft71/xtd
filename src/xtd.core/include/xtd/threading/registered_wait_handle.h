@@ -41,6 +41,7 @@ namespace xtd {
       /// @remarks If wait_object is specified, it is signaled only if the xtd::threading::registered_wait_handle is successfully unregistered. If a callback method is in progress when Unregister executes, wait_object is not signaled until the callback method completes. In particular, if a callback method executes Unregister, waitObject is not signaled until that callback method completes.
       /// @see xtd::threading::thread_pool
       bool unregister(wait_handle& wait_obbject);
+      /// @}
       
     private:
       intptr item_ = 0;

@@ -27,7 +27,7 @@ namespace xtd {
       static constexpr uint16 min_port = 0x0000;
       /// @brief Specifies the maximum value that can be assigned to the port property. The max_port value is set to 0xFFFF. This field is read-only.
       static constexpr uint16 max_port = 0xFFFF;
-      /// @
+      /// @}
       
       /// @name Public Constructors
       

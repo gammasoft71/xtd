@@ -33,6 +33,7 @@ namespace xtd {
       /// @{
       /// @brief Represents an empty emoticon.
       static const emoticon empty();
+      /// @}
       
       /// @name Public Constructors
       

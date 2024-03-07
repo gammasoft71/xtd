@@ -216,7 +216,7 @@ namespace xtd {
 
       /// @name Public Static Methods
       
-      /// {
+      /// @{
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_writer object.
       /// @param reader The TextReader object to synchronize.
       /// @return text_writer A thread-safe text_writer object.

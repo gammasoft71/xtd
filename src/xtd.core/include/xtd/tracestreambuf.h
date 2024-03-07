@@ -31,5 +31,6 @@ namespace xtd {
       #endif
       return 0;
     }
+    /// @}
   };
 }

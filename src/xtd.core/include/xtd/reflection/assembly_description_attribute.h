@@ -30,7 +30,8 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::reflection::assembly_description_attribute class.
       /// @param description The description information.
       explicit assembly_description_attribute(const ustring& description);
-      
+      /// @}
+
       /// @cond
       /// Internal used only
       assembly_description_attribute(const ustring& description, const object& executing_assembly);
