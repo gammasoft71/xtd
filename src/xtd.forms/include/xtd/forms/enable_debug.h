@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief Represent all debug.
       static const enable_debug all;
       
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief Gets a trace switch to configure debug traces.
@@ -70,7 +70,11 @@ namespace xtd {
       
       /// @{
       bool equals(const enable_debug& value) const noexcept override;
+      /// @}
       
+      /// @name Static methods
+      
+      /// @{
       /// @brief Gets enable_debug flags status.
       /// @return true if enable_debug flags is on; otherwise false.
       static bool get(const enable_debug& flags);

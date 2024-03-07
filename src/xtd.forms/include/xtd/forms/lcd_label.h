@@ -135,7 +135,7 @@ namespace xtd {
       std::vector<char32> valid_characters();
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::lcd_label.

@@ -116,7 +116,7 @@ namespace xtd {
       virtual status_bar& sizing_grip(bool value);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::status_bar with specified location, size, and name.

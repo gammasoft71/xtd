@@ -84,6 +84,18 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Stops the timer.
+      /// @remarks You can also stop the timer by setting the enabled property to false.
+      void start();
+      
+      /// @brief Starts the timer.
+      /// @remarks You can also start the timer by setting the enabled property to true.
+      void stop();
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::timer.
       /// @return New xtd::forms::timer created.
       static timer create();
@@ -105,14 +117,6 @@ namespace xtd {
       /// @param enabled true if the timer is currently enabled; otherwise, false. The default is false.
       /// @return New xtd::forms::timer created.
       static timer create(int interval_milliseconds, bool enable);
-
-      /// @brief Stops the timer.
-      /// @remarks You can also stop the timer by setting the enabled property to false.
-      void start();
-      
-      /// @brief Starts the timer.
-      /// @remarks You can also start the timer by setting the enabled property to true.
-      void stop();
       /// @}
       
       /// @name Events

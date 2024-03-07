@@ -30,6 +30,9 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class forms_export_ text_renderer static_ {
     public:
+      /// @name Static methods
+      
+      /// @{
       /// @brief Draws shadow text.
       /// @param graphics The xtd::drawing::graphics used to draw text.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the text.
@@ -46,6 +49,7 @@ namespace xtd {
       
       static void draw_shadow_text_and_links(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::forms::style_sheets::itext_model& data, const xtd::forms::style_sheets::ibox_model& box);
       static void draw_text_and_links(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const xtd::forms::style_sheets::itext_model& data);
+      /// @}
     };
   }
 }

@@ -21,7 +21,7 @@ namespace xtd {
     /// @ingroup xtd_forms components
     class form_button_images final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Close image object.

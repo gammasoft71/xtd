@@ -188,7 +188,7 @@ namespace xtd {
       virtual const tab_page_collection& tab_pages() const noexcept;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::tab_control.

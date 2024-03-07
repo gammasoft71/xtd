@@ -67,7 +67,7 @@ namespace xtd {
       virtual user_control& border_style(std::nullptr_t border_style);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::user_control.

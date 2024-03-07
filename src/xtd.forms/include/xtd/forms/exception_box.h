@@ -34,7 +34,7 @@ namespace xtd {
     /// @include exception_box.cpp
     class forms_export_ exception_box final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Displays a exception box in front of the specified window. The exception box displays an unknown exception.

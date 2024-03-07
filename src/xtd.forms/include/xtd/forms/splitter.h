@@ -64,7 +64,7 @@ namespace xtd {
       virtual splitter& splitter_style(xtd::forms::splitter_style splitter_style);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::splitter.

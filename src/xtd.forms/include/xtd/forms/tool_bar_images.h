@@ -21,7 +21,7 @@ namespace xtd {
     /// @ingroup xtd_forms components
     class tool_bar_images final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief File new image object.

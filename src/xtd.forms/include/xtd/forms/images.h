@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_forms components
     class images final static_ {
     public:
-      /// @name Methods
+      /// @name Static Properties
       
       /// @{
       /// @brief Gets system image from specified name.

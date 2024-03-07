@@ -110,7 +110,15 @@ namespace xtd {
       /// @brief Maintains performance while items are added to the combo_box one at a time by preventing the control from drawing until the EndUpdate() method is called.
       /// @remarks The preferred way to add multiple items to the combo_box is to use the push_back_range method of the combo_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void begin_update();
+
+      /// @brief Resumes painting the combo_box control after painting is suspended by the begin_update method.
+      /// @remarks The preferred way to add multiple items to the combo_box is to use the push_back_range method of the combo_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
+      void end_update();
+      /// @}
       
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::combo_box.
       /// @return New xtd::forms::combo_box created.
       static combo_box create();
@@ -255,10 +263,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::combo_box.
       /// @return New xtd::forms::combo_box created.
       static combo_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Resumes painting the combo_box control after painting is suspended by the begin_update method.
-      /// @remarks The preferred way to add multiple items to the combo_box is to use the push_back_range method of the combo_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
-      void end_update();
       /// @}
       
       /// @name Events

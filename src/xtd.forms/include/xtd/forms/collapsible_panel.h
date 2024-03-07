@@ -78,6 +78,14 @@ namespace xtd {
       /// @remarks Collapsing the collapsible_panel is equivalent to setting the expanded property to false. After the collapse method is called, the expanded property returns a value of false until the expand method is called.
       void collapse();
       
+      /// @brief Expand the collapsible_panel.
+      /// @remarks Expanding the collapsible_panel is equivalent to setting the expanded property to true. After the expand method is called, the expanded property returns a value of true until the collapse method is called.
+      void expand();
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
       static collapsible_panel create();
@@ -222,10 +230,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::collapsible_panel.
       /// @return New xtd::forms::collapsible_panel created.
       static collapsible_panel create(const control& parent, const xtd::ustring& text, bool expanded, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-      
-      /// @brief Expand the collapsible_panel.
-      /// @remarks Expanding the collapsible_panel is equivalent to setting the expanded property to true. After the expand method is called, the expanded property returns a value of true until the collapse method is called.
-      void expand();
       /// @}
       
       /// @name Events

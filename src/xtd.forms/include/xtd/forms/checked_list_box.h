@@ -188,7 +188,50 @@ namespace xtd {
       /// @brief Maintains performance while items are added to the checked_list_box one at a time by preventing the control from drawing until the end_update() method is called.
       /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
       void begin_update();
+
+      /// @brief Resumes painting the checked_list_box control after painting is suspended by the begin_update method.
+      /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
+      void end_update();
       
+      /// @brief Returns a value indicating whether the specified item is checked.
+      /// @param index The index of the item.
+      /// @return true if the item is checked; otherwise, false.
+      /// @remarks get_item_checked returns true if the value of CheckState is checked or indeterminate for the item. To determine the specific state the item is in, use the get_item_check_state method.
+      bool get_item_checked(size_t index) const;
+      
+      /// @brief Returns a value indicating the check state of the current item.
+      /// @param index The index of the item.
+      /// @return One of the check_state values.
+      /// @remarks The get_item_check_state method provides the ability to get the check_state value of an item, given the index. If you never set the check state of an item to indeterminate, then use the getItem_checked method.
+      forms::check_state get_item_check_state(size_t index) const;
+      
+      /// @brief Returns the text value of the current item.
+      /// @param index The index of the item.
+      /// @return A string that represent the text value of the current item.
+      const xtd::ustring& get_item_text(size_t index) const;
+      
+      /// @brief Sets check_state for the item at the specified index to checked.
+      /// @param index The index of the item to set the check state for.
+      /// @param checked true to set the item as checked; otherwise, false.
+      /// @remarks When a value of true is passed, this method sets the check_state value to checked. A value of false sets check_state to unchecked.
+      void set_item_checked(size_t index, bool checked);
+      
+      /// @brief Sets the check state of the item at the specified index.
+      /// @param index The index of the item to set the check state for.
+      /// @param check_state One of the check_state values.
+      /// @remarks The set_item_check_state method raises the item_check event.
+      /// @remarks Items whose check_state is set to indeterminate appear with a check mark in the check box, but the box is grayed to indicate the indeterminate status of the checked item.
+      void set_item_check_state(size_t index, forms::check_state check_state);
+      
+      /// @brief Sets the text value of the item at the specified index.
+      /// @param index The index of the item to set the check state for.
+      /// @param text A string that represent the text value.
+      void set_item_text(size_t index, const xtd::ustring& text);
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
       static checked_list_box create();
@@ -333,45 +376,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::checked_list_box.
       /// @return New xtd::forms::checked_list_box created.
       static checked_list_box create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Resumes painting the checked_list_box control after painting is suspended by the begin_update method.
-      /// @remarks The preferred way to add multiple items to the list_box is to use the push_back_range method of the list_box::object_collection class (through the items property of the list_box). This enables you to add an array of items to the list in a single operation. However, if you want to add items one at a time using the Add method of the list_box::object_collection class, you can use the begin_update method to prevent the control from repainting the list_box each time an item is added to the list. Once you have completed the task of adding items to the list, call the end_update method to enable the list_box to repaint. This way of adding items can prevent flickered drawing of the list_box when a large number of items are being added to the list.
-      void end_update();
-      
-      /// @brief Returns a value indicating whether the specified item is checked.
-      /// @param index The index of the item.
-      /// @return true if the item is checked; otherwise, false.
-      /// @remarks get_item_checked returns true if the value of CheckState is checked or indeterminate for the item. To determine the specific state the item is in, use the get_item_check_state method.
-      bool get_item_checked(size_t index) const;
-      
-      /// @brief Returns a value indicating the check state of the current item.
-      /// @param index The index of the item.
-      /// @return One of the check_state values.
-      /// @remarks The get_item_check_state method provides the ability to get the check_state value of an item, given the index. If you never set the check state of an item to indeterminate, then use the getItem_checked method.
-      forms::check_state get_item_check_state(size_t index) const;
-      
-      /// @brief Returns the text value of the current item.
-      /// @param index The index of the item.
-      /// @return A string that represent the text value of the current item.
-      const xtd::ustring& get_item_text(size_t index) const;
-      
-      /// @brief Sets check_state for the item at the specified index to checked.
-      /// @param index The index of the item to set the check state for.
-      /// @param checked true to set the item as checked; otherwise, false.
-      /// @remarks When a value of true is passed, this method sets the check_state value to checked. A value of false sets check_state to unchecked.
-      void set_item_checked(size_t index, bool checked);
-      
-      /// @brief Sets the check state of the item at the specified index.
-      /// @param index The index of the item to set the check state for.
-      /// @param check_state One of the check_state values.
-      /// @remarks The set_item_check_state method raises the item_check event.
-      /// @remarks Items whose check_state is set to indeterminate appear with a check mark in the check box, but the box is grayed to indicate the indeterminate status of the checked item.
-      void set_item_check_state(size_t index, forms::check_state check_state);
-      
-      /// @brief Sets the text value of the item at the specified index.
-      /// @param index The index of the item to set the check state for.
-      /// @param text A string that represent the text value.
-      void set_item_text(size_t index, const xtd::ustring& text);
       /// @}
       
       /// @name Events

@@ -20,7 +20,7 @@ namespace xtd {
     /// @ingroup xtd_forms components
     class button_images final static_ {
     public:
-      /// @name Methods
+      /// @name Static porperties
       
       /// @{
       /// @brief Add image object.
@@ -181,7 +181,7 @@ namespace xtd {
       static xtd::drawing::size size() {return {16, 16};}
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Gets image object with specified name.

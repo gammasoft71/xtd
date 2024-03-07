@@ -75,6 +75,16 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Starts animation of the animation control.
+      void start();
+      
+      /// @brief Stops animation of the animation control.
+      void stop();
+      /// @}
+
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::animation.
       /// @return New xtd::forms::animation created.
       static animation create();
@@ -163,12 +173,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::animation.
       /// @return New xtd::forms::animation created.
       static animation create(const control& parent, uint32 frames_per_second, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Starts animation of the animation control.
-      void start();
-      
-      /// @brief Stops animation of the animation control.
-      void stop();
       /// @}
       
       /// @name Events

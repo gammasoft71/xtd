@@ -109,7 +109,7 @@ namespace xtd {
       virtual toggle_button& three_state(bool three_state);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::toggle_button.

@@ -213,14 +213,6 @@ namespace xtd {
       /// @name Methods
       
       /// @{
-      /// @brief Create a new xtd::forms::about_dialog from specified assembly.
-      /// @param assembly The xtd::reflection::assembly object containing the information for filling in the dialog.
-      /// @return New xtd::forms::about_dialog with xtd::reflection::assembly informations.
-      static about_dialog from_assembly(const xtd::reflection::assembly& assembly);
-      /// @brief Create a new xtd::forms::about_dialog from executing xtd::reflection::assembly informations.
-      /// @return New xtd::forms::about_dialog with executing xtd::reflection::assembly informations.
-      static about_dialog from_executing_assembly_informations();
-
       /// @brief Resets all properties to empty string.
       void reset() noexcept;
       
@@ -230,7 +222,19 @@ namespace xtd {
       /// @param owner The owner of the about box dialog.
       void show(const iwin32_window& owner);
       /// @}
+
+      /// @name Static methods
       
+      /// @{
+      /// @brief Create a new xtd::forms::about_dialog from specified assembly.
+      /// @param assembly The xtd::reflection::assembly object containing the information for filling in the dialog.
+      /// @return New xtd::forms::about_dialog with xtd::reflection::assembly informations.
+      static about_dialog from_assembly(const xtd::reflection::assembly& assembly);
+      /// @brief Create a new xtd::forms::about_dialog from executing xtd::reflection::assembly informations.
+      /// @return New xtd::forms::about_dialog with executing xtd::reflection::assembly informations.
+      static about_dialog from_executing_assembly_informations();
+      /// @}
+
     private:
       std::shared_ptr<data> data_;
     };

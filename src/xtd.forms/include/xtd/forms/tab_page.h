@@ -81,6 +81,12 @@ namespace xtd {
       /// @{
       /// @brief A factory to create an xtd::forms::tab_page.
       /// @return New xtd::forms::tab_page created.
+      void destroy_handle() override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       static tab_page create();
       /// @brief A factory to create an xtd::forms::tab_page with specified location.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::tab_page.
@@ -167,8 +173,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::tab_page.
       /// @return New xtd::forms::tab_page created.
       static tab_page create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      void destroy_handle() override;
       /// @}
       
     protected:

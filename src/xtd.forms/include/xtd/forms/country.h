@@ -83,6 +83,14 @@ namespace xtd {
       /// @{
       bool equals(const country& value) const noexcept override;
       
+      /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
+      /// @return A string containing the name, alpha codes and numeric code of the country.
+      virtual xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief Gets a country from alpha 2 code.
       /// @return If exist a xtd::forms::country that represent alpha 2 coded; otherwise xtd::forms::country::empty.
       static country from_alpha_2_code(const xtd::ustring& alpha_2_code);
@@ -98,12 +106,7 @@ namespace xtd {
       /// @brief Gets a country from numeric code.
       /// @return If exist a xtd::forms::country that represent numeric coded; otherwise xtd::forms::country::empty.
       static country from_numeric_code(int32 numeric_code);
-      
-      /// @brief Returns a string containing the name, alpha codes and numeric code of the country.
-      /// @return A string containing the name, alpha codes and numeric code of the country.
-      virtual xtd::ustring to_string() const noexcept override;
       /// @}
-      /// @endcond
       
     private:
       friend class countries;

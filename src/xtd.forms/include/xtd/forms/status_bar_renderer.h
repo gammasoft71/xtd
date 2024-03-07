@@ -31,6 +31,9 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class status_bar_renderer static_ {
     public:
+      /// @name Static methods
+      
+      /// @{
       /// @brief Draws a box in the specified bounds, form state and background color.
       /// @param graphics The Graphics used to draw a form.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the form.
@@ -42,6 +45,7 @@ namespace xtd {
       static void draw_status_bar(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::form_state form_state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides);
       
       static void draw_text_status_bar(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::ustring& text, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::font>& font);
+      /// @}
     };
   }
 }

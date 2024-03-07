@@ -125,6 +125,31 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Advances the current position of the progress bar by the specified amount.
+      /// @param value The amount by which to increment the progress bar's current position.
+      /// @remarks The increment method enables you to increment the value of the progress bar by a specific amount. This method of incrementing the progress bar is similar to using the step property with the perform_step method. The value property specifies the current position of the progress_bar. If, after calling the increment method, the value property is greater than the value of the maximum property, the value property remains at the value of the maximum property. If, after calling the increment method with a negative value specified in the value parameter, the Value property is less than the value of the minimum property, the value property remains at the value of the minimum property.
+      /// @remarks Because a progress_bar object whose style is set to marquee displays a continuously scrolling bar instead of its value, calling increment is unnecessary and will do nothing.
+      void increment(int32 value);
+      
+      /// @brief Advances the current position of the progress bar by the amount of the Step property.
+      /// @remarks The perform_step method increments the value of the progress bar by the amount specified by the step property. You can use the Step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
+      void perform_step();
+      
+      /// @brief Sets the minimum and maximum values for a xtd::forms::progress_bar.
+      /// @param min_value The lower limit of the range of the progress bar.
+      /// @param max_value The upper limit of the range of the progress bar.
+      /// @remarks You can use this method to set the entire range for the xtd::forms::progress_bar at the same time. To set the minimum or maximum values individually, use the xtd::forms::progress_bar::minimum and xtd::forms::progress_bar::maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
+      void set_range(int32 min_value, int32 max_value);
+      
+      /// @brief Returns a string that represents the progress_bar control.
+      /// @return A string that represents the current progress_bar.
+      /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
+      xtd::ustring to_string() const noexcept override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::progress_bar.
       /// @return New xtd::forms::progress_bar created.
       static progress_bar create();
@@ -333,27 +358,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::progress_bar.
       /// @return New xtd::forms::progress_bar created.
       static progress_bar create(const control& parent, int32 value, int32 minimum, int32 maximum, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Advances the current position of the progress bar by the specified amount.
-      /// @param value The amount by which to increment the progress bar's current position.
-      /// @remarks The increment method enables you to increment the value of the progress bar by a specific amount. This method of incrementing the progress bar is similar to using the step property with the perform_step method. The value property specifies the current position of the progress_bar. If, after calling the increment method, the value property is greater than the value of the maximum property, the value property remains at the value of the maximum property. If, after calling the increment method with a negative value specified in the value parameter, the Value property is less than the value of the minimum property, the value property remains at the value of the minimum property.
-      /// @remarks Because a progress_bar object whose style is set to marquee displays a continuously scrolling bar instead of its value, calling increment is unnecessary and will do nothing.
-      void increment(int32 value);
-      
-      /// @brief Advances the current position of the progress bar by the amount of the Step property.
-      /// @remarks The perform_step method increments the value of the progress bar by the amount specified by the step property. You can use the Step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
-      void perform_step();
-      
-      /// @brief Sets the minimum and maximum values for a xtd::forms::progress_bar.
-      /// @param min_value The lower limit of the range of the progress bar.
-      /// @param max_value The upper limit of the range of the progress bar.
-      /// @remarks You can use this method to set the entire range for the xtd::forms::progress_bar at the same time. To set the minimum or maximum values individually, use the xtd::forms::progress_bar::minimum and xtd::forms::progress_bar::maximum properties. If the min_value parameter is greater than the max_value parameter, max_value is set equal to min_value.
-      void set_range(int32 min_value, int32 max_value);
-      
-      /// @brief Returns a string that represents the progress_bar control.
-      /// @return A string that represents the current progress_bar.
-      /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      xtd::ustring to_string() const noexcept override;
       ///@}
       
     protected:

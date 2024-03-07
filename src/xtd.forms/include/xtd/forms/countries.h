@@ -21,7 +21,7 @@ namespace xtd {
     /// @include countries.cpp
     class forms_export_ countries final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief A system-defined country object.
@@ -773,7 +773,7 @@ namespace xtd {
       static const country zimbabwe();
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Gets countries collection.

@@ -34,6 +34,9 @@ namespace xtd {
     /// @ingroup xtd_forms renderers
     class label_renderer static_ {
     public:
+      /// @name Static methods
+      
+      /// @{
       /// @brief Draws a box in the specified bounds, label style, label state and background color.
       /// @param style_sheet The xtd::forms::style_sheets::style_sheet used to draw a label.
       /// @param graphics The xtd::drawing::graphics used to draw a label.
@@ -70,6 +73,7 @@ namespace xtd {
       /// @param auto_ellipsis The value indicating whether the ellipsis character (...) appears at the right edge of the xtd::forms::label, denoting that the xtd::forms::label text extends beyond the specified length of the xtd::forms::label.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_link_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::link_label_state link_label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::ustring& text, const std::vector<xtd::forms::link>& links, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::color>& link_color, const std::optional<xtd::drawing::color>& visited_link_color, const std::optional<xtd::drawing::font>& font, xtd::forms::link_behavior link_behavior, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides, const std::vector<xtd::forms::shadow>& shadows, bool auto_ellipsis);
+      /// @}
     };
   }
 }

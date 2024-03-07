@@ -30,7 +30,7 @@ namespace xtd {
     /// @remarks For more information about system-wide parameters, see "SystemParametersInfo" in the Platform SDK documentation at http://msdn.microsoft.com.
     class forms_export_ system_information final static_ {
     public:
-      /// @name Properties
+      /// @name Static properties
       
       /// @{
       /// @brief Gets the active window tracking delay.

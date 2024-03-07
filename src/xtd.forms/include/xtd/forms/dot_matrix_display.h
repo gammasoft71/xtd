@@ -130,6 +130,32 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      /// @brief Gets specified dot point status.
+      /// @param point dot point location in the matrix.
+      /// @return true if specified dot point is on; otherwise false.
+      virtual bool get_dot(const drawing::point& point) const noexcept;
+      
+      /// @brief Sets all dots with specified boolean.
+      /// @param on true to set all dots to on; otherwise false.
+      virtual void set_all_dots(bool on);
+      
+      /// @brief Sets specified dot point status.
+      /// @param point dot point location in the matrix.
+      /// @param on true if specified dot point is on; otherwise false.
+      virtual void set_dot(const drawing::point& point, bool on);
+      
+      /// @brief Sets specified dots to on.
+      /// @param points Dot points collection tha contains locations in the matrix.
+      virtual void set_dots(const points_collection& points);
+      /// @brief Sets specified dots with specified boolean.
+      /// @param points Dot points collection tha contains locations in the matrix.
+      /// @param on true to set specified dots points to on; otherwise false.
+      virtual void set_dots(const points_collection& points, bool on);
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::dot_matrix_display.
       /// @return New xtd::forms::dot_matrix_display created.
       static dot_matrix_display create();
@@ -274,30 +300,8 @@ namespace xtd {
       /// @param name The name of the xtd::forms::dot_matrix_display.
       /// @return New xtd::forms::dot_matrix_display created.
       static dot_matrix_display create(const control& parent, const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      /// @brief Gets specified dot point status.
-      /// @param point dot point location in the matrix.
-      /// @return true if specified dot point is on; otherwise false.
-      virtual bool get_dot(const drawing::point& point) const noexcept;
-      
-      /// @brief Sets all dots with specified boolean.
-      /// @param on true to set all dots to on; otherwise false.
-      virtual void set_all_dots(bool on);
-      
-      /// @brief Sets specified dot point status.
-      /// @param point dot point location in the matrix.
-      /// @param on true if specified dot point is on; otherwise false.
-      virtual void set_dot(const drawing::point& point, bool on);
-      
-      /// @brief Sets specified dots to on.
-      /// @param points Dot points collection tha contains locations in the matrix.
-      virtual void set_dots(const points_collection& points);
-      /// @brief Sets specified dots with specified boolean.
-      /// @param points Dot points collection tha contains locations in the matrix.
-      /// @param on true to set specified dots points to on; otherwise false.
-      virtual void set_dots(const points_collection& points, bool on);
       /// @}
-      
+
     protected:
       /// @name Protected properties
       

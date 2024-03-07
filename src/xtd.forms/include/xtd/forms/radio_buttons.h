@@ -21,7 +21,7 @@ namespace xtd {
     /// @include radio_buttons.cpp
     class forms_export_ radio_buttons final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Create a system-defined radio_button that represent abort radio_button.

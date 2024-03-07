@@ -46,7 +46,7 @@ namespace xtd {
       seven_segment_display& thickness(int32 value) override;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::nine_segment_display.

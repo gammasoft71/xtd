@@ -29,7 +29,7 @@ namespace xtd {
       table_layout_panel() = default;
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::table_layout_panel.

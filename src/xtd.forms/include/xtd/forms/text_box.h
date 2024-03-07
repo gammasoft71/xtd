@@ -111,6 +111,12 @@ namespace xtd {
       /// @{
       void append_text(const xtd::ustring& value) override;
 
+      void select(size_t start, size_t length) override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::text_box.
       /// @return New xtd::forms::text_box created.
       static text_box create();
@@ -199,8 +205,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::text_box.
       /// @return New xtd::forms::text_box created.
       static text_box create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
-
-      void select(size_t start, size_t length) override;
       /// @}
       
       /// @name Events

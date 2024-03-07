@@ -21,7 +21,7 @@ namespace xtd {
     /// @include toggle_buttons.cpp
     class toggle_buttons final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Create a system-defined toggle_button that represent abort toggle_button.

@@ -28,7 +28,7 @@ namespace xtd {
     /// @include open_file_box.cpp
     class forms_export_ open_file_box final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Displays a select file dialog box in front of a specified window.

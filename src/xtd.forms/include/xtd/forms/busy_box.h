@@ -29,7 +29,7 @@ namespace xtd {
     /// @include busy_box.cpp
     class forms_export_ busy_box final static_ {
     public:
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief Hides a busy box in front.

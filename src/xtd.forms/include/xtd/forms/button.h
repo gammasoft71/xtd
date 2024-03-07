@@ -97,6 +97,14 @@ namespace xtd {
       /// @name Methods
       
       /// @{
+      void notify_default(bool value) override;
+      
+      void perform_click() override;
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create an xtd::forms::button.
       /// @return New xtd::forms::button created.
       static button create();
@@ -186,11 +194,6 @@ namespace xtd {
       /// @return New xtd::forms::button created.
       static button create(const control& parent, const xtd::ustring& text, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
 
-      void notify_default(bool value) override;
-      
-      void perform_click() override;
-      /// @}
-      
     protected:
       /// @name Protected properties
       
@@ -216,7 +219,8 @@ namespace xtd {
       void on_mouse_leave(const event_args& e) override;
       void on_mouse_up(const mouse_event_args& e) override;
       void on_paint(paint_event_args& e) override;
-      
+      /// @}
+
     private:
       void on_auto_repeat_timer_tick(object& sender, const event_args& e);
       

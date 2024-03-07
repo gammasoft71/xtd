@@ -85,7 +85,7 @@ namespace xtd {
       virtual split_container& splitter_width(int32 splitter_width);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::split_container.

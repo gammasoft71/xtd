@@ -356,17 +356,6 @@ namespace xtd {
       /// @return true if the control can raise events; otherwise, false.
       bool can_raise_events() const noexcept override;
       
-      /// @brief Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
-      /// @return true if calls on the wrong thread are caught; otherwise, false.
-      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
-      /// @warning Be careful, some OS don't support cross-thread UI operations!
-      static bool check_for_illegal_cross_thread_calls() noexcept;
-      /// @brief Sets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
-      /// @param value true if calls on the wrong thread are caught; otherwise, false.
-      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
-      /// @warning Be careful, some OS don't support cross-thread UI operations!
-      static void check_for_illegal_cross_thread_calls(bool value);
-      
       /// @brief Gets the rectangle that represents the client area of the control.
       /// @return A rectangle that represents the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
@@ -607,20 +596,6 @@ namespace xtd {
       /// @include form_resize.cpp
       virtual control& minimum_size(const xtd::drawing::size& size);
       
-      /// @brief Gets a value indicating which of the modifier keys (SHIFT, CTRL, and ALT) is in a pressed state.
-      /// @return A bitwise combination of the keys values. The default is none.
-      static forms::keys modifier_keys() noexcept;
-      
-      /// @brief Gets a value indicating which of the mouse buttons is in a pressed state.
-      /// @return A bitwise combination of the mouse_buttons enumeration values. The default is none.
-      static forms::mouse_buttons mouse_buttons() noexcept;
-      
-      /// @brief Gets the position of the mouse cursor in screen coordinates.
-      /// @return A xtd::drawing::point that contains the coordinates of the mouse cursor relative to the upper-left corner of the screen.
-      /// @remarks The xtd::forms::control::mouse_position property returns a xtd::drawing::point that represents the mouse cursor position at the time the property was referenced. The coordinates indicate the position on the screen, not relative to the control, and are returned regardless of whether the cursor is positioned over the control. The coordinates of the upper-left corner of the screen are 0,0.
-      /// @remarks The xtd::forms::control::mouse_position property is identical to the xtd::forms::cursor::position property.
-      static xtd::drawing::point mouse_position() noexcept;
-      
       /// @brief Gets the native handle that the control is bound to.
       /// @return An intptr that contains the native handle (HWND) of the control.
       /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the true native handle.
@@ -771,6 +746,35 @@ namespace xtd {
       virtual control& width(int32 width);
       /// @}
       
+      /// @name Static properties
+      
+      /// @{
+      /// @brief Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
+      /// @return true if calls on the wrong thread are caught; otherwise, false.
+      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
+      /// @warning Be careful, some OS don't support cross-thread UI operations!
+      static bool check_for_illegal_cross_thread_calls() noexcept;
+      /// @brief Sets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
+      /// @param value true if calls on the wrong thread are caught; otherwise, false.
+      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
+      /// @warning Be careful, some OS don't support cross-thread UI operations!
+      static void check_for_illegal_cross_thread_calls(bool value);
+      
+      /// @brief Gets a value indicating which of the modifier keys (SHIFT, CTRL, and ALT) is in a pressed state.
+      /// @return A bitwise combination of the keys values. The default is none.
+      static forms::keys modifier_keys() noexcept;
+      
+      /// @brief Gets a value indicating which of the mouse buttons is in a pressed state.
+      /// @return A bitwise combination of the mouse_buttons enumeration values. The default is none.
+      static forms::mouse_buttons mouse_buttons() noexcept;
+      
+      /// @brief Gets the position of the mouse cursor in screen coordinates.
+      /// @return A xtd::drawing::point that contains the coordinates of the mouse cursor relative to the upper-left corner of the screen.
+      /// @remarks The xtd::forms::control::mouse_position property returns a xtd::drawing::point that represents the mouse cursor position at the time the property was referenced. The coordinates indicate the position on the screen, not relative to the control, and are returned regardless of whether the cursor is positioned over the control. The coordinates of the upper-left corner of the screen are 0,0.
+      /// @remarks The xtd::forms::control::mouse_position property is identical to the xtd::forms::cursor::position property.
+      static xtd::drawing::point mouse_position() noexcept;
+      /// @}
+      
       /// @name Methods
       
       /// @{
@@ -791,7 +795,221 @@ namespace xtd {
       virtual void bring_to_front();
       
       int32 compare_to(const control& value) const noexcept override;
+
+      /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
+      /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.
+      /// @remarks create_control does not create a control handle if the control's visible property is false. You can either call the create_control method or access the handle property to create the control's handle regardless of the control's visibility, but in this case, no window handles are created for the control's children.
+      void create_control();
       
+      /// @brief Creates the xtd::drawing::graphics for the control.
+      /// @return A xtd::drawing::graphics for the control.
+      /// @remarks The graphics object that you retrieve through the create_graphics method should not normally be retained after the current Windows message has been processed, because anything painted with that object will be erased with the next WM_PAINT message. Therefore you cannot cache the graphics object for reuse, except to use non-visual methods like xtd::drawing::graphics::measure_string. Instead, you must call create_graphics every time that you want to use the graphics object.
+      drawing::graphics create_graphics() const;
+      
+      /// @brief Forces the destruction of the visible control, including the destruction of the handle and any visible child controls.
+      /// @remarks The destroy_control method forces a handle to be destroyed for the control and its child controls.
+      /// @par Notes to Inheritors
+      /// When overriding destroy_control() in a derived class, be sure to call the base class's destroy_control() method to ensure that the handle is destroyed.
+      virtual void destroy_control();
+      
+      /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
+      /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
+      std::optional<object_ref> end_invoke(xtd::async_result async) override;
+      
+      bool equals(const control& value) const noexcept override;
+      
+      /// @brief Sets input focus to the control.
+      /// @return true if the input focus request was successful; otherwise, false.
+      /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them.
+      bool focus();
+      
+      /// @brief Gets a value indicating how a control will behave when its auto_size property is enabled.
+      /// @return auto_size_mode One of the xtd::forms::auto_size_mode values.
+      auto_size_mode get_auto_size_mode() const;
+      
+      /// @cond
+      /// @todo Remove when render is done.
+      std::optional<xtd::drawing::color> get_back_color() const noexcept;
+      /// @endcond
+      
+      /// @cond
+      /// @todo Remove when render is done.
+      std::optional<xtd::drawing::font> get_font() const noexcept;
+      /// @endcond
+      
+      /// @cond
+      /// @todo Remove when render is done.
+      std::optional<xtd::drawing::color> get_fore_color() const noexcept;
+      /// @endcond
+      
+      /// @brief Retrieves the index of a control within the control collection.
+      /// @param child The control to search for in the control collection.
+      /// @return A zero-based index value that represents the location of the specified child control within the control collection.
+      /// @exception xtd::argument_exception The child control is not in the control::control_collection.
+      size_t get_child_index(intptr child) const;
+      
+      /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
+      /// @param child The control to search for in the control collection.
+      /// @@param throw_exception true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, false.
+      size_t get_child_index(intptr child, bool& throw_exception) const;
+      
+      /// @brief Conceals the control from the user.
+      /// @remarks Hiding the control is equivalent to setting the visible property to false. After the hide method is called, the visible property returns a value of false until the show method is called.
+      virtual void hide();
+      
+      /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
+      virtual void invalidate() const;
+      
+      /// @brief Invalidates a specific region of the control and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
+      /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
+      virtual void invalidate(bool invalidate_children) const;
+      
+      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
+      /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
+      virtual void invalidate(const drawing::rectangle& rect) const;
+      
+      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
+      /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
+      /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
+      virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
+      
+      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
+      /// @param region A xtd::drawing::region that represents the region to invalidate.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
+      virtual void invalidate(const drawing::region& region) const;
+      
+      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
+      /// @param region A xtd::drawing::region that represents the region to invalidate.
+      /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
+      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
+      virtual void invalidate(const drawing::region& region, bool invalidate_children) const;
+      
+      using isynchronize_invoke::invoke;
+      /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
+      /// @param method A delegate that contains a method to be called in the control's thread context.
+      std::optional<object_ref> invoke(delegate<void()> method) override;
+      /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
+      /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
+      /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
+      std::optional<object_ref> invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) override;
+      /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
+      /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
+      /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
+      std::optional<object_ref> invoke(delegate<void(std::vector<std::any>)> method, std::any arg) override;
+      
+      /// @brief Forces the control to apply layout logic to all its child controls.
+      /// @remarks If the suspend_layout method was called before calling the perform_layout method, the xtd::forms::control::layout event is suppressed.
+      void perform_layout();
+      
+      /// @brief Computes the location of the specified screen point into client coordinates.
+      /// @param p The screen coordinate xtd::drawing::point to convert.
+      /// @return A xtd::drawing::point that represents the converted xtd::drawing::point, p, in client coordinates.
+      xtd::drawing::point point_to_client(const xtd::drawing::point& p) const;
+      
+      /// @brief Computes the location of the specified client point into screen coordinates.
+      /// @param p The client coordinate  xtd::drawing::point to convert.
+      /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
+      xtd::drawing::point point_to_screen(const xtd::drawing::point& p) const;
+      
+      /// @brief Preprocesses keyboard or input messages within the message loop before they are dispatched.
+      /// @param message A xtd::forms::message, passed by reference, that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
+      /// @return true if the message was processed by the control; otherwise, false.
+      /// @remarks pre_process_message is called by the application's message loop to preprocess input messages before they are dispatched. Possible values for the msg parameter are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
+      virtual bool pre_process_message(const xtd::forms::message& message);
+      
+      /// @brief Forces the control to invalidate its client area and immediately redraw itself and any child controls.
+      /// @par Notes to Inheritors
+      /// When overriding refresh() in a derived class, be sure to call the base class's refresh() method so the control and its child controls are invalidated and redrawn.
+      virtual void refresh() const;
+      
+      /// @brief Resumes usual layout logic.
+      /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests.
+      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
+      /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
+      void resume_layout();
+      
+      /// @brief Resumes usual layout logic, optionally forcing an immediate layout of pending layout requests.
+      /// @param perform_layout true to execute pending layout requests; otherwise, false.
+      /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests. When the perform_layout parameter is set to true, an immediate layout occurs if there are any pending layout requests.
+      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
+      /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
+      /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
+      void resume_layout(bool perform_layout);
+      
+      /// @brief Send a message with specified hwnd, message, wparam and lparam.
+      /// @param hwnd The window handle of the message.
+      /// @param msg The ID number for the message.
+      /// @param wparam The WParam field of the message.
+      /// @param lparam The LParam field of the message.
+      /// @return The return value of the message.
+      intptr send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const;
+      
+      /// @brief Sets a value indicating how a control will behave when its auto_size property is enabled.
+      /// @param auto_size_mode One of the xtd::forms::auto_size_mode values.
+      void set_auto_size_mode(auto_size_mode auto_size_mode);
+      
+      /// @brief Sets the bounds of the control to the specified location and size.
+      /// @param x The new left property value of the control.
+      /// @param y The new top property value of the control.
+      /// @param width The new width property value of the control.
+      /// @param height The new height property value of the control.
+      void set_bounds(int32 x, int32 y, int32 width, int32 height);
+      
+      /// @brief Sets the specified bounds of the control to the specified location and size.
+      /// @param x The new left property value of the control.
+      /// @param y The new top property value of the control.
+      /// @param width The new width property value of the control.
+      /// @param height The new height property value of the control.
+      /// @param specified A bitwise combination of the xtd::forms::bounds_specified values. For any parameter not specified, the current value will be used.
+      void set_bounds(int32 x, int32 y, int32 width, int32 height, bounds_specified specified);
+      
+      /// @brief Displays the control to the user.
+      /// @remarks Showing the control is equivalent to setting the visible property to true. After the show method is called, the visible property returns a value of true until the hide method is called.
+      virtual void show();
+      
+      /// @brief Temporarily suspends the layout logic for the control.
+      /// @remarks The layout logic of the control is suspended until the resume_layout method is called.
+      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
+      /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
+      /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
+      void suspend_layout();
+      
+      /// @brief Returns a string containing the name of the control, if any.
+      /// @return A string containing the name of the control, if any, or class name if the control is unnamed.
+      xtd::ustring to_string() const noexcept override;
+      
+      /// @brief Causes the control to redraw the invalidated regions within its client area.
+      /// @remarks Executes any pending requests for painting.
+      /// @remarks There are two ways to repaint a form and its contents:
+      /// * You can use one of the overloads of the invalidate method with the update method.
+      /// * You can call the refresh method, which forces the control to redraw itself and all its children. This is equivalent to setting the invalidate method to true and using it with update.
+      /// @remarks The invalidate method governs what gets painted or repainted. The update method governs when the painting or repainting occurs. If you use the invalidate and update methods together rather than calling refresh, what gets repainted depends on which overload of invalidate you use. The update method just forces the control to be painted immediately, but the invalidate method governs what gets painted when you call the update method.
+      virtual void update() const;
+      /// @}
+      
+      /// @name Operators
+      
+      /// @{
+      /// @brief Add child control.
+      /// @param parent A control that represents the parent or container control of the control.
+      /// @param child A control to add to parent.
+      /// @return Current control.
+      control& operator <<(control& child);
+      
+      /// @brief Remove child control.
+      /// @param parent A control that represents the parent or container control of the control.
+      /// @param child A control to remove to parent.
+      /// @return Current control.
+      control& operator >>(control& child);
+      /// @}
+      
+      /// @name Static methods
+      
+      /// @{
       /// @brief A factory to create a specified control.
       /// @return New control created.
       static control create();
@@ -1026,33 +1244,6 @@ namespace xtd {
         result.name(name);
         return result;
       }
-
-      /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
-      /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.
-      /// @remarks create_control does not create a control handle if the control's visible property is false. You can either call the create_control method or access the handle property to create the control's handle regardless of the control's visibility, but in this case, no window handles are created for the control's children.
-      void create_control();
-      
-      /// @brief Creates the xtd::drawing::graphics for the control.
-      /// @return A xtd::drawing::graphics for the control.
-      /// @remarks The graphics object that you retrieve through the create_graphics method should not normally be retained after the current Windows message has been processed, because anything painted with that object will be erased with the next WM_PAINT message. Therefore you cannot cache the graphics object for reuse, except to use non-visual methods like xtd::drawing::graphics::measure_string. Instead, you must call create_graphics every time that you want to use the graphics object.
-      drawing::graphics create_graphics() const;
-      
-      /// @brief Forces the destruction of the visible control, including the destruction of the handle and any visible child controls.
-      /// @remarks The destroy_control method forces a handle to be destroyed for the control and its child controls.
-      /// @par Notes to Inheritors
-      /// When overriding destroy_control() in a derived class, be sure to call the base class's destroy_control() method to ensure that the handle is destroyed.
-      virtual void destroy_control();
-      
-      /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
-      /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
-      std::optional<object_ref> end_invoke(xtd::async_result async) override;
-      
-      bool equals(const control& value) const noexcept override;
-      
-      /// @brief Sets input focus to the control.
-      /// @return true if the input focus request was successful; otherwise, false.
-      /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them.
-      bool focus();
       
       /// @brief Retrieves the control that contains the specified handle.
       /// @param handle The window handle (HWND) to search for.
@@ -1064,189 +1255,6 @@ namespace xtd {
       /// @param handle The window handle (HWND) to search for.
       /// @return A control that represents the control associated with the specified handle; returns null if no control with the specified handle is found.
       static std::optional<control_ref> from_handle(intptr handle);
-      
-      /// @brief Gets a value indicating how a control will behave when its auto_size property is enabled.
-      /// @return auto_size_mode One of the xtd::forms::auto_size_mode values.
-      auto_size_mode get_auto_size_mode() const;
-      
-      /// @cond
-      /// @todo Remove when render is done.
-      std::optional<xtd::drawing::color> get_back_color() const noexcept;
-      /// @endcond
-      
-      /// @cond
-      /// @todo Remove when render is done.
-      std::optional<xtd::drawing::font> get_font() const noexcept;
-      /// @endcond
-      
-      /// @cond
-      /// @todo Remove when render is done.
-      std::optional<xtd::drawing::color> get_fore_color() const noexcept;
-      /// @endcond
-      
-      /// @brief Retrieves the index of a control within the control collection.
-      /// @param child The control to search for in the control collection.
-      /// @return A zero-based index value that represents the location of the specified child control within the control collection.
-      /// @exception xtd::argument_exception The child control is not in the control::control_collection.
-      size_t get_child_index(intptr child) const;
-      
-      /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
-      /// @param child The control to search for in the control collection.
-      /// @@param throw_exception true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, false.
-      size_t get_child_index(intptr child, bool& throw_exception) const;
-      
-      /// @brief Conceals the control from the user.
-      /// @remarks Hiding the control is equivalent to setting the visible property to false. After the hide method is called, the visible property returns a value of false until the show method is called.
-      virtual void hide();
-      
-      /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
-      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate() const;
-      
-      /// @brief Invalidates a specific region of the control and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
-      /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
-      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(bool invalidate_children) const;
-      
-      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
-      /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
-      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::rectangle& rect) const;
-      
-      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
-      /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
-      /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
-      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
-      
-      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control.
-      /// @param region A xtd::drawing::region that represents the region to invalidate.
-      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::region& region) const;
-      
-      /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
-      /// @param region A xtd::drawing::region that represents the region to invalidate.
-      /// @param invalidate_children true to invalidate the control's child controls; otherwise, false.
-      /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
-      virtual void invalidate(const drawing::region& region, bool invalidate_children) const;
-      
-      using isynchronize_invoke::invoke;
-      /// @brief Executes the specified delegate on the thread that owns the control's underlying window handle.
-      /// @param method A delegate that contains a method to be called in the control's thread context.
-      std::optional<object_ref> invoke(delegate<void()> method) override;
-      /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
-      /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
-      /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
-      std::optional<object_ref> invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) override;
-      /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
-      /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
-      /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
-      std::optional<object_ref> invoke(delegate<void(std::vector<std::any>)> method, std::any arg) override;
-      
-      /// @brief Forces the control to apply layout logic to all its child controls.
-      /// @remarks If the suspend_layout method was called before calling the perform_layout method, the xtd::forms::control::layout event is suppressed.
-      void perform_layout();
-      
-      /// @brief Computes the location of the specified screen point into client coordinates.
-      /// @param p The screen coordinate xtd::drawing::point to convert.
-      /// @return A xtd::drawing::point that represents the converted xtd::drawing::point, p, in client coordinates.
-      xtd::drawing::point point_to_client(const xtd::drawing::point& p) const;
-      
-      /// @brief Computes the location of the specified client point into screen coordinates.
-      /// @param p The client coordinate  xtd::drawing::point to convert.
-      /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
-      xtd::drawing::point point_to_screen(const xtd::drawing::point& p) const;
-      
-      /// @brief Preprocesses keyboard or input messages within the message loop before they are dispatched.
-      /// @param message A xtd::forms::message, passed by reference, that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
-      /// @return true if the message was processed by the control; otherwise, false.
-      /// @remarks pre_process_message is called by the application's message loop to preprocess input messages before they are dispatched. Possible values for the msg parameter are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
-      virtual bool pre_process_message(const xtd::forms::message& message);
-      
-      /// @brief Forces the control to invalidate its client area and immediately redraw itself and any child controls.
-      /// @par Notes to Inheritors
-      /// When overriding refresh() in a derived class, be sure to call the base class's refresh() method so the control and its child controls are invalidated and redrawn.
-      virtual void refresh() const;
-      
-      /// @brief Resumes usual layout logic.
-      /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests.
-      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
-      /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
-      void resume_layout();
-      
-      /// @brief Resumes usual layout logic, optionally forcing an immediate layout of pending layout requests.
-      /// @param perform_layout true to execute pending layout requests; otherwise, false.
-      /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests. When the perform_layout parameter is set to true, an immediate layout occurs if there are any pending layout requests.
-      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
-      /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
-      /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
-      void resume_layout(bool perform_layout);
-      
-      /// @brief Send a message with specified hwnd, message, wparam and lparam.
-      /// @param hwnd The window handle of the message.
-      /// @param msg The ID number for the message.
-      /// @param wparam The WParam field of the message.
-      /// @param lparam The LParam field of the message.
-      /// @return The return value of the message.
-      intptr send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const;
-      
-      /// @brief Sets a value indicating how a control will behave when its auto_size property is enabled.
-      /// @param auto_size_mode One of the xtd::forms::auto_size_mode values.
-      void set_auto_size_mode(auto_size_mode auto_size_mode);
-      
-      /// @brief Sets the bounds of the control to the specified location and size.
-      /// @param x The new left property value of the control.
-      /// @param y The new top property value of the control.
-      /// @param width The new width property value of the control.
-      /// @param height The new height property value of the control.
-      void set_bounds(int32 x, int32 y, int32 width, int32 height);
-      
-      /// @brief Sets the specified bounds of the control to the specified location and size.
-      /// @param x The new left property value of the control.
-      /// @param y The new top property value of the control.
-      /// @param width The new width property value of the control.
-      /// @param height The new height property value of the control.
-      /// @param specified A bitwise combination of the xtd::forms::bounds_specified values. For any parameter not specified, the current value will be used.
-      void set_bounds(int32 x, int32 y, int32 width, int32 height, bounds_specified specified);
-      
-      /// @brief Displays the control to the user.
-      /// @remarks Showing the control is equivalent to setting the visible property to true. After the show method is called, the visible property returns a value of true until the hide method is called.
-      virtual void show();
-      
-      /// @brief Temporarily suspends the layout logic for the control.
-      /// @remarks The layout logic of the control is suspended until the resume_layout method is called.
-      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
-      /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
-      /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
-      void suspend_layout();
-      
-      /// @brief Returns a string containing the name of the control, if any.
-      /// @return A string containing the name of the control, if any, or class name if the control is unnamed.
-      xtd::ustring to_string() const noexcept override;
-      
-      /// @brief Causes the control to redraw the invalidated regions within its client area.
-      /// @remarks Executes any pending requests for painting.
-      /// @remarks There are two ways to repaint a form and its contents:
-      /// * You can use one of the overloads of the invalidate method with the update method.
-      /// * You can call the refresh method, which forces the control to redraw itself and all its children. This is equivalent to setting the invalidate method to true and using it with update.
-      /// @remarks The invalidate method governs what gets painted or repainted. The update method governs when the painting or repainting occurs. If you use the invalidate and update methods together rather than calling refresh, what gets repainted depends on which overload of invalidate you use. The update method just forces the control to be painted immediately, but the invalidate method governs what gets painted when you call the update method.
-      virtual void update() const;
-      /// @}
-      
-      /// @name Operators
-      
-      /// @{
-      /// @brief Add child control.
-      /// @param parent A control that represents the parent or container control of the control.
-      /// @param child A control to add to parent.
-      /// @return Current control.
-      control& operator <<(control& child);
-      
-      /// @brief Remove child control.
-      /// @param parent A control that represents the parent or container control of the control.
-      /// @param child A control to remove to parent.
-      /// @return Current control.
-      control& operator >>(control& child);
       /// @}
       
       /// @name Events
@@ -1995,11 +2003,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding set_client_size_core(int32, int32) in a derived class, be sure to call the base class's set_client_size_core(int32, int32) method so that the client_size property is adjusted.
       virtual void set_client_size_core(int32 width, int32 height);
-      
-      /// @brief Sets a value indicating which of the mouse buttons is in a pressed state.
-      /// @param value A bitwise combination of the mouse_buttons enumeration values. The default is none.
-      static void set_mouse_buttons(forms::mouse_buttons value);
-      
+            
       /// @brief Sets the parent handle of the control.
       /// @param handle The parent handle.
       void set_parent(intptr handle);
@@ -2017,6 +2021,14 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// Inheriting controls should call the base class's wnd_proc(message&) method to process any messages that they do not handle.
       virtual void wnd_proc(message& m);
+      /// @}
+      
+      /// @name Protected static methods
+      
+      /// @{
+      /// @brief Sets a value indicating which of the mouse buttons is in a pressed state.
+      /// @param value A bitwise combination of the mouse_buttons enumeration values. The default is none.
+      static void set_mouse_buttons(forms::mouse_buttons value);
       /// @}
       
       /// @cond

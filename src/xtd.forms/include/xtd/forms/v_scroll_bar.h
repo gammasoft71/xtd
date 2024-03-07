@@ -33,7 +33,7 @@ namespace xtd {
       v_scroll_bar();
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::v_scroll_bar.

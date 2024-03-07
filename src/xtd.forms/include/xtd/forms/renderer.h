@@ -42,7 +42,7 @@ namespace xtd {
       using radio_button_renderer = xtd::delegate<void(xtd::drawing::graphics, const xtd::drawing::rectangle&, const xtd::ustring&, const xtd::drawing::font&, xtd::forms::text_format_flags, const xtd::drawing::image&, const xtd::drawing::rectangle&, bool focused, xtd::forms::visual_styles::radio_button_state, const std::optional<xtd::drawing::color>&, const std::optional<xtd::drawing::color>&)>;
       /// @}
       
-      /// @name Fields
+      /// @name Static fields
       
       /// @{
       static const renderer empty;

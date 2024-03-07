@@ -65,7 +65,7 @@ namespace xtd {
       virtual xtd::forms::group_box& flat_style(xtd::forms::flat_style flat_style);
       /// @}
       
-      /// @name Methods
+      /// @name Static methods
       
       /// @{
       /// @brief A factory to create an xtd::forms::group_box.
