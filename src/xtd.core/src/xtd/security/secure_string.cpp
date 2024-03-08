@@ -11,7 +11,7 @@ using namespace xtd::security;
 
 namespace {
   vector<xtd::byte> encrypt(const xtd::guid& guid, const char value[], size_t length) {
-    // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
+    // https://www.programmingalgorithms.com/algorithm/xor-encryption/
     auto key = guid.to_string("D");
     auto result = vector<xtd::byte> {};
     for (auto index = 0_sz; index < length; ++index)
@@ -20,7 +20,7 @@ namespace {
   }
   
   ustring decrypt(const xtd::guid& guid, const xtd::byte value[], size_t length) {
-    // https://kylewbanks.com/blog/Simple-XOR-Encryption-Decryption-in-Cpp
+    // https://www.programmingalgorithms.com/algorithm/xor-encryption/
     return ustring {reinterpret_cast<const char*>(encrypt(guid, reinterpret_cast<const char*>(value), length).data()), length};
   }
 }
