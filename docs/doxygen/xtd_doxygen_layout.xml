@@ -10,7 +10,7 @@
       <tab type="classlist" visible="yes" title="" intro="Contains the classes, structs and interfaces with brief descriptions."/>
       <tab type="classindex" visible="$ALPHABETICAL_INDEX" title=""/> 
       <tab type="hierarchy" visible="yes" title="" intro="Contains inheritance class list sorted roughly, but not completely, alphabetically."/>
-      <tab type="classmembers" visible="no" title="" intro=""/>
+      <tab type="classmembers" visible="yes" title="" intro="Contains the list of all documented class members with links to the class documentation for each member."/>
     </tab>
     <tab type="filelist" visible="yes" title="Files" intro="Contains a list of all documented files with brief descriptions."/>
     <tab type="examples" visible="yes" title="" intro="Contains all examples used by this Reference Guide."/>
