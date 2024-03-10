@@ -20,6 +20,7 @@ List of ambient properties :
 * [xtd::forms::control::cursor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html)
 * [xtd::forms::control::font](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html)
 * [xtd::forms::control::fore_color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html)
+* [xtd::forms::control::right_to_left](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html)
 
 ### Example
 
