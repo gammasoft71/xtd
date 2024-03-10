@@ -165,6 +165,7 @@ struct control::data {
   xtd::ustring name;
   intptr parent = 0;
   bool recreate_handle_posted = false;
+  std::optional<forms::right_to_left> right_to_left;
   std::optional<drawing::size> size;
   control::state state = control::state::empty;
   control_styles style = control_styles::none;
@@ -721,6 +722,29 @@ int32 control::right() const noexcept {
   return left() + width();
 }
 
+xtd::forms::right_to_left control::right_to_left() const noexcept {
+  if (data_->right_to_left.has_value()) return data_->right_to_left.value();
+  for (auto control = this; control; control = control->parent().has_value() && !control->get_state(state::top_level) ? &control->parent().value().get() : nullptr)
+    if (control->data_->right_to_left.has_value()) return control->data_->right_to_left.value();
+  return xtd::forms::right_to_left::inherit;
+}
+
+control& control::right_to_left(xtd::forms::right_to_left value) {
+  if (data_->right_to_left.has_value() && value == data_->right_to_left) return *this;
+  data_->right_to_left = value;
+  if (is_handle_created()) native::control::right_to_left(handle(), static_cast<int32>(value));
+  on_right_to_left_changed(event_args::empty);
+  return *this;
+}
+
+control& control::right_to_left(std::nullptr_t) {
+  if (!data_->right_to_left.has_value()) return *this;
+  data_->right_to_left.reset();
+  post_recreate_handle();
+  on_right_to_left_changed(event_args::empty);
+  return *this;
+}
+
 drawing::size control::size() const noexcept {
   return data_->size.value_or(default_size());
 }
@@ -1083,7 +1107,7 @@ forms::create_params control::create_params() const noexcept {
   if (visible()) create_params.style(create_params.style() | WS_VISIBLE);
   if (!enabled()) create_params.style(create_params.style() | WS_DISABLED);
   
-  //if (right_to_left() == forms::right_to_left::yes) create_params.ex_style(create_params.ex_style() | WS_EX_RTLREADING | WS_EX_RIGHT | WS_EX_LEFTSCROLLBAR);
+  if (right_to_left() == forms::right_to_left::yes) create_params.ex_style(create_params.ex_style() | WS_EX_RTLREADING | WS_EX_RIGHT | WS_EX_LEFTSCROLLBAR);
   
   return create_params;
 }
@@ -1240,6 +1264,8 @@ void control::on_handle_created(const event_args& e) {
   data_->size = native::control::size(handle());
   
   if (parent().has_value()) data_->anchoring = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
+  
+  native::control::right_to_left(handle(), static_cast<int32>(right_to_left()));
   
   if (can_raise_events()) handle_created(*this, e);
   
@@ -1439,6 +1465,10 @@ void control::on_resize(const event_args& e) {
   invalidate();
   
   if (can_raise_events()) resize(*this, e);
+}
+
+void control::on_right_to_left_changed(const event_args& e) {
+  if (can_raise_events()) right_to_left_changed(*this, e);
 }
 
 void control::on_size_changed(const event_args& e) {

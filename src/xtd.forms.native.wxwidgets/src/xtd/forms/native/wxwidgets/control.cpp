@@ -549,6 +549,20 @@ void control::resume_layout(intptr control) {
   reinterpret_cast<control_handler*>(control)->DecrementLayoutSuspended();
 }
 
+void control::right_to_left(intptr control, int32 value) {
+  if (!control) throw argument_exception {csf_};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  switch (value) {
+    case 0: reinterpret_cast<control_handler*>(control)->control()->SetLayoutDirection(wxLayoutDirection::wxLayout_LeftToRight); break;
+    case 1: reinterpret_cast<control_handler*>(control)->control()->SetLayoutDirection(wxLayoutDirection::wxLayout_RightToLeft); break;
+    case 2: reinterpret_cast<control_handler*>(control)->control()->SetLayoutDirection(wxLayoutDirection::wxLayout_Default); break;
+    default: reinterpret_cast<control_handler*>(control)->control()->SetLayoutDirection(wxLayoutDirection::wxLayout_LeftToRight); break;
+  }
+}
+
 intptr control::send_message(intptr control, intptr hwnd, int32 msg, intptr wparam, intptr lparam) {
   if (!control) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {

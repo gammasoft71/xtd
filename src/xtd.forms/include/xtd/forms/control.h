@@ -22,10 +22,11 @@
 #include "iwin32_window.h"
 #include "key_event_handler.h"
 #include "key_press_event_handler.h"
+#include "message.h"
 #include "mouse_event_handler.h"
 #include "padding.h"
 #include "paint_event_handler.h"
-#include "message.h"
+#include "right_to_left.h"
 #include "timer.h"
 #include "style_sheets/style_sheet.h"
 #include "visual_styles/control_state.h"
@@ -281,13 +282,13 @@ namespace xtd {
       /// @brief Gets the background color for the control.
       /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
       /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to true.
-      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default.
+      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       virtual drawing::color back_color() const noexcept;
       /// @brief Sets the background color for the control.
       /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
       /// @return Current control.
       /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to true.
-      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default.
+      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::back_color property in a derived class, use the base class's xtd::forms::control::back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::back_color property; you can override only one if needed.
       virtual control& back_color(const xtd::drawing::color& color);
@@ -423,10 +424,12 @@ namespace xtd {
       
       /// @brief Gets the cursor that is displayed when the mouse pointer is over the control.
       /// @return A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
+      /// @remarks The xtd::forms::control::cursor property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       virtual forms::cursor cursor() const noexcept;
       /// @brief Sets the cursor that is displayed when the mouse pointer is over the control.
       /// @param cursor A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
       /// @return Current control.
+      /// @remarks The xtd::forms::control::cursor property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       virtual control& cursor(const xtd::forms::cursor& cursor);
       /// @cond
       virtual control& cursor(std::nullptr_t);
@@ -478,10 +481,12 @@ namespace xtd {
       
       /// @brief Gets the font of the text displayed by the control.
       /// @return The font to apply to the text displayed by the control. The default is the value of the default_font property.
+      /// @remarks The xtd::forms::control::font property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       virtual drawing::font font() const noexcept;
       /// @brief Sets the font of the text displayed by the control.
       /// @param font The font to apply to the text displayed by the control. The default is the value of the default_font property.
       /// @return Current control.
+      /// @remarks The xtd::forms::control::font property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       virtual control& font(const xtd::drawing::font& font);
       /// @cond
       virtual control& font(std::nullptr_t);
@@ -489,10 +494,12 @@ namespace xtd {
       
       /// @brief Gets the foreground color of the control.
       /// @return The foreground color of the control. The default is the value of the default_fore_color property.
+      /// @remarks The xtd::forms::control::fore_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       virtual drawing::color fore_color() const noexcept;
       /// @brief Sets the foreground color of the control.
       /// @param color The foreground color of the control. The default is the value of the default_fore_color property.
       /// @return Current control.
+      /// @remarks The xtd::forms::control::fore_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       virtual control& fore_color(const xtd::drawing::color& color);
       /// @cond
       virtual control& fore_color(std::nullptr_t);
@@ -653,6 +660,39 @@ namespace xtd {
       /// @return An int32 representing the distance, in pixels, between the right edge of the control and the left edge of its container's client area.
       virtual int32 right() const noexcept;
       
+      /// @brief Gets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
+      /// @return One of the xtd::forms::right_to_left values. The default is xtd::forms::right_to_left::inherit.
+      /// @remarks The xtd::forms::control::right_to_left property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::right_to_left property is used for international applications where the language is written from right to left, such as Hebrew or Arabic. When this property is set to xtd::forms::right_to_left::yes, control elements that include text are displayed from right to left.
+      /// @note If the value of the xtd::forms::control::right_to_left property is changed at run time, only raw text without formatting is preserved.
+      /// @remarks The following are a few examples of how control elements are affected by the xtd::forms::control::right_to_left property value of xtd::forms::right_to_left::yes :
+      /// * Vertical scroll bars are displayed on the left side rather than right side of scrollable controls (for example, xtd::forms::form, xtd::forms::panel, multiline xtd::forms::text_box, and xtd::forms::rich_text_box).
+      /// * Horizontal scroll bars start with the scroll box (thumb) right-aligned.
+      /// * The check box element alignment, controlled by the `check_align` property, is reversed for xtd::forms::check_box and xtd::forms::radio_button controls.
+      /// * Items in list box, combo box, and up-down controls are right aligned.
+      /// * Up and down buttons are left-aligned on xtd::forms::numeric_up_down and domain_up_down controls.
+      /// * Menus (xtd::forms::main_menu, xtd::forms::menu_item, and xtd::forms::context_menu) are displayed right-aligned.
+      /// * The alignment of toolbar buttons on a xtd::forms::tool_bar control or the alignment of text on a xtd::forms::tool_bar_button is not affected by the xtd::forms::control::right_to_left property.
+      virtual xtd::forms::right_to_left right_to_left() const noexcept;
+      /// @brief Sets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
+      /// @param value One of the xtd::forms::right_to_left values. The default is xtd::forms::right_to_left::inherit.
+      /// @return Current control.
+      /// @remarks The xtd::forms::control::right_to_left property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::right_to_left property is used for international applications where the language is written from right to left, such as Hebrew or Arabic. When this property is set to xtd::forms::right_to_left::yes, control elements that include text are displayed from right to left.
+      /// @note If the value of the xtd::forms::control::right_to_left property is changed at run time, only raw text without formatting is preserved.
+      /// @remarks The following are a few examples of how control elements are affected by the xtd::forms::control::right_to_left property value of xtd::forms::right_to_left::yes :
+      /// * Vertical scroll bars are displayed on the left side rather than right side of scrollable controls (for example, xtd::forms::form, xtd::forms::panel, multiline xtd::forms::text_box, and xtd::forms::rich_text_box).
+      /// * Horizontal scroll bars start with the scroll box (thumb) right-aligned.
+      /// * The check box element alignment, controlled by the `check_align` property, is reversed for xtd::forms::check_box and xtd::forms::radio_button controls.
+      /// * Items in list box, combo box, and up-down controls are right aligned.
+      /// * Up and down buttons are left-aligned on xtd::forms::numeric_up_down and domain_up_down controls.
+      /// * Menus (xtd::forms::main_menu, xtd::forms::menu_item, and xtd::forms::context_menu) are displayed right-aligned.
+      /// * The alignment of toolbar buttons on a xtd::forms::tool_bar control or the alignment of text on a xtd::forms::tool_bar_button is not affected by the xtd::forms::control::right_to_left property.
+      virtual control& right_to_left(xtd::forms::right_to_left value);
+      /// @cond
+      virtual control& right_to_left(std::nullptr_t);
+      /// @endcond
+
       /// @brief Gets the height and width of the control.
       /// @return The size that represents the height and width of the control in pixels.
       virtual drawing::size size() const noexcept;
@@ -1646,6 +1686,11 @@ namespace xtd {
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
       event<control, event_handler> resize;
       
+      /// @brief Occurs when the value of the xtd::forms::control::right_to_left property changes.
+      /// @remarks This event is raised if the xtd::forms::control::right_to_left property is changed by either a programmatic modification or user interaction.
+      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      event<control, event_handler> right_to_left_changed;
+
       /// @brief Occurs when the value of the xtd::forms::control::size property changes.
       /// @remarks This event is raised if the xtd::forms::control::size property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
@@ -1943,6 +1988,10 @@ namespace xtd {
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_region_changed(const event_args& e);
       
+      /// @brief Raises the xtd::forms::control::right_to_left_changed event.
+      /// @param e An xtd::event_args that contains the event data.
+      virtual void on_right_to_left_changed(const event_args& e);
+
       /// @brief Raises the xtd::forms::control::size_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_size_changed(const event_args& e);

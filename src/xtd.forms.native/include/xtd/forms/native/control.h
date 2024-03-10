@@ -376,6 +376,18 @@ namespace xtd {
         /// @warning Internal use only
         static void resume_layout(intptr control);
         
+        /// @brief Sets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
+        /// @param control Control window handle.
+        /// @param value The 0, 1 or 2 value.
+        /// @remarks Possible value for value parameter :
+        /// | value | state   |
+        /// | ----- | ------- |
+        /// | 0     | no      |
+        /// | 1     | yes     |
+        /// | 2     | inherit |
+        /// @warning Internal use only
+        static void right_to_left(intptr control, int32 value);
+
         /// @brief Send a message with specified hwnd, message, wparam and lparam.
         /// @param control Control window handle.
         /// @param hwnd The window handle of the message.
