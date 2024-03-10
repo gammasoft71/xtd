@@ -314,8 +314,7 @@ namespace xtd {
       /// // The size of UpdatePatch.txt is 30 bytes.
       /// // The size of wt3d.ini is 234 bytes.
       /// @endcode
-      /// @remarks
-      /// The value of the Length property is pre-cached if the current instance of the xtd::io::file_info object was returned from any of the following DirectoryInfo methods:
+      /// @remarks The value of the Length property is pre-cached if the current instance of the xtd::io::file_info object was returned from any of the following DirectoryInfo methods:
       /// * xtd::io::file_info::get_directories
       /// * xtd::io::file_info::_det_files
       /// * xtd::io::file_info::get_file_system_infos
@@ -709,7 +708,7 @@ namespace xtd {
       /// @remarks This method works across disk volumes. For example, the file c:\MyFile.txt can be moved to d:\public and renamed NewFile.txt.
       void move_to(const xtd::ustring& dest_file_name, bool overwrite);
       
-      /// @brief
+      /// @brief Opens a file in the specified mode.
       /// @param mode A std::ios::openmode constant specifying the mode (for example, std::ios::openmode::in or std::ios::openmode::app) in which to open the file.
       /// @return A file opened in the specified mode, with read/write access and unshared.
       /// @exception xtd::io::file_not_found_exception The file is not found.

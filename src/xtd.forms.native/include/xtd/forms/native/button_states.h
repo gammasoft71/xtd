@@ -37,10 +37,6 @@ constexpr size_t BST_INDETERMINATE = 0x0002;
 /// xtd.forms.native
 /// @ingroup xtd_forms_native bst
 /// @warning Internal use only
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native bst
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t BST_PUSHED = 0x0004;

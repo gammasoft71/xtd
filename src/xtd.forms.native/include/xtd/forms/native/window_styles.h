@@ -82,10 +82,6 @@ constexpr size_t WS_BORDER = 0x00800000;
 /// xtd.forms.native
 /// @ingroup xtd_forms_native ws
 /// @warning Internal use only
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native ws
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t WS_CAPTION = 0x00C00000; // WS_BORDER|WS_DLGFRAME

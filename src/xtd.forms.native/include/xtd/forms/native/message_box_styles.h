@@ -44,10 +44,6 @@ constexpr size_t MB_YESNOCANCEL = 0x00000003L;
 /// xtd.forms.native
 /// @ingroup xtd_forms_native mb
 /// @warning Internal use only
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native mb
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t MB_YESNO = 0x00000004L;

@@ -252,7 +252,7 @@ namespace xtd {
       /// * For a file c:\noextension, this property returns an empty string "".
       /// * For a file c:\a.b.c, this property returns ".c".
       /// * When the xtd::io::file_system_info is constructed from a file path with a trailing dot, then that trailing dot is trimmed, so new xtd::io::file_system_info("foo.bar.").extension returns ".bar".
-      /// @remarks
+      /// @remarks The following table lists examples of other typical or related I/O tasks.
       /// | To do this...                                 | See the example in this topic...                                                                                                               |
       /// | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
       /// | Create a text file.                           | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file">How to: Write Text to a File</a> |

@@ -367,14 +367,14 @@ constexpr size_t VK_META_MODIFIER = 0x00100000;
 constexpr size_t VK_FUNCTION_MODIFIER = 0x00200000;
 
 #if !defined(VK_LBUTTON)
-/// @brief
+/// @brief The left mouse button.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_LBUTTON = 0x000001;
-/// @brief The left mouse button.
+/// @brief The right mouse button.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
@@ -1434,98 +1434,98 @@ constexpr size_t VK_GAMEPAD_DPAD_UP = 0x0000CB; // reserved
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_DPAD_DOWN = 0x0000CC; // reserved
-/// @brief
+/// @brief The gampad direction pad left key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_DPAD_LEFT = 0x0000CD; // reserved
-/// @brief
+/// @brief The gampad direction pad rright key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_DPAD_RIGHT = 0x0000CE; // reserved
-/// @brief
+/// @brief The gampad direction pad menu key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_MENU = 0x0000CF; // reserved
-/// @brief
+/// @brief The gampad direction pad view key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_VIEW = 0x0000D0; // reserved
-/// @brief
+/// @brief The gampad direction pad left thumbstick key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_LEFT_THUMBSTICK_BUTTON = 0x0000D1; // reserved
-/// @brief
+/// @brief The gampad direction pad right thumbstick key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_RIGHT_THUMBSTICK_BUTTON = 0x0000D2; // reserved
-/// @brief
+/// @brief The gampad direction pad left thumbstick up key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_LEFT_THUMBSTICK_UP = 0x0000D3; // reserved
-/// @brief
+/// @brief The gampad direction pad left thumbstick down key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_LEFT_THUMBSTICK_DOWN = 0x0000D4; // reserved
-/// @brief
+/// @brief The gampad direction pad left thumbstick right key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_LEFT_THUMBSTICK_RIGHT = 0x0000D5; // reserved
-/// @brief
+/// @brief The gampad direction pad left thumbstick left key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_LEFT_THUMBSTICK_LEFT = 0x0000D6; // reserved
-/// @brief
+/// @brief The gampad direction pad right thumbstick up key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_RIGHT_THUMBSTICK_UP = 0x0000D7; // reserved
-/// @brief
+/// @brief The gampad direction pad right thumbstick down key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_RIGHT_THUMBSTICK_DOWN = 0x0000D8; // reserved
-/// @brief
+/// @brief The gampad direction pad right thumbstick right key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t VK_GAMEPAD_RIGHT_THUMBSTICK_RIGHT = 0x0000D9; // reserved
-/// @brief
+/// @brief The gampad direction pad right thumbstick left key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
