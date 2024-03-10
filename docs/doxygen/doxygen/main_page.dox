@@ -5,45 +5,45 @@
 ///
 /// <b>xtd (pronounced "extend") is a modern c++17/20 framework to create console, forms (GUI like WinForms) and unit test applications on Windows, macOS, Linux, iOS and android.</b>
 ///
-/// <a href="https://gammasoft71.github.io/xtd"><img src="logo.png"></a>
+/// [![](logo.png)](https://gammasoft71.github.io/xtd)
 ///
 /// @section FeaturesSection Features
-///   * Free and open-source (<a href="https://gammasoft71.github.io/xtd/docs/documentation/license">MIT License</a>);
+///   * Free and open-source ([MIT License](https://gammasoft71.github.io/xtd/docs/documentation/license));
 ///   * a collection of native C++ classes libraries, to complete std;
 ///   * API close to the .net API with a modern C++ approach and full integration with the std standard;
-///   * xtd is designed to manage GUI controls and dialogs in pure <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/control_appearance">native mode</a> or with <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">CSS styles</a>.
-///   * written in efficient, modern <a href="https://en.cppreference.com/w/">C++ 17/20</a> with <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> programming idiom;
-///   * and <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability">highly</a> portable and available on <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability">many different platforms</a> (Windows, macOS, Linux, iOS and android);
-///   * See <a href="https://gammasoft71.github.io/xtd/docs/documentation/features">features</a> for more informations.
+///   * xtd is designed to manage GUI controls and dialogs in pure [native mode](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/control_appearance) or with [CSS styles](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
+///   * written in efficient, modern [C++ 17/20](https://en.cppreference.com/w/) with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
+///   * and [highly](https://gammasoft71.github.io/xtd/docs/documentation/portability) portable and available on [many different platforms](https://gammasoft71.github.io/xtd/docs/documentation/portability) (Windows, macOS, Linux, iOS and android);
+///   * See [features](https://gammasoft71.github.io/xtd/docs/documentation/features) for more informations.
 ///
 /// @section xtdLibrariesArchitectureSection xtd libraries architecture
 ///
-/// <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy"><img src="block_diagram_onion.png"></a>
+/// [![](block_diagram_onion.png)](https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy)
 ///
 /// xtd is composed of several libraries.
 ///
 /// @subsection coreSubSection xtd.core
-/// <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html"><img src="xtd.core.png"></a>
-/// The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html">xtd.core</a> library is modern C++17/20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
+/// [![](xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)
+/// The [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library is modern C++17/20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
 ///
 /// @subsection DrawingSubSection xtd.drawing
-/// <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html"><img src="xtd.drawing.png"></a>
-/// The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html">xtd.drawing</a> library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
+/// [![](xtd.drawing.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html)
+/// The [xtd.drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html) library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
 ///
 /// @subsection FormsSubSection xtd.forms
-/// <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html"><img src="xtd.forms.png"></a>
-/// The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html">xtd.forms</a> library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
+/// [![](xtd.forms.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)
+/// The [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
 ///
 /// @subsection TUinitSubSection xtd.tunit
-/// <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html"><img src="xtd.tunit.png"></a>
-/// The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html">xtd.tunit</a> library is a unit-testing framework for modern C++17/20 inspired by <a href="https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference">Microsoft.VisualStudio.TestTools.Cpp</a>.
+/// [![](xtd.tunit.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)
+/// The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) library is a unit-testing framework for modern C++17/20 inspired by [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 ///
-/// See <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy">xtd libraries hierarchy</a>.
+/// See [xtd libraries hierarchy](https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy).
 ///
 /// @section GettingStartedSection Getting Started
-///  * [installation](https://gammasoft71.github.io/xtd/docs/downloads) provides download, install and uninstall documentation.
-///  * <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides">Guide</a> provides xtd guides and tutorials.
-///  * <a href="https://github.com/gammasoft71/xtd/blob/master/examples/README.md">Examples</a> provides over 750 examples to help you use xtd, grouped by libraries and topics.
+///  * [Installation](https://gammasoft71.github.io/xtd/docs/downloads) provides download, install and uninstall documentation.
+///  * [Guide](https://gammasoft71.github.io/xtd/docs/documentation/Guides) provides xtd guides and tutorials.
+///  * [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides over 750 examples to help you use xtd, grouped by libraries and topics.
 ///
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
@@ -196,8 +196,8 @@
 ///  @image html hello_world_tunit.png
 ///
 /// @subsection SeeAlsoSubsection See also
-///  * <a href="https://gammasoft71.github.io/xtd">website</a>
-///  * <a href="https://github.com/gammasoft71/xtd/wiki">wiki</a>
-///  * <a href="https://github.com/gammasoft71/xtd">sources</a>
-///  * <a href="https://sourceforge.net/projects/xtdpro/">project</a>
-///  * <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/">Reference Guide</a>
+///  * [Website](https://gammasoft71.github.io/xtd)
+///  * [Wiki](https://github.com/gammasoft71/xtd/wiki)
+///  * [Sources](https://github.com/gammasoft71/xtd)
+///  * [Project](https://sourceforge.net/projects/xtdpro/)
+///  * [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/)
