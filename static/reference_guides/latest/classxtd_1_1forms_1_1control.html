@@ -141,7 +141,7 @@ Inheritance diagram for xtd::forms::control:</div>
 <dd>
 The <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> class implements very basic functionality required by classes that display information to the user. It handles user input through the keyboard and pointing devices. It handles message routing and security. It defines the bounds of a control (its position and size), although it does not implement painting. It provides a window handle (hWnd). </dd>
 <dd>
-Windows Forms controls use ambient properties so child controls can appear like their surrounding environment. An ambient property is a control property that, if not set, is retrieved from the <a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7" title="Gets the parent container of the control.">xtd::forms::control::parent</a> control. If the control does not have a parent, and the property is not set, the control attempts to determine the value of the ambient property through the site property. If the control is not sited, if the site does not support ambient properties, or if the property is not set on the ambient_properties, the control uses its own default values. Typically, an ambient property represents a characteristic of a control, such as <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a>, that is communicated to a child control. For example, a button will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent form by default. Ambient properties provided by the control class include: <a class="el" href="classxtd_1_1forms_1_1control.html#a7849758bad61a8e3c358cd7b1a9ea572" title="Gets the cursor that is displayed when the mouse pointer is over the control.">xtd::forms::control::cursor</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e" title="Gets the font of the text displayed by the control.">xtd::forms::control::font</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#a265fde2d4a85f8abae67e2223c20e1f5" title="Gets the foreground color of the control.">xtd::forms::control::fore_color</a>, and xtd::forms::control::right_to_left. </dd>
+Windows Forms controls use ambient properties so child controls can appear like their surrounding environment. An ambient property is a control property that, if not set, is retrieved from the <a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7" title="Gets the parent container of the control.">xtd::forms::control::parent</a> control. If the control does not have a parent, and the property is not set, the control attempts to determine the value of the ambient property through the site property. If the control is not sited, if the site does not support ambient properties, or if the property is not set on the ambient_properties, the control uses its own default values. Typically, an ambient property represents a characteristic of a control, such as <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a>, that is communicated to a child control. For example, a button will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent form by default. Ambient properties provided by the control class include: <a class="el" href="classxtd_1_1forms_1_1control.html#a7849758bad61a8e3c358cd7b1a9ea572" title="Gets the cursor that is displayed when the mouse pointer is over the control.">xtd::forms::control::cursor</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e" title="Gets the font of the text displayed by the control.">xtd::forms::control::font</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#a265fde2d4a85f8abae67e2223c20e1f5" title="Gets the foreground color of the control.">xtd::forms::control::fore_color</a>, and <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a>. </dd>
 <dd>
 The majority of the controls in the <a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> namespace use the underlying Windows common control as a base to build on. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of control control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/colors&gt;</span></div>
@@ -179,7 +179,7 @@ The majority of the controls in the <a class="el" href="namespacextd_1_1forms.ht
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1colors_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1colors.html">xtd::drawing::colors</a></div><div class="ttdoc">colors for all the standard colors. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> colors.h:26</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a></div><div class="ttdoc">Defines the base class for controls, which are components with visual representation.</div><div class="ttdef"><b>Definition</b> control.h:78</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a></div><div class="ttdoc">Defines the base class for controls, which are components with visual representation.</div><div class="ttdef"><b>Definition</b> control.h:79</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.h:11</div></div>
@@ -318,6 +318,9 @@ Classes</h2></td></tr>
 <tr class="memitem:aea1a435b7c3963a9e39af7aa218778a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1control.html">control</a>, <a class="el" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#aea1a435b7c3963a9e39af7aa218778a6">resize</a></td></tr>
 <tr class="memdesc:aea1a435b7c3963a9e39af7aa218778a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> is resized.  <br /></td></tr>
 <tr class="separator:aea1a435b7c3963a9e39af7aa218778a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe96b6995d88a27644d385dfbf460b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1control.html">control</a>, <a class="el" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#aafe96b6995d88a27644d385dfbf460b1">right_to_left_changed</a></td></tr>
+<tr class="memdesc:aafe96b6995d88a27644d385dfbf460b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the value of the <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property changes.  <br /></td></tr>
+<tr class="separator:aafe96b6995d88a27644d385dfbf460b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe0f62b1ab246557d721ac04348740f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1control.html">control</a>, <a class="el" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#afe0f62b1ab246557d721ac04348740f8">size_changed</a></td></tr>
 <tr class="memdesc:afe0f62b1ab246557d721ac04348740f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the value of the <a class="el" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e" title="Gets the height and width of the control.">xtd::forms::control::size</a> property changes.  <br /></td></tr>
 <tr class="separator:afe0f62b1ab246557d721ac04348740f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -580,6 +583,12 @@ Classes</h2></td></tr>
 <tr class="memitem:ad160f51c44a5bc8691a14d65382ba4ae"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ad160f51c44a5bc8691a14d65382ba4ae">right</a> () const noexcept</td></tr>
 <tr class="memdesc:ad160f51c44a5bc8691a14d65382ba4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distance, in pixels, between the right edge of the control and the left edge of its container's client area.  <br /></td></tr>
 <tr class="separator:ad160f51c44a5bc8691a14d65382ba4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacdf46e9818911676ef45cb7520cc483"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__xtd__forms.html#gac06dd62f5da1fa2f0e7c3ff5bfa6c94b">xtd::forms::right_to_left</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483">right_to_left</a> () const noexcept</td></tr>
+<tr class="memdesc:aacdf46e9818911676ef45cb7520cc483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.  <br /></td></tr>
+<tr class="separator:aacdf46e9818911676ef45cb7520cc483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d255edcab4ba931ccb684d756485049"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a9d255edcab4ba931ccb684d756485049">right_to_left</a> (<a class="el" href="group__xtd__forms.html#gac06dd62f5da1fa2f0e7c3ff5bfa6c94b">xtd::forms::right_to_left</a> value)</td></tr>
+<tr class="memdesc:a9d255edcab4ba931ccb684d756485049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.  <br /></td></tr>
+<tr class="separator:a9d255edcab4ba931ccb684d756485049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6b15530ad92e3df1996d4fd3c0c862e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a> () const noexcept</td></tr>
 <tr class="memdesc:ad6b15530ad92e3df1996d4fd3c0c862e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height and width of the control.  <br /></td></tr>
 <tr class="separator:ad6b15530ad92e3df1996d4fd3c0c862e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1076,6 +1085,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a73da60718950b738b1d019a50ea08a02"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a73da60718950b738b1d019a50ea08a02">on_region_changed</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>)</td></tr>
 <tr class="memdesc:a73da60718950b738b1d019a50ea08a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#aa3b0d4756fec3535a1ff1b759bfac72c" title="Occurs when the value of the xtd::forms::control::region property changes.">xtd::forms::control::region_changed</a> event.  <br /></td></tr>
 <tr class="separator:a73da60718950b738b1d019a50ea08a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac74432a6e47910d92cc127c68657fa1a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ac74432a6e47910d92cc127c68657fa1a">on_right_to_left_changed</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>)</td></tr>
+<tr class="memdesc:ac74432a6e47910d92cc127c68657fa1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#aafe96b6995d88a27644d385dfbf460b1" title="Occurs when the value of the xtd::forms::control::right_to_left property changes.">xtd::forms::control::right_to_left_changed</a> event.  <br /></td></tr>
+<tr class="separator:ac74432a6e47910d92cc127c68657fa1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cfe7e19d528be90cd6150c9ae542302"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#a0cfe7e19d528be90cd6150c9ae542302">on_size_changed</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>)</td></tr>
 <tr class="memdesc:a0cfe7e19d528be90cd6150c9ae542302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#afe0f62b1ab246557d721ac04348740f8" title="Occurs when the value of the xtd::forms::control::size property changes.">xtd::forms::control::size_changed</a> event.  <br /></td></tr>
 <tr class="separator:a0cfe7e19d528be90cd6150c9ae542302"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1618,7 +1630,7 @@ You can anchor a control to one or more edges of its container. For example, if 
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> that represents the background color of the control. The default is the value of the <a class="el" href="classxtd_1_1forms_1_1control.html#a4bd2302971df359722cecf6106a4c8ed" title="Gets the default background color of the control.">xtd::forms::control::default_back_color</a> property. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property does not support transparent colors unless the <a class="el" href="group__xtd__forms.html#gga8b6e8bca23778f49dc78093e0d5fadbfaea40a4cc3b5943ae2a00eb1b600da7be" title="If true, the control accepts a BackColor with an alpha component of less than 255 to simulate transpa...">xtd::forms::control_styles::supports_transparent_back_color</a> value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> is set to true. </dd>
 <dd>
-The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent form by default. </dd></dl>
+The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent form by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="animation_8cpp-example.html#a12">animation.cpp</a>, <a class="el" href="clock_8cpp-example.html#a10">clock.cpp</a>, <a class="el" href="debug_form_8cpp-example.html#a4">debug_form.cpp</a>, <a class="el" href="demo_8cpp-example.html#a21">demo.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a14">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a8">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a8">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a8">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a8">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a8">lcd_label_with_sixteen_segment.cpp</a>, <a class="el" href="test_forms_8cpp-example.html#a6">test_forms.cpp</a>, and <a class="el" href="trace_form_8cpp-example.html#a3">trace_form.cpp</a>.</dd>
 </dl>
 
@@ -1658,7 +1670,7 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2
 <dl class="section return"><dt>Returns</dt><dd>Current control. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property does not support transparent colors unless the <a class="el" href="group__xtd__forms.html#gga8b6e8bca23778f49dc78093e0d5fadbfaea40a4cc3b5943ae2a00eb1b600da7be" title="If true, the control accepts a BackColor with an alpha component of less than 255 to simulate transpa...">xtd::forms::control_styles::supports_transparent_back_color</a> value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> is set to true. </dd>
 <dd>
-The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent form by default. </dd></dl>
+The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent form by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 <dl class="section user"><dt>Notes to Inheritors</dt><dd>When overriding the <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property in a derived class, use the base class's <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property; you can override only one if needed. </dd></dl>
 
 </div>
@@ -3990,6 +4002,7 @@ create_control does not create a control handle if the control's visible propert
 
 <p>Gets the cursor that is displayed when the mouse pointer is over the control. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1cursor.html" title="Represents the image used to paint the mouse pointer.">xtd::forms::cursor</a> that represents the cursor to display when the mouse pointer is over the control. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#a7849758bad61a8e3c358cd7b1a9ea572" title="Gets the cursor that is displayed when the mouse pointer is over the control.">xtd::forms::control::cursor</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 
 </div>
 </div>
@@ -4025,6 +4038,7 @@ create_control does not create a control handle if the control's visible propert
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Current control. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#a7849758bad61a8e3c358cd7b1a9ea572" title="Gets the cursor that is displayed when the mouse pointer is over the control.">xtd::forms::control::cursor</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 
 </div>
 </div>
@@ -4631,6 +4645,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 
 <p>Gets the font of the text displayed by the control. </p>
 <dl class="section return"><dt>Returns</dt><dd>The font to apply to the text displayed by the control. The default is the value of the default_font property. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e" title="Gets the font of the text displayed by the control.">xtd::forms::control::font</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1font__picker.html#a6eac89bd4e88f4f4ce0b068b4eb92576">xtd::forms::font_picker</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="demo_8cpp-example.html#a86">demo.cpp</a>, <a class="el" href="hello_world_emoticons_8cpp-example.html#a4">hello_world_emoticons.cpp</a>, <a class="el" href="hello_world_label_8cpp-example.html#a3">hello_world_label.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#a8">test_forms.cpp</a>.</dd>
@@ -4670,6 +4685,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Current control. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e" title="Gets the font of the text displayed by the control.">xtd::forms::control::font</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1font__picker.html#a83549bc5b5217e71e91dbecd5fa23983">xtd::forms::font_picker</a>.</p>
 
@@ -4700,6 +4716,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 
 <p>Gets the foreground color of the control. </p>
 <dl class="section return"><dt>Returns</dt><dd>The foreground color of the control. The default is the value of the default_fore_color property. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#a265fde2d4a85f8abae67e2223c20e1f5" title="Gets the foreground color of the control.">xtd::forms::control::fore_color</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="clock_8cpp-example.html#a9">clock.cpp</a>, <a class="el" href="demo_8cpp-example.html#a22">demo.cpp</a>, <a class="el" href="hello_world_label_8cpp-example.html#a5">hello_world_label.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a13">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a7">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a7">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a7">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a7">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a7">lcd_label_with_sixteen_segment.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#a10">test_forms.cpp</a>.</dd>
 </dl>
 
@@ -4737,6 +4754,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Current control. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#a265fde2d4a85f8abae67e2223c20e1f5" title="Gets the foreground color of the control.">xtd::forms::control::fore_color</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 
 </div>
 </div>
@@ -8642,6 +8660,40 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#a401edfee5bfcb03598eda
 
 </div>
 </div>
+<a id="ac74432a6e47910d92cc127c68657fa1a" name="ac74432a6e47910d92cc127c68657fa1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac74432a6e47910d92cc127c68657fa1a">&#9670;&#160;</a></span>on_right_to_left_changed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void xtd::forms::control::on_right_to_left_changed </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#aafe96b6995d88a27644d385dfbf460b1" title="Occurs when the value of the xtd::forms::control::right_to_left property changes.">xtd::forms::control::right_to_left_changed</a> event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>An <a class="el" href="classxtd_1_1event__args.html" title="Represents the base class for classes that contain event data, and provides a value to use for events...">xtd::event_args</a> that contains the event data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a0cfe7e19d528be90cd6150c9ae542302" name="a0cfe7e19d528be90cd6150c9ae542302"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0cfe7e19d528be90cd6150c9ae542302">&#9670;&#160;</a></span>on_size_changed()</h2>
 
@@ -9445,6 +9497,97 @@ There must be no pending calls to suspend_layout for resume_layout to be success
 
 <p>Gets the distance, in pixels, between the right edge of the control and the left edge of its container's client area. </p>
 <dl class="section return"><dt>Returns</dt><dd>An int32 representing the distance, in pixels, between the right edge of the control and the left edge of its container's client area. </dd></dl>
+
+</div>
+</div>
+<a id="aacdf46e9818911676ef45cb7520cc483" name="aacdf46e9818911676ef45cb7520cc483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacdf46e9818911676ef45cb7520cc483">&#9670;&#160;</a></span>right_to_left() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__xtd__forms.html#gac06dd62f5da1fa2f0e7c3ff5bfa6c94b">xtd::forms::right_to_left</a> xtd::forms::control::right_to_left </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether control's elements are aligned to support locales using right-to-left fonts. </p>
+<dl class="section return"><dt>Returns</dt><dd>One of the <a class="el" href="group__xtd__forms.html#gac06dd62f5da1fa2f0e7c3ff5bfa6c94b" title="Specifies a value indicating whether the text appears from right to left, such as when using Hebrew o...">xtd::forms::right_to_left</a> values. The default is <a class="el" href="group__xtd__forms.html#ggac06dd62f5da1fa2f0e7c3ff5bfa6c94ba6995c373523132a1006975baf4079aa0" title="The direction the text read is inherited from the parent control.">xtd::forms::right_to_left::inherit</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property is used for international applications where the language is written from right to left, such as Hebrew or Arabic. When this property is set to <a class="el" href="group__xtd__forms.html#ggac06dd62f5da1fa2f0e7c3ff5bfa6c94baa6105c0a611b41b08f1209506350279e" title="The text reads from right to left.">xtd::forms::right_to_left::yes</a>, control elements that include text are displayed from right to left. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the value of the <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property is changed at run time, only raw text without formatting is preserved. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The following are a few examples of how control elements are affected by the <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property value of <a class="el" href="group__xtd__forms.html#ggac06dd62f5da1fa2f0e7c3ff5bfa6c94baa6105c0a611b41b08f1209506350279e" title="The text reads from right to left.">xtd::forms::right_to_left::yes</a> :<ul>
+<li>Vertical scroll bars are displayed on the left side rather than right side of scrollable controls (for example, <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a>, <a class="el" href="classxtd_1_1forms_1_1panel.html" title="Used to group collections of controls.">xtd::forms::panel</a>, multiline <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">xtd::forms::text_box</a>, and xtd::forms::rich_text_box).</li>
+<li>Horizontal scroll bars start with the scroll box (thumb) right-aligned.</li>
+<li>The check box element alignment, controlled by the <code>check_align</code> property, is reversed for <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> and <a class="el" href="classxtd_1_1forms_1_1radio__button.html" title="Enables the user to select a single option from a group of choices when paired with other xtd::forms:...">xtd::forms::radio_button</a> controls.</li>
+<li>Items in list box, combo box, and up-down controls are right aligned.</li>
+<li>Up and down buttons are left-aligned on <a class="el" href="classxtd_1_1forms_1_1numeric__up__down.html" title="Represents a standard Windows numeric up down.">xtd::forms::numeric_up_down</a> and <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a> controls.</li>
+<li>Menus (<a class="el" href="classxtd_1_1forms_1_1main__menu.html" title="Represents the menu structure of a form.">xtd::forms::main_menu</a>, <a class="el" href="classxtd_1_1forms_1_1menu__item.html" title="Represents an individual item that is displayed within a main_menu or context_menu.">xtd::forms::menu_item</a>, and <a class="el" href="classxtd_1_1forms_1_1context__menu.html" title="Represents a shortcut menu.">xtd::forms::context_menu</a>) are displayed right-aligned.</li>
+<li>The alignment of toolbar buttons on a <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a> control or the alignment of text on a <a class="el" href="classxtd_1_1forms_1_1tool__bar__button.html" title="Represents a toolbar button.">xtd::forms::tool_bar_button</a> is not affected by the <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property. </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a9d255edcab4ba931ccb684d756485049" name="a9d255edcab4ba931ccb684d756485049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d255edcab4ba931ccb684d756485049">&#9670;&#160;</a></span>right_to_left() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp; xtd::forms::control::right_to_left </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gac06dd62f5da1fa2f0e7c3ff5bfa6c94b">xtd::forms::right_to_left</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicating whether control's elements are aligned to support locales using right-to-left fonts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>One of the <a class="el" href="group__xtd__forms.html#gac06dd62f5da1fa2f0e7c3ff5bfa6c94b" title="Specifies a value indicating whether the text appears from right to left, such as when using Hebrew o...">xtd::forms::right_to_left</a> values. The default is <a class="el" href="group__xtd__forms.html#ggac06dd62f5da1fa2f0e7c3ff5bfa6c94ba6995c373523132a1006975baf4079aa0" title="The direction the text read is inherited from the parent control.">xtd::forms::right_to_left::inherit</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Current control. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <a class="el" href="classxtd_1_1forms_1_1button.html" title="Represents a Windows button control.">xtd::forms::button</a> will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property is used for international applications where the language is written from right to left, such as Hebrew or Arabic. When this property is set to <a class="el" href="group__xtd__forms.html#ggac06dd62f5da1fa2f0e7c3ff5bfa6c94baa6105c0a611b41b08f1209506350279e" title="The text reads from right to left.">xtd::forms::right_to_left::yes</a>, control elements that include text are displayed from right to left. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the value of the <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property is changed at run time, only raw text without formatting is preserved. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The following are a few examples of how control elements are affected by the <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property value of <a class="el" href="group__xtd__forms.html#ggac06dd62f5da1fa2f0e7c3ff5bfa6c94baa6105c0a611b41b08f1209506350279e" title="The text reads from right to left.">xtd::forms::right_to_left::yes</a> :<ul>
+<li>Vertical scroll bars are displayed on the left side rather than right side of scrollable controls (for example, <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a>, <a class="el" href="classxtd_1_1forms_1_1panel.html" title="Used to group collections of controls.">xtd::forms::panel</a>, multiline <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">xtd::forms::text_box</a>, and xtd::forms::rich_text_box).</li>
+<li>Horizontal scroll bars start with the scroll box (thumb) right-aligned.</li>
+<li>The check box element alignment, controlled by the <code>check_align</code> property, is reversed for <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">xtd::forms::check_box</a> and <a class="el" href="classxtd_1_1forms_1_1radio__button.html" title="Enables the user to select a single option from a group of choices when paired with other xtd::forms:...">xtd::forms::radio_button</a> controls.</li>
+<li>Items in list box, combo box, and up-down controls are right aligned.</li>
+<li>Up and down buttons are left-aligned on <a class="el" href="classxtd_1_1forms_1_1numeric__up__down.html" title="Represents a standard Windows numeric up down.">xtd::forms::numeric_up_down</a> and <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a> controls.</li>
+<li>Menus (<a class="el" href="classxtd_1_1forms_1_1main__menu.html" title="Represents the menu structure of a form.">xtd::forms::main_menu</a>, <a class="el" href="classxtd_1_1forms_1_1menu__item.html" title="Represents an individual item that is displayed within a main_menu or context_menu.">xtd::forms::menu_item</a>, and <a class="el" href="classxtd_1_1forms_1_1context__menu.html" title="Represents a shortcut menu.">xtd::forms::context_menu</a>) are displayed right-aligned.</li>
+<li>The alignment of toolbar buttons on a <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a> control or the alignment of text on a <a class="el" href="classxtd_1_1forms_1_1tool__bar__button.html" title="Represents a toolbar button.">xtd::forms::tool_bar_button</a> is not affected by the <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property. </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
@@ -12662,6 +12805,25 @@ To handle custom layouts, use the <a class="el" href="classxtd_1_1forms_1_1contr
 
 </div>
 </div>
+<a id="aafe96b6995d88a27644d385dfbf460b1" name="aafe96b6995d88a27644d385dfbf460b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafe96b6995d88a27644d385dfbf460b1">&#9670;&#160;</a></span>right_to_left_changed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1forms_1_1control.html">control</a>, <a class="el" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>&gt; xtd::forms::control::right_to_left_changed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Occurs when the value of the <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property changes. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This event is raised if the <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45cb7520cc483" title="Gets a value indicating whether control&#39;s elements are aligned to support locales using right-to-left...">xtd::forms::control::right_to_left</a> property is changed by either a programmatic modification or user interaction. </dd>
+<dd>
+For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
+
+</div>
+</div>
 <a id="afe0f62b1ab246557d721ac04348740f8" name="afe0f62b1ab246557d721ac04348740f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe0f62b1ab246557d721ac04348740f8">&#9670;&#160;</a></span>size_changed</h2>
 
@@ -12785,7 +12947,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 10 2024 06:54:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Mar 10 2024 21:07:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
