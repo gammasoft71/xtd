@@ -14,19 +14,19 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @remarks Each of the above values represents a constant, which represent different signals sent to the program.
-  /// @remarks For more information about signal, see <a href="https://en.cppreference.com/w/cpp/utility/program/signal">std::signal</a>.
+  /// @remarks For more information about signal, see [std::signal](https://en.cppreference.com/w/cpp/utility/program/signal).
   enum class signal {
-    /// @brief Abnormal termination triggered by abort call. Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGABRT</a>.
+    /// @brief Abnormal termination triggered by abort call. Is equal to [SIGABRT](https://en.cppreference.com/w/cpp/utility/program/signal).
     abnormal_termination = SIGABRT,
-    /// @brief Erroneous arithmetic operation such as divide by zero. Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGFPE</a>.
+    /// @brief Erroneous arithmetic operation such as divide by zero. Is equal to [SIGFPE](https://en.cppreference.com/w/cpp/utility/program/signal).
     floating_point_exception = SIGFPE,
-    /// @brief Invalid program image, such as invalid instruction. Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGILL</a>.
+    /// @brief Invalid program image, such as invalid instruction. Is equal to [SIGILL](https://en.cppreference.com/w/cpp/utility/program/signal).
     illegal_instruction = SIGILL,
-    /// @brief external interrupt, usually initiated by the user. Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a>.
+    /// @brief external interrupt, usually initiated by the user. Is equal to [SIGINT](https://en.cppreference.com/w/cpp/utility/program/signal).
     interrupt = SIGINT,
-    /// @brief Invalid memory access (segmentation fault). Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGSEGV</a>.
+    /// @brief Invalid memory access (segmentation fault). Is equal to [SIGSEGV](https://en.cppreference.com/w/cpp/utility/program/signal).
     segmentation_violation = SIGSEGV,
-    /// @brief Termination request, sent to the program. Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGTERM</a>.
+    /// @brief Termination request, sent to the program. Is equal to [SIGTERM](https://en.cppreference.com/w/cpp/utility/program/signal).
     software_termination = SIGTERM,
   };
 }

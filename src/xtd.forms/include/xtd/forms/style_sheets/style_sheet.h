@@ -58,7 +58,7 @@ namespace xtd {
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
       /// @remarks This class is used by xtd::forms::style_sheets::ibox_model.
-      /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+      /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
       class forms_export_ style_sheet final : public xtd::iequatable<style_sheet>, public xtd::object {
         struct data;
         
@@ -109,7 +109,7 @@ namespace xtd {
         style_sheet();
         /// @brief Initialize a new xtd::forms::style_sheets::style_sheet instance from specified css forrmated text.
         /// @param css_text The css forrmated text that contains the style sheet definition.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         explicit style_sheet(const xtd::ustring& css_text);
         
         /// @cond
@@ -316,27 +316,27 @@ namespace xtd {
         /// @{
         /// @brief Gets current xtd::forms::style_sheets::style_sheet style sheet.
         /// @return The current xtd::forms::style_sheets::style_sheet style sheet.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static const style_sheet& current_style_sheet() noexcept;
         /// @brief Sets current xtd::forms::style_sheets::style_sheet style sheet.
         /// @param value The current xtd::forms::style_sheets::style_sheet style sheet.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static void current_style_sheet(const style_sheet& value);
         
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheets.
         /// @return The installed xtd::forms::style_sheets::style_sheet style sheets.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static const style_sheets_t& style_sheets() noexcept;
         
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet names.
         /// @return The installed xtd::forms::style_sheets::style_sheet names.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static const style_sheet_names_t& style_sheet_names() noexcept;
         
         /// @brief Gets system xtd::forms::style_sheets::style_sheet style sheet.
         /// @return The system xtd::forms::style_sheets::style_sheet style sheet.
         /// @remarks The system style sheet is the style sheet corresponding to the current Operating System and the current Desktop Environment.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static const style_sheet& system_style_sheet() noexcept;
         /// @}
 
@@ -352,52 +352,52 @@ namespace xtd {
         /// @brief Gets the style sheet buttons collection from specified css string.
         /// @param css_text The css string that contains button definition.
         /// @return The style sheet buttons collection.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static buttons_t button_from_css(const  xtd::ustring& css_text);
         
         /// @brief Gets the style sheet controls collection from specified css string.
         /// @param css_text The css string that contains control definition.
         /// @return The style sheet controls collection.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static controls_t control_from_css(const  xtd::ustring& css_text);
         
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
         /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
         /// @exception xtd::argument_exception The style sheet name not tvalid.
         /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static style_sheet get_style_sheet_from_name(const xtd::ustring& name);
         
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
         /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
         /// @exception xtd::argument_exception The style sheet name not tvalid.
         /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static style_sheet get_style_sheet_from_file(const xtd::ustring& file_name);
         
         /// @brief Gets the installed xtd::forms::style_sheets::style_sheet style sheet from specified name.
         /// @return The xtd::forms::style_sheets::style_sheet style sheet from name.
         /// @exception xtd::argument_exception The style sheet name not tvalid.
         /// @remarks Use xtd::forms::style_sheets::style_sheet::style_sheet_names to retreive valid style sheet names.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static style_sheet get_style_sheet_from_path(const xtd::ustring& path_name);
         
         /// @brief Gets the style sheet forms collection from specified css string.
         /// @param css_text The css string that contains forms definition.
         /// @return The style sheet forms collection.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static forms_t form_from_css(const  xtd::ustring& css_text);
         
         /// @brief Gets the style sheet system colors from specified css string.
         /// @param css_text The css string that contains system colors definition.
         /// @return The style sheet system colors.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static xtd::forms::style_sheets::system_colors system_colors_from_css(const xtd::ustring& css_text);
         
         /// @brief Gets the style sheet theme from specified css string.
         /// @param css_text The css string that contains theme definition.
         /// @return The style sheet theme.
-        /// @remarks For more information, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">Style sheets overview</a>.
+        /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static xtd::forms::style_sheets::theme theme_from_css(const xtd::ustring& css_text);
         
         /// @brief Converts xtd::forms::border_style in std::tuple<xtd::forms::style_sheets::border_type, int32, int32>.
@@ -411,7 +411,7 @@ namespace xtd {
         /// @{
         /// @brief Occurs when the value of the xtd::forms::style_sheets::style_sheet::current_style_sheet property changes.
         /// @remarks This event is raised if the xtd::forms::style_sheets::style_sheet::current_style_sheet property is changed by either a programmatic modification or user interaction.
-        /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
         static event<style_sheet, event_handler> style_sheet_changed;
         /// @}
         

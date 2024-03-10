@@ -237,7 +237,7 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the selected_index property has changed.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<tab_control, event_handler> selected_index_changed;
       /// @}
       

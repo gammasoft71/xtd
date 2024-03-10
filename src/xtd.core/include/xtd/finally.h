@@ -29,7 +29,7 @@ namespace xtd {
 
 /// @brief In addition to try and catch clauses, xtd supports a #finally_ clause. A #finally_ block can follow a try or catch block.
 /// @remarks The purpose of the #finally_ block is to clean up any resources left after the exception occurred. Note that the finally block is always executed, even if no exception was thrown. The catch block is only executed if a managed exception is thrown within the associated try block.
-/// @warning Generally in C++ the #finally_ is NOT required because of <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a>.
+/// @warning Generally in C++ the #finally_ is NOT required because of [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization).
 /// @par Namespace
 /// xtd
 /// @par Library

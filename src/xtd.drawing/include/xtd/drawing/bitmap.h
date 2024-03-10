@@ -117,13 +117,13 @@ namespace xtd {
       
       /// @brief Creates a GDI bitmap object from this xtd::drawing::bitmap.
       /// @return A handle to the GDI bitmap object that this method creates.
-      /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see <a href=https://go.microsoft.com/fwlink/?LinkId=205685>Bitmaps</a> in the Windows GDI documentation.
+      /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see [Bitmaps](https://go.microsoft.com/fwlink/?LinkId=205685) in the Windows GDI documentation.
       intptr get_hbitmap() const;
       
       /// @brief Creates a GDI bitmap object from this xtd::drawing::bitmap.
       /// @param background A xtd::drawing::color structure that specifies the background color. This parameter is ignored if the bitmap is totally opaque.
       /// @return A handle to the GDI bitmap object that this method creates.
-      /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see <a href=https://go.microsoft.com/fwlink/?LinkId=205685>Bitmaps</a> in the Windows GDI documentation.
+      /// @remarks You are responsible for calling the GDI DeleteObject method to free the memory used by the GDI bitmap object. For more information about GDI bitmaps, see [Bitmaps](https://go.microsoft.com/fwlink/?LinkId=205685) in the Windows GDI documentation.
       intptr get_hbitmap(const color& background) const;
       
       /// @brief Returns the handle to an icon.

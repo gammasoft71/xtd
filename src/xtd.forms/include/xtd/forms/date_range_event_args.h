@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_forms events
     /// @remarks The xtd::forms::month_calendar::date_changed event occurs when the currently selected date or range of dates changes; for example, when the user explicitly changes a selection within the current month or when the selection is implicitly changed in response to next/previous month navigation. The xtd::forms::month_calendar::date_selected event occurs when the user explicitly changes a selection. The xtd::forms::date_range_event_args constructor specifies the start and end for the new date range that has been selected.
     /// @note If a single date is selected, the xtd::forms::date_range_event_args::start and xtd::forms::date_range_event_args::end property values will be equal.
-    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+    /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
     class date_range_event_args : public event_args {
     public:
       /// @cond

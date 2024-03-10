@@ -86,7 +86,7 @@ endmacro ()
 ## @remarks Call only once by project.
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
-## @remarks For more inforamtion see <a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html">Desktop Entry Specification</a>.
+## @remarks For more inforamtion see [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
 ## @par Examples
 ## @code
 ##  cmake_minimum_required(VERSION 3.20)

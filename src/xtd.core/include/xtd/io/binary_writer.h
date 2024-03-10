@@ -59,7 +59,7 @@ namespace xtd {
       /// @{
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       std::optional<std::reference_wrapper<std::ostream>> base_stream() const;
       /// @}
       
@@ -78,31 +78,31 @@ namespace xtd {
       /// @param origin A field of std::ios::seekdir indicating the reference point from which the new position is to be obtained.
       /// @return The position with the current stream.
       /// @exception xtd::io::io_exception The file pointer was moved to an invalid location.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual size_t seek(size_t offset, std::ios::seekdir origin);
       
       /// @brief Writes a one-byte boolean value to the current stream, with 0 representing false and 1 representing true.
       /// @param value The boolean value to write (0 or 1).
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(bool value);
       
       /// @brief Writes an unsigned byte to the current stream and advances the stream position by one byte.
       /// @param value The unsigned byte to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(xtd::byte value);
       
       /// @brief Writes a character to the current stream and advances the current position by one byte.
       /// @param value The character to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(char value);
       
       /// @brief Writes a byte array to the underlying stream.
       /// @param buffer A byte array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       template<size_t size>
       void write(const std::array<xtd::byte, size>& buffer) {
         for (auto b : buffer)
@@ -112,7 +112,7 @@ namespace xtd {
       /// @brief Writes a character array to the underlying stream.
       /// @param buffer A character array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       template<size_t size>
       void write(const std::array<char, size>& buffer) {
         for (auto c : buffer)
@@ -122,7 +122,7 @@ namespace xtd {
       /// @brief Writes a byte array to the underlying stream.
       /// @param buffer A byte array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(const std::vector<xtd::byte>& buffer);
       
       /// @brief Writes a region of a byte array to the current stream.
@@ -131,13 +131,13 @@ namespace xtd {
       /// @param count The number of bytes to read from buffer and to write to the stream.
       /// @exception xtd::argument_exception The buffer length minus index is less than count.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(const std::vector<xtd::byte>& buffer, size_t index, size_t count);
       
       /// @brief Writes a character array to the underlying stream.
       /// @param buffer A character array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(const std::vector<char>& buffer);
       
       /// @brief Writes a region of a character array to the current stream.
@@ -146,49 +146,49 @@ namespace xtd {
       /// @param count The number of bytes to read from buffer and to write to the stream.
       /// @exception xtd::argument_exception The buffer length minus index is less than count.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(const std::vector<char>& buffer, size_t index, size_t count);
       
       /// @brief Writes an eight-byte floating-point value to the current stream and advances the stream position by eight bytes.
       /// @param value The eight-byte floating-point value to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(double value);
       
       /// @brief Writes a two-byte signed integer to the current stream and advances the stream position by two bytes.
       /// @param value The two-byte signed integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(int16 value);
       
       /// @brief Writes a four-byte signed integer to the current stream and advances the stream position by four bytes.
       /// @param value The four-byte signed integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(int32 value);
       
       /// @brief Writes a eight-byte signed integer to the current stream and advances the stream position by eight bytes.
       /// @param value The eight-byte signed integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(int64 value);
       
       /// @brief Writes an signed byte to the current stream and advances the stream position by one byte.
       /// @param value The signed byte to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(sbyte value);
       
       /// @brief Writes an four-byte floating-point value to the current stream and advances the stream position by four bytes.
       /// @param value The four-byte floating-point value to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(float value);
       
       /// @brief Writes a length-prefixed string to this stream, and advances the current position of the stream and the specific characters being written to the stream.
       /// @param value The value to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(const ustring& value);
       /// @cond
       virtual void write(const std::string& value);
@@ -210,19 +210,19 @@ namespace xtd {
       /// @brief Writes a two-byte unsigned integer to the current stream and advances the stream position by two bytes.
       /// @param value The two-byte unsigned integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(uint16 value);
       
       /// @brief Writes a four-byte unsigned integer to the current stream and advances the stream position by four bytes.
       /// @param value The four-byte unsigned integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(uint32 value);
       
       /// @brief Writes a eight-byte unsigned integer to the current stream and advances the stream position by eight bytes.
       /// @param value The eight-byte unsigned integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(uint64 value);
       /// @}
       

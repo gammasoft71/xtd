@@ -83,11 +83,11 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the scroll box has been moved by either a mouse or keyboard action.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<scroll_bar, event_handler> scroll;
       
       /// @brief Occurs when the xtd::forms::scroll_bar::value property is changed, either by a xtd::forms::scroll_bar::scroll event or programmatically.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<scroll_bar, event_handler> value_changed;
       /// @}
       

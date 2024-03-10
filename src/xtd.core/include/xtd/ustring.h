@@ -687,16 +687,16 @@ namespace xtd {
     /// @remarks The xtd::ustring::pad_right method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
     ustring pad_right(size_t total_width, value_type padding_char) const noexcept;
     
-    /// @brief Allows insertion and extraction of quoted strings, such as the ones found in <a href=https://en.wikipedia.org/wiki/Comma-separated_values>CSV</a> or <a href=https://en.wikipedia.org/wiki/XML>XML</a>.
+    /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML).
     /// @return A new quoted string.
-    /// @remarks the delimiter is set to @verbatim " @endverbatim by default and the escape is set to @verbatim \ @endverbatim by  default.
-    /// @remarks for more information see <a href=https://en.cppreference.com/w/cpp/io/manip/quoted>std::quoted</a>.
+    /// @remarks the delimiter is set to @verbatim " @endverbatim by default and the escape is set to `\` by  default.
+    /// @remarks for more information see [std::quoted](https://en.cppreference.com/w/cpp/io/manip/quoted).
     ustring quoted() const;
-    /// @brief Allows insertion and extraction of quoted strings, such as the ones found in <a href=https://en.wikipedia.org/wiki/Comma-separated_values>CSV</a> or <a href=https://en.wikipedia.org/wiki/XML>XML</a> ith specified delimiter and escape.
-    /// @param delimiter The character to use as the delimiter, defaults to @verbatim " @endverbatim.
-    /// @param escape The character to use as the escape character, defaults to @verbatim \ @endverbatim.
+    /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML) ith specified delimiter and escape.
+    /// @param delimiter The character to use as the delimiter, defaults to `"`.
+    /// @param escape The character to use as the escape character, defaults to `\`.
     /// @return A new quoted string.
-    /// @remarks for more information see <a href=https://en.cppreference.com/w/cpp/io/manip/quoted>std::quoted</a>.
+    /// @remarks for more information see [std::quoted](https://en.cppreference.com/w/cpp/io/manip/quoted).
     ustring quoted(value_type delimiter, value_type escape) const;
     
     /// @brief Deletes all the characters from this string beginning at a specified position and continuing through the last position.

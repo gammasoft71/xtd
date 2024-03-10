@@ -459,15 +459,15 @@ namespace xtd {
         
         /// @{
         /// @brief Occurs when an item is added to the collection.
-        /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_added;
         
         /// @brief Occurs when an item is updated in the collection.
-        /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
         
         /// @brief Occurs when an item is removed from the collection.
-        /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
         /// @}
         

@@ -33,7 +33,7 @@ namespace xtd {
   /// @remarks Use xtd::boxing to box an object.
   /// @remarks Use xtd::unboxing to unbox an object.
   /// @remarks The boxed object must implement operator == and operator < because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
-  /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
+  /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
   /// @par Examples
   /// The following example shows how to create and use xtd::box<bool>.
   /// @code
