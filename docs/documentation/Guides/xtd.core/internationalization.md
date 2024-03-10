@@ -1,6 +1,6 @@
 # Internationalization
 
-![international](/pictures/international.png)
+![international](/pictures/international_500x428.png)
 
 ## Overview
 
