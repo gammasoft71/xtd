@@ -93,7 +93,7 @@ namespace xtd {
       /// @param priority The thread priority.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      /// @remarks
+      /// @remarks Possible values for priority paramter :
       /// * 0 : lowest
       /// * 1 : below_normal
       /// * 2 : normal

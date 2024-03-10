@@ -72,10 +72,6 @@ constexpr size_t ES_AUTOVSCROLL = 0x00000040L;
 /// xtd.forms.native
 /// @ingroup xtd_forms_native es
 /// @warning Internal use only
-/// @brief
-/// @par Library
-/// xtd.forms.native
-/// @ingroup xtd_forms_native es
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
 constexpr size_t ES_AUTOHSCROLL = 0x00000080L;
