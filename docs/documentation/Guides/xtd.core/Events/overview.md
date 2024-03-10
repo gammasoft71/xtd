@@ -16,9 +16,9 @@ The event is usually a member of the event sender; for example, the [click](http
 To define an event, you use the [xtd::event](/docs/documentation/Guides/xtd.core/Types%20overview/events) class in your [event](/docs/documentation/Guides/xtd.core/Types%20overview/events) class signature, and you specify the delegate type for the event. 
 Delegates are described in the next section.
 
-In general, to trigger an event, you add a method marked as ```protected``` and ```virtual```. Name this method ```on_```event_name; for example, ```on_data_received```. 
+In general, to trigger an event, you add a method marked as ```protected``` and ```virtual```. Name this method ```on_event_name```; for example, ```on_data_received```. 
 The method must take a parameter that specifies an event data object, which is an object of type [xtd::event_ags](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) or a derived type. You provide this method to allow derived classes to override the event trigger logic. 
-A derived class must always call the ```on_```event_name method of the base class to ensure that the registered delegates receive the event.
+A derived class must always call the ```on_``` event_name method of the base class to ensure that the registered delegates receive the event.
 
 The following example shows how to declare an event named ```threshold_reached```. The event is associated with the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate and triggered by a method called ```on_threshold_reached```.
 
