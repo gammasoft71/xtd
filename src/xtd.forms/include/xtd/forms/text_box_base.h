@@ -141,19 +141,19 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the value of the accepts_tab property has changed.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<text_box_base, event_handler> accepts_tab_changed;
       
       /// @brief Occurs when the value of the accepts_tab border_style has changed.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<text_box_base, event_handler> border_style_changed;
       
       /// @brief Occurs when the value of the accepts_tab border_style has changed.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<text_box_base, event_handler> multiline_changed;
       
       /// @brief Occurs when the value of the read_only property has changed.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<text_box_base, event_handler> read_only_changed;
       /// @}
       

@@ -93,9 +93,9 @@ namespace xtd {
     /// @return An object that contains the c++ standard identifier and version number.
     static xtd::cpp_language language() noexcept;
     
-    /// @brief Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::global</a> or a copy of See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::classic()</a> if no call to See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::global</a> has been made.
+    /// @brief Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) or a copy of See [std::locale::classic()](https://en.cppreference.com/w/cpp/locale/locale/locale) if no call to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) has been made.
     /// @return A copy of the global C++ locale.
-    /// @remarks See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale</a> for more information.
+    /// @remarks See [std::locale](https://en.cppreference.com/w/cpp/locale/locale/locale) for more information.
     static std::locale locale() noexcept;
     
     /// @brief Gets an xtd::operating_system object that contains the current platform identifier and version number.

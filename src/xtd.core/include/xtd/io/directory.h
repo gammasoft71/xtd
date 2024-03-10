@@ -94,8 +94,8 @@ namespace xtd {
     /// @remarks By default, full read/write access to new directories is granted to all users. However, the app must have the correct security to access existing directories.
     /// @remarks To demand permissions for a directory and all its subdirectories, end the path string with the directory separator character. (For example, "C:\Temp\" grants access to C:\Temp\ and all its subdirectories.) To demand permissions only for a specific directory, end the path string with a period. (For example, "C:\Temp\." grants access only to C:\Temp\, not to its subdirectories.)
     /// @remarks In members that accept a search_pattern parameter, the search string can be any combination of literal characters and two wildcard characters; * and ?. This parameter does not recognize regular expressions. For more information, see the xtd::io::directory::enumerate_directories(ustring, ustring) method or any other method that uses the search_pattern parameter.
-    /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
-    /// @remarks xtd::io::directory and xtd::io::directory_info are not supported for use in Windows Store apps. For information about how to access files and folders in Windows Store apps, see <a href=https://msdn.microsoft.com/library/windows/apps/hh758319.aspx>Accessing data and files (Windows Store apps)</a>.
+    /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+    /// @remarks xtd::io::directory and xtd::io::directory_info are not supported for use in Windows Store apps. For information about how to access files and folders in Windows Store apps, see [Accessing data and files (Windows Store apps)](https://msdn.microsoft.com/library/windows/apps/hh758319.aspx).
     class core_export_ directory static_ {
     public:
       /// @brief Represent directory iterator used by xtd::io::directory.
@@ -610,7 +610,7 @@ namespace xtd {
       /// startup_(program::main);
       /// @endcode
       /// @remarks The current directory is distinct from the original directory, which is the one from which the process was started.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static xtd::ustring get_current_directory();
       
       /// @brief Returns the names of subdirectories (including their paths) in the specified directory.
@@ -673,7 +673,7 @@ namespace xtd {
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The names returned by this method are prefixed with the directory information provided in path.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static std::vector<xtd::ustring> get_directories(const xtd::ustring& path);
       /// @brief Returns the names of subdirectories (including their paths) that match the specified search pattern in the specified directory.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -721,7 +721,7 @@ namespace xtd {
       /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::io::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @remarks The path parameter can specify relative or absolute path information, and is not case-sensitive. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static std::vector<xtd::ustring> get_directories(const xtd::ustring& path, const xtd::ustring& search_pattern);
       
       /// @brief Returns the volume information, root information, or both for the specified path.
@@ -763,7 +763,7 @@ namespace xtd {
       /// @remarks This method obtains the fully qualified path name of path, as returned by xtd::io::path::get_full_path, and returns root directory information. The specified path is not required to exist.
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static xtd::ustring get_directory_root(const xtd::ustring& path);
       
       /// @brief Returns the names of files (including their paths) in the specified directory.
@@ -827,7 +827,7 @@ namespace xtd {
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The order of the returned file names is not guaranteed; use the std:::sort method if a specific sort order is required.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static std::vector<xtd::ustring> get_files(const xtd::ustring& path);
       /// @brief Returns the names of files (including their paths) that match the specified search pattern in the specified directory.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -881,7 +881,7 @@ namespace xtd {
       /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static std::vector<xtd::ustring> get_files(const xtd::ustring& path, const xtd::ustring& search_pattern);
       
       /// @brief Returns the names of all files and subdirectories in a specified path.
@@ -995,7 +995,7 @@ namespace xtd {
       /// @remarks This method is identical to xtd::io::directory::get_file_system_entries with the asterisk (*) specified as the search pattern.
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path);
       /// @brief Returns an array of file names and directory names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -1120,7 +1120,7 @@ namespace xtd {
       /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static std::vector<xtd::ustring> get_file_system_entries(const xtd::ustring& path, const xtd::ustring& search_pattern);
       
       /// @brief Returns the date and time the specified file or directory was last accessed.
@@ -1173,7 +1173,7 @@ namespace xtd {
       /// @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static xtd::date_time get_last_access_time(const xtd::ustring& path);
       
       /// @brief Returns the date and time the specified file or directory was last written to.
@@ -1225,7 +1225,7 @@ namespace xtd {
       /// @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static xtd::date_time get_last_write_time(const xtd::ustring& path);
       
       /// @brief Retrieves the names of the logical drives on this computer in the form "<drive letter>:\".
@@ -1331,7 +1331,7 @@ namespace xtd {
       /// startup_(program::main);
       /// @endcode
       /// @remarks xtd::io::directory::get_logical_drives returns all of the accessible drives on a particular machine, including the floppy drive and any optical drives.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static std::vector<xtd::ustring> get_logical_drives();
       
       /// @brief Retrieves the parent directory of the specified path, including both absolute and relative paths.
@@ -1444,7 +1444,7 @@ namespace xtd {
       /// @remarks Trailing spaces are removed from the end of the path parameter before getting the directory.
       /// @remarks The string returned by this method consists of all characters in the path up to, but not including, the last xtd::io::path::directory_separator_char or alt_directory_separator_char. For example, passing the path "C:\Directory\SubDirectory\test.txt" to xtd::io::directory::get_parent returns "C:\Directory\SubDirectory". Passing "C:\Directory\SubDirectory" returns "C:\Directory". However, passing "C:\Directory\SubDirectory\" returns "C:\Directory\SubDirectory", because the ending directory separator is after "SubDirectory".
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static xtd::io::directory_info get_parent(const xtd::ustring& path);
       
       /// @brief Gets the xtd::io::file_permissions of the directory on the path.
@@ -1789,7 +1789,7 @@ namespace xtd {
       /// @endcode
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static void set_last_access_time(const xtd::ustring& path, const xtd::date_time& last_access_time);
       
       /// @brief Sets the date and time a directory was last written to.
@@ -1838,7 +1838,7 @@ namespace xtd {
       /// @endcode
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static void set_last_write_time(const xtd::ustring& path, const xtd::date_time& last_write_time);
       
       /// @brief Sets the specified xtd::io::file_permissions of the directory on the specified path.
@@ -1850,7 +1850,7 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static void set_permissions(const xtd::ustring& path, xtd::io::file_permissions permissions);
       /// @}
 

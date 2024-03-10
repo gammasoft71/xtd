@@ -14,11 +14,11 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @remarks Each of the above values represents a constant, which represent different exit status of to the program.
-  /// @remarks For more information about exit_status, see <a href="https://en.cppreference.com/w/cpp/utility/program/EXIT_status">EXIT_status</a>.
+  /// @remarks For more information about exit_status, see [EXIT_status](]https://en.cppreference.com/w/cpp/utility/program/EXIT_status).
   enum class exit_status {
-    /// @brief Successful execution of a program. Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/EXIT_status">EXIT_SUCCESS</a>.
+    /// @brief Successful execution of a program. Is equal to [EXIT_SUCCESS](https://en.cppreference.com/w/cpp/utility/program/EXIT_status).
     success = EXIT_SUCCESS,
-    /// @brief Unsuccessful execution of a program. Is equal to <a href="https://en.cppreference.com/w/cpp/utility/program/EXIT_status">EXIT_FAILURE</a>.
+    /// @brief Unsuccessful execution of a program. Is equal to [EXIT_FAILURE](https://en.cppreference.com/w/cpp/utility/program/EXIT_status).
     failure = EXIT_FAILURE,
   };
 }

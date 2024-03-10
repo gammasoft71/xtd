@@ -123,7 +123,7 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the value of the image property changes.
       /// @remarks This event is raised if the image property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<button_base, event_handler> image_changed;
       /// @}
       

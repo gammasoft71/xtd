@@ -25,7 +25,7 @@ namespace xtd {
   /// @remarks You can use xtd::box to represent a class or structure that does not inherit from xtd::object. Typically used for integral types.
   /// @remarks Use xtd::boxing to box an object.
   /// @remarks Use xtd::unboxing to unbox an object.
-  /// @remarks For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>.
+  /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
   /// @par Examples
   /// The following example shows how to create and use xtd::box_floating_point<float>.
   /// @code

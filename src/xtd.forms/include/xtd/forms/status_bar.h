@@ -139,12 +139,12 @@ namespace xtd {
       /// @{
       /// @brief Occurs when a visual aspect of an owner-drawn status bar control changes.
       /// @remarks You can use this event to perform drawing operations in an owner-drawn xtd::forms::status_bar control. For example, if you display an owner-drawn xtd::forms::status_bar_panel that displays a progress bar, you can use this event to perform the drawing of the progress bar on the panel. The data provided to the event through the xtd::forms::status_bar_draw_item_event_args object passed as a parameter to the event handler enables you to determine the panel that needs to be drawn and the xtd::drawing::graphics to use to draw to the panel. This event is only raised when the xtd::forms::status_bar_panel::style property of a xtd::forms::status_bar_panel in a xtd::forms::status_bar control is set to xtd::forms::status_bar_panel_style::owner_draw.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       xtd::event<status_bar, xtd::forms::status_bar_draw_item_event_handler> draw_item;
       
       /// @brief Occurs when a xtd::forms::status_bar_panel object on a xtd::forms::status_bar control is clicked.
       /// @remarks You can use this event to perform tasks when a panel within a xtd::forms::status_bar control is clicked. The data provided to the event through the xtd::forms::status_bar_panel_click_event_args passed as a parameter to the event handler enables you to determine the xtd::forms::status_bar_panel that was clicked by the user in order to perform tasks on the selected panel.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       xtd::event<status_bar, xtd::forms::status_bar_panel_click_event_handler> panel_click;
       /// @}
       
@@ -166,7 +166,7 @@ namespace xtd {
       /// @brief Raises the xtd::forms::status_bar::daw_item event.
       /// @param e A xtd::forms::status_bar_draw_item_event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       /// @remarks The xtd::forms::status_bar::on_draw_item method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inheritors
       /// When overriding xtd::forms::status_bar::on_draw_item in a derived class, be sure to call the base class's xtd::forms::status_bar::on_draw_item method so that registered delegates receive the event.
@@ -175,7 +175,7 @@ namespace xtd {
       /// @brief Raises the xtd::forms::status_bar::panel_click event.
       /// @param e A xtd::forms::status_bar_panel_click_event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       /// @remarks The xtd::forms::status_bar::on_panel_click method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inheritors
       /// When overriding xtd::forms::status_bar::on_panel_click in a derived class, be sure to call the base class's xtd::forms::status_bar::on_panel_click method so that registered delegates receive the event.

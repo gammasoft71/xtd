@@ -102,7 +102,7 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the user close a message dialog box with dialog close button or other dialog buttons.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<trace_message_dialog, dialog_closed_event_handler> dialog_closed;
       /// @}
       

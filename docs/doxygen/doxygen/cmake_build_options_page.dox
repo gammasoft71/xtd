@@ -4,7 +4,7 @@
 /// @page CMakeBuildOption CMake build options
 /// @brief Contains xtd CMake build options.
 ///
-/// @remarks These options are only needed if you are not using the <a href="https://gammasoft71.github.io/xtd/docs/downloads">installation</a> and want a custom build.
+/// @remarks These options are only needed if you are not using the [installation](https://gammasoft71.github.io/xtd/docs/downloads) and want a custom build.
 ///
 /// @section xtdBuildOptions xtd build options
 ///

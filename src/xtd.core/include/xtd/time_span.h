@@ -83,7 +83,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::time_span structure to the specified number of ticks.
     /// @param tiks A time period expressed in 100-nanosecond units.
     /// @remarks A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond.
-    /// @remarks See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::duration</a> for more information.
+    /// @remarks See [std::chrono::duration](https://en.cppreference.com/w/cpp/chrono/duration) for more information.
     template<typename duration_t, typename period_t = std::ratio<1>> // Can't be explicit by design.
     time_span(const std::chrono::duration<duration_t, period_t>& value) : time_span(static_cast<int64>(std::chrono::duration_cast<xtd::ticks>(value).count())) {}
     /// @brief Initializes a new instance of the xtd::time_span structure to a specified number of hours, minutes, and seconds.

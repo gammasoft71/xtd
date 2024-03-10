@@ -16,7 +16,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @remarks The xtd::enum_attribute is used with the xtd::enum_set_attribute struct.
-  /// @remarks For more information about enumeration, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/enum_class">enum class</a> guide.
+  /// @remarks For more information about enumeration, see [enum class](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/enum_class) guide.
   enum class enum_attribute {
     /// @brief Enum standard attribute. The default value.
     standard,

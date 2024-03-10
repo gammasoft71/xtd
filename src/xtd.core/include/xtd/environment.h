@@ -463,9 +463,9 @@ namespace xtd {
     /// @return true if the process is 64-bit; otherwise, false.
     static bool is_64_bit_process() noexcept;
     
-    /// @brief Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::global</a> or a copy of See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::classic()</a> if no call to See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale::global</a> has been made.
+    /// @brief Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) or a copy of See [std::locale::classic()](https://en.cppreference.com/w/cpp/locale/locale/locale) if no call to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) has been made.
     /// @return A copy of the global C++ locale.
-    /// @remarks See <a href=https://en.cppreference.com/w/cpp/locale/locale/locale>std::locale</a> for more information.
+    /// @remarks See [std::locale](https://en.cppreference.com/w/cpp/locale/locale/locale) for more information.
     static std::locale locale() noexcept;
     
     /// @brief Gets the NetBIOS name of this local computer.
@@ -569,13 +569,13 @@ namespace xtd {
     /// @{
     /// @brief Occurs when a signal is sent to the current process.
     /// @remarks This event is used in conjunction with xtd::signal_cancel_event_handler and xtd::signal_cancel_event_args. The xtd::environment::cancel_signal event enables a xtd::signal so the event handler can decide whether to continue executing or terminate.
-    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
-    /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c use the same signal (<a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a>).
-    /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c can be cancelled with xtd::environment::cancel_signal event or xtd::console::cancel_key_press event. Both of these events are called when <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a> is raised.
+    /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+    /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c use the same signal ([SIGINT](https://en.cppreference.com/w/cpp/utility/program/signal)).
+    /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c can be cancelled with xtd::environment::cancel_signal event or xtd::console::cancel_key_press event. Both of these events are called when [SIGINT](https://en.cppreference.com/w/cpp/utility/program/signal) is raised.
     static event<environment, signal_cancel_event_handler> cancel_signal;
     
     /// @brief Occurs when the terminates normally (via xtd::environment::exit or returning from the main function).
-    /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+    /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
     static event<environment, program_exit_event_handler> program_exit;
     /// @}
     

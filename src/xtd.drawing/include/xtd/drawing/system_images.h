@@ -65,7 +65,7 @@ namespace xtd {
       /// | Places        | Icons used to represent locations, either on the local filesystem, or through remote connections. Folders, trash, and workgroups are some examples.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
       /// | Status        | Icons for presenting status to the user. This context contains icons for warning and error dialogs, as well as for the current weather, appointment alarms, and battery status.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
       /// | xtd           | Icons for representinf xtd libraries and products.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-      /// @remarks See <a href="https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html">Icon Naming Specification</a> for more information.
+      /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
       static std::vector<xtd::ustring> contexts() noexcept;
       /// @brief Gets the image context names.
       /// @return An xtd::ustring, xtd::ustring hash table that contains the image context names.
@@ -459,7 +459,7 @@ namespace xtd {
       /// | xtd-drawing               | The icon for xtd drawing logo.     |
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
-      /// @remarks See <a href="https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html">Icon Naming Specification</a> for more information.
+      /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
       static std::map<xtd::ustring, std::vector<xtd::ustring>> context_names() noexcept;
       /// @brief Gets the image names.
       /// @return An xtd::ustring array that contains the image names.
@@ -852,7 +852,7 @@ namespace xtd {
       /// | xtd-drawing               | The icon for xtd drawing logo.     |
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
-      /// @remarks See <a href="https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html">Icon Naming Specification</a> for more information.
+      /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
       static std::vector<xtd::ustring> names() noexcept;
       /// @brief Gets the image names for the specified context.
       /// @param context The context to retrieve the image names.
@@ -1247,7 +1247,7 @@ namespace xtd {
       /// | xtd-drawing               | The icon for xtd drawing logo.     |
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
-      /// @remarks See <a href="https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html">Icon Naming Specification</a> for more information.
+      /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
       static std::vector<xtd::ustring> names(const xtd::ustring& context) noexcept;
       /// @brief Gets standard sizes for image.
       /// @return An xtd::drawing::size array that contains the default sizes for image.

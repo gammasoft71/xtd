@@ -140,11 +140,11 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<message_dialog, help_event_handler> help_request;
       
       /// @brief Occurs when the user close a message dialog box with dialog close button or other dialog buttons.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<message_dialog, dialog_closed_event_handler> dialog_closed;
       /// @}
       

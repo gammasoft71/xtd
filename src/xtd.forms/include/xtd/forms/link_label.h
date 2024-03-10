@@ -375,7 +375,7 @@ namespace xtd {
       /// @{
       /// @brief Occurs when a link is clicked within the control.
       /// @remarks Typically, the xtd::forms::link_label::link_clicked event is handled to perform tasks when the user clicks on a link in the control. The event handler for the xtd::forms::link_label::link_clicked event is passed an instance of the xtd::forms::link_label_clicked_event_args class that contains a xtd::forms::link object that is associated with the link that was clicked. You can use information specified in the xtd::forms::link::link_data property of xtd::forms::link class to determine which link was clicked or what type of task to perform when the link is clicked. For example, if a xtd::forms::link_label control has a xtd::forms::link object defined with its xtd::forms::link::link_data property set to the string www.microsoft.com, you can use this information in an event handler for the xtd::forms::link_label::link_clicked event to display the Web site.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<link_label, link_label_clicked_event_handler> link_clicked;
       /// @}
       

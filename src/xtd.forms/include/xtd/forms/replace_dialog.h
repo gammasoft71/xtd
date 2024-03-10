@@ -120,20 +120,20 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the user click the find button.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       xtd::event<replace_dialog, xtd::forms::find_event_handler> find_next;
       
       /// @brief Occurs when the user click the replace button.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       xtd::event<replace_dialog, xtd::forms::replace_event_handler> replace;
       
       /// @brief Occurs when the user click the replace all button.
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       xtd::event<replace_dialog, xtd::forms::replace_event_handler> replace_all;
       
       /// @brief Occurs when the user close the replace dialog box with dialog close button or cancel button.
       /// @remarks The xtd::forms::dialog_closed_event_args::dialog_result is always set to xtd::forms::dialog_result::cancel
-      /// @remarks For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       xtd::event<replace_dialog, xtd::forms::dialog_closed_event_handler> dialog_closed;
       /// @}
       

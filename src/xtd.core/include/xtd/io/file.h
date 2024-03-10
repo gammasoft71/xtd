@@ -267,7 +267,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks Certain file attributes, such as xtd::io::file_attributes::hidden and xtd::io::file_attributes::read_only, can be combined. Other attributes, such as xtd::io::file_attributes::normal, must be used alone.
       /// @remarks It is not possible to change the compression status of a xtd::io::file object using the xtd::io::file::set_attributes method.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static void set_attributes(const xtd::ustring& path, xtd::io::file_attributes attributes);
       
       /// @brief Sets the date and time the file was created.
@@ -280,7 +280,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks NTFS-formatted drives may cache file meta-info, such as file creation time, for a short period of time. As a result, it may be necessary to explicitly set the creation time of a file if you are overwriting or replacing an existing file.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static void set_creation_time(const xtd::ustring& path, const xtd::date_time& creation_time);
       
       /// @brief Sets the date and time the specified file was last accessed.
@@ -292,7 +292,7 @@ namespace xtd {
       /// @exception xtd::io::file_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static void set_last_access_time(const xtd::ustring& path, const xtd::date_time& last_access_time);
       
       /// @brief Sets the date and time that the specified file was last written to.
@@ -304,7 +304,7 @@ namespace xtd {
       /// @exception xtd::io::file_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static void set_last_write_time(const xtd::ustring& path, const xtd::date_time& last_write_time);
       
       /// @brief Sets the specified xtd::io::file_permissions of the file on the specified path.
@@ -316,7 +316,7 @@ namespace xtd {
       /// @exception xtd::io::file_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
-      /// @remarks For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static void set_permissions(const xtd::ustring& path, xtd::io::file_permissions permissions);
       
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
