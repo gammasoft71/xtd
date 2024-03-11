@@ -18,4 +18,4 @@ sidebar_position: 12
 
 ## See also
 
-- [Documentation](/docs/documentation)
+* [Documentation](/docs/documentation)
