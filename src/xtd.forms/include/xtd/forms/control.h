@@ -673,6 +673,8 @@ namespace xtd {
       /// * Up and down buttons are left-aligned on xtd::forms::numeric_up_down and domain_up_down controls.
       /// * Menus (xtd::forms::main_menu, xtd::forms::menu_item, and xtd::forms::context_menu) are displayed right-aligned.
       /// * The alignment of toolbar buttons on a xtd::forms::tool_bar control or the alignment of text on a xtd::forms::tool_bar_button is not affected by the xtd::forms::control::right_to_left property.
+      /// @par Notes to Inheritors
+      /// When overriding the xtd::forms::control::right_to_left property in a derived class, use the base class's xtd::forms::control::right_to_left property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::right_to_left property; you can override only one if needed.
       virtual xtd::forms::right_to_left right_to_left() const noexcept;
       /// @brief Sets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
       /// @param value One of the xtd::forms::right_to_left values. The default is xtd::forms::right_to_left::inherit.
@@ -688,6 +690,8 @@ namespace xtd {
       /// * Up and down buttons are left-aligned on xtd::forms::numeric_up_down and domain_up_down controls.
       /// * Menus (xtd::forms::main_menu, xtd::forms::menu_item, and xtd::forms::context_menu) are displayed right-aligned.
       /// * The alignment of toolbar buttons on a xtd::forms::tool_bar control or the alignment of text on a xtd::forms::tool_bar_button is not affected by the xtd::forms::control::right_to_left property.
+      /// @par Notes to Inheritors
+      /// When overriding the xtd::forms::control::right_to_left property in a derived class, use the base class's xtd::forms::control::right_to_left property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::right_to_left property; you can override only one if needed.
       virtual control& right_to_left(xtd::forms::right_to_left value);
       /// @cond
       virtual control& right_to_left(std::nullptr_t);
