@@ -13,10 +13,10 @@ namespace loading_indicators_example {
     
   private:
     void on_mouse_click(const mouse_event_args& e) override {
-      //for (auto item : {&loading_indicator1, &loading_indicator2, &loading_indicator3, &loading_indicator4, &loading_indicator5, &loading_indicator6, &loading_indicator7, &loading_indicator8, &loading_indicator9, &loading_indicator10, &loading_indicator11, &loading_indicator12, &loading_indicator13, &loading_indicator14}) {
-      //  if (e.button() == xtd::forms::mouse_buttons::left) item->running(!item->running());
-      //  if (e.button() == xtd::forms::mouse_buttons::right) item->enabled(!item->enabled());
-      //}
+      for (auto item : {&loading_indicator1, &loading_indicator2, &loading_indicator3, &loading_indicator4, &loading_indicator5, &loading_indicator6, &loading_indicator7, &loading_indicator8, &loading_indicator9, &loading_indicator10, &loading_indicator11, &loading_indicator12, &loading_indicator13, &loading_indicator14}) {
+        if (e.button() == xtd::forms::mouse_buttons::left) item->running(!item->running());
+        if (e.button() == xtd::forms::mouse_buttons::right) item->enabled(!item->enabled());
+      }
     }
 
     loading_indicator loading_indicator1 = loading_indicators::system(*this, true, {10, 10});
