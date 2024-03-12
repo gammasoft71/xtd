@@ -5,5 +5,5 @@
 #include "../include/xtd/environment.h"
 
 xtd::version xtd::environment::version() {
-  return xtd::version::parse("0.1.1");
+  return xtd::version::parse("0.1.2");
 }

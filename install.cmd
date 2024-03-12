@@ -3,5 +3,5 @@
 ::
 :: Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.
 
-set xtd_version=0.1.1
+set xtd_version=0.1.2
 call scripts\install\install.cmd %*
