@@ -38,26 +38,26 @@ namespace xtd {
       
       /// @{
       /// @brief Provides an IP address that indicates that the server must listen for client activity on all network interfaces. This field is constant.
-      /// @remarks The td::net::ip_address::any field is equivalent to 0.0.0.0 in dotted-quad notation
+      /// @remarks The xtd::net::ip_address::any field is equivalent to 0.0.0.0 in dotted-quad notation
       static const ip_address any;
       /// @brief Provides the IP broadcast address. This field is constant.
-      /// @remarks The td::net::ip_address::broadcast field is equivalent to 255.255.255.255 in dotted-quad notation.
+      /// @remarks The xtd::net::ip_address::broadcast field is equivalent to 255.255.255.255 in dotted-quad notation.
       static const ip_address broadcast;
       /// @brief The Socket::Bind method uses the cIPv6Any field to indicate that a Socket must listen for client activity on all network interfaces. This field is constant.
-      /// @remarks The td::net::ip_address::ip_v6_any field is equivalent to 0:0:0:0:0:0:0:0 in colon-hexadecimal notation, or to :: in compact notation.
+      /// @remarks The xtd::net::ip_address::ip_v6_any field is equivalent to 0:0:0:0:0:0:0:0 in colon-hexadecimal notation, or to :: in compact notation.
       static const ip_address ip_v6_any;
       /// @brief Provides the IP loopback address. This field is constant.
-      /// @remarks The td::net::ip_address::ip_v6_loopback field is equivalent to 0:0:0:0:0:0:0:1 in colon-hexadecimal notation, or to ::1 in compact notation.
+      /// @remarks The xtd::net::ip_address::ip_v6_loopback field is equivalent to 0:0:0:0:0:0:0:1 in colon-hexadecimal notation, or to ::1 in compact notation.
       static const ip_address ip_v6_loopback;
       /// @brief Provides an IP address that indicates that no network interface should be used. This field is constant.
       /// @remarks The Socket::Bind method uses the cIPv6None field to indicate that a Socket must not listen for client activity.
-      /// @remarks The td::net::ip_address::ip_v6_none field is equivalent to 0:0:0:0:0:0:0:0 in colon-hexadecimal notation, or to ::0 in compact notation.
+      /// @remarks The xtd::net::ip_address::ip_v6_none field is equivalent to 0:0:0:0:0:0:0:0 in colon-hexadecimal notation, or to ::0 in compact notation.
       static const ip_address ip_v6_none;
       /// @brief Provides the IP loopback address. This field is constant.
-      /// @remarks The td::net::ip_address::loopback field is equivalent to 127.0.0.1 in dotted-quad notation.
+      /// @remarks The xtd::net::ip_address::loopback field is equivalent to 127.0.0.1 in dotted-quad notation.
       static const ip_address loopback;
       /// @brief Provides an IP address that indicates that no network interface should be used. This field is constant.
-      /// @remarks The td::net::ip_address::none field is equivalent to 255.255.255.255 in dotted-quad notation.
+      /// @remarks The xtd::net::ip_address::none field is equivalent to 255.255.255.255 in dotted-quad notation.
       static const ip_address none;
       /// @}
       

@@ -449,7 +449,7 @@ namespace xtd {
       /// When overriding the xtd::forms::control::dock property in a derived class, use the base class's xtd::forms::control::dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the xtd::forms::control::dock property; you can override only one if needed.
       virtual dock_style dock() const noexcept;
       /// @brief Sets which control borders are docked to its parent control and determines how a control is resized with its parent.
-      /// @param dock One of the td::forms::dock_style values. The default is xtd::forms::dock_style::none.
+      /// @param dock One of the xtd::forms::dock_style values. The default is xtd::forms::dock_style::none.
       /// @return Current control.
       /// @remarks Use the xtd::forms::control::dock property to define how a control is automatically resized as its parent control is resized. For example, setting xtd::forms::control::dock to xtd::forms::dock_style::left causes the control to align itself with the left edges of its parent control and to resize as the parent control is resized. Controls are docked in their Z-order, which is the visual layering of controls on a form along the form's Z-axis (depth).
       /// @remarks A control can be docked to one edge of its parent container or can be docked to all edges and fill the parent container.

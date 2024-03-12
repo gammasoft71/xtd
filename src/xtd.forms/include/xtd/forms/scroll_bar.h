@@ -114,7 +114,7 @@ namespace xtd {
       /// @brief Raises the xtd::forms::scroll_bar::scroll event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
-      /// @remarks The td::forms::scroll_bar::on_scroll method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      /// @remarks The xtd::forms::scroll_bar::on_scroll method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inheritors
       /// When overriding xtd::forms::scroll_bar::on_scroll in a derived class, be sure to call the base class' xtd::forms::scroll_bar::on_scroll method so that registered delegates receive the event.
       virtual void on_scroll(const event_args& e);
@@ -122,7 +122,7 @@ namespace xtd {
       /// @brief Raises the scroll_bar::value_changed event.
       /// @param e The event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
-      /// @remarks The td::forms::scroll_bar::on_value_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
+      /// @remarks The xtd::forms::scroll_bar::on_value_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       /// @par Notes to Inheritors
       /// When overriding xtd::forms::scroll_bar::on_value_changed in a derived class, be sure to call the base class' xtd::forms::scroll_bar::on_value_changed method so that registered delegates receive the event.
       virtual void on_value_changed(const event_args& e);

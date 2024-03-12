@@ -147,10 +147,10 @@ namespace xtd {
       month_calendar& calendar_dimensions(const xtd::drawing::size& value);
       
       /// @brief Gets the first day of the week as displayed in the month calendar.
-      /// @return One of the xtd::forms::day values. The default is td::forms::day::default_day.
+      /// @return One of the xtd::forms::day values. The default is xtd::forms::day::default_day.
       xtd::forms::day first_day_of_week() const noexcept;
       /// @brief Sets the first day of the week as displayed in the month calendar.
-      /// @param value One of the xtd::forms::day values. The default is td::forms::day::default_day.
+      /// @param value One of the xtd::forms::day values. The default is xtd::forms::day::default_day.
       /// @return Current month_calendar.
       month_calendar& first_day_of_week(xtd::forms::day value);
       
