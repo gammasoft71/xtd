@@ -144,7 +144,7 @@ sidebar_position: 5
 
 * ![fixed](/pictures/releases/status/fixed.png) Code autosuggestion (IntelliSense) in VS2022 - [#246](https://github.com/gammasoft71/xtd/issues/246)
 * ![fixed](/pictures/releases/status/fixed.png) xtdc-gui.exe not found - [#245](https://github.com/gammasoft71/xtd/issues/245)
-* ![added](/pictures/releases/status/added.png) V0.1.0 beta add #include <algorithm> update tag/v0.1.1-beta - [#245](https://github.com/gammasoft71/xtd/pull/244)
+* ![added](/pictures/releases/status/added.png) V0.1.0 beta add #include <algorithm> update tag/v0.1.1-beta - [#244](https://github.com/gammasoft71/xtd/pull/244)
 
 ## Remarks
 
