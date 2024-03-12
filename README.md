@@ -262,4 +262,3 @@ ________________________________________________________________________________
 [![painting](docs/pictures/painting.png)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)
 
 [painting (on Ubuntu)](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/painting/README.md)
-
