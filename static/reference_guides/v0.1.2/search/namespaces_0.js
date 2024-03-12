@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['collections_0',['collections',['../namespacextd_1_1collections.html',1,'xtd']]],
+  ['diagnostics_1',['diagnostics',['../namespacextd_1_1diagnostics.html',1,'xtd']]],
+  ['drawing_2',['drawing',['../namespacextd_1_1drawing.html',1,'xtd']]],
+  ['drawing2d_3',['drawing2d',['../namespacextd_1_1drawing_1_1drawing2d.html',1,'xtd::drawing']]],
+  ['forms_4',['forms',['../namespacextd_1_1forms.html',1,'xtd']]],
+  ['imaging_5',['imaging',['../namespacextd_1_1drawing_1_1imaging.html',1,'xtd::drawing']]],
+  ['io_6',['io',['../namespacextd_1_1io.html',1,'xtd']]],
+  ['layout_7',['layout',['../namespacextd_1_1forms_1_1layout.html',1,'xtd::forms']]],
+  ['linux_8',['linux',['../namespacextd_1_1linux.html',1,'xtd']]],
+  ['macos_9',['macos',['../namespacextd_1_1macos.html',1,'xtd']]],
+  ['media_10',['media',['../namespacextd_1_1media.html',1,'xtd']]],
+  ['net_11',['net',['../namespacextd_1_1net.html',1,'xtd']]],
+  ['properties_12',['properties',['../namespacextd_1_1forms_1_1properties.html',1,'xtd::forms']]],
+  ['security_13',['security',['../namespacextd_1_1security.html',1,'xtd']]],
+  ['sockets_14',['sockets',['../namespacextd_1_1net_1_1sockets.html',1,'xtd::net']]],
+  ['specialized_15',['specialized',['../namespacextd_1_1collections_1_1specialized.html',1,'xtd::collections']]],
+  ['text_16',['text',['../namespacextd_1_1drawing_1_1text.html',1,'xtd::drawing']]],
+  ['tunit_17',['tunit',['../namespacextd_1_1tunit.html',1,'xtd']]],
+  ['visual_5fstyles_18',['visual_styles',['../namespacextd_1_1forms_1_1visual__styles.html',1,'xtd::forms']]],
+  ['web_19',['web',['../namespacextd_1_1web.html',1,'xtd']]],
+  ['windows_20',['windows',['../namespacextd_1_1windows.html',1,'xtd']]],
+  ['xtd_21',['xtd',['../namespacextd.html',1,'']]]
+];

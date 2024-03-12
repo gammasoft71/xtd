@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['file_0',['file',['../classxtd_1_1io_1_1file.html',1,'xtd::io']]],
+  ['file_5fassert_1',['file_assert',['../classxtd_1_1tunit_1_1file__assert.html',1,'xtd::tunit']]],
+  ['file_5fassume_2',['file_assume',['../classxtd_1_1tunit_1_1file__assume.html',1,'xtd::tunit']]],
+  ['file_5fdialog_3',['file_dialog',['../classxtd_1_1forms_1_1file__dialog.html',1,'xtd::forms']]],
+  ['file_5fformat_5fexception_4',['file_format_exception',['../classxtd_1_1io_1_1file__format__exception.html',1,'xtd::io']]],
+  ['file_5fload_5fexception_5',['file_load_exception',['../classxtd_1_1io_1_1file__load__exception.html',1,'xtd::io']]],
+  ['file_5fnot_5ffound_5fexception_6',['file_not_found_exception',['../classxtd_1_1io_1_1file__not__found__exception.html',1,'xtd::io']]],
+  ['file_5fvalid_7',['file_valid',['../classxtd_1_1tunit_1_1file__valid.html',1,'xtd::tunit']]],
+  ['fixed_5flayout_5fpanel_8',['fixed_layout_panel',['../classxtd_1_1forms_1_1fixed__layout__panel.html',1,'xtd::forms']]],
+  ['flat_5fbutton_5fappearance_9',['flat_button_appearance',['../classxtd_1_1forms_1_1flat__button__appearance.html',1,'xtd::forms']]],
+  ['flow_5flayout_5fpanel_10',['flow_layout_panel',['../classxtd_1_1forms_1_1flow__layout__panel.html',1,'xtd::forms']]],
+  ['folder_5fbrowser_5fdialog_11',['folder_browser_dialog',['../classxtd_1_1forms_1_1folder__browser__dialog.html',1,'xtd::forms']]],
+  ['font_12',['font',['../classxtd_1_1drawing_1_1font.html',1,'xtd::drawing']]],
+  ['font_5fcollection_13',['font_collection',['../classxtd_1_1drawing_1_1text_1_1font__collection.html',1,'xtd::drawing::text']]],
+  ['font_5fdialog_14',['font_dialog',['../classxtd_1_1forms_1_1font__dialog.html',1,'xtd::forms']]],
+  ['font_5ffamily_15',['font_family',['../classxtd_1_1drawing_1_1font__family.html',1,'xtd::drawing']]],
+  ['font_5fpicker_16',['font_picker',['../classxtd_1_1forms_1_1font__picker.html',1,'xtd::forms']]],
+  ['foreground_5fcolor_17',['foreground_color',['../classxtd_1_1foreground__color.html',1,'xtd']]],
+  ['form_18',['form',['../classxtd_1_1forms_1_1form.html',1,'xtd::forms']]],
+  ['form_5fbutton_5fimages_19',['form_button_images',['../classxtd_1_1forms_1_1form__button__images.html',1,'xtd::forms']]],
+  ['form_5fclosed_5fevent_5fargs_20',['form_closed_event_args',['../classxtd_1_1forms_1_1form__closed__event__args.html',1,'xtd::forms']]],
+  ['form_5fclosing_5fevent_5fargs_21',['form_closing_event_args',['../classxtd_1_1forms_1_1form__closing__event__args.html',1,'xtd::forms']]],
+  ['format_5fexception_22',['format_exception',['../classxtd_1_1format__exception.html',1,'xtd']]],
+  ['fourteen_5fsegment_5fdisplay_23',['fourteen_segment_display',['../classxtd_1_1forms_1_1fourteen__segment__display.html',1,'xtd::forms']]],
+  ['frame_5fdimension_24',['frame_dimension',['../classxtd_1_1drawing_1_1imaging_1_1frame__dimension.html',1,'xtd::drawing::imaging']]]
+];

@@ -140,6 +140,18 @@ sidebar_position: 5
 
 ---
 
+![0.1.2](/pictures/releases/version_0_1_2.png) (beta) March 12, 2024
+
+* ![fixed](/pictures/releases/status/fixed.png) Code autosuggestion (IntelliSense) in VS2022 - [#246](https://github.com/gammasoft71/xtd/issues/246)
+* ![fixed](/pictures/releases/status/fixed.png) xtdc-gui.exe not found - [#245](https://github.com/gammasoft71/xtd/issues/245)
+* ![added](/pictures/releases/status/added.png) xtdc-gui.exe not found - [#245](https://github.com/gammasoft71/xtd/pull/244)
+
+## Remarks
+
+* This release is only a bug fix on version 0.1.1. Some users report a compilation problem with Visual Studio (#include \<algorithm> missing).
+
+---
+
 ![0.1.1](/pictures/releases/version_0_1_1.png) (beta) Jully 17, 2023
 
 * ![added](/pictures/releases/status/added.png) xtd - Deactivate by default the option to convert warnings into errors during build. - [#229](https://github.com/gammasoft71/xtd/issues/229)

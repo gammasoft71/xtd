@@ -4,6 +4,13 @@ sidebar_position: 1
 
 # News
 
+## Release xtd 0.1.2 (beta) - March 12, 2024
+
+* This release is only a bug fix on version 0.1.1. Some users report a compilation problem with Visual Studio (#include \<algorithm> missing).
+* Read the [release notes](documentation/release_notes.md) for more informations.
+* [Installation](downloads.md) provides download and install documentation.
+* For more information about all functionalities read the [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/v0.1.2/index.html).
+
 ## The xtd 0.2.0 (beta) is growing - November 12, 2023
 
 * The xtd 0.2.0 is 84% complete.
