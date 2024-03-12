@@ -96,12 +96,12 @@ namespace xtd {
       
       /// @brief Gets the border style of the status bar panel.
       /// @return One of the xtd::forms::status_bar_panel_border_style values. The default is xtd::forms::status_bar_panel_border_style::sunken.
-      /// @remarks You can use this property to differentiate a panel from other panels in a td::forms::status_bar control.
+      /// @remarks You can use this property to differentiate a panel from other panels in a xtd::forms::status_bar control.
       xtd::forms::status_bar_panel_border_style border_style() const noexcept;
       /// @brief Sets the border style of the status bar panel.
       /// @param value One of the xtd::forms::status_bar_panel_border_style values. The default is xtd::forms::status_bar_panel_border_style::sunken.
       /// @return This current instance.
-      /// @remarks You can use this property to differentiate a panel from other panels in a td::forms::status_bar control.
+      /// @remarks You can use this property to differentiate a panel from other panels in a xtd::forms::status_bar control.
       status_bar_panel& border_style(xtd::forms::status_bar_panel_border_style value);
       
       /// @brief Gets the control to be displayed in the control status bar panel.

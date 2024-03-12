@@ -33,8 +33,8 @@ namespace xtd {
     /// When the properties are first retrieved, xtd::io::file_info calls the xtd::io::file_info::refresh method and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
     /// @include file_info.cpp
     /// @remarks Use the xtd::io::file_info class for typical operations such as copying, moving, renaming, creating, opening, deleting, and appending to files.
-    /// @remarks If you are performing multiple operations on the same file, it can be more efficient to use td::io::file_info instance methods instead of the corresponding static methods of thetd::io::file class, because a security check will not always be necessary.
-    /// @remarks Many of the xtd::io::file_info methods return other I/O types when you create or open files. You can use these other types to further manipulate a file. For more information, see specific td::io::file_info members such as td::io::file_info::open, td::io::file_info::open_read, td::io::file_info::open_text, td::io::file_info::create_text, or td::io::file_info::create.
+    /// @remarks If you are performing multiple operations on the same file, it can be more efficient to use xtd::io::file_info instance methods instead of the corresponding static methods of thetd::io::file class, because a security check will not always be necessary.
+    /// @remarks Many of the xtd::io::file_info methods return other I/O types when you create or open files. You can use these other types to further manipulate a file. For more information, see specific xtd::io::file_info members such as xtd::io::file_info::open, xtd::io::file_info::open_read, xtd::io::file_info::open_text, xtd::io::file_info::create_text, or xtd::io::file_info::create.
     /// @remarks By default, full read/write access to new files is granted to all users.
     class core_export_ file_info : public xtd::io::file_system_info {
     public:
@@ -416,7 +416,7 @@ namespace xtd {
       /// @exception xtd::ioo::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
       /// @par Examples
-      /// The following example demonstrates both overloads of the td::io::file_info::copy_to method.
+      /// The following example demonstrates both overloads of the xtd::io::file_info::copy_to method.
       /// @code
       /// #include <xtd/xtd>
       ///
@@ -528,7 +528,7 @@ namespace xtd {
       /// @exception xtd::ioo::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
       /// @par Examples
-      /// The following example demonstrates both overloads of the td::io::file_info::copy_to method.
+      /// The following example demonstrates both overloads of the xtd::io::file_info::copy_to method.
       /// @code
       /// #include <xtd/xtd>
       ///
