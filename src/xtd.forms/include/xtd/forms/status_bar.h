@@ -119,19 +119,110 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
-      /// @brief A factory to create an xtd::forms::status_bar with specified location, size, and name.
-      /// @param location A xtd::drawing::point that represent location of the xtd::forms::status_bar.
-      /// @param size A xtd::drawing::size that represent size of the xtd::forms::status_bar.
+      /// @brief A factory to create an xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create();
+      /// @brief A factory to create an xtd::forms::status_bar with specified panels.
+      /// @param panels A xtd::forms::status_bar::status_bar_panel_collection containing the xtd::forms::status_bar_panel objects of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const status_bar_panel_collection& panels);
+      /// @brief A factory to create an xtd::forms::status_bar with specified panels, and name.
+      /// @param panels A xtd::forms::status_bar::status_bar_panel_collection containing the xtd::forms::status_bar_panel objects of the xtd::forms::status_bar.
       /// @param name The name of the xtd::forms::status_bar.
       /// @return New xtd::forms::status_bar created.
-      static status_bar create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
-      /// @brief A factory to create an xtd::forms::status_bar with specified parent, location, size, and name.
+      static status_bar create(const status_bar_panel_collection& panels, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::status_bar with specified style.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(xtd::forms::dock_style style);
+      /// @brief A factory to create an xtd::forms::status_bar with specified style, and panels.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @param panels A xtd::forms::status_bar::status_bar_panel_collection containing the xtd::forms::status_bar_panel objects of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(xtd::forms::dock_style style, const status_bar_panel_collection& panels);
+      /// @brief A factory to create an xtd::forms::status_bar with specified style, panels, and name.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @param panels A xtd::forms::status_bar::status_bar_panel_collection containing the xtd::forms::status_bar_panel objects of the xtd::forms::status_bar.
+      /// @param name The name of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(xtd::forms::dock_style style, const status_bar_panel_collection& panels, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::status_bar with specified text.
+      /// @param text The text of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::status_bar with specified text, and name.
+      /// @param text The text of the xtd::forms::status_bar.
+      /// @param name The name of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const xtd::ustring& text, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::status_bar with specified style, and text.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @param text The text of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(xtd::forms::dock_style style, const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::status_bar with specified style, text, and name.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @param text The text of the xtd::forms::status_bar.
+      /// @param name The name of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(xtd::forms::dock_style style, const xtd::ustring& text, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent.
       /// @param parent The parent that contains the new created xtd::forms::status_bar.
-      /// @param location A xtd::drawing::point that represent location of the xtd::forms::status_bar.
-      /// @param size A xtd::drawing::size that represent size of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, and panels.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param panels A xtd::forms::status_bar::status_bar_panel_collection containing the xtd::forms::status_bar_panel objects of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent, const status_bar_panel_collection& panels);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, panels, and name.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param panels A xtd::forms::status_bar::status_bar_panel_collection containing the xtd::forms::status_bar_panel objects of the xtd::forms::status_bar.
       /// @param name The name of the xtd::forms::status_bar.
       /// @return New xtd::forms::status_bar created.
-      static status_bar create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const xtd::ustring& name = xtd::ustring::empty_string);
+      static status_bar create(const control& parent, const status_bar_panel_collection& panels, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, and style.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent, xtd::forms::dock_style style);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, style, and panels.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @param panels A xtd::forms::status_bar::status_bar_panel_collection containing the xtd::forms::status_bar_panel objects of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent, xtd::forms::dock_style style, const status_bar_panel_collection& panels);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, style, panels, and name.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @param panels A xtd::forms::status_bar::status_bar_panel_collection containing the xtd::forms::status_bar_panel objects of the xtd::forms::status_bar.
+      /// @param name The name of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent, xtd::forms::dock_style style, const status_bar_panel_collection& panels, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, and text.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param text The text of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent, const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, text, and name.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param text The text of the xtd::forms::status_bar.
+      /// @param name The name of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent, const xtd::ustring& text, const xtd::ustring& name);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, style, and text.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @param text The text of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent, xtd::forms::dock_style style, const xtd::ustring& text);
+      /// @brief A factory to create an xtd::forms::status_bar with specified parent, style, text, and name.
+      /// @param parent The parent that contains the new created xtd::forms::status_bar.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @param text The text of the xtd::forms::status_bar.
+      /// @param name The name of the xtd::forms::status_bar.
+      /// @return New xtd::forms::status_bar created.
+      static status_bar create(const control& parent, xtd::forms::dock_style style, const xtd::ustring& text, const xtd::ustring& name);
       /// @}
       
       /// @name Public Events

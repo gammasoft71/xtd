@@ -132,19 +132,145 @@ status_bar& status_bar::sizing_grip(bool value) {
   return *this;
 }
 
-status_bar status_bar::create(const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+status_bar status_bar::create() {
+  return status_bar {};
+}
+
+status_bar status_bar::create(const status_bar_panel_collection& panels) {
   auto result = status_bar {};
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  result.panels() = panels;
+  return result;
+}
+
+status_bar status_bar::create(const status_bar_panel_collection& panels, const xtd::ustring& name) {
+  auto result = status_bar {};
+  result.panels() = panels;
   result.name(name);
   return result;
 }
 
-status_bar status_bar::create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name) {
+status_bar status_bar::create(xtd::forms::dock_style style) {
+  auto result = status_bar {};
+  result.dock(style);
+  return result;
+}
+
+status_bar status_bar::create(xtd::forms::dock_style style, const status_bar_panel_collection& panels) {
+  auto result = status_bar {};
+  result.dock(style);
+  result.panels() = panels;
+  return result;
+}
+
+status_bar status_bar::create(xtd::forms::dock_style style, const status_bar_panel_collection& panels, const xtd::ustring& name) {
+  auto result = status_bar {};
+  result.dock(style);
+  result.panels() = panels;
+  result.name(name);
+  return result;
+}
+
+status_bar status_bar::create(const xtd::ustring& text) {
+  auto result = status_bar {};
+  result.text(text);
+  return result;
+}
+
+status_bar status_bar::create(const xtd::ustring& text, const xtd::ustring& name) {
+  auto result = status_bar {};
+  result.text(text);
+  result.name(name);
+  return result;
+}
+
+status_bar status_bar::create(xtd::forms::dock_style style, const xtd::ustring& text) {
+  auto result = status_bar {};
+  result.dock(style);
+  result.text(text);
+  return result;
+}
+
+status_bar status_bar::create(xtd::forms::dock_style style, const xtd::ustring& text, const xtd::ustring& name) {
+  auto result = status_bar {};
+  result.dock(style);
+  result.text(text);
+  result.name(name);
+  return result;
+}
+
+status_bar status_bar::create(const control& parent) {
   auto result = status_bar {};
   result.parent(parent);
-  if (location != drawing::point {-1, -1}) result.location(location);
-  if (size != drawing::size {-1, -1}) result.size(size);
+  return result;
+}
+
+status_bar status_bar::create(const control& parent, const status_bar_panel_collection& panels) {
+  auto result = status_bar {};
+  result.parent(parent);
+  result.panels() = panels;
+  return result;
+}
+
+status_bar status_bar::create(const control& parent, const status_bar_panel_collection& panels, const xtd::ustring& name) {
+  auto result = status_bar {};
+  result.parent(parent);
+  result.panels() = panels;
+  result.name(name);
+  return result;
+}
+
+status_bar status_bar::create(const control& parent, xtd::forms::dock_style style) {
+  auto result = status_bar {};
+  result.parent(parent);
+  result.dock(style);
+  return result;
+}
+
+status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const status_bar_panel_collection& panels) {
+  auto result = status_bar {};
+  result.parent(parent);
+  result.dock(style);
+  result.panels() = panels;
+  return result;
+}
+
+status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const status_bar_panel_collection& panels, const xtd::ustring& name) {
+  auto result = status_bar {};
+  result.parent(parent);
+  result.dock(style);
+  result.panels() = panels;
+  result.name(name);
+  return result;
+}
+
+status_bar status_bar::create(const control& parent, const xtd::ustring& text) {
+  auto result = status_bar {};
+  result.parent(parent);
+  result.text(text);
+  return result;
+}
+
+status_bar status_bar::create(const control& parent, const xtd::ustring& text, const xtd::ustring& name) {
+  auto result = status_bar {};
+  result.parent(parent);
+  result.text(text);
+  result.name(name);
+  return result;
+}
+
+status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::ustring& text) {
+  auto result = status_bar {};
+  result.parent(parent);
+  result.dock(style);
+  result.text(text);
+  return result;
+}
+
+status_bar status_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::ustring& text, const xtd::ustring& name) {
+  auto result = status_bar {};
+  result.parent(parent);
+  result.dock(style);
+  result.text(text);
   result.name(name);
   return result;
 }
