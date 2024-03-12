@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.20)
 
 project(create_gtest_like_event_listener)
 find_package(xtd REQUIRED)

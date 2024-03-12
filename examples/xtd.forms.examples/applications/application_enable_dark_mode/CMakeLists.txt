@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.20)
 
 project(application_enable_dark_mode)
 find_package(xtd REQUIRED)
