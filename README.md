@@ -10,10 +10,10 @@
  
 # Latest news
 
-* [Release xtd 0.1.2 (beta)](https://gammasoft71.github.io/xtd/docs/news/20240312) - March 12, 2024
-* [The xtd 0.2.0 (beta) is growing](https://gammasoft71.github.io/xtd/docs/news/20231112) - November 12, 2023
-* [Release xtd 0.1.1 (beta)](https://gammasoft71.github.io/xtd/docs/news/20230717) - Jully 17, 2023
-* [The new xtd website is online](https://gammasoft71.github.io/xtd/docs/news/20230209) - February 9, 2023
+* [Release xtd 0.1.2 (beta)](https://gammasoft71.github.io/xtd/docs/news/20240312) - Posted on March 12, 2024
+* [The xtd 0.2.0 (beta) is growing](https://gammasoft71.github.io/xtd/docs/news/20231112) - Posted on November 12, 2023
+* [Release xtd 0.1.1 (beta)](https://gammasoft71.github.io/xtd/docs/news/20230717) - Posted on Jully 17, 2023
+* [The new xtd website is online](https://gammasoft71.github.io/xtd/docs/news/20230209) - Posted on February 9, 2023
 * [All news](https://gammasoft71.github.io/xtd/docs/news)
 
 ## Features
