@@ -6,7 +6,7 @@ const FeatureList = [
   {
     description: (
       <>
-      (*) See <a href="docs/documentation/portability#the-xtd-libraries-portability-list">portability</a> for more information.                                                                                                    <br/> 
+      (*) See <a href="docs/documentation/portability#the-xtd-libraries-portability-list">portability</a> for more information.<br/> 
       </>
     ),
   },
@@ -100,11 +100,9 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
       </div>
     </section>
   );
