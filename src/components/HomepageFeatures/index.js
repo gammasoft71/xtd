@@ -14,10 +14,10 @@ const FeatureList = [
     title: 'Latest news',
     description: (
       <>
-      • <a href="docs/news/20240312">Release xtd 0.1.2 (beta)</a> - March 12, 2024
-      <br/>• <a href="docs/news/20231112">The xtd 0.2.0 (beta) is growing</a> - November 12, 2023
-      <br/>• <a href="docs/news/20230717">Release xtd 0.1.1 (beta)</a> - Jully 17, 2023
-      <br/>• <a href="docs/news/20230209">The new xtd website is online</a> - February 9, 2023
+      • <a href="docs/news/20240312">Release xtd 0.1.2 (beta)</a> - Posted on March 12, 2024
+      <br/>• <a href="docs/news/20231112">The xtd 0.2.0 (beta) is growing</a> - Posted on November 12, 2023
+      <br/>• <a href="docs/news/20230717">Release xtd 0.1.1 (beta)</a> - Posted on Jully 17, 2023
+      <br/>• <a href="docs/news/20230209">The new xtd website is online</a> - Posted on February 9, 2023
       <br/>• <a href="docs/news">All news</a>
       </>
     ),
