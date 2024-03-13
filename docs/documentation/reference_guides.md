@@ -5,6 +5,7 @@ sidebar_position: 3
 # Reference Guides
 
 All Reference Guides are available online, including older versions. 
+
 The latest development version of the manual is also available.
 
 ## Current stable version

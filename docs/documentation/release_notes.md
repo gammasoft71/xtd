@@ -4,7 +4,9 @@ sidebar_position: 5
 
 # Release Notes
 
-Contains all release notes for xtd versions.
+Contains all release notes for xtd versions, including older versions. 
+
+The release note of the latest development version is also available.
 
 ## Current stable version
 
