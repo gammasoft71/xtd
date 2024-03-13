@@ -9,7 +9,7 @@ The latest development version of the manual is also available.
 
 ## Current stable version
 
-* There is no stable version of xtd yet.
+* *There is no stable version of xtd yet.*
 
 ## Current development version
 

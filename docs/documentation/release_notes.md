@@ -8,7 +8,7 @@ Contains all release notes for xtd versions.
 
 ## Current stable version
 
-* There is no stable version of xtd yet.
+* *There is no stable version of xtd yet.*
 
 ## Current development version
 
