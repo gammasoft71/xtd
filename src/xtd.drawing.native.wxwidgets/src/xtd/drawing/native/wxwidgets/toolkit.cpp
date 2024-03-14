@@ -58,7 +58,14 @@ intptr xtd::drawing::native::toolkit::initialize() {
   wxApp::SetInstance(new wx_application());
   int32 argc = 0;
   wxEntryStart(argc, reinterpret_cast<wxChar**>(0));
+  // Workaround : On macOS, call only one wxApp::CallOnInit because after calling wxApp::CleanUp, calling wxApp::CallOnInit again is blocking...
+#if defined(__APPLE__)
+  static auto init = false;
+  if (!init) wxTheApp->CallOnInit();
+  init = true;
+#else
   wxTheApp->CallOnInit();
+#endif
   wxTheApp->SetExitOnFrameDelete(false);
   wxInitAllImageHandlers();
   return 0;
@@ -66,12 +73,8 @@ intptr xtd::drawing::native::toolkit::initialize() {
 
 void xtd::drawing::native::toolkit::shutdown(intptr handle) {
   if (!wxTheApp) return;
-  
   wxImage::CleanUpHandlers();
-  wxTheApp->OnExit();
-  wxTheApp->CleanUp();
-  wxApp::SetInstance(nullptr);
-  delete wxTheApp;
+  wxEntryCleanup();
 }
 
 ustring xtd::drawing::native::toolkit::name() {
