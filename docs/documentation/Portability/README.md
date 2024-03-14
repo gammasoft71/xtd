@@ -95,8 +95,8 @@ xtd is every time tested with Continuous Integration tools.
 
 Configurations :
 
-- Visual Studio 2019 Win32
-- Visual Studio 2019 Win64
+* Visual Studio 2019 Win32
+* Visual Studio 2019 Win64
 
 ### Travis CI
 
@@ -104,8 +104,8 @@ Configurations :
 
 Configurations :
 
-- macOS Xcode 11.6
-- linux g++ 9
+* macOS Xcode 11.6
+* linux g++ 9
 
 ### Codecov
 
@@ -159,9 +159,10 @@ With CMake, xtd support many Development Environment Tools.
 
 The compilers listed below are supported with xtd :
 
-- MSVC 2019 or later
-- clang version 11.0.3 (clang-1103.0.32.62) - Xcode 11.6 or later
-- GCC 10 or later
+* Apple clang version 11.0.3 (clang-1103.0.32.62) - Xcode 11.6 or later
+* clang 10 or later
+* GCC 10 or later
+* MSVC 2019 or later
 
 ## Native
 
@@ -171,10 +172,10 @@ For add a new Operating System, you juste have to implement native api for the n
 
 ### Native API by library
 
-- [xtd.core](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core.native)
-- [xtd.drawing](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing.native)
-- [xtd.forms](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native)
+* [xtd.core](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core.native)
+* [xtd.drawing](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing.native)
+* [xtd.forms](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native)
 
 ## See also
 
-- [Documentation](/docs/documentation)
+* [Documentation](/docs/documentation)

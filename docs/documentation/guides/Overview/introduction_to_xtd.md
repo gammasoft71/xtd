@@ -81,9 +81,10 @@ You can write `xtd` apps in modern **C++17** or above and **C** (For more info a
 
 The compilers listed below are supported with xtd :
 
-* MSVC 2019 or later
-* clang version 11.0.3 (clang-1103.0.32.62) - Xcode 11.6 or later
+* Apple clang version 11.0.3 (clang-1103.0.32.62) - Xcode 11.6 or later
+* clang 10 or later
 * GCC 10 or later
+* MSVC 2019 or later
 
 Other compilers can probably be used, but they have not been tested yet.
 
