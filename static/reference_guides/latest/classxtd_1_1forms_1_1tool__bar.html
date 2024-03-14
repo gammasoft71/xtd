@@ -419,6 +419,11 @@ friend&#160;</td><td class="memItemRight" valign="bottom"><b>tool_bar_button</b>
 <tr class="memdesc:a41dc903f9f2c9b177a18bcccad829830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the toolbar buttons wrap to the next line if the toolbar becomes too small to display all the buttons on the same line.  <br /></td></tr>
 <tr class="separator:a41dc903f9f2c9b177a18bcccad829830"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
+<tr class="memitem:ab55326bf627a71e4e131f1b2116066f6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1tool__bar.html">tool_bar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1tool__bar.html#ab55326bf627a71e4e131f1b2116066f6">create</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#aee159340730f7eed058c5c4bffece2c7">parent</a>, <a class="el" href="group__xtd__forms.html#gaac8e45c70fc114a556d8f717b7ee7619">xtd::forms::dock_style</a> style, const <a class="el" href="classxtd_1_1forms_1_1image__list.html#ab2980da466b87684eb01dc92804c1d73">xtd::forms::image_list::image_collection</a> &amp;image_collection, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>)</td></tr>
+<tr class="memdesc:ab55326bf627a71e4e131f1b2116066f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a> with specified parent, style, text, and name.  <br /></td></tr>
+<tr class="separator:ab55326bf627a71e4e131f1b2116066f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protetced properties</h2></td></tr>
 <tr class="memitem:a51d6b37783703a8997a1167594101124"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1create__params.html">forms::create_params</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1tool__bar.html#a51d6b37783703a8997a1167594101124">create_params</a> () const noexcept override</td></tr>
 <tr class="memdesc:a51d6b37783703a8997a1167594101124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the required creation parameters when the control handle is created.  <br /></td></tr>
@@ -1814,6 +1819,65 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
+<a id="ab55326bf627a71e4e131f1b2116066f6" name="ab55326bf627a71e4e131f1b2116066f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55326bf627a71e4e131f1b2116066f6">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1tool__bar.html">tool_bar</a> xtd::forms::tool_bar::create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__forms.html#gaac8e45c70fc114a556d8f717b7ee7619">xtd::forms::dock_style</a>&#160;</td>
+          <td class="paramname"><em>style</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1image__list.html#ab2980da466b87684eb01dc92804c1d73">xtd::forms::image_list::image_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>image_collection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A factory to create an <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a> with specified parent, style, text, and name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a>. </td></tr>
+    <tr><td class="paramname">style</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac8e45c70fc114a556d8f717b7ee7619" title="Specifies the position and manner in which a control is docked.">xtd::forms::dock_style</a> values. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a> created. </dd></dl>
+
+</div>
+</div>
 <a id="a51d6b37783703a8997a1167594101124" name="a51d6b37783703a8997a1167594101124"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51d6b37783703a8997a1167594101124">&#9670;&#160;</a></span>create_params()</h2>
 
@@ -2037,7 +2101,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 <p>Sets which control borders are docked to its parent control and determines how a control is resized with its parent. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dock</td><td>One of the td::forms::dock_style values. The default is <a class="el" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619a334c4a4c42fdb79d7ebc3e73b517e6f8" title="The control is not docked.">xtd::forms::dock_style::none</a>. </td></tr>
+    <tr><td class="paramname">dock</td><td>One of the <a class="el" href="group__xtd__forms.html#gaac8e45c70fc114a556d8f717b7ee7619" title="Specifies the position and manner in which a control is docked.">xtd::forms::dock_style</a> values. The default is <a class="el" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619a334c4a4c42fdb79d7ebc3e73b517e6f8" title="The control is not docked.">xtd::forms::dock_style::none</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2847,7 +2911,7 @@ The <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#a413c840156136e2329b
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 10 2024 21:07:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 14 2024 22:05:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
