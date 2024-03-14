@@ -14,11 +14,10 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 extern char** __diagnostics_argv;
-std::recursive_mutex __debug_mutex__;
-trace_listener_collection __listeners__ {std::make_shared<xtd::diagnostics::default_trace_listener>()};
-bool __show_assert_dialog__ {true};
-
-bool __debug_use_debug_global_lock__ = true;
+auto __debug_mutex__ = recursive_mutex {};
+auto __listeners__ = trace_listener_collection {make_shared<default_trace_listener>()};
+auto __show_assert_dialog__  = true;
+auto __debug_use_debug_global_lock__ = true;
 
 trace_listener_collection& debug::listeners_ = __listeners__;
 bool& debug::show_assert_dialog_ = __show_assert_dialog__;
@@ -209,7 +208,7 @@ xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, cons
   write_line(detail_message);
   write_line(stack_trace(stack_frame).to_string());
   write_line("");
-  return show_assert_dialog_ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n{}\n{}", message, detail_message, stack_trace(stack_frame)), assert_dialog_caption())) : assert_dialog_result::retry;
+  return __show_assert_dialog__ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n{}\n{}", message, detail_message, stack_trace(stack_frame)), assert_dialog_caption())) : assert_dialog_result::retry;
 }
 
 xtd::ustring debug::assert_dialog_caption() {
