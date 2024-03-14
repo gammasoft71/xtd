@@ -116,6 +116,20 @@ namespace xtd {
       virtual status_bar& sizing_grip(bool value);
       /// @}
       
+      /// @name Public Events
+      
+      /// @{
+      /// @brief Occurs when a visual aspect of an owner-drawn status bar control changes.
+      /// @remarks You can use this event to perform drawing operations in an owner-drawn xtd::forms::status_bar control. For example, if you display an owner-drawn xtd::forms::status_bar_panel that displays a progress bar, you can use this event to perform the drawing of the progress bar on the panel. The data provided to the event through the xtd::forms::status_bar_draw_item_event_args object passed as a parameter to the event handler enables you to determine the panel that needs to be drawn and the xtd::drawing::graphics to use to draw to the panel. This event is only raised when the xtd::forms::status_bar_panel::style property of a xtd::forms::status_bar_panel in a xtd::forms::status_bar control is set to xtd::forms::status_bar_panel_style::owner_draw.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      xtd::event<status_bar, xtd::forms::status_bar_draw_item_event_handler> draw_item;
+      
+      /// @brief Occurs when a xtd::forms::status_bar_panel object on a xtd::forms::status_bar control is clicked.
+      /// @remarks You can use this event to perform tasks when a panel within a xtd::forms::status_bar control is clicked. The data provided to the event through the xtd::forms::status_bar_panel_click_event_args passed as a parameter to the event handler enables you to determine the xtd::forms::status_bar_panel that was clicked by the user in order to perform tasks on the selected panel.
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      xtd::event<status_bar, xtd::forms::status_bar_panel_click_event_handler> panel_click;
+      /// @}
+
       /// @name Public Static Methods
       
       /// @{
@@ -223,20 +237,6 @@ namespace xtd {
       /// @param name The name of the xtd::forms::status_bar.
       /// @return New xtd::forms::status_bar created.
       static status_bar create(const control& parent, xtd::forms::dock_style style, const xtd::ustring& text, const xtd::ustring& name);
-      /// @}
-      
-      /// @name Public Events
-      
-      /// @{
-      /// @brief Occurs when a visual aspect of an owner-drawn status bar control changes.
-      /// @remarks You can use this event to perform drawing operations in an owner-drawn xtd::forms::status_bar control. For example, if you display an owner-drawn xtd::forms::status_bar_panel that displays a progress bar, you can use this event to perform the drawing of the progress bar on the panel. The data provided to the event through the xtd::forms::status_bar_draw_item_event_args object passed as a parameter to the event handler enables you to determine the panel that needs to be drawn and the xtd::drawing::graphics to use to draw to the panel. This event is only raised when the xtd::forms::status_bar_panel::style property of a xtd::forms::status_bar_panel in a xtd::forms::status_bar control is set to xtd::forms::status_bar_panel_style::owner_draw.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
-      xtd::event<status_bar, xtd::forms::status_bar_draw_item_event_handler> draw_item;
-      
-      /// @brief Occurs when a xtd::forms::status_bar_panel object on a xtd::forms::status_bar control is clicked.
-      /// @remarks You can use this event to perform tasks when a panel within a xtd::forms::status_bar control is clicked. The data provided to the event through the xtd::forms::status_bar_panel_click_event_args passed as a parameter to the event handler enables you to determine the xtd::forms::status_bar_panel that was clicked by the user in order to perform tasks on the selected panel.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
-      xtd::event<status_bar, xtd::forms::status_bar_panel_click_event_handler> panel_click;
       /// @}
       
     protected:
