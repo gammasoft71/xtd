@@ -10,7 +10,7 @@
 
 /// @cond
 #if defined(_MSC_VER)
-#  define __compiler_id xtd::compiler_id::microsoft_visual_studio
+#  define __compiler_id xtd::compiler_id::visual_studio
 #elif defined(__clang__)
 #  define __compiler_id xtd::compiler_id::clang;
 #elif defined(__GNUC__)
