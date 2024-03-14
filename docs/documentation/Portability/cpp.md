@@ -25,10 +25,10 @@ For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) an
 
 Compilers list where xtd.forms are tested
 
-* Apple clang version 11.0.3 (clang-1103.0.32.62) - Xcode 11.6 or later
+* Xcode 11.6 (Apple clang version 11.0.3) or later
 * clang 10 or later
 * GCC 10 or later
-* MSVC 2019 or later
+* Visual Studio 2019 RTW 16.0 or later
 
 More compilers can be used see [C++ compiler support for C++17](https://en.cppreference.com/w/cpp/compiler_support#cpp17).
 
