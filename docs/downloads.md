@@ -36,7 +36,7 @@ In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gam
   
    In order to build xtd, you first need download and install Microsoft Visual Studio 2019 community from [https://www.visualstudio.com](https://www.visualstudio.com).
 
-2. Install CMake 3.3 or later
+2. Install CMake 3.20 or later
   
    After Microsoft Visual Studio, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/)
 
@@ -117,7 +117,7 @@ cd xtd_path_name
   
    After gsound, you need to install the [gtk3](https://www.gtk.org).
 
-4. Install CMake 3.3 or later
+4. Install CMake 3.20 or later
   
    After g++, gsound and gtk3, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/).
 

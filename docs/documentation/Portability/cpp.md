@@ -25,7 +25,7 @@ For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) an
 
 Compilers list where xtd.forms are tested
 
-* Xcode 11.6 (Apple clang version 11.0.3) or later
+* Xcode 11.6 - Apple clang version 11.0.3 or later
 * clang 10 or later
 * GCC 10 or later
 * Visual Studio 2019 RTW 16.0 or later
