@@ -68,7 +68,7 @@ We investigate to add cotire to build of xtd.
 
 ### xtd install script
 
-* git clone wxWidgets 3.1.5
+* git clone wxWidgets 3.2.2.1
 * build and install wxWidgets in Debug and Release.
 * build and install xtd (without unit tests) in Debug and Release.
 
