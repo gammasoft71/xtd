@@ -58,7 +58,7 @@ namespace guidgen {
       return ustring::format("guidgen version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static auto process_arguments(const std::vector<ustring>& args, ustring& format, int& count, bool& show_version, bool& show_help) noexcept->bool {
+    static auto process_arguments(const std::vector<ustring>& args, ustring& format, int& count, bool& show_version, bool& show_help) noexcept -> bool {
       try {
         for (auto index = 0_sz; index < args.size(); index += 1) {
           static constexpr auto format_types = {"N", "D", "B", "P", "X"};
