@@ -18,6 +18,7 @@ using namespace xtd::forms;
 
 struct button::data {
   bool auto_repeat = false;
+  bool auto_repeat_click = false;
   timer auto_repeat_timer;
   int32 auto_repeat_delay = 300;
   int32 auto_repeat_interval = 100;
@@ -228,7 +229,7 @@ drawing::size button::measure_control() const noexcept {
 }
 
 void button::on_click(const event_args& e) {
-  if (enabled()) button_base::on_click(e);
+  if (enabled() && (!data_->auto_repeat || data_->auto_repeat_click)) button_base::on_click(e);
   if (data_->dialog_result != forms::dialog_result::none &&  top_level_control().has_value() && static_cast<form&>(top_level_control().value().get()).modal()) {
     static_cast<form&>(top_level_control().value().get()).dialog_result(dialog_result());
     static_cast<form&>(top_level_control().value().get()).close();
@@ -261,6 +262,7 @@ void button::on_enabled_changed(const event_args& e) {
 void button::on_mouse_down(const mouse_event_args& e) {
   data_->auto_repeat_timer.enabled(false);
   if (e.button() == mouse_buttons::left) {
+    auto_repeat_perform_click();
     data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_delay);
     data_->auto_repeat_timer.enabled(data_->auto_repeat);
     if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = xtd::forms::visual_styles::push_button_state::pressed;
@@ -293,10 +295,16 @@ void button::on_paint(paint_event_args& e) {
   button_base::on_paint(e);
 }
 
+void button::auto_repeat_perform_click() {
+  data_->auto_repeat_click = true;
+  perform_click();
+  data_->auto_repeat_click = false;
+}
+
 void button::on_auto_repeat_timer_tick(object& sender, const event_args& e) {
   data_->auto_repeat_timer.enabled(false);
   if (enabled()) {
-    perform_click();
+    auto_repeat_perform_click();
     data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_interval);
     data_->auto_repeat_timer.enabled(data_->auto_repeat);
   }
