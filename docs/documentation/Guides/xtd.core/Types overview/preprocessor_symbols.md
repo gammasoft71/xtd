@@ -191,7 +191,7 @@ The following code shows how to detect the compiler with the preprocessor symbol
 
 ```cpp
 #if defined(_MSC_VER)
-#  define __comiler_name__ "Microsoft Visual Studio"
+#  define __comiler_name__ "Visual Studio"
 #elif defined(__clang__)
 #  define __comiler_name__ "clang"
 #elif defined(__GNUC__)
