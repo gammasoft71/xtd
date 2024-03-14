@@ -562,8 +562,8 @@ add_sources(
   include/xtd/internal/__show_generic_exception_message
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__sprintf
-  include/xtd/internal/__std_abort.h
-  include/xtd/internal/__std_abort
+  include/xtd/internal/__xtd_debugbreak.h
+  include/xtd/internal/__xtd_debugbreak
   include/xtd/internal/__string_formatter.h
   include/xtd/internal/__string_formatter
   include/xtd/io/binary_reader.h

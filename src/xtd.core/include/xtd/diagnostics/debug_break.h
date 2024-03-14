@@ -17,4 +17,4 @@
 /// console::write_line("Hello, world.");
 /// @endcode
 #define debug_break_() \
-  if (xtd::diagnostics::debugger::launch()) __std_abort()
+  if (xtd::diagnostics::debugger::launch()) __xtd_debugbreak()
