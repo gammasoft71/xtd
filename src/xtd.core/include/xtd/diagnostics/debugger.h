@@ -9,7 +9,7 @@
 #include "../ustring.h"
 
 #define __XTD_CORE_INTERNAL__
-#include "../internal/__std_abort.h"
+#include "../internal/__xtd_debugbreak.h"
 #undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
