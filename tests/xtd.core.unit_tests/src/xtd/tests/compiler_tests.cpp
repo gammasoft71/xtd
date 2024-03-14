@@ -33,15 +33,15 @@ namespace xtd::tests {
     }
     
     void test_method_(create_compiler_with_compiler_id_microsoft_visual_studio_version_build_type_release_and_is_64_bit) {
-      compiler c {compiler_id::microsoft_visual_studio, {1, 2, 3}, build_type::release, true};
-      assert::are_equal(compiler_id::microsoft_visual_studio, c.compiler_id(), csf_);
+      compiler c {compiler_id::visual_studio, {1, 2, 3}, build_type::release, true};
+      assert::are_equal(compiler_id::visual_studio, c.compiler_id(), csf_);
       assert::is_true(c.is_64_bit(), csf_);
       assert::are_equal(build_type::release, c.build_type(), csf_);
       assert::is_false(c.is_build_type_debug(), csf_);
-      assert::are_equal("Microsoft Visual Studio", c.name(), csf_);
+      assert::are_equal("Visual Studio", c.name(), csf_);
       assert::are_equal(version {1, 2, 3}, c.version(), csf_);
-      assert::are_equal("Microsoft Visual Studio 1.2.3", c.version_string(), csf_);
-      assert::are_equal("Microsoft Visual Studio 1.2.3", c.to_string(), csf_);
+      assert::are_equal("Visual Studio (MSVC 1.2.3)", c.version_string(), csf_);
+      assert::are_equal("Visual Studio (MSVC 1.2.3)", c.to_string(), csf_);
     }
     
     void test_method_(create_compiler_with_compiler_id_clang_version_build_type_release_and_is_64_bit) {

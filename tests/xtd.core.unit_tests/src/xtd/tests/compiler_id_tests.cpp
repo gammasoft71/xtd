@@ -14,10 +14,10 @@ namespace xtd::tests {
       assert::are_equal(compiler_id::unknown, enum_object<>::parse<compiler_id>("unknown"), csf_);
     }
     
-    void test_method_(microsoft_visual_studio) {
-      assert::are_equal(0, enum_object<>::to_int32(compiler_id::microsoft_visual_studio), csf_);
-      assert::are_equal("microsoft_visual_studio", enum_object<>::to_string(compiler_id::microsoft_visual_studio), csf_);
-      assert::are_equal(compiler_id::microsoft_visual_studio, enum_object<>::parse<compiler_id>("microsoft_visual_studio"), csf_);
+    void test_method_(visual_studio) {
+      assert::are_equal(0, enum_object<>::to_int32(compiler_id::visual_studio), csf_);
+      assert::are_equal("visual_studio", enum_object<>::to_string(compiler_id::visual_studio), csf_);
+      assert::are_equal(compiler_id::visual_studio, enum_object<>::parse<compiler_id>("visual_studio"), csf_);
     }
     
     void test_method_(clang) {

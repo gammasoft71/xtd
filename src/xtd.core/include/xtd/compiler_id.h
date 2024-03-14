@@ -18,17 +18,20 @@ namespace xtd {
   enum class compiler_id {
     /// @brief The compiler is unknown.
     unknown = -1,
+    /// @brief The compiler is Visual Studio.
+    visual_studio = 0,
     /// @brief The compiler is Microsoft Visual Studio.
-    microsoft_visual_studio,
+    /// @deprecated Replaced by xtd::compiler_id::visual_studio - Will be removed in version 0.4.0
+    microsoft_visual_studio [[deprecated("Replaced by xtd::compiler_id::visual_studio - Will be removed in version 0.4.0")]] = visual_studio,
     /// @brief The compiler is clang.
-    clang,
+    clang = 1,
     /// @brief The compiler is gcc.
-    gcc,
+    gcc = 2,
   };
 }
 
 /// @cond
 template<> struct xtd::enum_register<xtd::compiler_id> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::compiler_id> {{xtd::compiler_id::unknown, "unknown"}, {xtd::compiler_id::microsoft_visual_studio, "microsoft_visual_studio"}, {xtd::compiler_id::clang, "clang"}, {xtd::compiler_id::gcc, "gcc"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::compiler_id> {{xtd::compiler_id::unknown, "unknown"}, {xtd::compiler_id::visual_studio, "visual_studio"}, {xtd::compiler_id::clang, "clang"}, {xtd::compiler_id::gcc, "gcc"}};}
 };
 /// @endcond
