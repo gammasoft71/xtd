@@ -77,7 +77,7 @@ namespace {
   ustring generate_compiler_string_report(int32 indent) {
     ustring report = ustring::format("{}Compiler{}", indent_string(indent), environment::new_line());
     auto compiler = system_report::compiler();
-    report += ustring::format("{}Name: {}{}", indent_string(indent + 1), compiler.name(), environment::new_line());
+    report += ustring::format("{}Name: {}{}", indent_string(indent + 1), compiler.to_string(), environment::new_line());
     report += ustring::format("{}Version: {}{}", indent_string(indent + 1), compiler.version(), environment::new_line());
     report += ustring::format("{}Mode: {}{}", indent_string(indent + 1), compiler.is_build_type_debug() ? "Debug" : "Release", environment::new_line());
     report += ustring::format("{}64 bit: {}{}", indent_string(indent + 1), compiler.is_64_bit(), environment::new_line());
