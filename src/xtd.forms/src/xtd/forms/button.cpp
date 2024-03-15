@@ -261,12 +261,12 @@ void button::on_enabled_changed(const event_args& e) {
 
 void button::on_mouse_down(const mouse_event_args& e) {
   data_->auto_repeat_timer.enabled(false);
-  if (e.button() == mouse_buttons::left) {
+  if (data_->auto_repeat && e.button() == mouse_buttons::left) {
     auto_repeat_perform_click();
     data_->auto_repeat_timer.interval_milliseconds(data_->auto_repeat_delay);
     data_->auto_repeat_timer.enabled(data_->auto_repeat);
-    if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = xtd::forms::visual_styles::push_button_state::pressed;
   }
+  if (flat_style() != xtd::forms::flat_style::system && enabled()) data_->state = xtd::forms::visual_styles::push_button_state::pressed;
   button_base::on_mouse_down(e);
 }
 
