@@ -191,11 +191,13 @@ The following code shows how to detect the compiler with the preprocessor symbol
 
 ```cpp
 #if defined(_MSC_VER)
-#  define __comiler_name__ "Visual Studio"
+#  define __comiler_name__ "MSVC"
+#elif defined (__APPLE__) && defined(__clang__)
+#  define __comiler_name__ "Apple Clang"
 #elif defined(__clang__)
-#  define __comiler_name__ "clang"
+#  define __comiler_name__ "Clang"
 #elif defined(__GNUC__)
-#  define __comiler_name__ "gcc"
+#  define __comiler_name__ "GCC"
 #else
 #  error "Unknown compiler"
 #endif
@@ -211,8 +213,8 @@ int main() {
 
 // This code produces the following output if compiler is Clang:
 //
-// compiler_name="clang"
-// compiler_name="clang"
+// compiler_name="Clang"
+// compiler_name="Clang"
 ```
 
 ### Remarks
