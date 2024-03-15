@@ -298,7 +298,7 @@ void assert::is_greater(const char* val1, const char* val2, const ustring& messa
   if (strcmp(val1, val2) > 0)
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -306,7 +306,7 @@ void assert::is_greater(const char8* val1, const char8* val2, const ustring& mes
   if (ustring {val1} > ustring {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 #endif
 
@@ -314,28 +314,28 @@ void assert::is_greater(const char16* val1, const char16* val2, const ustring& m
   if (u16string {val1} > u16string {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {val1} > u32string {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater(const wchar_t* val1, const wchar_t* val2, const ustring& message, const stack_frame& stack_frame) {
   if (wcscmp(val1, val2) > 0)
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater_or_equal(const char* val1, const char* val2, const ustring& message, const stack_frame& stack_frame) {
   if (strcmp(val1, val2) >= 0)
     succeed(message, stack_frame);
   else
-    fail("greather than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 #if defined(__cpp_lib_char8_t)
@@ -343,7 +343,7 @@ void assert::is_greater_or_equal(const char8* val1, const char8* val2, const ust
   if (ustring {val1} >= ustring {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 #endif
 
@@ -351,21 +351,21 @@ void assert::is_greater_or_equal(const char16* val1, const char16* val2, const u
   if (u16string {val1} >= u16string {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater_or_equal(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {val1} >= u32string {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const ustring& message, const stack_frame& stack_frame) {
   if (wcscmp(val1, val2) >= 0)
     succeed(message, stack_frame);
   else
-    fail("greather than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less(const char* val1, const char* val2, const ustring& message, const stack_frame& stack_frame) {
@@ -380,7 +380,7 @@ void assert::is_less(const char8* val1, const char8* val2, const ustring& messag
   if (ustring {val1} < ustring {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 #endif
 
@@ -388,14 +388,14 @@ void assert::is_less(const char16* val1, const char16* val2, const ustring& mess
   if (u16string {val1} < u16string {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {val1} < u32string {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less(const wchar_t* val1, const wchar_t* val2, const ustring& message, const stack_frame& stack_frame) {
@@ -417,7 +417,7 @@ void assert::is_less_or_equal(const char8* val1, const char8* val2, const ustrin
   if (ustring {val1} <= ustring {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 #endif
 
@@ -425,14 +425,14 @@ void assert::is_less_or_equal(const char16* val1, const char16* val2, const ustr
   if (u16string {val1} <= u16string {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less_or_equal(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
   if (u32string {val1} <= u32string {val2})
     succeed(message, stack_frame);
   else
-    fail("greather than " + to_string(val2), to_string(val1), message, stack_frame);
+    fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const ustring& message, const stack_frame& stack_frame) {

@@ -146,7 +146,7 @@ namespace xtd::forms::tests {
       assert::are_equal(10, progress_bar.value(), csf_);
     }
     
-    void test_method_(set_minimum_greather_than_maximum) {
+    void test_method_(set_minimum_greater_than_maximum) {
       progress_bar_for_test progress_bar;
       valid::are_equal(100, progress_bar.maximum(), csf_);
       valid::is_zero(progress_bar.minimum(), csf_);
