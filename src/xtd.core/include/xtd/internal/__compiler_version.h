@@ -9,8 +9,10 @@
 #include "../version.h"
 
 /// @cond
-#if defined(_MSC_FULL_VER)
+#if defined(_MSC_FULL_VER) && defined(_MSC_BUILD) && _MSC_BUILD != 0
 #  define __compiler_version xtd::version {_MSC_FULL_VER / 10000000, _MSC_FULL_VER % 10000000 / 100000, _MSC_FULL_VER % 100000, _MSC_BUILD}
+#elif defined(_MSC_FULL_VER)
+#  define __compiler_version xtd::version {_MSC_FULL_VER / 10000000, _MSC_FULL_VER % 10000000 / 100000, _MSC_FULL_VER % 100000}
 #elif defined(_MSC_VER)
 #  define __compiler_version xtd::version {_MSC_VER / 100, _MSC_VER % 100}
 #elif defined(__clang__)
