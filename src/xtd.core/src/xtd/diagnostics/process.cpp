@@ -301,13 +301,11 @@ bool process::start() {
     }
   }, *this, std::ref(allow_to_continue)};
   while (!allow_to_continue) this_thread::yield();
-  if (data_->exception_pointer_) {
-    if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
-    auto exception_pointer = data_->exception_pointer_;
-    data_->exception_pointer_ = nullptr;
-    rethrow_exception(exception_pointer);
-  }
-  return true;
+  if (!data_->exception_pointer_) return true;
+  if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
+  auto exception_pointer = data_->exception_pointer_;
+  data_->exception_pointer_ = nullptr;
+  rethrow_exception(exception_pointer);
 }
 
 process process::start(const process_start_info& start_info) {
