@@ -10,7 +10,6 @@
 #include "imessage_filter.h"
 #include "message.h"
 #include "message_loop_callback.h"
-#include <xtd/forms/window_messages>
 #include <xtd/delegate>
 #include <xtd/event_args>
 #include <xtd/static>

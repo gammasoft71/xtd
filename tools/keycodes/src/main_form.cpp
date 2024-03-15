@@ -1,3 +1,4 @@
+#include <xtd/forms/window_messages>
 #include "main_form.h"
 #include "key_control.h"
 #include "key_press_control.h"

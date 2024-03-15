@@ -2,6 +2,7 @@
 #include <xtd/forms/button>
 #include <xtd/forms/check_box>
 #include <xtd/forms/debug_form>
+#include <xtd/forms/window_messages>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

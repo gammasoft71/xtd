@@ -35,7 +35,6 @@
 #include <xtd/drawing/point>
 #include <xtd/drawing/rectangle>
 #include <xtd/drawing/size>
-#include <xtd/forms/window_messages>
 #include <xtd/any>
 #include <xtd/async_result>
 #include <xtd/optional>

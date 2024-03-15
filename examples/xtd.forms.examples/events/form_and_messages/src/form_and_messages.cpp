@@ -2,6 +2,7 @@
 #include <xtd/forms/application>
 #include <xtd/forms/trace_form>
 #include <xtd/forms/form>
+#include <xtd/forms/window_messages>
 #include <xtd/ctrace>
 
 using namespace std;
