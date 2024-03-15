@@ -202,34 +202,33 @@ intmax_t process::shell_execute(const std::string& verb, const string& file_name
 }
 
 process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int_least32_t process_window_style, int_least32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
-  auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
+  if (!is_valid_process(&unix::strings::split, file_name, working_directory)) return make_tuple(0, 0, std::unique_ptr<std::ostream> {}, std::unique_ptr<std::istream> {}, std::unique_ptr<std::istream> {});
   
+  auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   int_least32_t pipe_result = 0;
-  int_least32_t pipe_stdin[2];
+  int_least32_t pipe_stdin[] = {0, 0};
   if (redirect_standard_input) pipe_result = pipe(pipe_stdin);
-  int_least32_t pipe_stdout[2];
+  int_least32_t pipe_stdout[] = {0, 0};
   if (redirect_standard_output) pipe_result = pipe(pipe_stdout);
-  int_least32_t pipe_stderr[2];
+  int_least32_t pipe_stderr[] = {0, 0};
   if (redirect_standard_error) pipe_result = pipe(pipe_stderr);
   if (pipe_result) {/*do nothing*/}
-  
-  if (!is_valid_process(&unix::strings::split, file_name, working_directory)) return make_tuple(0, 0, make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
   
   pid_t process = fork();
   if (process == 0) {
     if (redirect_standard_input) {
       close(pipe_stdin[1]);
-      dup2(pipe_stdin[0], 0);
+      dup2(pipe_stdin[0], STDIN_FILENO);
     }
     
     if (redirect_standard_output) {
       close(pipe_stdout[0]);
-      dup2(pipe_stdout[1], 1);
+      dup2(pipe_stdout[1], STDOUT_FILENO);
     }
     
     if (redirect_standard_error) {
       close(pipe_stderr[0]);
-      dup2(pipe_stderr[1], 2);
+      dup2(pipe_stderr[1], STDERR_FILENO);
     }
     
     vector<string> command_line_args;
