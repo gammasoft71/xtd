@@ -34,7 +34,7 @@ bool compiler::is_64_bit() noexcept {
 }
 
 xtd::ustring compiler::name() const noexcept {
-  static std::map<xtd::compiler_id, xtd::ustring> names {{compiler_id::unknown, "<unknown>"}, {compiler_id::msvc, "MSVC"}, {compiler_id::clang, "clang"}, {compiler_id::gcc, "gcc"}, {compiler_id::apple_clang, "Apple clang"}};
+  static std::map<xtd::compiler_id, xtd::ustring> names {{compiler_id::unknown, "<unknown>"}, {compiler_id::msvc, "MSVC"}, {compiler_id::clang, "Clang"}, {compiler_id::gcc, "GCC"}, {compiler_id::apple_clang, "Apple Clang"}};
   return names[compiler_id()];
 }
 
