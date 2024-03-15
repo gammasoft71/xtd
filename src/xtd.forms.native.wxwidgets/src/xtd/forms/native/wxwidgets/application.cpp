@@ -6,9 +6,9 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include <xtd/forms/native/application>
+#include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/system_colors>
-#include <xtd/forms/window_messages>
 #include <xtd/threading/thread>
 #include <xtd/chrono>
 #include <xtd/environment>

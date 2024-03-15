@@ -10,8 +10,8 @@
 #include <xtd/forms/native/button>
 #include <xtd/forms/native/button_styles>
 #include <xtd/forms/native/control>
+#include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages>
 
 using namespace xtd;
 using namespace xtd::forms;

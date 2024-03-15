@@ -2,7 +2,9 @@
 #include "../../../../include/xtd/forms/application.h"
 #include <xtd/drawing/drawing_2d/linear_gradient_brush>
 #include <xtd/drawing/system_colors>
-#include <xtd/forms/window_messages>
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/window_definitions>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/io/directory>
 #include <xtd/io/directory_not_found_exception>
 #include <xtd/io/file>
