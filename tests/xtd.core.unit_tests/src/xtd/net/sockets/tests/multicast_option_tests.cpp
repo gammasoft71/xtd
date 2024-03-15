@@ -39,7 +39,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(ip_address::none, mo.local_address(), csf_);
     }
     
-    void test_method_(constructor_with_group_and_interface_index_greather_than_0x00FFFFFF) {
+    void test_method_(constructor_with_group_and_interface_index_greater_than_0x00FFFFFF) {
       assert::throws<argument_out_of_range_exception>([] {multicast_option(ip_address(172, 16, 12, 24), 0x1000000);}, csf_);
     }
     
@@ -59,7 +59,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(ip_address::none, mo.local_address(), csf_);
     }
     
-    void test_method_(set_interface_index_greather_than_0x00FFFFFF) {
+    void test_method_(set_interface_index_greater_than_0x00FFFFFF) {
       multicast_option mo;
       assert::throws<argument_out_of_range_exception>([&] {mo.interface_index(0x1000000);}, csf_);
     }

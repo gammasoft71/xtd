@@ -141,7 +141,7 @@ namespace xtd::tests {
       assert::throws<argument_out_of_range_exception>([&] {ce.signal(-1);}, csf_);
     }
     
-    void test_method_(signal_with_greather_param_than_intial_count) {
+    void test_method_(signal_with_greater_param_than_intial_count) {
       auto ce = countdown_event {10};
       assert::throws<argument_out_of_range_exception>([&] {ce.signal(11);}, csf_);
     }

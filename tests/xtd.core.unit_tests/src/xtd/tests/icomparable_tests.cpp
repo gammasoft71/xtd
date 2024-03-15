@@ -56,7 +56,7 @@ namespace xtd::tests {
       assert::is_false(ic1 <= "a"_s);
     }
     
-    void test_method_(opearator_greather) {
+    void test_method_(opearator_greater) {
       icomparable_test ic1 {42};
       icomparable_test ic2 {42};
       icomparable_test ic3 {84};
@@ -67,7 +67,7 @@ namespace xtd::tests {
       assert::is_false(ic1 > "a"_s);
     }
     
-    void test_method_(opearator_greather_or_equal) {
+    void test_method_(opearator_greater_or_equal) {
       icomparable_test ic1 {42};
       icomparable_test ic2 {42};
       icomparable_test ic3 {84};
