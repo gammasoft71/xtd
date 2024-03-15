@@ -558,7 +558,7 @@ void control::right_to_left(intptr control, int32 value) {
   switch (value) {
     case 0: reinterpret_cast<control_handler*>(control)->control()->SetLayoutDirection(wxLayoutDirection::wxLayout_LeftToRight); break;
     case 1: reinterpret_cast<control_handler*>(control)->control()->SetLayoutDirection(wxLayoutDirection::wxLayout_RightToLeft); break;
-    case 2: reinterpret_cast<control_handler*>(control)->control()->SetLayoutDirection(wxLayoutDirection::wxLayout_Default); break;
+    case 2: reinterpret_cast<control_handler*>(control)->control()->SetLayoutDirection(wxLayoutDirection::wxLayout_LeftToRight); break;
     default: reinterpret_cast<control_handler*>(control)->control()->SetLayoutDirection(wxLayoutDirection::wxLayout_LeftToRight); break;
   }
 }
