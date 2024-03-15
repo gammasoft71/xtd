@@ -33,8 +33,8 @@ namespace xtd::tests {
     }
     
     void test_method_(create_compiler_with_compiler_id_microsoft_visual_studio_version_build_type_release_and_is_64_bit) {
-      compiler c {compiler_id::visual_studio, {1, 2, 3}, build_type::release, true};
-      assert::are_equal(compiler_id::visual_studio, c.compiler_id(), csf_);
+      compiler c {compiler_id::msvc, {1, 2, 3}, build_type::release, true};
+      assert::are_equal(compiler_id::msvc, c.compiler_id(), csf_);
       assert::is_true(c.is_64_bit(), csf_);
       assert::are_equal(build_type::release, c.build_type(), csf_);
       assert::is_false(c.is_build_type_debug(), csf_);
