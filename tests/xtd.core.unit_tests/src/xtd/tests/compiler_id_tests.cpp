@@ -14,10 +14,10 @@ namespace xtd::tests {
       assert::are_equal(compiler_id::unknown, enum_object<>::parse<compiler_id>("unknown"), csf_);
     }
     
-    void test_method_(visual_studio) {
-      assert::are_equal(0, enum_object<>::to_int32(compiler_id::visual_studio), csf_);
-      assert::are_equal("visual_studio", enum_object<>::to_string(compiler_id::visual_studio), csf_);
-      assert::are_equal(compiler_id::visual_studio, enum_object<>::parse<compiler_id>("visual_studio"), csf_);
+    void test_method_(msvc) {
+      assert::are_equal(0, enum_object<>::to_int32(compiler_id::msvc), csf_);
+      assert::are_equal("msvc", enum_object<>::to_string(compiler_id::msvc), csf_);
+      assert::are_equal(compiler_id::msvc, enum_object<>::parse<compiler_id>("msvc"), csf_);
     }
     
     void test_method_(clang) {
@@ -30,6 +30,12 @@ namespace xtd::tests {
       assert::are_equal(2, enum_object<>::to_int32(compiler_id::gcc), csf_);
       assert::are_equal("gcc", enum_object<>::to_string(compiler_id::gcc), csf_);
       assert::are_equal(compiler_id::gcc, enum_object<>::parse<compiler_id>("gcc"), csf_);
+    }
+    
+    void test_method_(apple_clang) {
+      assert::are_equal(3, enum_object<>::to_int32(compiler_id::apple_clang), csf_);
+      assert::are_equal("apple_clang", enum_object<>::to_string(compiler_id::apple_clang), csf_);
+      assert::are_equal(compiler_id::apple_clang, enum_object<>::parse<compiler_id>("apple_clang"), csf_);
     }
   };
 }
