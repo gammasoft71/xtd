@@ -44,6 +44,10 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
+    /// @brief Gets additional information.
+    /// @return Additional information.
+    xtd::ustring additional_information() const noexcept;
+    
     /// @brief Gets the build type.
     /// @return One of xtd::build_type values.
     xtd::build_type build_type() const noexcept;
@@ -82,6 +86,10 @@ namespace xtd {
     /// @}
     
   private:
+    xtd::ustring get_apple_clang_additional_information() const noexcept;
+    xtd::ustring get_compiler_version_string(const xtd::ustring& compiler_name) const noexcept;
+    xtd::ustring get_msvc_additional_information() const noexcept;
+    
     xtd::compiler_id compiler_id_ = xtd::compiler_id::unknown;
     xtd::version version_;
     xtd::build_type build_type_ = xtd::build_type::debug;
