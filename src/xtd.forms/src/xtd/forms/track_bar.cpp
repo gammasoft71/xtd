@@ -2,8 +2,8 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/track_bar>
 #include <xtd/forms/native/track_bar_styles>
+#include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages>
 #include <algorithm>
 
 using namespace xtd;

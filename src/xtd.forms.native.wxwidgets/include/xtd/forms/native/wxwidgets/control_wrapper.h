@@ -11,7 +11,7 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/diagnostics/debug>
 #include <xtd/drawing/size>
-#include <xtd/forms/window_messages>
+#include <xtd/forms/native/window_definitions>
 #include <xtd/forms/native/extended_window_styles>
 #include <xtd/forms/native/mouse_key>
 #include <xtd/forms/native/scroll_bar_styles>

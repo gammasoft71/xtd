@@ -103,4 +103,5 @@
 #include "forms/native/up_down_styles.h"
 #include "forms/native/user_control.h"
 #include "forms/native/virtual_keys.h"
+#include "forms/native/window_definitions.h"
 #include "forms/native/window_styles.h"

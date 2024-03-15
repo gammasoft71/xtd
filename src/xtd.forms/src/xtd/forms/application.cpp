@@ -12,8 +12,8 @@
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/toolkit>
+#include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages>
 #include <xtd/threading/thread>
 #include <xtd/reflection/assembly>
 #include <xtd/environment>

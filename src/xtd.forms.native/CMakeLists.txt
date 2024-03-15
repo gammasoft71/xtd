@@ -182,6 +182,8 @@ add_sources(
   include/xtd/forms/native/user_control
   include/xtd/forms/native/virtual_keys.h
   include/xtd/forms/native/virtual_keys
+  include/xtd/forms/native/window_definitions.h
+  include/xtd/forms/native/window_definitions
   include/xtd/forms/native/window_styles.h
   include/xtd/forms/native/window_styles
   include/xtd/forms/browser_info_flags.h

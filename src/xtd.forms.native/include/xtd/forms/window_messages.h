@@ -5,9 +5,6 @@
 #include <xtd/types.h>
 
 #if !defined(WM_NULL)
-struct HWND__ {};
-typedef struct HWND__* HWND;
-
 /// @brief Performs no operation. An application sends the WM_NULL message if it wants to post a message that the recipient window will ignore.
 /// @par Library
 /// xtd.forms.native
@@ -1890,57 +1887,6 @@ constexpr xtd::int32 UDN_DELTAPOS = UDN_FIRST - 1;
 
 constexpr xtd::int32 HELPINFO_WINDOW = 0x0001;
 constexpr xtd::int32 HELPINFO_MENUITEM = 0x0002;
-
-struct NMHDR {
-  HWND hwndFrom;
-  xtd::uintptr idFrom;
-  xtd::uint32 code;
-};
-
-struct POINT {
-  xtd::int32 x;
-  xtd::int32 y;
-};
-
-struct HELPINFO {
-  xtd::uint32 cbSize;
-  xtd::int32 iContextType;
-  xtd::int32 iCtrlId;
-  HWND hItemHandle;
-  xtd::uintptr dwContextId;
-  POINT MousePos;
-};
-
-template<typename type1_t, typename type2_t>
-xtd::uint16 MAKEWORD(type1_t a, type2_t b) {
-  return static_cast<xtd::uint16>((static_cast<xtd::uint16>((static_cast<xtd::uint32>(a)) & 0xff)) | (static_cast<xtd::uint16>(static_cast<xtd::uint16>((static_cast<xtd::uint32>(b)) & 0xff))) << 8);
-}
-
-template<typename type1_t, typename type2_t>
-xtd::uint32 MAKELONG(type1_t a, type2_t b) {
-  return static_cast<xtd::uint32>((static_cast<xtd::uint16>((static_cast<xtd::uint32>(a)) & 0xffff)) | (static_cast<xtd::uint32>(static_cast<xtd::uint16>((static_cast<xtd::uint32>(b)) & 0xffff))) << 16);
-}
-
-template<typename type_t>
-inline xtd::uint16 LOWORD(type_t value) {
-  return static_cast<xtd::uint16>(static_cast<xtd::uint32>(value) & 0xFFFF);
-}
-
-template<typename type_t>
-inline xtd::uint16 HIWORD(type_t value) {
-  return static_cast<xtd::uint16>((static_cast<xtd::uint32>(value) >> 16) & 0xFFFF);
-}
-
-template<typename type_t>
-inline xtd::uint16 LOBYTE(type_t value) {
-  return static_cast<xtd::byte>(static_cast<xtd::uint32>(value) & 0xFF);
-}
-
-template<typename type_t>
-inline xtd::byte HIBYTE(type_t value) {
-  return static_cast<xtd::byte>((static_cast<xtd::uint32>(value) >> 8) & 0xFF);
-}
-
 #endif
 
 constexpr xtd::uint32 WM_REFLECT = WM_USER + 0x1C00;

@@ -4,9 +4,9 @@
 #include <xtd/forms/native/command_link_button>
 #include <xtd/forms/native/button_styles>
 #include <xtd/forms/native/control>
+#include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/size_f>
-#include <xtd/forms/window_messages>
 
 using namespace std;
 using namespace xtd;

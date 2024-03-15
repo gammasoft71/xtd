@@ -12,8 +12,8 @@
 #include <xtd/forms/native/extended_window_styles>
 #include <xtd/forms/native/form>
 #include <xtd/forms/native/window_styles>
+#include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages>
 #include <xtd/as>
 #include <xtd/invalid_operation_exception>
 #include <xtd/is>

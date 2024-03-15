@@ -22,7 +22,7 @@
 #include <xtd/drawing/region.h>
 #include <xtd/ustring.h>
 #include <xtd/forms_native_export.h>
-#include "../window_messages.h"
+#include "window_definitions.h"
 #include "create_params.h"
 
 /// @cond

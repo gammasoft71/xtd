@@ -10,8 +10,8 @@
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/status_bar>
 #include <xtd/forms/native/status_bar_styles>
+#include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages>
 #include <xtd/as>
 #include <xtd/is>
 
