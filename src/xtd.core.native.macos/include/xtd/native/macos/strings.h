@@ -5,12 +5,7 @@
 #endif
 /// @endcond
 
-/// @cond
-#undef max
-/// @endcond
-
 #include <algorithm>
-#include <limits>
 #include <vector>
 #include <sstream>
 #include <string>
@@ -96,7 +91,7 @@ namespace xtd::native::macos {
       return result;
     }
     
-    static std::vector<std::string> split(const std::string& str, const std::vector<char>& separators, size_t count = std::numeric_limits<size_t>::max(), bool remove_empty_entries = false) noexcept {
+    static std::vector<std::string> split(const std::string& str, const std::vector<char>& separators, size_t count = 18446744073709551615u /*std::numeric_limits<size_t>::max()*/, bool remove_empty_entries = false) noexcept {
       if (count == 0) return {};
       if (count == 1) return {str};
       

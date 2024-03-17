@@ -7,14 +7,6 @@
 #endif
 /// @endcond
 
-/// @cond
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#if defined(max)
-#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
-#  undef max
-#endif
-/// @endcond
-
 #include "../number_styles.h"
 #include "../types.h"
 #include <locale>
