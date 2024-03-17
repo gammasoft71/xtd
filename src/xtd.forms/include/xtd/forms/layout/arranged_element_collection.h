@@ -3,21 +3,13 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 
-/// @cond
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#if defined(max)
-#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
-#  undef max
-#endif
-/// @endcond
-
 #include "sorter_none.h"
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/event_args>
 #include <xtd/event_handler>
 #include <xtd/event>
 #include <xtd/object>
-#include <limits>
+#include <xtd/size_object>
 #include <ostream>
 #include <vector>
 
@@ -66,7 +58,7 @@ namespace xtd {
           
         private:
           friend class arranged_element_collection;
-          size_t pos = std::numeric_limits<size_t>::max();
+          size_t pos = size_object::max_value;
           arranged_element_collection* owner = nullptr;
         };
         
@@ -101,7 +93,7 @@ namespace xtd {
         
         /// @{
         /// @brief This is a special value equal to the maximum value representable by the type size_t.
-        inline static const size_t npos = std::numeric_limits<size_t>::max();
+        inline static const size_t npos = size_object::max_value;
         /// @}
         
         /// @name Public Constructors
