@@ -3,17 +3,10 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 
-/// @cond
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#if defined(max)
-#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
-#  undef max
-#endif
-/// @endcond
-
 #include "timeout.h"
 #include "../abstract.h"
 #include "../as.h"
+#include "../size_object.h"
 #include "../time_span.h"
 #include "../types.h"
 #include <limits>
@@ -69,7 +62,7 @@ namespace xtd {
       
       /// @brief Indicates that a xtd::threading::wait_handle::wait_any operation timed out before any of the wait handles were signaled. This field is constant.
       /// @remarks This field is one of the possible return values of xtd::threading::wait_handle::wait_any.
-      static constexpr size_t wait_timeout = std::numeric_limits<size_t>::max();
+      static constexpr size_t wait_timeout = size_object::max_value;
       /// @}
       
       /// @name Public Constructors
