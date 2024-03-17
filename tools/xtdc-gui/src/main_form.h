@@ -10,7 +10,6 @@
 #include "project_type_item_control.h"
 #include "project_type_items_control.h"
 #include "xtd_example_item.h"
-#include <limits>
 #include <memory>
 #include <vector>
 #include <xtd/forms/background_worker>
@@ -31,6 +30,7 @@
 #include <xtd/forms/tab_page>
 #include <xtd/forms/text_box>
 #include <xtd/drawing/texts>
+#include <xtd/size_object>
 
 namespace xtdc_gui {
   /// @brief Represents the main form
@@ -142,7 +142,7 @@ namespace xtdc_gui {
     xtd::forms::menu_item help_menu_item_ {xtd::drawing::texts::help(), {help_about_menu_item_}};
     xtd::forms::main_menu main_menu_ {file_menu_item_, help_menu_item_};
     
-    size_t current_project_type_index_ = std::numeric_limits<size_t>::max();
+    size_t current_project_type_index_ = xtd::size_object::max_value;
     size_t current_open_xtd_example_core_list_box_index_ = 0;
     size_t current_open_xtd_example_drawing_list_box_index_ = 0;
     size_t current_open_xtd_example_forms_list_box_index_ = 0;
