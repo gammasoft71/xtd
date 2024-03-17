@@ -21,6 +21,7 @@
 #include <xtd/object>
 #include <xtd/using>
 #if defined(__WXMSW__)
+#define NOMINMAX
 #include <Windows.h>
 #include <Commctrl.h>
 #endif

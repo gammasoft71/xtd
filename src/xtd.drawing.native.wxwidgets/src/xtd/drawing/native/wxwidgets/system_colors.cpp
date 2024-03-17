@@ -15,11 +15,8 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 
 #if defined(__WXMSW__)
+#define NOMINMAX
 #include <Windows.h>
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#undef max
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
-#undef min
 drawing_native_export_ int32 __xtd_win32_enable_dark_mode__ = -1;
 #endif
 

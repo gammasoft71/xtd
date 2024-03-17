@@ -1,13 +1,10 @@
 #include <wx/apptrait.h>
 #if defined(__WXMSW__)
+#define NOMINMAX
 #include <winsock2.h>
 #include <Windows.h>
 #include <Windowsx.h>
 #include <Commctrl.h>
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#undef max
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
-#undef min
 #endif
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"

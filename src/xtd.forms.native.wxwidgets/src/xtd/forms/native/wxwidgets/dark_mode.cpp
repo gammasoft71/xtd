@@ -11,12 +11,9 @@
 using namespace xtd;
 
 #if defined(_WIN32)
+#define NOMINMAX
 #include <Windows.h>
 #include <Uxtheme.h>
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#undef max
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
-#undef min
 
 namespace {
   template <typename T, typename T1, typename T2>

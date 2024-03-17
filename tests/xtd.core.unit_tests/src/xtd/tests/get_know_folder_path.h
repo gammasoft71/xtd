@@ -4,12 +4,9 @@
 
 #if defined(_WIN32)
 #define UNICODE
+#define NOMINMAX
 #include <shlobj.h>
-#include <Windows.H>
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#undef max
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
-#undef min
+#include <Windows.h>
 #include <xtd/convert_string>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>

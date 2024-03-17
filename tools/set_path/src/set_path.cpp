@@ -6,6 +6,7 @@
 #include <xtd/chrono>
 #if defined(_WIN32)
 #define UNICODE
+#define NOMINMAX
 #include <Windows.h>
 #endif
 

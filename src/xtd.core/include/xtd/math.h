@@ -4,9 +4,10 @@
 
 /// @cond
 // Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#undef max
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
-#undef min
+#if defined(max)
+#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
+#  undef max
+#endif
 /// @endcond
 
 #include "static.h"
