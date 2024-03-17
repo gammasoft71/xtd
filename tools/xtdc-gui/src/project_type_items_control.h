@@ -3,6 +3,7 @@
 #pragma once
 #include <limits>
 #include <xtd/as>
+#include <xtd/size_object>
 #include <xtd/drawing/bitmap>
 #include <xtd/forms/application>
 #include "project_type_item_control.h"
@@ -128,7 +129,7 @@ namespace xtdc_gui {
     }
     
     /// @brief This is a special value equal to the maximum value representable by the type size_t.
-    static const size_t npos = std::numeric_limits<size_t>::max();
+    static const size_t npos = xtd::size_object::max_value;
     
   private:
     void on_selected_index_changed(const xtd::event_args& e) {
