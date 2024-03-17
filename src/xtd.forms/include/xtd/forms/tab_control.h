@@ -5,7 +5,10 @@
 
 /// @cond
 // Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#undef max
+#if defined(max)
+#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
+#  undef max
+#endif
 /// @endcond
 
 #include "const_tab_page_ref.h"

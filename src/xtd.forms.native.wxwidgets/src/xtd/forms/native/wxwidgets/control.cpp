@@ -4,14 +4,11 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #if defined(__WXMSW__)
+#define NOMINMAX
 #include <winsock2.h>
 #include <Windows.h>
 #include <windowsx.h>
 #include <Commctrl.h>
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#undef max
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
-#undef min
 #endif
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/control>

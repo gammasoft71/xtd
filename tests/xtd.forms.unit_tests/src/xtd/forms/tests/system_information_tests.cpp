@@ -1,9 +1,6 @@
 #if defined(_WIN32)
+#define NOMINMAX
 #include <Windows.h>
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#undef max
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
-#undef min
 #elif defined(__APPLE__)
 #include "get_double_click_time.h"
 #endif
