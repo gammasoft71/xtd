@@ -2,14 +2,7 @@
 /// @brief Contains xtd::math class.
 #pragma once
 
-/// @cond
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#if defined(max)
-#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
-#  undef max
-#endif
-/// @endcond
-
+#include "double_object.h"
 #include "static.h"
 #include "types.h"
 #include <limits>
@@ -38,32 +31,32 @@ namespace xtd {
     /// @remarks The value of this field is 4.94066e-324.
     /// @deprecated Replaced by xtd::double_object::epsilon - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::double_object::epsilon - Will be removed in version 0.4.0")]]
-    static constexpr double epsilon = 4.94066e-324;
+    static constexpr double epsilon = xtd::double_object::epsilon;
     /// @brief Represents infinity. This field is constant.
     /// @remarks The value of this field is std::numeric_limits<double>::infinity().
     /// @deprecated Replaced by xtd::double_object::positive_infinity - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::double_object::positive_infinity - Will be removed in version 0.4.0")]]
-    static constexpr double infinity = std::numeric_limits<double>::infinity();
+    static constexpr double infinity = xtd::double_object::positive_infinity;
     /// @brief Represents the largest possible value of double. This field is constant.
     /// @remarks The value of this field is  1.7976931348623157E+308.
     /// @deprecated Replaced by xtd::double_object::max_value - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::double_object::max_value - Will be removed in version 0.4.0")]]
-    static constexpr double max_value = std::numeric_limits<double>::max();
+    static constexpr double max_value = xtd::double_object::max_value;
     /// @brief Represents the smallest possible value of double. This field is constant.
     /// @remarks The value of this field is -1.7976931348623157E+308.
     /// @deprecated Replaced by xtd::double_object::min_value - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::double_object::min_value - Will be removed in version 0.4.0")]]
-    static constexpr double min_value = std::numeric_limits<double>::lowest();
+    static constexpr double min_value = xtd::double_object::min_value;
     /// @brief Represents not a number (NaN). This field is constant.
     /// @remarks The value of this field is std::numeric_limits<double>::quiet_NaN().
     /// @deprecated Replaced by xtd::double_object::NaN - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::double_object::NaN - Will be removed in version 0.4.0")]]
-    static constexpr double NaN = std::numeric_limits<double>::quiet_NaN();
+    static constexpr double NaN = xtd::double_object::NaN;
     /// @brief Represents negative infinity. This field is constant.
     /// @remarks The value of this field is -std::numeric_limits<double>::infinity().
     /// @deprecated Replaced by xtd::double_object::negative_infinity - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::double_object::negative_infinity - Will be removed in version 0.4.0")]]
-    static constexpr double negative_infinity = -std::numeric_limits<double>::infinity();
+    static constexpr double negative_infinity = xtd::double_object::negative_infinity;
     /// @brief Represents the ratio of the circumference of a circle to its diameter, specified by the constant, π. This field is constant.
     /// @remarks The value of this field is 3.14159265358979323846.
     static constexpr double pi = 3.14159265358979323846;
@@ -71,7 +64,7 @@ namespace xtd {
     /// @remarks The value of this field is std::numeric_limits<double>::infinity().
     /// @deprecated Replaced by xtd::double_object::positive_infinity - Will be removed in version 0.4.0
     [[deprecated("Replaced by xtd::double_object::positive_infinity - Will be removed in version 0.4.0")]]
-    static constexpr double positive_infinity = +std::numeric_limits<double>::infinity();
+    static constexpr double positive_infinity = xtd::double_object::positive_infinity;
     /// @brief Represents the number of radians in one turn, specified by the constant, τ.
     /// @remarks The value of this field is 2.7182818284590451.
     static constexpr double tau = 2.7182818284590451;
