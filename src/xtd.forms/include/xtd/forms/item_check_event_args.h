@@ -2,6 +2,12 @@
 /// @brief Contains xtd::forms::item_check_event_args event args.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+
+/// @cond
+// Like Windows.h, some includes define max as a macro and this causes compilation errors.
+#undef max
+/// @endcond
+
 #include "check_state.h"
 #include <xtd/event_args>
 #include <cstdint>

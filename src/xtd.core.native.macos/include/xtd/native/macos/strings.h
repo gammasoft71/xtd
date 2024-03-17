@@ -5,6 +5,11 @@
 #endif
 /// @endcond
 
+/// @cond
+// Like Windows.h, some includes define max as a macro and this causes compilation errors.
+#undef max
+/// @endcond
+
 #include <algorithm>
 #include <limits>
 #include <vector>

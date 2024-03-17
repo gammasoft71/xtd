@@ -2,6 +2,12 @@
 /// @brief Contains xtd::forms::layout::arranged_element_collection collection.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+
+/// @cond
+// Like Windows.h, some includes define max as a macro and this causes compilation errors.
+#undef max
+/// @endcond
+
 #include "sorter_none.h"
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/event_args>

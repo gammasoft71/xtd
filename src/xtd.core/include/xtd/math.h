@@ -1,6 +1,14 @@
 /// @file
 /// @brief Contains xtd::math class.
 #pragma once
+
+/// @cond
+// Like Windows.h, some includes define max as a macro and this causes compilation errors.
+#undef max
+// Like Windows.h, some includes define min as a macro and this causes compilation errors.
+#undef min
+/// @endcond
+
 #include "static.h"
 #include "types.h"
 #include <limits>
