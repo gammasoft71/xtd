@@ -6,7 +6,9 @@
 #define UNICODE
 #include <shlobj.h>
 #include <Windows.H>
+// Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
 #undef max
+// Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
 #undef min
 #include <xtd/convert_string>
 #include <xtd/tunit/assert>
