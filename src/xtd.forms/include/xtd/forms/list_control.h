@@ -2,6 +2,12 @@
 /// @brief Contains xtd::forms::list_control control.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+
+/// @cond
+// Like Windows.h, some includes define max as a macro and this causes compilation errors.
+#undef max
+/// @endcond
+
 #include "application.h"
 #include "control.h"
 #include <xtd/iequatable>

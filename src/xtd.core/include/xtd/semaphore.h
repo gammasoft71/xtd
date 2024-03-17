@@ -5,6 +5,12 @@
 #if defined(__cpp_lib_semaphore) || __cplusplus >= 202002l
 #include <semaphore>
 #else
+
+/// @cond
+// Like Windows.h, some includes define max as a macro and this causes compilation errors.
+#undef max
+/// @endcond
+
 #include <condition_variable>
 #include <cstdint>
 #include <cstddef>

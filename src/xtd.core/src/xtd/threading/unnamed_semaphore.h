@@ -1,4 +1,10 @@
 #pragma once
+
+/// @cond
+// Like Windows.h, some includes define max as a macro and this causes compilation errors.
+#undef max
+/// @endcond
+
 #include "semaphore_base.h"
 #include "../../../include/xtd/int32_object.h"
 #include "../../../include/xtd/semaphore.h"
