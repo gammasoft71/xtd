@@ -9,10 +9,11 @@
 #include <condition_variable>
 #include <cstdint>
 #include <cstddef>
+#include <limits>
 #include <mutex>
 
 namespace std {
-  template<std::ptrdiff_t least_max_value = 9223372036854775807 /*std::numeric_limits<std::ptrdiff_t>::max()*/>
+  template<std::ptrdiff_t least_max_value = std::numeric_limits<std::ptrdiff_t>::max()>
   class counting_semaphore {
   public:
     static constexpr std::ptrdiff_t max() noexcept {return least_max_value;}

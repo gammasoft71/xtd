@@ -2,6 +2,18 @@
 /// @brief Contains xtd::math class.
 #pragma once
 
+/// @cond
+// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
+#if defined(max)
+#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
+#  undef max
+#endif
+#if defined(min)
+#  warning "The macro `min` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `min` macro."
+#  undef min
+#endif
+/// @endcond
+
 #include "double_object.h"
 #include "static.h"
 #include "types.h"
