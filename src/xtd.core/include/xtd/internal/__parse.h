@@ -8,7 +8,7 @@
 /// @endcond
 
 /// @cond
-// Like Windows.h, some includes define max as a macro and this causes compilation errors.
+// Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
 #undef max
 /// @endcond
 

@@ -8,6 +8,7 @@
 #include <utility>
 #if defined(_WIN32)
 #include <Windows.h>
+// Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
 #undef max
 #elif defined(__linux__) || defined(__APPLE__)
 #include <semaphore.h>

@@ -4,7 +4,9 @@
 #include <Windows.h>
 #include <Windowsx.h>
 #include <Commctrl.h>
+// Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
 #undef max
+// Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
 #undef min
 #endif
 #define __XTD_FORMS_NATIVE_LIBRARY__
