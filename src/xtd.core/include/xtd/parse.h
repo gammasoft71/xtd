@@ -2,7 +2,14 @@
 /// @brief Contains xtd::parse methods.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+
 /// @cond
+// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
+#if defined(max)
+#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
+#  undef max
+#endif
+
 #define __XTD_CORE_INTERNAL__
 #include "internal/__parse.h"
 #undef __XTD_CORE_INTERNAL__

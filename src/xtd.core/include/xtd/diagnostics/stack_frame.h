@@ -3,16 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 
-/// @cond
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#if defined(max)
-#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
-#  undef max
-#endif
-/// @endcond
-
 #include <cstdint>
-#include <limits>
 #include "../iequatable.h"
 #include "../object.h"
 #include "../ustring.h"
@@ -104,7 +95,7 @@ namespace xtd {
       
       /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
       /// @remarks The value of this constant is std::numeric_limit<uint32>::max().
-      static constexpr uint32 OFFSET_UNKNOWN = std::numeric_limits<uint32>::max();
+      static constexpr uint32 OFFSET_UNKNOWN = 4294967295u;
       /// @}
       
       /// @name Public Methods

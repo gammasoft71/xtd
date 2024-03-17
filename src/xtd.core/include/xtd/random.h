@@ -3,16 +3,9 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 
-/// @cond
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#if defined(max)
-#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
-#  undef max
-#endif
-/// @endcond
-
 #include "argument_null_exception.h"
 #include "argument_out_of_range_exception.h"
+#include "box_integer.h"
 #include "core_export.h"
 #include "environment.h"
 #include "math.h"
@@ -86,7 +79,7 @@ namespace xtd {
     /// @return A value_t greater than or equal to zero and less than std::numeric_limits<value_t>::max()
     template<typename value_t>
     value_t next() const {
-      return next(std::numeric_limits<value_t>::max());
+      return next(xtd::box_integer<value_t>::max_value);
     }
     
     /// @brief Returns a nonnegative random number less than the specified maximum.
@@ -126,7 +119,7 @@ namespace xtd {
     value_t next(value_t min_value, value_t max_value) const {
       if (min_value > max_value) throw argument_out_of_range_exception {csf_};
       if (min_value == max_value) return min_value;
-      return min_value + static_cast<value_t>(math::round(sample() * std::numeric_limits<value_t>::max())) % ((max_value - 1) - min_value + 1);
+      return min_value + static_cast<value_t>(math::round(sample() * xtd::box_integer<value_t>::max_value)) % ((max_value - 1) - min_value + 1);
     }
     
     /// @cond
@@ -165,7 +158,7 @@ namespace xtd {
     void next_values(value_t* buffer, size_t buffer_size) const {
       if (buffer == nullptr) throw argument_null_exception {csf_};
       for (size_t index = 0; index < buffer_size; index++)
-        buffer[index] = next<value_t>(0, std::numeric_limits<value_t>::max());
+        buffer[index] = next<value_t>(0, xtd::box_integer<value_t>::max_value);
     }
     
     /// @brief Returns a random number between 0.0 and 1.0

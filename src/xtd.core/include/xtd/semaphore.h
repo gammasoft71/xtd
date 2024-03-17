@@ -6,22 +6,13 @@
 #include <semaphore>
 #else
 
-/// @cond
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#if defined(max)
-#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
-#  undef max
-#endif
-/// @endcond
-
 #include <condition_variable>
 #include <cstdint>
 #include <cstddef>
-#include <limits>
 #include <mutex>
 
 namespace std {
-  template<std::ptrdiff_t least_max_value = std::numeric_limits<std::ptrdiff_t>::max()>
+  template<std::ptrdiff_t least_max_value = 9223372036854775807 /*std::numeric_limits<std::ptrdiff_t>::max()*/>
   class counting_semaphore {
   public:
     static constexpr std::ptrdiff_t max() noexcept {return least_max_value;}
