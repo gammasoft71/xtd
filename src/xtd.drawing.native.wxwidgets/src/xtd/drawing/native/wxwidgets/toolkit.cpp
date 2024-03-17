@@ -21,23 +21,23 @@ namespace {
   boolean_switch show_wx_assert("wx_assert", "Shows wxAssert log", "true");
   
   void xtd_assert_handler(const wxString& file, int32 line, const wxString& func, const wxString& cond, const wxString& msg) {
-    // Workaround: wxWidgets generates an unknown assertion when there is a double mouse click event on an empty area of wxCalendarCtrl.
+    // Workaround : wxWidgets generates an unknown assertion when there is a double mouse click event on an empty area of wxCalendarCtrl.
     if (func == "wxCalendarCtrl::HitTest" && cond == "\"Assert failure\"" && msg == "unexpected") return;
-    // Workaround: wxWidgets generates an assert if wxApp is not running when call exit.
+    // Workaround : wxWidgets generates an assert if wxApp is not running when call exit.
     if (func == "wxEventLoopBase::Exit" && cond == "\"IsRunning()\"" && msg == "Use ScheduleExit() on not running loop") return;
-    // Workaround: wxWidgets generates an assert if bitmap is empty.
+    // Workaround : wxWidgets generates an assert if bitmap is empty.
     if (func.Contains("GetHeight") && cond == "\"IsOk()\"" && msg == "invalid bitmap") return;
-    // Workaround: wxWidgets generates an assert if bitmap is empty.
+    // Workaround : wxWidgets generates an assert if bitmap is empty.
     if (func.Contains("GetWidth") && cond == "\"IsOk()\"" && msg == "invalid bitmap") return;
-    // Workaround: wxWidgets generates an assert if wxPaintDC is not call in paint event.
+    // Workaround : wxWidgets generates an assert if wxPaintDC is not call in paint event.
     if (func.Contains("wxPaintDCImpl::wxPaintDCImpl") && cond == "\"paintStack.top().window == window\"" && msg == "wxPaintDC must be associated with the window being repainted") return;
-    // Workaround: wxWidgets generates an assert if wxPaintDC is not call in paint event.
+    // Workaround : wxWidgets generates an assert if wxPaintDC is not call in paint event.
     if (func.Contains("wxClientDCImpl::DoGetSize") && cond == "\"m_window\"" && msg == "wxClientDCImpl without a window?") return;
-    // Workaround: wxWidgets generates an assert if wxPaintDC is not call in paint event.
+    // Workaround : wxWidgets generates an assert if wxPaintDC is not call in paint event.
     if (func.Contains("wxTextMeasure::BeginMeasuring") && cond == "m_hdc" && msg == "Must not be used with non-native wxDCs") return;
-    // Workaround: wxWidgets generates an assert if wxPaintDC is not call with the window being repainted.
+    // Workaround : wxWidgets generates an assert if wxPaintDC is not call with the window being repainted.
     if (func.Contains("wxPaintDCImpl") && cond == "\"paintStack.top().window == window\"" && msg == "wxPaintDC must be associated with the window being repainted") return;
-    // Workaround: Call wxClientDCImpl without a window.
+    // Workaround : Call wxClientDCImpl without a window.
     if (func.Contains("DoGetSize") && cond == "\"m_window\"" && msg == "wxClientDCImpl without a window?") return;
     
     if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "wxAssert", ustring::format("cond={}, msg={}", cond, msg), stack_frame {ustring {file.c_str()}, as<uint32>(line), ustring {func.c_str()}})) debug_break_();
