@@ -67,7 +67,7 @@ tuple<ustring, ustring> command_link_button::texts() const noexcept {
 command_link_button& command_link_button::texts(const tuple<ustring, ustring>& texts) {
   if (data_->texts == texts) return *this;
   data_->texts = texts;
-  data_->text = ustring::format("{}{}{}", get<0>(texts), environment::new_line(), get<1>(texts));
+  data_->text = ustring::is_empty(get<1>(texts)) ? ustring::format("{}", get<0>(texts)) : ustring::format("{}{}{}", get<0>(texts), environment::new_line(), get<1>(texts));
   if (is_handle_created()) native::command_link_button::texts(handle(), data_->texts);
   on_text_changed(event_args::empty);
   return *this;
