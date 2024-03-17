@@ -3,17 +3,10 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 
-/// @cond
-// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#if defined(max)
-#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
-#  undef max
-#endif
-/// @endcond
-
 #include "up_down_base.h"
 #include "application.h"
 #include <xtd/iequatable>
+#include <xtd/size_object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -100,7 +93,7 @@ namespace xtd {
       
       /// @{
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
-      static const size_t npos = std::numeric_limits<size_t>::max();
+      static const size_t npos = size_object::max_value;
       /// @}
       
       /// @name Public Constructors
