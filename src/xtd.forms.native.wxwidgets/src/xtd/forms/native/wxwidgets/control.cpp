@@ -8,9 +8,9 @@
 #include <Windows.h>
 #include <windowsx.h>
 #include <Commctrl.h>
-// Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
+// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
 #undef max
-// Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
+// Workaround : Like Windows.h (with NOMINMAX defined), some includes define min as a macro and this causes compilation errors.
 #undef min
 #endif
 #include <xtd/forms/native/application>
