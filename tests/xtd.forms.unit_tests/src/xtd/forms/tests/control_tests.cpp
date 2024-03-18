@@ -2358,7 +2358,8 @@ namespace xtd::forms::tests {
       control.parent(form);
       
       form.back_color(nullptr);
-      assert::is_false(control.on_parent_back_color_changed_raised, csf_);
+      assert::is_true(control.on_parent_back_color_changed_raised, csf_); // Form has back color...
+      control.on_parent_back_color_changed_raised = false;
       form.back_color(color::spring_green);
       assert::is_true(control.on_parent_back_color_changed_raised, csf_);
     }
@@ -2447,7 +2448,8 @@ namespace xtd::forms::tests {
       control.parent(form);
       
       form.fore_color(nullptr);
-      assert::is_false(control.on_parent_fore_color_changed_raised, csf_);
+      assert::is_true(control.on_parent_fore_color_changed_raised, csf_); // Form has fore color...
+      control.on_parent_fore_color_changed_raised = false;
       form.fore_color(color::spring_green);
       assert::is_true(control.on_parent_fore_color_changed_raised, csf_);
     }
