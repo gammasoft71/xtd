@@ -4,12 +4,20 @@
 
 /// @cond
 // Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.
-#if defined(max)
-#  warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
+#if defined(_MSC_VER) && defined(max)
+#  if __cplusplus < 202302L
+#    pragma message("The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro.")
+#  else
+#    warning "The macro `max` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `max` macro."
+#  endif
 #  undef max
 #endif
-#if defined(min)
-#  warning "The macro `min` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `min` macro."
+#if defined(_MSC_VER) && defined(min)
+#  if __cplusplus < 202302L
+#    pragma message("The macro `min` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `min` macro.")
+#  else
+#    warning "The macro `min` is defined. If you include the `Windows.h` file, please define the 'NOMINMAX' constant before including `Windows.h'`. xtd will undef the `min` macro."
+#  endif
 #  undef min
 #endif
 /// @endcond
