@@ -95,7 +95,7 @@ void image_converter::bitonal(image& image, int32 threshold, const drawing::colo
 }
 
 image image_converter::bitonal(const image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
-  auto result = image;
+  auto result = image.clone();
   image_converter::bitonal(result, threshold, upper_color, lower_color);
   return result;
 }
@@ -105,7 +105,7 @@ void image_converter::blur(image& image, int32 radius) {
 }
 
 image image_converter::blur(const image& image, int32 radius) {
-  auto result = image;
+  auto result = image.clone();
   blur(result, radius);
   return result;
 }
@@ -124,7 +124,7 @@ void image_converter::brightness(image& image, double percent) {
 }
 
 image image_converter::brightness(const image& image, double percent) {
-  auto result = image;
+  auto result = image.clone();
   brightness(result, percent);
   return result;
 }
@@ -143,7 +143,7 @@ void image_converter::color(xtd::drawing::image& image, const xtd::drawing::colo
 }
 
 xtd::drawing::image image_converter::color(const xtd::drawing::image& image, const xtd::drawing::color& color, double percent) {
-  auto result = image;
+  auto result = image.clone();
   image_converter::color(result, color, percent);
   return result;
 }
@@ -161,7 +161,7 @@ void image_converter::color_extraction(xtd::drawing::image& image, int32 thresho
 }
 
 xtd::drawing::image image_converter::color_extraction(const xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept {
-  auto result = image;
+  auto result = image.clone();
   color_extraction(result, threshold, extraction_color, other_pixels_color);
   return result;
 }
@@ -179,7 +179,7 @@ void image_converter::color_substitution(xtd::drawing::image& image, int32 thres
 }
 
 xtd::drawing::image image_converter::color_substitution(const xtd::drawing::image& image, int32 threshold, const drawing::color& source_color, const xtd::drawing::color& new_color) noexcept {
-  auto result = image;
+  auto result = image.clone();
   color_substitution(result, threshold, source_color, new_color);
   return result;
 }
@@ -198,7 +198,7 @@ void image_converter::contrast(image& image, double percent) {
 }
 
 image image_converter::contrast(const image& image, double percent) {
-  auto result = image;
+  auto result = image.clone();
   contrast(result, percent);
   return result;
 }
@@ -208,7 +208,7 @@ void image_converter::crop(xtd::drawing::image& image, const xtd::drawing::recta
 }
 
 xtd::drawing::image image_converter::crop(const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle) {
-  auto result = image;
+  auto result = image.clone();
   crop(result, rectangle);
   return result;
 }
@@ -234,14 +234,14 @@ void image_converter::disabled(image& image, float brightness) {
 }
 
 image image_converter::disabled(const image& image, float brightness) {
-  auto result = image;
+  auto result = image.clone();
   disabled(result, brightness);
   return result;
 }
 
 void image_converter::drop_shadow(xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color) {
   if (!blur) {
-    auto shadow = image;
+    auto shadow = image.clone();
     image_converter::bitonal(shadow, 0, color, color);
     auto result = xtd::drawing::image {image.width() + math::abs(horizontal_shadow), image.height() + math::abs(vertical_shadow)};
     auto graphics = result.create_graphics();
@@ -252,7 +252,7 @@ void image_converter::drop_shadow(xtd::drawing::image& image, int32 horizontal_s
   }
 
   auto shadow = xtd::drawing::image {image.width() + math::abs(horizontal_shadow) + 10, image.height() + math::abs(vertical_shadow) + 10};
-  auto bitonal_image = image;
+  auto bitonal_image = image.clone();
   image_converter::bitonal(bitonal_image, 382, color, color.is_dark() ? color_converter::light(color, 0.01) : color_converter::dark(color, 0.01));
   auto graphics = shadow.create_graphics();
   graphics.draw_image(bitonal_image, horizontal_shadow <= 0 ? 0 : horizontal_shadow, vertical_shadow <= 0 ? 0 : vertical_shadow);
@@ -265,7 +265,7 @@ void image_converter::drop_shadow(xtd::drawing::image& image, int32 horizontal_s
 }
 
 xtd::drawing::image image_converter::drop_shadow(const xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color) {
-  auto result = image;
+  auto result = image.clone();
   drop_shadow(result, horizontal_shadow, vertical_shadow, blur, color);
   return result;
 }
@@ -286,7 +286,7 @@ void image_converter::gamma_correction(xtd::drawing::image &image, double r, dou
 }
 
 image image_converter::gamma_correction(const image& image, double r, double g, double b) {
-  auto result = image;
+  auto result = image.clone();
   gamma_correction(result, r, g, b);
   return result;
 }
@@ -314,7 +314,7 @@ void image_converter::grayscale(image& image, double percent) {
 }
 
 image image_converter::grayscale(const image& image, double percent) {
-  auto result = image;
+  auto result = image.clone();
   grayscale(result, percent);
   return result;
 }
@@ -334,7 +334,7 @@ void image_converter::hue_rotate(image& image, int angle) {
 }
 
 image image_converter::hue_rotate(const image& image, int angle) {
-  auto result = image;
+  auto result = image.clone();
   hue_rotate(result, angle);
   return result;
 }
@@ -361,7 +361,7 @@ void image_converter::invert(image& image, double percent) {
 }
 
 image image_converter::invert(const image& image, double percent) {
-  auto result = image;
+  auto result = image.clone();
   invert(result, percent);
   return result;
 }
@@ -378,7 +378,7 @@ void image_converter::opacity(image& image, double percent) {
 }
 
 image image_converter::opacity(const image& image, double percent) {
-  auto result = image;
+  auto result = image.clone();
   opacity(result, percent);
   return result;
 }
@@ -388,7 +388,7 @@ void image_converter::rescale(xtd::drawing::image& image, const xtd::drawing::si
 }
 
 xtd::drawing::image image_converter::rescale(const xtd::drawing::image& image, const xtd::drawing::size& size) {
-  auto result = image;
+  auto result = image.clone();
   rescale(result, size);
   return result;
 }
@@ -398,7 +398,7 @@ void image_converter::resize(xtd::drawing::image& image, const xtd::drawing::siz
 }
 
 xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, const xtd::drawing::size& size) {
-  auto result = image;
+  auto result = image.clone();
   resize(result, size);
   return result;
 }
@@ -408,7 +408,7 @@ void image_converter::rotate_flip(image& image, xtd::drawing::rotate_flip_type r
 }
 
 image image_converter::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
-  auto result = image;
+  auto result = image.clone();
   rotate_flip(result, rotate_flip_type);
   return result;
 }
@@ -431,7 +431,7 @@ void image_converter::saturate(image& image, double percent) {
 }
 
 image image_converter::saturate(const image& image, double percent) {
-  auto result = image;
+  auto result = image.clone();
   saturate(result, percent);
   return result;
 }
@@ -458,7 +458,7 @@ void image_converter::sepia(image& image, double percent) {
 }
 
 image image_converter::sepia(const image& image, double percent) {
-  auto result = image;
+  auto result = image.clone();
   sepia(result, percent);
   return result;
 }
@@ -468,7 +468,7 @@ void image_converter::threshold(image& image, int32 threshold) {
 }
 
 image image_converter::threshold(const image& image, int32 threshold) {
-  auto result = image;
+  auto result = image.clone();
   image_converter::threshold(result, threshold);
   return result;
 }
