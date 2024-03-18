@@ -1358,7 +1358,7 @@ constexpr size_t VK_OEM_2 = 0x0000BF; // '/?' for US
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr size_t VK_OEM_3 = 0x0000C0; // '`~' for US
+constexpr size_t VK_OEM_3 = 0x0000C0; // '~' for US
 
 // 0x0000C1 - 0x0000C2 : reserved
 
