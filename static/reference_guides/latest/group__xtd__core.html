@@ -933,13 +933,15 @@ Enumerations</h2></td></tr>
 <tr class="memitem:gaeb666968a02e2d1ea1aab56ec278ffc9"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaeb666968a02e2d1ea1aab56ec278ffc9">xtd::compiler_id</a> { <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9aad921d60486366258809553a3db49a4a">xtd::compiler_id::unknown</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9aa8395a90229487d216f408160bed2370">xtd::compiler_id::visual_studio</a>
-, <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9aea46e25cd506e68293df509ed3124e51">xtd::compiler_id::microsoft_visual_studio</a>
+&#160;&#160;<a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9a3a69e825de46a19a06d800acd98739a9">xtd::compiler_id::msvc</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9a2c5517db7bc397f9b14ae357a7ce54ff">xtd::compiler_id::clang</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9ae0d511356bd44120af49cc96c9dcf3b3">xtd::compiler_id::gcc</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9a506a260bf0428ca9a088399298466dfc">xtd::compiler_id::apple_clang</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9aea46e25cd506e68293df509ed3124e51">xtd::compiler_id::microsoft_visual_studio</a>
 <br />
  }</td></tr>
 <tr class="memdesc:gaeb666968a02e2d1ea1aab56ec278ffc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies the compiler, supported by an assembly.  <a href="group__xtd__core.html#gaeb666968a02e2d1ea1aab56ec278ffc9">More...</a><br /></td></tr>
@@ -7264,14 +7266,16 @@ If you want to pass information to your callback method, create an object that c
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9aad921d60486366258809553a3db49a4a" name="ggaeb666968a02e2d1ea1aab56ec278ffc9aad921d60486366258809553a3db49a4a"></a>unknown&#160;</td><td class="fielddoc"><p>The compiler is unknown. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9aa8395a90229487d216f408160bed2370" name="ggaeb666968a02e2d1ea1aab56ec278ffc9aa8395a90229487d216f408160bed2370"></a>visual_studio&#160;</td><td class="fielddoc"><p>The compiler is Visual Studio. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9aea46e25cd506e68293df509ed3124e51" name="ggaeb666968a02e2d1ea1aab56ec278ffc9aea46e25cd506e68293df509ed3124e51"></a>microsoft_visual_studio&#160;</td><td class="fielddoc"><p>The compiler is Microsoft Visual Studio. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Replaced by <a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9aa8395a90229487d216f408160bed2370" title="The compiler is Visual Studio.">xtd::compiler_id::visual_studio</a> - Will be removed in version 0.4.0 </dd></dl>
+<tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9a3a69e825de46a19a06d800acd98739a9" name="ggaeb666968a02e2d1ea1aab56ec278ffc9a3a69e825de46a19a06d800acd98739a9"></a>msvc&#160;</td><td class="fielddoc"><p>The compiler is Microsoft Visual Studio. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9a2c5517db7bc397f9b14ae357a7ce54ff" name="ggaeb666968a02e2d1ea1aab56ec278ffc9a2c5517db7bc397f9b14ae357a7ce54ff"></a>clang&#160;</td><td class="fielddoc"><p>The compiler is clang. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9ae0d511356bd44120af49cc96c9dcf3b3" name="ggaeb666968a02e2d1ea1aab56ec278ffc9ae0d511356bd44120af49cc96c9dcf3b3"></a>gcc&#160;</td><td class="fielddoc"><p>The compiler is gcc. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9a506a260bf0428ca9a088399298466dfc" name="ggaeb666968a02e2d1ea1aab56ec278ffc9a506a260bf0428ca9a088399298466dfc"></a>apple_clang&#160;</td><td class="fielddoc"><p>The compiler is Apple clang. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9aea46e25cd506e68293df509ed3124e51" name="ggaeb666968a02e2d1ea1aab56ec278ffc9aea46e25cd506e68293df509ed3124e51"></a>microsoft_visual_studio&#160;</td><td class="fielddoc"><p>The compiler is Microsoft Visual Studio. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Replaced by <a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9a3a69e825de46a19a06d800acd98739a9" title="The compiler is Microsoft Visual Studio.">xtd::compiler_id::msvc</a> - Will be removed in version 0.4.0 </dd></dl>
 </td></tr>
 </table>
 
@@ -60205,7 +60209,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 14 2024 22:04:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Mar 18 2024 08:00:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
