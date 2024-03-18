@@ -53,8 +53,8 @@ namespace xtd {
       /// @cond
       image();
       image(image&&) = default;
-      image(const image& image);
-      image& operator =(const image& image);
+      image(const image& image) = default;
+      image& operator =(const image& image) = default;
       ~image();
       /// @endcond
       
@@ -163,6 +163,10 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      /// @brief Creates an exact copy of this xtd::drawing::image.
+      /// @return The xtd::drawing::image this method creates.
+      image clone() const;
+      
       /// @brief Creates the xtd::drawing::graphics for the image.
       /// @return A xtd::drawing::graphics for the image.
       graphics create_graphics();
@@ -332,7 +336,6 @@ namespace xtd {
       friend class image_converter;
       void blur(int32 radius);
       void crop(int32 x, int32 y, int32 width, int32 height);
-      void move_handle(const image& image);
       void rescale(int32 width, int32 height);
       void resize(int32 width, int32 height);
       void update_properties();

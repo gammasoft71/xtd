@@ -61,22 +61,6 @@ struct image::data {
 image::image() : data_(make_shared<data>()) {
 }
 
-image::image(const image& image) {
-  *this = image;
-}
-
-image& image::operator =(const image& image) {
-  data_ = make_shared<data>();
-  if (image == image::empty) return *this;
-  
-  auto result = xtd::drawing::image {image.width(), image.height()};
-  auto graphics = result.create_graphics();
-  graphics.draw_image(image, rectangle({0, 0, image.width(), image.height()}));
-  move_handle(result);
-  update_properties();
-  return *this;
-}
-
 image::image(intptr hbitmap) : data_(make_shared<data>()) {
   if (hbitmap) data_->handle_ = hbitmap;
   update_properties();
@@ -251,6 +235,16 @@ float image::vertical_resolution() const noexcept {
 
 int32 image::width() const noexcept {
   return data_->size_.width();
+}
+
+image image::clone() const {
+  if (*this == image::empty) return *this;
+
+  auto result = xtd::drawing::image {width(), height()};
+  auto graphics = result.create_graphics();
+  graphics.draw_image(*this, rectangle({0, 0, width(), height()}));
+  result.update_properties();
+  return result;
 }
 
 graphics image::create_graphics() {
@@ -449,11 +443,6 @@ void image::crop(int32 x, int32 y, int32 width, int32 height) {
   auto graphics = result.create_graphics();
   graphics.draw_image(*this, rectangle {0, 0, width, height}, rectangle {x, y, width, height});
   *this = result;
-}
-
-void image::move_handle(const image& image) {
-  *data_ = *image.data_;
-  image.data_->handle_ = 0;
 }
 
 void image::rescale(int32 width, int32 height) {
