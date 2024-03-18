@@ -195,12 +195,12 @@ inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream
   return os << "(" << value.name() << ")";
 }
     
-    template <typename char_t, typename char_traits_t>
+template <typename char_t, typename char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::error_code& value) {
   return os << "(value = " << value.value() << "category= " << value.category().name() << ")";
 }
         
-        template <typename char_t, typename char_traits_t>
+template <typename char_t, typename char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, std::any value) {
   auto it = __any_stringer__.find(std::type_index(value.type()));
   if (it == __any_stringer__.cend()) return os << "(unregistered)";
