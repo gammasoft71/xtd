@@ -10,13 +10,13 @@ namespace xtd::security::tests {
   class test_class_(secure_string_tests) {
     void test_method_(create_secure_string) {
       secure_string ss("String to test", 14);
-      assert::are_equal(14_sz, ss.size(), csf_);
+      assert::are_equal(14_z, ss.size(), csf_);
       assert::are_equal("String to test", ss.to_unsecure_string(), csf_);
     }
     
     void test_method_(create_secure_string_with_null_pointer) {
       secure_string ss(nullptr, 14);
-      assert::are_equal(0_sz, ss.size(), csf_);
+      assert::are_equal(0_z, ss.size(), csf_);
       assert::is_empty(ss.to_unsecure_string(), csf_);
     }
   };

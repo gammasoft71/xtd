@@ -39,10 +39,10 @@ auto main()->int {
   auto server_socket = socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
   server_socket.bind(ip_end_point {ip_address::any, 9400});
   server_socket.listen();
-  for (auto index = 0_sz; index < client_count; ++index)
+  for (auto index = 0_z; index < client_count; ++index)
     server_socket.begin_accept(async_callback(on_server_accept), server_socket);
     
-  for (auto index = 0_sz; index < client_count; ++index) {
+  for (auto index = 0_z; index < client_count; ++index) {
     auto socket = xtd::net::sockets::socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
     socket.begin_connect(ip_address::loopback, 9400, async_callback(on_client_connect), socket);
   }

@@ -330,7 +330,7 @@ drawing::color domain_up_down::default_fore_color() const noexcept {
 
 void domain_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
-  for (auto index = 0_sz; index < data_->items.size(); ++index)
+  for (auto index = 0_z; index < data_->items.size(); ++index)
     native::domain_up_down::insert_item(handle(), index, data_->items[index].value());
   native::domain_up_down::selected_index(handle(), data_->selected_index);
   if (data_->selected_index != npos) data_->selected_item = data_->items[data_->selected_index];

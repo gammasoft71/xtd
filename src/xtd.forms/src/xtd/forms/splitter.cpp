@@ -119,7 +119,7 @@ void splitter::on_mouse_down(const mouse_event_args& e) {
   control::on_mouse_down(e);
   data_->mouse_down_location = control::dock() == dock_style::left || control::dock() == dock_style::right ? cursor::position().x() : cursor::position().y();
   if (parent().has_value()) {
-    for (auto index = 0_sz; index < parent().value().get().controls().size(); ++index) {
+    for (auto index = 0_z; index < parent().value().get().controls().size(); ++index) {
       if (parent().value().get().controls()[index].get() == *this) {
         if (index > 0) data_->previous_control_cursor = (data_->previous_control = &parent().value().get().controls()[index - 1].get())->cursor();
         if (index < parent().value().get().controls().size() - 1) data_->next_control_cursor = (data_->next_control = &parent().value().get().controls()[index + 1].get())->cursor();

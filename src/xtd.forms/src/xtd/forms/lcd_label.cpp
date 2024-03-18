@@ -862,7 +862,7 @@ control& lcd_label::text(const xtd::ustring& value) {
       dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_move += {*this, &lcd_label::on_digit_mouse_move};
       dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_up += {*this, &lcd_label::on_digit_mouse_up};
     }
-  for (auto index = 0_sz; index < str.size(); ++index)
+  for (auto index = 0_z; index < str.size(); ++index)
     data_->digits[index]->set_character(str[index]);
   set_digits_params();
   set_text(value);

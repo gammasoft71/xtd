@@ -303,7 +303,7 @@ forms::create_params choice::create_params() const noexcept {
 void choice::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
   data_->items.sorted(data_->sorted);
-  for (auto index = 0_sz; index < data_->items.size(); ++index)
+  for (auto index = 0_z; index < data_->items.size(); ++index)
     native::choice::insert_item(handle(), index, data_->items[index].value());
   native::choice::selected_index(handle(), selected_index());
   if (selected_index() != npos) data_->selected_item = data_->items[selected_index()];

@@ -59,7 +59,7 @@ namespace xtd::tests {
       auto action = wait_callback {[&] {
         interlocked::increment(count);
       }};
-      for (auto index = 0_sz; index < min_worker_threads; ++index)
+      for (auto index = 0_z; index < min_worker_threads; ++index)
         thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
@@ -74,7 +74,7 @@ namespace xtd::tests {
       auto action = wait_callback {[&] {
         interlocked::increment(count);
       }};
-      for (auto index = 0_sz; index < max_worker_threads; ++index)
+      for (auto index = 0_z; index < max_worker_threads; ++index)
         thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();

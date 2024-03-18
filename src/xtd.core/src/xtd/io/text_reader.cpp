@@ -25,7 +25,7 @@ int32 text_reader::read() {
 
 size_t text_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
   if (index + count > buffer.size()) throw argument_exception {csf_};
-  for (auto i = 0_sz; i < count; i++) {
+  for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
     buffer[index + i] = static_cast<char>(current);

@@ -14,70 +14,70 @@ namespace xtd::net::tests {
     void test_method_(create_socket_address_with_address_family_unnown) {
       socket_address sa(address_family::unknown);
       assert::are_equal(address_family::unspecified, sa.address_family(), csf_);
-      assert::are_equal(32_sz, sa.size(), csf_);
+      assert::are_equal(32_z, sa.size(), csf_);
       assert::are_equal("unspecified:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     
     void test_method_(create_socket_address_with_address_family_unspecified) {
       socket_address sa(address_family::unspecified);
       assert::are_equal(address_family::unspecified, sa.address_family(), csf_);
-      assert::are_equal(32_sz, sa.size(), csf_);
+      assert::are_equal(32_z, sa.size(), csf_);
       assert::are_equal("unspecified:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     
     void test_method_(create_socket_address_with_address_family_unix) {
       socket_address sa(address_family::unix);
       assert::are_equal(address_family::unix, sa.address_family(), csf_);
-      assert::are_equal(32_sz, sa.size(), csf_);
+      assert::are_equal(32_z, sa.size(), csf_);
       assert::are_equal("unix:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     
     void test_method_(create_socket_address_with_address_family_inter_network) {
       socket_address sa(address_family::inter_network);
       assert::are_equal(address_family::inter_network, sa.address_family(), csf_);
-      assert::are_equal(32_sz, sa.size(), csf_);
+      assert::are_equal(32_z, sa.size(), csf_);
       assert::are_equal("inter_network:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     
     void test_method_(create_socket_address_with_address_family_sna) {
       socket_address sa(address_family::sna);
       assert::are_equal(address_family::sna, sa.address_family(), csf_);
-      assert::are_equal(32_sz, sa.size(), csf_);
+      assert::are_equal(32_z, sa.size(), csf_);
       assert::are_equal("sna:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     
     void test_method_(create_socket_address_with_address_family_dec_net) {
       socket_address sa(address_family::dec_net);
       assert::are_equal(address_family::dec_net, sa.address_family(), csf_);
-      assert::are_equal(32_sz, sa.size(), csf_);
+      assert::are_equal(32_z, sa.size(), csf_);
       assert::are_equal("dec_net:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     
     void test_method_(create_socket_address_with_address_family_apple_talk) {
       socket_address sa(address_family::apple_talk);
       assert::are_equal(address_family::apple_talk, sa.address_family(), csf_);
-      assert::are_equal(32_sz, sa.size(), csf_);
+      assert::are_equal(32_z, sa.size(), csf_);
       assert::are_equal("apple_talk:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     
     void test_method_(create_socket_address_with_address_family_inter_network_v6) {
       socket_address sa(address_family::inter_network_v6);
       assert::are_equal(address_family::inter_network_v6, sa.address_family(), csf_);
-      assert::are_equal(32_sz, sa.size(), csf_);
+      assert::are_equal(32_z, sa.size(), csf_);
       assert::are_equal("inter_network_v6:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     
     void test_method_(create_socket_address_with_address_family_max) {
       socket_address sa(address_family::max);
       assert::are_equal(address_family::max, sa.address_family(), csf_);
-      assert::are_equal(32_sz, sa.size(), csf_);
+      assert::are_equal(32_z, sa.size(), csf_);
       assert::are_equal("max:32:{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     
     void test_method_(create_socket_address_with_address_family_inter_network_and_size_16) {
       socket_address sa(address_family::inter_network, 16);
       assert::are_equal(address_family::inter_network, sa.address_family(), csf_);
-      assert::are_equal(16_sz, sa.size(), csf_);
+      assert::are_equal(16_z, sa.size(), csf_);
       assert::are_equal("inter_network:16:{0,0,0,0,0,0,0,0,0,0,0,0,0,0}", sa.to_string(), csf_);
     }
     

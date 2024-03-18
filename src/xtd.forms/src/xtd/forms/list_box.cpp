@@ -393,7 +393,7 @@ forms::create_params list_box::create_params() const noexcept {
 void list_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
   data_->items.sorted(data_->sorted);
-  for (auto index = 0_sz; index < data_->items.size(); ++index)
+  for (auto index = 0_z; index < data_->items.size(); ++index)
     native::list_box::insert_item(handle(), index, data_->items[index].value());
   if (data_->selection_mode == forms::selection_mode::none) selected_index(npos);
   native::list_box::selected_index(handle(), selected_index());

@@ -102,10 +102,10 @@ ustring stack_frame::to_string() const noexcept {
 
 std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) noexcept {
   auto call_stack = native::stack_trace::get_frames(2);
-  auto skip_frames_before_str = 0_sz;
+  auto skip_frames_before_str = 0_z;
   if (!str.empty()) {
     skip_frames_before_str = call_stack.size();
-    for (auto index = 0_sz; index < call_stack.size(); ++index) {
+    for (auto index = 0_z; index < call_stack.size(); ++index) {
       auto [file, line, column, function, offset] = call_stack[index];
       if (ustring {function}.starts_with(str)) {
         skip_frames_before_str = index;

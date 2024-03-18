@@ -173,14 +173,14 @@ void thread_pool::create_asynchronous_io_thread() {
 void thread_pool::initialize_min_threads() {
   join_all_threads(timeout::infinite);
   static_data_.threads.clear();
-  for (auto index = 0_sz; index < min_threads_; ++index)
+  for (auto index = 0_z; index < min_threads_; ++index)
     create_thread();
 }
 
 void thread_pool::initialize_min_asynchronous_io_threads() {
   join_all_asynchronous_io_threads(timeout::infinite);
   static_data_.asynchronous_io_threads.clear();
-  for (auto index = 0_sz; index < min_asynchronous_io_threads_; ++index)
+  for (auto index = 0_z; index < min_asynchronous_io_threads_; ++index)
     create_asynchronous_io_thread();
 }
 

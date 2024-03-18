@@ -594,11 +594,11 @@ namespace xtd {
 
       /// @brief Gets the international system image "flag-sz".
       /// @return The xtd::drawing::image "flag-sz".
-      static xtd::drawing::image flag_sz() noexcept;
+      static xtd::drawing::image flag_z() noexcept;
       /// @brief Gets the international system image "flag-sz" with specified size.
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sz".
-      static xtd::drawing::image flag_sz(const xtd::drawing::size& size) noexcept;
+      static xtd::drawing::image flag_z(const xtd::drawing::size& size) noexcept;
 
       /// @brief Gets the international system image "flag-et".
       /// @return The xtd::drawing::image "flag-et".

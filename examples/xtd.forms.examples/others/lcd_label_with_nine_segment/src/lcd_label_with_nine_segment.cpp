@@ -9,7 +9,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 auto main()->int {
-  auto index = 0_sz;
+  auto index = 0_z;
   
   form form_main;
   form_main.text("Lcd label with nine segment example");

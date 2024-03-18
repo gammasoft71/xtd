@@ -769,7 +769,7 @@ size_t ustring::index_of_any(const vector<value_type>& values, size_t start_inde
 }
 
 size_t ustring::index_of_any(const vector<value_type>& values, size_t start_index, size_t count) const noexcept {
-  auto index = 0_sz;
+  auto index = 0_z;
   for (const auto& item : *this) {
     if (index++ < start_index) continue;
     if (index - 1 > start_index + count) break;
@@ -901,7 +901,7 @@ ustring ustring::replace(const ustring& old_string, const ustring& new_string) c
   auto result = *this;
   auto old_size = old_string.length();
   auto new_size = new_string.length();
-  auto index = 0_sz;
+  auto index = 0_z;
   while (true) {
     index = result.find(old_string, index);
     if (index == npos) break;

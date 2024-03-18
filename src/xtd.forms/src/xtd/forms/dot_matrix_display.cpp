@@ -316,8 +316,8 @@ bool dot_matrix_display::get_dot(const drawing::point& point) const noexcept {
 }
 
 void dot_matrix_display::set_all_dots(bool on) {
-  for (auto y = 0_sz; y < data_->dots.size(); ++y)
-    for (auto x = 0_sz; x < data_->dots[y].size(); ++x)
+  for (auto y = 0_z; y < data_->dots.size(); ++y)
+    for (auto x = 0_z; x < data_->dots[y].size(); ++x)
       data_->dots[y][x] = on;
 }
 
@@ -354,8 +354,8 @@ void dot_matrix_display::on_fore_color_changed(const event_args& e) {
 
 void dot_matrix_display::on_paint(paint_event_args& e) {
   e.graphics().clear(back_color());
-  for (auto y = 0_sz; y < data_->dots.size(); ++y) {
-    for (auto x = 0_sz; x < data_->dots[y].size(); ++x) {
+  for (auto y = 0_z; y < data_->dots.size(); ++y) {
+    for (auto x = 0_z; x < data_->dots[y].size(); ++x) {
       if (data_->dots[y][x]) draw_dot(e.graphics(), fore_color(), {as<int32>(x), as<int32>(y)});
       else if (data_->show_back_dot) draw_dot(e.graphics(), drawing::color_converter::average(back_dot_color(), back_color(), data_->back_dot_opacity), {as<int32>(x), as<int32>(y)});
     }

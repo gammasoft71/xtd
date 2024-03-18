@@ -660,7 +660,7 @@ size_t socket::end_send_to(std::shared_ptr<xtd::iasync_result> ar) {
 
 size_t socket::get_raw_socket_option(int32 socket_option_level, int32 socket_option_name, intptr option_value, size_t size_option_value) const {
   if (data_->handle == 0) throw object_closed_exception {csf_};
-  auto size = 0_sz;
+  auto size = 0_z;
   if (native::socket::get_raw_socket_option(data_->handle, socket_option_level, socket_option_name, option_value, size) != 0) throw socket_exception(get_last_error_(), csf_);
   return size;
 }
@@ -819,7 +819,7 @@ size_t socket::select(std::vector<socket>& check_read, std::vector<socket>& chec
   if (status < 0) throw socket_exception(get_last_error_(), csf_);
   
   auto update_check_sockets = [](auto & sockets, auto & handles) {
-    for (auto i = 0_sz, j = 0_sz; i < handles.size() && j < sockets.size(); ++i, ++j)
+    for (auto i = 0_z, j = 0_z; i < handles.size() && j < sockets.size(); ++i, ++j)
       if (handles[i] == 0)
         sockets.erase(sockets.begin() + j--);
   };
