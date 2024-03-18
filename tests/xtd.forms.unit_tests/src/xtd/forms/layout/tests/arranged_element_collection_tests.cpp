@@ -33,7 +33,7 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else
@@ -49,9 +49,9 @@ namespace xtd::forms::layout::tests {
       items.push_back("a");
       
       assert::is_false(items.empty(), csf_);
-      assert::are_equal(1_sz, items.size(), csf_);
+      assert::are_equal(1_z, items.size(), csf_);
       assert::are_equal("a", items[0], csf_);
-      assert::are_equal(1_sz, added_control_check, csf_);
+      assert::are_equal(1_z, added_control_check, csf_);
     }
     
     void test_method_(push_back_items) {
@@ -59,15 +59,15 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("b", value, csf_);
           added_control_check += 2;
         } else if (added_control_check == 3) {
-          assert::are_equal(2_sz, index, csf_);
+          assert::are_equal(2_z, index, csf_);
           assert::are_equal("c", value, csf_);
           added_control_check += 3;
         } else
@@ -85,11 +85,11 @@ namespace xtd::forms::layout::tests {
       items.push_back("c");
       
       assert::is_false(items.empty(), csf_);
-      assert::are_equal(3_sz, items.size(), csf_);
+      assert::are_equal(3_z, items.size(), csf_);
       assert::are_equal("a", items[0], csf_);
       assert::are_equal("b", items[1], csf_);
       assert::are_equal("c", items[2], csf_);
-      assert::are_equal(6_sz, added_control_check, csf_);
+      assert::are_equal(6_z, added_control_check, csf_);
     }
     
     void test_method_(push_back_range_item) {
@@ -97,7 +97,7 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else
@@ -113,9 +113,9 @@ namespace xtd::forms::layout::tests {
       items.push_back_range({"a"});
       
       assert::is_false(items.empty(), csf_);
-      assert::are_equal(1_sz, items.size(), csf_);
+      assert::are_equal(1_z, items.size(), csf_);
       assert::are_equal("a", items[0], csf_);
-      assert::are_equal(1_sz, added_control_check, csf_);
+      assert::are_equal(1_z, added_control_check, csf_);
     }
     
     void test_method_(push_back_range_items) {
@@ -123,15 +123,15 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("b", value, csf_);
           added_control_check += 2;
         } else if (added_control_check == 3) {
-          assert::are_equal(2_sz, index, csf_);
+          assert::are_equal(2_z, index, csf_);
           assert::are_equal("c", value, csf_);
           added_control_check += 3;
         } else
@@ -147,11 +147,11 @@ namespace xtd::forms::layout::tests {
       items.push_back_range({"a", "b", "c"});
       
       assert::is_false(items.empty(), csf_);
-      assert::are_equal(3_sz, items.size(), csf_);
+      assert::are_equal(3_z, items.size(), csf_);
       assert::are_equal("a", items[0], csf_);
       assert::are_equal("b", items[1], csf_);
       assert::are_equal("c", items[2], csf_);
-      assert::are_equal(6_sz, added_control_check, csf_);
+      assert::are_equal(6_z, added_control_check, csf_);
     }
     
     void test_method_(insert_item) {
@@ -159,19 +159,19 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("b", value, csf_);
           added_control_check += 2;
         } else if (added_control_check == 3) {
-          assert::are_equal(2_sz, index, csf_);
+          assert::are_equal(2_z, index, csf_);
           assert::are_equal("c", value, csf_);
           added_control_check += 3;
         } else if (added_control_check == 6) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("z", value, csf_);
           added_control_check += 4;
         } else
@@ -186,16 +186,16 @@ namespace xtd::forms::layout::tests {
       
       items.push_back_range({"a", "b", "c"});
       
-      assert::are_equal(6_sz, added_control_check, csf_);
+      assert::are_equal(6_z, added_control_check, csf_);
       
       items.insert(items.cbegin() + 1, "z");
       
-      assert::are_equal(4_sz, items.size(), csf_);
+      assert::are_equal(4_z, items.size(), csf_);
       assert::are_equal("a", items[0], csf_);
       assert::are_equal("z", items[1], csf_);
       assert::are_equal("b", items[2], csf_);
       assert::are_equal("c", items[3], csf_);
-      assert::are_equal(10_sz, added_control_check, csf_);
+      assert::are_equal(10_z, added_control_check, csf_);
     }
     
     void test_method_(insert_item_in_first) {
@@ -203,11 +203,11 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("z", value, csf_);
           added_control_check += 2;
         } else
@@ -225,7 +225,7 @@ namespace xtd::forms::layout::tests {
       
       assert::are_equal("z", items[0], csf_);
       assert::are_equal("a", items[1], csf_);
-      assert::are_equal(3_sz, added_control_check, csf_);
+      assert::are_equal(3_z, added_control_check, csf_);
     }
     
     void test_method_(insert_item_in_last) {
@@ -233,11 +233,11 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("z", value, csf_);
           added_control_check += 2;
         } else
@@ -255,7 +255,7 @@ namespace xtd::forms::layout::tests {
       
       assert::are_equal("a", items[0], csf_);
       assert::are_equal("z", items[1], csf_);
-      assert::are_equal(3_sz, added_control_check, csf_);
+      assert::are_equal(3_z, added_control_check, csf_);
     }
     
     void test_method_(insert_at_item) {
@@ -263,19 +263,19 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("b", value, csf_);
           added_control_check += 2;
         } else if (added_control_check == 3) {
-          assert::are_equal(2_sz, index, csf_);
+          assert::are_equal(2_z, index, csf_);
           assert::are_equal("c", value, csf_);
           added_control_check += 3;
         } else if (added_control_check == 6) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("z", value, csf_);
           added_control_check += 4;
         } else
@@ -290,16 +290,16 @@ namespace xtd::forms::layout::tests {
       
       items.push_back_range({"a", "b", "c"});
       
-      assert::are_equal(6_sz, added_control_check, csf_);
+      assert::are_equal(6_z, added_control_check, csf_);
       
-      items.insert_at(1_sz, "z");
+      items.insert_at(1_z, "z");
       
-      assert::are_equal(4_sz, items.size(), csf_);
+      assert::are_equal(4_z, items.size(), csf_);
       assert::are_equal("a", items[0], csf_);
       assert::are_equal("z", items[1], csf_);
       assert::are_equal("b", items[2], csf_);
       assert::are_equal("c", items[3], csf_);
-      assert::are_equal(10_sz, added_control_check, csf_);
+      assert::are_equal(10_z, added_control_check, csf_);
     }
     
     void test_method_(insert_at_item_width_bad_index) {
@@ -313,11 +313,11 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("z", value, csf_);
           added_control_check += 2;
         } else
@@ -331,11 +331,11 @@ namespace xtd::forms::layout::tests {
       };
       
       items.push_back("a");
-      items.insert_at(0_sz, "z");
+      items.insert_at(0_z, "z");
       
       assert::are_equal("z", items[0], csf_);
       assert::are_equal("a", items[1], csf_);
-      assert::are_equal(3_sz, added_control_check, csf_);
+      assert::are_equal(3_z, added_control_check, csf_);
     }
     
     void test_method_(insert_at_item_in_last) {
@@ -343,11 +343,11 @@ namespace xtd::forms::layout::tests {
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
         if (added_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           added_control_check += 1;
         } else if (added_control_check == 1) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("z", value, csf_);
           added_control_check += 2;
         } else
@@ -361,11 +361,11 @@ namespace xtd::forms::layout::tests {
       };
       
       items.push_back("a");
-      items.insert_at(1_sz, "z");
+      items.insert_at(1_z, "z");
       
       assert::are_equal("a", items[0], csf_);
       assert::are_equal("z", items[1], csf_);
-      assert::are_equal(3_sz, added_control_check, csf_);
+      assert::are_equal(3_z, added_control_check, csf_);
     }
     
     void test_method_(erase_item) {
@@ -377,7 +377,7 @@ namespace xtd::forms::layout::tests {
       };
       items.item_removed += [&](size_t index, std::string & value) {
         if (erased_control_check == 0) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("b", value, csf_);
           erased_control_check += 1;
         } else
@@ -393,7 +393,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal("c", items[1], csf_);
       assert::are_equal("d", items[2], csf_);
       assert::are_equal("e", items[3], csf_);
-      assert::are_equal(1_sz, erased_control_check);
+      assert::are_equal(1_z, erased_control_check);
     }
     
     void test_method_(erase_all_items) {
@@ -405,23 +405,23 @@ namespace xtd::forms::layout::tests {
       };
       items.item_removed += [&](size_t index, std::string & value) {
         if (erased_control_check == 0) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("b", value, csf_);
           erased_control_check += 1;
         } else if (erased_control_check == 1) {
-          assert::are_equal(2_sz, index, csf_);
+          assert::are_equal(2_z, index, csf_);
           assert::are_equal("d", value, csf_);
           erased_control_check += 2;
         } else if (erased_control_check == 3) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("c", value, csf_);
           erased_control_check += 3;
         } else if (erased_control_check == 6) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           erased_control_check += 4;
         } else if (erased_control_check == 10) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("e", value, csf_);
           erased_control_check += 5;
         } else
@@ -438,19 +438,19 @@ namespace xtd::forms::layout::tests {
       items.erase_at(0);
       
       assert::is_true(items.empty(), csf_);
-      assert::are_equal(15_sz, erased_control_check);
+      assert::are_equal(15_z, erased_control_check);
     }
     
     void test_method_(erase_item_first) {
       arranged_element_collection<std::string> items;
-      size_t erased_control_check = 0_sz;
+      size_t erased_control_check = 0_z;
       items.push_back_range({"a", "b", "c", "d", "e"});
       items.item_added += [&](size_t index, std::string & value) {
         assert::fail(ustring::format("added index = {}, value = {}", index, value), csf_);
       };
       items.item_removed += [&](size_t index, std::string & value) {
         if (erased_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           erased_control_check += 1;
         } else
@@ -466,7 +466,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal("c", items[1], csf_);
       assert::are_equal("d", items[2], csf_);
       assert::are_equal("e", items[3], csf_);
-      assert::are_equal(1_sz, erased_control_check);
+      assert::are_equal(1_z, erased_control_check);
     }
     
     void test_method_(erase_item_last) {
@@ -478,7 +478,7 @@ namespace xtd::forms::layout::tests {
       };
       items.item_removed += [&](size_t index, std::string & value) {
         if (erased_control_check == 0) {
-          assert::are_equal(4_sz, index, csf_);
+          assert::are_equal(4_z, index, csf_);
           assert::are_equal("e", value, csf_);
           erased_control_check += 1;
         } else
@@ -494,7 +494,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal("b", items[1], csf_);
       assert::are_equal("c", items[2], csf_);
       assert::are_equal("d", items[3], csf_);
-      assert::are_equal(1_sz, erased_control_check);
+      assert::are_equal(1_z, erased_control_check);
     }
     
     void test_method_(erase_at_item_width_bad_index) {
@@ -515,7 +515,7 @@ namespace xtd::forms::layout::tests {
       };
       items.item_updated += [&](size_t index, std::string & value) {
         if (updated_control_check == 0) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("z", value, csf_);
           updated_control_check += 1;
         } else
@@ -529,7 +529,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal("c", items[2], csf_);
       assert::are_equal("d", items[3], csf_);
       assert::are_equal("e", items[4], csf_);
-      assert::are_equal(1_sz, updated_control_check);
+      assert::are_equal(1_z, updated_control_check);
     }
     
     void test_method_(using_std_sort_two_items) {
@@ -617,11 +617,11 @@ namespace xtd::forms::layout::tests {
       };
       items.item_updated += [&](size_t index, std::string & value) {
         if (updated_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           updated_control_check += 1;
         } else if (updated_control_check == 1) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("z", value, csf_);
           updated_control_check += 2;
         } else
@@ -632,7 +632,7 @@ namespace xtd::forms::layout::tests {
       
       assert::are_equal("a", items[0], csf_);
       assert::are_equal("z", items[1], csf_);
-      assert::are_equal(3_sz, updated_control_check);
+      assert::are_equal(3_z, updated_control_check);
     }
     
     void test_method_(using_std_double_swap) {
@@ -648,19 +648,19 @@ namespace xtd::forms::layout::tests {
       };
       items.item_updated += [&](size_t index, std::string & value) {
         if (updated_control_check == 0) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("a", value, csf_);
           updated_control_check += 1;
         } else if (updated_control_check == 1) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("z", value, csf_);
           updated_control_check += 2;
         } else if (updated_control_check == 3) {
-          assert::are_equal(0_sz, index, csf_);
+          assert::are_equal(0_z, index, csf_);
           assert::are_equal("z", value, csf_);
           updated_control_check += 3;
         } else if (updated_control_check == 6) {
-          assert::are_equal(1_sz, index, csf_);
+          assert::are_equal(1_z, index, csf_);
           assert::are_equal("a", value, csf_);
           updated_control_check += 4;
         } else
@@ -672,7 +672,7 @@ namespace xtd::forms::layout::tests {
       
       assert::are_equal("z", items[0], csf_);
       assert::are_equal("a", items[1], csf_);
-      assert::are_equal(10_sz, updated_control_check);
+      assert::are_equal(10_z, updated_control_check);
     }
   };
 }

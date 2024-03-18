@@ -45,7 +45,7 @@ bool unit_test::repeat_tests() const noexcept {
 }
 
 size_t unit_test::test_cases_count() const noexcept {
-  auto count = 0_sz;
+  auto count = 0_z;
   for (auto test_class : test_classes())
     if (test_class.test()->test_count())
       count ++;
@@ -53,14 +53,14 @@ size_t unit_test::test_cases_count() const noexcept {
 }
 
 size_t unit_test::test_count() const noexcept {
-  auto count = 0_sz;
+  auto count = 0_z;
   for (auto test_class : test_classes())
     count += test_class.test()->test_count();
   return count;
 }
 
 size_t unit_test::aborted_test_count() const noexcept {
-  auto count = 0_sz;
+  auto count = 0_z;
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) count++;
@@ -83,7 +83,7 @@ milliseconds unit_test::elapsed_time() const noexcept {
 }
 
 size_t unit_test::ignored_test_count() const noexcept {
-  auto count = 0_sz;
+  auto count = 0_z;
   for (auto test_class : test_classes())
     count += test_class.test()->ignored_test_count();
   return count;
@@ -98,7 +98,7 @@ vector<ustring> unit_test::ignored_test_names() const noexcept {
 }
 
 size_t unit_test::failed_test_count() const noexcept {
-  auto count = 0_sz;
+  auto count = 0_z;
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) count++;
@@ -114,7 +114,7 @@ vector<ustring> unit_test::failed_test_names() const noexcept {
 }
 
 size_t unit_test::succeed_test_count() const noexcept {
-  auto count = 0_sz;
+  auto count = 0_z;
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;

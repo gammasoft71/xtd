@@ -12,7 +12,7 @@ using namespace xtd::forms;
 vector<screen> screen::all_screens() {
   auto screens = vector<screen> {};
   auto count = native::screen::count();
-  for (auto index = 0_sz; index < count; index++)
+  for (auto index = 0_z; index < count; index++)
     screens.push_back({native::screen::bits_per_pixel(index), native::screen::bounds(index), native::screen::device_name(index), native::screen::pixels_per_inch(index), native::screen::primary(index), native::screen::scale_factor(index), native::screen::working_area(index)});
   return screens;
 }

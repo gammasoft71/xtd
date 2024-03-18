@@ -179,7 +179,7 @@ namespace xtd::forms::tests {
     void test_method_(constructor_with_parent_and_text) {
       forms::form form;
       control_for_test control(form, "Value");
-      assert::are_equal(1_sz, form.controls().size(), csf_);
+      assert::are_equal(1_z, form.controls().size(), csf_);
       assert::are_equal(control, form.controls()[0].get(), csf_);
       assert::are_equal(anchor_styles::left | anchor_styles::top, control.anchor(), csf_);
       assert::are_equal(drawing::point::empty, control.auto_scroll_point(), csf_);
@@ -318,7 +318,7 @@ namespace xtd::forms::tests {
     void test_method_(constructor_with_parent_text_location_and_size) {
       forms::form form;
       control_for_test control(form, "Value", 10, 20, 100, 50);
-      assert::are_equal(1_sz, form.controls().size(), csf_);
+      assert::are_equal(1_z, form.controls().size(), csf_);
       assert::are_equal(control, form.controls()[0].get(), csf_);
       assert::are_equal(anchor_styles::left | anchor_styles::top, control.anchor(), csf_);
       assert::are_equal(drawing::point::empty, control.auto_scroll_point(), csf_);
@@ -577,7 +577,7 @@ namespace xtd::forms::tests {
       forms::form form;
       control_for_test control;
       form.controls().push_back(control);
-      assert::are_equal(1_sz, form.controls().size(), csf_);
+      assert::are_equal(1_z, form.controls().size(), csf_);
       assert::are_equal(control, form.controls()[0].get(), csf_);
       assert::are_equal(form, control.parent(), csf_);
       assert::is_not_zero(control.handle(), csf_);
@@ -587,7 +587,7 @@ namespace xtd::forms::tests {
       forms::form form;
       control_for_test control;
       control.parent(form);
-      assert::are_equal(1_sz, form.controls().size(), csf_);
+      assert::are_equal(1_z, form.controls().size(), csf_);
       assert::are_equal(control, form.controls()[0].get(), csf_);
       assert::is_not_zero(control.handle(), csf_);
     }
@@ -804,7 +804,7 @@ namespace xtd::forms::tests {
       control.controls().push_back(control1);
       control.controls().push_back(control2);
       control.controls().push_back(control3);
-      assert::are_equal(3_sz, control.controls().size(), csf_);
+      assert::are_equal(3_z, control.controls().size(), csf_);
       assert::are_same(control1, control.controls()[0].get(), csf_);
       assert::are_same(control2, control.controls()[1].get(), csf_);
       assert::are_same(control3, control.controls()[2].get(), csf_);
@@ -823,7 +823,7 @@ namespace xtd::forms::tests {
       control.controls().push_back(control1);
       control.controls().push_back(control2);
       control.controls().push_back(control3);
-      assert::are_equal(3_sz, control.controls().size(), csf_);
+      assert::are_equal(3_z, control.controls().size(), csf_);
       assert::are_same(control1, control.controls()[0].get(), csf_);
       assert::are_same(control2, control.controls()[1].get(), csf_);
       assert::are_same(control3, control.controls()[2].get(), csf_);
@@ -1138,7 +1138,7 @@ namespace xtd::forms::tests {
       control1.parent(control);
       control2.parent(control);
       control3.parent(control);
-      assert::are_equal(3_sz, control.controls().size(), csf_);
+      assert::are_equal(3_z, control.controls().size(), csf_);
       assert::is_null(control1.parent(), csf_);
       assert::is_null(control2.parent(), csf_);
       assert::is_null(control3.parent(), csf_);
@@ -1154,7 +1154,7 @@ namespace xtd::forms::tests {
       control1.parent(control);
       control2.parent(control);
       control3.parent(control);
-      assert::are_equal(3_sz, control.controls().size(), csf_);
+      assert::are_equal(3_z, control.controls().size(), csf_);
       assert::are_same(control, control1.parent().value().get(), csf_);
       assert::are_same(control, control2.parent().value().get(), csf_);
       assert::are_same(control, control3.parent().value().get(), csf_);
@@ -1176,13 +1176,13 @@ namespace xtd::forms::tests {
       forms::form form2;
       control_for_test control;
       control.parent(form1);
-      assert::are_equal(1_sz, form1.controls().size(), csf_);
-      assert::are_equal(0_sz, form2.controls().size(), csf_);
+      assert::are_equal(1_z, form1.controls().size(), csf_);
+      assert::are_equal(0_z, form2.controls().size(), csf_);
       assert::are_same(form1, control.parent().value().get(), csf_);
       
       control.parent(form2);
-      assert::are_equal(0_sz, form1.controls().size(), csf_);
-      assert::are_equal(1_sz, form2.controls().size(), csf_);
+      assert::are_equal(0_z, form1.controls().size(), csf_);
+      assert::are_equal(1_z, form2.controls().size(), csf_);
       assert::are_same(form2, control.parent().value().get(), csf_);
     }
     
@@ -1365,7 +1365,7 @@ namespace xtd::forms::tests {
       forms::form form;
       control_for_test control;
       control.parent(form);
-      assert::are_equal(1_sz, form.controls().size(), csf_);
+      assert::are_equal(1_z, form.controls().size(), csf_);
       assert::are_equal(control, form.controls()[0].get(), csf_);
       assert::are_equal(anchor_styles::left | anchor_styles::top, control.anchor(), csf_);
       assert::are_equal(drawing::point::empty, control.auto_scroll_point(), csf_);
@@ -1506,9 +1506,9 @@ namespace xtd::forms::tests {
       control_for_test control3;
       control_for_test control4;
       control.controls().push_back_range({control1, control2, control3});
-      assert::are_equal(0_sz, control.get_child_index(control1.handle()), csf_);
-      assert::are_equal(1_sz, control.get_child_index(control2.handle()), csf_);
-      assert::are_equal(2_sz, control.get_child_index(control3.handle()), csf_);
+      assert::are_equal(0_z, control.get_child_index(control1.handle()), csf_);
+      assert::are_equal(1_z, control.get_child_index(control2.handle()), csf_);
+      assert::are_equal(2_z, control.get_child_index(control3.handle()), csf_);
       assert::are_equal(forms::control::control_collection::npos, control.get_child_index(control4.handle()), csf_);
     }
     

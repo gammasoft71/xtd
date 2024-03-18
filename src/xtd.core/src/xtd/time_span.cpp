@@ -388,29 +388,29 @@ int32 time_span::try_parse_internal(const ustring& value, time_span& result) {
   auto days = 0, hours = 0, minutes = 0, seconds = 0, ticks = 0;
   auto items = value.split({'-', ':', '.', '\0'}, string_split_options::remove_empty_entries);
   
-  if (items.size() == 1_sz) {
+  if (items.size() == 1_z) {
     if (int32_object::try_parse(items[0], days) == false) return parse_format;
   }
   
-  if (items.size() == 2_sz) {
+  if (items.size() == 2_z) {
     if (int32_object::try_parse(items[0], hours) == false) return parse_format;
     if (int32_object::try_parse(items[1], minutes) == false) return parse_format;
   }
   
-  if (items.size() == 3_sz) {
+  if (items.size() == 3_z) {
     if (int32_object::try_parse(items[0], hours) == false) return parse_format;
     if (int32_object::try_parse(items[1], minutes) == false) return parse_format;
     if (int32_object::try_parse(items[2], seconds) == false) return parse_format;
   }
   
-  if (items.size() == 4_sz) {
+  if (items.size() == 4_z) {
     if (int32_object::try_parse(items[0], days) == false) return parse_format;
     if (int32_object::try_parse(items[1], hours) == false) return parse_format;
     if (int32_object::try_parse(items[2], minutes) == false) return parse_format;
     if (int32_object::try_parse(items[3], seconds) == false) return false;
   }
   
-  if (items.size() == 5_sz) {
+  if (items.size() == 5_z) {
     if (items[4].size() != 7) return parse_format;
     
     if (int32_object::try_parse(items[0], days) == false) return parse_format;
@@ -420,9 +420,9 @@ int32 time_span::try_parse_internal(const ustring& value, time_span& result) {
     if (int32_object::try_parse(items[4], ticks) == false) return parse_format;
   }
   
-  if (items.size() > 5_sz) return parse_format;
-  if (value.last_index_of('-') != ustring::npos && value.last_index_of('-') != 0_sz) return parse_format;
-  if (items.size() == 5_sz && value.last_index_of(':') > value.last_index_of('.')) return parse_format;
+  if (items.size() > 5_z) return parse_format;
+  if (value.last_index_of('-') != ustring::npos && value.last_index_of('-') != 0_z) return parse_format;
+  if (items.size() == 5_z && value.last_index_of(':') > value.last_index_of('.')) return parse_format;
   
   if (0 > hours || hours > 24) return parse_overflow;
   if (0 > minutes || minutes > 60) return parse_overflow;

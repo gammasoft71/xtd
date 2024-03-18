@@ -410,11 +410,11 @@ void link_label::on_paint(paint_event_args& e) {
   
   if (system_information::is_operating_system_double_buffered() || double_buffered())
     e.graphics().clear(back_color());
-  auto line_number = 0_sz;
-  auto index = 0_sz;
+  auto line_number = 0_z;
+  auto index = 0_z;
   for (auto line : text().split({'\n'})) {
     auto text_location = get_text_location(line_number);
-    auto line_index = 0_sz;
+    auto line_index = 0_z;
     auto size_text = drawing::size {};
     auto text = ustring::empty_string;
     for (auto link : data_->links) {
@@ -473,7 +473,7 @@ void link_label::on_text_changed(const event_args& e) {
 }
 
 link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
-  auto link_index = 0_sz;
+  auto link_index = 0_z;
   for (auto [rect, is_link] : generate_text_rects())
     if (is_link) {
       if (rect.contains(point)) return data_->links[link_index];
@@ -484,7 +484,7 @@ link_label::link& link_label::point_in_link(const xtd::drawing::point& point) {
 }
 
 xtd::drawing::point link_label::get_text_location(size_t line_number) const noexcept {
-  auto line_index = 0_sz;
+  auto line_index = 0_z;
   for (auto line : text().split({'\n'})) {
     auto text_location = point {};
     auto text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
@@ -508,10 +508,10 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const noex
 
 std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects() const noexcept {
   auto text_rects = std::vector<std::tuple<xtd::drawing::rectangle, bool>> {};
-  auto line_number = 0_sz;
-  auto index = 0_sz;
+  auto line_number = 0_z;
+  auto index = 0_z;
   for (auto line : text().split({'\n'})) {
-    auto line_index = 0_sz;
+    auto line_index = 0_z;
     auto text_location = get_text_location(line_number);
     auto size_text = drawing::size {};
     auto text = ustring::empty_string;

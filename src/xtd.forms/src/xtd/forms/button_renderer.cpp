@@ -148,8 +148,8 @@ void button_renderer::draw_popup_button(const style_sheets::style_sheet& style_s
 
 namespace {
   xtd::ustring get_hotkey_prefix_locations(const xtd::ustring& str, std::vector<size_t>& locations) {
-    auto offset = 0_sz;
-    for (auto index = 0_sz; index < str.size(); index++) {
+    auto offset = 0_z;
+    for (auto index = 0_z; index < str.size(); index++) {
       if (str[index] == '&' && str[index + 1] != '&')
         locations.push_back(index + offset);
       else if (str[index] == '&' && str[index + 1] == '&') {
@@ -158,7 +158,7 @@ namespace {
       }
     }
     auto new_str = str.replace("&&", "&");
-    for (auto index = 0_sz; index < locations.size(); ++index)
+    for (auto index = 0_z; index < locations.size(); ++index)
       new_str = new_str.remove(locations[index], 1);
     return new_str;
   }

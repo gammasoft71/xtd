@@ -33,7 +33,7 @@ ip_address::ip_address(const vector<xtd::byte>& address) {
   
   if (address.size() == 16) {
     address_family_ = sockets::address_family::inter_network_v6;
-    for (auto index = 0_sz; index < number_of_numbers_; index++)
+    for (auto index = 0_z; index < number_of_numbers_; index++)
       numbers_[index] = (static_cast<int16>(address[index * 2]) << 8) + static_cast<int16>(address[(index * 2) + 1]);
   }
 }
@@ -42,7 +42,7 @@ ip_address::ip_address(const vector<xtd::byte>& address, uint32 scope_id) : addr
   if (address.size() != 16) throw argument_exception {csf_};
   
   scope_id_ = scope_id;
-  for (auto index = 0_sz; index < number_of_numbers_; index++)
+  for (auto index = 0_z; index < number_of_numbers_; index++)
     numbers_[index] = (static_cast<int16>(address[index * 2]) << 8) + static_cast<int16>(address[(index * 2) + 1]);
 }
 
@@ -58,7 +58,7 @@ sockets::address_family ip_address::address_family() const noexcept {
 
 bool ip_address::is_ip_v4_mapped_to_ip_v6() const noexcept {
   if (address_family_ != sockets::address_family::inter_network_v6) return false;
-  for (auto index = 0_sz; index < 5u; index++)
+  for (auto index = 0_z; index < 5u; index++)
     if (numbers_[index] != 0) return false;
   return numbers_[5] == 0xFFFF;
 }
@@ -153,7 +153,7 @@ uint64 ip_address::host_to_network_order(uint64 host) {
 
 bool ip_address::is_loopback(const ip_address& address) {
   if (address.address_family_ == sockets::address_family::inter_network) return static_cast<xtd::byte>(address.address_ & 0x00000000000000FF) == 0x7F;
-  for (auto index = 0_sz; index < number_of_numbers_ - 2; index++)
+  for (auto index = 0_z; index < number_of_numbers_ - 2; index++)
     if (address.numbers_[index] != 0) return false;
   return address.numbers_[7] == 1u;
 }
@@ -209,7 +209,7 @@ ip_address ip_address::parse(const ustring& str) {
   using_(vector<ustring> address_parts = str.split({'.'})) {
     if (address_parts.size() == 4) {
       vector<xtd::byte> addresses(4);
-      for (auto index = 0_sz; index < address_parts.size(); index++)
+      for (auto index = 0_z; index < address_parts.size(); index++)
         addresses[index] = xtd::parse<xtd::byte>(address_parts[index]);
       return ip_address(addresses);
     }
@@ -234,7 +234,7 @@ ip_address ip_address::parse(const ustring& str) {
     }
     
     if (address_parts.size() == 8) {
-      for (auto index = 0_sz; index < address_parts.size(); index++)
+      for (auto index = 0_z; index < address_parts.size(); index++)
         value.numbers_[index] = xtd::parse<uint16>(ustring::is_empty(address_parts[index]) ? "0" : address_parts[index], number_styles::hex_number);
       return value;
     }

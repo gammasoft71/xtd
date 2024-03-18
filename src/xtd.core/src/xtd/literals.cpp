@@ -348,36 +348,6 @@ int64 xtd::operator""_s64(const wchar* s, size_t n) {
   return as<int64>(wstring(s, s + n));
 }
 
-size_t xtd::operator""_sz(long double n) {
-  return as<size_t>(n);
-}
-
-size_t xtd::operator""_sz(unsigned long long n) {
-  return as<size_t>(n);
-}
-
-size_t xtd::operator""_sz(const char* s, size_t n) {
-  return as<size_t>(ustring(s, s + n));
-}
-
-#if defined(__cpp_lib_char8_t)
-size_t xtd::operator""_sz(const char8* s, size_t n) {
-  return as<size_t>(ustring(s, s + n));
-}
-#endif
-
-size_t xtd::operator""_sz(const char16* s, size_t n) {
-  return as<size_t>(u16string(s, s + n));
-}
-
-size_t xtd::operator""_sz(const char32* s, size_t n) {
-  return as<size_t>(u32string(s, s + n));
-}
-
-size_t xtd::operator""_sz(const wchar* s, size_t n) {
-  return as<size_t>(wstring(s, s + n));
-}
-
 const char* xtd::operator""_t(const char* s, size_t n) noexcept {
   return translator::translate(s);
 }
@@ -526,4 +496,34 @@ uint64 xtd::operator""_u64(const wchar* s, size_t n) {
 
 xtd::time_span xtd::operator""_us(unsigned long long s) {
   return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::microseconds(s))};
+}
+
+size_t xtd::operator""_z(long double n) {
+  return as<size_t>(n);
+}
+
+size_t xtd::operator""_z(unsigned long long n) {
+  return as<size_t>(n);
+}
+
+size_t xtd::operator""_z(const char* s, size_t n) {
+  return as<size_t>(ustring(s, s + n));
+}
+
+#if defined(__cpp_lib_char8_t)
+size_t xtd::operator""_z(const char8* s, size_t n) {
+  return as<size_t>(ustring(s, s + n));
+}
+#endif
+
+size_t xtd::operator""_z(const char16* s, size_t n) {
+  return as<size_t>(u16string(s, s + n));
+}
+
+size_t xtd::operator""_z(const char32* s, size_t n) {
+  return as<size_t>(u32string(s, s + n));
+}
+
+size_t xtd::operator""_z(const wchar* s, size_t n) {
+  return as<size_t>(wstring(s, s + n));
 }

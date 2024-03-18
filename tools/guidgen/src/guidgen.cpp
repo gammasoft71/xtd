@@ -60,7 +60,7 @@ namespace guidgen {
     
     static auto process_arguments(const std::vector<ustring>& args, ustring& format, int& count, bool& show_version, bool& show_help) noexcept -> bool {
       try {
-        for (auto index = 0_sz; index < args.size(); index += 1) {
+        for (auto index = 0_z; index < args.size(); index += 1) {
           static constexpr auto format_types = {"N", "D", "B", "P", "X"};
           if ((args[index] == "-f" || args[index] == "--format") && index + 1 < args.size() && std::count(format_types.begin(), format_types.end(), args[index + 1])) format = args[index++ + 1];
           else if ((args[index] == "-c" || args[index] == "--count") && index + 1 < args.size() && ustring::try_parse(args[index++ + 1], count) && count >= 1) ; // nothing to do all is done

@@ -994,15 +994,15 @@ namespace xtd::drawing::tests {
       assert::are_equal(system_images::from_name("flag-ee", size {64, 64}), i, csf_);
     }
 
-    void test_method_(flag_sz) {
-      auto i = international_system_images::flag_sz();
+    void test_method_(flag_z) {
+      auto i = international_system_images::flag_z();
       assert::are_equal(size {32, 32}, i.size(), csf_);
       assert::are_not_equal(image::empty, i, csf_);
       assert::are_equal(system_images::from_name("flag-sz"), i, csf_);
     }
 
-    void test_method_(flag_sz_with_specified_size) {
-      auto i = international_system_images::flag_sz({64, 64});
+    void test_method_(flag_z_with_specified_size) {
+      auto i = international_system_images::flag_z({64, 64});
       assert::are_equal(size {64, 64}, i.size(), csf_);
       assert::are_not_equal(image::empty, i, csf_);
       assert::are_equal(system_images::from_name("flag-sz", size {64, 64}), i, csf_);

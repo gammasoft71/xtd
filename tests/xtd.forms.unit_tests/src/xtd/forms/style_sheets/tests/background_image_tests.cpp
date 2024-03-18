@@ -17,7 +17,7 @@ namespace xtd::forms::style_sheets::tests {
       background_image i;
       assert::are_equal(image_type::none, i.image_type(), csf_);
       assert::is_empty(i.url().to_string(), csf_);
-      assert::are_equal(2_sz, i.colors().size(), csf_);
+      assert::are_equal(2_z, i.colors().size(), csf_);
       collection_assert::are_equal({color::black, color::black}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
     }
@@ -26,7 +26,7 @@ namespace xtd::forms::style_sheets::tests {
       background_image i("file://arrow.png");
       assert::are_equal(image_type::url, i.image_type(), csf_);
       assert::are_equal("arrow.png", i.url().host(), csf_);
-      assert::are_equal(2_sz, i.colors().size(), csf_);
+      assert::are_equal(2_z, i.colors().size(), csf_);
       collection_assert::are_equal({color::black, color::black}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
     }
@@ -35,7 +35,7 @@ namespace xtd::forms::style_sheets::tests {
       background_image i({color::blue, color::white});
       assert::are_equal(image_type::linear_gradient, i.image_type(), csf_);
       assert::is_empty(i.url().to_string(), csf_);
-      assert::are_equal(2_sz, i.colors().size(), csf_);
+      assert::are_equal(2_z, i.colors().size(), csf_);
       collection_assert::are_equal({color::blue, color::white}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
     }
@@ -44,7 +44,7 @@ namespace xtd::forms::style_sheets::tests {
       background_image i(image_type::linear_gradient, {color::blue, color::white});
       assert::are_equal(image_type::linear_gradient, i.image_type(), csf_);
       assert::is_empty(i.url().to_string(), csf_);
-      assert::are_equal(2_sz, i.colors().size(), csf_);
+      assert::are_equal(2_z, i.colors().size(), csf_);
       collection_assert::are_equal({color::blue, color::white}, i.colors(), csf_);
       assert::are_equal(180, i.angle(), csf_);
     }
@@ -65,7 +65,7 @@ namespace xtd::forms::style_sheets::tests {
       background_image i(image_type::linear_gradient, {color::blue, color::white}, 270);
       assert::are_equal(image_type::linear_gradient, i.image_type(), csf_);
       assert::is_empty(i.url().to_string(), csf_);
-      assert::are_equal(2_sz, i.colors().size(), csf_);
+      assert::are_equal(2_z, i.colors().size(), csf_);
       collection_assert::are_equal({color::blue, color::white}, i.colors(), csf_);
       assert::are_equal(270, i.angle(), csf_);
     }

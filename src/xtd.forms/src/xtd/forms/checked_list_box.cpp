@@ -71,7 +71,7 @@ checked_list_box::checked_list_box() : data_(std::make_shared<data>()) {
 
 checked_list_box::checked_index_collection checked_list_box::checked_indices() const noexcept {
   auto indices = checked_index_collection {};
-  for (auto index = 0_sz; index < data_->items.size(); ++index)
+  for (auto index = 0_z; index < data_->items.size(); ++index)
     if (data_->items[index].checked()) indices.push_back(index);
   return indices;
 }
@@ -399,7 +399,7 @@ forms::create_params checked_list_box::create_params() const noexcept {
 void checked_list_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
   data_->items.sorted(sorted());
-  for (auto index = 0_sz; index < data_->items.size(); ++index)
+  for (auto index = 0_z; index < data_->items.size(); ++index)
     native::checked_list_box::insert_item(handle(), index, data_->items[index].value(), data_->items[index].checked());
   if (selection_mode() == forms::selection_mode::none) selected_index(npos);
   native::checked_list_box::selected_index(handle(), selected_index());

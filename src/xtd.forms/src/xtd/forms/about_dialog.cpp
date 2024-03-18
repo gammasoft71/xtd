@@ -51,7 +51,7 @@ namespace {
       if (names_ == names) return *this;
       names_ = names;
       names_label_.text(names_.size() ? names_[0] : "");
-      for (auto index  = 1_sz; index < names_.size(); ++index)
+      for (auto index  = 1_z; index < names_.size(); ++index)
         names_label_.text(ustring::format("{}{}{}", names_label_.text(), environment::new_line(), names_[index]));
       height(names_label_.height());
       return *this;

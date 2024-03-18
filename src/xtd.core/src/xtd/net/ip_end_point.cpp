@@ -42,7 +42,7 @@ unique_ptr<end_point> ip_end_point::create(const socket_address& socket_address)
   
   if (address_family_ == address_family::inter_network_v6) {
     vector<xtd::byte> current_address(16);
-    for (auto i = 0_sz; i < current_address.size(); i++)
+    for (auto i = 0_z; i < current_address.size(); i++)
       current_address[i] = socket_address[i + 8];
     //uint32 scope = ip_address::network_to_host_order(bit_converter::to_uint32(socket_address.bytes_, 24));
     uint32 scope = bit_converter::to_uint32(socket_address.bytes_, 24);

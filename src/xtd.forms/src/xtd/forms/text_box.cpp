@@ -293,7 +293,7 @@ void text_box::on_handle_created(const event_args& e) {
   if (!data_->use_system_password_char && data_->password_char) {
     auto txt = text();
     native::text_box::text(handle(), "");
-    for (auto count = 0_sz; count < txt.size(); ++count)
+    for (auto count = 0_z; count < txt.size(); ++count)
       native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
   } else {
     switch (data_->character_casing) {

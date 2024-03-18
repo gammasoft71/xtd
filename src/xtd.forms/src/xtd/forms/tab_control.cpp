@@ -246,7 +246,7 @@ void tab_control::wnd_proc(message& message) {
 }
 
 size_t tab_control::get_child_index(intptr page) {
-  for (auto index = 0_sz; index < controls().size(); ++index)
+  for (auto index = 0_z; index < controls().size(); ++index)
     if (controls()[index].get().handle() == page) return index;
   return npos;
 }

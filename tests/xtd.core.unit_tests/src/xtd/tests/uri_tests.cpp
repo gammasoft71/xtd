@@ -264,18 +264,18 @@ namespace xtd::tests {
     
     void test_method_(segments) {
       auto segments = uri("  Http://yfi:MyPass@www.Contoso.com:8080/C:a ta%20log/ShowNew.htm?Date=ToDay#bOdy  ").segments();
-      assert::are_equal(3_sz, segments.size(), csf_);
+      assert::are_equal(3_z, segments.size(), csf_);
       assert::are_equal("/", segments[0], csf_);
       assert::are_equal("C:a%20ta%20log/", segments[1], csf_);
       assert::are_equal("ShowNew.htm", segments[2], csf_);
       
       segments = uri("http://www.contoso.com/index.htm?date=today").segments();
-      assert::are_equal(2_sz, segments.size(), csf_);
+      assert::are_equal(2_z, segments.size(), csf_);
       assert::are_equal("/", segments[0], csf_);
       assert::are_equal("index.htm", segments[1], csf_);
       
       segments = uri("http://www.contoso.com/index.htm#main").segments();
-      assert::are_equal(2_sz, segments.size(), csf_);
+      assert::are_equal(2_z, segments.size(), csf_);
       assert::are_equal("/", segments[0], csf_);
       assert::are_equal("index.htm", segments[1], csf_);
       
@@ -283,16 +283,16 @@ namespace xtd::tests {
       assert::are_equal(0ul, segments.size(), csf_);
       
       segments = uri("nntp://news.contoso.com/123456@contoso.com").segments();
-      assert::are_equal(2_sz, segments.size(), csf_);
+      assert::are_equal(2_z, segments.size(), csf_);
       assert::are_equal("/", segments[0], csf_);
       assert::are_equal("123456@contoso.com", segments[1], csf_);
       
       segments = uri("news:123456@contoso.com").segments();
-      assert::are_equal(1_sz, segments.size(), csf_);
+      assert::are_equal(1_z, segments.size(), csf_);
       assert::are_equal("123456@contoso.com", segments[0], csf_);
       
       segments = uri("file://server/filename.ext").segments();
-      assert::are_equal(2_sz, segments.size(), csf_);
+      assert::are_equal(2_z, segments.size(), csf_);
       assert::are_equal("/", segments[0], csf_);
       assert::are_equal("filename.ext", segments[1], csf_);
     }
@@ -304,9 +304,9 @@ namespace xtd::tests {
     }
     
     void test_method_(hex_unescape) {
-      size_t index = 0_sz;
+      size_t index = 0_z;
       assert::are_equal('<', uri::hex_unescape("%3c", index), csf_);
-      assert::are_equal(3_sz, index, csf_);
+      assert::are_equal(3_z, index, csf_);
     }
     
     void test_method_(is_base_of) {
