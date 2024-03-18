@@ -9,8 +9,8 @@
 #include <xtd/forms/native/control>
 #include <xtd/forms/native/tool_bar>
 #include <xtd/forms/native/tool_bar_styles>
+#include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/window_messages>
 #include <xtd/as>
 #include <xtd/is>
 
@@ -360,9 +360,9 @@ void tool_bar::fill() {
   if (!is_system_tool_bar()) std::reverse(reversed_buttons.begin(), reversed_buttons.end());
   if (!is_system_tool_bar() && auto_size())
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
-  for (auto index = 0_sz; index < reversed_buttons.size(); ++index) {
+  for (auto index = 0_z; index < reversed_buttons.size(); ++index) {
     auto& button_item = reversed_buttons[index].get();
-    auto control_handle = 0_sz;
+    auto control_handle = 0_z;
     if (is_system_tool_bar()) {
       if (reversed_buttons[index].get().style() == tool_bar_button_style::push_button || (!data_->drop_down_arrows && button_item.style() == tool_bar_button_style::drop_down_button))
         control_handle = native::tool_bar::add_tool_bar_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
@@ -502,7 +502,7 @@ void tool_bar::update_toolbar_button_control(intptr handle, const xtd::ustring& 
 
 void tool_bar::wm_click(const message& message) {
   auto found_button_or_menu = false;
-  for (auto index = 0_sz; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
+  for (auto index = 0_z; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
     if (index < data_->system_tool_bar_button_handles.size() && message.wparam() == data_->system_tool_bar_button_handles[index]) {
       if (data_->buttons[index].get().style() == tool_bar_button_style::toggle_button)
         data_->buttons[index].get().pushed(!data_->buttons[index].get().pushed());
@@ -511,7 +511,7 @@ void tool_bar::wm_click(const message& message) {
     }
   }
   
-  for (auto index = 0_sz; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
+  for (auto index = 0_z; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
     if (data_->buttons[index].get().style() == tool_bar_button_style::drop_down_button && data_->buttons[index].get().drop_down_menu().has_value())
       found_button_or_menu = on_context_menu_item_click(data_->buttons[index].get().drop_down_menu().value(), message.wparam());
   }
