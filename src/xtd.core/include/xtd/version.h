@@ -5,11 +5,6 @@
 #include "icomparable.h"
 #include "ustring.h"
 
-/// @cond
-//#undef major
-//#undef minor
-/// @endcond
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the version number of an assembly, operating system, or the xtd. This class cannot be inherited.
