@@ -3,13 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "base_assert.h"
-#include <algorithm>
-#include <cmath>
-#include <cstring>
-#include <exception>
 #include <functional>
-#include <iterator>
-#include <memory>
 
 /// @cond
 #if defined(assert)

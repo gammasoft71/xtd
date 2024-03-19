@@ -16,7 +16,7 @@ void ostream_event_listener::on_class_end(const class_event_args& e) const {
     console::foreground_color(console_color::dark_green);
     os_ << "[----------] ";
     console::reset_color();
-    os_ << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms total)" << endl << endl;
+    os_ << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << static_cast<int32>(e.test_class().elapsed_time().total_milliseconds()) << " ms total)" << endl << endl;
   }
   event_listener::on_class_end(e);
 }
@@ -42,14 +42,14 @@ void ostream_event_listener::on_test_aborted(const test_event_args& e) const {
     console::foreground_color(console_color::dark_red);
     os_ << "[  ABORTED ] ";
     console::reset_color();
-    os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
+    os_ << e.test_class().name() << "." << e.test().name() << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms)" << endl;
   } else {
     console::foreground_color(console_color::dark_magenta);
     os_ << "  ABORTED ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (settings::default_settings().show_duration())
-      os_ << " (" << e.test().elapsed_time().count() << " ms total)";
+      os_ << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms total)";
     os_ << endl;
     if (e.test().message() != "")
       os_ << "    " << e.test().message() << endl;
@@ -96,14 +96,14 @@ void ostream_event_listener::on_test_failed(const test_event_args& e) const {
     console::foreground_color(console_color::dark_red);
     os_ << "[  FAILED  ] ";
     console::reset_color();
-    os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
+    os_ << e.test_class().name() << "." << e.test().name() << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms)" << endl;
   } else {
     console::foreground_color(console_color::dark_red);
     os_ << "  FAILED  ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (settings::default_settings().show_duration())
-      os_ << " (" << e.test().elapsed_time().count() << " ms total)";
+      os_ << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms total)";
     os_ << endl;
     if (e.test().message() != "")
       os_ << "    " << e.test().message() << endl;
@@ -132,7 +132,7 @@ void ostream_event_listener::on_test_ignored(const test_event_args& e) const {
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (settings::default_settings().show_duration())
-      os_ << " (" << e.test().elapsed_time().count() << " ms total)";
+      os_ << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms total)";
     os_ << endl;
     if (e.test().message() != "")
       os_ << "    " << e.test().message() << endl;
@@ -155,14 +155,14 @@ void ostream_event_listener::on_test_succeed(const test_event_args& e) const {
     console::foreground_color(console_color::dark_green);
     os_ << "[       OK ] ";
     console::reset_color();
-    os_ << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
+    os_ << e.test_class().name() << "." << e.test().name() << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms)" << endl;
   } else {
     console::foreground_color(console_color::dark_green);
     os_ << "  SUCCEED ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (settings::default_settings().show_duration())
-      os_ << " (" << e.test().elapsed_time().count() << " ms total)";
+      os_ << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms total)";
     os_ << endl;
     if (e.test().message() != "")
       os_ << "    " << e.test().message() << endl;
@@ -175,7 +175,7 @@ void ostream_event_listener::on_unit_test_end(const tunit_event_args& e) const {
     console::foreground_color(console_color::dark_green);
     os_ << "[==========] ";
     console::reset_color();
-    os_ << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ?  "s" : "") <<  " ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << endl;
+    os_ << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test suite" << (e.unit_test().test_cases_count() > 1 ?  "s" : "") <<  " ran. (" << static_cast<int32>(e.unit_test().elapsed_time().total_milliseconds()) << " ms total)" << endl;
     console::foreground_color(console_color::dark_green);
     os_ << "[  PASSED  ] ";
     console::reset_color();
@@ -231,7 +231,7 @@ void ostream_event_listener::on_unit_test_end(const tunit_event_args& e) const {
     
     os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() > 1 ? "s" : "") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << " ran.";
     if (settings::default_settings().show_duration())
-      os_ << " (" << e.unit_test().elapsed_time().count() << " ms total)";
+      os_ << " (" << static_cast<int32>(e.unit_test().elapsed_time().total_milliseconds()) << " ms total)";
     os_ << endl << endl;
   }
 }

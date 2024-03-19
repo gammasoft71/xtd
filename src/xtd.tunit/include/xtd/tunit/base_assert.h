@@ -10,7 +10,6 @@
 #include "abort_error.h"
 #include "assert_error.h"
 #include "ignore_error.h"
-#include <xtd/environment>
 #include <xtd/static>
 #include <xtd/types>
 #include <xtd/typeof>
@@ -213,7 +212,7 @@ namespace xtd {
       /// @}
       
     private:
-      static bool is_debug() noexcept {return environment::compiler_version().build_type() == build_type::debug;}
+      static bool is_debug() noexcept;
     };
   }
 }

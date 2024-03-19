@@ -2,7 +2,8 @@
 /// @brief Contains xtd::tunit::test_initialize_attribute class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "test.h"
+#include <xtd/diagnostics/stack_frame>
+#include <xtd/ustring>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,7 +24,7 @@ namespace xtd {
       /// @param test_class The test_class that will contians the test initialize attribute.
       /// @param method The test initialize method.
       template<typename test_class_t>
-      test_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)()) noexcept :  test_initialize_attribute(name, test_class, method, xtd::diagnostics::stack_frame()) {}
+      test_initialize_attribute(const xtd::ustring& name, test_class_t& test_class, void (*method)()) noexcept :  test_initialize_attribute(name, test_class, method, xtd::diagnostics::stack_frame()) {}
       
       /// @brief Creates a new instance of test_initialize_attribute with specified name, test_class and method.
       /// @param name The name of the test initialize attribute.
@@ -31,7 +32,7 @@ namespace xtd {
       /// @param method The test initialize method.
       /// @param stack_frame The stack frame of test initialize method.
       template<typename test_class_t>
-      test_initialize_attribute(const std::string& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame) noexcept {test_class.add_test_initialize({name, method, stack_frame});}
+      test_initialize_attribute(const xtd::ustring& name, test_class_t& test_class, void (*method)(), const xtd::diagnostics::stack_frame& stack_frame) noexcept {test_class.add_test_initialize({name, method, stack_frame});}
       /// @}
     };
   }

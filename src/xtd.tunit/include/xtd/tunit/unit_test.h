@@ -6,14 +6,8 @@
 #include "event_listener.h"
 #include "registered_test_class.h"
 #include "settings.h"
-#include <xtd/convert>
 #include <xtd/date_time>
 #include <xtd/ustring>
-#include <xtd/system_exception>
-#include <iomanip>
-#include <fstream>
-#include <memory>
-#include <random>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -87,7 +81,7 @@ namespace xtd {
       
       /// @brief Gets the elapsed time for the execution of all tests in the unit test.
       /// @return The elapsed time for the execution of all tests in the unit test.
-      std::chrono::milliseconds elapsed_time() const noexcept;
+      xtd::time_span elapsed_time() const noexcept;
       
       /// @brief Gets the ignored test count.
       /// @return The ignored test count.
@@ -167,8 +161,7 @@ namespace xtd {
       xtd::ustring message_to_xml_string(const xtd::tunit::test& test);
       xtd::ustring name_to_string(const xtd::ustring& name);
       xtd::ustring status_to_string(const xtd::tunit::test& test);
-      xtd::ustring to_string(const std::chrono::milliseconds& ms);
-      xtd::ustring to_string(const std::chrono::time_point<std::chrono::system_clock>& time);
+      xtd::ustring to_string(const time_span& ms);
       void unit_test_cleanup();
       void unit_test_initialize();
       void write_list_tests_json();

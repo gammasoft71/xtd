@@ -7,8 +7,6 @@
 #include "assert_error.h"
 #include <xtd/diagnostics/stack_frame>
 #include <xtd/date_time>
-#include <xtd/using>
-#include <functional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -76,7 +74,7 @@ namespace xtd {
       
       /// @brief Gets the elapsed time of the test method.
       /// @return The elapsed time of the test method.
-      std::chrono::milliseconds elapsed_time() const noexcept;
+      xtd::time_span elapsed_time() const noexcept;
       
       /// @brief Gets the expect value string.
       /// @return The expect value string. Can be empty.

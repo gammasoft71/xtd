@@ -19,7 +19,6 @@ namespace {
 #endif
 
 using namespace std;
-using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
@@ -76,11 +75,10 @@ vector<ustring> unit_test::aborted_test_names() const noexcept {
   return names;
 }
 
-milliseconds unit_test::elapsed_time() const noexcept {
-  using namespace chrono_literals;
-  if (start_time_point_.ticks() == 0 && end_time_point_.ticks() == 0) return 0ms;
-  if (end_time_point_.ticks() == 0) return duration_cast<milliseconds>((date_time::now() - start_time_point_).ticks_duration());
-  return duration_cast<milliseconds>((end_time_point_ - start_time_point_).ticks_duration());
+time_span unit_test::elapsed_time() const noexcept {
+  if (start_time_point_.ticks() == 0 && end_time_point_.ticks() == 0) return 0_ms;
+  if (end_time_point_.ticks() == 0) return date_time::now() - start_time_point_;
+  return end_time_point_ - start_time_point_;
 }
 
 size_t unit_test::ignored_test_count() const noexcept {
@@ -350,21 +348,11 @@ ustring unit_test::status_to_string(const test& test) {
   return ss.str();
 }
 
-ustring unit_test::to_string(const milliseconds& ms) {
+ustring unit_test::to_string(const time_span& ts) {
   auto ss = stringstream {};
-  if (ms.count() == 0)
-    ss << 0;
-  else
-    ss << ms.count() / 1000 << "." << setfill('0') << setw(3) << ms.count() % 1000;
-  return ss.str();
-}
-
-ustring unit_test::to_string(const time_point<system_clock>& time) {
-  auto time_t = system_clock::to_time_t(time);
-  auto tm = *localtime(&time_t);
-  auto ss = stringstream {};
-  ss << tm.tm_year + 1900 << "-" << setfill('0') << setw(2) << tm.tm_mon << "-" << setfill('0') << setw(2) << tm.tm_mday;
-  ss << "T" << setfill('0') << setw(2) << tm.tm_hour << ":" << setfill('0') << setw(2) << tm.tm_min << ":" << setfill('0') << setw(2) << tm.tm_sec;
+  auto ms = static_cast<int32>(ts.total_nanoseconds());
+  if (ms == 0) ss << 0;
+  else ss << ms / 1000 << "." << setfill('0') << setw(3) << ms % 1000;
   return ss.str();
 }
 
