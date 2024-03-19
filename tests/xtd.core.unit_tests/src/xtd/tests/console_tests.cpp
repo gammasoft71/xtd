@@ -1,3 +1,4 @@
+#include <xtd/argument_out_of_range_exception>
 #include <xtd/console>
 #include <xtd/int16_object>
 #include <xtd/io/file>
