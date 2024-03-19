@@ -1,5 +1,6 @@
 #include "../../../include/xtd/tunit/test_class.h"
 #include "../../../include/xtd/tunit/unit_test.h"
+#include <xtd/random>
 
 using namespace std;
 using namespace std::chrono;
