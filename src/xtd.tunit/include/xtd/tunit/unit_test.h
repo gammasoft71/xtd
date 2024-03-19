@@ -8,7 +8,6 @@
 #include "settings.h"
 #include <xtd/convert>
 #include <xtd/date_time>
-#include <xtd/random>
 #include <xtd/ustring>
 #include <xtd/system_exception>
 #include <iomanip>
