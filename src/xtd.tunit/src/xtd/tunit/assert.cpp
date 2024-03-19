@@ -1,4 +1,5 @@
 #include "../../../include/xtd/tunit/assert.h"
+#include <cstring>
 
 using namespace std;
 using namespace xtd;
