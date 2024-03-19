@@ -1461,7 +1461,7 @@ namespace xtd {
   /// @code
   /// std::cout << 1.6_z << std::endl;
   /// @endcode
-  size_t operator""_z(long double n);
+  size_t operator""_uz(long double n);
   
   /// @brief Used to convert specified value into size_t.
   /// @par Namespace
@@ -1473,7 +1473,7 @@ namespace xtd {
   /// @code
   /// std::cout << 54_z << std::endl;
   /// @endcode
-  size_t operator""_z(unsigned long long n);
+  size_t operator""_uz(unsigned long long n);
   
   /// @brief Used to convert specified value into size_t.
   /// @par Namespace
@@ -1485,7 +1485,7 @@ namespace xtd {
   /// @code
   /// std::cout << "125"_z << std::endl;
   /// @endcode
-  size_t operator""_z(const char* s, size_t n);
+  size_t operator""_uz(const char* s, size_t n);
   
 #if defined(__cpp_lib_char8_t)
   /// @brief Used to convert specified value into size_t.
@@ -1498,7 +1498,7 @@ namespace xtd {
   /// @code
   /// std::cout << u8"125"_z << std::endl;
   /// @endcode
-  size_t operator""_z(const char8* s, size_t n);
+  size_t operator""_uz(const char8* s, size_t n);
 #endif
   
   /// @brief Used to convert specified value into size_t.
@@ -1511,7 +1511,7 @@ namespace xtd {
   /// @code
   /// std::cout << u"125"_z << std::endl;
   /// @endcode
-  size_t operator""_z(const char16* s, size_t n);
+  size_t operator""_uz(const char16* s, size_t n);
   
   /// @brief Used to convert specified value into size_t.
   /// @par Namespace
@@ -1523,9 +1523,95 @@ namespace xtd {
   /// @code
   /// std::cout << U"125"_z << std::endl;
   /// @endcode
-  size_t operator""_z(const char32* s, size_t n);
+  size_t operator""_uz(const char32* s, size_t n);
   
   /// @brief Used to convert specified value into size_t.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << L"125"_z << std::endl;
+  /// @endcode
+  size_t operator""_uz(const wchar* s, size_t n);
+
+  /// @brief Used to convert specified value into signed size_t.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << 1.6_z << std::endl;
+  /// @endcode
+  size_t operator""_z(long double n);
+  
+  /// @brief Used to convert specified value into signed size_t.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << 54_z << std::endl;
+  /// @endcode
+  size_t operator""_z(unsigned long long n);
+  
+  /// @brief Used to convert specified value into signed size_t.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << "125"_z << std::endl;
+  /// @endcode
+  size_t operator""_z(const char* s, size_t n);
+  
+#if defined(__cpp_lib_char8_t)
+  /// @brief Used to convert specified value into signed size_t.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u8"125"_z << std::endl;
+  /// @endcode
+  size_t operator""_z(const char8* s, size_t n);
+#endif
+  
+  /// @brief Used to convert specified value into signed size_t.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << u"125"_z << std::endl;
+  /// @endcode
+  size_t operator""_z(const char16* s, size_t n);
+  
+  /// @brief Used to convert specified value into signed size_t.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core literals
+  /// @par Examples
+  /// @code
+  /// std::cout << U"125"_z << std::endl;
+  /// @endcode
+  size_t operator""_z(const char32* s, size_t n);
+  
+  /// @brief Used to convert specified value into signed size_t.
   /// @par Namespace
   /// xtd
   /// @par Library
