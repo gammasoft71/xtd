@@ -4,8 +4,6 @@
 #pragma once
 #include <xtd/ustring>
 #include "assert.h"
-#include <locale>
-#include <cstring>
 #include <regex>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

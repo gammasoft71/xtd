@@ -60,7 +60,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the elapsed time of the test class.
       /// @return The elapsed time of the test class.
-      std::chrono::milliseconds elapsed_time() const noexcept;
+      xtd::time_span elapsed_time() const noexcept;
       
       /// @brief Gets the name of the test class.
       /// @return The nzme of the test class.

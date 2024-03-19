@@ -4,7 +4,6 @@
 #include <exception>
 
 using namespace std;
-using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
@@ -28,11 +27,10 @@ const ustring& test::actual() const noexcept {
   return actual_;
 }
 
-milliseconds test::elapsed_time() const noexcept {
-  using namespace std::chrono_literals;
-  if (start_time_.ticks() == 0 && end_time_point.ticks() == 0) return 0ms;
-  if (end_time_point.ticks() == 0) return duration_cast<milliseconds>((date_time::now() - start_time_).ticks_duration());
-  return duration_cast<milliseconds>((end_time_point - start_time_).ticks_duration());
+time_span test::elapsed_time() const noexcept {
+  if (start_time_.ticks() == 0 && end_time_point.ticks() == 0) return 0_ms;
+  if (end_time_point.ticks() == 0) return date_time::now() - start_time_;
+  return end_time_point - start_time_;
 }
 
 const ustring& test::expect() const noexcept {

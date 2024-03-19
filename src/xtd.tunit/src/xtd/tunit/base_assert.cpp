@@ -3,6 +3,7 @@
 #include "../../../include/xtd/tunit/unit_test.h"
 #include "../../../include/xtd/tunit/test.h"
 #include <xtd/diagnostics/assert>
+#include <xtd/environment>
 
 using namespace std;
 using namespace xtd;
@@ -134,4 +135,8 @@ void base_assert::succeed(const ustring& message, const stack_frame& stack_frame
 
 ustring base_assert::join_items(const ustring& str) {
   return __tunit_join__items(str);
+}
+
+bool base_assert::is_debug() noexcept {
+  return environment::compiler_version().build_type() == build_type::debug;
 }

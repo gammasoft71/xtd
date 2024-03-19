@@ -27,6 +27,7 @@ namespace xtd {
       
       /// @cond
       tunit_event_args(const tunit_event_args&) = default;
+      tunit_event_args& operator =(const tunit_event_args&) = delete;
       /// @endcond
       
       /// @name Public Properties
