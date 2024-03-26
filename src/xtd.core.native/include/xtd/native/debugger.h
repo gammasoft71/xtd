@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains debug API.
+/// @brief Contains debugger API.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
@@ -8,14 +8,9 @@
 #endif
 /// @endcond
 
-#include "constant_special_item_id_list.h"
-#include "environment_variable_target.h"
-#include "platform_ids.h"
 #include <xtd/core_native_export>
 #include <cstdint>
-#include <map>
 #include <string>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
