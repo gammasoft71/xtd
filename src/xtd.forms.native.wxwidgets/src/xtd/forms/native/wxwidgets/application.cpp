@@ -15,6 +15,7 @@
 #include <wx/aboutdlg.h>
 #include <wx/evtloop.h>
 #include <wx/sysopt.h>
+#include <wx/stdpaths.h>
 
 #if defined(__WXMSW__)
 #include <wx/msw/registry.h>
@@ -201,6 +202,7 @@ void application::initialize() {
   #elif defined(__WXOSX__)
   wxMenuBar::MacSetCommonMenuBar(__create_default_menu_bar__());
   #endif
+  wxStandardPaths::Get().SetFileLayout(wxStandardPaths::FileLayout_XDG);
 }
 
 void application::register_message_filter(const delegate<bool(intptr, int32, intptr, intptr, intptr)>& message_filter_proc) {

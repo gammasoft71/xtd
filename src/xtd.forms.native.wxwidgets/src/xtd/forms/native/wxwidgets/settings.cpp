@@ -17,11 +17,7 @@ using namespace xtd::forms::native;
 
 intptr settings::create(const ustring& product_name, const ustring& company_name) {
   application::initialize(); // Must be first
-  #if defined(__WXGTK__)
-  return reinterpret_cast<intptr>(new wxConfig(convert_string::to_wstring(product_name), convert_string::to_wstring(company_name), L"~/.config/"s + convert_string::to_wstring(product_name)));
-  #else
   return reinterpret_cast<intptr>(new wxConfig(convert_string::to_wstring(product_name), convert_string::to_wstring(company_name)));
-  #endif
 }
 
 void settings::destroy(intptr config) {
