@@ -56,6 +56,10 @@ namespace xtd {
       button();
       /// @}
       
+      /// @cond
+      button(button&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
