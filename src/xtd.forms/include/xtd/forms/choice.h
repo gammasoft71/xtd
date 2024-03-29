@@ -43,6 +43,10 @@ namespace xtd {
       choice();
       /// @}
       
+      /// @cond
+      choice(choice&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
