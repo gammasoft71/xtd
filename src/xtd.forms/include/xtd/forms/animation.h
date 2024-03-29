@@ -33,6 +33,10 @@ namespace xtd {
       animation();
       /// @}
       
+      /// @cond
+      animation(animation&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
