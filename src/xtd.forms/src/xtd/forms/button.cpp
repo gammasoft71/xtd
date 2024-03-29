@@ -28,7 +28,6 @@ struct button::data {
 
 button::button() : data_(std::make_shared<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
-  data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
 }
 
 bool button::auto_repeat() const noexcept {
@@ -38,7 +37,11 @@ bool button::auto_repeat() const noexcept {
 button& button::auto_repeat(bool auto_repeat) {
   if (data_->auto_repeat == auto_repeat) return *this;
   data_->auto_repeat = auto_repeat;
-  if (!data_->auto_repeat) data_->auto_repeat_timer.enabled(false);
+  if (data_->auto_repeat) data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
+  else {
+    data_->auto_repeat_timer.tick -= {*this, &button::on_auto_repeat_timer_tick};
+    data_->auto_repeat_timer.enabled(false);
+  }
   return *this;
 }
 
