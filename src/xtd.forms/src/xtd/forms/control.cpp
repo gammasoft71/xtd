@@ -91,6 +91,8 @@ forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
 map<intptr, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 
+std::vector<std::unique_ptr<xtd::forms::control>> control::control_collection::controls_;
+
 control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
 }
 

@@ -187,15 +187,73 @@ namespace xtd {
         std::optional<value_type> operator [](const xtd::ustring& name);
         /// @}
         
-        /// @name Public Methodss
+        /// @name Public Methods
         
         /// @{
+        /// @brief Creates and inserts specified control at specified position.
+        /// @param pos The iterator before which the content will be inserted. pos may be the xtd::forms::control::control_collection::end iterator.
+        /// @param args The arguments to forward to the create method of the control
+        /// @return A reference to the created control.
+        /// @remarks The control will be destroyed automatically when the control no longer has a parent.
+        template<typename control_t, typename ... args_t>
+        control_t& emplace(const_iterator pos, args_t&& ...args) {
+          auto control_ptr = std::make_unique<control_t>(control_t::create(std::forward<args_t>(args)...));
+          auto& control_ref = *control_ptr;
+          controls_.push_back(std::move(control_ptr));
+          insert(pos, control_ref);
+          return control_ref;
+        }
+        
+        /// @brief Creates and inserts specified control at specified position.
+        /// @param index The index before which the content will be inserted.
+        /// @param args The arguments to forward to the create method of the control
+        /// @return A reference to the created control.
+        /// @remarks The control will be destroyed automatically when the control no longer has a parent.
+        template<typename control_t, typename ... args_t>
+        control_t& emplace_at(size_t index, args_t&& ...args) {
+          auto control_ptr = std::make_unique<control_t>(control_t::create(std::forward<args_t>(args)...));
+          auto& control_ref = *control_ptr;
+          controls_.push_back(std::move(control_ptr));
+          insert_at(index, control_ref);
+          return control_ref;
+        }
+        
+        /// @brief Creates and adds a control to the end.
+        /// @param args The arguments to forward to the create method of the control
+        /// @return A reference to the created control.
+        /// @remarks The control will be destroyed automatically when the control no longer has a parent.
+        template<typename control_t, typename ... args_t>
+        control_t& emplace_back(args_t&& ...args) {
+          auto control_ptr = std::make_unique<control_t>(control_t::create(std::forward<args_t>(args)...));
+          auto& control_ref = *control_ptr;
+          controls_.push_back(std::move(control_ptr));
+          push_back(control_ref);
+          return control_ref;
+        }
+        
         iterator insert(const_iterator pos, const value_type& value) override;
         
         void insert_at(size_t index, const value_type& value) override;
         
         void push_back(const value_type& value) override;
         /// @}
+        
+      protected:
+        /// @name Protected Methods
+        
+        /// @{
+        void on_item_removed(size_t index, control_ref& item) override {
+          xtd::forms::layout::arranged_element_collection<control_ref>::on_item_removed(index, item);
+          for (auto iterator = controls_.begin(); iterator != controls_.end(); ++iterator) {
+            if (iterator->get() != &item.get()) continue;
+            controls_.erase(iterator);
+            break;
+          }
+        }
+        /// @}
+
+      private:
+        static std::vector<std::unique_ptr<xtd::forms::control>> controls_;
       };
       
       /// @name Public Constructors
