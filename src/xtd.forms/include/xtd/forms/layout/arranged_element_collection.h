@@ -279,7 +279,7 @@ namespace xtd {
         }
         
         /// @brief Inserts specified element at specified index.
-        /// @param pos The index before which the content will be inserted.
+        /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
         virtual void insert_at(size_t index, const value_type& value) {
           if (index > size()) throw argument_out_of_range_exception {csf_};
