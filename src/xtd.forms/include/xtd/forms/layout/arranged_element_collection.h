@@ -42,13 +42,13 @@ namespace xtd {
           value_type(args_t&& ...args) : type_t(args...) {}
           value_type& operator =(const value_type& value) {
             if (value.owner) owner = value.owner;
-            if (owner != nullptr && !owner->inserting_ && !owner->erasing_) owner->item_updated(pos, static_cast<type_t&>(const_cast<value_type&>(value)));
+            if (owner != nullptr && !owner->inserting_ && !owner->erasing_) owner->on_item_updated(pos, static_cast<type_t&>(const_cast<value_type&>(value)));
             type_t::operator =(value);
             return *this;
           }
           value_type& operator =(value_type&& value) {
             if (value.owner) owner = value.owner;
-            if (owner != nullptr && !owner->inserting_ && !owner->erasing_) owner->item_updated(pos, static_cast<type_t&>(value));
+            if (owner != nullptr && !owner->inserting_ && !owner->erasing_) owner->on_item_updated(pos, static_cast<type_t&>(value));
             type_t::operator =(value);
             return *this;
           }
@@ -259,7 +259,7 @@ namespace xtd {
           inserting_ = false;
           (*this)[index].owner = this;
           (*this)[index].pos = index;
-          item_added(index, collection_[index]);
+          on_item_added(index, collection_[index]);
           if (sorted_) sort();
           return result;
         }
@@ -273,7 +273,7 @@ namespace xtd {
           inserting_ = false;
           (*this)[index].owner = this;
           (*this)[index].pos = index;
-          item_added(index, collection_[index]);
+          on_item_added(index, collection_[index]);
           if (sorted_) sort();
           return result;
         }
@@ -297,7 +297,7 @@ namespace xtd {
           inserting_ = false;
           (*this)[index].owner = this;
           (*this)[index].pos = index;
-          item_added(index, collection_[index]);
+          on_item_added(index, collection_[index]);
           if (sorted_) sort();
           return result;
         }
@@ -310,14 +310,14 @@ namespace xtd {
           size_t index = collection_.size() - 1;
           (*this)[index].owner = this;
           (*this)[index].pos = index;
-          item_added(index, collection_[index]);
+          on_item_added(index, collection_[index]);
           if (sorted_) sort();
         }
         
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
         virtual iterator erase(iterator pos) {
-          item_removed(pos - begin(), *pos);
+          on_item_removed(pos - begin(), *pos);
           erasing_ = true;
           iterator result = collection_.erase(pos);
           erasing_ = false;
@@ -326,7 +326,7 @@ namespace xtd {
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
         virtual iterator erase(const_iterator pos) {
-          item_removed(pos - begin(), *reinterpret_cast<iterator&>(pos));
+          on_item_removed(pos - begin(), *reinterpret_cast<iterator&>(pos));
           erasing_ = true;
           iterator result = collection_.erase(pos);
           erasing_ = false;
@@ -371,7 +371,7 @@ namespace xtd {
           size_t index = collection_.size() - 1;
           (*this)[index].owner = this;
           (*this)[index].pos = index;
-          item_added(index, collection_[index]);
+          on_item_added(index, collection_[index]);
           if (sorted_) sort();
         }
         /// @brief Adds an element to the end.
@@ -381,7 +381,7 @@ namespace xtd {
           size_t index = collection_.size() - 1;
           (*this)[index].owner = this;
           (*this)[index].pos = index;
-          item_added(index, collection_[index]);
+          on_item_added(index, collection_[index]);
           if (sorted_) sort();
         }
         
@@ -437,7 +437,7 @@ namespace xtd {
         std::vector<type_t> to_vector() const noexcept {return to_array();}
         /// @}
         
-        /// @name Operators
+        /// @name Public Operators
         
         /// @{
         /// @brief Access specified element.
@@ -472,6 +472,31 @@ namespace xtd {
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
         /// @}
         
+        /// @name Protected Methods
+        
+        /// @{
+        /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_added event.
+        /// @param index The index of the item.
+        /// @param item The item added.
+        virtual void on_item_added(size_t index, type_t& item) {
+          item_added(index, item);
+        }
+
+        /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_updated event.
+        /// @param index The index of the item.
+        /// @param item The item updated.
+        virtual void on_item_updated(size_t index, type_t& item) {
+          item_updated(index, item);
+        }
+
+        /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_removed event.
+        /// @param index The index of the item.
+        /// @param item The item removed.
+        virtual void on_item_removed(size_t index, type_t& item) {
+          item_removed(index, item);
+        }
+        /// @}
+
       private:
         mutable std::vector<value_type, allocator_type> collection_;
         bool inserting_ = false;
