@@ -18,7 +18,7 @@ public:
     button1.parent(*this);
     button1.text("Write line...");
     button1.click += [&] {
-      static int counter = 0;
+      static auto counter = 0;
       xtd::diagnostics::debug::write_line("Write line {}...", ++counter);
     };
   }
