@@ -214,7 +214,7 @@ control::control(const control& parent, const xtd::ustring& text, int32 left, in
 }
 
 control::~control() {
-  destroy_control();
+  if (data_) destroy_control();
 }
 
 anchor_styles control::anchor() const noexcept {
