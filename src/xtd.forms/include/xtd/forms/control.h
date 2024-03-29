@@ -295,7 +295,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      control(control&&) = default;
+      control(control&& rhs);
       control(const control&) = delete;
       ~control();
       /// @endcond
