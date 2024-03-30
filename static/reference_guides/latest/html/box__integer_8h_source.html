@@ -92,9 +92,9 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Workaround : Like Windows.h (with NOMINMAX defined), some includes define max as a macro and this causes compilation errors.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#if defined(_MSC_VER) &amp;&amp; defined(max)</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#  if __cplusplus &lt; 202302L</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#    pragma message(&quot;The macro `max` is defined. If you include the `Windows.h` file, please define the &#39;NOMINMAX&#39; constant before including `Windows.h&#39;`. xtd will undef the `max` macro.&quot;</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#    pragma message(&quot;The macro `max` is defined. If you include the `Windows.h` file, please define the &#39;NOMINMAX&#39; constant before including `Windows.h`. xtd will undef the `max` macro.&quot;</span>)</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#  else</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#    warning &quot;The macro `max` is defined. If you include the `Windows.h` file, please define the &#39;NOMINMAX&#39; constant before including `Windows.h&#39;`. xtd will undef the `max` macro.&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#    warning &quot;The macro `max` is defined. If you include the `Windows.h` file, please define the &#39;NOMINMAX&#39; constant before including `Windows.h`. xtd will undef the `max` macro.&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#  endif</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#  undef max</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
@@ -140,7 +140,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 18 2024 08:00:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Mar 29 2024 09:46:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
