@@ -230,6 +230,17 @@ namespace xtd {
       xtd::event<tool_bar, xtd::forms::tool_bar_button_click_event_handler> button_drop_down;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief A factory to create an xtd::forms::tool_bar with specified parent, style, text, and name.
+      /// @param parent The parent that contains the new created xtd::forms::tool_bar.
+      /// @param style One of the xtd::forms::dock_style values.
+      /// @param name The name of the xtd::forms::tool_bar.
+      /// @return New xtd::forms::tool_bar created.
+      static tool_bar create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name);
+      /// @}
+      
     protected:
       friend tool_bar_button;
       friend form;
