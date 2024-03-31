@@ -69,6 +69,16 @@ checked_list_box::checked_list_box() : data_(std::make_shared<data>()) {
   data_->items.item_updated += {*this, &checked_list_box::on_items_item_updated};
 }
 
+checked_list_box::checked_list_box(checked_list_box&& rhs) : list_box(std::move(rhs)) {
+  rhs.data_->items.item_added -= {rhs, &checked_list_box::on_items_item_added};
+  rhs.data_->items.item_removed -= {rhs, &checked_list_box::on_items_item_removed};
+  rhs.data_->items.item_updated -= {rhs, &checked_list_box::on_items_item_updated};
+  data_ = std::move(rhs.data_);
+  data_->items.item_added += {*this, &checked_list_box::on_items_item_added};
+  data_->items.item_removed += {*this, &checked_list_box::on_items_item_removed};
+  data_->items.item_updated += {*this, &checked_list_box::on_items_item_updated};
+}
+
 checked_list_box::checked_index_collection checked_list_box::checked_indices() const noexcept {
   auto indices = checked_index_collection {};
   for (auto index = 0_z; index < data_->items.size(); ++index)
