@@ -29,27 +29,20 @@ combo_box::combo_box() : data_(std::make_shared<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);
-  data_->items.item_added += [&](size_t pos, const item & item) {
-    if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
-    auto selected_item = combo_box::item {};
-    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-    this->selected_item(selected_item);
-  };
   
-  data_->items.item_removed += [&](size_t pos, const item & item) {
-    if (is_handle_created()) native::combo_box::delete_item(handle(), pos);
-    
-    combo_box::item selected_item;
-    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-    if (selected_index() == pos) selected_index(npos);
-  };
-  
-  data_->items.item_updated += [&](size_t pos, const item & item) {
-    if (is_handle_created()) native::combo_box::update_item(handle(), pos, item.value());
-    auto selected_item = combo_box::item {};
-    if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
-    this->selected_item(selected_item);
-  };
+  data_->items.item_added += {*this, &combo_box::on_items_item_added};
+  data_->items.item_removed += {*this, &combo_box::on_items_item_removed};
+  data_->items.item_updated += {*this, &combo_box::on_items_item_updated};
+}
+
+combo_box::combo_box(combo_box&& rhs) : list_control(std::move(rhs)) {
+  rhs.data_->items.item_added -= {rhs, &combo_box::on_items_item_added};
+  rhs.data_->items.item_removed -= {rhs, &combo_box::on_items_item_removed};
+  rhs.data_->items.item_updated -= {rhs, &combo_box::on_items_item_updated};
+  data_ = std::move(rhs.data_);
+  data_->items.item_added += {*this, &combo_box::on_items_item_added};
+  data_->items.item_removed += {*this, &combo_box::on_items_item_removed};
+  data_->items.item_updated += {*this, &combo_box::on_items_item_updated};
 }
 
 bool combo_box::dropped_down() const noexcept {
@@ -388,6 +381,27 @@ void combo_box::on_selected_value_changed(const event_args& e) {
   list_control::text(data_->selected_item.value());
   list_control::on_selected_value_changed(e);
 }
+void combo_box::on_items_item_added(size_t pos, const item& item) {
+  if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
+  auto selected_item = combo_box::item {};
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
+  this->selected_item(selected_item);
+}
+
+void combo_box::on_items_item_removed(size_t pos, const item& item)  {
+  if (is_handle_created()) native::combo_box::delete_item(handle(), pos);
+  auto selected_item = combo_box::item {};
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
+  if (selected_index() == pos) selected_index(npos);
+}
+
+void combo_box::on_items_item_updated(size_t pos, const item& item) {
+  if (is_handle_created()) native::combo_box::update_item(handle(), pos, item.value());
+  auto selected_item = combo_box::item {};
+  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
+  this->selected_item(selected_item);
+}
+
 
 void combo_box::wnd_proc(message& message) {
   switch (message.msg()) {
