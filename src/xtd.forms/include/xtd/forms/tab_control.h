@@ -145,6 +145,10 @@ namespace xtd {
       tab_control();
       /// @}
       
+      /// @cond
+      tab_control(tab_control&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
