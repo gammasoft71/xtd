@@ -44,6 +44,14 @@ menu::menu(const vector<menu_item_ref>& items) : data_(make_shared<data>()) {
   data_->menu_items.push_back_range(items);
 }
 
+menu::menu(menu&& rhs) : component(std::move(rhs)) {
+  rhs.data_->menu_items.item_added -= {rhs, &menu::on_item_added};
+  rhs.data_->menu_items.item_removed -= {rhs, &menu::on_item_removed};
+  data_ = std::move(rhs.data_);
+  data_->menu_items.item_added += {*this, &menu::on_item_added};
+  data_->menu_items.item_removed += {*this, &menu::on_item_removed};
+}
+
 menu::~menu() {
   data_->menu_items.item_added -= {*this, &menu::on_item_added};
   data_->menu_items.item_removed -= {*this, &menu::on_item_removed};
