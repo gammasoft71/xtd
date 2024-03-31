@@ -76,18 +76,15 @@ namespace xtd {
     /// @{
     /// @brief Initializes an empty delegate.
     delegate() = default;
-    /// @brief Initializes a delegate that invokes the specified delegate instance.
-    /// @param delegate The delegate instance.
-    delegate(const delegate& delegate) noexcept {
-      data_->functions = delegate.data_->functions;
-    }
     /// @cond
-    delegate(const function_t& function) noexcept {data_->functions.push_back(function);} // Can't be explicit by design.
-    delegate& operator =(const delegate& delegate) noexcept {
-      data_->functions = delegate.data_->functions;
-      return *this;
-    }
+    delegate(delegate&&) = default;
+    delegate(const delegate&) = default;
+    delegate& operator =(const delegate& delegate) = default;
     /// @endcond
+
+    /// @brief Initializes a delegate that invokes the specified instance method.
+    /// @param function the method instance.
+    delegate(const function_t& function) noexcept {data_->functions.push_back(function);} // Can't be explicit by design.
     
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
     /// @param object the class instance.
@@ -396,21 +393,11 @@ namespace xtd {
     /// @{
     /// @brief Initializes an empty delegate.
     delegate() = default;
-    /// @brief Initializes a delegate that invokes the specified delegate instance.
-    /// @param delegate The delegate instance.
-    delegate(const delegate& delegate) noexcept {
-      data_->no_arguments_functions = delegate.data_->no_arguments_functions;
-      data_->functions = delegate.data_->functions;
-    }
     /// @cond
-    delegate& operator =(const delegate& delegate) noexcept {
-      data_->no_arguments_functions = delegate.data_->no_arguments_functions;
-      data_->functions = delegate.data_->functions;
-      return *this;
-    }
-    delegate(const delegate<result_t()>& delegate) noexcept {
-      data_->no_arguments_functions = delegate.functions();
-    }
+    delegate(delegate&&) = default;
+    delegate(const delegate&) = default;
+    delegate& operator =(const delegate& delegate) = default;
+    delegate(const delegate<result_t()>& delegate) noexcept {data_->no_arguments_functions = delegate.functions();}
     /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method.
