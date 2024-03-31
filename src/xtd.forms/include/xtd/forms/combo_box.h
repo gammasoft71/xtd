@@ -42,6 +42,10 @@ namespace xtd {
       combo_box();
       /// @}
       
+      /// @cond
+      combo_box(combo_box&& rhs);
+      /// @endcond
+
       /// @name Porperties
       
       /// @{
@@ -312,6 +316,9 @@ namespace xtd {
       /// @}
       
     private:
+      void on_items_item_added(size_t pos, const item& item);
+      void on_items_item_removed(size_t pos, const item& item);
+      void on_items_item_updated(size_t pos, const item& item);
       void wm_command_control(message& message);
       void wm_command_control_selchange(message& message);
       void wm_mouse_double_click(message& message);
