@@ -95,6 +95,16 @@ tab_control::tab_control() : data_(std::make_shared<data>()) {
   data_->tab_pages.text_added += {*this, &tab_control::on_tab_pages_text_added};
 }
 
+tab_control::tab_control(tab_control&& rhs) : control(std::move(rhs)) {
+  rhs.data_->tab_pages.item_added -= {rhs, &tab_control::on_tab_pages_item_added};
+  rhs.data_->tab_pages.item_removed -= {rhs, &tab_control::on_tab_pages_item_removed};
+  rhs.data_->tab_pages.text_added -= {rhs, &tab_control::on_tab_pages_text_added};
+  data_ = std::move(rhs.data_);
+  data_->tab_pages.item_added += {*this, &tab_control::on_tab_pages_item_added};
+  data_->tab_pages.item_removed += {*this, &tab_control::on_tab_pages_item_removed};
+  data_->tab_pages.text_added += {*this, &tab_control::on_tab_pages_text_added};
+}
+
 tab_alignment tab_control::alignment() const noexcept {
   return data_->alignment;
 }
