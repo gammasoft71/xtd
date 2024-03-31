@@ -37,6 +37,10 @@ namespace xtd {
       loading_indicator();
       /// @}
       
+      /// @cond
+      loading_indicator(loading_indicator&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
