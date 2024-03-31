@@ -102,6 +102,10 @@ namespace xtd {
       link_label();
       /// @}
       
+      /// @cond
+      link_label(link_label&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
@@ -402,7 +406,10 @@ namespace xtd {
       xtd::drawing::point get_text_location(size_t line) const noexcept;
       std::vector<std::tuple<xtd::drawing::rectangle, bool>> generate_text_rects() const noexcept;
       xtd::drawing::font link_font() const noexcept;
-      
+      void on_links_link_added(size_t pos, const link& link);
+      void on_links_link_removed(size_t pos, const link& link);
+      void on_links_link_updated(size_t pos, const link& link);
+
       std::shared_ptr<data> data_;
     };
   }
