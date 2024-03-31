@@ -126,6 +126,10 @@ namespace xtd {
       checked_list_box();
       /// @}
       
+      /// @cond
+      checked_list_box(checked_list_box&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
