@@ -55,18 +55,19 @@ link_label::link_collection::reference link_label::link_collection::operator [](
 link_label::link_label() : data_(std::make_shared<data>()) {
   double_buffered(true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::optimized_double_buffer | control_styles::opaque | control_styles::user_paint | control_styles::standard_click | control_styles::resize_redraw, true);
-  data_->links.item_added += [&] {
-    if (data_->links.size() == 2 && data_->links[0].start() == 0 && data_->links[0].length() == text().length())
-      data_->links.erase_at(0);
-    //tab_stop(true);
-    invalidate();
-  };
-  data_->links.item_removed += [&] {
-    invalidate();
-  };
-  data_->links.item_updated += [&] {
-    invalidate();
-  };
+  data_->links.item_added += {*this, &link_label::on_links_link_added};
+  data_->links.item_removed += {*this, &link_label::on_links_link_removed};
+  data_->links.item_updated += {*this, &link_label::on_links_link_updated};
+}
+
+link_label::link_label(link_label&& rhs) : label(std::move(rhs)) {
+  rhs.data_->links.item_added -= {rhs, &link_label::on_links_link_added};
+  rhs.data_->links.item_removed -= {rhs, &link_label::on_links_link_removed};
+  rhs.data_->links.item_updated -= {rhs, &link_label::on_links_link_updated};
+  data_ = std::move(rhs.data_);
+  data_->links.item_added += {*this, &link_label::on_links_link_added};
+  data_->links.item_removed += {*this, &link_label::on_links_link_removed};
+  data_->links.item_updated += {*this, &link_label::on_links_link_updated};
 }
 
 xtd::drawing::color link_label::active_link_color() const noexcept {
@@ -549,3 +550,19 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
 xtd::drawing::font link_label::link_font() const noexcept {
   return {font(), xtd::drawing::font_style::underline};
 }
+
+void link_label::on_links_link_added(size_t pos, const link& link) {
+  if (data_->links.size() == 2 && data_->links[0].start() == 0 && data_->links[0].length() == text().length())
+    data_->links.erase_at(0);
+  //tab_stop(true);
+  invalidate();
+}
+
+void link_label::on_links_link_removed(size_t pos, const link& item) {
+  invalidate();
+}
+
+void link_label::on_links_link_updated(size_t pos, const link& link) {
+  invalidate();
+}
+
