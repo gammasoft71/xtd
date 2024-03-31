@@ -103,6 +103,10 @@ namespace xtd {
       domain_up_down();
       /// @}
       
+      /// @cond
+      domain_up_down(domain_up_down&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
