@@ -70,6 +70,10 @@ namespace xtd {
       status_bar();
       /// @}
       
+      /// @cond
+      status_bar(status_bar&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
