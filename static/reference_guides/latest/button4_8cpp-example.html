@@ -119,7 +119,7 @@ $(function() {
 <div class="line">  <span class="keyword">auto</span> label1 = <a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1forms_1_1label.html#a0360050ed100c9ec1c42643d403cd0e8">xtd::forms::label::create</a>(form1, <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, {50, 200}, {200, 23});</div>
 <div class="line">  <span class="keyword">auto</span> label2 = <a class="code hl_function" href="classxtd_1_1forms_1_1label.html#a0360050ed100c9ec1c42643d403cd0e8">xtd::forms::label::create</a>(form1, <span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>, {50, 230}, {200, 23});</div>
 <div class="line">  button1.click += [&amp;] {label1.text(<a id="a3" name="a3"></a><a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));};</div>
-<div class="line">  button2.click += [&amp;] {label2.text(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));};</div>
+<div class="line">  button2.auto_repeat(<span class="keyword">true</span>).click += [&amp;] {label2.text(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));};</div>
 <div class="line">  <a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(form1);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
@@ -131,7 +131,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 18 2024 08:00:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Mar 31 2024 14:00:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

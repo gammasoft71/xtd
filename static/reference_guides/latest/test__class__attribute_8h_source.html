@@ -90,38 +90,38 @@ $(function() {
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="unit__test_8h.html">unit_test.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;xtd/typeof&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">namespace </span>tunit {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> test_<span class="keyword">class</span>_t&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1test__class__attribute.html">   25</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1tunit_1_1test__class__attribute.html">test_class_attribute</a> final {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1test__class__attribute.html#a072ba1e3805de9eadddd715afcb9e7bc">   32</a></span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1tunit_1_1test__class__attribute.html#a072ba1e3805de9eadddd715afcb9e7bc">test_class_attribute</a>(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">noexcept</span> {xtd::tunit::unit_test::add({name, std::make_shared&lt;test_class_t&gt;()});}</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    };</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="group__tunit.html#ga14fc641d752637ef79a213a129f925a0">   44</a></span><span class="preprocessor">#define test_class_(class_name) \</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">  class_name;\</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">  xtd::tunit::test_class_attribute&lt;class_name&gt; __##class_name##_attribute {typeof_&lt;class_name&gt;().full_name()}; \</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">  class class_name : public xtd::tunit::test_class</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="group__tunit.html#ga7bf0fd397772b7a3b8caa47f79cea377">   79</a></span><span class="preprocessor">#define test_class_from_(class_name, from_class_name) \</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">  class_name;\</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">  xtd::tunit::test_class_attribute&lt;class_name&gt; __##class_name##_attribute {typeof_&lt;class_name&gt;().full_name()}; \</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">  class class_name : public from_class_name</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1test__class__attribute_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class__attribute.html">xtd::tunit::test_class_attribute</a></div><div class="ttdoc">Represents a test class attribute.</div><div class="ttdef"><b>Definition</b> test_class_attribute.h:25</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1test__class__attribute_html_a072ba1e3805de9eadddd715afcb9e7bc"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class__attribute.html#a072ba1e3805de9eadddd715afcb9e7bc">xtd::tunit::test_class_attribute::test_class_attribute</a></div><div class="ttdeci">test_class_attribute(const std::string &amp;name) noexcept</div><div class="ttdoc">Creates a new instance of test_class_attribute with specified name.</div><div class="ttdef"><b>Definition</b> test_class_attribute.h:32</div></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">namespace </span>tunit {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> test_<span class="keyword">class</span>_t&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1test__class__attribute.html">   24</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1tunit_1_1test__class__attribute.html">test_class_attribute</a> final {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1test__class__attribute.html#a28d7cca10dc0340bae9863e4a34e5383">   31</a></span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1tunit_1_1test__class__attribute.html#a28d7cca10dc0340bae9863e4a34e5383">test_class_attribute</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">xtd::ustring</a>&amp; name) <span class="keyword">noexcept</span> {xtd::tunit::unit_test::add({name, std::make_shared&lt;test_class_t&gt;()});}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    };</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="group__tunit.html#ga14fc641d752637ef79a213a129f925a0">   43</a></span><span class="preprocessor">#define test_class_(class_name) \</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">  class_name;\</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">  xtd::tunit::test_class_attribute&lt;class_name&gt; __##class_name##_attribute {typeof_&lt;class_name&gt;().full_name()}; \</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">  class class_name : public xtd::tunit::test_class</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="group__tunit.html#ga7bf0fd397772b7a3b8caa47f79cea377">   78</a></span><span class="preprocessor">#define test_class_from_(class_name, from_class_name) \</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">  class_name;\</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">  xtd::tunit::test_class_attribute&lt;class_name&gt; __##class_name##_attribute {typeof_&lt;class_name&gt;().full_name()}; \</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">  class class_name : public from_class_name</span></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1test__class__attribute_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class__attribute.html">xtd::tunit::test_class_attribute</a></div><div class="ttdoc">Represents a test class attribute.</div><div class="ttdef"><b>Definition</b> test_class_attribute.h:24</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1test__class__attribute_html_a28d7cca10dc0340bae9863e4a34e5383"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class__attribute.html#a28d7cca10dc0340bae9863e4a34e5383">xtd::tunit::test_class_attribute::test_class_attribute</a></div><div class="ttdeci">test_class_attribute(const xtd::ustring &amp;name) noexcept</div><div class="ttdoc">Creates a new instance of test_class_attribute with specified name.</div><div class="ttdef"><b>Definition</b> test_class_attribute.h:31</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:47</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 <div class="ttc" id="aunit__test_8h_html"><div class="ttname"><a href="unit__test_8h.html">unit_test.h</a></div><div class="ttdoc">Contains xtd::tunit::unit_test class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 18 2024 08:00:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Mar 31 2024 14:00:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
