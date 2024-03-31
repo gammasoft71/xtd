@@ -23,6 +23,7 @@ add_projects(
   colors
   control_with_name_operator
   docked_panels
+  emplace
   flat_button
   font_families
   form2
