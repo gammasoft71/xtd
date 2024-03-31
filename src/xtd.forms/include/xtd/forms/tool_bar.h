@@ -67,6 +67,10 @@ namespace xtd {
       tool_bar();
       /// @}
       
+      /// @cond
+      tool_bar(tool_bar&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
