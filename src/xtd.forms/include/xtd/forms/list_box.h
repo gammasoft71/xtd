@@ -49,6 +49,10 @@ namespace xtd {
       list_box();
       /// @}
       
+      /// @cond
+      list_box(list_box&& rhs);
+      /// @endcond
+
       /// @name Public Properties
       
       /// @{
