@@ -104,6 +104,8 @@ namespace xtd {
       
       /// @cond
       link_label(link_label&& rhs);
+      link_label(const link_label&) = default;
+      link_label& operator =(const link_label&) = default;
       /// @endcond
 
       /// @name Public Properties

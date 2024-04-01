@@ -223,7 +223,7 @@ control::control(control&& rhs) : data_ {std::move(rhs.data_)} {
 }
 
 control::~control() {
-  if (data_) destroy_control();
+  if (data_ && data_.use_count() == 1) destroy_control();
 }
 
 anchor_styles control::anchor() const noexcept {

@@ -155,7 +155,8 @@ namespace xtd {
       explicit menu(const std::initializer_list<menu_item_ref>& items);
       explicit menu(const std::vector<menu_item_ref>& items);
       menu(menu&& rhs);
-      menu(const menu&) = delete;
+      menu(const menu&) = default;
+      menu& operator =(const menu&) = default;
       /// @endcond
       
       /// @name Protected methods

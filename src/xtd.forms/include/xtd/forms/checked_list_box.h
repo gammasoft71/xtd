@@ -128,6 +128,8 @@ namespace xtd {
       
       /// @cond
       checked_list_box(checked_list_box&& rhs);
+      checked_list_box(const checked_list_box&) = default;
+      checked_list_box& operator =(const checked_list_box&) = default;
       /// @endcond
 
       /// @name Public Properties
