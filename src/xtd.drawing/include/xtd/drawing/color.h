@@ -54,8 +54,8 @@ namespace xtd {
       /// @brief Represents a color that is null.
       static const xtd::drawing::color empty;
       
-      /// @brief Gets a system-defined color that has an ARGB value of 0x00FFFFFF. This field is constant.
-      /// @remarks The value is 0x00FFFFFF unlike the value defined by css, which is 0x00000000.
+      /// @brief Gets a system-defined color that has an ARGB value of 0x00000000. This field is constant.
+      /// @remarks The value is 0x00000000 unlike the value defined by css, which is 0x00000000.
       static const xtd::drawing::color transparent;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF0F8FF. This field is constant.
