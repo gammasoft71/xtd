@@ -35,6 +35,8 @@ namespace xtd {
       
       /// @cond
       animation(animation&& rhs);
+      animation(const animation&) = default;
+      animation& operator =(const animation&) = default;
       /// @endcond
 
       /// @name Public Properties

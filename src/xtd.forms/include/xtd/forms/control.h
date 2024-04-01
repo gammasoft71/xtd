@@ -204,7 +204,7 @@ namespace xtd {
           auto control_ptr = std::make_unique<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
           controls_.push_back(std::move(control_ptr));
-          insert(pos, control_ref);
+          base::insert(pos, control_ref);
           return control_ref;
         }
         
@@ -222,7 +222,7 @@ namespace xtd {
           auto control_ptr = std::make_unique<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
           controls_.push_back(std::move(control_ptr));
-          insert_at(index, control_ref);
+          base::insert_at(index, control_ref);
           return control_ref;
         }
         
@@ -239,7 +239,7 @@ namespace xtd {
           auto control_ptr = std::make_unique<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
           controls_.push_back(std::move(control_ptr));
-          push_back(control_ref);
+          base::push_back(control_ref);
           return control_ref;
         }
         
@@ -248,6 +248,38 @@ namespace xtd {
         void insert_at(size_t index, const value_type& value) override;
         
         void push_back(const value_type& value) override;
+        
+        /*
+        template<typename control_t>
+        iterator insert(const_iterator pos, const control_t& value) {
+          //for (auto it = begin(); it != end(); ++it)
+          //  if (it->get() == value) return it;
+          auto control_ptr = std::make_unique<control_t>(value);
+          auto& control_ref = *control_ptr;
+          controls_.push_back(std::move(control_ptr));
+          return base::insert(pos, control_ref);
+        }
+        
+        template<typename control_t>
+        void insert_at(size_t index, const control_t& value) {
+          //for (auto it = begin(); it != end(); ++it)
+          //  if (it->get() == value) return;
+          auto control_ptr = std::make_unique<control_t>(value);
+          auto& control_ref = *control_ptr;
+          controls_.push_back(std::move(control_ptr));
+          base::insert_at(index, control_ref);
+        }
+        
+        template<typename control_t>
+        void push_back(const control_t& value) {
+          //for (auto it = begin(); it != end(); ++it)
+          //  if (it->get() == value) return;
+          auto control_ptr = std::make_unique<control_t>(value);
+          auto& control_ref = *control_ptr;
+          controls_.push_back(std::move(control_ptr));
+          base::push_back(control_ref);
+        }*/
+
         /// @}
         
       protected:
@@ -308,7 +340,8 @@ namespace xtd {
       
       /// @cond
       control(control&& rhs);
-      control(const control&) = delete;
+      control(const control&) = default;
+      control& operator =(const control&) = default;
       ~control();
       /// @endcond
       

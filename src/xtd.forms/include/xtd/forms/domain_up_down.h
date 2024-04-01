@@ -105,6 +105,8 @@ namespace xtd {
       
       /// @cond
       domain_up_down(domain_up_down&& rhs);
+      domain_up_down(const domain_up_down&) = default;
+      domain_up_down& operator =(const domain_up_down&) = default;
       /// @endcond
 
       /// @name Public Properties

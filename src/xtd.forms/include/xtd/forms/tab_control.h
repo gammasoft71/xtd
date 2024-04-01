@@ -147,6 +147,8 @@ namespace xtd {
       
       /// @cond
       tab_control(tab_control&& rhs);
+      tab_control(const tab_control&) = default;
+      tab_control& operator =(const tab_control&) = default;
       /// @endcond
 
       /// @name Public Properties
