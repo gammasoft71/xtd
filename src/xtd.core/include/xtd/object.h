@@ -76,8 +76,16 @@ namespace xtd {
     /// @brief Creates a shallow copy of the current object.
     /// @return A shallow copy of the current object.
     /// @par Examples
-    /// The following code example shows how to copy an instance of a class using memberwise_clone.
+    /// The following example illustrates the xtd::object::memberwise_clone method. It defines a `shallow_copy` method that calls the xtd::object::memberwise_clone method to perform a shallow copy operation on a `person` object. It also defines a `deep_copy` method that performs a deep copy operation on a `person` object.
     /// @include object_memberwise_clone.cpp
+    /// In this example, the `perso::iId_info` property returns an IdInfo object. As the output from the example shows, when a `person` object is cloned by calling the xtd::object::memberwise_clone method, the cloned `person` object is an independent copy of the original object, except that they share the same `perso::iId_info` object reference. As a result, modifying the clone's `perso::iId_info` property changes the original object's `perso::iId_info` property. On the other hand, when a deep copy operation is performed, the cloned `person` object, including its `perso::iId_info` property, can be modified without affecting the original object.
+    /// @remarks The xtd::object::memberwise_clone method creates a shallow copy by creating a new object, and then copying the nonstatic fields of the current object to the new object. If a field is a value type, a bit-by-bit copy of the field is performed. If a field is a reference type, the reference is copied but the referred object is not; therefore, the original object and its clone refer to the same object.
+    /// @remarks For example, consider an object called X that references objects A and B. Object B, in turn, references object C. A shallow copy of X creates new object X2 that also references objects A and B. In contrast, a deep copy of X creates a new object X2 that references the new objects A2 and B2, which are copies of A and B. B2, in turn, references the new object C2, which is a copy of C. The example illustrates the difference between a shallow and a deep copy operation.
+    /// @remarks There are numerous ways to implement a deep copy operation if the shallow copy operation performed by the xtd::object::memberwise_clone method does not meet your needs. These include the following:
+    /// * Call a class constructor of the object to be copied to create a second object with property values taken from the first object. This assumes that the values of an object are entirely defined by its class constructor.
+    /// * Call the xtd::object::memberwise_clone method to create a shallow copy of an object, and then assign new objects whose values are the same as the original object to any properties or fields whose values are reference types. The `deep_copy` method in the example illustrates this approach.
+    /// * Serialize the object to be deep copied, and then restore the serialized data to a different object variable.
+    /// * Use reflection with recursion to perform the deep copy operation.
     template<typename object_t>
     std::unique_ptr<object_t> memberwise_clone() const noexcept {return std::make_unique<object_t>(dynamic_cast<const object_t&>(*this));}
     

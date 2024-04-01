@@ -279,6 +279,7 @@
 #include "get_out_rdbuf.h"
 #include "guid.h"
 #include "iasync_result.h"
+#include "iclonable.h"
 #include "icomparable.h"
 #include "iequatable.h"
 #include "index_out_of_range_exception.h"

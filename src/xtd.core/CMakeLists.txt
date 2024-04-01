@@ -187,6 +187,8 @@ add_sources(
   include/xtd/guid
   include/xtd/iasync_result.h
   include/xtd/iasync_result
+  include/xtd/iclonable.h
+  include/xtd/iclonable
   include/xtd/icomparable.h
   include/xtd/icomparable
   include/xtd/iequatable.h

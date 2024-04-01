@@ -38,6 +38,7 @@
 #include <xtd/any>
 #include <xtd/async_result>
 #include <xtd/optional>
+#include <xtd/iclonable>
 #include <xtd/iequatable>
 #include <xtd/isynchronize_invoke>
 #include <cstdint>
