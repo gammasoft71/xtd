@@ -7,7 +7,6 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  template<typename type_t>
   /// @brief Supports cloning, which creates a new instance of a class with the same value as an existing instance.
   /// @par Namespace
   /// xtd
