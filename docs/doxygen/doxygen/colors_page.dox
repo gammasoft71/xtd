@@ -327,7 +327,7 @@
 ///
 /// | Name                   | Value                                        | ARGB value (in hexa) | Color                                           |
 /// | ---------------------- | -------------------------------------------- | -------------------- | ----------------------------------------------- |
-/// | Transparent            | xtd::drawing::colors::transparent            | 0x00FFFFFF           |  @image html colors_transparent.png             |
+/// | Transparent            | xtd::drawing::colors::transparent            | 0x00000000           |  @image html colors_transparent.png             |
 /// | Alice Blue             | xtd::drawing::colors::alice_blue             | 0xFFF0F8FF           |  @image html colors_alice_blue.png              |
 /// | Antique White          | xtd::drawing::colors::antique_white          | 0xFFFAEBD7           |  @image html colors_antique_white.png           |
 /// | Aqua                   | xtd::drawing::colors::aqua                   | 0xFF00FFFF           |  @image html colors_aqua.png                    |

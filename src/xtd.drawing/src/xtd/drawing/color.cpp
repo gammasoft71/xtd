@@ -295,7 +295,7 @@ color color::from_hsl(float hue, float saturation, float lightness) noexcept {
 color color::from_known_color(known_color color) {
   switch (color) {
       // "Web" colors
-    case known_color::transparent: return drawing::color {color::from_argb(0x00FFFFFF), color};
+    case known_color::transparent: return drawing::color {color::from_argb(0x00000000), color};
     case known_color::alice_blue: return drawing::color {color::from_argb(0xFFF0F8FF), color};
     case known_color::antique_white: return drawing::color {color::from_argb(0xFFFAEBD7), color};
     case known_color::aqua: return drawing::color {color::from_argb(0xFF00FFFF), color};

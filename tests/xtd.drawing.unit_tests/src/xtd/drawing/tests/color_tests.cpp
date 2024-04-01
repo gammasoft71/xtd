@@ -241,7 +241,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0x00FFFFFFu, c.to_argb(), csf_);
+      assert::are_equal(0x00000000, c.to_argb(), csf_);
       assert::are_equal(known_color::transparent, c.to_known_color(), csf_);
     }
     
@@ -3766,7 +3766,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color(), csf_);
       assert::is_true(c.is_named_color(), csf_);
       
-      assert::are_equal(0x00FFFFFFu, c.to_argb(), csf_);
+      assert::are_equal(0x00000000, c.to_argb(), csf_);
       assert::are_equal(known_color::transparent, c.to_known_color(), csf_);
     }
     
