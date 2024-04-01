@@ -215,10 +215,9 @@ control::control(const control& parent, const xtd::ustring& text, int32 left, in
   this->height(height);
 }
 
-control::control(control&& rhs) {
-  rhs.data_->controls.item_added -= {rhs, &control::on_controls_item_added};
-  rhs.data_->controls.item_removed -= {rhs, &control::on_controls_item_removed};
-  data_ = std::move(rhs.data_);
+control::control(control&& rhs) : data_ {std::move(rhs.data_)} {
+  data_->controls.item_added -= {rhs, &control::on_controls_item_added};
+  data_->controls.item_removed -= {rhs, &control::on_controls_item_removed};
   data_->controls.item_added += {*this, &control::on_controls_item_added};
   data_->controls.item_removed += {*this, &control::on_controls_item_removed};
 }

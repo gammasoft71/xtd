@@ -35,11 +35,10 @@ combo_box::combo_box() : data_(std::make_shared<data>()) {
   data_->items.item_updated += {*this, &combo_box::on_items_item_updated};
 }
 
-combo_box::combo_box(combo_box&& rhs) : list_control(std::move(rhs)) {
-  rhs.data_->items.item_added -= {rhs, &combo_box::on_items_item_added};
-  rhs.data_->items.item_removed -= {rhs, &combo_box::on_items_item_removed};
-  rhs.data_->items.item_updated -= {rhs, &combo_box::on_items_item_updated};
-  data_ = std::move(rhs.data_);
+combo_box::combo_box(combo_box&& rhs) : list_control(std::move(rhs)), data_ {std::move(rhs.data_)} {
+  data_->items.item_added -= {rhs, &combo_box::on_items_item_added};
+  data_->items.item_removed -= {rhs, &combo_box::on_items_item_removed};
+  data_->items.item_updated -= {rhs, &combo_box::on_items_item_updated};
   data_->items.item_added += {*this, &combo_box::on_items_item_added};
   data_->items.item_removed += {*this, &combo_box::on_items_item_removed};
   data_->items.item_updated += {*this, &combo_box::on_items_item_updated};

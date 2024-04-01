@@ -58,11 +58,10 @@ domain_up_down::domain_up_down() : data_(make_shared<data>()) {
   data_->items.item_updated += {*this, &domain_up_down::on_items_item_updated};
 }
 
-domain_up_down::domain_up_down(domain_up_down&& rhs) : up_down_base(std::move(rhs)) {
-  rhs.data_->items.item_added -= {rhs, &domain_up_down::on_items_item_added};
-  rhs.data_->items.item_removed -= {rhs, &domain_up_down::on_items_item_removed};
-  rhs.data_->items.item_updated -= {rhs, &domain_up_down::on_items_item_updated};
-  data_ = std::move(rhs.data_);
+domain_up_down::domain_up_down(domain_up_down&& rhs) : up_down_base(std::move(rhs)), data_ {std::move(rhs.data_)} {
+  data_->items.item_added -= {rhs, &domain_up_down::on_items_item_added};
+  data_->items.item_removed -= {rhs, &domain_up_down::on_items_item_removed};
+  data_->items.item_updated -= {rhs, &domain_up_down::on_items_item_updated};
   data_->items.item_added += {*this, &domain_up_down::on_items_item_added};
   data_->items.item_removed += {*this, &domain_up_down::on_items_item_removed};
   data_->items.item_updated += {*this, &domain_up_down::on_items_item_updated};
