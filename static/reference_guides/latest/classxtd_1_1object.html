@@ -494,7 +494,18 @@ template&lt;typename object_t &gt; </div>
 
 <p>Creates a shallow copy of the current object. </p>
 <dl class="section return"><dt>Returns</dt><dd>A shallow copy of the current object. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example shows how to copy an instance of a class using memberwise_clone. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example illustrates the <a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86" title="Creates a shallow copy of the current object.">xtd::object::memberwise_clone</a> method. It defines a <code>shallow_copy</code> method that calls the <a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86" title="Creates a shallow copy of the current object.">xtd::object::memberwise_clone</a> method to perform a shallow copy operation on a <code>person</code> object. It also defines a <code>deep_copy</code> method that performs a deep copy operation on a <code>person</code> object. <div class="fragment"></div><!-- fragment --> In this example, the <code>perso::iId_info</code> property returns an IdInfo object. As the output from the example shows, when a <code>person</code> object is cloned by calling the <a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86" title="Creates a shallow copy of the current object.">xtd::object::memberwise_clone</a> method, the cloned <code>person</code> object is an independent copy of the original object, except that they share the same <code>perso::iId_info</code> object reference. As a result, modifying the clone's <code>perso::iId_info</code> property changes the original object's <code>perso::iId_info</code> property. On the other hand, when a deep copy operation is performed, the cloned <code>person</code> object, including its <code>perso::iId_info</code> property, can be modified without affecting the original object. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86" title="Creates a shallow copy of the current object.">xtd::object::memberwise_clone</a> method creates a shallow copy by creating a new object, and then copying the nonstatic fields of the current object to the new object. If a field is a value type, a bit-by-bit copy of the field is performed. If a field is a reference type, the reference is copied but the referred object is not; therefore, the original object and its clone refer to the same object. </dd>
+<dd>
+For example, consider an object called X that references objects A and B. Object B, in turn, references object C. A shallow copy of X creates new object X2 that also references objects A and B. In contrast, a deep copy of X creates a new object X2 that references the new objects A2 and B2, which are copies of A and B. B2, in turn, references the new object C2, which is a copy of C. The example illustrates the difference between a shallow and a deep copy operation. </dd>
+<dd>
+There are numerous ways to implement a deep copy operation if the shallow copy operation performed by the <a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86" title="Creates a shallow copy of the current object.">xtd::object::memberwise_clone</a> method does not meet your needs. These include the following:<ul>
+<li>Call a class constructor of the object to be copied to create a second object with property values taken from the first object. This assumes that the values of an object are entirely defined by its class constructor.</li>
+<li>Call the <a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86" title="Creates a shallow copy of the current object.">xtd::object::memberwise_clone</a> method to create a shallow copy of an object, and then assign new objects whose values are the same as the original object to any properties or fields whose values are reference types. The <code>deep_copy</code> method in the example illustrates this approach.</li>
+<li>Serialize the object to be deep copied, and then restore the serialized data to a different object variable.</li>
+<li>Use reflection with recursion to perform the deep copy operation. </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
@@ -585,7 +596,7 @@ template&lt;typename object_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 31 2024 14:00:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Apr 1 2024 18:37:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

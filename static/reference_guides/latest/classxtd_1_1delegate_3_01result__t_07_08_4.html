@@ -164,9 +164,9 @@ class xtd::delegate&lt; result_t()&gt;</div><p>Represents a delegate, which is a
 <tr class="memitem:a883db92a52d80316a9deacf9a4df6e7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a> ()=default</td></tr>
 <tr class="memdesc:a883db92a52d80316a9deacf9a4df6e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an empty delegate.  <br /></td></tr>
 <tr class="separator:a883db92a52d80316a9deacf9a4df6e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99b5a4e59fbc5b2ae470578ad0998a56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a99b5a4e59fbc5b2ae470578ad0998a56">delegate</a> (const delegate &amp;delegate) noexcept</td></tr>
-<tr class="memdesc:a99b5a4e59fbc5b2ae470578ad0998a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a delegate that invokes the specified delegate instance.  <br /></td></tr>
-<tr class="separator:a99b5a4e59fbc5b2ae470578ad0998a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a78f1206dceb890969b85d4f9e2142"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#ab6a78f1206dceb890969b85d4f9e2142">delegate</a> (const <a class="el" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#ac6ac28272b0483d975b902c3839d044e">function_t</a> &amp;function) noexcept</td></tr>
+<tr class="memdesc:ab6a78f1206dceb890969b85d4f9e2142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a delegate that invokes the specified instance method.  <br /></td></tr>
+<tr class="separator:ab6a78f1206dceb890969b85d4f9e2142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a476fa41475c08bd1e4661c4ad4d26df5"><td class="memTemplParams" colspan="2">template&lt;typename object1_t , typename object2_t &gt; </td></tr>
 <tr class="memitem:a476fa41475c08bd1e4661c4ad4d26df5"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a476fa41475c08bd1e4661c4ad4d26df5">delegate</a> (const object1_t &amp;<a class="el" href="classxtd_1_1object.html">object</a>, result_t(object2_t::*method)() const) noexcept</td></tr>
 <tr class="memdesc:a476fa41475c08bd1e4661c4ad4d26df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a delegate that invokes the specified instance method on the specified class instance.  <br /></td></tr>
@@ -315,8 +315,8 @@ template&lt;typename result_t &gt; </div>
 
 </div>
 </div>
-<a id="a99b5a4e59fbc5b2ae470578ad0998a56" name="a99b5a4e59fbc5b2ae470578ad0998a56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99b5a4e59fbc5b2ae470578ad0998a56">&#9670;&#160;</a></span>delegate() <span class="overload">[2/4]</span></h2>
+<a id="ab6a78f1206dceb890969b85d4f9e2142" name="ab6a78f1206dceb890969b85d4f9e2142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6a78f1206dceb890969b85d4f9e2142">&#9670;&#160;</a></span>delegate() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -329,8 +329,8 @@ template&lt;typename result_t &gt; </div>
         <tr>
           <td class="memname">xtd::delegate&lt; result_t()&gt;::delegate </td>
           <td>(</td>
-          <td class="paramtype">const delegate&lt; result_t()&gt; &amp;&#160;</td>
-          <td class="paramname"><em>delegate</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#ac6ac28272b0483d975b902c3839d044e">function_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>function</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -341,10 +341,10 @@ template&lt;typename result_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a delegate that invokes the specified delegate instance. </p>
+<p>Initializes a delegate that invokes the specified instance method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">delegate</td><td>The delegate instance. </td></tr>
+    <tr><td class="paramname">function</td><td>the method instance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1118,7 +1118,7 @@ template&lt;typename result_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 31 2024 14:00:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Apr 1 2024 18:37:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
