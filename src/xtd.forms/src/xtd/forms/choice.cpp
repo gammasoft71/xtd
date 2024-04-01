@@ -28,11 +28,10 @@ choice::choice() : data_(std::make_shared<data>()) {
   data_->items.item_updated += {*this, &choice::on_items_item_updated};
 }
 
-choice::choice(choice&& rhs) : list_control(std::move(rhs)) {
-  rhs.data_->items.item_added -= {rhs, &choice::on_items_item_added};
-  rhs.data_->items.item_removed -= {rhs, &choice::on_items_item_removed};
-  rhs.data_->items.item_updated -= {rhs, &choice::on_items_item_updated};
-  data_ = std::move(rhs.data_);
+choice::choice(choice&& rhs) : list_control(std::move(rhs)), data_ {std::move(rhs.data_)} {
+  data_->items.item_added -= {rhs, &choice::on_items_item_added};
+  data_->items.item_removed -= {rhs, &choice::on_items_item_removed};
+  data_->items.item_updated -= {rhs, &choice::on_items_item_updated};
   data_->items.item_added += {*this, &choice::on_items_item_added};
   data_->items.item_removed += {*this, &choice::on_items_item_removed};
   data_->items.item_updated += {*this, &choice::on_items_item_updated};

@@ -74,11 +74,10 @@ tool_bar::tool_bar() : data_(std::make_shared<data>()) {
   set_style(control_styles::fixed_width, false);
 }
 
-tool_bar::tool_bar(tool_bar&& rhs) : control(std::move(rhs)) {
-  rhs.data_->buttons.item_added -= {rhs, &tool_bar::on_item_added};
-  rhs.data_->buttons.item_updated -= {rhs, &tool_bar::on_item_updated};
-  rhs.data_->buttons.item_removed -= {rhs, &tool_bar::on_item_removed};
-  data_ = std::move(rhs.data_);
+tool_bar::tool_bar(tool_bar&& rhs) : control(std::move(rhs)), data_ {std::move(rhs.data_)} {
+  data_->buttons.item_added -= {rhs, &tool_bar::on_item_added};
+  data_->buttons.item_updated -= {rhs, &tool_bar::on_item_updated};
+  data_->buttons.item_removed -= {rhs, &tool_bar::on_item_removed};
   data_->buttons.item_added += {*this, &tool_bar::on_item_added};
   data_->buttons.item_updated += {*this, &tool_bar::on_item_updated};
   data_->buttons.item_removed += {*this, &tool_bar::on_item_removed};

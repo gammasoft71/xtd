@@ -31,9 +31,8 @@ button::button() : data_(std::make_shared<data>()) {
   data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
 }
 
-button::button(button&& rhs) : button_base(std::move(rhs)) {
-  rhs.data_->auto_repeat_timer.tick -= {rhs, &button::on_auto_repeat_timer_tick};
-  data_ = std::move(rhs.data_);
+button::button(button&& rhs) : button_base(std::move(rhs)), data_ {std::move(rhs.data_)} {
+  data_->auto_repeat_timer.tick -= {rhs, &button::on_auto_repeat_timer_tick};
   data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
 }
 

@@ -21,9 +21,8 @@ animation::animation() : data_(make_shared<data>()) {
   data_->frames_timer.tick += {*this, &animation::on_frames_timer_tick};
 }
 
-animation::animation(animation&& rhs) : control(std::move(rhs)) {
-  rhs.data_->frames_timer.tick -= {rhs, &animation::on_frames_timer_tick};
-  data_ = std::move(rhs.data_);
+animation::animation(animation&& rhs) : control(std::move(rhs)), data_ {std::move(rhs.data_)} {
+  data_->frames_timer.tick -= {rhs, &animation::on_frames_timer_tick};
   data_->frames_timer.tick += {*this, &animation::on_frames_timer_tick};
 }
 

@@ -35,11 +35,10 @@ list_box::list_box() : data_(std::make_shared<data>()) {
   data_->items.item_updated += {*this, &list_box::on_items_item_updated};
 }
 
-list_box::list_box(list_box&& rhs) : list_control(std::move(rhs)) {
-  rhs.data_->items.item_added -= {rhs, &list_box::on_items_item_added};
-  rhs.data_->items.item_removed -= {rhs, &list_box::on_items_item_removed};
-  rhs.data_->items.item_updated -= {rhs, &list_box::on_items_item_updated};
-  data_ = std::move(rhs.data_);
+list_box::list_box(list_box&& rhs) : list_control(std::move(rhs)), data_ {std::move(rhs.data_)} {
+  data_->items.item_added -= {rhs, &list_box::on_items_item_added};
+  data_->items.item_removed -= {rhs, &list_box::on_items_item_removed};
+  data_->items.item_updated -= {rhs, &list_box::on_items_item_updated};
   data_->items.item_added += {*this, &list_box::on_items_item_added};
   data_->items.item_removed += {*this, &list_box::on_items_item_removed};
   data_->items.item_updated += {*this, &list_box::on_items_item_updated};

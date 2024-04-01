@@ -60,11 +60,10 @@ link_label::link_label() : data_(std::make_shared<data>()) {
   data_->links.item_updated += {*this, &link_label::on_links_link_updated};
 }
 
-link_label::link_label(link_label&& rhs) : label(std::move(rhs)) {
-  rhs.data_->links.item_added -= {rhs, &link_label::on_links_link_added};
-  rhs.data_->links.item_removed -= {rhs, &link_label::on_links_link_removed};
-  rhs.data_->links.item_updated -= {rhs, &link_label::on_links_link_updated};
-  data_ = std::move(rhs.data_);
+link_label::link_label(link_label&& rhs) : label(std::move(rhs)), data_ {std::move(rhs.data_)} {
+  data_->links.item_added -= {rhs, &link_label::on_links_link_added};
+  data_->links.item_removed -= {rhs, &link_label::on_links_link_removed};
+  data_->links.item_updated -= {rhs, &link_label::on_links_link_updated};
   data_->links.item_added += {*this, &link_label::on_links_link_added};
   data_->links.item_removed += {*this, &link_label::on_links_link_removed};
   data_->links.item_updated += {*this, &link_label::on_links_link_updated};
