@@ -76,7 +76,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of control control.
     /// @include control.cpp
-    class forms_export_ control : public component, public iwin32_window, public icomparable<control>, public xtd::iequatable<control>, public xtd::isynchronize_invoke {
+    class forms_export_ control : public component, public iwin32_window, public iclonable, public icomparable<control>, public xtd::iequatable<control>, public xtd::isynchronize_invoke {
       struct data;
       
     protected:
@@ -163,6 +163,12 @@ namespace xtd {
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         explicit control_collection(const allocator_type& allocator = allocator_type());
+        /// @brief Creates a new object xtd::forms::control::control_collection with specified clone_and_keep_controls, and allocator (optional).
+        /// @param clone_and_keep_controls If true the collection clone and keep controls; otherwise none.
+        /// @param allocator The allocator associate to the collection (optional).
+        /// @remarks If allocator not specified, the std::allocator<value_type> is used.
+        /// @warning Internal use only
+        explicit control_collection(bool clone_and_keep_controls, const allocator_type& allocator = allocator_type());
         /// @}
         
         /// @cond
@@ -250,36 +256,42 @@ namespace xtd {
         
         void push_back(const value_type& value) override;
         
-        /*
         template<typename control_t>
-        iterator insert(const_iterator pos, const control_t& value) {
-          //for (auto it = begin(); it != end(); ++it)
-          //  if (it->get() == value) return it;
-          auto control_ptr = std::make_unique<control_t>(value);
+        iterator insert(const_iterator pos, control_t& value) {
+          for (auto it = begin(); it != end(); ++it)
+            if (it->get() == value) return it;
+          if (!clone_and_keep_controls_) return base::insert(pos, value);
+          auto control_ptr = as<control>(value.clone());
           auto& control_ref = *control_ptr;
           controls_.push_back(std::move(control_ptr));
           return base::insert(pos, control_ref);
         }
         
         template<typename control_t>
-        void insert_at(size_t index, const control_t& value) {
-          //for (auto it = begin(); it != end(); ++it)
-          //  if (it->get() == value) return;
-          auto control_ptr = std::make_unique<control_t>(value);
-          auto& control_ref = *control_ptr;
-          controls_.push_back(std::move(control_ptr));
-          base::insert_at(index, control_ref);
+        void insert_at(size_t index, control_t& value) {
+          for (auto it = begin(); it != end(); ++it)
+            if (it->get() == value) return;
+          if (!clone_and_keep_controls_) base::insert_at(index, value);
+          else {
+            auto control_ptr = as<control>(value.clone());
+            auto& control_ref = *control_ptr;
+            controls_.push_back(std::move(control_ptr));
+            base::insert_at(index, control_ref);
+          }
         }
         
         template<typename control_t>
-        void push_back(const control_t& value) {
-          //for (auto it = begin(); it != end(); ++it)
-          //  if (it->get() == value) return;
-          auto control_ptr = std::make_unique<control_t>(value);
-          auto& control_ref = *control_ptr;
-          controls_.push_back(std::move(control_ptr));
-          base::push_back(control_ref);
-        }*/
+        void push_back(control_t& value) {
+          for (auto it = begin(); it != end(); ++it)
+            if (it->get() == value) return;
+          if (!clone_and_keep_controls_) base::push_back(value);
+          else {
+            auto control_ptr = as<control>(value.clone());
+            auto& control_ref = *control_ptr;
+            controls_.push_back(std::move(control_ptr));
+            base::push_back(control_ref);
+          }
+        }
 
         /// @}
         
@@ -298,6 +310,7 @@ namespace xtd {
         /// @}
 
       private:
+        bool clone_and_keep_controls_ = false;
         static std::vector<std::unique_ptr<xtd::forms::control>> controls_;
       };
       
@@ -1877,6 +1890,12 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      
       /// @brief Creates a handle for the control.
       /// @remarks You typically should not call the create_handle method directly. The preferred method is to call the create_control method, which forces a handle to be created for the control and its child controls when the control is created.
       /// @par Notes to Inheritors
