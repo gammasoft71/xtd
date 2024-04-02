@@ -9,6 +9,7 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -638,6 +639,12 @@ forms::create_params month_calendar::create_params() const noexcept {
   if (data_->show_week_numbers) create_params.style(create_params.style() | MCS_WEEKNUMBERS);
   
   return create_params;
+}
+
+unique_ptr<xtd::object> month_calendar::clone() const {
+  auto result = make_unique<month_calendar>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void month_calendar::on_date_changed(const date_range_event_args& e) {
