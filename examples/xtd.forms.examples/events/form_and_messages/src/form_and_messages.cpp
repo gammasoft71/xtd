@@ -16,6 +16,16 @@ public:
   }
   
 protected:
+  template<typename type_t>
+  inline static uint16 LOWORD(type_t value) {
+    return static_cast<uint16>(static_cast<uint32>(value) & 0xFFFF);
+  }
+  
+  template<typename type_t>
+  inline static uint16 HIWORD(type_t value) {
+    return static_cast<uint16>((static_cast<uint32>(value) >> 16) & 0xFFFF);
+  }
+
   void wnd_proc(message& message) override {
     form::wnd_proc(message);
     

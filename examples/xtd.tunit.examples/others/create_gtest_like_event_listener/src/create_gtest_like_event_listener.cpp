@@ -2,6 +2,7 @@
 #include <sstream>
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 // Simulate gtest event listener test output
@@ -49,7 +50,7 @@ private:
   
   void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
     event_listener::on_test_succeed(e);
-    cout << "[       OK ] " << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
+    cout << "[       OK ] " << e.test_class().name() << "." << e.test().name() << " (" << as<int>(e.test().elapsed_time().total_microseconds()) << " ms)" << endl;
   }
   
   //void on_test_aborted(const xtd::tunit::test_event_args& e) const override {
@@ -62,7 +63,7 @@ private:
     if (e.test().actual() != "") cout << "  Actual: " << e.test().actual() << endl;
     if (e.test().expect() != "") cout << "Expected: " << e.test().expect() << endl;
     if (e.test().message() != "") cout << e.test().message() << endl;
-    cout << "[  FAILED  ] " << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
+    cout << "[  FAILED  ] " << e.test_class().name() << "." << e.test().name() << " (" << as<int>(e.test().elapsed_time().total_milliseconds()) << " ms)" << endl;
   }
   
   //void on_test_ignored(const xtd::tunit::test_event_args& e) const override {
@@ -91,7 +92,7 @@ private:
   
   void on_class_end(const xtd::tunit::class_event_args& e) const override {
     event_listener::on_class_end(e);
-    cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms)" << endl;
+    cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << as<int>(e.test_class().elapsed_time().total_milliseconds()) << " ms)" << endl;
   }
   
   //void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const override {
@@ -105,7 +106,7 @@ private:
   
   void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override {
     event_listener::on_unit_test_end(e);
-    cout << "[==========] " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << endl;
+    cout << "[==========] " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case ran. (" << as<int>(e.unit_test().elapsed_time().total_milliseconds()) << " ms total)" << endl;
     cout << "[  PASSED  ] " << e.unit_test().succeed_test_count() << " tests." << endl;
     if (e.unit_test().failed_test_count()) {
       cout << "[  FAILED  ] " << e.unit_test().failed_test_count() << " test, listed below:" << endl;
