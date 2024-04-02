@@ -7,6 +7,7 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -239,6 +240,12 @@ forms::create_params font_picker::create_params() const noexcept {
   forms::create_params create_params = control::create_params();
   create_params.class_name("fontpicker");
   return create_params;
+}
+
+unique_ptr<xtd::object> font_picker::clone() const {
+  auto result = make_unique<font_picker>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void font_picker::on_handle_created(const event_args& e) {
