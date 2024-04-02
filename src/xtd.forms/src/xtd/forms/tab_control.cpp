@@ -261,7 +261,7 @@ size_t tab_control::get_child_index(intptr page) {
 }
 
 void tab_control::on_tab_pages_item_added(size_t index, tab_page_ref& item) {
-  controls().insert_at(index, item);
+  controls().insert_at(index, item.get());
 }
 
 void tab_control::on_tab_pages_item_removed(size_t index, tab_page_ref& item) {
