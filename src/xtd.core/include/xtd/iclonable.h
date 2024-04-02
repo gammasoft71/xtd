@@ -26,7 +26,7 @@ namespace xtd {
     /// @remarks The resulting clone must be of the same type as, or compatible with, the original instance.
     /// @remarks An implementation of xtd::iclonable::clone can perform either a deep copy or a shallow copy. In a deep copy, all objects are duplicated; in a shallow copy, only the top-level objects are duplicated and the lower levels contain references. Because callers of xtd::iclonable::clone cannot depend on the method performing a predictable cloning operation, we recommend that xtd::iclonable not be implemented in public APIs.
     /// @remarks See xtd::object::memberwise_clone for more information on cloning, deep versus shallow copies, and examples.
-    virtual std::unique_ptr<xtd::object> clone() const noexcept = 0;
+    virtual std::unique_ptr<xtd::object> clone() const = 0;
     /// @}
   };
 }
