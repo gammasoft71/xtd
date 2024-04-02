@@ -226,6 +226,12 @@ forms::create_params command_link_button::create_params() const noexcept {
   return create_params;
 }
 
+unique_ptr<xtd::object> command_link_button::clone() const {
+  auto result = make_unique<command_link_button>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
 void command_link_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   native::command_link_button::texts(handle(), data_->texts);
