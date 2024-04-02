@@ -8,6 +8,7 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -366,6 +367,12 @@ forms::create_params date_time_picker::create_params() const noexcept {
     default: create_params.style(create_params.style() | DTS_LONGDATEFORMAT); break;
   }
   return create_params;
+}
+
+unique_ptr<xtd::object> date_time_picker::clone() const {
+  auto result = make_unique<date_time_picker>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void date_time_picker::on_close_up(const event_args& e) {
