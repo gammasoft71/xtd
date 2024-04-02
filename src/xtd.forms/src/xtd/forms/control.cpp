@@ -57,6 +57,8 @@ namespace {
     else if ((message.wparam() & MK_MBUTTON) == MK_MBUTTON) return mouse_buttons::middle;
     return mouse_buttons::none;
   }
+  
+  bool clone_and_keep_controls = false;
 }
 
 struct control::async_result_invoke::data {
@@ -94,6 +96,9 @@ control::control_collection control::top_level_controls_;
 std::vector<std::unique_ptr<xtd::forms::control>> control::control_collection::controls_;
 
 control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
+}
+
+control::control_collection::control_collection(bool clone_and_keep_controls, const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator), clone_and_keep_controls_ {clone_and_keep_controls} {
 }
 
 control::control_collection::control_collection(const control::control_collection::base& collection) : control::control_collection::base(collection) {}
@@ -147,7 +152,7 @@ struct control::data {
   drawing::size client_size;
   forms::control_appearance control_appearance = forms::control_appearance::standard;
   xtd::forms::visual_styles::control_state control_state = xtd::forms::visual_styles::control_state::normal;
-  control_collection controls;
+  control_collection controls {clone_and_keep_controls};
   std::optional<context_menu_ref> context_menu;
   std::optional<forms::cursor> cursor;
   dock_style dock = dock_style::none;
@@ -1181,7 +1186,7 @@ void control::on_control_appearance_changed(const event_args& e) {
 
 void control::on_create_control() {
   if (!parent().has_value())
-    top_level_controls_.push_back(control_ref(*this));
+    top_level_controls_.push_back(*this);
   for (auto control : data_->controls) {
     control.get().data_->parent = handle();
     control.get().create_control();
@@ -1652,6 +1657,12 @@ intptr control::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, 
 
 void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawing::point& pos) const {
   on_context_menu_item_click(menu, native::control::user_context_menu(handle(), menu.handle(), pos));
+}
+
+std::unique_ptr<xtd::object> control::clone() const {
+  auto result = make_unique<control>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void control::create_handle() {
