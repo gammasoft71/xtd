@@ -24,6 +24,7 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -85,53 +86,6 @@ loading_indicator& loading_indicator::running(bool value) {
   return *this;
 }
 
-forms::create_params loading_indicator::create_params() const noexcept {
-  auto create_params = control::create_params();
-  create_params.class_name("loadingindicator");
-  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) create_params.style(create_params.style() | LI_OWNERDRAW);
-  return create_params;
-}
-
-drawing::size loading_indicator::measure_control() const noexcept {
-  return control::measure_text();
-}
-
-void loading_indicator::on_handle_created(const event_args& e) {
-  control::on_handle_created(e);
-  switch (data_->loading_indicator_style) {
-    case loading_indicator_style::bar: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_bar>(); break;
-    case loading_indicator_style::circle_bars: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_circle_bars>(); break;
-    case loading_indicator_style::circle_blinks: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_circle_blinks>(); break;
-    case loading_indicator_style::five_lines: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines>(); break;
-    case loading_indicator_style::five_lines_center: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_center>(); break;
-    case loading_indicator_style::five_lines_chronological: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_chronological>(); break;
-    case loading_indicator_style::five_lines_pulse: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_pulse>(); break;
-    case loading_indicator_style::five_lines_wave: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_wave>(); break;
-    case loading_indicator_style::pulse: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_pulse>(); break;
-    case loading_indicator_style::pulse_outline: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_pulse_outline>(); break;
-    case loading_indicator_style::standard: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_standard>(); break;
-    case loading_indicator_style::system: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_system>(); break;
-    case loading_indicator_style::three_balls: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_three_balls>(); break;
-    case loading_indicator_style::three_balls_bouncing: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_three_balls_bouncing>(); break;
-    case loading_indicator_style::three_balls_rotation: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_three_balls_rotation>(); break;
-    default: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_system>(); break;
-  }
-  if (data_->loading_indicator_style == xtd::forms::loading_indicator_style::system) {
-    if (data_->running) native::loading_indicator::start(handle());
-    else native::loading_indicator::stop(handle());
-  }
-}
-
-void loading_indicator::on_paint(paint_event_args& e) {
-  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) data_->loading_indicator_animation->on_paint(e.graphics(), e.clip_rectangle(), fore_color(), enabled());
-  control::on_paint(e);
-}
-
-void loading_indicator::on_timer_tick(object& timer, const xtd::event_args& e) {
-  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) data_->loading_indicator_animation->on_timer();
-  if (control_appearance() == forms::control_appearance::standard) invalidate();
-}
-
 loading_indicator loading_indicator::create() {
   return loading_indicator {};
 }
@@ -185,6 +139,59 @@ loading_indicator loading_indicator::create(const control& parent, const drawing
   result.size(size);
   result.name(name);
   return result;
+}
+
+forms::create_params loading_indicator::create_params() const noexcept {
+  auto create_params = control::create_params();
+  create_params.class_name("loadingindicator");
+  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) create_params.style(create_params.style() | LI_OWNERDRAW);
+  return create_params;
+}
+
+unique_ptr<xtd::object> loading_indicator::clone() const {
+  auto result = make_unique<loading_indicator>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
+drawing::size loading_indicator::measure_control() const noexcept {
+  return control::measure_text();
+}
+
+void loading_indicator::on_handle_created(const event_args& e) {
+  control::on_handle_created(e);
+  switch (data_->loading_indicator_style) {
+    case loading_indicator_style::bar: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_bar>(); break;
+    case loading_indicator_style::circle_bars: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_circle_bars>(); break;
+    case loading_indicator_style::circle_blinks: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_circle_blinks>(); break;
+    case loading_indicator_style::five_lines: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines>(); break;
+    case loading_indicator_style::five_lines_center: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_center>(); break;
+    case loading_indicator_style::five_lines_chronological: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_chronological>(); break;
+    case loading_indicator_style::five_lines_pulse: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_pulse>(); break;
+    case loading_indicator_style::five_lines_wave: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_five_lines_wave>(); break;
+    case loading_indicator_style::pulse: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_pulse>(); break;
+    case loading_indicator_style::pulse_outline: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_pulse_outline>(); break;
+    case loading_indicator_style::standard: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_standard>(); break;
+    case loading_indicator_style::system: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_system>(); break;
+    case loading_indicator_style::three_balls: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_three_balls>(); break;
+    case loading_indicator_style::three_balls_bouncing: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_three_balls_bouncing>(); break;
+    case loading_indicator_style::three_balls_rotation: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_three_balls_rotation>(); break;
+    default: data_->loading_indicator_animation = std::make_shared<loading_indicator_animation_system>(); break;
+  }
+  if (data_->loading_indicator_style == xtd::forms::loading_indicator_style::system) {
+    if (data_->running) native::loading_indicator::start(handle());
+    else native::loading_indicator::stop(handle());
+  }
+}
+
+void loading_indicator::on_paint(paint_event_args& e) {
+  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) data_->loading_indicator_animation->on_paint(e.graphics(), e.clip_rectangle(), fore_color(), enabled());
+  control::on_paint(e);
+}
+
+void loading_indicator::on_timer_tick(object& timer, const xtd::event_args& e) {
+  if (data_->loading_indicator_style != xtd::forms::loading_indicator_style::system) data_->loading_indicator_animation->on_timer();
+  if (control_appearance() == forms::control_appearance::standard) invalidate();
 }
 
 void loading_indicator::start() {
