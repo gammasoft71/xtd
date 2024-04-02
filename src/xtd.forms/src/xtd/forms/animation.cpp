@@ -199,7 +199,7 @@ void animation::stop() {
   running(false);
 }
 
-std::unique_ptr<xtd::object> animation::clone() const {
+unique_ptr<xtd::object> animation::clone() const {
   auto result = make_unique<animation>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;

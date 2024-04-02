@@ -10,6 +10,7 @@
 #include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -423,6 +424,12 @@ forms::create_params check_box::create_params() const noexcept {
 
 xtd::forms::visual_styles::check_box_state check_box::state() const noexcept {
   return data_->state;
+}
+
+unique_ptr<xtd::object> check_box::clone() const {
+  auto result = make_unique<check_box>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 drawing::size check_box::measure_control() const noexcept {
