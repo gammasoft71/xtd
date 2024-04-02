@@ -246,6 +246,12 @@ forms::create_params picture_box::create_params() const noexcept {
   return create_params;
 }
 
+unique_ptr<xtd::object> picture_box::clone() const {
+  auto result = make_unique<picture_box>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
 drawing::size picture_box::measure_control() const noexcept {
   auto size = data_->image.has_value() ? data_->image.value().size() : drawing::size(0, 0);
   /// @todo add location

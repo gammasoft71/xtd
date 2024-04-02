@@ -194,12 +194,18 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      
+      drawing::size measure_control() const noexcept override;
+
       /// @brief Overrides the on_handle_created(const event_args&) method.
       /// @param e An event_args that contains the event data.
       void on_handle_created(const event_args& e) override;
       void on_paint(paint_event_args& e) override;
-      
-      drawing::size measure_control() const noexcept override;
       /// @}
       
     private:
