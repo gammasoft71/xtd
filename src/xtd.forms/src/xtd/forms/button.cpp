@@ -13,6 +13,7 @@
 #include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -225,6 +226,12 @@ forms::create_params button::create_params() const noexcept {
 
 xtd::forms::visual_styles::push_button_state button::state() const noexcept {
   return data_->state;
+}
+
+std::unique_ptr<xtd::object> button::clone() const {
+  auto result = make_unique<button>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 drawing::size button::measure_control() const noexcept {
