@@ -1,5 +1,6 @@
 #include "../../../include/xtd/forms/lcd_label.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -1007,6 +1008,17 @@ drawing::size lcd_label::default_size() const noexcept {
   return {100, 25};
 }
 
+unique_ptr<xtd::object> lcd_label::clone() const {
+  auto result = make_unique<lcd_label>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
+drawing::size lcd_label::measure_control() const noexcept {
+  if (data_->digits.size() == 0) return {0, size().height()};
+  return drawing::size((dynamic_cast<control*>(data_->digits[0].get())->width() - 2 + digit_spacing()) * static_cast<int32>(data_->digits.size()) - digit_spacing() + 2, size().height());
+}
+
 void lcd_label::on_back_color_changed(const event_args& e) {
   control::on_back_color_changed(e);
   invalidate();
@@ -1030,11 +1042,6 @@ void lcd_label::on_size_changed(const event_args& e) {
 void lcd_label::on_resize(const event_args& e) {
   set_digits_params();
   control::on_resize(e);
-}
-
-drawing::size lcd_label::measure_control() const noexcept {
-  if (data_->digits.size() == 0) return {0, size().height()};
-  return drawing::size((dynamic_cast<control*>(data_->digits[0].get())->width() - 2 + digit_spacing()) * static_cast<int32>(data_->digits.size()) - digit_spacing() + 2, size().height());
 }
 
 void lcd_label::on_digit_click(object& sender, const event_args& e) {
