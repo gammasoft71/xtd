@@ -4,6 +4,7 @@
 #include <xtd/forms/native/scroll_bar_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -292,5 +293,11 @@ h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 mini
   result.location(location);
   result.size(size);
   result.name(name);
+  return result;
+}
+
+unique_ptr<xtd::object> h_scroll_bar::clone() const {
+  auto result = make_unique<h_scroll_bar>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
