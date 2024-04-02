@@ -8,6 +8,7 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/as>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -391,6 +392,12 @@ forms::create_params numeric_up_down::create_params() const noexcept {
   create_params.class_name("numericupdown");
   if (data_->wrapped) create_params.style(create_params.style() | UDS_WRAP);
   return create_params;
+}
+
+unique_ptr<xtd::object> numeric_up_down::clone() const {
+  auto result = make_unique<numeric_up_down>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void numeric_up_down::on_handle_created(const event_args& e) {
