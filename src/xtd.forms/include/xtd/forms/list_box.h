@@ -321,6 +321,12 @@ namespace xtd {
       /// @name Protetced methods
       
       /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      
       void on_handle_created(const event_args& e) override;
       void on_selected_value_changed(const event_args& e) override;
       void wnd_proc(message& message) override;
