@@ -14,6 +14,7 @@
 #include <xtd/forms/native/window_definitions>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -435,6 +436,17 @@ xtd::forms::visual_styles::check_box_state light_button::state() const noexcept 
   return data_->state;
 }
 
+unique_ptr<xtd::object> light_button::clone() const {
+  auto result = make_unique<light_button>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
+drawing::size light_button::measure_control() const noexcept {
+  /// @todo Add light according to the alignment
+  return button_base::measure_text();
+}
+
 void light_button::on_image_changed(const xtd::event_args& e) {
   button_base::on_image_changed(e);
 }
@@ -531,11 +543,6 @@ void light_button::on_paint(paint_event_args& e) {
     e.graphics().draw_rounded_rectangle(drawing::pen(drawing::solid_brush(drawing::color_converter::dark(back_color()))), drawing::rectangle {left, top, 9, 15}, 2);
   }
   button_base::on_paint(e);
-}
-
-drawing::size light_button::measure_control() const noexcept {
-  /// @todo Add light according to the alignment
-  return button_base::measure_text();
 }
 
 void light_button::wnd_proc(message& message) {
