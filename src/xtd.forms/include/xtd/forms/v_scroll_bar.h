@@ -253,6 +253,16 @@ namespace xtd {
       xtd::forms::create_params create_params() const noexcept override;
       xtd::drawing::size default_size() const noexcept override;
       /// @}
+
+      /// @name Protectedd Methods
+      
+      /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      /// @}
     };
   }
 }

@@ -4,6 +4,7 @@
 #include <xtd/forms/native/scroll_bar_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -12,16 +13,6 @@ v_scroll_bar::v_scroll_bar() : scroll_bar(true) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_can_focus(false);
-}
-
-forms::create_params v_scroll_bar::create_params() const noexcept {
-  auto create_params = scroll_bar::create_params();
-  create_params.style(create_params.style() | SBS_VERT);
-  return create_params;
-}
-
-xtd::drawing::size v_scroll_bar::default_size() const noexcept {
-  return {control::default_size().width(), 80};
 }
 
 v_scroll_bar v_scroll_bar::create() {
@@ -292,5 +283,21 @@ v_scroll_bar v_scroll_bar::create(const control& parent, int32 value, int32 mini
   result.location(location);
   result.size(size);
   result.name(name);
+  return result;
+}
+
+forms::create_params v_scroll_bar::create_params() const noexcept {
+  auto create_params = scroll_bar::create_params();
+  create_params.style(create_params.style() | SBS_VERT);
+  return create_params;
+}
+
+xtd::drawing::size v_scroll_bar::default_size() const noexcept {
+  return {control::default_size().width(), 80};
+}
+
+unique_ptr<xtd::object> v_scroll_bar::clone() const {
+  auto result = make_unique<v_scroll_bar>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
