@@ -3,6 +3,7 @@
 #include "../../../include/xtd/forms/switch_button.h"
 #include <xtd/drawing/color_converter>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -219,6 +220,12 @@ switch_button switch_button::create(const control& parent, bool checked, const d
 
 drawing::size switch_button::default_size() const noexcept {
   return {50, 25};
+}
+
+unique_ptr<xtd::object> switch_button::clone() const {
+  auto result = make_unique<switch_button>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void switch_button::on_checked_changed(const event_args& e) {
