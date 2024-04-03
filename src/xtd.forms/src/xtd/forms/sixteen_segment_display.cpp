@@ -1,6 +1,7 @@
 #include "../../../include/xtd/forms/sixteen_segment_display.h"
 #include <xtd/drawing/color_converter>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -208,6 +209,12 @@ sixteen_segment_display sixteen_segment_display::create(const control& parent, x
   item.size(size);
   item.name(name);
   return item;
+}
+
+unique_ptr<xtd::object> sixteen_segment_display::clone() const {
+  auto result = make_unique<sixteen_segment_display>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void sixteen_segment_display::draw_back_digit(drawing::graphics& graphics) {
