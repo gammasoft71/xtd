@@ -264,21 +264,11 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
-      void on_back_color_changed(const event_args& e) override;
-      
-      void on_enabled_changed(const event_args& e) override;
-      
-      void on_fore_color_changed(const event_args& e) override;
-      
-      void on_paint(paint_event_args& e) override;
-      
-      void on_parent_enabled_changed(const event_args& e) override;
-      
-      drawing::size measure_control() const noexcept override;
-      
-      void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) override;
-      
-      void set_client_size_core(int32 width, int32 height) override;
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
       
       /// @brief Draw all background digit on specified graphics.
       /// @param graphics A xtd::drawing::graphics from on_paint method.
@@ -328,6 +318,22 @@ namespace xtd {
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_pc(drawing::graphics& graphics, const drawing::color& color);
+
+      void on_back_color_changed(const event_args& e) override;
+      
+      void on_enabled_changed(const event_args& e) override;
+      
+      void on_fore_color_changed(const event_args& e) override;
+      
+      void on_paint(paint_event_args& e) override;
+      
+      void on_parent_enabled_changed(const event_args& e) override;
+      
+      drawing::size measure_control() const noexcept override;
+      
+      void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) override;
+      
+      void set_client_size_core(int32 width, int32 height) override;
       /// @}
       
     private:
