@@ -1,5 +1,6 @@
 #include "../../../include/xtd/forms/splitter.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -109,6 +110,12 @@ splitter splitter::create(const control& parent, const drawing::point& location,
 
 drawing::size splitter::default_size() const noexcept {
   return {3, 3};
+}
+
+unique_ptr<xtd::object> splitter::clone() const {
+  auto result = make_unique<splitter>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void splitter::on_handle_created(const event_args& e) {
