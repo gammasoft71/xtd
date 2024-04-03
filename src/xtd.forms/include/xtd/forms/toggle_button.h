@@ -346,6 +346,12 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This metod is not relevant for this class.
