@@ -1,6 +1,7 @@
 #include "../../../include/xtd/forms/seven_segment_display.h"
 #include <xtd/drawing/color_converter>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -285,64 +286,10 @@ drawing::size seven_segment_display::default_size() const noexcept {
   return {25, 50};
 }
 
-void seven_segment_display::on_back_color_changed(const event_args& e) {
-  control::on_back_color_changed(e);
-  invalidate();
-}
-
-void seven_segment_display::on_enabled_changed(const event_args& e) {
-  control::on_enabled_changed(e);
-  invalidate();
-}
-
-void seven_segment_display::on_fore_color_changed(const event_args& e) {
-  control::on_fore_color_changed(e);
-  invalidate();
-}
-
-void seven_segment_display::on_paint(paint_event_args& e) {
-  control::on_paint(e);
-  e.graphics().clear(back_color());
-  if (data_->show_back_segment) draw_back_digit(e.graphics());
-  auto color = enabled() ? fore_color() : application::style_sheet().system_colors().gray_text();
-  if ((data_->value & forms::segments::dp) == forms::segments::dp) draw_dp(e.graphics(), color);
-  if ((data_->value & forms::segments::pc) == forms::segments::pc) draw_pc(e.graphics(), color);
-  if ((data_->value & forms::segments::a) == forms::segments::a) draw_segment_a(e.graphics(), color);
-  if ((data_->value & forms::segments::b) == forms::segments::b) draw_segment_b(e.graphics(), color);
-  if ((data_->value & forms::segments::c) == forms::segments::c) draw_segment_c(e.graphics(), color);
-  if ((data_->value & forms::segments::d) == forms::segments::d) draw_segment_d(e.graphics(), color);
-  if ((data_->value & forms::segments::e) == forms::segments::e) draw_segment_e(e.graphics(), color);
-  if ((data_->value & forms::segments::f) == forms::segments::f) draw_segment_f(e.graphics(), color);
-  if ((data_->value & forms::segments::g) == forms::segments::g) draw_segment_g(e.graphics(), color);
-}
-
-void seven_segment_display::on_parent_enabled_changed(const event_args& e) {
-  control::on_parent_enabled_changed(e);
-  invalidate();
-}
-
-drawing::size seven_segment_display::measure_control() const noexcept {
-  return drawing::size((height() - 3) / 2 + 2, height());
-}
-
-void seven_segment_display::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) {
-  if ((specified & bounds_specified::width) == forms::bounds_specified::width && (specified & bounds_specified::height) != forms::bounds_specified::height) {
-    height = (width - 2) * 2 + 3;
-    specified |= bounds_specified::height;
-  }
-  if ((specified & bounds_specified::height) == forms::bounds_specified::height) {
-    width = (height - 3) / 2 + 2;
-    specified |= bounds_specified::width;
-  }
-  control::set_bounds_core(x, y, width, height, specified);
-}
-
-void seven_segment_display::set_client_size_core(int32 width, int32 height) {
-  if (client_size().height() != height)
-    width = (height - 3) / 2 + 2;
-  if (client_size().width() != width)
-    height = (width - 2) * 2 + 3;
-  control::set_client_size_core(width, height);
+unique_ptr<xtd::object> seven_segment_display::clone() const {
+  auto result = make_unique<seven_segment_display>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void seven_segment_display::draw_back_digit(drawing::graphics& graphics) {
@@ -552,4 +499,64 @@ void seven_segment_display::draw_pc(drawing::graphics& graphics, const drawing::
       graphics.draw_line(drawing::pen(color), size().width() / 2 - thickness() / 2, size().height() / 3 * 2 - thickness() / 2 + offset, size().width() / 2 + thickness() / 2, size().height() / 3 * 2 - thickness() / 2 + offset);
     }
   }
+}
+
+void seven_segment_display::on_back_color_changed(const event_args& e) {
+  control::on_back_color_changed(e);
+  invalidate();
+}
+
+void seven_segment_display::on_enabled_changed(const event_args& e) {
+  control::on_enabled_changed(e);
+  invalidate();
+}
+
+void seven_segment_display::on_fore_color_changed(const event_args& e) {
+  control::on_fore_color_changed(e);
+  invalidate();
+}
+
+void seven_segment_display::on_paint(paint_event_args& e) {
+  control::on_paint(e);
+  e.graphics().clear(back_color());
+  if (data_->show_back_segment) draw_back_digit(e.graphics());
+  auto color = enabled() ? fore_color() : application::style_sheet().system_colors().gray_text();
+  if ((data_->value & forms::segments::dp) == forms::segments::dp) draw_dp(e.graphics(), color);
+  if ((data_->value & forms::segments::pc) == forms::segments::pc) draw_pc(e.graphics(), color);
+  if ((data_->value & forms::segments::a) == forms::segments::a) draw_segment_a(e.graphics(), color);
+  if ((data_->value & forms::segments::b) == forms::segments::b) draw_segment_b(e.graphics(), color);
+  if ((data_->value & forms::segments::c) == forms::segments::c) draw_segment_c(e.graphics(), color);
+  if ((data_->value & forms::segments::d) == forms::segments::d) draw_segment_d(e.graphics(), color);
+  if ((data_->value & forms::segments::e) == forms::segments::e) draw_segment_e(e.graphics(), color);
+  if ((data_->value & forms::segments::f) == forms::segments::f) draw_segment_f(e.graphics(), color);
+  if ((data_->value & forms::segments::g) == forms::segments::g) draw_segment_g(e.graphics(), color);
+}
+
+void seven_segment_display::on_parent_enabled_changed(const event_args& e) {
+  control::on_parent_enabled_changed(e);
+  invalidate();
+}
+
+drawing::size seven_segment_display::measure_control() const noexcept {
+  return drawing::size((height() - 3) / 2 + 2, height());
+}
+
+void seven_segment_display::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) {
+  if ((specified & bounds_specified::width) == forms::bounds_specified::width && (specified & bounds_specified::height) != forms::bounds_specified::height) {
+    height = (width - 2) * 2 + 3;
+    specified |= bounds_specified::height;
+  }
+  if ((specified & bounds_specified::height) == forms::bounds_specified::height) {
+    width = (height - 3) / 2 + 2;
+    specified |= bounds_specified::width;
+  }
+  control::set_bounds_core(x, y, width, height, specified);
+}
+
+void seven_segment_display::set_client_size_core(int32 width, int32 height) {
+  if (client_size().height() != height)
+    width = (height - 3) / 2 + 2;
+  if (client_size().width() != width)
+    height = (width - 2) * 2 + 3;
+  control::set_client_size_core(width, height);
 }
