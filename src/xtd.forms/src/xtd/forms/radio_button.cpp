@@ -10,21 +10,22 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/environment>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 namespace {
   xtd::forms::visual_styles::push_button_state to_push_button_style(xtd::forms::visual_styles::radio_button_state state) {
     switch (state) {
-      case xtd::forms::visual_styles::radio_button_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
-      case xtd::forms::visual_styles::radio_button_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
-      case xtd::forms::visual_styles::radio_button_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::radio_button_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      case xtd::forms::visual_styles::radio_button_state::checked_normal: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::radio_button_state::checked_hot: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::radio_button_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
-      case xtd::forms::visual_styles::radio_button_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
-      default: return xtd::forms::visual_styles::push_button_state::normal;
+      case visual_styles::radio_button_state::unchecked_normal: return visual_styles::push_button_state::normal;
+      case visual_styles::radio_button_state::unchecked_hot: return visual_styles::push_button_state::hot;
+      case visual_styles::radio_button_state::unchecked_pressed: return visual_styles::push_button_state::pressed;
+      case visual_styles::radio_button_state::unchecked_disabled: return visual_styles::push_button_state::disabled;
+      case visual_styles::radio_button_state::checked_normal: return visual_styles::push_button_state::pressed;
+      case visual_styles::radio_button_state::checked_hot: return visual_styles::push_button_state::pressed;
+      case visual_styles::radio_button_state::checked_pressed: return visual_styles::push_button_state::pressed;
+      case visual_styles::radio_button_state::checked_disabled: return visual_styles::push_button_state::disabled;
+      default: return visual_styles::push_button_state::normal;
     }
   }
 }
@@ -312,6 +313,12 @@ forms::create_params radio_button::create_params() const noexcept {
 
 xtd::forms::visual_styles::radio_button_state radio_button::state() const noexcept {
   return data_->state;
+}
+
+unique_ptr<xtd::object> radio_button::clone() const {
+  auto result = make_unique<radio_button>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 drawing::size radio_button::measure_control() const noexcept {
