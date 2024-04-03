@@ -272,6 +272,12 @@ forms::create_params text_box::create_params() const noexcept {
   return create_params;
 }
 
+unique_ptr<xtd::object> text_box::clone() const {
+  auto result = make_unique<text_box>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
 drawing::size text_box::measure_control() const noexcept {
   return drawing::size(client_size().width(), static_cast<int32>(font().get_height()) + 2 + (border_style() == border_style::none ? 0 : 4));
 }
