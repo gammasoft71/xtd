@@ -39,7 +39,7 @@ This document is for the GTK 4 library, version 3.98.5 . The latest versions can
 
 ## Unicode
 
-[https://symbl.cc](https://symbl.cc](https://symbl.cc](https://symbl.cc)
+[https://symbl.cc](https://symbl.cc)
 
 Unicode Character Table.
 
