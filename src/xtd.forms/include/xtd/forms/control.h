@@ -261,7 +261,7 @@ namespace xtd {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return it;
           if (!clone_and_keep_controls_) return base::insert(pos, value);
-          auto control_ptr = as<control>(value.clone());
+          auto control_ptr = as<control>(as<iclonable>(value).clone());
           auto& control_ref = *control_ptr;
           controls_.push_back(std::move(control_ptr));
           return base::insert(pos, control_ref);
@@ -273,7 +273,7 @@ namespace xtd {
             if (it->get() == value) return;
           if (!clone_and_keep_controls_) base::insert_at(index, value);
           else {
-            auto control_ptr = as<control>(value.clone());
+            auto control_ptr = as<control>(as<iclonable>(value).clone());
             auto& control_ref = *control_ptr;
             controls_.push_back(std::move(control_ptr));
             base::insert_at(index, control_ref);
@@ -286,7 +286,7 @@ namespace xtd {
             if (it->get() == value) return;
           if (!clone_and_keep_controls_) base::push_back(value);
           else {
-            auto control_ptr = as<control>(value.clone());
+            auto control_ptr = as<control>(as<iclonable>(value).clone());
             auto& control_ref = *control_ptr;
             controls_.push_back(std::move(control_ptr));
             base::push_back(control_ref);
