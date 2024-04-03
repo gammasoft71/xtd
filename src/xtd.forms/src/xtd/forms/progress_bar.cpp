@@ -5,6 +5,7 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/math>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -406,6 +407,12 @@ forms::create_params progress_bar::create_params() const noexcept {
 drawing::size progress_bar::default_size() const noexcept {
   static auto size = control::default_size();
   return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height(), size.width());
+}
+
+unique_ptr<xtd::object> progress_bar::clone() const {
+  auto result = make_unique<progress_bar>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void progress_bar::on_handle_created(const event_args& e) {
