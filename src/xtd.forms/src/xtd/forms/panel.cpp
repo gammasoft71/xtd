@@ -135,6 +135,12 @@ forms::create_params panel::create_params() const noexcept {
   return create_params;
 }
 
+unique_ptr<xtd::object> panel::clone() const {
+  auto result = make_unique<panel>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
 drawing::size panel::measure_control() const noexcept {
   auto bounds = drawing::rectangle {};
   for (auto item : controls()) {
