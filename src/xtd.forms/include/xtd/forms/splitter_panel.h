@@ -76,6 +76,17 @@ namespace xtd {
       /// @return New xtd::forms::splitter_panel created.
       static splitter_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::ustring& name);
       /// @}
+
+    protected:
+      /// @name Protected Methods
+      
+      /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      /// @}
     };
   }
 }
