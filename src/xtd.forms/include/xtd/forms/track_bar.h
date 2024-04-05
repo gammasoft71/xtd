@@ -365,7 +365,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
@@ -375,7 +375,7 @@ namespace xtd {
       drawing::size default_size() const noexcept override;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Creates a new object that is a copy of the current instance.

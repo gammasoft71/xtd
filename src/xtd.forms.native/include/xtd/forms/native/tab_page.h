@@ -36,7 +36,7 @@ namespace xtd {
         friend xtd::forms::tab_control;
         friend xtd::forms::tab_page;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Sets image index associate to the tab page.

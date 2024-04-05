@@ -66,7 +66,7 @@ namespace xtd {
       brush();
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief In a derived class, sets a reference to a GDI+ brush object.

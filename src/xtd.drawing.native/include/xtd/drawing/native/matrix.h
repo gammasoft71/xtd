@@ -35,7 +35,7 @@ namespace xtd {
       class drawing_native_export_ matrix final static_ {
         friend xtd::drawing::drawing_2d::matrix;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Create a matrix with the specified elements.

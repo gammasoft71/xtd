@@ -150,7 +150,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief When overridden in a derived class, specifies a common dialog box.

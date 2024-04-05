@@ -45,7 +45,7 @@ namespace xtd {
     attribute() = default;
     /// @}
     
-    /// @name Protected methods
+    /// @name Protected Methods
     
     /// @{
     /// @brief When implemented in a derived class, gets a unique identifier for this attribute.

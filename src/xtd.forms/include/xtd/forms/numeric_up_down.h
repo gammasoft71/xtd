@@ -338,7 +338,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       forms::create_params create_params() const noexcept override;
@@ -346,7 +346,7 @@ namespace xtd {
       drawing::color default_fore_color() const noexcept override;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Creates a new object that is a copy of the current instance.

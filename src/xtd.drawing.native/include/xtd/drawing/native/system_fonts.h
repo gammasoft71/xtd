@@ -32,7 +32,7 @@ namespace xtd {
       class drawing_native_export_ system_fonts final static_ {
         friend xtd::drawing::system_fonts;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Gets a font that is used to display text in the title bars of windows.

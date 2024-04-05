@@ -37,7 +37,7 @@ namespace xtd {
       guid() = delete;
       friend xtd::guid;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Generates a globally unique identifier (GUID).

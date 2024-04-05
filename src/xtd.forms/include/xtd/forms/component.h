@@ -31,7 +31,7 @@ namespace xtd {
       component();
       /// @}
       
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       /// @brief Gets a value indicating whether the component can raise an event.

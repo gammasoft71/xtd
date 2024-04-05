@@ -36,7 +36,7 @@ namespace xtd {
       thread() = delete;
       friend xtd::threading::thread;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Cancel thread with specified handle.

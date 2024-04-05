@@ -35,7 +35,7 @@ namespace xtd {
       class forms_native_export_ list_box final static_ {
         friend xtd::forms::list_box;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Maintains performance while items are added to the list_box one at a time by preventing the control from drawing until the end_update() method is called.

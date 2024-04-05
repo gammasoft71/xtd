@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ popup_panel final static_ {
         friend xtd::forms::popup_panel;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Sets ignore mouse messages

@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ status_bar final static_ {
         friend xtd::forms::status_bar;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Adds status bar panel.

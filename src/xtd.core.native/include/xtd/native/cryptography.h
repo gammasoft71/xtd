@@ -36,7 +36,7 @@ namespace xtd {
       cryptography() = delete;
       friend xtd::security::secure_string;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Gets the machine's GUID.

@@ -37,7 +37,7 @@ namespace xtd {
     protected:
       friend class xtd::io::drive_info;
       
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Gets available free space for specified root path.

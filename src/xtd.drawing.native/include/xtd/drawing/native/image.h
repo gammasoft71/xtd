@@ -280,7 +280,7 @@ namespace xtd {
           std::vector<xtd::byte> value;
         };
         
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Blurs the image whith the specified radius.

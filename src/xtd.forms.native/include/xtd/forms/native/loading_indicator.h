@@ -35,7 +35,7 @@ namespace xtd {
       class forms_native_export_ loading_indicator final static_ {
         friend xtd::forms::loading_indicator;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Start loading indicator.

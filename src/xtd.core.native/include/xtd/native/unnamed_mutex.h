@@ -36,7 +36,7 @@ namespace xtd {
       unnamed_mutex() = delete;
       friend xtd::threading::mutex;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Create named mutex with specified name and a bool value that.

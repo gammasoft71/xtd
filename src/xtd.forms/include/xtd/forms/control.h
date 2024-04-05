@@ -1851,7 +1851,7 @@ namespace xtd {
       friend class vertical_layout_panel;
       friend class style_sheets::style_sheet;
       
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       /// @brief Gets state.
@@ -1887,7 +1887,7 @@ namespace xtd {
       virtual drawing::size default_size() const noexcept;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Creates a new object that is a copy of the current instance.
@@ -2198,7 +2198,7 @@ namespace xtd {
       virtual void wnd_proc(message& m);
       /// @}
       
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Sets a value indicating which of the mouse buttons is in a pressed state.

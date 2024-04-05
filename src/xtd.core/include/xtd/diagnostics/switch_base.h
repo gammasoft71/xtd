@@ -87,7 +87,7 @@ namespace xtd {
       switch_base(const xtd::ustring& display_name, const xtd::ustring& description, const xtd::ustring& default_switch_value);
       /// @}
       
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       /// @brief Gets the current setting for this switch.
@@ -111,7 +111,7 @@ namespace xtd {
       void value(const xtd::ustring& value);
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Gets the custom attributes supported by the switch.

@@ -35,7 +35,7 @@ namespace xtd {
         // class forms_native_export_ label final static_ {
         friend xtd::forms::label;
       protected:
-        /// @name Protected methods
+        /// @name Protected Methods
         
         /// @{
         /// @}

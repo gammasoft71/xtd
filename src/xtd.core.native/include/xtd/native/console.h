@@ -34,7 +34,7 @@ namespace xtd {
       console() = delete;
       friend xtd::console;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Gets the background color of the console.

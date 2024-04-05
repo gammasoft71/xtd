@@ -53,7 +53,7 @@ namespace xtd {
       using started_process = std::tuple<intmax_t, int_least32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>>;
       /// @}
 
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Gets the base priority xof the associated process.

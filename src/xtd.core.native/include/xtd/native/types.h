@@ -38,7 +38,7 @@ namespace xtd {
       friend xtd::threading::thread;
       friend xtd::threading::wait_handle;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Gets demangled string of name,.

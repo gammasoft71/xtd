@@ -123,7 +123,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       xtd::forms::create_params create_params() const noexcept override;

@@ -263,7 +263,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       /// @brief Creates a new object that is a copy of the current instance.
@@ -281,7 +281,7 @@ namespace xtd {
       xtd::forms::visual_styles::radio_button_state state() const noexcept;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Measure this control.

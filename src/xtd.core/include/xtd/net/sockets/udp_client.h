@@ -471,7 +471,7 @@ namespace xtd {
         /// @}
         
       protected:
-        /// @name Protected properties
+        /// @name Protected Properties
         
         /// @{
         /// @brief Gets a value that indicates whether a connection has been made.

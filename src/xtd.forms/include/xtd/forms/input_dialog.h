@@ -125,7 +125,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       bool run_dialog(intptr owner) override;

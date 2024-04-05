@@ -46,7 +46,7 @@ namespace xtd {
       using frames = std::vector<frame>;
       /// @}
 
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Play system sound.

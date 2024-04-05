@@ -38,7 +38,7 @@ namespace xtd {
       class forms_native_export_ progress_dialog final static_ {
         friend xtd::forms::progress_dialog;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Gets whether user has clicked on cancel button.

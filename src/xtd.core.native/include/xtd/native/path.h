@@ -40,7 +40,7 @@ namespace xtd {
       friend xtd::io::path;
       friend xtd::native::file_system;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.

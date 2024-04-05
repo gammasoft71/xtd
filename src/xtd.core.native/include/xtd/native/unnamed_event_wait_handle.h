@@ -36,7 +36,7 @@ namespace xtd {
       unnamed_event_wait_handle() = delete;
       friend xtd::threading::event_wait_handle;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Create named event wait handle with specified initial state and manual reset.

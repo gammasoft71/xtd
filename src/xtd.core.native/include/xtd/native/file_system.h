@@ -58,7 +58,7 @@ namespace xtd {
       friend xtd::native::file;
       friend xtd::native::speech_synthesizer;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Gets the attributes for the specified file or directory path.

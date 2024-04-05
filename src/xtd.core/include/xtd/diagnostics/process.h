@@ -839,7 +839,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Raises the xtd::diagnostics::process::exited event.

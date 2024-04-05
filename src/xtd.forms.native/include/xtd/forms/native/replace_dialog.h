@@ -37,7 +37,7 @@ namespace xtd {
       class forms_native_export_ replace_dialog final static_ {
         friend xtd::forms::replace_dialog;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Creates replace dialog.

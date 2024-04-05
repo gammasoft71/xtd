@@ -130,7 +130,7 @@ namespace xtd {
         /// @}
         
       protected:
-        /// @name Protected methods
+        /// @name Protected Methods
         
         /// @{
         /// @brief Represents a method that is called when an asynchronous operation completes.

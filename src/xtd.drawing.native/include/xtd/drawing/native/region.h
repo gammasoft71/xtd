@@ -31,7 +31,7 @@ namespace xtd {
       class drawing_native_export_ region final static_ {
         friend xtd::drawing::region;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Creates a region with an infinite interior.

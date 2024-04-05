@@ -165,14 +165,14 @@ namespace xtd {
       text_box_base();
       /// @}
       
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       forms::create_params create_params() const noexcept override;
       forms::cursor default_cursor() const noexcept override;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Raises the text_box_base::accepts_tab_changed event.

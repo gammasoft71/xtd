@@ -36,7 +36,7 @@ namespace xtd {
       critical_section() = delete;
       friend xtd::threading::monitor;
     protected:
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Create critical section.
