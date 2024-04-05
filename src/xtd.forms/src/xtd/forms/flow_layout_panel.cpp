@@ -1,5 +1,6 @@
 #include "../../../include/xtd/forms/flow_layout_panel.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -55,6 +56,12 @@ flow_layout_panel flow_layout_panel::create(const control& parent, const drawing
   result.location(location);
   result.size(size);
   result.name(name);
+  return result;
+}
+
+unique_ptr<xtd::object> flow_layout_panel::clone() const {
+  auto result = make_unique<flow_layout_panel>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
 
