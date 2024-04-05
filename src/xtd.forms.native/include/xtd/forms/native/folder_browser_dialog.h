@@ -37,7 +37,7 @@ namespace xtd {
       class forms_native_export_ folder_browser_dialog final static_ {
         friend xtd::forms::folder_browser_dialog;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Shows dialog.

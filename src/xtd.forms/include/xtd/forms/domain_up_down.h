@@ -319,7 +319,7 @@ namespace xtd {
       drawing::color default_fore_color() const noexcept override;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Creates a new object that is a copy of the current instance.

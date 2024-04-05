@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ button final static_ {
         friend xtd::forms::button;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Sets image.

@@ -54,7 +54,7 @@ namespace xtd {
         friend xtd::forms::native::timer;
         friend xtd::forms::native::wx_command_link_button;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Gets a value indicating whether the caller can quit this application.

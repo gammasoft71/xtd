@@ -202,7 +202,7 @@ namespace xtd {
       /// @}
 
     protected:
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       forms::create_params create_params() const noexcept override;
@@ -212,7 +212,7 @@ namespace xtd {
       xtd::forms::visual_styles::push_button_state state() const noexcept;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Creates a new object that is a copy of the current instance.

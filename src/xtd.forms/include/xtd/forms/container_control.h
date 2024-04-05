@@ -44,7 +44,7 @@ namespace xtd {
       container_control();
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       drawing::size measure_control() const noexcept override;

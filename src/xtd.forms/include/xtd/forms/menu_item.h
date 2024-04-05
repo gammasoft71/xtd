@@ -333,7 +333,7 @@ namespace xtd {
       friend main_menu;
       friend context_menu;
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Creates a new object that is a copy of the current instance.

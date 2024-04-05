@@ -158,7 +158,7 @@ namespace xtd {
       drawing::color default_fore_color() const noexcept override;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Gets a value indicating whether the list enables selection of list items.

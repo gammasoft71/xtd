@@ -35,7 +35,7 @@ namespace xtd {
         // class forms_native_export_ group_box final static_ {
         friend xtd::forms::group_box;
       protected:
-        /// @name Protected methods
+        /// @name Protected Methods
         
         /// @{
         /// @}

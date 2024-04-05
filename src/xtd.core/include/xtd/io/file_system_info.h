@@ -620,7 +620,7 @@ namespace xtd {
       file_system_info() = default;
       /// @}
       
-      /// @name Protected fields
+      /// @name Protected Fields
       
       /// @{
       /// @brief Represents the fully qualified path of the directory or file.

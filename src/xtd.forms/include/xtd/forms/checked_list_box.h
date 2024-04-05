@@ -393,14 +393,14 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       bool allow_selection() const noexcept override;
       forms::create_params create_params() const noexcept override;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Creates a new object that is a copy of the current instance.

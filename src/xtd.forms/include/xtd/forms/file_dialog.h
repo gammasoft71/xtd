@@ -264,7 +264,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Runs file dialog box.

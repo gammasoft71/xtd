@@ -34,7 +34,7 @@ namespace xtd {
       class drawing_native_export_ graphics final static_ {
         friend xtd::drawing::graphics;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Performs a bit-block transfer of color data, corresponding to a rectangle of pixels, from the screen to the drawing surface of the graphics.

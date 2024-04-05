@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ date_time_picker final static_ {
         friend xtd::forms::date_time_picker;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         /// @{
         /// @brief Sets allowable date range to the date time picker.
         /// @param control: Date time picker handle.

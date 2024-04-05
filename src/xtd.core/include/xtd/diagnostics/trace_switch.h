@@ -74,7 +74,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       void on_switch_setting_changed() override;

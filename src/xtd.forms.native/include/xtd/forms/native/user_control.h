@@ -33,7 +33,7 @@ namespace xtd {
       class forms_native_export_ user_control final static_ {
         friend xtd::forms::user_control;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Sets virtual size

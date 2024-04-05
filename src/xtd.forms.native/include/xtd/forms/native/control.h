@@ -78,7 +78,7 @@ namespace xtd {
         friend xtd::forms::tool_bar;
         friend xtd::forms::native::form;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Sets the background color for the control.

@@ -296,7 +296,7 @@ namespace xtd {
       /// @endcond
 
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Releases ownership of the specified wait_handle object.

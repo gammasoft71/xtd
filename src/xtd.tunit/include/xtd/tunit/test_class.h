@@ -96,7 +96,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Adds the class cleanup method.

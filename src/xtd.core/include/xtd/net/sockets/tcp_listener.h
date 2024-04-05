@@ -252,7 +252,7 @@ namespace xtd {
         /// @}
 
       protected:
-        /// @name Protected properties
+        /// @name Protected Properties
         
         /// @{
         /// @brief Gets a value that indicates whether xtd::net::sockets::tcp_listener is actively listening for client connections.

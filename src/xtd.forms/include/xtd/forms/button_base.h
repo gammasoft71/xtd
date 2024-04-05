@@ -135,7 +135,7 @@ namespace xtd {
       button_base() noexcept;
       /// @}
       
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       /// @brief Gets the required creation parameters when the control handle is created.
@@ -154,7 +154,7 @@ namespace xtd {
       button_base& is_default(bool value);
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Measure this control.

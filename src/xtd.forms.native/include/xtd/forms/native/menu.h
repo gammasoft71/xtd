@@ -36,7 +36,7 @@ namespace xtd {
         friend xtd::forms::menu;
         friend xtd::forms::menu_item;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Creates menu.

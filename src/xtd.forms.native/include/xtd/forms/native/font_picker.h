@@ -35,7 +35,7 @@ namespace xtd {
       class forms_native_export_ font_picker final static_ {
         friend xtd::forms::font_picker;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Gets the color selected by the user.

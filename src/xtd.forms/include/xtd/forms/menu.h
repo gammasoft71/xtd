@@ -159,7 +159,7 @@ namespace xtd {
       menu& operator =(const menu&) = default;
       /// @endcond
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Copies the menu that is passed as a parameter to the current menu.

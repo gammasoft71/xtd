@@ -33,7 +33,7 @@ namespace xtd {
       class forms_native_export_ toggle_button final static_ {
         friend xtd::forms::toggle_button;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Sets check state.

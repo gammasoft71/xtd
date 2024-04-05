@@ -312,7 +312,7 @@ namespace xtd {
       /// @endcond
       
     protected:
-      /// @name Protected properties
+      /// @name Protected Properties
       
       /// @{
       /// @brief Gets a value indicating whether to indent the output.
@@ -327,7 +327,7 @@ namespace xtd {
       void thread_safe(bool thread_safe) noexcept;
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to false.

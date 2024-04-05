@@ -36,7 +36,7 @@ namespace xtd {
       class forms_native_export_ about_dialog final static_ {
         friend xtd::forms::about_dialog;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Shows about dialog.

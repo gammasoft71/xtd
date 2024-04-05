@@ -156,7 +156,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Throws an xtd::tunit::assert_error exception. This is used by the other assert functions.

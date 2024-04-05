@@ -100,7 +100,7 @@ namespace xtd {
       /// @}
       
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       /// @{
       
       /// @brief Determines whether the new value of the Value property can be parsed as a Boolean value.

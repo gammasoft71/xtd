@@ -36,7 +36,7 @@ namespace xtd {
       class forms_native_export_ font_dialog final static_ {
         friend xtd::forms::font_dialog;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Shows dialog.

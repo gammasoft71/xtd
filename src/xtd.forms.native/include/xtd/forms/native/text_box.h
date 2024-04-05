@@ -35,7 +35,7 @@ namespace xtd {
       class forms_native_export_ text_box final static_ {
         friend xtd::forms::text_box;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Gets the number of characters selected in the text box.

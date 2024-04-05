@@ -33,7 +33,7 @@ namespace xtd {
       class forms_native_export_ main_menu final static_ {
         friend xtd::forms::main_menu;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Creates main menu.

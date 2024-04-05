@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ picture_box final static_ {
         friend xtd::forms::picture_box;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Sets the image that is displayed by picture_box.

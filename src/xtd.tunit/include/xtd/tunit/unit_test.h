@@ -119,7 +119,7 @@ namespace xtd {
       
       
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Counts the test names contained in the specified tests.

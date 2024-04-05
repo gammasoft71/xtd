@@ -34,7 +34,7 @@ namespace xtd {
       class forms_native_export_ color_picker final static_ {
         friend xtd::forms::color_picker;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Gets picker color.

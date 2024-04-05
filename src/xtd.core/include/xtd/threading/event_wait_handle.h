@@ -167,7 +167,7 @@ namespace xtd {
       /// @}
 
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       bool signal() override;

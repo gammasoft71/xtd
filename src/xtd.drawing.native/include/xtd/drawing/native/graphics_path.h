@@ -35,7 +35,7 @@ namespace xtd {
       class drawing_native_export_ graphics_path final static_ {
         friend xtd::drawing::drawing_2d::graphics_path;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Creates graphics_path.

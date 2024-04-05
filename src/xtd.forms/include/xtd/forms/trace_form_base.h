@@ -70,7 +70,7 @@ namespace xtd {
       explicit trace_form_base(const xtd::ustring& text);
       /// @}
       
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       void on_back_color_changed(const xtd::event_args& e) override;

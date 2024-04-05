@@ -22,7 +22,7 @@ namespace xtd {
       class forms_native_export_ message_notifier final static_ {
         friend xtd::forms::message_notifier;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
 
         /// @{
         /// @brief Shows message notifier

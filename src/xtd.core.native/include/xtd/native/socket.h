@@ -44,7 +44,7 @@ namespace xtd {
       friend xtd::net::socket_address;
       friend xtd::net::sockets::socket;
     protected:
-      /// @name Protected methods
+      /// @name Protected Methods
       
       /// @{
       /// @brief Gets the native address family value corresponding to xtd address family.

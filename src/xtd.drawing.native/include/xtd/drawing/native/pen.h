@@ -32,7 +32,7 @@ namespace xtd {
       class drawing_native_export_ pen final static_ {
         friend xtd::drawing::pen;
       protected:
-        /// @name Protected static methods
+        /// @name Protected Static Methods
         
         /// @{
         /// @brief Creates a pen.

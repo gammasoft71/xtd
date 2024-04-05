@@ -79,7 +79,7 @@ namespace xtd {
     protected:
       friend xtd::date_time;
       friend xtd::time_zone_info;
-      /// @name Protected static methods
+      /// @name Protected Static Methods
       
       /// @{
       /// @brief Gets a time_zone_info object that represents the local time zone.
