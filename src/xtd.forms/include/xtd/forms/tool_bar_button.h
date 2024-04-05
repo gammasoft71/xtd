@@ -11,6 +11,7 @@
 #include "tool_bar_button_style.h"
 #include <xtd/event>
 #include <xtd/event_handler>
+#include <xtd/iclonable>
 #include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -37,7 +38,7 @@ namespace xtd {
     /// @remarks To change the appearance of the toolbar buttons assigned to the toolbar, set the xtd::forms::tool_bar::appearance property of the parent toolbar control. The xtd::forms::tool_bar_appearance::flat appearance gives the buttons a flat appearance. As the mouse pointer moves over the buttons, their appearance changes to three-dimensional. Button separators appear as lines rather than spaces between the buttons when the buttons have a flat appearance. If the xtd::forms::tool_bar::appearance property is set to xtd::forms::tool_bar_appearance::normal, the buttons appear raised and three-dimensional, and the separators appear as a gap between the buttons.
     /// @remarks You can assign a xtd::forms::context_menu to a button if the xtd::forms::tool_bar_button::style property is set to xtd::forms::tool_bar_button_style::drop_down. When the button is clicked, the assigned menu is displayed.
     /// @remarks To create a collection of xtd::forms::tool_bar_button controls to display on a xtd::forms::tool_bar, add the buttons individually by using the xtd::forms::tool_bar::tool_bar_button_collection::push_back method of the xtd::forms::tool_bar::buttons property. Alternatively, you can add several toolbar buttons using the xtd::forms::tool_bar::tool_bar_button_collection.push_back_range method.
-    class tool_bar_button : public xtd::forms::component, public xtd::iequatable<tool_bar_button> {
+    class tool_bar_button : public xtd::forms::component, public xtd::iclonable, public xtd::iequatable<tool_bar_button> {
       struct data;
       
     public:
@@ -268,6 +269,17 @@ namespace xtd {
       /// @param image_index The index value of the xtd::drawing::image assigned to the toolbar button.
       /// @return New xtd::forms::tool_bar_button created.
       static tool_bar_button create_toggle_button(const xtd::ustring& text, size_t image_index);
+      /// @}
+      
+    protected:
+      /// @name Protected Methods
+      
+      /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;      
       /// @}
       
     private:

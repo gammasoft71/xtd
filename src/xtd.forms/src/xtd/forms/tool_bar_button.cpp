@@ -257,3 +257,9 @@ xtd::ustring tool_bar_button::to_string() const noexcept {
   if (!data_->name.empty()) return ustring::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
   return ustring::format("{}, style: {}", get_type().full_name(), data_->style);
 }
+
+unique_ptr<xtd::object> tool_bar_button::clone() const {
+  auto result = make_unique<tool_bar_button>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
