@@ -5,6 +5,7 @@
 #include "menu_item.h"
 #include "message.h"
 #include <xtd/drawing/size>
+#include <xtd/iclonable>
 #include <memory>
 #include <vector>
 
@@ -35,7 +36,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of main_menu::create_standard_items factory.
     /// @include main_menu_create_standard_items.cpp
-    class forms_export_ main_menu : public menu {
+    class forms_export_ main_menu : public menu, public iclonable {
     public:
       /// @name Public Constructors
       
@@ -49,6 +50,9 @@ namespace xtd {
       
       /// @cond
       explicit main_menu(const std::initializer_list<const_menu_item_ref>& menu_items);
+      main_menu(main_menu&&) = default;
+      main_menu(const main_menu&) = default;
+      main_menu& operator =(const main_menu&) = default;
       /// @endcond
       
       /// @name Public Static Methods
@@ -271,6 +275,12 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      
       intptr create_menu_handle() override;
       void destroy_menu_handle(intptr handle) override;
       void on_item_added(size_t pos, menu_item_ref item) override;
@@ -280,7 +290,7 @@ namespace xtd {
     private:
       friend class form;
       void wm_click(message& message);
-      std::vector<std::unique_ptr<menu_item>> standard_menu_items_;
+      std::vector<std::shared_ptr<menu_item>> standard_menu_items_;
     };
   }
 }
