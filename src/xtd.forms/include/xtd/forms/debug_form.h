@@ -46,7 +46,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      ~debug_form() {xtd::diagnostics::debug::listeners().erase(std::find(xtd::diagnostics::debug::listeners().begin(), xtd::diagnostics::debug::listeners().end(), listener_));}
+      ~debug_form();
       /// @endcond
       
       /// @name Public Properties
@@ -54,16 +54,16 @@ namespace xtd {
       /// @{
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
-      const xtd::diagnostics::trace_listener& trace_listener() const noexcept {return *listener_;}
+      const xtd::diagnostics::trace_listener& trace_listener() const noexcept;
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
-      xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}
+      xtd::diagnostics::trace_listener& trace_listener();
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      void flush() override {}
+      void flush() override;debug_form::
       
       void write(const xtd::ustring& debug) override {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
@@ -75,6 +75,17 @@ namespace xtd {
         trace_form_base::write_line(debug);
         #endif
       }
+      /// @}
+
+    protected:
+      /// @name Protected Methods
+      
+      /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;      
       /// @}
       
     private:
