@@ -926,6 +926,7 @@ add_sources(
   src/xtd/forms/tool_bar_images.cpp
   src/xtd/forms/tool_bar_renderer.cpp
   src/xtd/forms/trace_form_base.cpp
+  src/xtd/forms/trace_form.cpp
   src/xtd/forms/trace_message_dialog.cpp
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp

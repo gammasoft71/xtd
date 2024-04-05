@@ -46,7 +46,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      ~trace_form() {xtd::diagnostics::trace::listeners().erase(std::find(xtd::diagnostics::trace::listeners().begin(), xtd::diagnostics::trace::listeners().end(), listener_));}
+      ~trace_form();
       /// @endcond
       
       /// @name Public Properties
@@ -54,10 +54,10 @@ namespace xtd {
       /// @{
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
-      const xtd::diagnostics::trace_listener& trace_listener() const noexcept {return *listener_;}
+      const xtd::diagnostics::trace_listener& trace_listener() const noexcept;
       /// @brief Gets underlying trace listener.
       /// @return A xtd::diagnostics::trace_listener trace listener. In this case a xtd::forms::control_trace_listener.
-      xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}
+      xtd::diagnostics::trace_listener& trace_listener();
       /// @}
       
       /// @name Public Methods
@@ -74,7 +74,18 @@ namespace xtd {
         #endif
       }
       
-      void flush() override {}
+      void flush() override;
+      /// @}
+
+    protected:
+      /// @name Protected Methods
+      
+      /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
       /// @}
       
     private:

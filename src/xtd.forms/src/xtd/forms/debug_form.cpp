@@ -9,15 +9,15 @@ debug_form::~debug_form() {
   debug::listeners().erase(std::find(debug::listeners().begin(), debug::listeners().end(), listener_));
 }
 
-const xtd::diagnostics::trace_listener& debug_form::trace_listener() const noexcept {
+const trace_listener& debug_form::trace_listener() const noexcept {
   return *listener_;
 }
 
-xtd::diagnostics::trace_listener& debug_form::trace_listener() {
+trace_listener& debug_form::trace_listener() {
   return *listener_;
 }
 
-void debug_form::flush() override {
+void debug_form::flush() {
 }
 
 unique_ptr<xtd::object> debug_form::clone() const {

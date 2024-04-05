@@ -63,7 +63,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      void flush() override;debug_form::
+      void flush() override;
       
       void write(const xtd::ustring& debug) override {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
