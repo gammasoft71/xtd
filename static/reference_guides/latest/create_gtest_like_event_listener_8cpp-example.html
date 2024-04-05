@@ -87,6 +87,7 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Simulate gtest event listener test output</span></div>
@@ -134,7 +135,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_test_succeed(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1test__event__args.html">xtd::tunit::test_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_test_succeed(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[       OK ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; e.test().elapsed_time().count() &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[       OK ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; as&lt;int&gt;(e.test().elapsed_time().total_microseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; endl;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//void on_test_aborted(const xtd::tunit::test_event_args&amp; e) const override {</span></div>
@@ -147,7 +148,7 @@ $(function() {
 <div class="line">    <span class="keywordflow">if</span> (e.test().actual() != <span class="stringliteral">&quot;&quot;</span>) cout &lt;&lt; <span class="stringliteral">&quot;  Actual: &quot;</span> &lt;&lt; e.test().actual() &lt;&lt; endl;</div>
 <div class="line">    <span class="keywordflow">if</span> (e.test().expect() != <span class="stringliteral">&quot;&quot;</span>) cout &lt;&lt; <span class="stringliteral">&quot;Expected: &quot;</span> &lt;&lt; e.test().expect() &lt;&lt; endl;</div>
 <div class="line">    <span class="keywordflow">if</span> (e.test().message() != <span class="stringliteral">&quot;&quot;</span>) cout &lt;&lt; e.test().message() &lt;&lt; endl;</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[  FAILED  ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; e.test().elapsed_time().count() &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[  FAILED  ] &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; e.test().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; as&lt;int&gt;(e.test().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; endl;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//void on_test_ignored(const xtd::tunit::test_event_args&amp; e) const override {</span></div>
@@ -176,7 +177,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_class_end(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1class__event__args.html">xtd::tunit::class_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_class_end(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[----------] &quot;</span> &lt;&lt; e.test_class().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; e.test_class().elapsed_time().count() &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[----------] &quot;</span> &lt;&lt; e.test_class().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.test_class().name() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; as&lt;int&gt;(e.test_class().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms)&quot;</span> &lt;&lt; endl;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args&amp; e) const override {</span></div>
@@ -190,7 +191,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> on_unit_test_end(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1tunit__event__args.html">xtd::tunit::tunit_event_args</a>&amp; e)<span class="keyword"> const override </span>{</div>
 <div class="line">    event_listener::on_unit_test_end(e);</div>
-<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[==========] &quot;</span> &lt;&lt; e.unit_test().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.unit_test().test_cases_count() &lt;&lt; <span class="stringliteral">&quot; test case ran. (&quot;</span> &lt;&lt; e.unit_test().elapsed_time().count() &lt;&lt; <span class="stringliteral">&quot; ms total)&quot;</span> &lt;&lt; endl;</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[==========] &quot;</span> &lt;&lt; e.unit_test().test_count() &lt;&lt; <span class="stringliteral">&quot; tests from &quot;</span> &lt;&lt; e.unit_test().test_cases_count() &lt;&lt; <span class="stringliteral">&quot; test case ran. (&quot;</span> &lt;&lt; as&lt;int&gt;(e.unit_test().elapsed_time().total_milliseconds()) &lt;&lt; <span class="stringliteral">&quot; ms total)&quot;</span> &lt;&lt; endl;</div>
 <div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;[  PASSED  ] &quot;</span> &lt;&lt; e.unit_test().succeed_test_count() &lt;&lt; <span class="stringliteral">&quot; tests.&quot;</span> &lt;&lt; endl;</div>
 <div class="line">    <span class="keywordflow">if</span> (e.unit_test().failed_test_count()) {</div>
 <div class="line">      cout &lt;&lt; <span class="stringliteral">&quot;[  FAILED  ] &quot;</span> &lt;&lt; e.unit_test().failed_test_count() &lt;&lt; <span class="stringliteral">&quot; test, listed below:&quot;</span> &lt;&lt; endl;</div>
@@ -266,11 +267,12 @@ $(function() {
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:89</div></div>
 <div class="ttc" id="agroup__tunit_html_gae6380e953939b23b1a9a4671b772bd60"><div class="ttname"><a href="group__tunit.html#gae6380e953939b23b1a9a4671b772bd60">ignore_test_method_</a></div><div class="ttdeci">#define ignore_test_method_(method_name)</div><div class="ttdoc">Add ignored test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:73</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.h:10</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -124,6 +124,16 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>
+<div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_typedef" href="group__types.html#ga7f48d085fbe8abdb92329be2bc04a236">uint16</a> LOWORD(type_t value) {</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#ga7f48d085fbe8abdb92329be2bc04a236">uint16</a><span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a><span class="keyword">&gt;</span>(value) &amp; 0xFFFF);</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code hl_typedef" href="group__types.html#ga7f48d085fbe8abdb92329be2bc04a236">uint16</a> HIWORD(type_t value) {</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#ga7f48d085fbe8abdb92329be2bc04a236">uint16</a><span class="keyword">&gt;</span>((<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a><span class="keyword">&gt;</span>(value) &gt;&gt; 16) &amp; 0xFFFF);</div>
+<div class="line">  }</div>
+<div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> wnd_proc(<a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>)<span class="keyword"> override </span>{</div>
 <div class="line">    form::wnd_proc(<a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>);</div>
 <div class="line">    </div>
@@ -181,13 +191,15 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1message_html_a303bbe885f5bedf8d6552ce4ddc3c9aa"><div class="ttname"><a href="classxtd_1_1forms_1_1message.html#a303bbe885f5bedf8d6552ce4ddc3c9aa">xtd::forms::message::lparam</a></div><div class="ttdeci">intptr lparam() const noexcept</div><div class="ttdoc">Gets the lparam field of the message.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message_html_aa03b92404d32b7b0ebe446408d1d2727"><div class="ttname"><a href="classxtd_1_1forms_1_1message.html#aa03b92404d32b7b0ebe446408d1d2727">xtd::forms::message::msg</a></div><div class="ttdeci">uint32 msg() const noexcept</div><div class="ttdoc">Gets the ID number for the message.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1trace__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1trace__form.html">xtd::forms::trace_form</a></div><div class="ttdoc">Represents a form that displays trace form. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> trace_form.h:34</div></div>
+<div class="ttc" id="agroup__types_html_ga7f48d085fbe8abdb92329be2bc04a236"><div class="ttname"><a href="group__types.html#ga7f48d085fbe8abdb92329be2bc04a236">xtd::uint16</a></div><div class="ttdeci">uint_least16_t uint16</div><div class="ttdoc">Represents a 16-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:230</div></div>
+<div class="ttc" id="agroup__types_html_gae7af83eab478757e17f0eb7af57571df"><div class="ttname"><a href="group__types.html#gae7af83eab478757e17f0eb7af57571df">xtd::uint32</a></div><div class="ttdeci">uint_least32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:241</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

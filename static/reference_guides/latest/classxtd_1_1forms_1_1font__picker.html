@@ -94,17 +94,19 @@ Inheritance diagram for xtd::forms::font_picker:</div>
  <div class="center">
   <img src="classxtd_1_1forms_1_1font__picker.png" usemap="#xtd::forms::font_5Fpicker_map" alt=""/>
   <map id="xtd::forms::font_5Fpicker_map" name="xtd::forms::font_5Fpicker_map">
-<area href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation." alt="xtd::forms::control" shape="rect" coords="352,112,518,136"/>
+<area href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation." alt="xtd::forms::control" shape="rect" coords="440,112,606,136"/>
 <area href="classxtd_1_1forms_1_1component.html" title="Provides the base implementation and enables object sharing between applications." alt="xtd::forms::component" shape="rect" coords="0,56,166,80"/>
 <area href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles." alt="xtd::forms::iwin32_window" shape="rect" coords="176,56,342,80"/>
-<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; control &gt;" shape="rect" coords="352,56,518,80"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; control &gt;" shape="rect" coords="528,56,694,80"/>
-<area href="classxtd_1_1isynchronize__invoke.html" title="Provides a way to synchronously or asynchronously execute a delegate." alt="xtd::isynchronize_invoke" shape="rect" coords="704,56,870,80"/>
+<area href="classxtd_1_1iclonable.html" title="Supports cloning, which creates a new instance of a class with the same value as an existing instance..." alt="xtd::iclonable" shape="rect" coords="352,56,518,80"/>
+<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; control &gt;" shape="rect" coords="528,56,694,80"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; control &gt;" shape="rect" coords="704,56,870,80"/>
+<area href="classxtd_1_1isynchronize__invoke.html" title="Provides a way to synchronously or asynchronously execute a delegate." alt="xtd::isynchronize_invoke" shape="rect" coords="880,56,1046,80"/>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,166,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="176,0,342,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="352,0,518,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="528,0,694,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="704,0,870,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="880,0,1046,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -301,12 +303,15 @@ Inheritance diagram for xtd::forms::font_picker:</div>
 <tr class="memdesc:ab3d0a5c4f0d8d67d62914e6fc96fb15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1font__picker.html" title="Represents a picker control that displays available fonts along with controls.">xtd::forms::font_picker</a> with specified parent, font, color, location, size, and name.  <br /></td></tr>
 <tr class="separator:ab3d0a5c4f0d8d67d62914e6fc96fb15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Properties</h2></td></tr>
 <tr class="memitem:a0f8472c1d98f50bd8d9891a8dc37a9a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1create__params.html">forms::create_params</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1font__picker.html#a0f8472c1d98f50bd8d9891a8dc37a9a9">create_params</a> () const noexcept override</td></tr>
 <tr class="memdesc:a0f8472c1d98f50bd8d9891a8dc37a9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the required creation parameters when the control handle is created.  <br /></td></tr>
 <tr class="separator:a0f8472c1d98f50bd8d9891a8dc37a9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
+<tr class="memitem:a68afb5304828c30be9929a55f9c88389"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1font__picker.html#a68afb5304828c30be9929a55f9c88389">clone</a> () const override</td></tr>
+<tr class="memdesc:a68afb5304828c30be9929a55f9c88389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
+<tr class="separator:a68afb5304828c30be9929a55f9c88389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a455ef41c5fe1b82325fcd222192eb5d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1font__picker.html#a455ef41c5fe1b82325fcd222192eb5d9">on_font_picker_changed</a> (const <a class="el" href="classxtd_1_1forms_1_1font__picker__event__args.html">font_picker_event_args</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>)</td></tr>
 <tr class="memdesc:a455ef41c5fe1b82325fcd222192eb5d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#a52494f7214b65db98e3a942acab5d506" title="Occurs when the value of the xtd::forms::control::font property changes.">xtd::forms::control::font_changed</a> event.  <br /></td></tr>
 <tr class="separator:a455ef41c5fe1b82325fcd222192eb5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -916,6 +921,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memdesc:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="separator:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1forms_1_1iwin32__window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1forms_1_1iwin32__window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a></td></tr>
+<tr class="inherit_header pub_methods_classxtd_1_1iclonable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1iclonable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1iclonable.html">xtd::iclonable</a></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1icomparable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1icomparable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1icomparable.html">xtd::icomparable&lt; control &gt;</a></td></tr>
 <tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5 inherit pub_methods_classxtd_1_1icomparable"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const control &amp;obj) const noexcept=0</td></tr>
 <tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5 inherit pub_methods_classxtd_1_1icomparable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
@@ -1295,6 +1301,37 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a68afb5304828c30be9929a55f9c88389" name="a68afb5304828c30be9929a55f9c88389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68afb5304828c30be9929a55f9c88389">&#9670;&#160;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt; xtd::forms::font_picker::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new object that is a copy of the current instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new object that is a copy of this instance. </dd></dl>
+<dl class="section user"><dt>Notes to Implementers</dt><dd>All controls must be override the clone method. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1control.html#a38e91fcf8d1145441c0b39b3dfae8855">xtd::forms::control</a>.</p>
+
+</div>
+</div>
 <a id="af9c14e57459958040ad80d4c6d0237b4" name="af9c14e57459958040ad80d4c6d0237b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9c14e57459958040ad80d4c6d0237b4">&#9670;&#160;</a></span>color() <span class="overload">[1/2]</span></h2>
 
@@ -2846,7 +2883,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -95,19 +95,21 @@ Inheritance diagram for xtd::forms::checked_list_box:</div>
  <div class="center">
   <img src="classxtd_1_1forms_1_1checked__list__box.png" usemap="#xtd::forms::checked_5Flist_5Fbox_map" alt=""/>
   <map id="xtd::forms::checked_5Flist_5Fbox_map" name="xtd::forms::checked_5Flist_5Fbox_map">
-<area href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box." alt="xtd::forms::list_box" shape="rect" coords="356,224,524,248"/>
-<area href="classxtd_1_1forms_1_1list__control.html" title="Provides a common implementation of members for the list_box, choice and combo_box classes." alt="xtd::forms::list_control" shape="rect" coords="356,168,524,192"/>
-<area href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation." alt="xtd::forms::control" shape="rect" coords="356,112,524,136"/>
+<area href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box." alt="xtd::forms::list_box" shape="rect" coords="445,224,613,248"/>
+<area href="classxtd_1_1forms_1_1list__control.html" title="Provides a common implementation of members for the list_box, choice and combo_box classes." alt="xtd::forms::list_control" shape="rect" coords="445,168,613,192"/>
+<area href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation." alt="xtd::forms::control" shape="rect" coords="445,112,613,136"/>
 <area href="classxtd_1_1forms_1_1component.html" title="Provides the base implementation and enables object sharing between applications." alt="xtd::forms::component" shape="rect" coords="0,56,168,80"/>
 <area href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles." alt="xtd::forms::iwin32_window" shape="rect" coords="178,56,346,80"/>
-<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; control &gt;" shape="rect" coords="356,56,524,80"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; control &gt;" shape="rect" coords="534,56,702,80"/>
-<area href="classxtd_1_1isynchronize__invoke.html" title="Provides a way to synchronously or asynchronously execute a delegate." alt="xtd::isynchronize_invoke" shape="rect" coords="712,56,880,80"/>
+<area href="classxtd_1_1iclonable.html" title="Supports cloning, which creates a new instance of a class with the same value as an existing instance..." alt="xtd::iclonable" shape="rect" coords="356,56,524,80"/>
+<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; control &gt;" shape="rect" coords="534,56,702,80"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; control &gt;" shape="rect" coords="712,56,880,80"/>
+<area href="classxtd_1_1isynchronize__invoke.html" title="Provides a way to synchronously or asynchronously execute a delegate." alt="xtd::isynchronize_invoke" shape="rect" coords="890,56,1058,80"/>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,168,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="178,0,346,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="356,0,524,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="534,0,702,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="712,0,880,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="890,0,1058,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -378,7 +380,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:a6700d24f3dc778249503131aaada93da"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">xtd::forms::checked_list_box</a> with specified parent, items, selected_index, location, size, and name.  <br /></td></tr>
 <tr class="separator:a6700d24f3dc778249503131aaada93da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected properties</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Properties</h2></td></tr>
 <tr class="memitem:aa33ac211b868748b0c53048412c7de41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#aa33ac211b868748b0c53048412c7de41">allow_selection</a> () const noexcept override</td></tr>
 <tr class="memdesc:aa33ac211b868748b0c53048412c7de41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the list enables selection of list items.  <br /></td></tr>
 <tr class="separator:aa33ac211b868748b0c53048412c7de41"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -386,7 +388,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:aece705166350a8f5020dd4d62d013948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the required creation parameters when the control handle is created.  <br /></td></tr>
 <tr class="separator:aece705166350a8f5020dd4d62d013948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
+<tr class="memitem:ae742665d486e6cafdb701dd54695efbd"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#ae742665d486e6cafdb701dd54695efbd">clone</a> () const override</td></tr>
+<tr class="memdesc:ae742665d486e6cafdb701dd54695efbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
+<tr class="separator:ae742665d486e6cafdb701dd54695efbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb50e86dc4d24d91302454b0d1a96d6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#abb50e86dc4d24d91302454b0d1a96d6c">on_handle_created</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>) override</td></tr>
 <tr class="memdesc:abb50e86dc4d24d91302454b0d1a96d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#a73566543c98d95a5c70066d127dfe115" title="Occurs when a handle is created for the xtd::forms::control.">xtd::forms::control::handle_created</a> event.  <br /></td></tr>
 <tr class="separator:abb50e86dc4d24d91302454b0d1a96d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1092,6 +1097,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memdesc:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="separator:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1forms_1_1iwin32__window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1forms_1_1iwin32__window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a></td></tr>
+<tr class="inherit_header pub_methods_classxtd_1_1iclonable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1iclonable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1iclonable.html">xtd::iclonable</a></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1icomparable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1icomparable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1icomparable.html">xtd::icomparable&lt; control &gt;</a></td></tr>
 <tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5 inherit pub_methods_classxtd_1_1icomparable"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const control &amp;obj) const noexcept=0</td></tr>
 <tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5 inherit pub_methods_classxtd_1_1icomparable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
@@ -1304,6 +1310,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a0fcd756388c0398a8f5fc7c4f79220f0 inherit pro_methods_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1color.html">drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a0fcd756388c0398a8f5fc7c4f79220f0">default_fore_color</a> () const noexcept override</td></tr>
 <tr class="memdesc:a0fcd756388c0398a8f5fc7c4f79220f0 inherit pro_methods_classxtd_1_1forms_1_1list__box"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the default foreground color of the control.  <br /></td></tr>
 <tr class="separator:a0fcd756388c0398a8f5fc7c4f79220f0 inherit pro_methods_classxtd_1_1forms_1_1list__box"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99ea498a27c3ba3062d88fda970a69a6 inherit pro_methods_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a99ea498a27c3ba3062d88fda970a69a6">clone</a> () const override</td></tr>
+<tr class="memdesc:a99ea498a27c3ba3062d88fda970a69a6 inherit pro_methods_classxtd_1_1forms_1_1list__box"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
+<tr class="separator:a99ea498a27c3ba3062d88fda970a69a6 inherit pro_methods_classxtd_1_1forms_1_1list__box"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c86dba8fe0f5b0776fc6b4f31f68335 inherit pro_methods_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a0c86dba8fe0f5b0776fc6b4f31f68335">on_handle_created</a> (const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae1671797c52e15f763380b45e841ec32">e</a>) override</td></tr>
 <tr class="memdesc:a0c86dba8fe0f5b0776fc6b4f31f68335 inherit pro_methods_classxtd_1_1forms_1_1list__box"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the <a class="el" href="classxtd_1_1forms_1_1control.html#a73566543c98d95a5c70066d127dfe115" title="Occurs when a handle is created for the xtd::forms::control.">xtd::forms::control::handle_created</a> event.  <br /></td></tr>
 <tr class="separator:a0c86dba8fe0f5b0776fc6b4f31f68335 inherit pro_methods_classxtd_1_1forms_1_1list__box"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1747,6 +1756,37 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <p>Collection of checked items in this <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a59d018289a01e9c7700a5f2c6e83a738" title="Encapsulates the collection of checked items, including items in an indeterminate state,...">checked_list_box::checked_item_collection</a> collection for the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The collection is a subset of the objects in the items collection, representing only those items whose <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> is checked or indeterminate. The indexes in this collection are in ascending order. </dd></dl>
+
+</div>
+</div>
+<a id="ae742665d486e6cafdb701dd54695efbd" name="ae742665d486e6cafdb701dd54695efbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae742665d486e6cafdb701dd54695efbd">&#9670;&#160;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt; xtd::forms::checked_list_box::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new object that is a copy of the current instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new object that is a copy of this instance. </dd></dl>
+<dl class="section user"><dt>Notes to Implementers</dt><dd>All controls must be override the clone method. </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1iclonable.html#a40029d417c9942193c797e2cb504ec80">xtd::iclonable</a>.</p>
 
 </div>
 </div>
@@ -3776,7 +3816,7 @@ Items whose check_state is set to indeterminate appear with a check mark in the 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

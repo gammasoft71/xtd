@@ -110,6 +110,9 @@ Inheritance diagram for xtd::forms::control::control_collection:</div>
 <tr class="memitem:a0acc1b4516785b91ecbaa21ecb3663f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#a0acc1b4516785b91ecbaa21ecb3663f7">control_collection</a> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a> &amp;allocator=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a>())</td></tr>
 <tr class="memdesc:a0acc1b4516785b91ecbaa21ecb3663f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified allocator (optional).  <br /></td></tr>
 <tr class="separator:a0acc1b4516785b91ecbaa21ecb3663f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae36084cbd3a99202bca564b20fd4e600"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#ae36084cbd3a99202bca564b20fd4e600">control_collection</a> (bool clone_and_keep_controls, const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a> &amp;allocator=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a>())</td></tr>
+<tr class="memdesc:ae36084cbd3a99202bca564b20fd4e600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified clone_and_keep_controls, and allocator (optional).  <br /></td></tr>
+<tr class="separator:ae36084cbd3a99202bca564b20fd4e600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Operators</h2></td></tr>
 <tr class="memitem:abe601b27efbf5ad81d803a341ca9448f"><td class="memItemLeft" align="right" valign="top">std::optional&lt; value_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#abe601b27efbf5ad81d803a341ca9448f">operator[]</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>) const</td></tr>
@@ -141,6 +144,18 @@ Inheritance diagram for xtd::forms::control::control_collection:</div>
 <tr class="memitem:a8e6927aebf5d20e1794a32153687eb40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#a8e6927aebf5d20e1794a32153687eb40">push_back</a> (const value_type &amp;value) override</td></tr>
 <tr class="memdesc:a8e6927aebf5d20e1794a32153687eb40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the end.  <br /></td></tr>
 <tr class="separator:a8e6927aebf5d20e1794a32153687eb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ee193071be0ac277ac7143ec94910c8"><td class="memTemplParams" colspan="2"><a id="a7ee193071be0ac277ac7143ec94910c8" name="a7ee193071be0ac277ac7143ec94910c8"></a>
+template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:a7ee193071be0ac277ac7143ec94910c8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54a7c85a5ebca902f6d7d390089c4894">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insert</b> (<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a> pos, control_t &amp;value)</td></tr>
+<tr class="separator:a7ee193071be0ac277ac7143ec94910c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c277c42c43d3a03612688f3a56038f7"><td class="memTemplParams" colspan="2"><a id="a8c277c42c43d3a03612688f3a56038f7" name="a8c277c42c43d3a03612688f3a56038f7"></a>
+template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:a8c277c42c43d3a03612688f3a56038f7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insert_at</b> (size_t index, control_t &amp;value)</td></tr>
+<tr class="separator:a8c277c42c43d3a03612688f3a56038f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a6f646e10ca3e927bee5b525465c51"><td class="memTemplParams" colspan="2"><a id="a10a6f646e10ca3e927bee5b525465c51" name="a10a6f646e10ca3e927bee5b525465c51"></a>
+template&lt;typename control_t &gt; </td></tr>
+<tr class="memitem:a10a6f646e10ca3e927bee5b525465c51"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>push_back</b> (control_t &amp;value)</td></tr>
+<tr class="separator:a10a6f646e10ca3e927bee5b525465c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
 <tr class="memitem:ad629776670bdbaa3b19eaab892af36c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#ad629776670bdbaa3b19eaab892af36c0">on_item_removed</a> (size_t index, <a class="el" href="group__xtd__forms.html#gafdd40a9deb594b248dfd59d2df804b2c">control_ref</a> &amp;item) override</td></tr>
@@ -407,7 +422,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0acc1b4516785b91ecbaa21ecb3663f7" name="a0acc1b4516785b91ecbaa21ecb3663f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0acc1b4516785b91ecbaa21ecb3663f7">&#9670;&#160;</a></span>control_collection()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0acc1b4516785b91ecbaa21ecb3663f7">&#9670;&#160;</a></span>control_collection() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,6 +453,53 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If allocator not specified, the std::allocator&lt;value_type&gt; is used. </dd></dl>
+
+</div>
+</div>
+<a id="ae36084cbd3a99202bca564b20fd4e600" name="ae36084cbd3a99202bca564b20fd4e600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae36084cbd3a99202bca564b20fd4e600">&#9670;&#160;</a></span>control_collection() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::forms::control::control_collection::control_collection </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>clone_and_keep_controls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em> = <code><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified clone_and_keep_controls, and allocator (optional). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clone_and_keep_controls</td><td>If true the collection clone and keep controls; otherwise none. </td></tr>
+    <tr><td class="paramname">allocator</td><td>The allocator associate to the collection (optional). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If allocator not specified, the std::allocator&lt;value_type&gt; is used. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
 
 </div>
 </div>
@@ -515,8 +577,8 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <div class="ttc" id="aclassxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.h:31</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1control_1_1control__collection_html_acbacd7606d615a5c2c66c4e706644c35"><div class="ttname"><a href="classxtd_1_1forms_1_1control_1_1control__collection.html#acbacd7606d615a5c2c66c4e706644c35">xtd::forms::control::control_collection::emplace_back</a></div><div class="ttdeci">control_t &amp; emplace_back(args_t &amp;&amp;...args)</div><div class="ttdoc">Creates and adds a control to the end.</div><div class="ttdef"><b>Definition</b> control.h:239</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.h:1458</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_1_1control__collection_html_acbacd7606d615a5c2c66c4e706644c35"><div class="ttname"><a href="classxtd_1_1forms_1_1control_1_1control__collection.html#acbacd7606d615a5c2c66c4e706644c35">xtd::forms::control::control_collection::emplace_back</a></div><div class="ttdeci">control_t &amp; emplace_back(args_t &amp;&amp;...args)</div><div class="ttdoc">Creates and adds a control to the end.</div><div class="ttdef"><b>Definition</b> control.h:245</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.h:1471</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a65896f051dab5b3050412ab63a0af079"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">xtd::forms::control::controls</a></div><div class="ttdeci">virtual control_collection &amp; controls() noexcept</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_aea269af32d571c9c68d4e83400ab2d00"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a></div><div class="ttdeci">static form create()</div><div class="ttdoc">A factory to create an xtd::forms::form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.h:36</div></div>
@@ -903,7 +965,7 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

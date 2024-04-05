@@ -95,18 +95,20 @@ Inheritance diagram for xtd::forms::link_label:</div>
  <div class="center">
   <img src="classxtd_1_1forms_1_1link__label.png" usemap="#xtd::forms::link_5Flabel_map" alt=""/>
   <map id="xtd::forms::link_5Flabel_map" name="xtd::forms::link_5Flabel_map">
-<area href="classxtd_1_1forms_1_1label.html" title="Represents a standard Windows label." alt="xtd::forms::label" shape="rect" coords="352,168,518,192"/>
-<area href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation." alt="xtd::forms::control" shape="rect" coords="352,112,518,136"/>
+<area href="classxtd_1_1forms_1_1label.html" title="Represents a standard Windows label." alt="xtd::forms::label" shape="rect" coords="440,168,606,192"/>
+<area href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation." alt="xtd::forms::control" shape="rect" coords="440,112,606,136"/>
 <area href="classxtd_1_1forms_1_1component.html" title="Provides the base implementation and enables object sharing between applications." alt="xtd::forms::component" shape="rect" coords="0,56,166,80"/>
 <area href="classxtd_1_1forms_1_1iwin32__window.html" title="Provides an interface to expose Win32 HWND handles." alt="xtd::forms::iwin32_window" shape="rect" coords="176,56,342,80"/>
-<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; control &gt;" shape="rect" coords="352,56,518,80"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; control &gt;" shape="rect" coords="528,56,694,80"/>
-<area href="classxtd_1_1isynchronize__invoke.html" title="Provides a way to synchronously or asynchronously execute a delegate." alt="xtd::isynchronize_invoke" shape="rect" coords="704,56,870,80"/>
+<area href="classxtd_1_1iclonable.html" title="Supports cloning, which creates a new instance of a class with the same value as an existing instance..." alt="xtd::iclonable" shape="rect" coords="352,56,518,80"/>
+<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; control &gt;" shape="rect" coords="528,56,694,80"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; control &gt;" shape="rect" coords="704,56,870,80"/>
+<area href="classxtd_1_1isynchronize__invoke.html" title="Provides a way to synchronously or asynchronously execute a delegate." alt="xtd::isynchronize_invoke" shape="rect" coords="880,56,1046,80"/>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,166,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="176,0,342,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="352,0,518,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="528,0,694,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="704,0,870,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="880,0,1046,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -378,7 +380,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:ab79fe7dea745f7d50769a9dfec90dd43"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create an <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> with specified parent, text, location, size, and name.  <br /></td></tr>
 <tr class="separator:ab79fe7dea745f7d50769a9dfec90dd43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected methods</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
+<tr class="memitem:aa93d4b830a10b4e45d07353a3ec073fa"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1link__label.html#aa93d4b830a10b4e45d07353a3ec073fa">clone</a> () const override</td></tr>
+<tr class="memdesc:aa93d4b830a10b4e45d07353a3ec073fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
+<tr class="separator:aa93d4b830a10b4e45d07353a3ec073fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab59ea938398b114ec76d5ef1d2ee4068"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1link__label.html#ab59ea938398b114ec76d5ef1d2ee4068">measure_control</a> () const noexcept override</td></tr>
 <tr class="memdesc:ab59ea938398b114ec76d5ef1d2ee4068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measure this control.  <br /></td></tr>
 <tr class="separator:ab59ea938398b114ec76d5ef1d2ee4068"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1101,6 +1106,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memdesc:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="separator:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1forms_1_1iwin32__window"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1forms_1_1iwin32__window')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html">xtd::forms::iwin32_window</a></td></tr>
+<tr class="inherit_header pub_methods_classxtd_1_1iclonable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1iclonable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1iclonable.html">xtd::iclonable</a></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1icomparable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1icomparable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1icomparable.html">xtd::icomparable&lt; control &gt;</a></td></tr>
 <tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5 inherit pub_methods_classxtd_1_1icomparable"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const control &amp;obj) const noexcept=0</td></tr>
 <tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5 inherit pub_methods_classxtd_1_1icomparable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
@@ -1604,6 +1610,37 @@ There are a number of colors associated with a link. The <a class="el" href="cla
 There are a number of colors associated with a link. The <a class="el" href="classxtd_1_1forms_1_1link__label.html#a1c05619e5f9b14b301cf9fe41226eff5" title="Gets the color used when displaying a normal link.">xtd::forms::link_label::link_color</a> specifies the color of all links displayed in the <a class="el" href="classxtd_1_1forms_1_1link__label.html" title="Represents a Windows label control that can display hyperlinks.">xtd::forms::link_label</a> control. The <a class="el" href="classxtd_1_1forms_1_1link__label.html#a559fbc2277c957aca7a7fdb17babcebd" title="Gets the color used when displaying a link that has been previously visited.">xtd::forms::link_label::visited_link_color</a> property enables you to specify the color of a link after it has been visited by the user. When a link is disabled, the <a class="el" href="classxtd_1_1forms_1_1link__label.html#ac5f98bf250bc9fad37d04a8ed1027105" title="Gets the color used when displaying a disabled link.">xtd::forms::link_label::disabled_link_color</a> is used to display the link in a disabled state. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>When setting this property, ensure that the color you are setting the property to does not conflict with the color of the control's background or the text does not display properly. For example, if the background color of the control is <a class="el" href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab" title="Gets a system-defined color that has an ARGB value of 0xFFFF0000. This field is constant.">xtd::drawing::color::red</a> and this property is set to <a class="el" href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab" title="Gets a system-defined color that has an ARGB value of 0xFFFF0000. This field is constant.">xtd::drawing::color::red</a>, the text is not shown properly when the link is in the process of being clicked. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The default color of the <a class="el" href="classxtd_1_1forms_1_1link__label.html#af1ef2b8f29d81a8671c5f80eb37047e9" title="Gets the color used to display an active link.">xtd::forms::link_label::active_link_color</a>, <a class="el" href="classxtd_1_1forms_1_1link__label.html#ac5f98bf250bc9fad37d04a8ed1027105" title="Gets the color used when displaying a disabled link.">xtd::forms::link_label::disabled_link_color</a>, <a class="el" href="classxtd_1_1forms_1_1link__label.html#a1c05619e5f9b14b301cf9fe41226eff5" title="Gets the color used when displaying a normal link.">xtd::forms::link_label::link_color</a> and <a class="el" href="classxtd_1_1forms_1_1link__label.html#a559fbc2277c957aca7a7fdb17babcebd" title="Gets the color used when displaying a link that has been previously visited.">xtd::forms::link_label::visited_link_color</a> properties may be different on operating systems other than Windows with ligh theme. </dd></dl>
+
+</div>
+</div>
+<a id="aa93d4b830a10b4e45d07353a3ec073fa" name="aa93d4b830a10b4e45d07353a3ec073fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93d4b830a10b4e45d07353a3ec073fa">&#9670;&#160;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt; xtd::forms::link_label::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new object that is a copy of the current instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new object that is a copy of this instance. </dd></dl>
+<dl class="section user"><dt>Notes to Implementers</dt><dd>All controls must be override the clone method. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1label.html#af93144ce3af6c5f1a9b1105ba4705de9">xtd::forms::label</a>.</p>
 
 </div>
 </div>
@@ -3702,7 +3739,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
