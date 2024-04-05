@@ -11,6 +11,7 @@
 #include <xtd/as>
 #include <xtd/is>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -187,6 +188,12 @@ tab_page tab_page::create(const control& parent, const xtd::ustring& text, const
 void tab_page::destroy_handle() {
   if (parent().has_value()) native::tab_control::delete_page(parent().value().get().handle(), handle());
   panel::destroy_handle();
+}
+
+unique_ptr<xtd::object> tab_page::clone() const {
+  auto result = make_unique<tab_page>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
 }
 
 void tab_page::on_handle_created(const event_args& e) {
