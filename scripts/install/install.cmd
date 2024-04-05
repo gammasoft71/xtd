@@ -89,9 +89,6 @@ call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%cmake_i
 
 ::______________________________________________________________________________
 ::                                                             Add xtdc-gui path
-
-::______________________________________________________________________________
-::                                                             Add xtdc-gui path
 build\tools\set_path\Release\set_path "%cmake_install_prefix%\xtd\bin"
 set Path=%cmake_install_prefix%\xtd\bin;%Path%
 
