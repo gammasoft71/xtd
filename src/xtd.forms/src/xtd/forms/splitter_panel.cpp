@@ -1,5 +1,6 @@
 #include "../../../include/xtd/forms/splitter_panel.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -55,5 +56,11 @@ splitter_panel splitter_panel::create(const control& parent, const drawing::poin
   result.location(location);
   result.size(size);
   result.name(name);
+  return result;
+}
+
+unique_ptr<xtd::object> splitter_panel::clone() const {
+  auto result = make_unique<splitter_panel>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
