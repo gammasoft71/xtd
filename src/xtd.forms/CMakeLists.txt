@@ -788,6 +788,7 @@ add_sources(
   src/xtd/forms/cursor.cpp
   src/xtd/forms/cursors.cpp
   src/xtd/forms/date_time_picker.cpp
+  src/xtd/forms/debug_form.cpp
   src/xtd/forms/debug_message_dialog.cpp
   src/xtd/forms/domain_up_down.cpp
   src/xtd/forms/dot_matrix_display.cpp
