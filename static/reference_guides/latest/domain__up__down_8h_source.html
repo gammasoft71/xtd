@@ -191,26 +191,27 @@ $(function() {
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#a11bb407fa738d562592291b079d26f4d">  319</a></span>      drawing::color default_fore_color() const noexcept override;</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>      </div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>      </div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#ad11728dd4d7895b229c9c67cec29818c">  325</a></span>      <span class="keywordtype">void</span> on_handle_created(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) override;</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>      </div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#a36fcad899a808f9e1e408b73addb1028">  327</a></span>      <span class="keywordtype">void</span> on_lost_focus(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) override;</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>      </div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#adc092fec99ac4742d3dea4b403763e40">  331</a></span>      virtual <span class="keywordtype">void</span> on_selected_item_changed(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e);</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      </div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#a1c37d934f41aebe2e66200deb3524dc3">  333</a></span>      <span class="keywordtype">void</span> on_text_changed(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) override;</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#ac9b86c22897dfb7c07a858a28176659f">  334</a></span>      <span class="keywordtype">void</span> wnd_proc(<a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>) override;</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>      </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>      <span class="keywordtype">void</span> wm_scroll_control(<a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>);</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>      </div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    private:</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>      <span class="keywordtype">void</span> on_items_item_added(<span class="keywordtype">size_t</span> pos, const <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>);</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>      <span class="keywordtype">void</span> on_items_item_removed(<span class="keywordtype">size_t</span> pos, const <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>);</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      <span class="keywordtype">void</span> on_items_item_updated(<span class="keywordtype">size_t</span> pos, const <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>);</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#a63fd7071f4af68d60a9e89c56bc2483e">  329</a></span>      std::unique_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">object</span>&gt; clone() const override;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>      </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#ad11728dd4d7895b229c9c67cec29818c">  331</a></span>      <span class="keywordtype">void</span> on_handle_created(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) override;      </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#a36fcad899a808f9e1e408b73addb1028">  332</a></span>      <span class="keywordtype">void</span> on_lost_focus(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) override;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>      </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#adc092fec99ac4742d3dea4b403763e40">  336</a></span>      virtual <span class="keywordtype">void</span> on_selected_item_changed(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e);</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>      </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#a1c37d934f41aebe2e66200deb3524dc3">  338</a></span>      <span class="keywordtype">void</span> on_text_changed(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) override;</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1domain__up__down.html#ac9b86c22897dfb7c07a858a28176659f">  339</a></span>      <span class="keywordtype">void</span> wnd_proc(<a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>) override;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>      </div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>      <span class="keywordtype">void</span> wm_scroll_control(<a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>);</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>      </div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>      std::shared_ptr&lt;data&gt; data_;</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    };</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>  }</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>}</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    private:</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>      <span class="keywordtype">void</span> on_items_item_added(<span class="keywordtype">size_t</span> pos, const <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>);</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>      <span class="keywordtype">void</span> on_items_item_removed(<span class="keywordtype">size_t</span> pos, const <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>);</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>      <span class="keywordtype">void</span> on_items_item_updated(<span class="keywordtype">size_t</span> pos, const <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down_1_1item.html">item</a>);</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>      </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>      std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    };</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  }</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>}</div>
 <div class="ttc" id="aapplication_8h_html"><div class="ttname"><a href="application_8h.html">application.h</a></div><div class="ttdoc">Contains xtd::forms::application class.</div></div>
 <div class="ttc" id="aclassxtd_1_1box__integer_html"><div class="ttname"><a href="classxtd_1_1box__integer.html">xtd::box_integer</a></div><div class="ttdoc">Represents a boxed integer object.</div><div class="ttdef"><b>Definition</b> box_integer.h:50</div></div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.h:18</div></div>
@@ -241,7 +242,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

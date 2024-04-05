@@ -143,16 +143,18 @@ $(function() {
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      </div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    protected:</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1picture__box.html#ae2333c3815355dea77a6cd431a12cf15">  199</a></span>      <span class="keywordtype">void</span> on_handle_created(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) override;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1picture__box.html#a759e2de0b60256b20acb4ff4733806dc">  200</a></span>      <span class="keywordtype">void</span> on_paint(<a class="code hl_class" href="classxtd_1_1forms_1_1paint__event__args.html">paint_event_args</a>&amp; e) override;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1picture__box.html#aab5b720453e77d826584be4603eb7851">  202</a></span>      drawing::<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> measure_control() const noexcept override;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    private:</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      std::shared_ptr&lt;data&gt; data_;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    };</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  }</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1picture__box.html#a8c463f5457339c7196092b3fda47362a">  201</a></span>      std::unique_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">object</span>&gt; clone() const override;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1picture__box.html#aab5b720453e77d826584be4603eb7851">  203</a></span>      drawing::<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> measure_control() const noexcept override;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1picture__box.html#ae2333c3815355dea77a6cd431a12cf15">  207</a></span>      <span class="keywordtype">void</span> on_handle_created(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) override;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1picture__box.html#a759e2de0b60256b20acb4ff4733806dc">  208</a></span>      <span class="keywordtype">void</span> on_paint(<a class="code hl_class" href="classxtd_1_1forms_1_1paint__event__args.html">paint_event_args</a>&amp; e) override;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    private:</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>      std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    };</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
 <div class="ttc" id="aborder__sides_8h_html"><div class="ttname"><a href="border__sides_8h.html">border_sides.h</a></div><div class="ttdoc">Contains xtd::forms::border_sides enum class.</div></div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a></div><div class="ttdoc">Defines the base class for controls, which are components with visual representation.</div><div class="ttdef"><b>Definition</b> control.h:79</div></div>
@@ -175,7 +177,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

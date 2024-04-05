@@ -216,7 +216,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga3a58fce91c530883d63a6e440c3c5eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define shared library export.  <br /></td></tr>
 <tr class="separator:ga3a58fce91c530883d63a6e440c3c5eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafa2ffd9b4a6568b57ab2731bec095d99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></td></tr>
-<tr class="memdesc:gafa2ffd9b4a6568b57ab2731bec095d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the type string for a type. A typeof_ expression takes the following form:  <br /></td></tr>
+<tr class="memdesc:gafa2ffd9b4a6568b57ab2731bec095d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the type object of a specified type or object.  <br /></td></tr>
 <tr class="separator:gafa2ffd9b4a6568b57ab2731bec095d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0ee680d2ff7ec14c0dc73da3bb2e5c91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#ga0ee680d2ff7ec14c0dc73da3bb2e5c91">unused_</a></td></tr>
 <tr class="memdesc:ga0ee680d2ff7ec14c0dc73da3bb2e5c91"><td class="mdescLeft">&#160;</td><td class="mdescRight">It may be used to suppress the "unused variable" or "unused local typedefs" compiler warnings when the variable or typedef can't be removed or commented out, e.g. when some blocks of the code are conditionally activated.  <br /></td></tr>
@@ -3021,9 +3021,9 @@ The section Threading discusses threading. </dd>
 <dd>
 The lock_ keyword calls Enter at the start of the block and Exit at the end of the block. A <a class="el" href="classxtd_1_1threading_1_1thread__interrupted__exception.html" title="The exception that is thrown when a Thread is interrupted while it is in a waiting state.">xtd::threading::thread_interrupted_exception</a> is thrown if <a class="el" href="classxtd_1_1threading_1_1thread.html#a23a6354206f5d065d706198b3afac452" title="Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.">xtd::threading::thread::interrupt</a> interrupts a thread that is waiting to enter a lock statement. </dd>
 <dd>
-In general, avoid locking on a public type, or instances beyond your code's control. The common constructs lock_ (*this), lock_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type string for a type. A typeof_ expression takes the following form:">typeof_&lt;my_type&gt;()</a>), and lock_ ("myLock") violate this guideline:<ul>
+In general, avoid locking on a public type, or instances beyond your code's control. The common constructs lock_ (*this), lock_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type object of a specified type or object.">typeof_&lt;my_type&gt;()</a>), and lock_ ("myLock") violate this guideline:<ul>
 <li>lock_ (*this) is a problem if the instance can be accessed publicly.</li>
-<li>lock_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type string for a type. A typeof_ expression takes the following form:">typeof_&lt;my_type&gt;()</a>) is a problem if my_type is publicly accessible.</li>
+<li>lock_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type object of a specified type or object.">typeof_&lt;my_type&gt;()</a>) is a problem if my_type is publicly accessible.</li>
 <li>lock_ ("my_lock") is a problem because any other code in the process using the same string, will share the same lock. </li>
 </ul>
 </dd>
@@ -3228,9 +3228,9 @@ The section Threading discusses threading. </dd>
 <dd>
 The lock_guard_ keyword calls Enter at the start of the block and Exit at the end of the block. A <a class="el" href="classxtd_1_1threading_1_1thread__interrupted__exception.html" title="The exception that is thrown when a Thread is interrupted while it is in a waiting state.">xtd::threading::thread_interrupted_exception</a> is thrown if <a class="el" href="classxtd_1_1threading_1_1thread.html#a23a6354206f5d065d706198b3afac452" title="Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.">xtd::threading::thread::interrupt</a> interrupts a thread that is waiting to enter a lock statement. </dd>
 <dd>
-In general, avoid locking on a public type, or instances beyond your code's control. The common constructs lock_guard_ (*this), lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type string for a type. A typeof_ expression takes the following form:">typeof_&lt;my_type&gt;()</a>), and lock_guard_ ("myLock") violate this guideline:<ul>
+In general, avoid locking on a public type, or instances beyond your code's control. The common constructs lock_guard_ (*this), lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type object of a specified type or object.">typeof_&lt;my_type&gt;()</a>), and lock_guard_ ("myLock") violate this guideline:<ul>
 <li>lock_guard_ (*this) is a problem if the instance can be accessed publicly.</li>
-<li>lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type string for a type. A typeof_ expression takes the following form:">typeof_&lt;my_type&gt;()</a>) is a problem if my_type is publicly accessible.</li>
+<li>lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type object of a specified type or object.">typeof_&lt;my_type&gt;()</a>) is a problem if my_type is publicly accessible.</li>
 <li>lock_guard_ ("my_lock") is a problem because any other code in the process using the same string, will share the same lock. </li>
 </ul>
 </dd>
@@ -3425,7 +3425,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1131</div></div>
-<div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type string for a type. A typeof_ expression takes the following form:</div><div class="ttdef"><b>Definition</b> typeof.h:42</div></div>
+<div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.h:45</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3740,13 +3740,17 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 
 <p><code>#include &lt;<a class="el" href="typeof_8h.html">xtd.core/include/xtd/typeof.h</a>&gt;</code></p>
 
-<p>Used to obtain the type string for a type. A typeof_ expression takes the following form: </p>
+<p>Used to obtain the type object of a specified type or object. </p>
+<dl class="section return"><dt>Returns</dt><dd>THe <a class="el" href="classxtd_1_1type__object.html" title="Represents type declarations: class types, interface types, array types, value types,...">xtd::type_object</a> that represent the type or the object. </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::string type1 = typeof_&lt;int32&gt;();</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="comment">// Get the type object of a type :</span></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1type__object.html">xtd::type_object</a> type1 = typeof_&lt;int32&gt;();</div>
 <div class="line"> </div>
 <div class="line">int32 i = 42;</div>
-<div class="line">std::string type2 = <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(i);</div>
+<div class="line"><span class="comment">// Get the type object of an object :</span></div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1type__object.html">xtd::type_object</a> type2 = <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(i);</div>
+<div class="ttc" id="aclassxtd_1_1type__object_html"><div class="ttname"><a href="classxtd_1_1type__object.html">xtd::type_object</a></div><div class="ttdoc">Represents type declarations: class types, interface types, array types, value types,...</div><div class="ttdef"><b>Definition</b> type_object.h:36</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The typeof_ operator cannot be overloaded. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="boxed_info_8cpp-example.html#a1">boxed_info.cpp</a>, and <a class="el" href="file_info_move_to_8cpp-example.html#a14">file_info_move_to.cpp</a>.</dd>
@@ -3824,7 +3828,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

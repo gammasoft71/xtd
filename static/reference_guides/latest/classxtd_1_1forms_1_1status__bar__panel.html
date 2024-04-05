@@ -95,9 +95,11 @@ Inheritance diagram for xtd::forms::status_bar_panel:</div>
   <img src="classxtd_1_1forms_1_1status__bar__panel.png" usemap="#xtd::forms::status_5Fbar_5Fpanel_map" alt=""/>
   <map id="xtd::forms::status_5Fbar_5Fpanel_map" name="xtd::forms::status_5Fbar_5Fpanel_map">
 <area href="classxtd_1_1forms_1_1component.html" title="Provides the base implementation and enables object sharing between applications." alt="xtd::forms::component" shape="rect" coords="0,56,211,80"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; status_bar_panel &gt;" shape="rect" coords="221,56,432,80"/>
+<area href="classxtd_1_1iclonable.html" title="Supports cloning, which creates a new instance of a class with the same value as an existing instance..." alt="xtd::iclonable" shape="rect" coords="221,56,432,80"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; status_bar_panel &gt;" shape="rect" coords="442,56,653,80"/>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,211,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="221,0,432,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="442,0,653,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -176,7 +178,7 @@ Inheritance diagram for xtd::forms::status_bar_panel:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:52</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1progress__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__bar.html">xtd::forms::progress_bar</a></div><div class="ttdoc">Represents a Windows progress bar control.</div><div class="ttdef"><b>Definition</b> progress_bar.h:38</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1status__bar__panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1status__bar__panel.html">xtd::forms::status_bar_panel</a></div><div class="ttdoc">Represents a xtd::forms::status_bar panel.</div><div class="ttdef"><b>Definition</b> status_bar_panel.h:43</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1status__bar__panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1status__bar__panel.html">xtd::forms::status_bar_panel</a></div><div class="ttdoc">Represents a xtd::forms::status_bar panel.</div><div class="ttdef"><b>Definition</b> status_bar_panel.h:44</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1status__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1status__bar.html">xtd::forms::status_bar</a></div><div class="ttdoc">Represents a Windows status bar control.</div><div class="ttdef"><b>Definition</b> status_bar.h:46</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1timer_html"><div class="ttname"><a href="classxtd_1_1forms_1_1timer.html">xtd::forms::timer</a></div><div class="ttdoc">Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in...</div><div class="ttdef"><b>Definition</b> timer.h:36</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d">xtd::console_key::g</a></div><div class="ttdeci">@ g</div><div class="ttdoc">The G key.</div></div>
@@ -316,6 +318,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memdesc:ae521025aaf19d3a1845ed7fd3db3faa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A factory to create a status bar panel with specified text and image index.  <br /></td></tr>
 <tr class="separator:ae521025aaf19d3a1845ed7fd3db3faa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
+<tr class="memitem:afecc6a19504779fc33492f7bc8020904"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html#afecc6a19504779fc33492f7bc8020904">clone</a> () const override</td></tr>
+<tr class="memdesc:afecc6a19504779fc33492f7bc8020904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object that is a copy of the current instance.  <br /></td></tr>
+<tr class="separator:afecc6a19504779fc33492f7bc8020904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1object.html">xtd::object</a></td></tr>
@@ -335,6 +342,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86">memberwise_clone</a> () const noexcept</td></tr>
 <tr class="memdesc:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="separator:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classxtd_1_1iclonable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1iclonable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1iclonable.html">xtd::iclonable</a></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1iequatable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1iequatable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1iequatable.html">xtd::iequatable&lt; status_bar_panel &gt;</a></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const status_bar_panel &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
@@ -593,6 +601,37 @@ You can use <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html#a8c
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You can use this property to differentiate a panel from other panels in a <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control. </dd></dl>
+
+</div>
+</div>
+<a id="afecc6a19504779fc33492f7bc8020904" name="afecc6a19504779fc33492f7bc8020904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afecc6a19504779fc33492f7bc8020904">&#9670;&#160;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classxtd_1_1object.html">xtd::object</a> &gt; xtd::forms::status_bar_panel::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new object that is a copy of the current instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new object that is a copy of this instance. </dd></dl>
+<dl class="section user"><dt>Notes to Implementers</dt><dd>All controls must be override the clone method. </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1iclonable.html#a40029d417c9942193c797e2cb504ec80">xtd::iclonable</a>.</p>
 
 </div>
 </div>
@@ -1431,7 +1470,7 @@ To display ToolTips for other controls in your application, use the xtd::forms::
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 1 2024 18:37:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Apr 5 2024 22:03:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
