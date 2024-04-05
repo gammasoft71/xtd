@@ -13,6 +13,7 @@
 #include "status_bar_panel_style.h"
 #include <xtd/event>
 #include <xtd/event_handler>
+#include <xtd/iclonable>
 #include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -40,7 +41,7 @@ namespace xtd {
     /// @remarks The xtd::forms::status_bar control is typically used to display Help information or state information about your application. Often, it is important to display additional information about data that is presented in a panel. You can use the xtd::forms::status_bar_panel::tool_tip_text property to display information whenever the mouse pointer rests on a panel.
     /// @remarks Although the xtd::forms::status_bar control is typically used to display textual information, you can also provide your own type of display to a xtd::forms::status_bar_panel. The xtd::forms::status_bar_panel::style property enables you to specify how the xtd::forms::status_bar_panel will be drawn. By default, the xtd::forms::status_bar_panel::style property is used to display the value of the xtd::forms::status_bar_panel_style::text property (and an image, if specified in the xtd::forms::status_bar_panel::image property). If the property is set to xtd::forms::status_bar_panel_style::owner_draw, you can draw your own information into the panel. You can use this feature to draw a progress bar or an animated image in the panel.
     /// @remarks When you create an instance of the xtd::forms::status_bar_panel class, the read/write properties are set to initial values. For a list of these values, see the xtd::forms::status_bar_panel::status_bar_panel constructor.
-    class status_bar_panel : public xtd::forms::component, public xtd::iequatable<status_bar_panel> {
+    class status_bar_panel : public xtd::forms::component, public iclonable, public xtd::iequatable<status_bar_panel> {
       struct data;
       
     public:
@@ -253,6 +254,18 @@ namespace xtd {
       /// @param image The xtd::drawing::image assigned to the status bar panel.
       /// @return New xtd::forms::status_bar_panel created.
       static status_bar_panel create_panel(const xtd::ustring& text, const xtd::drawing::image& image);
+      /// @}
+      
+    protected:
+      /// @name Protected Methods
+      
+      /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      
       /// @}
       
     private:
