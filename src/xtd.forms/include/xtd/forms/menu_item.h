@@ -7,6 +7,7 @@
 #include "shortcut.h"
 #include <xtd/drawing/image>
 #include <xtd/event>
+#include <xtd/iclonable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,7 +26,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms menus_and_toolbars
-    class forms_export_ menu_item : public xtd::forms::menu {
+    class forms_export_ menu_item : public xtd::forms::menu, public xtd::iclonable {
       struct data;
       
     public:
@@ -247,6 +248,9 @@ namespace xtd {
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       /// @remarks The items parameter enables you to assign an array of menu items to define a submenu of this menu item. Each item in the array can also have an array of menu items assigned to it. This enables you to create complete menu structures and assign them to the constructor for the menu item.
       menu_item(const xtd::ustring& text, const std::vector<menu_item_ref>& items);
+      menu_item(menu_item&&) = default;
+      menu_item(const menu_item&) = default;
+      menu_item& operator =(const menu_item&) = default;
       /// @}
       
       /// @name Public Properties
@@ -332,6 +336,12 @@ namespace xtd {
       /// @name Protected methods
       
       /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      
       intptr create_menu_handle() override;
       void destroy_menu_handle(intptr handle) override;
       
