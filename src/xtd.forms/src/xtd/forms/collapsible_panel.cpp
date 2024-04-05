@@ -295,6 +295,21 @@ forms::create_params collapsible_panel::create_params() const noexcept {
   return create_params;
 }
 
+unique_ptr<xtd::object> collapsible_panel::clone() const {
+  auto result = make_unique<collapsible_panel>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
+drawing::size collapsible_panel::measure_control() const noexcept {
+  auto bounds = drawing::rectangle {};
+  for (auto item : controls()) {
+    if (item.get().visible())
+      bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
+  }
+  return drawing::size(bounds.location() + bounds.size());
+}
+
 void collapsible_panel::on_control_added(const control_event_args& e) {
   control::on_control_added(e);
   if (expanded()) {
@@ -321,15 +336,6 @@ void collapsible_panel::on_expanded_changed(const xtd::event_args& e) {
 void collapsible_panel::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   size(native::control::size(handle()));
-}
-
-drawing::size collapsible_panel::measure_control() const noexcept {
-  auto bounds = drawing::rectangle {};
-  for (auto item : controls()) {
-    if (item.get().visible())
-      bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
-  }
-  return drawing::size(bounds.location() + bounds.size());
 }
 
 void collapsible_panel::wnd_proc(message& message) {
