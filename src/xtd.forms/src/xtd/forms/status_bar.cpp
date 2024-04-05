@@ -307,6 +307,12 @@ drawing::size status_bar::default_size() const noexcept {
   return native::control::default_size("toolbar");
 }
 
+unique_ptr<xtd::object> status_bar::clone() const {
+  auto result = make_unique<status_bar>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
 void status_bar::on_control_appearance_changed(const xtd::event_args&) {
   if (control_appearance() == forms::control_appearance::system) {
     data_->non_system_dock = control::dock();
