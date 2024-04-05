@@ -262,6 +262,12 @@ menu_item& menu_item::text(const xtd::ustring& value) {
   return *this;
 }
 
+unique_ptr<xtd::object> menu_item::clone() const {
+  auto result = make_unique<menu_item>(*this);
+  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+  return result;
+}
+
 intptr menu_item::create_menu_handle() {
   if (is_parent() || menu::data_->main_menu.has_value()) return native::menu::create();
   
