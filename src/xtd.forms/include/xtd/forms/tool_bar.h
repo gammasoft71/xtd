@@ -262,6 +262,12 @@ namespace xtd {
       /// @name Protetced methods
       
       /// @{
+      /// @brief Creates a new object that is a copy of the current instance.
+      /// @return A new object that is a copy of this instance.
+      /// @par Notes to Implementers
+      /// All controls must be override the clone method.
+      std::unique_ptr<xtd::object> clone() const override;
+      
       /// @brief Raises the xtd::forms::tool_bar::button_click event.
       /// @param e A xtd::forms::tool_bar_button_click_event_args that contains the event data.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
