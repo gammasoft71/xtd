@@ -136,11 +136,7 @@ namespace xtd {
       /// @}
       
     private:
-      #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__ || __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_UNKNOWN__
       bool assert_ui_enabled_ = true;
-      #else
-      bool assert_ui_enabled_ = false;
-      #endif
       xtd::ustring log_file_name_;
       xtd::ustring message_line_;
     };

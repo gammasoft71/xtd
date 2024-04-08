@@ -11,10 +11,8 @@ using namespace xtd::diagnostics;
 
 extern std::recursive_mutex __debug_mutex__;
 extern trace_listener_collection __listeners__;
-extern bool __show_assert_dialog__;
 
 trace_listener_collection& trace::listeners_ = __listeners__;
-bool& trace::show_assert_dialog_ = __show_assert_dialog__;
 ustring trace::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
 
 bool trace::auto_flush() noexcept {
@@ -50,11 +48,13 @@ void trace::listeners(const trace_listener_collection& listeners) noexcept {
 }
 
 bool trace::show_assert_dialog() noexcept {
-  return show_assert_dialog_;
+  return debug::internal_show_assert_dialog();
 }
 
 void trace::show_assert_dialog(bool show_assert_dialog) noexcept {
-  show_assert_dialog_ = show_assert_dialog;
+  for (auto listener : listeners())
+    if (is<default_trace_listener>(listener))
+      as<default_trace_listener>(listener)->assert_ui_enabled(show_assert_dialog);
 }
 
 bool trace::use_global_lock() noexcept {

@@ -16,11 +16,9 @@ using namespace xtd::diagnostics;
 extern char** __diagnostics_argv;
 auto __debug_mutex__ = recursive_mutex {};
 auto __listeners__ = trace_listener_collection {make_shared<default_trace_listener>()};
-auto __show_assert_dialog__  = true;
 auto __debug_use_debug_global_lock__ = true;
 
 trace_listener_collection& debug::listeners_ = __listeners__;
-bool& debug::show_assert_dialog_ = __show_assert_dialog__;
 ustring debug::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
 
 bool debug::auto_flush() noexcept {
@@ -56,11 +54,13 @@ void debug::listeners(const trace_listener_collection& listeners) noexcept {
 }
 
 bool debug::show_assert_dialog() noexcept {
-  return show_assert_dialog_;
+  return internal_show_assert_dialog();
 }
 
 void debug::show_assert_dialog(bool show_assert_dialog) noexcept {
-  show_assert_dialog_ = show_assert_dialog;
+  for (auto listener : listeners())
+    if (is<default_trace_listener>(listener))
+      as<default_trace_listener>(listener)->assert_ui_enabled(show_assert_dialog);
 }
 
 bool debug::use_global_lock() noexcept {
@@ -208,9 +208,16 @@ xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, cons
   write_line(detail_message);
   write_line(stack_trace(stack_frame).to_string());
   write_line("");
-  return __show_assert_dialog__ ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n{}\n{}", message, detail_message, stack_trace(stack_frame)), assert_dialog_caption())) : assert_dialog_result::retry;
+  return internal_show_assert_dialog() ? static_cast<xtd::diagnostics::assert_dialog_result>(native::debugger::show_assert_dialog(ustring::format("{}\n{}\n{}", message, detail_message, stack_trace(stack_frame)), assert_dialog_caption())) : assert_dialog_result::retry;
 }
 
 xtd::ustring debug::assert_dialog_caption() {
   return "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue"_t;
+}
+
+bool debug::internal_show_assert_dialog() noexcept {
+  for (auto listener : listeners())
+    if (is<default_trace_listener>(listener) && as<default_trace_listener>(listener)->assert_ui_enabled())
+      return true;
+  return false;;
 }
