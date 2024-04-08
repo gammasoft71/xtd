@@ -5,9 +5,11 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 auto main()->int {
-  // Uncomment following line to remove assert dialog
-  //diagnostics::debug::show_assert_dialog(false);
-  
+  // Uncomment following lines to remove assert dialog
+  //for (auto listener : debug::listeners())
+  //  if (is<default_trace_listener>(listener))
+  //    as<default_trace_listener>(listener)->assert_ui_enabled(false);
+
   auto index = 0;
   console::write_line("Start application");
   debug::cassert_(index > 0);
