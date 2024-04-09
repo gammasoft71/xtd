@@ -1,10 +1,14 @@
 #include <xtd/diagnostics/assert>
 #include <xtd/diagnostics/debug>
+#include <xtd/diagnostics/default_trace_listener>
 #include <xtd/diagnostics/debug_break>
 #include <xtd/diagnostics/debugger>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
+#include <xtd/forms/check_box>
 #include <xtd/forms/form>
+#include <xtd/as>
+#include <xtd/is>
 #include <xtd/startup>
 
 using namespace xtd;
@@ -19,9 +23,6 @@ public:
   
   main_form() {
     text("application and assert example");
-    
-    // Uncomment following line to remove assert dialog
-    //debug::show_assert_dialog(false);
     
     generate_assert_button.auto_size(true);
     generate_assert_button.location({10, 10});
@@ -46,6 +47,15 @@ public:
     generate_debugger_debug_break_button.parent(*this);
     generate_debugger_debug_break_button.text("Generate debugger::debug break");
     generate_debugger_debug_break_button.click += event_handler(*this, &main_form::generate_debugger_debug_break);
+    
+    show_assert_dialog_check_box.auto_size(true);
+    for (auto listener : debug::listeners())
+      if (is<default_trace_listener>(listener) && as<default_trace_listener>(listener)->assert_ui_enabled())
+        show_assert_dialog_check_box.checked(true);
+    show_assert_dialog_check_box.location({10, 230});
+    show_assert_dialog_check_box.parent(*this);
+    show_assert_dialog_check_box.text("Show assert dialog");
+    show_assert_dialog_check_box.click += event_handler(*this, &main_form::show_assert_dialog);
   }
   
 private:
@@ -67,10 +77,17 @@ private:
     debugger::debug_break();
   }
   
+  void show_assert_dialog() {
+    for (auto listener : debug::listeners())
+      if (is<default_trace_listener>(listener))
+        as<default_trace_listener>(listener)->assert_ui_enabled(show_assert_dialog_check_box.checked());
+  }
+
   button generate_assert_button;
   button generate_debug_dassert_button;
   button generate_debug_break_button;
   button generate_debugger_debug_break_button;
+  check_box show_assert_dialog_check_box;
 };
 
 startup_(main_form::main);
