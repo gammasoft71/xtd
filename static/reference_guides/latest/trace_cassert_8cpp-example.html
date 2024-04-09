@@ -91,9 +91,11 @@ $(function() {
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="comment">// Uncomment following line to remove assert dialog</span></div>
-<div class="line">  <span class="comment">//diagnostics::debug::show_assert_dialog(false);</span></div>
-<div class="line">  </div>
+<div class="line">  <span class="comment">// Uncomment following lines to remove assert dialog</span></div>
+<div class="line">  <span class="comment">//for (auto listener : trace::listeners())</span></div>
+<div class="line">  <span class="comment">//  if (is&lt;default_trace_listener&gt;(listener))</span></div>
+<div class="line">  <span class="comment">//    as&lt;default_trace_listener&gt;(listener)-&gt;assert_ui_enabled(false);</span></div>
+<div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> index = 0;</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
 <div class="line">  trace::cassert_(index &gt; 0, <span class="stringliteral">&quot;index must be greater than 0&quot;</span>);</div>
@@ -120,7 +122,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 5 2024 22:03:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Apr 10 2024 00:07:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
