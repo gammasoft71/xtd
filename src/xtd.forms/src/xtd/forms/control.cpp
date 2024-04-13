@@ -57,8 +57,6 @@ namespace {
     else if ((message.wparam() & MK_MBUTTON) == MK_MBUTTON) return mouse_buttons::middle;
     return mouse_buttons::none;
   }
-  
-  bool clone_and_keep_controls = false;
 }
 
 struct control::async_result_invoke::data {
@@ -98,7 +96,7 @@ std::vector<std::unique_ptr<xtd::forms::control>> control::control_collection::c
 control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
 }
 
-control::control_collection::control_collection(bool clone_and_keep_controls, const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator), clone_and_keep_controls_ {clone_and_keep_controls} {
+control::control_collection::control_collection(bool keep_cloned_controls, const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator), keep_cloned_controls_ {keep_cloned_controls} {
 }
 
 control::control_collection::control_collection(const control::control_collection::base& collection) : control::control_collection::base(collection) {}
@@ -152,7 +150,7 @@ struct control::data {
   drawing::size client_size;
   forms::control_appearance control_appearance = forms::control_appearance::standard;
   xtd::forms::visual_styles::control_state control_state = xtd::forms::visual_styles::control_state::normal;
-  control_collection controls {clone_and_keep_controls};
+  control_collection controls {application::keep_cloned_controls()};
   std::optional<context_menu_ref> context_menu;
   std::optional<forms::cursor> cursor;
   dock_style dock = dock_style::none;

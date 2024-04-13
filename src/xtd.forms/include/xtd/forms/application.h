@@ -138,6 +138,17 @@ namespace xtd {
       /// @remarks This method has an effect only on non Windows operating system.
       static void font_size_correction(bool value);
       
+      /// @brief Gets a value indicating whether the xtd framework keep cloned control is enabled.
+      /// @return true if xtd framework keep cloned control is enabled; otherwise false.
+      /// @remarks By default the value is true.
+      static bool keep_cloned_controls() noexcept;
+      
+      /// @brief Sets a value indicating whether the xtd framework keep cloned control is enabled.
+      /// @param value true if xtd framework keep cloned control is enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      /// @remarks By default the value is true.
+       static void keep_cloned_controls(bool value);
+
       /// @brief Gets a value indicating whether light mode is enabled for the application.
       /// @return True is light mode enabled; otherwise false.
       static bool light_mode() noexcept;
@@ -500,6 +511,7 @@ namespace xtd {
       static xtd::forms::application_context internal_context_;
       static xtd::forms::application_context* context_;
       static bool button_images_;
+      static bool keep_cloned_controls_;
       static bool light_mode_;
       static bool font_size_correction_;
       static bool menu_images_;
