@@ -7,7 +7,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   static auto main() {
-    application::enable_light_mode();
+    application::light_mode(true);
     application::run(form1 {});
   }
   

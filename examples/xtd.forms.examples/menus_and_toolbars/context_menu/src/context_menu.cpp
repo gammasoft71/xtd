@@ -97,6 +97,5 @@ namespace context_menu_example {
 }
 
 auto main()->int {
-  application::enable_menu_images();
   application::run(context_menu_example::form1 {});
 }
