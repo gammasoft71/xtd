@@ -37,6 +37,5 @@ namespace command_link_button_example {
 }
 
 auto main()->int {
-  application::enable_button_images();
   application::run(command_link_button_example::form1 {});
 }

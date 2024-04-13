@@ -32,6 +32,5 @@ namespace main_menu_create_standard_items_example {
 }
 
 auto main()->int {
-  application::enable_menu_images();
   application::run(main_menu_create_standard_items_example::form1 {});
 }
