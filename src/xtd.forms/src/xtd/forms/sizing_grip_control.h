@@ -12,6 +12,12 @@ public:
   }
   
 protected:
+  std::unique_ptr<xtd::object> clone() const override {
+    auto result = std::make_unique<sizing_grip_control>(*this);
+    if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+    return result;
+  }
+
   void on_paint(paint_event_args& e) override {
     /// @todo Replace following code by drawing style_sheet sizing grip image.
     auto sizing_grip_color = back_color().is_dark() ? xtd::drawing::color_converter::light(back_color()) : xtd::drawing::color_converter::dark(back_color());
