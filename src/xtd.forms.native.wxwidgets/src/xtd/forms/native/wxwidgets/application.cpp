@@ -44,8 +44,8 @@ static void __on_timer_system_color_detection__(wxTimerEvent& e) {
 
 #elif defined(__WXGTK__)
 bool __xtd_gtk_enable_dark_mode__ = false;
-bool __xtd_gtk_enable_button_images__ = false;
-bool __xtd_gtk_enable_menu_images__ = false;
+bool __xtd_gtk_enable_button_images__ = true;
+bool __xtd_gtk_enable_menu_images__ = true;
 void __gtk_button_images__(bool enable);
 void __gtk_menu_images__(bool enable);
 void __gtk_application_prefer_dark_theme__(bool prefer_dark_theme);
@@ -107,10 +107,6 @@ bool application::dark_mode_enabled() {
    */
 }
 
-void application::disable_font_size_correction() {
-  __enable_font_size_correction__ = false;
-}
-
 void application::do_events() {
   initialize(); // Must be first
   //if (!wxTheApp || !wxTheApp->GetMainLoop()) return;
@@ -124,51 +120,54 @@ void application::do_idle() {
   wxWakeUpIdle();
 }
 
-void application::enable_dark_mode() {
+void application::enable_button_images(bool value) {
+#if defined(__WXGTK__)
+  __xtd_gtk_enable_button_images__ = value;
+#endif
+}
+
+void application::enable_dark_mode(bool value) {
   #if defined(__WXMSW__)
-  __xtd_win32_enable_dark_mode__ = 1;
+  __xtd_win32_enable_dark_mode__ = value ? 1 : 0;
   #elif defined(__WXGTK__)
-  __xtd_gtk_enable_dark_mode__ = true;
+  __xtd_gtk_enable_dark_mode__ = value;
   #elif defined(__WXOSX__)
   initialize();
   __xtd_macos_enable_dark_mode__();
   #endif
 }
 
-void application::enable_button_images() {
-  #if defined(__WXGTK__)
-  __xtd_gtk_enable_button_images__ = true;
-  #endif
+void application::enable_font_size_correction(bool value) {
+  __enable_font_size_correction__ = value;
 }
 
-void application::enable_light_mode() {
+void application::enable_light_mode(bool value) {
   #if defined(__WXMSW__)
-  __xtd_win32_enable_dark_mode__ = 0;
+  __xtd_win32_enable_dark_mode__ = value ? 0 : 1;
   #elif defined(__WXGTK__)
-  __xtd_gtk_enable_dark_mode__ = false;
+  __xtd_gtk_enable_dark_mode__ = value;
   #elif defined(__WXOSX__)
   initialize(); // Must be first
-  __xtd_macos_enable_light_mode__();
+  if (value) __xtd_macos_enable_light_mode__();
   #endif
 }
 
-void application::enable_menu_images() {
+void application::enable_menu_images(bool value) {
   #if defined(__WXGTK__)
-  // This option does not work with wxWidgets...
-  //__xtd_gtk_enable_menu_images__ = true;
+  __xtd_gtk_enable_menu_images__ = value;
   #endif
 }
 
-void application::enable_system_font_size() {
+void application::enable_system_font_size(bool value) {
   initialize(); // Must be first
   #if defined(__WXGTK__)
-  __enable_system_font_size__ = true;
+  __enable_system_font_size__ = value;
   #endif
 }
 
-void application::enable_visual_style() {
+void application::enable_visual_style(bool value) {
   initialize(); // Must be first
-  wxTheApp->SetUseBestVisual(true);
+  wxTheApp->SetUseBestVisual(value);
 }
 
 void application::exit() {
@@ -197,7 +196,8 @@ void application::initialize() {
   init_dark_mode(__xtd_win32_enable_dark_mode__);
   #elif defined(__WXGTK__)
   __gtk_button_images__(__xtd_gtk_enable_button_images__);
-  __gtk_menu_images__(__xtd_gtk_enable_menu_images__);
+  // This option does not work with wxWidgets...
+  //__gtk_menu_images__(__xtd_gtk_enable_menu_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
   #elif defined(__WXOSX__)
   wxMenuBar::MacSetCommonMenuBar(__create_default_menu_bar__());

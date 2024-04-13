@@ -23,7 +23,7 @@ struct message_dialog::data {
 };
 
 message_dialog::message_dialog() : data_(std::make_shared<data>()) {
-  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 xtd::forms::message_dialog_buttons message_dialog::buttons() const noexcept {
@@ -105,7 +105,7 @@ message_dialog& message_dialog::text(const xtd::ustring& text) {
 void message_dialog::reset() {
   data_->buttons = xtd::forms::message_dialog_buttons::ok;
   data_->default_button = xtd::forms::message_dialog_default_button::button1;
-  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->display_help_button = false;
   data_->icon = xtd::forms::message_dialog_icon::none;
   data_->options = static_cast<xtd::forms::message_dialog_options>(0);

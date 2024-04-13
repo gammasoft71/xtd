@@ -183,7 +183,7 @@ struct control::data {
 };
 
 control::control() : data_(std::make_shared<data>()) {
-  if (application::use_system_controls()) data_->control_appearance = xtd::forms::control_appearance::system;
+  if (application::system_controls()) data_->control_appearance = xtd::forms::control_appearance::system;
   native::application::initialize();
   set_state(state::enabled, true);
   set_state(state::visible, true);

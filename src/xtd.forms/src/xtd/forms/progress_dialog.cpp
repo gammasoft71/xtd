@@ -27,7 +27,7 @@ struct progress_dialog::data {
 };
 
 progress_dialog::progress_dialog() : data_(std::make_shared<data>()) {
-  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 progress_dialog::~progress_dialog() {
@@ -234,7 +234,7 @@ void progress_dialog::perform_step() {
 }
 
 void progress_dialog::reset() noexcept {
-  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->informations.clear();
   data_->marquee_animation_speed = 100;
   data_->maximum = 100;

@@ -55,12 +55,25 @@ namespace xtd {
       /// @return true if the caller can quit this application; otherwise, false.
       /// @remarks This method returns false if it is called from a control being hosted within a Web browser. Thus, the control cannot quit the application.
       static bool allow_quit() noexcept;
-      
+
       /// @brief Gets the application context associate to the application.
       /// @return An application context.
       /// @remarks The application context can be created by the user and sent to the application when the xtd::forms::application::run method is called.
       static xtd::forms::application_context& application_context();
       
+      /// @brief Gets button images are enabled.
+      /// @return true if button images aree enabled; otherwise false.
+      /// @remarks The default value is true.
+      /// @remarks This method has an effect only on linux.
+      static bool button_images() noexcept;
+      
+      /// @brief Gets button images are enabled.
+      /// @param value true if button images aree enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      /// @remarks The default value is true.
+      /// @remarks This method has an effect only on linux.
+      static void button_images(bool value);
+
       /// @brief Gets the path for the application data that is shared among all users.
       /// @return The path for the application data that is shared among all users.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
@@ -69,10 +82,10 @@ namespace xtd {
       static xtd::ustring common_app_data_path() noexcept;
       
       /*
-      /// @brief Gets the registry key for the application data that is shared among all users.
-      /// @return A RegistryKey representing the registry key of the application data that is shared among all users.
-      /// @remarks If the key does not exist, it is created in the following format: local_machine\software\company_name\product_name\product_version
-      static microsoft::win32::registry_key common_app_data_registry();
+       /// @brief Gets the registry key for the application data that is shared among all users.
+       /// @return A RegistryKey representing the registry key of the application data that is shared among all users.
+       /// @remarks If the key does not exist, it is created in the following format: local_machine\software\company_name\product_name\product_version
+       static microsoft::win32::registry_key common_app_data_registry();
        */
       
       /// @brief Gets the company name associated with the application.
@@ -85,14 +98,21 @@ namespace xtd {
       /// }
       /// @endcode
       static xtd::ustring company_name() noexcept;
+
+      /// @brief Gets a value indicating whether dark mode is enabled for the application.
+      /// @return True is dark mode enabled; otherwise false.
+      static bool dark_mode() noexcept;
+      
+      /// @brief Sets a value indicating whether dark mode is enabled for the application.
+      /// @param value True is dark mode enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      static void dark_mode(bool value);
       
       /// @brief Return true if dark mode is enabled for the application; otherwise return false.
       /// @return True is dark mode enabled; otherwise false.
+      /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0")]]
       static bool dark_mode_enabled() noexcept;
-      
-      /// @brief Return true if dark mode is enabled for the application; otherwise return false.
-      /// @return True is light mode enabled; otherwise false.
-      static bool light_mode_enabled() noexcept;
       
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
@@ -101,11 +121,55 @@ namespace xtd {
       /// @brief Gets the path for the executable file that started the application, including the executable name.
       /// @return The path and executable name for the executable file that started the application.<br><br>
       static xtd::ustring executable_path() noexcept;
+
+      /// @brief Gets a value indicating whether font size correction is enabled.
+      /// @return true if font size correction is enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      /// @remarks By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows.
+      /// @remarks If you disable this option, you will use the actual native font size of the operating system.
+      /// @remarks This method has an effect only on non Windows operating system.
+      static bool font_size_correction();
+      
+      /// @brief Sets a value indicating whether font size correction is enabled.
+      /// @param value true if font size correction is enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      /// @remarks By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows.
+      /// @remarks If you disable this option, you will use the actual native font size of the operating system.
+      /// @remarks This method has an effect only on non Windows operating system.
+      static void font_size_correction(bool value);
+      
+      /// @brief Gets a value indicating whether light mode is enabled for the application.
+      /// @return True is light mode enabled; otherwise false.
+      static bool light_mode() noexcept;
+      
+      /// @brief Sets a value indicating whether light mode is enabled for the application.
+      /// @param value True is light mode enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      static void light_mode(bool value);
+      
+      /// @brief Return true if dark mode is enabled for the application; otherwise return false.
+      /// @return True is light mode enabled; otherwise false.
+      /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 0.4.0")]]
+      static bool light_mode_enabled() noexcept;
       
       /// @brief Gets the optional main form owned by the application.
       /// @return The optional main form.
       /// @remarks The return value doesn't necessarily contain the main form, as an application doesn't always have a main form. In fact, the xtd::forms::application method can be called with the xtd::forms::application_context class, which doesn't contain a main form.
       static std::optional<form_ref> main_form();
+
+      /// @brief Gets menu images are enabled.
+      /// @return true if menu images aree enabled; otherwise false.
+      /// @remarks The default value is true.
+      /// @remarks This method has an effect only on linux.
+      static bool menu_images() noexcept;
+      
+      /// @brief Sets menu images ilages are enabled.
+      /// @param value true if menu images aree enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      /// @remarks The default value is true.
+      /// @remarks This method has an effect only on linux.
+      static void menu_images(bool value);
 
       /// @brief Gets a value indicating whether a message loop exists on this thread.
       /// @return true if a message loop exists; otherwise, false.
@@ -146,6 +210,35 @@ namespace xtd {
       /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
       static const xtd::forms::style_sheets::style_sheet::style_sheet_names_t& style_sheet_names() noexcept;
       
+      /// @brief Gets a value indicating whether the system control is enabled.
+      /// @return true if system control is enabled; otherwise false.
+      /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
+      /// @remarks The xtd::forms::control::control_appearance method can still be used to modify the control's appearance on the fly.
+      static bool system_controls() noexcept;
+      
+      /// @brief Sets a value indicating whether the system control is enabled.
+      /// @param value true if system control is enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
+      /// @remarks The xtd::forms::control::control_appearance method can still be used to modify the control's appearance on the fly.
+      static void system_controls(bool value);
+
+      /// @brief Gets a value indicating whether the system font size is enabled.
+      /// @return true if the system font size is enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
+      /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
+      /// @remarks This method has an effect only on Gtk.
+      static bool system_font_size() noexcept;
+
+      /// @brief Sets a value indicating whether the system font size is enabled.
+      /// @param value true if the system font size is enabled; otherwise false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
+      /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
+      /// @remarks This method has an effect only on Gtk.
+      static void system_font_size(bool value);
+
       /// @brief Gets system xtd::forms::style_sheets::style_sheet style sheet.
       /// @return The system xtd::forms::style_sheets::style_sheet style sheet.
       /// @remarks The system style sheet is the style sheet corresponding to the current Operating System and the current Desktop Environment.
@@ -167,15 +260,11 @@ namespace xtd {
        static microsoft::win32::registry_key user_app_data_registry();
        */
       
-      /// @brief Gets a value that indicates whether system controls are enabled for the application.
-      /// @return true if system_control are enabled; otherwise, false.
-      /// @remarks The system_controls can be enabled by calling enable_xtd::forms::application::system_controls.
-      static bool use_system_controls() noexcept;
-      
-      
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
       /// @return true if visual styles are enabled; otherwise, false.
       /// @remarks The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles.
+      /// @deprecated Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0")]]
       static bool use_visual_styles() noexcept;
       
       /// @brief Gets whether the wait cursor is used for all open forms of the application.
@@ -192,6 +281,19 @@ namespace xtd {
       /// The following code example demonstrates the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
       static void use_wait_cursor(bool use_wait_cursor);
+      
+      /// @brief Gets a value that indicates whether visual styles are enabled for the application.
+      /// @return true if visual styles are enabled; otherwise, false.
+      /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
+      /// @remarks This method has an effect only on Windows.
+      static bool visual_styles() noexcept;
+      
+      /// @brief Sets a value that indicates whether visual styles are enabled for the application.
+      /// @param value true if visual styles are enabled; otherwise, false.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
+      /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
+      /// @remarks This method has an effect only on Windows.
+      static void visual_styles(bool value);
       /// @}
       
       /// @name Public Static Events
@@ -241,13 +343,6 @@ namespace xtd {
       /// @remarks Use a message filter to prevent specific events from being raised or to perform special operations for an event before it is passed to an event handler. Message filters are unique to a specific thread.
       static void add_message_filter(const imessage_filter& value);
       
-      /// @brief Disables font size correction for the application.
-      /// @remarks By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows.
-      /// @remarks If you disable this option, you will use the actual native font size of the operating system.
-      /// @remarks This method has an effect only on non Windows operating system.
-      /// @warning You must call this method before xtd::forms::application::run.
-      static void disable_font_size_correction();
-      
       /// @brief Processes all Windows messages currently in the message queue.
       /// @remarks When you run a Windows form, it creates the new form, which then waits for events to handle. Each time the form handles an event, it processes all the code associated with that event. All other events wait in the queue. While your code handles the event, your application does not respond. For example, the window does not repaint if another window is dragged on top.
       /// @remarks If you call do_events in your code, your application can handle the other events. For example, if you have a form that adds data to a list_box and add do_events to your code, your form repaints when another window is dragged over it. If you remove do_events from your code, your form will not repaint until the click event handler of the button is finished executing.
@@ -256,50 +351,39 @@ namespace xtd {
       static void do_events();
       
       /// @brief Enables button images for the application.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method has an effect only on linux.
-      /// @warning You must call this method before xtd::forms::application::run.
+      /// @deprecated Replaced by xtd::application::button_images - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::application::button_images - Will be removed in version 0.4.0")]]
       static void enable_button_images();
       
       /// @brief Enables dark mode for the application.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, the dark mode is enabled automatically if the system is in dark mode.
       /// @remarks xtd::forms::application::enable_dark_mode sets the application in dark mode even if your system is in light mode.
-      /// @warning You must call this method before xtd::forms::application::run.
+      /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0")]]
       static void enable_dark_mode();
       
       /// @brief Enables light mode for the application.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, the light mode is enabled automatically if the system is in light mode.
       /// @remarks xtd::forms::application::enable_light_mode sets the application in light mode even if your system is in dark mode.
-      /// @warning You must call this method before xtd::forms::application::run.
+      /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 0.4.0")]]
       static void enable_light_mode();
       
       /// @brief Enables menu images  for the application.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method has an effect only on linux.
-      /// @warning You must call this method before xtd::forms::application::run.
+      /// @deprecated Replaced by xtd::application::menu_images - Will be removed in version 0.4.0
+      [[deprecated("Replaced by xtd::application::menu_images - Will be removed in version 0.4.0")]]
       static void enable_menu_images();
       
-      /// @brief Enables standard control for the application.
-      /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
-      /// @remarks You can always change the appearance of the control on the fly with the xtd::forms::control::control_appearance method.
-      /// @warning You must call this method before xtd::forms::application::run.
-      static void enable_standard_controls();
-      
-      /// @brief Enables system control for the application.
-      /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
-      /// @remarks You can always change the appearance of the control on the fly with the xtd::forms::control::control_appearance method.
-      /// @warning You must call this method before xtd::forms::application::run.
-      static void enable_system_controls();
-
-      /// @brief Enables system font size for the application.
-      /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
-      /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
-      /// @remarks This method has an effect only on Gtk.
-      /// @warning You must call this method before xtd::forms::application::run.
-      static void enable_system_font_size();
-      
       /// @brief Enables visual styles for the application.
+      /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       /// @remarks This method has an effect only on Windows.
-      /// @warning You must call this method before xtd::forms::application::run.
       static void enable_visual_styles();
       
       /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.
@@ -415,11 +499,16 @@ namespace xtd {
       
       static xtd::forms::application_context internal_context_;
       static xtd::forms::application_context* context_;
-      static bool use_visual_styles_;
-      static bool use_system_controls_;
-      static bool use_wait_cursor_;
+      static bool button_images_;
+      static bool light_mode_;
+      static bool font_size_correction_;
+      static bool menu_images_;
       static bool message_loop_;
       static bool raise_idle_;
+      static bool system_controls_;
+      static bool system_font_size_;
+      static bool use_wait_cursor_;
+      static bool visual_styles_;
     };
   }
 }

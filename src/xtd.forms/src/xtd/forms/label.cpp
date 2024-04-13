@@ -38,7 +38,7 @@ struct label::data {
 };
 
 label::label() : data_(std::make_shared<data>()) {
-  if (application::use_system_controls()) data_->flat_style = xtd::forms::flat_style::system;
+  if (application::system_controls()) data_->flat_style = xtd::forms::flat_style::system;
   double_buffered(true);
   set_can_focus(false);
   set_style(control_styles::user_paint | control_styles::supports_transparent_back_color | control_styles::optimized_double_buffer, control::control_appearance() == forms::control_appearance::standard);

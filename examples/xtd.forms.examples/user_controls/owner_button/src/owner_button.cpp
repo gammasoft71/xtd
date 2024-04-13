@@ -13,7 +13,7 @@ namespace owner_button_example {
   protected:
     void on_paint(paint_event_args& e) override {
       auto accentuate_color = [](const color & c, float percent) {
-        return application::dark_mode_enabled() ? control_paint::light(c, percent) : control_paint::dark(c, percent);
+        return application::dark_mode() ? control_paint::light(c, percent) : control_paint::dark(c, percent);
       };
       auto background_color = get_back_color().value_or(application::style_sheet().system_colors().control());
       auto foreground_color = get_fore_color().value_or(application::style_sheet().system_colors().control_text());

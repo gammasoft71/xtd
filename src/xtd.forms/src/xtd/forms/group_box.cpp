@@ -19,7 +19,7 @@ struct group_box::data {
 group_box::group_box() : data_(std::make_shared<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
-  if (application::use_system_controls()) data_->flat_style = xtd::forms::flat_style::system;
+  if (application::system_controls()) data_->flat_style = xtd::forms::flat_style::system;
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_can_focus(false);
   set_state(state::tab_stop, false);
