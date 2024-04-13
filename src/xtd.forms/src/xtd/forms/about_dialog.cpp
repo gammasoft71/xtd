@@ -58,6 +58,12 @@ namespace {
     }
     
   protected:
+    std::unique_ptr<xtd::object> clone() const override {
+      auto result = std::make_unique<credits_item_panel>(*this);
+      if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+      return result;
+    }
+    
     void on_create_control() override {
       horizontal_layout_panel::on_create_control();
       control_layout_style(title_label_, {.50f, size_type::percent});
