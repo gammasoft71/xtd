@@ -52,6 +52,6 @@ private:
 };
 
 auto main()->int {
-  //application::enable_system_controls();
+  //application::system_controls(true);
   application::run(form1 {});
 }

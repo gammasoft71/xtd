@@ -14,7 +14,7 @@ namespace form_background_image2 {
   class form1 : public form {
   public:
     form1() {
-      background_image(application::dark_mode_enabled() ? properties::resources::bliss_night() : properties::resources::bliss_day());
+      background_image(application::dark_mode() ? properties::resources::bliss_night() : properties::resources::bliss_day());
       client_size({600, 450});
       controls().push_back_range({bliss_url, image_layout_choice});
       double_buffered(true);
@@ -42,7 +42,7 @@ namespace form_background_image2 {
   protected:
     void on_system_colors_changed(const event_args &e) {
       form::on_system_colors_changed(e);
-      background_image(application::dark_mode_enabled() ? properties::resources::bliss_night() : properties::resources::bliss_day());
+      background_image(application::dark_mode() ? properties::resources::bliss_night() : properties::resources::bliss_day());
       bliss_url.back_color(color::from_argb(64, system_colors::control()));
     }
 

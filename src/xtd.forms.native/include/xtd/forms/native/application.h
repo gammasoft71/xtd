@@ -75,27 +75,27 @@ namespace xtd {
         /// @return true if dark mode is enabled; otherwise false.
         /// @warning Internal use only
         static bool dark_mode_enabled();
-        /// @brief Disable font size correction for the application.
-        /// @warning Internal use only
-        static void disable_font_size_correction();
         /// @brief Enables button images for the application.
         /// @warning Internal use only
-        static void enable_button_images();
+        static void enable_button_images(bool value);
         /// @brief Enables dark mode for the application.
         /// @warning Internal use only
-        static void enable_dark_mode();
+        static void enable_dark_mode(bool value);
+        /// @brief Disable font size correction for the application.
+        /// @warning Internal use only
+        static void enable_font_size_correction(bool value);
         /// @brief Enables light mode for the application.
         /// @warning Internal use only
-        static void enable_light_mode();
+        static void enable_light_mode(bool value);
         /// @brief Enables menu images for the application.
         /// @warning Internal use only
-        static void enable_menu_images();
+        static void enable_menu_images(bool value);
         /// @brief Enables system font size for the application.
         /// @warning Internal use only
-        static void enable_system_font_size();
+        static void enable_system_font_size(bool value);
         /// @brief Enables visual styles for the application.
         /// @warning Internal use only
-        static void enable_visual_style();
+        static void enable_visual_style(bool value);
         /// @brief Exits application.
         /// @warning Internal use only
         static void exit();

@@ -22,7 +22,7 @@ struct button_base::data {
 
 
 button_base::button_base() noexcept : data_(std::make_shared<data>()) {
-  if (application::use_system_controls()) data_->flat_style = xtd::forms::flat_style::system;
+  if (application::system_controls()) data_->flat_style = xtd::forms::flat_style::system;
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_style(control_styles::user_mouse | control_styles::user_paint, control_appearance() == forms::control_appearance::standard);
 }

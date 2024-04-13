@@ -23,7 +23,7 @@ struct busy_dialog::data {
 };
 
 busy_dialog::busy_dialog() : data_(std::make_shared<data>()) {
-  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 busy_dialog::~busy_dialog() {hide();}
@@ -106,7 +106,7 @@ busy_dialog& busy_dialog::text(const xtd::ustring& text) {
 }
 
 void busy_dialog::reset() {
-  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->icon = xtd::drawing::image::empty;
   data_->text = "";
   data_->description = "";

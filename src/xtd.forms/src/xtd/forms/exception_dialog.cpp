@@ -199,7 +199,7 @@ struct exception_dialog::data {
 };
 
 exception_dialog::exception_dialog() : data_(std::make_shared<data>()) {
-  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
 forms::dialog_result exception_dialog::dialog_result() const noexcept {
@@ -235,7 +235,7 @@ exception_dialog& exception_dialog::text(const ustring& text) {
 
 
 void exception_dialog::reset() noexcept {
-  data_->dialog_appearance = application::use_system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
+  data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
   data_->exception = nullptr;
   data_->text = "";
 }

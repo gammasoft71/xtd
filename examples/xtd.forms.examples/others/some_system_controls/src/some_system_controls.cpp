@@ -7,7 +7,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   static auto main() {
-    application::enable_system_controls();
+    application::system_controls(true);
     application::run(form1 {});
   }
   

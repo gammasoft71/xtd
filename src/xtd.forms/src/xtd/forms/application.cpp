@@ -75,15 +75,20 @@ namespace {
 
 xtd::forms::application_context application::internal_context_;
 xtd::forms::application_context* application::context_ = &application::internal_context_;
-#if defined(__XTD_USE_SYSTEM_CONTROLS__)
-bool application::use_system_controls_ = true;
-#else
-bool application::use_system_controls_ = false;
-#endif
-bool application::use_visual_styles_ = false;
-bool application::use_wait_cursor_ = false;
+bool application::button_images_ = true;
+bool application::font_size_correction_ = true;
+bool application::light_mode_ = false;
+bool application::menu_images_ = true;
 bool application::message_loop_ = false;
 bool application::raise_idle_ = false;
+#if defined(__XTD_USE_SYSTEM_CONTROLS__)
+bool application::system_controls_ = true;
+#else
+bool application::system_controls_ = false;
+#endif
+bool application::system_font_size_ = false;
+bool application::use_wait_cursor_ = false;
+bool application::visual_styles_ = false;
 
 event<application, delegate<void(const event_args&)>> application::application_exit;
 event<application, delegate<void(const event_args&)>> application::enter_thread_modal;
@@ -102,6 +107,17 @@ bool application::allow_quit() noexcept {
 
 xtd::forms::application_context& application::application_context() {
   return *context_;
+}
+
+bool application::button_images() noexcept {
+  return button_images_;
+}
+
+void application::button_images(bool value) {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call xtd::application::button_images() before application::run()"_t, csf_);
+  if (button_images_ == value) return;
+  button_images_ = value;
+  native::application::enable_button_images(value);
 }
 
 xtd::ustring application::common_app_data_path() noexcept {
@@ -130,7 +146,7 @@ xtd::ustring application::company_name() noexcept {
   }
 }
 
-bool application::dark_mode_enabled() noexcept {
+bool application::dark_mode() noexcept {
   try {
     return native::application::dark_mode_enabled();
   } catch (...) {
@@ -138,8 +154,10 @@ bool application::dark_mode_enabled() noexcept {
   }
 }
 
-bool application::light_mode_enabled() noexcept {
-  return !dark_mode_enabled();
+void application::dark_mode(bool value) {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call xtd::application::light_mode() before application::run()"_t, csf_);
+  if (dark_mode() == value) return;
+  native::application::enable_dark_mode(value);
 }
 
 xtd::ustring application::executable_name() noexcept {
@@ -151,9 +169,49 @@ xtd::ustring application::executable_path() noexcept {
   return environment::get_command_line_args()[0];
 }
 
+bool application::font_size_correction() {
+  return font_size_correction_;
+}
+
+void application::font_size_correction(bool value) {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::font_size_correction() before application::run()"_t, csf_);
+  if (font_size_correction_ == value) return;
+  font_size_correction_ = value;
+  native::application::enable_font_size_correction(value);
+}
+
+bool application::light_mode() noexcept {
+  return !dark_mode();
+}
+
+void application::light_mode(bool value) {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call xtd::application::light_mode() before application::run()"_t, csf_);
+  if (light_mode() == value) return;
+  native::application::enable_light_mode(value);
+}
+
+bool application::dark_mode_enabled() noexcept {
+  return dark_mode();
+}
+
+bool application::light_mode_enabled() noexcept {
+  return light_mode();
+}
+
 std::optional<form_ref> application::main_form() {
   if (application_context().main_form().has_value()) return application_context().main_form();
   return {};
+}
+
+bool application::menu_images() noexcept {
+  return menu_images_;
+}
+
+void application::menu_images(bool value) {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call xtd::application::menu_images() before application::run()"_t, csf_);
+  if (menu_images_ == value) return;
+  menu_images_ = value;
+  native::application::enable_menu_images(value);
 }
 
 bool application::message_loop() noexcept {
@@ -207,6 +265,26 @@ const xtd::forms::style_sheets::style_sheet::style_sheet_names_t& application::s
   return xtd::forms::style_sheets::style_sheet::style_sheet_names();
 }
 
+bool application::system_controls() noexcept {
+  return system_controls_;
+}
+
+void application::system_controls(bool value) {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::system_controls() before application::run()"_t, csf_);
+  system_controls_ = value;
+}
+
+bool application::system_font_size() noexcept {
+  return system_font_size_;
+}
+
+void application::system_font_size(bool value) {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::system_font_size() before application::run()"_t, csf_);
+  if (system_font_size_ == value) return;
+  system_font_size_ = value;
+  native::application::enable_system_font_size(value);
+}
+
 const xtd::forms::style_sheets::style_sheet& application::system_style_sheet() noexcept {
   return xtd::forms::style_sheets::style_sheet::system_style_sheet();
 }
@@ -228,12 +306,8 @@ xtd::ustring application::user_app_data_path() noexcept {
  }
  */
 
-bool application::use_system_controls() noexcept {
-  return use_system_controls_;
-}
-
 bool application::use_visual_styles() noexcept {
-  return use_visual_styles_;
+  return visual_styles();
 }
 
 bool application::use_wait_cursor() noexcept {
@@ -246,58 +320,43 @@ void application::use_wait_cursor(bool use_wait_cursor) {
   native::application::use_wait_cursor(use_wait_cursor_);
 }
 
-void application::add_message_filter(const imessage_filter& value) {
-  message_filters.push_back(const_cast<imessage_filter&>(value));
+bool application::visual_styles() noexcept {
+  return visual_styles_;
 }
 
-void application::disable_font_size_correction() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::disable_font_size_correction() before application::run()"_t, csf_);
-  native::application::disable_font_size_correction();
+void application::visual_styles(bool value) {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::visual_styles() before application::run()"_t, csf_);
+  if (visual_styles_ == value) return;
+  visual_styles_ = true;
+  native::application::enable_visual_style(value);
+}
+
+void application::add_message_filter(const imessage_filter& value) {
+  message_filters.push_back(const_cast<imessage_filter&>(value));
 }
 
 void application::do_events() {
   native::application::do_events();
 }
 
-void application::enable_dark_mode() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_dark_mode() before application::run()"_t, csf_);
-  native::application::enable_dark_mode();
+void application::enable_button_images() {
+  button_images(true);
 }
 
-void application::enable_button_images() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_button_images() before application::run()"_t, csf_);
-  native::application::enable_button_images();
+void application::enable_dark_mode() {
+  dark_mode(true);
 }
 
 void application::enable_light_mode() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_light_mode() before application::run()"_t, csf_);
-  native::application::enable_light_mode();
+  light_mode(true);
 }
 
 void application::enable_menu_images() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_menu_images() before application::run()"_t, csf_);
-  native::application::enable_menu_images();
-}
-
-void application::enable_standard_controls() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_standard_controls() before application::run()"_t, csf_);
-  application::use_system_controls_ = false;
-}
-
-void application::enable_system_controls() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_system_controls() before application::run()"_t, csf_);
-  application::use_system_controls_ = true;
-}
-
-void application::enable_system_font_size() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_system_font_size() before application::run()"_t, csf_);
-  native::application::enable_system_font_size();
+  menu_images(true);
 }
 
 void application::enable_visual_styles() {
-  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call application::enable_visual_styles() before application::run()"_t, csf_);
-  application::use_visual_styles_ = true;
-  native::application::enable_visual_style();
+  visual_styles(true);
 }
 
 void application::exit() {
