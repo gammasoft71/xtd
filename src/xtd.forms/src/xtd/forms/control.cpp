@@ -158,6 +158,7 @@ struct control::data {
   std::optional<drawing::color> fore_color;
   std::optional<drawing::font> font;
   intptr handle = 0;
+  uint32 id = 0;
   drawing::point location;
   drawing::region region;
   forms::padding margin {3};
@@ -181,6 +182,8 @@ struct control::data {
 };
 
 control::control() : data_(std::make_shared<data>()) {
+  static auto id = 1u;
+  data_->id = id++;
   if (application::system_controls()) data_->control_appearance = xtd::forms::control_appearance::system;
   native::application::initialize();
   set_state(state::enabled, true);
@@ -1088,7 +1091,7 @@ std::optional<object_ref> control::invoke(delegate<void(std::vector<std::any>)> 
 }
 
 bool control::equals(const control& value) const noexcept {
-  return this == &value;
+  return data_->id == value.data_->id;
 }
 
 std::optional<object_ref> control::end_invoke(async_result async) {
