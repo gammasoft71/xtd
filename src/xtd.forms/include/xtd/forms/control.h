@@ -163,12 +163,12 @@ namespace xtd {
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         explicit control_collection(const allocator_type& allocator = allocator_type());
-        /// @brief Creates a new object xtd::forms::control::control_collection with specified clone_and_keep_controls, and allocator (optional).
-        /// @param clone_and_keep_controls If true the collection clone and keep controls; otherwise none.
+        /// @brief Creates a new object xtd::forms::control::control_collection with specified keep_cloned_controls, and allocator (optional).
+        /// @param keep_cloned_controls If true the collection clone and keep controls; otherwise none.
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         /// @warning Internal use only
-        explicit control_collection(bool clone_and_keep_controls, const allocator_type& allocator = allocator_type());
+        explicit control_collection(bool keep_cloned_controls, const allocator_type& allocator = allocator_type());
         /// @}
         
         /// @cond
@@ -260,7 +260,7 @@ namespace xtd {
         iterator insert(const_iterator pos, control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return it;
-          if (!clone_and_keep_controls_) return base::insert(pos, value);
+          if (!keep_cloned_controls_) return base::insert(pos, value);
           auto control_ptr = as<control>(as<iclonable>(value).clone());
           auto& control_ref = *control_ptr;
           controls_.push_back(std::move(control_ptr));
@@ -271,7 +271,7 @@ namespace xtd {
         void insert_at(size_t index, control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
-          if (!clone_and_keep_controls_) base::insert_at(index, value);
+          if (!keep_cloned_controls_) base::insert_at(index, value);
           else {
             auto control_ptr = as<control>(as<iclonable>(value).clone());
             auto& control_ref = *control_ptr;
@@ -284,7 +284,7 @@ namespace xtd {
         void push_back(control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
-          if (!clone_and_keep_controls_) base::push_back(value);
+          if (!keep_cloned_controls_) base::push_back(value);
           else {
             auto control_ptr = as<control>(as<iclonable>(value).clone());
             auto& control_ref = *control_ptr;
@@ -310,7 +310,7 @@ namespace xtd {
         /// @}
 
       private:
-        bool clone_and_keep_controls_ = false;
+        bool keep_cloned_controls_ = false;
         static std::vector<std::unique_ptr<xtd::forms::control>> controls_;
       };
       

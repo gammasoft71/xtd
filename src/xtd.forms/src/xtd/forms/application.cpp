@@ -76,6 +76,7 @@ namespace {
 xtd::forms::application_context application::internal_context_;
 xtd::forms::application_context* application::context_ = &application::internal_context_;
 bool application::button_images_ = true;
+bool application::keep_cloned_controls_ = true;
 bool application::font_size_correction_ = true;
 bool application::light_mode_ = false;
 bool application::menu_images_ = true;
@@ -178,6 +179,15 @@ void application::font_size_correction(bool value) {
   if (font_size_correction_ == value) return;
   font_size_correction_ = value;
   native::application::enable_font_size_correction(value);
+}
+
+bool application::keep_cloned_controls() noexcept {
+  return keep_cloned_controls_;
+}
+
+void application::keep_cloned_controls(bool value) {
+  if (application::application::message_loop_ == true) throw invalid_operation_exception("Call xtd::keep_cloned_controls::button_images() before application::run()"_t, csf_);
+  keep_cloned_controls_ = value;
 }
 
 bool application::light_mode() noexcept {
