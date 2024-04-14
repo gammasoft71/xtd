@@ -7,6 +7,7 @@ This file lists all persons who contributed to xtd (in alphabetical order). If y
 * [Arsero](https://github.com/Arsero) - Developer
 * [Bader](https://github.com/baderouaich) - Developer
 * [bigplayszn](https://github.com/bigplayszn) - Developer
+* [emmanuel-ferdman](https://github.com/emmanuel-ferdman) - Documenter
 * [Fireblaze-A47](https://github.com/Fireblaze-A47) - Developer
 * [deltoro05](https://github.com/deltoro05) - Developer
 * **[gammasoft71](https://gammasoft71.wixsite.com/gammasoft)** - **Main developer : Owner**
