@@ -131,6 +131,13 @@ namespace xtdc_gui {
     /// @brief This is a special value equal to the maximum value representable by the type size_t.
     static const size_t npos = xtd::size_object::max_value;
     
+  protected:
+    std::unique_ptr<xtd::object> clone() const override {
+      auto result = std::make_unique<project_type_items_control>(*this);
+      if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+      return result;
+    }
+    
   private:
     void on_selected_index_changed(const xtd::event_args& e) {
       if (previous_selected_index_ != npos) {
