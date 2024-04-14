@@ -15,6 +15,13 @@ namespace keycodes {
     key_press_control& key_char(const xtd::ustring& value);
     key_press_control& key_data(const xtd::ustring& value);
     
+  protected:
+    std::unique_ptr<xtd::object> clone() const override {
+      auto result = std::make_unique<key_press_control>(*this);
+      if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+      return result;
+    }
+
   private:
     xtd::forms::label key_event_label_;
     xtd::forms::label key_char_label_;

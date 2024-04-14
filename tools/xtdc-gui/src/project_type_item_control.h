@@ -44,6 +44,12 @@ namespace xtdc_gui {
     xtdc_gui::project_type_item project_type_item() const {return project_type_item_;}
     
   protected:
+    std::unique_ptr<xtd::object> clone() const override {
+      auto result = std::make_unique<project_type_item_control>(*this);
+      if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
+      return result;
+    }
+    
     void on_double_click(const xtd::event_args& e) override;
     
   private:
