@@ -4,7 +4,7 @@ This file lists all persons who contributed to xtd (in alphabetical order). If y
 
 ## Owner
 
-* **[gammasoft71](https://gammasoft71.wixsite.com/gammasoft) - **Main developer - Translator**
+* **[gammasoft71](https://gammasoft71.wixsite.com/gammasoft)** **- Main developer - Translator**
 
 ## Contributors
 
