@@ -140,13 +140,13 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the xtd framework keep cloned control is enabled.
       /// @return true if xtd framework keep cloned control is enabled; otherwise false.
-      /// @remarks By default the value is true.
+      /// @remarks By default the value is false.
       static bool keep_cloned_controls() noexcept;
       
       /// @brief Sets a value indicating whether the xtd framework keep cloned control is enabled.
       /// @param value true if xtd framework keep cloned control is enabled; otherwise false.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
-      /// @remarks By default the value is true.
+      /// @remarks By default the value is false.
        static void keep_cloned_controls(bool value);
 
       /// @brief Gets a value indicating whether light mode is enabled for the application.
