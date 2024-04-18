@@ -1,4 +1,4 @@
-# examples
+# xtd examples
 
 [This folder](.) contains all examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
