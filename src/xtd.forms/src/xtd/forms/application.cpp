@@ -76,7 +76,11 @@ namespace {
 xtd::forms::application_context application::internal_context_;
 xtd::forms::application_context* application::context_ = &application::internal_context_;
 bool application::button_images_ = true;
+#if defined(__XTD_KEEP_CLONED_CONTROLS__)
 bool application::keep_cloned_controls_ = true;
+#else
+bool application::keep_cloned_controls_ = false;
+#endif
 bool application::font_size_correction_ = true;
 bool application::light_mode_ = false;
 bool application::menu_images_ = true;
