@@ -1,6 +1,6 @@
 # application_use_wait_cursor
 
-Shows how to create an application_use_wait_cursor with  [xtd::forms::application::use_wait_cursor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1use__wait__cursor.html) method.
+Shows how to create an application_use_wait_cursor with [xtd::forms::application::use_wait_cursor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1use__wait__cursor.html) method.
 
 ## Sources
 
