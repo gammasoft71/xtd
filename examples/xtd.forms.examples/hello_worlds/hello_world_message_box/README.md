@@ -1,6 +1,6 @@
 # hello_world_message_box
 
-The classic first application "Hello, World!" with [xtd::forms::message_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1message__box.html) control.
+The classic first application "Hello, World!" with [xtd::forms::message_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1message__box.html) dialog.
 
 ## Sources
 
