@@ -1,6 +1,6 @@
 # application_add_message_filter
 
-Shows how to create an application with  [xtd::forms::application::add_message_filter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14) method.
+Shows how to create an application with [xtd::forms::application::add_message_filter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14) method.
 
 ## Sources
 
