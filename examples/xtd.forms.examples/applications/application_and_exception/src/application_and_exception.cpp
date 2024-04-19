@@ -19,7 +19,7 @@ public:
   main_form() {
     text("application and exception example");
     
-    // uncomment next line to throw error and catch it in main entry point
+    // Uncomment the following line to raise the exception in main entry point :
     //throw system_exception(current_stack_frame_);
     
     generate_handled_exception_button.auto_size(true);
