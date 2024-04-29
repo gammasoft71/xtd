@@ -61,6 +61,10 @@
 #define __XTD_LIB_PATH__ ""
 #endif
 
+#if !defined(__XTD_RESOURCES_PATH__)
+#define __XTD_RESOURCES_PATH__ ""
+#endif
+
 #if !defined(__XTD_CONSOLE_INCLUDE_PATH__)
 #define __XTD_CONSOLE_INCLUDE_PATH__ ""
 #endif
