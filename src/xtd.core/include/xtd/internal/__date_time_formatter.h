@@ -11,6 +11,17 @@
 #include "__format_exception.h"
 #include "__sprintf.h"
 
+#if defined(_WIN32)
+inline struct tm* __localtime_s(const time_t* timer, struct tm* buf) noexcept {
+  localtime_s(buf, timer);
+  return buf;
+}
+#else
+inline struct tm* __localtime_s(const time_t* timer, struct tm* buf) noexcept {
+  return localtime_r(timer, buf);
+}
+#endif
+
 /// @cond
 template<typename char_t>
 inline std::basic_string<char_t> __to_string(const char_t* fmt, const std::tm& value, const std::locale& loc) {
@@ -119,10 +130,12 @@ inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time,
 }
 
 inline std::string __date_time_formatter(const std::string& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
-  return __date_time_formatter(fmt, *std::localtime(&time), nanoseconds, loc);
+  tm buf;
+  return __date_time_formatter(fmt, *__localtime_s(&time, &buf), nanoseconds, loc);
 }
 
 inline std::wstring __date_time_formatter(const std::wstring& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
-  return __date_time_formatter(fmt, *std::localtime(&time), nanoseconds, loc);
+  tm buf;
+  return __date_time_formatter(fmt, *__localtime_s(&time, &buf), nanoseconds, loc);
 }
 /// @endcond
