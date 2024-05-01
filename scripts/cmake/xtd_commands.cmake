@@ -2151,7 +2151,7 @@ if (MSVC)
     endif()
     set(BUILD_ON_MULTIPLE_PROCESSES /MP${MULTI_PROCESS_COUNT})
   endif()
-  add_compile_options(${BUILD_ON_MULTIPLE_PROCESSES} /utf-8 /wd4251 /wd4275 /wd4996 /Zc:__cplusplus)
+  add_compile_options(${BUILD_ON_MULTIPLE_PROCESSES} /utf-8 /wd4251 /wd4275 /Zc:__cplusplus)
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /bigobj")
   set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /bigobj")
   
