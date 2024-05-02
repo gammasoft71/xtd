@@ -1,6 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -9,18 +8,18 @@ namespace hello_world_label_example {
   public:
     main_form() {
       text("Hello world (label)");
-      controls().push_back(label);
+      controls().push_back(label1);
       
-      label.dock(dock_style::fill);
-      label.font(drawing::font {label.font(), 32, font_style::bold | font_style::italic});
-      label.fore_color(color::green);
-      label.shadow(true);
-      label.text("Hello, World!");
-      label.text_align(xtd::forms::content_alignment::middle_center);
+      label1.dock(dock_style::fill);
+      label1.font({label1.font(), 32, font_style::bold | font_style::italic});
+      label1.fore_color(color::green);
+      label1.shadow(true);
+      label1.text("Hello, World!");
+      label1.text_align(content_alignment::middle_center);
     }
     
   private:
-    forms::label label;
+    label label1;
   };
 }
 
