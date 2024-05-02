@@ -162,6 +162,18 @@ elif [[ "$OSTYPE" == *"Darwin"* ]]; then
 fi
 
 #_______________________________________________________________________________
+#                                      Create xtd root path environemnt variable
+
+if [[ "$OSTYPE" == *"Darwin"* ]]; then
+  echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.bash_profile
+elif [[ "$OSTYPE" == *"FreeBSD"* ]]; then
+  echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.cshrc
+else
+  echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.bashrc
+fi
+export XTD_ROOT_PATH=\"$cmake_install_prefix\"
+
+#_______________________________________________________________________________
 #                             Copy install manifest files to xtd share directory
 if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
   if test -f build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt; then
