@@ -41,6 +41,7 @@ namespace xtd {
         xtd::diagnostics::debug::listeners().push_back(listener_);
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         visible(true);
+        defined = true;
         #endif
       }
       /// @}
@@ -66,14 +67,12 @@ namespace xtd {
       void flush() override;
       
       void write(const xtd::ustring& debug) override {
-        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (!defined) return;
         trace_form_base::write(debug);
-        #endif
       }
       void write_line(const xtd::ustring& debug) override {
-        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (!defined) return;
         trace_form_base::write_line(debug);
-        #endif
       }
       /// @}
 
@@ -90,6 +89,7 @@ namespace xtd {
       
     private:
       std::shared_ptr<xtd::diagnostics::trace_listener> listener_ = xtd::forms::control_trace_listener::create(*this);
+      bool defined = false;
     };
   }
 }
