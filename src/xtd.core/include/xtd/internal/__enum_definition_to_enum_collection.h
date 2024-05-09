@@ -16,7 +16,7 @@
 template<typename enum_t>
 xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::ustring& enum_definition) {
   xtd::enum_collection<enum_t> entries;
-  #if defined(__XTD_USE_ENUMERATION_INTROSPECTION__)
+  #if !defined(__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)
   for (size_t num_state = 0; num_state < __enumeration_introspection::num_states<enum_t>; ++num_state)
     entries.emplace_back(static_cast<enum_t>(__enumeration_introspection::enum_values<enum_t>[num_state]), __enumeration_introspection::enum_names<enum_t>[num_state]);
   #else

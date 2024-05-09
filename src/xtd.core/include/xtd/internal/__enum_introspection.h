@@ -8,7 +8,7 @@
 #include "../types.h"
 #include "../ustring.h"
 
-#if !defined(__XTD_USE_ENUMERATION_INTROSPECTION__)
+#if defined(__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)
 #define __enum_introspection__(namespace_name, enum_t, base_t, ...)
 #else
 #include <string_view>
