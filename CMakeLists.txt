@@ -1,9 +1,13 @@
 cmake_minimum_required(VERSION 3.20)
 
+################################################################################
 # Solution
+
 project(xtd)
 
+################################################################################
 # Options
+
 option(XTD_BUILD_SHARED_LIBRARIES "Build shared libraries" OFF)
 option(XTD_BUILD_TESTS "Build tests" OFF)
 option(XTD_BUILD_TOOLS "Build tools" ON)
@@ -51,14 +55,18 @@ if (XTD_USE_SYSTEM_CONTROLS)
   add_definitions(-D__XTD_USE_SYSTEM_CONTROLS__)
 endif ()
 
+################################################################################
 # incldue xtd cmake scripts
+
 include(scripts/cmake/xtd_commands.cmake)
 include(scripts/cmake/xtd_version.cmake)
 include(scripts/cmake/update_export.cmake)
 include(scripts/cmake/update_version_number.cmake)
 include(scripts/cmake/package.cmake)
 
+################################################################################
 # Graphic toolkits definitions
+
 get_operating_system_name(XTD_OPERATING_SYSTEM_NAME)
 if (${XTD_OPERATING_SYSTEM_NAME} STREQUAL "Darwin" OR ${XTD_OPERATING_SYSTEM_NAME} STREQUAL "macOS")
   choice_options(XTD_NATIVE_OPERATING_SYSTEM "Choose Operating System for native system libraries" "macOS" "iOS" "Android")
@@ -79,7 +87,9 @@ else ()
   message(FATAL_ERROR "The Operating system \"${XTD_OPERATING_SYSTEM_NAME}\" is unknown!")
 endif ()
 
+################################################################################
 # set core native library
+
 #add_definitions(-D__XTD_NATIVE_OPERATING_SYSTEM__="${XTD_NATIVE_OPERATING_SYSTEM}")
 
 if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Android")
@@ -105,7 +115,9 @@ else ()
   message(FATAL_ERROR "Operating system \"${XTD_NATIVE_OPERATING_SYSTEM}\" is unknown!")
 endif ()
 
+################################################################################
 # set drawing and forms native library
+
 #add_definitions(-D__XTD_NATIVE_GRAPHIC_TOOLKIT__="${XTD_NATIVE_GRAPHIC_TOOLKIT}")
 if (${XTD_NATIVE_GRAPHIC_TOOLKIT} STREQUAL "cocoa")
   message(WARNING "Cocoa toolkit is only supported for development, used wxwidgets instead.\nCocoa toolkit will be disponible in a future release.")
@@ -142,13 +154,17 @@ if (${XTD_NATIVE_GRAPHIC_TOOLKIT} STREQUAL "wxwidgets")
   set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.wxwidgets)
 endif ()
 
+################################################################################
 # Code coverage
+
 if (XTD_ENABLE_COVERAGE AND UNIX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage")
   set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} --coverage")
 endif ()
 
+################################################################################
 # set xtd library type (shared or static)
+
 if (XTD_BUILD_SHARED_LIBRARIES)
   set(XTD_LIBRARY_TYPE SHARED_LIBRARY)
 else()
@@ -159,7 +175,9 @@ if (XTD_BUILD_TESTS_XTD_CORE OR XTD_BUILD_TESTS_XTD_DRAWING OR XTD_BUILD_TESTS_X
   enable_testing()
 endif ()
 
+################################################################################
 # Projects
+
 if (XTD_ENABLE_EXTRA_PROJECTS)
   add_projects(docs locale scripts)
 endif ()
@@ -178,7 +196,9 @@ if (XTD_BUILD_LIBRARIES_XTD_FORMS)
   add_projects(themes)
 endif ()
 
+################################################################################
 # Run Developper Reference Guide generator command
+
 if (XTD_ENABLE_RUN_DEVELOPPER_REFERENCE_GUIDE)
   add_custom_target(RUN_DEVELOPPER_REFERENCE_GUIDE ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen/doxygen_developer.txt WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen COMMAND ${XTD_RUN_COMMAND} "${CMAKE_CURRENT_BINARY_DIR}/developer_html/index.html" COMMENT "Run Doxygen Developper Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
   set_target_properties(RUN_DEVELOPPER_REFERENCE_GUIDE PROPERTIES FOLDER commands)
@@ -201,10 +221,14 @@ xtd_update_export_file(src/xtd.forms/include/xtd/forms_export.h XTD_FORMS_EXPORT
 xtd_update_export_file(src/xtd.tunit/include/xtd/tunit_export.h XTD_TUNIT_EXPORT tunit_export_)
 xtd_update_export_file(src/xtd/include/xtd/export.h XTD_EXPORT export_)
 
+################################################################################
 # Run tests
+
 set(CMAKE_CTEST_ARGUMENTS ${CMAKE_CTEST_ARGUMENTS} --output-on-failure)
 
+################################################################################
 # Install
+
 install_package()
 # override with specific xtd cmake config file
 set(XTD_CONFIG_CMAKE_FILE ${CMAKE_CURRENT_BINARY_DIR}/xtdConfig.cmake)
