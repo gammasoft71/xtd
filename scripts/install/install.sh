@@ -174,6 +174,16 @@ else
 fi
 export XTD_ROOT_PATH=\"$cmake_install_prefix\"
 
+if [[ "$OSTYPE" == *"Darwin"* ]]; then
+  echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.bash_profile
+  echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.zprofile
+elif [[ "$OSTYPE" == *"FreeBSD"* ]]; then
+  echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.cshrc
+else
+  echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.bashrc
+fi
+export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"
+
 #_______________________________________________________________________________
 #                             Copy install manifest files to xtd share directory
 if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
