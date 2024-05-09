@@ -2100,8 +2100,8 @@ add_definitions(-D__XTD_TARGET_ID_CUSTOM_TARGET__=${__CMAKE_TARGET_ID_CUSTOM_TAR
 # Enumeration introspection
 # brief The following option activate the enum introspection.
 option(XTD_USE_ENUMERATION_INTROSPECTION "Activate the enumeration introspection." ON)
-if (XTD_USE_ENUMERATION_INTROSPECTION)
-  add_definitions(-D__XTD_USE_ENUMERATION_INTROSPECTION__)
+if (NOT XTD_USE_ENUMERATION_INTROSPECTION)
+  add_definitions(-D__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)
 endif ()
 
 # standard C
@@ -2175,7 +2175,6 @@ if (APPLE AND XCODE_VERSION)
   endif ()
 endif ()
 
-add_definitions(-D__CMAKE_INSTALL_PREFIX__="${CMAKE_INSTALL_PREFIX}")
 if (NOT XTD_PROJECT_INCLUDE_FILE)
   set(XTD_PROJECT_INCLUDE_FILE "xtd/xtd")
 endif ()
