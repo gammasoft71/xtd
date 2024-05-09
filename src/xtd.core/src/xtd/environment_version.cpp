@@ -4,6 +4,11 @@
 
 #include "../include/xtd/environment.h"
 
+// This check verifies that the current version is defined in the availability_versions.h include file.
+#if !defined(__XTD_0_2_0__)
+#  error "__XTD_0_2_0__ not defined"
+#endif
+
 xtd::version xtd::environment::version() noexcept {
   return xtd::version::parse("0.2.0");
 }
