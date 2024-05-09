@@ -162,7 +162,7 @@ elif [[ "$OSTYPE" == *"Darwin"* ]]; then
 fi
 
 #_______________________________________________________________________________
-#                                      Create xtd root path environemnt variable
+#                                      Create xtd root path environment variable
 
 if [[ "$OSTYPE" == *"Darwin"* ]]; then
   echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.bash_profile
