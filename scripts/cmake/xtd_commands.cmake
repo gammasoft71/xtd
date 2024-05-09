@@ -2106,8 +2106,8 @@ enable_testing()
 # add ASSEMBLY_VERSION definition
 #if (NOT PROJECT_VERSION AND XTD_VERSION)
 #  set(PROJECT_VERSION ${XTD_VERSION})
-#  remove_definitions(-DXTD_TARGET_VERSION)
-#  add_definitions(-D__XTD_TARGET_VERSION__="${PROJECT_VERSION}")
+#  remove_definitions(-D__XTD_ASSEMBLY_VERSION__)
+#  add_definitions(-D__XTD_ASSEMBLY_VERSION__="${PROJECT_VERSION}")
 #endif ()
 
 # add compile and link flags
