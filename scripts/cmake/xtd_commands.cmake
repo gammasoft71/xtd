@@ -8,6 +8,20 @@ include(ExternalProject)
 include(ProcessorCount)
 
 ################################################################################
+# Options
+
+option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
+option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
+option(XTD_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
+option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" OFF)
+option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" OFF)
+option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" OFF)
+option(XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" ON)
+option(XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" OFF)
+option(XTD_SET_COMPILER_OPTION_BUILD_ON_MULTIPLE_PROCESSES "Enable compiler option to buildd on muultiple processes (has effect on MSVC build only)" ON)
+option(XTD_USE_ENUMERATION_INTROSPECTION "Activate the enumeration introspection." ON)
+
+################################################################################
 # Target type Settings
 
 set(__CMAKE_TARGET_ID_UNKNOWN__ 0)
@@ -2088,7 +2102,6 @@ endif ()
 
 # Enumeration introspection
 # brief The following option activate the enum introspection.
-option(XTD_USE_ENUMERATION_INTROSPECTION "Activate the enumeration introspection." ON)
 if (NOT XTD_USE_ENUMERATION_INTROSPECTION)
   add_definitions(-D__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)
 endif ()
@@ -2111,9 +2124,6 @@ enable_testing()
 #endif ()
 
 # add compile and link flags
-option(XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" ON)
-option(XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" OFF)
-
 if (XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL)
   if (MSVC)
     add_compile_options(/W4 /wd4100 /wd4127 /wd4458 /wd4459 /wd4996 /wd5105)
@@ -2130,7 +2140,6 @@ if (XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS)
   endif()
 endif()
 
-option(XTD_SET_COMPILER_OPTION_BUILD_ON_MULTIPLE_PROCESSES "Enable compiler option to buildd on muultiple processes (has effect on MSVC build only)" ON)
 if (MSVC)
   if (XTD_SET_COMPILER_OPTION_BUILD_ON_MULTIPLE_PROCESSES)
     include(ProcessorCount)
@@ -2200,10 +2209,6 @@ add_definitions(-D__XTD_ROOT_PATH__="${XTD_ROOT_PATH}")
 ################################################################################
 # Run astyle coommand
 
-# Options
-option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" ON)
-option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
-
 if (NOT ASTYLE_SOURCE_FILES)
   set(ASTYLE_SOURCE_FILES
    ${CMAKE_SOURCE_DIR}/*.cpp 
@@ -2262,9 +2267,6 @@ endif ()
 ################################################################################
 # Run cppcheck command
 
-option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" ON)
-option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
-
 if (NOT CPPCHECK_SOURCE_ROOTS)
   set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR})
 endif ()
@@ -2303,10 +2305,6 @@ endif ()
 
 ################################################################################
 # Run Reference Guide generator command
-
-option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" ON)
-option(XTD_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
-
   
 if (MSVC)
   set(XTD_RUN_COMMAND start)
