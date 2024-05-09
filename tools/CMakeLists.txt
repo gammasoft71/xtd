@@ -11,6 +11,7 @@ add_projects(
   guidgen-gui
   keycodes
   sleepfor
+  set_environment_variable
   set_path
   xtdc
   xtdc-gui
