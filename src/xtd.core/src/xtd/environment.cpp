@@ -353,23 +353,23 @@ xtd::ustring environment::get_folder_path(environment::special_folder folder) {
 
 ustring environment::get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
   switch (folder) {
-    case environment::special_folder::xtd_install: return __XTD_INSTALL_PATH__;
-    case environment::special_folder::xtd_locale: return __XTD_LOCALE_PATH__; break;
-    case environment::special_folder::xtd_reference_guide: return __XTD_REFERENCE_GUIDE_PATH__;
-    case environment::special_folder::xtd_themes: return __XTD_THEMES_PATH__;
-    case environment::special_folder::xtd_include: return environment::xtd_include_path;
-    case environment::special_folder::xtd_libraries: return environment::xtd_libraries_path;
-    case environment::special_folder::xtd_resources: return environment::xtd_resources_path;
-    case environment::special_folder::xtd_console_include: return environment::xtd_console_include_path;
-    case environment::special_folder::xtd_console_libraries: return environment::xtd_console_libraries_path;
-    case environment::special_folder::xtd_drawing_include: return environment::xtd_drawing_include_path;
-    case environment::special_folder::xtd_drawing_libraries: return environment::xtd_drawing_libraries_path;
-    case environment::special_folder::xtd_drawing_resources: return environment::xtd_drawing_resources_path;
-    case environment::special_folder::xtd_forms_include: return environment::xtd_forms_include_path;
-    case environment::special_folder::xtd_forms_libraries: return environment::xtd_forms_libraries_path;
-    case environment::special_folder::xtd_forms_resources: return environment::xtd_forms_resources_path;
-    case environment::special_folder::xtd_tunit_include: return environment::xtd_tunit_include_path;
-    case environment::special_folder::xtd_tunit_libraries: return environment::xtd_tunit_libraries_path;
+    case environment::special_folder::xtd_install: return xtd_install_path;
+    case environment::special_folder::xtd_locale: return xtd_locale_path;
+    case environment::special_folder::xtd_reference_guide: return xtd_reference_guide_path;
+    case environment::special_folder::xtd_themes: return xtd_themes_path;
+    case environment::special_folder::xtd_include: return xtd_include_path;
+    case environment::special_folder::xtd_libraries: return xtd_libraries_path;
+    case environment::special_folder::xtd_resources: return xtd_resources_path;
+    case environment::special_folder::xtd_console_include: return xtd_console_include_path;
+    case environment::special_folder::xtd_console_libraries: return xtd_console_libraries_path;
+    case environment::special_folder::xtd_drawing_include: return xtd_drawing_include_path;
+    case environment::special_folder::xtd_drawing_libraries: return xtd_drawing_libraries_path;
+    case environment::special_folder::xtd_drawing_resources: return xtd_drawing_resources_path;
+    case environment::special_folder::xtd_forms_include: return xtd_forms_include_path;
+    case environment::special_folder::xtd_forms_libraries: return xtd_forms_libraries_path;
+    case environment::special_folder::xtd_forms_resources: return xtd_forms_resources_path;
+    case environment::special_folder::xtd_tunit_include: return xtd_tunit_include_path;
+    case environment::special_folder::xtd_tunit_libraries: return xtd_tunit_libraries_path;
     default: break;
   }
   

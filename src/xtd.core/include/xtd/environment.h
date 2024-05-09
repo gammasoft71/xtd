@@ -5,6 +5,7 @@
 #include "collections/specialized/string_vector.h"
 #include "diagnostics/stack_trace.h"
 #include "io/directory.h"
+#include "io/path.h"
 #include "argument_exception.h"
 #include "as.h"
 #include "compiler.h"
@@ -37,77 +38,15 @@
 #include <vector>
 
 /// @cond
-// The following constants are defined in the file xtd_command.cmake.
-// If the target project is not built with cmake, each constant must be defined by the build tool like this:
-// | Constant                       | Value                                            |
-// | ------------------------------ | ------------------------------------------------ |
-// | __XTD_INCLUDE_PATH__           | ${XTD_INSTALL_PATH}/include"                     |
-// | __XTD_LIB_PATH__               | ${XTD_INSTALL_PATH}/lib"                         |
-// | __XTD_CONSOLE_INCLUDE_PATH__   | ${XTD_CONSOLE_INSTALL_PATH}/include"             |
-// | __XTD_CONSOLE_LIB_PATH__       | ${XTD_CONSOLE_INSTALL_PATH}/lib"                 |
-// | __XTD_DRAWING_INCLUDE_PATH__   | ${XTD_DRAWING_INSTALL_PATH}/include"             |
-// | __XTD_DRAWING_LIB_PATH__       | ${XTD_DRAWING_INSTALL_PATH}/lib"                 |
-// | __XTD_DRAWING_RESOURCES_PATH__ | ${XTD_DRAWING_INSTALL_PATH}/share/xtd/resources" |
-// | __XTD_FORMS_INCLUDE_PATH__     | ${XTD_FORMS_INSTALL_PATH}/include"               |
-// | __XTD_FORMS_LIB_PATH__         | ${XTD_FORMS_INSTALL_PATH}/lib"                   |
-// | __XTD_FORMS_RESOURCES_PATH__   | ${XTD_FORMS_INSTALL_PATH}/share/xtd/resources"   |
-// | __XTD_TUNIT_INCLUDE_PATH__     | ${XTD_TUNIT_INSTALL_PATH}/include"               |
-// | __XTD_TUNIT_LIB_PATH__         | ${XTD_TUNIT_INSTALL_PATH}/lib"                   |
+// The following constant is defined in the file xtd_command.cmake.
+// If the target project is not built with cmake, the following constant must be defined by the build tool like this if the cmake_install_prefix is not modified; otherwise the cmake_install_prefix value:
+// | Constant          | Windows Value                | macOS        | linux        |
+// | ----------------- | ---------------------------- |--------------|--------------|
+// | __XTD_ROOT_PATH__ | "C:\Program Files (x86)\xtd" | "/usr/local" | "/usr/local" |
+// Remarks : If __XTD_ROOT_PATH__ is empty the environment variable XTD_ROOT_PATH is used. And if the environment variable XTD_ROOT_PATH is empty too the directory componant of __FILE__ macro is used.
 
 #if !defined(__XTD_ROOT_PATH__)
-#define __XTD_ROOT_PATH__ ""
-#endif
-
-#if !defined(__XTD_INCLUDE_PATH__)
-#define __XTD_INCLUDE_PATH__ ""
-#endif
-
-#if !defined(__XTD_LIB_PATH__)
-#define __XTD_LIB_PATH__ ""
-#endif
-
-#if !defined(__XTD_RESOURCES_PATH__)
-#define __XTD_RESOURCES_PATH__ ""
-#endif
-
-#if !defined(__XTD_CONSOLE_INCLUDE_PATH__)
-#define __XTD_CONSOLE_INCLUDE_PATH__ ""
-#endif
-
-#if !defined(__XTD_CONSOLE_LIB_PATH__)
-#define __XTD_CONSOLE_LIB_PATH__ ""
-#endif
-
-#if !defined(__XTD_DRAWING_INCLUDE_PATH__)
-#define __XTD_DRAWING_INCLUDE_PATH__ ""
-#endif
-
-#if !defined(__XTD_DRAWING_LIB_PATH__)
-#define __XTD_DRAWING_LIB_PATH__ ""
-#endif
-
-#if !defined(__XTD_DRAWING_RESOURCES_PATH__)
-#define __XTD_DRAWING_RESOURCES_PATH__ ""
-#endif
-
-#if !defined(__XTD_FORMS_INCLUDE_PATH__)
-#define __XTD_FORMS_INCLUDE_PATH__ ""
-#endif
-
-#if !defined(__XTD_FORMS_LIB_PATH__)
-#define __XTD_FORMS_LIB_PATH__ ""
-#endif
-
-#if !defined(__XTD_FORMS_RESOURCES_PATH__)
-#define __XTD_FORMS_RESOURCES_PATH__ ""
-#endif
-
-#if !defined(__XTD_TUNIT_INCLUDE_PATH__)
-#define __XTD_TUNIT_INCLUDE_PATH__ ""
-#endif
-
-#if !defined(__XTD_TUNIT_LIB_PATH__)
-#define __XTD_TUNIT_LIB_PATH__ ""
+#  define __XTD_ROOT_PATH__ ""
 #endif
 /// @endcond
 
@@ -718,19 +657,24 @@ namespace xtd {
     static void on_cancel_signal(signal_cancel_event_args& e);
     static void on_program_exit(const program_exit_event_args& e);
 
-    inline static constexpr const char* xtd_include_path = __XTD_INCLUDE_PATH__;
-    inline static constexpr const char* xtd_libraries_path = __XTD_LIB_PATH__;
-    inline static constexpr const char* xtd_resources_path = __XTD_RESOURCES_PATH__;
-    inline static constexpr const char* xtd_console_include_path = __XTD_CONSOLE_INCLUDE_PATH__;
-    inline static constexpr const char* xtd_console_libraries_path = __XTD_CONSOLE_LIB_PATH__;
-    inline static constexpr const char* xtd_drawing_include_path = __XTD_DRAWING_INCLUDE_PATH__;
-    inline static constexpr const char* xtd_drawing_libraries_path = __XTD_DRAWING_LIB_PATH__;
-    inline static constexpr const char* xtd_drawing_resources_path = __XTD_DRAWING_RESOURCES_PATH__;
-    inline static constexpr const char* xtd_forms_include_path = __XTD_FORMS_INCLUDE_PATH__;
-    inline static constexpr const char* xtd_forms_libraries_path = __XTD_FORMS_LIB_PATH__;
-    inline static constexpr const char* xtd_forms_resources_path = __XTD_FORMS_RESOURCES_PATH__;
-    inline static constexpr const char* xtd_tunit_include_path = __XTD_TUNIT_INCLUDE_PATH__;
-    inline static constexpr const char* xtd_tunit_libraries_path = __XTD_TUNIT_LIB_PATH__;
+    inline static const ustring xtd_root_path = ustring::is_empty(__XTD_ROOT_PATH__) ? (ustring::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(__FILE__), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__;
+    inline static const ustring xtd_include_path = io::path::combine(xtd_root_path, "include");
+    inline static const ustring xtd_install_path = xtd_root_path;
+    inline static const ustring xtd_libraries_path = io::path::combine(xtd_root_path, "lib");
+    inline static const ustring xtd_locale_path = io::path::combine(xtd_root_path, "share", "xtd", "locale");
+    inline static const ustring xtd_reference_guide_path = io::path::combine(xtd_root_path, "share", "xtd", "reference_guide");
+    inline static const ustring xtd_resources_path = io::path::combine(xtd_root_path, "share", "xtd", "resources");
+    inline static const ustring xtd_themes_path = io::path::combine(xtd_root_path, "share", "xtd", "themes");
+    inline static const ustring xtd_console_include_path = io::path::combine(xtd_root_path, "include");
+    inline static const ustring xtd_console_libraries_path = io::path::combine(xtd_root_path, "lib");
+    inline static const ustring xtd_drawing_include_path = io::path::combine(xtd_root_path, "include");
+    inline static const ustring xtd_drawing_libraries_path = io::path::combine(xtd_root_path, "lib");
+    inline static const ustring xtd_drawing_resources_path = io::path::combine(xtd_root_path, "share", "xtd", "resources");
+    inline static const ustring xtd_forms_include_path = io::path::combine(xtd_root_path, "include");
+    inline static const ustring xtd_forms_libraries_path = io::path::combine(xtd_root_path, "lib");
+    inline static const ustring xtd_forms_resources_path = io::path::combine(xtd_root_path, "share", "xtd", "resources");
+    inline static const ustring xtd_tunit_include_path = io::path::combine(xtd_root_path, "include");
+    inline static const ustring xtd_tunit_libraries_path = io::path::combine(xtd_root_path, "lib");
     static signal_catcher signal_catcher_;
   };
 }

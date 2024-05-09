@@ -23,10 +23,7 @@ option(XTD_KEEP_CLONED_CONTROLS "Keep cloned controls by default (Only for debug
 option(XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" ON)
 option(XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" OFF)
 option(XTD_USE_SYSTEM_CONTROLS "Use by default system controls instead standard controls (Only for debugging)" OFF)
-add_definitions(-D__XTD_INSTALL_PATH__="${CMAKE_INSTALL_PREFIX}")
-add_definitions(-D__XTD_LOCALE_PATH__="${CMAKE_INSTALL_PREFIX}/share/xtd/locale")
-add_definitions(-D__XTD_REFERENCE_GUIDE_PATH__="${CMAKE_INSTALL_PREFIX}/share/xtd/reference_guide")
-add_definitions(-D__XTD_THEMES_PATH__="${CMAKE_INSTALL_PREFIX}/share/xtd/themes")
+add_definitions(-D__XTD_ROOT_PATH__="${CMAKE_INSTALL_PREFIX}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/cmake)
 
 set(ASTYLE_SOURCE_FILES 

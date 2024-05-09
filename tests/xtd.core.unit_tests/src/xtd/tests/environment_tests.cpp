@@ -6,6 +6,7 @@
 #include "platform_name.h"
 #include "standard_name.h"
 #include <xtd/environment>
+#include <xtd/io/path>
 #include <xtd/threading/thread>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>
@@ -13,6 +14,7 @@
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
+using namespace xtd::io;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
@@ -663,67 +665,67 @@ namespace xtd::tests {
     }
     
     void test_method_(get_folder_path_special_folder_xtd_install) {
-      assert::are_equal(__XTD_INSTALL_PATH__, environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), csf_);
+      assert::is_not_empty(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_locale) {
-      assert::are_equal(__XTD_LOCALE_PATH__, environment::get_folder_path(environment::special_folder::xtd_locale, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "share", "xtd", "locale"), environment::get_folder_path(environment::special_folder::xtd_locale, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_reference_guide) {
-      assert::are_equal(__XTD_REFERENCE_GUIDE_PATH__, environment::get_folder_path(environment::special_folder::xtd_reference_guide, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "share", "xtd", "reference_guide"), environment::get_folder_path(environment::special_folder::xtd_reference_guide, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_themes) {
-      assert::are_equal(__XTD_THEMES_PATH__, environment::get_folder_path(environment::special_folder::xtd_themes, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "share", "xtd", "themes"), environment::get_folder_path(environment::special_folder::xtd_themes, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_include) {
-      assert::are_equal(__XTD_INCLUDE_PATH__, environment::get_folder_path(environment::special_folder::xtd_include, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "include"), environment::get_folder_path(environment::special_folder::xtd_include, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_libraries) {
-      assert::are_equal(__XTD_LIB_PATH__, environment::get_folder_path(environment::special_folder::xtd_libraries, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "lib"), environment::get_folder_path(environment::special_folder::xtd_libraries, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_resources) {
-      assert::are_equal(__XTD_RESOURCES_PATH__, environment::get_folder_path(environment::special_folder::xtd_resources, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "share", "xtd", "resources"), environment::get_folder_path(environment::special_folder::xtd_resources, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_console_include) {
-      assert::are_equal(__XTD_CONSOLE_INCLUDE_PATH__, environment::get_folder_path(environment::special_folder::xtd_console_include, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "include"), environment::get_folder_path(environment::special_folder::xtd_console_include, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_console_libraries) {
-      assert::are_equal(__XTD_CONSOLE_LIB_PATH__, environment::get_folder_path(environment::special_folder::xtd_console_libraries, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "lib"), environment::get_folder_path(environment::special_folder::xtd_console_libraries, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_drawing_include) {
-      assert::are_equal(__XTD_DRAWING_INCLUDE_PATH__, environment::get_folder_path(environment::special_folder::xtd_drawing_include, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "include"), environment::get_folder_path(environment::special_folder::xtd_drawing_include, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_drawing_libraries) {
-      assert::are_equal(__XTD_DRAWING_LIB_PATH__, environment::get_folder_path(environment::special_folder::xtd_drawing_libraries, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "lib"), environment::get_folder_path(environment::special_folder::xtd_drawing_libraries, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_forms_include) {
-      assert::are_equal(__XTD_FORMS_INCLUDE_PATH__, environment::get_folder_path(environment::special_folder::xtd_forms_include, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "include"), environment::get_folder_path(environment::special_folder::xtd_forms_include, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_forms_libraries) {
-      assert::are_equal(__XTD_FORMS_LIB_PATH__, environment::get_folder_path(environment::special_folder::xtd_forms_libraries, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "lib"), environment::get_folder_path(environment::special_folder::xtd_forms_libraries, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_forms_resources) {
-      assert::are_equal(__XTD_FORMS_RESOURCES_PATH__, environment::get_folder_path(environment::special_folder::xtd_forms_resources, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "share", "xtd", "resources"), environment::get_folder_path(environment::special_folder::xtd_forms_resources, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_tunit_include) {
-      assert::are_equal(__XTD_TUNIT_INCLUDE_PATH__, environment::get_folder_path(environment::special_folder::xtd_tunit_include, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "include"), environment::get_folder_path(environment::special_folder::xtd_tunit_include, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_folder_path_special_folder_xtd_tunit_libraries) {
-      assert::are_equal(__XTD_TUNIT_LIB_PATH__, environment::get_folder_path(environment::special_folder::xtd_tunit_libraries, environment::special_folder_option::do_not_verify), csf_);
+      assert::are_equal(path::combine(environment::get_folder_path(environment::special_folder::xtd_install, environment::special_folder_option::do_not_verify), "lib"), environment::get_folder_path(environment::special_folder::xtd_tunit_libraries, environment::special_folder_option::do_not_verify), csf_);
     }
     
     void test_method_(get_logical_drives) {
