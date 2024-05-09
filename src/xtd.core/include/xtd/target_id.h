@@ -22,41 +22,15 @@
 // Remarks
 // if __XTD_CURRENT_TARGET_ID__ id not defined. It will be defined as __XTD_TARGET_ID_UNKNOWN__.
 
-#if !defined(__XTD_TARGET_ID_UNKNOWN__)
 #define __XTD_TARGET_ID_UNKNOWN__ 0
-#endif
-
-#if !defined(__XTD_TARGET_ID_CONSOLE_APPLICATION__)
 #define __XTD_TARGET_ID_CONSOLE_APPLICATION__ 1
-#endif
-
-#if !defined(__XTD_TARGET_ID_GUI_APPLICATION__)
 #define __XTD_TARGET_ID_GUI_APPLICATION__ 2
-#endif
-
-#if !defined(__XTD_TARGET_ID_TEST_APPLICATION__)
 #define __XTD_TARGET_ID_TEST_APPLICATION__ 3
-#endif
-
-#if !defined(__XTD_TARGET_ID_INTERFACE_LIBRARY__)
 #define __XTD_TARGET_ID_INTERFACE_LIBRARY__ 4
-#endif
-
-#if !defined(__XTD_TARGET_ID_MODULE_LIBRARY__)
 #define __XTD_TARGET_ID_MODULE_LIBRARY__ 5
-#endif
-
-#if !defined(__XTD_TARGET_ID_SHARED_LIBRARY__)
 #define __XTD_TARGET_ID_SHARED_LIBRARY__ 6
-#endif
-
-#if !defined(__XTD_TARGET_ID_STATIC_LIBRARY__)
 #define __XTD_TARGET_ID_STATIC_LIBRARY__ 7
-#endif
-
-#if !defined(__XTD_TARGET_ID_CUSTOM_TARGET__)
 #define __XTD_TARGET_ID_CUSTOM_TARGET__ 8
-#endif
 
 #if !defined(__XTD_CURRENT_TARGET_ID__)
 #define __XTD_CURRENT_TARGET_ID__ __XTD_TARGET_ID_UNKNOWN__

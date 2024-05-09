@@ -2086,17 +2086,6 @@ if (NOT "${XTD_BUILD_CPP_STANDARD}" STREQUAL "compiler_default")
   set(CMAKE_CXX_STANDARD_REQUIRED ON)
 endif ()
 
-# target types
-add_definitions(-D__XTD_TARGET_ID_UNKNOWN__=${__CMAKE_TARGET_ID_UNKNOWN__})
-add_definitions(-D__XTD_TARGET_ID_CONSOLE_APPLICATION__=${__CMAKE_TARGET_ID_CONSOLE_APPLICATION__})
-add_definitions(-D__XTD_TARGET_ID_GUI_APPLICATION__=${__CMAKE_TARGET_ID_GUI_APPLICATION__})
-add_definitions(-D__XTD_TARGET_ID_TEST_APPLICATION__=${__CMAKE_TARGET_ID_TEST_APPLICATION__})
-add_definitions(-D__XTD_TARGET_ID_INTERFACE_LIBRARY__=${__CMAKE_TARGET_ID_INTERFACE_LIBRARY__})
-add_definitions(-D__XTD_TARGET_ID_MODULE_LIBRARY__=${__CMAKE_TARGET_ID_MODULE_LIBRARY__})
-add_definitions(-D__XTD_TARGET_ID_SHARED_LIBRARY__=${__CMAKE_TARGET_ID_SHARED_LIBRARY__})
-add_definitions(-D__XTD_TARGET_ID_STATIC_LIBRARY__=${__CMAKE_TARGET_ID_STATIC_LIBRARY__})
-add_definitions(-D__XTD_TARGET_ID_CUSTOM_TARGET__=${__CMAKE_TARGET_ID_CUSTOM_TARGET__})
-
 # Enumeration introspection
 # brief The following option activate the enum introspection.
 option(XTD_USE_ENUMERATION_INTROSPECTION "Activate the enumeration introspection." ON)
