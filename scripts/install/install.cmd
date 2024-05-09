@@ -96,6 +96,7 @@ set Path=%cmake_install_prefix%\xtd\bin;%Path%
 ::                                     Create xtd root path environment variable
 build\tools\set_environment_variable\Release\set_environment_variable XTD_ROOT_PATH "%cmake_install_prefix%\xtd"
 set XTD_ROOT_PATH="%cmake_install_prefix%\xtd"
+set XTD_TOOLKIT_PATH="%cmake_install_prefix%\wxWidgets"
 
 ::______________________________________________________________________________
 ::                                                               launch xtdc-gui
