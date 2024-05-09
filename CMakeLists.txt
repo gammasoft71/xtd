@@ -23,7 +23,6 @@ option(XTD_KEEP_CLONED_CONTROLS "Keep cloned controls by default (Only for debug
 option(XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" ON)
 option(XTD_SET_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" OFF)
 option(XTD_USE_SYSTEM_CONTROLS "Use by default system controls instead standard controls (Only for debugging)" OFF)
-add_definitions(-D__XTD_ROOT_PATH__="${CMAKE_INSTALL_PREFIX}")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/cmake)
 
 set(ASTYLE_SOURCE_FILES 
@@ -81,7 +80,7 @@ else ()
 endif ()
 
 # set core native library
-add_definitions(-D__XTD_NATIVE_OPERATING_SYSTEM__="${XTD_NATIVE_OPERATING_SYSTEM}")
+#add_definitions(-D__XTD_NATIVE_OPERATING_SYSTEM__="${XTD_NATIVE_OPERATING_SYSTEM}")
 
 if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Android")
   #set(XTD_CORE_NATIVE_LIBRARY xtd.core.native.android)
@@ -107,7 +106,7 @@ else ()
 endif ()
 
 # set drawing and forms native library
-add_definitions(-D__XTD_NATIVE_GRAPHIC_TOOLKIT__="${XTD_NATIVE_GRAPHIC_TOOLKIT}")
+#add_definitions(-D__XTD_NATIVE_GRAPHIC_TOOLKIT__="${XTD_NATIVE_GRAPHIC_TOOLKIT}")
 if (${XTD_NATIVE_GRAPHIC_TOOLKIT} STREQUAL "cocoa")
   message(WARNING "Cocoa toolkit is only supported for development, used wxwidgets instead.\nCocoa toolkit will be disponible in a future release.")
   set(XTD_DRAWING_NATIVE_LIBRARY xtd.drawing.native.cocoa)
