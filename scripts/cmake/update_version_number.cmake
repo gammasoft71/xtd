@@ -9,6 +9,7 @@
 file(READ src/xtd.core/src/xtd/environment_version.cpp ENVIRONMENT_VERSION_API)
 string(FIND "${ENVIRONMENT_VERSION_API}" "${XTD_VERSION}" STRING_FOUND)
 if (${STRING_FOUND} EQUAL -1)
+  string(REPLACE "." "_" XTD_VERSION_WITH_UNDERSCORE ${XTD_VERSION})
   message(NOTICE "")
   message(NOTICE "--------------------------------")
   message(NOTICE "--- Version number changed ! ---")
@@ -21,6 +22,11 @@ if (${STRING_FOUND} EQUAL -1)
     "// Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.\n"
     "\n"
     "#include \"../include/xtd/environment\"\n"
+    "\n"
+    "// This check verifies that the current version is defined in the availability_versions.h include file.\n"
+    "#if !defined(__XTD_${XTD_VERSION_WITH_UNDERSCORE}__)\n"
+    "#  error \"__XTD_${XTD_VERSION_WITH_UNDERSCORE}__ not defined\"\n"
+    "#endif\n"
     "\n"
     "xtd::version xtd::environment::version() noexcept {\n"
     "  return xtd::version::parse(\"${XTD_VERSION}\");\n"

@@ -2,6 +2,7 @@
 /// @brief Contains xtd fundamental types.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "availability_versions.h"
 #include "core_export.h"
 #include "core_namespace_aliases.h"
 #include "self.h"

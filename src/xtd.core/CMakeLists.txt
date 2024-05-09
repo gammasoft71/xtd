@@ -38,6 +38,8 @@ add_sources(
   include/xtd/async_result
   include/xtd/attribute.h
   include/xtd/attribute
+  include/xtd/availability_versions.h
+  include/xtd/availability_versions
   include/xtd/background_color.h
   include/xtd/background_color
   include/xtd/beep.h
