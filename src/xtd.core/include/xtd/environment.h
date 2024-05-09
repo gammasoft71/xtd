@@ -53,6 +53,11 @@
 // | __XTD_FORMS_RESOURCES_PATH__   | ${XTD_FORMS_INSTALL_PATH}/share/xtd/resources"   |
 // | __XTD_TUNIT_INCLUDE_PATH__     | ${XTD_TUNIT_INSTALL_PATH}/include"               |
 // | __XTD_TUNIT_LIB_PATH__         | ${XTD_TUNIT_INSTALL_PATH}/lib"                   |
+
+#if !defined(__XTD_ROOT_PATH__)
+#define __XTD_ROOT_PATH__ ""
+#endif
+
 #if !defined(__XTD_INCLUDE_PATH__)
 #define __XTD_INCLUDE_PATH__ ""
 #endif
