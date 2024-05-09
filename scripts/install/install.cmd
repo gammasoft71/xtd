@@ -93,6 +93,11 @@ build\tools\set_path\Release\set_path "%cmake_install_prefix%\xtd\bin"
 set Path=%cmake_install_prefix%\xtd\bin;%Path%
 
 ::______________________________________________________________________________
+::                                     Create xtd root path environment variable
+build\tools\set_environment_variable\Release\set_environment_variable XTD_ROOT_PATH "%cmake_install_prefix%\xtd"
+set XTD_ROOT_PATH="%cmake_install_prefix%\xtd"
+
+::______________________________________________________________________________
 ::                                                               launch xtdc-gui
 echo Launching xtdc-gui...
 ::start "xtdc-gui" "%cmake_install_prefix%\xtd\bin\xtdc-gui.exe"
