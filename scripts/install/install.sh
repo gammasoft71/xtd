@@ -166,6 +166,7 @@ fi
 
 if [[ "$OSTYPE" == *"Darwin"* ]]; then
   echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.bash_profile
+  echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.zprofile
 elif [[ "$OSTYPE" == *"FreeBSD"* ]]; then
   echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.cshrc
 else
