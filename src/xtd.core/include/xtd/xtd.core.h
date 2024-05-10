@@ -202,6 +202,7 @@
 #include "as.h"
 #include "async_callback.h"
 #include "attribute.h"
+#include "availability_versions.h"
 #include "background_color.h"
 #include "beep.h"
 #include "bit_converter.h"
