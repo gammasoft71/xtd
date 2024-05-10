@@ -61,16 +61,16 @@ public:
     open_gammasoft_png_file_button.text("Open \"gammasoft.png\" file...");
     open_gammasoft_png_file_button.click += [] {
       images::from_name("gammasoft", drawing::size(512, 512)).save(path::combine(path::get_temp_path(), "gammasoft.png"));
-      process::start(process_start_info("gammasoft.png").working_directory(path::get_temp_path()));
+      process::start(process_start_info {"gammasoft.png"}.working_directory(path::get_temp_path()));
     };
     
     open_calculator_button.image(button_images::from_name("accessories-calculator", drawing::size(64, 64)));
     open_calculator_button.image_align(content_alignment::middle_left);
     open_calculator_button.text("Launch Calculator...");
     open_calculator_button.click += [] {
-      if (environment::os_version().is_windows()) process::start("calc");
-      else if (environment::os_version().is_macos()) process::start("Calculator");
-      else if (environment::os_version().is_linux()) process::start("gnome-calculator");
+      if (environment::os_version().is_windows()) process::start(process_start_info {"calc"}.use_shell_execute(false));
+      else if (environment::os_version().is_macos()) process::start(process_start_info {"Calculator"});
+      else if (environment::os_version().is_linux()) process::start(process_start_info {"gnome-calculator"}.use_shell_execute(false));
       else throw invalid_operation_exception("Calculator application unknown.");
     };
   }
