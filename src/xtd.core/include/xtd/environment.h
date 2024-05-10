@@ -8,6 +8,7 @@
 #include "io/path.h"
 #include "argument_exception.h"
 #include "as.h"
+#include "availability_versions.h"
 #include "compiler.h"
 #include "core_export.h"
 #include "cpp_language.h"
