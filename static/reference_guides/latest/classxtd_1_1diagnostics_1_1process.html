@@ -1514,16 +1514,16 @@ Whenever you use <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ad2
 <div class="line">    open_gammasoft_png_file_button.text(<span class="stringliteral">&quot;Open \&quot;gammasoft.png\&quot; file...&quot;</span>);</div>
 <div class="line">    open_gammasoft_png_file_button.click += [] {</div>
 <div class="line">      images::from_name(<span class="stringliteral">&quot;gammasoft&quot;</span>, <a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">drawing::size</a>(512, 512)).save(path::combine(path::get_temp_path(), <span class="stringliteral">&quot;gammasoft.png&quot;</span>));</div>
-<div class="line">      process::start(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">process_start_info</a>(<span class="stringliteral">&quot;gammasoft.png&quot;</span>).working_directory(path::get_temp_path()));</div>
+<div class="line">      process::start(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">process_start_info</a> {<span class="stringliteral">&quot;gammasoft.png&quot;</span>}.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a257d1c65002ce5cd55e54cbdc0dc94a5">working_directory</a>(path::get_temp_path()));</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    open_calculator_button.image(button_images::from_name(<span class="stringliteral">&quot;accessories-calculator&quot;</span>, <a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">drawing::size</a>(64, 64)));</div>
 <div class="line">    open_calculator_button.image_align(content_alignment::middle_left);</div>
 <div class="line">    open_calculator_button.text(<span class="stringliteral">&quot;Launch Calculator...&quot;</span>);</div>
 <div class="line">    open_calculator_button.click += [] {</div>
-<div class="line">      <span class="keywordflow">if</span> (environment::os_version().is_windows()) process::start(<span class="stringliteral">&quot;calc&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (environment::os_version().is_macos()) process::start(<span class="stringliteral">&quot;Calculator&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (environment::os_version().is_linux()) process::start(<span class="stringliteral">&quot;gnome-calculator&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">if</span> (environment::os_version().is_windows()) process::start(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">process_start_info</a> {<span class="stringliteral">&quot;calc&quot;</span>}.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>));</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (environment::os_version().is_macos()) process::start(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">process_start_info</a> {<span class="stringliteral">&quot;Calculator&quot;</span>});</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (environment::os_version().is_linux()) process::start(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">process_start_info</a> {<span class="stringliteral">&quot;gnome-calculator&quot;</span>}.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>));</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1invalid__operation__exception.html">invalid_operation_exception</a>(<span class="stringliteral">&quot;Calculator application unknown.&quot;</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -1541,6 +1541,7 @@ Whenever you use <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ad2
 <div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(main_form());</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_a257d1c65002ce5cd55e54cbdc0dc94a5"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#a257d1c65002ce5cd55e54cbdc0dc94a5">xtd::diagnostics::process_start_info::working_directory</a></div><div class="ttdeci">const xtd::ustring &amp; working_directory() const noexcept</div><div class="ttdoc">When the xtd::diagnostics::process_start_info::use_shell_execute property is false,...</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.h:31</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
@@ -1911,7 +1912,7 @@ The event is enabled during asynchronous read operations on <a class="el" href="
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 10 2024 00:07:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat May 11 2024 21:12:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

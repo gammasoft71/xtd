@@ -142,7 +142,7 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;application and exception example&quot;</span>);</div>
 <div class="line">    </div>
-<div class="line">    <span class="comment">// uncomment next line to throw error and catch it in main entry point</span></div>
+<div class="line">    <span class="comment">// Uncomment the following line to raise the exception in main entry point :</span></div>
 <div class="line">    <span class="comment">//throw system_exception(current_stack_frame_);</span></div>
 <div class="line">    </div>
 <div class="line">    generate_handled_exception_button.auto_size(<span class="keyword">true</span>);</div>
@@ -230,27 +230,63 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a52af1045fc303d2b79e3ff34b85dbf37"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1application__context.html">xtd::forms::application_context</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a52af1045fc303d2b79e3ff34b85dbf37">application_context</a> ()</td></tr>
 <tr class="memdesc:a52af1045fc303d2b79e3ff34b85dbf37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the application context associate to the application.  <br /></td></tr>
 <tr class="separator:a52af1045fc303d2b79e3ff34b85dbf37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79afa7726d7fcdb03740623f80bbe1a1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a79afa7726d7fcdb03740623f80bbe1a1">button_images</a> () noexcept</td></tr>
+<tr class="memdesc:a79afa7726d7fcdb03740623f80bbe1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets button images are enabled.  <br /></td></tr>
+<tr class="separator:a79afa7726d7fcdb03740623f80bbe1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf76b61660575a7393bb9cdc7d25071"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a7cf76b61660575a7393bb9cdc7d25071">button_images</a> (bool value)</td></tr>
+<tr class="memdesc:a7cf76b61660575a7393bb9cdc7d25071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets button images are enabled.  <br /></td></tr>
+<tr class="separator:a7cf76b61660575a7393bb9cdc7d25071"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04530a2c8329c8ae4350a532152bdf6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a04530a2c8329c8ae4350a532152bdf6d">common_app_data_path</a> () noexcept</td></tr>
 <tr class="memdesc:a04530a2c8329c8ae4350a532152bdf6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path for the application data that is shared among all users.  <br /></td></tr>
 <tr class="separator:a04530a2c8329c8ae4350a532152bdf6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26fd212234b96addf604e92a153d7559"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a26fd212234b96addf604e92a153d7559">company_name</a> () noexcept</td></tr>
 <tr class="memdesc:a26fd212234b96addf604e92a153d7559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the company name associated with the application.  <br /></td></tr>
 <tr class="separator:a26fd212234b96addf604e92a153d7559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf6bb5ac809a232e245d513dcc51886f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#abf6bb5ac809a232e245d513dcc51886f">dark_mode</a> () noexcept</td></tr>
+<tr class="memdesc:abf6bb5ac809a232e245d513dcc51886f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether dark mode is enabled for the application.  <br /></td></tr>
+<tr class="separator:abf6bb5ac809a232e245d513dcc51886f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4661f15e72d4f0844ab55077fb557e3a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a4661f15e72d4f0844ab55077fb557e3a">dark_mode</a> (bool value)</td></tr>
+<tr class="memdesc:a4661f15e72d4f0844ab55077fb557e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether dark mode is enabled for the application.  <br /></td></tr>
+<tr class="separator:a4661f15e72d4f0844ab55077fb557e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29a68b46fdee9e2e71d70d89ed296a91"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a29a68b46fdee9e2e71d70d89ed296a91">dark_mode_enabled</a> () noexcept</td></tr>
 <tr class="memdesc:a29a68b46fdee9e2e71d70d89ed296a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if dark mode is enabled for the application; otherwise return false.  <br /></td></tr>
 <tr class="separator:a29a68b46fdee9e2e71d70d89ed296a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2db9c2e2d4a2e7dd2f053987f1e8965e">light_mode_enabled</a> () noexcept</td></tr>
-<tr class="memdesc:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if dark mode is enabled for the application; otherwise return false.  <br /></td></tr>
-<tr class="separator:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e50286f482eb57be87fa9571f5b65c7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a8e50286f482eb57be87fa9571f5b65c7">executable_name</a> () noexcept</td></tr>
 <tr class="memdesc:a8e50286f482eb57be87fa9571f5b65c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the executable name for the executable file that started the application, including the executable extension.  <br /></td></tr>
 <tr class="separator:a8e50286f482eb57be87fa9571f5b65c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49b3586e61663ebea48f26784b09f1ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a49b3586e61663ebea48f26784b09f1ab">executable_path</a> () noexcept</td></tr>
 <tr class="memdesc:a49b3586e61663ebea48f26784b09f1ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path for the executable file that started the application, including the executable name.  <br /></td></tr>
 <tr class="separator:a49b3586e61663ebea48f26784b09f1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade5f1fa1e950c27c5ad30e3c70f2cbcc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ade5f1fa1e950c27c5ad30e3c70f2cbcc">font_size_correction</a> ()</td></tr>
+<tr class="memdesc:ade5f1fa1e950c27c5ad30e3c70f2cbcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether font size correction is enabled.  <br /></td></tr>
+<tr class="separator:ade5f1fa1e950c27c5ad30e3c70f2cbcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae47ee571e2c08db751cc1d67cbc57902"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ae47ee571e2c08db751cc1d67cbc57902">font_size_correction</a> (bool value)</td></tr>
+<tr class="memdesc:ae47ee571e2c08db751cc1d67cbc57902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether font size correction is enabled.  <br /></td></tr>
+<tr class="separator:ae47ee571e2c08db751cc1d67cbc57902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947cfa74e4312a79bb1a9d8b0508f1ee"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a947cfa74e4312a79bb1a9d8b0508f1ee">keep_cloned_controls</a> () noexcept</td></tr>
+<tr class="memdesc:a947cfa74e4312a79bb1a9d8b0508f1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the xtd framework keep cloned control is enabled.  <br /></td></tr>
+<tr class="separator:a947cfa74e4312a79bb1a9d8b0508f1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa93994a7f7b2a7a573ba4b553c7d066b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#aa93994a7f7b2a7a573ba4b553c7d066b">keep_cloned_controls</a> (bool value)</td></tr>
+<tr class="memdesc:aa93994a7f7b2a7a573ba4b553c7d066b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the xtd framework keep cloned control is enabled.  <br /></td></tr>
+<tr class="separator:aa93994a7f7b2a7a573ba4b553c7d066b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71d03242779b1a39208629987771c66d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a71d03242779b1a39208629987771c66d">light_mode</a> () noexcept</td></tr>
+<tr class="memdesc:a71d03242779b1a39208629987771c66d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether light mode is enabled for the application.  <br /></td></tr>
+<tr class="separator:a71d03242779b1a39208629987771c66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf4524268d96e0ea2b4000f0db5ae015"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#aaf4524268d96e0ea2b4000f0db5ae015">light_mode</a> (bool value)</td></tr>
+<tr class="memdesc:aaf4524268d96e0ea2b4000f0db5ae015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether light mode is enabled for the application.  <br /></td></tr>
+<tr class="separator:aaf4524268d96e0ea2b4000f0db5ae015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2db9c2e2d4a2e7dd2f053987f1e8965e">light_mode_enabled</a> () noexcept</td></tr>
+<tr class="memdesc:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if dark mode is enabled for the application; otherwise return false.  <br /></td></tr>
+<tr class="separator:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="memItemLeft" align="right" valign="top">static std::optional&lt; <a class="el" href="group__xtd__forms.html#ga17fc36e024d6f766763e4aeb97855b4a">form_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> ()</td></tr>
 <tr class="memdesc:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the optional main form owned by the application.  <br /></td></tr>
 <tr class="separator:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a061bde352f14ce03feb70fa1cc553e1e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a061bde352f14ce03feb70fa1cc553e1e">menu_images</a> () noexcept</td></tr>
+<tr class="memdesc:a061bde352f14ce03feb70fa1cc553e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets menu images are enabled.  <br /></td></tr>
+<tr class="separator:a061bde352f14ce03feb70fa1cc553e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e05c1f7105e7d3274e9170726847255"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a7e05c1f7105e7d3274e9170726847255">menu_images</a> (bool value)</td></tr>
+<tr class="memdesc:a7e05c1f7105e7d3274e9170726847255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets menu images ilages are enabled.  <br /></td></tr>
+<tr class="separator:a7e05c1f7105e7d3274e9170726847255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ae514ee1ee37c31c89ab5b75d8b71271e">message_loop</a> () noexcept</td></tr>
 <tr class="memdesc:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether a message loop exists on this thread.  <br /></td></tr>
 <tr class="separator:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -278,15 +314,24 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:aee77c62a3995f20d27dbae34f360adad"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#acadafd1055e3ef4899aeb46114e5a111">xtd::forms::style_sheets::style_sheet::style_sheet_names_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#aee77c62a3995f20d27dbae34f360adad">style_sheet_names</a> () noexcept</td></tr>
 <tr class="memdesc:aee77c62a3995f20d27dbae34f360adad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the installed <a class="el" href="classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html" title="The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.">xtd::forms::style_sheets::style_sheet</a> style sheet names.  <br /></td></tr>
 <tr class="separator:aee77c62a3995f20d27dbae34f360adad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308c24420f178d14968a1f7be4ebea4e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a308c24420f178d14968a1f7be4ebea4e">system_controls</a> () noexcept</td></tr>
+<tr class="memdesc:a308c24420f178d14968a1f7be4ebea4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the system control is enabled.  <br /></td></tr>
+<tr class="separator:a308c24420f178d14968a1f7be4ebea4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab151a210e8a14a32956af40b4d0a0f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#aab151a210e8a14a32956af40b4d0a0f1">system_controls</a> (bool value)</td></tr>
+<tr class="memdesc:aab151a210e8a14a32956af40b4d0a0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the system control is enabled.  <br /></td></tr>
+<tr class="separator:aab151a210e8a14a32956af40b4d0a0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a90f614d99a574239b91c9da2827a85"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2a90f614d99a574239b91c9da2827a85">system_font_size</a> () noexcept</td></tr>
+<tr class="memdesc:a2a90f614d99a574239b91c9da2827a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the system font size is enabled.  <br /></td></tr>
+<tr class="separator:a2a90f614d99a574239b91c9da2827a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03b08a17143a6e7bcabbdcbfab1a909a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a03b08a17143a6e7bcabbdcbfab1a909a">system_font_size</a> (bool value)</td></tr>
+<tr class="memdesc:a03b08a17143a6e7bcabbdcbfab1a909a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether the system font size is enabled.  <br /></td></tr>
+<tr class="separator:a03b08a17143a6e7bcabbdcbfab1a909a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6bc6bdfb9735dd07f6f0ac1623548ae"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html">xtd::forms::style_sheets::style_sheet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ab6bc6bdfb9735dd07f6f0ac1623548ae">system_style_sheet</a> () noexcept</td></tr>
 <tr class="memdesc:ab6bc6bdfb9735dd07f6f0ac1623548ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets system <a class="el" href="classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html" title="The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.">xtd::forms::style_sheets::style_sheet</a> style sheet.  <br /></td></tr>
 <tr class="separator:ab6bc6bdfb9735dd07f6f0ac1623548ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa45fa946a6639da96c70d209bda1df32"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#aa45fa946a6639da96c70d209bda1df32">user_app_data_path</a> () noexcept</td></tr>
 <tr class="memdesc:aa45fa946a6639da96c70d209bda1df32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path for the application data of a user.  <br /></td></tr>
 <tr class="separator:aa45fa946a6639da96c70d209bda1df32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00a6c66cac0457868a3daa50ed8a26a9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a00a6c66cac0457868a3daa50ed8a26a9">use_system_controls</a> () noexcept</td></tr>
-<tr class="memdesc:a00a6c66cac0457868a3daa50ed8a26a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether system controls are enabled for the application.  <br /></td></tr>
-<tr class="separator:a00a6c66cac0457868a3daa50ed8a26a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2ce54cc1670ae96a3282d2b712ef58"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#aba2ce54cc1670ae96a3282d2b712ef58">use_visual_styles</a> () noexcept</td></tr>
 <tr class="memdesc:aba2ce54cc1670ae96a3282d2b712ef58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether visual styles are enabled for the application.  <br /></td></tr>
 <tr class="separator:aba2ce54cc1670ae96a3282d2b712ef58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -296,14 +341,17 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a70a9b0d8fd502111b7f4bba193135c46"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a70a9b0d8fd502111b7f4bba193135c46">use_wait_cursor</a> (bool <a class="el" href="classxtd_1_1forms_1_1use__wait__cursor.html">use_wait_cursor</a>)</td></tr>
 <tr class="memdesc:a70a9b0d8fd502111b7f4bba193135c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the wait cursor is used for all open forms of the application.  <br /></td></tr>
 <tr class="separator:a70a9b0d8fd502111b7f4bba193135c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35566958f7b382dbd9cb5f83423a7cd7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a35566958f7b382dbd9cb5f83423a7cd7">visual_styles</a> () noexcept</td></tr>
+<tr class="memdesc:a35566958f7b382dbd9cb5f83423a7cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether visual styles are enabled for the application.  <br /></td></tr>
+<tr class="separator:a35566958f7b382dbd9cb5f83423a7cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b8b2dad5105f19d5c0a247ec60a12f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a05b8b2dad5105f19d5c0a247ec60a12f">visual_styles</a> (bool value)</td></tr>
+<tr class="memdesc:a05b8b2dad5105f19d5c0a247ec60a12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether visual styles are enabled for the application.  <br /></td></tr>
+<tr class="separator:a05b8b2dad5105f19d5c0a247ec60a12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:a4f8eac12a2e3e29b5308846260788d14"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14">add_message_filter</a> (const <a class="el" href="classxtd_1_1forms_1_1imessage__filter.html">imessage_filter</a> &amp;value)</td></tr>
 <tr class="memdesc:a4f8eac12a2e3e29b5308846260788d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a message filter to monitor Windows messages as they are routed to their destinations.  <br /></td></tr>
 <tr class="separator:a4f8eac12a2e3e29b5308846260788d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf17d1d7052d313ff8137035f8a0d276"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#abf17d1d7052d313ff8137035f8a0d276">disable_font_size_correction</a> ()</td></tr>
-<tr class="memdesc:abf17d1d7052d313ff8137035f8a0d276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables font size correction for the application.  <br /></td></tr>
-<tr class="separator:abf17d1d7052d313ff8137035f8a0d276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d4031fa24263d5b25e996ebd2ce9089"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a1d4031fa24263d5b25e996ebd2ce9089">do_events</a> ()</td></tr>
 <tr class="memdesc:a1d4031fa24263d5b25e996ebd2ce9089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes all Windows messages currently in the message queue.  <br /></td></tr>
 <tr class="separator:a1d4031fa24263d5b25e996ebd2ce9089"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -319,15 +367,6 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a38695ee0d586fd727abfb42995f6d9cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a38695ee0d586fd727abfb42995f6d9cb">enable_menu_images</a> ()</td></tr>
 <tr class="memdesc:a38695ee0d586fd727abfb42995f6d9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables menu images for the application.  <br /></td></tr>
 <tr class="separator:a38695ee0d586fd727abfb42995f6d9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1496ddd594d8502e5c64355434d9e73e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a1496ddd594d8502e5c64355434d9e73e">enable_standard_controls</a> ()</td></tr>
-<tr class="memdesc:a1496ddd594d8502e5c64355434d9e73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables standard control for the application.  <br /></td></tr>
-<tr class="separator:a1496ddd594d8502e5c64355434d9e73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28ad4db693e3bf228e5f0902fdf5882a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a28ad4db693e3bf228e5f0902fdf5882a">enable_system_controls</a> ()</td></tr>
-<tr class="memdesc:a28ad4db693e3bf228e5f0902fdf5882a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables system control for the application.  <br /></td></tr>
-<tr class="separator:a28ad4db693e3bf228e5f0902fdf5882a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d71d75530eaadb67edc3be36c57ca61"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a7d71d75530eaadb67edc3be36c57ca61">enable_system_font_size</a> ()</td></tr>
-<tr class="memdesc:a7d71d75530eaadb67edc3be36c57ca61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables system font size for the application.  <br /></td></tr>
-<tr class="separator:a7d71d75530eaadb67edc3be36c57ca61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6af4447091dec74038a54c6b9f5f8760"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760">enable_visual_styles</a> ()</td></tr>
 <tr class="memdesc:a6af4447091dec74038a54c6b9f5f8760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables visual styles for the application.  <br /></td></tr>
 <tr class="separator:a6af4447091dec74038a54c6b9f5f8760"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -461,6 +500,80 @@ You cannot create an instance of this class. </dd></dl>
 
 </div>
 </div>
+<a id="a79afa7726d7fcdb03740623f80bbe1a1" name="a79afa7726d7fcdb03740623f80bbe1a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79afa7726d7fcdb03740623f80bbe1a1">&#9670;&#160;</a></span>button_images() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::button_images </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets button images are enabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if button images aree enabled; otherwise false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The default value is true. </dd>
+<dd>
+This method has an effect only on linux. </dd></dl>
+
+</div>
+</div>
+<a id="a7cf76b61660575a7393bb9cdc7d25071" name="a7cf76b61660575a7393bb9cdc7d25071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf76b61660575a7393bb9cdc7d25071">&#9670;&#160;</a></span>button_images() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::button_images </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets button images are enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true if button images aree enabled; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The default value is true. </dd>
+<dd>
+This method has an effect only on linux. </dd></dl>
+
+</div>
+</div>
 <a id="a04530a2c8329c8ae4350a532152bdf6d" name="a04530a2c8329c8ae4350a532152bdf6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a04530a2c8329c8ae4350a532152bdf6d">&#9670;&#160;</a></span>common_app_data_path()</h2>
 
@@ -527,6 +640,74 @@ The path will be different depending on whether the Windows Forms application is
 
 </div>
 </div>
+<a id="abf6bb5ac809a232e245d513dcc51886f" name="abf6bb5ac809a232e245d513dcc51886f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6bb5ac809a232e245d513dcc51886f">&#9670;&#160;</a></span>dark_mode() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::dark_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether dark mode is enabled for the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>True is dark mode enabled; otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="a4661f15e72d4f0844ab55077fb557e3a" name="a4661f15e72d4f0844ab55077fb557e3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4661f15e72d4f0844ab55077fb557e3a">&#9670;&#160;</a></span>dark_mode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::dark_mode </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicating whether dark mode is enabled for the application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>True is dark mode enabled; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a29a68b46fdee9e2e71d70d89ed296a91" name="a29a68b46fdee9e2e71d70d89ed296a91"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29a68b46fdee9e2e71d70d89ed296a91">&#9670;&#160;</a></span>dark_mode_enabled()</h2>
 
@@ -552,39 +733,7 @@ The path will be different depending on whether the Windows Forms application is
 
 <p>Return true if dark mode is enabled for the application; otherwise return false. </p>
 <dl class="section return"><dt>Returns</dt><dd>True is dark mode enabled; otherwise false. </dd></dl>
-
-</div>
-</div>
-<a id="abf17d1d7052d313ff8137035f8a0d276" name="abf17d1d7052d313ff8137035f8a0d276"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf17d1d7052d313ff8137035f8a0d276">&#9670;&#160;</a></span>disable_font_size_correction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::forms::application::disable_font_size_correction </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disables font size correction for the application. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows. </dd>
-<dd>
-If you disable this option, you will use the actual native font size of the operating system. </dd>
-<dd>
-This method has an effect only on non Windows operating system. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000042">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0 </dd></dl>
 
 </div>
 </div>
@@ -645,8 +794,14 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 </div><div class="memdoc">
 
 <p>Enables button images for the application. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method has an effect only on linux. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000045">Deprecated:</a></b></dt><dd>Replaced by xtd::application::button_images - Will be removed in version 0.4.0 </dd></dl>
 
 </div>
 </div>
@@ -674,10 +829,16 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 </div><div class="memdoc">
 
 <p>Enables dark mode for the application. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the dark mode is enabled automatically if the system is in dark mode. </dd>
 <dd>
 <a class="el" href="classxtd_1_1forms_1_1application.html#a055e78c3b5097f08a108c0730360e3b8" title="Enables dark mode for the application.">xtd::forms::application::enable_dark_mode</a> sets the application in dark mode even if your system is in light mode. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000046">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0 </dd></dl>
 
 </div>
 </div>
@@ -705,10 +866,16 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 </div><div class="memdoc">
 
 <p>Enables light mode for the application. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the light mode is enabled automatically if the system is in light mode. </dd>
 <dd>
 <a class="el" href="classxtd_1_1forms_1_1application.html#ac6f2defe8e2722b0fb450f5ae6a2f28d" title="Enables light mode for the application.">xtd::forms::application::enable_light_mode</a> sets the application in light mode even if your system is in dark mode. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000047">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0 </dd></dl>
 
 </div>
 </div>
@@ -736,103 +903,14 @@ Typically, you use this method in a loop to process messages. </dd></dl>
 </div><div class="memdoc">
 
 <p>Enables menu images for the application. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method has an effect only on linux. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a1496ddd594d8502e5c64355434d9e73e" name="a1496ddd594d8502e5c64355434d9e73e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1496ddd594d8502e5c64355434d9e73e">&#9670;&#160;</a></span>enable_standard_controls()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::forms::application::enable_standard_controls </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables standard control for the application. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd uses the standard control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316ac00f0c4675b91fb8b918e4079a0b1bac" title="The appearance of the control is determined by current theme of xtd.">xtd::forms::control_appearance::standard</a>) with this method you can change to force the use of system control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316a54b53072540eeeb8f8e9343e71f28176" title="The appearance of the control is determined by the user&#39;s operating system.">xtd::forms::control_appearance::system</a>) instead. </dd>
-<dd>
-You can always change the appearance of the control on the fly with the <a class="el" href="classxtd_1_1forms_1_1control.html#ab593d8b22a37ed66044f36820c0f25cd" title="Gets control appearance.">xtd::forms::control::control_appearance</a> method. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a28ad4db693e3bf228e5f0902fdf5882a" name="a28ad4db693e3bf228e5f0902fdf5882a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28ad4db693e3bf228e5f0902fdf5882a">&#9670;&#160;</a></span>enable_system_controls()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::forms::application::enable_system_controls </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables system control for the application. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd uses the standard control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316ac00f0c4675b91fb8b918e4079a0b1bac" title="The appearance of the control is determined by current theme of xtd.">xtd::forms::control_appearance::standard</a>) with this method you can change to force the use of system control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316a54b53072540eeeb8f8e9343e71f28176" title="The appearance of the control is determined by the user&#39;s operating system.">xtd::forms::control_appearance::system</a>) instead. </dd>
-<dd>
-You can always change the appearance of the control on the fly with the <a class="el" href="classxtd_1_1forms_1_1control.html#ab593d8b22a37ed66044f36820c0f25cd" title="Gets control appearance.">xtd::forms::control::control_appearance</a> method. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a7d71d75530eaadb67edc3be36c57ca61" name="a7d71d75530eaadb67edc3be36c57ca61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d71d75530eaadb67edc3be36c57ca61">&#9670;&#160;</a></span>enable_system_font_size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::forms::application::enable_system_font_size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables system font size for the application. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd automatically limits the system font size to 9 points if it is larger than 9. </dd>
-<dd>
-If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well. </dd>
-<dd>
-This method has an effect only on Gtk. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000048">Deprecated:</a></b></dt><dd>Replaced by xtd::application::menu_images - Will be removed in version 0.4.0 </dd></dl>
 
 </div>
 </div>
@@ -860,10 +938,15 @@ This method has an effect only on Gtk. </dd></dl>
 </div><div class="memdoc">
 
 <p>Enables visual styles for the application. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, <a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760" title="Enables visual styles for the application.">enable_visual_styles()</a> must be called before creating any controls in the application; typically, <a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760" title="Enables visual styles for the application.">enable_visual_styles()</a> is the first line in the Main function. A separate manifest is not required to enable visual styles when calling <a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760" title="Enables visual styles for the application.">enable_visual_styles()</a>. </dd>
 <dd>
 This method has an effect only on Windows. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>You must call this method before <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </dd></dl>
 
 </div>
 </div>
@@ -1030,6 +1113,90 @@ Exit raises the following events and performs the associated conditional actions
 
 </div>
 </div>
+<a id="ade5f1fa1e950c27c5ad30e3c70f2cbcc" name="ade5f1fa1e950c27c5ad30e3c70f2cbcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade5f1fa1e950c27c5ad30e3c70f2cbcc">&#9670;&#160;</a></span>font_size_correction() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::font_size_correction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether font size correction is enabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if font size correction is enabled; otherwise false. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows. </dd>
+<dd>
+If you disable this option, you will use the actual native font size of the operating system. </dd>
+<dd>
+This method has an effect only on non Windows operating system. </dd></dl>
+
+</div>
+</div>
+<a id="ae47ee571e2c08db751cc1d67cbc57902" name="ae47ee571e2c08db751cc1d67cbc57902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae47ee571e2c08db751cc1d67cbc57902">&#9670;&#160;</a></span>font_size_correction() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::font_size_correction </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicating whether font size correction is enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true if font size correction is enabled; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows. </dd>
+<dd>
+If you disable this option, you will use the actual native font size of the operating system. </dd>
+<dd>
+This method has an effect only on non Windows operating system. </dd></dl>
+
+</div>
+</div>
 <a id="a34e13eafa46ecfb02235a8f4e1043ad9" name="a34e13eafa46ecfb02235a8f4e1043ad9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a34e13eafa46ecfb02235a8f4e1043ad9">&#9670;&#160;</a></span>get_style_sheet_from_name()</h2>
 
@@ -1068,6 +1235,144 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 
 </div>
 </div>
+<a id="a947cfa74e4312a79bb1a9d8b0508f1ee" name="a947cfa74e4312a79bb1a9d8b0508f1ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947cfa74e4312a79bb1a9d8b0508f1ee">&#9670;&#160;</a></span>keep_cloned_controls() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::keep_cloned_controls </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether the xtd framework keep cloned control is enabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if xtd framework keep cloned control is enabled; otherwise false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default the value is false. </dd></dl>
+
+</div>
+</div>
+<a id="aa93994a7f7b2a7a573ba4b553c7d066b" name="aa93994a7f7b2a7a573ba4b553c7d066b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93994a7f7b2a7a573ba4b553c7d066b">&#9670;&#160;</a></span>keep_cloned_controls() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::keep_cloned_controls </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicating whether the xtd framework keep cloned control is enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true if xtd framework keep cloned control is enabled; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default the value is false. </dd></dl>
+
+</div>
+</div>
+<a id="a71d03242779b1a39208629987771c66d" name="a71d03242779b1a39208629987771c66d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71d03242779b1a39208629987771c66d">&#9670;&#160;</a></span>light_mode() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::light_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether light mode is enabled for the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>True is light mode enabled; otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="aaf4524268d96e0ea2b4000f0db5ae015" name="aaf4524268d96e0ea2b4000f0db5ae015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf4524268d96e0ea2b4000f0db5ae015">&#9670;&#160;</a></span>light_mode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::light_mode </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicating whether light mode is enabled for the application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>True is light mode enabled; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a2db9c2e2d4a2e7dd2f053987f1e8965e" name="a2db9c2e2d4a2e7dd2f053987f1e8965e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2db9c2e2d4a2e7dd2f053987f1e8965e">&#9670;&#160;</a></span>light_mode_enabled()</h2>
 
@@ -1093,6 +1398,7 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 
 <p>Return true if dark mode is enabled for the application; otherwise return false. </p>
 <dl class="section return"><dt>Returns</dt><dd>True is light mode enabled; otherwise false. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000043">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0 </dd></dl>
 
 </div>
 </div>
@@ -1122,6 +1428,80 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 <p>Gets the optional main form owned by the application. </p>
 <dl class="section return"><dt>Returns</dt><dd>The optional main form. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The return value doesn't necessarily contain the main form, as an application doesn't always have a main form. In fact, the <a class="el" href="classxtd_1_1forms_1_1application.html" title="Provides static methods and properties to manage an application, such as methods to start and stop an...">xtd::forms::application</a> method can be called with the <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">xtd::forms::application_context</a> class, which doesn't contain a main form. </dd></dl>
+
+</div>
+</div>
+<a id="a061bde352f14ce03feb70fa1cc553e1e" name="a061bde352f14ce03feb70fa1cc553e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a061bde352f14ce03feb70fa1cc553e1e">&#9670;&#160;</a></span>menu_images() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::menu_images </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets menu images are enabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if menu images aree enabled; otherwise false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The default value is true. </dd>
+<dd>
+This method has an effect only on linux. </dd></dl>
+
+</div>
+</div>
+<a id="a7e05c1f7105e7d3274e9170726847255" name="a7e05c1f7105e7d3274e9170726847255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e05c1f7105e7d3274e9170726847255">&#9670;&#160;</a></span>menu_images() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::menu_images </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets menu images ilages are enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true if menu images aree enabled; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The default value is true. </dd>
+<dd>
+This method has an effect only on linux. </dd></dl>
 
 </div>
 </div>
@@ -1435,7 +1815,7 @@ Most Windows Forms developers will not need to use this version of the method. Y
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_8cpp-example.html#a0">application.cpp</a>, <a class="el" href="application_add_message_filter_8cpp-example.html#a10">application_add_message_filter.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a2">application_use_wait_cursor.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a2">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a7">busy_dialog.cpp</a>, <a class="el" href="button2_8cpp-example.html#a7">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a5">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a4">button4.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a3">control_with_name_operator.cpp</a>, <a class="el" href="form2_8cpp-example.html#a8">form2.cpp</a>, <a class="el" href="hello_world_cmake_8cpp-example.html#a0">hello_world_cmake.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a2">horizontal_layout_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a6">process_form.cpp</a>, <a class="el" href="screen_informations_8cpp-example.html#a11">screen_informations.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a4">trace_message_box.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a3">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a6">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a8">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a2">tutorial_simple_application.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a3">use_wait_cursor.cpp</a>, and <a class="el" href="vertical_layout_panel_8cpp-example.html#a2">vertical_layout_panel.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_8cpp-example.html#a0">application.cpp</a>, <a class="el" href="application_add_message_filter_8cpp-example.html#a10">application_add_message_filter.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a2">application_use_wait_cursor.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a2">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a7">busy_dialog.cpp</a>, <a class="el" href="button2_8cpp-example.html#a7">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a5">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a4">button4.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a3">control_with_name_operator.cpp</a>, <a class="el" href="form2_8cpp-example.html#a8">form2.cpp</a>, <a class="el" href="hello_world_cmake_8cpp-example.html#a0">hello_world_cmake.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a2">horizontal_layout_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a8">process_form.cpp</a>, <a class="el" href="screen_informations_8cpp-example.html#a11">screen_informations.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a4">trace_message_box.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a3">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a6">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a8">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a2">tutorial_simple_application.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a3">use_wait_cursor.cpp</a>, and <a class="el" href="vertical_layout_panel_8cpp-example.html#a2">vertical_layout_panel.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1695,6 +2075,164 @@ This method adds an event handler to the main_form parameter for the closed even
 
 </div>
 </div>
+<a id="a308c24420f178d14968a1f7be4ebea4e" name="a308c24420f178d14968a1f7be4ebea4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a308c24420f178d14968a1f7be4ebea4e">&#9670;&#160;</a></span>system_controls() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::system_controls </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether the system control is enabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if system control is enabled; otherwise false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd uses the standard control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316ac00f0c4675b91fb8b918e4079a0b1bac" title="The appearance of the control is determined by current theme of xtd.">xtd::forms::control_appearance::standard</a>) with this method you can change to force the use of system control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316a54b53072540eeeb8f8e9343e71f28176" title="The appearance of the control is determined by the user&#39;s operating system.">xtd::forms::control_appearance::system</a>) instead. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1forms_1_1control.html#ab593d8b22a37ed66044f36820c0f25cd" title="Gets control appearance.">xtd::forms::control::control_appearance</a> method can still be used to modify the control's appearance on the fly. </dd></dl>
+
+</div>
+</div>
+<a id="aab151a210e8a14a32956af40b4d0a0f1" name="aab151a210e8a14a32956af40b4d0a0f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab151a210e8a14a32956af40b4d0a0f1">&#9670;&#160;</a></span>system_controls() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::system_controls </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicating whether the system control is enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true if system control is enabled; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd uses the standard control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316ac00f0c4675b91fb8b918e4079a0b1bac" title="The appearance of the control is determined by current theme of xtd.">xtd::forms::control_appearance::standard</a>) with this method you can change to force the use of system control (<a class="el" href="group__xtd__forms.html#gga5d307293383256b1361069a8e6c57316a54b53072540eeeb8f8e9343e71f28176" title="The appearance of the control is determined by the user&#39;s operating system.">xtd::forms::control_appearance::system</a>) instead. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1forms_1_1control.html#ab593d8b22a37ed66044f36820c0f25cd" title="Gets control appearance.">xtd::forms::control::control_appearance</a> method can still be used to modify the control's appearance on the fly. </dd></dl>
+
+</div>
+</div>
+<a id="a2a90f614d99a574239b91c9da2827a85" name="a2a90f614d99a574239b91c9da2827a85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a90f614d99a574239b91c9da2827a85">&#9670;&#160;</a></span>system_font_size() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::system_font_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether the system font size is enabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the system font size is enabled; otherwise false. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd automatically limits the system font size to 9 points if it is larger than 9. </dd>
+<dd>
+If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well. </dd>
+<dd>
+This method has an effect only on Gtk. </dd></dl>
+
+</div>
+</div>
+<a id="a03b08a17143a6e7bcabbdcbfab1a909a" name="a03b08a17143a6e7bcabbdcbfab1a909a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03b08a17143a6e7bcabbdcbfab1a909a">&#9670;&#160;</a></span>system_font_size() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::system_font_size </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value indicating whether the system font size is enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true if the system font size is enabled; otherwise false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default, xtd automatically limits the system font size to 9 points if it is larger than 9. </dd>
+<dd>
+If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well. </dd>
+<dd>
+This method has an effect only on Gtk. </dd></dl>
+
+</div>
+</div>
 <a id="ab6bc6bdfb9735dd07f6f0ac1623548ae" name="ab6bc6bdfb9735dd07f6f0ac1623548ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6bc6bdfb9735dd07f6f0ac1623548ae">&#9670;&#160;</a></span>system_style_sheet()</h2>
 
@@ -1726,35 +2264,6 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 
 </div>
 </div>
-<a id="a00a6c66cac0457868a3daa50ed8a26a9" name="a00a6c66cac0457868a3daa50ed8a26a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00a6c66cac0457868a3daa50ed8a26a9">&#9670;&#160;</a></span>use_system_controls()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool xtd::forms::application::use_system_controls </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets a value that indicates whether system controls are enabled for the application. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if system_control are enabled; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The system_controls can be enabled by calling enable_xtd::forms::application::system_controls. </dd></dl>
-
-</div>
-</div>
 <a id="aba2ce54cc1670ae96a3282d2b712ef58" name="aba2ce54cc1670ae96a3282d2b712ef58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba2ce54cc1670ae96a3282d2b712ef58">&#9670;&#160;</a></span>use_visual_styles()</h2>
 
@@ -1781,6 +2290,7 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 <p>Gets a value that indicates whether visual styles are enabled for the application. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if visual styles are enabled; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000044">Deprecated:</a></b></dt><dd>Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0 </dd></dl>
 
 </div>
 </div>
@@ -1952,6 +2462,80 @@ A typical base path is "C:\Documents and Settings\username\Application Data". </
 
 </div>
 </div>
+<a id="a35566958f7b382dbd9cb5f83423a7cd7" name="a35566958f7b382dbd9cb5f83423a7cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35566958f7b382dbd9cb5f83423a7cd7">&#9670;&#160;</a></span>visual_styles() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::visual_styles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value that indicates whether visual styles are enabled for the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if visual styles are enabled; otherwise, false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, <a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760" title="Enables visual styles for the application.">enable_visual_styles()</a> must be called before creating any controls in the application; typically, <a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760" title="Enables visual styles for the application.">enable_visual_styles()</a> is the first line in the Main function. A separate manifest is not required to enable visual styles when calling <a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760" title="Enables visual styles for the application.">enable_visual_styles()</a>. </dd>
+<dd>
+This method has an effect only on Windows. </dd></dl>
+
+</div>
+</div>
+<a id="a05b8b2dad5105f19d5c0a247ec60a12f" name="a05b8b2dad5105f19d5c0a247ec60a12f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b8b2dad5105f19d5c0a247ec60a12f">&#9670;&#160;</a></span>visual_styles() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::visual_styles </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a value that indicates whether visual styles are enabled for the application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true if visual styles are enabled; otherwise, false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, <a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760" title="Enables visual styles for the application.">enable_visual_styles()</a> must be called before creating any controls in the application; typically, <a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760" title="Enables visual styles for the application.">enable_visual_styles()</a> is the first line in the Main function. A separate manifest is not required to enable visual styles when calling <a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760" title="Enables visual styles for the application.">enable_visual_styles()</a>. </dd>
+<dd>
+This method has an effect only on Windows. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="af1adab6813016a8eea1ea6382abeeadc" name="af1adab6813016a8eea1ea6382abeeadc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af1adab6813016a8eea1ea6382abeeadc">&#9670;&#160;</a></span>application_exit</h2>
@@ -2118,7 +2702,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 10 2024 00:07:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat May 11 2024 21:12:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

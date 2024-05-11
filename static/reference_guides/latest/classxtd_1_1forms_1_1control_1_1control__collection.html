@@ -110,9 +110,9 @@ Inheritance diagram for xtd::forms::control::control_collection:</div>
 <tr class="memitem:a0acc1b4516785b91ecbaa21ecb3663f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#a0acc1b4516785b91ecbaa21ecb3663f7">control_collection</a> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a> &amp;allocator=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a>())</td></tr>
 <tr class="memdesc:a0acc1b4516785b91ecbaa21ecb3663f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified allocator (optional).  <br /></td></tr>
 <tr class="separator:a0acc1b4516785b91ecbaa21ecb3663f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae36084cbd3a99202bca564b20fd4e600"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#ae36084cbd3a99202bca564b20fd4e600">control_collection</a> (bool clone_and_keep_controls, const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a> &amp;allocator=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a>())</td></tr>
-<tr class="memdesc:ae36084cbd3a99202bca564b20fd4e600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified clone_and_keep_controls, and allocator (optional).  <br /></td></tr>
-<tr class="separator:ae36084cbd3a99202bca564b20fd4e600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae640d83b874805e5b725b7fc02906b6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#ae640d83b874805e5b725b7fc02906b6e">control_collection</a> (bool keep_cloned_controls, const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a> &amp;allocator=<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54ca9193cb356b15138bfb2458f057e7">allocator_type</a>())</td></tr>
+<tr class="memdesc:ae640d83b874805e5b725b7fc02906b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified keep_cloned_controls, and allocator (optional).  <br /></td></tr>
+<tr class="separator:ae640d83b874805e5b725b7fc02906b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Operators</h2></td></tr>
 <tr class="memitem:abe601b27efbf5ad81d803a341ca9448f"><td class="memItemLeft" align="right" valign="top">std::optional&lt; value_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#abe601b27efbf5ad81d803a341ca9448f">operator[]</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html#a94c7ebd07a270701867295ae2fd7348d">name</a>) const</td></tr>
@@ -456,8 +456,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ae36084cbd3a99202bca564b20fd4e600" name="ae36084cbd3a99202bca564b20fd4e600"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae36084cbd3a99202bca564b20fd4e600">&#9670;&#160;</a></span>control_collection() <span class="overload">[2/2]</span></h2>
+<a id="ae640d83b874805e5b725b7fc02906b6e" name="ae640d83b874805e5b725b7fc02906b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae640d83b874805e5b725b7fc02906b6e">&#9670;&#160;</a></span>control_collection() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,7 +469,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">xtd::forms::control::control_collection::control_collection </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>clone_and_keep_controls</em>, </td>
+          <td class="paramname"><em>keep_cloned_controls</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -490,10 +490,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified clone_and_keep_controls, and allocator (optional). </p>
+<p>Creates a new object <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">xtd::forms::control::control_collection</a> with specified keep_cloned_controls, and allocator (optional). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">clone_and_keep_controls</td><td>If true the collection clone and keep controls; otherwise none. </td></tr>
+    <tr><td class="paramname">keep_cloned_controls</td><td>If true the collection clone and keep controls; otherwise none. </td></tr>
     <tr><td class="paramname">allocator</td><td>The allocator associate to the collection (optional). </td></tr>
   </table>
   </dd>
@@ -965,7 +965,7 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 10 2024 00:07:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat May 11 2024 21:12:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

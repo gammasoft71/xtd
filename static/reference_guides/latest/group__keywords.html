@@ -3413,14 +3413,15 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <p>When reporting errors in code, hooking up model-view-controller (MVC) links, firing property changed events, etc., you often want to capture the string name of a method. Using nameof helps keep your code valid when renaming definitions. Before, you had to use string literals to refer to definitions, which is brittle when renaming code elements because tools do not know to check these string literals.</p>
 <p>A nameof expression has this form: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (x == null) <span class="keywordflow">throw</span>  std::argument_error(<a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(x));</div>
 <div class="line">write_line(<a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(person.address().zip_code())); <span class="comment">// prints &quot;person.address().zip_code()&quot;</span></div>
-<div class="ttc" id="agroup__keywords_html_gabe3976c5f529fab9b255e38ced18b281"><div class="ttname"><a href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a></div><div class="ttdeci">#define nameof_(...)</div><div class="ttdoc">Used to obtain the simple (unqualified) string name of a variable, type, or member.</div><div class="ttdef"><b>Definition</b> nameof.h:33</div></div>
+<div class="ttc" id="agroup__keywords_html_gabe3976c5f529fab9b255e38ced18b281"><div class="ttname"><a href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a></div><div class="ttdeci">#define nameof_(...)</div><div class="ttdoc">Used to obtain the simple (unqualified) string name of a variable, type, or member.</div><div class="ttdef"><b>Definition</b> nameof.h:34</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Examples</dt><dd>Some C++ examples: <div class="fragment"></div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The argument to nameof must be a simple name, qualified name, member access, base access with a specified member, or this access with a specified member. The argument expression identifies a code definition, but it is never evaluated. </dd>
 <dd>
 Because the argument needs to be an expression syntactically, there are many things disallowed that are not useful to list. The following are worth mentioning that produce errors: predefined types (for example, int or void), nullable types (Point?), array types (Customer[,]), pointer types (Buffer*), qualified alias (A::B), and unbound generic types (Dictionary&lt;,&gt;), preprocessing symbols (DEBUG), and labels (loop:). </dd>
 <dd>
 If you need to get the fully-qualified name, you can use the typeof_ expression along with nameof. For example: <div class="fragment"><div class="line"><span class="keyword">class </span>c {</div>
-<div class="line">  public_ <span class="keywordtype">void</span> f(<span class="keywordtype">int</span> i) {</div>
+<div class="line"><span class="keyword">public</span>: </div>
+<div class="line">  <span class="keywordtype">void</span> f(<span class="keywordtype">int</span> i) {</div>
 <div class="line">    log(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;{0}.{1}&quot;</span>, <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(C), <a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(f)), <span class="stringliteral">&quot;method entry&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
@@ -3514,7 +3515,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:33</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:117</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:66</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt></dt><dd>This example show a main method with a return code and without arguments <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
@@ -3828,7 +3829,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 10 2024 00:07:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat May 11 2024 21:12:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
