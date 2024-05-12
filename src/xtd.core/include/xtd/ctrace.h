@@ -18,7 +18,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core debug
   inline std::ostream ctrace(&ctracestreambuf);
   #else
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
@@ -28,7 +28,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core debug
   inline std::ostream ctrace(nullptr);
   #endif
 }
