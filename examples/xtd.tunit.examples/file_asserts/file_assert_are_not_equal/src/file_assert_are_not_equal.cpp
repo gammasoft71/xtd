@@ -25,8 +25,8 @@ auto main()->int {
 //
 // Start 2 tests from 1 test case
 // Run tests:
-//   SUCCEED test.test_case_succeed (0 ms total)
-//   FAILED  test.test_case_failed (0 ms total)
+//   SUCCEED unit_tests::test.test_case_succeed (0 ms total)
+//   FAILED  unit_tests::test.test_case_failed (0 ms total)
 //     Expected: not equal <std::basic_istringstream<char, std::char_traits<char>, std::allocator<char>>>
 //     But was:  <std::basic_istringstream<char, std::char_traits<char>, std::allocator<char>>>
 //     Stack Trace: in |---OMITTED---|/file_assert_are_not_equal.cpp:14

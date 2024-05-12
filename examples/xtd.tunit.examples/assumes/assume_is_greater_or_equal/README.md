@@ -21,8 +21,8 @@ xtdc run
 ```
 Start 3 tests from 1 test case
 Run tests:
-  SUCCEED test.test_case_succeed1 (0 ms total)
-  SUCCEED test.test_case_succeed2 (0 ms total)
+  SUCCEED unit_tests::test.test_case_succeed1 (0 ms total)
+  SUCCEED unit_tests::test.test_case_succeed2 (0 ms total)
   ABORTED test.test_case_aborted (0 ms total)
     Expected: greater than or equal to 48
     But was:  24

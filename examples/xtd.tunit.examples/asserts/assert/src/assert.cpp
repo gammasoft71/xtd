@@ -28,12 +28,12 @@ auto main()->int {
 //
 // Start 3 tests from 1 test case
 // Run tests:
-//   SUCCEED test.test_case1 (0 ms total)
-//   FAILED  test.test_case2 (0 ms total)
+//   SUCCEED unit_tests::test.test_case1 (0 ms total)
+//   FAILED  unit_tests::test.test_case2 (0 ms total)
 //     Expected: false
 //     But was:  true
 //     Stack Trace: in |---OMITTED---|/assert.cpp:14
-//   FAILED  test.test_case3 (0 ms total)
+//   FAILED  unit_tests::test.test_case3 (0 ms total)
 //     Expected: No Exception to be thrown
 //     But was:  <std::range_error>
 //     Stack Trace: in |---OMITTED---|/assert.cpp:18

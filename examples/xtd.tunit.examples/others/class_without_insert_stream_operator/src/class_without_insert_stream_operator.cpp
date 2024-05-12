@@ -41,8 +41,8 @@ auto main()->int {
 //
 // Start 2 tests from 1 test case
 // Run tests:
-//   SUCCEED test.test_case_succeed (0 ms total)
-//   FAILED  test.test_case_failed (0 ms total)
+//   SUCCEED unit_tests::test.test_case_succeed (0 ms total)
+//   FAILED  unit_tests::test.test_case_failed (0 ms total)
 //     Expected: 4-byte object <2A-00 00-00>
 //     But was:  4-byte object <18-00 00-00>
 //     Stack Trace: in |---OMITTED---|/class_without_insert_stream_operator.cpp:30

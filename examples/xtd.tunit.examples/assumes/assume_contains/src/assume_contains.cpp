@@ -32,12 +32,12 @@ auto main()->int {
 //
 // Start 4 tests from 1 test case
 // Run tests:
-//   SUCCEED test.test_case_collection_succeed (0 ms total)
+//   SUCCEED unit_tests::test.test_case_collection_succeed (0 ms total)
 //   ABORTED test.test_case_collection_aborted (0 ms total)
 //     Expected: collection containing 4
 //     But was:  < 0, 1, 2, 3 >
 //     Stack Trace: in |---OMITTED---|/assume_contains.cpp:14
-//   SUCCEED test.test_case_string_succeed (0 ms total)
+//   SUCCEED unit_tests::test.test_case_string_succeed (0 ms total)
 //   ABORTED test.test_case_string_aborted (0 ms total)
 //     Expected: collection containing a
 //     But was:  < 's', 't', 'r', 'i', 'n', 'g' >

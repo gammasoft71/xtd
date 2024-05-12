@@ -21,7 +21,7 @@ xtdc run
 ```
 Start 1 test from 1 test case
 Run tests:
-  SUCCEED test.test_case_succeed (0 ms total)
+  SUCCEED unit_tests::test.test_case_succeed (0 ms total)
 
 Test results:
   SUCCEED 1 test.

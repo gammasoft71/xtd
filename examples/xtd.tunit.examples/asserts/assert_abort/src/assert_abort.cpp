@@ -19,7 +19,7 @@ auto main()->int {
 //
 // Start 1 test from 1 test case
 // Run tests:
-//   ABORTED test.test_case_aborted (0 ms total)
+//   ABORTED unit_tests::test.test_case_aborted (0 ms total)
 //     Test aborted
 //
 // Test results:
