@@ -339,8 +339,8 @@ ustring time_span::to_string(const ustring& format) const {
     case 'c': return make_string_from_duration(true);
     case 'd': return ustring::format("{}", math::abs(days()));
     case 'D': return ustring::format("{:d2}", math::abs(days()));
-    case 'f': return ustring::format("{}{}.{}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : "", math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
-    case 'F': return ustring::format("{}{}.{:d2}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : "", math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
+    case 'f': return ustring::format("{}{}.{}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : ustring::empty_string, math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
+    case 'F': return ustring::format("{}{}.{:d2}:{:d2}:{:d2}.{:d7}", ticks() < 0 ? "-" : ustring::empty_string, math::abs(days()), math::abs(hours()), math::abs(minutes()), math::abs(seconds()), math::abs(ticks() % ticks_per_second));
     case 'g': return make_string_from_duration(false);
     case 'G': return make_string_from_duration(true);
     case 'h': return ustring::format("{}", math::abs(hours()));

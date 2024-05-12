@@ -156,7 +156,7 @@ namespace xtd {
       /// @}
       
     private:
-      static dialog_result show_message_dialog(const iwin32_window* owner, const xtd::ustring& text = "", const xtd::ustring& caption = "", message_box_buttons buttons = message_box_buttons::ok, message_box_icon icon = message_box_icon::none, message_box_default_button default_button = message_box_default_button::button1, message_box_options options = static_cast<message_box_options>(0), bool display_help_button = false);
+      static dialog_result show_message_dialog(const iwin32_window* owner, const xtd::ustring& text = xtd::ustring::empty_string, const xtd::ustring& caption = xtd::ustring::empty_string, message_box_buttons buttons = message_box_buttons::ok, message_box_icon icon = message_box_icon::none, message_box_default_button default_button = message_box_default_button::button1, message_box_options options = static_cast<message_box_options>(0), bool display_help_button = false);
     };
   }
 }

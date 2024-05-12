@@ -21,7 +21,7 @@ struct event_wait_handle::data {
 event_wait_handle::event_wait_handle() : event_wait_handle(false) {
 }
 
-event_wait_handle::event_wait_handle(bool initial_state) : event_wait_handle(initial_state, event_reset_mode::auto_reset, "") {
+event_wait_handle::event_wait_handle(bool initial_state) : event_wait_handle(initial_state, event_reset_mode::auto_reset, ustring::empty_string) {
 }
 
 event_wait_handle::event_wait_handle(const ustring& name) : event_wait_handle(false, event_reset_mode::auto_reset, name) {
@@ -36,7 +36,7 @@ event_wait_handle::event_wait_handle(bool initial_state, const ustring& name) : 
 event_wait_handle::event_wait_handle(bool initial_state, const ustring& name, bool& created_new) : event_wait_handle(initial_state, event_reset_mode::auto_reset, name, created_new) {
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode) : event_wait_handle(initial_state, mode, "") {
+event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode) : event_wait_handle(initial_state, mode, ustring::empty_string) {
   
 }
 event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name) : data_(std::make_shared<event_wait_handle::data>()) {

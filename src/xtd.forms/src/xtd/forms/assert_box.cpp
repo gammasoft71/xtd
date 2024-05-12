@@ -13,7 +13,7 @@ dialog_result assert_box::show(const iwin32_window& owner, const ustring& messag
 }
 
 dialog_result assert_box::show(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame) {
-  return show_assert_box(&owner, "", stack_frame);
+  return show_assert_box(&owner, ustring::empty_string, stack_frame);
 }
 
 dialog_result assert_box::show(const iwin32_window& owner, const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
@@ -29,7 +29,7 @@ dialog_result assert_box::show(const ustring& message) {
 }
 
 dialog_result assert_box::show(const xtd::diagnostics::stack_frame& stack_frame) {
-  return show_assert_box(nullptr, "", stack_frame);
+  return show_assert_box(nullptr, ustring::empty_string, stack_frame);
 }
 
 dialog_result assert_box::show(const ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {

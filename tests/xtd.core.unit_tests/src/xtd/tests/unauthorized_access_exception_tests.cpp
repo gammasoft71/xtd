@@ -72,7 +72,7 @@ namespace xtd::tests {
     
     void test_method_(creator_with_message_empty_and_stack_frame) {
       auto info = current_stack_frame_;
-      unauthorized_access_exception e("", info);
+      unauthorized_access_exception e(ustring::empty_string, info);
       assert::are_equal(info.get_file_name(), e.file_path(), csf_);
       assert::is_empty(e.help_link(), csf_);
       assert::are_equal(0, e.error_code().value(), csf_);

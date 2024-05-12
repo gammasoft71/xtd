@@ -28,7 +28,7 @@ namespace testing {
 #define TEST(class_name, method_name) \
   void __##class_name##method_name(); \
   class __class_##class_name##_##method_name; \
-  xtd::tunit::test_class_attribute<__class_##class_name##_##method_name> __class_##class_name##_##method_name##_attr {typeof_<__class_##class_name##_##method_name>().full_name().replace(typeof_<__class_##class_name##_##method_name>().name(), "") + #class_name}; \
+  xtd::tunit::test_class_attribute<__class_##class_name##_##method_name> __class_##class_name##_##method_name##_attr {typeof_<__class_##class_name##_##method_name>().full_name().replace(typeof_<__class_##class_name##_##method_name>().name(), xtd::ustring::empty_string) + #class_name}; \
   class __class_##class_name##_##method_name : public xtd::tunit::test_class { \
     xtd::tunit::test_method_attribute __class_##class_name##_##method_name##_method {#method_name, *this, &__class_##class_name##_##method_name::__method}; \
     void __method() { \

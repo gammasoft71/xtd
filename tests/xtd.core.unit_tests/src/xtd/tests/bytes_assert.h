@@ -10,10 +10,10 @@ namespace xtd::tests {
     
   public:
     template<typename value_t, typename bytes_t>
-    static void are_equal(value_t b, const std::vector<bytes_t>& bytes) {are_equal(b, bytes, "", xtd::diagnostics::stack_frame());}
+    static void are_equal(value_t b, const std::vector<bytes_t>& bytes) {are_equal(b, bytes, xtd::ustring::empty_string, xtd::diagnostics::stack_frame());}
     
     template<typename value_t, typename bytes_t>
-    static void are_equal(value_t b, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b, bytes, "", stack_frame);}
+    static void are_equal(value_t b, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b, bytes, xtd::ustring::empty_string, stack_frame);}
     
     template<typename value_t, typename bytes_t>
     static void are_equal(value_t b, const std::vector<bytes_t>& bytes, const std::string& message) {are_equal(b, bytes, message, xtd::diagnostics::stack_frame());}
@@ -27,10 +27,10 @@ namespace xtd::tests {
     }
     
     template<typename value1_t, typename value2_t, typename bytes_t>
-    static void are_equal(value1_t b1, value2_t b2, const std::vector<bytes_t>& bytes) {are_equal(b1, b2, bytes, "", xtd::diagnostics::stack_frame());}
+    static void are_equal(value1_t b1, value2_t b2, const std::vector<bytes_t>& bytes) {are_equal(b1, b2, bytes, xtd::ustring::empty_string, xtd::diagnostics::stack_frame());}
     
     template<typename value1_t, typename value2_t, typename bytes_t>
-    static void are_equal(value1_t b1, value2_t b2, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b1, b2, bytes, "", stack_frame);}
+    static void are_equal(value1_t b1, value2_t b2, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b1, b2, bytes, xtd::ustring::empty_string, stack_frame);}
     
     template<typename value1_t, typename value2_t, typename bytes_t>
     static void are_equal(value1_t b1, value2_t b2, const std::vector<bytes_t>& bytes, const std::string& message) {are_equal(b1, b2, bytes, message, xtd::diagnostics::stack_frame());}
@@ -44,10 +44,10 @@ namespace xtd::tests {
     }
     
     template<typename value1_t, typename value2_t, typename value3_t, typename value4_t, typename bytes_t>
-    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, const std::vector<bytes_t>& bytes) {are_equal(b1, b2, b3, b4, bytes, "", xtd::diagnostics::stack_frame());}
+    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, const std::vector<bytes_t>& bytes) {are_equal(b1, b2, b3, b4, bytes, xtd::ustring::empty_string, xtd::diagnostics::stack_frame());}
     
     template<typename value1_t, typename value2_t, typename value3_t, typename value4_t, typename bytes_t>
-    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b1, b2, b3, b4, bytes, "", stack_frame);}
+    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b1, b2, b3, b4, bytes, xtd::ustring::empty_string, stack_frame);}
     
     template<typename value1_t, typename value2_t, typename value3_t, typename value4_t, typename bytes_t>
     static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, const std::vector<bytes_t>& bytes, const std::string& message) {are_equal(b1, b2, b3, b4, bytes, message, xtd::diagnostics::stack_frame());}
@@ -61,10 +61,10 @@ namespace xtd::tests {
     }
     
     template<typename value1_t, typename value2_t, typename value3_t, typename value4_t, typename value5_t, typename value6_t, typename value7_t, typename value8_t, typename bytes_t>
-    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, const std::vector<bytes_t>& bytes) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, bytes, "", xtd::diagnostics::stack_frame());}
+    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, const std::vector<bytes_t>& bytes) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, bytes, xtd::ustring::empty_string, xtd::diagnostics::stack_frame());}
     
     template<typename value1_t, typename value2_t, typename value3_t, typename value4_t, typename value5_t, typename value6_t, typename value7_t, typename value8_t, typename bytes_t>
-    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, bytes, "", stack_frame);}
+    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, bytes, xtd::ustring::empty_string, stack_frame);}
     
     template<typename value1_t, typename value2_t, typename value3_t, typename value4_t, typename value5_t, typename value6_t, typename value7_t, typename value8_t, typename bytes_t>
     static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, const std::vector<bytes_t>& bytes, const std::string& message) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, bytes, message, xtd::diagnostics::stack_frame());}
@@ -78,10 +78,10 @@ namespace xtd::tests {
     }
     
     template<typename value1_t, typename value2_t, typename value3_t, typename value4_t, typename value5_t, typename value6_t, typename value7_t, typename value8_t, typename value9_t, typename value10_t, typename value11_t, typename value12_t, typename value13_t, typename value14_t, typename value15_t, typename value16_t, typename bytes_t>
-    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, value9_t b9, value10_t b10, value11_t b11, value12_t b12, value13_t b13, value14_t b14, value15_t b15, value16_t b16, const std::vector<bytes_t>& bytes) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, bytes, "", xtd::diagnostics::stack_frame());}
+    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, value9_t b9, value10_t b10, value11_t b11, value12_t b12, value13_t b13, value14_t b14, value15_t b15, value16_t b16, const std::vector<bytes_t>& bytes) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, bytes, xtd::ustring::empty_string, xtd::diagnostics::stack_frame());}
     
     template<typename value1_t, typename value2_t, typename value3_t, typename value4_t, typename value5_t, typename value6_t, typename value7_t, typename value8_t, typename value9_t, typename value10_t, typename value11_t, typename value12_t, typename value13_t, typename value14_t, typename value15_t, typename value16_t, typename bytes_t>
-    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, value9_t b9, value10_t b10, value11_t b11, value12_t b12, value13_t b13, value14_t b14, value15_t b15, value16_t b16, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, b10, b11, b12, b13, b14, b15, b16, bytes, "", stack_frame);}
+    static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, value9_t b9, value10_t b10, value11_t b11, value12_t b12, value13_t b13, value14_t b14, value15_t b15, value16_t b16, const std::vector<bytes_t>& bytes, const xtd::diagnostics::stack_frame& stack_frame) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, b10, b11, b12, b13, b14, b15, b16, bytes, xtd::ustring::empty_string, stack_frame);}
     
     template<typename value1_t, typename value2_t, typename value3_t, typename value4_t, typename value5_t, typename value6_t, typename value7_t, typename value8_t, typename value9_t, typename value10_t, typename value11_t, typename value12_t, typename value13_t, typename value14_t, typename value15_t, typename value16_t, typename bytes_t>
     static void are_equal(value1_t b1, value2_t b2, value3_t b3, value4_t b4, value5_t b5, value6_t b6, value7_t b7, value8_t b8, value9_t b9, value10_t b10, value11_t b11, value12_t b12, value13_t b13, value14_t b14, value15_t b15, value16_t b16, const std::vector<bytes_t>& bytes, const std::string& message) {are_equal(b1, b2, b3, b4, b5, b6, b7, b8, b10, b11, b12, b13, b14, b15, b16, bytes, message, xtd::diagnostics::stack_frame());}

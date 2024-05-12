@@ -96,7 +96,7 @@ control& text_box::text(const ustring& text) {
   if (control::text() == text) return *this;
   set_text(text);
   if (!data_->use_system_password_char && data_->password_char) {
-    if (is_handle_created()) native::text_box::text(handle(), "");
+    if (is_handle_created()) native::text_box::text(handle(), ustring::empty_string);
     for (size_t count = 0; count < text.size(); count++)
       if (is_handle_created()) native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
   } else {
@@ -298,7 +298,7 @@ void text_box::on_handle_created(const event_args& e) {
   
   if (!data_->use_system_password_char && data_->password_char) {
     auto txt = text();
-    native::text_box::text(handle(), "");
+    native::text_box::text(handle(), ustring::empty_string);
     for (auto count = 0_z; count < txt.size(); ++count)
       native::text_box::append(handle(), xtd::ustring::format("{}", data_->password_char));
   } else {

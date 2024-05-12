@@ -12,7 +12,7 @@ using namespace xtd::threading;
 mutex::mutex() : mutex(false) {
 }
 
-mutex::mutex(bool initially_owned) : mutex(initially_owned, "") {
+mutex::mutex(bool initially_owned) : mutex(initially_owned, ustring::empty_string) {
 }
 
 mutex::mutex(const ustring& name) : mutex(false, name) {

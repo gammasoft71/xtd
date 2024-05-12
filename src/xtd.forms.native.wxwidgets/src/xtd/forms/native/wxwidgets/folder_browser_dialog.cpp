@@ -71,7 +71,7 @@ namespace {
   #else
   class DirDialog : public wxDirDialog {
   public:
-    explicit DirDialog(wxWindow* parent, const wxString& message = wxDirSelectorPromptStr, const wxString& defaultPath = "", long style = wxDD_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, const wxString& name = wxDirDialogNameStr) : wxDirDialog(parent, message, defaultPath, style, pos, size, name) {}
+    explicit DirDialog(wxWindow* parent, const wxString& message = wxDirSelectorPromptStr, const wxString& defaultPath = ustring::empty_string, long style = wxDD_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, const wxString& name = wxDirDialogNameStr) : wxDirDialog(parent, message, defaultPath, style, pos, size, name) {}
     void ShowWindowModal() {
       SetReturnCode(ShowModal());
       wxWindowModalDialogEvent event(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, GetId());

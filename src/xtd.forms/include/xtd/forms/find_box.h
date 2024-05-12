@@ -79,7 +79,7 @@ namespace xtd {
       /// @}
       
     private:
-      static void show_find_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, const xtd::ustring& find_string = "", const xtd::ustring& title = "", bool match_case = false, xtd::forms::search_direction search_direction = xtd::forms::search_direction::down, bool whole_word = false);
+      static void show_find_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, const xtd::ustring& find_string = xtd::ustring::empty_string, const xtd::ustring& title = xtd::ustring::empty_string, bool match_case = false, xtd::forms::search_direction search_direction = xtd::forms::search_direction::down, bool whole_word = false);
       
       static std::unique_ptr<xtd::forms::find_dialog> dialog_;
     };

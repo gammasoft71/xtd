@@ -116,7 +116,7 @@ namespace xtd {
       /// @}
       
     private:
-      static void show_busy_dialog(const iwin32_window* owner, const xtd::ustring& text = "Please wait..."_t, const xtd::ustring& caption = "", const xtd::drawing::icon& icon = xtd::drawing::icon::empty, const xtd::drawing::color& back_color = application::style_sheet().system_colors().control(), const xtd::drawing::color& fore_color = application::style_sheet().system_colors().control_text(), float opacity = 1.0f);
+      static void show_busy_dialog(const iwin32_window* owner, const xtd::ustring& text = "Please wait..."_t, const xtd::ustring& caption = xtd::ustring::empty_string, const xtd::drawing::icon& icon = xtd::drawing::icon::empty, const xtd::drawing::color& back_color = application::style_sheet().system_colors().control(), const xtd::drawing::color& fore_color = application::style_sheet().system_colors().control_text(), float opacity = 1.0f);
       
       static std::unique_ptr<busy_dialog> dialog_;
     };

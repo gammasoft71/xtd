@@ -96,7 +96,7 @@ namespace xtd {
       /// @}
       
     private:
-      static void show_replace_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, xtd::forms::replace_event_handler replace, xtd::forms::replace_event_handler replace_all, const xtd::ustring& find_string = "", const xtd::ustring& replace_string = "", const xtd::ustring& title = "", bool match_case = false, bool whole_word = false);
+      static void show_replace_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, xtd::forms::replace_event_handler replace, xtd::forms::replace_event_handler replace_all, const xtd::ustring& find_string = xtd::ustring::empty_string, const xtd::ustring& replace_string = xtd::ustring::empty_string, const xtd::ustring& title = xtd::ustring::empty_string, bool match_case = false, bool whole_word = false);
       
       static std::unique_ptr<xtd::forms::replace_dialog> dialog_;
     };

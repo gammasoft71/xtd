@@ -113,8 +113,8 @@ namespace xtd {
           for (auto& line : strings) {
             switch (trimming) {
               case ST_NONE: break;
-              case ST_CHARACTER: line = TrimmingCharacter(dc, line, font, width, ""); break;
-              case ST_WORD: line = TrimmingWord(dc, line, font, width, ""); break;
+              case ST_CHARACTER: line = TrimmingCharacter(dc, line, font, width, ustring::empty_string); break;
+              case ST_WORD: line = TrimmingWord(dc, line, font, width, ustring::empty_string); break;
               case ST_ELLIPSIS_CHARACTER:  line = TrimmingCharacter(dc, line, font, width, "..."); break;
               case ST_ELLIPSIS_WORD: line = TrimmingWord(dc, line, font, width, "..."); break;
               case ST_ELLIPSIS_PATH: line = TrimmingPath(dc, line, font, width, "..."); break;

@@ -157,7 +157,7 @@ namespace xtd {
       /// @}
       
     private:
-      static xtd::forms::dialog_result show_save_file_box(xtd::ustring& output, const xtd::ustring& title, const xtd::ustring& initial_directory = "", const xtd::ustring& filter = "", const save_file_box_options options = save_file_box_options::none, const iwin32_window* owner = nullptr);
+      static xtd::forms::dialog_result show_save_file_box(xtd::ustring& output, const xtd::ustring& title, const xtd::ustring& initial_directory = xtd::ustring::empty_string, const xtd::ustring& filter = xtd::ustring::empty_string, const save_file_box_options options = save_file_box_options::none, const iwin32_window* owner = nullptr);
     };
   }
 }

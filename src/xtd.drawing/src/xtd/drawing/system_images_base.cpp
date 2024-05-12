@@ -107,7 +107,7 @@ image system_images_base::from_name(const ustring& theme, const ustring& name, c
   static auto default_sizes = vector<drawing::size> {{1024, 1024}, {512, 512}, {256, 256}, {128, 128}, {96, 96}, {64, 64}, {48, 48}, {32, 32}, {24, 24}, {16, 16}};
   static auto default_size_names = vector<ustring> {"1024x1024", "512x512", "256x256", "128x128", "96x96", "64x64", "48x48", "32x32", "24x24", "16x16"};
   auto dark_mode = (system_colors::window().get_lightness() < 0.5 && !theme.ends_with(" (light)")) || theme.ends_with(" (dark)");
-  auto theme_name = theme.replace(" (dark)", "").replace(" (light)", "");
+  auto theme_name = theme.replace(" (dark)", ustring::empty_string).replace(" (light)", ustring::empty_string);
   
   auto theme_path = directory::exists(path::combine(system_images_base_resource_path(), theme_name)) ? path::combine(system_images_base_resource_path(), theme_name) : path::combine(system_images_base_resource_path(), default_theme());
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));

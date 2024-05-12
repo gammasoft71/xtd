@@ -552,10 +552,10 @@ color color::from_name(const ustring& name) noexcept {
   static auto names = map<ustring, known_color> {};
   if (names.empty()) {
     for (auto entry : enum_object<>::get_entries<known_color>())
-      names.insert({entry.second.replace("_", ""), entry.first});
+      names.insert({entry.second.replace("_", ustring::empty_string), entry.first});
   }
   
-  auto key = name.to_lower().replace(" ", "").replace("_", "");
+  auto key = name.to_lower().replace(" ", ustring::empty_string).replace("_", ustring::empty_string);
   auto it = names.find(key);
   if (it == names.end()) {
     auto result = color {};
@@ -648,11 +648,11 @@ color color::light(const color& color, double percent) noexcept {
 
 color color::parse(const ustring& color) noexcept {
   try {
-    auto argb = color.replace("color [a=", "").replace(" r=", "").replace(" g=", "").replace("b=", "").replace("]", "").split({','});
+    auto argb = color.replace("color [a=", ustring::empty_string).replace(" r=", ustring::empty_string).replace(" g=", ustring::empty_string).replace("b=", ustring::empty_string).replace("]", ustring::empty_string).split({','});
     if (argb.size() == 1) return color::from_argb(xtd::parse<uint32>(argb.at(0), xtd::number_styles::hex_number));
     return color::from_argb(ustring::parse<xtd::byte>(argb.at(0)), ustring::parse<xtd::byte>(argb.at(1)), ustring::parse<xtd::byte>(argb.at(2)), ustring::parse<xtd::byte>(argb.at(3)));
   } catch (...) {
-    return color::from_name(color.replace("]", "").replace("color [", ""));
+    return color::from_name(color.replace("]", ustring::empty_string).replace("color [", ustring::empty_string));
   }
 }
 

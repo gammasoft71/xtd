@@ -28,7 +28,7 @@ tab_control::tab_page_collection& tab_control::tab_page_collection::operator =(c
 }
 
 tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::ustring& text) {
-  return insert(pos, text, "");
+  return insert(pos, text, ustring::empty_string);
 }
 
 tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::ustring& text, const xtd::ustring& name) {
@@ -36,7 +36,7 @@ tab_control::tab_page_collection::iterator tab_control::tab_page_collection::ins
 }
 
 void tab_control::tab_page_collection::insert_at(size_t index, const xtd::ustring& text) {
-  return insert_at(index, text, "");
+  return insert_at(index, text, ustring::empty_string);
 }
 
 void tab_control::tab_page_collection::insert_at(size_t index, const xtd::ustring& text, const xtd::ustring& name) {
@@ -44,7 +44,7 @@ void tab_control::tab_page_collection::insert_at(size_t index, const xtd::ustrin
 }
 
 void tab_control::tab_page_collection::push_back(const xtd::ustring& text) {
-  push_back(text, "");
+  push_back(text, ustring::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const xtd::ustring& text, const ustring& name) {
@@ -52,25 +52,25 @@ void tab_control::tab_page_collection::push_back(const xtd::ustring& text, const
 }
 
 void tab_control::tab_page_collection::push_back(const char* text) {
-  push_back(text, "");
+  push_back(text, ustring::empty_string);
 }
 
 #if defined(__cpp_lib_char8_t)
 void tab_control::tab_page_collection::push_back(const char8* text) {
-  push_back(text, "");
+  push_back(text, ustring::empty_string);
 }
 #endif
 
 void tab_control::tab_page_collection::push_back(const char16* text) {
-  push_back(text, "");
+  push_back(text, ustring::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const char32* text) {
-  push_back(text, "");
+  push_back(text, ustring::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const wchar* text) {
-  push_back(text, "");
+  push_back(text, ustring::empty_string);
 }
 
 optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const ustring& name) const {

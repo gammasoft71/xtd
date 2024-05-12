@@ -68,7 +68,7 @@ stack_frame::stack_frame(const ustring& file_name, uint32 line_number, const ust
 }
 
 stack_frame stack_frame::empty() noexcept {
-  return {"", 0, "", 0, OFFSET_UNKNOWN};
+  return {ustring::empty_string, 0, ustring::empty_string, 0, OFFSET_UNKNOWN};
 }
 
 bool stack_frame::equals(const stack_frame& sf) const noexcept {

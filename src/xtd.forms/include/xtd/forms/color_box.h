@@ -95,7 +95,7 @@ namespace xtd {
       /// @}
       
     private:
-      static xtd::forms::dialog_result show_color_box(xtd::drawing::color& color, const xtd::forms::iwin32_window* owner = nullptr, const xtd::ustring& title = "", color_box_styles styles = color_box_styles::alpha_color | color_box_styles::allow_full_open, const std::optional<std::vector<xtd::drawing::color>>& custom_colors = std::optional<std::vector<xtd::drawing::color>> {});
+      static xtd::forms::dialog_result show_color_box(xtd::drawing::color& color, const xtd::forms::iwin32_window* owner = nullptr, const xtd::ustring& title = xtd::ustring::empty_string, color_box_styles styles = color_box_styles::alpha_color | color_box_styles::allow_full_open, const std::optional<std::vector<xtd::drawing::color>>& custom_colors = std::optional<std::vector<xtd::drawing::color>> {});
     };
   }
 }
