@@ -31,13 +31,13 @@ auto main()->int {
 //
 // Start 4 tests from 1 test case
 // Run tests:
-//   SUCCEED test.test_case_collection_succeed (0 ms total)
-//   FAILED  test.test_case_collection_failed (0 ms total)
+//   SUCCEED unit_tests::test.test_case_collection_succeed (0 ms total)
+//   FAILED  unit_tests::test.test_case_collection_failed (0 ms total)
 //     Expected: collection <empty>
 //     But was:  < 0, 1, 2, 3 >
 //     Stack Trace: in |---OMITTED---|/valid_is_empty.cpp:13
-//   SUCCEED test.test_case_string_succeed (0 ms total)
-//   FAILED  test.test_case_string_failed (0 ms total)
+//   SUCCEED unit_tests::test.test_case_string_succeed (0 ms total)
+//   FAILED  unit_tests::test.test_case_string_failed (0 ms total)
 //     Expected: collection <empty>
 //     But was:  < 's', 't', 'r', 'i', 'n', 'g' >
 //     Stack Trace: in |---OMITTED---|/valid_is_empty.cpp:21

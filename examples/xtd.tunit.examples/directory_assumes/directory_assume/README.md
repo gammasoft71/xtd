@@ -21,7 +21,7 @@ xtdc run
 ```
 Start 3 tests from 1 test case
 Run tests:
-  SUCCEED test.test_case1 (0 ms total)
+  SUCCEED unit_tests::test.test_case1 (0 ms total)
   ABORTED test.test_case2 (0 ms total)
     Test aborted
     Expected: directory exists

@@ -26,8 +26,8 @@ auto main()->int {
 //
 // Start 2 tests from 1 test case
 // Run tests:
-//   SUCCEED test.test_case_succeed (0 ms total)
-//   FAILED  test.test_case_failed (0 ms total)
+//   SUCCEED unit_tests::test.test_case_succeed (0 ms total)
+//   FAILED  unit_tests::test.test_case_failed (0 ms total)
 //     Expected: "/var/folders/xg/2fvdl7v939g9kbp8xn1dpgg00000gn/T"
 //     But was:  "/System"
 //     Stack Trace: in |---OMITTED---|/directory_valid_are_equal.cpp:15

@@ -21,12 +21,12 @@ xtdc run
 ```
 Start 3 tests from 1 test case
 Run tests:
-  SUCCEED test.test_case1 (0 ms total)
-  FAILED  test.test_case2 (0 ms total)
+  SUCCEED unit_tests::test.test_case1 (0 ms total)
+  FAILED  unit_tests::test.test_case2 (0 ms total)
     Expected: <empty>
     But was:  < 1, 2, 3 >
     Stack Trace: in |---OMITTED---|/collection_valid.cpp:14
-  FAILED  test.test_case3 (0 ms total)
+  FAILED  unit_tests::test.test_case3 (0 ms total)
     Expected: <ordered>
     But was:  < 1, 3, 2 >
     Stack Trace: in |---OMITTED---|/collection_valid.cpp:18

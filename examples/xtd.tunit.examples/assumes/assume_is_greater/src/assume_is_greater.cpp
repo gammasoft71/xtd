@@ -24,7 +24,7 @@ auto main()->int {
 //
 // Start 2 tests from 1 test case
 // Run tests:
-//   SUCCEED test.test_case_succeed (0 ms total)
+//   SUCCEED unit_tests::test.test_case_succeed (0 ms total)
 //   ABORTED test.test_case_aborted (0 ms total)
 //     Expected: greater than 48
 //     But was:  24

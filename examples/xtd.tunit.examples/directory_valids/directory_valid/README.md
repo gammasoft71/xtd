@@ -21,12 +21,12 @@ xtdc run
 ```
 Start 3 tests from 1 test case
 Run tests:
-  SUCCEED test.test_case1 (0 ms total)
-  FAILED  test.test_case2 (0 ms total)
+  SUCCEED unit_tests::test.test_case1 (0 ms total)
+  FAILED  unit_tests::test.test_case2 (0 ms total)
     Expected: directory exists
     But was:  "unknown root folder/unknown sub folder/unknown xtd example folder"
     Stack Trace: in |---OMITTED---|/directory_valid.cpp:16
-  FAILED  test.test_case3 (0 ms total)
+  FAILED  unit_tests::test.test_case3 (0 ms total)
     Expected: "|---OMITTED---|/Music"
     But was:  "|---OMITTED---|/Movies"
     Stack Trace: in |---OMITTED---|/directory_valid.cpp:20

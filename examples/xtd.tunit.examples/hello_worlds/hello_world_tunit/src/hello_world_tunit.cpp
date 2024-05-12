@@ -29,8 +29,8 @@ auto main()->int {
 //
 // Start 2 tests from 1 test case
 // Run tests:
-//   SUCCEED hello_world_test.create_string_from_literal (0 ms total)
-//   SUCCEED hello_world_test.create_string_from_chars (0 ms total)
+//   SUCCEED unit_tests::hello_world_test.create_string_from_literal (0 ms total)
+//   SUCCEED unit_tests::hello_world_test.create_string_from_chars (0 ms total)
 //
 // Test results:
 //   SUCCEED 2 tests.

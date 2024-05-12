@@ -26,8 +26,8 @@ auto main()->int {
 //
 // Start 2 tests from 1 test case
 // Run tests:
-//   SUCCEED test.test_case_succeed (0 ms total)
-//   FAILED  test.test_case_failed (0 ms total)
+//   SUCCEED unit_tests::test.test_case_succeed (0 ms total)
+//   FAILED  unit_tests::test.test_case_failed (0 ms total)
 //     Expected: NaN
 //     But was:  3.14159
 //     Stack Trace: in |---OMITTED---|/valid_is_NaN.cpp:15

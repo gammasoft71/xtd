@@ -18,7 +18,7 @@ auto main()->int {
 //
 // Start 1 test from 1 test case
 // Run tests:
-//   FAILED  test.test_case_failed (0 ms total)
+//   FAILED  unit_tests::test.test_case_failed (0 ms total)
 //     Test failed
 //     Stack Trace: in |---OMITTED---|/assert_fail.cpp:8
 //

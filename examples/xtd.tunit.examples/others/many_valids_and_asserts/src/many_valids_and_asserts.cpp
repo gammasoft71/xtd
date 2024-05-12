@@ -26,15 +26,15 @@ auto main()->int {
 //
 // Start 1 test from 1 test case
 // Run tests:
-//   FAILED  test.test_case1 (0 ms total)
+//   FAILED  unit_tests::test.test_case1 (0 ms total)
 //     Expected: string starting with "¡Hola,"
 //     But was:  "Hello, World!"
 //     Stack Trace: in |---OMITTED---|/many_valids_and_asserts.cpp:15
-//   FAILED  test.test_case1 (0 ms total)
+//   FAILED  unit_tests::test.test_case1 (0 ms total)
 //     Expected: string ending with " mundo!"
 //     But was:  "Hello, World!"
 //     Stack Trace: in |---OMITTED---|/many_valids_and_asserts.cpp:16
-//   FAILED  test.test_case1 (0 ms total)
+//   FAILED  unit_tests::test.test_case1 (0 ms total)
 //     Expected: collection containing a
 //     But was:  < 'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!' >
 //     Stack Trace: in |---OMITTED---|/many_valids_and_asserts.cpp:17
