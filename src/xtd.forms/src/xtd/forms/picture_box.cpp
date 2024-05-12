@@ -44,10 +44,9 @@ forms::border_sides picture_box::border_sides() const noexcept {
 }
 
 picture_box& picture_box::border_sides(forms::border_sides border_sides) {
-  if (data_->border_sides != border_sides) {
-    data_->border_sides = border_sides;
-    if (control_appearance() == forms::control_appearance::standard) invalidate();
-  }
+  if (data_->border_sides == border_sides) return *this;
+  data_->border_sides = border_sides;
+  refresh();
   return *this;
 }
 
@@ -59,7 +58,7 @@ picture_box& picture_box::border_style(forms::border_style border_style) {
   if (this->border_style() == border_style) return *this;
   data_->border_style = border_style;
   if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
-  else invalidate();
+  refresh();
   return *this;
 }
 
@@ -67,7 +66,7 @@ picture_box& picture_box::border_style(nullptr_t) {
   if (data_->border_style) return *this;
   data_->border_style.reset();
   if (is_handle_created() && control_appearance() == forms::control_appearance::system) post_recreate_handle();
-  else invalidate();
+  refresh();
   return *this;
 }
 
@@ -80,16 +79,15 @@ picture_box& picture_box::image(const drawing::image& image) {
   if (image == drawing::image::empty) return this->image(nullptr);
   data_->image = image;
   if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::image(handle(), data_->image.value());
-  else invalidate();
+  refresh();
   return *this;
 }
 
 picture_box& picture_box::image(std::nullptr_t) {
-  if (data_->image.has_value()) {
-    data_->image.reset();
-    if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::reset(handle());
-    else invalidate();
-  }
+  if (!data_->image.has_value()) return *this;
+  data_->image.reset();
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::reset(handle());
+  refresh();
   return *this;
 }
 
@@ -234,6 +232,8 @@ forms::create_params picture_box::create_params() const noexcept {
     if (border_style() == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
     else if (border_style() != forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   }
+  
+  if (control_appearance() != forms::control_appearance::system) create_params.style(create_params.style() | SS_OWNERDRAW);
   
   switch (data_->size_mode) {
     case picture_box_size_mode::normal: create_params.style(create_params.style() | SS_BITMAP_NORMAL); break;
