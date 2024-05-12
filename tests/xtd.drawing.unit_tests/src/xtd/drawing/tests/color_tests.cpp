@@ -228,9 +228,9 @@ namespace xtd::drawing::tests {
       assert::are_not_equal(color::empty, c);
       
       assert::are_equal(0x00, c.a(), csf_);
-      assert::are_equal(0xFF, c.r(), csf_);
-      assert::are_equal(0xFF, c.g(), csf_);
-      assert::are_equal(0xFF, c.b(), csf_);
+      assert::are_equal(0x00, c.r(), csf_);
+      assert::are_equal(0x00, c.g(), csf_);
+      assert::are_equal(0x00, c.b(), csf_);
       assert::are_equal(0, c.handle(), csf_);
       assert::are_equal("transparent", c.name(), csf_);
       
@@ -3753,9 +3753,9 @@ namespace xtd::drawing::tests {
       assert::are_not_equal(color::empty, c);
       
       assert::are_equal(0x00, c.a(), csf_);
-      assert::are_equal(0xFF, c.r(), csf_);
-      assert::are_equal(0xFF, c.g(), csf_);
-      assert::are_equal(0xFF, c.b(), csf_);
+      assert::are_equal(0x00, c.r(), csf_);
+      assert::are_equal(0x00, c.g(), csf_);
+      assert::are_equal(0x00, c.b(), csf_);
       assert::are_equal(0, c.handle(), csf_);
       assert::are_equal("transparent", c.name(), csf_);
       
