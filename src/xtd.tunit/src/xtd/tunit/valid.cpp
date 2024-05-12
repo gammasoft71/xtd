@@ -71,11 +71,11 @@ void valid::are_equal(long double expected, long double actual, const xtd::ustri
 }
 
 void valid::are_equal(float expected, float actual, float tolerance) {
-  are_equal(expected, actual, tolerance, "", xtd::diagnostics::stack_frame::empty());
+  are_equal(expected, actual, tolerance, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::are_equal(float expected, float actual, float tolerance, const xtd::diagnostics::stack_frame& stack_frame) {
-  are_equal(expected, actual, tolerance, "", stack_frame);
+  are_equal(expected, actual, tolerance, ustring::empty_string, stack_frame);
 }
 
 void valid::are_equal(float expected, float& actual, float tolerance, const xtd::ustring& message) {
@@ -91,11 +91,11 @@ void valid::are_equal(float expected, float actual, float tolerance, const xtd::
 }
 
 void valid::are_equal(double expected, double actual, double tolerance) {
-  are_equal(expected, actual, tolerance, "", xtd::diagnostics::stack_frame::empty());
+  are_equal(expected, actual, tolerance, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::are_equal(double expected, double actual, double tolerance, const xtd::diagnostics::stack_frame& stack_frame) {
-  are_equal(expected, actual, tolerance, "", stack_frame);
+  are_equal(expected, actual, tolerance, ustring::empty_string, stack_frame);
 }
 
 void valid::are_equal(double expected, double actual, double tolerance, const xtd::ustring& message) {
@@ -111,11 +111,11 @@ void valid::are_equal(double expected, double actual, double tolerance, const xt
 }
 
 void valid::are_equal(long double expected, long double actual, long double tolerance) {
-  are_equal(expected, actual, tolerance, "", xtd::diagnostics::stack_frame::empty());
+  are_equal(expected, actual, tolerance, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::are_equal(long double expected, long double actual, long double tolerance, const xtd::diagnostics::stack_frame& stack_frame) {
-  are_equal(expected, actual, tolerance, "", stack_frame);
+  are_equal(expected, actual, tolerance, ustring::empty_string, stack_frame);
 }
 
 void valid::are_equal(long double expected, long double actual, long double tolerance, const xtd::ustring& message) {
@@ -215,11 +215,11 @@ void valid::contains(wchar_t item, const wchar_t* values, const xtd::ustring& me
 }
 
 void valid::does_not_throw(const std::function<void()>& statement) {
-  does_not_throw(statement, "", xtd::diagnostics::stack_frame::empty());
+  does_not_throw(statement, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::does_not_throw(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {
-  does_not_throw(statement, "", stack_frame);
+  does_not_throw(statement, ustring::empty_string, stack_frame);
 }
 
 void valid::does_not_throw(const std::function<void()>& statement, const xtd::ustring& message) {
@@ -277,11 +277,11 @@ void valid::is_empty(const wchar_t* value, const xtd::ustring& message, const xt
 }
 
 void valid::is_false(bool condition) {
-  is_false(condition, "", xtd::diagnostics::stack_frame::empty());
+  is_false(condition, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::is_false(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  is_false(condition, "", stack_frame);
+  is_false(condition, ustring::empty_string, stack_frame);
 }
 
 void valid::is_false(bool condition, const xtd::ustring& message) {
@@ -465,11 +465,11 @@ void valid::is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const xtd
 }
 
 void valid::is_NaN(double value) {
-  is_NaN(value, "", xtd::diagnostics::stack_frame::empty());
+  is_NaN(value, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::is_NaN(double value, const xtd::diagnostics::stack_frame& stack_frame) {
-  is_NaN(value, "", stack_frame);
+  is_NaN(value, ustring::empty_string, stack_frame);
 }
 
 void valid::is_NaN(double value, const xtd::ustring& message) {
@@ -485,11 +485,11 @@ void valid::is_NaN(double value, const xtd::ustring& message, const xtd::diagnos
 }
 
 void valid::is_NaN(long double value) {
-  is_NaN(value, "", xtd::diagnostics::stack_frame::empty());
+  is_NaN(value, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::is_NaN(long double value, const xtd::diagnostics::stack_frame& stack_frame) {
-  is_NaN(value, "", stack_frame);
+  is_NaN(value, ustring::empty_string, stack_frame);
 }
 
 void valid::is_NaN(long double value, const xtd::ustring& message) {
@@ -505,11 +505,11 @@ void valid::is_NaN(long double value, const xtd::ustring& message, const xtd::di
 }
 
 void valid::is_NaN(float value) {
-  is_NaN(value, "", xtd::diagnostics::stack_frame::empty());
+  is_NaN(value, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::is_NaN(float value, const xtd::diagnostics::stack_frame& stack_frame) {
-  is_NaN(value, "", stack_frame);
+  is_NaN(value, ustring::empty_string, stack_frame);
 }
 
 void valid::is_NaN(float value, const xtd::ustring& message) {
@@ -567,11 +567,11 @@ void valid::is_not_empty(const wchar_t* value, const xtd::ustring& message, cons
 }
 
 void valid::is_not_null(std::nullptr_t pointer) {
-  is_not_null(pointer, "", xtd::diagnostics::stack_frame::empty());
+  is_not_null(pointer, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::is_not_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {
-  is_not_null(pointer, "", stack_frame);
+  is_not_null(pointer, ustring::empty_string, stack_frame);
 }
 
 void valid::is_not_null(std::nullptr_t pointer, const xtd::ustring& message) {
@@ -587,11 +587,11 @@ void valid::is_not_null(std::nullptr_t pointer, const xtd::ustring& message, con
 }
 
 void valid::is_null(std::nullptr_t pointer) {
-  is_null(pointer, "", xtd::diagnostics::stack_frame::empty());
+  is_null(pointer, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::is_null(std::nullptr_t pointer, const xtd::diagnostics::stack_frame& stack_frame) {
-  is_null(pointer, "", stack_frame);
+  is_null(pointer, ustring::empty_string, stack_frame);
 }
 
 void valid::is_null(std::nullptr_t pointer, const xtd::ustring& message) {
@@ -603,11 +603,11 @@ void valid::is_null(std::nullptr_t pointer, const xtd::ustring& message, const x
 }
 
 void valid::is_true(bool condition) {
-  is_true(condition, "", xtd::diagnostics::stack_frame::empty());
+  is_true(condition, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::is_true(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  is_true(condition, "", stack_frame);
+  is_true(condition, ustring::empty_string, stack_frame);
 }
 
 void valid::is_true(bool condition, const xtd::ustring& message) {
@@ -623,11 +623,11 @@ void valid::is_true(bool condition, const xtd::ustring& message, const xtd::diag
 }
 
 void valid::throws_any(const std::function<void()>& statement) {
-  throws_any(statement, "", xtd::diagnostics::stack_frame::empty());
+  throws_any(statement, ustring::empty_string, xtd::diagnostics::stack_frame::empty());
 }
 
 void valid::throws_any(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame) {
-  throws_any(statement, "", stack_frame);
+  throws_any(statement, ustring::empty_string, stack_frame);
 }
 
 void valid::throws_any(const std::function<void()>& statement, const xtd::ustring& message) {

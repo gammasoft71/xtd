@@ -71,11 +71,11 @@ void assert::are_equal(long double expected, long double actual, const ustring& 
 }
 
 void assert::are_equal(float expected, float actual, float tolerance) {
-  are_equal(expected, actual, tolerance, "", stack_frame::empty());
+  are_equal(expected, actual, tolerance, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::are_equal(float expected, float actual, float tolerance, const stack_frame& stack_frame) {
-  are_equal(expected, actual, tolerance, "", stack_frame);
+  are_equal(expected, actual, tolerance, ustring::empty_string, stack_frame);
 }
 
 void assert::are_equal(float expected, float& actual, float tolerance, const ustring& message) {
@@ -90,11 +90,11 @@ void assert::are_equal(float expected, float actual, float tolerance, const ustr
 }
 
 void assert::are_equal(double expected, double actual, double tolerance) {
-  are_equal(expected, actual, tolerance, "", stack_frame::empty());
+  are_equal(expected, actual, tolerance, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::are_equal(double expected, double actual, double tolerance, const stack_frame& stack_frame) {
-  are_equal(expected, actual, tolerance, "", stack_frame);
+  are_equal(expected, actual, tolerance, ustring::empty_string, stack_frame);
 }
 
 void assert::are_equal(double expected, double actual, double tolerance, const ustring& message) {
@@ -109,11 +109,11 @@ void assert::are_equal(double expected, double actual, double tolerance, const u
 }
 
 void assert::are_equal(long double expected, long double actual, long double tolerance) {
-  are_equal(expected, actual, tolerance, "", stack_frame::empty());
+  are_equal(expected, actual, tolerance, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::are_equal(long double expected, long double actual, long double tolerance, const stack_frame& stack_frame) {
-  are_equal(expected, actual, tolerance, "", stack_frame);
+  are_equal(expected, actual, tolerance, ustring::empty_string, stack_frame);
 }
 
 void assert::are_equal(long double expected, long double actual, long double tolerance, const ustring& message) {
@@ -212,11 +212,11 @@ void assert::contains(wchar_t item, const wchar_t* values, const ustring& messag
 }
 
 void assert::does_not_throw(const function<void()>& statement) {
-  does_not_throw(statement, "", stack_frame::empty());
+  does_not_throw(statement, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::does_not_throw(const function<void()>& statement, const stack_frame& stack_frame) {
-  does_not_throw(statement, "", stack_frame);
+  does_not_throw(statement, ustring::empty_string, stack_frame);
 }
 
 void assert::does_not_throw(const function<void()>& statement, const ustring& message) {
@@ -277,11 +277,11 @@ void assert::is_empty(const wchar_t* value, const ustring& message, const stack_
 }
 
 void assert::is_false(bool condition) {
-  is_false(condition, "", stack_frame::empty());
+  is_false(condition, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::is_false(bool condition, const stack_frame& stack_frame) {
-  is_false(condition, "", stack_frame);
+  is_false(condition, ustring::empty_string, stack_frame);
 }
 
 void assert::is_false(bool condition, const ustring& message) {
@@ -444,11 +444,11 @@ void assert::is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const us
 }
 
 void assert::is_NaN(double value) {
-  is_NaN(value, "", stack_frame::empty());
+  is_NaN(value, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::is_NaN(double value, const stack_frame& stack_frame) {
-  is_NaN(value, "", stack_frame);
+  is_NaN(value, ustring::empty_string, stack_frame);
 }
 
 void assert::is_NaN(double value, const ustring& message) {
@@ -463,11 +463,11 @@ void assert::is_NaN(double value, const ustring& message, const stack_frame& sta
 }
 
 void assert::is_NaN(long double value) {
-  is_NaN(value, "", stack_frame::empty());
+  is_NaN(value, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::is_NaN(long double value, const stack_frame& stack_frame) {
-  is_NaN(value, "", stack_frame);
+  is_NaN(value, ustring::empty_string, stack_frame);
 }
 
 void assert::is_NaN(long double value, const ustring& message) {
@@ -482,11 +482,11 @@ void assert::is_NaN(long double value, const ustring& message, const stack_frame
 }
 
 void assert::is_NaN(float value) {
-  is_NaN(value, "", stack_frame::empty());
+  is_NaN(value, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::is_NaN(float value, const stack_frame& stack_frame) {
-  is_NaN(value, "", stack_frame);
+  is_NaN(value, ustring::empty_string, stack_frame);
 }
 
 void assert::is_NaN(float value, const ustring& message) {
@@ -538,11 +538,11 @@ void assert::is_not_empty(const wchar_t* value, const ustring& message, const st
 }
 
 void assert::is_not_null(nullptr_t pointer) {
-  is_not_null(pointer, "", stack_frame::empty());
+  is_not_null(pointer, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::is_not_null(nullptr_t pointer, const stack_frame& stack_frame) {
-  is_not_null(pointer, "", stack_frame);
+  is_not_null(pointer, ustring::empty_string, stack_frame);
 }
 
 void assert::is_not_null(nullptr_t pointer, const ustring& message) {
@@ -554,11 +554,11 @@ void assert::is_not_null(nullptr_t pointer, const ustring& message, const stack_
 }
 
 void assert::is_null(nullptr_t pointer) {
-  is_null(pointer, "", stack_frame::empty());
+  is_null(pointer, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::is_null(nullptr_t pointer, const stack_frame& stack_frame) {
-  is_null(pointer, "", stack_frame);
+  is_null(pointer, ustring::empty_string, stack_frame);
 }
 
 void assert::is_null(nullptr_t pointer, const ustring& message) {
@@ -570,11 +570,11 @@ void assert::is_null(nullptr_t pointer, const ustring& message, const stack_fram
 }
 
 void assert::is_true(bool condition) {
-  is_true(condition, "", stack_frame::empty());
+  is_true(condition, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::is_true(bool condition, const stack_frame& stack_frame) {
-  is_true(condition, "", stack_frame);
+  is_true(condition, ustring::empty_string, stack_frame);
 }
 
 void assert::is_true(bool condition, const ustring& message) {
@@ -589,11 +589,11 @@ void assert::is_true(bool condition, const ustring& message, const stack_frame& 
 }
 
 void assert::throws_any(const function<void()>& statement) {
-  throws_any(statement, "", stack_frame::empty());
+  throws_any(statement, ustring::empty_string, stack_frame::empty());
 }
 
 void assert::throws_any(const function<void()>& statement, const stack_frame& stack_frame) {
-  throws_any(statement, "", stack_frame);
+  throws_any(statement, ustring::empty_string, stack_frame);
 }
 
 void assert::throws_any(const function<void()>& statement, const ustring& message) {
