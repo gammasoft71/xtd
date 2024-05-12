@@ -55,7 +55,7 @@ namespace {
       auto days = std::chrono::duration_cast<std::chrono::days>(time_since_boot);
       auto hours = std::chrono::duration_cast<std::chrono::hours>(time_since_boot);
       auto minutes = std::chrono::duration_cast<std::chrono::minutes>(time_since_boot);
-      return ustring::format("{}{}{}", days.count() ? ustring::format("{} days, ", days.count()) : "", days.count() || hours.count()  % 24 ? ustring::format("{} hours, ", hours.count() % 24) : "", ustring::format("{} minutes", minutes.count() % 60));
+      return ustring::format("{}{}{}", days.count() ? ustring::format("{} days, ", days.count()) : ustring::empty_string, days.count() || hours.count()  % 24 ? ustring::format("{} hours, ", hours.count() % 24) : ustring::empty_string, ustring::format("{} minutes", minutes.count() % 60));
     };
     ustring report = ustring::format("{}Operating System{}", indent_string(indent), environment::new_line());
     auto operating_system = system_report::operating_system();

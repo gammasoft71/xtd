@@ -45,7 +45,7 @@ void default_trace_listener::write(const ustring& message) {
 
 void default_trace_listener::write_line(const ustring& message) {
   write(message + "\n");
-  native::debugger::log(0, "", message_line_);
+  native::debugger::log(0, ustring::empty_string, message_line_);
   message_line_ = "";
   need_indent(true);
 }

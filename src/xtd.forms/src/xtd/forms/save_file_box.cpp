@@ -6,23 +6,23 @@ using namespace xtd;
 using namespace xtd::forms;
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner) {
-  return show_save_file_box(file_name, "", "", "", save_file_box_options::none, &owner);
+  return show_save_file_box(file_name, ustring::empty_string, ustring::empty_string, ustring::empty_string, save_file_box_options::none, &owner);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title) {
-  return show_save_file_box(file_name, title, "", "", save_file_box_options::none, &owner);
+  return show_save_file_box(file_name, title, ustring::empty_string, ustring::empty_string, save_file_box_options::none, &owner);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const save_file_box_options options) {
-  return show_save_file_box(file_name, title, "", "", options, &owner);
+  return show_save_file_box(file_name, title, ustring::empty_string, ustring::empty_string, options, &owner);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory) {
-  return show_save_file_box(file_name, title, initial_directory, "", save_file_box_options::none, &owner);
+  return show_save_file_box(file_name, title, initial_directory, ustring::empty_string, save_file_box_options::none, &owner);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory, const save_file_box_options options) {
-  return show_save_file_box(file_name, title, initial_directory, "", options, &owner);
+  return show_save_file_box(file_name, title, initial_directory, ustring::empty_string, options, &owner);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::forms::iwin32_window& owner, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter) {
@@ -34,23 +34,23 @@ dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::forms::iwi
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name) {
-  return show_save_file_box(file_name, "", "", "", save_file_box_options::none, nullptr);
+  return show_save_file_box(file_name, ustring::empty_string, ustring::empty_string, ustring::empty_string, save_file_box_options::none, nullptr);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::ustring& title) {
-  return show_save_file_box(file_name, title, "", "", save_file_box_options::none, nullptr);
+  return show_save_file_box(file_name, title, ustring::empty_string, ustring::empty_string, save_file_box_options::none, nullptr);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::ustring& title, const save_file_box_options options) {
-  return show_save_file_box(file_name, title, "", "", options, nullptr);
+  return show_save_file_box(file_name, title, ustring::empty_string, ustring::empty_string, options, nullptr);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory) {
-  return show_save_file_box(file_name, title, initial_directory, "", save_file_box_options::none, nullptr);
+  return show_save_file_box(file_name, title, initial_directory, ustring::empty_string, save_file_box_options::none, nullptr);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory, const save_file_box_options options) {
-  return show_save_file_box(file_name, title, initial_directory, "", options, nullptr);
+  return show_save_file_box(file_name, title, initial_directory, ustring::empty_string, options, nullptr);
 }
 
 dialog_result save_file_box::show(xtd::ustring& file_name, const xtd::ustring& title, const xtd::ustring& initial_directory,  const xtd::ustring& filter) {

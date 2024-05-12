@@ -39,7 +39,7 @@ cursor::cursor() : data_(make_shared<data>()) {
   data_->size_ = native::cursor::size(data_->handle_);
 }
 
-cursor::cursor(intptr handle) : cursor(handle, false, "") {
+cursor::cursor(intptr handle) : cursor(handle, false, ustring::empty_string) {
 }
 
 cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) : data_(make_shared<data>()) {

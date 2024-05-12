@@ -11,11 +11,11 @@ using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
 void base_assert::abort() {
-  abort("", stack_frame::empty());
+  abort(ustring::empty_string, stack_frame::empty());
 }
 
 void base_assert::abort(const stack_frame& stack_frame) {
-  abort("", stack_frame);
+  abort(ustring::empty_string, stack_frame);
 }
 
 void base_assert::abort(const ustring& message) {
@@ -35,11 +35,11 @@ void base_assert::abort(const ustring& message, const stack_frame& stack_frame) 
 }
 
 void base_assert::fail() {
-  fail("", stack_frame::empty());
+  fail(ustring::empty_string, stack_frame::empty());
 }
 
 void base_assert::fail(const stack_frame& stack_frame) {
-  fail("", stack_frame);
+  fail(ustring::empty_string, stack_frame);
 }
 
 void base_assert::fail(const ustring& message) {
@@ -47,7 +47,7 @@ void base_assert::fail(const ustring& message) {
 }
 
 void base_assert::fail(const ustring& message, const stack_frame& stack_frame) {
-  fail("", "", message, stack_frame);
+  fail(ustring::empty_string, ustring::empty_string, message, stack_frame);
 }
 
 void base_assert::error() {
@@ -89,11 +89,11 @@ void base_assert::fail(const ustring& expected, const ustring& actual, const ust
 }
 
 void base_assert::ignore() {
-  ignore("", stack_frame::empty());
+  ignore(ustring::empty_string, stack_frame::empty());
 }
 
 void base_assert::ignore(const stack_frame& stack_frame) {
-  ignore("", stack_frame);
+  ignore(ustring::empty_string, stack_frame);
 }
 
 void base_assert::ignore(const ustring& message) {
@@ -112,11 +112,11 @@ void base_assert::ignore(const ustring& message, const stack_frame& stack_frame)
 }
 
 void base_assert::succeed() {
-  succeed("", csf_);
+  succeed(ustring::empty_string, csf_);
 }
 
 void base_assert::succeed(const stack_frame& stack_frame) {
-  succeed("", stack_frame);
+  succeed(ustring::empty_string, stack_frame);
 }
 
 void base_assert::succeed(const ustring& message) {

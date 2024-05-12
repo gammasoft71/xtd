@@ -72,7 +72,7 @@ void debug::use_global_lock(bool use_global_lock) noexcept {
 }
 
 void debug::cassert(bool condition) {
-  if (__should_aborted__(condition, "", csf_)) debug_break_();
+  if (__should_aborted__(condition, ustring::empty_string, csf_)) debug_break_();
 }
 
 void debug::cassert(bool condition, const ustring& message) {
@@ -92,7 +92,7 @@ void debug::cassert(bool condition, const ustring& message, const ustring& detai
 }
 
 void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, "", stack_frame)) debug_break_();
+  if (__should_aborted__(condition, ustring::empty_string, stack_frame)) debug_break_();
 }
 
 void debug::indent() noexcept {

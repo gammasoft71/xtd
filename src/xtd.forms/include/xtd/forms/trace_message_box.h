@@ -46,7 +46,7 @@ namespace xtd {
       /// @}
       
     private:
-      static xtd::forms::dialog_result show_message_dialog(const xtd::forms::iwin32_window* owner, const xtd::ustring& text = "", const xtd::ustring& caption = "", xtd::forms::message_box_buttons buttons = xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon icon = xtd::forms::message_box_icon::none, xtd::forms::message_box_default_button default_button = xtd::forms::message_box_default_button::button1, xtd::forms::message_box_options options = static_cast<xtd::forms::message_box_options>(0), bool display_help_button = false) {
+      static xtd::forms::dialog_result show_message_dialog(const xtd::forms::iwin32_window* owner, const xtd::ustring& text = xtd::ustring::empty_string, const xtd::ustring& caption = xtd::ustring::empty_string, xtd::forms::message_box_buttons buttons = xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon icon = xtd::forms::message_box_icon::none, xtd::forms::message_box_default_button default_button = xtd::forms::message_box_default_button::button1, xtd::forms::message_box_options options = static_cast<xtd::forms::message_box_options>(0), bool display_help_button = false) {
         #if defined(TRACE)
         xtd::diagnostics::trace::write_line(text);
         message_dialog dialog;

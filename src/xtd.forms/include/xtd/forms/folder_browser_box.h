@@ -112,7 +112,7 @@ namespace xtd {
       /// @}
       
     private:
-      static xtd::forms::dialog_result show_folder_browser_box(xtd::ustring& selected_path, const xtd::ustring& description = "", xtd::environment::special_folder root_folder = xtd::environment::special_folder::desktop, bool show_new_folder_button = true, bool auto_upgrade_enable = true, const iwin32_window* owner = nullptr);
+      static xtd::forms::dialog_result show_folder_browser_box(xtd::ustring& selected_path, const xtd::ustring& description = xtd::ustring::empty_string, xtd::environment::special_folder root_folder = xtd::environment::special_folder::desktop, bool show_new_folder_button = true, bool auto_upgrade_enable = true, const iwin32_window* owner = nullptr);
     };
   }
 }

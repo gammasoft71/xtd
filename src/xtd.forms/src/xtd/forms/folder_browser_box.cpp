@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 dialog_result folder_browser_box::show(ustring& selected_path, const iwin32_window& owner) {
-  return show_folder_browser_box(selected_path, "", environment::special_folder::desktop, true, true, &owner);
+  return show_folder_browser_box(selected_path, ustring::empty_string, environment::special_folder::desktop, true, true, &owner);
 }
 
 dialog_result folder_browser_box::show(ustring& selected_path, const iwin32_window& owner, const ustring& description) {

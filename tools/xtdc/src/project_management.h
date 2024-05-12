@@ -300,7 +300,7 @@ namespace xtdc_command {
       if (name.empty()) {
         for (const auto& line : get_system_information()) {
           if (line.starts_with("CMAKE_PROJECT_NAME:STATIC=")) {
-            name = line.replace("CMAKE_PROJECT_NAME:STATIC=", "");
+            name = line.replace("CMAKE_PROJECT_NAME:STATIC=", xtd::ustring::empty_string);
             break;
           }
         }
@@ -312,7 +312,7 @@ namespace xtdc_command {
     xtd::ustring get_target_path(const xtd::ustring& target, bool release) const {
       for (const auto& line : get_system_information())
         if (line.starts_with(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target)))
-          return make_platform_target_path(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), ""), target, release);
+          return make_platform_target_path(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", target), xtd::ustring::empty_string), target, release);
       //if (xtd::environment::os_version().is_linux()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target);
       //return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target, target);
 
@@ -329,7 +329,7 @@ namespace xtdc_command {
     
     xtd::ustring get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
-        if (line.index_of("_BINARY_DIR:STATIC=") != xtd::ustring::npos) return make_platform_target_path(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), ""), line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
+        if (line.index_of("_BINARY_DIR:STATIC=") != xtd::ustring::npos) return make_platform_target_path(line.replace(xtd::ustring::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), xtd::ustring::empty_string), line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
       if (xtd::environment::os_version().is_windows_platform()) return xtd::io::path::combine(build_path(), xtd::io::path::get_file_name(path_), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_));
       if (xtd::environment::os_version().is_macos_platform()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_), xtd::io::path::get_file_name(path_));
       return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_));
@@ -589,7 +589,7 @@ namespace xtdc_command {
     
     void launch_and_wait_process(const xtd::ustring& file_name) const {launch_and_wait_process(file_name, false);}
     void launch_and_wait_process(const xtd::ustring& file_name, bool shell_execute) const {launch_and_wait_process(file_name, shell_execute, false);}
-    void launch_and_wait_process(const xtd::ustring& file_name, bool shell_execute, bool verbose) const {launch_and_wait_process(file_name, "", shell_execute, verbose);}
+    void launch_and_wait_process(const xtd::ustring& file_name, bool shell_execute, bool verbose) const {launch_and_wait_process(file_name, xtd::ustring::empty_string, shell_execute, verbose);}
     void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments) const {launch_and_wait_process(file_name, arguments, false);}
     void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments, bool shell_execute) const {launch_and_wait_process(file_name, arguments, shell_execute, false);}
     void launch_and_wait_process(const xtd::ustring& file_name, const xtd::ustring& arguments, bool shell_execute, bool verbose) const {

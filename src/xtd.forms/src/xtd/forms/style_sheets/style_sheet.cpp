@@ -578,21 +578,21 @@ color style_sheet::color_from_css(const ustring& css_text, const color& default_
 length style_sheet::length_from_css(const ustring& css_text, const length& default_value) const noexcept {
   if (css_text.to_lower() == "auto" || css_text.to_lower() == "initial" || css_text.to_lower() == "inherit") return length(-1);
   auto l = .0;
-  if (css_text.to_lower().ends_with("cm") && ::try_parse<double>(css_text.to_lower().replace("cm", ""), l)) return length(l, length_unit::centimeters);
-  if (css_text.to_lower().ends_with("mm") && ::try_parse<double>(css_text.to_lower().replace("mm", ""), l)) return length(l, length_unit::millimeters);
-  if (css_text.to_lower().ends_with("in") && ::try_parse<double>(css_text.to_lower().replace("in", ""), l)) return length(l, length_unit::inches);
-  if (css_text.to_lower().ends_with("px") && ::try_parse<double>(css_text.to_lower().replace("px", ""), l)) return length(l, length_unit::pixels);
-  if (css_text.to_lower().ends_with("pt") && ::try_parse<double>(css_text.to_lower().replace("pt", ""), l)) return length(l, length_unit::points);
-  if (css_text.to_lower().ends_with("pc") && ::try_parse<double>(css_text.to_lower().replace("pc", ""), l)) return length(l, length_unit::picas);
-  if (css_text.to_lower().ends_with("em") && ::try_parse<double>(css_text.to_lower().replace("em", ""), l)) return length(l, length_unit::element);
-  if (css_text.to_lower().ends_with("ex") && ::try_parse<double>(css_text.to_lower().replace("ex", ""), l)) return length(l, length_unit::element_x_height);
-  if (css_text.to_lower().ends_with("ch") && ::try_parse<double>(css_text.to_lower().replace("ch", ""), l)) return length(l, length_unit::chase);
-  if (css_text.to_lower().ends_with("rem") && ::try_parse<double>(css_text.to_lower().replace("rem", ""), l)) return length(l, length_unit::root_element);
-  if (css_text.to_lower().ends_with("vw") && ::try_parse<double>(css_text.to_lower().replace("vw", ""), l)) return length(l, length_unit::viewport_width);
-  if (css_text.to_lower().ends_with("vh") && ::try_parse<double>(css_text.to_lower().replace("vh", ""), l)) return length(l, length_unit::viewport_height);
-  if (css_text.to_lower().ends_with("vmin") && ::try_parse<double>(css_text.to_lower().replace("vmin", ""), l)) return length(l, length_unit::viewport_min);
-  if (css_text.to_lower().ends_with("vmax") && ::try_parse<double>(css_text.to_lower().replace("vmax", ""), l)) return length(l, length_unit::viewport_max);
-  if (css_text.to_lower().ends_with("%") && ::try_parse<double>(css_text.replace("%", ""), l)) return length(l, length_unit::percent);
+  if (css_text.to_lower().ends_with("cm") && ::try_parse<double>(css_text.to_lower().replace("cm", ustring::empty_string), l)) return length(l, length_unit::centimeters);
+  if (css_text.to_lower().ends_with("mm") && ::try_parse<double>(css_text.to_lower().replace("mm", ustring::empty_string), l)) return length(l, length_unit::millimeters);
+  if (css_text.to_lower().ends_with("in") && ::try_parse<double>(css_text.to_lower().replace("in", ustring::empty_string), l)) return length(l, length_unit::inches);
+  if (css_text.to_lower().ends_with("px") && ::try_parse<double>(css_text.to_lower().replace("px", ustring::empty_string), l)) return length(l, length_unit::pixels);
+  if (css_text.to_lower().ends_with("pt") && ::try_parse<double>(css_text.to_lower().replace("pt", ustring::empty_string), l)) return length(l, length_unit::points);
+  if (css_text.to_lower().ends_with("pc") && ::try_parse<double>(css_text.to_lower().replace("pc", ustring::empty_string), l)) return length(l, length_unit::picas);
+  if (css_text.to_lower().ends_with("em") && ::try_parse<double>(css_text.to_lower().replace("em", ustring::empty_string), l)) return length(l, length_unit::element);
+  if (css_text.to_lower().ends_with("ex") && ::try_parse<double>(css_text.to_lower().replace("ex", ustring::empty_string), l)) return length(l, length_unit::element_x_height);
+  if (css_text.to_lower().ends_with("ch") && ::try_parse<double>(css_text.to_lower().replace("ch", ustring::empty_string), l)) return length(l, length_unit::chase);
+  if (css_text.to_lower().ends_with("rem") && ::try_parse<double>(css_text.to_lower().replace("rem", ustring::empty_string), l)) return length(l, length_unit::root_element);
+  if (css_text.to_lower().ends_with("vw") && ::try_parse<double>(css_text.to_lower().replace("vw", ustring::empty_string), l)) return length(l, length_unit::viewport_width);
+  if (css_text.to_lower().ends_with("vh") && ::try_parse<double>(css_text.to_lower().replace("vh", ustring::empty_string), l)) return length(l, length_unit::viewport_height);
+  if (css_text.to_lower().ends_with("vmin") && ::try_parse<double>(css_text.to_lower().replace("vmin", ustring::empty_string), l)) return length(l, length_unit::viewport_min);
+  if (css_text.to_lower().ends_with("vmax") && ::try_parse<double>(css_text.to_lower().replace("vmax", ustring::empty_string), l)) return length(l, length_unit::viewport_max);
+  if (css_text.to_lower().ends_with("%") && ::try_parse<double>(css_text.replace("%", ustring::empty_string), l)) return length(l, length_unit::percent);
   if (css_text == "0") return length(0);
   return default_value;
 }
@@ -696,7 +696,7 @@ style_sheets::padding style_sheet::padding_top_from_css(const ustring& css_text,
 ustring style_sheet::string_from_css(const ustring& css_text, const ustring& default_value) const noexcept {
   auto value = css_text.trim();
   if (!value.starts_with("\"") || !value.ends_with("\"")) return default_value;
-  return value.remove(value.size() - 1, 1).replace("\"", "");
+  return value.remove(value.size() - 1, 1).replace("\"", ustring::empty_string);
 }
 
 content_alignment style_sheet::text_align_from_css(const ustring& css_text, const content_alignment& default_value) const noexcept {
@@ -1127,7 +1127,7 @@ bool style_sheet::try_parse_hex_color(const ustring& text, color& result) const 
 }
 
 bool style_sheet::try_parse_linear_gradient(const ustring& text, background_image& result) const noexcept {
-  auto arguments = split_values_from_text(text.remove(text.size() - 1).replace("linear-gradient(", ""));
+  auto arguments = split_values_from_text(text.remove(text.size() - 1).replace("linear-gradient(", ustring::empty_string));
   auto colors = vector<color> {};
   auto angle = -1;
   for (auto argument : arguments) {
@@ -1157,7 +1157,7 @@ bool style_sheet::try_parse_linear_gradient(const ustring& text, background_imag
       if (angle != -1) return false;
       angle = 315;
     } else if (argument.ends_with("deg")) {
-      argument = argument.replace("deg", "");
+      argument = argument.replace("deg", ustring::empty_string);
       if (angle != -1 || xtd::try_parse<int32>(argument, angle) == false) return false;
     } else if (try_parse_color(argument, gradient_color))
       colors.push_back(gradient_color);
@@ -1168,7 +1168,7 @@ bool style_sheet::try_parse_linear_gradient(const ustring& text, background_imag
 }
 
 bool style_sheet::try_parse_rgb_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("rgb(", "");
+  auto value = text.remove(text.size() - 1).replace("rgb(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 3) return false;
   xtd::byte r = 0;
@@ -1182,7 +1182,7 @@ bool style_sheet::try_parse_rgb_color(const ustring& text, color& result) const 
 }
 
 bool style_sheet::try_parse_rgba_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("rgba(", "");
+  auto value = text.remove(text.size() - 1).replace("rgba(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   xtd::byte r = 0;
@@ -1198,7 +1198,7 @@ bool style_sheet::try_parse_rgba_color(const ustring& text, color& result) const
 }
 
 bool style_sheet::try_parse_hsv_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsv(", "");
+  auto value = text.remove(text.size() - 1).replace("hsv(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 3) return false;
   float h = 0;
@@ -1212,7 +1212,7 @@ bool style_sheet::try_parse_hsv_color(const ustring& text, color& result) const 
 }
 
 bool style_sheet::try_parse_hsva_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsva(", "");
+  auto value = text.remove(text.size() - 1).replace("hsva(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   float h = 0;
@@ -1228,7 +1228,7 @@ bool style_sheet::try_parse_hsva_color(const ustring& text, color& result) const
 }
 
 bool style_sheet::try_parse_hsl_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsl(", "");
+  auto value = text.remove(text.size() - 1).replace("hsl(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 3) return false;
   float h = 0;
@@ -1242,7 +1242,7 @@ bool style_sheet::try_parse_hsl_color(const ustring& text, color& result) const 
 }
 
 bool style_sheet::try_parse_hsla_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsla(", "");
+  auto value = text.remove(text.size() - 1).replace("hsla(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   float h = 0;
@@ -1266,7 +1266,7 @@ bool style_sheet::try_parse_named_color(const ustring& text, color& result) cons
 }
 
 bool style_sheet::try_parse_system_color(const ustring& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("system-color(", "");
+  auto value = text.remove(text.size() - 1).replace("system-color(", ustring::empty_string);
   map<ustring, drawing::color> colors {{"accent", system_colors().accent()}, {"accent-text", system_colors().accent_text()}, {"active-border", system_colors().active_border()}, {"active-caption", system_colors().active_caption()}, {"active-caption-text", system_colors().active_caption_text()}, {"app-workspace", system_colors().app_workspace()}, {"button-face", system_colors().button_face()}, {"button-highlight", system_colors().button_highlight()}, {"button-shadow", system_colors().button_shadow()}, {"control", system_colors().control()}, {"control-dark", system_colors().control_dark()}, {"control-dark-dark", system_colors().control_dark_dark()}, {"control-light", system_colors().control_light()}, {"control-light-light", system_colors().control_light_light()}, {"control-text", system_colors().control_text()}, {"desktop", system_colors().desktop()}, {"gradient-active-caption", system_colors().gradient_active_caption()}, {"gradient-inactive-caption", system_colors().gradient_inactive_caption()}, {"gray-text", system_colors().gray_text()}, {"highlight", system_colors().highlight()}, {"highlight-text", system_colors().highlight_text()}, {"hot-track", system_colors().hot_track()}, {"inactive-border", system_colors().inactive_border()}, {"inactive-caption", system_colors().inactive_caption()}, {"inactive-caption-text", system_colors().inactive_caption_text()}, {"info", system_colors().info()}, {"info-text", system_colors().info_text()}, {"menu", system_colors().menu()}, {"menu-bar", system_colors().menu_bar()}, {"menu-highlight", system_colors().menu_highlight()}, {"menu-text", system_colors().menu_text()}, {"scroll-bar", system_colors().scroll_bar()}, {"shadow-text", system_colors().shadow_text()}, {"text-box", system_colors().text_box()}, {"text-box-text", system_colors().text_box_text()}, {"window", system_colors().window()}, {"window-frame", system_colors().window_frame()}, {"window-text", system_colors().window_text()}};
   auto it = colors.find(value);
   if (it == colors.end()) return false;

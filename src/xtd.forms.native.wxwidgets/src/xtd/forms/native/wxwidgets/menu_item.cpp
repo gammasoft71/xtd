@@ -19,40 +19,40 @@ namespace {
   #if defined(__WXOSX__)
   static bool is_about_item(const xtd::ustring& text) {
     wxString itemText = text;
-    itemText.Replace("&", "");
-    itemText.Replace(".", "");
+    itemText.Replace("&", ustring::empty_string);
+    itemText.Replace(".", ustring::empty_string);
     itemText.LowerCase();
     wxString aboutText = "&About..."_t;
-    aboutText.Replace("&", "");
-    aboutText.Replace(".", "");
+    aboutText.Replace("&", ustring::empty_string);
+    aboutText.Replace(".", ustring::empty_string);
     aboutText.LowerCase();
     return itemText == aboutText || itemText == "about";
   }
   
   static bool is_quit_item(const xtd::ustring& text) {
     wxString itemText = text;
-    itemText.Replace("&", "");
-    itemText.Replace(".", "");
+    itemText.Replace("&", ustring::empty_string);
+    itemText.Replace(".", ustring::empty_string);
     itemText.LowerCase();
     wxString exitText = "E&xit"_t;
-    exitText.Replace("&", "");
-    exitText.Replace(".", "");
+    exitText.Replace("&", ustring::empty_string);
+    exitText.Replace(".", ustring::empty_string);
     exitText.LowerCase();
     return itemText == exitText || itemText == "exit" || itemText == "quit";
   }
   
   static bool is_preferences_item(const xtd::ustring& text) {
     wxString itemText = text;
-    itemText.Replace("&", "");
-    itemText.Replace(".", "");
+    itemText.Replace("&", ustring::empty_string);
+    itemText.Replace(".", ustring::empty_string);
     itemText.LowerCase();
 #ifdef __MAC_13_0
     wxString preferenceText = "&Settings..."_t;
 #else
     wxString preferenceText = "&Preferences"_t;
 #endif
-    preferenceText.Replace("&", "");
-    preferenceText.Replace(".", "");
+    preferenceText.Replace("&", ustring::empty_string);
+    preferenceText.Replace(".", ustring::empty_string);
     preferenceText.LowerCase();
     return itemText == preferenceText || itemText == "preferences" || itemText == "options" || itemText == "settings";
   }

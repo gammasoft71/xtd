@@ -80,7 +80,7 @@ country country::from_alpha_3_code(const xtd::ustring& alpha_3_code) {
 
 country country::from_name(const xtd::ustring& name) {
   auto countries = countries::get_countries();
-  auto iterator = find_if(countries.begin(), countries.end(), [&](const auto & country) {return country.name().replace(" ", "").to_lower().starts_with(name.replace(" ", "").to_lower());});
+  auto iterator = find_if(countries.begin(), countries.end(), [&](const auto & country) {return country.name().replace(" ", ustring::empty_string).to_lower().starts_with(name.replace(" ", ustring::empty_string).to_lower());});
   if (iterator != countries.end()) return *iterator;
   return empty();
 }

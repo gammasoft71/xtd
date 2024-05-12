@@ -22,27 +22,27 @@ using namespace xtd::forms::visual_styles;
 using namespace xtd::forms::style_sheets;
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds) {
-  draw_button(style_sheet::current_style_sheet(), graphics, bounds, push_button_state::normal, false, nullopt, "", nullopt, nullopt, nullopt, image::empty, nullopt);
+  draw_button(style_sheet::current_style_sheet(), graphics, bounds, push_button_state::normal, false, nullopt, ustring::empty_string, nullopt, nullopt, nullopt, image::empty, nullopt);
 }
 
 void button_renderer::draw_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds) {
-  draw_button(style_sheet, graphics, bounds, push_button_state::normal, false, nullopt, "", nullopt, nullopt, nullopt, image::empty, nullopt);
+  draw_button(style_sheet, graphics, bounds, push_button_state::normal, false, nullopt, ustring::empty_string, nullopt, nullopt, nullopt, image::empty, nullopt);
 }
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, push_button_state button_state, bool default_button) {
-  draw_button(style_sheet::current_style_sheet(), graphics, bounds, button_state, default_button, nullopt, "", nullopt, nullopt, nullopt, image::empty, nullopt);
+  draw_button(style_sheet::current_style_sheet(), graphics, bounds, button_state, default_button, nullopt, ustring::empty_string, nullopt, nullopt, nullopt, image::empty, nullopt);
 }
 
 void button_renderer::draw_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, push_button_state button_state, bool default_button) {
-  draw_button(style_sheet, graphics, bounds, button_state, default_button, nullopt, "", nullopt, nullopt, nullopt, image::empty, nullopt);
+  draw_button(style_sheet, graphics, bounds, button_state, default_button, nullopt, ustring::empty_string, nullopt, nullopt, nullopt, image::empty, nullopt);
 }
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, push_button_state button_state, bool default_button, const optional<color>& back_color) {
-  draw_button(style_sheet::current_style_sheet(), graphics, bounds, button_state, default_button, back_color, "", nullopt, nullopt, nullopt, image::empty, nullopt);
+  draw_button(style_sheet::current_style_sheet(), graphics, bounds, button_state, default_button, back_color, ustring::empty_string, nullopt, nullopt, nullopt, image::empty, nullopt);
 }
 
 void button_renderer::draw_button(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, push_button_state button_state, bool default_button, const optional<color>& back_color) {
-  draw_button(style_sheet, graphics, bounds, button_state, default_button, back_color, "", nullopt, nullopt, nullopt, image::empty, nullopt);
+  draw_button(style_sheet, graphics, bounds, button_state, default_button, back_color, ustring::empty_string, nullopt, nullopt, nullopt, image::empty, nullopt);
 }
 
 void button_renderer::draw_button(graphics& graphics, const rectangle& bounds, push_button_state button_state, bool default_button, const optional<color>& back_color, const ustring& text, const optional<content_alignment>& text_align, const optional<color>& fore_color, const optional<font>& font) {

@@ -35,9 +35,9 @@ namespace xtdc_command {
       std::vector<xtd::ustring> headers;
       std::vector<xtd::ustring> sources;
       for (auto file : xtd::io::directory::get_files(path, "*.h"))
-        headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+        headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::ustring::empty_string));
       for (auto file : xtd::io::directory::get_files(path, "*.c"))
-        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::ustring::empty_string));
         
       for (auto sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_c_sources(current_path, sub_path);
@@ -54,9 +54,9 @@ namespace xtdc_command {
       std::vector<xtd::ustring> headers;
       std::vector<xtd::ustring> sources;
       for (auto file : xtd::io::directory::get_files(path, "*.h"))
-        headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+        headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::ustring::empty_string));
       for (auto file : xtd::io::directory::get_files(path, "*.cpp"))
-        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::ustring::empty_string));
         
       for (auto sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_cpp_sources(current_path, sub_path);
@@ -74,11 +74,11 @@ namespace xtdc_command {
       std::vector<xtd::ustring> configs;
       std::vector<xtd::ustring> xamls;
       for (auto file : xtd::io::directory::get_files(path, "*.cs"))
-        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::ustring::empty_string));
       for (auto file : xtd::io::directory::get_files(path, "*.config"))
-        configs.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+        configs.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::ustring::empty_string));
       for (auto file : xtd::io::directory::get_files(path, "*.xaml"))
-        xamls.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+        xamls.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::ustring::empty_string));
         
       for (auto sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_sources, sub_configs, sub_xamls] = get_csharp_sources(current_path, sub_path);
@@ -97,9 +97,9 @@ namespace xtdc_command {
       std::vector<xtd::ustring> headers;
       std::vector<xtd::ustring> sources;
       for (auto file : xtd::io::directory::get_files(path, "*.h"))
-        headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+        headers.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::ustring::empty_string));
       for (auto file : xtd::io::directory::get_files(path, "*.m"))
-        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), ""));
+        sources.push_back(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::ustring::empty_string));
         
       for (auto sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_objectivec_sources(current_path, sub_path);

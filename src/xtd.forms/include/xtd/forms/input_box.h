@@ -141,7 +141,7 @@ namespace xtd {
       /// @}
       
     private:
-      static xtd::forms::dialog_result show_input_box(xtd::ustring& value, const xtd::forms::iwin32_window* owner = nullptr, const xtd::ustring& text = "", const xtd::ustring& caption = "", xtd::forms::input_box_style style = xtd::forms::input_box_style::normal, xtd::forms::character_casing casing = xtd::forms::character_casing::normal, bool word_wrap = true);
+      static xtd::forms::dialog_result show_input_box(xtd::ustring& value, const xtd::forms::iwin32_window* owner = nullptr, const xtd::ustring& text = xtd::ustring::empty_string, const xtd::ustring& caption = xtd::ustring::empty_string, xtd::forms::input_box_style style = xtd::forms::input_box_style::normal, xtd::forms::character_casing casing = xtd::forms::character_casing::normal, bool word_wrap = true);
     };
   }
 }

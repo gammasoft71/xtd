@@ -124,7 +124,7 @@ int32 color_translator::to_win32(const xtd::drawing::color& value) noexcept {
 }
 
 ustring color_translator::from_name(const color& value) {
-  return value.name().replace("_", " ").to_title_case().replace(" ", "");
+  return value.name().replace("_", " ").to_title_case().replace(" ", ustring::empty_string);
 }
 
 bool color_translator::try_parse_hex_color(const ustring& text, color& result) noexcept {
@@ -173,7 +173,7 @@ bool color_translator::try_parse_hex_color(const ustring& text, color& result) n
 }
 
 bool color_translator::try_parse_hsl_color(const ustring& text, color& result) noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsl(", "");
+  auto value = text.remove(text.size() - 1).replace("hsl(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 3) return false;
   if (!color_parts[1].ends_with("%")) return false;
@@ -191,7 +191,7 @@ bool color_translator::try_parse_hsl_color(const ustring& text, color& result) n
 }
 
 bool color_translator::try_parse_hsla_color(const ustring& text, color& result) noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsla(", "");
+  auto value = text.remove(text.size() - 1).replace("hsla(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   if (!color_parts[1].ends_with("%")) return false;
@@ -211,7 +211,7 @@ bool color_translator::try_parse_hsla_color(const ustring& text, color& result) 
 }
 
 bool color_translator::try_parse_hsv_color(const ustring& text, color& result) noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsv(", "");
+  auto value = text.remove(text.size() - 1).replace("hsv(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 3) return false;
   if (!color_parts[1].ends_with("%")) return false;
@@ -229,7 +229,7 @@ bool color_translator::try_parse_hsv_color(const ustring& text, color& result) n
 }
 
 bool color_translator::try_parse_hsva_color(const ustring& text, color& result) noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsva(", "");
+  auto value = text.remove(text.size() - 1).replace("hsva(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   if (!color_parts[1].ends_with("%")) return false;
@@ -270,7 +270,7 @@ bool color_translator::try_parse_named_color(const ustring& text, color& result)
 }
 
 bool color_translator::try_parse_rgb_color(const ustring& text, color& result) noexcept {
-  auto value = text.remove(text.size() - 1).replace("rgb(", "");
+  auto value = text.remove(text.size() - 1).replace("rgb(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 3) return false;
   auto r = xtd::byte {};
@@ -284,7 +284,7 @@ bool color_translator::try_parse_rgb_color(const ustring& text, color& result) n
 }
 
 bool color_translator::try_parse_rgba_color(const ustring& text, color& result) noexcept {
-  auto value = text.remove(text.size() - 1).replace("rgba(", "");
+  auto value = text.remove(text.size() - 1).replace("rgba(", ustring::empty_string);
   auto color_parts = value.split({','});
   if (color_parts.size() != 4) return false;
   auto r = xtd::byte {};

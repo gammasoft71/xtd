@@ -66,7 +66,7 @@ void trace::use_global_lock(bool use_global_lock) noexcept {
 }
 
 void trace::cassert(bool condition) {
-  if (__should_aborted__(condition, "", csf_)) __xtd_debugbreak();
+  if (__should_aborted__(condition, ustring::empty_string, csf_)) __xtd_debugbreak();
 }
 
 void trace::cassert(bool condition, const ustring& message) {
@@ -86,7 +86,7 @@ void trace::cassert(bool condition, const ustring& message, const ustring& detai
 }
 
 void trace::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, "", stack_frame)) __xtd_debugbreak();
+  if (__should_aborted__(condition, ustring::empty_string, stack_frame)) __xtd_debugbreak();
 }
 
 void trace::indent() noexcept {

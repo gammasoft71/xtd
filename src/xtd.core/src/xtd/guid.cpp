@@ -62,7 +62,7 @@ guid::guid(uint32 a, uint16 b, uint16 c, xtd::byte d, xtd::byte e, xtd::byte f, 
 }
 
 guid::guid(const ustring& guid) {
-  auto simple = guid.replace("0x", "").replace(",", "").replace("-", "").replace("(", "").replace(")", "").replace("{", "").replace("}", "");
+  auto simple = guid.replace("0x", ustring::empty_string).replace(",", ustring::empty_string).replace("-", ustring::empty_string).replace("(", ustring::empty_string).replace(")", ustring::empty_string).replace("{", ustring::empty_string).replace("}", ustring::empty_string);
   for (auto index = 0_z; index < data_.size(); ++index) {
     data_[index] = parse<xtd::byte>(simple.substring(0, 2), number_styles::hex_number);
     simple = simple.remove(0, 2);
