@@ -266,9 +266,7 @@ void picture_box::on_handle_created(const event_args& e) {
 
 void picture_box::on_paint(paint_event_args& e) {
   control::on_paint(e);
-  if (control_appearance() == forms::control_appearance::standard) {
-    if (image().has_value())
-      control_paint::draw_image(e.graphics(), image().value(), e.clip_rectangle(), to_image_layout(size_mode()));
-    control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
-  }
+  if (control_appearance() != forms::control_appearance::standard) return;
+  if (image().has_value()) control_paint::draw_image(e.graphics(), image().value(), e.clip_rectangle(), to_image_layout(size_mode()));
+  control_paint::draw_border_from_back_color(*this, e.graphics(), border_style(), border_sides(), back_color(), e.clip_rectangle());
 }
