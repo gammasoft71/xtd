@@ -1,7 +1,7 @@
 #include "../../../include/xtd/forms/control_paint.h"
 #include "../../../include/xtd/forms/control.h"
 #include "../../../include/xtd/forms/screen.h"
-#include <xtd/drawing/color_converter.h>
+#include <xtd/drawing/color_converter>
 #include <xtd/as>
 #include <xtd/math>
 
@@ -294,8 +294,9 @@ void control_paint::draw_border_from_back_color(const forms::control& control, d
   draw_border(control, graphics, border, sides, light(back_color, percent_of_color), rect, back_color.is_dark());
 }
 
-void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle, xtd::forms::image_layout image_layout) {draw_image(graphics, image, rectangle.x(), rectangle.y(), rectangle.width(), rectangle.height(), image_layout);}
-
+void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle, xtd::forms::image_layout image_layout) {
+  draw_image(graphics, image, rectangle.x(), rectangle.y(), rectangle.width(), rectangle.height(), image_layout);
+}
 
 void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32 x, int32 y, int32 width, int32 height, xtd::forms::image_layout image_layout) {
   if (image_layout == xtd::forms::image_layout::none)
