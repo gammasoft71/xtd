@@ -52,7 +52,7 @@ namespace xtd {
 #define class_cleanup_(method_name) \
   __##method_name##_static() {} \
   class __class_cleanup_attribute : public xtd::tunit::class_cleanup_attribute { \
-  public:\
+  public: \
     template<typename test_class> __class_cleanup_attribute(test_class& test) : class_cleanup_attribute(#method_name, test, &method_name, {__FILE__, __LINE__, __func__}) {__##method_name##_static();} \
   } __class_cleanup_attribute {*this}; \
   static void method_name()
