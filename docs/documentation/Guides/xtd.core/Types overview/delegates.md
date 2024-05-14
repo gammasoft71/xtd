@@ -11,7 +11,7 @@
 
 ## Overview
 
-A [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) is a type that represents references to methods with a particular parameter list and return type. When you instantiate a delegate, you can associate its instance with any method with a compatible signature and return type. You can invoke (or call) the method through the delegate instance.
+A [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) is a type that represents references to methods with a particular parameter list and return type. When you instantiate a delegate, you can associate its instance with any method with a compatible signature and return type. You can invoke (or call) the method through the delegate instance.
 
 Delegates are used to pass methods as arguments to other methods. Event handlers are nothing more than methods that are invoked through delegates. You create a custom method, and a class such as a windows control can call your method when a certain event occurs. The following example shows a delegate declaration:
 
@@ -28,9 +28,9 @@ This ability to refer to a method as a parameter makes delegates ideal for defin
 
 ## Difference betwwen xtd::delegate and std::function
 
-Unlike [std::function](https://en.cppreference.com/w/cpp/utility/functional/function), [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) can be chained together; for example, multiple methods can be called on a single event.
+Unlike [std::function](https://en.cppreference.com/w/cpp/utility/functional/function), [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) can be chained together; for example, multiple methods can be called on a single event.
 
-A [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) is a collection of [std::function](https://en.cppreference.com/w/cpp/utility/functional/function).
+A [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) is a collection of [std::function](https://en.cppreference.com/w/cpp/utility/functional/function).
 
 ## Delegates Overview
 
@@ -43,7 +43,7 @@ Delegates have the following properties:
 
 ## Using Delegates
 
-A [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) is a type that safely encapsulates a method, similar to a function pointer in C and C++. Unlike C function pointers, delegates are object-oriented, type safe, and secure. The type of a delegate is defined by the name of the delegate. The following example declares a delegate named `del` that can encapsulate a method that takes a [xtd::ustring](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/ustring.h) as an argument and returns void:
+A [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) is a type that safely encapsulates a method, similar to a function pointer in C and C++. Unlike C function pointers, delegates are object-oriented, type safe, and secure. The type of a delegate is defined by the name of the delegate. The following example declares a delegate named `del` that can encapsulate a method that takes a [xtd::ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html) as an argument and returns void:
 
 ```cpp
 using del = xtd::delegate<void(const xtd::ustring& message)>;
@@ -76,7 +76,7 @@ del handler = del(delegate_method);
 handler("Hello World");
 ```
 
-Because the instantiated [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) is an object, it can be passed as a parameter, or assigned to a property. This allows a method to accept a delegate as a parameter, and call the delegate at some later time. This is known as an asynchronous callback, and is a common method of notifying a caller when a long process has completed. When a delegate is used in this fashion, the code using the delegate does not need any knowledge of the implementation of the method being used. The functionality is similar to the encapsulation interfaces provide.
+Because the instantiated [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) is an object, it can be passed as a parameter, or assigned to a property. This allows a method to accept a delegate as a parameter, and call the delegate at some later time. This is known as an asynchronous callback, and is a common method of notifying a caller when a long process has completed. When a delegate is used in this fashion, the code using the delegate does not need any knowledge of the implementation of the method being used. The functionality is similar to the encapsulation interfaces provide.
 
 Another common use of callbacks is defining a custom comparison method and passing that delegate to a sort method. It allows the caller's code to become part of the sort algorithm. The following example method uses the `del` type as a parameter:
 
@@ -99,7 +99,7 @@ The number is: 3
 ```
 
 Using the delegate as an abstraction, `method_with_callback` does not need to call the console directly—it does not have to be designed with a console in mind. What `method_with_callback` does is simply prepare a string and pass the string to another method. This is especially powerful since a delegated method can use any number of parameters.
-When a [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) is constructed to wrap an instance method, the delegate references both the instance and the method. A delegate has no knowledge of the instance type aside from the method it wraps, so a delegate can refer to any type of object as long as there is a method on that object that matches the delegate signature. When a delegate is constructed to wrap a static method, it only references the method. Consider the following declarations:
+When a [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) is constructed to wrap an instance method, the delegate references both the instance and the method. A delegate has no knowledge of the instance type aside from the method it wraps, so a delegate can refer to any type of object as long as there is a method on that object that matches the delegate signature. When a delegate is constructed to wrap a static method, it only references the method. Consider the following declarations:
 
 ```cpp
 class method_class {
@@ -136,16 +136,16 @@ all_methods_delegate -= d1;
 del one_method_delegate = all_methods_delegate - d2;
 ```
 
-Because [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) types is a class, the methods and properties defined by that class can be called on the delegate. 
+Because [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) types is a class, the methods and properties defined by that class can be called on the delegate. 
 For example, to find the number of methods in a delegate's invocation list, you may write:
 
 ```cpp
 size_t invocation_count = d1.size();
 ```
 
-Multicast delegates are used extensively in event handling. [xtd::event](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/event.h) source objects send event notifications to recipient objects that have registered to receive that event. To register for an event, the recipient creates a method designed to handle the event, then creates a delegate for that method and passes the delegate to the event source. The source calls the delegate when the event occurs. The delegate then calls the event handling method on the recipient, delivering the event data. The delegate type for a given event is defined by the event source. For more, see [events](/docs/documentation/Guides/xtd.core/Types%20overview/events).
+Multicast delegates are used extensively in event handling. [xtd::event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event.html) source objects send event notifications to recipient objects that have registered to receive that event. To register for an event, the recipient creates a method designed to handle the event, then creates a delegate for that method and passes the delegate to the event source. The source calls the delegate when the event occurs. The delegate then calls the event handling method on the recipient, delivering the event data. The delegate type for a given event is defined by the event source. For more, see [events](/docs/documentation/Guides/xtd.core/Types%20overview/events).
 
-Comparing delegates of two different types assigned at compile-time will result in a compilation error. If the delegate instances are statically of the type [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h), then the comparison is allowed, but will return false at run time. For example:
+Comparing delegates of two different types assigned at compile-time will result in a compilation error. If the delegate instances are statically of the type [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html), then the comparison is allowed, but will return false at run time. For example:
 
 ```cpp
 template<typename result_t, typename... arguments_t>
@@ -161,7 +161,7 @@ void method(delegate1 d, delegate2 e, xtd::delegate<result_t(arguments_t...)> f)
 
 ## Delegates with Named methods
 
-A [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) can be associated with a named method. When you instantiate a delegate by using a named method, the method is passed as a parameter, for example:
+A [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) can be associated with a named method. When you instantiate a delegate by using a named method, the method is passed as a parameter, for example:
 
 ```cpp
 // Declare a delegate.
@@ -271,7 +271,7 @@ startup_(test_sample_class);
 
 ## Delegates with Lambda expressions
 
-The `\[]\()` operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) type:
+The `\[]\()` operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) type:
 
 ```cpp
 xtd::func<int, int, int> sum([] (int a, int b) { return a + b; });
@@ -292,7 +292,7 @@ introduce(42, 2.7);
 // This is world!
 ```
 
-This functionality of lambda expression is supported by [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) but not by [std::function](https://en.cppreference.com/w/cpp/utility/functional/function).
+This functionality of lambda expression is supported by [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) but not by [std::function](https://en.cppreference.com/w/cpp/utility/functional/function).
 
 ## See also
 
