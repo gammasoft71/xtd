@@ -43,7 +43,7 @@ Delegates have the following properties:
 
 ## Using Delegates
 
-A [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) is a type that safely encapsulates a method, similar to a function pointer in C and C++. Unlike C function pointers, delegates are object-oriented, type safe, and secure. The type of a delegate is defined by the name of the delegate. The following example declares a delegate named **del** that can encapsulate a method that takes a [xtd::ustring](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/ustring.h) as an argument and returns void:
+A [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) is a type that safely encapsulates a method, similar to a function pointer in C and C++. Unlike C function pointers, delegates are object-oriented, type safe, and secure. The type of a delegate is defined by the name of the delegate. The following example declares a delegate named `del` that can encapsulate a method that takes a [xtd::ustring](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/ustring.h) as an argument and returns void:
 
 ```cpp
 using del = xtd::delegate<void(const xtd::ustring& message)>;
@@ -78,7 +78,7 @@ handler("Hello World");
 
 Because the instantiated [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) is an object, it can be passed as a parameter, or assigned to a property. This allows a method to accept a delegate as a parameter, and call the delegate at some later time. This is known as an asynchronous callback, and is a common method of notifying a caller when a long process has completed. When a delegate is used in this fashion, the code using the delegate does not need any knowledge of the implementation of the method being used. The functionality is similar to the encapsulation interfaces provide.
 
-Another common use of callbacks is defining a custom comparison method and passing that delegate to a sort method. It allows the caller's code to become part of the sort algorithm. The following example method uses the **del** type as a parameter:
+Another common use of callbacks is defining a custom comparison method and passing that delegate to a sort method. It allows the caller's code to become part of the sort algorithm. The following example method uses the `del` type as a parameter:
 
 ```cpp
 void method_with_callback(int param1, int param2, del callback) {
@@ -98,7 +98,7 @@ and receive the following output to the console:
 The number is: 3
 ```
 
-Using the delegate as an abstraction, **method_with_callback** does not need to call the console directly—it does not have to be designed with a console in mind. What **method_with_callback** does is simply prepare a string and pass the string to another method. This is especially powerful since a delegated method can use any number of parameters.
+Using the delegate as an abstraction, `method_with_callback` does not need to call the console directly—it does not have to be designed with a console in mind. What `method_with_callback` does is simply prepare a string and pass the string to another method. This is especially powerful since a delegated method can use any number of parameters.
 When a [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) is constructed to wrap an instance method, the delegate references both the instance and the method. A delegate has no knowledge of the instance type aside from the method it wraps, so a delegate can refer to any type of object as long as there is a method on that object that matches the delegate signature. When a delegate is constructed to wrap a static method, it only references the method. Consider the following declarations:
 
 ```cpp
@@ -109,7 +109,7 @@ public:
 }
 ```
 
-Along with the static **delegate_method** shown previously, we now have three methods that can be wrapped by a **del** instance.
+Along with the static `delegate_method` shown previously, we now have three methods that can be wrapped by a `del` instance.
 
 A delegate can call more than one method when invoked. This is referred to as multicasting. To add an extra method to the delegate's list of methods—the invocation list—simply requires adding two delegates using the addition or addition assignment operators ('+' or '+='). For example:
 
@@ -124,8 +124,8 @@ del all_methods_delegate = d1 + d2;
 all_methods_delegate += d3;
 ```
 
-At this point **all_methods_delegate** contains three methods in its invocation list—**method1**, **method2**, and **delegate_method**.
-The original three delegates, **d1**, **d2**, and **d3**, remain unchanged. When **all_methods_delegate** is invoked, all three methods are called in order. If the delegate uses reference parameters, the reference is passed sequentially to each of the three methods in turn, and any changes by one method are visible to the next method. When any of the methods throws an exception that is not caught within the method, that exception is passed to the caller of the delegate and no subsequent methods in the invocation list are called. If the delegate has a return value and/or out parameters, it returns the return value and parameters of the last method invoked. 
+At this point `all_methods_delegate` contains three methods in its invocation list—`method1`, `method2`, and `delegate_method`.
+The original three delegates, `d1`, `d2`, and `d3`, remain unchanged. When `all_methods_delegate` is invoked, all three methods are called in order. If the delegate uses reference parameters, the reference is passed sequentially to each of the three methods in turn, and any changes by one method are visible to the next method. When any of the methods throws an exception that is not caught within the method, that exception is passed to the caller of the delegate and no subsequent methods in the invocation list are called. If the delegate has a return value and/or out parameters, it returns the return value and parameters of the last method invoked. 
 To remove a method from the invocation list, use the subtraction or subtraction assignment operators (- or -=). For example:
 
 ```cpp
@@ -184,7 +184,7 @@ This is called using a named method. Delegates constructed with a named method c
 
 ### Example 1
 
-TThe following is a simple example of declaring and using a delegate. Notice that both the delegate, **del**, and the associated method, **multiply_numbers**, have the same signature
+TThe following is a simple example of declaring and using a delegate. Notice that both the delegate, `del`, and the associated method, `multiply_numbers`, have the same signature
 
 ```cpp
 #include <xtd/xtd>
@@ -271,14 +271,14 @@ startup_(test_sample_class);
 
 ## Delegates with Lambda expressions
 
-The **\[]\()** operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) type:
+The `\[]\()` operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/delegate.h) type:
 
 ```cpp
 xtd::func<int, int, int> sum([] (int a, int b) { return a + b; });
 xtd::console::write_line(sum(3, 4));  // output: 7
 ```
 
-When you use the **\[]\()** operator, you might omit the parameter list. If you do that, the created anonymous method can be converted to a delegate type with any list of parameters, as the following example shows:
+When you use the `\[]\()` operator, you might omit the parameter list. If you do that, the created anonymous method can be converted to a delegate type with any list of parameters, as the following example shows:
 
 ```cpp
 xtd::action<> greet([] { xtd::console::write_line("Hello!"); });
