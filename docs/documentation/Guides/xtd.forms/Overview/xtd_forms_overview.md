@@ -208,7 +208,7 @@ All controls inherit from [xtd::forms::componant](https://gammasoft71.github.io/
 
 ### Component objects
 
-There are several components in **xtd.forms** : [xtd::forms::timer](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/timer.h), [xtd::forms::background_worker](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/background_workerr.h), ...
+There are several components in **xtd.forms** : [xtd::forms::timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1timer.html), [xtd::forms::background_worker](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1background__worker.html), ...
 
 ## Controls
 
@@ -237,20 +237,20 @@ An [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/late
 
 ### Parent and children
 
-All controls must have a parent, except [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) which cannot have one (An exception [xtd::invalid_operation_exception](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/invalid_operation_exception.h) will be generated if you try).
+All controls must have a parent, except [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) which cannot have one (An exception [xtd::invalid_operation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__operation__exception.html) will be generated if you try).
 
 A control must always have one and only one parent (except for [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) which can't have any). But a parent can have several child controls.
 
 Any control can be a parent and/or a child. There are no restrictions.
 
 It is easy to imagine that a complex control needs several simple controls.
-Like for example [xtd::forms::domain_up_down](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/domain_up_down.h) is composed of an [xtd::forms::text_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/text_box.h) and an [xtd::forms::up_down_button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/up_down_button.h).
-And that an [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) or an [xtd::forms::panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/pane.h) can contain an [xtd::forms::domain_up_down](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/domain_up_down.h). 
-In this case our [xtd::forms::domain_up_down](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/domain_up_down.h) is a parent for [xtd::forms::text_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/text_box.h) and [xtd::forms::up_down_button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/up_down_button.h) and at the same time is a child for [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) or [xtd::forms::panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/panel.h).
+Like for example [xtd::forms::domain_up_down](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1domain__up__down.html) is composed of an [xtd::forms::text_box]https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html) and an [xtd::forms::up_down_button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1up__down__button.html).
+And that an [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) or an [xtd::forms::panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html) can contain an [xtd::forms::domain_up_down](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1domain__up__down.html). 
+In this case our [xtd::forms::domain_up_down](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1domain__up__down.html) is a parent for [xtd::forms::text_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html) and [xtd::forms::up_down_button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1up__down__button.html) and at the same time is a child for [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) or [xtd::forms::panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
 
 You can retrieve or assign a parent to a control using the [xtd::forms::control::parent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) property or by assigning the control to the parent by adding it to the [xtd::forms::control::controls](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) collection.
 
-A collection of controls is a particular collection, it is an [xtd::froms::layout::arranged_element_collection](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h).
+A collection of controls is a particular collection, it is an [xtd::froms::layout::arranged_element_collection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html).
 
 This collection has the particularity to have [events](/docs/documentation/Guides/xtd.core/Types%20overview/events) on which we can connect:
 
@@ -350,15 +350,15 @@ The following sequence diagram shows the creation of an [xtd::forms::button](htt
 
 If we use as parent a control that is not yet natively created (because it has no parent), the new child control will not be natively created. It is when the parent control is created that it will be created.
 
-The role of the [xtd::forms::control::create_params](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) function is to give the [xtd::forms::native::control::create](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native/control.h) function the necessary set of parameters to create a native control. 
+The role of the [xtd::forms::control::create_params](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) function is to give the [xtd::forms::native::control::create](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a3789586663405e61bedc845f808003f6) function the necessary set of parameters to create a native control. 
 This function provides among other things a name which is the unique key to identify the control to create.
 
-For example to create an [xtd::forms::button](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/button.h), the name must contain *"button"*, to create an [xtd::forms::choice](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/choice.h), the name must contain *"choice"* and so on for all controls.
+For example to create an [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html), the name must contain *"button"*, to create an [xtd::forms::choice](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1choice.html), the name must contain *"choice"* and so on for all controls.
 
 When the handle is created (when the native control is created), there will be an exchange between the base class [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) and [xtd::forms::nativve::control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native/control.h) to transmit the different basic properties of the control like for example, the background color, the text color, etc.
 
 Then, it's the turn of the specialized control to send its specific properties via the specialized API to [xtd::forms::native](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native).
-For example [xtd::forms::list_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/list_box.h) will send the list of strings contained in the control to the corresponding API [xtd::forms::native::list_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native/list_box.h), etc.
+For example [xtd::forms::list_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__box.html) will send the list of strings contained in the control to the corresponding API [xtd::forms::native::list_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__box.html), etc.
 
 The **parent_changed** and **control_added** [events](/docs/documentation/Guides/xtd.core/Types%20overview/events) are only sent for a child control, in the case of a [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html), these [events](/docs/documentation/Guides/xtd.core/Types%20overview/events) are not sent.
 
@@ -525,9 +525,9 @@ Any control can be inherited by the user.
 
 If he doesn't need any particular property of a specific control, the user will inherit [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html).
 
-If on the other hand the user wants to have the functionality of a container, then he will use [xtd::forms::user_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/user_control.h).
+If on the other hand the user wants to have the functionality of a container, then he will use [xtd::forms::user_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1user__control.html).
 
-If he doesn't know exactly how his control will evolve, the best is to use [xtd::forms::user_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/user_control.h).
+If he doesn't know exactly how his control will evolve, the best is to use [xtd::forms::user_control]https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1user__control.html).
 
 ### Some controls class diagram
 
@@ -537,13 +537,13 @@ If he doesn't know exactly how his control will evolve, the best is to use [xtd:
 
 Containers are a specialization of controls. Although by line any control can be a container (see [Parent and children](#parent-and-children)).
 
-The base class of a container is [xtd::forms::container_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/container_control.h).
+The base class of a container is [xtd::forms::container_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1container__control.html).
 
 A container has the property to have an active focus and control. If the active control is not defined, then the first child control will have the focus.
 
-There are simple containers like [xtd::forms::panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/panel.h). 
+There are simple containers like [xtd::forms::panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html). 
 
-There are more complex containers like [xtd::forms::tab_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/tab_control.h) and [xtd::forms::tab_page](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/tab_page.h).
+There are more complex containers like [xtd::forms::tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html) and [xtd::forms::tab_page](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__page.html).
 
 ### Container control class diagram
 
@@ -551,17 +551,17 @@ There are more complex containers like [xtd::forms::tab_control](https://github.
 
 The [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control is also a container.
 
-Even if it is included as a container, [xtd::forms::group_box](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/group_box.h) does not inherit from [xtd::forms::container_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/container_control.h) but from [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html). So it doesn't have the properties of a container.
+Even if it is included as a container, [xtd::forms::group_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1group__box.html) does not inherit from [xtd::forms::container_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1container__control.html) but from [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html). So it doesn't have the properties of a container.
 
-The [xtd::forms::panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/panel.h) container is also a bit special because it does not inherit from [xtd::forms::container_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/container_control.h) but directly from [xtd::forms::scrollable_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/scrollable_control.h). 
-This means that an [xtd::forms::panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/panel.h) container does not have the possibility to have focus and active control.
+The [xtd::forms::panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html) container is also a bit special because it does not inherit from [xtd::forms::container_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1container__control.html) but directly from [xtd::forms::scrollable_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1scrollable__control.html).
+This means that an [xtd::forms::panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html) container does not have the possibility to have focus and active control.
 It will therefore be the parent container that will manage them.
 
 ### Scrollables
 
 Unlike the standard control, a container can have scroll bars (one horizontal and/or one vertical).
 
-The [xtd::forms::container_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/container_control.h) class inherits from the [xtd::forms::scrollable_control](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/scrollable_control.h).
+The [xtd::forms::container_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1container__control.html) class inherits from the [xtd::forms::scrollable_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1scrollable__control.html).
 
 The scroll bars can be managed :
 * automatically
@@ -581,7 +581,7 @@ Then set the value, minimum and maximum properties and specify the behavior to a
 
 The automatic mode is generally the most used and the easiest to implement.
 
-To use the automatic mode you just have to set the property [xtd::forms::scrollable_control::auto_scroll](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/scrollable_control.h) to *true*.
+To use the automatic mode you just have to set the property [xtd::forms::scrollable_control::auto_scroll](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1scrollable__control.html) to *true*.
 
 ### Layouts
 
@@ -589,11 +589,11 @@ Layouts are containers that automatically organize controls in a specific order.
 
 There are several types of layout panel :
 
-* [xtd::forms::fixed_layout_panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/fixed_layout_panel.h) is used to group collections of fixed aligned controls (Exactly the same as [xtd::forms::panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/panel.h)).
-* [xtd::forms::flow_layout_panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/flow_layout_panel.h) is used to group collections of fixed aligned controls.
-* [xtd::forms::horizontal_layout_panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/horizontal_layout_panel.h) is used to group collections of horizontally aligned controls.
-* [xtd::forms::vertical_layout_panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/vertical_layout_panel.h) is used to group collections of vertically aligned controls.
-* [xtd::forms::table_layout_panel](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/table_layout_panel.h) represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
+* [xtd::forms::fixed_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1fixed__layout__panel.html) is used to group collections of fixed aligned controls (Exactly the same as [xtd::forms::panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html)).
+* [xtd::forms::flow_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1flow__layout__panel.html) is used to group collections of fixed aligned controls.
+* [xtd::forms::horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) is used to group collections of horizontally aligned controls.
+* [xtd::forms::vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) is used to group collections of vertically aligned controls.
+* [xtd::forms::table_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1table__layout__panel.html) represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
 
 ### Some container controls class diagram
 
@@ -664,7 +664,7 @@ A dialog has no defined type, it is a [xtd::forms::form](https://gammasoft71.git
 
 The only difference is that a dialog cannot have a menu, a toolbar or a status bar.
 
-If any of the above elements are accidentally present, an [xtd::invalid_operation_exception](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/invalid_operation_exception.h) will be generated during the dialog show.
+If any of the above elements are accidentally present, an [xtd::invalid_operation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__operation__exception.html) will be generated during the dialog show.
 
 ## Events
 
@@ -715,7 +715,7 @@ All system events will be processed by the method [xtd::forms::control::wnd_proc
 
 If the event is not processed by the control then the fallback method is [xtd::forms::control::def_wnd_proc(xtd::forms::message& message)](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) will be used.
 
-Here is a typical example of a **wnd_proc** method for a [xtd::forms::track_bar](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/track_bar.h) control:
+Here is a typical example of a **wnd_proc** method for a [xtd::forms::track_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1track__bar.html) control:
 
 ```cpp
 void track_bar::wnd_proc(xtd::forms::message& message) {
