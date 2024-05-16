@@ -73,12 +73,12 @@ Container adaptors provide a different interface for sequential collections.
 
 ### Collections with events
 
-| Container                                                                                                                                          | Definition                                                                                                              |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| [arranged_element_collection](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h) | Represents a collection with [events](/docs/documentation/Guides/xtd.core/Events/overview.md) to which you can connect. |
+| Container                                                                                                                                                  | Definition                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| [arranged_element_collection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html) | Represents a collection with [events](/docs/documentation/Guides/xtd.core/Events/overview.md) to which you can connect. |
 
 > **Remarks**
-> The [arranged_element_collection](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/layout/arranged_element_collection.h) Collections is overloaded in various classes such as [control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html), [list_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__control.html), [tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html), [status_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1status__bar.html), [tool_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tool__bar.html), ...
+> The [arranged_element_collection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html) Collections is overloaded in various classes such as [control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html), [list_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__control.html), [tab_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tab__control.html), [status_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1status__bar.html), [tool_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tool__bar.html), ...
 
 ### Specialized collections
 

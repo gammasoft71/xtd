@@ -22,12 +22,12 @@ There are three types of forms:
 ### Show
 
 These forms can be displayed in different ways:
-* Show normal : shows [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h) normally.
-* Show modeless : shows modeless dialog on a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h) (specified by handle from [xtd::forms::iw32_window](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/iw32_window.h)) or on application.
+* Show normal : shows [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) normally.
+* Show modeless : shows modeless dialog on a [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) (specified by handle from [xtd::forms::iw32_window](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1iwin32__window.html)) or on application.
 * Show top most : shows top most form on application.
-* Show modal : shows modal dialog on a form (specified by handle from [xtd::forms::iw32_window](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/iw32_window.h)) or on application.
-* Show sheet : Shows sheet dialog on a form (specified by handle from [xtd::forms::iw32_window](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/iw32_window.h)).
-* Show sheet modal : Shows sheet modal dialog on a form (specified by handle from [xtd::forms::iw32_window](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/iw32_window.h)).
+* Show modal : shows modal dialog on a form (specified by handle from [xtd::forms::iw32_window](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1iwin32__window.html)) or on application.
+* Show sheet : Shows sheet dialog on a form (specified by handle from [xtd::forms::iw32_window](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1iwin32__window.html)).
+* Show sheet modal : Shows sheet modal dialog on a form (specified by handle from [xtd::forms::iw32_window](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1iwin32__window.html)).
 
 #### Remarks
 
@@ -38,7 +38,7 @@ Sheet is a special dialog mode on macOS :
 
 #### Example
 
-The following example demonstates the different ways to display a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
+The following example demonstates the different ways to display a [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html).
 
 ```cpp
 #include <xtd/xtd>
@@ -143,23 +143,23 @@ startup_(example::form1);
 ### Start position
 
 A form can be shown with different start positions:
-* [xtd::forms::form_start_postion::manual](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form_start_postion.h) : The position of the form is determined by the Location property.
-* [xtd::forms::form_start_postion::center_screen](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form_start_postion.h) : The form is centered on the current display, and has the dimensions specified in the form's size.
-* [xtd::forms::form_start_postion::windows_default_location](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form_start_postion.h) : The form is positioned at the Windows default location and has the dimensions specified in the form's size.
-* [xtd::forms::form_start_postion::windows_default_bounds](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form_start_postion.h) : The form is positioned at the Windows default location and has the bounds determined by Windows default.
-* [xtd::forms::form_start_postion::center_parent](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form_start_postion.h) : The form is centered within the bounds of its parent form.
+* [xtd::forms::form_start_postion::manual](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gac490ea79fddd26e2c8354e1e58701019) : The position of the form is determined by the Location property.
+* [xtd::forms::form_start_postion::center_screen](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gac490ea79fddd26e2c8354e1e58701019) : The form is centered on the current display, and has the dimensions specified in the form's size.
+* [xtd::forms::form_start_postion::windows_default_location](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gac490ea79fddd26e2c8354e1e58701019) : The form is positioned at the Windows default location and has the dimensions specified in the form's size.
+* [xtd::forms::form_start_postion::windows_default_bounds](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gac490ea79fddd26e2c8354e1e58701019) : The form is positioned at the Windows default location and has the bounds determined by Windows default.
+* [xtd::forms::form_start_postion::center_parent](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gac490ea79fddd26e2c8354e1e58701019) : The form is centered within the bounds of its parent form.
 
 ### Window state
 
 A form can be shown with different states:
-* [xtd::forms::form_window_state::normal](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form_window_state.h) : A default sized window.
-* [xtd::forms::form_window_state::minimized](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form_window_state.h) : A minimized window.
-* [xtd::forms::form_window_state::maximized](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form_window_state.h) : A maximized window.
-* [xtd::forms::form_window_state::full_screen](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form_window_state.h) : A full screen window.
+* [xtd::forms::form_window_state::normal](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#ga8722681a872adc2cf18788bb45c4bce4) : A default sized window.
+* [xtd::forms::form_window_state::minimized](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#ga8722681a872adc2cf18788bb45c4bce4) : A minimized window.
+* [xtd::forms::form_window_state::maximized](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#ga8722681a872adc2cf18788bb45c4bce4) : A maximized window.
+* [xtd::forms::form_window_state::full_screen](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#ga8722681a872adc2cf18788bb45c4bce4) : A full screen window.
 
 #### Examples
 
-The folloing example demonstates the different ways to display a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
+The folloing example demonstates the different ways to display a [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html).
 
 ```cpp
 #define TRACE
@@ -227,7 +227,7 @@ auto main()->int {
 
 ## Form
 
-The [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h) represents a window or dialog box that makes up an application's user interface.
+The [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) represents a window or dialog box that makes up an application's user interface.
 
 ## MDI and child
 
@@ -235,11 +235,11 @@ Not yet implemented.
 
 ## Dialog
 
-A dialog does not have a defined type, it is a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
+A dialog does not have a defined type, it is a [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html).
 
 The only difference is that a dialog cannot have a menu, a toolbar or a status bar.
 
-If any of the above elements are accidentally present, an [xtd::invalid_operation_exception](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/invalid_operation_exception.h) will be generated during the dialog show.
+If any of the above elements are accidentally present, an [xtd::invalid_operation_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1invalid__operation__exception.html) will be generated during the dialog show.
 
 ### Examples
 
