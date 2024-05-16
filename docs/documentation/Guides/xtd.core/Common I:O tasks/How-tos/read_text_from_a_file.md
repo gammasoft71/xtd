@@ -8,7 +8,7 @@ The following example shows a read operation within a console app. This example 
 
 ### Important
 
-The example assume that a file named test_file.txt already exists in the same folder as the app.
+The example assume that a file named `test_file.txt` already exists in the same folder as the app.
 
 ```cpp
 #include <xtd/xtd>
