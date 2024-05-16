@@ -527,7 +527,7 @@ If he doesn't need any particular property of a specific control, the user will 
 
 If on the other hand the user wants to have the functionality of a container, then he will use [xtd::forms::user_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1user__control.html).
 
-If he doesn't know exactly how his control will evolve, the best is to use [xtd::forms::user_control]https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1user__control.html).
+If he doesn't know exactly how his control will evolve, the best is to use [xtd::forms::user_control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1user__control.html).
 
 ### Some controls class diagram
 
