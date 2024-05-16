@@ -14,7 +14,7 @@
 
 ## Overview
 
-[Events](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/event.h) enable a class or object to notify other classes or objects when something of interest occurs. The class that sends (or raises) the event is called the publisher and the classes that receive (or handle) the event are called subscribers.
+[Events](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event.html) enable a class or object to notify other classes or objects when something of interest occurs. The class that sends (or raises) the event is called the publisher and the classes that receive (or handle) the event are called subscribers.
 In a typical xtd Windows Forms application, you subscribe to events raised by controls such as buttons and list boxes. For more information, see [How to subscribe to and unsubscribe from events](#how-to-subscribe-to-and-unsubscribe-from-events).
 
 Events have the following properties:
@@ -23,13 +23,13 @@ Events have the following properties:
 * Events that have no subscribers are never raised.
 * Events are typically used to signal user actions such as button clicks or menu selections in graphical user interfaces.
 * When an event has multiple subscribers, the event handlers are invoked synchronously when an event is raised.
-* In the xtd framework, events are based on the [xtd::event_handler](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/event_handler.h) [delegate and the xtd::event_args](https://github.com/gammasoft71/xtd/blob/master./src/xtd.core/include/xtd/event_args.h) base class.
+* In the xtd framework, events are based on the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) [delegate and the xtd::event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) base class.
 
 ## How to subscribe to and unsubscribe from events
 
 ### To subscribe to events programmatically
 
-1. Define an event handler method whose signature matches the delegate signature for the event. For example, if the event is based on the [xtd::event_handler](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/event_handler.h) delegate type, the following code represents the method stub:
+1. Define an event handler method whose signature matches the delegate signature for the event. For example, if the event is based on the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate type, the following code represents the method stub:
 
 ```cpp
 void handle_custom_event(object& sender, custom_event_args& e) {  
@@ -84,7 +84,7 @@ When all subscribers have unsubscribed from an event, the event instance in the 
 
 ## How to publish events that conform to xtd Guidelines
 
-The following procedure demonstrates how to add events that follow the standard xtd pattern to your classes and structs. All events in the xtd framework are based on the [xtd::event_handler](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/event_handler.h) delegate, which is defined as follows:
+The following procedure demonstrates how to add events that follow the standard xtd pattern to your classes and structs. All events in the xtd framework are based on the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate, which is defined as follows:
 
 ```cpp
 template<typename event_args_t = const xtd::event_args&>
@@ -97,8 +97,8 @@ and
 using event_handler = xtd::generic_event_handler<>;
 ```
 
-Although events in classes that you define can be based on any valid delegate type, even delegates that return a value, it is generally recommended that you base your events on the xtd pattern by using [xtd::event_handler](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/event_handler.h), as shown in the following example.
-The name event_handler can lead to a bit of confusion as it doesn't actually handle the event. The [xtd::event_handler](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/event_handler.h), and generic [xtd::generic_event_handler<event_args_t>](https://github.com/gammasoft71/xtd/blob/master/src/xtd.core/include/xtd/event_handler.h) are delegate types. A method or lambda expression whose signature matches the delegate definition is the event handler and will be invoked when the event is raised.
+Although events in classes that you define can be based on any valid delegate type, even delegates that return a value, it is generally recommended that you base your events on the xtd pattern by using [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b), as shown in the following example.
+The name event_handler can lead to a bit of confusion as it doesn't actually handle the event. The [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b), and generic [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) are delegate types. A method or lambda expression whose signature matches the delegate definition is the event handler and will be invoked when the event is raised.
 
 ### Publish events based on the event_handler pattern
 
