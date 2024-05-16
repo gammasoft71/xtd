@@ -4,7 +4,7 @@ This topic shows different ways to write text to a file for a xtd app.
 
 The following classes and methods are typically used to write text to a file:
 
-* [xtd::io::stream_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1stream__writer.html) contains methods to write to a file ([write and write_line).
+* [xtd::io::stream_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1stream__writer.html) contains methods to write to a file (write and write_line).
 * [xtd::io::file](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file.html) provides static methods to write text to a file, such as write_all_lines and write_all_text, or to append text to a file, such as append_all_jines, append_all_text, and append_text.
 * [xtd::io::path](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1path.html) is for strings that have file or directory path information. It contains the combine method and, the join and try_join methods, which allow concatenation of strings to build a file or directory path.
 
@@ -14,7 +14,7 @@ The following examples show only the minimum amount of code needed. A real-world
 
 ## Example: Write text with stream_writer
 
-The following example shows how to use the xtd::io::stream_writer class to write text to a new file one line at a time. Because the xtd::io::stream_writer object is declared and instantiated in a using statement, the destructor automatically flushes and closes the stream.
+The following example shows how to use the [xtd::io::stream_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1stream__writer.html) class to write text to a new file one line at a time. Because the [xtd::io::stream_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1stream__writer.html) object is declared and instantiated in a using statement, the destructor automatically flushes and closes the stream.
 
 ```cpp
 #include <xtd/xtd>
@@ -78,7 +78,7 @@ startup_(program);
 
 ## Example: Write and append text with the file class
 
-The following example shows how to write text to a new file and append new lines of text to the same file using the xtd::io::file class. The xtd::io::file::write_all_text and xtd::io::file::append_all_lines methods open and close the file automatically. If the path you provide to the xtd::io::file::write_all_text method already exists, the file is overwritten.
+The following example shows how to write text to a new file and append new lines of text to the same file using the [xtd::io::file](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file.html) class. The [xtd::io::file::write_all_text](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file.html#a93dd71561fbc7a998bd3d92f6f4cd671) and [xtd::io::file::append_all_lines](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file.html#a8dbded14b2a5d0ecf45bd83a727c61aa) methods open and close the file automatically. If the path you provide to the [xtd::io::file::write_all_text](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file.html#a93dd71561fbc7a998bd3d92f6f4cd671) method already exists, the file is overwritten.
 
 ```cpp
 #include <xtd/xtd>
