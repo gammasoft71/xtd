@@ -252,6 +252,12 @@ namespace xtd {
         /// @warning Internal use only
         static void destroy(intptr control);
         
+        /// @brief Sets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
+        /// @param control Control window handle.
+        /// @param value true if the surface of the control should be drawn using double buffering; otherwise, false.
+        /// @warning Internal use only
+        static void double_buffered(intptr control, bool value);
+        
         /// @brief Gets a value indicating whether the control can respond to user interaction.
         /// @param control Control window handle.
         /// @return true if the control can respond to user interaction; otherwise, false.

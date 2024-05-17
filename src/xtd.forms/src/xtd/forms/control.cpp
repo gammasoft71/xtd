@@ -471,7 +471,9 @@ bool control::double_buffered() const noexcept {
 }
 
 control& control::double_buffered(bool double_buffered) {
+  if (get_state(state::double_buffered) == double_buffered) return *this;
   set_state(state::double_buffered, double_buffered);
+  if (is_handle_created()) native::control::double_buffered(handle(), double_buffered);
   return *this;
 }
 
@@ -1269,6 +1271,7 @@ void control::on_handle_created(const event_args& e) {
   if (data_->cursor.has_value() || cursor() != default_cursor()) native::control::cursor(handle(), cursor().handle());
   if (data_->fore_color.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle(), fore_color());
   if (data_->font.has_value() || font() != default_font()) native::control::font(handle(), font());
+  native::control::double_buffered(handle(), double_buffered());
   native::control::enabled(handle(), enabled());
   native::control::visible(handle(), visible());
   if (focused()) native::control::focus(handle());
