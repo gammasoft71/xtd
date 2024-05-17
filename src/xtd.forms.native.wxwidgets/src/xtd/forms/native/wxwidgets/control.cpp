@@ -308,6 +308,15 @@ void control::cursor(intptr control, intptr cursor) {
   reinterpret_cast<control_handler*>(control)->SetCursor(cursor ? *reinterpret_cast<wxCursor*>(cursor) : wxNullCursor);
 }
 
+void control::double_buffered(intptr control, bool value) {
+  if (!control || !wxTheApp) throw argument_exception {csf_};
+  if (!reinterpret_cast<control_handler*>(control)->control()) {
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    return;
+  }
+  reinterpret_cast<control_handler*>(control)->control()->SetDoubleBuffered(value);
+}
+
 bool control::enabled(intptr control) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
