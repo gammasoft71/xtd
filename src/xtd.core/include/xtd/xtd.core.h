@@ -271,6 +271,7 @@
 #include "event_handler.h"
 #include "exit_mode.h"
 #include "exit_status.h"
+#include "finally.h"
 #include "flags_attribute.h"
 #include "foreground_color.h"
 #include "format_exception.h"
