@@ -1074,7 +1074,15 @@ namespace xtd {
       /// @param p The client coordinate  xtd::drawing::point to convert.
       /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
       xtd::drawing::point point_to_screen(const xtd::drawing::point& p) const;
-      
+
+      /// @brief Places (posts) a message in the message queue with specified hwnd, message, wparam and lparam.
+      /// @param hwnd The window handle of the message.
+      /// @param msg The ID number for the message.
+      /// @param wparam The WParam field of the message.
+      /// @param lparam The LParam field of the message.
+      /// @return true if message posted; otherwhise false.
+      bool post_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const;
+
       /// @brief Preprocesses keyboard or input messages within the message loop before they are dispatched.
       /// @param message A xtd::forms::message, passed by reference, that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
       /// @return true if the message was processed by the control; otherwise, false.
