@@ -25,12 +25,13 @@
 #include <xtd/forms/native/mouse_key>
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/threading/manual_reset_event.h>
+#include <xtd/threading/manual_reset_event>
 #include <xtd/threading/thread>
 #include <xtd/char32_object>
 #include <xtd/invalid_operation_exception>
 #include <xtd/typeof>
 #include <iostream>
+#include <queue>
 #include <set>
 
 using namespace std;
@@ -170,6 +171,7 @@ struct control::data {
   bool mouse_in = false;
   xtd::ustring name;
   intptr parent = 0;
+  std::queue<message> post_messages;
   bool recreate_handle_posted = false;
   std::optional<forms::right_to_left> right_to_left;
   std::optional<drawing::size> size;
@@ -177,6 +179,7 @@ struct control::data {
   control_styles style = control_styles::none;
   style_sheets::style_sheet style_sheet;
   bool suppress_key_press = false;
+  object sync_root;
   std::any tag;
   xtd::ustring text;
 };
@@ -955,7 +958,7 @@ void control::create_control() {
     set_state(state::destroyed, false);
     set_state(state::creating, true);
     create_handle();
-    send_message(handle(), WM_CREATE, 0, handle());
+    post_message(handle(), WM_CREATE, 0, handle());
     set_state(state::created, is_handle_created());
     set_state(state::creating, false);
   }
@@ -1558,6 +1561,14 @@ drawing::point control::point_to_screen(const xtd::drawing::point& p) const {
   return is_handle_created() ? native::control::point_to_screen(handle(), p) : drawing::point {};
 }
 
+bool control::post_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const {
+  if (check_for_illegal_cross_thread_calls() && invoke_required())
+    throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
+  if (!is_handle_created()) return false;
+  data_->post_messages.push(message::create(hwnd, msg, wparam, lparam));
+  return true;
+}
+
 bool control::pre_process_message(const xtd::forms::message& message) {
   auto message_processed = false;
   for (auto child : controls()) {
@@ -1583,6 +1594,8 @@ void control::refresh() const {
 }
 
 intptr control::send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const {
+  if (check_for_illegal_cross_thread_calls() && invoke_required())
+    throw invalid_operation_exception(ustring::format("Cross-thread operation not valid: {}"_t, to_string()), csf_);
   return is_handle_created() ? native::control::send_message(handle(), hwnd, msg, wparam, lparam) : static_cast<intptr>(-1);
 }
 
@@ -1789,6 +1802,12 @@ void control::set_style(control_styles flag, bool value) {
 }
 
 void control::wnd_proc(message& message) {
+  while (!data_->post_messages.empty()) {
+    auto m = data_->post_messages.front();
+    data_->post_messages.pop();
+    send_message(m.hwnd(), m.msg(), m.wparam(), m.lparam());
+  }
+  
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), ustring::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
       // keyboard events
