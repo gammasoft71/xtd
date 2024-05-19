@@ -8,7 +8,7 @@ The application will exit automatically when the form is closed.
 ```cpp
 #include <xtd/xtd>
 
-auto main()->int {
+auto main() -> int {
   xtd::forms::application::run(xtd::forms::form {});
 }
 ```
@@ -34,7 +34,7 @@ You have to call the method [applicati::exit](https://gammasoft71.github.io/xtd/
 
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto form1 = form {};
   form1.show();
   form1.form_closed += [] {
@@ -79,7 +79,7 @@ The following code shows how to create an [application_context](https://gammasof
 
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto form1 = form {};
   form1.text("form 1;");
   form1.show();

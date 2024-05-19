@@ -76,7 +76,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 }
 
 // Main entry point
-auto main()->int {
+auto main() -> int {
   // Controls creation
   window = CreateWindowEx(0, WC_DIALOG, L"Button example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, nullptr, nullptr, nullptr, nullptr);
   button1 = CreateWindowEx(0, WC_BUTTON, L"button1", WS_CHILD | WS_VISIBLE, 50, 50, 75, 25, window, nullptr, nullptr, nullptr);
@@ -108,7 +108,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 // Main entry point
-auto main()->int {
+auto main() -> int {
   // Controls creation
   form form1;
   form1.text("Button example");
@@ -184,7 +184,7 @@ private:
   button button1;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }
 ```
@@ -216,7 +216,7 @@ private:
   button button1;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }
 ```
@@ -256,7 +256,7 @@ private:
   my_button button1;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }
 ```

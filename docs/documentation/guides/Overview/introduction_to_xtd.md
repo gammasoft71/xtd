@@ -45,7 +45,7 @@ app.cpp file:
 ```cpp
 #include <xtd/xtd>
 
-auto main()->int {
+auto main() -> int {
   xtd::console::write_line("Hello, World!");
 }
 ```
