@@ -115,7 +115,7 @@ You cannot create an instance of this class. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(<a class="code hl_class" href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a> {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
@@ -194,7 +194,7 @@ You cannot create an instance of this class. </dd></dl>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a652dfeb393c4deaa7ee4dacfb641ca36"><div class="ttname"><a href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">xtd::forms::message_box::show</a></div><div class="ttdeci">static dialog_result show()</div><div class="ttdoc">Displays a message box.</div></div>
 <div class="ttc" id="aclassxtd_1_1operation__canceled__exception_html"><div class="ttname"><a href="classxtd_1_1operation__canceled__exception.html">xtd::operation_canceled_exception</a></div><div class="ttdoc">The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...</div><div class="ttdef"><b>Definition</b> operation_canceled_exception.h:18</div></div>
-<div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:25</div></div>
+<div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 <div class="ttc" id="agroup__events_html_ga0b1801aa17fa22ddacfdcccd7b25316b"><div class="ttname"><a href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt;&gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.h:32</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1131</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:166</div></div>
@@ -1758,7 +1758,7 @@ If your application was originally supplied command-line options when it first e
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> restart_count = <a class="code hl_function" href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>).empty() ? 0 : <a class="code hl_function" href="group__xtd__core.html#ga8dd4c00484ddac781e23fb7a7a0f5d2e">parse&lt;int&gt;</a>(<a class="code hl_function" href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>));</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;Restart {} times&quot;</span>, restart_count));</div>
 <div class="line">  <span class="keyword">auto</span> restart_button = <a class="code hl_function" href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">button::create</a>(<a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>, <span class="stringliteral">&quot;Restart&quot;</span>, {10, 10});</div>
@@ -1772,7 +1772,7 @@ If your application was originally supplied command-line options when it first e
 <div class="ttc" id="aclassxtd_1_1environment_html_abc571cecc9691249a326323123b98c29"><div class="ttname"><a href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">xtd::environment::get_environment_variable</a></div><div class="ttdeci">static xtd::ustring get_environment_variable(const xtd::ustring &amp;variable)</div><div class="ttdoc">Retrieves the value of an environment variable from the current process.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a9d1de5b2f5e8ee4b46a24aa8f556a5c2"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2">xtd::forms::application::restart</a></div><div class="ttdeci">static void restart()</div><div class="ttdoc">Shuts down the application and starts a new instance immediately.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html_a6a8437802231381f5f91dee9d8c3415e"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">xtd::forms::button::create</a></div><div class="ttdeci">static button create()</div><div class="ttdoc">A factory to create an xtd::forms::button.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.h:1471</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.h:1479</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_aea269af32d571c9c68d4e83400ab2d00"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a></div><div class="ttdeci">static form create()</div><div class="ttdoc">A factory to create an xtd::forms::form.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga8dd4c00484ddac781e23fb7a7a0f5d2e"><div class="ttname"><a href="group__xtd__core.html#ga8dd4c00484ddac781e23fb7a7a0f5d2e">xtd::parse&lt; int &gt;</a></div><div class="ttdeci">int parse&lt; int &gt;(const std::string &amp;str, number_styles styles)</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.h:137</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gabff6a04b06200c06d782196536e4a8af"><div class="ttname"><a href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">xtd::to_string</a></div><div class="ttdeci">std::string to_string(const date_time &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</div><div class="ttdoc">Convert a specified value into a string with specified format and locale.</div><div class="ttdef"><b>Definition</b> date_time.h:1080</div></div>
@@ -1811,7 +1811,7 @@ Most Windows Forms developers will not need to use this version of the method. Y
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
@@ -1857,7 +1857,7 @@ This method adds an event handler to the main_form parameter for the closed even
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application run method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(<a class="code hl_class" href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a> {});</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
@@ -1902,7 +1902,7 @@ This method adds an event handler to the main_form parameter for the closed even
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> context = <a class="code hl_class" href="classxtd_1_1forms_1_1application__context.html">application_context</a> {};</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> form1 = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<span class="stringliteral">&quot;Form 1 (Click the client area to set form as the main form)&quot;</span>);</div>
@@ -2351,7 +2351,7 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div></div>
@@ -2422,7 +2422,7 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(form1 {});</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
@@ -2635,7 +2635,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(application_idle_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.h:18</div></div>
@@ -2702,7 +2702,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

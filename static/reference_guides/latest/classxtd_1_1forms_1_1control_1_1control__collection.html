@@ -560,7 +560,7 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> button1_clicked = 0, button2_clicked = 0;</div>
 <div class="line">  <span class="keyword">auto</span> form1 = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a>(<span class="stringliteral">&quot;Emplace example&quot;</span>);</div>
 <div class="line">  form1.controls().emplace&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a>&gt;(form1.controls().begin(), <span class="stringliteral">&quot;Button 1&quot;</span>, <a class="code hl_class" href="classxtd_1_1drawing_1_1point.html">point</a>{50, 50}).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += [&amp;] {</div>
@@ -578,7 +578,7 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_1_1control__collection_html_acbacd7606d615a5c2c66c4e706644c35"><div class="ttname"><a href="classxtd_1_1forms_1_1control_1_1control__collection.html#acbacd7606d615a5c2c66c4e706644c35">xtd::forms::control::control_collection::emplace_back</a></div><div class="ttdeci">control_t &amp; emplace_back(args_t &amp;&amp;...args)</div><div class="ttdoc">Creates and adds a control to the end.</div><div class="ttdef"><b>Definition</b> control.h:245</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.h:1471</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.h:1479</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a65896f051dab5b3050412ab63a0af079"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">xtd::forms::control::controls</a></div><div class="ttdeci">virtual control_collection &amp; controls() noexcept</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_aea269af32d571c9c68d4e83400ab2d00"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a></div><div class="ttdeci">static form create()</div><div class="ttdoc">A factory to create an xtd::forms::form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.h:36</div></div>
@@ -646,7 +646,7 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> button1_clicked = 0, button2_clicked = 0;</div>
 <div class="line">  <span class="keyword">auto</span> form1 = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a>(<span class="stringliteral">&quot;Emplace example&quot;</span>);</div>
 <div class="line">  form1.controls().emplace&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a>&gt;(form1.controls().begin(), <span class="stringliteral">&quot;Button 1&quot;</span>, <a class="code hl_class" href="classxtd_1_1drawing_1_1point.html">point</a>{50, 50}).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += [&amp;] {</div>
@@ -708,7 +708,7 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> button1_clicked = 0, button2_clicked = 0;</div>
 <div class="line">  <span class="keyword">auto</span> form1 = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a>(<span class="stringliteral">&quot;Emplace example&quot;</span>);</div>
 <div class="line">  form1.controls().emplace&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a>&gt;(form1.controls().begin(), <span class="stringliteral">&quot;Button 1&quot;</span>, <a class="code hl_class" href="classxtd_1_1drawing_1_1point.html">point</a>{50, 50}).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += [&amp;] {</div>
@@ -965,7 +965,7 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

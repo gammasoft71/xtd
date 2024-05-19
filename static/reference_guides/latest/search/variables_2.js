@@ -25,7 +25,7 @@ var searchData=
   ['cat_5fface_22',['cat_face',['../classxtd_1_1forms_1_1emoticons.html#ae2468e6145914f4f72ecab46a9c7892e',1,'xtd::forms::emoticons']]],
   ['cat_5fface_5fwith_5ftears_5fof_5fjoy_23',['cat_face_with_tears_of_joy',['../classxtd_1_1forms_1_1emoticons.html#a897ff8c499ece1d6fad6120e6149d476',1,'xtd::forms::emoticons']]],
   ['cat_5fface_5fwith_5fwry_5fsmile_24',['cat_face_with_wry_smile',['../classxtd_1_1forms_1_1emoticons.html#a1c620489b8249c525382063590141be2',1,'xtd::forms::emoticons']]],
-  ['cdebugstreambuf_25',['cdebugstreambuf',['../group__xtd__core.html#ga208cd246390887de6b38b2e5315ef1f9',1,'xtd']]],
+  ['cdebugstreambuf_25',['cdebugstreambuf',['../group__debug.html#ga208cd246390887de6b38b2e5315ef1f9',1,'xtd']]],
   ['chains_26',['chains',['../classxtd_1_1forms_1_1emoticons.html#a4fc5f98ec9e6e54b3299448f4fe192b6',1,'xtd::forms::emoticons']]],
   ['chair_27',['chair',['../classxtd_1_1forms_1_1emoticons.html#a3c56ce12652cd4a364b6d24ec587c76f',1,'xtd::forms::emoticons']]],
   ['chart_5fwith_5fdownwards_5ftrend_28',['chart_with_downwards_trend',['../classxtd_1_1forms_1_1emoticons.html#a7c6b75d89ed63b603b1b7912ad4aadd5',1,'xtd::forms::emoticons']]],

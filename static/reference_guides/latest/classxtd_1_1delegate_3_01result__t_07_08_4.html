@@ -124,7 +124,7 @@ class xtd::delegate&lt; result_t()&gt;</div><p>Represents a delegate, which is a
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">using </span>example_function = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;void(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp;)&gt;;</div>
 <div class="line">  <span class="keyword">auto</span> instance = <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">::object</a> {};</div>
 <div class="line">  <span class="keyword">auto</span> str = <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> {<span class="stringliteral">&quot;World&quot;</span>};</div>
@@ -476,8 +476,8 @@ template&lt;typename result_t &gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name)-&gt;<span class="keywordtype">int</span> {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -532,8 +532,8 @@ template&lt;typename result_t &gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name)-&gt;<span class="keywordtype">int</span> {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -597,8 +597,8 @@ template&lt;typename result_t &gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name)-&gt;<span class="keywordtype">int</span> {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -768,8 +768,8 @@ template&lt;typename result_t &gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name)-&gt;<span class="keywordtype">int</span> {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -896,8 +896,8 @@ template&lt;typename result_t &gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name)-&gt;<span class="keywordtype">int</span> {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#a883db92a52d80316a9deacf9a4df6e7c">delegate</a>&lt;int(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>)&gt; {[](<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -1118,7 +1118,7 @@ template&lt;typename result_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
