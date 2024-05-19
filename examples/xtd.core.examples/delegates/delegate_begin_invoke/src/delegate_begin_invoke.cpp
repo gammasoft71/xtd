@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::threading;
 
 auto main() -> int {
-  auto d1 = delegate<int(ustring)> {[](ustring name)->int {
+  auto d1 = delegate<int(ustring)> {[](ustring name) -> int {
     console::write_line("(Thread {}) Hello {}!", thread::current_thread().managed_thread_id(), name);
     return name == "xtd" ? 42 : 24;
   }};
