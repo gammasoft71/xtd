@@ -27,7 +27,7 @@ The [xtd::environment](https://gammasoft71.github.io/xtd/reference_guides/latest
 
 using namespace xtd;
 
-int main() {
+auto main() -> int {
   // Write the command line to the console output
   console::write_line(environment::command_line());
 
@@ -128,7 +128,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main() {
+    static auto main() -> int {
       // Write arguments to the console output
       for (auto arg : environment::get_command_line_args())
         console::write_line(arg);
@@ -177,7 +177,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main(const vector<ustring>& args) {
+    static auto main(const vector<ustring>& args) -> int {
       // Write arguments to the console output
       for (auto arg : args)
         console::write_line(arg);
@@ -224,7 +224,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main(int argc, char* argv[]) {
+    static auto main(int argc, char* argv[]) -> int {
       // Write arguments to the console output
       for (auto arg : {argv, argv + argc})
         console::write_line(arg);
