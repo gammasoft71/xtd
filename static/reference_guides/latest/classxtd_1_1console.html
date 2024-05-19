@@ -107,7 +107,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Hello &quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;World!&quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Enter your name: &quot;</span>);</div>
@@ -132,7 +132,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = <a class="code hl_variable" href="classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
@@ -471,7 +471,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = vector {</div>
 <div class="line">    u8<span class="stringliteral">&quot;████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████&quot;</span>,</div>
@@ -617,7 +617,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = vector {</div>
 <div class="line">    u8<span class="stringliteral">&quot;████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████&quot;</span>,</div>
@@ -745,7 +745,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = 0;</div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keywordflow">if</span> ((argc == 2) &amp;&amp; (<a class="code hl_function" href="classxtd_1_1box.html#ae3aed129628ac43dcb02f5054d355eb1">int32_object::try_parse</a>(argv[1], <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) == <span class="keyword">true</span>) &amp;&amp; ((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt;= 1) &amp;&amp; (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt;= 9))) {</div>
@@ -881,7 +881,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Declare the first few notes of the song, &quot;Mary Had A Little Lamb&quot;.</span></div>
 <div class="line">  <span class="keyword">auto</span> mary = vector {</div>
 <div class="line">    note(tone::b, ::duration::quarter),</div>
@@ -945,7 +945,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer height is {} rows.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6">console::buffer_height</a>());</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer width is {} columns.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#aec1066642f96e01b4623b9d56ba0fa24">console::buffer_width</a>());</div>
 <div class="line">}</div>
@@ -1003,7 +1003,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer height is {} rows.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6">console::buffer_height</a>());</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer width is {} columns.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#aec1066642f96e01b4623b9d56ba0fa24">console::buffer_width</a>());</div>
 <div class="line">}</div>
@@ -1045,7 +1045,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer height is {} rows.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6">console::buffer_height</a>());</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer width is {} columns.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#aec1066642f96e01b4623b9d56ba0fa24">console::buffer_width</a>());</div>
 <div class="line">}</div>
@@ -1101,7 +1101,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer height is {} rows.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6">console::buffer_height</a>());</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer width is {} columns.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#aec1066642f96e01b4623b9d56ba0fa24">console::buffer_width</a>());</div>
 <div class="line">}</div>
@@ -1264,7 +1264,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Clear the screen, then save the top and left coordinates.</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a">console::clear</a>();</div>
 <div class="line">  orig_row = <a class="code hl_function" href="classxtd_1_1console.html#a79de2f1a60c607ca2fc58bf4691809b4">console::cursor_top</a>();</div>
@@ -1354,7 +1354,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Clear the screen, then save the top and left coordinates.</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a">console::clear</a>();</div>
 <div class="line">  orig_row = <a class="code hl_function" href="classxtd_1_1console.html#a79de2f1a60c607ca2fc58bf4691809b4">console::cursor_top</a>();</div>
@@ -1452,7 +1452,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Clear the screen, then save the top and left coordinates.</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a">console::clear</a>();</div>
 <div class="line">  orig_row = <a class="code hl_function" href="classxtd_1_1console.html#a79de2f1a60c607ca2fc58bf4691809b4">console::cursor_top</a>();</div>
@@ -1528,7 +1528,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m0 = <span class="stringliteral">&quot;This example increments the cursor size from 1% to 100%:\n&quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;Cursor size = {0}%. (Press any key to continue...)&quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> sizes = { 1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };</div>
@@ -1606,7 +1606,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m0 = <span class="stringliteral">&quot;This example increments the cursor size from 1% to 100%:\n&quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;Cursor size = {0}%. (Press any key to continue...)&quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> sizes = { 1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };</div>
@@ -1677,7 +1677,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Clear the screen, then save the top and left coordinates.</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a">console::clear</a>();</div>
 <div class="line">  orig_row = <a class="code hl_function" href="classxtd_1_1console.html#a79de2f1a60c607ca2fc58bf4691809b4">console::cursor_top</a>();</div>
@@ -1776,7 +1776,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Clear the screen, then save the top and left coordinates.</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a8aa7128ca9254b18afa2e2155413a22a">console::clear</a>();</div>
 <div class="line">  orig_row = <a class="code hl_function" href="classxtd_1_1console.html#a79de2f1a60c607ca2fc58bf4691809b4">console::cursor_top</a>();</div>
@@ -1852,7 +1852,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nThe cursor is {0}.\nType any text then press Enter. &quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;Type &#39;+&#39; in the first column to show \n&quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;the cursor, &#39;-&#39; to hide the cursor, &quot;</span></div>
@@ -1954,7 +1954,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nThe cursor is {0}.\nType any text then press Enter. &quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;Type &#39;+&#39; in the first column to show \n&quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;the cursor, &#39;-&#39; to hide the cursor, &quot;</span></div>
@@ -2051,7 +2051,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = vector {</div>
 <div class="line">    u8<span class="stringliteral">&quot;████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████&quot;</span>,</div>
@@ -2186,7 +2186,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = vector {</div>
 <div class="line">    u8<span class="stringliteral">&quot;████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████&quot;</span>,</div>
@@ -2786,7 +2786,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nType a string of text then press Enter. &quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;Type &#39;+&#39; anywhere in the text to quit:\n&quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> m2 = <span class="stringliteral">&quot;Character &#39;{0}&#39; is hexadecimal 0x{1:x4}.&quot;</span>;</div>
@@ -3296,7 +3296,7 @@ width or height is greater than the largest possible window width or height for 
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> orig_width = 0, width = 0;</div>
 <div class="line">  <span class="keyword">auto</span> orig_height = 0, height = 0;</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;The current window width is {0}, and the current window height is {1}.&quot;</span>;</div>
@@ -4020,7 +4020,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = <a class="code hl_variable" href="classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
@@ -4067,7 +4067,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = <a class="code hl_variable" href="classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
@@ -4097,7 +4097,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

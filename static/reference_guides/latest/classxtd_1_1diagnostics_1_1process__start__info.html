@@ -1166,7 +1166,7 @@ The last two examples in this section use the xtd::diagnostics:process::start me
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ctr = 0; ctr &lt; 500; ctr++)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Line {} of 500 written: {:P2}&quot;</span>, ctr + 1, (ctr + 1)/500.0);</div>
 <div class="line"> </div>
@@ -1191,7 +1191,7 @@ The following example shows how to read from a redirected error stream and wait 
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a> = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().redirect_standard_error(<span class="keyword">true</span>);</div>
@@ -1218,7 +1218,7 @@ There is a similar issue when you read all text from both the standard output an
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a> = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().redirect_standard_output(<span class="keyword">true</span>);</div>
@@ -1313,7 +1313,7 @@ The last two examples in this section use the xtd::diagnostics:process::start me
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ctr = 0; ctr &lt; 500; ctr++)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Line {} of 500 written: {:P2}&quot;</span>, ctr + 1, (ctr + 1)/500.0);</div>
 <div class="line"> </div>
@@ -1335,7 +1335,7 @@ The following example shows how to read from a redirected error stream and wait 
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a> = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().redirect_standard_error(<span class="keyword">true</span>);</div>
@@ -1359,7 +1359,7 @@ There is a similar issue when you read all text from both the standard output an
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a> = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().redirect_standard_output(<span class="keyword">true</span>);</div>
@@ -1424,7 +1424,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Ready to sort one or more text lines...&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Start the sort process with redirected input.</span></div>
@@ -1523,7 +1523,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Ready to sort one or more text lines...&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Start the sort process with redirected input.</span></div>
@@ -1608,7 +1608,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>) {</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>(<span class="stringliteral">&quot;ipconfig&quot;</span>);</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
@@ -1644,7 +1644,7 @@ The last two examples in this section use the xtd::diagnostics:process::start me
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ctr = 0; ctr &lt; 500; ctr++)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Line {} of 500 written: {:P2}&quot;</span>, ctr + 1, (ctr + 1)/500.0);</div>
 <div class="line"> </div>
@@ -1666,7 +1666,7 @@ The following example shows how to read from a redirected error stream and wait 
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a> = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().redirect_standard_error(<span class="keyword">true</span>);</div>
@@ -1690,7 +1690,7 @@ There is a similar issue when you read all text from both the standard output an
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a> = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().redirect_standard_output(<span class="keyword">true</span>);</div>
@@ -1764,7 +1764,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>) {</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>(<span class="stringliteral">&quot;ipconfig&quot;</span>);</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>.<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process.html#a764c6d95b61925b947ff01f150ea9ae4">start_info</a>().<a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
@@ -1798,7 +1798,7 @@ The last two examples in this section use the xtd::diagnostics:process::start me
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ctr = 0; ctr &lt; 500; ctr++)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Line {} of 500 written: {:P2}&quot;</span>, ctr + 1, (ctr + 1)/500.0);</div>
 <div class="line"> </div>
@@ -1820,7 +1820,7 @@ The following example shows how to read from a redirected error stream and wait 
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a> = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().redirect_standard_error(<span class="keyword">true</span>);</div>
@@ -1844,7 +1844,7 @@ There is a similar issue when you read all text from both the standard output an
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a> = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">process</a>();</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().use_shell_execute(<span class="keyword">false</span>);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>.start_info().redirect_standard_output(<span class="keyword">true</span>);</div>
@@ -2274,7 +2274,7 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#a25
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

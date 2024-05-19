@@ -138,7 +138,7 @@ To activate your code if TRACE is defined, you must enclose calls to the methods
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">trace::listeners</a>().push_back(make_shared&lt;ostream_trace_listener&gt;(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a315726e6dae274cc31aa0e37dd45196b">trace::auto_flush</a>(<span class="keyword">true</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#adcd7c63e63e1ba262d5c338df2f62a29">trace::indent</a>();</div>
@@ -449,7 +449,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Uncomment following lines to remove assert dialog</span></div>
 <div class="line">  <span class="comment">//for (auto listener : trace::listeners())</span></div>
 <div class="line">  <span class="comment">//  if (is&lt;default_trace_listener&gt;(listener))</span></div>
@@ -2272,7 +2272,7 @@ This method calls the write method of the trace listener. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

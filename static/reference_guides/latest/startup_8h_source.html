@@ -181,17 +181,16 @@ $(function() {
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">  166</a></span><span class="preprocessor">#define startup_(main_method) \</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">  auto main(int argc, char* argv[])-&gt;int {\</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">    return xtd::startup::safe_run(main_method, argc, argv);\</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">  }\</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">  auto main(int argc, char* argv[]) -&gt; int { \</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">    return xtd::startup::safe_run(main_method, argc, argv); \</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">  } \</span></div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">  intptr_t __opaque_sftews__ = 0 </span><span class="comment">// force to end with semicolon</span></div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="group__keywords.html#ga8929ac8f5f6468542f8f9f0d1e0673ff">  180</a></span><span class="preprocessor">#define startup_class_(main_class) \</span></div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor">  auto main(int argc, char* argv[])-&gt;int {\</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">    return xtd::startup::safe_run(main_class::main, argc, argv);\</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">  }\</span></div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">  intptr_t __opaque_sftews__ = 0 </span><span class="comment">// force to end with semicolon</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="group__keywords.html#ga8929ac8f5f6468542f8f9f0d1e0673ff">  179</a></span><span class="preprocessor">#define startup_class_(main_class) \</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">  auto main(int argc, char* argv[]) -&gt; int { \</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor">    return xtd::startup::safe_run(main_class::main, argc, argv); \</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">  } \</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">  intptr_t __opaque_sftews__ = 0 </span><span class="comment">// force to end with semicolon</span></div>
 <div class="ttc" id="aclassxtd_1_1startup_html"><div class="ttname"><a href="classxtd_1_1startup.html">xtd::startup</a></div><div class="ttdoc">Defines the xtd::startup object that can be used in the main method to safely call the application's ...</div><div class="ttdef"><b>Definition</b> startup.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1startup_html_a052f759ab4cf62333e6f61622cb5be32"><div class="ttname"><a href="classxtd_1_1startup.html#a052f759ab4cf62333e6f61622cb5be32">xtd::startup::safe_run</a></div><div class="ttdeci">static int safe_run(main_function_t main_function, int argc, char *argv[])</div><div class="ttdoc">Safely call the specified application's main entry point, argc and argv.</div><div class="ttdef"><b>Definition</b> startup.h:72</div></div>
 <div class="ttc" id="aclassxtd_1_1startup_html_a9301437f9e6012fa2a487878639e7d23"><div class="ttname"><a href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">xtd::startup::safe_run</a></div><div class="ttdeci">static int safe_run(main_function_t main_function)</div><div class="ttdoc">Safely call the specified application's main entry point.</div><div class="ttdef"><b>Definition</b> startup.h:47</div></div>
@@ -207,7 +206,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

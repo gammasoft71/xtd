@@ -113,11 +113,11 @@ $(function() {
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define TEST(class_name, method_name) \</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">  void __##class_name##method_name(); \</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">  class __class_##class_name##_##method_name; \</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">  xtd::tunit::test_class_attribute&lt;__class_##class_name##_##method_name&gt; __class_##class_name##_##method_name##_attr {typeof_&lt;__class_##class_name##_##method_name&gt;().full_name().replace(typeof_&lt;__class_##class_name##_##method_name&gt;().name(), &quot;&quot;</span>) + #class_name}; \</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  class __class_##class_name##_##method_name : public xtd::tunit::test_class { \</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    xtd::tunit::test_method_attribute __class_##class_name##_##method_name##_method {#method_name, *this, &amp;__class_##class_name##_##method_name::__method}; \</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    void __method() { \</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      if (xtd::ustring {#method_name}.starts_with(&quot;DISABLED_&quot;)) xtd::tunit::assert::ignore();\</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">  xtd::tunit::test_class_attribute&lt;__class_##class_name##_##method_name&gt; __class_##class_name##_##method_name##_attr {typeof_&lt;__class_##class_name##_##method_name&gt;().full_name().replace(typeof_&lt;__class_##class_name##_##method_name&gt;().name(), xtd::ustring::empty_string) + #class_name}; \</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">  class __class_##class_name##_##method_name : public xtd::tunit::test_class { \</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">    xtd::tunit::test_method_attribute __class_##class_name##_##method_name##_method {#method_name, *this, &amp;__class_##class_name##_##method_name::__method}; \</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">    void __method() { \</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">      if (xtd::ustring {#method_name}.starts_with(&quot;DISABLED_&quot;</span>)) xtd::tunit::assert::ignore();\</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      __##class_name##method_name(); \</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    } \</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }; \</div>
@@ -130,7 +130,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

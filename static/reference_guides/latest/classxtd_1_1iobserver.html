@@ -158,7 +158,7 @@ class xtd::iobserver&lt; type_t &gt;</div><p>Provides a mechanism for receiving 
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  location_unknown_exception() {}</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:25</div></div>
+<div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 </div><!-- fragment --> Observers subscribe to receive notifications from an <code>location_tracker</code> object by calling its <a class="el" href="classxtd_1_1iobservable.html#a6f2db48cba351e9b26dcd633ff78294f" title="Notifies the provider that an observer is to receive notifications.">xtd::iobservable::subscribe</a> method. And unsubscribe by calling its xtd::unobservable &lt;type_t&gt;::unsubscribe method. The <code>location_tracker</code> class also includes an @ end_transmission method. When no further location data is available, this method calls each observer's <a class="el" href="classxtd_1_1iobserver.html#a466d725a38941d2d70f44348aa611c17" title="Notifies the observer that the provider has finished sending push-based notifications.">xtd::iobserver::on_completed</a> method, and then clears the internal list of observers.</dd></dl>
 <p>In this example, the <code>location_reporter</code> class provides the <a class="el" href="classxtd_1_1iobserver.html" title="Provides a mechanism for receiving push-based notifications.">xtd::iobserver</a> implementation. It displays information about the current location to the console. Its constructor includes a <code>name</code> parameter, which allows the <code>location_reporter</code> instance to identify itself in its string output. It also includes a <code>subscribe</code> method, which wraps a call to the provider's <a class="el" href="classxtd_1_1iobservable.html#a6f2db48cba351e9b26dcd633ff78294f" title="Notifies the provider that an observer is to receive notifications.">xtd::iobservable::subscribe</a> method. The <code>location_reporter</code> class also includes an <code>unsubscribe</code> method, to remove the subscription. The following code defines the <code>location_reporter</code> class. </p><div class="fragment"><div class="line"><span class="keyword">class </span>location_reporter : <a class="code hl_class" href="classxtd_1_1iobserver.html">iobserver</a>&lt;location&gt; {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -195,7 +195,7 @@ class xtd::iobserver&lt; type_t &gt;</div><p>Provides a mechanism for receiving 
 <div class="line">  iobservable&lt;location&gt;* provider_ = <span class="keyword">nullptr</span>;</div>
 <div class="line">};</div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:47</div></div>
-</div><!-- fragment --><p> The following code then instantiates the provider and the observer. </p><div class="fragment"><div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+</div><!-- fragment --><p> The following code then instantiates the provider and the observer. </p><div class="fragment"><div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Define a provider and two observers.</span></div>
 <div class="line">  location_tracker provider;</div>
 <div class="line">  location_reporter reporter1 {<span class="stringliteral">&quot;Fixed GPS&quot;</span>};</div>
@@ -375,7 +375,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

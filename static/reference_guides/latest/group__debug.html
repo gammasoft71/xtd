@@ -81,7 +81,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">debug</div></div>
 </div><!--header-->
 <div class="contents">
@@ -153,6 +155,18 @@ Macros</h2></td></tr>
 <tr class="memitem:ga7a5088b030211d28a0a24ecc924f57b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a>()</td></tr>
 <tr class="memdesc:ga7a5088b030211d28a0a24ecc924f57b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals a breakpoint to an attached debugger.  <br /></td></tr>
 <tr class="separator:ga7a5088b030211d28a0a24ecc924f57b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga20a8c5c8813e84b0831d7b236d1f1459"><td class="memItemLeft" align="right" valign="top">std::ostream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#ga20a8c5c8813e84b0831d7b236d1f1459">xtd::ctrace</a> (nullptr)</td></tr>
+<tr class="memdesc:ga20a8c5c8813e84b0831d7b236d1f1459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an std::ostream for <a class="el" href="classxtd_1_1diagnostics_1_1trace.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::trace</a>.  <br /></td></tr>
+<tr class="separator:ga20a8c5c8813e84b0831d7b236d1f1459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga208cd246390887de6b38b2e5315ef1f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1debugstreambuf.html">xtd::debugstreambuf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#ga208cd246390887de6b38b2e5315ef1f9">xtd::cdebugstreambuf</a></td></tr>
+<tr class="memdesc:ga208cd246390887de6b38b2e5315ef1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classxtd_1_1debugstreambuf.html" title="Provides an std::stringbuf for xtd::diagnostics::debug.">xtd::debugstreambuf</a> variable used by xtd::cdebug ostream.  <br /></td></tr>
+<tr class="separator:ga208cd246390887de6b38b2e5315ef1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gad1e9d87aeb065b1eec47e92a49fd01e9" name="gad1e9d87aeb065b1eec47e92a49fd01e9"></a>
@@ -292,7 +306,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Uncomment following lines to remove assert dialog</span></div>
 <div class="line">  <span class="comment">//for (auto listener : debug::listeners())</span></div>
 <div class="line">  <span class="comment">//  if (is&lt;default_trace_listener&gt;(listener))</span></div>
@@ -327,7 +341,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Uncomment following lines to remove assert dialog</span></div>
 <div class="line">  <span class="comment">//for (auto listener : trace::listeners())</span></div>
 <div class="line">  <span class="comment">//  if (is&lt;default_trace_listener&gt;(listener))</span></div>
@@ -387,11 +401,78 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga20a8c5c8813e84b0831d7b236d1f1459" name="ga20a8c5c8813e84b0831d7b236d1f1459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga20a8c5c8813e84b0831d7b236d1f1459">&#9670;&#160;</a></span>ctrace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream xtd::ctrace </td>
+          <td>(</td>
+          <td class="paramtype">nullptr&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="ctrace_8h.html">xtd.core/include/xtd/ctrace.h</a>&gt;</code></p>
+
+<p>Provides an std::ostream for <a class="el" href="classxtd_1_1diagnostics_1_1trace.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::trace</a>. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ctrace&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga208cd246390887de6b38b2e5315ef1f9" name="ga208cd246390887de6b38b2e5315ef1f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga208cd246390887de6b38b2e5315ef1f9">&#9670;&#160;</a></span>cdebugstreambuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream cdebug &amp; xtd::cdebugstreambuf</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="cdebug_8h.html">xtd.core/include/xtd/cdebug.h</a>&gt;</code></p>
+
+<p>A <a class="el" href="classxtd_1_1debugstreambuf.html" title="Provides an std::stringbuf for xtd::diagnostics::debug.">xtd::debugstreambuf</a> variable used by xtd::cdebug ostream. </p>
+<p>Provides an std::ostream for <a class="el" href="classxtd_1_1diagnostics_1_1debug.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::debug</a>.</p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/cdebug&gt;</span> </div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 11 2024 21:12:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 18:20:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -226,7 +226,7 @@ var searchData=
   ['croatia_223',['croatia',['../classxtd_1_1forms_1_1countries.html#a9b95fa8f9eac1bedd7ddedba4fc84f4b',1,'xtd::forms::countries']]],
   ['crop_224',['crop',['../classxtd_1_1drawing_1_1image__converter.html#a6b5d9bb2a29dd72a2d4c37b19a4be7e8',1,'xtd::drawing::image_converter::crop(xtd::drawing::image &amp;image, const xtd::drawing::rectangle &amp;rectangle)'],['../classxtd_1_1drawing_1_1image__converter.html#aa030dedade1ad2cd35ac2dbc6534ee57',1,'xtd::drawing::image_converter::crop(const xtd::drawing::image &amp;image, const xtd::drawing::rectangle &amp;rectangle)']]],
   ['cross_225',['cross',['../classxtd_1_1forms_1_1cursors.html#a8192d24bc201d31665b77d10e4732a37',1,'xtd::forms::cursors']]],
-  ['ctrace_226',['ctrace',['../group__xtd__core.html#ga20a8c5c8813e84b0831d7b236d1f1459',1,'xtd']]],
+  ['ctrace_226',['ctrace',['../group__debug.html#ga20a8c5c8813e84b0831d7b236d1f1459',1,'xtd']]],
   ['cuba_227',['cuba',['../classxtd_1_1forms_1_1countries.html#ab311aa6810d092f2e909f5fdf5f75a85',1,'xtd::forms::countries']]],
   ['culture_228',['culture',['../classxtd_1_1reflection_1_1assembly.html#a4a2ed85f85d20e7e5b3da25e4a82c48e',1,'xtd::reflection::assembly::culture()'],['../classxtd_1_1reflection_1_1assembly__culture__attribute.html#a1a5f4ba8071c57251cf6874b66e2ba42',1,'xtd::reflection::assembly_culture_attribute::culture()']]],
   ['cur_229',['cur',['../classxtd_1_1drawing_1_1imaging_1_1image__format.html#ae3963fe96cb7d5390f17097ae4b41267',1,'xtd::drawing::imaging::image_format']]],
