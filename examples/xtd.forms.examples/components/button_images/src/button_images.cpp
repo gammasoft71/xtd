@@ -99,6 +99,6 @@ namespace button_images_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(button_images_example::form1 {});
 }

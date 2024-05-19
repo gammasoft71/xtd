@@ -30,6 +30,6 @@ namespace auto_scroll_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(auto_scroll_example::form1 {});
 }

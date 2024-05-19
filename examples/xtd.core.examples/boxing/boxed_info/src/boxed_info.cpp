@@ -28,7 +28,7 @@ ustring get_boxed_info(const type_t& value) {
   return ustring::format("[type = {}, boxed type = {}, value = {}]", typeof_(value), typeof_(boxed_value), boxed_value.to_string());
 }
 
-auto main()->int {
+auto main() -> int {
   console::write_line(get_boxed_info(42));
   console::write_line(get_boxed_info(42.84));
   console::write_line(get_boxed_info(true));

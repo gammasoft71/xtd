@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto ptr = static_cast<int*>(nullptr);
   cout << ustring::format("{}", ptr) << endl;
   ptr = new int(42);

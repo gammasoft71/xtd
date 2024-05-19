@@ -9,6 +9,6 @@ public:
   }
 };
 
-auto main()->int {
+auto main() -> int {
   return console_unit_test().run();
 }

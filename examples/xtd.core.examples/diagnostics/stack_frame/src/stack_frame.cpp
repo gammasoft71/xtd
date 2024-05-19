@@ -33,7 +33,7 @@ void method1() {
   }
 }
 
-auto main()->int {
+auto main() -> int {
   try {
     method1();
   } catch (const system_exception&) {

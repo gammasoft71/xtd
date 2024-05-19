@@ -38,7 +38,7 @@ protected:
   virtual void on_click(const xtd::event_args& e) {click(*this, e);}
 };
 
-auto main()->int {
+auto main() -> int {
   auto button1 = button {};
   
   button1.text_changed += [](xtd::object & sender, const xtd::event_args & e)  {

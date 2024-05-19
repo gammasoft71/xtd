@@ -6,7 +6,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::write_line("Convert int to byte :");
   console::write_line("---------------------");
   auto value = 42;

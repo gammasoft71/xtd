@@ -3,7 +3,7 @@
 #include <xtd/forms/form>
 #include <xtd/forms/label>
 
-auto main()->int {
+auto main() -> int {
   auto button1_clicked = 0, button2_clicked = 0;
   xtd::forms::button button1, button2;
   xtd::forms::label label1, label2;

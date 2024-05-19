@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::net;
 
-auto main()->int {
+auto main() -> int {
   auto addresses = dns::get_host_addresses("www.google.com");
   console::write_line("www.google.com addresses:");
   for (auto address : addresses)

@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto colored_forms = std::vector<std::unique_ptr<form>> {};
   auto form_color = known_color::alice_blue;
   auto form_main = form::create("Main Form", point {screen::primary_screen().working_area().width() - 340, 40});

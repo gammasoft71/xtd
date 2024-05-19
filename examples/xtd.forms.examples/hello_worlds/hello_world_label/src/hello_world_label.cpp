@@ -23,6 +23,6 @@ namespace hello_world_label_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(hello_world_label_example::main_form {});
 }

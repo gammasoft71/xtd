@@ -11,7 +11,7 @@ int divide_by_two(int num) {
   return num / 2;
 }
 
-auto main()->int {
+auto main() -> int {
   // argument_exception is not thrown because 10 is an even number.
   console::write_line("10 divided by 2 is {0}", divide_by_two(10));
   try {

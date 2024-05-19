@@ -15,7 +15,7 @@ using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::collections;
 
-auto main()->int {
+auto main() -> int {
   register_any_stringer<platform_id>([](auto value) {return ustring::format("{}", value);});
   register_any_stringer<seconds>([](auto value) {return ustring::format("{}", value);});
   

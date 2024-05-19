@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto bytes1 = vector<unsigned char>(100);
   auto bytes2 = vector<unsigned char>(100);
   auto rnd1 = xtd::random {};

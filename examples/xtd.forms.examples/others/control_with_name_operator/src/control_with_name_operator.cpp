@@ -33,6 +33,6 @@ namespace control_with_name_operator_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   xtd::forms::application::run(control_with_name_operator_example::main_form {});
 }

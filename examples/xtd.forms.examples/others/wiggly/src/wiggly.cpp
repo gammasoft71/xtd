@@ -70,6 +70,6 @@ namespace wiggly_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(wiggly_example::form1 {});
 }

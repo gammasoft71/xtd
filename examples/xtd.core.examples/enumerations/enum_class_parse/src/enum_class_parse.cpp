@@ -11,7 +11,7 @@ enum_class_(, enum_test,
   value_four
 );
 
-auto main()->int {
+auto main() -> int {
   console::write_line("result = {}", enum_object<>::parse<enum_test>("value_two"));
   console::write_line("result = {}", enum_object<>::parse<enum_test>("VaLuE_fOuR", true));
   try {

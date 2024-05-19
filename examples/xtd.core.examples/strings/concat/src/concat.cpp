@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::write_line(ustring::concat("Hello", ", ", "World", "!"));
 }
 

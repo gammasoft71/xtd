@@ -39,7 +39,7 @@ namespace xtd {
 ///
 /// using namespace xtd;
 ///
-/// auto main()->int {
+/// auto main() -> int {
 ///   scope_exit_ {
 ///     console::write_line("scope_exit");
 ///   };

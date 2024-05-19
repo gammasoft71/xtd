@@ -5,7 +5,7 @@ using namespace std;
 using namespace std::literals;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   cout << ustring::format("{}", "string") << endl;
   cout << ustring::format("{}", u8"string") << endl;
   cout << ustring::format("{}", L"string") << endl;

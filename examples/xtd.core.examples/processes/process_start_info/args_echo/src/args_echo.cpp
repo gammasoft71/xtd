@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::write_line("Received the following arguments:\n");
   
   auto args = environment::get_command_line_args();

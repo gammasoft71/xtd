@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-auto main()->int {
+auto main() -> int {
   console::write_line("color::black = {}", color::black);
   console::write_line("color::withe = {}", color::white);
   console::write_line("color::blue = {}", color::blue);

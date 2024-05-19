@@ -109,6 +109,6 @@ namespace tool_bar_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(tool_bar_example::form1 {});
 }

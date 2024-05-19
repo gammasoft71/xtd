@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::io;
 
-auto main()->int {
+auto main() -> int {
   auto di = directory_info {"."};
   console::write_line("full_name = {}", di.full_name());
   console::write_line("  attributes = {}", di.attributes());

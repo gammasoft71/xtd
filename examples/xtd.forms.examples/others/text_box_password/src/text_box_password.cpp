@@ -30,6 +30,6 @@ namespace text_box_password_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(text_box_password_example::form1 {});
 }

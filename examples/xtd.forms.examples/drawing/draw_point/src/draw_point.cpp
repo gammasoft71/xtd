@@ -48,6 +48,6 @@ namespace draw_point_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(draw_point_example::form1 {});
 }

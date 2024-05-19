@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::write_line("The current buffer height is {} rows.", console::buffer_height());
   console::write_line("The current buffer width is {} columns.", console::buffer_width());
 }

@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto str = ustring::empty_string;
   auto nl = environment::new_line();
   

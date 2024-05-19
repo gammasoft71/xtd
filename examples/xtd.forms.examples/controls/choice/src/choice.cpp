@@ -34,6 +34,6 @@ namespace choice_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(choice_example::form1 {});
 }

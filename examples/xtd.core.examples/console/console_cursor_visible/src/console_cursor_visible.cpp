@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto m1 = "\nThe cursor is {0}.\nType any text then press Enter. "
   "Type '+' in the first column to show \n"
   "the cursor, '-' to hide the cursor, "

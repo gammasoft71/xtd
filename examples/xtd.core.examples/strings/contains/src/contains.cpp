@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto s = "This is a literal string";
   console::write_line("The string: \""_s + s + "\""_s + (ustring {s}.contains("is") ? " contains " : " does not contain ") + "\"is\" substring."_s);
   console::write_line("The string: \""_s + s + "\""_s + (ustring {s}.contains("z") ? " contains " : " does not contain ") + "\"z\" character."_s);

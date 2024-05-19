@@ -32,6 +32,6 @@ namespace up_down_button_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(up_down_button_example::form1 {});
 }

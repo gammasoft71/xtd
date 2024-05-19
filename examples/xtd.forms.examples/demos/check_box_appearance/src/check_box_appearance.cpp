@@ -245,6 +245,6 @@ private:
   check_box check_box_demo;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

@@ -5,7 +5,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto names = vector {"Bruce", "Alfred", "Tim", "Richard"};
   
   auto print = action<const ustring&> {[](const ustring & value) {

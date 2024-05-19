@@ -41,6 +41,6 @@ private:
   message_dialog dialog;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

@@ -53,6 +53,6 @@ namespace link_label_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(link_label_example::form1 {});
 }

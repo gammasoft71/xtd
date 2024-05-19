@@ -11,7 +11,7 @@ void trace_message(const ustring& message, const xtd::diagnostics::stack_frame& 
   console::write_line("File line number: {}", stack_frame.get_file_line_number());
 }
 
-auto main()->int {
+auto main() -> int {
   trace_message("Something has happened.", csf_);
   // trace_message("Something has happened.", csf_); is same as :
   //

@@ -60,6 +60,6 @@ namespace toggle_light_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(toggle_light_example::main_form {});
 }

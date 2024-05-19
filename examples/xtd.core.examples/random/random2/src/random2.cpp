@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   // Instantiate random number generator using system-supplied value as seed.
   auto rand = xtd::random {};
   

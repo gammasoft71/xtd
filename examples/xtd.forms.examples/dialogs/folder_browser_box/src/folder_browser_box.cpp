@@ -32,6 +32,6 @@ private:
   ustring selected_path;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

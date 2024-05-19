@@ -34,7 +34,7 @@ private:
   control control1;
 };
 
-auto main()->int {
+auto main() -> int {
   trace_form trace_form;
   application::run(form1 {});
 }

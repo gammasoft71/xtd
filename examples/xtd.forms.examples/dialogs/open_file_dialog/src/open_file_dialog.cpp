@@ -39,6 +39,6 @@ private:
   ustring file_name;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

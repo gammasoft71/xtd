@@ -19,7 +19,7 @@ private:
 
 using characters = vector<character>;
 
-auto main()->int {
+auto main() -> int {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
     cout << ustring::format("{}", c) << endl;
 }

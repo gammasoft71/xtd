@@ -34,6 +34,6 @@ namespace form_paint_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(form_paint_example::form1 {});
 }

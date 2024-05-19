@@ -52,6 +52,6 @@ namespace form_background_image2 {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(::form_background_image2::form1 {});
 }

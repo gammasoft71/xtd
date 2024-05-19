@@ -18,7 +18,7 @@ namespace interface_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   auto stringable = as<interface_example::istringable>(make_shared<interface_example::program>());
   console::write_line(stringable->to_string());
 }

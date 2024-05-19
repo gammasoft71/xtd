@@ -22,6 +22,6 @@ namespace text_box_multiline_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(text_box_multiline_example::form1 {});
 }

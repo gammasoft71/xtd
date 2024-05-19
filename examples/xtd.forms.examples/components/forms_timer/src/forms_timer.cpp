@@ -43,6 +43,6 @@ namespace timer_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(timer_example::form1 {});
 }

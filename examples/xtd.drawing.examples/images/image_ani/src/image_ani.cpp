@@ -7,7 +7,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::io;
 
-auto main()->int {
+auto main() -> int {
   auto img = image_ani::properties::resources::gammasoft_ani();
   img.save(path::combine(path::get_temp_path(), "image_ani.png"));
   process::start(path::combine(path::get_temp_path(), "image_ani.png"));

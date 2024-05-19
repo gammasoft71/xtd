@@ -5,7 +5,7 @@
 using namespace xtd;
 using namespace xtd::io;
 
-auto main()->int {
+auto main() -> int {
   environment::current_directory(environment::get_folder_path(environment::special_folder::desktop));
   console::write_line("Directory entry:   " + path::get_full_path("."));
 }

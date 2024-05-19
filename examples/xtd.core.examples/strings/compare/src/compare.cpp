@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto result = ustring::compare("Aaa", "Baa");
   if (result < 0)
     console::write_line("Aaa < Baa");

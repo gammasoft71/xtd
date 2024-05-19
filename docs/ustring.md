@@ -48,7 +48,7 @@ The following code shows how to convert [xtd::ustring](https://gammasoft71.githu
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s1 = "UTF-8 (65001) string value";
   
   auto s2 = convert_string::to_u32string(s1);
@@ -78,7 +78,7 @@ The following code shows how to convert [std::u16string](https://en.cppreference
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   u16string s1 = u"UTF-8 (65001) string value";
   
   auto s2 = as<ustring>(s1);
@@ -101,7 +101,7 @@ There are some literals operators for xtd::ustring:
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = "This is a "_s + "simple string"_s;
   console::write_line(s);
 }
@@ -115,7 +115,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sb;
   console::write_line("0b{}", s);
 }
@@ -129,7 +129,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 1_sb2;
   console::write_line("0b{}", s);
 }
@@ -143,7 +143,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 3_sb4;
   console::write_line("0b{}", s);
 }
@@ -157,7 +157,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sb8;
   console::write_line("0b{}", s);
 }
@@ -171,7 +171,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sb16;
   console::write_line("0b{}", s);
 }
@@ -185,7 +185,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sb32;
   console::write_line("0b{}", s);
 }
@@ -199,7 +199,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sb64;
   console::write_line("0b{}", s);
 }
@@ -213,7 +213,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sd;
   console::write_line(s);
 }
@@ -227,7 +227,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 4.2_sd;
   console::write_line(s);
 }
@@ -241,7 +241,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sx;
   console::write_line("0x{}", s);
 }
@@ -255,7 +255,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 10_sx2;
   console::write_line("0x{}", s);
 }
@@ -269,7 +269,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sx4;
   console::write_line("0x{}", s);
 }
@@ -283,7 +283,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sx8;
   console::write_line("0x{}", s);
 }
@@ -297,7 +297,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sX;
   console::write_line("0x{}", s);
 }
@@ -311,7 +311,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 10_sX2;
   console::write_line("0x{}", s);
 }
@@ -325,7 +325,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sX4;
   console::write_line("0x{}", s);
 }
@@ -339,7 +339,7 @@ auto main()->int {
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   ustring s = 42_sX8;
   console::write_line("0x{}", s);
 }

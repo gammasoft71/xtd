@@ -5,7 +5,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   cout << background_color(console_color::blue) << foreground_color(console_color::white) << "Hello, World!" << reset_color() << endl;
 }
 

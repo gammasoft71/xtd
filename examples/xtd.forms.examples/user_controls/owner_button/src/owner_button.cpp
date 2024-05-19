@@ -71,6 +71,6 @@ namespace owner_button_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(owner_button_example::form1 {});
 }

@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   cout << ustring::sprintf("%f", 12.345) << endl;
   cout << ustring::sprintf("%F", 12.345) << endl;
   cout << ustring::sprintf("%e", 12.345) << endl;

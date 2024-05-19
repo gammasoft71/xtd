@@ -27,7 +27,7 @@ private:
   button button1;
 };
 
-auto main()->int {
+auto main() -> int {
   auto df = debug_form {};
   df.back_color(xtd::drawing::color::black);
   df.fore_color(xtd::drawing::color::lime);

@@ -1109,7 +1109,7 @@ namespace xtd {
     ///
     /// using namespace xtd;
     ///
-    /// auto main()->int {
+    /// auto main() -> int {
     ///   console::write_line("name = {}", typeid(xtd::date_time).name());
     ///   console::write_line("demangled name = {}", ustring::demangle(typeid(xtd::date_time).name()));
     /// }

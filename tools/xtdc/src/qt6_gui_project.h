@@ -130,7 +130,7 @@ namespace xtdc_command {
         xtd::ustring::format("using namespace {};", name),
         "",
         "// The main entry point for the application.",
-        "auto main(int argc, char* argv[])->int {",
+        "auto main(int argc, char* argv[]) -> int {",
         "  QApplication application(argc, argv);",
         "  Window1 window1;",
         "  window1.show();",

@@ -11,7 +11,7 @@ enum_(, enum_test,
   value_four
 );
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("value = {}", enum_object(enum_test::value_four).to_int32());
   console::write_line("as<int> = {}", as<int>(enum_test::value_four));

@@ -57,6 +57,6 @@ namespace progress_bar_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(progress_bar_example::form1 {});
 }

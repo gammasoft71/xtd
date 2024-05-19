@@ -36,6 +36,6 @@ namespace font_family_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(font_family_example::form1 {});
 }

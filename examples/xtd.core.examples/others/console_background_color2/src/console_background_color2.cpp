@@ -4,7 +4,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::out << background_color(console_color::dark_blue) << "                    " << reset_color() << environment::new_line;
   console::out << background_color(console_color::blue) << "                    " << reset_color() << environment::new_line;
   console::out << environment::new_line;

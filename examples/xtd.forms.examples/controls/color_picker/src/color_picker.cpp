@@ -49,6 +49,6 @@ namespace color_picker_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(color_picker_example::form1 {});
 }

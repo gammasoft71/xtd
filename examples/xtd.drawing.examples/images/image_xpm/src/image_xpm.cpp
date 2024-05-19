@@ -7,7 +7,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::io;
 
-auto main()->int {
+auto main() -> int {
   auto bmp = bitmap {gammasoft_xpm};
   bmp.save(path::combine(path::get_temp_path(), "image_xpm.png"));
   process::start(path::combine(path::get_temp_path(), "image_xpm.png"));

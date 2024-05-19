@@ -46,6 +46,6 @@ private:
   vector<unique_ptr<tab_page>> colored_tab_pages;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

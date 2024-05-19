@@ -96,6 +96,6 @@ namespace context_menu_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(context_menu_example::form1 {});
 }

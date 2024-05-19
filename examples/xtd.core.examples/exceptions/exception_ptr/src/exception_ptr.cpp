@@ -5,7 +5,7 @@
 using namespace xtd;
 using namespace xtd::threading;
 
-auto main()->int {
+auto main() -> int {
   auto exception_pointer = std::exception_ptr {};
   
   auto thread1 = thread {[&] {

@@ -4,7 +4,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::out << "Hello, " << "World!" << environment::new_line;
   console::out << "Value = " << 42 << environment::new_line;
   console::out << "Value (Hex) = 0x" << int32_object(42).to_string("X") << environment::new_line;

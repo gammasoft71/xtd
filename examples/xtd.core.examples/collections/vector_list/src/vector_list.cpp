@@ -12,7 +12,7 @@ void print_values(const collection_t& my_list) {
   console::write_line();
 }
 
-auto main()->int {
+auto main() -> int {
   // Creates and initializes a new vector_list.
   vector_list my_vl;
   my_vl.emplace_back("Hello");

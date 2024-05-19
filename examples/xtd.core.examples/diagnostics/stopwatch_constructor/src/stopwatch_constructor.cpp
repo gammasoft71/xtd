@@ -7,7 +7,7 @@ using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::threading;
 
-auto main()->int {
+auto main() -> int {
   auto stopwatch = xtd::diagnostics::stopwatch {};
   stopwatch.start();
   thread::sleep(10000_ms);

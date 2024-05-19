@@ -67,7 +67,7 @@ void play(const vector<note>& tune) {
   }
 }
 
-auto main()->int {
+auto main() -> int {
   // Declare the first few notes of the song, "Mary Had A Little Lamb".
   auto mary = vector {
     note(tone::b, duration::quarter),

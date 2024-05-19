@@ -6,7 +6,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-auto main()->int {
+auto main() -> int {
   try {
     using_(auto my_process = process {}) {
       my_process.start_info().use_shell_execute(false);

@@ -33,7 +33,7 @@ namespace v_scroll_bar_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   auto df = debug_form {};
   application::run(v_scroll_bar_example::form1 {});
 }

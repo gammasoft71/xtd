@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto now = xtd::date_time::now();
   cout << now << endl;
   cout << date_time::sprintf("%Y", now) << endl;

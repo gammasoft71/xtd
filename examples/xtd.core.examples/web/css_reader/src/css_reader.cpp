@@ -13,7 +13,7 @@ void write_selectors(const selector_map& selectors) {
   }
 }
 
-auto main()->int {
+auto main() -> int {
   auto reader = css_reader {".user_box {\n"
     "  display: none;\n"
     "  position: fixed;\n"

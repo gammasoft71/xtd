@@ -20,6 +20,6 @@ namespace hello_world_paint_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(hello_world_paint_example::main_form());
 }

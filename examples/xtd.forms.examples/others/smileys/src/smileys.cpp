@@ -5,7 +5,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto main_form = form::create("Smileys example");
   main_form.auto_size_mode(auto_size_mode::grow_and_shrink).auto_size(true).font({main_form.font(), 48});
   auto emoticons_label = label::create(main_form,

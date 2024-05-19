@@ -48,6 +48,6 @@ namespace list_box_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(list_box_example::form1 {});
 }

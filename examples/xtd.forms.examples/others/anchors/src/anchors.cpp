@@ -69,6 +69,6 @@ private:
   button bottom_right_button;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(main_form());
 }

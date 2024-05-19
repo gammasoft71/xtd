@@ -142,7 +142,7 @@
 /// #include <vector>
 /// #include <xtd/xtd>
 ///
-/// auto main()->int {
+/// auto main() -> int {
 ///   std::vector names = {"Adam", "Bridgette", "Carla", "Daniel", "Ebenezer", "Francine", "George"};
 ///   std::vector hours = {40.0, 6.667, 40.39, 82.0, 40.333, 80.0, 16.75};
 ///

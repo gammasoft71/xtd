@@ -143,7 +143,7 @@ namespace unit_tests {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return gtest_unit_test().run();
   // is same :
   // return unit_test(std::make_unique<gtest_event_listener>()).run();

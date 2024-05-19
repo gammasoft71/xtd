@@ -36,6 +36,6 @@ namespace loading_indicators_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(loading_indicators_example::form1 {});
 }

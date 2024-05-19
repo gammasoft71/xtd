@@ -10,7 +10,7 @@ namespace static_object2_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   // uncomment next line cause build error with call implicitly-deleted default constructor.
   //auto program = static_object2_example::program {};
   

@@ -42,6 +42,6 @@ private:
   button button_open_multiple_files;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

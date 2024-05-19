@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto strings = ustring("One Two Three\tFour\nFive").split();
   
   console::write_line("strings.size = {}", strings.size());

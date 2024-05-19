@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::threading;
 
-auto main()->int {
+auto main() -> int {
   auto cki = console_key_info {};
   
   do {

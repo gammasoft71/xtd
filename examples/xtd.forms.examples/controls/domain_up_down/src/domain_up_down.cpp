@@ -30,6 +30,6 @@ namespace domain_up_down_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(domain_up_down_example::form1 {});
 }

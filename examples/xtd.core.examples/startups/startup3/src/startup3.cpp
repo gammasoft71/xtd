@@ -19,12 +19,12 @@ namespace startup3_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return startup::safe_run(startup3_example::program::main);
 }
 // Is approximately the same as :
 //
-// auto main()->int {
+// auto main() -> int {
 //   try {
 //     auto args = xtd::environment::get_command_line_args();
 //     startup3_example::program::main({args.begin() + 1, args.end()});

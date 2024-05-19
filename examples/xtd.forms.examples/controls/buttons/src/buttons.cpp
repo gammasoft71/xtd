@@ -4,7 +4,7 @@
 
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto main_form = form::create("Buttons example", xtd::drawing::point {100, 200}, {450, 200});
   auto actual_size_button = buttons::actual_size(main_form, {10, 10}, {100, 25});
   auto zoom_in_button = buttons::zoom_in(main_form, {120, 10}, {100, 25});

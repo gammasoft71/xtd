@@ -32,7 +32,7 @@ private:
   label text_label;
 };
 
-auto main()->int {
+auto main() -> int {
   //translator::language("ar");
   //translator::language("es");
   //translator::language("fr");

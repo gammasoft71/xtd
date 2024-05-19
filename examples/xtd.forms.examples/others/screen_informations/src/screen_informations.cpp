@@ -42,6 +42,6 @@ private:
   text_box screen_informations_text_box;
 };
 
-auto main()->int {
+auto main() -> int {
   xtd::forms::application::run(main_form());
 }

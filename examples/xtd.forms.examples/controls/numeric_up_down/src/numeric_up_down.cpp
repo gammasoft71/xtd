@@ -44,6 +44,6 @@ namespace numeric_up_down_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(numeric_up_down_example::form1 {});
 }

@@ -23,7 +23,7 @@ public:
   button ok_button;
 };
 
-auto main()->int {
+auto main() -> int {
   form form;
   form.text("Dialog example");
   

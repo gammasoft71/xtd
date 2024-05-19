@@ -45,6 +45,6 @@ namespace line_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(line_example::form1 {});
 }

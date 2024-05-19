@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::write_line();
   // Invoke this sample with an arbitrary set of command line arguments.
   console::write_line("command_line: {0}", environment::command_line());

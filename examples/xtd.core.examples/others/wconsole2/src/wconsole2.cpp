@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::out << L"Hello ";
   console::out << L"World!" << endl;
   console::out << L"Enter your name: ";

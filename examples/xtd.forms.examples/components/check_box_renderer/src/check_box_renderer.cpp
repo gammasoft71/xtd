@@ -103,6 +103,6 @@ namespace check_box_renderer_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(check_box_renderer_example::form1 {});
 }

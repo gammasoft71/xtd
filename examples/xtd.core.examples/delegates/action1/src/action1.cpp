@@ -16,7 +16,7 @@ void write_line(const ustring& message) {
   console::write_line(message);
 }
 
-auto main()->int {
+auto main() -> int {
   auto message_target = display_message {};
   
   if (environment::get_command_line_args().size() > 1)

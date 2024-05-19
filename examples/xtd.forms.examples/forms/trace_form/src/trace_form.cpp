@@ -28,7 +28,7 @@ private:
   button button1;
 };
 
-auto main()->int {
+auto main() -> int {
   auto tf = trace_form {};
   tf.back_color(color::navy);
   tf.fore_color(color::white);

@@ -48,6 +48,6 @@ namespace wnd_proc_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(wnd_proc_example::form1 {});
 }

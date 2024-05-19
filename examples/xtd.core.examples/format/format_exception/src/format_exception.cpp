@@ -5,7 +5,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   cout << ustring::format("{}", exception()) << endl;
   cout << ustring::format("{}", invalid_argument("Invalid argument")) << endl;
   cout << ustring::format("{}", system_exception("System exception")) << endl;

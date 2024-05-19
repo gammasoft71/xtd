@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto result_str = ustring::join(", ", {"One", "Two", "Three", "Four", "Five"});
   console::write_line(result_str);
 }

@@ -225,7 +225,7 @@ namespace example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   //application::enable_dark_mode();
   //application::enable_light_mode();
   application::run(example::form1 {});

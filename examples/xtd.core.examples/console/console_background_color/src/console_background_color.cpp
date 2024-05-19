@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::background_color(console_color::dark_blue);
   console::write_line("                    ");
   console::background_color(console_color::blue);

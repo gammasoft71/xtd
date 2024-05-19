@@ -3,7 +3,7 @@
 
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   xtd::drawing::rectangle area = screen::primary_screen().working_area();
   
   form form1;

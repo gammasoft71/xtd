@@ -156,7 +156,7 @@ public:
   }
 };
 
-auto main()->int {
+auto main() -> int {
   operations_timer::display_timer_properties();
   
   console::write_line();

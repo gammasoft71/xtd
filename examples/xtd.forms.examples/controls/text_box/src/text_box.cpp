@@ -32,6 +32,6 @@ namespace text_box_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(text_box_example::form1 {});
 }

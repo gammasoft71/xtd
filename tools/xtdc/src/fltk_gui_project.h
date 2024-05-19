@@ -105,7 +105,7 @@ namespace xtdc_command {
         xtd::ustring::format("using namespace {};", name),
         "",
         "// The main entry point for the application.",
-        "auto main(int argc, char* argv[])->int {",
+        "auto main(int argc, char* argv[]) -> int {",
         "  Window1 window;",
         "  window.show(argc, argv);",
         "  return Fl::run();",

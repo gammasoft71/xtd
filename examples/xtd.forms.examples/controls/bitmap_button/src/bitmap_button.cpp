@@ -51,7 +51,7 @@ private:
   int button2_clicked = 0;
 };
 
-auto main()->int {
+auto main() -> int {
   //application::system_controls(true);
   application::run(form1 {});
 }

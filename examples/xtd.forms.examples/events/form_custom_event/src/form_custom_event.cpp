@@ -42,6 +42,6 @@ namespace custom_event_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(custom_event_example::form1 {});
 }

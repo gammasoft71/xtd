@@ -75,7 +75,7 @@ namespace xtdc_command {
       std::vector<xtd::ustring> lines {
         "#include <xtd_c/xtd_c>",
         "",
-        "auto main()->int {",
+        "auto main() -> int {",
         "  xtd_forms_control* form1 = xtd_forms_form_create();",
         "  xtd_forms_control_set_text(form1, \"form1\");",
         "  xtd_forms_control_set_client_size(form1, (xtd_drawing_size){.width=800, .height=450});",

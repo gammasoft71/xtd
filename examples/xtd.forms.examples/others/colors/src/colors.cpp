@@ -37,6 +37,6 @@ namespace colors_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(colors_example::main_form {});
 }

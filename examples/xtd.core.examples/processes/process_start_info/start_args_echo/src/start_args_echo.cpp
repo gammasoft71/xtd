@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-auto main()->int {
+auto main() -> int {
   auto start_info = process_start_info {"args_echo"};
   start_info.use_shell_execute(false);
   

@@ -118,7 +118,7 @@ namespace xtd {
   /// @endcode
   /// The following code then instantiates the provider and the observer.
   /// @code
-  /// auto main()->int {
+  /// auto main() -> int {
   ///   // Define a provider and two observers.
   ///   location_tracker provider;
   ///   location_reporter reporter1 {"Fixed GPS"};

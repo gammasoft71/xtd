@@ -24,7 +24,7 @@ public:
   }
 };
 
-auto main()->int {
+auto main() -> int {
   auto write = writer {};
   
   write += [](const ustring & str)  {

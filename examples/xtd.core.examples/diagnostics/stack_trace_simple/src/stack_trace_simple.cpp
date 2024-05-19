@@ -41,7 +41,7 @@ private:
   };
 };
 
-auto main()->int {
+auto main() -> int {
   auto sample = stack_trace_sample {};
   try {
     sample.my_public_method();

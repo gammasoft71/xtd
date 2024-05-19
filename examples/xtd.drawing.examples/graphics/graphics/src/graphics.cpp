@@ -14,7 +14,7 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
 using namespace xtd::io;
 
-auto main()->int {
+auto main() -> int {
   auto drawing_bitmap = bitmap {640, 480};
   auto graphics = graphics::from_image(drawing_bitmap);
   graphics.clear(color::cyan);
