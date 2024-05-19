@@ -121,7 +121,7 @@ When you create a label and add it to the main window as in the example below :
 ```cpp
 #include <xtd/xtd>
 
-auto main()->int {
+auto main() -> int {
   xtd::forms::label my_label;
   my_label.text("Hello, World!");
 
@@ -148,7 +148,7 @@ void add_label(xtd::forms::form& f) {
   f.controls().push_back(my_label);
 }
 
-auto main()->int {
+auto main() -> int {
   xtd::forms::form main_form;
   add_label(main_form);
   
@@ -171,7 +171,7 @@ auto add_label(xtd::forms::form& f) {
   return my_label;
 }
 
-auto main()->int {
+auto main() -> int {
   xtd::forms::form main_form;
   auto my_label = add_label(main_form);
   
@@ -203,7 +203,7 @@ private:
   xtd::forms::label my_label;
 };
 
-auto main()->int {
+auto main() -> int {
   xtd::forms::application::run(main_form());
 }
 ```
@@ -273,7 +273,7 @@ private:
   form form2;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```

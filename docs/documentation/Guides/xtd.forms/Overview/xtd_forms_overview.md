@@ -945,7 +945,7 @@ private:
   label label2;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(main_form());
 }
 ```
@@ -1037,7 +1037,7 @@ private:
   button fill_button;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(main_form());
 }
 ```
@@ -1121,7 +1121,7 @@ private:
   button bottom_right_button;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(main_form());
 }
 ```
@@ -1170,7 +1170,7 @@ private:
   button button1;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(main_form());
 }
 ```
@@ -1257,7 +1257,7 @@ target_type(GUI_APPLICATION)
 
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto main_form = form::create("Resources example", {0, 0}, {800, 450});
   auto main_tab_control = tab_control::create(main_form);
   main_tab_control.dock(dock_style::fill);

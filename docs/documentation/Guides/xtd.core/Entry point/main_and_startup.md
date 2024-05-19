@@ -29,7 +29,7 @@ The [xtd::environment](https://gammasoft71.github.io/xtd/reference_guides/latest
 
 using namespace xtd;
 
-int main() {
+auto main() -> int {
   // Write the command line to the console output
   console::write_line(environment::command_line());
 
@@ -61,7 +61,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static void main() {
+    static auto main() -> void {
       try {
         // your code
       } catch(const std::exception& e) {
@@ -71,7 +71,7 @@ namespace examples {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return xtd::startup::safe_run(examples::program::main);
 }
 ```
@@ -90,7 +90,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static void main() {
+    static auto main() -> void {
       // Write arguments to the console output
       for (auto arg : environment::get_command_line_args())
         console::write_line(arg);
@@ -101,7 +101,7 @@ namespace examples {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return xtd::startup::safe_run(examples::program::main);
 }
 ```
@@ -116,7 +116,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main() {
+    static auto main() -> int {
       // Write arguments to the console output
       for (auto arg : environment::get_command_line_args())
         console::write_line(arg);
@@ -126,7 +126,7 @@ namespace examples {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return xtd::startup::safe_run(examples::program::main);
 }
 ```
@@ -153,7 +153,7 @@ namespace examples {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return xtd::startup::safe_run(examples::program::main);
 }
 ```
@@ -179,7 +179,7 @@ namespace examples {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return xtd::startup::safe_run(examples::program::main);
 }
 ```
@@ -195,7 +195,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static void main(int argc, char* argv[]) {
+    static auto main(int argc, char* argv[]) -> void {
       // Write arguments to the console output
       for (auto arg : {argv, argv + argc})
         console::write_line(arg);
@@ -206,7 +206,7 @@ namespace examples {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return xtd::startup::safe_run(examples::program::main);
 }
 ```
@@ -222,7 +222,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main(int argc, char* argv[]) {
+    static auto main(int argc, char* argv[]) -> int {
       // Write arguments to the console output
       for (auto arg : {argv, argv + argc})
         console::write_line(arg);
@@ -232,7 +232,7 @@ namespace examples {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return xtd::startup::safe_run(examples::program::main);
 }
 ```
@@ -247,7 +247,7 @@ Behind this keyword there is a `main` global function that call `main` static me
 
 ```cpp
 #define startup_(main_class) \
-  auto main(int argc, char* argv[])->int {\
+  auto main(int argc, char* argv[]) -> int {\
     return xtd::startup::safe_run(main_method, argc, argv);\
   }\
   intptr_t __opaque_sftews__ = 0
@@ -267,7 +267,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static void main() {
+    static auto main() -> void {
       try {
         // your code
       } catch(const std::exception& e) {
@@ -294,7 +294,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static void main() {
+    static auto main() -> void {
       // Write arguments to the console output
       for (auto arg : environment::get_command_line_args())
         console::write_line(arg);
@@ -318,7 +318,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main() {
+    static auto main() -> int {
       // Write arguments to the console output
       for (auto arg : environment::get_command_line_args())
         console::write_line(arg);
@@ -391,7 +391,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static void main(int argc, char* argv[]) {
+    static auto main(int argc, char* argv[]) -> void {
       // Write arguments to the console output
       for (auto arg : {argv, argv + argc})
         console::write_line(arg);
@@ -416,7 +416,7 @@ using namespace xtd;
 namespace examples {
   class program {
   public:
-    static int main(int argc, char* argv[]) {
+    static auto main(int argc, char* argv[]) -> int {
       // Write arguments to the console output
       for (auto arg : {argv, argv + argc})
         console::write_line(arg);

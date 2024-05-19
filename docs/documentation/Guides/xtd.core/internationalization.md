@@ -117,14 +117,14 @@ To change the application locale, use [std::locale::global](https://en.cpprefere
 The following example show how to change the locale to french (France).
 
 ```cpp
-auto main()->int {
+auto main() -> int {
   std::locale::global(std::locale {"fr_FR.utf-8"});
 }
 ```
 The following example show how to change the locale to russian (Russia).
 
 ```cpp
-auto main()->int {
+auto main() -> int {
   std::locale::global(std::locale {"ru_RU.utf-8"});
 }
 ```
@@ -134,14 +134,14 @@ Or use [xtd::translate::locale](https://gammasoft71.github.io/xtd/reference_guid
 The following example show how to change the locale to french (France).
 
 ```cpp
-auto main()->int {
+auto main() -> int {
   xtd::translate::locale("fr_FR");
 }
 ```
 The following example show how to change the locale to russian (Russia).
 
 ```cpp
-auto main()->int {
+auto main() -> int {
   xtd::translate::locale("ru_RU");
 }
 ```
@@ -153,14 +153,14 @@ To change the application language without changing locale use [xtd::translate::
 The following example show how to change the language to french (France).
 
 ```cpp
-auto main()->int {
+auto main() -> int {
   xtd::translate::language("fr");
 }
 ```
 The following example show how to change the language to russian (Russia).
 
 ```cpp
-auto main()->int {
+auto main() -> int {
   xtd::translate::language("ru");
 }
 ```
@@ -176,7 +176,7 @@ To mark a string for translation use [xtd::translator::translate](https://gammas
 The following example shows how to marks a string for translation with [xtd::translator::translate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1translator.html#ad0cb6175fa980d928321600c1156d6f2) method.
 
 ```cpp
-auto main()->int {
+auto main() -> int {
   auto str = translator::translate("This is a sor translation tring fexample.");
 
   console::write_line(str);
@@ -186,7 +186,7 @@ auto main()->int {
 The following example shows how to marks a string for translation with  [operator""_t](https://gammasoft71.github.io/xtd/reference_guides/latest/group__literals.html#gad8e2f2486b3591796ad602fe1739178e) literal operator.
 
 ```cpp
-auto main()->int {
+auto main() -> int {
   auto str = "This is a sor translation tring fexample."_t;
 
   console::write_line(str);

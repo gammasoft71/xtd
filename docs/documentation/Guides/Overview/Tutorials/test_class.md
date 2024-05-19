@@ -28,7 +28,7 @@ namespace unit_tests {
   };
 }
 
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   return console_unit_test(argv, argc).run();
 }
 ```
@@ -63,7 +63,7 @@ namespace unit_tests {
   };
 }
 
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   return console_unit_test(argv, argc).run();
 }
 ```
@@ -93,7 +93,7 @@ namespace unit_tests {
   };
 }
 
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   return console_unit_test(argv, argc).run();
 }
 ```

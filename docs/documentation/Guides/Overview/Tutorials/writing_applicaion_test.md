@@ -38,7 +38,7 @@ namespace unit_tests {
 }
 
 
-auto main()->int {
+auto main() -> int {
   return console_unit_test().run();
 }
 ```
@@ -60,7 +60,7 @@ namespace unit_tests {
 }
 
 
-auto main()->int {
+auto main() -> int {
   return xtd::tunit::console_unit_test().run();
 }
 ```
@@ -123,7 +123,7 @@ namespace unit_tests {
   };
 }
 
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   return console_unit_test(argv, argc).run();
 }
 ```
@@ -193,7 +193,7 @@ namespace unit_tests {
   };
 }
 
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   return console_unit_test(argv, argc).run();
 }
 ```
@@ -214,7 +214,7 @@ void trace_message(const string& message, const xtd::diagnostics::stack_frame& s
   cout << "source line number: " << stack_frame.get_file_line_number() << endl;
 }
 
-auto main()->int {
+auto main() -> int {
   trace_message("Something happened.", csf_);
 }
 ```
@@ -235,7 +235,7 @@ void trace_message(const string& message, const xtd::diagnostics::stack_frame& s
   cout << "source line number: " << stack_frame.get_file_line_number() << endl;
 }
 
-auto main()->int {
+auto main() -> int {
   trace_message("Something happened.", xtd::diagnostics::stack_frame(__FILE__, __LINE__, __func__));
 }
 ```
@@ -275,7 +275,7 @@ namespace unit_tests {
   };
 }
 
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   return console_unit_test(argv, argc).run();
 }
 ```
@@ -298,7 +298,7 @@ namespace unit_tests {
   };
 }
 
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   return console_unit_test(argv, argc).run();
 }
 ```

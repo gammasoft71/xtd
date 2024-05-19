@@ -78,7 +78,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -125,7 +125,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -170,7 +170,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -227,7 +227,7 @@ private:
   popup_panel popup_panel1;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }
 ```
@@ -298,7 +298,7 @@ private:
   label label3;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }
 ```
@@ -391,7 +391,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -431,7 +431,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -471,7 +471,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -548,7 +548,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -588,7 +588,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -628,7 +628,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -715,7 +715,7 @@ private:
   label label3;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }
 ```
@@ -768,7 +768,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```
@@ -813,7 +813,7 @@ private:
   button button4;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1());
 }
 ```

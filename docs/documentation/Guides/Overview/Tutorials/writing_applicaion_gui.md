@@ -47,7 +47,7 @@ You will add more code to the constructor in a subsequent procedure.
 Create an instance of the **form1** and run it.
 
 ```cpp
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }
 ```
@@ -175,7 +175,7 @@ private:
   }
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }
 ```

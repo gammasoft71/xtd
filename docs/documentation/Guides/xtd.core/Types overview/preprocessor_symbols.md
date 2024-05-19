@@ -98,7 +98,7 @@ The following code shows how to detect the operating system with the preprocesso
 
 using namespace xtd;
 
-int main() {
+auto main() -> int {
   console::write_line("platform_name=\"{}\"", __platform_name__);
   console::write_line("platform_name=\"{}\"", environment::os_version().name());
 }
@@ -154,7 +154,7 @@ The following code shows how to detect the architecture with the preprocessor sy
 
 using namespace xtd;
 
-int main() {
+auto main() -> int {
   console::write_line("architecture_name=\"{}\"", __architecture_name__);
   console::write_line("architecture_name=\"{}\"", environment::processor_information().architecture_string());
 }
@@ -206,7 +206,7 @@ The following code shows how to detect the compiler with the preprocessor symbol
 
 using namespace xtd;
 
-int main() {
+auto main() -> int {
   console::write_line("compiler_name=\"{}\"", __comiler_name__);
   console::write_line("compiler_name=\"{}\"", environment::compiler_version().name());
 }
@@ -266,7 +266,7 @@ The following code shows how to detect the C++ standard with the preprocessor sy
 
 using namespace xtd;
 
-int main() {
+auto main() -> int {
   console::write_line("standard_name=\"{}\"", __standard_name__);
   console::write_line("standard_name=\"{}\"", environment::cpp_version().name());
 }
@@ -310,7 +310,7 @@ The following code shows how to detect the buil type with the preprocessor symbo
 
 using namespace xtd;
 
-int main() {
+auto main() -> int {
   console::write_line("build_type=\"{}\"", __build_type__);
   console::write_line("build_type=\"{}\"", environment::compiler_version().build_type());
 }
@@ -383,7 +383,7 @@ The following code shows how to detect the xtd folder with the folder symbols:
 
 using namespace xtd;
 
-int main() {
+auto main() -> int {
   console::write_line("target_type=\"{}\"", __TARGET_ID_NAME__);
   console::write_line("target_type=\"{}\"", environment::target_type().name());
 }
@@ -435,7 +435,7 @@ The following code shows how to detect the xtd folder with the folder symbols:
 
 using namespace xtd;
 
-int main() {
+auto main() -> int {
   console::write_line("xtd_themes=\"{}\"", __XTD_THEMES_PATH__);
   console::write_line("xtd_themes=\"{}\"", environment::get_folder_path(environment::special_folder::xtd_themes));
 }
