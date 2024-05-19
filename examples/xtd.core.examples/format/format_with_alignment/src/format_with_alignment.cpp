@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   cout << ustring::format("[{,10}]", 42) << endl;
   cout << ustring::format("[{,-10}]", 42) << endl;
   cout << ustring::format("[{:D10}]", 42) << endl;

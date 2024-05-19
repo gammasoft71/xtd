@@ -47,6 +47,6 @@ private:
   label label3;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

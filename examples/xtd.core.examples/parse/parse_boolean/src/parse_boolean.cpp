@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto b1 = xtd::parse<bool>("true");
   console::write_line(b1);
   auto b2 = xtd::parse<bool>("false");

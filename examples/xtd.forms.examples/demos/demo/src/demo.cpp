@@ -6,7 +6,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   main_menu main_menu1 = forms::main_menu::create_standard_items([&](object & sender, const event_args & e) {
     if (as<menu_item&>(sender).text() == texts::exit()) application::exit();
   });

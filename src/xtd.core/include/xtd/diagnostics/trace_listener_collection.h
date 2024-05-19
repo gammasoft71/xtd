@@ -70,7 +70,7 @@ namespace xtd {
       ///
       /// using xtd::diagnostics;
       ///
-      /// auto main()->int {
+      /// auto main() -> int {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// @endcode
@@ -86,7 +86,7 @@ namespace xtd {
       ///
       /// using xtd::diagnostics;
       ///
-      /// auto main()->int {
+      /// auto main() -> int {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// @endcode

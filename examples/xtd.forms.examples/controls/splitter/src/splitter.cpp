@@ -48,6 +48,6 @@ namespace splitter_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(splitter_example::form1 {});
 }

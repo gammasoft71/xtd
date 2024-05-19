@@ -58,7 +58,7 @@ enum class enum_test {
   value_four
 };
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_name<enum_test>(enum_test::value_four));
   console::write_line("value = {}", enum_integer<enum_test>(enum_test::value_four));
   console::write_line("as<int> = {}", as<int>(enum_test::value_four));
@@ -102,7 +102,7 @@ nav_declare_enum(enum_test, int,
   value_four
 );
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("as<int> = {}", as<int>(enum_test::value_four));
   console::write_line("values = {}", ustring::join(", ", enum_values<enum_test>));
@@ -154,7 +154,7 @@ template<> struct xtd::enum_register<enum_test> {
   explicit operator auto() const noexcept {return xtd::enum_collection<enum_test> {{enum_test::value_one,  "value_one"}, {enum_test::value_two,  "value_two"}, {enum_test::value_three,  "value_three"}, {enum_test::value_four,  "value_four"}};}
 };
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("value = {}", enum_object(enum_test::value_four).to_int32());
   console::write_line("as<int> = {}", as<int>(enum_test::value_four));
@@ -240,7 +240,7 @@ template<> struct xtd::enum_register<test_enum> {
   explicit operator auto() const noexcept {return xtd::enum_collection<test_enum> {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
 };
 
-auto main()->int {
+auto main() -> int {
   auto value = test_enum::value_two | test_enum::value_three;
   console::write_line("value = {}", value);
 }
@@ -274,7 +274,7 @@ template<> struct xtd::enum_register<test_enum> {
   explicit operator auto() const noexcept {return xtd::enum_collection<test_enum> {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
 };
 
-auto main()->int {
+auto main() -> int {
   auto value = test_enum::value_two | test_enum::value_three;
   console::write_line("value = {}", value);
 }
@@ -332,7 +332,7 @@ template<> struct xtd::enum_register<test_enum> {
   explicit operator auto() const noexcept {return xtd::enum_collection<test_enum> {{test_enum::value_one, "value_one"}, {test_enum::value_two, "value_two"}, {test_enum::value_three, "value_three"}, {test_enum::value_four, "value_four"}};}
 };
 
-auto main()->int {
+auto main() -> int {
   auto value = test_enum::value_two | test_enum::value_three;
   console::write_line("value = {}", value);
 }
@@ -377,7 +377,7 @@ template<> struct xtd::enum_register<week_day> {
   explicit operator auto() const noexcept {return xtd::enum_collection<week_day> {{week_day::monday, "monday"}, {week_day::tuesday, "tuesday"}, {week_day::wednesday, "wednesday"}, {week_day::thursday, "thursday"}, {week_day::friday, "friday"}, {week_day::saturday, "saturday"}, {week_day::sunday, "sunday"}};}
 };
 
-auto main()->int {
+auto main() -> int {
   console::write_line("{}", week_day::saturday);
   console::write_line("0b{:b}", week_day::saturday);
   console::write_line("0b{:B}", week_day::saturday);
@@ -433,7 +433,7 @@ template<> struct xtd::enum_register<enum_test> {
   explicit operator auto() const noexcept {return xtd::enum_collection<enum_test> {{enum_test::value_one,  "value_one"}, {enum_test::value_two,  "value_two"}, {enum_test::value_three,  "value_three"}, {enum_test::value_four,  "value_four"}};}
 };
 
-auto main()->int {
+auto main() -> int {
   console::write_line("result = {}", enum_object<>::parse<enum_test>("value_two"));
   console::write_line("result = {}", enum_object<>::parse<enum_test>("VaLuE_fOuR", true));
   try {
@@ -498,7 +498,7 @@ enum_(, enum_test,
   value_four
 );
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("value = {}", enum_object(enum_test::value_four).to_int32());
   console::write_line("as<int> = {}", as<int>(enum_test::value_four));
@@ -535,7 +535,7 @@ enum_ut_(, enum_test, byte,
   value_four
 );
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("value = {}", enum_object(enum_test::value_four).to_byte());
   console::write_line("as<byte> = {}", as<byte>(enum_test::value_four));
@@ -572,7 +572,7 @@ enum_class_(, enum_test,
   value_four
 );
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("value = {}", enum_object(enum_test::value_four).to_int32());
   console::write_line("as<int> = {}", as<int>(enum_test::value_four));
@@ -609,7 +609,7 @@ enum_class_ut_(, enum_test, byte,
   value_four
 );
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("value = {}", enum_object(enum_test::value_four).to_byte());
   console::write_line("as<byte> = {}", as<byte>(enum_test::value_four));
@@ -646,7 +646,7 @@ enum_class_(, enum_test,
   value_four
 );
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("value = {}", enum_object(enum_test::value_four).to_int32());
   console::write_line("as<int> = {}", as<int>(enum_test::value_four));
@@ -683,7 +683,7 @@ enum_struct_ut_(, enum_test, byte,
   value_four
 );
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("value = {}", enum_object(enum_test::value_four).to_byte());
   console::write_line("as<byte> = {}", as<byte>(enum_test::value_four));

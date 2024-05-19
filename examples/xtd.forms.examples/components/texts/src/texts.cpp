@@ -24,7 +24,7 @@ private:
   list_box list_box_texts;
 };
 
-auto main()->int {
+auto main() -> int {
   try {
     //locale::global(locale {"fr_FR.utf-8"});
     locale::global(locale {"zh_CN.utf-8"});

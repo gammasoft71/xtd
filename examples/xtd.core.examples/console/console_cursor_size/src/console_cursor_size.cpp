@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto m0 = "This example increments the cursor size from 1% to 100%:\n";
   auto m1 = "Cursor size = {0}%. (Press any key to continue...)";
   auto sizes = { 1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };

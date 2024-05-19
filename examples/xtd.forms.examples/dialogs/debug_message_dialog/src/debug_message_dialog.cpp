@@ -25,7 +25,7 @@ private:
   button button_show_debug_message;
 };
 
-auto main()->int {
+auto main() -> int {
   auto df = debug_form {};
   application::run(form1 {});
 }

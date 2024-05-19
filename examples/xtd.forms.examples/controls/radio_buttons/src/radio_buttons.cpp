@@ -6,7 +6,7 @@
 
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto form_main = form::create("Radio buttons example");
   auto group_box_alignment = group_box::create(form_main, xtd::drawing::texts::alignment(), {10, 10}, {150, 180});
   auto radio_button_align_left = radio_buttons::align_left(group_box_alignment, true, {20, 20});

@@ -282,7 +282,7 @@ namespace xtd {
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
-      /// auto main()->int {
+      /// auto main() -> int {
       ///   // Make a reference to a directory.
       ///   directory_info di("c:\\");
       ///   // Get a reference to each file in that directory.
@@ -336,7 +336,7 @@ namespace xtd {
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
-      /// auto main()->int {
+      /// auto main() -> int {
       ///   // Create a reference to the current directory.
       ///   directory_info di(environment::current_directory());
       ///   // Create an array representing the files in the current directory.

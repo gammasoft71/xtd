@@ -12,7 +12,7 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::threading;
 
-auto main()->int {
+auto main() -> int {
   auto terminate_app = false;
   
   auto server = thread {[&] {

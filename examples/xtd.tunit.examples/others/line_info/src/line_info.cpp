@@ -12,7 +12,7 @@ void trace_message(const string& message, const stack_frame& sf) {
   cout << "source line number: " << sf.get_file_line_number() << endl;
 }
 
-auto main()->int {
+auto main() -> int {
   trace_message("Something happened.", csf_);
 }
 

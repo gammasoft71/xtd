@@ -58,6 +58,6 @@ private:
   text_box xml_reports_text_box;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(main_form());
 }

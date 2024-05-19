@@ -28,6 +28,6 @@ namespace control_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(control_example::form1 {});
 }

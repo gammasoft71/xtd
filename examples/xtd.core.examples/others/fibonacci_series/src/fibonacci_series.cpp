@@ -14,7 +14,7 @@ auto fibonacci_series(int n) noexcept {
   return numbers;
 }
 
-auto main()->int {
+auto main() -> int {
   console::write_line(ustring::join(", ", fibonacci_series(1000)));
 }
 

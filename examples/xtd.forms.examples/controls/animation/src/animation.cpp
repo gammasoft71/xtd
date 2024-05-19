@@ -53,7 +53,7 @@ namespace animation_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   auto df = debug_form {};
   df.back_color(basic_colors::black());
   df.fore_color(basic_colors::lime());

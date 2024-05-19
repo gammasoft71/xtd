@@ -42,6 +42,6 @@ namespace draw_line_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(draw_line_example::form1 {});
 }

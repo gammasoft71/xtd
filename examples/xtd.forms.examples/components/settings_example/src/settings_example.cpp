@@ -6,7 +6,7 @@
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto main_form = form::create(settings_example::properties::settings::default_settings().text(), form_start_position::manual);
   
   auto back_color_picker = color_picker::create(main_form, main_form.back_color(), {10, 10}, {75, 25});

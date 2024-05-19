@@ -34,6 +34,6 @@ namespace h_scroll_bar_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(h_scroll_bar_example::form1 {});
 }

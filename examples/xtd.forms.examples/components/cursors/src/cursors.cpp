@@ -38,6 +38,6 @@ private:
   panel loading_indicator_panel;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

@@ -7,7 +7,7 @@
 
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto main_form = form::create("Settings example");
   
   auto colored_panel = panel::create(main_form, {10, 100});

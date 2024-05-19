@@ -60,6 +60,6 @@ namespace fill_rounded_rectangle_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(fill_rounded_rectangle_example::form1 {});
 }

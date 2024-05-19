@@ -129,6 +129,6 @@ private:
   switch_button show_in_taskbar_switch_button;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

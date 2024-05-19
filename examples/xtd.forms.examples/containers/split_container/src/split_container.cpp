@@ -35,6 +35,6 @@ private:
   split_container split_container_center;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

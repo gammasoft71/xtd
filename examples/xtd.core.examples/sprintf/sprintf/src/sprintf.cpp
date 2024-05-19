@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   cout << ustring::sprintf("%s %s %d %c", "string", "literal"_s, 42, 'a') << endl;
 }
 

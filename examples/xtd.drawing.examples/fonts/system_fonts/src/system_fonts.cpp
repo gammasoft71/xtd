@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-auto main()->int {
+auto main() -> int {
   console::write_line("caption_font       : {}", system_fonts::caption_font());
   console::write_line("default_font       : {}", system_fonts::default_font());
   console::write_line("dialog_font        : {}", system_fonts::dialog_font());

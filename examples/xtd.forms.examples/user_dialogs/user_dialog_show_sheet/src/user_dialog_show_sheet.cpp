@@ -78,6 +78,6 @@ private:
   label input_text;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   console::out << ustring::format("{},{,10}!", "Hello", "World"_s) << environment::new_line;
 }
 

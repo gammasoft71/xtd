@@ -9,7 +9,7 @@ using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::threading;
 
-auto main()->int {
+auto main() -> int {
   auto terminate_app = false;
   
   auto on_server_accept = [&](async_result ar) {

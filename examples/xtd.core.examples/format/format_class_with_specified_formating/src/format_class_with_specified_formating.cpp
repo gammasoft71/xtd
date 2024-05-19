@@ -31,7 +31,7 @@ private:
 template<>
 string xtd::to_string(const character& value, const string& fmt, const locale& loc) {return value.to_string(fmt);}
 
-auto main()->int {
+auto main() -> int {
   auto c = character {"Jean-Luc Picard", "Captain"};
   cout << ustring::format("{}", c) << endl;
   cout << ustring::format("{:F}", c) << endl;

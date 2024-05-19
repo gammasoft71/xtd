@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   cout << ustring::format("{}", initializer_list<int> {1, 2, 3, 4}) << endl;
   cout << ustring::format("{}", array<int, 4> {1, 2, 3, 4}) << endl;
   cout << ustring::format("{}", forward_list<int> {1, 2, 3, 4}) << endl;

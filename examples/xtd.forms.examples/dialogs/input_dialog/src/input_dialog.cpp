@@ -35,6 +35,6 @@ namespace input_dialog_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(input_dialog_example::form1 {});
 }

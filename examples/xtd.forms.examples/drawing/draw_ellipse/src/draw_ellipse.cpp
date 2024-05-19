@@ -42,6 +42,6 @@ namespace draw_ellipe_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(draw_ellipe_example::form1 {});
 }

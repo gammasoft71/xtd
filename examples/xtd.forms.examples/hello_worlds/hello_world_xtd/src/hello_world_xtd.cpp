@@ -42,6 +42,6 @@ namespace hello_world_xtd_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(hello_world_xtd_example::main_form {});
 }

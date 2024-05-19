@@ -38,7 +38,7 @@ namespace xtd {
 /// using namespace xtd;
 /// using namespace xtd::threading;
 ///
-/// auto main()->int {
+/// auto main() -> int {
 ///   console::write_line("(main) begin");
 ///
 ///   auto mre = manual_reset_event {};

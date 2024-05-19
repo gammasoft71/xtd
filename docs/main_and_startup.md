@@ -51,7 +51,7 @@ Behind this keyword there is a `main` global function that call `main` static me
 
 ```cpp
 #define startup_(main_class) \
-  auto main(int argc, char* argv[])->int {\
+  auto main(int argc, char* argv[]) -> int {\
     try {\
       return __startup__::run(main_class::main, argc, argv);\
     } catch(const std::exception& e) {\

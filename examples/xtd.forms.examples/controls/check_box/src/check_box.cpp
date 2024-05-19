@@ -62,7 +62,7 @@ namespace check_box_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::enable_visual_styles();
   application::run(check_box_example::form1 {});
 }

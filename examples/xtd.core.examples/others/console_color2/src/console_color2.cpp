@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   const auto logo = vector {
     u8"████████████████████████████████████████████████████████████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",

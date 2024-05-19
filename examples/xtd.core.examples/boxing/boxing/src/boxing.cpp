@@ -43,7 +43,7 @@ struct setup {
   xtd::version version;
 };
 
-auto main()->int {
+auto main() -> int {
   auto my_application_setup = setup {10, 10, 300, 300, "My application", {1, 2, 3}};
   
   auto serializer = setup_serializer {};

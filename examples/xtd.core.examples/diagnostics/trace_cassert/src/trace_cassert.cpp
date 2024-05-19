@@ -5,7 +5,7 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-auto main()->int {
+auto main() -> int {
   // Uncomment following lines to remove assert dialog
   //for (auto listener : trace::listeners())
   //  if (is<default_trace_listener>(listener))

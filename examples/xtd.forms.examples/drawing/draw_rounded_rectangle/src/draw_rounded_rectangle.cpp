@@ -42,6 +42,6 @@ namespace draw_rounded_rectangle_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(draw_rounded_rectangle_example::form1 {});
 }

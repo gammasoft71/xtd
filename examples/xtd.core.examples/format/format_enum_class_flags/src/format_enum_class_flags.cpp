@@ -20,7 +20,7 @@ template<> struct xtd::enum_register<text_styles> {
   explicit operator auto() const noexcept {return xtd::enum_collection<text_styles> {{text_styles::normal, "normal"}, {text_styles::bold, "bold"}, {text_styles::italic, "italic"}, {text_styles::underline, "underline"}, {text_styles::strikeout, "strikeout"}};}
 };
 
-auto main()->int {
+auto main() -> int {
   cout << ustring::format("{}", text_styles::bold | text_styles::italic) << endl;
   cout << ustring::format("0b{:b}", text_styles::bold | text_styles::italic) << endl;
   cout << ustring::format("0b{:B}", text_styles::bold | text_styles::italic) << endl;

@@ -22,7 +22,7 @@ template<> struct xtd::enum_register<text_attribute> {
   explicit operator auto() const noexcept {return xtd::enum_collection<text_attribute> {{text_attribute::normal, "normal"}, {text_attribute::bold, "bold"}, {text_attribute::italic, "italic"}, {text_attribute::underline, "underline"}, {text_attribute::strikeout, "strikeout"}};}
 };
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", text_attribute::bold | text_attribute::italic);
   console::write_line("value = {}", enum_object(text_attribute::bold | text_attribute::italic).to_int32());
   console::write_line("as<int> = {}", as<int>(text_attribute::bold | text_attribute::italic));

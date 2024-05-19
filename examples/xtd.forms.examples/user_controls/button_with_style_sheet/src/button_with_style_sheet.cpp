@@ -90,6 +90,6 @@ namespace button_with_style_sheet_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(button_with_style_sheet_example::form1 {});
 }

@@ -11,7 +11,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   timer timer;
   timer.interval(100_ms);
   stopwatch chrono;

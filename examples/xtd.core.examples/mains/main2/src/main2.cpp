@@ -20,7 +20,7 @@ namespace main2_example {
 startup_(main2_example::program::main);
 // Is the same as :
 //
-// auto main()->int {
+// auto main() -> int {
 //   return startup::safe_run(main2_example::program::main);
 // }
 

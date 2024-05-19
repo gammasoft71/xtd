@@ -42,6 +42,6 @@ private:
   bool closed = false;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form_thread());
 }

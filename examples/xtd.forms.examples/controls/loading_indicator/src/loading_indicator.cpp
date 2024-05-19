@@ -50,6 +50,6 @@ namespace loading_indicator_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(loading_indicator_example::form1 {});
 }

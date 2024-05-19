@@ -3,7 +3,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   using_(auto values = {1, 2, 3, 4, 5})
     console::write_line(ustring::join(", ", values));
   

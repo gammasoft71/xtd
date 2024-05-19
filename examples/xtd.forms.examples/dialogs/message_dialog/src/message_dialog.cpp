@@ -37,6 +37,6 @@ private:
   label label_dialog_result;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

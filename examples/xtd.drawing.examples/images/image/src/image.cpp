@@ -5,7 +5,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-auto main()->int {
+auto main() -> int {
   auto bmp = bitmap {logo_xpm};
   
   console::write_line("handle = 0x{:X}", bmp.handle());

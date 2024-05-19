@@ -12,7 +12,7 @@ public:
   }
 };
 
-auto main()->int {
+auto main() -> int {
   // use delegate as std::function with std::bind
   auto td = test_delegate {};
   auto writer = delegate<void(const ustring& str)> {td, &test_delegate::write};

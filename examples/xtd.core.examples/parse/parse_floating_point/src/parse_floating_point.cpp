@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   locale::global(locale {"en_US.UTF-8"}); // change to us for currency
   auto d1 = xtd::parse<double>("12.345");
   console::write_line(d1);

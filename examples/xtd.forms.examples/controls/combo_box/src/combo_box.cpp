@@ -43,6 +43,6 @@ namespace combo_box_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(combo_box_example::form1 {});
 }

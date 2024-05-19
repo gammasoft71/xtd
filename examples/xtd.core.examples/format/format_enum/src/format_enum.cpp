@@ -19,7 +19,7 @@ template<> struct xtd::enum_register<week_day> {
   explicit operator auto() const noexcept {return xtd::enum_collection<week_day> {{week_day::monday, "monday"}, {week_day::tuesday, "tuesday"}, {week_day::wednesday, "wednesday"}, {week_day::thursday, "thursday"}, {week_day::friday, "friday"}, {week_day::saturday, "saturday"}, {week_day::sunday, "sunday"}};}
 };
 
-auto main()->int {
+auto main() -> int {
   cout << ustring::format("{}", week_day::saturday) << endl;
   cout << ustring::format("0b{:b}", week_day::saturday) << endl;
   cout << ustring::format("0b{:B}", week_day::saturday) << endl;

@@ -27,6 +27,6 @@ namespace status_bar_without_panels_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(status_bar_without_panels_example::form1 {});
 }

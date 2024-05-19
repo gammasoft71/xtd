@@ -32,6 +32,6 @@ private:
   button button1;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

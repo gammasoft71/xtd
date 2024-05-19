@@ -41,6 +41,6 @@ private:
   vector<pair<label, label>> items {languages.size()};
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

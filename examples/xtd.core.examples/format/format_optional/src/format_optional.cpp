@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   cout << ustring::format("{}", optional<string>()) << endl;
   cout << ustring::format("{}", optional<string>("Optional string")) << endl;
 }

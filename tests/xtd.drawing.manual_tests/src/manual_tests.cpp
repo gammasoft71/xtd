@@ -35,7 +35,7 @@ void to_ppm(const xtd::ustring& filename, const color& transparent_color = color
   to_ppm(xtd::io::path::combine(xtd::io::path::get_directory_name(filename), xtd::ustring::format("{}{}", xtd::io::path::get_file_name_without_extension(filename), ".ppm")), bitmap(filename), transparent_color);
 }
 
-auto main()->int {
+auto main() -> int {
   //to_ppm("/Users/yves/Desktop/test.png");
   //bitmap img = bitmap(logo_xpm);
   //to_ppm("/Users/yves/Desktop/logo.ppm", img, color::magenta);

@@ -11,7 +11,7 @@ namespace unit_tests {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   // create your own ostream in this case a string stream for example
   auto ss = stringstream {};
   

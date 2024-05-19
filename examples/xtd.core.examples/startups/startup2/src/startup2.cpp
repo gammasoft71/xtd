@@ -17,12 +17,12 @@ namespace startup2_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return startup::safe_run(startup2_example::program::main);
 }
 // Is approximately the same as :
 //
-// auto main()->int {
+// auto main() -> int {
 //   try {
 //     return startup2_example::program::main();
 //   } catch(const std::exception& e) {

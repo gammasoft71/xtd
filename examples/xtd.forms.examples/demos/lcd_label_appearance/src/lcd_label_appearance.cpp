@@ -119,6 +119,6 @@ namespace lcd_label_appearance_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(lcd_label_appearance_example::form_lcd_label());
 }

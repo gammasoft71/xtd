@@ -11,7 +11,7 @@ namespace unit_tests {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   return console_unit_test().run();
   // is same :
   // return unit_test(std::make_unique<ostream_event_listener>(cout)).run();

@@ -32,7 +32,7 @@ private:
   text_box text_box1;
 };
 
-auto main()->int {
+auto main() -> int {
   auto df = debug_form {};
   enable_debug::trace_switch().level(xtd::diagnostics::trace_level::verbose);
   enable_debug::set(enable_debug::key_events | enable_debug::mouse_events, true);

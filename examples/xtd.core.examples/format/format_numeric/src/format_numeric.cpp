@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   locale::global(locale {"en_US.UTF-8"}); // change to us for currency
   cout << ustring::format("{}", 42) << endl;
   cout << ustring::format("0b{:b8}", 42) << endl;

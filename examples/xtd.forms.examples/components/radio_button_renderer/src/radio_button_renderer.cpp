@@ -98,6 +98,6 @@ namespace radio_button_renderer_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(radio_button_renderer_example::form1 {});
 }

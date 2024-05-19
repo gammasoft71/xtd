@@ -4,7 +4,7 @@
 
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto context = application_context {};
   
   auto form1 = form::create("Form 1 (Click the client area to set form as the main form)");

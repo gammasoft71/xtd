@@ -5,7 +5,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-auto main()->int {
+auto main() -> int {
   auto location = point {10, 235};
   console::write_line("location = {}", location);
   

@@ -10,7 +10,7 @@
 /// This example shows how to use
 /// @include tunit_config_main.cpp TUNIT_CONFIG_MAIN
 #if defined(TUNIT_CONFIG_MAIN)
-auto main()->int {
+auto main() -> int {
   return __tunit_main::main();
 }
 #endif

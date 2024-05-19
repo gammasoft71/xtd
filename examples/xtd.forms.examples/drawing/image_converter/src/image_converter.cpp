@@ -579,6 +579,6 @@ namespace image_converter_example {
     panel adjusted_picture_panel = panel::create(picures_panel, {370, 40}, {350, 350});
   };
 }
-auto main()->int {
+auto main() -> int {
   application::run(image_converter_example::form1 {});
 }

@@ -31,6 +31,6 @@ namespace main_menu_create_standard_items_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(main_menu_create_standard_items_example::form1 {});
 }

@@ -20,6 +20,6 @@ namespace application_idle_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(application_idle_example::form1 {});
 }

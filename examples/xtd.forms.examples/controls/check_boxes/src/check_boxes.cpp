@@ -6,7 +6,7 @@
 
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto main_form = form::create("Check boxes example");
   auto font_group_box = group_box::create(main_form, xtd::drawing::texts::font(), {10, 10}, {150, 180});
   auto bold_check_box = check_boxes::bold(font_group_box, {20, 20});

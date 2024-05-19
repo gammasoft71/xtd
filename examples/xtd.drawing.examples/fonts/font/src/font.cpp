@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-auto main()->int {
+auto main() -> int {
   auto font1 = font {font_family::generic_monospace(), 42.0f, font_style::bold};
   console::write_line("font1 = {0}", font1);
   

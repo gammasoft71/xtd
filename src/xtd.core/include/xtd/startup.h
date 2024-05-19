@@ -164,7 +164,7 @@ namespace xtd {
 /// This example show a main method with argument and return code
 /// @include main4.cpp
 #define startup_(main_method) \
-  auto main(int argc, char* argv[])->int { \
+  auto main(int argc, char* argv[]) -> int { \
     return xtd::startup::safe_run(main_method, argc, argv); \
   } \
   intptr_t __opaque_sftews__ = 0 // force to end with semicolon
@@ -177,7 +177,7 @@ namespace xtd {
 /// @ingroup xtd_core keywords
 /// @warning The main_class must ba have a static member main method. For other entry point that main use #startup_ keyword.
 #define startup_class_(main_class) \
-  auto main(int argc, char* argv[])->int { \
+  auto main(int argc, char* argv[]) -> int { \
     return xtd::startup::safe_run(main_class::main, argc, argv); \
   } \
   intptr_t __opaque_sftews__ = 0 // force to end with semicolon

@@ -14,7 +14,7 @@ public:
   }
 };
 
-auto main()->int {
+auto main() -> int {
   using example_function = delegate<void(const ustring&)>;
   auto instance = ::object {};
   auto str = ustring {"World"};

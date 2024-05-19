@@ -104,7 +104,7 @@ namespace xtdc_command {
         "#import \"Window1.h\"",
         "",
         "// The main entry point for the application.",
-        "auto main(int argc, char* argv[])->int {",
+        "auto main(int argc, char* argv[]) -> int {",
         "  [NSApplication sharedApplication];",
         "  [[[[Window1 alloc] init] autorelease] makeMainWindow];",
         "  [NSApp run];",

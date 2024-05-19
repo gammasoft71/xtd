@@ -14,7 +14,7 @@ enum_class_(, text_attribute,
 
 flags_attribute_(, text_attribute);
 
-auto main()->int {
+auto main() -> int {
   console::write_line("name = {}", text_attribute::bold | text_attribute::italic);
   console::write_line("value = {}", enum_object(text_attribute::bold | text_attribute::italic).to_int32());
   console::write_line("as<int> = {}", as<int>(text_attribute::bold | text_attribute::italic));

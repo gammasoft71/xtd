@@ -158,6 +158,6 @@ namespace painting_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(painting_example::form1 {});
 }

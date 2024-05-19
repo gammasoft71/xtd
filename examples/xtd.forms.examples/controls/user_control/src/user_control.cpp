@@ -102,6 +102,6 @@ namespace user_control_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(user_control_example::form1 {});
 }

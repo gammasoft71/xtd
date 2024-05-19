@@ -10,7 +10,7 @@ void write_at(const ustring& s, int x, int y) {
   console::write(s);
 }
 
-auto main()->int {
+auto main() -> int {
   // Clear the screen, then save the top and left coordinates.
   console::clear();
   orig_row = console::cursor_top();

@@ -41,6 +41,6 @@ namespace label_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(label_example::form1 {});
 }

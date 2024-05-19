@@ -22,6 +22,6 @@ namespace hello_world_emoticons_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(hello_world_emoticons_example::main_form {});
 }

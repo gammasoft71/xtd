@@ -6,7 +6,7 @@
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto button1_clicked = 0, button2_clicked = 0;
   auto form1 = xtd::forms::form::create("Emplace example");
   form1.controls().emplace<xtd::forms::button>(form1.controls().begin(), "Button 1", point{50, 50}).click += [&] {

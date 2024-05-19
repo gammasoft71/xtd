@@ -2,7 +2,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   auto orig_width = 0, width = 0;
   auto orig_height = 0, height = 0;
   auto m1 = "The current window width is {0}, and the current window height is {1}.";

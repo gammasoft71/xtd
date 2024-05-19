@@ -39,6 +39,6 @@ namespace picture_box {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(::picture_box::form1 {});
 }

@@ -41,6 +41,6 @@ namespace font_changed_event_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(font_changed_event_example::form1 {});
 }

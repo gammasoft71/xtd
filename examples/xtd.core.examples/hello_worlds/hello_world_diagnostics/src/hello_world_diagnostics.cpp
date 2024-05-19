@@ -3,7 +3,7 @@
 
 using namespace xtd::diagnostics;
 
-auto main()->int {
+auto main() -> int {
   trace::write_line("Hello, World!");
 }
 

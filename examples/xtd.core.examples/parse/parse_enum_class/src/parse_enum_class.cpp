@@ -14,7 +14,7 @@ enum_class_(, week_day,
   sunday
 );
 
-auto main()->int {
+auto main() -> int {
   auto wd1 = parse<week_day>("wednesday");
   console::write_line(wd1);
   auto wd2 = enum_object<>::parse<week_day>("WEDNESDAY", true);

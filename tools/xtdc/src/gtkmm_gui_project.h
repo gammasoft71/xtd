@@ -105,7 +105,7 @@ namespace xtdc_command {
         xtd::ustring::format("using namespace {};", name),
         "",
         "// The main entry point for the application.",
-        "auto main(int argc, char* argv[])->int {",
+        "auto main(int argc, char* argv[]) -> int {",
         "  auto application = Application::create(argc, argv);",
         xtd::ustring::format("  {}::Window1 window1;", name),
         "  window1.show_all();",

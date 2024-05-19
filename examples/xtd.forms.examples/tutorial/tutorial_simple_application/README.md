@@ -39,7 +39,7 @@ startup_(tutorial::simple::main);
 The code behind startup_ macro can be replaced by :
 
 ```cpp
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   tutorial::simple::main();
   return xtd::environment::exit_code();
 }

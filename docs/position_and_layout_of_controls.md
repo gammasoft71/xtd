@@ -101,7 +101,7 @@ private:
   button fill_button;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(main_form());
 }
 ```
@@ -188,7 +188,7 @@ private:
   button bottom_right_button;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(main_form());
 }
 ```
@@ -239,7 +239,7 @@ private:
   button button1;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(main_form());
 }
 ```

@@ -49,6 +49,6 @@ private:
   label color_label = label::create(*this, color_translator::to_html(selected_color), {10, 160});
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

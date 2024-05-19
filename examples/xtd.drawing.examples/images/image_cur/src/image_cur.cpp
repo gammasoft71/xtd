@@ -7,7 +7,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::io;
 
-auto main()->int {
+auto main() -> int {
   auto bmp = image_cur::properties::resources::gammasoft_cur();
   bmp.save(path::combine(path::get_temp_path(), "image_cur.png"));
   process::start(path::combine(path::get_temp_path(), "image_cur.png"));

@@ -26,7 +26,7 @@ namespace main_example {
   };
 }
 
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   return startup::safe_run(main_example::program::main, argc, argv);
 }
 

@@ -6,7 +6,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main(int argc, char* argv[])->int {
+auto main(int argc, char* argv[]) -> int {
   int x = 0;
   //
   if ((argc == 2) && (int32_object::try_parse(argv[1], x) == true) && ((x >= 1) && (x <= 9))) {

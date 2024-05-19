@@ -42,6 +42,6 @@ private:
   radio_button radio_button6 = radio_button::create(layout_panel_group_box2, "radio 6");
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

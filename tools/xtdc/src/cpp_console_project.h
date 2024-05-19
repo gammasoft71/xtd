@@ -59,7 +59,7 @@ namespace xtdc_command {
         "using namespace std;",
         "",
         "// The main entry point for the application.",
-        "auto main(int argc, char* argv[])->int {",
+        "auto main(int argc, char* argv[]) -> int {",
         "  cout << \"Hello, World!\" << endl;",
         "}",
       };

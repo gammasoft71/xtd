@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   environment::program_exit += [] {trace::write_line("The program is stopped");};
   application::application_exit += [] {trace::write_line("The application is stopped");};
   trace::write_line("Before application run");

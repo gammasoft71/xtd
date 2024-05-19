@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   // Change current code page to UTF-8.
   console::output_code_page(65001);
   

@@ -96,6 +96,6 @@ namespace main_menu_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(main_menu_example::form1 {});
 }

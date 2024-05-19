@@ -4,7 +4,7 @@
 
 using namespace xtd;
 
-auto main()->int {
+auto main() -> int {
   const auto formatter = "{0,25}{1,30}";
   
   auto a_double = 0.1111111111111111111;

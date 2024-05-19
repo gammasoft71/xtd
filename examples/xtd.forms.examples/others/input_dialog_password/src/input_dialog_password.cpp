@@ -38,6 +38,6 @@ namespace input_dialog_password_example {
   };
 }
 
-auto main()->int {
+auto main() -> int {
   application::run(input_dialog_password_example::form1 {});
 }

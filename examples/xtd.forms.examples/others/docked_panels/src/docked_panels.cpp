@@ -5,7 +5,7 @@
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto form_main = form::create("Docked panels example");
   form_main.client_size({300, 300});
   

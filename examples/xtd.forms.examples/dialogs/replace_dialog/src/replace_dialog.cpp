@@ -40,6 +40,6 @@ private:
   xtd::forms::replace_dialog replace_dialog;
 };
 
-auto main()->int {
+auto main() -> int {
   application::run(form1 {});
 }

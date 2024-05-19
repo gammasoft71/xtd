@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
-auto main()->int {
+auto main() -> int {
   auto df = debug_form {};
   
   form form1;
