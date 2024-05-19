@@ -62,7 +62,7 @@ namespace xtdc_command {
         "#include <gtk/gtk>",
         "",
         "/* The main entry point for the application. */",
-        "auto main(int argc, char* argv[]) -> int {",
+        "int main(int argc, char* argv[]) {",
         "  gtk_init(&argc, &argv);",
         "  GtkWidget* window1 = gtk_window_new(GTK_WINDOW_TOPLEVEL);",
         "  gtk_window_set_title(GTK_WINDOW(window1), \"Window1\");",
@@ -71,6 +71,7 @@ namespace xtdc_command {
         "  g_signal_connect (window1, \"destroy\", G_CALLBACK(gtk_main_quit), NULL);",
         "  gtk_widget_show(window1);",
         "  gtk_main();",
+        "  return 0;"
         "}",
       };
       
