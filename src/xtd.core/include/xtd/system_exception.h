@@ -6,7 +6,6 @@
 #include "diagnostics/stack_trace.h"
 #include "optional.h"
 #include "core_export.h"
-#include "finally.h"
 #include "literals.h"
 #include "object.h"
 #include "ustring.h"

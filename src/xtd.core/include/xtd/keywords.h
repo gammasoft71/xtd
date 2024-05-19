@@ -4,9 +4,10 @@
 #pragma once
 #include "abstract.h"
 #include "block_scope.h"
-#include "finally.h"
+#include "call_once.h"
 #include "interface.h"
 #include "nameof.h"
+#include "scope_exit.h"
 #include "self.h"
 #include "startup.h"
 #include "typeof.h"

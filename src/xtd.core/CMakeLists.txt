@@ -68,6 +68,8 @@ add_sources(
   include/xtd/byte
   include/xtd/byte_object.h
   include/xtd/byte_object
+  include/xtd/call_once.h
+  include/xtd/call_once
   include/xtd/cdebug.h
   include/xtd/cdebug
   include/xtd/char.h
@@ -176,7 +178,6 @@ add_sources(
   include/xtd/exit_mode
   include/xtd/exit_status.h
   include/xtd/exit_status
-  include/xtd/finally.h
   include/xtd/flags_attribute.h
   include/xtd/flags_attribute
   include/xtd/foreground_color.h
@@ -305,6 +306,8 @@ add_sources(
   include/xtd/sbyte
   include/xtd/sbyte_object.h
   include/xtd/sbyte_object
+  include/xtd/scope_exit.h
+  include/xtd/scope_exit
   include/xtd/self.h
   include/xtd/self
   include/xtd/semaphore.h
