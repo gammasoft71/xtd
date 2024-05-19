@@ -91,30 +91,31 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">struct </span>__xtd_call_once_helper__ { };</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">struct </span>__xtd_call_once_object__ {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    __xtd_call_once_object__(function_t function) { <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>(); }</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  };</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">auto</span> operator +(__xtd_call_once_helper__, function_t&amp;&amp; function) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> __xtd_call_once_object__&lt;function_t&gt;{std::forward&lt;function_t&gt;(function)};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define __xtd_call_once_cat__(name, line) name##line</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define __xtd_call_once_id__(name, line) __xtd_call_once_cat__(name, line)</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85">   72</a></span><span class="preprocessor">#define call_once_ [[maybe_unused]] static auto __xtd_call_once_id__(__xtd__call_once__, __LINE__) = xtd::__xtd_call_once_helper__{} + [&amp;]</span></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">xtd::forms::keys::function</a></div><div class="ttdeci">@ function</div><div class="ttdoc">The FUNCTION modifier key.</div></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structxtd_1_1call__once.html">   54</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1call__once.html">call_once</a> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  };</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">struct </span>__xtd_call_once_object__ {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    __xtd_call_once_object__(function_t function) { function(); }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  };</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">auto</span> operator +(call_once, function_t&amp;&amp; function) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> __xtd_call_once_object__&lt;function_t&gt;{std::forward&lt;function_t&gt;(function)};</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#define __xtd_call_once_cat__(name, line) name##line</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#define __xtd_call_once_id__(name, line) __xtd_call_once_cat__(name, line)</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85">  120</a></span><span class="preprocessor">#define call_once_ [[maybe_unused]] static auto __xtd_call_once_id__(__xtd__call_once__, __LINE__) = xtd::call_once {} + [&amp;]</span></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+<div class="ttc" id="astructxtd_1_1call__once_html"><div class="ttname"><a href="structxtd_1_1call__once.html">xtd::call_once</a></div><div class="ttdoc">The xtd::call_once struct can be used to execute a routine exactly once. This can be used to initiali...</div><div class="ttdef"><b>Definition</b> call_once.h:54</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 19 2024 18:20:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 22:44:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

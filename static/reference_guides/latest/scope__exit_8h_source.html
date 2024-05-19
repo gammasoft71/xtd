@@ -91,31 +91,32 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">struct </span>__xtd_scope_exit_helper__ { };</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">struct </span>__xtd_scope_exit_object__ {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    ~__xtd_scope_exit_object__() { <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>(); }</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    function_t <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  };</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">auto</span> operator +(__xtd_scope_exit_helper__, function_t&amp;&amp; function) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> __xtd_scope_exit_object__&lt;function_t&gt;{std::forward&lt;function_t&gt;(function)};</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define __xtd_scope_exit_cat__(name, line) name##line</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define __xtd_scope_exit_id__(name, line) __xtd_scope_exit_cat__(name, line)</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">   64</a></span><span class="preprocessor">#define scope_exit_ [[maybe_unused]] auto __xtd_scope_exit_id__(__xtd__scope_exit__, __LINE__) = xtd::__xtd_scope_exit_helper__{} + [&amp;]</span></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">xtd::forms::keys::function</a></div><div class="ttdeci">@ function</div><div class="ttdoc">The FUNCTION modifier key.</div></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structxtd_1_1scope__exit.html">   45</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1scope__exit.html">scope_exit</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">struct </span>__xtd_scope_exit_object__ {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ~__xtd_scope_exit_object__() { function(); }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    function_t function;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  };</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">auto</span> operator +(scope_exit, function_t&amp;&amp; function) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> __xtd_scope_exit_object__&lt;function_t&gt;{std::forward&lt;function_t&gt;(function)};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#define __xtd_scope_exit_cat__(name, line) name##line</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#define __xtd_scope_exit_id__(name, line) __xtd_scope_exit_cat__(name, line)</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">  103</a></span><span class="preprocessor">#define scope_exit_ [[maybe_unused]] auto __xtd_scope_exit_id__(__xtd__scope_exit__, __LINE__) = xtd::scope_exit {} + [&amp;]</span></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+<div class="ttc" id="astructxtd_1_1scope__exit_html"><div class="ttname"><a href="structxtd_1_1scope__exit.html">xtd::scope_exit</a></div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_exit.h:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 19 2024 18:20:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 22:44:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

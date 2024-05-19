@@ -2046,6 +2046,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <p>The xtd keyword <a class="el" href="group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85" title="The xtd keyword call_once_ can be used to execute a routine exactly once. This can be used to initial...">call_once_</a> can be used to execute a routine exactly once. This can be used to initialise data in a thread-safe way. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="structxtd_1_1call__once.html" title="The xtd::call_once struct can be used to execute a routine exactly once. This can be used to initiali...">xtd::call_once</a> struct.</dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -2082,7 +2083,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">//   (thread_proc) running 3 times</span></div>
 <div class="line"><span class="comment">// (main) end</span></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1manual__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1manual__reset__event.html">xtd::threading::manual_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, must be reset manually....</div><div class="ttdef"><b>Definition</b> manual_reset_event.h:33</div></div>
-<div class="ttc" id="agroup__keywords_html_gaf3084b419b4cc718142c35ab8ac5ac85"><div class="ttname"><a href="group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85">call_once_</a></div><div class="ttdeci">#define call_once_</div><div class="ttdoc">The xtd keyword call_once_ can be used to execute a routine exactly once. This can be used to initial...</div><div class="ttdef"><b>Definition</b> call_once.h:72</div></div>
+<div class="ttc" id="agroup__keywords_html_gaf3084b419b4cc718142c35ab8ac5ac85"><div class="ttname"><a href="group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85">call_once_</a></div><div class="ttdeci">#define call_once_</div><div class="ttdoc">The xtd keyword call_once_ can be used to execute a routine exactly once. This can be used to initial...</div><div class="ttdef"><b>Definition</b> call_once.h:120</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> 
@@ -3458,9 +3459,10 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <p><code>#include &lt;<a class="el" href="scope__exit_8h.html">xtd.core/include/xtd/scope_exit.h</a>&gt;</code></p>
 
 <p>Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (<a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a>) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd <a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a> comes into play. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Prefer use <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> then <a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a>. </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="structxtd_1_1scope__exit.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_exit</a> struct. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Prefer use <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> then <a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a>.</dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -3486,7 +3488,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// end</span></div>
 <div class="line"><span class="comment">// scope_exit</span></div>
-<div class="ttc" id="agroup__keywords_html_ga523a9defb7ea3de88cc956948015ef98"><div class="ttname"><a href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a></div><div class="ttdeci">#define scope_exit_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_exit.h:64</div></div>
+<div class="ttc" id="agroup__keywords_html_ga523a9defb7ea3de88cc956948015ef98"><div class="ttname"><a href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a></div><div class="ttdeci">#define scope_exit_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_exit.h:103</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -3888,7 +3890,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 19 2024 18:20:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun May 19 2024 22:44:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
