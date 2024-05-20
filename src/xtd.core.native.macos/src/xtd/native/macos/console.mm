@@ -606,8 +606,7 @@ namespace {
       
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
       
-      static auto initialized = false;
-      if (!initialized) {
+      [[maybe_unused]] static auto __call_once__ = [&] {
         AudioComponentDescription audio_component_description {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
         AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit);
         
@@ -619,8 +618,8 @@ namespace {
         
         AudioUnitInitialize(audio_unit);
         AudioOutputUnitStart(audio_unit);
-      }
-      initialized = true;
+        return true;
+      }();
       
       beep_freq = frequency;
       beep_samples = duration * bits_per_channel;

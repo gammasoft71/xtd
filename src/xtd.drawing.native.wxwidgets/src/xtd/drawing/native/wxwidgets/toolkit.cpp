@@ -4,6 +4,7 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/diagnostics/assert>
 #include <xtd/diagnostics/boolean_switch>
+#include <xtd/call_once>
 #include <xtd/delegate>
 #include <xtd/event>
 #include <wx/app.h>
@@ -60,9 +61,9 @@ intptr xtd::drawing::native::toolkit::initialize() {
   wxEntryStart(argc, reinterpret_cast<wxChar**>(0));
   // Workaround : On macOS, call only one wxApp::CallOnInit because after calling wxApp::CleanUp, calling wxApp::CallOnInit again is blocking...
 #if defined(__APPLE__)
-  static auto init = false;
-  if (!init) wxTheApp->CallOnInit();
-  init = true;
+  call_once_ {
+    wxTheApp->CallOnInit();
+  };
 #else
   wxTheApp->CallOnInit();
 #endif
