@@ -18,7 +18,7 @@ namespace keycodes {
   class main_form : public xtd::forms::form {
   public:
     /// @brief The main entry point for the application.
-    static void main();
+    static auto main() -> void;
     
     /// @brief Initializes a new instance of the form1 class.
     main_form();

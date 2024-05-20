@@ -14,9 +14,6 @@ namespace xtdc_gui {
     /// @brief Initializes a new instance of the settings_form class.
     settings_form();
     
-    /// @brief The main entry point for the application.
-    static void main();
-    
   protected:
     void on_form_closed(const xtd::forms::form_closed_event_args& e) override;
 

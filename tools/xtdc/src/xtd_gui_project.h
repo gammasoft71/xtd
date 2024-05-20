@@ -106,7 +106,7 @@ namespace xtdc_command {
         "    form1();",
         "",
         "    /// @brief The main entry point for the application.",
-        "    static void main();",
+        "    static auto main() -> void;",
         "  };",
         "}",
       };
@@ -127,7 +127,7 @@ namespace xtdc_command {
         "  client_size({800, 450});",
         "}",
         "",
-        "void form1::main() {",
+        "auto form1::main() -> void {",
         "  application::run(form1());",
         "}",
       };
