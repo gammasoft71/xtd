@@ -1,5 +1,6 @@
 #include "../../include/xtd/argument_out_of_range_exception.h"
 #include "../../include/xtd/as.h"
+#include "../../include/xtd/call_once.h"
 #include "../../include/xtd/console.h"
 #include "../../include/xtd/int16_object.h"
 #include "../../include/xtd/lock.h"
@@ -393,9 +394,9 @@ bool console::on_cancel_key_press(int32 special_key) {
 }
 
 void console::register_cancel_key_press() {
-  static auto initialized = false;
-  if (!initialized) native::console::register_user_cancel_callback(console::on_cancel_key_press);
-  initialized = true;
+  call_once_ {
+    native::console::register_user_cancel_callback(console::on_cancel_key_press);
+  };
 }
 
 void console::write_(const ustring& value) {

@@ -1,9 +1,8 @@
+#include "../../include/xtd/call_once.h"
 #include "../../include/xtd/console.h"
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/system_exception.h"
 #include "../../include/xtd/diagnostics/stack_trace.h"
-
-//void __xtd__signal_catcher_check__();
 
 using namespace xtd;
 
@@ -46,10 +45,9 @@ const xtd::ustring& system_exception::message() const noexcept {
 }
 
 const xtd::ustring& system_exception::name() const noexcept {
-  static auto init = false;
-  //if (!init) __xtd__signal_catcher_check__();
-  if (!init) environment::__signal_catcher_check__();
-  init = true;
+  call_once_ {
+    environment::__signal_catcher_check__();
+  };
   return (name_ = get_type().full_name());
 }
 
