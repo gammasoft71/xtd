@@ -5,11 +5,11 @@
 using namespace xtd;
 using namespace xtd::tunit;
 
-int __tunit_main::main() {
+auto __tunit_main::main() -> int {
   return console_unit_test {}.run();
 }
 
-int __tunit_main::main_with_gtest_compatibility() {
+auto __tunit_main::main_with_gtest_compatibility() -> int {
   settings::default_settings().gtest_compatibility(true);
   return main();
 }

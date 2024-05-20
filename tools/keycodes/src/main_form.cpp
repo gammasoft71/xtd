@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace xtd::forms;
 using namespace keycodes;
 
-void main_form::main() {
+auto main_form::main() -> void {
   application::run(main_form());
 }
 

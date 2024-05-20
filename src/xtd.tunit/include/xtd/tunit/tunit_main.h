@@ -9,7 +9,7 @@
 /// @cond
 struct tunit_export_ __tunit_main final static_ {
   static auto main() -> int;
-  static int main_with_gtest_compatibility();
+  static auto main_with_gtest_compatibility() -> int;
 };
 /// @endcond
 

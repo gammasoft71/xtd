@@ -40,7 +40,7 @@ namespace xtdc_gui {
     main_form();
     
     /// @brief The main entry point for the application.
-    static void main();
+    static auto main() -> void;
     
   private:
     void add_to_create_recent_projects(size_t create_project_items_index);

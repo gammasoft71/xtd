@@ -97,7 +97,7 @@ namespace xtdc_command {
         "  class program {",
         "  public:",
         "    /// @brief The main entry point for the application.",
-        "    static void main(const std::vector<xtd::ustring>& args);",
+        "    static auto main(const std::vector<xtd::ustring>& args) -> void;",
         "  };",
         "}",
       };
@@ -114,7 +114,7 @@ namespace xtdc_command {
         "using namespace xtd;",
         xtd::ustring::format("using namespace {};", name),
         "",
-        "void program::main(const vector<ustring>& args) {",
+        "auto program::main(const vector<ustring>& args) -> void {",
         "  console::write_line(\"Hello, World!\");",
         "}",
       };

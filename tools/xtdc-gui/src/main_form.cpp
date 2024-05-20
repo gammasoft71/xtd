@@ -916,6 +916,6 @@ void main_form::update_open_xtd_examples_output(const xtd::ustring& output) {
   open_xtd_examples_information_output_text_box_.text(output);
 }
 
-void main_form::main() {
+auto main_form::main() -> void {
   application::run(main_form());
 }
