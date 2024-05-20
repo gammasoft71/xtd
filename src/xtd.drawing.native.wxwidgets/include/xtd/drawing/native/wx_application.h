@@ -7,6 +7,7 @@
 
 #include <xtd/delegate>
 #include <xtd/event>
+#include <xtd/scope_exit>
 #include <wx/aboutdlg.h>
 #include <wx/app.h>
 #include <wx/menu.h>
@@ -47,9 +48,10 @@ namespace xtd {
           };
           auto pre_process_filer = PreProcessFilter {};
           
-          struct CallOnExit {
-            ~CallOnExit() {wxTheApp->OnExit();}
-          } callOnExit;
+          scope_exit_ {
+            wxTheApp->OnExit();
+          };
+          
           auto result = wxApp::MainLoop();
           if (exceptionStored) std::rethrow_exception(exceptionStored);
           return result;
