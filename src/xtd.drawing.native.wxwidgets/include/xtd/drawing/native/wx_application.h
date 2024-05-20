@@ -40,7 +40,7 @@ namespace xtd {
             PreProcessFilter() {wxEvtHandler::AddFilter(this);}
             ~PreProcessFilter() {wxEvtHandler::RemoveFilter(this);}
             
-            // Workaround to remove Ctrl-Alt-middle click that shows information about wx version
+            // Workaround to remove Ctrl-Alt-middle click that shows information about wx version (::wxInfoMessageBox)
             int FilterEvent(wxEvent& event) override {
               auto mouseEVent = dynamic_cast<wxMouseEvent*>(&event);
               return mouseEVent && mouseEVent->GetEventType() == wxEVT_MIDDLE_DOWN && mouseEVent->ControlDown() && mouseEVent->AltDown() ? Event_Ignore : Event_Skip;
