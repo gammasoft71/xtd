@@ -27,7 +27,7 @@ namespace xtd {
   ///
   ///   auto thread_proc = [&] {
   ///     static auto cpt = 0;
-  ///     [[maybe_unused]] auto co = call_once {} + [&] {
+  ///     [[maybe_unused]] auto __call_once__ = call_once {} + [&] {
   ///       console::write_line("  (thread_proc) call once {} times", cpt + 1);
   ///     };
   ///     console::write_line("  (thread_proc) running {} times", ++cpt);

@@ -21,7 +21,7 @@ namespace xtd {
   /// using namespace xtd;
   ///
   /// auto main() -> int {
-  ///   static auto se = scope_exit {} + [&] {
+  ///   static auto __scope_exit__ = scope_exit {} + [&] {
   ///     console::write_line("scope_exit");
   ///   };
   ///   console::write_line("begin");
