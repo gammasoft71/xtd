@@ -133,10 +133,10 @@ namespace tutorial {
       active_control(button_quit);
       
       button_quit.parent(*this);
-      button_quit.image(xtd::forms::images::from_name("application-exit", xtd::drawing::size(16, 16)));
+      button_quit.image(xtd::forms::images::from_name("application-exit", xtd::drawing::size {16, 16}));
       button_quit.image_align(xtd::forms::content_alignment::middle_left);
       button_quit.text("&Quit");
-      button_quit.location(xtd::drawing::point(20, 20));
+      button_quit.location(xtd::drawing::point {20, 20});
       button_quit.click += xtd::event_handler {*this, &form_button::on_quit};
     }
 
@@ -145,7 +145,7 @@ namespace tutorial {
     }
     
   private:
-    void on_quit(xtd::forms::control& sender, const xtd::event_args& e) {
+    void on_quit(xtd::object& sender, const xtd::event_args& e) {
       close();
     }
     
@@ -164,10 +164,10 @@ First we create a [button](https://gammasoft71.github.io/xtd/reference_guides/la
 
 ```cpp
 button_quit.parent(*this);
-button_quit.image(xtd::forms::images::from_name("application-exit", xtd::drawing::size(16, 16)));
+button_quit.image(xtd::forms::images::from_name("application-exit", xtd::drawing::size {16, 16}));
 button_quit.image_align(xtd::forms::content_alignment::middle_left);
 button_quit.text("&Quit");
-button_quit.location(xtd::drawing::point(20, 20));
+button_quit.location(xtd::drawing::point {20, 20});
 ```
 
 It will be placed inside a [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control. It will cause to display a small operating system dependent exit icon on the button. The [text](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85) of the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) is `Quit`. The button is positioned manually at [left](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a1151e443399686210a7a191fcd040902)=20, [top](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ab3d3623c509eaef3028024f33d99b8cd)=20 coordinates. The beginning of the coordinate system is at the upper left hand corner.
@@ -231,7 +231,8 @@ namespace tutorial {
       button_plus.click += [&] {
         count++;
         control& form = parent().value().get();
-        static_cast<panel_right&>(form.controls()[0].get()).label.text(xtd::strings::format("{}", count));
+        panel_right& panel = static_cast<panel_right&>(form.controls()[0].get());
+        panel.label.text(xtd::ustring::format("{}", count));
       };
 
       button_minus.auto_repeat(true);
@@ -240,7 +241,8 @@ namespace tutorial {
       button_minus.click += [&] {
         count--;
         control& form = parent().value().get();
-        static_cast<panel_right&>(form.controls()[0].get()).label.text(xtd::strings::format("{}", count));
+        panel_right& panel = static_cast<panel_right&>(form.controls()[0].get());
+        panel.label.text(xtd::ustring::format("{}", count));
       };
     }
 
@@ -272,7 +274,8 @@ In our example we have two panels. A left and right panel. The left panel has tw
 
 ```cpp
 control& form = parent().value().get();
-static_cast<panel_right&>(form.controls()[0].get()).label.text(xtd::strings::format("{}", count));
+panel_right& panel = static_cast<panel_right&>(form.controls()[0].get());
+panel.label.text(xtd::ustring::format("{}", count));
 ```
 
 These two lines are the most important lines of the example. It is shown, how we get access to the label control, which is placed on a different panel. First we get the parent of the both left and right panels. This parent control has a reference to the right panel. And the right panel has a reference to the static text.
