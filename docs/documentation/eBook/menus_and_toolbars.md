@@ -71,6 +71,58 @@ It contains the list of submenus, in this case the `file` submenu.
 
 *Figure: Simple menu example*
 
+## Submenus
+
+Each menu can also have a submenu. 
+This way we can group similar commands into groups. 
+For example we can place commands that hide or show various toolbars like personal bar, address bar, status bar, or navigation bar into a submenu called toolbars. 
+Within a menu, we can separate commands with a separator. 
+It is a simple line. It is common practice to separate commands like new, open, save from commands like print, print preview with a single separator. 
+In our example we see, how we can create submenus and menu separators.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 final : public form {
+public:
+  form1() {
+    menu(main_menu1);
+    size({200, 180});
+    start_position(form_start_position::center_screen);
+    text("Submenu");
+  }
+
+private:
+  auto on_exit(object& sender, const event_args& e) noexcept -> void {
+    close();
+  }
+  
+  menu_item file_new_menu_item {"&New"};
+  menu_item file_open_menu_item {"Open"};
+  menu_item file_save_menu_item {"&Save"};
+  menu_item file_separator1_menu_item {"-"};
+  menu_item file_import_newsfeed_menu_item {"Import newsfeed list..."};
+  menu_item file_import_bookmarks_menu_item {"Import bookmarks..."};
+  menu_item file_import_mails_menu_item {"Import mails..."};
+  menu_item file_import_menu_item {"Import", {file_import_newsfeed_menu_item, file_import_bookmarks_menu_item, file_import_mails_menu_item}};
+  menu_item file_separator2_menu_item {"-"};
+  menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, shortcut::alt_f4};
+  menu_item file_menu_item {"&File", {file_new_menu_item, file_open_menu_item, file_save_menu_item, file_separator1_menu_item, file_import_menu_item, file_separator2_menu_item, file_exit_menu_item}};
+  main_menu main_menu1 {{file_menu_item}};
+};
+
+auto main() -> int {
+  application::run(form1 {});
+}
+```
+
+![Screenshot](/pictures/examples/tutorial/submenu.png)
+
+*Figure: Submenu*
+
 ## See also
 
 * [eBook](/docs/documentation/eBook)
