@@ -14,7 +14,7 @@ To implement a [menu](https://gammasoft71.github.io/xtd/reference_guides/latest/
 
 Creating a [menu](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html#a9b34052d185a980f1fa5b9d2929f241c) in xtd is very simple.
 
-```c++
+```cpp
 #include <xtd/xtd>
 
 using namespace xtd;
@@ -44,7 +44,7 @@ auto main() -> int {
 }
 ```
 
-```c++
+```cpp
 menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, shortcut::alt_f4};
 ```
 
@@ -53,14 +53,14 @@ The second parameter is the event handler associated with the menu item.
 The third parameter is the shortcut key for calling the menu item from the keyboard.
 The `&` character creates an accelerator key. The character that follows the `&` is underlined.
 
-```c++
+```cpp
 menu_item file_menu_item {"&File", {file_exit_menu_item}};
 ```
 
 We create the submenu item in the file with the menu item text as the first parameter.
 The second parameter is a vector of menu items. In this case, it contains only the exit menu item. 
 
-```c++
+```cpp
 main_menu main_menu1 {file_menu_item};
 ```
 
