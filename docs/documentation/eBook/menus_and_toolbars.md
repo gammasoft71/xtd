@@ -58,14 +58,14 @@ menu_item file_menu_item {"&File", {file_exit_menu_item}};
 ```
 
 We create the submenu item in the file with the menu item text as the first parameter.
-The second parameter is a vector of menu items. In this case, it contains only the exit menu item. 
+The second parameter is a vector of menu items. In this case, it contains only the `exit` menu item. 
 
 ```cpp
 main_menu main_menu1 {file_menu_item};
 ```
 
 Finally, we create the main menu, which will be placed in the form's menu bar. 
-It contains the list of submenus, in this case the file submenu.
+It contains the list of submenus, in this case the `file` submenu.
 
 ![Screenshot](/pictures/examples/tutorial/simple_menu.png)
 
