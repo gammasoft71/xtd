@@ -1,6 +1,8 @@
 # First programs in xtd.forms
 
-In this chapter, we will cover the basics needed to create [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications. We will create our first simple example, show how to display an icon. Next we will create a simple example demonstrating usage of an event. Finally, we will see how controls communicate in [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications.
+In this chapter, we will cover the basics needed to create [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications. 
+We will create our first simple example, show how to display an icon. Next we will create a simple example demonstrating usage of an event. 
+Finally, we will see how controls communicate in [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications.
 
 ## A simple application
 
@@ -26,7 +28,8 @@ namespace tutorial {
 startup_(tutorial::simple::main);
 ```
 
-This very basic example shows a small [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) on the screen. The [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) is centered.
+This very basic example shows a small [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) on the screen. 
+The [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) is centered.
 
 ```cpp
 start_position(xtd::forms::form_start_position::center_screen);
@@ -82,7 +85,9 @@ See [CMake](https:\\cmake.org) for more information.
 
 ## Application icon
 
-In this example, we provide an icon for our application. It became a standard to display a small icon in the upper left corner of the form. The icon is a graphical identity of the program.
+In this example, we provide an icon for our application. 
+It became a standard to display a small icon in the upper left corner of the form. 
+The icon is a graphical identity of the program.
 
 ```cpp
 #include <xtd/xtd>
@@ -119,7 +124,8 @@ To display an application icon is a matter of one code line.
 
 ## A simple button
 
-In the following example, we create a [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) on the [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control. We will show, how to create a simple [event handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b).
+In the following example, we create a [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) on the [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control. 
+We will show, how to create a simple [event handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b).
 
 ```cpp
 #include <xtd/xtd>
@@ -271,7 +277,11 @@ namespace tutorial {
 
 startup_(tutorial::communicate::main);
 ```
-In our example we have two panels. A left and right panel. The left panel has two buttons. The right panel has one label. The buttons change the number displayed in the label. The question is, how do we grab the pointer to the label?
+In our example we have two panels. 
+A left and right panel. The left panel has two buttons. 
+The right panel has one label. 
+The buttons change the number displayed in the label. 
+The question is, how do we grab the pointer to the label?
 
 ```cpp
 control& form = parent().value().get();
@@ -279,7 +289,11 @@ panel_right& panel = static_cast<panel_right&>(form.controls()[0].get());
 panel.label.text(xtd::ustring::format("{}", count));
 ```
 
-These two lines are the most important lines of the example. It is shown, how we get access to the label control, which is placed on a different panel. First we get the parent of the both left and right panels. This parent control has a reference to the right panel. And the right panel has a reference to the static text.
+These two lines are the most important lines of the example. 
+It is shown, how we get access to the label control, which is placed on a different panel. 
+First we get the parent of the both left and right panels. 
+This parent control has a reference to the right panel. 
+And the right panel has a reference to the static text.
 
 ![Screenshot](/pictures/examples/tutorial/communicate.png)
 
