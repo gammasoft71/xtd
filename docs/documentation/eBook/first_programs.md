@@ -1,10 +1,10 @@
 # First programs in xtd.forms
 
-In this chapter, we will cover the basics needed to create xtd.forms applications. We will create our first simple example, show how to display an icon. Next we will create a simple example demonstrating usage of an event. Finally, we will see how widgets communicate in xtd.forms applications.
+In this chapter, we will cover the basics needed to create [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications. We will create our first simple example, show how to display an icon. Next we will create a simple example demonstrating usage of an event. Finally, we will see how widgets communicate in [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications.
 
 ## A simple application
 
-First we create the very basic xtd.forms program.
+First we create the very basic [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) program.
 
 ```cpp
 #include <xtd/xtd>
@@ -23,7 +23,7 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::simple);
+startup_(tutorial::simple::main);
 ```
 
 This very basic example shows a small window on the screen. The window is centered.
@@ -41,9 +41,25 @@ startup_(tutorial::simple);
 The code behind `startup_` macro can be replaced by :
 
 ```cpp
-auto main(int argc, char* argv[]) -> int {
-  tutorial::simple::main();
-  return xtd::environment::exit_code();
+auto main() -> int {
+  return xtd::startup::safe_run(tutorial::simple::main);
+}
+```
+
+The [xtd::startup::safe_run](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23) method can be replaced by :
+
+```cpp
+auto main() -> int {
+  try {
+    tutorial::simple::main();
+    return xtd::environment::exit_code();
+  } catch (const std::exception& e) {
+    xtd::forms::exception_box::show(e);
+    return EXIT_FAILURE;
+  } catch (...) {
+    xtd::forms::exception_box::show();
+    return EXIT_FAILURE;
+  }
 }
 ```
 
@@ -86,7 +102,7 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::form_icon);
+startup_(tutorial::form_icon::main);
 ```
 
 In our example we show a small gammasoft icon.
@@ -137,7 +153,7 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::form_button);
+startup_(tutorial::form_button::main);
 ```
 
 ```cpp
@@ -250,7 +266,7 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::communicate);
+startup_(tutorial::communicate::main);
 ```
 In our example we have two panels. A left and right panel. The left panel has two buttons. The right panel has one label. The buttons change the number displayed in the label. The question is, how do we grab the pointer to the label?
 
@@ -261,7 +277,7 @@ static_cast<panel_right&>(form.controls()[0].get()).label.text(xtd::strings::for
 
 These two lines are the most important lines of the example. It is shown, how we get access to the label control, which is placed on a different panel. First we get the parent of the both left and right panels. This parent control has a reference to the right panel. And the right panel has a reference to the static text.
 
-In this part of the xtd.forms tutorial, we have created some simple programs.
+In this part of the [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) tutorial, we have created some simple programs.
 
 # See also
 ​
