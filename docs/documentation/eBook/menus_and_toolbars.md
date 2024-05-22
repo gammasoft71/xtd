@@ -36,7 +36,7 @@ private:
   
   menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, shortcut::alt_f4};
   menu_item file_menu_item {"&File", {file_exit_menu_item}};
-  main_menu main_menu1 {file_menu_item};
+  main_menu main_menu1 {{file_menu_item}};
 };
 
 auto main() -> int {
