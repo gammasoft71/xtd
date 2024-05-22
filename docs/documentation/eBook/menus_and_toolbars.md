@@ -8,7 +8,7 @@ To implement a [menu](https://gammasoft71.github.io/xtd/reference_guides/latest/
 
 ## In This Section
 
-* [Simple menu example](simple-menu-example)
+* [Simple menu example](#simple-menu-example)
 
 ## Simple menu example
 
