@@ -1,6 +1,6 @@
 # First programs in xtd.forms
 
-In this chapter, we will cover the basics needed to create [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications. We will create our first simple example, show how to display an icon. Next we will create a simple example demonstrating usage of an event. Finally, we will see how widgets communicate in [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications.
+In this chapter, we will cover the basics needed to create [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications. We will create our first simple example, show how to display an icon. Next we will create a simple example demonstrating usage of an event. Finally, we will see how controls communicate in [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) applications.
 
 ## A simple application
 
@@ -26,19 +26,19 @@ namespace tutorial {
 startup_(tutorial::simple::main);
 ```
 
-This very basic example shows a small window on the screen. The window is centered.
+This very basic example shows a small [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) on the screen. The [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) is centered.
 
 ```cpp
 start_position(xtd::forms::form_start_position::center_screen);
 ```
 
-This method centers the form on the screen, both horizontally and vertically.
+The method [start_position](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html#aef5f579130f9834f4f35a85a94b0cf97) centers the [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) on the screen, both horizontally and vertically.
 
 ```cpp
 startup_(tutorial::simple);
 ```
 
-The code behind `startup_` macro can be replaced by :
+The code behind [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd) macro can be replaced by :
 
 ```cpp
 auto main() -> int {
@@ -74,7 +74,7 @@ add_sources(src/simple.cpp)
 target_type(GUI_APPLICATION)
 ```
 
-See [cmake](htps:\\cmake.org) for more information.
+See [CMake](https:\\cmake.org) for more information.
 
 ![Screenshot](/pictures/examples/tutorial/simple.png)
 
@@ -82,7 +82,7 @@ See [cmake](htps:\\cmake.org) for more information.
 
 ## Application icon
 
-In this example, we provide an icon for our application. It became a standard to display a small icon in the upper left corner of the window. The icon is a graphical identity of the program.
+In this example, we provide an icon for our application. It became a standard to display a small icon in the upper left corner of the form. The icon is a graphical identity of the program.
 
 ```cpp
 #include <xtd/xtd>
@@ -119,7 +119,7 @@ To display an application icon is a matter of one code line.
 
 ## A simple button
 
-In the following example, we create a button on the form control. We will show, how to create a simple event handler.
+In the following example, we create a [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) on the [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control. We will show, how to create a simple [event handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b).
 
 ```cpp
 #include <xtd/xtd>
@@ -160,7 +160,7 @@ startup_(tutorial::form_button::main);
 xtd::forms::button button_quit;
 ```
 
-First we create a button control. 
+First we create a [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control. 
 
 ```cpp
 button_quit.parent(*this);
@@ -170,25 +170,25 @@ button_quit.text("&Quit");
 button_quit.location(xtd::drawing::point(20, 20));
 ```
 
-It will be placed inside a form control. It will cause to display a small operating system dependent exit icon on the button. The label of the button is "Quit". The button is positioned manually at x=20, y=20 coordinates. The beginning of the coordinate system is at the upper left hand corner.
+It will be placed inside a [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control. It will cause to display a small operating system dependent exit icon on the button. The [text](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85) of the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) is `Quit`. The button is positioned manually at [left](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a1151e443399686210a7a191fcd040902)=20, [top](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ab3d3623c509eaef3028024f33d99b8cd)=20 coordinates. The beginning of the coordinate system is at the upper left hand corner.
 
 ```cpp
 button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
 ```
 
-If we click on the button, a `click` event is generated. We connect the event to the `on_quit()` method of the button class. So when we click on the button, the `on_quit()` method is called.
+If we click on the button, a [click](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68) event is generated. We connect the event to the `on_quit() method of the button class. So when we click on the button, the `on_quit()` method is called.
 
 ```cpp
 active_control(button_quit);
 ```
 
-We set the keyboard focus to the button. So if we press the Enter key, the button is being clicked.
+We set the keyboard focus to the button. So if we press the `Enter` key, the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) is being clicked.
 
 ```cpp
 close();
 ```
 
-Inside the `on_quit()` method, we call the `close()` method. This will close the form and terminate our application.
+Inside the `on_quit()` method, we call the [close()](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html#aa15c46b6ffb3f8df16dab0d6edf796bf) method. This will close the [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) and terminate our [application](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html).
 
 ![Screenshot](/pictures/examples/tutorial/button.png)
 
