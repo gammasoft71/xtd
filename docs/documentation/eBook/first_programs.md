@@ -257,7 +257,7 @@ namespace tutorial {
       controls().push_back_range({panel_right, panel_left});
       padding(10);
       client_size({320, 120});
-      text("communicate");
+      text("Controls communicate");
     }
     
     static auto main() {
@@ -281,8 +281,12 @@ panel.label.text(xtd::ustring::format("{}", count));
 
 These two lines are the most important lines of the example. It is shown, how we get access to the label control, which is placed on a different panel. First we get the parent of the both left and right panels. This parent control has a reference to the right panel. And the right panel has a reference to the static text.
 
+![Screenshot](/pictures/examples/tutorial/communicate.png)
+
 In this part of the [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) tutorial, we have created some simple programs.
 
 # See also
 ​
 * [eBook](/docs/documentation/eBook)
+
+*Figure: Controls communicate*
