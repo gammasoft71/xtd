@@ -35,7 +35,7 @@ private:
   }
   
   menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, shortcut::alt_f4};
-  menu_item file_menu_item {"File", {file_exit_menu_item}};
+  menu_item file_menu_item {"&File", {file_exit_menu_item}};
   main_menu main_menu1 {file_menu_item};
 };
 
@@ -43,6 +43,29 @@ auto main() -> int {
   application::run(form1 {});
 }
 ```
+
+```c++
+menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, shortcut::alt_f4};
+```
+
+We create an `exit` menu item with the menu item text as the first parameter. 
+The second parameter is the event handler associated with the menu item.
+The third parameter is the shortcut key for calling the menu item from the keyboard.
+The `&` character creates an accelerator key. The character that follows the `&` is underlined.
+
+```c++
+menu_item file_menu_item {"&File", {file_exit_menu_item}};
+```
+
+We create the submenu item in the file with the menu item text as the first parameter.
+The second parameter is a vector of menu items. In this case, it contains only the exit menu item. 
+
+```c++
+main_menu main_menu1 {file_menu_item};
+```
+
+Finally, we create the main menu, which will be placed in the form's menu bar. 
+It contains the list of submenus, in this case the file submenu.
 
 ## See also
 
