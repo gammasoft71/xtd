@@ -18,7 +18,7 @@ namespace tutorial {
     }
 
     static auto main() {
-      xtd::forms::application::run(simple());
+      xtd::forms::application::run(simple {});
     }
   };
 }
@@ -97,7 +97,7 @@ namespace tutorial {
     }
 
     static auto main() {
-      xtd::forms::application::run(form_icon());
+      xtd::forms::application::run(form_icon {});
     }
   };
 }
@@ -137,7 +137,7 @@ namespace tutorial {
       button_quit.image_align(xtd::forms::content_alignment::middle_left);
       button_quit.text("&Quit");
       button_quit.location(xtd::drawing::point(20, 20));
-      button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
+      button_quit.click += xtd::event_handler {*this, &form_button::on_quit};
     }
 
     static auto main() {
@@ -173,7 +173,7 @@ button_quit.location(xtd::drawing::point(20, 20));
 It will be placed inside a [form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control. It will cause to display a small operating system dependent exit icon on the button. The [text](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a254433fdf3532bdc36f3bb9743236c85) of the [button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) is `Quit`. The button is positioned manually at [left](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a1151e443399686210a7a191fcd040902)=20, [top](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ab3d3623c509eaef3028024f33d99b8cd)=20 coordinates. The beginning of the coordinate system is at the upper left hand corner.
 
 ```cpp
-button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
+button_quit.click += xtd::event_handler {*this, &form_button::on_quit};
 ```
 
 If we click on the button, a [click](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68) event is generated. We connect the event to the `on_quit() method of the button class. So when we click on the button, the `on_quit()` method is called.
