@@ -67,6 +67,10 @@ main_menu main_menu1 {file_menu_item};
 Finally, we create the main menu, which will be placed in the form's menu bar. 
 It contains the list of submenus, in this case the file submenu.
 
+![Screenshot](/pictures/examples/tutorial/simple_menu.png)
+
+*Figure: Simple menu example*
+
 ## See also
 
 * [eBook](/docs/documentation/eBook)
