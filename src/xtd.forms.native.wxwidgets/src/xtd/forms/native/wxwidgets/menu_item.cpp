@@ -30,7 +30,7 @@ namespace {
   }
 #endif
 
-  static bool is_quit_item(const xtd::ustring& text) {
+  static bool is_quit_item(const xtd::ustring& text, size_t shortcut) {
     wxString itemText = text;
     itemText.Replace("&", ustring::empty_string);
     itemText.Replace(".", ustring::empty_string);
@@ -39,7 +39,7 @@ namespace {
     exitText.Replace("&", ustring::empty_string);
     exitText.Replace(".", ustring::empty_string);
     exitText.LowerCase();
-    return itemText == exitText || itemText == "exit" || itemText == "quit";
+    return (itemText == exitText || itemText == "exit" || itemText == "quit") && (shortcut == (VK_COMMAND_MODIFIER | VK_Q) || shortcut == (VK_ALT_MODIFIER | VK_F4));
   }
 
 #if defined(__WXOSX__)
@@ -64,16 +64,16 @@ namespace {
     using namespace std::literals;
 #if defined(__WXOSX__)
     if (is_about_item(text)) return "";
-    if (is_quit_item(text)) return "";
+    if (is_quit_item(text, shortcut)) return "";
 #  ifdef __MAC_13_0
     if (is_preferences_item(text)) return xtd::ustring {"&Settings..."_t} + "\tCtrl+,";
 #  else
     if (is_preferences_item(text)) return xtd::ustring {"&Preference"_t} + "\tCtrl+,";
 #  endif
 #elif defined(__WXMSW__)
-    if (is_quit_item(text)) return text + "\tAlt+F4";
+      if (is_quit_item(text, shortcut)) return text + "\tAlt+F4";
 #elif defined(__WXGTK__)
-    if (is_quit_item(text)) return text + "\tCtrl+Q";
+      if (is_quit_item(text, shortcut)) return text + "\tCtrl+Q";
 #endif
     if (shortcut == VK_NONE) return text;
     auto key = ""_s;
@@ -134,10 +134,10 @@ namespace {
     return text + "\t" + key;
   }
   
-  static wxWindowID make_window_id(const xtd::ustring& text) {
+  static wxWindowID make_window_id(const xtd::ustring& text, size_t shortcut) {
     #if defined(__WXOSX__)
     if (is_about_item(text)) return wxID_ABOUT;
-    if (is_quit_item(text)) return wxID_EXIT;
+    if (is_quit_item(text, shortcut)) return wxID_EXIT;
     if (is_preferences_item(text)) return wxID_PREFERENCES;
     #endif
     return wxID_ANY;
@@ -150,7 +150,7 @@ void menu_item::checked(intptr menu_item, bool checked) {
 
 intptr menu_item::create(intptr menu, const ustring& text, const xtd::drawing::image& image, int32 kind, size_t shortcut) {
   static auto kinds = map<int32, wxItemKind> {{MI_NORMAL, wxITEM_NORMAL}, {MI_CHECK, wxITEM_CHECK}, {MI_RADIO, wxITEM_RADIO}, {MI_DROPDOWN, wxITEM_DROPDOWN}, {MI_SEPARATOR, wxITEM_SEPARATOR}};
-  auto wx_menu_item = new wxMenuItem(menu == 0 ? nullptr : reinterpret_cast<wxMenu*>(menu), make_window_id(text), convert_string::to_wstring(make_item_text(text, shortcut)), wxEmptyString, kinds[kind]);
+  auto wx_menu_item = new wxMenuItem(menu == 0 ? nullptr : reinterpret_cast<wxMenu*>(menu), make_window_id(text, shortcut), convert_string::to_wstring(make_item_text(text, shortcut)), wxEmptyString, kinds[kind]);
   if (image.handle() != 0) wx_menu_item->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
   return reinterpret_cast<intptr>(wx_menu_item);
 }
