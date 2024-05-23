@@ -28,7 +28,9 @@ namespace {
     aboutText.LowerCase();
     return itemText == aboutText || itemText == "about";
   }
-  
+#endif
+
+#if defined(__WXOSX__) || defined(__WXMSW__)
   static bool is_quit_item(const xtd::ustring& text) {
     wxString itemText = text;
     itemText.Replace("&", ustring::empty_string);
@@ -40,17 +42,19 @@ namespace {
     exitText.LowerCase();
     return itemText == exitText || itemText == "exit" || itemText == "quit";
   }
-  
+#endif
+
+#if defined(__WXOSX__)
   static bool is_preferences_item(const xtd::ustring& text) {
     wxString itemText = text;
     itemText.Replace("&", ustring::empty_string);
     itemText.Replace(".", ustring::empty_string);
     itemText.LowerCase();
-#ifdef __MAC_13_0
+#  ifdef __MAC_13_0
     wxString preferenceText = "&Settings..."_t;
-#else
+#  else
     wxString preferenceText = "&Preferences"_t;
-#endif
+#  endif
     preferenceText.Replace("&", ustring::empty_string);
     preferenceText.Replace(".", ustring::empty_string);
     preferenceText.LowerCase();
@@ -60,15 +64,17 @@ namespace {
   
   static xtd::ustring make_item_text(const xtd::ustring& text, size_t shortcut) {
     using namespace std::literals;
-    #if defined(__WXOSX__)
+#if defined(__WXOSX__)
     if (is_about_item(text)) return "";
     if (is_quit_item(text)) return "";
-#ifdef __MAC_13_0
+#  ifdef __MAC_13_0
     if (is_preferences_item(text)) return xtd::ustring {"&Settings..."_t} + "\tCtrl+,";
-#else
+#  else
     if (is_preferences_item(text)) return xtd::ustring {"&Preference"_t} + "\tCtrl+,";
+#  endif
+#elif defined(__WXMSW__)
+    if (is_quit_item(text)) return text + "\tAlt+F4";
 #endif
-    #endif
     if (shortcut == VK_NONE) return text;
     auto key = ""s;
     if ((shortcut & VK_COMMAND_MODIFIER) == VK_COMMAND_MODIFIER) key += (key.empty() ? ""s : "+"s) + "Ctrl"s;
