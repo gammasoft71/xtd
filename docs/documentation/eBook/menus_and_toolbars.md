@@ -34,7 +34,7 @@ private:
     close();
   }
   
-  menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, environment::os_version().is_windows() ? shortcut::alt_f4 : shortcut::cmd_q};
+  menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, shortcut::cmd_q};
   menu_item file_menu_item {"&File", {file_exit_menu_item}};
   main_menu main_menu1 {{file_menu_item}};
 };
@@ -109,7 +109,7 @@ private:
   menu_item file_import_mails_menu_item {"Import mails..."};
   menu_item file_import_menu_item {"Import", {file_import_newsfeed_menu_item, file_import_bookmarks_menu_item, file_import_mails_menu_item}};
   menu_item file_separator2_menu_item {"-"};
-  menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, environment::os_version().is_windows() ? shortcut::alt_f4 : shortcut::cmd_q};
+  menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, shortcut::cmd_q};
   menu_item file_menu_item {"&File", {file_new_menu_item, file_open_menu_item, file_save_menu_item, file_separator1_menu_item, file_import_menu_item, file_separator2_menu_item, file_exit_menu_item}};
   main_menu main_menu1 {{file_menu_item}};
 };
