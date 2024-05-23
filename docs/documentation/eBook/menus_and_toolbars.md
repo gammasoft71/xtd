@@ -45,7 +45,7 @@ auto main() -> int {
 ```
 
 ```cpp
-menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, shortcut::alt_f4};
+menu_item file_exit_menu_item {"&Quit", {*this, &form1::on_exit}, shortcut::cmd_q};
 ```
 
 We create an `exit` menu item with the menu item text as the first parameter. 
