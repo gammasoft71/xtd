@@ -30,7 +30,6 @@ namespace {
   }
 #endif
 
-#if defined(__WXOSX__) || defined(__WXMSW__)
   static bool is_quit_item(const xtd::ustring& text) {
     wxString itemText = text;
     itemText.Replace("&", ustring::empty_string);
@@ -42,7 +41,6 @@ namespace {
     exitText.LowerCase();
     return itemText == exitText || itemText == "exit" || itemText == "quit";
   }
-#endif
 
 #if defined(__WXOSX__)
   static bool is_preferences_item(const xtd::ustring& text) {
@@ -74,6 +72,8 @@ namespace {
 #  endif
 #elif defined(__WXMSW__)
     if (is_quit_item(text)) return text + "\tAlt+F4";
+#elif defined(__WXGTK__)
+    if (is_quit_item(text)) return text + "\tCtrl+Q";
 #endif
     if (shortcut == VK_NONE) return text;
     auto key = ""s;
