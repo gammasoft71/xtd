@@ -44,7 +44,7 @@ namespace keycodes {
     xtd::forms::button clear_button_;
     xtd::forms::menu_item file_clear_menu_item_ {xtd::drawing::texts::clear(), {*this, &main_form::on_clear_button_click}, xtd::forms::menu_images::from_name("edit-delete"), xtd::forms::shortcut::cmd_del};
     xtd::forms::menu_item file_separator1_menu_item_ {"-"};
-    xtd::forms::menu_item file_exit_menu_item_ {xtd::drawing::texts::exit(), overload_<>(&xtd::forms::application::exit), xtd::forms::menu_images::file_exit(), xtd::environment::os_version().is_windows() ? xtd::forms::shortcut::alt_f4 : xtd::forms::shortcut::cmd_q};
+    xtd::forms::menu_item file_exit_menu_item_ {xtd::drawing::texts::exit(), overload_<>(&xtd::forms::application::exit), xtd::forms::menu_images::file_exit(), xtd::forms::shortcut::cmd_q};
     xtd::forms::menu_item file_menu_item_ {xtd::drawing::texts::file(), {file_clear_menu_item_, file_separator1_menu_item_, file_exit_menu_item_}};
     xtd::forms::menu_item help_about_menu_item_ {xtd::drawing::texts::about(), {*this, &main_form::show_about_dialog}, xtd::forms::menu_images::help_about()};
     xtd::forms::menu_item help_menu_item_ {xtd::drawing::texts::help(), {help_about_menu_item_}};
