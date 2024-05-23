@@ -107,10 +107,11 @@ namespace xtd {
         return exit_code;
       } catch(const std::exception& e) {
         __show_generic_exception_message__(e);
+        return EXIT_FAILURE;
       } catch(...) {\
         __show_generic_exception_message__();
+        return EXIT_FAILURE;
       }
-      return 0;
     }
 
     static void init_safe_run();
