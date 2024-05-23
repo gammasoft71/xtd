@@ -7,6 +7,7 @@
 #include <xtd/forms/native/main_menu>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/texts>
+#include <xtd/environment>
 #include "menu_data.h"
 
 using namespace std;
@@ -87,7 +88,7 @@ xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme
   auto file_print_menu_item = make_shared<menu_item>(texts::print(), on_click, menu_images::file_print(theme, size), shortcut::cmd_p);
   auto file_print_preview_menu_item = make_shared<menu_item>(texts::print_preview(), on_click, menu_images::file_print_preview(theme, size));
   auto file_separator3_menu_item = make_shared<menu_item>("-");
-  auto file_exit_menu_item = make_shared<menu_item>(texts::exit(), on_click, shortcut::alt_f4);
+  auto file_exit_menu_item = make_shared<menu_item>(texts::exit(), on_click, environment::os_version().is_windows() ? shortcut::alt_f4 : shortcut::cmd_q);
   
   auto edit_undo_menu_item = make_shared<menu_item>(texts::undo(), on_click, shortcut::cmd_z);
   auto edit_redo_menu_item = make_shared<menu_item>(texts::redo(), on_click, shortcut::cmd_shift_z);
