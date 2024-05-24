@@ -12,7 +12,7 @@
 
 assembly_title_("xtd.foorms.native");
 assembly_description_("xtd.foorms.native  library contains internal native API definitions to access underlying toolkits used by xtd.forms library.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.foorms.native");
 assembly_copyright_("Copyright © Gammasoft 2024");

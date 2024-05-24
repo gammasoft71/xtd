@@ -12,7 +12,7 @@
 
 assembly_title_("sleepfor");
 assembly_description_("sleepfor is a sleep for duration command line tool.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("sleepfor");
 assembly_copyright_("Copyright © Gammasoft 2024");

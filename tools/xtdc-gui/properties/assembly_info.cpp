@@ -12,7 +12,7 @@
 
 assembly_title_("xtdc-gui");
 assembly_description_("xtdc-gui is a guid generator GUI application.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("xtdc-gui");
 assembly_copyright_("Copyright © Gammasoft 2024");

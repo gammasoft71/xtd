@@ -12,7 +12,7 @@
 
 assembly_title_("xtdc");
 assembly_description_("xtdc is s project management command line tool.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("xtdc");
 assembly_copyright_("Copyright © Gammasoft 2024");

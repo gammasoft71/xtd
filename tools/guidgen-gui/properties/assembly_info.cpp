@@ -12,7 +12,7 @@
 
 assembly_title_("guidgen-gui");
 assembly_description_("guidgen-gui is a guid generator GUI application.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("guidgen-gui");
 assembly_copyright_("Copyright © Gammasoft 2024");

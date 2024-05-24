@@ -12,7 +12,7 @@
 
 assembly_title_("xtd.drawing.native");
 assembly_description_("xtd.drawing.native library contains internal native API definitions to access underlying toolkits used by xtd.drawing library.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.native");
 assembly_copyright_("Copyright © Gammasoft 2024");

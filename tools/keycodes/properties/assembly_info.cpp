@@ -12,7 +12,7 @@
 
 assembly_title_("keycodes");
 assembly_description_("keycodes displays information about the keys entered.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("keycodes");
 assembly_copyright_("Copyright © Gammasoft 2024");
