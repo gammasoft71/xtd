@@ -12,7 +12,7 @@
 
 assembly_title_("guidgen");
 assembly_description_("guidgen is a guid generator command line tool.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("guidgen");
 assembly_copyright_("Copyright © Gammasoft 2024");

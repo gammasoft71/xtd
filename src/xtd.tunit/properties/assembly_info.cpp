@@ -12,7 +12,7 @@
 
 assembly_title_("xtd.tunit");
 assembly_description_("xtd.tunit library contains components needed for unit testing.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.tunit");
 assembly_copyright_("Copyright © Gammasoft 2024");

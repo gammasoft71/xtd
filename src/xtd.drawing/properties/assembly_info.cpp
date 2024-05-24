@@ -12,7 +12,7 @@
 
 assembly_title_("xtd.drawing");
 assembly_description_("xtd.drawing library provides access to GDI+ basic graphics functionality.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing");
 assembly_copyright_("Copyright © Gammasoft 2024");

@@ -12,7 +12,7 @@
 
 assembly_title_("xtd.drawing.native.wxwidgets");
 assembly_description_("xtd.drawing.native.wxwidgets library is based on wxWidgets toolkit.");
-assembly_configuration_("");
+assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing.native.wxwidgets");
 assembly_copyright_("Copyright © Gammasoft 2024");
