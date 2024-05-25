@@ -582,6 +582,8 @@ namespace xtd::forms::native {
         return;
       }
     }
+#elif defined (__WXMSW__)
+    if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_WINDOWS_LEFT || static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_WINDOWS_RIGHT) return;
 #endif
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYDOWN, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event));
   }
