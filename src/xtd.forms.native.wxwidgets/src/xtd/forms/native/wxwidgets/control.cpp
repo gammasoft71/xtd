@@ -314,7 +314,7 @@ void control::double_buffered(intptr control, bool value) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  reinterpret_cast<control_handler*>(control)->control()->SetDoubleBuffered(value);
+  //reinterpret_cast<control_handler*>(control)->control()->SetDoubleBuffered(value);
 }
 
 bool control::enabled(intptr control) {
