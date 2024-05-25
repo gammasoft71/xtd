@@ -39,7 +39,7 @@ namespace {
     exitText.Replace("&", ustring::empty_string);
     exitText.Replace(".", ustring::empty_string);
     exitText.LowerCase();
-    return (itemText == exitText || itemText == "exit" || itemText == "quit") && (shortcut == (VK_COMMAND_MODIFIER | VK_Q) || shortcut == (VK_ALT_MODIFIER | VK_F4));
+    return (itemText == exitText || itemText == "exit" || itemText == "quit") && (shortcut == (VK_CONTROL_MODIFIER | VK_Q) || shortcut == (VK_ALT_MODIFIER | VK_F4));
   }
 
 #if defined(__WXOSX__)
@@ -77,12 +77,14 @@ namespace {
 #endif
     if (shortcut == VK_NONE) return text;
     auto key = ""_s;
-    if ((shortcut & VK_COMMAND_MODIFIER) == VK_COMMAND_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "Ctrl"_s;
-    if ((shortcut & VK_CONTROL_MODIFIER) == VK_CONTROL_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "RawCtrl"_s;
+#if defined(__WXOSX__)
+    if ((shortcut & VK_META_MODIFIER) == VK_META_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "RawCtrl"_s;
+#endif
+    if ((shortcut & VK_CONTROL_MODIFIER) == VK_CONTROL_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "Ctrl"_s;
     if ((shortcut & VK_ALT_MODIFIER) == VK_ALT_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "Alt"_s;
     if ((shortcut & VK_SHIFT_MODIFIER) == VK_SHIFT_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "Shift"_s;
     
-    shortcut &= ~(VK_COMMAND_MODIFIER | VK_CONTROL_MODIFIER | VK_ALT_MODIFIER | VK_SHIFT_MODIFIER);
+    shortcut &= ~(VK_META_MODIFIER | VK_CONTROL_MODIFIER | VK_ALT_MODIFIER | VK_SHIFT_MODIFIER);
     
     if (shortcut >= VK_A && shortcut <= VK_Z) key += (key.empty() ? ""_s : "+"_s) + static_cast<char>(shortcut);
     else if (shortcut >= VK_0 && shortcut <= VK_9) key += (key.empty() ? ""_s : "+"_s) + static_cast<char>(shortcut);

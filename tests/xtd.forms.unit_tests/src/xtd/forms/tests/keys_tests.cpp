@@ -1053,19 +1053,19 @@ namespace xtd::forms::tests {
     }
     
     void test_method_(command) {
-      assert::are_equal(524288, enum_object<>::to_int32(keys::command), csf_);
-      assert::are_equal("command", enum_object<>::to_string(keys::command), csf_);
-      assert::are_equal(keys::command, enum_object<>::parse<keys>("command"), csf_);
+      assert::are_equal(131072, enum_object<>::to_int32(keys::command), csf_);
+      assert::are_equal("control", enum_object<>::to_string(keys::command), csf_);
+      assert::are_equal(keys::command, enum_object<>::parse<keys>("control"), csf_);
     }
     
     void test_method_(meta) {
-      assert::are_equal(1048576, enum_object<>::to_int32(keys::meta), csf_);
+      assert::are_equal(524288, enum_object<>::to_int32(keys::meta), csf_);
       assert::are_equal("meta", enum_object<>::to_string(keys::meta), csf_);
       assert::are_equal(keys::meta, enum_object<>::parse<keys>("meta"), csf_);
     }
     
     void test_method_(function) {
-      assert::are_equal(2097152, enum_object<>::to_int32(keys::function), csf_);
+      assert::are_equal(1048576, enum_object<>::to_int32(keys::function), csf_);
       assert::are_equal("function", enum_object<>::to_string(keys::function), csf_);
       assert::are_equal(keys::function, enum_object<>::parse<keys>("function"), csf_);
     }

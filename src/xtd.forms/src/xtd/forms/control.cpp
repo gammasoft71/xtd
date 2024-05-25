@@ -2066,8 +2066,14 @@ void control::wm_help(message& message) {
 void control::wm_key_char(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), ustring::format("({}) receive message [{}]", *this, message));
   if (message.msg() == WM_KEYDOWN || message.msg() == WM_SYSKEYDOWN) {
-    auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
-    modifier_keys_ = key_event_args.modifiers();
+    auto key = static_cast<keys>(message.wparam());
+    if ((key & keys::key_code) == keys::shift_key || (key & keys::key_code) == keys::lshift_key || (key & keys::key_code) == keys::rshift_key) modifier_keys_ |= keys::shift;
+    if ((key & keys::key_code) == keys::control_key || (key & keys::key_code) == keys::lcontrol_key || (key & keys::rcontrol_key) == keys::rcontrol_key) modifier_keys_ |= keys::control;
+    if ((key & keys::key_code) == keys::menu || (key & keys::key_code) == keys::lmenu || (key & keys::key_code) == keys::rmenu) modifier_keys_ |= keys::alt;
+    if ((key & keys::key_code) == keys::lwin || (key & keys::key_code) == keys::rwin) modifier_keys_ |= keys::meta;
+    if ((key & keys::key_code) == keys::function_key) modifier_keys_ |= keys::function;
+    key += modifier_keys_;
+    auto key_event_args = forms::key_event_args {key};
     on_key_down(key_event_args);
     data_->suppress_key_press = key_event_args.suppress_key_press();
     if (!key_event_args.handled()) def_wnd_proc(message);
@@ -2077,7 +2083,14 @@ void control::wm_key_char(message& message) {
     message.result(key_press_event_args.handled());
     if (!key_press_event_args.handled()) def_wnd_proc(message);
   } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
-    auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
+    auto key = static_cast<keys>(message.wparam());
+    if ((key & keys::key_code) == keys::shift_key || (key & keys::key_code) == keys::lshift_key || (key & keys::key_code) == keys::rshift_key) modifier_keys_ &= ~keys::shift;
+    if ((key & keys::key_code) == keys::control_key || (key & keys::key_code) == keys::lcontrol_key || (key & keys::rcontrol_key) == keys::rcontrol_key) modifier_keys_ &= ~keys::control;
+    if ((key & keys::key_code) == keys::menu || (key & keys::key_code) == keys::lmenu || (key & keys::key_code) == keys::rmenu) modifier_keys_ &= ~keys::alt;
+    if ((key & keys::key_code) == keys::lwin || (key & keys::key_code) == keys::rwin) modifier_keys_ &= ~keys::meta;
+    if ((key & keys::key_code) == keys::function_key) modifier_keys_ &= ~keys::function;
+    key += modifier_keys_;
+    auto key_event_args = forms::key_event_args {key};
     modifier_keys_ = key_event_args.modifiers();
     on_key_up(key_event_args);
     message.result(key_event_args.handled());

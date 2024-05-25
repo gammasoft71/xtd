@@ -79,25 +79,25 @@ xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme
 }
 
 xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme, const drawing::size& size, const xtd::event_handler& on_click) {
-  auto file_new_menu_item = make_shared<menu_item>(texts::new_(), on_click, menu_images::file_new(theme, size), shortcut::cmd_n);
-  auto file_open_menu_item = make_shared<menu_item>(texts::open(), on_click, menu_images::file_open(theme, size), shortcut::cmd_o);
+  auto file_new_menu_item = make_shared<menu_item>(texts::new_(), on_click, menu_images::file_new(theme, size), shortcut::ctrl_n);
+  auto file_open_menu_item = make_shared<menu_item>(texts::open(), on_click, menu_images::file_open(theme, size), shortcut::ctrl_o);
   auto file_separator1_menu_item = make_shared<menu_item>("-");
-  auto file_save_menu_item = make_shared<menu_item>(texts::save(), on_click, menu_images::file_save(theme, size), shortcut::cmd_s);
+  auto file_save_menu_item = make_shared<menu_item>(texts::save(), on_click, menu_images::file_save(theme, size), shortcut::ctrl_s);
   auto file_save_as_menu_item = make_shared<menu_item>(texts::save_as(), on_click);
   auto file_separator2_menu_item = make_shared<menu_item>("-");
-  auto file_print_menu_item = make_shared<menu_item>(texts::print(), on_click, menu_images::file_print(theme, size), shortcut::cmd_p);
+  auto file_print_menu_item = make_shared<menu_item>(texts::print(), on_click, menu_images::file_print(theme, size), shortcut::ctrl_p);
   auto file_print_preview_menu_item = make_shared<menu_item>(texts::print_preview(), on_click, menu_images::file_print_preview(theme, size));
   auto file_separator3_menu_item = make_shared<menu_item>("-");
-  auto file_exit_menu_item = make_shared<menu_item>(texts::exit(), on_click, shortcut::cmd_q);
+  auto file_exit_menu_item = make_shared<menu_item>(texts::exit(), on_click, shortcut::ctrl_q);
   
-  auto edit_undo_menu_item = make_shared<menu_item>(texts::undo(), on_click, shortcut::cmd_z);
-  auto edit_redo_menu_item = make_shared<menu_item>(texts::redo(), on_click, shortcut::cmd_shift_z);
+  auto edit_undo_menu_item = make_shared<menu_item>(texts::undo(), on_click, shortcut::ctrl_z);
+  auto edit_redo_menu_item = make_shared<menu_item>(texts::redo(), on_click, shortcut::ctrl_shift_z);
   auto edit_separator1_menu_item = make_shared<menu_item>("-");
-  auto edit_cut_menu_item = make_shared<menu_item>(texts::cut(), on_click, menu_images::edit_cut(theme, size), shortcut::cmd_x);
-  auto edit_copy_menu_item = make_shared<menu_item>(texts::copy(), on_click, menu_images::edit_copy(theme, size), shortcut::cmd_c);
-  auto edit_paste_menu_item = make_shared<menu_item>(texts::paste(), on_click, menu_images::edit_paste(theme, size), shortcut::cmd_v);
+  auto edit_cut_menu_item = make_shared<menu_item>(texts::cut(), on_click, menu_images::edit_cut(theme, size), shortcut::ctrl_x);
+  auto edit_copy_menu_item = make_shared<menu_item>(texts::copy(), on_click, menu_images::edit_copy(theme, size), shortcut::ctrl_c);
+  auto edit_paste_menu_item = make_shared<menu_item>(texts::paste(), on_click, menu_images::edit_paste(theme, size), shortcut::ctrl_v);
   auto edit_separator2_menu_item = make_shared<menu_item>("-");
-  auto edit_select_all_menu_item = make_shared<menu_item>(texts::select_all(), on_click, shortcut::cmd_a);
+  auto edit_select_all_menu_item = make_shared<menu_item>(texts::select_all(), on_click, shortcut::ctrl_a);
   
   auto tools_customize_menu_item = make_shared<menu_item>(texts::customize(), on_click);
   auto tools_options_menu_item = make_shared<menu_item>(texts::options(), on_click);

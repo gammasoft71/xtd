@@ -130,14 +130,14 @@ namespace xtdc_gui {
     
     settings_form settings_form_;
 
-    xtd::forms::menu_item file_open_project_menu_item_ {"Open a project or solution", {*this, overload_<>(&main_form::open_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_open_examples_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::cmd_o};
-    xtd::forms::menu_item file_run_project_menu_item_ {"Run a project", {*this, overload_<>(&main_form::run_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_run_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::cmd_r};
-    xtd::forms::menu_item file_create_new_project_menu_item_ {"Create new project", {*this, overload_<>(&main_form::new_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_new_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::cmd_n};
-    xtd::forms::menu_item file_open_xtd_examples_menu_item_ {"Open xtd examples", {*this, &main_form::open_xtd_examples}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_open_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::cmd_e};
+    xtd::forms::menu_item file_open_project_menu_item_ {"Open a project or solution", {*this, overload_<>(&main_form::open_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_open_examples_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::ctrl_o};
+    xtd::forms::menu_item file_run_project_menu_item_ {"Run a project", {*this, overload_<>(&main_form::run_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_run_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::ctrl_r};
+    xtd::forms::menu_item file_create_new_project_menu_item_ {"Create new project", {*this, overload_<>(&main_form::new_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_new_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::ctrl_n};
+    xtd::forms::menu_item file_open_xtd_examples_menu_item_ {"Open xtd examples", {*this, &main_form::open_xtd_examples}, xtd::drawing::bitmap(xtd::drawing::bitmap(xtd_open_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::ctrl_e};
     xtd::forms::menu_item file_separator1_menu_item_ {"-"};
     xtd::forms::menu_item file_settings_menu_item_ {xtd::drawing::texts::settings(), {*this, &main_form::settings}, xtd::forms::shortcut::f2};
     xtd::forms::menu_item file_separator2_menu_item_ {"-"};
-    xtd::forms::menu_item file_exit_menu_item_ {xtd::drawing::texts::exit(), overload_<>(&xtd::forms::application::exit), xtd::forms::menu_images::file_exit(), xtd::environment::os_version().is_windows() ? xtd::forms::shortcut::alt_f4 : xtd::forms::shortcut::cmd_q};
+    xtd::forms::menu_item file_exit_menu_item_ {xtd::drawing::texts::exit(), overload_<>(&xtd::forms::application::exit), xtd::forms::menu_images::file_exit(), xtd::environment::os_version().is_windows() ? xtd::forms::shortcut::alt_f4 : xtd::forms::shortcut::ctrl_q};
     xtd::forms::menu_item file_menu_item_ {xtd::drawing::texts::file(), {file_open_project_menu_item_, file_run_project_menu_item_, file_create_new_project_menu_item_, file_open_xtd_examples_menu_item_, file_separator1_menu_item_, file_settings_menu_item_, file_separator2_menu_item_, file_exit_menu_item_}};
     xtd::forms::menu_item help_about_menu_item_ {xtd::drawing::texts::about(), {*this, &main_form::show_about_dialog}, xtd::forms::menu_images::help_about()};
     xtd::forms::menu_item help_menu_item_ {xtd::drawing::texts::help(), {help_about_menu_item_}};

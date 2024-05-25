@@ -28,7 +28,7 @@ namespace hello_world_xtd_example {
       about_box::show("This is a xtd Hello World example", "About Hello World");
     }
     
-    menu_item hello_menu {"&Hello...", {*this, &main_form::on_hello_menu_click}, shortcut::cmd_h};
+    menu_item hello_menu {"&Hello...", {*this, &main_form::on_hello_menu_click}, shortcut::ctrl_h};
     menu_item separator_menu {"-"};
     menu_item exit_menu {texts::exit(), {*this, &main_form::on_exit_menu_click}, shortcut::alt_f4};
     
