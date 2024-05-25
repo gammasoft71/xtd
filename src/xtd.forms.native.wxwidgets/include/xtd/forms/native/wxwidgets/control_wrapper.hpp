@@ -8,6 +8,9 @@
 #if defined(__WXOSX__)
 #include <Carbon/Carbon.h>
 #endif
+#if defined(__WXGTK__)
+#include <gdk/gdkkeysyms.h>
+#endif
 
 namespace xtd::forms::native {
   template<typename control_t>
@@ -571,7 +574,15 @@ namespace xtd::forms::native {
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_key_down(wxEvent& event) {
-#if defined(__WXOSX__)
+#if defined (__WXMSW__)
+    if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_WINDOWS_LEFT || static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_WINDOWS_RIGHT) return;
+#elif defined(__WXGTK__)
+  if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == GDK_KEY_ISO_Level3_Shift) {
+      static_cast<wxKeyEvent&>(event).m_keyCode = WXK_ALT;
+      event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYDOWN, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event));
+      return;
+  }
+#elif defined(__WXOSX__)
     static auto functionKeyModifierIsDown = false;
     if (static_cast<wxKeyEvent&>(event).GetKeyCode() != WXK_NONE || static_cast<wxKeyEvent&>(event).GetRawKeyCode() != kVK_Function) functionKeyModifierIsDown = false;
     else {
@@ -582,14 +593,19 @@ namespace xtd::forms::native {
         return;
       }
     }
-#elif defined (__WXMSW__)
-    if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_WINDOWS_LEFT || static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_WINDOWS_RIGHT) return;
 #endif
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYDOWN, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event));
   }
   
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_key_up(wxEvent& event) {
+#if defined(__WXGTK__)
+  if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == GDK_KEY_ISO_Level3_Shift) {
+      static_cast<wxKeyEvent&>(event).m_keyCode = WXK_ALT;
+      event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYUP, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event));
+      return;
+  }
+  #endif
     event.Skip(!event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYUP, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event)));
   }
   
