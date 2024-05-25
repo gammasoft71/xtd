@@ -471,7 +471,7 @@ namespace xtd {
       /// @remarks The Apple keyboard xtd::forms::keys::option modifier key corresponding to the xtd::forms::keys::alt modifier key.
       option = alt,
       /// @brief The METTA modifier key.
-      /// @remarks OnWindows and Linux, the xtd::Forms::keys::meta modifier value corresponds to the Windows Left or Right keys.
+      /// @remarks OnWindows and Linux, the xtd::forms::keys::meta modifier value corresponds to the Windows Left or Right keys.
       /// @remarks On macOS, the xtd::forms::keys::control modifier value corresponds to the `command` keys on the keyboard, and the xtd::forms::keys::meta modifier value corresponds to the `control` keys.
       meta = 0x00080000,
       /// @brief The FUNCTION modifier key.
