@@ -171,592 +171,592 @@ namespace xtd::forms::tests {
       assert::are_equal(shortcut::alt_up_arrow, enum_object<>::parse<shortcut>("alt_up_arrow"), csf_);
     }
     
-    void test_method_(cmd_0) {
-      assert::are_equal(524336, enum_object<>::to_int32(shortcut::cmd_0), csf_);
-      assert::are_equal("cmd_0", enum_object<>::to_string(shortcut::cmd_0), csf_);
-      assert::are_equal(shortcut::cmd_0, enum_object<>::parse<shortcut>("cmd_0"), csf_);
+    void test_method_(ctrl_0) {
+      assert::are_equal(131120, enum_object<>::to_int32(shortcut::ctrl_0), csf_);
+      assert::are_equal("ctrl_0", enum_object<>::to_string(shortcut::ctrl_0), csf_);
+      assert::are_equal(shortcut::ctrl_0, enum_object<>::parse<shortcut>("ctrl_0"), csf_);
     }
     
-    void test_method_(cmd_1) {
-      assert::are_equal(524337, enum_object<>::to_int32(shortcut::cmd_1), csf_);
-      assert::are_equal("cmd_1", enum_object<>::to_string(shortcut::cmd_1), csf_);
-      assert::are_equal(shortcut::cmd_1, enum_object<>::parse<shortcut>("cmd_1"), csf_);
+    void test_method_(ctrl_1) {
+      assert::are_equal(131121, enum_object<>::to_int32(shortcut::ctrl_1), csf_);
+      assert::are_equal("ctrl_1", enum_object<>::to_string(shortcut::ctrl_1), csf_);
+      assert::are_equal(shortcut::ctrl_1, enum_object<>::parse<shortcut>("ctrl_1"), csf_);
     }
     
-    void test_method_(cmd_2) {
-      assert::are_equal(524338, enum_object<>::to_int32(shortcut::cmd_2), csf_);
-      assert::are_equal("cmd_2", enum_object<>::to_string(shortcut::cmd_2), csf_);
-      assert::are_equal(shortcut::cmd_2, enum_object<>::parse<shortcut>("cmd_2"), csf_);
+    void test_method_(ctrl_2) {
+      assert::are_equal(131122, enum_object<>::to_int32(shortcut::ctrl_2), csf_);
+      assert::are_equal("ctrl_2", enum_object<>::to_string(shortcut::ctrl_2), csf_);
+      assert::are_equal(shortcut::ctrl_2, enum_object<>::parse<shortcut>("ctrl_2"), csf_);
     }
     
-    void test_method_(cmd_3) {
-      assert::are_equal(524339, enum_object<>::to_int32(shortcut::cmd_3), csf_);
-      assert::are_equal("cmd_3", enum_object<>::to_string(shortcut::cmd_3), csf_);
-      assert::are_equal(shortcut::cmd_3, enum_object<>::parse<shortcut>("cmd_3"), csf_);
+    void test_method_(ctrl_3) {
+      assert::are_equal(131123, enum_object<>::to_int32(shortcut::ctrl_3), csf_);
+      assert::are_equal("ctrl_3", enum_object<>::to_string(shortcut::ctrl_3), csf_);
+      assert::are_equal(shortcut::ctrl_3, enum_object<>::parse<shortcut>("ctrl_3"), csf_);
     }
     
-    void test_method_(cmd_4) {
-      assert::are_equal(524340, enum_object<>::to_int32(shortcut::cmd_4), csf_);
-      assert::are_equal("cmd_4", enum_object<>::to_string(shortcut::cmd_4), csf_);
-      assert::are_equal(shortcut::cmd_4, enum_object<>::parse<shortcut>("cmd_4"), csf_);
+    void test_method_(ctrl_4) {
+      assert::are_equal(131124, enum_object<>::to_int32(shortcut::ctrl_4), csf_);
+      assert::are_equal("ctrl_4", enum_object<>::to_string(shortcut::ctrl_4), csf_);
+      assert::are_equal(shortcut::ctrl_4, enum_object<>::parse<shortcut>("ctrl_4"), csf_);
     }
     
-    void test_method_(cmd_5) {
-      assert::are_equal(524341, enum_object<>::to_int32(shortcut::cmd_5), csf_);
-      assert::are_equal("cmd_5", enum_object<>::to_string(shortcut::cmd_5), csf_);
-      assert::are_equal(shortcut::cmd_5, enum_object<>::parse<shortcut>("cmd_5"), csf_);
+    void test_method_(ctrl_5) {
+      assert::are_equal(131125, enum_object<>::to_int32(shortcut::ctrl_5), csf_);
+      assert::are_equal("ctrl_5", enum_object<>::to_string(shortcut::ctrl_5), csf_);
+      assert::are_equal(shortcut::ctrl_5, enum_object<>::parse<shortcut>("ctrl_5"), csf_);
     }
     
-    void test_method_(cmd_6) {
-      assert::are_equal(524342, enum_object<>::to_int32(shortcut::cmd_6), csf_);
-      assert::are_equal("cmd_6", enum_object<>::to_string(shortcut::cmd_6), csf_);
-      assert::are_equal(shortcut::cmd_6, enum_object<>::parse<shortcut>("cmd_6"), csf_);
+    void test_method_(ctrl_6) {
+      assert::are_equal(131126, enum_object<>::to_int32(shortcut::ctrl_6), csf_);
+      assert::are_equal("ctrl_6", enum_object<>::to_string(shortcut::ctrl_6), csf_);
+      assert::are_equal(shortcut::ctrl_6, enum_object<>::parse<shortcut>("ctrl_6"), csf_);
     }
     
-    void test_method_(cmd_7) {
-      assert::are_equal(524343, enum_object<>::to_int32(shortcut::cmd_7), csf_);
-      assert::are_equal("cmd_7", enum_object<>::to_string(shortcut::cmd_7), csf_);
-      assert::are_equal(shortcut::cmd_7, enum_object<>::parse<shortcut>("cmd_7"), csf_);
+    void test_method_(ctrl_7) {
+      assert::are_equal(131127, enum_object<>::to_int32(shortcut::ctrl_7), csf_);
+      assert::are_equal("ctrl_7", enum_object<>::to_string(shortcut::ctrl_7), csf_);
+      assert::are_equal(shortcut::ctrl_7, enum_object<>::parse<shortcut>("ctrl_7"), csf_);
     }
     
-    void test_method_(cmd_8) {
-      assert::are_equal(524344, enum_object<>::to_int32(shortcut::cmd_8), csf_);
-      assert::are_equal("cmd_8", enum_object<>::to_string(shortcut::cmd_8), csf_);
-      assert::are_equal(shortcut::cmd_8, enum_object<>::parse<shortcut>("cmd_8"), csf_);
+    void test_method_(ctrl_8) {
+      assert::are_equal(131128, enum_object<>::to_int32(shortcut::ctrl_8), csf_);
+      assert::are_equal("ctrl_8", enum_object<>::to_string(shortcut::ctrl_8), csf_);
+      assert::are_equal(shortcut::ctrl_8, enum_object<>::parse<shortcut>("ctrl_8"), csf_);
     }
     
-    void test_method_(cmd_9) {
-      assert::are_equal(524345, enum_object<>::to_int32(shortcut::cmd_9), csf_);
-      assert::are_equal("cmd_9", enum_object<>::to_string(shortcut::cmd_9), csf_);
-      assert::are_equal(shortcut::cmd_9, enum_object<>::parse<shortcut>("cmd_9"), csf_);
+    void test_method_(ctrl_9) {
+      assert::are_equal(131129, enum_object<>::to_int32(shortcut::ctrl_9), csf_);
+      assert::are_equal("ctrl_9", enum_object<>::to_string(shortcut::ctrl_9), csf_);
+      assert::are_equal(shortcut::ctrl_9, enum_object<>::parse<shortcut>("ctrl_9"), csf_);
     }
     
-    void test_method_(cmd_a) {
-      assert::are_equal(524353, enum_object<>::to_int32(shortcut::cmd_a), csf_);
-      assert::are_equal("cmd_a", enum_object<>::to_string(shortcut::cmd_a), csf_);
-      assert::are_equal(shortcut::cmd_a, enum_object<>::parse<shortcut>("cmd_a"), csf_);
+    void test_method_(ctrl_a) {
+      assert::are_equal(131137, enum_object<>::to_int32(shortcut::ctrl_a), csf_);
+      assert::are_equal("ctrl_a", enum_object<>::to_string(shortcut::ctrl_a), csf_);
+      assert::are_equal(shortcut::ctrl_a, enum_object<>::parse<shortcut>("ctrl_a"), csf_);
     }
     
-    void test_method_(cmd_b) {
-      assert::are_equal(524354, enum_object<>::to_int32(shortcut::cmd_b), csf_);
-      assert::are_equal("cmd_b", enum_object<>::to_string(shortcut::cmd_b), csf_);
-      assert::are_equal(shortcut::cmd_b, enum_object<>::parse<shortcut>("cmd_b"), csf_);
+    void test_method_(ctrl_b) {
+      assert::are_equal(131138, enum_object<>::to_int32(shortcut::ctrl_b), csf_);
+      assert::are_equal("ctrl_b", enum_object<>::to_string(shortcut::ctrl_b), csf_);
+      assert::are_equal(shortcut::ctrl_b, enum_object<>::parse<shortcut>("ctrl_b"), csf_);
     }
     
-    void test_method_(cmd_c) {
-      assert::are_equal(524355, enum_object<>::to_int32(shortcut::cmd_c), csf_);
-      assert::are_equal("cmd_c", enum_object<>::to_string(shortcut::cmd_c), csf_);
-      assert::are_equal(shortcut::cmd_c, enum_object<>::parse<shortcut>("cmd_c"), csf_);
+    void test_method_(ctrl_c) {
+      assert::are_equal(131139, enum_object<>::to_int32(shortcut::ctrl_c), csf_);
+      assert::are_equal("ctrl_c", enum_object<>::to_string(shortcut::ctrl_c), csf_);
+      assert::are_equal(shortcut::ctrl_c, enum_object<>::parse<shortcut>("ctrl_c"), csf_);
     }
     
-    void test_method_(cmd_d) {
-      assert::are_equal(524356, enum_object<>::to_int32(shortcut::cmd_d), csf_);
-      assert::are_equal("cmd_d", enum_object<>::to_string(shortcut::cmd_d), csf_);
-      assert::are_equal(shortcut::cmd_d, enum_object<>::parse<shortcut>("cmd_d"), csf_);
+    void test_method_(ctrl_d) {
+      assert::are_equal(131140, enum_object<>::to_int32(shortcut::ctrl_d), csf_);
+      assert::are_equal("ctrl_d", enum_object<>::to_string(shortcut::ctrl_d), csf_);
+      assert::are_equal(shortcut::ctrl_d, enum_object<>::parse<shortcut>("ctrl_d"), csf_);
     }
     
-    void test_method_(cmd_del) {
-      assert::are_equal(524334, enum_object<>::to_int32(shortcut::cmd_del), csf_);
-      assert::are_equal("cmd_del", enum_object<>::to_string(shortcut::cmd_del), csf_);
-      assert::are_equal(shortcut::cmd_del, enum_object<>::parse<shortcut>("cmd_del"), csf_);
+    void test_method_(ctrl_del) {
+      assert::are_equal(131118, enum_object<>::to_int32(shortcut::ctrl_del), csf_);
+      assert::are_equal("ctrl_del", enum_object<>::to_string(shortcut::ctrl_del), csf_);
+      assert::are_equal(shortcut::ctrl_del, enum_object<>::parse<shortcut>("ctrl_del"), csf_);
     }
     
-    void test_method_(cmd_e) {
-      assert::are_equal(524357, enum_object<>::to_int32(shortcut::cmd_e), csf_);
-      assert::are_equal("cmd_e", enum_object<>::to_string(shortcut::cmd_e), csf_);
-      assert::are_equal(shortcut::cmd_e, enum_object<>::parse<shortcut>("cmd_e"), csf_);
+    void test_method_(ctrl_e) {
+      assert::are_equal(131141, enum_object<>::to_int32(shortcut::ctrl_e), csf_);
+      assert::are_equal("ctrl_e", enum_object<>::to_string(shortcut::ctrl_e), csf_);
+      assert::are_equal(shortcut::ctrl_e, enum_object<>::parse<shortcut>("ctrl_e"), csf_);
     }
     
-    void test_method_(cmd_f) {
-      assert::are_equal(524358, enum_object<>::to_int32(shortcut::cmd_f), csf_);
-      assert::are_equal("cmd_f", enum_object<>::to_string(shortcut::cmd_f), csf_);
-      assert::are_equal(shortcut::cmd_f, enum_object<>::parse<shortcut>("cmd_f"), csf_);
+    void test_method_(ctrl_f) {
+      assert::are_equal(131142, enum_object<>::to_int32(shortcut::ctrl_f), csf_);
+      assert::are_equal("ctrl_f", enum_object<>::to_string(shortcut::ctrl_f), csf_);
+      assert::are_equal(shortcut::ctrl_f, enum_object<>::parse<shortcut>("ctrl_f"), csf_);
     }
     
-    void test_method_(cmd_f1) {
-      assert::are_equal(524400, enum_object<>::to_int32(shortcut::cmd_f1), csf_);
-      assert::are_equal("cmd_f1", enum_object<>::to_string(shortcut::cmd_f1), csf_);
-      assert::are_equal(shortcut::cmd_f1, enum_object<>::parse<shortcut>("cmd_f1"), csf_);
+    void test_method_(ctrl_f1) {
+      assert::are_equal(131184, enum_object<>::to_int32(shortcut::ctrl_f1), csf_);
+      assert::are_equal("ctrl_f1", enum_object<>::to_string(shortcut::ctrl_f1), csf_);
+      assert::are_equal(shortcut::ctrl_f1, enum_object<>::parse<shortcut>("ctrl_f1"), csf_);
     }
     
-    void test_method_(cmd_f10) {
-      assert::are_equal(524409, enum_object<>::to_int32(shortcut::cmd_f10), csf_);
-      assert::are_equal("cmd_f10", enum_object<>::to_string(shortcut::cmd_f10), csf_);
-      assert::are_equal(shortcut::cmd_f10, enum_object<>::parse<shortcut>("cmd_f10"), csf_);
+    void test_method_(ctrl_f10) {
+      assert::are_equal(131193, enum_object<>::to_int32(shortcut::ctrl_f10), csf_);
+      assert::are_equal("ctrl_f10", enum_object<>::to_string(shortcut::ctrl_f10), csf_);
+      assert::are_equal(shortcut::ctrl_f10, enum_object<>::parse<shortcut>("ctrl_f10"), csf_);
     }
     
-    void test_method_(cmd_f11) {
-      assert::are_equal(524410, enum_object<>::to_int32(shortcut::cmd_f11), csf_);
-      assert::are_equal("cmd_f11", enum_object<>::to_string(shortcut::cmd_f11), csf_);
-      assert::are_equal(shortcut::cmd_f11, enum_object<>::parse<shortcut>("cmd_f11"), csf_);
+    void test_method_(ctrl_f11) {
+      assert::are_equal(131194, enum_object<>::to_int32(shortcut::ctrl_f11), csf_);
+      assert::are_equal("ctrl_f11", enum_object<>::to_string(shortcut::ctrl_f11), csf_);
+      assert::are_equal(shortcut::ctrl_f11, enum_object<>::parse<shortcut>("ctrl_f11"), csf_);
     }
     
-    void test_method_(cmd_f12) {
-      assert::are_equal(524411, enum_object<>::to_int32(shortcut::cmd_f12), csf_);
-      assert::are_equal("cmd_f12", enum_object<>::to_string(shortcut::cmd_f12), csf_);
-      assert::are_equal(shortcut::cmd_f12, enum_object<>::parse<shortcut>("cmd_f12"), csf_);
+    void test_method_(ctrl_f12) {
+      assert::are_equal(131195, enum_object<>::to_int32(shortcut::ctrl_f12), csf_);
+      assert::are_equal("ctrl_f12", enum_object<>::to_string(shortcut::ctrl_f12), csf_);
+      assert::are_equal(shortcut::ctrl_f12, enum_object<>::parse<shortcut>("ctrl_f12"), csf_);
     }
     
-    void test_method_(cmd_f2) {
-      assert::are_equal(524401, enum_object<>::to_int32(shortcut::cmd_f2), csf_);
-      assert::are_equal("cmd_f2", enum_object<>::to_string(shortcut::cmd_f2), csf_);
-      assert::are_equal(shortcut::cmd_f2, enum_object<>::parse<shortcut>("cmd_f2"), csf_);
+    void test_method_(ctrl_f2) {
+      assert::are_equal(131185, enum_object<>::to_int32(shortcut::ctrl_f2), csf_);
+      assert::are_equal("ctrl_f2", enum_object<>::to_string(shortcut::ctrl_f2), csf_);
+      assert::are_equal(shortcut::ctrl_f2, enum_object<>::parse<shortcut>("ctrl_f2"), csf_);
     }
     
-    void test_method_(cmd_f3) {
-      assert::are_equal(524402, enum_object<>::to_int32(shortcut::cmd_f3), csf_);
-      assert::are_equal("cmd_f3", enum_object<>::to_string(shortcut::cmd_f3), csf_);
-      assert::are_equal(shortcut::cmd_f3, enum_object<>::parse<shortcut>("cmd_f3"), csf_);
+    void test_method_(ctrl_f3) {
+      assert::are_equal(131186, enum_object<>::to_int32(shortcut::ctrl_f3), csf_);
+      assert::are_equal("ctrl_f3", enum_object<>::to_string(shortcut::ctrl_f3), csf_);
+      assert::are_equal(shortcut::ctrl_f3, enum_object<>::parse<shortcut>("ctrl_f3"), csf_);
     }
     
-    void test_method_(cmd_f4) {
-      assert::are_equal(524403, enum_object<>::to_int32(shortcut::cmd_f4), csf_);
-      assert::are_equal("cmd_f4", enum_object<>::to_string(shortcut::cmd_f4), csf_);
-      assert::are_equal(shortcut::cmd_f4, enum_object<>::parse<shortcut>("cmd_f4"), csf_);
+    void test_method_(ctrl_f4) {
+      assert::are_equal(131187, enum_object<>::to_int32(shortcut::ctrl_f4), csf_);
+      assert::are_equal("ctrl_f4", enum_object<>::to_string(shortcut::ctrl_f4), csf_);
+      assert::are_equal(shortcut::ctrl_f4, enum_object<>::parse<shortcut>("ctrl_f4"), csf_);
     }
     
-    void test_method_(cmd_f5) {
-      assert::are_equal(524404, enum_object<>::to_int32(shortcut::cmd_f5), csf_);
-      assert::are_equal("cmd_f5", enum_object<>::to_string(shortcut::cmd_f5), csf_);
-      assert::are_equal(shortcut::cmd_f5, enum_object<>::parse<shortcut>("cmd_f5"), csf_);
+    void test_method_(ctrl_f5) {
+      assert::are_equal(131188, enum_object<>::to_int32(shortcut::ctrl_f5), csf_);
+      assert::are_equal("ctrl_f5", enum_object<>::to_string(shortcut::ctrl_f5), csf_);
+      assert::are_equal(shortcut::ctrl_f5, enum_object<>::parse<shortcut>("ctrl_f5"), csf_);
     }
     
-    void test_method_(cmd_f6) {
-      assert::are_equal(524405, enum_object<>::to_int32(shortcut::cmd_f6), csf_);
-      assert::are_equal("cmd_f6", enum_object<>::to_string(shortcut::cmd_f6), csf_);
-      assert::are_equal(shortcut::cmd_f6, enum_object<>::parse<shortcut>("cmd_f6"), csf_);
+    void test_method_(ctrl_f6) {
+      assert::are_equal(131189, enum_object<>::to_int32(shortcut::ctrl_f6), csf_);
+      assert::are_equal("ctrl_f6", enum_object<>::to_string(shortcut::ctrl_f6), csf_);
+      assert::are_equal(shortcut::ctrl_f6, enum_object<>::parse<shortcut>("ctrl_f6"), csf_);
     }
     
-    void test_method_(cmd_f7) {
-      assert::are_equal(524406, enum_object<>::to_int32(shortcut::cmd_f7), csf_);
-      assert::are_equal("cmd_f7", enum_object<>::to_string(shortcut::cmd_f7), csf_);
-      assert::are_equal(shortcut::cmd_f7, enum_object<>::parse<shortcut>("cmd_f7"), csf_);
+    void test_method_(ctrl_f7) {
+      assert::are_equal(131190, enum_object<>::to_int32(shortcut::ctrl_f7), csf_);
+      assert::are_equal("ctrl_f7", enum_object<>::to_string(shortcut::ctrl_f7), csf_);
+      assert::are_equal(shortcut::ctrl_f7, enum_object<>::parse<shortcut>("ctrl_f7"), csf_);
     }
     
-    void test_method_(cmd_f8) {
-      assert::are_equal(524407, enum_object<>::to_int32(shortcut::cmd_f8), csf_);
-      assert::are_equal("cmd_f8", enum_object<>::to_string(shortcut::cmd_f8), csf_);
-      assert::are_equal(shortcut::cmd_f8, enum_object<>::parse<shortcut>("cmd_f8"), csf_);
+    void test_method_(ctrl_f8) {
+      assert::are_equal(131191, enum_object<>::to_int32(shortcut::ctrl_f8), csf_);
+      assert::are_equal("ctrl_f8", enum_object<>::to_string(shortcut::ctrl_f8), csf_);
+      assert::are_equal(shortcut::ctrl_f8, enum_object<>::parse<shortcut>("ctrl_f8"), csf_);
     }
     
-    void test_method_(cmd_f9) {
-      assert::are_equal(524408, enum_object<>::to_int32(shortcut::cmd_f9), csf_);
-      assert::are_equal("cmd_f9", enum_object<>::to_string(shortcut::cmd_f9), csf_);
-      assert::are_equal(shortcut::cmd_f9, enum_object<>::parse<shortcut>("cmd_f9"), csf_);
+    void test_method_(ctrl_f9) {
+      assert::are_equal(131192, enum_object<>::to_int32(shortcut::ctrl_f9), csf_);
+      assert::are_equal("ctrl_f9", enum_object<>::to_string(shortcut::ctrl_f9), csf_);
+      assert::are_equal(shortcut::ctrl_f9, enum_object<>::parse<shortcut>("ctrl_f9"), csf_);
     }
     
-    void test_method_(cmd_g) {
-      assert::are_equal(524359, enum_object<>::to_int32(shortcut::cmd_g), csf_);
-      assert::are_equal("cmd_g", enum_object<>::to_string(shortcut::cmd_g), csf_);
-      assert::are_equal(shortcut::cmd_g, enum_object<>::parse<shortcut>("cmd_g"), csf_);
+    void test_method_(ctrl_g) {
+      assert::are_equal(131143, enum_object<>::to_int32(shortcut::ctrl_g), csf_);
+      assert::are_equal("ctrl_g", enum_object<>::to_string(shortcut::ctrl_g), csf_);
+      assert::are_equal(shortcut::ctrl_g, enum_object<>::parse<shortcut>("ctrl_g"), csf_);
     }
     
-    void test_method_(cmd_h) {
-      assert::are_equal(524360, enum_object<>::to_int32(shortcut::cmd_h), csf_);
-      assert::are_equal("cmd_h", enum_object<>::to_string(shortcut::cmd_h), csf_);
-      assert::are_equal(shortcut::cmd_h, enum_object<>::parse<shortcut>("cmd_h"), csf_);
+    void test_method_(ctrl_h) {
+      assert::are_equal(131144, enum_object<>::to_int32(shortcut::ctrl_h), csf_);
+      assert::are_equal("ctrl_h", enum_object<>::to_string(shortcut::ctrl_h), csf_);
+      assert::are_equal(shortcut::ctrl_h, enum_object<>::parse<shortcut>("ctrl_h"), csf_);
     }
     
-    void test_method_(cmd_i) {
-      assert::are_equal(524361, enum_object<>::to_int32(shortcut::cmd_i), csf_);
-      assert::are_equal("cmd_i", enum_object<>::to_string(shortcut::cmd_i), csf_);
-      assert::are_equal(shortcut::cmd_i, enum_object<>::parse<shortcut>("cmd_i"), csf_);
+    void test_method_(ctrl_i) {
+      assert::are_equal(131145, enum_object<>::to_int32(shortcut::ctrl_i), csf_);
+      assert::are_equal("ctrl_i", enum_object<>::to_string(shortcut::ctrl_i), csf_);
+      assert::are_equal(shortcut::ctrl_i, enum_object<>::parse<shortcut>("ctrl_i"), csf_);
     }
     
-    void test_method_(cmd_ins) {
-      assert::are_equal(524333, enum_object<>::to_int32(shortcut::cmd_ins), csf_);
-      assert::are_equal("cmd_ins", enum_object<>::to_string(shortcut::cmd_ins), csf_);
-      assert::are_equal(shortcut::cmd_ins, enum_object<>::parse<shortcut>("cmd_ins"), csf_);
+    void test_method_(ctrl_ins) {
+      assert::are_equal(131117, enum_object<>::to_int32(shortcut::ctrl_ins), csf_);
+      assert::are_equal("ctrl_ins", enum_object<>::to_string(shortcut::ctrl_ins), csf_);
+      assert::are_equal(shortcut::ctrl_ins, enum_object<>::parse<shortcut>("ctrl_ins"), csf_);
     }
     
-    void test_method_(cmd_j) {
-      assert::are_equal(524362, enum_object<>::to_int32(shortcut::cmd_j), csf_);
-      assert::are_equal("cmd_j", enum_object<>::to_string(shortcut::cmd_j), csf_);
-      assert::are_equal(shortcut::cmd_j, enum_object<>::parse<shortcut>("cmd_j"), csf_);
+    void test_method_(ctrl_j) {
+      assert::are_equal(131146, enum_object<>::to_int32(shortcut::ctrl_j), csf_);
+      assert::are_equal("ctrl_j", enum_object<>::to_string(shortcut::ctrl_j), csf_);
+      assert::are_equal(shortcut::ctrl_j, enum_object<>::parse<shortcut>("ctrl_j"), csf_);
     }
     
-    void test_method_(cmd_k) {
-      assert::are_equal(524363, enum_object<>::to_int32(shortcut::cmd_k), csf_);
-      assert::are_equal("cmd_k", enum_object<>::to_string(shortcut::cmd_k), csf_);
-      assert::are_equal(shortcut::cmd_k, enum_object<>::parse<shortcut>("cmd_k"), csf_);
+    void test_method_(ctrl_k) {
+      assert::are_equal(131147, enum_object<>::to_int32(shortcut::ctrl_k), csf_);
+      assert::are_equal("ctrl_k", enum_object<>::to_string(shortcut::ctrl_k), csf_);
+      assert::are_equal(shortcut::ctrl_k, enum_object<>::parse<shortcut>("ctrl_k"), csf_);
     }
     
-    void test_method_(cmd_l) {
-      assert::are_equal(524364, enum_object<>::to_int32(shortcut::cmd_l), csf_);
-      assert::are_equal("cmd_l", enum_object<>::to_string(shortcut::cmd_l), csf_);
-      assert::are_equal(shortcut::cmd_l, enum_object<>::parse<shortcut>("cmd_l"), csf_);
+    void test_method_(ctrl_l) {
+      assert::are_equal(131148, enum_object<>::to_int32(shortcut::ctrl_l), csf_);
+      assert::are_equal("ctrl_l", enum_object<>::to_string(shortcut::ctrl_l), csf_);
+      assert::are_equal(shortcut::ctrl_l, enum_object<>::parse<shortcut>("ctrl_l"), csf_);
     }
     
-    void test_method_(cmd_m) {
-      assert::are_equal(524365, enum_object<>::to_int32(shortcut::cmd_m), csf_);
-      assert::are_equal("cmd_m", enum_object<>::to_string(shortcut::cmd_m), csf_);
-      assert::are_equal(shortcut::cmd_m, enum_object<>::parse<shortcut>("cmd_m"), csf_);
+    void test_method_(ctrl_m) {
+      assert::are_equal(131149, enum_object<>::to_int32(shortcut::ctrl_m), csf_);
+      assert::are_equal("ctrl_m", enum_object<>::to_string(shortcut::ctrl_m), csf_);
+      assert::are_equal(shortcut::ctrl_m, enum_object<>::parse<shortcut>("ctrl_m"), csf_);
     }
     
-    void test_method_(cmd_n) {
-      assert::are_equal(524366, enum_object<>::to_int32(shortcut::cmd_n), csf_);
-      assert::are_equal("cmd_n", enum_object<>::to_string(shortcut::cmd_n), csf_);
-      assert::are_equal(shortcut::cmd_n, enum_object<>::parse<shortcut>("cmd_n"), csf_);
+    void test_method_(ctrl_n) {
+      assert::are_equal(131150, enum_object<>::to_int32(shortcut::ctrl_n), csf_);
+      assert::are_equal("ctrl_n", enum_object<>::to_string(shortcut::ctrl_n), csf_);
+      assert::are_equal(shortcut::ctrl_n, enum_object<>::parse<shortcut>("ctrl_n"), csf_);
     }
     
-    void test_method_(cmd_o) {
-      assert::are_equal(524367, enum_object<>::to_int32(shortcut::cmd_o), csf_);
-      assert::are_equal("cmd_o", enum_object<>::to_string(shortcut::cmd_o), csf_);
-      assert::are_equal(shortcut::cmd_o, enum_object<>::parse<shortcut>("cmd_o"), csf_);
+    void test_method_(ctrl_o) {
+      assert::are_equal(131151, enum_object<>::to_int32(shortcut::ctrl_o), csf_);
+      assert::are_equal("ctrl_o", enum_object<>::to_string(shortcut::ctrl_o), csf_);
+      assert::are_equal(shortcut::ctrl_o, enum_object<>::parse<shortcut>("ctrl_o"), csf_);
     }
     
-    void test_method_(cmd_p) {
-      assert::are_equal(524368, enum_object<>::to_int32(shortcut::cmd_p), csf_);
-      assert::are_equal("cmd_p", enum_object<>::to_string(shortcut::cmd_p), csf_);
-      assert::are_equal(shortcut::cmd_p, enum_object<>::parse<shortcut>("cmd_p"), csf_);
+    void test_method_(ctrl_p) {
+      assert::are_equal(131152, enum_object<>::to_int32(shortcut::ctrl_p), csf_);
+      assert::are_equal("ctrl_p", enum_object<>::to_string(shortcut::ctrl_p), csf_);
+      assert::are_equal(shortcut::ctrl_p, enum_object<>::parse<shortcut>("ctrl_p"), csf_);
     }
     
-    void test_method_(cmd_q) {
-      assert::are_equal(524369, enum_object<>::to_int32(shortcut::cmd_q), csf_);
-      assert::are_equal("cmd_q", enum_object<>::to_string(shortcut::cmd_q), csf_);
-      assert::are_equal(shortcut::cmd_q, enum_object<>::parse<shortcut>("cmd_q"), csf_);
+    void test_method_(ctrl_q) {
+      assert::are_equal(131153, enum_object<>::to_int32(shortcut::ctrl_q), csf_);
+      assert::are_equal("ctrl_q", enum_object<>::to_string(shortcut::ctrl_q), csf_);
+      assert::are_equal(shortcut::ctrl_q, enum_object<>::parse<shortcut>("ctrl_q"), csf_);
     }
     
-    void test_method_(cmd_r) {
-      assert::are_equal(524370, enum_object<>::to_int32(shortcut::cmd_r), csf_);
-      assert::are_equal("cmd_r", enum_object<>::to_string(shortcut::cmd_r), csf_);
-      assert::are_equal(shortcut::cmd_r, enum_object<>::parse<shortcut>("cmd_r"), csf_);
+    void test_method_(ctrl_r) {
+      assert::are_equal(131154, enum_object<>::to_int32(shortcut::ctrl_r), csf_);
+      assert::are_equal("ctrl_r", enum_object<>::to_string(shortcut::ctrl_r), csf_);
+      assert::are_equal(shortcut::ctrl_r, enum_object<>::parse<shortcut>("ctrl_r"), csf_);
     }
     
-    void test_method_(cmd_s) {
-      assert::are_equal(524371, enum_object<>::to_int32(shortcut::cmd_s), csf_);
-      assert::are_equal("cmd_s", enum_object<>::to_string(shortcut::cmd_s), csf_);
-      assert::are_equal(shortcut::cmd_s, enum_object<>::parse<shortcut>("cmd_s"), csf_);
+    void test_method_(ctrl_s) {
+      assert::are_equal(131155, enum_object<>::to_int32(shortcut::ctrl_s), csf_);
+      assert::are_equal("ctrl_s", enum_object<>::to_string(shortcut::ctrl_s), csf_);
+      assert::are_equal(shortcut::ctrl_s, enum_object<>::parse<shortcut>("ctrl_s"), csf_);
     }
     
-    void test_method_(cmd_shift_0) {
-      assert::are_equal(589872, enum_object<>::to_int32(shortcut::cmd_shift_0), csf_);
-      assert::are_equal("cmd_shift_0", enum_object<>::to_string(shortcut::cmd_shift_0), csf_);
-      assert::are_equal(shortcut::cmd_shift_0, enum_object<>::parse<shortcut>("cmd_shift_0"), csf_);
+    void test_method_(ctrl_shift_0) {
+      assert::are_equal(196656, enum_object<>::to_int32(shortcut::ctrl_shift_0), csf_);
+      assert::are_equal("ctrl_shift_0", enum_object<>::to_string(shortcut::ctrl_shift_0), csf_);
+      assert::are_equal(shortcut::ctrl_shift_0, enum_object<>::parse<shortcut>("ctrl_shift_0"), csf_);
     }
     
-    void test_method_(cmd_shift_1) {
-      assert::are_equal(589873, enum_object<>::to_int32(shortcut::cmd_shift_1), csf_);
-      assert::are_equal("cmd_shift_1", enum_object<>::to_string(shortcut::cmd_shift_1), csf_);
-      assert::are_equal(shortcut::cmd_shift_1, enum_object<>::parse<shortcut>("cmd_shift_1"), csf_);
+    void test_method_(ctrl_shift_1) {
+      assert::are_equal(196657, enum_object<>::to_int32(shortcut::ctrl_shift_1), csf_);
+      assert::are_equal("ctrl_shift_1", enum_object<>::to_string(shortcut::ctrl_shift_1), csf_);
+      assert::are_equal(shortcut::ctrl_shift_1, enum_object<>::parse<shortcut>("ctrl_shift_1"), csf_);
     }
     
-    void test_method_(cmd_shift_2) {
-      assert::are_equal(589874, enum_object<>::to_int32(shortcut::cmd_shift_2), csf_);
-      assert::are_equal("cmd_shift_2", enum_object<>::to_string(shortcut::cmd_shift_2), csf_);
-      assert::are_equal(shortcut::cmd_shift_2, enum_object<>::parse<shortcut>("cmd_shift_2"), csf_);
+    void test_method_(ctrl_shift_2) {
+      assert::are_equal(196658, enum_object<>::to_int32(shortcut::ctrl_shift_2), csf_);
+      assert::are_equal("ctrl_shift_2", enum_object<>::to_string(shortcut::ctrl_shift_2), csf_);
+      assert::are_equal(shortcut::ctrl_shift_2, enum_object<>::parse<shortcut>("ctrl_shift_2"), csf_);
     }
     
-    void test_method_(cmd_shift_3) {
-      assert::are_equal(589875, enum_object<>::to_int32(shortcut::cmd_shift_3), csf_);
-      assert::are_equal("cmd_shift_3", enum_object<>::to_string(shortcut::cmd_shift_3), csf_);
-      assert::are_equal(shortcut::cmd_shift_3, enum_object<>::parse<shortcut>("cmd_shift_3"), csf_);
+    void test_method_(ctrl_shift_3) {
+      assert::are_equal(196659, enum_object<>::to_int32(shortcut::ctrl_shift_3), csf_);
+      assert::are_equal("ctrl_shift_3", enum_object<>::to_string(shortcut::ctrl_shift_3), csf_);
+      assert::are_equal(shortcut::ctrl_shift_3, enum_object<>::parse<shortcut>("ctrl_shift_3"), csf_);
     }
     
-    void test_method_(cmd_shift_4) {
-      assert::are_equal(589876, enum_object<>::to_int32(shortcut::cmd_shift_4), csf_);
-      assert::are_equal("cmd_shift_4", enum_object<>::to_string(shortcut::cmd_shift_4), csf_);
-      assert::are_equal(shortcut::cmd_shift_4, enum_object<>::parse<shortcut>("cmd_shift_4"), csf_);
+    void test_method_(ctrl_shift_4) {
+      assert::are_equal(196660, enum_object<>::to_int32(shortcut::ctrl_shift_4), csf_);
+      assert::are_equal("ctrl_shift_4", enum_object<>::to_string(shortcut::ctrl_shift_4), csf_);
+      assert::are_equal(shortcut::ctrl_shift_4, enum_object<>::parse<shortcut>("ctrl_shift_4"), csf_);
     }
     
-    void test_method_(cmd_shift_5) {
-      assert::are_equal(589877, enum_object<>::to_int32(shortcut::cmd_shift_5), csf_);
-      assert::are_equal("cmd_shift_5", enum_object<>::to_string(shortcut::cmd_shift_5), csf_);
-      assert::are_equal(shortcut::cmd_shift_5, enum_object<>::parse<shortcut>("cmd_shift_5"), csf_);
+    void test_method_(ctrl_shift_5) {
+      assert::are_equal(196661, enum_object<>::to_int32(shortcut::ctrl_shift_5), csf_);
+      assert::are_equal("ctrl_shift_5", enum_object<>::to_string(shortcut::ctrl_shift_5), csf_);
+      assert::are_equal(shortcut::ctrl_shift_5, enum_object<>::parse<shortcut>("ctrl_shift_5"), csf_);
     }
     
-    void test_method_(cmd_shift_6) {
-      assert::are_equal(589878, enum_object<>::to_int32(shortcut::cmd_shift_6), csf_);
-      assert::are_equal("cmd_shift_6", enum_object<>::to_string(shortcut::cmd_shift_6), csf_);
-      assert::are_equal(shortcut::cmd_shift_6, enum_object<>::parse<shortcut>("cmd_shift_6"), csf_);
+    void test_method_(ctrl_shift_6) {
+      assert::are_equal(196662, enum_object<>::to_int32(shortcut::ctrl_shift_6), csf_);
+      assert::are_equal("ctrl_shift_6", enum_object<>::to_string(shortcut::ctrl_shift_6), csf_);
+      assert::are_equal(shortcut::ctrl_shift_6, enum_object<>::parse<shortcut>("ctrl_shift_6"), csf_);
     }
     
-    void test_method_(cmd_shift_7) {
-      assert::are_equal(589879, enum_object<>::to_int32(shortcut::cmd_shift_7), csf_);
-      assert::are_equal("cmd_shift_7", enum_object<>::to_string(shortcut::cmd_shift_7), csf_);
-      assert::are_equal(shortcut::cmd_shift_7, enum_object<>::parse<shortcut>("cmd_shift_7"), csf_);
+    void test_method_(ctrl_shift_7) {
+      assert::are_equal(196663, enum_object<>::to_int32(shortcut::ctrl_shift_7), csf_);
+      assert::are_equal("ctrl_shift_7", enum_object<>::to_string(shortcut::ctrl_shift_7), csf_);
+      assert::are_equal(shortcut::ctrl_shift_7, enum_object<>::parse<shortcut>("ctrl_shift_7"), csf_);
     }
     
-    void test_method_(cmd_shift_8) {
-      assert::are_equal(589880, enum_object<>::to_int32(shortcut::cmd_shift_8), csf_);
-      assert::are_equal("cmd_shift_8", enum_object<>::to_string(shortcut::cmd_shift_8), csf_);
-      assert::are_equal(shortcut::cmd_shift_8, enum_object<>::parse<shortcut>("cmd_shift_8"), csf_);
+    void test_method_(ctrl_shift_8) {
+      assert::are_equal(196664, enum_object<>::to_int32(shortcut::ctrl_shift_8), csf_);
+      assert::are_equal("ctrl_shift_8", enum_object<>::to_string(shortcut::ctrl_shift_8), csf_);
+      assert::are_equal(shortcut::ctrl_shift_8, enum_object<>::parse<shortcut>("ctrl_shift_8"), csf_);
     }
     
-    void test_method_(cmd_shift_9) {
-      assert::are_equal(589881, enum_object<>::to_int32(shortcut::cmd_shift_9), csf_);
-      assert::are_equal("cmd_shift_9", enum_object<>::to_string(shortcut::cmd_shift_9), csf_);
-      assert::are_equal(shortcut::cmd_shift_9, enum_object<>::parse<shortcut>("cmd_shift_9"), csf_);
+    void test_method_(ctrl_shift_9) {
+      assert::are_equal(196665, enum_object<>::to_int32(shortcut::ctrl_shift_9), csf_);
+      assert::are_equal("ctrl_shift_9", enum_object<>::to_string(shortcut::ctrl_shift_9), csf_);
+      assert::are_equal(shortcut::ctrl_shift_9, enum_object<>::parse<shortcut>("ctrl_shift_9"), csf_);
     }
     
-    void test_method_(cmd_shift_a) {
-      assert::are_equal(589889, enum_object<>::to_int32(shortcut::cmd_shift_a), csf_);
-      assert::are_equal("cmd_shift_a", enum_object<>::to_string(shortcut::cmd_shift_a), csf_);
-      assert::are_equal(shortcut::cmd_shift_a, enum_object<>::parse<shortcut>("cmd_shift_a"), csf_);
+    void test_method_(ctrl_shift_a) {
+      assert::are_equal(196673, enum_object<>::to_int32(shortcut::ctrl_shift_a), csf_);
+      assert::are_equal("ctrl_shift_a", enum_object<>::to_string(shortcut::ctrl_shift_a), csf_);
+      assert::are_equal(shortcut::ctrl_shift_a, enum_object<>::parse<shortcut>("ctrl_shift_a"), csf_);
     }
     
-    void test_method_(cmd_shift_b) {
-      assert::are_equal(589890, enum_object<>::to_int32(shortcut::cmd_shift_b), csf_);
-      assert::are_equal("cmd_shift_b", enum_object<>::to_string(shortcut::cmd_shift_b), csf_);
-      assert::are_equal(shortcut::cmd_shift_b, enum_object<>::parse<shortcut>("cmd_shift_b"), csf_);
+    void test_method_(ctrl_shift_b) {
+      assert::are_equal(196674, enum_object<>::to_int32(shortcut::ctrl_shift_b), csf_);
+      assert::are_equal("ctrl_shift_b", enum_object<>::to_string(shortcut::ctrl_shift_b), csf_);
+      assert::are_equal(shortcut::ctrl_shift_b, enum_object<>::parse<shortcut>("ctrl_shift_b"), csf_);
     }
     
-    void test_method_(cmd_shift_c) {
-      assert::are_equal(589891, enum_object<>::to_int32(shortcut::cmd_shift_c), csf_);
-      assert::are_equal("cmd_shift_c", enum_object<>::to_string(shortcut::cmd_shift_c), csf_);
-      assert::are_equal(shortcut::cmd_shift_c, enum_object<>::parse<shortcut>("cmd_shift_c"), csf_);
+    void test_method_(ctrl_shift_c) {
+      assert::are_equal(196675, enum_object<>::to_int32(shortcut::ctrl_shift_c), csf_);
+      assert::are_equal("ctrl_shift_c", enum_object<>::to_string(shortcut::ctrl_shift_c), csf_);
+      assert::are_equal(shortcut::ctrl_shift_c, enum_object<>::parse<shortcut>("ctrl_shift_c"), csf_);
     }
     
-    void test_method_(cmd_shift_d) {
-      assert::are_equal(589892, enum_object<>::to_int32(shortcut::cmd_shift_d), csf_);
-      assert::are_equal("cmd_shift_d", enum_object<>::to_string(shortcut::cmd_shift_d), csf_);
-      assert::are_equal(shortcut::cmd_shift_d, enum_object<>::parse<shortcut>("cmd_shift_d"), csf_);
+    void test_method_(ctrl_shift_d) {
+      assert::are_equal(196676, enum_object<>::to_int32(shortcut::ctrl_shift_d), csf_);
+      assert::are_equal("ctrl_shift_d", enum_object<>::to_string(shortcut::ctrl_shift_d), csf_);
+      assert::are_equal(shortcut::ctrl_shift_d, enum_object<>::parse<shortcut>("ctrl_shift_d"), csf_);
     }
     
-    void test_method_(cmd_shift_e) {
-      assert::are_equal(589893, enum_object<>::to_int32(shortcut::cmd_shift_e), csf_);
-      assert::are_equal("cmd_shift_e", enum_object<>::to_string(shortcut::cmd_shift_e), csf_);
-      assert::are_equal(shortcut::cmd_shift_e, enum_object<>::parse<shortcut>("cmd_shift_e"), csf_);
+    void test_method_(ctrl_shift_e) {
+      assert::are_equal(196677, enum_object<>::to_int32(shortcut::ctrl_shift_e), csf_);
+      assert::are_equal("ctrl_shift_e", enum_object<>::to_string(shortcut::ctrl_shift_e), csf_);
+      assert::are_equal(shortcut::ctrl_shift_e, enum_object<>::parse<shortcut>("ctrl_shift_e"), csf_);
     }
     
-    void test_method_(cmd_shift_f) {
-      assert::are_equal(589894, enum_object<>::to_int32(shortcut::cmd_shift_f), csf_);
-      assert::are_equal("cmd_shift_f", enum_object<>::to_string(shortcut::cmd_shift_f), csf_);
-      assert::are_equal(shortcut::cmd_shift_f, enum_object<>::parse<shortcut>("cmd_shift_f"), csf_);
+    void test_method_(ctrl_shift_f) {
+      assert::are_equal(196678, enum_object<>::to_int32(shortcut::ctrl_shift_f), csf_);
+      assert::are_equal("ctrl_shift_f", enum_object<>::to_string(shortcut::ctrl_shift_f), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f, enum_object<>::parse<shortcut>("ctrl_shift_f"), csf_);
     }
     
-    void test_method_(cmd_shift_f1) {
-      assert::are_equal(589936, enum_object<>::to_int32(shortcut::cmd_shift_f1), csf_);
-      assert::are_equal("cmd_shift_f1", enum_object<>::to_string(shortcut::cmd_shift_f1), csf_);
-      assert::are_equal(shortcut::cmd_shift_f1, enum_object<>::parse<shortcut>("cmd_shift_f1"), csf_);
+    void test_method_(ctrl_shift_f1) {
+      assert::are_equal(196720, enum_object<>::to_int32(shortcut::ctrl_shift_f1), csf_);
+      assert::are_equal("ctrl_shift_f1", enum_object<>::to_string(shortcut::ctrl_shift_f1), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f1, enum_object<>::parse<shortcut>("ctrl_shift_f1"), csf_);
     }
     
-    void test_method_(cmd_shift_f10) {
-      assert::are_equal(589945, enum_object<>::to_int32(shortcut::cmd_shift_f10), csf_);
-      assert::are_equal("cmd_shift_f10", enum_object<>::to_string(shortcut::cmd_shift_f10), csf_);
-      assert::are_equal(shortcut::cmd_shift_f10, enum_object<>::parse<shortcut>("cmd_shift_f10"), csf_);
+    void test_method_(ctrl_shift_f10) {
+      assert::are_equal(196729, enum_object<>::to_int32(shortcut::ctrl_shift_f10), csf_);
+      assert::are_equal("ctrl_shift_f10", enum_object<>::to_string(shortcut::ctrl_shift_f10), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f10, enum_object<>::parse<shortcut>("ctrl_shift_f10"), csf_);
     }
     
-    void test_method_(cmd_shift_f11) {
-      assert::are_equal(589946, enum_object<>::to_int32(shortcut::cmd_shift_f11), csf_);
-      assert::are_equal("cmd_shift_f11", enum_object<>::to_string(shortcut::cmd_shift_f11), csf_);
-      assert::are_equal(shortcut::cmd_shift_f11, enum_object<>::parse<shortcut>("cmd_shift_f11"), csf_);
+    void test_method_(ctrl_shift_f11) {
+      assert::are_equal(196730, enum_object<>::to_int32(shortcut::ctrl_shift_f11), csf_);
+      assert::are_equal("ctrl_shift_f11", enum_object<>::to_string(shortcut::ctrl_shift_f11), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f11, enum_object<>::parse<shortcut>("ctrl_shift_f11"), csf_);
     }
     
-    void test_method_(cmd_shift_f12) {
-      assert::are_equal(589947, enum_object<>::to_int32(shortcut::cmd_shift_f12), csf_);
-      assert::are_equal("cmd_shift_f12", enum_object<>::to_string(shortcut::cmd_shift_f12), csf_);
-      assert::are_equal(shortcut::cmd_shift_f12, enum_object<>::parse<shortcut>("cmd_shift_f12"), csf_);
+    void test_method_(ctrl_shift_f12) {
+      assert::are_equal(196731, enum_object<>::to_int32(shortcut::ctrl_shift_f12), csf_);
+      assert::are_equal("ctrl_shift_f12", enum_object<>::to_string(shortcut::ctrl_shift_f12), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f12, enum_object<>::parse<shortcut>("ctrl_shift_f12"), csf_);
     }
     
-    void test_method_(cmd_shift_f2) {
-      assert::are_equal(589937, enum_object<>::to_int32(shortcut::cmd_shift_f2), csf_);
-      assert::are_equal("cmd_shift_f2", enum_object<>::to_string(shortcut::cmd_shift_f2), csf_);
-      assert::are_equal(shortcut::cmd_shift_f2, enum_object<>::parse<shortcut>("cmd_shift_f2"), csf_);
+    void test_method_(ctrl_shift_f2) {
+      assert::are_equal(196721, enum_object<>::to_int32(shortcut::ctrl_shift_f2), csf_);
+      assert::are_equal("ctrl_shift_f2", enum_object<>::to_string(shortcut::ctrl_shift_f2), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f2, enum_object<>::parse<shortcut>("ctrl_shift_f2"), csf_);
     }
     
-    void test_method_(cmd_shift_f3) {
-      assert::are_equal(589938, enum_object<>::to_int32(shortcut::cmd_shift_f3), csf_);
-      assert::are_equal("cmd_shift_f3", enum_object<>::to_string(shortcut::cmd_shift_f3), csf_);
-      assert::are_equal(shortcut::cmd_shift_f3, enum_object<>::parse<shortcut>("cmd_shift_f3"), csf_);
+    void test_method_(ctrl_shift_f3) {
+      assert::are_equal(196722, enum_object<>::to_int32(shortcut::ctrl_shift_f3), csf_);
+      assert::are_equal("ctrl_shift_f3", enum_object<>::to_string(shortcut::ctrl_shift_f3), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f3, enum_object<>::parse<shortcut>("ctrl_shift_f3"), csf_);
     }
     
-    void test_method_(cmd_shift_f4) {
-      assert::are_equal(589939, enum_object<>::to_int32(shortcut::cmd_shift_f4), csf_);
-      assert::are_equal("cmd_shift_f4", enum_object<>::to_string(shortcut::cmd_shift_f4), csf_);
-      assert::are_equal(shortcut::cmd_shift_f4, enum_object<>::parse<shortcut>("cmd_shift_f4"), csf_);
+    void test_method_(ctrl_shift_f4) {
+      assert::are_equal(196723, enum_object<>::to_int32(shortcut::ctrl_shift_f4), csf_);
+      assert::are_equal("ctrl_shift_f4", enum_object<>::to_string(shortcut::ctrl_shift_f4), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f4, enum_object<>::parse<shortcut>("ctrl_shift_f4"), csf_);
     }
     
-    void test_method_(cmd_shift_f5) {
-      assert::are_equal(589940, enum_object<>::to_int32(shortcut::cmd_shift_f5), csf_);
-      assert::are_equal("cmd_shift_f5", enum_object<>::to_string(shortcut::cmd_shift_f5), csf_);
-      assert::are_equal(shortcut::cmd_shift_f5, enum_object<>::parse<shortcut>("cmd_shift_f5"), csf_);
+    void test_method_(ctrl_shift_f5) {
+      assert::are_equal(196724, enum_object<>::to_int32(shortcut::ctrl_shift_f5), csf_);
+      assert::are_equal("ctrl_shift_f5", enum_object<>::to_string(shortcut::ctrl_shift_f5), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f5, enum_object<>::parse<shortcut>("ctrl_shift_f5"), csf_);
     }
     
-    void test_method_(cmd_shift_f6) {
-      assert::are_equal(589941, enum_object<>::to_int32(shortcut::cmd_shift_f6), csf_);
-      assert::are_equal("cmd_shift_f6", enum_object<>::to_string(shortcut::cmd_shift_f6), csf_);
-      assert::are_equal(shortcut::cmd_shift_f6, enum_object<>::parse<shortcut>("cmd_shift_f6"), csf_);
+    void test_method_(ctrl_shift_f6) {
+      assert::are_equal(196725, enum_object<>::to_int32(shortcut::ctrl_shift_f6), csf_);
+      assert::are_equal("ctrl_shift_f6", enum_object<>::to_string(shortcut::ctrl_shift_f6), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f6, enum_object<>::parse<shortcut>("ctrl_shift_f6"), csf_);
     }
     
-    void test_method_(cmd_shift_f7) {
-      assert::are_equal(589942, enum_object<>::to_int32(shortcut::cmd_shift_f7), csf_);
-      assert::are_equal("cmd_shift_f7", enum_object<>::to_string(shortcut::cmd_shift_f7), csf_);
-      assert::are_equal(shortcut::cmd_shift_f7, enum_object<>::parse<shortcut>("cmd_shift_f7"), csf_);
+    void test_method_(ctrl_shift_f7) {
+      assert::are_equal(196726, enum_object<>::to_int32(shortcut::ctrl_shift_f7), csf_);
+      assert::are_equal("ctrl_shift_f7", enum_object<>::to_string(shortcut::ctrl_shift_f7), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f7, enum_object<>::parse<shortcut>("ctrl_shift_f7"), csf_);
     }
     
-    void test_method_(cmd_shift_f8) {
-      assert::are_equal(589943, enum_object<>::to_int32(shortcut::cmd_shift_f8), csf_);
-      assert::are_equal("cmd_shift_f8", enum_object<>::to_string(shortcut::cmd_shift_f8), csf_);
-      assert::are_equal(shortcut::cmd_shift_f8, enum_object<>::parse<shortcut>("cmd_shift_f8"), csf_);
+    void test_method_(ctrl_shift_f8) {
+      assert::are_equal(196727, enum_object<>::to_int32(shortcut::ctrl_shift_f8), csf_);
+      assert::are_equal("ctrl_shift_f8", enum_object<>::to_string(shortcut::ctrl_shift_f8), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f8, enum_object<>::parse<shortcut>("ctrl_shift_f8"), csf_);
     }
     
-    void test_method_(cmd_shift_f9) {
-      assert::are_equal(589944, enum_object<>::to_int32(shortcut::cmd_shift_f9), csf_);
-      assert::are_equal("cmd_shift_f9", enum_object<>::to_string(shortcut::cmd_shift_f9), csf_);
-      assert::are_equal(shortcut::cmd_shift_f9, enum_object<>::parse<shortcut>("cmd_shift_f9"), csf_);
+    void test_method_(ctrl_shift_f9) {
+      assert::are_equal(196728, enum_object<>::to_int32(shortcut::ctrl_shift_f9), csf_);
+      assert::are_equal("ctrl_shift_f9", enum_object<>::to_string(shortcut::ctrl_shift_f9), csf_);
+      assert::are_equal(shortcut::ctrl_shift_f9, enum_object<>::parse<shortcut>("ctrl_shift_f9"), csf_);
     }
     
-    void test_method_(cmd_shift_g) {
-      assert::are_equal(589895, enum_object<>::to_int32(shortcut::cmd_shift_g), csf_);
-      assert::are_equal("cmd_shift_g", enum_object<>::to_string(shortcut::cmd_shift_g), csf_);
-      assert::are_equal(shortcut::cmd_shift_g, enum_object<>::parse<shortcut>("cmd_shift_g"), csf_);
+    void test_method_(ctrl_shift_g) {
+      assert::are_equal(196679, enum_object<>::to_int32(shortcut::ctrl_shift_g), csf_);
+      assert::are_equal("ctrl_shift_g", enum_object<>::to_string(shortcut::ctrl_shift_g), csf_);
+      assert::are_equal(shortcut::ctrl_shift_g, enum_object<>::parse<shortcut>("ctrl_shift_g"), csf_);
     }
     
-    void test_method_(cmd_shift_h) {
-      assert::are_equal(589896, enum_object<>::to_int32(shortcut::cmd_shift_h), csf_);
-      assert::are_equal("cmd_shift_h", enum_object<>::to_string(shortcut::cmd_shift_h), csf_);
-      assert::are_equal(shortcut::cmd_shift_h, enum_object<>::parse<shortcut>("cmd_shift_h"), csf_);
+    void test_method_(ctrl_shift_h) {
+      assert::are_equal(196680, enum_object<>::to_int32(shortcut::ctrl_shift_h), csf_);
+      assert::are_equal("ctrl_shift_h", enum_object<>::to_string(shortcut::ctrl_shift_h), csf_);
+      assert::are_equal(shortcut::ctrl_shift_h, enum_object<>::parse<shortcut>("ctrl_shift_h"), csf_);
     }
     
-    void test_method_(cmd_shift_i) {
-      assert::are_equal(589897, enum_object<>::to_int32(shortcut::cmd_shift_i), csf_);
-      assert::are_equal("cmd_shift_i", enum_object<>::to_string(shortcut::cmd_shift_i), csf_);
-      assert::are_equal(shortcut::cmd_shift_i, enum_object<>::parse<shortcut>("cmd_shift_i"), csf_);
+    void test_method_(ctrl_shift_i) {
+      assert::are_equal(196681, enum_object<>::to_int32(shortcut::ctrl_shift_i), csf_);
+      assert::are_equal("ctrl_shift_i", enum_object<>::to_string(shortcut::ctrl_shift_i), csf_);
+      assert::are_equal(shortcut::ctrl_shift_i, enum_object<>::parse<shortcut>("ctrl_shift_i"), csf_);
     }
     
-    void test_method_(cmd_shift_j) {
-      assert::are_equal(589898, enum_object<>::to_int32(shortcut::cmd_shift_j), csf_);
-      assert::are_equal("cmd_shift_j", enum_object<>::to_string(shortcut::cmd_shift_j), csf_);
-      assert::are_equal(shortcut::cmd_shift_j, enum_object<>::parse<shortcut>("cmd_shift_j"), csf_);
+    void test_method_(ctrl_shift_j) {
+      assert::are_equal(196682, enum_object<>::to_int32(shortcut::ctrl_shift_j), csf_);
+      assert::are_equal("ctrl_shift_j", enum_object<>::to_string(shortcut::ctrl_shift_j), csf_);
+      assert::are_equal(shortcut::ctrl_shift_j, enum_object<>::parse<shortcut>("ctrl_shift_j"), csf_);
     }
     
-    void test_method_(cmd_shift_k) {
-      assert::are_equal(589899, enum_object<>::to_int32(shortcut::cmd_shift_k), csf_);
-      assert::are_equal("cmd_shift_k", enum_object<>::to_string(shortcut::cmd_shift_k), csf_);
-      assert::are_equal(shortcut::cmd_shift_k, enum_object<>::parse<shortcut>("cmd_shift_k"), csf_);
+    void test_method_(ctrl_shift_k) {
+      assert::are_equal(196683, enum_object<>::to_int32(shortcut::ctrl_shift_k), csf_);
+      assert::are_equal("ctrl_shift_k", enum_object<>::to_string(shortcut::ctrl_shift_k), csf_);
+      assert::are_equal(shortcut::ctrl_shift_k, enum_object<>::parse<shortcut>("ctrl_shift_k"), csf_);
     }
     
-    void test_method_(cmd_shift_l) {
-      assert::are_equal(589900, enum_object<>::to_int32(shortcut::cmd_shift_l), csf_);
-      assert::are_equal("cmd_shift_l", enum_object<>::to_string(shortcut::cmd_shift_l), csf_);
-      assert::are_equal(shortcut::cmd_shift_l, enum_object<>::parse<shortcut>("cmd_shift_l"), csf_);
+    void test_method_(ctrl_shift_l) {
+      assert::are_equal(196684, enum_object<>::to_int32(shortcut::ctrl_shift_l), csf_);
+      assert::are_equal("ctrl_shift_l", enum_object<>::to_string(shortcut::ctrl_shift_l), csf_);
+      assert::are_equal(shortcut::ctrl_shift_l, enum_object<>::parse<shortcut>("ctrl_shift_l"), csf_);
     }
     
-    void test_method_(cmd_shift_m) {
-      assert::are_equal(589901, enum_object<>::to_int32(shortcut::cmd_shift_m), csf_);
-      assert::are_equal("cmd_shift_m", enum_object<>::to_string(shortcut::cmd_shift_m), csf_);
-      assert::are_equal(shortcut::cmd_shift_m, enum_object<>::parse<shortcut>("cmd_shift_m"), csf_);
+    void test_method_(ctrl_shift_m) {
+      assert::are_equal(196685, enum_object<>::to_int32(shortcut::ctrl_shift_m), csf_);
+      assert::are_equal("ctrl_shift_m", enum_object<>::to_string(shortcut::ctrl_shift_m), csf_);
+      assert::are_equal(shortcut::ctrl_shift_m, enum_object<>::parse<shortcut>("ctrl_shift_m"), csf_);
     }
     
-    void test_method_(cmd_shift_n) {
-      assert::are_equal(589902, enum_object<>::to_int32(shortcut::cmd_shift_n), csf_);
-      assert::are_equal("cmd_shift_n", enum_object<>::to_string(shortcut::cmd_shift_n), csf_);
-      assert::are_equal(shortcut::cmd_shift_n, enum_object<>::parse<shortcut>("cmd_shift_n"), csf_);
+    void test_method_(ctrl_shift_n) {
+      assert::are_equal(196686, enum_object<>::to_int32(shortcut::ctrl_shift_n), csf_);
+      assert::are_equal("ctrl_shift_n", enum_object<>::to_string(shortcut::ctrl_shift_n), csf_);
+      assert::are_equal(shortcut::ctrl_shift_n, enum_object<>::parse<shortcut>("ctrl_shift_n"), csf_);
     }
     
-    void test_method_(cmd_shift_o) {
-      assert::are_equal(589903, enum_object<>::to_int32(shortcut::cmd_shift_o), csf_);
-      assert::are_equal("cmd_shift_o", enum_object<>::to_string(shortcut::cmd_shift_o), csf_);
-      assert::are_equal(shortcut::cmd_shift_o, enum_object<>::parse<shortcut>("cmd_shift_o"), csf_);
+    void test_method_(ctrl_shift_o) {
+      assert::are_equal(196687, enum_object<>::to_int32(shortcut::ctrl_shift_o), csf_);
+      assert::are_equal("ctrl_shift_o", enum_object<>::to_string(shortcut::ctrl_shift_o), csf_);
+      assert::are_equal(shortcut::ctrl_shift_o, enum_object<>::parse<shortcut>("ctrl_shift_o"), csf_);
     }
     
-    void test_method_(cmd_shift_p) {
-      assert::are_equal(589904, enum_object<>::to_int32(shortcut::cmd_shift_p), csf_);
-      assert::are_equal("cmd_shift_p", enum_object<>::to_string(shortcut::cmd_shift_p), csf_);
-      assert::are_equal(shortcut::cmd_shift_p, enum_object<>::parse<shortcut>("cmd_shift_p"), csf_);
+    void test_method_(ctrl_shift_p) {
+      assert::are_equal(196688, enum_object<>::to_int32(shortcut::ctrl_shift_p), csf_);
+      assert::are_equal("ctrl_shift_p", enum_object<>::to_string(shortcut::ctrl_shift_p), csf_);
+      assert::are_equal(shortcut::ctrl_shift_p, enum_object<>::parse<shortcut>("ctrl_shift_p"), csf_);
     }
     
-    void test_method_(cmd_shift_q) {
-      assert::are_equal(589905, enum_object<>::to_int32(shortcut::cmd_shift_q), csf_);
-      assert::are_equal("cmd_shift_q", enum_object<>::to_string(shortcut::cmd_shift_q), csf_);
-      assert::are_equal(shortcut::cmd_shift_q, enum_object<>::parse<shortcut>("cmd_shift_q"), csf_);
+    void test_method_(ctrl_shift_q) {
+      assert::are_equal(196689, enum_object<>::to_int32(shortcut::ctrl_shift_q), csf_);
+      assert::are_equal("ctrl_shift_q", enum_object<>::to_string(shortcut::ctrl_shift_q), csf_);
+      assert::are_equal(shortcut::ctrl_shift_q, enum_object<>::parse<shortcut>("ctrl_shift_q"), csf_);
     }
     
-    void test_method_(cmd_shift_r) {
-      assert::are_equal(589906, enum_object<>::to_int32(shortcut::cmd_shift_r), csf_);
-      assert::are_equal("cmd_shift_r", enum_object<>::to_string(shortcut::cmd_shift_r), csf_);
-      assert::are_equal(shortcut::cmd_shift_r, enum_object<>::parse<shortcut>("cmd_shift_r"), csf_);
+    void test_method_(ctrl_shift_r) {
+      assert::are_equal(196690, enum_object<>::to_int32(shortcut::ctrl_shift_r), csf_);
+      assert::are_equal("ctrl_shift_r", enum_object<>::to_string(shortcut::ctrl_shift_r), csf_);
+      assert::are_equal(shortcut::ctrl_shift_r, enum_object<>::parse<shortcut>("ctrl_shift_r"), csf_);
     }
     
-    void test_method_(cmd_shift_s) {
-      assert::are_equal(589907, enum_object<>::to_int32(shortcut::cmd_shift_s), csf_);
-      assert::are_equal("cmd_shift_s", enum_object<>::to_string(shortcut::cmd_shift_s), csf_);
-      assert::are_equal(shortcut::cmd_shift_s, enum_object<>::parse<shortcut>("cmd_shift_s"), csf_);
+    void test_method_(ctrl_shift_s) {
+      assert::are_equal(196691, enum_object<>::to_int32(shortcut::ctrl_shift_s), csf_);
+      assert::are_equal("ctrl_shift_s", enum_object<>::to_string(shortcut::ctrl_shift_s), csf_);
+      assert::are_equal(shortcut::ctrl_shift_s, enum_object<>::parse<shortcut>("ctrl_shift_s"), csf_);
     }
     
-    void test_method_(cmd_shift_t) {
-      assert::are_equal(589908, enum_object<>::to_int32(shortcut::cmd_shift_t), csf_);
-      assert::are_equal("cmd_shift_t", enum_object<>::to_string(shortcut::cmd_shift_t), csf_);
-      assert::are_equal(shortcut::cmd_shift_t, enum_object<>::parse<shortcut>("cmd_shift_t"), csf_);
+    void test_method_(ctrl_shift_t) {
+      assert::are_equal(196692, enum_object<>::to_int32(shortcut::ctrl_shift_t), csf_);
+      assert::are_equal("ctrl_shift_t", enum_object<>::to_string(shortcut::ctrl_shift_t), csf_);
+      assert::are_equal(shortcut::ctrl_shift_t, enum_object<>::parse<shortcut>("ctrl_shift_t"), csf_);
     }
     
-    void test_method_(cmd_shift_u) {
-      assert::are_equal(589909, enum_object<>::to_int32(shortcut::cmd_shift_u), csf_);
-      assert::are_equal("cmd_shift_u", enum_object<>::to_string(shortcut::cmd_shift_u), csf_);
-      assert::are_equal(shortcut::cmd_shift_u, enum_object<>::parse<shortcut>("cmd_shift_u"), csf_);
+    void test_method_(ctrl_shift_u) {
+      assert::are_equal(196693, enum_object<>::to_int32(shortcut::ctrl_shift_u), csf_);
+      assert::are_equal("ctrl_shift_u", enum_object<>::to_string(shortcut::ctrl_shift_u), csf_);
+      assert::are_equal(shortcut::ctrl_shift_u, enum_object<>::parse<shortcut>("ctrl_shift_u"), csf_);
     }
     
-    void test_method_(cmd_shift_v) {
-      assert::are_equal(589910, enum_object<>::to_int32(shortcut::cmd_shift_v), csf_);
-      assert::are_equal("cmd_shift_v", enum_object<>::to_string(shortcut::cmd_shift_v), csf_);
-      assert::are_equal(shortcut::cmd_shift_v, enum_object<>::parse<shortcut>("cmd_shift_v"), csf_);
+    void test_method_(ctrl_shift_v) {
+      assert::are_equal(196694, enum_object<>::to_int32(shortcut::ctrl_shift_v), csf_);
+      assert::are_equal("ctrl_shift_v", enum_object<>::to_string(shortcut::ctrl_shift_v), csf_);
+      assert::are_equal(shortcut::ctrl_shift_v, enum_object<>::parse<shortcut>("ctrl_shift_v"), csf_);
     }
     
-    void test_method_(cmd_shift_w) {
-      assert::are_equal(589911, enum_object<>::to_int32(shortcut::cmd_shift_w), csf_);
-      assert::are_equal("cmd_shift_w", enum_object<>::to_string(shortcut::cmd_shift_w), csf_);
-      assert::are_equal(shortcut::cmd_shift_w, enum_object<>::parse<shortcut>("cmd_shift_w"), csf_);
+    void test_method_(ctrl_shift_w) {
+      assert::are_equal(196695, enum_object<>::to_int32(shortcut::ctrl_shift_w), csf_);
+      assert::are_equal("ctrl_shift_w", enum_object<>::to_string(shortcut::ctrl_shift_w), csf_);
+      assert::are_equal(shortcut::ctrl_shift_w, enum_object<>::parse<shortcut>("ctrl_shift_w"), csf_);
     }
     
-    void test_method_(cmd_shift_x) {
-      assert::are_equal(589912, enum_object<>::to_int32(shortcut::cmd_shift_x), csf_);
-      assert::are_equal("cmd_shift_x", enum_object<>::to_string(shortcut::cmd_shift_x), csf_);
-      assert::are_equal(shortcut::cmd_shift_x, enum_object<>::parse<shortcut>("cmd_shift_x"), csf_);
+    void test_method_(ctrl_shift_x) {
+      assert::are_equal(196696, enum_object<>::to_int32(shortcut::ctrl_shift_x), csf_);
+      assert::are_equal("ctrl_shift_x", enum_object<>::to_string(shortcut::ctrl_shift_x), csf_);
+      assert::are_equal(shortcut::ctrl_shift_x, enum_object<>::parse<shortcut>("ctrl_shift_x"), csf_);
     }
     
-    void test_method_(cmd_shift_y) {
-      assert::are_equal(589913, enum_object<>::to_int32(shortcut::cmd_shift_y), csf_);
-      assert::are_equal("cmd_shift_y", enum_object<>::to_string(shortcut::cmd_shift_y), csf_);
-      assert::are_equal(shortcut::cmd_shift_y, enum_object<>::parse<shortcut>("cmd_shift_y"), csf_);
+    void test_method_(ctrl_shift_y) {
+      assert::are_equal(196697, enum_object<>::to_int32(shortcut::ctrl_shift_y), csf_);
+      assert::are_equal("ctrl_shift_y", enum_object<>::to_string(shortcut::ctrl_shift_y), csf_);
+      assert::are_equal(shortcut::ctrl_shift_y, enum_object<>::parse<shortcut>("ctrl_shift_y"), csf_);
     }
     
-    void test_method_(cmd_shift_z) {
-      assert::are_equal(589914, enum_object<>::to_int32(shortcut::cmd_shift_z), csf_);
-      assert::are_equal("cmd_shift_z", enum_object<>::to_string(shortcut::cmd_shift_z), csf_);
-      assert::are_equal(shortcut::cmd_shift_z, enum_object<>::parse<shortcut>("cmd_shift_z"), csf_);
+    void test_method_(ctrl_shift_z) {
+      assert::are_equal(196698, enum_object<>::to_int32(shortcut::ctrl_shift_z), csf_);
+      assert::are_equal("ctrl_shift_z", enum_object<>::to_string(shortcut::ctrl_shift_z), csf_);
+      assert::are_equal(shortcut::ctrl_shift_z, enum_object<>::parse<shortcut>("ctrl_shift_z"), csf_);
     }
     
-    void test_method_(cmd_t) {
-      assert::are_equal(524372, enum_object<>::to_int32(shortcut::cmd_t), csf_);
-      assert::are_equal("cmd_t", enum_object<>::to_string(shortcut::cmd_t), csf_);
-      assert::are_equal(shortcut::cmd_t, enum_object<>::parse<shortcut>("cmd_t"), csf_);
+    void test_method_(ctrl_t) {
+      assert::are_equal(131156, enum_object<>::to_int32(shortcut::ctrl_t), csf_);
+      assert::are_equal("ctrl_t", enum_object<>::to_string(shortcut::ctrl_t), csf_);
+      assert::are_equal(shortcut::ctrl_t, enum_object<>::parse<shortcut>("ctrl_t"), csf_);
     }
     
-    void test_method_(cmd_u) {
-      assert::are_equal(524373, enum_object<>::to_int32(shortcut::cmd_u), csf_);
-      assert::are_equal("cmd_u", enum_object<>::to_string(shortcut::cmd_u), csf_);
-      assert::are_equal(shortcut::cmd_u, enum_object<>::parse<shortcut>("cmd_u"), csf_);
+    void test_method_(ctrl_u) {
+      assert::are_equal(131157, enum_object<>::to_int32(shortcut::ctrl_u), csf_);
+      assert::are_equal("ctrl_u", enum_object<>::to_string(shortcut::ctrl_u), csf_);
+      assert::are_equal(shortcut::ctrl_u, enum_object<>::parse<shortcut>("ctrl_u"), csf_);
     }
     
-    void test_method_(cmd_v) {
-      assert::are_equal(524374, enum_object<>::to_int32(shortcut::cmd_v), csf_);
-      assert::are_equal("cmd_v", enum_object<>::to_string(shortcut::cmd_v), csf_);
-      assert::are_equal(shortcut::cmd_v, enum_object<>::parse<shortcut>("cmd_v"), csf_);
+    void test_method_(ctrl_v) {
+      assert::are_equal(131158, enum_object<>::to_int32(shortcut::ctrl_v), csf_);
+      assert::are_equal("ctrl_v", enum_object<>::to_string(shortcut::ctrl_v), csf_);
+      assert::are_equal(shortcut::ctrl_v, enum_object<>::parse<shortcut>("ctrl_v"), csf_);
     }
     
-    void test_method_(cmd_w) {
-      assert::are_equal(524375, enum_object<>::to_int32(shortcut::cmd_w), csf_);
-      assert::are_equal("cmd_w", enum_object<>::to_string(shortcut::cmd_w), csf_);
-      assert::are_equal(shortcut::cmd_w, enum_object<>::parse<shortcut>("cmd_w"), csf_);
+    void test_method_(ctrl_w) {
+      assert::are_equal(131159, enum_object<>::to_int32(shortcut::ctrl_w), csf_);
+      assert::are_equal("ctrl_w", enum_object<>::to_string(shortcut::ctrl_w), csf_);
+      assert::are_equal(shortcut::ctrl_w, enum_object<>::parse<shortcut>("ctrl_w"), csf_);
     }
     
-    void test_method_(cmd_x) {
-      assert::are_equal(524376, enum_object<>::to_int32(shortcut::cmd_x), csf_);
-      assert::are_equal("cmd_x", enum_object<>::to_string(shortcut::cmd_x), csf_);
-      assert::are_equal(shortcut::cmd_x, enum_object<>::parse<shortcut>("cmd_x"), csf_);
+    void test_method_(ctrl_x) {
+      assert::are_equal(131160, enum_object<>::to_int32(shortcut::ctrl_x), csf_);
+      assert::are_equal("ctrl_x", enum_object<>::to_string(shortcut::ctrl_x), csf_);
+      assert::are_equal(shortcut::ctrl_x, enum_object<>::parse<shortcut>("ctrl_x"), csf_);
     }
     
-    void test_method_(cmd_y) {
-      assert::are_equal(524377, enum_object<>::to_int32(shortcut::cmd_y), csf_);
-      assert::are_equal("cmd_y", enum_object<>::to_string(shortcut::cmd_y), csf_);
-      assert::are_equal(shortcut::cmd_y, enum_object<>::parse<shortcut>("cmd_y"), csf_);
+    void test_method_(ctrl_y) {
+      assert::are_equal(131161, enum_object<>::to_int32(shortcut::ctrl_y), csf_);
+      assert::are_equal("ctrl_y", enum_object<>::to_string(shortcut::ctrl_y), csf_);
+      assert::are_equal(shortcut::ctrl_y, enum_object<>::parse<shortcut>("ctrl_y"), csf_);
     }
     
-    void test_method_(cmd_z) {
-      assert::are_equal(524378, enum_object<>::to_int32(shortcut::cmd_z), csf_);
-      assert::are_equal("cmd_z", enum_object<>::to_string(shortcut::cmd_z), csf_);
-      assert::are_equal(shortcut::cmd_z, enum_object<>::parse<shortcut>("cmd_z"), csf_);
+    void test_method_(ctrl_z) {
+      assert::are_equal(131162, enum_object<>::to_int32(shortcut::ctrl_z), csf_);
+      assert::are_equal("ctrl_z", enum_object<>::to_string(shortcut::ctrl_z), csf_);
+      assert::are_equal(shortcut::ctrl_z, enum_object<>::parse<shortcut>("ctrl_z"), csf_);
     }
     
     void test_method_(del) {

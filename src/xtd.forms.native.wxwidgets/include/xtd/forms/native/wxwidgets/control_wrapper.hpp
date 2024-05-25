@@ -5,6 +5,9 @@
 #endif
 /// @endcond
 #include <xtd/typeof>
+#if defined(__WXOSX__)
+#include <Carbon/Carbon.h>
+#endif
 
 namespace xtd::forms::native {
   template<typename control_t>
@@ -153,7 +156,7 @@ namespace xtd::forms::native {
       switch (key_event.GetKeyCode()) {
         case WXK_NONE:
 #if defined(__WXOSX__)
-          if (key_event.GetRawKeyCode() == functionRawKeyCode) key_data = VK_FUNCTION;
+          if (key_event.GetRawKeyCode() == kVK_Function) key_data = VK_FUNCTION;
 #endif
           break;
         case WXK_BACK: key_data = VK_BACK; break;
@@ -171,8 +174,8 @@ namespace xtd::forms::native {
         case WXK_SHIFT: key_data = VK_SHIFT; break;
         case WXK_ALT: key_data = VK_MENU; break;
 #if defined(__WXOSX__)
-        case WXK_RAW_CONTROL: key_data = VK_CONTROL; break;
-        case WXK_CONTROL: key_data = VK_COMMAND; break;
+        case WXK_RAW_CONTROL: key_data = key_event.GetRawKeyCode() == kVK_Control ? VK_LWIN : VK_RWIN; break;
+        case WXK_COMMAND: key_data = VK_CONTROL; break;
 #else
         case WXK_CONTROL: key_data = VK_CONTROL; break;
 #endif
@@ -260,8 +263,8 @@ namespace xtd::forms::native {
         case WXK_NUMPAD_SUBTRACT: key_data = VK_SUBTRACT; break;
         case WXK_NUMPAD_DECIMAL: key_data = VK_DECIMAL; break;
         case WXK_NUMPAD_DIVIDE: key_data = VK_DIVIDE; break;
-        case WXK_WINDOWS_LEFT: key_data = VK_LWIN; break;
-        case WXK_WINDOWS_RIGHT: key_data = VK_RWIN; break;
+        case WXK_WINDOWS_LEFT: key_data = xtd::environment::os_version().is_macos() ? VK_CONTROL : VK_LWIN; break;
+        case WXK_WINDOWS_RIGHT: key_data = xtd::environment::os_version().is_macos() ? VK_CONTROL : VK_RWIN; break;
         case WXK_WINDOWS_MENU: key_data = VK_APPS; break;
           //case WXK_RAW_CONTROL: key_data = xtd::forms::keys::control_key; break;
         case WXK_SPECIAL1: key_data = VK_OEM_1; break;
@@ -305,17 +308,6 @@ namespace xtd::forms::native {
       }
     }
     
-    if ((key_event.GetModifiers() & wxMOD_ALT) == wxMOD_ALT) key_data += VK_ALT_MODIFIER;
-#if defined(__WXOSX__)
-    if ((key_event.GetModifiers() & wxMOD_CONTROL) == wxMOD_CONTROL) key_data += VK_COMMAND_MODIFIER;
-    if ((key_event.GetModifiers() & wxMOD_RAW_CONTROL) == wxMOD_RAW_CONTROL) key_data += VK_CONTROL_MODIFIER;
-    if (functionKeyModifierIsDown) key_data += VK_FUNCTION_MODIFIER;
-#else
-    if ((key_event.GetModifiers() & wxMOD_CONTROL) == wxMOD_CONTROL) key_data += VK_CONTROL_MODIFIER;
-#endif
-    if ((key_event.GetModifiers() & wxMOD_META) == wxMOD_META) key_data += VK_META_MODIFIER;
-    if ((key_event.GetModifiers() & wxMOD_SHIFT) == wxMOD_SHIFT) key_data += VK_SHIFT_MODIFIER;
-    
     return key_data;
   }
   
@@ -339,8 +331,7 @@ namespace xtd::forms::native {
     int32 virtual_keys = 0;
     
 #if defined(__WXOSX__)
-    if (mouse_state.RawControlDown()) virtual_keys |= MK_COMMAND;
-    if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
+    if (mouse_state.RawControlDown()) virtual_keys |= MK_CONTROL;
 #else
     if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
 #endif
@@ -581,11 +572,14 @@ namespace xtd::forms::native {
   template<typename control_t>
   inline void control_wrapper<control_t>::wx_evt_key_down(wxEvent& event) {
 #if defined(__WXOSX__)
-    if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == functionRawKeyCode) {
+    static auto functionKeyModifierIsDown = false;
+    if (static_cast<wxKeyEvent&>(event).GetKeyCode() != WXK_NONE || static_cast<wxKeyEvent&>(event).GetRawKeyCode() != kVK_Function) functionKeyModifierIsDown = false;
+    else {
       if (!functionKeyModifierIsDown) functionKeyModifierIsDown = true;
       else {
         functionKeyModifierIsDown = false;
-        event.SetEventType(wxEVT_KEY_UP);
+        event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYUP, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event));
+        return;
       }
     }
 #endif

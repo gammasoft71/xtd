@@ -38,29 +38,29 @@ namespace main_menu_example {
     menu_item file_open_recent_file3_menu_item {"Path/File3", {*this, &form1::on_menu_click}};
     menu_item file_open_recent_file4_menu_item {"Path/File4", {*this, &form1::on_menu_click}};
     
-    menu_item file_new_menu_item {texts::new_(), {*this, &form1::on_menu_click}, menu_images::file_new(), shortcut::cmd_n};
+    menu_item file_new_menu_item {texts::new_(), {*this, &form1::on_menu_click}, menu_images::file_new(), shortcut::ctrl_n};
     menu_item file_separator1_menu_item {"-"};
-    menu_item file_open_menu_item {texts::open(), {*this, &form1::on_menu_click}, menu_images::file_open(), shortcut::cmd_o};
+    menu_item file_open_menu_item {texts::open(), {*this, &form1::on_menu_click}, menu_images::file_open(), shortcut::ctrl_o};
     menu_item file_open_recent_menu_item {"Open recent", {file_open_recent_file1_menu_item, file_open_recent_file2_menu_item, file_open_recent_file3_menu_item, file_open_recent_file4_menu_item}};
-    menu_item file_close_menu_item {texts::close(), {*this, &form1::on_menu_click}, shortcut::cmd_w};
+    menu_item file_close_menu_item {texts::close(), {*this, &form1::on_menu_click}, shortcut::ctrl_w};
     menu_item file_separator2_menu_item {"-"};
-    menu_item file_save_menu_item {texts::save(), {*this, &form1::on_menu_click}, menu_images::file_save(), shortcut::cmd_s};
+    menu_item file_save_menu_item {texts::save(), {*this, &form1::on_menu_click}, menu_images::file_save(), shortcut::ctrl_s};
     menu_item file_save_as_menu_item {texts::save_as(), {*this, &form1::on_menu_click}};
     menu_item file_separator3_menu_item {"-"};
     menu_item file_page_setup_menu_item {"Page &Seup...", {*this, &form1::on_menu_click}};
-    menu_item file_print_menu_item {texts::print(), {*this, &form1::on_menu_click}, menu_images::file_print(), shortcut::cmd_p};
+    menu_item file_print_menu_item {texts::print(), {*this, &form1::on_menu_click}, menu_images::file_print(), shortcut::ctrl_p};
     menu_item file_print_preview_menu_item {texts::print_preview(), {*this, &form1::on_menu_click}, menu_images::file_print_preview()};
     menu_item file_separator4_menu_item {"-"};
     menu_item file_exit_menu_item {texts::exit(), {*this, &form1::on_menu_click}, menu_images::file_exit(), shortcut::alt_f4};
     
-    menu_item edit_undo_menu_item {texts::undo(), {*this, &form1::on_menu_click}, menu_images::edit_undo(), shortcut::cmd_z};
-    menu_item edit_redo_menu_item {texts::redo(), {*this, &form1::on_menu_click}, menu_images::edit_redo(), shortcut::cmd_shift_z};
+    menu_item edit_undo_menu_item {texts::undo(), {*this, &form1::on_menu_click}, menu_images::edit_undo(), shortcut::ctrl_z};
+    menu_item edit_redo_menu_item {texts::redo(), {*this, &form1::on_menu_click}, menu_images::edit_redo(), shortcut::ctrl_shift_z};
     menu_item edit_separator1_menu_item {"-"};
-    menu_item edit_cut_menu_item {texts::cut(), {*this, &form1::on_menu_click}, menu_images::edit_cut(), shortcut::cmd_x};
-    menu_item edit_copy_menu_item {texts::copy(), {*this, &form1::on_menu_click}, menu_images::edit_copy(), shortcut::cmd_c};
-    menu_item edit_paste_menu_item {texts::paste(), {*this, &form1::on_menu_click}, menu_images::edit_paste(), shortcut::cmd_v};
+    menu_item edit_cut_menu_item {texts::cut(), {*this, &form1::on_menu_click}, menu_images::edit_cut(), shortcut::ctrl_x};
+    menu_item edit_copy_menu_item {texts::copy(), {*this, &form1::on_menu_click}, menu_images::edit_copy(), shortcut::ctrl_c};
+    menu_item edit_paste_menu_item {texts::paste(), {*this, &form1::on_menu_click}, menu_images::edit_paste(), shortcut::ctrl_v};
     menu_item edit_separator2_menu_item {"-"};
-    menu_item edit_select_all_menu_item {texts::select_all(), {*this, &form1::on_menu_click}, shortcut::cmd_a};
+    menu_item edit_select_all_menu_item {texts::select_all(), {*this, &form1::on_menu_click}, shortcut::ctrl_a};
     menu_item edit_separator3_menu_item {"-"};
     menu_item edit_options_menu_item {texts::options(), {*this, &form1::on_menu_click}};
     
