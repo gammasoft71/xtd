@@ -1,4 +1,4 @@
-# Key events
+# Key events (**Internal use only**)
 
 ## xtd keys
 
