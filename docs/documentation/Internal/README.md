@@ -21,6 +21,7 @@ sidebar_position: 16
 * [Deprecated](/docs/documentation/Internal/deprecated) provides information about how to remove a method or class in xtd.
 * [Sounds](/docs/documentation/Internal/sounds) provides information about sounds.
 * [Theme](/docs/documentation/Internal/theme) provides information about themes.
+* [Key events](/docs/documentation/Internal/key_events) provides information about key events.
 
 ## Build
 
