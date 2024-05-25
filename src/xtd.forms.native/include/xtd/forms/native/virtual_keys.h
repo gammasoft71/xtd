@@ -315,7 +315,7 @@ constexpr size_t VK_LCOMMAND = 0x0000000101;
 /// @warning Internal use only
 constexpr size_t VK_RCOMMAND = 0x0000000102;
 // 0x00000103 : reserved for VK_LCOMMAND and VK_RCOMMAND combined
-/// @brief The FUNTIOON key.
+/// @brief The FUNCTION key.
 /// @par Library
 /// xtd.forms.native
 /// @ingroup xtd_forms_native virtual_keys
