@@ -23,9 +23,9 @@ using namespace xtd::forms;
 class form1 final : public form {
 public:
   form1() {
+    center_to_screen();
     menu(main_menu1);
     size({200, 180});
-    start_position(form_start_position::center_screen);
     text("Simple menu");
   }
 
@@ -89,9 +89,9 @@ using namespace xtd::forms;
 class form1 final : public form {
 public:
   form1() {
+    center_to_screen();
     menu(main_menu1);
     size({200, 180});
-    start_position(form_start_position::center_screen);
     text("Submenu");
   }
 
@@ -140,6 +140,15 @@ A submenu is created in the same way as a normal menu. Items are added as a seco
 
 ## Toolbars
 
+Menus group all commands that we can use in an application. Toolbars provide a quick access to the most frequently used commands.
+
+virtual wxToolBar* wxFrame::CreateToolBar(long style = wxTB_DEFAULT_STYLE,
+    wxWindowID id = wxID_ANY, const wxString & name = wxToolBarNameStr)
+
+To create a toolbar, we call the CreateToolBar method of the frame widget.
+
+## A simple toolbar
+
 Our first example will create a simple toolbar.
 
 ```cpp
@@ -151,13 +160,11 @@ using namespace xtd::forms;
 class form1 final : public form {
 public:
   form1() {
+    center_to_screen();
     text("Toolbar");
-    controls().push_back(tool_bar1);
     tool_bar(tool_bar1);
 
-    tool_bar1.buttons().push_back(exit_tool_bar_button);
     tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
-    tool_bar1.image_list().images().push_back(tool_bar_images::file_exit());
   }
 
 private:
@@ -165,7 +172,7 @@ private:
     if (e.button() == exit_tool_bar_button) close();
   }
   
-  forms::tool_bar tool_bar1;
+  forms::tool_bar tool_bar1 = forms::tool_bar::create(*this, {tool_bar_images::file_exit()}, {exit_tool_bar_button});
   tool_bar_button exit_tool_bar_button = tool_bar_button::create_push_button(0);
 };
 
