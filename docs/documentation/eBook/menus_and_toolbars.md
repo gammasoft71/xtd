@@ -210,7 +210,6 @@ We add the toolbar we've created as the form's system toolbar.
 
 *Figure: Toolbar*
 
-
 ### Toolbars
 
 If we want to have more than one toolbar, only one of the toolbars can be associated as the form's system toolbar. The other toolbars will be secondary toolbars that can be placed at the top, bottom, left or right of the form using the [xtd::forms::tool_bar::dock](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tool__bar.html#af25fbe68eefb148e22e3d26173a33e73) property.
@@ -250,6 +249,9 @@ auto main() -> int {
 }
 ````
 
+![Screenshot](/pictures/examples/tutorial/toolbars.png)
+
+*Figure: Toolbars*
 
 ## See also
 
