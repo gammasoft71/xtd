@@ -118,10 +118,62 @@ auto main() -> int {
   application::run(form1 {});
 }
 ```
+We created one submenu in a file menu. It is an import submenu, which can be seen in Opera web browser.
+
+```cpp
+menu_item file_separator1_menu_item {"-"};
+```
+A menu separator line is created calling it with "-" as text.
+
+```cpp
+  menu_item file_import_newsfeed_menu_item {"Import newsfeed list..."};
+  menu_item file_import_bookmarks_menu_item {"Import bookmarks..."};
+  menu_item file_import_mails_menu_item {"Import mails..."};
+  menu_item file_import_menu_item {"Import", {file_import_newsfeed_menu_item, file_import_bookmarks_menu_item, file_import_mails_menu_item}};
+```
+
+A submenu is created in the same way as a normal menu. Items are added as a second parameter as a menu_item vector.
 
 ![Screenshot](/pictures/examples/tutorial/submenu.png)
 
 *Figure: Submenu*
+
+## Toolbars
+
+Our first example will create a simple toolbar.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 final : public form {
+public:
+  form1() {
+    text("Toolbar");
+    controls().push_back(tool_bar1);
+    tool_bar(tool_bar1);
+
+    tool_bar1.buttons().push_back(exit_tool_bar_button);
+    tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
+    tool_bar1.image_list().images().push_back(tool_bar_images::file_exit());
+  }
+
+private:
+  auto on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) noexcept -> void {
+    if (e.button() == exit_tool_bar_button) close();
+  }
+  
+  forms::tool_bar tool_bar1;
+  tool_bar_button exit_tool_bar_button = tool_bar_button::create_push_button(0);
+};
+
+auto main() -> int {
+  application::run(form1 {});
+}
+```
+
 
 ## See also
 
