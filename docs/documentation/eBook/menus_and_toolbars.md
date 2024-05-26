@@ -146,7 +146,7 @@ Menus group all commands that we can use in an application. Toolbars provide a q
 xtd::forms::tool_bar xtd::forms::tool_bar::create(...);
 ````
 
-To create a toolbar, we call the CreateToolBar method of the frame widget.
+To create a system toolbar, we call the xtd::forms::form::tool_bar method of the xtd::forms::form control.
 
 ## A simple toolbar
 
