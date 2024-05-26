@@ -181,6 +181,10 @@ auto main() -> int {
 }
 ```
 
+![Screenshot](/pictures/examples/tutorial/toolbar.png)
+
+*Figure: Toolbar*
+
 
 ## See also
 
