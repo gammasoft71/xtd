@@ -13,7 +13,8 @@ To implement a [menu](https://gammasoft71.github.io/xtd/reference_guides/latest/
 * [Toolbars](#toolbars)
   * [A simple toolbar](#a-simple-toolbar)
   * [Toolbars](#toolbars)
-  * [Toolbar on bottom](#toolbar_on_bottom)
+  * [Toolbar at bottom](#toolbar_at_bottom)
+  * [Toolbar anywhere](#toolbar_anywhere)
 
 ## Simple menu example
 
@@ -254,10 +255,10 @@ auto main() -> int {
 
 *Figure: Toolbars*
 
-### Toolbars on bottom
+### Toolbar at bottom
 
 A toolbar can be placed on any border of the form or at any coordinate.
-Simply use the dock property of latoolbar.
+Simply use the dock property of the toolbar.
 
 ```cpp
 #include <xtd/xtd>
@@ -303,11 +304,50 @@ tool_bar2.dock(dock_style::bottom);
 
 We set the dock property to xtd::formq::dock_style::button.
 
+![Screenshot](/pictures/examples/tutorial/toolbar_at_bottom.png)
+
+*Figure: Toolbar at bottom*
+
+### Toolbar anywhere
+
 To place the toolbar anywhere on the form, simply change the dock property to xtd::formq::dock_style::none and modify the toolbar location.
 
-![Screenshot](/pictures/examples/tutorial/toolbar_on_bottom.png)
+```cpp
+#include <xtd/xtd>
 
-*Figure: Toolbar on bottom*
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 final : public form {
+public:
+  form1() {
+    center_to_screen();
+    text("Toolbar anywhere");
+    tool_bar(tool_bar1);
+
+    tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
+    tool_bar2.button_click += {*this, &form1::on_tool_bar_button_click};
+    tool_bar2.dock(dock_style::none);
+    tool_bar2.location({80, 100});
+  }
+
+private:
+  auto on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) noexcept -> void {
+    if (e.button() == exit_tool_bar_button) close();
+  }
+  
+  tool_bar_button exit_tool_bar_button = tool_bar_button::create_push_button(0);
+  forms::tool_bar tool_bar1 = forms::tool_bar::create(*this, {tool_bar_images::file_exit()}, {exit_tool_bar_button});
+  tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(0);
+  tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(1);
+  tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(2);
+  forms::tool_bar tool_bar2 = forms::tool_bar::create(*this, {tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save()}, {new_tool_bar_button, open_tool_bar_button, save_tool_bar_button});
+};
+
+auto main() -> int {
+  application::run(form1 {});
+}
+```
 
 ```cpp
 tool_bar2.dock(dock_style::none);
