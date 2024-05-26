@@ -311,6 +311,7 @@ We set the dock property to xtd::formq::dock_style::button.
 ### Toolbar anywhere
 
 To place the toolbar anywhere on the form, simply change the dock property to xtd::formq::dock_style::none and modify the toolbar location.
+The toolbar behaves exactly like any other control, except that it can be a system toolbar.
 
 ```cpp
 #include <xtd/xtd>
@@ -354,8 +355,7 @@ tool_bar2.dock(dock_style::none);
 tool_bar2.locarion({80, 100});
 ```
 
-To place the toolbar anywhere on the form, simply change the dock property to xtd::formq::dock_style::none and modify the toolbar location.
-The toolbar behaves exactly like any other control, except that it can be a system toolbar.
+We set the dock property to none and set the location to 80 pixels to the left and 100 pixels to the top.
 
 ![Screenshot](/pictures/examples/tutorial/toolbar_anywhere.png)
 
