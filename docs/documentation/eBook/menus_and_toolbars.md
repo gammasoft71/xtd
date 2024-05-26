@@ -13,8 +13,8 @@ To implement a [menu](https://gammasoft71.github.io/xtd/reference_guides/latest/
 * [Toolbars](#toolbars)
   * [A simple toolbar](#a-simple-toolbar)
   * [Toolbars](#toolbars)
-  * [Toolbar at bottom](#toolbar_at_bottom)
-  * [Toolbar anywhere](#toolbar_anywhere)
+  * [Toolbar at bottom](#toolbar-at-bottom)
+  * [Toolbar anywhere](#toolbar-anywhere)
 
 ## Simple menu example
 
