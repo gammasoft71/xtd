@@ -356,6 +356,57 @@ tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, c
   return result;
 }
 
+tool_bar tool_bar::create(const control& parent, const tool_bar_button_collection& buttons) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.buttons().push_back_range(buttons);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.image_list().images().push_back_range(image_collection);
+  result.buttons().push_back_range(buttons);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.image_list().images().push_back_range(image_collection);
+  result.buttons().push_back_range(buttons);
+  result.name(name);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, const tool_bar_button_collection& buttons) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.dock(style);
+  result.buttons().push_back_range(buttons);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.dock(style);
+  result.image_list().images().push_back_range(image_collection);
+  result.buttons().push_back_range(buttons);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.dock(style);
+  result.image_list().images().push_back_range(image_collection);
+  result.buttons().push_back_range(buttons);
+  result.name(name);
+  return result;
+}
+
 forms::create_params tool_bar::create_params() const noexcept {
   auto create_params = control::create_params();
   
