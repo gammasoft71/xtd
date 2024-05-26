@@ -311,6 +311,51 @@ tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_
   return result;
 }
 
+tool_bar tool_bar::create(const tool_bar_button_collection& buttons) {
+  auto result = tool_bar {};
+  result.buttons().push_back_range(buttons);
+  return result;
+}
+
+tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons) {
+  auto result = tool_bar {};
+  result.image_list().images().push_back_range(image_collection);
+  result.buttons().push_back_range(buttons);
+  return result;
+}
+
+tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name) {
+  auto result = tool_bar {};
+  result.image_list().images().push_back_range(image_collection);
+  result.buttons().push_back_range(buttons);
+  result.name(name);
+  return result;
+}
+
+tool_bar tool_bar::create(xtd::forms::dock_style style, const tool_bar_button_collection& buttons) {
+  auto result = tool_bar {};
+  result.dock(style);
+  result.buttons().push_back_range(buttons);
+  return result;
+}
+
+tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons) {
+  auto result = tool_bar {};
+  result.dock(style);
+  result.image_list().images().push_back_range(image_collection);
+  result.buttons().push_back_range(buttons);
+  return result;
+}
+
+tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const tool_bar_button_collection& buttons, const xtd::ustring& name) {
+  auto result = tool_bar {};
+  result.dock(style);
+  result.image_list().images().push_back_range(image_collection);
+  result.buttons().push_back_range(buttons);
+  result.name(name);
+  return result;
+}
+
 tool_bar tool_bar::create(const control& parent) {
   auto result = tool_bar {};
   result.parent(parent);
