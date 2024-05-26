@@ -11,6 +11,8 @@ To implement a [menu](https://gammasoft71.github.io/xtd/reference_guides/latest/
 * [Simple menu example](#simple-menu-example)
 * [Submenus](#submenus)
 * [Toolbars](#toolbars)
+  * [A simple toolbar](#a-simple-toolbar)
+  * [Toolbars](#toolbars)
 
 ## Simple menu example
 
@@ -150,7 +152,7 @@ xtd::forms::tool_bar xtd::forms::tool_bar::create(...);
 
 To create a system toolbar, we call the [xtd::forms::form::tool_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html#a2745bb47e63653ddccb5893db2cf2e39) method of the [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control.
 
-## A simple toolbar
+### A simple toolbar
 
 Our first example will create a simple toolbar.
 
@@ -184,9 +186,69 @@ auto main() -> int {
 }
 ```
 
+In our example, we create a toolbar and one tool button. Clicking on the toolbar button will terminate the application.
+
+```cpp
+tool_bar_button exit_tool_bar_button = tool_bar_button::create_push_button(0);
+```
+
+We create a toolbar button.
+
+```cpp
+forms::tool_bar tool_bar1 = forms::tool_bar::create(*this, {tool_bar_images::file_exit()}, {exit_tool_bar_button});
+````
+
+We create a toolbar and adding `exit` toolbar button.
+
+```cpp
+tool_bar(tool_bar1);
+```
+
+We add the toolbar we've created as the form's system toolbar.
+
 ![Screenshot](/pictures/examples/tutorial/toolbar.png)
 
 *Figure: Toolbar*
+
+
+### Toolbars
+
+If we want to have more than one toolbar, only one of the toolbars can be associated as the form's system toolbar. The other toolbars will be secondary toolbars that can be placed at the top, bottom, left or right of the form using the [xtd::forms::tool_bar::dock](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tool__bar.html#af25fbe68eefb148e22e3d26173a33e73) property.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 final : public form {
+public:
+  form1() {
+    center_to_screen();
+    text("Toolbar");
+    tool_bar(tool_bar1);
+
+    tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
+    tool_bar2.button_click += {*this, &form1::on_tool_bar_button_click};
+  }
+
+private:
+  auto on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) noexcept -> void {
+    if (e.button() == exit_tool_bar_button) close();
+  }
+  
+  tool_bar_button exit_tool_bar_button = tool_bar_button::create_push_button(0);
+  forms::tool_bar tool_bar1 = forms::tool_bar::create(*this, {tool_bar_images::file_exit()}, {exit_tool_bar_button});
+  tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(0);
+  tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(1);
+  tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(2);
+  forms::tool_bar tool_bar2 = forms::tool_bar::create(*this, {tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save()}, {new_tool_bar_button, open_tool_bar_button, save_tool_bar_button});
+};
+
+auto main() -> int {
+  application::run(form1 {});
+}
+````
 
 
 ## See also
