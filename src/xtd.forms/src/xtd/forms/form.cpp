@@ -390,9 +390,12 @@ void form::bring_to_front() {
 }
 
 void form::center_to_screen() {
-  screen screen = screen::from_control(*this);
-  left((screen.working_area().width() - width()) / 2);
-  top((screen.working_area().height() - height()) / 2);
+  if (!data_->previous_screen) start_position(form_start_position::center_screen);
+  else {
+    screen screen = screen::from_control(*this);
+    left((screen.working_area().width() - width()) / 2);
+    top((screen.working_area().height() - height()) / 2);
+  }
 }
 
 void form::close() {
