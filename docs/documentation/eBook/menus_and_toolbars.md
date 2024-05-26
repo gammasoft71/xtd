@@ -142,8 +142,9 @@ A submenu is created in the same way as a normal menu. Items are added as a seco
 
 Menus group all commands that we can use in an application. Toolbars provide a quick access to the most frequently used commands.
 
-virtual wxToolBar* wxFrame::CreateToolBar(long style = wxTB_DEFAULT_STYLE,
-    wxWindowID id = wxID_ANY, const wxString & name = wxToolBarNameStr)
+```cpp
+xtd::forms::tool_bar xtd::forms::tool_bar::create(...);
+````
 
 To create a toolbar, we call the CreateToolBar method of the frame widget.
 
