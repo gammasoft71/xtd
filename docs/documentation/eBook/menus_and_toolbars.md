@@ -172,8 +172,8 @@ private:
     if (e.button() == exit_tool_bar_button) close();
   }
   
-  forms::tool_bar tool_bar1 = forms::tool_bar::create(*this, {tool_bar_images::file_exit()}, {exit_tool_bar_button});
   tool_bar_button exit_tool_bar_button = tool_bar_button::create_push_button(0);
+  forms::tool_bar tool_bar1 = forms::tool_bar::create(*this, {tool_bar_images::file_exit()}, {exit_tool_bar_button});
 };
 
 auto main() -> int {
