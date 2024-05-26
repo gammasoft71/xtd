@@ -9,6 +9,8 @@ To implement a [menu](https://gammasoft71.github.io/xtd/reference_guides/latest/
 ## In This Section
 
 * [Simple menu example](#simple-menu-example)
+* [Submenus](#submenus)
+* [Toolbars](#toolbars)
 
 ## Simple menu example
 
@@ -146,7 +148,7 @@ Menus group all commands that we can use in an application. Toolbars provide a q
 xtd::forms::tool_bar xtd::forms::tool_bar::create(...);
 ````
 
-To create a system toolbar, we call the xtd::forms::form::tool_bar method of the xtd::forms::form control.
+To create a system toolbar, we call the [xtd::forms::form::tool_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html#a2745bb47e63653ddccb5893db2cf2e39) method of the [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) control.
 
 ## A simple toolbar
 
