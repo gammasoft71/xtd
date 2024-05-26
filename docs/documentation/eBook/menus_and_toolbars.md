@@ -13,6 +13,7 @@ To implement a [menu](https://gammasoft71.github.io/xtd/reference_guides/latest/
 * [Toolbars](#toolbars)
   * [A simple toolbar](#a-simple-toolbar)
   * [Toolbars](#toolbars)
+  * [Toolbar on bottom](#toolbar_on_bottom)
 
 ## Simple menu example
 
@@ -252,6 +253,76 @@ auto main() -> int {
 ![Screenshot](/pictures/examples/tutorial/toolbars.png)
 
 *Figure: Toolbars*
+
+### Toolbars on bottom
+
+A toolbar can be placed on any border of the form or at any coordinate.
+Simply use the dock property of latoolbar.
+
+```cpp
+#include <xtd/xtd>
+
+using namespace xtd;
+using namespace xtd::forms;
+
+class form1 final : public form {
+public:
+  form1() {
+    center_to_screen();
+    text("Toolbar on bottom");
+    tool_bar(tool_bar1);
+
+    tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
+    tool_bar2.button_click += {*this, &form1::on_tool_bar_button_click};
+    tool_bar2.dock(dock_style::bottom);
+  }
+
+private:
+  auto on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) noexcept -> void {
+    if (e.button() == exit_tool_bar_button) close();
+  }
+  
+  tool_bar_button exit_tool_bar_button = tool_bar_button::create_push_button(0);
+  forms::tool_bar tool_bar1 = forms::tool_bar::create(*this, {tool_bar_images::file_exit()}, {exit_tool_bar_button});
+  tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(0);
+  tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(1);
+  tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(2);
+  forms::tool_bar tool_bar2 = forms::tool_bar::create(*this, {tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save()}, {new_tool_bar_button, open_tool_bar_button, save_tool_bar_button});
+};
+
+auto main() -> int {
+  application::run(form1 {});
+}
+```
+
+In this example, the toolbar is placed at the bottom of the form.
+
+```cpp
+tool_bar2.dock(dock_style::bottom);
+```
+
+We set the dock property to xtd::formq::dock_style::button.
+
+To place the toolbar anywhere on the form, simply change the dock property to xtd::formq::dock_style::none and modify the toolbar location.
+
+![Screenshot](/pictures/examples/tutorial/toolbar_on_bottom.png)
+
+*Figure: Toolbar on bottom*
+
+```cpp
+tool_bar2.dock(dock_style::none);
+tool_bar2.locarion({80, 100});
+```
+
+To place the toolbar anywhere on the form, simply change the dock property to xtd::formq::dock_style::none and modify the toolbar location.
+The toolbar behaves exactly like any other control, except that it can be a system toolbar.
+
+![Screenshot](/pictures/examples/tutorial/toolbar_anywhere.png)
+
+*Figure: Toolbar anywhere*
+
+
+In this part of the xtd tutorial, we have covered menus and toolbars.
 
 ## See also
 
