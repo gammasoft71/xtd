@@ -2091,7 +2091,6 @@ void control::wm_key_char(message& message) {
     if ((key & keys::key_code) == keys::function_key) modifier_keys_ &= ~keys::function;
     key += modifier_keys_;
     auto key_event_args = forms::key_event_args {key};
-    modifier_keys_ = key_event_args.modifiers();
     on_key_up(key_event_args);
     message.result(key_event_args.handled());
     if (!key_event_args.handled()) def_wnd_proc(message);
