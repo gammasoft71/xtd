@@ -273,6 +273,80 @@ tool_bar& tool_bar::wrappable(bool value) {
   return *this;
 }
 
+tool_bar tool_bar::create() {
+  return tool_bar {};
+}
+
+tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_collection) {
+  auto result = tool_bar {};
+  result.image_list().images().push_back_range(image_collection);
+  return result;
+}
+
+tool_bar tool_bar::create(const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name) {
+  auto result = tool_bar {};
+  result.image_list().images().push_back_range(image_collection);
+  result.name(name);
+  return result;
+}
+
+tool_bar tool_bar::create(xtd::forms::dock_style style) {
+  auto result = tool_bar {};
+  result.dock(style);
+  return result;
+}
+
+tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection) {
+  auto result = tool_bar {};
+  result.dock(style);
+  result.image_list().images().push_back_range(image_collection);
+  return result;
+}
+
+tool_bar tool_bar::create(xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name) {
+  auto result = tool_bar {};
+  result.dock(style);
+  result.image_list().images().push_back_range(image_collection);
+  result.name(name);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::image_collection& image_collection) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.image_list().images().push_back_range(image_collection);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.image_list().images().push_back_range(image_collection);
+  result.name(name);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.dock(style);
+  return result;
+}
+
+tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection) {
+  auto result = tool_bar {};
+  result.parent(parent);
+  result.dock(style);
+  result.image_list().images().push_back_range(image_collection);
+  return result;
+}
+
 tool_bar tool_bar::create(const control& parent, xtd::forms::dock_style style, const xtd::forms::image_list::image_collection& image_collection, const xtd::ustring& name) {
   auto result = tool_bar {};
   result.parent(parent);
