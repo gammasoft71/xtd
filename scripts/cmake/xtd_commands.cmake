@@ -1800,7 +1800,7 @@ macro(write_resources_file_header)
     "  /// @remarks See [Resources](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/resources) for more informations.\n"
     "  class resources final static_ {\n"
     "  public:\n"
-    "    /// @name Public Static Methods\n"
+    "    /// @name Public Static Properties\n"
     "\n"
     "    /// @{\n"
   )
@@ -1908,10 +1908,16 @@ macro(write_settings_file_header)
     "\n"
     "    /// @{\n"
     "    /// @brief Initializes a new instance of the ${TARGET_DEFAULT_NAMESPACE}::properties::settings class.\n"
-    "    settings() : ::${TARGET_DEFAULT_NAMESPACE}::properties::settings(true) {}\n"
+    "    settings() noexcept = default;\n"
     "    /// @}\n"
     "\n"
-    "    /// @name Public Methods\n"
+    "    /// @cond\n"
+    "    settings(settings&&) noexcept = default;\n"
+    "    settings(const settings&) noexcept = default;\n"
+    "    settings& operator =(const settings&) noexcept = default;\n"
+    "    /// @endcond\n"
+    "\n"
+    "    /// @name Public Properties\n"
     "\n"
     "    /// @{\n"
   )
@@ -1922,10 +1928,10 @@ macro(write_settings_file_header)
       file(APPEND ${SETTINGS_FILE_HEADER}
         "    /// @brief Gets the ${NAME} user setting property.\n"
         "    /// @return A ${TYPE} value.\n"
-        "    ${TYPE} ${NAME}() const {return ${NAME}_;}\n"
+        "    ${TYPE} ${NAME}() const noexcept {return ${NAME}_;}\n"
         "    /// @brief Sets the ${NAME} user setting property.\n"
         "    /// @param value A ${TYPE} value.\n"
-        "    settings& ${NAME}(${TYPE} value) {\n"
+        "    settings& ${NAME}(${TYPE} value) noexcept {\n"
         "      ${NAME}_ = value;\n"
         "      return *this;\n"
         "    }\n"
@@ -1940,7 +1946,7 @@ macro(write_settings_file_header)
       file(APPEND ${SETTINGS_FILE_HEADER}
         "    /// @brief Gets the ${NAME} system setting property.\n"
         "    /// @return A ${TYPE} value.\n"
-        "    ${TYPE} ${NAME}() const {return ${VALUE};}\n"
+        "    ${TYPE} ${NAME}() const noexcept {return ${VALUE};}\n"
         "\n"
       )
     endforeach()
@@ -1948,9 +1954,14 @@ macro(write_settings_file_header)
 
   
   file(APPEND ${SETTINGS_FILE_HEADER}
+    "    /// @}\n"
+    "\n"
+    "    /// @name Public Methods\n"
+    "\n"
+    "    /// @{\n"
     "    /// @brief Reload all properties with the last saved values.\n"
     "    /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/settings) for more informations.\n"
-    "    void reload() {\n"
+    "    void reload() noexcept {\n"
   )
 
   if (PROJECT_USER_SETTINGS)
@@ -1968,10 +1979,9 @@ macro(write_settings_file_header)
   file(APPEND ${SETTINGS_FILE_HEADER}
     "    /// @brief Reset all properties to their default values.\n"
     "    /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/settings) for more informations.\n"
-    "    void reset() {\n"
+    "    void reset() noexcept {\n"
     "      settings_.reset();\n"
-    "      *this = settings(false);\n"
-    "      reload();\n"
+    "      *this = settings {};\n"
     "    }\n"
     "\n"
   )
@@ -1979,7 +1989,7 @@ macro(write_settings_file_header)
   file(APPEND ${SETTINGS_FILE_HEADER}
     "    /// @brief Save all properties.\n"
     "    /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/settings) for more informations.\n"
-    "    void save() {\n"
+    "    void save() noexcept {\n"
   )
 
   if (PROJECT_USER_SETTINGS)
@@ -1994,13 +2004,16 @@ macro(write_settings_file_header)
     "    }\n"
     "    /// @}\n"
     "\n"
-    "    /// @name Public Static Methods\n"
+    "    /// @name Public Static Properties\n"
     "\n"
     "    /// @{\n"
     "    /// @brief Gets the default instance of settings.\n"
     "    /// @return The default instance.\n"
-    "    static ::${TARGET_DEFAULT_NAMESPACE}::properties::settings& default_settings() {\n"
-    "      static ::${TARGET_DEFAULT_NAMESPACE}::properties::settings default_settings;\n"
+    "    static settings& default_settings() noexcept {\n"
+    "      static auto default_settings = settings {};\n"
+    "      call_once_ {\n"
+    "        default_settings.reload();\n"
+    "      };\n"
     "      return default_settings;\n"
     "    }\n"
     "    /// @}\n"
@@ -2009,7 +2022,6 @@ macro(write_settings_file_header)
 
   file(APPEND ${SETTINGS_FILE_HEADER}
     "  private:\n"
-    "    explicit settings(bool load) {if (load) reload();}\n"
     "    xtd::forms::settings settings_;\n"
   )
 
