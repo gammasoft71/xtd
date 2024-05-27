@@ -58,7 +58,7 @@ high_scores_dialog::high_scores_dialog() {
   reset_scores_button_.width(100);
   reset_scores_button_.text("&Reset Scores"_t);
   reset_scores_button_.click += [&] {
-    properties::settings empty;
+    auto empty = properties::settings {false};
     properties::settings::default_settings().beginner_high_scores_name(empty.beginner_high_scores_name());
     properties::settings::default_settings().beginner_high_scores_value(empty.beginner_high_scores_value());
     properties::settings::default_settings().intermediate_high_scores_name(empty.intermediate_high_scores_name());
