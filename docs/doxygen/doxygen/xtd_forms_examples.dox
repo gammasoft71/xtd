@@ -332,7 +332,7 @@
 /// @image html screen_gd.png
 ///
 /// @example settings_example.cpp
-/// demonstrates the use of xtd::forms::settings component.
+/// demonstrates the use of xtd::settings component.
 /// @par Windows
 /// @image html settings_example_w.png
 /// <br>
@@ -3137,7 +3137,7 @@
 /// @image html screen_informations_gd.png
 ///
 /// @example settings_example2.cpp
-/// demonstrates the use of xtd::forms::settings component.
+/// demonstrates the use of xtd::settings component.
 /// @par Windows
 /// @image html settings_example2_w.png
 /// <br>

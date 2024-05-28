@@ -4,6 +4,7 @@
 #pragma once
 #include <xtd/xtd.drawing>
 #include <xtd/forms/window_messages>
+#include "xtd/settings.h"
 #include "xtd/forms/layout/arranged_element_collection.h"
 #include "xtd/forms/layout/sorter_none.h"
 #include "xtd/forms/properties/resources.h"
@@ -309,7 +310,6 @@
 #include "forms/segments.h"
 #include "forms/selection_mode.h"
 #include "forms/selection_range.h"
-#include "forms/settings.h"
 #include "forms/seven_segment_display.h"
 #include "forms/shadow.h"
 #include "forms/shadows.h"
