@@ -15,12 +15,12 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class settings;
+  /// @endcond
+
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @cond
-    class settings;
-    /// @endcond
-    
     /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
     /// @warning Internal use only
     namespace native {
@@ -35,7 +35,7 @@ namespace xtd {
       /// @remarks On linux settings are stored in "~/.product_name" file.
       /// @warning Internal use only
       class forms_native_export_ settings final static_ {
-        friend xtd::forms::settings;
+        friend xtd::settings;
       protected:
         /// @name Protected Static Methods
         

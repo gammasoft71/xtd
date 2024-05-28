@@ -1,6 +1,6 @@
 # settings_example
 
-demonstrates the use of [xtd::forms::settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1settings.html) component.
+demonstrates the use of [xtd::settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1settings.html) component.
 
 ## Sources
 

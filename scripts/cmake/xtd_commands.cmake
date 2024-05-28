@@ -1936,7 +1936,7 @@ macro(write_settings_file_header)
   endif ()
 
   file(APPEND ${SETTINGS_FILE_HEADER}
-    "#include <xtd/forms/settings>\n"
+    "#include <xtd/settings>\n"
     "\n"
     "namespace ${TARGET_DEFAULT_NAMESPACE}::properties {\n"
     "  /// @brief A strongly typed settings class, for storing user and system settings\n"
@@ -2066,7 +2066,7 @@ macro(write_settings_file_header)
 
   file(APPEND ${SETTINGS_FILE_HEADER}
     "  private:\n"
-    "    xtd::forms::settings settings_;\n"
+    "    xtd::settings settings_;\n"
   )
 
   if (PROJECT_USER_SETTINGS)
