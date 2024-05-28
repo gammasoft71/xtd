@@ -16,7 +16,7 @@ namespace xtd {
   /// xtd::forms
   /// @par Library
   /// xtd.forms
-  /// @ingroup xtd_forms components
+  /// @ingroup xtd_core system components
   /// @remarks On Windows settings are stored in registry with "HKEY_CURRENT_USER\Software\company_name\product_name" key or if no Company name "\HKEY_CURRENT_USER\Software\Product Name\Product Name" key.
   /// @remarks On macos settings are stored in "~/Library/Preferences/product_name Preferences" file.
   /// @remarks On linux settings are stored in "~/.consig/product_name" file.
@@ -46,7 +46,7 @@ namespace xtd {
     /// @param key The key used to read a value.
     /// @param default_value A string used if value not found.
     /// @return A string that represent the value associate to the key.
-    xtd::ustring read(const xtd::ustring& key, const xtd::ustring& default_value) {return read_string(key, default_value);}
+    xtd::ustring read(const xtd::ustring& key, const xtd::ustring& default_value);
     /// @brief Reads a value for specified key. If not found default value is used.
     /// @tparam type_t The type of value to read.
     /// @param key The key used to read a value.
@@ -66,7 +66,7 @@ namespace xtd {
     /// @brief Writes a specified value for specified key.
     /// @param key The key used to write a value.
     /// @param value A string to write.
-    void write(const xtd::ustring& key, const xtd::ustring& value) {write_string(key, value);}
+    void write(const xtd::ustring& key, const xtd::ustring& value);
     
     /// @brief Writes a specified value for specified key.
     /// @tparam type_t The type of value to write.

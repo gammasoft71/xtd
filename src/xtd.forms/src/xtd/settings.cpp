@@ -43,8 +43,8 @@ settings::~settings() {
     forms::native::settings::destroy(data_->settings_);
 }
 
-xtd::ustring settings::read_string(const xtd::ustring& key, const xtd::ustring& default_value) {
-  return forms::native::settings::read(data_->settings_, key, default_value);
+xtd::ustring settings::read(const xtd::ustring& key, const xtd::ustring& default_value) {
+  return read_string(key, default_value);
 }
 
 void settings::reset() {
@@ -53,6 +53,14 @@ void settings::reset() {
 
 void settings::save() {
   forms::native::settings::save(data_->settings_);
+}
+
+void settings::write(const xtd::ustring& key, const xtd::ustring& value) {
+  write_string(key, value);
+}
+
+xtd::ustring settings::read_string(const xtd::ustring& key, const xtd::ustring& default_value) {
+  return forms::native::settings::read(data_->settings_, key, default_value);
 }
 
 void settings::write_string(const xtd::ustring& key, const xtd::ustring& value) {
