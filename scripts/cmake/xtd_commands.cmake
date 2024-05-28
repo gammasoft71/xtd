@@ -1194,7 +1194,7 @@ endmacro()
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
 ##  add_sources(file.h file.cpp)
-##  setting(name string APPLICATION "\"Settings example\"")
+##  setting(name xtd::ustring APPLICATION "\"Settings example\"")
 ##  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ##
 ##  target_type(CONSOLE_APPLICATION)
@@ -1217,6 +1217,36 @@ macro(setting NAME TYPE SCOPE VALUE)
   endif ()
   set(PROJECT_SETTING_NAMES "${PROJECT_SETTING_NAMES};${NAME}")
 endmacro()
+
+## @brief Adds a setting include file to current project.
+## @param SETTIING_INCLUDE_FILE The include file to add.
+## @remarks This method can be call more than once in the same project.
+## @remarks This method must be call before target_type().
+## @remarks This method is optional.
+## @par Examples
+## @code
+##  cmake_minimum_required(VERSION 3.20)
+##
+##  project(my_project)
+##  find_package(xtd REQUIRED)
+##  add_sources(file.h file.cpp)
+##
+##  setting_include("xtd/drawing/color") 
+##  setting_include("xtd/ustring") 
+##  setting(name xtd::ustring APPLICATION "\"Settings example\"")
+##  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
+##
+##  target_type(CONSOLE_APPLICATION)
+## @endcode
+macro(setting_include SETTIING_INCLUDE_FILE)
+  if ("${SETTIING_INCLUDE_FILE}" IN_LIST PROJECT_SETTING_INCLUDE_FILES)
+    message(FATAL_ERROR "Duplicate setting include : ${SETTIING_INCLUDE_FILE}")
+  endif ()
+
+  message(VERBOSE "Add include setting application [${SETTIING_INCLUDE_FILE}]...")
+ set(PROJECT_SETTING_INCLUDE_FILES "${PROJECT_SETTING_INCLUDE_FILES};${SETTIING_INCLUDE_FILE}")
+endmacro()
+
 
 ## @brief Adds source and header files to current project.
 ## @param ARGN Files list to add.
@@ -1896,7 +1926,17 @@ macro(write_settings_file_header)
     "// Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.\n"
     "\n"
     "#pragma once\n"
-    "#include <${XTD_PROJECT_INCLUDE_FILE}>\n"
+  )
+  if (PROJECT_SETTING_INCLUDE_FILES)
+    foreach(PROJECT_SETTING_INCLUDE_FILE ${PROJECT_SETTING_INCLUDE_FILES})
+      file(APPEND ${SETTINGS_FILE_HEADER}
+        "#include <${PROJECT_SETTING_INCLUDE_FILE}>\n"
+      )
+    endforeach()
+  endif ()
+
+  file(APPEND ${SETTINGS_FILE_HEADER}
+    "#include <xtd/forms/settings>\n"
     "\n"
     "namespace ${TARGET_DEFAULT_NAMESPACE}::properties {\n"
     "  /// @brief A strongly typed settings class, for storing user and system settings\n"

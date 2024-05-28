@@ -54,6 +54,7 @@
 ///   * @ref AddResourcesSubSection adds resources to current project.
 ///   * @ref AddResourceStringSubSection adds resource string to current project.
 ///   * @ref AddSettingSubSection adds a setting to current project.
+///   * @ref AddSettingIncludeSubSection adds a setting_include to current project.
 ///   * @ref AddSourcesSubSection adds source and header files to current project.
 ///
 /// @par xtd Specific CMake variables
@@ -92,7 +93,7 @@
 ///   * @ref ProjectReferencesSubSection contains project references.
 ///   * @ref ProjectResourcesSubSection contains project resources.
 ///   * @ref ProjectResourceStringsSubSection contains project resource strings.
-///   * @ref ProjectSettingsSubSection contains project settings.
+///   * @ref ProjectSettingIncludeFilesSubSection contains project setting include files.
 ///   * @ref ProjectSourcesSubSection contains project sources.
 ///   * @ref ProjectUserSettingsSubSection contains project user settings.
 /// * @ref SystemVariablesSection
@@ -754,7 +755,29 @@
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
 ///  add_sources(file.h file.cpp)
-///  setting(name string APPLICATION "\"Settings example\"")
+///  setting(name xtd::ustring APPLICATION "\"Settings example\"")
+///  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
+///
+///  target_type(CONSOLE_APPLICATION)
+/// @endcode
+///
+/// @subsection AddSettingIncludeSubSection setting_include
+/// @brief Adds a setting include file to current project.
+/// @param SETTIING_INCLUDE_FILE The include file to add.
+/// @remarks This method can be call more than once in the same project.
+/// @remarks This method must be call before target_type().
+/// @remarks This method is optional.
+/// @par Examples
+/// @code
+///  cmake_minimum_required(VERSION 3.20)
+///
+///  project(my_project)
+///  find_package(xtd REQUIRED)
+///  add_sources(file.h file.cpp)
+///
+///  setting_include("xtd/drawing/color")
+///  setting_include("xtd/ustring")
+///  setting(name xtd::ustring APPLICATION "\"Settings example\"")
 ///  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ///
 ///  target_type(CONSOLE_APPLICATION)
@@ -909,6 +932,10 @@
 /// @subsection ProjectResourceStringsSubSection PROJECT_RESOURCE_STRINGS
 /// @brief Contains project resource strings.
 /// @see @ref AddResourceStringSubSection
+///
+/// @subsection ProjectSettingIncludeFilesSubSection PROJECT_SETTING_INCLUDE_FILES
+/// @brief Contains project setting include files.
+/// @see @ref AddSettingIncludeSubSection
 ///
 /// @subsection ProjectSourcesSubSection PROJECT_SOURCES
 /// @brief Contains project sources.
