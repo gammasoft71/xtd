@@ -1,5 +1,8 @@
 #include <xtd/drawing/color_converter>
 #include <xtd/forms/about_dialog>
+#include <xtd/diagnostics/process>
+#include <xtd/drawing/brushes>
+#include <xtd/random>
 #include "minesweeper.h"
 #include "custom_field_dialog.h"
 #include "input_name_dialog.h"

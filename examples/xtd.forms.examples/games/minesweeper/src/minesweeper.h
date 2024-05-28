@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/drawing/texts>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/form>
@@ -6,6 +7,7 @@
 #include <xtd/forms/main_menu>
 #include <xtd/forms/panel>
 #include <xtd/forms/timer>
+#include <xtd/overload>
 #include "cell.h"
 #include "high_scores_dialog.h"
 #include "level.h"

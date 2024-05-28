@@ -31,6 +31,7 @@
 #include <xtd/forms/text_box>
 #include <xtd/drawing/texts>
 #include <xtd/environment>
+#include <xtd/overload>
 #include <xtd/size_object>
 
 namespace xtdc_gui {

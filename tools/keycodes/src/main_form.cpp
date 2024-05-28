@@ -1,9 +1,11 @@
-#include <xtd/forms/window_messages>
+#include "../properties/resources.h"
+#include "../properties/settings.h"
 #include "main_form.h"
 #include "key_control.h"
 #include "key_press_control.h"
-#include "../properties/resources.h"
-#include "../properties/settings.h"
+#include <xtd/forms/about_dialog>
+#include <xtd/forms/button_images>
+#include <xtd/forms/window_messages>
 
 using namespace std;
 using namespace xtd;
