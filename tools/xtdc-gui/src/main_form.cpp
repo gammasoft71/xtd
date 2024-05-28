@@ -7,11 +7,15 @@
 #include <xtd/diagnostics/debug>
 #include <xtd/diagnostics/process>
 #include <xtd/drawing/system_icons>
+#include <xtd/forms/about_dialog>
 #include <xtd/forms/application>
+#include <xtd/forms/busy_box>
 #include <xtd/forms/folder_browser_dialog>
-#include <xtd/forms/images>
+#include <xtd/forms/busy_box>
 #include <xtd/forms/message_box>
 #include <xtd/io/directory>
+#include <xtd/io/directory_not_found_exception>
+#include <xtd/io/file_info>
 #include <xtd/io/path>
 
 using namespace std;
