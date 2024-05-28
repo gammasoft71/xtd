@@ -1,3 +1,5 @@
+setting_include(xtd/environment)
+
 setting(menu_visible bool USER "true")
 setting(auto_close bool USER "true")
 setting(create_propject_folder xtd::ustring USER "xtd::environment::get_folder_path(xtd::environment::special_folder::home)")
