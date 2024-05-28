@@ -140,6 +140,7 @@ $(function() {
 <li><a class="el" href="_c_make_commands.html#AddResourcesSubSection">resource</a> adds resources to current project.</li>
 <li><a class="el" href="_c_make_commands.html#AddResourceStringSubSection">resource_string</a> adds resource string to current project.</li>
 <li><a class="el" href="_c_make_commands.html#AddSettingSubSection">setting</a> adds a setting to current project.</li>
+<li><a class="el" href="_c_make_commands.html#AddSettingIncludeSubSection">setting_include</a> adds a setting_include to current project.</li>
 <li><a class="el" href="_c_make_commands.html#AddSourcesSubSection">add_sources</a> adds source and header files to current project.</li>
 </ul>
 </li>
@@ -189,7 +190,7 @@ $(function() {
 <li><a class="el" href="_c_make_commands.html#ProjectReferencesSubSection">PROJECT_REFERENCES</a> contains project references.</li>
 <li><a class="el" href="_c_make_commands.html#ProjectResourcesSubSection">PROJECT_RESOURCES</a> contains project resources.</li>
 <li><a class="el" href="_c_make_commands.html#ProjectResourceStringsSubSection">PROJECT_RESOURCE_STRINGS</a> contains project resource strings.</li>
-<li>ProjectSettingsSubSection contains project settings.</li>
+<li><a class="el" href="_c_make_commands.html#ProjectSettingIncludeFilesSubSection">PROJECT_SETTING_INCLUDE_FILES</a> contains project setting include files.</li>
 <li><a class="el" href="_c_make_commands.html#ProjectSourcesSubSection">PROJECT_SOURCES</a> contains project sources.</li>
 <li><a class="el" href="_c_make_commands.html#ProjectUserSettingsSubSection">PROJECT_USER_SETTINGS</a> contains project user settings.</li>
 </ul>
@@ -1008,7 +1009,33 @@ This method is optional. </dd></dl>
 <div class="line">project(my_project)</div>
 <div class="line">find_package(<a class="code hl_namespace" href="namespacextd.html">xtd</a> REQUIRED)</div>
 <div class="line">add_sources(file.h file.cpp)</div>
-<div class="line">setting(name <span class="keywordtype">string</span> APPLICATION &quot;\&quot;Settings example\&quot;&quot;)</div>
+<div class="line">setting(name <a class="code hl_namespace" href="namespacextd.html">xtd</a>::ustring APPLICATION &quot;\&quot;Settings example\&quot;&quot;)</div>
+<div class="line">setting(back_color <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::color USER &quot;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::color::spring_green&quot;)</div>
+<div class="line"> </div>
+<div class="line">target_type(CONSOLE_APPLICATION)</div>
+</div><!-- fragment --></dd></dl>
+<h2><a class="anchor" id="AddSettingIncludeSubSection"></a>
+setting_include</h2>
+<p>Adds a setting include file to current project. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">SETTIING_INCLUDE_FILE</td><td>The include file to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method can be call more than once in the same project. </dd>
+<dd>
+This method must be call before target_type(). </dd>
+<dd>
+This method is optional. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">cmake_minimum_required(VERSION 3.20)</div>
+<div class="line"> </div>
+<div class="line">project(my_project)</div>
+<div class="line">find_package(<a class="code hl_namespace" href="namespacextd.html">xtd</a> REQUIRED)</div>
+<div class="line">add_sources(file.h file.cpp)</div>
+<div class="line"> </div>
+<div class="line">setting_include(&quot;<a class="code hl_namespace" href="namespacextd.html">xtd</a>/drawing/color&quot;)</div>
+<div class="line">setting_include(&quot;<a class="code hl_namespace" href="namespacextd.html">xtd</a>/ustring&quot;)</div>
+<div class="line">setting(name <a class="code hl_namespace" href="namespacextd.html">xtd</a>::ustring APPLICATION &quot;\&quot;Settings example\&quot;&quot;)</div>
 <div class="line">setting(back_color <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::color USER &quot;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::color::spring_green&quot;)</div>
 <div class="line"> </div>
 <div class="line">target_type(CONSOLE_APPLICATION)</div>
@@ -1141,6 +1168,9 @@ PROJECT_RESOURCES</h2>
 <h2><a class="anchor" id="ProjectResourceStringsSubSection"></a>
 PROJECT_RESOURCE_STRINGS</h2>
 <p>Contains project resource strings. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#AddResourceStringSubSection">resource_string</a></dd></dl>
+<h2><a class="anchor" id="ProjectSettingIncludeFilesSubSection"></a>
+PROJECT_SETTING_INCLUDE_FILES</h2>
+<p>Contains project setting include files. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#AddSettingIncludeSubSection">setting_include</a></dd></dl>
 <h2><a class="anchor" id="ProjectSourcesSubSection"></a>
 PROJECT_SOURCES</h2>
 <p>Contains project sources. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_c_make_commands.html#AddSourcesSubSection">add_sources</a></dd></dl>
@@ -1157,7 +1187,7 @@ USER_DIRECTORY</h2>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat May 25 2024 13:47:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue May 28 2024 21:29:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
