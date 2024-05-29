@@ -10,23 +10,15 @@ using namespace xtd;
 using namespace xtd::reflection;
 
 namespace {
-  xtd::ustring executable_path() noexcept {
-    if (environment::get_command_line_args().size() == 0) return "";
-    return environment::get_command_line_args()[0];
+  ustring product_name() noexcept {
+    if (assembly::get_executing_assembly().product() != ustring::empty_string) return assembly::get_executing_assembly().product();
+    if (environment::get_command_line_args().size() != 0) return xtd::io::path::get_file_name_without_extension(environment::get_command_line_args()[0]);
+    return "noname";
   }
 
-  xtd::ustring product_name() noexcept {
-    if (assembly::get_executing_assembly().product() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
-    return assembly::get_executing_assembly().product();
-  }
-
-  xtd::ustring company_name() noexcept {
-    try {
-      if (assembly::get_executing_assembly().company() == "") return xtd::io::path::get_file_name_without_extension(executable_path());
-      return assembly::get_executing_assembly().company();
-    } catch (...) {
-      return assembly::get_executing_assembly().company();
-    }
+  ustring company_name() noexcept {
+    if (assembly::get_executing_assembly().company() != ustring::empty_string) return assembly::get_executing_assembly().company();
+    return product_name();
   }
 }
 
