@@ -76,6 +76,8 @@ add_sources(
   include/xtd/native/protocol_type_constants
   include/xtd/native/select_mode_constants.h
   include/xtd/native/select_mode_constants
+  include/xtd/native/settings.h
+  include/xtd/native/settings
   include/xtd/native/socket.h
   include/xtd/native/socket
   include/xtd/native/socket_option_level_constants.h

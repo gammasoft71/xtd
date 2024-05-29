@@ -60,6 +60,7 @@ add_sources(
   src/xtd/native/linux/named_semaphore.cpp
   src/xtd/native/linux/path.cpp
   src/xtd/native/linux/process.cpp
+  src/xtd/native/linux/settings.cpp
   src/xtd/native/linux/socket.cpp
   src/xtd/native/linux/speech_synthesizer.cpp
   src/xtd/native/linux/stack_trace.cpp

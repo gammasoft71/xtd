@@ -41,6 +41,7 @@ add_sources(
   src/xtd/native/macos/named_semaphore.mm
   src/xtd/native/macos/path.mm
   src/xtd/native/macos/process.mm
+  src/xtd/native/macos/settings.mm
   src/xtd/native/macos/socket.mm
   src/xtd/native/macos/speech_synthesizer.mm
   src/xtd/native/macos/stack_trace.mm

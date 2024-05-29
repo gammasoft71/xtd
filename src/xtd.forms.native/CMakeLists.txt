@@ -140,8 +140,6 @@ add_sources(
   include/xtd/forms/native/scroll_bar
   include/xtd/forms/native/scroll_bar_styles.h
   include/xtd/forms/native/scroll_bar_styles
-  include/xtd/forms/native/settings.h
-  include/xtd/forms/native/settings
   include/xtd/forms/native/static_styles.h
   include/xtd/forms/native/static_styles
   include/xtd/forms/native/status_bar.h

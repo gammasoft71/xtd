@@ -1,7 +1,7 @@
 #include "../../include/xtd/settings.h"
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/settings>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/settings>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/environment>
 #include <xtd/io/path>
 #include <xtd/reflection/assembly>

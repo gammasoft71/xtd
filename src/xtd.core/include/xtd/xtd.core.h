@@ -337,6 +337,7 @@
 #include "sbyte_object.h"
 #include "scope_exit.h"
 #include "self.h"
+#include "settings.h"
 #include "signal.h"
 #include "signal_cancel_event_args.h"
 #include "signal_cancel_event_handler.h"
