@@ -1,5 +1,6 @@
 /// @file
-/// @brief Contains xtd::settings component.
+/// @brief Contains xtd::settings class
+/// .
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "core_export.h"
@@ -13,13 +14,13 @@ namespace xtd {
   /// @par Header
   /// @code #include <xtd/settings> @endcode
   /// @par Namespace
-  /// xtd::forms
+  /// xtd
   /// @par Library
-  /// xtd.forms
+  /// xtd.core
   /// @ingroup xtd_core system components
-  /// @remarks On Windows settings are stored in registry with "HKEY_CURRENT_USER\Software\company_name\product_name" key or if no Company name "\HKEY_CURRENT_USER\Software\Product Name\Product Name" key.
-  /// @remarks On macos settings are stored in "~/Library/Preferences/product_name Preferences" file.
-  /// @remarks On linux settings are stored in "~/.consig/product_name.conf" file.
+  /// @remarks On Windows settings are stored in "application_path/product_name.ini" file.
+  /// @remarks On macos settings are stored in "~/Library/Preferences/company_name/product_name Preferences" file.
+  /// @remarks On linux settings are stored in "~/.consig/company_name/product_name.conf" file.
   /// @par Examples
   /// The following code example demonstrates the use of settings class.
   /// @include settings_example.cpp
