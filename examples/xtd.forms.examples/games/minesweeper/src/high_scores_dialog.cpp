@@ -9,11 +9,11 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 high_scores_dialog::high_scores_dialog() {
-  start_position(form_start_position::center_parent);
-  form_border_style(forms::form_border_style::none);
-  client_size({360, 200});
   accept_button(ok_button_);
+  client_size({360, 200});
   controls().push_back_range({title_, beginner_level_label_, intermediate_level_label_, expert_level_label_, beginner_score_label_, intermediate_score_label_, expert_score_label_, beginner_name_label_, intermediate_name_label_, expert_name_label_, reset_scores_button_, ok_button_});
+  form_border_style(forms::form_border_style::none);
+  start_position(form_start_position::center_parent);
   
   if (properties::settings::default_settings().original_color()) {
     back_color(color::silver);
