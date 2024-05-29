@@ -35,12 +35,12 @@ struct settings::data {
 };
 
 settings::settings() : data_(std::make_shared<data>()) {
-  data_->settings_ = forms::native::settings::create(product_name(), company_name());
+  data_->settings_ = native::settings::create(product_name(), company_name());
 }
 
 settings::~settings() {
   if (data_.use_count() == 1)
-    forms::native::settings::destroy(data_->settings_);
+    native::settings::destroy(data_->settings_);
 }
 
 xtd::ustring settings::read(const xtd::ustring& key, const xtd::ustring& default_value) {
@@ -48,11 +48,11 @@ xtd::ustring settings::read(const xtd::ustring& key, const xtd::ustring& default
 }
 
 void settings::reset() {
-  forms::native::settings::reset(data_->settings_);
+  native::settings::reset(data_->settings_);
 }
 
 void settings::save() {
-  forms::native::settings::save(data_->settings_);
+  native::settings::save(data_->settings_);
 }
 
 void settings::write(const xtd::ustring& key, const xtd::ustring& value) {
@@ -60,9 +60,9 @@ void settings::write(const xtd::ustring& key, const xtd::ustring& value) {
 }
 
 xtd::ustring settings::read_string(const xtd::ustring& key, const xtd::ustring& default_value) {
-  return forms::native::settings::read(data_->settings_, key, default_value);
+  return native::settings::read(data_->settings_, key, default_value);
 }
 
 void settings::write_string(const xtd::ustring& key, const xtd::ustring& value) {
-  forms::native::settings::write(data_->settings_, key, value);
+  native::settings::write(data_->settings_, key, value);
 }

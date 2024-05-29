@@ -19,7 +19,7 @@ namespace xtd {
   /// @ingroup xtd_core system components
   /// @remarks On Windows settings are stored in registry with "HKEY_CURRENT_USER\Software\company_name\product_name" key or if no Company name "\HKEY_CURRENT_USER\Software\Product Name\Product Name" key.
   /// @remarks On macos settings are stored in "~/Library/Preferences/product_name Preferences" file.
-  /// @remarks On linux settings are stored in "~/.consig/product_name" file.
+  /// @remarks On linux settings are stored in "~/.consig/product_name.conf" file.
   /// @par Examples
   /// The following code example demonstrates the use of settings class.
   /// @include settings_example.cpp
@@ -67,7 +67,6 @@ namespace xtd {
     /// @param key The key used to write a value.
     /// @param value A string to write.
     void write(const xtd::ustring& key, const xtd::ustring& value);
-    
     /// @brief Writes a specified value for specified key.
     /// @tparam type_t The type of value to write.
     /// @param key The key used to write a value.
