@@ -76,6 +76,58 @@ public:
     stream.close();
   }
   
+  void write(const string& key, const string& value) noexcept {
+    if (key_values_.find(key) != key_values_.end() && key_values_[key] == value) return;
+    modified_ = true;
+    key_values_[key] = value;
+  }
+  
+private:
+  void reload() noexcept {
+    if (!modified_) return;
+    modified_ = false;
+    auto stream = ifstream {name_, ios::binary};
+    if (!stream) return;
+    std::string line;
+    while (std::getline(stream, line)) {
+      auto pos = line.find("=");
+      key_values_[line.substr(0, pos)] = pos == line.npos || (pos + 1) > line.size() ? "" : line.substr(pos+1);
+    }
+    stream.close();
+  }
+  map<string, string> key_values_;
+  path name_;
+  bool modified_ = true;
+};
+
+intmax_t settings::create(const string& product_name, const string& company_name) {
+  return reinterpret_cast<intmax_t>(new file_settings(product_name, company_name));
+}
+
+void settings::destroy(intmax_t config) {
+  if (!config) return;
+  delete reinterpret_cast<file_settings*>(config);
+}
+
+void settings::reset(intmax_t config) {
+  if (!config) return;
+  reinterpret_cast<file_settings*>(config)->reset();
+}
+
+string settings::read(intmax_t config, const string& key, const string& default_value) {
+  if (!config) return "";
+  return reinterpret_cast<file_settings*>(config)->read(key, default_value);
+}
+
+void settings::save(intmax_t config) {
+  if (!config) return;
+  reinterpret_cast<file_settings*>(config)->save();
+}
+
+void settings::write(intmax_t config, const string& key, const string& value) {
+  if (!config) return;
+  reinterpret_cast<file_settings*>(config)->write(key, value);
+}
 #else
 class file_settings {
 public:
