@@ -8,10 +8,10 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 input_name_dialog::input_name_dialog() {
-  start_position(form_start_position::center_parent);
-  form_border_style(xtd::forms::form_border_style::none);
   client_size({200, 160});
-  
+  form_border_style(xtd::forms::form_border_style::none);
+  start_position(form_start_position::center_parent);
+
   if (properties::settings::default_settings().original_color()) {
     back_color(color::silver);
     fore_color(color::black);
