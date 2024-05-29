@@ -7,8 +7,6 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_include_directories(include)
 add_references(${XTD_FORMS_NATIVE_LIBRARY})
 add_sources(
-  include/xtd/settings.h
-  include/xtd/settings
   include/xtd/xtd.forms.h
   include/xtd/xtd.forms
   include/xtd/forms/about_box.h
@@ -749,7 +747,6 @@ add_sources(
   include/xtd/forms/visual_styles/toggle_button_state
   include/xtd/forms/visual_styles/user_control_state.h
   include/xtd/forms/visual_styles/user_control_state
-  src/xtd/settings.cpp
   src/xtd/forms/about_box.cpp
   src/xtd/forms/about_dialog.cpp
   src/xtd/forms/animation.cpp

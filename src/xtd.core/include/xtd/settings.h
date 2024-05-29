@@ -2,9 +2,9 @@
 /// @brief Contains xtd::settings component.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "forms_export.h"
-#include <xtd/object>
-#include <xtd/ustring>
+#include "core_export.h"
+#include "object"
+#include "ustring"
 #include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -23,8 +23,7 @@ namespace xtd {
   /// @par Examples
   /// The following code example demonstrates the use of settings class.
   /// @include settings_example.cpp
-  /// @todo Move xtd::settings class into xtd.core library.
-  class forms_export_ settings : public object {
+  class core_export_ settings : public object {
     struct data;
     
   public:

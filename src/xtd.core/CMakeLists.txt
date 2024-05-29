@@ -312,6 +312,8 @@ add_sources(
   include/xtd/self
   include/xtd/semaphore.h
   include/xtd/semaphore
+  include/xtd/settings.h
+  include/xtd/settings
   include/xtd/signal.h
   include/xtd/signal
   include/xtd/signal_cancel_event_args.h
@@ -883,6 +885,7 @@ add_sources(
   src/xtd/processor.cpp
   src/xtd/random.cpp
   src/xtd/signal_cancel_event_args.cpp
+  src/xtd/settings.cpp
   src/xtd/startup.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp

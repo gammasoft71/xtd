@@ -34,6 +34,7 @@ add_sources(
   src/xtd/native/win32/named_semaphore.cpp
   src/xtd/native/win32/path.cpp
   src/xtd/native/win32/process.cpp
+  src/xtd/native/win32/settings.cpp
   src/xtd/native/win32/socket.cpp
   src/xtd/native/win32/speech_synthesizer.cpp
   src/xtd/native/win32/stack_trace.cpp

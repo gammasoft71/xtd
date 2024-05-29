@@ -4,7 +4,6 @@
 #pragma once
 #include <xtd/xtd.drawing>
 #include <xtd/forms/window_messages>
-#include "xtd/settings.h"
 #include "xtd/forms/layout/arranged_element_collection.h"
 #include "xtd/forms/layout/sorter_none.h"
 #include "xtd/forms/properties/resources.h"

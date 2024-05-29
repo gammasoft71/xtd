@@ -58,6 +58,7 @@ add_sources(
   src/xtd/native/posix/named_semaphore.cpp
   src/xtd/native/posix/path.cpp
   src/xtd/native/posix/process.cpp
+  src/xtd/native/posix/settings.cpp
   src/xtd/native/posix/socket.cpp
   src/xtd/native/posix/speech_synthesizer.cpp
   src/xtd/native/posix/stack_trace.cpp

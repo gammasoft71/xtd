@@ -1,9 +1,9 @@
 /// @file
-/// @brief Contains xtd::forms::native::settings API.
+/// @brief Contains xtd::native::settings API.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#if !defined(__XTD_FORMS_NATIVE_LIBRARY__)
+#if !defined(__XTD_CORE_NATIVE_LIBRARY__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
@@ -11,7 +11,7 @@
 #include <cstdint>
 #include <xtd/static.h>
 #include <xtd/ustring.h>
-#include <xtd/forms_native_export.h>
+#include <xtd/core_native_export.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -32,7 +32,7 @@ namespace xtd {
     /// @remarks On macos settings are stored in "~/Library/Preferences/product_name Preferences" file.
     /// @remarks On linux settings are stored in "~/.product_name" file.
     /// @warning Internal use only
-    class forms_native_export_ settings final static_ {
+    class core_native_export_ settings final static_ {
       friend xtd::settings;
     protected:
       /// @name Protected Static Methods
