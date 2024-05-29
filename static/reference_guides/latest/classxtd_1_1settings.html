@@ -101,13 +101,13 @@ Inheritance diagram for xtd::settings:</div>
 <div class="textblock"><p>Represent settings associate to the application. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/settings&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>On Windows settings are stored in registry with "HKEY_CURRENT_USER\Software\company_name\product_name" key or if no Company name "\HKEY_CURRENT_USER\Software\Product Name\Product Name" key. </dd>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>On Windows settings are stored in "application_path/product_name.ini" file. </dd>
 <dd>
-On macos settings are stored in "~/Library/Preferences/product_name Preferences" file. </dd>
+On macos settings are stored in "~/Library/Preferences/company_name/product_name Preferences" file. </dd>
 <dd>
-On linux settings are stored in "~/.consig/product_name" file. </dd></dl>
+On linux settings are stored in "~/.consig/company_name/product_name.conf" file. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of settings class. <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../properties/settings.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
@@ -157,7 +157,6 @@ On linux settings are stored in "~/.consig/product_name" file. </dd></dl>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.h:11</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo:</a></b></dt><dd>Move <a class="el" href="classxtd_1_1settings.html" title="Represent settings associate to the application.">xtd::settings</a> class into xtd.core library. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="settings_example2_8cpp-example.html#_a0">settings_example2.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
@@ -298,9 +297,6 @@ template&lt;typename type_t &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::settings::read </td>
@@ -320,11 +316,6 @@ template&lt;typename type_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Reads a value for specified key. If not found default value is used. </p>
@@ -388,9 +379,6 @@ template&lt;typename type_t &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void xtd::settings::write </td>
@@ -410,11 +398,6 @@ template&lt;typename type_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Writes a specified value for specified key. </p>
@@ -484,13 +467,13 @@ template&lt;typename type_t &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.forms/include/xtd/<a class="el" href="xtd_8forms_2include_2xtd_2settings_8h_source.html">settings.h</a></li>
+<li>xtd.core/include/xtd/<a class="el" href="xtd_8core_2include_2xtd_2settings_8h_source.html">settings.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 28 2024 22:41:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed May 29 2024 22:18:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
