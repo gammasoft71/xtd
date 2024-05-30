@@ -1,9 +1,10 @@
+#include <xtd/configuration/settings>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/color_picker>
 #include <xtd/forms/form>
-#include <xtd/forms/settings>
 
+using namespace xtd::configuration;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 

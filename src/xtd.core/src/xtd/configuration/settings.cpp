@@ -1,12 +1,19 @@
-#include "../../include/xtd/settings.h"
+#include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/configuration/settings.h"
+#include "../../../include/xtd/io/directory.h"
+#include "../../../include/xtd/io/file.h"
+#include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/io/stream_reader.h"
+#include "../../../include/xtd/io/stream_writer.h"
+#include "../../../include/xtd/reflection/assembly.h"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/settings>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/environment>
-#include <xtd/io/path>
-#include <xtd/reflection/assembly>
+#include <map>
 
 using namespace xtd;
+using namespace xtd::configuration;
+using namespace xtd::io;
 using namespace xtd::reflection;
 
 namespace {

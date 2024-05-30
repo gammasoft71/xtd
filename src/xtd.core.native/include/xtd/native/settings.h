@@ -16,7 +16,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  class settings;
+  namespace configuration {
+    class settings;
+  }
   /// @endcond
 
   /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
@@ -33,7 +35,7 @@ namespace xtd {
     /// @remarks On linux settings are stored in "~/.product_name" file.
     /// @warning Internal use only
     class core_native_export_ settings final static_ {
-      friend xtd::settings;
+      friend xtd::configuration::settings;
     protected:
       /// @name Protected Static Methods
       
