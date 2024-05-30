@@ -43,17 +43,7 @@ bool file_settings::equals(const file_settings& rhs) const noexcept {
 
 void file_settings::load(const xtd::ustring& file_path) {
   file_path_ = path::get_full_path(file_path);
-  auto stream = stream_reader {file_path_};
-  auto section = ustring::empty_string;
-  while (!stream.end_of_stream()) {
-    auto line = stream.read_line().trim();
-    if (ustring::is_empty(line) || line.starts_with(';') || line.starts_with('#')) continue;
-    if (line.starts_with('[') && line.ends_with(']')) section = line.substring(1, line.size() - 2);
-    else {
-      auto key_value = line.split({'='});
-      section_key_values_[section][key_value[0].trim().trim('"')] = key_value.size() == 1 ? "" : ustring::join("=", key_value, 1).trim().trim('"');
-    }
-  }
+  from_string(stream_reader {file_path_}.read_to_end());
 }
 
 ustring file_settings::read(const ustring& key, const ustring& default_value) noexcept {
@@ -98,6 +88,18 @@ void file_settings::save_as(const xtd::ustring& file_path) {
   if (!directory::exists(path::get_directory_name(file_path))) directory::create_directory(path::get_directory_name(file_path));
   auto stream = stream_writer {file_path};
   stream.write(to_string());
+}
+
+void file_settings::from_string(const xtd::ustring& text) {
+  auto section = ustring::empty_string;
+  for (auto line : text.split({10, 13}, string_split_options::remove_empty_entries)) {
+    if (ustring::is_empty(line) || line.starts_with(';') || line.starts_with('#')) continue;
+    if (line.starts_with('[') && line.ends_with(']')) section = line.substring(1, line.size() - 2);
+    else {
+      auto key_value = line.split({'='});
+      section_key_values_[section][key_value[0].trim().trim('"')] = key_value.size() == 1 ? "" : ustring::join("=", key_value, 1).trim().trim('"');
+    }
+  }
 }
 
 ustring file_settings::to_string() const noexcept {

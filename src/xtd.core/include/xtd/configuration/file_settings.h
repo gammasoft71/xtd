@@ -81,6 +81,8 @@ namespace xtd {
       
       void save_as(const xtd::ustring& file_path);
 
+      virtual void from_string(const xtd::ustring& text);
+      
       xtd::ustring to_string() const noexcept override;
       
       void write(const xtd::ustring& key, const xtd::ustring& value) noexcept;
