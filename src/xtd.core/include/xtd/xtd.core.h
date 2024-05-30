@@ -8,6 +8,7 @@
 #include "collections/specialized/string_map.h"
 #include "collections/specialized/string_pair.h"
 #include "collections/specialized/string_vector.h"
+#include "configuration/file_settings.h"
 #include "configuration/settings.h"
 #include "diagnostics/assert.h"
 #include "diagnostics/assert_dialog_result.h"
