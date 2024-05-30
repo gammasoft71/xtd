@@ -51,7 +51,7 @@ void file_settings::load(const xtd::ustring& file_path) {
     if (line.starts_with('[') && line.ends_with(']')) section = line.substring(1, line.size() - 2);
     else {
       auto key_value = line.split({'='});
-      section_key_values_[section][key_value[0]] = key_value.size() == 1 ? "" : ustring::join("=", key_value, 1);
+      section_key_values_[section][key_value[0].trim().trim('"')] = key_value.size() == 1 ? "" : ustring::join("=", key_value, 1).trim().trim('"');
     }
   }
 }
