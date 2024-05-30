@@ -52,7 +52,7 @@ public:
 
 private:
   void reload() noexcept {
-    if (!modified_) return;
+    if (modified_) return;
     modified_ = false;
     auto stream = ifstream {name_, ios::binary};
     if (!stream) return;
@@ -65,7 +65,7 @@ private:
   }
   map<string, string> key_values_;
   path name_;
-  bool modified_ = true;
+  bool modified_ = false;
 };
 
 intmax_t settings::create(const string& product_name, const string& company_name) {
