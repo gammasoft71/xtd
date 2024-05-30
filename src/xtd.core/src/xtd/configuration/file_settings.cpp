@@ -4,8 +4,9 @@ using namespace xtd;
 using namespace configuration;
 using namespace io;
 
-file_settings::file_settings(const ustring& file_path) {
-  this->load(file_path);
+file_settings::file_settings(const ustring& file_path) : file_path_ {path::get_full_path(file_path)} {
+  if (ustring::is_empty(file_path_) || !file::exists(file_path_)) return;
+  this->load(file_path_);
 }
 
 file_settings::string_map file_settings::key_values() const noexcept {
@@ -42,7 +43,6 @@ bool file_settings::equals(const file_settings& rhs) const noexcept {
 
 void file_settings::load(const xtd::ustring& file_path) {
   file_path_ = path::get_full_path(file_path);
-  if (ustring::is_empty(file_path_) || !file::exists(file_path_)) return;
   auto stream = stream_reader {file_path_};
   auto section = ustring::empty_string;
   while (!stream.end_of_stream()) {
@@ -90,11 +90,11 @@ void file_settings::reset() {
 }
 
 void file_settings::save() {
+  if (ustring::is_empty(file_path_)) return;
   save_as(file_path_);
 }
 
 void file_settings::save_as(const xtd::ustring& file_path) {
-  if (ustring::is_empty(file_path)) return;
   if (!directory::exists(path::get_directory_name(file_path))) directory::create_directory(path::get_directory_name(file_path));
   auto stream = stream_writer {file_path};
   stream.write(to_string());
