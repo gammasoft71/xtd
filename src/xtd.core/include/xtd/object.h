@@ -89,7 +89,7 @@ namespace xtd {
     template<typename object_t>
     std::unique_ptr<object_t> memberwise_clone() const noexcept {return std::make_unique<object_t>(dynamic_cast<const object_t&>(*this));}
     
-    /// @brief Returns a sxd::ustring that represents the current object.
+    /// @brief Returns a xd::ustring that represents the current object.
     /// @return A string that represents the current object.
     /// @par Examples
     /// The following code example demonstrates what to_string returns.
