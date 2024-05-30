@@ -312,8 +312,6 @@ add_sources(
   include/xtd/self
   include/xtd/semaphore.h
   include/xtd/semaphore
-  include/xtd/settings.h
-  include/xtd/settings
   include/xtd/signal.h
   include/xtd/signal
   include/xtd/signal_cancel_event_args.h
@@ -452,6 +450,8 @@ add_sources(
   include/xtd/collections/specialized/string_pair
   include/xtd/collections/specialized/string_vector.h
   include/xtd/collections/specialized/string_vector
+  include/xtd/configuration/settings.h
+  include/xtd/configuration/settings
   include/xtd/diagnostics/assert.h
   include/xtd/diagnostics/assert
   include/xtd/diagnostics/assert_dialog_result.h
@@ -885,7 +885,6 @@ add_sources(
   src/xtd/processor.cpp
   src/xtd/random.cpp
   src/xtd/signal_cancel_event_args.cpp
-  src/xtd/settings.cpp
   src/xtd/startup.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp
@@ -899,6 +898,7 @@ add_sources(
   src/xtd/uri.cpp
   src/xtd/ustring.cpp
   src/xtd/version.cpp
+  src/xtd/configuration/settings.cpp
   src/xtd/diagnostics/boolean_switch.cpp
   src/xtd/diagnostics/console_trace_listener.cpp
   src/xtd/diagnostics/debug.cpp
