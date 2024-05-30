@@ -37,7 +37,7 @@ namespace xtd {
       /// @remarks The xtd::configuration::file_settings::save method has no effect.
       /// @remarks This is equivalent to using the xtd::configuration::file_settings constructor with an empty string as the file path.
       file_settings() noexcept = default;
-      /// @brief Initialize an xtd::configuration::file_settings with file path toload.
+      /// @brief Initialize an xtd::configuration::file_settings with file path to load.
       /// @param file_path the file path to load.
       /// @remarks When the xtd::configuration::file_settings file is destroyed, the backup is not automatically called up. The backup must be made manually.
       /// @remarks If the file path is empty, this is equivalent to using the xtd::configuration::file_settings constructor with no parameters.
