@@ -450,6 +450,8 @@ add_sources(
   include/xtd/collections/specialized/string_pair
   include/xtd/collections/specialized/string_vector.h
   include/xtd/collections/specialized/string_vector
+  include/xtd/configuration/file_settings.h
+  include/xtd/configuration/file_settings
   include/xtd/configuration/settings.h
   include/xtd/configuration/settings
   include/xtd/diagnostics/assert.h
@@ -898,6 +900,7 @@ add_sources(
   src/xtd/uri.cpp
   src/xtd/ustring.cpp
   src/xtd/version.cpp
+  src/xtd/configuration/file_settings.cpp
   src/xtd/configuration/settings.cpp
   src/xtd/diagnostics/boolean_switch.cpp
   src/xtd/diagnostics/console_trace_listener.cpp
