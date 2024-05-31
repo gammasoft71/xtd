@@ -19,7 +19,7 @@ namespace xtd {
     /// xtd
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core system components
+    /// @ingroup xtd_core configuration
     /// @remarks On Windows settings are stored in "application_path/product_name.ini" file.
     /// @remarks On macos settings are stored in "~/Library/Preferences/company_name/product_name Preferences" file.
     /// @remarks On linux settings are stored in "~/.consig/company_name/product_name.conf" file.

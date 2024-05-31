@@ -21,6 +21,10 @@
 /// @brief Components are objects that an application uses in conjunction with another window.
 /// @ingroup gui
 
+/// @defgroup configuration configuration
+/// @brief Contains configuration definitions.
+/// @ingroup system
+
 /// @defgroup containers containers
 /// @brief Containers are container for other controls.
 /// @ingroup gui
