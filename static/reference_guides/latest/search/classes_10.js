@@ -13,7 +13,7 @@ var searchData=
   ['semaphore_10',['semaphore',['../classxtd_1_1threading_1_1semaphore.html',1,'xtd::threading']]],
   ['semaphore_5ffull_5fexception_11',['semaphore_full_exception',['../classxtd_1_1threading_1_1semaphore__full__exception.html',1,'xtd::threading']]],
   ['send_5fpackets_5felement_12',['send_packets_element',['../classxtd_1_1net_1_1sockets_1_1send__packets__element.html',1,'xtd::net::sockets']]],
-  ['settings_13',['settings',['../classxtd_1_1settings.html',1,'xtd::settings'],['../classxtd_1_1tunit_1_1settings.html',1,'xtd::tunit::settings']]],
+  ['settings_13',['settings',['../classxtd_1_1configuration_1_1settings.html',1,'xtd::configuration::settings'],['../classxtd_1_1tunit_1_1settings.html',1,'xtd::tunit::settings']]],
   ['seven_5fsegment_5fdisplay_14',['seven_segment_display',['../classxtd_1_1forms_1_1seven__segment__display.html',1,'xtd::forms']]],
   ['shadow_15',['shadow',['../classxtd_1_1forms_1_1shadow.html',1,'xtd::forms::shadow'],['../classxtd_1_1forms_1_1style__sheets_1_1shadow.html',1,'xtd::forms::style_sheets::shadow']]],
   ['signal_5fcancel_5fevent_5fargs_16',['signal_cancel_event_args',['../classxtd_1_1signal__cancel__event__args.html',1,'xtd']]],
