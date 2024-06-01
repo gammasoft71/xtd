@@ -352,7 +352,7 @@ auto main() -> int {
 
 ```cpp
 tool_bar2.dock(dock_style::none);
-tool_bar2.locarion({80, 100});
+tool_bar2.location({80, 100});
 ```
 
 We set the dock property to none and set the location to 80 pixels to the left and 100 pixels to the top.
