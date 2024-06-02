@@ -85,7 +85,7 @@ void file_settings::save() {
 }
 
 void file_settings::save_as(const xtd::ustring& file_path) {
-  if (!directory::exists(path::get_directory_name(file_path))) directory::create_directory(path::get_directory_name(file_path));
+  directory::create_directory(path::get_directory_name(file_path));
   auto stream = stream_writer {file_path};
   stream.write(to_string());
 }

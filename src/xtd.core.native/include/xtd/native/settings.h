@@ -40,35 +40,15 @@ namespace xtd {
       /// @name Protected Static Methods
       
       /// @{
-      /// @brief Create settings.
-      /// @return The settings handle created.
+      /// @brief Gets settings path from product name and company name.
+      /// @param company_name The company name to make the settings path.
+      /// @param product_name The product name to make the settings path.
+      /// @return A string that represents the settings path.
+      /// @remarks On Windows settings are stored in "application_path/product_name.ini" file.
+      /// @remarks On macos settings are stored in "~/Library/Preferences/company_name/product_name Preferences" file.
+      /// @remarks On linux settings are stored in "~/.consig/company_name/product_name.conf" file.
       /// @warning Internal use only
-      static intmax_t create(const std::string& product_name, const std::string& company_name);
-      /// @brief Destroys settings.
-      /// @param settings Settings handle.
-      /// @warning Internal use only
-      static void destroy(intmax_t settings);
-      /// @brief Reset settings.
-      /// @param settings Settings handle.
-      /// @warning Internal use only
-      static void reset(intmax_t settings);
-      /// @brief Reads about settings handle a value for specified key. If not found default value is used.
-      /// @param settings Settings handle.
-      /// @param key The key used to read a value.
-      /// @param default_value A string used if value not found.
-      /// @return A string that represent the value associate to the key.
-      /// @warning Internal use only
-      static std::string read(intmax_t settings, const std::string& key, const std::string& default_value);
-      /// @brief Save settings.
-      /// @param settings Settings handle.
-      /// @warning Internal use only
-      static void save(intmax_t settings);
-      /// @brief Writes in settings handle a specified value for specified key.
-      /// @param settings Settings handle.
-      /// @param key The key used to write a value.
-      /// @param value A string to write.
-      /// @warning Internal use only
-      static void write(intmax_t settings, const std::string& key, const std::string& value);
+      static std::string get_path(const std::string& company_name, const std::string& product_name);
       /// @}
     };
   }

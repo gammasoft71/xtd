@@ -1527,7 +1527,7 @@ namespace xtd {
       ///
       /// startup_(program::main);
       /// @endcode
-      /// @remarks This method behaves identically to Delete(String, Boolean) with false specified for the second parameter.
+      /// @remarks This method behaves identically to xtd::io::dirctory::remove(const xtd::ustring&, bool) with false specified for the second parameter.
       /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
       /// @remarks This method throws an IOException if the directory specified in the path parameter contains files or subdirectories.

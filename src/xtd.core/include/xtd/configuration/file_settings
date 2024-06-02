@@ -1,2 +1,2 @@
 #pragma once
-#include "settings.h"
+#include "file_settings.h"
