@@ -99,6 +99,12 @@ namespace xtd {
       /// @return true if the current object is equal to the other parameter; otherwise, false.
       bool equals(const file_settings& obj) const noexcept override;
       
+      /// @brief Sets the current settings with parsing the xtd::ustring in [INI format](https://en.wikipedia.org/wiki/INI_file).
+      /// @param text A text to set the current setting.
+      /// @par Notes to inheritors
+      /// To create your own file_settings with another format, you just need to override the xtd::configuration::file_settings::from_string and xtd::configuration::file_settings::to_string methods.
+      virtual void from_string(const xtd::ustring& text);
+
       /// @brief Loads settings from specified file.
       /// @param file_path The file path to load settings.
       void load(const xtd::ustring& file_path);
@@ -134,30 +140,46 @@ namespace xtd {
         return xtd::parse<type_t>(read_string(section, key, xtd::ustring::format("{}", default_value)));
       }
 
+      /// @brief Removes the specified key from the global section.
+      /// @param key The key to remove from the global section.
+      /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
+      /// @remarks This method is equivalent to call xtd::configuration::file_settings::remove (const xtd::ustring& section) with xtd::ustring::empty_string paramreter.
       void remove(const xtd::ustring& key) noexcept;
-      
+      /// @brief Removes the specified key from the specified section.
+      /// @param section The section where the key is removed.
+      /// @param key The key to remove from the specified section.
+      /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
+      /// @remarks Use xtd::ustring::empty_string paramreter to remove key of the global section.
       void remove(const xtd::ustring& section, const xtd::ustring& key) noexcept;
       
+      /// @brief Removes all keys from the global section.
+      /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
+      /// @remarks This method is equivalent to call xtd::configuration::file_settings::remove_all_keys (const xtd::ustring& section) with xtd::ustring::empty_string paramreter.
       void remove_all_keys() noexcept;
-      
+      /// @brief Removes all key from the specified section.
+      /// @param section The section where all keys are removed.
+      /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
+      /// @remarks Use xtd::ustring::empty_string paramreter to remove all keys of the global section.
       void remove_all_keys(const xtd::ustring& section) noexcept;
       
+      /// @brief Reset current settings.
+      /// @remarks The settings are cleared and the settings file is removed.
+      /// @remarks To write permanently use the xtd::configuration::settings::save method.
       void reset();
       
+      /// @brief Save current settings.
+      /// @remarks The settings are saved in the settings file.
       void save();
       
-      void save_as(const xtd::ustring& file_path);
-
-      /// @brief Sets the current settings with parsing the xtd::ustring in [INI format](https://en.wikipedia.org/wiki/INI_file).
-      /// @param text A text to set the current setting.
-      /// @par Notes to inheritors
-      /// To create your own file_settings with another format, you just need to override the xtd::confguration::file_settings::from_string and xtd::confguration::file_settings::to_string methods.
-      virtual void from_string(const xtd::ustring& text);
+      /// @brief Save current settings in the specified file path.
+      /// @param file_path The file to save the current settings.
+      /// @remarks The settings are saved in the specified settings file.
+     void save_as(const xtd::ustring& file_path);
       
       /// @brief Returns a xtd::ustring that represents the current setting in [INI format](https://en.wikipedia.org/wiki/INI_file).
       /// @return A string that represents the current setting.
       /// @par Notes to inheritors
-      /// To create your own file_settings with another format, you just need to override the xtd::confguration::file_settings::from_string and xtd::confguration::file_settings::to_string methods.
+      /// To create your own file_settings with another format, you just need to override the xtd::configuration::file_settings::from_string and xtd::configuration::file_settings::to_string methods.
       xtd::ustring to_string() const noexcept override;
       
       void write(const xtd::ustring& key, const xtd::ustring& value) noexcept;
