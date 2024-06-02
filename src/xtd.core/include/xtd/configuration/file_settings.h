@@ -109,31 +109,35 @@ namespace xtd {
       /// @param file_path The file path to load settings.
       void load(const xtd::ustring& file_path);
       
-      /// @brief Reads value associate to the specified key.
-      /// @param key The key to read the value.
-      /// @param default_value The value to return if `key` does not exist.
-      /// @return The value associated with `key`, or `default_value` if name is not found.
+      /// @brief Reads a value for specified key in the global section. If not found default value is used.
+      /// @param key The key used to read a value.
+      /// @param default_value A string used if value not found.
+      /// @return A string that represent the value associate to the key.
+      /// @remarks Use xtd::ustring::empty_string for section paramreter to read keys of the global section.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::read (const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& default_value) with xtd::ustring::empty_string paramreter as section parameter.
       xtd::ustring read(const xtd::ustring& key, const xtd::ustring& default_value) noexcept;
-      /// @brief Reads value associate to the specified key.
-      /// @param key The key to read the value.
-      /// @param default_value The value to return if `key` does not exist.
-      /// @return The value associated with `key`, or `default_value` if name is not found.
+      /// @brief Reads a value for specified key in the global section. If not found default value is used.
+      /// @param key The key used to read a value.
+      /// @param default_value A string used if value not found.
+      /// @return A string that represent the value associate to the key.
+      /// @remarks Use xtd::ustring::empty_string for section paramreter to read keys of the global section.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::read (const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& default_value) with xtd::ustring::empty_string paramreter as section parameter.
       template<typename type_t>
       type_t read(const xtd::ustring& key, const type_t& default_value) noexcept {
         return xtd::parse<type_t>(read_string(xtd::ustring::empty_string, key, xtd::ustring::format("{}", default_value)));
       }
-      /// @brief Reads value associate to the specified key.
-      /// @param key The key to read the value.
-      /// @param default_value The value to return if `key` does not exist.
-      /// @return The value associated with `key`, or `default_value` if name is not found.
+      /// @brief Reads a value for specified key in the specified section. If not found default value is used.
+      /// @param section The section where the key is read.
+      /// @param key The key used to read a value.
+      /// @param default_value A string used if value not found.
+      /// @return A string that represent the value associate to the key.
       /// @remarks Use xtd::ustring::empty_string for section paramreter to read keys of the global section.
       xtd::ustring read(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& default_value) noexcept;
-      /// @brief Reads value associate to the specified key.
-      /// @param key The key to read the value.
-      /// @param default_value The value to return if `key` does not exist.
-      /// @return The value associated with `key`, or `default_value` if name is not found.
+      /// @brief Reads a value for specified key in the specified section. If not found default value is used.
+      /// @param section The section where the key is read.
+      /// @param key The key used to read a value.
+      /// @param default_value A string used if value not found.
+      /// @return A string that represent the value associate to the key.
       /// @remarks Use xtd::ustring::empty_string for section paramreter to read keys of the global section.
       template<typename type_t>
       type_t read(const xtd::ustring& section, const xtd::ustring& key, const type_t& default_value) noexcept {
@@ -182,15 +186,30 @@ namespace xtd {
       /// To create your own file_settings with another format, you just need to override the xtd::configuration::file_settings::from_string and xtd::configuration::file_settings::to_string methods.
       xtd::ustring to_string() const noexcept override;
       
+      /// @brief Writes a specified value for specified key in the global section.
+      /// @param key The key used to write a value.
+      /// @param value A string to write.
+      /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
       void write(const xtd::ustring& key, const xtd::ustring& value) noexcept;
-
+      /// @brief Writes a specified value for specified key in the global section.
+      /// @param key The key used to write a value.
+      /// @param value A string to write.
+      /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
       template<typename type_t>
       void write(const xtd::ustring& key, type_t&& value) {
         write_string(xtd::ustring::empty_string, key, xtd::ustring::format("{}", value));
       }
-
+      /// @brief Writes a specified value for specified key in the specified section.
+      /// @param section The section where the key is write.
+      /// @param key The key used to write a value.
+      /// @param value A string to write.
+      /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
       void write(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& value) noexcept;
-
+      /// @brief Writes a specified value for specified key in the specified section.
+      /// @param section The section where the key is write.
+      /// @param key The key used to write a value.
+      /// @param value A string to write.
+      /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
       template<typename type_t>
       void write(const xtd::ustring& section, const xtd::ustring& key, type_t&& value) {
         write_string(section, key, xtd::ustring::format("{}", value));
