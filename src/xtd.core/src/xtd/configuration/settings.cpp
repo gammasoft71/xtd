@@ -22,13 +22,13 @@ struct settings::data {
 };
 
 settings::settings() : data_(std::make_shared<data>()) {
-  auto product_name = [] noexcept {
+  auto product_name = [] {
     if (assembly::get_executing_assembly().product() != ustring::empty_string) return assembly::get_executing_assembly().product();
     if (environment::get_command_line_args().size() != 0) return xtd::io::path::get_file_name_without_extension(environment::get_command_line_args()[0]);
     return "noname"_s;
   };
   
-  auto company_name = [&] noexcept {
+  auto company_name = [&] {
     if (assembly::get_executing_assembly().company() != ustring::empty_string) return assembly::get_executing_assembly().company();
     return product_name();
   };
