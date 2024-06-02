@@ -18,7 +18,7 @@ namespace xtd {
   namespace configuration {
     /// @brief Represents an object for storing and retrieving configuration information using text files in [INI format](https://en.wikipedia.org/wiki/INI_file).
     /// @par Header
-    /// @code #include <xtd/settings> @endcode
+    /// @code #include <xtd/configuration/file_settings> @endcode
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -148,7 +148,7 @@ namespace xtd {
       
       void save_as(const xtd::ustring& file_path);
 
-      /// @brief Sets the current settings with a xtd::ustring in [INI format](https://en.wikipedia.org/wiki/INI_file).
+      /// @brief Sets the current settings with parsing the xtd::ustring in [INI format](https://en.wikipedia.org/wiki/INI_file).
       /// @param text A text to set the current setting.
       /// @par Notes to inheritors
       /// To create your own file_settings with another format, you just need to override the xtd::confguration::file_settings::from_string and xtd::confguration::file_settings::to_string methods.
