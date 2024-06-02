@@ -23,8 +23,8 @@ namespace xtd {
     /// @remarks On Windows settings are stored in `application_path/product_name.ini` file.
     /// @remarks On macos settings are stored in `~/Library/Preferences/company_name/product_name Preferences` file.
     /// @remarks On linux settings are stored in `~/.consig/company_name/product_name.conf` file.
-    /// @remarks The `product_name` is equal to xtd::assembly::get_executing_assembly().product() if not empty; otherwise is equal to the filename of the first arguemnt of main.
-    /// @remarks The `company_name` is equal to xtd::assembly::get_executing_assembly().company() if not empty; otherwise is equal to `product_name`.
+    /// @remarks The `product_name` is equal to the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to the filename of the first arguemnt of main.
+    /// @remarks The `company_name` is equal to the xtd::reflection::assembly::company() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to `product_name`.
     /// @par Examples
     /// The following code example demonstrates the use of settings class.
     /// @include settings_example.cpp
@@ -47,8 +47,8 @@ namespace xtd {
       /// @remarks On Windows settings are stored in `application_path/product_name.ini` file.
       /// @remarks On macos settings are stored in `~/Library/Preferences/company_name/product_name Preferences` file.
       /// @remarks On linux settings are stored in `~/.consig/company_name/product_name.conf` file.
-      /// @remarks The `product_name` is equal to xtd::assembly::get_executing_assembly().product() if not empty; otherwise is equal to the filename of the first arguemnt of main.
-      /// @remarks The `company_name` is equal to xtd::assembly::get_executing_assembly().company() if not empty; otherwise is equal to `product_name`.
+      /// @remarks The `product_name` is equal to the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to the filename of the first arguemnt of main.
+      /// @remarks The `company_name` is equal to the xtd::reflection::assembly::company() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to `product_name`.
       /// @warning Don't manipulate the file yourself, otherwise the expected result may be undefined.
       const xtd::ustring& file_path() const noexcept;
       /// @}
@@ -73,6 +73,7 @@ namespace xtd {
       
       /// @brief Reset application settings.
       /// @remarks The settings are cleared and the application settings file is removed.
+      /// @remarks To write permanently use the xtd::configuration::settings::save method.
       void reset();
       
       /// @brief Save application settings.
