@@ -41,8 +41,8 @@ file_settings::string_vector file_settings::sections() const noexcept {
   return sections;
 }
 
-bool file_settings::equals(const file_settings& rhs) const noexcept {
-  return section_key_values_ == rhs.section_key_values_;
+bool file_settings::equals(const file_settings& obj) const noexcept {
+  return section_key_values_ == obj.section_key_values_;
 }
 
 void file_settings::load(const xtd::ustring& file_path) {
@@ -51,12 +51,11 @@ void file_settings::load(const xtd::ustring& file_path) {
 }
 
 ustring file_settings::read(const ustring& key, const ustring& default_value) noexcept {
-  return read(ustring::empty_string, key, default_value);
+  return read_string(ustring::empty_string, key, default_value);
 }
 
 ustring file_settings::read(const ustring& section, const ustring& key, const ustring& default_value) noexcept {
-  if (section_key_values_.find(section) == section_key_values_.end() || section_key_values_[section].find(key) == section_key_values_[section].end()) section_key_values_[section][key] = default_value;
-  return section_key_values_[section][key];
+  return read_string(section, key, default_value);
 }
 
 void file_settings::remove(const ustring& key) noexcept {
@@ -117,12 +116,11 @@ ustring file_settings::to_string() const noexcept {
 }
 
 void file_settings::write(const ustring& key, const ustring& value) noexcept {
-  write(ustring::empty_string, key, value);
+  write_string(ustring::empty_string, key, value);
 }
 
 void file_settings::write(const ustring& section, const ustring& key, const ustring& value) noexcept {
-  if (section_key_values_.find(section) != section_key_values_.end() && section_key_values_[section].find(key) != section_key_values_[section].end() && section_key_values_[section][key] == value) return;
-  section_key_values_[section][key] = value;
+  write_string(section, key, value);
 }
 
 const file_settings::string_map& file_settings::operator [](const ustring& section) const noexcept {
@@ -131,4 +129,14 @@ const file_settings::string_map& file_settings::operator [](const ustring& secti
 
 file_settings::string_map& file_settings::operator [](const ustring& section) noexcept {
   return section_key_values_[section];
+}
+
+xtd::ustring file_settings::read_string(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& default_value) noexcept {
+  if (section_key_values_.find(section) == section_key_values_.end() || section_key_values_[section].find(key) == section_key_values_[section].end()) section_key_values_[section][key] = default_value;
+  return section_key_values_[section][key];
+}
+
+void file_settings::write_string(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& value) noexcept {
+  if (section_key_values_.find(section) != section_key_values_.end() && section_key_values_[section].find(key) != section_key_values_[section].end() && section_key_values_[section][key] == value) return;
+  section_key_values_[section][key] = value;
 }
