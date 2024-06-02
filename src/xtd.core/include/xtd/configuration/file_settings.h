@@ -66,14 +66,14 @@ namespace xtd {
       /// @warning Don't manipulate the file yourself, otherwise the expected result may be undefined.
       const xtd::ustring& file_path() const noexcept;
 
-      /// @brief Gets all key-values from global section.
-      /// @return The key-values map.
+      /// @brief Gets all key-value pairs from global section.
+      /// @return The key-value pairs map.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::key_values (const xtd::ustring& section) with xtd::ustring::empty_string paramreter.
       string_map key_values() const noexcept;
-      /// @brief Gets all key-values from a specified section.
-      /// @param section The section to get key-values.
-      /// @return The key-values map from the specified section.
-      /// @remarks Use xtd::ustring::empty_string paramreter to get key-values of the global section.
+      /// @brief Gets all key-value pairs from a specified section.
+      /// @param section The section to get key-value pairs.
+      /// @return The key-value pairs map from the specified section.
+      /// @remarks Use xtd::ustring::empty_string paramreter to get key-value pairs of the global section.
       string_map key_values(const xtd::ustring& section) const noexcept;
       
       /// @brief Gets all keys from global section.
@@ -219,8 +219,29 @@ namespace xtd {
       /// @name Public Operators
       
       /// @{
+      /// @brief Gets key-value pairs of the specified section.
+      /// @param secion The section to get the key-value pairs
+      /// @return The key-value pairs of the section.
+      /// @par Examples
+      /// Use this operator to read value from section like xtd::configuration::file_settings::read method.
+      /// @code
+      /// auto fs = file_settings {"my_file.ini"};
+      /// auto v1 = fs["section1"]["key1"]; 
+      /// // Is equivalent to call :
+      /// // auto v1 = fs.read("section1", "key1", ustring::empty_string);
+      /// @endcode
       const string_map& operator [](const xtd::ustring& section) const noexcept;
-      
+      /// @brief Gets key-value pairs of the specified section.
+      /// @param secion The section to get the key-value pairs
+      /// @return The key-value pairs of the section.
+      /// @par Examples
+      /// Use this operator to write value to section like xtd::configuration::file_settings::write method.
+      /// @code
+      /// auto fs = file_settings {"my_file.ini"};
+      /// fs["section1"]["key1"] = "value1";
+      /// // Is equivalent to call :
+      /// // fs.write("section1", "key1", "value1");
+      /// @endcode
       string_map& operator [](const xtd::ustring& section) noexcept;
       /// @}
       
