@@ -84,8 +84,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classxtd_1_1configuration_1_1file__settings-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::configuration::file_settings Class Reference<div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__configuration.html">configuration</a></div></div></div>
 </div><!--header-->
@@ -109,56 +107,63 @@ Inheritance diagram for xtd::configuration::file_settings:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>An <a href="https://en.wikipedia.org/wiki/INI_file">INI file</a> is a configuration file that consists of a text-based content with a structure and syntax comprising key–value pairs for properties, and sections that organize the properties. </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliass</h2></td></tr>
 <tr class="memitem:ac7889c282efd09812795f4645920fe80"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a> = <a class="el" href="group__collections.html#ga563b341f7aaf8f09a45cf5c52e70bbc8">xtd::collections::specialized::string_map</a></td></tr>
-<tr class="memdesc:ac7889c282efd09812795f4645920fe80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a std::map with the key and the value strongly typed to be strings.  <br /></td></tr>
+<tr class="memdesc:ac7889c282efd09812795f4645920fe80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a std::map with the key and the value strongly typed to be strings.  <br /></td></tr>
 <tr class="separator:ac7889c282efd09812795f4645920fe80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5f96cbc1cba5568e014a9e9c8a5fbbf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a> = <a class="el" href="group__collections.html#gadc1dbfbb41611242c5aa2e857e574256">xtd::collections::specialized::string_vector</a></td></tr>
 <tr class="memdesc:ad5f96cbc1cba5568e014a9e9c8a5fbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of strings.  <br /></td></tr>
 <tr class="separator:ad5f96cbc1cba5568e014a9e9c8a5fbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a42b09b02441dd275b5408fa93f6375d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a42b09b02441dd275b5408fa93f6375d0">file_settings</a> () noexcept=default</td></tr>
 <tr class="memdesc:a42b09b02441dd275b5408fa93f6375d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> without loading a file.  <br /></td></tr>
 <tr class="separator:a42b09b02441dd275b5408fa93f6375d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93de91e02afceaefecf1e10467c39e9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a93de91e02afceaefecf1e10467c39e9c">file_settings</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;file_path)</td></tr>
+<tr class="memitem:a93de91e02afceaefecf1e10467c39e9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a93de91e02afceaefecf1e10467c39e9c">file_settings</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a>)</td></tr>
 <tr class="memdesc:a93de91e02afceaefecf1e10467c39e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> with file path to load.  <br /></td></tr>
 <tr class="separator:a93de91e02afceaefecf1e10467c39e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2f68d5e69a9dd61c0c3a0837b950cd8"><td class="memItemLeft" align="right" valign="top"><a id="ad2f68d5e69a9dd61c0c3a0837b950cd8" name="ad2f68d5e69a9dd61c0c3a0837b950cd8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> &amp;) const noexcept override</td></tr>
-<tr class="separator:ad2f68d5e69a9dd61c0c3a0837b950cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f7574f15df844e2be624f14f405aebf"><td class="memItemLeft" align="right" valign="top"><a id="a3f7574f15df844e2be624f14f405aebf" name="a3f7574f15df844e2be624f14f405aebf"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>from_string</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;text)</td></tr>
-<tr class="separator:a3f7574f15df844e2be624f14f405aebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c9fcf84d74674925c5db4d95f1144fb"><td class="memItemLeft" align="right" valign="top"><a id="a0c9fcf84d74674925c5db4d95f1144fb" name="a0c9fcf84d74674925c5db4d95f1144fb"></a>
-<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a>&#160;</td><td class="memItemRight" valign="bottom"><b>key_values</b> () const noexcept</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:a9d8fc6680c5d965aea0e96b505223df1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a> () const noexcept</td></tr>
+<tr class="memdesc:a9d8fc6680c5d965aea0e96b505223df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file path of the current instance.  <br /></td></tr>
+<tr class="separator:a9d8fc6680c5d965aea0e96b505223df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9fcf84d74674925c5db4d95f1144fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a0c9fcf84d74674925c5db4d95f1144fb">key_values</a> () const noexcept</td></tr>
+<tr class="memdesc:a0c9fcf84d74674925c5db4d95f1144fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all key-values from global section.  <br /></td></tr>
 <tr class="separator:a0c9fcf84d74674925c5db4d95f1144fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06e4818813bf9d2ff0a138cdad2236ea"><td class="memItemLeft" align="right" valign="top"><a id="a06e4818813bf9d2ff0a138cdad2236ea" name="a06e4818813bf9d2ff0a138cdad2236ea"></a>
-<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a>&#160;</td><td class="memItemRight" valign="bottom"><b>key_values</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
+<tr class="memitem:a06e4818813bf9d2ff0a138cdad2236ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a06e4818813bf9d2ff0a138cdad2236ea">key_values</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
+<tr class="memdesc:a06e4818813bf9d2ff0a138cdad2236ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all key-values from a specified section.  <br /></td></tr>
 <tr class="separator:a06e4818813bf9d2ff0a138cdad2236ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af01dbe43750be475a0f304c1db42adbc"><td class="memItemLeft" align="right" valign="top"><a id="af01dbe43750be475a0f304c1db42adbc" name="af01dbe43750be475a0f304c1db42adbc"></a>
-<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>keys</b> () const noexcept</td></tr>
+<tr class="memitem:af01dbe43750be475a0f304c1db42adbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af01dbe43750be475a0f304c1db42adbc">keys</a> () const noexcept</td></tr>
+<tr class="memdesc:af01dbe43750be475a0f304c1db42adbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all keys from global section.  <br /></td></tr>
 <tr class="separator:af01dbe43750be475a0f304c1db42adbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc001b6a569ae869477008ce77d202f2"><td class="memItemLeft" align="right" valign="top"><a id="abc001b6a569ae869477008ce77d202f2" name="abc001b6a569ae869477008ce77d202f2"></a>
-<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>keys</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
+<tr class="memitem:abc001b6a569ae869477008ce77d202f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abc001b6a569ae869477008ce77d202f2">keys</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
+<tr class="memdesc:abc001b6a569ae869477008ce77d202f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all keys from a specified section.  <br /></td></tr>
 <tr class="separator:abc001b6a569ae869477008ce77d202f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5213bc5c5b761736d49b8b83b676abca"><td class="memItemLeft" align="right" valign="top"><a id="a5213bc5c5b761736d49b8b83b676abca" name="a5213bc5c5b761736d49b8b83b676abca"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;file_path)</td></tr>
+<tr class="memitem:a5a4acbfb781cac70b8ab7854f3bdd62d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a5a4acbfb781cac70b8ab7854f3bdd62d">sections</a> () const noexcept</td></tr>
+<tr class="memdesc:a5a4acbfb781cac70b8ab7854f3bdd62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all sections.  <br /></td></tr>
+<tr class="separator:a5a4acbfb781cac70b8ab7854f3bdd62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
+<tr class="memitem:a8972971726f41b4043cf99614c4bf1c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a8972971726f41b4043cf99614c4bf1c3">equals</a> (const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> &amp;obj) const noexcept override</td></tr>
+<tr class="memdesc:a8972971726f41b4043cf99614c4bf1c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
+<tr class="separator:a8972971726f41b4043cf99614c4bf1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5213bc5c5b761736d49b8b83b676abca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a5213bc5c5b761736d49b8b83b676abca">load</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a>)</td></tr>
+<tr class="memdesc:a5213bc5c5b761736d49b8b83b676abca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads settings from specified file.  <br /></td></tr>
 <tr class="separator:a5213bc5c5b761736d49b8b83b676abca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e676fab98faaa6666cc4ac01bebe813"><td class="memItemLeft" align="right" valign="top"><a id="a9e676fab98faaa6666cc4ac01bebe813" name="a9e676fab98faaa6666cc4ac01bebe813"></a>
-const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
-<tr class="separator:a9e676fab98faaa6666cc4ac01bebe813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5d8079e0957a44b1560a2e5cd24b032"><td class="memItemLeft" align="right" valign="top"><a id="ac5d8079e0957a44b1560a2e5cd24b032" name="ac5d8079e0957a44b1560a2e5cd24b032"></a>
-<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) noexcept</td></tr>
-<tr class="separator:ac5d8079e0957a44b1560a2e5cd24b032"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a25e87fa3c22358fa188d5a92de2816"><td class="memItemLeft" align="right" valign="top"><a id="a5a25e87fa3c22358fa188d5a92de2816" name="a5a25e87fa3c22358fa188d5a92de2816"></a>
-<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;default_value) noexcept</td></tr>
+<tr class="memitem:a5a25e87fa3c22358fa188d5a92de2816"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a5a25e87fa3c22358fa188d5a92de2816">read</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;default_value) noexcept</td></tr>
+<tr class="memdesc:a5a25e87fa3c22358fa188d5a92de2816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets value associate to the specified key.  <br /></td></tr>
 <tr class="separator:a5a25e87fa3c22358fa188d5a92de2816"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51a0974a5fa4ff0b2f1ba3445b39ea35"><td class="memItemLeft" align="right" valign="top"><a id="a51a0974a5fa4ff0b2f1ba3445b39ea35" name="a51a0974a5fa4ff0b2f1ba3445b39ea35"></a>
-<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;default_value) noexcept</td></tr>
+<tr class="memitem:adefd77ce2744177789177ea4745a3c3b"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:adefd77ce2744177789177ea4745a3c3b"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#adefd77ce2744177789177ea4745a3c3b">read</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key, const type_t &amp;default_value)</td></tr>
+<tr class="memdesc:adefd77ce2744177789177ea4745a3c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets value associate to the specified key.  <br /></td></tr>
+<tr class="separator:adefd77ce2744177789177ea4745a3c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a0974a5fa4ff0b2f1ba3445b39ea35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a51a0974a5fa4ff0b2f1ba3445b39ea35">read</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;default_value) noexcept</td></tr>
+<tr class="memdesc:a51a0974a5fa4ff0b2f1ba3445b39ea35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets value associate to the specified key.  <br /></td></tr>
 <tr class="separator:a51a0974a5fa4ff0b2f1ba3445b39ea35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a191483eb76a6f1e4248ca18ec310a6"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:a7a191483eb76a6f1e4248ca18ec310a6"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a7a191483eb76a6f1e4248ca18ec310a6">read</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key, const type_t &amp;default_value)</td></tr>
+<tr class="memdesc:a7a191483eb76a6f1e4248ca18ec310a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets value associate to the specified key.  <br /></td></tr>
+<tr class="separator:a7a191483eb76a6f1e4248ca18ec310a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af009462692b2835401e59280d70d94bd"><td class="memItemLeft" align="right" valign="top"><a id="af009462692b2835401e59280d70d94bd" name="af009462692b2835401e59280d70d94bd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>remove</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key) noexcept</td></tr>
 <tr class="separator:af009462692b2835401e59280d70d94bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,11 +183,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr
 void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> ()</td></tr>
 <tr class="separator:a69697b6c0561e0f9eb87f038fabd7aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e5d81d79b330a519cff35063b406090"><td class="memItemLeft" align="right" valign="top"><a id="a8e5d81d79b330a519cff35063b406090" name="a8e5d81d79b330a519cff35063b406090"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>save_as</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;file_path)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>save_as</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a>)</td></tr>
 <tr class="separator:a8e5d81d79b330a519cff35063b406090"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a4acbfb781cac70b8ab7854f3bdd62d"><td class="memItemLeft" align="right" valign="top"><a id="a5a4acbfb781cac70b8ab7854f3bdd62d" name="a5a4acbfb781cac70b8ab7854f3bdd62d"></a>
-<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sections</b> () const noexcept</td></tr>
-<tr class="separator:a5a4acbfb781cac70b8ab7854f3bdd62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7574f15df844e2be624f14f405aebf"><td class="memItemLeft" align="right" valign="top"><a id="a3f7574f15df844e2be624f14f405aebf" name="a3f7574f15df844e2be624f14f405aebf"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>from_string</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;text)</td></tr>
+<tr class="separator:a3f7574f15df844e2be624f14f405aebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9caa63d0157322a5a80e19d7db3cb36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad9caa63d0157322a5a80e19d7db3cb36">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:ad9caa63d0157322a5a80e19d7db3cb36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> that represents the current object.  <br /></td></tr>
 <tr class="separator:ad9caa63d0157322a5a80e19d7db3cb36"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,6 +197,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const <a c
 <tr class="memitem:a0e1c478adecc357f42de9c55efe8f87c"><td class="memItemLeft" align="right" valign="top"><a id="a0e1c478adecc357f42de9c55efe8f87c" name="a0e1c478adecc357f42de9c55efe8f87c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;value) noexcept</td></tr>
 <tr class="separator:a0e1c478adecc357f42de9c55efe8f87c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
+<tr class="memitem:a9e676fab98faaa6666cc4ac01bebe813"><td class="memItemLeft" align="right" valign="top"><a id="a9e676fab98faaa6666cc4ac01bebe813" name="a9e676fab98faaa6666cc4ac01bebe813"></a>
+const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
+<tr class="separator:a9e676fab98faaa6666cc4ac01bebe813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d8079e0957a44b1560a2e5cd24b032"><td class="memItemLeft" align="right" valign="top"><a id="ac5d8079e0957a44b1560a2e5cd24b032" name="ac5d8079e0957a44b1560a2e5cd24b032"></a>
+<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) noexcept</td></tr>
+<tr class="separator:ac5d8079e0957a44b1560a2e5cd24b032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1object.html">xtd::object</a></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
@@ -213,9 +229,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const <a c
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const file_settings &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
 <tr class="separator:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classxtd_1_1object"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classxtd_1_1object')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classxtd_1_1object.html">xtd::object</a></td></tr>
 <tr class="memitem:a75cb9ed56172fb088ca6697d5d836b13 inherit pub_static_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a75cb9ed56172fb088ca6697d5d836b13">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;object_a, const <a class="el" href="classxtd_1_1object.html">object</a> &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a75cb9ed56172fb088ca6697d5d836b13 inherit pub_static_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
@@ -237,7 +250,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements a std::map with the key and the value strongly typed to be strings. </p>
+<p>Represents a std::map with the key and the value strongly typed to be strings. </p>
 
 </div>
 </div>
@@ -326,6 +339,455 @@ If the file path is empty, this is equivalent to using the <a class="el" href="c
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8972971726f41b4043cf99614c4bf1c3" name="a8972971726f41b4043cf99614c4bf1c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8972971726f41b4043cf99614c4bf1c3">&#9670;&#160;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::configuration::file_settings::equals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates whether the current object is equal to another object of the same type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>An object to compare with this object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the current object is equal to the other parameter; otherwise, false. </dd></dl>
+
+</div>
+</div>
+<a id="a9d8fc6680c5d965aea0e96b505223df1" name="a9d8fc6680c5d965aea0e96b505223df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d8fc6680c5d965aea0e96b505223df1">&#9670;&#160;</a></span>file_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp; xtd::configuration::file_settings::file_path </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the file path of the current instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>The file path of the current instance. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If no file the property can be return <a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b" title="Represents the empty string.">xtd::ustring::empty_string</a>. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Don't manipulate the file yourself, otherwise the expected result may be undefined. </dd></dl>
+
+</div>
+</div>
+<a id="a0c9fcf84d74674925c5db4d95f1144fb" name="a0c9fcf84d74674925c5db4d95f1144fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c9fcf84d74674925c5db4d95f1144fb">&#9670;&#160;</a></span>key_values() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a> xtd::configuration::file_settings::key_values </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets all key-values from global section. </p>
+<dl class="section return"><dt>Returns</dt><dd>The key-values map. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is equivalent to call xtd::configuration::file_settings::key_values(xtd::ustring::empty_string) with <a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b" title="Represents the empty string.">xtd::ustring::empty_string</a> paramreter. </dd></dl>
+
+</div>
+</div>
+<a id="a06e4818813bf9d2ff0a138cdad2236ea" name="a06e4818813bf9d2ff0a138cdad2236ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e4818813bf9d2ff0a138cdad2236ea">&#9670;&#160;</a></span>key_values() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a> xtd::configuration::file_settings::key_values </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>section</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets all key-values from a specified section. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">section</td><td>The section to get key-values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The key-values map from the specified section. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b" title="Represents the empty string.">xtd::ustring::empty_string</a> paramreter to get key-values of the global section. </dd></dl>
+
+</div>
+</div>
+<a id="af01dbe43750be475a0f304c1db42adbc" name="af01dbe43750be475a0f304c1db42adbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af01dbe43750be475a0f304c1db42adbc">&#9670;&#160;</a></span>keys() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a> xtd::configuration::file_settings::keys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets all keys from global section. </p>
+<dl class="section return"><dt>Returns</dt><dd>The keys vector. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is equivalent to call xtd::configuration::file_settings::keys(xtd::ustring::empty_string) with <a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b" title="Represents the empty string.">xtd::ustring::empty_string</a> paramreter. </dd></dl>
+
+</div>
+</div>
+<a id="abc001b6a569ae869477008ce77d202f2" name="abc001b6a569ae869477008ce77d202f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc001b6a569ae869477008ce77d202f2">&#9670;&#160;</a></span>keys() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a> xtd::configuration::file_settings::keys </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>section</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets all keys from a specified section. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">section</td><td>The section to get keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The keys vector from the specified section. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b" title="Represents the empty string.">xtd::ustring::empty_string</a> paramreter to get keys of the global section. </dd></dl>
+
+</div>
+</div>
+<a id="a5213bc5c5b761736d49b8b83b676abca" name="a5213bc5c5b761736d49b8b83b676abca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5213bc5c5b761736d49b8b83b676abca">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::configuration::file_settings::load </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>file_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads settings from specified file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>The file path to load settings. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adefd77ce2744177789177ea4745a3c3b" name="adefd77ce2744177789177ea4745a3c3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adefd77ce2744177789177ea4745a3c3b">&#9670;&#160;</a></span>read() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">type_t xtd::configuration::file_settings::read </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>default_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets value associate to the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to read the value. </td></tr>
+    <tr><td class="paramname">default_value</td><td>If no value found for the specified key, the default_value is returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is equivalent to call xtd::configuration::file_settings::read(xtd::ustring::empty_string, key, default_value). </dd></dl>
+
+</div>
+</div>
+<a id="a5a25e87fa3c22358fa188d5a92de2816" name="a5a25e87fa3c22358fa188d5a92de2816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a25e87fa3c22358fa188d5a92de2816">&#9670;&#160;</a></span>read() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::configuration::file_settings::read </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>default_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets value associate to the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to read the value. </td></tr>
+    <tr><td class="paramname">default_value</td><td>If no value found for the specified key, the default_value is returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is equivalent to call xtd::configuration::file_settings::read(xtd::ustring::empty_string, key, default_value). </dd></dl>
+
+</div>
+</div>
+<a id="a7a191483eb76a6f1e4248ca18ec310a6" name="a7a191483eb76a6f1e4248ca18ec310a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a191483eb76a6f1e4248ca18ec310a6">&#9670;&#160;</a></span>read() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">type_t xtd::configuration::file_settings::read </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>section</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>default_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets value associate to the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to read the value. </td></tr>
+    <tr><td class="paramname">default_value</td><td>If no value found for the specified key, the default_value is returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b" title="Represents the empty string.">xtd::ustring::empty_string</a> for section paramreter to read keys of the global section. </dd></dl>
+
+</div>
+</div>
+<a id="a51a0974a5fa4ff0b2f1ba3445b39ea35" name="a51a0974a5fa4ff0b2f1ba3445b39ea35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a0974a5fa4ff0b2f1ba3445b39ea35">&#9670;&#160;</a></span>read() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::configuration::file_settings::read </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>section</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>default_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets value associate to the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to read the value. </td></tr>
+    <tr><td class="paramname">default_value</td><td>If no value found for the specified key, the default_value is returned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="classxtd_1_1ustring.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b" title="Represents the empty string.">xtd::ustring::empty_string</a> for section paramreter to read keys of the global section. </dd></dl>
+
+</div>
+</div>
+<a id="a5a4acbfb781cac70b8ab7854f3bdd62d" name="a5a4acbfb781cac70b8ab7854f3bdd62d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a4acbfb781cac70b8ab7854f3bdd62d">&#9670;&#160;</a></span>sections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a> xtd::configuration::file_settings::sections </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets all sections. </p>
+<dl class="section return"><dt>Returns</dt><dd>The sections vector. </dd></dl>
+
+</div>
+</div>
 <a id="ad9caa63d0157322a5a80e19d7db3cb36" name="ad9caa63d0157322a5a80e19d7db3cb36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9caa63d0157322a5a80e19d7db3cb36">&#9670;&#160;</a></span>to_string()</h2>
 
@@ -364,7 +826,7 @@ If the file path is empty, this is equivalent to using the <a class="el" href="c
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 31 2024 19:39:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 2 2024 20:57:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
