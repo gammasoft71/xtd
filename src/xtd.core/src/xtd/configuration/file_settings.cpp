@@ -9,6 +9,10 @@ file_settings::file_settings(const ustring& file_path) : file_path_ {path::get_f
   this->load(file_path_);
 }
 
+const xtd::ustring& file_settings::file_path() const noexcept {
+  return file_path_;
+}
+
 file_settings::string_map file_settings::key_values() const noexcept {
   return key_values(ustring::empty_string);
 }

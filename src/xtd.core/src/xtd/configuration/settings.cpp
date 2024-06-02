@@ -36,7 +36,8 @@ settings::settings() : data_(std::make_shared<data>()) {
   data_->file_settings = file_settings {native::settings::get_path(company_name(), product_name())};
 }
 
-settings::~settings() {
+const xtd::ustring& settings::file_path() const noexcept {
+  return data_->file_settings.file_path();
 }
 
 xtd::ustring settings::read(const xtd::ustring& key, const xtd::ustring& default_value) {

@@ -20,9 +20,11 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core configuration
-    /// @remarks On Windows settings are stored in "application_path/product_name.ini" file.
-    /// @remarks On macos settings are stored in "~/Library/Preferences/company_name/product_name Preferences" file.
-    /// @remarks On linux settings are stored in "~/.consig/company_name/product_name.conf" file.
+    /// @remarks On Windows settings are stored in `application_path/product_name.ini` file.
+    /// @remarks On macos settings are stored in `~/Library/Preferences/company_name/product_name Preferences` file.
+    /// @remarks On linux settings are stored in `~/.consig/company_name/product_name.conf` file.
+    /// @remarks The `product_name` is equal to xtd::assembly::get_executing_assembly().product() if not empty; otherwise is equal to the filename of the first arguemnt of main.
+    /// @remarks The `company_name` is equal to xtd::assembly::get_executing_assembly().company() if not empty; otherwise is equal to `product_name`.
     /// @par Examples
     /// The following code example demonstrates the use of settings class.
     /// @include settings_example.cpp
@@ -37,9 +39,19 @@ namespace xtd {
       settings();
       /// @}
       
-      /// @cond
-      ~settings();
-      /// @endcond
+      /// @name Public Properties
+      
+      /// @{
+      /// @brief Gets the file path of the application settings.
+      /// @return The file path of the application settings.
+      /// @remarks On Windows settings are stored in `application_path/product_name.ini` file.
+      /// @remarks On macos settings are stored in `~/Library/Preferences/company_name/product_name Preferences` file.
+      /// @remarks On linux settings are stored in `~/.consig/company_name/product_name.conf` file.
+      /// @remarks The `product_name` is equal to xtd::assembly::get_executing_assembly().product() if not empty; otherwise is equal to the filename of the first arguemnt of main.
+      /// @remarks The `company_name` is equal to xtd::assembly::get_executing_assembly().company() if not empty; otherwise is equal to `product_name`.
+      /// @warning Don't manipulate the file yourself, otherwise the expected result may be undefined.
+      const xtd::ustring& file_path() const noexcept;
+      /// @}
       
       /// @name Public Methods
       
@@ -60,19 +72,23 @@ namespace xtd {
       }
       
       /// @brief Reset application settings.
+      /// @remarks The settings are cleared and the application settings file is removed.
       void reset();
       
       /// @brief Save application settings.
+      /// @remarks The settings are saved in the application settings file.
       void save();
       
       /// @brief Writes a specified value for specified key.
       /// @param key The key used to write a value.
       /// @param value A string to write.
+      /// @remarks To write permanently use the xtd::configuration::settings::save method.
       void write(const xtd::ustring& key, const xtd::ustring& value);
       /// @brief Writes a specified value for specified key.
       /// @tparam type_t The type of value to write.
       /// @param key The key used to write a value.
       /// @param value A type_t to write.
+      /// @remarks To write permanently use the xtd::configuration::settings::save method.
       template<typename type_t>
       void write(const xtd::ustring& key, type_t&& value) {
         write_string(key, xtd::ustring::format("{}", value));

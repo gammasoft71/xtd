@@ -60,6 +60,12 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
+      /// @brief Gets the file path of the current instance.
+      /// @return The file path of the current instance.
+      /// @remarks If no file the property can be return xtd::string::empty_string.
+      /// @warning Don't manipulate the file yourself, otherwise the expected result may be undefined.
+      const xtd::ustring& file_path() const noexcept;
+
       string_map key_values() const noexcept;
       
       string_map key_values(const xtd::ustring& section) const noexcept;
