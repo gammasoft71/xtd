@@ -99,15 +99,19 @@ Inheritance diagram for xtd::configuration::settings:</div>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Represent settings associate to the application. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/settings&gt;</span> </div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/configuration/settings&gt;</span> </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>On Windows settings are stored in "application_path/product_name.ini" file. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>On Windows settings are stored in <code>application_path/product_name.ini</code> file. </dd>
 <dd>
-On macos settings are stored in "~/Library/Preferences/company_name/product_name Preferences" file. </dd>
+On macos settings are stored in <code>~/Library/Preferences/company_name/product_name Preferences</code> file. </dd>
 <dd>
-On linux settings are stored in "~/.consig/company_name/product_name.conf" file. </dd></dl>
+On linux settings are stored in <code>~/.consig/company_name/product_name.conf</code> file. </dd>
+<dd>
+The <code>product_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#abe3aeea3bdf537658ad52b828efda892" title="Gets product information.">xtd::reflection::assembly::product()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to the filename of the first arguemnt of main. </dd>
+<dd>
+The <code>company_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a03404c57cfc3d59eb8bac4ed26978ae2" title="Gets company name information.">xtd::reflection::assembly::company()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to <code>product_name</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of settings class. <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../properties/settings.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
@@ -164,6 +168,11 @@ On linux settings are stored in "~/.consig/company_name/product_name.conf" file.
 <tr class="memitem:ac42c075373ddc30f7e6a7e04021cbc7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1settings.html#ac42c075373ddc30f7e6a7e04021cbc7c">settings</a> ()</td></tr>
 <tr class="memdesc:ac42c075373ddc30f7e6a7e04021cbc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of settings class.  <br /></td></tr>
 <tr class="separator:ac42c075373ddc30f7e6a7e04021cbc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:a8c0e2bff8c05de5478e45a0336d43357"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1settings.html#a8c0e2bff8c05de5478e45a0336d43357">file_path</a> () const noexcept</td></tr>
+<tr class="memdesc:a8c0e2bff8c05de5478e45a0336d43357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file path of the application settings.  <br /></td></tr>
+<tr class="separator:a8c0e2bff8c05de5478e45a0336d43357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:abad0d7b0ddc8fc70056ffc2b4912f299"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1settings.html#abad0d7b0ddc8fc70056ffc2b4912f299">read</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;default_value)</td></tr>
@@ -238,6 +247,44 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8c0e2bff8c05de5478e45a0336d43357" name="a8c0e2bff8c05de5478e45a0336d43357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0e2bff8c05de5478e45a0336d43357">&#9670;&#160;</a></span>file_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp; xtd::configuration::settings::file_path </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the file path of the application settings. </p>
+<dl class="section return"><dt>Returns</dt><dd>The file path of the application settings. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>On Windows settings are stored in <code>application_path/product_name.ini</code> file. </dd>
+<dd>
+On macos settings are stored in <code>~/Library/Preferences/company_name/product_name Preferences</code> file. </dd>
+<dd>
+On linux settings are stored in <code>~/.consig/company_name/product_name.conf</code> file. </dd>
+<dd>
+The <code>product_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#abe3aeea3bdf537658ad52b828efda892" title="Gets product information.">xtd::reflection::assembly::product()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to the filename of the first arguemnt of main. </dd>
+<dd>
+The <code>company_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a03404c57cfc3d59eb8bac4ed26978ae2" title="Gets company name information.">xtd::reflection::assembly::company()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to <code>product_name</code>. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Don't manipulate the file yourself, otherwise the expected result may be undefined. </dd></dl>
+
+</div>
+</div>
 <a id="a76ed785aa538733b5762596538b81add" name="a76ed785aa538733b5762596538b81add"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76ed785aa538733b5762596538b81add">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
 
@@ -348,6 +395,9 @@ template&lt;typename type_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Reset application settings. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The settings are cleared and the application settings file is removed. </dd>
+<dd>
+To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1settings.html#a089a23666c57a7b26c6641f195bb69f9" title="Save application settings.">xtd::configuration::settings::save</a> method. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="settings_example2_8cpp-example.html#a5">settings_example2.cpp</a>.</dd>
 </dl>
 
@@ -369,6 +419,7 @@ template&lt;typename type_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Save application settings. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The settings are saved in the application settings file. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="settings_example2_8cpp-example.html#a2">settings_example2.cpp</a>.</dd>
 </dl>
 
@@ -408,6 +459,7 @@ template&lt;typename type_t &gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1settings.html#a089a23666c57a7b26c6641f195bb69f9" title="Save application settings.">xtd::configuration::settings::save</a> method. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="settings_example2_8cpp-example.html#a1">settings_example2.cpp</a>.</dd>
 </dl>
 
@@ -463,6 +515,7 @@ template&lt;typename type_t &gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1settings.html#a089a23666c57a7b26c6641f195bb69f9" title="Save application settings.">xtd::configuration::settings::save</a> method. </dd></dl>
 
 </div>
 </div>
@@ -473,7 +526,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 31 2024 19:39:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 2 2024 22:38:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
