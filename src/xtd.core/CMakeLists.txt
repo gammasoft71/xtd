@@ -450,6 +450,8 @@ add_sources(
   include/xtd/collections/specialized/string_pair
   include/xtd/collections/specialized/string_vector.h
   include/xtd/collections/specialized/string_vector
+  include/xtd/configuration/ini_file_settings.h
+  include/xtd/configuration/ini_file_settings
   include/xtd/configuration/file_settings.h
   include/xtd/configuration/file_settings
   include/xtd/configuration/settings.h
