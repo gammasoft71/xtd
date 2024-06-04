@@ -1,10 +1,10 @@
-# format_class
+# format_class_object
 
 Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) class with class objects.
 
 ## Sources
 
-[src/format_class.cpp](src/format_class.cpp)
+[src/format_class_object.cpp](src/format_class_object.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
