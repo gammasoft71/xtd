@@ -1,12 +1,12 @@
 #include "../../../include/xtd/configuration/file_settings.h"
 
 using namespace xtd;
-using namespace configuration;
-using namespace io;
+using namespace xtd::configuration;
+using namespace xtd::io;
 
 file_settings::file_settings(const ustring& file_path) : file_path_ {path::get_full_path(file_path)} {
   if (ustring::is_empty(file_path_) || !file::exists(file_path_)) return;
-  this->load(file_path_);
+  load(file_path_);
 }
 
 const xtd::ustring& file_settings::file_path() const noexcept {
@@ -43,6 +43,18 @@ file_settings::string_vector file_settings::sections() const noexcept {
 
 bool file_settings::equals(const file_settings& obj) const noexcept {
   return section_key_values_ == obj.section_key_values_;
+}
+
+void file_settings::from_string(const xtd::ustring& text) {
+  auto section = ustring::empty_string;
+  for (auto line : text.split({10, 13}, string_split_options::remove_empty_entries)) {
+    if (ustring::is_empty(line) || line.starts_with(';') || line.starts_with('#')) continue;
+    if (line.starts_with('[') && line.ends_with(']')) section = line.substring(1, line.size() - 2);
+    else {
+      auto key_value = line.split({'='});
+      section_key_values_[section][key_value[0].trim().trim('"')] = key_value.size() == 1 ? "" : ustring::join("=", key_value, 1).trim().trim('"');
+    }
+  }
 }
 
 void file_settings::load(const xtd::ustring& file_path) {
@@ -91,18 +103,6 @@ void file_settings::save_as(const xtd::ustring& file_path) {
   directory::create_directory(path::get_directory_name(file_path));
   auto stream = stream_writer {file_path};
   stream.write(to_string());
-}
-
-void file_settings::from_string(const xtd::ustring& text) {
-  auto section = ustring::empty_string;
-  for (auto line : text.split({10, 13}, string_split_options::remove_empty_entries)) {
-    if (ustring::is_empty(line) || line.starts_with(';') || line.starts_with('#')) continue;
-    if (line.starts_with('[') && line.ends_with(']')) section = line.substring(1, line.size() - 2);
-    else {
-      auto key_value = line.split({'='});
-      section_key_values_[section][key_value[0].trim().trim('"')] = key_value.size() == 1 ? "" : ustring::join("=", key_value, 1).trim().trim('"');
-    }
-  }
 }
 
 ustring file_settings::to_string() const noexcept {
