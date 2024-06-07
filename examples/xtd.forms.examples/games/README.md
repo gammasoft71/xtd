@@ -6,6 +6,7 @@
 
 * [game_of_life](game_of_life/README.md) The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
 * [minesweeper](minesweeper/README.md) The goal of the game is to uncover all the squares that do not contain mines.
+* [tetris](tetris/README.md) The Tetris game is one of the most popular computer games ever created.
 
 
 ## Build and run any project
