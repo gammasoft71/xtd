@@ -1645,6 +1645,9 @@ namespace xtd {
     
     static ustring get_class_name(const ustring& full_name);
     
+    static const std::vector<value_type> default_split_separators;
+    static const std::vector<value_type> default_trim_chars;
+
     using std::basic_string<value_type>::assign;
     using std::basic_string<value_type>::reserve;
     using std::basic_string<value_type>::shrink_to_fit;
