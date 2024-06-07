@@ -1056,6 +1056,7 @@ ustring ustring::trim_start(value_type trim_char) const noexcept {
 }
 
 ustring ustring::trim_start(const vector<value_type>& trim_chars) const noexcept {
+  if (!size()) return *this;
   auto result = *this;
   while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
     result.erase(0, 1);
