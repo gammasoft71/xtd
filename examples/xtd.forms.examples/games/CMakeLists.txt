@@ -6,4 +6,5 @@ find_package(xtd REQUIRED)
 add_projects(
   game_of_life
   minesweeper
+  tetris
 )
