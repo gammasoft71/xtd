@@ -30,6 +30,9 @@ void __throw_ustring_format_exception_start_colon(const char* file, uint32 line,
 
 const ustring ustring::empty_string;
 
+const vector<ustring::value_type> ustring::default_split_separators {9, 10, 11, 12, 13, 32};
+const vector<ustring::value_type> ustring::default_trim_chars {ustring::default_split_separators};
+
 ustring::ustring() noexcept {
 }
 
@@ -921,7 +924,7 @@ vector<ustring> ustring::split(const vector<value_type>& separators, size_t coun
   
   auto list = vector<ustring> {};
   auto sub_string = ustring::empty_string;
-  auto split_char_separators = separators.size() == 0 ? vector<value_type> {9, 10, 11, 12, 13, 32} : separators;
+  auto split_char_separators = separators.size() == 0 ? default_split_separators : separators;
   for (auto it = begin(); it != end(); ++it) {
     auto is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
     if (!is_separator) sub_string.append(ustring(1, *it));
@@ -939,7 +942,7 @@ vector<ustring> ustring::split(const vector<value_type>& separators, size_t coun
 }
 
 vector<ustring> ustring::split() const noexcept {
-  return split(vector<value_type> {9, 10, 11, 12, 13, 32}, numeric_limits<size_t>::max(), string_split_options::none);
+  return split(default_split_separators, numeric_limits<size_t>::max(), string_split_options::none);
 }
 
 vector<ustring> ustring::split(const vector<value_type>& separators) const noexcept {
@@ -1020,7 +1023,7 @@ ustring ustring::to_upper() const noexcept {
 }
 
 ustring ustring::trim() const noexcept {
-  return trim(vector<value_type> {9, 10, 11, 12, 13, 32});
+  return trim(default_trim_chars);
 }
 
 ustring ustring::trim(value_type trim_char) const noexcept {
@@ -1032,7 +1035,7 @@ ustring ustring::trim(const vector<value_type>& trim_chars) const noexcept {
 }
 
 ustring ustring::trim_end() const noexcept {
-  return trim_end(vector<value_type> {9, 10, 11, 12, 13, 32});
+  return trim_end(default_trim_chars);
 }
 
 ustring ustring::trim_end(value_type trim_char) const noexcept {
@@ -1048,7 +1051,7 @@ ustring ustring::trim_end(const vector<value_type>& trim_chars) const noexcept {
 }
 
 ustring ustring::trim_start() const noexcept {
-  return trim_start(vector<value_type> {9, 10, 11, 12, 13, 32});
+  return trim_start(default_trim_chars);
 }
 
 ustring ustring::trim_start(value_type trim_char) const noexcept {
