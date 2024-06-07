@@ -49,6 +49,7 @@ void file_settings::from_string(const xtd::ustring& text) {
   auto section = ustring::empty_string;
   for (auto line : text.split({10, 13}, string_split_options::remove_empty_entries)) {
     if (ustring::is_empty(line) || line.starts_with(';') || line.starts_with('#')) continue;
+    line = line.trim();
     if (line.starts_with('[') && line.ends_with(']')) section = line.substring(1, line.size() - 2);
     else {
       auto key_value = line.split({'='});
