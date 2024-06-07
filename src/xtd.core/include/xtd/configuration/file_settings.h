@@ -178,7 +178,7 @@ namespace xtd {
       /// @brief Save current settings in the specified file path.
       /// @param file_path The file to save the current settings.
       /// @remarks The settings are saved in the specified settings file.
-     void save_as(const xtd::ustring& file_path);
+      void save_as(const xtd::ustring& file_path);
       
       /// @brief Returns a xtd::ustring that represents the current setting in [INI format](https://en.wikipedia.org/wiki/INI_file).
       /// @return A string that represents the current setting.
