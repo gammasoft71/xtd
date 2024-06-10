@@ -1,6 +1,10 @@
 #include "../../../include/xtd/tunit/unit_test.h"
 #include <xtd/random>
 
+#define __XTD_CORE_INTERNAL__
+#include <xtd/internal/__show_generic_exception_message>
+#undef __XTD_CORE_INTERNAL__
+
 #if defined(_WIN32)
 __declspec(dllimport) extern int __argc;
 __declspec(dllimport) extern char** __argv;
@@ -128,72 +132,80 @@ vector<ustring> unit_test::succeed_test_names() const noexcept {
   return names;
 }
 
-int32 unit_test::run() {
-  if (parse_arguments(arguments))
-    return settings::default_settings().exit_status();
+int32 unit_test::run() noexcept {
+  try {
+    if (parse_arguments(arguments))
+      return settings::default_settings().exit_status();
     
-  if (settings::default_settings().count_tests()) {
-    auto count = 0;
-    for (auto test_class : test_classes())
-      for (auto test : test_class.test()->tests())
-        count++;
-        
-    return count_tests(count);
-  }
-  
-  if (settings::default_settings().list_tests()) {
-    auto tests = vector<ustring> {};
-    for (auto test_class : test_classes())
-      for (auto test : test_class.test()->tests())
-        tests.push_back(test_class.test()->name() + '.' + test.name());
-        
-    if (settings::default_settings().output_json()) write_list_tests_json();
-    if (settings::default_settings().output_xml()) write_list_tests_xml();
-    
-    return list_tests(tests);
-  }
-  
-  system_exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
-  
-  auto random = settings::default_settings().random_seed() ? xtd::random(settings::default_settings().random_seed()) : xtd::random();
-  
-  for (repeat_iteration_ = 1; repeat_iteration_ <= settings::default_settings().repeat_test() || settings::default_settings().repeat_test() < 0; ++repeat_iteration_) {
-    if (settings::default_settings().shuffle_test())
-      shuffle(test_classes().begin(), test_classes().end(), random.generator());
+    if (settings::default_settings().count_tests()) {
+      auto count = 0;
+      for (auto test_class : test_classes())
+        for (auto test : test_class.test()->tests())
+          count++;
       
-    try {
-      if (!settings::default_settings().brief()) event_listener_->on_unit_test_start(tunit_event_args(*this));
-      
-      if (!settings::default_settings().brief()) event_listener_->on_unit_test_initialize_start(tunit_event_args(*this));
-      unit_test_initialize();
-      if (!settings::default_settings().brief()) event_listener_->on_unit_test_initialize_end(tunit_event_args(*this));
-      
-      start_time_point_ = date_time::now();
-      for (auto& test_class : test_classes())
-        if (test_class.test()->test_count())
-          test_class.test()->run(*this);
-      end_time_point_ = date_time::now();
-      
-      if (!settings::default_settings().brief()) event_listener_->on_unit_test_cleanup_start(tunit_event_args(*this));
-      unit_test_cleanup();
-      if (!settings::default_settings().brief()) event_listener_->on_unit_test_cleanup_end(tunit_event_args(*this));
-      
-      event_listener_->on_unit_test_end(tunit_event_args(*this));
-    } catch (const exception&) {
-      settings::default_settings().exit_status(EXIT_FAILURE);
-      // do error...
-    } catch (...) {
-      settings::default_settings().exit_status(EXIT_FAILURE);
-      // do error...
+      return count_tests(count);
     }
+    
+    if (settings::default_settings().list_tests()) {
+      auto tests = vector<ustring> {};
+      for (auto test_class : test_classes())
+        for (auto test : test_class.test()->tests())
+          tests.push_back(test_class.test()->name() + '.' + test.name());
+      
+      if (settings::default_settings().output_json()) write_list_tests_json();
+      if (settings::default_settings().output_xml()) write_list_tests_xml();
+      
+      return list_tests(tests);
+    }
+    
+    system_exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
+    
+    auto random = settings::default_settings().random_seed() ? xtd::random(settings::default_settings().random_seed()) : xtd::random();
+    
+    for (repeat_iteration_ = 1; repeat_iteration_ <= settings::default_settings().repeat_test() || settings::default_settings().repeat_test() < 0; ++repeat_iteration_) {
+      if (settings::default_settings().shuffle_test())
+        shuffle(test_classes().begin(), test_classes().end(), random.generator());
+      
+      try {
+        if (!settings::default_settings().brief()) event_listener_->on_unit_test_start(tunit_event_args(*this));
+        
+        if (!settings::default_settings().brief()) event_listener_->on_unit_test_initialize_start(tunit_event_args(*this));
+        unit_test_initialize();
+        if (!settings::default_settings().brief()) event_listener_->on_unit_test_initialize_end(tunit_event_args(*this));
+        
+        start_time_point_ = date_time::now();
+        for (auto& test_class : test_classes())
+          if (test_class.test()->test_count())
+            test_class.test()->run(*this);
+        end_time_point_ = date_time::now();
+        
+        if (!settings::default_settings().brief()) event_listener_->on_unit_test_cleanup_start(tunit_event_args(*this));
+        unit_test_cleanup();
+        if (!settings::default_settings().brief()) event_listener_->on_unit_test_cleanup_end(tunit_event_args(*this));
+        
+        event_listener_->on_unit_test_end(tunit_event_args(*this));
+      } catch (const exception&) {
+        settings::default_settings().exit_status(EXIT_FAILURE);
+        // do error...
+      } catch (...) {
+        settings::default_settings().exit_status(EXIT_FAILURE);
+        // do error...
+      }
+    }
+    
+    settings::default_settings().end_time(date_time::now());
+    
+    if (settings::default_settings().output_json()) write_tests_json();
+    if (settings::default_settings().output_xml()) write_tests_xml();
+    
+    return settings::default_settings().exit_status();
+  } catch (const std::exception& exception) {
+    __show_generic_exception_message__(exception);
+    return EXIT_FAILURE;
+  } catch (...) {
+    __show_generic_exception_message__();
+    return EXIT_FAILURE;
   }
-  
-  settings::default_settings().end_time(date_time::now());
-  
-  if (settings::default_settings().output_json()) write_tests_json();
-  if (settings::default_settings().output_xml()) write_tests_xml();
-  
-  return settings::default_settings().exit_status();
 }
 
 int32 unit_test::count_tests(int32 count) {
