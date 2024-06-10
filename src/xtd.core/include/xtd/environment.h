@@ -658,24 +658,7 @@ namespace xtd {
     static void on_cancel_signal(signal_cancel_event_args& e);
     static void on_program_exit(const program_exit_event_args& e);
 
-    inline static const ustring xtd_root_path = ustring::is_empty(__XTD_ROOT_PATH__) ? (ustring::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(__FILE__), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__;
-    inline static const ustring xtd_include_path = io::path::combine(xtd_root_path, "include");
-    inline static const ustring xtd_install_path = xtd_root_path;
-    inline static const ustring xtd_libraries_path = io::path::combine(xtd_root_path, "lib");
-    inline static const ustring xtd_locale_path = io::path::combine(xtd_root_path, "share", "xtd", "locale");
-    inline static const ustring xtd_reference_guide_path = io::path::combine(xtd_root_path, "share", "xtd", "reference_guide");
-    inline static const ustring xtd_resources_path = io::path::combine(xtd_root_path, "share", "xtd", "resources");
-    inline static const ustring xtd_themes_path = io::path::combine(xtd_root_path, "share", "xtd", "themes");
-    inline static const ustring xtd_console_include_path = io::path::combine(xtd_root_path, "include");
-    inline static const ustring xtd_console_libraries_path = io::path::combine(xtd_root_path, "lib");
-    inline static const ustring xtd_drawing_include_path = io::path::combine(xtd_root_path, "include");
-    inline static const ustring xtd_drawing_libraries_path = io::path::combine(xtd_root_path, "lib");
-    inline static const ustring xtd_drawing_resources_path = io::path::combine(xtd_root_path, "share", "xtd", "resources");
-    inline static const ustring xtd_forms_include_path = io::path::combine(xtd_root_path, "include");
-    inline static const ustring xtd_forms_libraries_path = io::path::combine(xtd_root_path, "lib");
-    inline static const ustring xtd_forms_resources_path = io::path::combine(xtd_root_path, "share", "xtd", "resources");
-    inline static const ustring xtd_tunit_include_path = io::path::combine(xtd_root_path, "include");
-    inline static const ustring xtd_tunit_libraries_path = io::path::combine(xtd_root_path, "lib");
+    inline static const ustring xtd_root_path() {return ustring::is_empty(__XTD_ROOT_PATH__) ? (ustring::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(__FILE__), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__;}
     static signal_catcher signal_catcher_;
   };
 }
