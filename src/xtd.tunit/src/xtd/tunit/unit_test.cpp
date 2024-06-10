@@ -236,7 +236,7 @@ bool unit_test::parse_arguments(const vector<ustring>& args) {
     if (arg == "--count_tests") settings::default_settings().count_tests(true);
     else if (arg == "--list_tests") settings::default_settings().list_tests(true);
     else if (arg == "--gtest_list_tests") settings::default_settings().list_tests(true);
-    else if (arg.find("--filter_tests=") == 0) settings::default_settings().filter_tests(arg.substring(15).split({':'}));
+    else if (arg.find("--filter_tests=") == 0) settings::default_settings().filter_tests(arg.substring(15).split({'|'}));
     else if (arg.find("--gtest_filter=") == 0) settings::default_settings().filter_tests(arg.substring(15).split({':'}));
     else if (arg == "--also_run_ignored_tests") settings::default_settings().also_run_ignored_tests(true);
     else if (arg == "--gtest_also_run_disabled_tests") settings::default_settings().also_run_ignored_tests(true);
