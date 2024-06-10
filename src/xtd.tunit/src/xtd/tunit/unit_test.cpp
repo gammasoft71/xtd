@@ -1,4 +1,5 @@
 #include "../../../include/xtd/tunit/unit_test.h"
+#include <xtd/call_once>
 #include <xtd/random>
 #include <xtd/startup>
 
@@ -46,33 +47,41 @@ bool unit_test::repeat_tests() const noexcept {
 }
 
 size_t unit_test::test_cases_count() const noexcept {
-  auto count = 0_z;
-  for (auto test_class : test_classes())
-    if (test_class.test()->test_count())
-      count ++;
+  static auto count = 0_z;
+  call_once_ {
+    for (auto test_class : test_classes())
+      if (test_class.test()->test_count())
+        ++count;
+  };
   return count;
 }
 
 size_t unit_test::test_count() const noexcept {
-  auto count = 0_z;
-  for (auto test_class : test_classes())
-    count += test_class.test()->test_count();
+  static auto count = 0_z;
+  call_once_ {
+    for (auto test_class : test_classes())
+      count += test_class.test()->test_count();
+  };
   return count;
 }
 
 size_t unit_test::aborted_test_count() const noexcept {
-  auto count = 0_z;
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) count++;
+  static auto count = 0_z;
+  call_once_ {
+    for (auto& test_class : test_classes())
+      for (auto& test : test_class.test()->tests())
+        if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) count++;
+  };
   return count;
 }
 
 vector<ustring> unit_test::aborted_test_names() const noexcept {
-  auto names = vector<ustring> {};
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
+  static auto names = vector<ustring> {};
+  call_once_ {
+    for (auto& test_class : test_classes())
+      for (auto& test : test_class.test()->tests())
+        if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
+  };
   return names;
 }
 
@@ -83,49 +92,61 @@ time_span unit_test::elapsed_time() const noexcept {
 }
 
 size_t unit_test::ignored_test_count() const noexcept {
-  auto count = 0_z;
-  for (auto test_class : test_classes())
-    count += test_class.test()->ignored_test_count();
+  static auto count = 0_z;
+  call_once_ {
+    for (auto test_class : test_classes())
+      count += test_class.test()->ignored_test_count();
+  };
   return count;
 }
 
 vector<ustring> unit_test::ignored_test_names() const noexcept {
-  auto names = vector<ustring> {};
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
+  static auto names = vector<ustring> {};
+  call_once_ {
+    for (auto& test_class : test_classes())
+      for (auto& test : test_class.test()->tests())
+        if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
+  };
   return names;
 }
 
 size_t unit_test::failed_test_count() const noexcept {
-  auto count = 0_z;
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) count++;
+  static auto count = 0_z;
+  call_once_ {
+    for (auto& test_class : test_classes())
+      for (auto& test : test_class.test()->tests())
+        if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) count++;
+  };
   return count;
 }
 
 vector<ustring> unit_test::failed_test_names() const noexcept {
-  auto names = vector<ustring> {};
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
+  static auto names = vector<ustring> {};
+  call_once_ {
+    for (auto& test_class : test_classes())
+      for (auto& test : test_class.test()->tests())
+        if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
+  };
   return names;
 }
 
 size_t unit_test::succeed_test_count() const noexcept {
-  auto count = 0_z;
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;
+  static auto count = 0_z;
+  call_once_ {
+    for (auto& test_class : test_classes())
+      for (auto& test : test_class.test()->tests())
+        if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;
+  };
   return count;
 }
 
 vector<ustring> unit_test::succeed_test_names() const noexcept {
-  auto names = vector<ustring> {};
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
+  static auto names = vector<ustring> {};
+  call_once_ {
+    for (auto& test_class : test_classes())
+      for (auto& test : test_class.test()->tests())
+        if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
+  };
   return names;
 }
 
@@ -278,7 +299,7 @@ ustring unit_test::get_filename(const ustring& path) {
   const auto last_slash_idx = filename.find_last_of("\\/");
   if (ustring::npos != last_slash_idx)
     filename = filename.remove(0, last_slash_idx + 1);
-    
+  
   const auto period_idx = filename.rfind('.');
   if (ustring::npos != period_idx)
     filename = filename.remove(period_idx);
