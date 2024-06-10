@@ -4,6 +4,7 @@
 #include <xtd/tunit/unit_test>
 #include <xtd/foreground_color>
 #include <xtd/reset_color>
+#include <xtd/startup>
 #include <xtd/typeof>
 #include <iostream>
 #include <functional>
@@ -28,24 +29,26 @@ namespace assert_unit_tests {
     }
     
     static int run_all_tests() noexcept {
-      xtd::system_exception::enable_stack_trace(false);
-      xtd::tunit::test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<xtd::intptr>("internal_tests");
-      std::cout << "Start unit tests" << std::endl;
-      try {
-        for (auto assert_unit_test : assert_unit_tests::register_assert_unit_test::assert_unit_tests)
-          assert_unit_test.method(assert_unit_test.name);
-      } catch (...) {
+      return xtd::startup::safe_run(xtd::delegate<int()>([] {
+        xtd::system_exception::enable_stack_trace(false);
+        xtd::tunit::test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<xtd::intptr>("internal_tests");
+        std::cout << "Start unit tests" << std::endl;
+        try {
+          for (auto assert_unit_test : assert_unit_tests::register_assert_unit_test::assert_unit_tests)
+            assert_unit_test.method(assert_unit_test.name);
+        } catch (...) {
+          std::cout << "end unit tests" << std::endl;
+          std::cout << std::endl << xtd::foreground_color(xtd::console_color::dark_red) << "FAILED TEST" << xtd::reset_color() << std::endl;
+          std::cout << std::endl;
+          return 1;
+        }
+        
         std::cout << "end unit tests" << std::endl;
-        std::cout << std::endl << xtd::foreground_color(xtd::console_color::dark_red) << "FAILED TEST" << xtd::reset_color() << std::endl;
+        std::cout << std::endl << xtd::foreground_color(xtd::console_color::dark_green) << "SUCCEED " << xtd::reset_color() << assert_unit_tests::register_assert_unit_test::assert_unit_tests.size() << " tests." << std::endl;
+        if (ignore_test_count) std::cout << std::endl << "You have " << ignore_test_count << " ignored test" << (ignore_test_count < 2 ? "" : "s") << std::endl;
         std::cout << std::endl;
-        return 1;
-      }
-      
-      std::cout << "end unit tests" << std::endl;
-      std::cout << std::endl << xtd::foreground_color(xtd::console_color::dark_green) << "SUCCEED " << xtd::reset_color() << assert_unit_tests::register_assert_unit_test::assert_unit_tests.size() << " tests." << std::endl;
-      if (ignore_test_count) std::cout << std::endl << "You have " << ignore_test_count << " ignored test" << (ignore_test_count < 2 ? "" : "s") << std::endl;
-      std::cout << std::endl;
-      return 0;
+        return 0;
+      }));
     }
     
     std::function<void(const std::string&)> method;
