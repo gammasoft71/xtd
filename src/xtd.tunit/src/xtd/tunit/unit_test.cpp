@@ -1,9 +1,6 @@
 #include "../../../include/xtd/tunit/unit_test.h"
 #include <xtd/random>
-
-#define __XTD_CORE_INTERNAL__
-#include <xtd/internal/__show_generic_exception_message>
-#undef __XTD_CORE_INTERNAL__
+#include <xtd/startup>
 
 #if defined(_WIN32)
 __declspec(dllimport) extern int __argc;
@@ -133,7 +130,7 @@ vector<ustring> unit_test::succeed_test_names() const noexcept {
 }
 
 int32 unit_test::run() noexcept {
-  try {
+  return startup::safe_run(delegate<int()>([this] {
     if (parse_arguments(arguments))
       return settings::default_settings().exit_status();
     
@@ -199,13 +196,7 @@ int32 unit_test::run() noexcept {
     if (settings::default_settings().output_xml()) write_tests_xml();
     
     return settings::default_settings().exit_status();
-  } catch (const std::exception& exception) {
-    __show_generic_exception_message__(exception);
-    return EXIT_FAILURE;
-  } catch (...) {
-    __show_generic_exception_message__();
-    return EXIT_FAILURE;
-  }
+  }));
 }
 
 int32 unit_test::count_tests(int32 count) {
