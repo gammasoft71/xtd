@@ -32,7 +32,7 @@ namespace xtd {
       /// @param os The ostream to write events.
       /// @param argc Argument count from main method.
       /// @param argv Arguments array from main method.
-      ostream_unit_test(std::ostream& os, int argc, char* argv[]);
+      ostream_unit_test(std::ostream& os, int argc, char* argv[]) noexcept;
       /// @}
       
       /// @name Public Properties
