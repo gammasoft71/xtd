@@ -27,7 +27,9 @@ namespace assert_unit_tests {
       return std::make_pair(output_stream.str(), result);
     }
     
-    static int run_all_tests() {
+    static int run_all_tests() noexcept {
+      xtd::system_exception::enable_stack_trace(false);
+      xtd::tunit::test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<xtd::intptr>("internal_tests");
       std::cout << "Start unit tests" << std::endl;
       try {
         for (auto assert_unit_test : assert_unit_tests::register_assert_unit_test::assert_unit_tests)
