@@ -1,5 +1,5 @@
-#include <xtd/tunit/tunit_main>
+#include <xtd/tunit/console_unit_test>
 
 auto main() -> int {
-  return xtd::startup::safe_run(tunit_main_);
+  return xtd::tunit::console_unit_test {}.run();
 }
