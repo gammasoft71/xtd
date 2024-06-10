@@ -69,7 +69,7 @@ void ostream_unit_test::write_help() {
   console::reset_color();
   os_ << "      Run only the tests whose name matches one of the positive patterns but" << endl;
   os_ << "      none of the negative patterns. '?' matches any single character; '*'" << endl;
-  os_ << "      matches any substring; ':' separates two patterns." << endl;
+  os_ << "      matches any substring; '|' separates two patterns." << endl;
   console::foreground_color(console_color::dark_green);
   os_ << "  --also_run_ignored_tests" << endl;
   console::reset_color();
