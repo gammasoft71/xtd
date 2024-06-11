@@ -15,6 +15,17 @@ file_settings::file_settings(iostream& stream) : stream_ {&stream} {
   load(*stream_);
 }
 
+file_settings::~file_settings() {
+  if (auto_save_) save();
+}
+
+bool file_settings::auto_save() const noexcept {
+  return auto_save_;
+}
+void file_settings::auto_save(bool value) noexcept {
+  auto_save_ = value;
+}
+
 const xtd::ustring& file_settings::file_path() const noexcept {
   return file_path_;
 }
@@ -45,6 +56,10 @@ file_settings::string_vector file_settings::sections() const noexcept {
   for (auto [section, key_value] : section_key_values_)
     sections.push_back(section);
   return sections;
+}
+
+optional<reference_wrapper<iostream>> file_settings::stream() const noexcept {
+  return stream_ ? optional<reference_wrapper<iostream>> {} : optional<reference_wrapper<iostream>> {*stream_};
 }
 
 bool file_settings::equals(const file_settings& obj) const noexcept {
@@ -102,12 +117,12 @@ void file_settings::remove_all_keys(const ustring& section) noexcept {
 void file_settings::reset() {
   section_key_values_.clear();
   if (!ustring::is_empty(file_path_) && file::exists(file_path_)) file::remove(file_path_);
-  if (stream_ != nullptr) stream_writer(*stream_).write("");
+  if (stream_) stream_writer(*stream_).write("");
 }
 
 void file_settings::save() {
   if (!ustring::is_empty(file_path_)) save_as(file_path_);
-  if (stream_ != nullptr) save_as(*stream_);
+  if (stream_) save_as(*stream_);
 }
 
 void file_settings::save_as(const xtd::ustring& file_path) {
