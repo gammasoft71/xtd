@@ -1,5 +1,6 @@
 #include "../../../include/xtd/configuration/file_settings.h"
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::configuration;
 using namespace xtd::io;
@@ -7,6 +8,11 @@ using namespace xtd::io;
 file_settings::file_settings(const ustring& file_path) : file_path_ {path::get_full_path(file_path)} {
   if (ustring::is_empty(file_path_) || !file::exists(file_path_)) return;
   load(file_path_);
+}
+
+file_settings::file_settings(iostream& stream) : stream_ {&stream} {
+  if (stream.bad() || stream_->peek() == EOF) return;
+  load(*stream_);
 }
 
 const xtd::ustring& file_settings::file_path() const noexcept {
@@ -63,6 +69,10 @@ void file_settings::load(const xtd::ustring& file_path) {
   from_string(stream_reader {file_path_}.read_to_end());
 }
 
+void file_settings::load(istream& stream) {
+  from_string(stream_reader {stream}.read_to_end());
+}
+
 ustring file_settings::read(const ustring& key, const ustring& default_value) noexcept {
   return read_string(ustring::empty_string, key, default_value);
 }
@@ -91,19 +101,24 @@ void file_settings::remove_all_keys(const ustring& section) noexcept {
 
 void file_settings::reset() {
   section_key_values_.clear();
-  if (ustring::is_empty(file_path_) || !file::exists(file_path_)) return;
-  file::remove(file_path_);
+  if (!ustring::is_empty(file_path_) && file::exists(file_path_)) file::remove(file_path_);
+  if (stream_ != nullptr) stream_writer(*stream_).write("");
 }
 
 void file_settings::save() {
-  if (ustring::is_empty(file_path_)) return;
-  save_as(file_path_);
+  if (!ustring::is_empty(file_path_)) save_as(file_path_);
+  if (stream_ != nullptr) save_as(*stream_);
 }
 
 void file_settings::save_as(const xtd::ustring& file_path) {
   directory::create_directory(path::get_directory_name(file_path));
-  auto stream = stream_writer {file_path};
-  stream.write(to_string());
+  auto sw = stream_writer {file_path};
+  sw.write(to_string());
+}
+
+void file_settings::save_as(ostream& stream) {
+  auto sw = stream_writer {stream};
+  sw.write(to_string());
 }
 
 ustring file_settings::to_string() const noexcept {

@@ -44,11 +44,16 @@ namespace xtd {
       /// @remarks The xtd::configuration::file_settings::save method has no effect.
       /// @remarks This is equivalent to using the xtd::configuration::file_settings constructor with an empty string as the file path.
       file_settings() noexcept = default;
-      /// @brief Initialize an xtd::configuration::file_settings with file path to load.
-      /// @param file_path the file path to load.
-      /// @remarks When the xtd::configuration::file_settings file is destroyed, the backup is not automatically called up. The backup must be made manually.
+      /// @brief Initialize an xtd::configuration::file_settings with file path to load and save.
+      /// @param file_path the file path to load and save.
+      /// @remarks When the xtd::configuration::file_settings file is destroyed, the xtd::configuration::file_settings::save method is not automatically called up. The xtd::configuration::file_settings::save method must be made manually.
       /// @remarks If the file path is empty, this is equivalent to using the xtd::configuration::file_settings constructor with no parameters.
       explicit file_settings(const xtd::ustring& file_path);
+      /// @brief Initialize an xtd::configuration::file_settings with a stream to load and save.
+      /// @param stream the stream to load and save.
+      /// @remarks When the xtd::configuration::file_settings file is destroyed, the backup is not automatically called up. The backup must be made manually.
+      /// @remarks If the stream is empty, this is equivalent to using the xtd::configuration::file_settings constructor with no parameters.
+      explicit file_settings(std::iostream& stream);
       /// @}
       
       /// @cond
@@ -108,7 +113,10 @@ namespace xtd {
       /// @brief Loads settings from specified file.
       /// @param file_path The file path to load settings.
       void load(const xtd::ustring& file_path);
-      
+      /// @brief Loads settings from specified stream.
+      /// @param stream The stream to load settings.
+      void load(std::istream& stream);
+
       /// @brief Reads a value for specified key in the global section. If not found default value is used.
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
@@ -179,7 +187,11 @@ namespace xtd {
       /// @param file_path The file to save the current settings.
       /// @remarks The settings are saved in the specified settings file.
       void save_as(const xtd::ustring& file_path);
-      
+      /// @brief Save current settings in the specified stream.
+      /// @param stream The stream to save the current settings.
+      /// @remarks The settings are saved in the specified settings stream.
+      void save_as(std::ostream& stream);
+
       /// @brief Returns a xtd::ustring that represents the current setting in [INI format](https://en.wikipedia.org/wiki/INI_file).
       /// @return A string that represents the current setting.
       /// @par Notes to inheritors
@@ -251,6 +263,7 @@ namespace xtd {
 
       std::map<xtd::ustring, string_map> section_key_values_;
       xtd::ustring file_path_;
+      std::iostream* stream_ = nullptr;
     };
   }
 }
