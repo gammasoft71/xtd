@@ -120,10 +120,19 @@ Inheritance diagram for xtd::configuration::file_settings:</div>
 <tr class="memdesc:a42b09b02441dd275b5408fa93f6375d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> without loading a file.  <br /></td></tr>
 <tr class="separator:a42b09b02441dd275b5408fa93f6375d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93de91e02afceaefecf1e10467c39e9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a93de91e02afceaefecf1e10467c39e9c">file_settings</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a>)</td></tr>
-<tr class="memdesc:a93de91e02afceaefecf1e10467c39e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> with file path to load.  <br /></td></tr>
+<tr class="memdesc:a93de91e02afceaefecf1e10467c39e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> with file path to load and save.  <br /></td></tr>
 <tr class="separator:a93de91e02afceaefecf1e10467c39e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5963f01b213ab9d2a4e96773da3741af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a5963f01b213ab9d2a4e96773da3741af">file_settings</a> (std::iostream &amp;<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af82546c530f95cd52cb83be4fbeb4ea2">stream</a>)</td></tr>
+<tr class="memdesc:a5963f01b213ab9d2a4e96773da3741af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> with a stream to load and save.  <br /></td></tr>
+<tr class="separator:a5963f01b213ab9d2a4e96773da3741af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:af10bd5f8fcb3d006e99ab29fbf191b90"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af10bd5f8fcb3d006e99ab29fbf191b90">auto_save</a> () const noexcept</td></tr>
+<tr class="memdesc:af10bd5f8fcb3d006e99ab29fbf191b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether save should be called on the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> destructor.  <br /></td></tr>
+<tr class="separator:af10bd5f8fcb3d006e99ab29fbf191b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a887503e8b428178bd6b47c6683c07f9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a887503e8b428178bd6b47c6683c07f9a">auto_save</a> (bool value) noexcept</td></tr>
+<tr class="memdesc:a887503e8b428178bd6b47c6683c07f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether save should be called on the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> destructor.  <br /></td></tr>
+<tr class="separator:a887503e8b428178bd6b47c6683c07f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d8fc6680c5d965aea0e96b505223df1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a> () const noexcept</td></tr>
 <tr class="memdesc:a9d8fc6680c5d965aea0e96b505223df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file path of the current instance.  <br /></td></tr>
 <tr class="separator:a9d8fc6680c5d965aea0e96b505223df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,6 +151,9 @@ Inheritance diagram for xtd::configuration::file_settings:</div>
 <tr class="memitem:a5a4acbfb781cac70b8ab7854f3bdd62d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad5f96cbc1cba5568e014a9e9c8a5fbbf">string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a5a4acbfb781cac70b8ab7854f3bdd62d">sections</a> () const noexcept</td></tr>
 <tr class="memdesc:a5a4acbfb781cac70b8ab7854f3bdd62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all sections.  <br /></td></tr>
 <tr class="separator:a5a4acbfb781cac70b8ab7854f3bdd62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af82546c530f95cd52cb83be4fbeb4ea2"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::reference_wrapper&lt; std::iostream &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af82546c530f95cd52cb83be4fbeb4ea2">stream</a> () const noexcept</td></tr>
+<tr class="memdesc:af82546c530f95cd52cb83be4fbeb4ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stream of the current instance.  <br /></td></tr>
+<tr class="separator:af82546c530f95cd52cb83be4fbeb4ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a8972971726f41b4043cf99614c4bf1c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a8972971726f41b4043cf99614c4bf1c3">equals</a> (const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> &amp;obj) const noexcept override</td></tr>
@@ -153,6 +165,9 @@ Inheritance diagram for xtd::configuration::file_settings:</div>
 <tr class="memitem:a5213bc5c5b761736d49b8b83b676abca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a5213bc5c5b761736d49b8b83b676abca">load</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a>)</td></tr>
 <tr class="memdesc:a5213bc5c5b761736d49b8b83b676abca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads settings from specified file.  <br /></td></tr>
 <tr class="separator:a5213bc5c5b761736d49b8b83b676abca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a145f74f7845d60797a8b31d861bf3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a8a145f74f7845d60797a8b31d861bf3e">load</a> (std::istream &amp;<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af82546c530f95cd52cb83be4fbeb4ea2">stream</a>)</td></tr>
+<tr class="memdesc:a8a145f74f7845d60797a8b31d861bf3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads settings from specified stream.  <br /></td></tr>
+<tr class="separator:a8a145f74f7845d60797a8b31d861bf3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a25e87fa3c22358fa188d5a92de2816"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a5a25e87fa3c22358fa188d5a92de2816">read</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;key, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;default_value) noexcept</td></tr>
 <tr class="memdesc:a5a25e87fa3c22358fa188d5a92de2816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a value for specified key in the global section. If not found default value is used.  <br /></td></tr>
 <tr class="separator:a5a25e87fa3c22358fa188d5a92de2816"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,6 +203,9 @@ Inheritance diagram for xtd::configuration::file_settings:</div>
 <tr class="memitem:a8e5d81d79b330a519cff35063b406090"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a8e5d81d79b330a519cff35063b406090">save_as</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a>)</td></tr>
 <tr class="memdesc:a8e5d81d79b330a519cff35063b406090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save current settings in the specified file path.  <br /></td></tr>
 <tr class="separator:a8e5d81d79b330a519cff35063b406090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0a4282d9bd0fa08e950711080de298"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a0f0a4282d9bd0fa08e950711080de298">save_as</a> (std::ostream &amp;<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af82546c530f95cd52cb83be4fbeb4ea2">stream</a>)</td></tr>
+<tr class="memdesc:a0f0a4282d9bd0fa08e950711080de298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save current settings in the specified stream.  <br /></td></tr>
+<tr class="separator:a0f0a4282d9bd0fa08e950711080de298"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9caa63d0157322a5a80e19d7db3cb36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ad9caa63d0157322a5a80e19d7db3cb36">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:ad9caa63d0157322a5a80e19d7db3cb36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> that represents the current setting in <a href="https://en.wikipedia.org/wiki/INI_file">INI format</a>.  <br /></td></tr>
 <tr class="separator:ad9caa63d0157322a5a80e19d7db3cb36"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,7 +298,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a42b09b02441dd275b5408fa93f6375d0" name="a42b09b02441dd275b5408fa93f6375d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42b09b02441dd275b5408fa93f6375d0">&#9670;&#160;</a></span>file_settings() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a42b09b02441dd275b5408fa93f6375d0">&#9670;&#160;</a></span>file_settings() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,7 +328,7 @@ This is equivalent to using the <a class="el" href="classxtd_1_1configuration_1_
 </div>
 </div>
 <a id="a93de91e02afceaefecf1e10467c39e9c" name="a93de91e02afceaefecf1e10467c39e9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93de91e02afceaefecf1e10467c39e9c">&#9670;&#160;</a></span>file_settings() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a93de91e02afceaefecf1e10467c39e9c">&#9670;&#160;</a></span>file_settings() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -333,20 +351,125 @@ This is equivalent to using the <a class="el" href="classxtd_1_1configuration_1_
 </table>
 </div><div class="memdoc">
 
-<p>Initialize an <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> with file path to load. </p>
+<p>Initialize an <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> with file path to load and save. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">file_path</td><td>the file path to load. </td></tr>
+    <tr><td class="paramname">file_path</td><td>the file path to load and save. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> file is destroyed, the backup is not automatically called up. The backup must be made manually. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af10bd5f8fcb3d006e99ab29fbf191b90" title="Gets whether save should be called on the xtd::configuration::file_settings destructor.">xtd::configuration::file_settings::auto_save</a> is true the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a69697b6c0561e0f9eb87f038fabd7aea" title="Save current settings.">xtd::configuration::file_settings::save</a> is called on the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> destructor; otherwise not, The <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a69697b6c0561e0f9eb87f038fabd7aea" title="Save current settings.">xtd::configuration::file_settings::save</a> method must be called manually. </dd>
+<dd>
+<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af10bd5f8fcb3d006e99ab29fbf191b90" title="Gets whether save should be called on the xtd::configuration::file_settings destructor.">xtd::configuration::file_settings::auto_save</a> is false by default. </dd>
 <dd>
 If the file path is empty, this is equivalent to using the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> constructor with no parameters. </dd></dl>
 
 </div>
 </div>
+<a id="a5963f01b213ab9d2a4e96773da3741af" name="a5963f01b213ab9d2a4e96773da3741af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5963f01b213ab9d2a4e96773da3741af">&#9670;&#160;</a></span>file_settings() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::configuration::file_settings::file_settings </td>
+          <td>(</td>
+          <td class="paramtype">std::iostream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize an <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> with a stream to load and save. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>the stream to load and save. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af10bd5f8fcb3d006e99ab29fbf191b90" title="Gets whether save should be called on the xtd::configuration::file_settings destructor.">xtd::configuration::file_settings::auto_save</a> is true the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a69697b6c0561e0f9eb87f038fabd7aea" title="Save current settings.">xtd::configuration::file_settings::save</a> is called on the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> destructor; otherwise not, The <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a69697b6c0561e0f9eb87f038fabd7aea" title="Save current settings.">xtd::configuration::file_settings::save</a> method must be called manually. </dd>
+<dd>
+<a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af10bd5f8fcb3d006e99ab29fbf191b90" title="Gets whether save should be called on the xtd::configuration::file_settings destructor.">xtd::configuration::file_settings::auto_save</a> is false by default. </dd>
+<dd>
+If the stream is empty, this is equivalent to using the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> constructor with no parameters. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af10bd5f8fcb3d006e99ab29fbf191b90" name="af10bd5f8fcb3d006e99ab29fbf191b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af10bd5f8fcb3d006e99ab29fbf191b90">&#9670;&#160;</a></span>auto_save() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::configuration::file_settings::auto_save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets whether save should be called on the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> destructor. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a69697b6c0561e0f9eb87f038fabd7aea" title="Save current settings.">xtd::configuration::file_settings::save</a> is called on the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> destructor; otherwise, false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The default is false. </dd></dl>
+
+</div>
+</div>
+<a id="a887503e8b428178bd6b47c6683c07f9a" name="a887503e8b428178bd6b47c6683c07f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a887503e8b428178bd6b47c6683c07f9a">&#9670;&#160;</a></span>auto_save() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::configuration::file_settings::auto_save </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets whether save should be called on the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> destructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true if <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a69697b6c0561e0f9eb87f038fabd7aea" title="Save current settings.">xtd::configuration::file_settings::save</a> is called on the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> destructor; otherwise, false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The default is false. </dd></dl>
+
+</div>
+</div>
 <a id="a8972971726f41b4043cf99614c4bf1c3" name="a8972971726f41b4043cf99614c4bf1c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8972971726f41b4043cf99614c4bf1c3">&#9670;&#160;</a></span>equals()</h2>
 
@@ -578,7 +701,7 @@ If the file path is empty, this is equivalent to using the <a class="el" href="c
 </div>
 </div>
 <a id="a5213bc5c5b761736d49b8b83b676abca" name="a5213bc5c5b761736d49b8b83b676abca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5213bc5c5b761736d49b8b83b676abca">&#9670;&#160;</a></span>load()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5213bc5c5b761736d49b8b83b676abca">&#9670;&#160;</a></span>load() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -597,6 +720,32 @@ If the file path is empty, this is equivalent to using the <a class="el" href="c
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_path</td><td>The file path to load settings. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8a145f74f7845d60797a8b31d861bf3e" name="a8a145f74f7845d60797a8b31d861bf3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a145f74f7845d60797a8b31d861bf3e">&#9670;&#160;</a></span>load() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::configuration::file_settings::load </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads settings from specified stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The stream to load settings. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1089,7 +1238,7 @@ To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1se
 </div>
 </div>
 <a id="a8e5d81d79b330a519cff35063b406090" name="a8e5d81d79b330a519cff35063b406090"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e5d81d79b330a519cff35063b406090">&#9670;&#160;</a></span>save_as()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e5d81d79b330a519cff35063b406090">&#9670;&#160;</a></span>save_as() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1112,6 +1261,33 @@ To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1se
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The settings are saved in the specified settings file. </dd></dl>
+
+</div>
+</div>
+<a id="a0f0a4282d9bd0fa08e950711080de298" name="a0f0a4282d9bd0fa08e950711080de298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0a4282d9bd0fa08e950711080de298">&#9670;&#160;</a></span>save_as() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::configuration::file_settings::save_as </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save current settings in the specified stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The stream to save the current settings. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The settings are saved in the specified settings stream. </dd></dl>
 
 </div>
 </div>
@@ -1140,6 +1316,35 @@ To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1se
 
 <p>Gets all sections. </p>
 <dl class="section return"><dt>Returns</dt><dd>The sections vector. </dd></dl>
+
+</div>
+</div>
+<a id="af82546c530f95cd52cb83be4fbeb4ea2" name="af82546c530f95cd52cb83be4fbeb4ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af82546c530f95cd52cb83be4fbeb4ea2">&#9670;&#160;</a></span>stream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; std::reference_wrapper&lt; std::iostream &gt; &gt; xtd::configuration::file_settings::stream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the stream of the current instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>The stream of the current instance. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Don't manipulate the stream yourself, otherwise the expected result may be undefined. </dd></dl>
 
 </div>
 </div>
@@ -1383,7 +1588,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 2 2024 22:38:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jun 11 2024 21:40:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
