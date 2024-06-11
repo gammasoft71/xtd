@@ -60,11 +60,21 @@ namespace xtd {
       file_settings(file_settings&&) noexcept = default;
       file_settings(const file_settings&) noexcept = default;
       file_settings& operator =(const file_settings&) noexcept = default;
+      ~file_settings();
       /// @endcond
       
       /// @name Public Properties
       
       /// @{
+      /// @brief Gets whether save should be called on the xtd::configuration::file_settings destructor.
+      /// @return true if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
+      /// @remarks The default is false.
+      bool auto_save() const noexcept;
+      /// @brief Sets whether save should be called on the xtd::configuration::file_settings destructor.
+      /// @param value true if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
+      /// @remarks The default is false.
+      void auto_save(bool value) noexcept;
+
       /// @brief Gets the file path of the current instance.
       /// @return The file path of the current instance.
       /// @remarks If no file the property can be return xtd::ustring::empty_string.
@@ -94,6 +104,11 @@ namespace xtd {
       /// @brief Gets all sections.
       /// @return The sections vector.
       string_vector sections() const noexcept;
+      
+      /// @brief Gets the stream of the current instance.
+      /// @return The stream of the current instance.
+      /// @warning Don't manipulate the stream yourself, otherwise the expected result may be undefined.
+      std::optional<std::reference_wrapper<std::iostream>> stream() const noexcept;
       /// @}
       
       /// @name Public Methods
@@ -261,8 +276,9 @@ namespace xtd {
       xtd::ustring read_string(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& default_value) noexcept;
       void write_string(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& value) noexcept;
 
-      std::map<xtd::ustring, string_map> section_key_values_;
+      bool auto_save_ = false;
       xtd::ustring file_path_;
+      std::map<xtd::ustring, string_map> section_key_values_;
       std::iostream* stream_ = nullptr;
     };
   }
