@@ -17,11 +17,10 @@ ustring test_class::name() const noexcept {
 }
 
 size_t test_class::test_count() const noexcept {
-  if (test_count_ != static_cast<size_t>(-1)) return test_count_;
-  test_count_ = 0;
+  auto count = 0_z;
   for (auto method : tests_)
-    if (settings::default_settings().is_match_test_name(name(), method.name())) ++test_count_;
-  return test_count_;
+    if (settings::default_settings().is_match_test_name(name(), method.name())) count++;
+  return count;
 }
 
 size_t test_class::aborted_test_count() const noexcept {
