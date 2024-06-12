@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::configuration;
 using namespace xtd::io;
 
-file_settings::file_settings(const ustring& file_path) : file_path_ {path::get_full_path(file_path)} {
+file_settings::file_settings(const ustring& file_path) : file_path_ {file_path != ustring::empty_string ? path::get_full_path(file_path) : ustring::empty_string} {
   if (ustring::is_empty(file_path_) || !file::exists(file_path_)) return;
   load(file_path_);
 }
