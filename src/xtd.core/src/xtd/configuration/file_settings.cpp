@@ -59,7 +59,7 @@ file_settings::string_vector file_settings::sections() const noexcept {
 }
 
 optional<reference_wrapper<iostream>> file_settings::stream() const noexcept {
-  return stream_ ? optional<reference_wrapper<iostream>> {} : optional<reference_wrapper<iostream>> {*stream_};
+  return stream_ ? optional<reference_wrapper<iostream>> {*stream_} : optional<reference_wrapper<iostream>> {};
 }
 
 bool file_settings::equals(const file_settings& obj) const noexcept {
