@@ -71,8 +71,10 @@ void file_settings::from_string(const xtd::ustring& text) {
   for (auto line : text.split({10, 13}, string_split_options::remove_empty_entries)) {
     if (ustring::is_empty(line) || line.starts_with(';') || line.starts_with('#')) continue;
     line = line.trim();
-    if (line.starts_with('[') && line.ends_with(']')) section = line.substring(1, line.size() - 2);
-    else {
+    if (line.starts_with('[') && line.ends_with(']')) {
+      section = line.substring(1, line.size() - 2);
+      section_key_values_[section] = {};
+    }else {
       auto key_value = line.split({'='});
       section_key_values_[section][key_value[0].trim().trim('"')] = key_value.size() == 1 ? "" : ustring::join("=", key_value, 1).trim().trim('"');
     }
