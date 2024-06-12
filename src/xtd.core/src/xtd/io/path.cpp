@@ -73,6 +73,7 @@ ustring path::get_file_name_without_extension(const ustring& path) {
 }
 
 ustring path::get_full_path(const ustring& path) {
+  if (ustring::is_empty(path)) throw argument_exception {csf_};
   return native::file_system::get_full_path(path);
 }
 
@@ -81,6 +82,7 @@ vector<char> path::get_invalid_path_chars() noexcept {
 }
 
 ustring path::get_path_root(const ustring& path) {
+  if (ustring::is_empty(path)) throw argument_exception {csf_};
   return is_path_rooted(path) ? path.substr(0, __get_index_path_rooted(path) + 1) : "";
 }
 
