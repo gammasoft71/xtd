@@ -430,11 +430,7 @@ namespace xtd {
       /// @endcode
       template<typename expected_t, typename actual_t>
       static void are_equivalent(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        expected_t expect_sorted = expected;
-        std::sort(expect_sorted.begin(), expect_sorted.end());
-        expected_t actual_sorted = actual;
-        std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
+        if (expected.size() != actual.size() || !std::is_permutation(expected.begin(), expected.end(), actual.begin()))
           fail("equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
@@ -449,11 +445,7 @@ namespace xtd {
       static void are_equivalent(const std::initializer_list<expected_t>& expected, const std::initializer_list<actual_t>& actual, const std::string& message) {are_equal(are_equivalent, actual, message, xtd::diagnostics::stack_frame::empty());}
       template<typename expected_t, typename actual_t>
       static void are_equivalent(const std::initializer_list<expected_t>& expected, const std::initializer_list<actual_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        std::vector<expected_t> expect_sorted = expected;
-        std::sort(expect_sorted.begin(), expect_sorted.end());
-        std::vector<actual_t> actual_sorted = actual;
-        std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
+        if (expected.size() != actual.size() || !std::is_permutation(expected.begin(), expected.end(), actual.begin()))
           fail("equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
@@ -466,11 +458,7 @@ namespace xtd {
       static void are_equivalent(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message) {are_equivalent(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       template<typename collection_t, typename item_t>
       static void are_equivalent(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        collection_t expect_sorted = expected;
-        std::sort(expect_sorted.begin(), expect_sorted.end());
-        std::vector<item_t> actual_sorted = actual;
-        std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
+        if (expected.size() != actual.size() || !std::is_permutation(expected.begin(), expected.end(), actual.begin()))
           fail("equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
@@ -483,11 +471,7 @@ namespace xtd {
       static void are_equivalent(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message) {are_equivalent(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       template<typename item_t, typename collection_t>
       static void are_equivalent(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        std::vector<item_t> expect_sorted = expected;
-        std::sort(expect_sorted.begin(), expect_sorted.end());
-        collection_t actual_sorted = actual;
-        std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == false)
+        if (expected.size() != actual.size() || !std::is_permutation(expected.begin(), expected.end(), actual.begin()))
           fail("equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
@@ -646,11 +630,7 @@ namespace xtd {
       /// @endcode
       template<typename expected_t, typename actual_t>
       static void are_not_equivalent(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        expected_t expect_sorted = expected;
-        std::sort(expect_sorted.begin(), expect_sorted.end());
-        expected_t actual_sorted = actual;
-        std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
+        if (expected.size() == actual.size() && std::is_permutation(expected.begin(), expected.end(), actual.begin()))
           fail("not equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
@@ -665,11 +645,7 @@ namespace xtd {
       static void are_not_equivalent(const std::initializer_list<expected_t>& expected, const std::initializer_list<actual_t>& actual, const std::string& message) {are_not_equivalent(are_equivalent, actual, message, xtd::diagnostics::stack_frame::empty());}
       template<typename expected_t, typename actual_t>
       static void are_not_equivalent(const std::initializer_list<expected_t>& expected, const std::initializer_list<actual_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        std::vector<expected_t> expect_sorted = expected;
-        std::sort(expect_sorted.begin(), expect_sorted.end());
-        std::vector<actual_t> actual_sorted = actual;
-        std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
+        if (expected.size() == actual.size() && std::is_permutation(expected.begin(), expected.end(), actual.begin()))
           fail("not equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
@@ -682,11 +658,7 @@ namespace xtd {
       static void are_not_equivalent(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message) {are_not_equivalent(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       template<typename collection_t, typename item_t>
       static void are_not_equivalent(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        collection_t expect_sorted = expected;
-        std::sort(expect_sorted.begin(), expect_sorted.end());
-        std::vector<item_t> actual_sorted = actual;
-        std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
+        if (expected.size() == actual.size() && std::is_permutation(expected.begin(), expected.end(), actual.begin()))
           fail("not equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
@@ -699,11 +671,7 @@ namespace xtd {
       static void are_not_equivalent(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message) {are_not_equivalent(expected, actual, message, xtd::diagnostics::stack_frame::empty());}
       template<typename item_t, typename collection_t>
       static void are_not_equivalent(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        std::vector<item_t> expect_sorted = expected;
-        std::sort(expect_sorted.begin(), expect_sorted.end());
-        collection_t actual_sorted = actual;
-        std::sort(actual_sorted.begin(), actual_sorted.end());
-        if (std::equal(actual_sorted.begin(), actual_sorted.end(), expect_sorted.begin(), expect_sorted.end()) == true)
+        if (expected.size() == actual.size() && std::is_permutation(expected.begin(), expected.end(), actual.begin()))
           fail("not equivalent " + join_items(expected), join_items(actual), message, stack_frame);
         else
           assert::succeed(message, stack_frame);
