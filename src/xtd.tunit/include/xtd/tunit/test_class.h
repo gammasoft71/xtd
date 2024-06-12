@@ -146,7 +146,6 @@ namespace xtd {
       xtd::tunit::test test_cleanup_;
       xtd::tunit::test test_initialize_;
       std::vector<xtd::tunit::test> tests_;
-      mutable size_t test_count_ = static_cast<size_t>(-1);
     };
   }
 }
