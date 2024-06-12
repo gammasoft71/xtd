@@ -46,12 +46,14 @@ namespace xtd {
       file_settings() noexcept = default;
       /// @brief Initialize an xtd::configuration::file_settings with file path to load and save.
       /// @param file_path the file path to load and save.
-      /// @remarks When the xtd::configuration::file_settings file is destroyed, the xtd::configuration::file_settings::save method is not automatically called up. The xtd::configuration::file_settings::save method must be made manually.
+      /// @remarks If the xtd::configuration::file_settings::auto_save is true the xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise not, The xtd::configuration::file_settings::save method must be called manually.
+      /// @remarks xtd::configuration::file_settings::auto_save is false by default.
       /// @remarks If the file path is empty, this is equivalent to using the xtd::configuration::file_settings constructor with no parameters.
       explicit file_settings(const xtd::ustring& file_path);
       /// @brief Initialize an xtd::configuration::file_settings with a stream to load and save.
       /// @param stream the stream to load and save.
-      /// @remarks When the xtd::configuration::file_settings file is destroyed, the backup is not automatically called up. The backup must be made manually.
+      /// @remarks If the xtd::configuration::file_settings::auto_save is true the xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise not, The xtd::configuration::file_settings::save method must be called manually.
+      /// @remarks xtd::configuration::file_settings::auto_save is false by default.
       /// @remarks If the stream is empty, this is equivalent to using the xtd::configuration::file_settings constructor with no parameters.
       explicit file_settings(std::iostream& stream);
       /// @}
