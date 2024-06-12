@@ -644,11 +644,11 @@ namespace xtd {
       
       /// @cond
       template<typename value_t>
-      static void is_empty(const std::initializer_list<value_t>& value) {is_empty(value, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void is_empty(const std::initializer_list<value_t>& values) {is_empty(values, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
       template<typename value_t>
-      static void is_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame) {is_empty(value, xtd::ustring::empty_string, stack_frame);}
+      static void is_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame) {is_empty(values, xtd::ustring::empty_string, stack_frame);}
       template<typename value_t>
-      static void is_empty(const std::initializer_list<value_t>& value, const xtd::ustring& message) {is_empty(value, message, xtd::diagnostics::stack_frame::empty());}
+      static void is_empty(const std::initializer_list<value_t>& values, const xtd::ustring& message) {is_empty(values, message, xtd::diagnostics::stack_frame::empty());}
       template<typename value_t>
       static void is_empty(const std::initializer_list<value_t>& values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (std::empty(values))
@@ -1296,14 +1296,14 @@ namespace xtd {
       
       /// @cond
       template<typename value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& value) {is_not_empty(value, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void is_not_empty(const std::initializer_list<value_t>& values) {is_not_empty(values, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
       template<typename value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame) {is_not_empty(value, xtd::ustring::empty_string, stack_frame);}
+      static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame) {is_not_empty(values, xtd::ustring::empty_string, stack_frame);}
       template<typename value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::ustring& message) {is_not_empty(value, message, xtd::diagnostics::stack_frame::empty());}
+      static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::ustring& message) {is_not_empty(values, message, xtd::diagnostics::stack_frame::empty());}
       template<typename value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
-        if (!std::empty(value))
+      static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+        if (!std::empty(values))
           succeed(message, stack_frame);
         else
           fail("collection not <empty>", "<empty>", message, stack_frame);
