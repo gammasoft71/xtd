@@ -39,7 +39,7 @@ namespace xtd::configuration::tests {
       file_assume::does_not_exist(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
-      assert::are_equal(io::path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
+      assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.keys(), csf_);
       assert::is_empty(fs.sections(), csf_);
@@ -48,43 +48,43 @@ namespace xtd::configuration::tests {
 
     void test_method_(ctor_with_empty_file) {
       auto file_name = "empty_file.ini";
-      io::file::write_all_text(file_name, "");
+      file::write_all_text(file_name, "");
       file_assume::exists(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
-      assert::are_equal(io::path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
+      assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.keys(), csf_);
       assert::is_empty(fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
-      io::file::remove(file_name);
+      file::remove(file_name);
     }
 
     void test_method_(ctor_with_file_containing_one_section) {
       auto file_name = "empty_file.ini";
       auto file_content = "[section1]\n";
-      io::file::write_all_text(file_name, file_content);
+      file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
-      assert::are_equal(io::path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
+      assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.key_values("section1"), csf_);
       assert::is_empty(fs.keys(), csf_);
       assert::is_empty(fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
-      io::file::remove(file_name);
+      file::remove(file_name);
     }
 
     void test_method_(ctor_with_file_containing_many_sections) {
       auto file_name = "empty_file.ini";
       auto file_content = "[section1]\n[section2]\n[section3]\n[section4]\n[section5]\n";
-      io::file::write_all_text(file_name, file_content);
+      file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
-      assert::are_equal(io::path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
+      assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.key_values("section1"), csf_);
       assert::is_empty(fs.key_values("section2"), csf_);
@@ -99,41 +99,41 @@ namespace xtd::configuration::tests {
       assert::is_empty(fs.keys("section5"), csf_);
       collection_assert::are_equivalent({"section1", "section2", "section3", "section4", "section5"}, fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
-      io::file::remove(file_name);
+      file::remove(file_name);
     }
 
     void test_method_(ctor_with_file_containing_one_section_and_one_key_value) {
       auto file_name = "empty_file.ini";
       auto file_content = "[section1]\nkey1=value1\n";
-      io::file::write_all_text(file_name, file_content);
+      file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
-      assert::are_equal(io::path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
+      assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::are_equal(file_settings::string_map {{"key1", "value1"}}, fs.key_values("section1"), csf_);
       assert::is_empty(fs.keys(), csf_);
       collection_assert::are_equivalent({"key1"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
-      io::file::remove(file_name);
+      file::remove(file_name);
     }
 
     void test_method_(ctor_with_file_containing_one_section_and_many_key_values) {
       auto file_name = "empty_file.ini";
       auto file_content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n";
-      io::file::write_all_text(file_name, file_content);
+      file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
-      assert::are_equal(io::path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
+      assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
       assert::is_empty(fs.keys(), csf_);
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
-      io::file::remove(file_name);
+      file::remove(file_name);
     }
 
     void test_method_(ctor_with_file_containing_many_sections_and_many_key_values) {
@@ -143,11 +143,11 @@ namespace xtd::configuration::tests {
       "[section3]\nkey11=value11\nkey12=value12\nkey13=value13\nkey14=value14\nkey15=value15\n"
       "[section4]\nkey16=value16\nkey17=value17\nkey18=value18\nkey19=value19\nkey20=value20\n"
       "[section5]\nkey21=value21\nkey22=value22\nkey23=value23\nkey24=value24\nkey25=value25\n";
-      io::file::write_all_text(file_name, file_content);
+      file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
-      assert::are_equal(io::path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
+      assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
       assert::are_equal(file_settings::string_map {{"key6", "value6"}, {"key7", "value7"}, {"key8", "value8"}, {"key9", "value9"}, {"key10", "value10"}}, fs.key_values("section2"), csf_);
@@ -162,7 +162,7 @@ namespace xtd::configuration::tests {
       collection_assert::are_equivalent({"key21", "key22", "key23", "key24", "key25"}, fs.keys("section5"), csf_);
       collection_assert::are_equivalent({"section1", "section2", "section3", "section4", "section5"}, fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
-      io::file::remove(file_name);
+      file::remove(file_name);
     }
 
     void test_method_(ctor_with_stream_containing_one_section_and_many_key_values) {
@@ -180,7 +180,7 @@ namespace xtd::configuration::tests {
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
       assert::is_true(fs.stream().has_value(), csf_);
-      io::file::remove(file_name);
+      file::remove(file_name);
     }
   };
 }
