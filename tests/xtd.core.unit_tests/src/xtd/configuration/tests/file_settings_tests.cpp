@@ -1,12 +1,15 @@
 #include <xtd/configuration/file_settings>
+#include <xtd/io/file>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert.h>
 #include <xtd/tunit/file_assume>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::configuration;
+using namespace xtd::io;
 using namespace xtd::tunit;
 
 namespace xtd::configuration::tests {
@@ -159,6 +162,24 @@ namespace xtd::configuration::tests {
       collection_assert::are_equivalent({"key21", "key22", "key23", "key24", "key25"}, fs.keys("section5"), csf_);
       collection_assert::are_equivalent({"section1", "section2", "section3", "section4", "section5"}, fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
+      io::file::remove(file_name);
+    }
+
+    void test_method_(ctor_with_stream_containing_one_section_and_many_key_values) {
+      auto file_name = "empty_file.ini";
+      auto file_content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n";
+      file::write_all_text(file_name, file_content);
+      file_assume::exists(file_name);
+      auto stream = file::open(file_name, ios::in|ios::out);
+      auto fs = file_settings {stream};
+      assert::is_false(fs.auto_save(), csf_);
+      assert::is_empty(fs.file_path(), csf_);
+      assert::is_empty(fs.key_values(), csf_);
+      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::is_empty(fs.keys(), csf_);
+      collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
+      collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
+      assert::is_true(fs.stream().has_value(), csf_);
       io::file::remove(file_name);
     }
   };
