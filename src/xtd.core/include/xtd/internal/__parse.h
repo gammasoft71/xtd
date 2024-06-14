@@ -233,4 +233,3 @@ inline value_t __parse_unsigned_number(const std::basic_string<char_t>& s, xtd::
 template<typename value_t>
 value_t __parse_enum(const std::string& str);
 /// @endcond
-

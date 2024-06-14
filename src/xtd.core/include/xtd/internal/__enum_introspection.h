@@ -3,16 +3,20 @@
 #if !defined(__XTD_CORE_INTERNAL__)
 #error "Do not include this file: Internal use only"
 #endif
+/// @endcond
 
 #include "../typeof.h"
 #include "../types.h"
 #include "../ustring.h"
 
+/// @cond
 #if defined(__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)
 #define __enum_introspection__(namespace_name, enum_t, base_t, ...)
 #else
 #include <string_view>
+/// @endcond
 
+/// @cond
 namespace __enumeration_introspection {
   constexpr std::string_view trim(std::string_view view) {
     size_t start = view.find_first_not_of(' ');
