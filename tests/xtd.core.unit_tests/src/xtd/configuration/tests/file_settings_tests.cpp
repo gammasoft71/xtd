@@ -1,7 +1,8 @@
 #include <xtd/configuration/file_settings>
 #include <xtd/io/file>
+#include <xtd/io/file_not_found_exception>
 #include <xtd/tunit/assert>
-#include <xtd/tunit/collection_assert.h>
+#include <xtd/tunit/collection_assert>
 #include <xtd/tunit/file_assume>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -181,6 +182,105 @@ namespace xtd::configuration::tests {
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
       assert::is_true(fs.stream().has_value(), csf_);
       file::remove(file_name);
+    }
+    
+    void test_method_(from_string) {
+      auto fs = file_settings {};
+      fs.from_string("[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n");
+      assert::is_empty(fs.key_values(), csf_);
+      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::is_empty(fs.keys(), csf_);
+      collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
+      collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
+
+      fs.from_string("[section2]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n");
+      assert::is_empty(fs.key_values(), csf_);
+      assert::is_empty(fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section2"), csf_);
+      assert::is_empty(fs.keys(), csf_);
+      assert::is_empty(fs.keys("section1"), csf_);
+      collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section2"), csf_);
+      collection_assert::are_equivalent({"section2"}, fs.sections(), csf_);
+    }
+
+    void test_method_(load_file) {
+      auto file_name = "empty_file.ini";
+      auto file_content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n";
+      file::write_all_text(file_name, file_content);
+      file_assume::exists(file_name);
+      auto fs = file_settings {};
+      fs.load(file_name);
+      assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
+      assert::is_empty(fs.key_values(), csf_);
+      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::is_empty(fs.keys(), csf_);
+      collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
+      collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
+      assert::is_false(fs.stream().has_value(), csf_);
+      file::remove(file_name);
+    }
+
+    void test_method_(load_stream) {
+      auto file_name = "empty_file.ini";
+      auto file_content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n";
+      file::write_all_text(file_name, file_content);
+      file_assume::exists(file_name);
+      auto stream = file::open(file_name, ios::in|ios::out);
+      auto fs = file_settings {stream};
+      assert::is_empty(fs.file_path(), csf_);
+      assert::is_empty(fs.key_values(), csf_);
+      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::is_empty(fs.keys(), csf_);
+      collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
+      collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
+      assert::is_true(fs.stream().has_value(), csf_);
+      file::remove(file_name);
+    }
+
+    void test_method_(load_with_non_existent_file_name) {
+      assert::throws<file_not_found_exception>([] {file_settings {}.load("non_existent_file_name.ini");}, csf_);
+    }
+
+    void test_method_(load_with_invalid_stream) {
+      auto stream = fstream {"non_existent_file_name.ini", ios::in|ios::out};
+      stream.close();
+      assert::throws<io_exception>([&] {file_settings {}.load(stream);}, csf_);
+    }
+    
+    void test_method_(read_key_with_fallback) {
+      auto fs = file_settings {};
+      assert::are_equal("default_value1", fs.read("key1", "default_value1"), csf_);
+      assert::are_equal(42, fs.read("key2", 42), csf_);
+      assert::are_equal("default_value1", fs.read("section1", "key1", "default_value1"), csf_);
+      assert::are_equal(42, fs.read("section1", "key2", 42), csf_);
+    }
+    
+    void test_method_(read_key) {
+      auto fs = file_settings {};
+      fs.from_string("key1=value1\nkey2=84\n[section1]\nkey1=value2\nkey2=21\n");
+      assert::are_equal("value1", fs.read("key1", "default_value1"), csf_);
+      assert::are_equal(84, fs.read("key2", 42), csf_);
+      assert::are_equal("value2", fs.read("section1", "key1", "default_value1"), csf_);
+      assert::are_equal(21, fs.read("section1", "key2", 42), csf_);
+    }
+    
+    void test_method_(read_invalid_key) {
+      auto fs = file_settings {};
+      fs.from_string("key1=value1\n");
+      assert::throws<format_exception>([&] {fs.read("key1", 42);}, csf_);
+    }
+    
+    void test_method_(remove) {
+      auto fs = file_settings {};
+      fs.from_string("key1=value1\nkey2=value2\nkey3=value3\n");
+      collection_assert::are_equivalent({"key1", "key2", "key3"}, fs.keys(), csf_);
+      fs.remove("key2");
+      collection_assert::are_equivalent({"key1", "key3"}, fs.keys(), csf_);
+
+      fs.from_string("[section1]\nkey1=value1\nkey2=value2\nkey3=value3\n");
+      collection_assert::are_equivalent({"key1", "key2", "key3"}, fs.keys("section1"), csf_);
+      fs.remove("section1", "key2");
+      collection_assert::are_equivalent({"key1", "key3"}, fs.keys("section1"), csf_);
     }
   };
 }
