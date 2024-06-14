@@ -68,6 +68,7 @@ bool file_settings::equals(const file_settings& obj) const noexcept {
 }
 
 void file_settings::from_string(const xtd::ustring& text) {
+  section_key_values_.clear();
   auto section = ustring::empty_string;
   for (auto line : text.split({10, 13}, string_split_options::remove_empty_entries)) {
     if (ustring::is_empty(line) || line.starts_with(';') || line.starts_with('#')) continue;
