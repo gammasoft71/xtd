@@ -62,7 +62,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(ctor_with_file_containing_one_section) {
-      auto file_name = "empty_file.ini";
+      auto file_name = "file.ini";
       auto file_content = "[section1]\n";
       file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
@@ -79,7 +79,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(ctor_with_file_containing_many_sections) {
-      auto file_name = "empty_file.ini";
+      auto file_name = "file.ini";
       auto file_content = "[section1]\n[section2]\n[section3]\n[section4]\n[section5]\n";
       file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
@@ -104,7 +104,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(ctor_with_file_containing_one_section_and_one_key_value) {
-      auto file_name = "empty_file.ini";
+      auto file_name = "file.ini";
       auto file_content = "[section1]\nkey1=value1\n";
       file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
@@ -121,7 +121,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(ctor_with_file_containing_one_section_and_many_key_values) {
-      auto file_name = "empty_file.ini";
+      auto file_name = "file.ini";
       auto file_content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n";
       file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
@@ -138,7 +138,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(ctor_with_file_containing_many_sections_and_many_key_values) {
-      auto file_name = "empty_file.ini";
+      auto file_name = "file.ini";
       auto file_content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n"
       "[section2]\nkey6=value6\nkey7=value7\nkey8=value8\nkey9=value9\nkey10=value10\n"
       "[section3]\nkey11=value11\nkey12=value12\nkey13=value13\nkey14=value14\nkey15=value15\n"
@@ -167,7 +167,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(ctor_with_stream_containing_one_section_and_many_key_values) {
-      auto file_name = "empty_file.ini";
+      auto file_name = "file.ini";
       auto file_content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n";
       file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
@@ -204,7 +204,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(load_file) {
-      auto file_name = "empty_file.ini";
+      auto file_name = "file.ini";
       auto file_content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n";
       file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
@@ -221,7 +221,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(load_stream) {
-      auto file_name = "empty_file.ini";
+      auto file_name = "file.ini";
       auto file_content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n";
       file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
@@ -276,11 +276,34 @@ namespace xtd::configuration::tests {
       collection_assert::are_equivalent({"key1", "key2", "key3"}, fs.keys(), csf_);
       fs.remove("key2");
       collection_assert::are_equivalent({"key1", "key3"}, fs.keys(), csf_);
-
+      
       fs.from_string("[section1]\nkey1=value1\nkey2=value2\nkey3=value3\n");
       collection_assert::are_equivalent({"key1", "key2", "key3"}, fs.keys("section1"), csf_);
       fs.remove("section1", "key2");
       collection_assert::are_equivalent({"key1", "key3"}, fs.keys("section1"), csf_);
+    }
+    
+    void test_method_(remove_all_keys) {
+      auto fs = file_settings {};
+      fs.from_string("key1=value1\nkey2=value2\nkey3=value3\n");
+      collection_assert::are_equivalent({"key1", "key2", "key3"}, fs.keys(), csf_);
+      fs.remove_all_keys();
+      collection_assert::is_empty(fs.keys(), csf_);
+      
+      fs.from_string("[section1]\nkey1=value1\nkey2=value2\nkey3=value3\n");
+      collection_assert::are_equivalent({"key1", "key2", "key3"}, fs.keys("section1"), csf_);
+      fs.remove_all_keys("section1");
+      collection_assert::is_empty(fs.keys("section1"), csf_);
+    }
+    
+    void test_method_(reset) {
+      auto fs = file_settings {};
+      fs.from_string("key1=value1\nkey2=value2\nkey3=value3\n[section1]\nkey1=value1\nkey2=value2\nkey3=value3\n");
+      collection_assert::are_equivalent({"key1", "key2", "key3"}, fs.keys(), csf_);
+      collection_assert::are_equivalent({"key1", "key2", "key3"}, fs.keys("section1"), csf_);
+      fs.reset();
+      collection_assert::is_empty(fs.keys(), csf_);
+      collection_assert::is_empty(fs.keys("section1"), csf_);
     }
   };
 }
