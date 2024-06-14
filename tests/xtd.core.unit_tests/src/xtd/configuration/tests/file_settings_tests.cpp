@@ -508,21 +508,21 @@ namespace xtd::configuration::tests {
       "# Section 1\n"
       "[section 1]\n"
       "  key\\ 1 = value\\ \\ 1  # Comment key 1 # hoo\n"
-      "  key 2 = value  2  \n"
-      "  key 3 = value  3  \n"
+      "  key 2 = value==2  \n"
+      "  key 3 = value\\=\\=3  \n"
       "  key 4 = value  4  \n"
       "  key 5 = \"\tvalue  5  \"; Comment key 5;;;;\n"
       "\n"
       "; Section 2###\n"
       "[section 2]; Other comment for section 2\n"
-      "  key 1 = value  6\n"
+      "  \"key 1\" = value  6\n"
       "  key 2 = value  7\n"
       "  key 3 = value  8\n"
       "  key 4 = value  9\n"
       "  key 5 = value 10\n";
       auto fs = file_settings {};
       fs.from_string(content);
-      assert::are_equal(file_settings::string_map {{"key 1", "value  1"}, {"key 2", "value  2"}, {"key 3", "value  3"}, {"key 4", "value  4"}, {"key 5", "\tvalue  5  "}}, fs.key_values("section 1"), csf_);
+      assert::are_equal(file_settings::string_map {{"key 1", "value  1"}, {"key 2", "value==2"}, {"key 3", "value==3"}, {"key 4", "value  4"}, {"key 5", "\tvalue  5  "}}, fs.key_values("section 1"), csf_);
       assert::are_equal(file_settings::string_map {{"key 1", "value  6"}, {"key 2", "value  7"}, {"key 3", "value  8"}, {"key 4", "value  9"}, {"key 5", "value 10"}}, fs.key_values("section 2"), csf_);
       fs.save_as("test.ini");
     }
