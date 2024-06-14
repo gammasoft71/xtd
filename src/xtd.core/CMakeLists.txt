@@ -522,7 +522,31 @@ add_sources(
   include/xtd/diagnostics/trace_source
   include/xtd/diagnostics/trace_switch.h
   include/xtd/diagnostics/trace_switch
+  include/xtd/internal/__as_char.h
+  include/xtd/internal/__as_bool.h
+  include/xtd/internal/__as_wchar.h
+  include/xtd/internal/__as_char8.h
+  include/xtd/internal/__as_char16.h
+  include/xtd/internal/__as_char32.h
+  include/xtd/internal/__as_double.h
+  include/xtd/internal/__as_float.h
+  include/xtd/internal/__as_byte.h
+  include/xtd/internal/__as_int16.h
   include/xtd/internal/__as_enum.h
+  include/xtd/internal/__as_enum
+  include/xtd/internal/__as_uint16.h
+  include/xtd/internal/__as_int64.h
+  include/xtd/internal/__as_uint64.h
+  include/xtd/internal/__as_slong.h
+  include/xtd/internal/__as_int32.h
+  include/xtd/internal/__as_uint32.h
+  include/xtd/internal/__as_sbyte.h
+  include/xtd/internal/__as_ustring.h
+  include/xtd/internal/__as_string.h
+  include/xtd/internal/__as_pointer.h
+  include/xtd/internal/__as_ulong.h
+  include/xtd/internal/__as_decimal.h
+  include/xtd/internal/__as_generic.h
   include/xtd/internal/__binary_formatter.h
   include/xtd/internal/__binary_formatter
   include/xtd/internal/__boolean_formatter.h
