@@ -305,5 +305,57 @@ namespace xtd::configuration::tests {
       collection_assert::is_empty(fs.keys(), csf_);
       collection_assert::is_empty(fs.keys("section1"), csf_);
     }
+
+    void test_method_(save) {
+      auto file_name = "file.ini";
+      auto file_content = "[section1]\nkey1=value1\n";
+      file::write_all_text(file_name, file_content);
+      file_assume::exists(file_name);
+
+      auto fs = file_settings {file_name};
+      fs.write("section1", "key2", "value2");
+      fs.save();
+      
+      fs = file_settings {file_name};
+      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
+      file::remove(file_name);
+    }
+
+    void test_method_(save_as_with_file) {
+      auto file_name = "file.ini";
+      file_assume::does_not_exist(file_name);
+
+      auto fs = file_settings {};
+      fs.from_string("[section1]\nkey1=value1\nkey2=value2\n");
+      
+      fs.save_as(file_name);
+      
+      fs = file_settings {file_name};
+      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
+      file::remove(file_name);
+    }
+
+    void test_method_(save_as_with_stream) {
+      auto file_name = "file.ini";
+      file_assume::does_not_exist(file_name);
+
+      auto fs = file_settings {};
+      fs.from_string("[section1]\nkey1=value1\nkey2=value2\n");
+      
+      auto stream = file::create(file_name);
+      fs.save_as(stream);
+      stream.close();
+      
+      fs = file_settings {file_name};
+      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
+      file::remove(file_name);
+    }
+
+    void test_method_(to_string) {
+      auto content = "[section1]\nkey1=value1\nkey2=value2\nkey3=value3\nkey4=value4\nkey5=value5\n\n[section2]\nkey1=value6\nkey2=value7\nkey3=value8\nkey4=value9\nkey5=value10\n";
+      auto fs = file_settings {};
+      fs.from_string(content);
+      assert::are_equal(content, fs.to_string(), csf_);
+    }
   };
 }
