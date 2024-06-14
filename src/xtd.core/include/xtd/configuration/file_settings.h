@@ -148,7 +148,7 @@ namespace xtd {
       /// @remarks Use xtd::ustring::empty_string for section paramreter to read keys of the global section.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::read (const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& default_value) with xtd::ustring::empty_string paramreter as section parameter.
       template<typename type_t>
-      type_t read(const xtd::ustring& key, const type_t& default_value) noexcept {
+      type_t read(const xtd::ustring& key, const type_t& default_value) {
         return xtd::parse<type_t>(read_string(xtd::ustring::empty_string, key, xtd::ustring::format("{}", default_value)));
       }
       /// @brief Reads a value for specified key in the specified section. If not found default value is used.
@@ -165,7 +165,7 @@ namespace xtd {
       /// @return A string that represent the value associate to the key.
       /// @remarks Use xtd::ustring::empty_string for section paramreter to read keys of the global section.
       template<typename type_t>
-      type_t read(const xtd::ustring& section, const xtd::ustring& key, const type_t& default_value) noexcept {
+      type_t read(const xtd::ustring& section, const xtd::ustring& key, const type_t& default_value) {
         return xtd::parse<type_t>(read_string(section, key, xtd::ustring::format("{}", default_value)));
       }
 
