@@ -206,5 +206,4 @@ inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream
   if (it == __any_stringer__.cend()) return os << "(unregistered)";
   return os << it->second(value);
 }
-
 /// @endcond

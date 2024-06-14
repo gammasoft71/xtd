@@ -17,5 +17,4 @@ struct __format_information {
   std::basic_string<char_t> alignment;
   std::basic_string<char_t> format;
 };
-
 /// @endcond

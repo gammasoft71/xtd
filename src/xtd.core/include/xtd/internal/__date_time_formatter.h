@@ -11,6 +11,7 @@
 #include "__format_exception.h"
 #include "__sprintf.h"
 
+/// @cond
 #if defined(_WIN32)
 inline struct tm* __localtime_s(const time_t* timer, struct tm* buf) noexcept {
   localtime_s(buf, timer);
@@ -22,7 +23,6 @@ inline struct tm* __localtime_s(const time_t* timer, struct tm* buf) noexcept {
 }
 #endif
 
-/// @cond
 template<typename char_t>
 inline std::basic_string<char_t> __to_string(const char_t* fmt, const std::tm& value, const std::locale& loc) {
   std::basic_stringstream<char_t> result;
