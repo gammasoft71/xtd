@@ -1,4 +1,5 @@
 #include "../../../include/xtd/configuration/file_settings.h"
+#include "../../../include/xtd/io/io_exception.h"
 
 using namespace std;
 using namespace xtd;
@@ -11,7 +12,7 @@ file_settings::file_settings(const ustring& file_path) : file_path_ {file_path !
 }
 
 file_settings::file_settings(iostream& stream) : stream_ {&stream} {
-  if (stream.bad() || stream_->peek() == EOF) return;
+  if (!stream.good() || stream_->peek() == EOF) return;
   load(*stream_);
 }
 
@@ -87,6 +88,7 @@ void file_settings::load(const xtd::ustring& file_path) {
 }
 
 void file_settings::load(istream& stream) {
+  if (!stream.good()) throw io_exception {csf_};
   from_string(stream_reader {stream}.read_to_end());
 }
 
