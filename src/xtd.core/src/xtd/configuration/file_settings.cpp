@@ -68,17 +68,34 @@ bool file_settings::equals(const file_settings& obj) const noexcept {
 }
 
 void file_settings::from_string(const xtd::ustring& text) {
+  auto unescaping = [](const ustring& line) {return line.replace("\\\\", "\\").replace("\\\'", "\'").replace("\\\"", "\"").replace("\\0", "\0").replace("\\a", "\a").replace("\\t", "\t").replace("\\r", "\r").replace("\\n", "\n").replace("\\;", ";").replace("\\#", "#").replace("\\=", "=").replace("\\:", ":").replace("\\ ", " ");};
+  auto remove_comment = [](const ustring& line) {
+    auto result = line.trim();
+    auto start_with_section = result.starts_with('[');
+
+    auto last_index = result.last_index_of(start_with_section ? ']' : '"');
+    if (last_index == result.npos) last_index = 0;
+    if (result.index_of_any({'#', ';'}, last_index) != result.npos) result = result.remove(result.index_of_any({'#', ';'}, last_index));
+    return result.trim();
+  };
   section_key_values_.clear();
   auto section = ustring::empty_string;
   for (auto line : text.split({10, 13}, string_split_options::remove_empty_entries)) {
     if (ustring::is_empty(line) || line.starts_with(';') || line.starts_with('#')) continue;
     line = line.trim();
-    if (line.starts_with('[') && line.ends_with(']')) {
-      section = line.substring(1, line.size() - 2);
+    if (line.starts_with('[')) {
+      line = remove_comment(line);
+      if (!line.ends_with(']')) throw format_exception {"Section start with '[' but not end with ']'", csf_};
+      section = unescaping(line.substring(1, line.size() - 2));
       section_key_values_[section] = {};
     }else {
       auto key_value = line.split({'='});
-      section_key_values_[section][key_value[0].trim().trim('"')] = key_value.size() == 1 ? "" : ustring::join("=", key_value, 1).trim().trim('"');
+      if (key_value.size() == 1 ) section_key_values_[section][unescaping(key_value[0].trim().trim('"'))] = "";
+      else {
+        auto value = remove_comment(ustring::join("=", key_value, 1));
+        if (value.starts_with('"') && value.ends_with('"')) value = value.trim('"');
+        section_key_values_[section][unescaping(key_value[0].trim().trim('"'))] = unescaping(value);
+      }
     }
   }
 }
@@ -146,7 +163,7 @@ ustring file_settings::to_string() const noexcept {
   for (auto [section, key_value] : section_key_values_) {
     if (!ustring::is_empty(section)) text += ustring::format("{}[{}]\n", text.size() == 0 ? "" : "\n", section);
     for (auto [key, value] : key_value)
-      text += ustring::format("{}={}\n", key, value);
+      text += ustring::format("{}={}\n", key, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains("#") ? ustring::format("\"{}\"", value) : value);
   }
   return text;
 }
