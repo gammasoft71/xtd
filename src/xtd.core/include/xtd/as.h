@@ -1382,6 +1382,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// ustring value = "42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(xtd::ustring& value) {
+    return xtd::convert::to_boolean(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// string value = "42";
   /// bool result = as<bool>(value);
   /// @endcode
@@ -1389,7 +1410,28 @@ namespace xtd {
   inline bool as<bool>(const std::string& value) {
     return xtd::convert::to_boolean(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(std::string& value) {
+    return xtd::convert::to_boolean(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -1409,6 +1451,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline bool as<bool>(const std::u8string& value) {
+    return xtd::convert::to_boolean(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(std::u8string& value) {
     return xtd::convert::to_boolean(value);
   }
 #endif
@@ -1447,6 +1510,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(std::u16string& value) {
+    return xtd::convert::to_boolean(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// bool result = as<bool>(value);
   /// @endcode
@@ -1454,7 +1538,28 @@ namespace xtd {
   inline bool as<bool>(const std::u32string& value) {
     return xtd::convert::to_boolean(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(std::u32string& value) {
+    return xtd::convert::to_boolean(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -1475,7 +1580,28 @@ namespace xtd {
   inline bool as<bool>(const std::wstring& value) {
     return xtd::convert::to_boolean(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// bool result = as<bool>(value);
+  /// @endcode
+  template<>
+  inline bool as<bool>(std::wstring& value) {
+    return xtd::convert::to_boolean(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -2116,7 +2242,28 @@ namespace xtd {
   inline xtd::byte as<xtd::byte>(const xtd::ustring& value) {
     return xtd::convert::to_byte(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::byte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a byte.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// xtd::byte result = as<xtd::byte>(value);
+  /// @endcode
+  template<>
+  inline xtd::byte as<xtd::byte>(xtd::ustring& value) {
+    return xtd::convert::to_byte(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -2159,7 +2306,28 @@ namespace xtd {
   inline xtd::byte as<xtd::byte>(const std::string& value) {
     return xtd::convert::to_byte(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::byte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// xtd::byte result = as<xtd::byte>(value);
+  /// @endcode
+  template<>
+  inline xtd::byte as<xtd::byte>(std::string& value) {
+    return xtd::convert::to_byte(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -2179,6 +2347,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline xtd::byte as<xtd::byte>(const std::u8string& value) {
+    return xtd::convert::to_byte(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::byte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// xtd::byte result = as<xtd::byte>(value);
+  /// @endcode
+  template<>
+  inline xtd::byte as<xtd::byte>(std::u8string& value) {
     return xtd::convert::to_byte(value);
   }
 #endif
@@ -2217,6 +2406,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// xtd::byte result = as<xtd::byte>(value);
+  /// @endcode
+  template<>
+  inline xtd::byte as<xtd::byte>(std::u16string& value) {
+    return xtd::convert::to_byte(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::byte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// xtd::byte result = as<xtd::byte>(value);
   /// @endcode
@@ -2238,11 +2448,53 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u32string value = U"42";
+  /// xtd::byte result = as<xtd::byte>(value);
+  /// @endcode
+  template<>
+  inline xtd::byte as<xtd::byte>(std::u32string& value) {
+    return xtd::convert::to_byte(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::byte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// wstring value = L"42";
   /// xtd::byte result = as<xtd::byte>(value);
   /// @endcode
   template<>
   inline xtd::byte as<xtd::byte>(const std::wstring& value) {
+    return xtd::convert::to_byte(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::byte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// xtd::byte result = as<xtd::byte>(value);
+  /// @endcode
+  template<>
+  inline xtd::byte as<xtd::byte>(std::wstring& value) {
     return xtd::convert::to_byte(value);
   }
   
@@ -2900,6 +3152,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// ustring value = "42";
+  /// char result = as<char>(value);
+  /// @endcode
+  template<>
+  inline char as<char>(xtd::ustring& value) {
+    return xtd::convert::to_char(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// string value = "42";
   /// char result = as<char>(value);
   /// @endcode
@@ -2907,7 +3180,28 @@ namespace xtd {
   inline char as<char>(const std::string& value) {
     return xtd::convert::to_char(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// char result = as<char>(value);
+  /// @endcode
+  template<>
+  inline char as<char>(std::string& value) {
+    return xtd::convert::to_char(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -2927,6 +3221,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline char as<char>(const std::u8string& value) {
+    return xtd::convert::to_char(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// char result = as<char>(value);
+  /// @endcode
+  template<>
+  inline char as<char>(std::u8string& value) {
     return xtd::convert::to_char(value);
   }
 #endif
@@ -2965,6 +3280,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// char result = as<char>(value);
+  /// @endcode
+  template<>
+  inline char as<char>(std::u16string& value) {
+    return xtd::convert::to_char(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// char result = as<char>(value);
   /// @endcode
@@ -2972,7 +3308,28 @@ namespace xtd {
   inline char as<char>(const std::u32string& value) {
     return xtd::convert::to_char(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// char result = as<char>(value);
+  /// @endcode
+  template<>
+  inline char as<char>(std::u32string& value) {
+    return xtd::convert::to_char(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
@@ -2993,7 +3350,28 @@ namespace xtd {
   inline char as<char>(const std::wstring& value) {
     return xtd::convert::to_char(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// char result = as<char>(value);
+  /// @endcode
+  template<>
+  inline char as<char>(std::wstring& value) {
+    return xtd::convert::to_char(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char object converted from value.
@@ -3647,6 +4025,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// ustring value = "42";
+  /// char8 result = as<char8>(value);
+  /// @endcode
+  template<>
+  inline char8 as<char8>(xtd::ustring& value) {
+    return xtd::convert::to_char8(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char8 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// string value = "42";
   /// char8 result = as<char8>(value);
   /// @endcode
@@ -3654,7 +4053,28 @@ namespace xtd {
   inline char8 as<char8>(const std::string& value) {
     return xtd::convert::to_char8(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char8 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// char8 result = as<char8>(value);
+  /// @endcode
+  template<>
+  inline char8 as<char8>(std::string& value) {
+    return xtd::convert::to_char8(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
@@ -3675,7 +4095,28 @@ namespace xtd {
   inline char8 as<char8>(const std::u8string& value) {
     return xtd::convert::to_char8(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char8 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// char8 result = as<char8>(value);
+  /// @endcode
+  template<>
+  inline char8 as<char8>(std::u8string& value) {
+    return xtd::convert::to_char8(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
@@ -3696,7 +4137,28 @@ namespace xtd {
   inline char8 as<char8>(const std::u16string& value) {
     return xtd::convert::to_char8(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char8 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u16string value = u"42";
+  /// char8 result = as<char8>(value);
+  /// @endcode
+  template<>
+  inline char8 as<char8>(std::u16string& value) {
+    return xtd::convert::to_char8(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
@@ -3717,7 +4179,28 @@ namespace xtd {
   inline char8 as<char8>(const std::u32string& value) {
     return xtd::convert::to_char8(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char8 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// char8 result = as<char8>(value);
+  /// @endcode
+  template<>
+  inline char8 as<char8>(std::u32string& value) {
+    return xtd::convert::to_char8(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
@@ -3738,7 +4221,28 @@ namespace xtd {
   inline char8 as<char8>(const std::wstring& value) {
     return xtd::convert::to_char8(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char8 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// char8 result = as<char8>(value);
+  /// @endcode
+  template<>
+  inline char8 as<char8>(std::wstring& value) {
+    return xtd::convert::to_char8(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
@@ -4392,6 +4896,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// ustring value = "42";
+  /// char16 result = as<char16>(value);
+  /// @endcode
+  template<>
+  inline char16 as<char16>(xtd::ustring& value) {
+    return xtd::convert::to_char16(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// string value = "42";
   /// char16 result = as<char16>(value);
   /// @endcode
@@ -4399,7 +4924,28 @@ namespace xtd {
   inline char16 as<char16>(const std::string& value) {
     return xtd::convert::to_char16(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// char16 result = as<char16>(value);
+  /// @endcode
+  template<>
+  inline char16 as<char16>(std::string& value) {
+    return xtd::convert::to_char16(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -4419,6 +4965,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline char16 as<char16>(const std::u8string& value) {
+    return xtd::convert::to_char16(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// char16 result = as<char16>(value);
+  /// @endcode
+  template<>
+  inline char16 as<char16>(std::u8string& value) {
     return xtd::convert::to_char16(value);
   }
 #endif
@@ -4457,6 +5024,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// char16 result = as<char16>(value);
+  /// @endcode
+  template<>
+  inline char16 as<char16>(std::u16string& value) {
+    return xtd::convert::to_char16(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// char16 result = as<char16>(value);
   /// @endcode
@@ -4464,7 +5052,28 @@ namespace xtd {
   inline char16 as<char16>(const std::u32string& value) {
     return xtd::convert::to_char16(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// char16 result = as<char16>(value);
+  /// @endcode
+  template<>
+  inline char16 as<char16>(std::u32string& value) {
+    return xtd::convert::to_char16(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
@@ -4485,7 +5094,28 @@ namespace xtd {
   inline char16 as<char16>(const std::wstring& value) {
     return xtd::convert::to_char16(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// char16 result = as<char16>(value);
+  /// @endcode
+  template<>
+  inline char16 as<char16>(std::wstring& value) {
+    return xtd::convert::to_char16(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char16 object converted from value.
@@ -5140,6 +5770,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// ustring value = "42";
+  /// char32 result = as<char32>(value);
+  /// @endcode
+  template<>
+  inline char32 as<char32>(xtd::ustring& value) {
+    return xtd::convert::to_char32(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// string value = "42";
   /// char32 result = as<char32>(value);
   /// @endcode
@@ -5147,7 +5798,28 @@ namespace xtd {
   inline char32 as<char32>(const std::string& value) {
     return xtd::convert::to_char32(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// char32 result = as<char32>(value);
+  /// @endcode
+  template<>
+  inline char32 as<char32>(std::string& value) {
+    return xtd::convert::to_char32(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -5167,6 +5839,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline char32 as<char32>(const std::u8string& value) {
+    return xtd::convert::to_char32(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// char32 result = as<char32>(value);
+  /// @endcode
+  template<>
+  inline char32 as<char32>(std::u8string& value) {
     return xtd::convert::to_char32(value);
   }
 #endif
@@ -5205,6 +5898,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// char32 result = as<char32>(value);
+  /// @endcode
+  template<>
+  inline char32 as<char32>(std::u16string& value) {
+    return xtd::convert::to_char32(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// char32 result = as<char32>(value);
   /// @endcode
@@ -5212,7 +5926,28 @@ namespace xtd {
   inline char32 as<char32>(const std::u32string& value) {
     return xtd::convert::to_char32(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// char32 result = as<char32>(value);
+  /// @endcode
+  template<>
+  inline char32 as<char32>(std::u32string& value) {
+    return xtd::convert::to_char32(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
@@ -5233,7 +5968,28 @@ namespace xtd {
   inline char32 as<char32>(const std::wstring& value) {
     return xtd::convert::to_char32(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new char32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// char32 result = as<char32>(value);
+  /// @endcode
+  template<>
+  inline char32 as<char32>(std::wstring& value) {
+    return xtd::convert::to_char32(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char32 object converted from value.
@@ -5888,6 +6644,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// ustring value = "42";
+  /// wchar result = as<wchar>(value);
+  /// @endcode
+  template<>
+  inline wchar as<wchar>(xtd::ustring& value) {
+    return xtd::convert::to_wchar(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new wchar object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// string value = "42";
   /// wchar result = as<wchar>(value);
   /// @endcode
@@ -5895,7 +6672,28 @@ namespace xtd {
   inline wchar as<wchar>(const std::string& value) {
     return xtd::convert::to_wchar(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new wchar object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// wchar result = as<wchar>(value);
+  /// @endcode
+  template<>
+  inline wchar as<wchar>(std::string& value) {
+    return xtd::convert::to_wchar(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -5915,6 +6713,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline wchar as<wchar>(const std::u8string& value) {
+    return xtd::convert::to_wchar(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new wchar object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// wchar result = as<wchar>(value);
+  /// @endcode
+  template<>
+  inline wchar as<wchar>(std::u8string& value) {
     return xtd::convert::to_wchar(value);
   }
 #endif
@@ -5953,6 +6772,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// wchar result = as<wchar>(value);
+  /// @endcode
+  template<>
+  inline wchar as<wchar>(std::u16string& value) {
+    return xtd::convert::to_wchar(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new wchar object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// wchar result = as<wchar>(value);
   /// @endcode
@@ -5960,7 +6800,28 @@ namespace xtd {
   inline wchar as<wchar>(const std::u32string& value) {
     return xtd::convert::to_wchar(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new wchar object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// wchar result = as<wchar>(value);
+  /// @endcode
+  template<>
+  inline wchar as<wchar>(std::u32string& value) {
+    return xtd::convert::to_wchar(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
@@ -5981,7 +6842,28 @@ namespace xtd {
   inline wchar as<wchar>(const std::wstring& value) {
     return xtd::convert::to_wchar(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new wchar object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// wchar result = as<wchar>(value);
+  /// @endcode
+  template<>
+  inline wchar as<wchar>(std::wstring& value) {
+    return xtd::convert::to_wchar(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new wchar object converted from value.
@@ -6636,6 +7518,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// ustring value = "42";
+  /// decimal result = as<decimal>(value);
+  /// @endcode
+  template<>
+  inline decimal as<decimal>(xtd::ustring& value) {
+    return xtd::convert::to_decimal(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new decimal object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// string value = "42";
   /// decimal result = as<decimal>(value);
   /// @endcode
@@ -6643,7 +7546,28 @@ namespace xtd {
   inline decimal as<decimal>(const std::string& value) {
     return xtd::convert::to_decimal(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new decimal object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// decimal result = as<decimal>(value);
+  /// @endcode
+  template<>
+  inline decimal as<decimal>(std::string& value) {
+    return xtd::convert::to_decimal(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -6663,6 +7587,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline decimal as<decimal>(const std::u8string& value) {
+    return xtd::convert::to_decimal(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new decimal object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// decimal result = as<decimal>(value);
+  /// @endcode
+  template<>
+  inline decimal as<decimal>(std::u8string& value) {
     return xtd::convert::to_decimal(value);
   }
 #endif
@@ -6701,6 +7646,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// decimal result = as<decimal>(value);
+  /// @endcode
+  template<>
+  inline decimal as<decimal>(std::u16string& value) {
+    return xtd::convert::to_decimal(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new decimal object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// decimal result = as<decimal>(value);
   /// @endcode
@@ -6708,7 +7674,28 @@ namespace xtd {
   inline decimal as<decimal>(const std::u32string& value) {
     return xtd::convert::to_decimal(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new decimal object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// decimal result = as<decimal>(value);
+  /// @endcode
+  template<>
+  inline decimal as<decimal>(std::u32string& value) {
+    return xtd::convert::to_decimal(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
@@ -6729,7 +7716,28 @@ namespace xtd {
   inline decimal as<decimal>(const std::wstring& value) {
     return xtd::convert::to_decimal(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new decimal object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// decimal result = as<decimal>(value);
+  /// @endcode
+  template<>
+  inline decimal as<decimal>(std::wstring& value) {
+    return xtd::convert::to_decimal(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new decimal object converted from value.
@@ -7384,6 +8392,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// ustring value = "42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(xtd::ustring& value) {
+    return xtd::convert::to_double(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// string value = "42";
   /// double result = as<double>(value);
   /// @endcode
@@ -7391,7 +8420,28 @@ namespace xtd {
   inline double as<double>(const std::string& value) {
     return xtd::convert::to_double(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(std::string& value) {
+    return xtd::convert::to_double(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -7411,6 +8461,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline double as<double>(const std::u8string& value) {
+    return xtd::convert::to_double(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(std::u8string& value) {
     return xtd::convert::to_double(value);
   }
 #endif
@@ -7449,11 +8520,74 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(std::u16string& value) {
+    return xtd::convert::to_double(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// double result = as<double>(value);
   /// @endcode
   template<>
   inline double as<double>(const std::u32string& value) {
+    return xtd::convert::to_double(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(std::u32string& value) {
+    return xtd::convert::to_double(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new double object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// double result = as<double>(value);
+  /// @endcode
+  template<>
+  inline double as<double>(const std::wstring& value) {
     return xtd::convert::to_double(value);
   }
   
@@ -7474,7 +8608,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// @endcode
   template<>
-  inline double as<double>(const std::wstring& value) {
+  inline double as<double>(std::wstring& value) {
     return xtd::convert::to_double(value);
   }
   
@@ -8132,6 +9266,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// ustring value = "42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(xtd::ustring& value) {
+    return xtd::convert::to_single(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// string value = "42";
   /// float result = as<float>(value);
   /// @endcode
@@ -8139,7 +9294,28 @@ namespace xtd {
   inline float as<float>(const std::string& value) {
     return xtd::convert::to_single(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(std::string& value) {
+    return xtd::convert::to_single(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -8159,6 +9335,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline float as<float>(const std::u8string& value) {
+    return xtd::convert::to_single(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(std::u8string& value) {
     return xtd::convert::to_single(value);
   }
 #endif
@@ -8197,6 +9394,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(std::u16string& value) {
+    return xtd::convert::to_single(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// float result = as<float>(value);
   /// @endcode
@@ -8204,7 +9422,28 @@ namespace xtd {
   inline float as<float>(const std::u32string& value) {
     return xtd::convert::to_single(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(std::u32string& value) {
+    return xtd::convert::to_single(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
@@ -8225,7 +9464,28 @@ namespace xtd {
   inline float as<float>(const std::wstring& value) {
     return xtd::convert::to_single(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new float object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// float result = as<float>(value);
+  /// @endcode
+  template<>
+  inline float as<float>(std::wstring& value) {
+    return xtd::convert::to_single(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
@@ -8869,6 +10129,27 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
+  /// @return A new int16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// int16 result = as<int16>(value);
+  /// @endcode
+  template<>
+  inline int16 as<int16>(xtd::ustring& value) {
+    return xtd::convert::to_int16(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new int16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a int16.
@@ -8910,6 +10191,27 @@ namespace xtd {
     return xtd::convert::to_int16(value);
   }
   
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// int16 result = as<int16>(value);
+  /// @endcode
+  template<>
+  inline int16 as<int16>(std::string& value) {
+    return xtd::convert::to_int16(value);
+  }
+  
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -8929,6 +10231,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline int16 as<int16>(const std::u8string& value) {
+    return xtd::convert::to_int16(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// int16 result = as<int16>(value);
+  /// @endcode
+  template<>
+  inline int16 as<int16>(std::u8string& value) {
     return xtd::convert::to_int16(value);
   }
 #endif
@@ -8967,6 +10290,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// int16 result = as<int16>(value);
+  /// @endcode
+  template<>
+  inline int16 as<int16>(std::u16string& value) {
+    return xtd::convert::to_int16(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// int16 result = as<int16>(value);
   /// @endcode
@@ -8974,7 +10318,28 @@ namespace xtd {
   inline int16 as<int16>(const std::u32string& value) {
     return xtd::convert::to_int16(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// int16 result = as<int16>(value);
+  /// @endcode
+  template<>
+  inline int16 as<int16>(std::u32string& value) {
+    return xtd::convert::to_int16(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
@@ -8995,7 +10360,28 @@ namespace xtd {
   inline int16 as<int16>(const std::wstring& value) {
     return xtd::convert::to_int16(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// int16 result = as<int16>(value);
+  /// @endcode
+  template<>
+  inline int16 as<int16>(std::wstring& value) {
+    return xtd::convert::to_int16(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int16 object converted from value.
@@ -9639,6 +11025,27 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
+  /// @return A new int32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// int32 result = as<int32>(value);
+  /// @endcode
+  template<>
+  inline int32 as<int32>(xtd::ustring& value) {
+    return xtd::convert::to_int32(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new int32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a int32.
@@ -9679,7 +11086,28 @@ namespace xtd {
   inline int32 as<int32>(const std::string& value) {
     return xtd::convert::to_int32(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// int32 result = as<int32>(value);
+  /// @endcode
+  template<>
+  inline int32 as<int32>(std::string& value) {
+    return xtd::convert::to_int32(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -9699,6 +11127,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline int32 as<int32>(const std::u8string& value) {
+    return xtd::convert::to_int32(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// int32 result = as<int32>(value);
+  /// @endcode
+  template<>
+  inline int32 as<int32>(std::u8string& value) {
     return xtd::convert::to_int32(value);
   }
 #endif
@@ -9737,6 +11186,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// int32 result = as<int32>(value);
+  /// @endcode
+  template<>
+  inline int32 as<int32>(std::u16string& value) {
+    return xtd::convert::to_int32(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// int32 result = as<int32>(value);
   /// @endcode
@@ -9744,7 +11214,28 @@ namespace xtd {
   inline int32 as<int32>(const std::u32string& value) {
     return xtd::convert::to_int32(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// int32 result = as<int32>(value);
+  /// @endcode
+  template<>
+  inline int32 as<int32>(std::u32string& value) {
+    return xtd::convert::to_int32(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
@@ -9765,7 +11256,28 @@ namespace xtd {
   inline int32 as<int32>(const std::wstring& value) {
     return xtd::convert::to_int32(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// int32 result = as<int32>(value);
+  /// @endcode
+  template<>
+  inline int32 as<int32>(std::wstring& value) {
+    return xtd::convert::to_int32(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int32 object converted from value.
@@ -10409,6 +11921,27 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
+  /// @return A new int64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// int64 result = as<int64>(value);
+  /// @endcode
+  template<>
+  inline int64 as<int64>(xtd::ustring& value) {
+    return xtd::convert::to_int64(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a int64.
@@ -10450,6 +11983,27 @@ namespace xtd {
     return xtd::convert::to_int64(value);
   }
   
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// int64 result = as<int64>(value);
+  /// @endcode
+  template<>
+  inline int64 as<int64>(std::string& value) {
+    return xtd::convert::to_int64(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -10469,6 +12023,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline int64 as<int64>(const std::u8string& value) {
+    return xtd::convert::to_int64(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// int64 result = as<int64>(value);
+  /// @endcode
+  template<>
+  inline int64 as<int64>(std::u8string& value) {
     return xtd::convert::to_int64(value);
   }
 #endif
@@ -10507,6 +12082,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// int64 result = as<int64>(value);
+  /// @endcode
+  template<>
+  inline int64 as<int64>(std::u16string& value) {
+    return xtd::convert::to_int64(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// int64 result = as<int64>(value);
   /// @endcode
@@ -10514,7 +12110,28 @@ namespace xtd {
   inline int64 as<int64>(const std::u32string& value) {
     return xtd::convert::to_int64(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// int64 result = as<int64>(value);
+  /// @endcode
+  template<>
+  inline int64 as<int64>(std::u32string& value) {
+    return xtd::convert::to_int64(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
@@ -10535,7 +12152,28 @@ namespace xtd {
   inline int64 as<int64>(const std::wstring& value) {
     return xtd::convert::to_int64(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new int64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// int64 result = as<int64>(value);
+  /// @endcode
+  template<>
+  inline int64 as<int64>(std::wstring& value) {
+    return xtd::convert::to_int64(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
@@ -11179,6 +12817,27 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
+  /// @return A new slong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// slong result = as<slong>(value);
+  /// @endcode
+  template<>
+  inline slong as<slong>(xtd::ustring& value) {
+    return xtd::convert::to_llong(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a slong.
@@ -11220,6 +12879,27 @@ namespace xtd {
     return xtd::convert::to_llong(value);
   }
   
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new slong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// slong result = as<slong>(value);
+  /// @endcode
+  template<>
+  inline slong as<slong>(std::string& value) {
+    return xtd::convert::to_llong(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -11239,6 +12919,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline slong as<slong>(const std::u8string& value) {
+    return xtd::convert::to_llong(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new slong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// slong result = as<slong>(value);
+  /// @endcode
+  template<>
+  inline slong as<slong>(std::u8string& value) {
     return xtd::convert::to_llong(value);
   }
 #endif
@@ -11277,6 +12978,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// slong result = as<slong>(value);
+  /// @endcode
+  template<>
+  inline slong as<slong>(std::u16string& value) {
+    return xtd::convert::to_llong(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new slong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// slong result = as<slong>(value);
   /// @endcode
@@ -11284,7 +13006,28 @@ namespace xtd {
   inline slong as<slong>(const std::u32string& value) {
     return xtd::convert::to_llong(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new slong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// slong result = as<slong>(value);
+  /// @endcode
+  template<>
+  inline slong as<slong>(std::u32string& value) {
+    return xtd::convert::to_llong(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
@@ -11305,7 +13048,28 @@ namespace xtd {
   inline slong as<slong>(const std::wstring& value) {
     return xtd::convert::to_llong(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new slong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// slong result = as<slong>(value);
+  /// @endcode
+  template<>
+  inline slong as<slong>(std::wstring& value) {
+    return xtd::convert::to_llong(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new slong object converted from value.
@@ -11949,6 +13713,27 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
+  /// @return A new sbyte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// sbyte result = as<sbyte>(value);
+  /// @endcode
+  template<>
+  inline sbyte as<sbyte>(xtd::ustring& value) {
+    return xtd::convert::to_sbyte(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new sbyte object converted from value.
   /// @exception xtd::argument_exception value does not represent a sbyte.
@@ -11990,6 +13775,27 @@ namespace xtd {
     return xtd::convert::to_sbyte(value);
   }
   
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new sbyte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// sbyte result = as<sbyte>(value);
+  /// @endcode
+  template<>
+  inline sbyte as<sbyte>(std::string& value) {
+    return xtd::convert::to_sbyte(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -12009,6 +13815,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline sbyte as<sbyte>(const std::u8string& value) {
+    return xtd::convert::to_sbyte(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new sbyte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// sbyte result = as<sbyte>(value);
+  /// @endcode
+  template<>
+  inline sbyte as<sbyte>(std::u8string& value) {
     return xtd::convert::to_sbyte(value);
   }
 #endif
@@ -12047,6 +13874,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// sbyte result = as<sbyte>(value);
+  /// @endcode
+  template<>
+  inline sbyte as<sbyte>(std::u16string& value) {
+    return xtd::convert::to_sbyte(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new sbyte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// sbyte result = as<sbyte>(value);
   /// @endcode
@@ -12054,7 +13902,28 @@ namespace xtd {
   inline sbyte as<sbyte>(const std::u32string& value) {
     return xtd::convert::to_sbyte(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new sbyte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// sbyte result = as<sbyte>(value);
+  /// @endcode
+  template<>
+  inline sbyte as<sbyte>(std::u32string& value) {
+    return xtd::convert::to_sbyte(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
@@ -12075,7 +13944,28 @@ namespace xtd {
   inline sbyte as<sbyte>(const std::wstring& value) {
     return xtd::convert::to_sbyte(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new sbyte object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// sbyte result = as<sbyte>(value);
+  /// @endcode
+  template<>
+  inline sbyte as<sbyte>(std::wstring& value) {
+    return xtd::convert::to_sbyte(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new sbyte object converted from value.
@@ -12719,6 +14609,27 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
+  /// @return A new uint16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// uint16 result = as<uint16>(value);
+  /// @endcode
+  template<>
+  inline uint16 as<uint16>(xtd::ustring& value) {
+    return xtd::convert::to_uint16(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new uint16 object converted from value.
   /// @exception xtd::argument_exception value does not represent a uint16.
@@ -12760,6 +14671,27 @@ namespace xtd {
     return xtd::convert::to_uint16(value);
   }
   
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// uint16 result = as<uint16>(value);
+  /// @endcode
+  template<>
+  inline uint16 as<uint16>(std::string& value) {
+    return xtd::convert::to_uint16(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -12779,6 +14711,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline uint16 as<uint16>(const std::u8string& value) {
+    return xtd::convert::to_uint16(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// uint16 result = as<uint16>(value);
+  /// @endcode
+  template<>
+  inline uint16 as<uint16>(std::u8string& value) {
     return xtd::convert::to_uint16(value);
   }
 #endif
@@ -12817,6 +14770,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// uint16 result = as<uint16>(value);
+  /// @endcode
+  template<>
+  inline uint16 as<uint16>(std::u16string& value) {
+    return xtd::convert::to_uint16(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// uint16 result = as<uint16>(value);
   /// @endcode
@@ -12824,7 +14798,28 @@ namespace xtd {
   inline uint16 as<uint16>(const std::u32string& value) {
     return xtd::convert::to_uint16(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// uint16 result = as<uint16>(value);
+  /// @endcode
+  template<>
+  inline uint16 as<uint16>(std::u32string& value) {
+    return xtd::convert::to_uint16(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
@@ -12845,7 +14840,28 @@ namespace xtd {
   inline uint16 as<uint16>(const std::wstring& value) {
     return xtd::convert::to_uint16(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint16 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// uint16 result = as<uint16>(value);
+  /// @endcode
+  template<>
+  inline uint16 as<uint16>(std::wstring& value) {
+    return xtd::convert::to_uint16(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint16 object converted from value.
@@ -13489,6 +15505,27 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
+  /// @return A new uint32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// uint32 result = as<uint32>(value);
+  /// @endcode
+  template<>
+  inline uint32 as<uint32>(xtd::ustring& value) {
+    return xtd::convert::to_uint32(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new uint32 object converted from value.
   /// @exception xtd::argument_exception value does not represent a uint32.
@@ -13530,6 +15567,27 @@ namespace xtd {
     return xtd::convert::to_uint32(value);
   }
   
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// uint32 result = as<uint32>(value);
+  /// @endcode
+  template<>
+  inline uint32 as<uint32>(std::string& value) {
+    return xtd::convert::to_uint32(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -13549,6 +15607,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline uint32 as<uint32>(const std::u8string& value) {
+    return xtd::convert::to_uint32(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// uint32 result = as<uint32>(value);
+  /// @endcode
+  template<>
+  inline uint32 as<uint32>(std::u8string& value) {
     return xtd::convert::to_uint32(value);
   }
 #endif
@@ -13587,6 +15666,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// uint32 result = as<uint32>(value);
+  /// @endcode
+  template<>
+  inline uint32 as<uint32>(std::u16string& value) {
+    return xtd::convert::to_uint32(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// uint32 result = as<uint32>(value);
   /// @endcode
@@ -13594,7 +15694,28 @@ namespace xtd {
   inline uint32 as<uint32>(const std::u32string& value) {
     return xtd::convert::to_uint32(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// uint32 result = as<uint32>(value);
+  /// @endcode
+  template<>
+  inline uint32 as<uint32>(std::u32string& value) {
+    return xtd::convert::to_uint32(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
@@ -13615,7 +15736,28 @@ namespace xtd {
   inline uint32 as<uint32>(const std::wstring& value) {
     return xtd::convert::to_uint32(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint32 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// uint32 result = as<uint32>(value);
+  /// @endcode
+  template<>
+  inline uint32 as<uint32>(std::wstring& value) {
+    return xtd::convert::to_uint32(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint32 object converted from value.
@@ -14259,6 +16401,27 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
+  /// @return A new uint64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// uint64 result = as<uint64>(value);
+  /// @endcode
+  template<>
+  inline uint64 as<uint64>(xtd::ustring& value) {
+    return xtd::convert::to_uint64(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new uint64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a uint64.
@@ -14300,6 +16463,27 @@ namespace xtd {
     return xtd::convert::to_uint64(value);
   }
   
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// uint64 result = as<uint64>(value);
+  /// @endcode
+  template<>
+  inline uint64 as<uint64>(std::string& value) {
+    return xtd::convert::to_uint64(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -14319,6 +16503,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline uint64 as<uint64>(const std::u8string& value) {
+    return xtd::convert::to_uint64(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// uint64 result = as<uint64>(value);
+  /// @endcode
+  template<>
+  inline uint64 as<uint64>(std::u8string& value) {
     return xtd::convert::to_uint64(value);
   }
 #endif
@@ -14357,6 +16562,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// uint64 result = as<uint64>(value);
+  /// @endcode
+  template<>
+  inline uint64 as<uint64>(std::u16string& value) {
+    return xtd::convert::to_uint64(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// uint64 result = as<uint64>(value);
   /// @endcode
@@ -14364,7 +16590,28 @@ namespace xtd {
   inline uint64 as<uint64>(const std::u32string& value) {
     return xtd::convert::to_uint64(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// uint64 result = as<uint64>(value);
+  /// @endcode
+  template<>
+  inline uint64 as<uint64>(std::u32string& value) {
+    return xtd::convert::to_uint64(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
@@ -14385,7 +16632,28 @@ namespace xtd {
   inline uint64 as<uint64>(const std::wstring& value) {
     return xtd::convert::to_uint64(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new uint64 object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// uint64 result = as<uint64>(value);
+  /// @endcode
+  template<>
+  inline uint64 as<uint64>(std::wstring& value) {
+    return xtd::convert::to_uint64(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new uint64 object converted from value.
@@ -15029,6 +17297,27 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
+  /// @return A new xtd::ulong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// ustring value = "42";
+  /// xtd::ulong result = as<xtd::ulong>(value);
+  /// @endcode
+  template<>
+  inline xtd::ulong as<xtd::ulong>(xtd::ustring& value) {
+    return xtd::convert::to_ullong(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
   /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::argument_exception value does not represent a xtd::ulong.
@@ -15070,6 +17359,27 @@ namespace xtd {
     return xtd::convert::to_ullong(value);
   }
   
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::ulong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// string value = "42";
+  /// xtd::ulong result = as<xtd::ulong>(value);
+  /// @endcode
+  template<>
+  inline xtd::ulong as<xtd::ulong>(std::string& value) {
+    return xtd::convert::to_ullong(value);
+  }
+
 #if defined(__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -15089,6 +17399,27 @@ namespace xtd {
   /// @endcode
   template<>
   inline xtd::ulong as<xtd::ulong>(const std::u8string& value) {
+    return xtd::convert::to_ullong(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::ulong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u8string value = u8"42";
+  /// xtd::ulong result = as<xtd::ulong>(value);
+  /// @endcode
+  template<>
+  inline xtd::ulong as<xtd::ulong>(std::u8string& value) {
     return xtd::convert::to_ullong(value);
   }
 #endif
@@ -15127,6 +17458,27 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// @code
+  /// u16string value = u"42";
+  /// xtd::ulong result = as<xtd::ulong>(value);
+  /// @endcode
+  template<>
+  inline xtd::ulong as<xtd::ulong>(std::u16string& value) {
+    return xtd::convert::to_ullong(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::ulong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
   /// u32string value = U"42";
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// @endcode
@@ -15134,7 +17486,28 @@ namespace xtd {
   inline xtd::ulong as<xtd::ulong>(const std::u32string& value) {
     return xtd::convert::to_ullong(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::ulong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// u32string value = U"42";
+  /// xtd::ulong result = as<xtd::ulong>(value);
+  /// @endcode
+  template<>
+  inline xtd::ulong as<xtd::ulong>(std::u32string& value) {
+    return xtd::convert::to_ullong(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
@@ -15155,7 +17528,28 @@ namespace xtd {
   inline xtd::ulong as<xtd::ulong>(const std::wstring& value) {
     return xtd::convert::to_ullong(value);
   }
-  
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::ulong object converted from value.
+  /// @exception xtd::argument_exception value does not represent a bool.
+  /// @par Header
+  /// @code #include <xtd/as> @endcode
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// @code
+  /// wstring value = L"42";
+  /// xtd::ulong result = as<xtd::ulong>(value);
+  /// @endcode
+  template<>
+  inline xtd::ulong as<xtd::ulong>(std::wstring& value) {
+    return xtd::convert::to_ullong(value);
+  }
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
@@ -18568,7 +20962,9 @@ namespace xtd {
   }
 }
 
+/// @cond
 template<typename new_type_t, typename current_type_t>
 new_type_t* __convert_value__(current_type_t* value) {
   return xtd::as<new_type_t>(value);
 }
+/// @endcond
