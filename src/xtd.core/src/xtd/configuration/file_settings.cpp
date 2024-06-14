@@ -131,7 +131,7 @@ void file_settings::save() {
 }
 
 void file_settings::save_as(const xtd::ustring& file_path) {
-  directory::create_directory(path::get_directory_name(file_path));
+  directory::create_directory(path::get_directory_name(path::get_full_path(file_path)));
   auto sw = stream_writer {file_path};
   sw.write(to_string());
 }
