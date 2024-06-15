@@ -1,6 +1,5 @@
 /// @file
 /// @brief Contains xtd::configuration::ini_file_settings alias
-/// .
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "file_settings.h"
