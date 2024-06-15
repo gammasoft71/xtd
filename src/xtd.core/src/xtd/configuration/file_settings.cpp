@@ -69,36 +69,62 @@ bool file_settings::equals(const file_settings& obj) const noexcept {
 
 void file_settings::from_string(const xtd::ustring& text) {
   auto unescaping = [](const ustring& line) {return line.replace("\\\\", "\\").replace("\\\'", "\'").replace("\\\"", "\"").replace("\\0", "\0").replace("\\a", "\a").replace("\\t", "\t").replace("\\r", "\r").replace("\\n", "\n").replace("\\;", ";").replace("\\#", "#").replace("\\=", "=").replace("\\:", ":").replace("\\ ", " ");};
-  auto remove_comment = [](const ustring& line) {
+  auto separate_comment = [](const ustring& line, ustring& comment) {
     auto result = line.trim();
     auto start_with_section = result.starts_with('[');
 
     auto last_index = result.last_index_of(start_with_section ? ']' : '"');
     if (last_index == result.npos) last_index = 0;
-    if (result.index_of_any({'#', ';'}, last_index) != result.npos) result = result.remove(result.index_of_any({'#', ';'}, last_index));
+    if (result.index_of_any({'#', ';'}, last_index) != result.npos) {
+      comment = result.substring(result.index_of_any({'#', ';'}, last_index));
+      result = result.remove(result.index_of_any({'#', ';'}, last_index));
+    }
     return result.trim();
   };
   section_key_values_.clear();
+  auto comment = ustring::empty_string;
   auto section = ustring::empty_string;
-  for (auto line : text.split({10, 13}, string_split_options::remove_empty_entries)) {
-    if (ustring::is_empty(line) || line.starts_with(';') || line.starts_with('#')) continue;
+  auto comment_break = false;
+  for (auto line : text.split({10, 13})) {
     line = line.trim();
-    if (line.starts_with('[')) {
-      line = remove_comment(line);
-      if (!line.ends_with(']')) throw format_exception {"Section start with '[' but not end with ']'", csf_};
-      section = unescaping(line.substring(1, line.size() - 2));
-      section_key_values_[section] = {};
-    }else {
-      auto key_value = line.split({'='});
-      if (key_value.size() == 1 ) section_key_values_[section][unescaping(key_value[0].trim().trim('"'))] = "";
-      else {
-        auto value = remove_comment(ustring::join("=", key_value, 1));
-        if (value.starts_with('"') && value.ends_with('"')) value = value.trim('"');
-        if (value.starts_with('\'') && value.ends_with('\'')) value = value.trim('\'');
-        section_key_values_[section][unescaping(key_value[0].trim().trim('"'))] = unescaping(value);
+    if (ustring::is_empty(line)) {
+      comment_break = true;
+    } else if (line.starts_with(';') || line.starts_with('#')) {
+      if (section_key_values_.empty() && !comment_break) before_all_comment_ += line + "\n";
+      else comment += line + "\n";
+    } else {
+      comment_break = false;
+      if (line.starts_with('[')) {
+        auto section_comment = ustring::empty_string;
+        line = separate_comment(line, section_comment);
+        if (!line.ends_with(']')) throw format_exception {"Section start with '[' but not end with ']'", csf_};
+        section = unescaping(line.substring(1, line.size() - 2));
+        if (!ustring::is_empty(section_comment)) section_comment_[section] = section_comment;
+        section_key_values_[section] = {};
+        if (!ustring::is_empty(comment)) before_section_comment_[section] = comment;
+        comment = ustring::empty_string;
+      } else {
+        //if (!ustring::is_empty(comment)) after_section_comment_[section] = comment;
+        //comment = ustring::empty_string;
+        auto key_value = line.split({'='});
+        if (key_value.size() == 1 ) {
+          if (!ustring::is_empty(comment)) before_key_comment_[unescaping(key_value[0].trim().trim('"'))] = comment;
+          section_key_values_[section][unescaping(key_value[0].trim().trim('"'))] = "";
+        } else {
+          auto key_comment = ustring::empty_string;
+          auto value = separate_comment(ustring::join("=", key_value, 1), key_comment);
+          if (value.starts_with('"') && value.ends_with('"')) value = value.trim('"');
+          if (value.starts_with('\'') && value.ends_with('\'')) value = value.trim('\'');
+          if (!ustring::is_empty(key_comment)) key_comment_[unescaping(key_value[0].trim().trim('"'))] = key_comment;
+          section_key_values_[section][unescaping(key_value[0].trim().trim('"'))] = unescaping(value);
+          if (!ustring::is_empty(comment)) before_key_comment_[unescaping(key_value[0].trim().trim('"'))] = comment;
+        }
+        comment = ustring::empty_string;
       }
     }
   }
+  
+  if (!ustring::is_empty(comment)) after_all_comment_ += comment;
 }
 
 void file_settings::load(const xtd::ustring& file_path) {
@@ -160,12 +186,33 @@ void file_settings::save_as(ostream& stream) {
 }
 
 ustring file_settings::to_string() const noexcept {
+  auto split_comment = [](const ustring& comments) {
+    auto result = ustring::empty_string;
+    for (auto comment : comments.split({10, 13}))
+      result += ustring::format("{}\n", comment);
+    return result;
+  };
   auto text = ustring::empty_string;
+  if (!ustring::is_empty(before_all_comment_)) 
+    text += split_comment(before_all_comment_);
   for (auto [section, key_value] : section_key_values_) {
-    if (!ustring::is_empty(section)) text += ustring::format("{}[{}]\n", text.size() == 0 ? "" : "\n", section);
-    for (auto [key, value] : key_value)
-      text += ustring::format("{}={}\n", key, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains("#") || value.contains(";") || value.contains("=") ? ustring::format("\"{}\"", value) : value);
+    text += text.size() == 0 ? "" : "\n";
+    auto bs_it = before_section_comment_.find(section);
+    if (bs_it != before_section_comment_.end() && !ustring::is_empty(bs_it->second)) text += split_comment(bs_it->second);
+    auto s_it = section_comment_.find(section);
+    if (!ustring::is_empty(section)) text += ustring::format("[{}]{}\n", section, s_it != section_comment_.end() && !ustring::is_empty(s_it->second) ? ustring::format(" {}", s_it->second) : "");
+    auto as_it = after_section_comment_.find(section);
+    if (as_it != after_section_comment_.end() && !ustring::is_empty(as_it->second)) text += split_comment(as_it->second);
+    for (auto [key, value] : key_value) {
+      auto bk_it = before_key_comment_.find(key);
+      if (bk_it != before_key_comment_.end() && !ustring::is_empty(bk_it->second)) text += split_comment(bk_it->second);
+      auto k_it = key_comment_.find(key);
+      text += ustring::format("{}={}{}\n", key, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains("#") || value.contains(";") || value.contains("=") ? ustring::format("\"{}\"", value) : value, k_it != key_comment_.end() && !ustring::is_empty(k_it->second) ? ustring::format(" {}", k_it->second) : "");
+      auto ak_it = after_key_comment_.find(key);
+      if (ak_it != after_key_comment_.end() && !ustring::is_empty(ak_it->second)) text += split_comment(ak_it->second);
+    }
   }
+  if (!ustring::is_empty(after_all_comment_)) text += "\n" + split_comment(after_all_comment_);
   return text;
 }
 

@@ -278,7 +278,15 @@ namespace xtd {
       void write_string(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& value) noexcept;
 
       bool auto_save_ = false;
+      xtd::ustring after_all_comment_;
+      std::map<xtd::ustring, xtd::ustring> after_key_comment_;
+      std::map<xtd::ustring, xtd::ustring> after_section_comment_;
+      xtd::ustring before_all_comment_;
+      std::map<xtd::ustring, xtd::ustring> before_key_comment_;
+      std::map<xtd::ustring, xtd::ustring> before_section_comment_;
       xtd::ustring file_path_;
+      std::map<xtd::ustring, xtd::ustring> key_comment_;
+      std::map<xtd::ustring, xtd::ustring> section_comment_;
       std::map<xtd::ustring, string_map> section_key_values_;
       std::iostream* stream_ = nullptr;
     };
