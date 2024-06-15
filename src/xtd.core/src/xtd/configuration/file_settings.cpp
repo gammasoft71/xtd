@@ -94,6 +94,7 @@ void file_settings::from_string(const xtd::ustring& text) {
       else {
         auto value = remove_comment(ustring::join("=", key_value, 1));
         if (value.starts_with('"') && value.ends_with('"')) value = value.trim('"');
+        if (value.starts_with('\'') && value.ends_with('\'')) value = value.trim('\'');
         section_key_values_[section][unescaping(key_value[0].trim().trim('"'))] = unescaping(value);
       }
     }
@@ -163,7 +164,7 @@ ustring file_settings::to_string() const noexcept {
   for (auto [section, key_value] : section_key_values_) {
     if (!ustring::is_empty(section)) text += ustring::format("{}[{}]\n", text.size() == 0 ? "" : "\n", section);
     for (auto [key, value] : key_value)
-      text += ustring::format("{}={}\n", key, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains("#") ? ustring::format("\"{}\"", value) : value);
+      text += ustring::format("{}={}\n", key, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains("#") || value.contains(";") || value.contains("=") ? ustring::format("\"{}\"", value) : value);
   }
   return text;
 }
