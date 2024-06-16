@@ -62,7 +62,6 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::ustring with specified allocator.
     /// @param allocator The allocator to use for all memory allocations of this string.
     explicit ustring(const allocator_type& allocator) noexcept;
-    
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
@@ -141,7 +140,6 @@ namespace xtd {
     /// @param index The index of the first substring character where start copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const ustring& str, size_t index, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     ustring(const value_type* str, size_t count);
@@ -150,21 +148,18 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const value_type* str, size_t count, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(const value_type* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const value_type* str, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(value_type* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(value_type* str, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
     ustring(const ustring& str) noexcept;
@@ -172,7 +167,6 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const ustring& str, const allocator_type& allocator) noexcept;
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
     ustring(const std::string& str) noexcept; // Can't be explicit by design.
@@ -180,7 +174,6 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::string& str, const allocator_type& allocator) noexcept;
-    
 #if defined(__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
@@ -189,14 +182,12 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::u8string& str, const allocator_type& allocator) noexcept;
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(const char8* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const char8* str, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(char8* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
@@ -204,7 +195,6 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(char8* str, const allocator_type& allocator);
 #endif
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
     ustring(const std::u16string& str) noexcept; // Can't be explicit by design.
@@ -212,21 +202,18 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::u16string& str, const allocator_type& allocator) noexcept;
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(const char16* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const char16* str, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(char16* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(char16* str, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
     ustring(const std::u32string& str) noexcept; // Can't be explicit by design.
@@ -234,21 +221,18 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::u32string& str, const allocator_type& allocator) noexcept;
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(const char32* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const char32* str, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(char32* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(char32* str, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
     ustring(const std::wstring& str) noexcept; // Can't be explicit by design.
@@ -256,21 +240,18 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::wstring& str, const allocator_type& allocator) noexcept;
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(const wchar* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const wchar* str, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     ustring(wchar* str); // Can't be explicit by design.
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(wchar* str, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string to move.
     /// @param str The string to move.
     ustring(ustring&& str) noexcept;
@@ -278,7 +259,6 @@ namespace xtd {
     /// @param str The string to move.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(ustring&& str, const allocator_type& allocator) noexcept;
-    
     /// @brief Initializes a new instance of xtd::ustring with specified first and last iterators of substring.
     /// @param first The first iterator of substring.
     /// @param last The first iterator of substring.
@@ -290,13 +270,11 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this string.
     template<typename input_iterator_t>
     ustring(input_iterator_t first, input_iterator_t last, const allocator_type& allocator) : std::basic_string<value_type>(first, last, allocator) {}
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string view of substring and allocator.
     /// @param string_view The string view.
     /// @param allocator The allocator to use for all memory allocations of this string.
     template<typename string_view_like_t>
     explicit constexpr ustring(const string_view_like_t& string_view, const allocator_type& allocator = allocator_type()) : std::basic_string<value_type>(string_view, allocator) {}
-    
     /// @brief Initializes a new instance of xtd::ustring with specified string view of substring and allocator.
     /// @param string_view The string view.
     /// @param index The index of the first substring character where start copy.
@@ -304,7 +282,6 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this string.
     template<typename string_view_like_t>
     constexpr ustring(const string_view_like_t& string_view, size_type index, size_type count, const allocator_type& allocator = allocator_type()) : std::basic_string<value_type>(string_view, index, count, allocator) {}
-    
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
     /// @param il The initializer list to fill.
     ustring(std::initializer_list<value_type> il);
@@ -312,7 +289,6 @@ namespace xtd {
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<value_type> il, const allocator_type& allocator);
-    
 #if defined(__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
     /// @param il The initializer list to fill.
@@ -330,7 +306,6 @@ namespace xtd {
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<char16> il, const allocator_type& allocator);
-    
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
     /// @param il The initializer list to fill.
     ustring(std::initializer_list<char32> il);
@@ -347,7 +322,6 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<wchar> il, const allocator_type& allocator);
     /// @}
-    
     /// @cond
     /*
     template<typename type_t>
@@ -484,35 +458,41 @@ namespace xtd {
     /// @{
     int32 compare_to(const ustring& tzi) const noexcept override;
     
+    /// @brief Returns a value indicating whether a specified char occurs within this string.
+    /// @param value The char to seek.
+    /// @return true if the value parameter occurs within this string; otherwise, false.
+    bool contains(value_type value) const noexcept;
+#if defined(__cpp_lib_char8_t)
+    /// @brief Returns a value indicating whether a specified char occurs within this string.
+    /// @param value The char to seek.
+    /// @return true if the value parameter occurs within this string; otherwise, false.
+    bool contains(char8 value) const noexcept;
+#endif
     /// @brief Returns a value indicating whether a specified substring occurs within this string.
     /// @param value The string to seek.
     /// @return true if the value parameter occurs within this string, or if value is the empty string (""); otherwise, false.
     bool contains(const ustring& value) const noexcept;
-    
+
     bool equals(const ustring& tzi) const noexcept;
     
     /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
     bool ends_with(value_type value) const noexcept;
-    
 #if defined(__cpp_lib_char8_t)
     /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
     bool ends_with(char8 value) const noexcept;
 #endif
-    
     /// @brief Determines whether the end of this string matches the specified string.
     /// @param value The string to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
     bool ends_with(const ustring& value) const noexcept;
-    
     /// @brief Determines whether the end of this string instance matches the specified string when compared using the specified culture.
     /// @param ignore_case true to ignore case during the comparison; otherwise, false.
     /// @return bool true if value matches the end of the specified string; otherwise, false.
     bool ends_with(const ustring& value, bool ignore_case) const noexcept;
-    
     /// @brief Determines whether the end of this string matches the specified string when compared using the specified comparison option.
     /// @param comparison_type One of the enumeration values that determines how this string and value are compared.
     /// @return bool true if value matches the end of the specified string; otherwise, false.
@@ -526,31 +506,26 @@ namespace xtd {
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(value_type value) const noexcept;
-    
     /// @brief Reports the index of the first occurrence of the specified string in this string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(const ustring& value) const noexcept;
-    
     /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(value_type value, size_t start_index) const noexcept;
-    
     /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(const ustring& value, size_t start_index) const noexcept;
-    
     /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t index_of(value_type value, size_t start_index, size_t count) const noexcept;
-    
     /// @brief Reports the index of the first occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
@@ -562,20 +537,17 @@ namespace xtd {
     /// @param values An unicode character array containing one or more characters to seek
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     size_t index_of_any(const std::vector<value_type>& values) const noexcept;
-    
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     size_t index_of_any(const std::vector<value_type>& values, size_t start_index) const noexcept;
-    
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     size_t index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept;
-    
     /// @cond
     size_t index_of_any(const std::initializer_list<value_type>& values) const noexcept;
     size_t index_of_any(const std::initializer_list<value_type>& values, size_t start_index) const noexcept;
@@ -600,24 +572,20 @@ namespace xtd {
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t last_index_of(value_type value) const noexcept;
-    
     /// @brief Reports the index of the last occurrence of the specified string in this string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t last_index_of(const ustring& value) const noexcept;
-    
     /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t last_index_of(value_type value, size_t start_index) const noexcept;
-    
     /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t last_index_of(const ustring& value, size_t start_index) const noexcept;
-    
     /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param str A string to find last index of.
     /// @param value An unicode character to seek
@@ -625,32 +593,28 @@ namespace xtd {
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t last_index_of(value_type value, size_t start_index, size_t count) const noexcept;
-    
     /// @brief Reports the index of the last occurrence of the specified character in this string. The search starts at a specified character position and examines a specified number of character positions.
     /// @param value An unicode character to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     size_t last_index_of(const ustring& value, size_t start_index, size_t count) const noexcept;
-    
+
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters.
     /// @param values An unicode character array containing one or more characters to seek
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     size_t last_index_of_any(const std::vector<value_type>& values) const noexcept;
-    
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     size_t last_index_of_any(const std::vector<value_type>& values, size_t start_index) const noexcept;
-    
     /// @brief Reports the index of the last occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param values An unicode character array containing one or more characters to seek
     /// @param start_index The search starting position
     /// @param count The number of character positions to examine.
     /// @return The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<char_t>::npos if no character in values was found.
     size_t last_index_of_any(const std::vector<value_type>& values, size_t start_index, size_t count) const noexcept;
-    
     /// @cond
     size_t last_index_of_any(const std::initializer_list<value_type>& values) const noexcept;
     size_t last_index_of_any(const std::initializer_list<value_type>& values, size_t start_index) const noexcept;
@@ -663,7 +627,6 @@ namespace xtd {
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned string. This means that, when used with right-to-left languages, it pads the right portion of the string..
     ustring pad_left(size_t total_width) const noexcept;
-    
     /// @brief Right-aligns the characters in this string, padding with spaces on the left for a specified total length.
     /// @param total_width The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
@@ -678,7 +641,6 @@ namespace xtd {
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The PadRight(const std::basic_string<char_t>&, int) method pads the end of the returned string. This means that, when used with right-to-left languages, it pads the left portion of the string..
     ustring pad_right(size_t total_width) const noexcept;
-    
     /// @brief Left-aligns the characters in this string, padding with spaces on the right for a specified total length.
     /// @param totalWidth The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar An unicode padding character.
@@ -703,7 +665,6 @@ namespace xtd {
     /// @param start_index The position to begin deleting characters.
     /// @return A new string object that is equivalent to this string less the removed characters.
     ustring remove(size_t start_index) const noexcept;
-    
     /// @brief Deletes all the characters from this string beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
     /// @param count The number of characters to delete.
@@ -715,7 +676,6 @@ namespace xtd {
     /// @param new_char A char_t to replace all occurrences of old_char.
     /// @return A new string equivalent to the specified string but with all instances of old_char replaced with new_char.
     ustring replace(value_type old_char, value_type new_char) const noexcept;
-    
     /// @brief Replaces all occurrences of a specified string in this string with another specified string.
     /// @param old_string A string to be replaced.
     /// @param new_string A string to replace all occurrences of old_string.
@@ -735,20 +695,17 @@ namespace xtd {
     /// @remarks If there are more than count substrings in the specified string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified string are returned in the last element of the return value.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
     std::vector<ustring> split(const std::vector<value_type>& separators, size_t count, string_split_options options) const noexcept;
-    
     /// @brief Splits this string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
     /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
     /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
     std::vector<ustring> split() const noexcept;
-    
     /// @brief Splits this string into substrings that are based on the characters in an array.
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
     /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
     /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
     std::vector<ustring> split(const std::vector<value_type>& separators) const noexcept;
-    
     /// @brief Splits this string into substrings based on the characters in an array. You can specify whether the substrings include empty array elements.
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
     /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
@@ -766,7 +723,6 @@ namespace xtd {
     /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
     std::vector<ustring> split(const std::vector<value_type>& separators, string_split_options options) const noexcept;
-    
     /// @brief Splits this string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
     /// @param count The maximum number of substrings to return.
@@ -782,20 +738,17 @@ namespace xtd {
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     bool starts_with(value_type value) const noexcept;
-    
     /// @brief Determines whether the beginning of this instance of xtd::ustring matches a specified xtd::ustring, ignoring or honoring their case.
     /// @param value A xtd::ustring to compare to.
     /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     bool starts_with(value_type value, bool ignore_case) const noexcept;
-    
     /// @brief Determines whether the beginning of this instance of xtd::ustring matches a specified xtd::ustring.
     /// @param value A xtd::ustring to compare to.
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     bool starts_with(const ustring& value) const noexcept;
-    
     /// @brief Determines whether the beginning of this instance of xtd::ustring matches a specified xtd::ustring, ignoring or honoring their case.
     /// @param value A xtd::ustring to compare to.
     /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
@@ -808,7 +761,6 @@ namespace xtd {
     /// @param start_index The zero-based starting character position of a substring in this instance.
     /// @return A string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
     ustring substring(size_t start_index) const noexcept;
-    
     /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
     /// @param start_index The zero-based starting character position of a substring in this instance.
     /// @param length The number of characters in the substring.
@@ -818,12 +770,10 @@ namespace xtd {
     /// @brief Copies the characters in this instance to a Unicode character array.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::ustring, the returned array is empty and has a zero length.
     std::vector<value_type> to_array() const noexcept;
-    
     /// @brief Copies the characters in this instance to a Unicode character array starting at specified index.
     /// @param start_index The starting position of string to convert.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty xtd::ustring, the returned array is empty and has a zero length.
     std::vector<value_type> to_array(size_t start_index) const noexcept;
-    
     /// @brief Copies the characters in this instance to a Unicode character array starting at specified index with specified length.
     /// @param start_index The starting position of string to convert.
     /// @param length The length of the string to convert
@@ -850,13 +800,11 @@ namespace xtd {
     /// @param trim_char A character to remove.
     /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the start and te and of the specified xtd::ustring.
     ustring trim() const noexcept;
-    
     /// @brief Removes all leading and trailing occurrences of a character specified from the specified xtd::ustring .
     /// @param str xtd::ustring to trim start.
     /// @param trim_char A character to remove.
     /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the start and the end of the specified xtd::ustring.
     ustring trim(value_type trim_char) const noexcept;
-    
     /// @brief Removes all leading and trailing occurrences of a set of characters specified in an array from the specified xtd::ustring.
     /// @param str xtd::ustring to trim end.
     /// @param trim_chars An array of characters to remove.
@@ -868,13 +816,11 @@ namespace xtd {
     /// @param trim_char A character to remove.
     /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified xtd::ustring.
     ustring trim_end() const noexcept;
-    
     /// @brief Removes all trailing occurrences of a character specified from the specified xtd::ustring .
     /// @param str xtd::ustring to trim start.
     /// @param trim_char A character to remove.
     /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified xtd::ustring.
     ustring trim_end(value_type trim_char) const noexcept;
-    
     /// @brief Removes all trailing occurrences of a set of characters specified in an array from the specified xtd::ustring.
     /// @param str xtd::ustring to trim end.
     /// @param trim_chars An array of characters to remove.
@@ -886,13 +832,11 @@ namespace xtd {
     /// @param trim_char A character to remove.
     /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified xtd::ustring.
     ustring trim_start() const noexcept;
-    
     /// @brief Removes all leading occurrences of a character specified from the specified xtd::ustring .
     /// @param str xtd::ustring to trim start.
     /// @param trim_char A character to remove.
     /// @return The xtd::ustring that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified xtd::ustring.
     ustring trim_start(value_type trim_char) const noexcept;
-    
     /// @brief Removes all leading occurrences of a set of characters specified in an array from the specified xtd::ustring.
     /// @param str An xtd::ustring to trim start.
     /// @param trim_chars An array of characters to remove.
@@ -910,7 +854,6 @@ namespace xtd {
     template<typename object_t>
     [[deprecated("Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0")]]
     static ustring class_name() {return get_class_name(full_class_name<object_t>());}
-    
     /// @brief Gets the class name of the specified object.
     /// @return The class name of the specified object.
     /// @remarks For example, the name of the ustring type is ustring.
@@ -918,7 +861,6 @@ namespace xtd {
     template<typename object_t>
     [[deprecated("Replaced by typeof_(object).name() - Will be removed in version 0.4.0")]]
     static ustring class_name(const object_t& object) {return get_class_name(full_class_name(object));}
-    
     /// @brief Gets the class name of the specified object.
     /// @return The class name of the specified object.
     /// @remarks For example, the name of the ustring type is ustring.
@@ -948,7 +890,6 @@ namespace xtd {
     /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
     /// | Greater than zero | str_a follows str_b in the sort order.                        |
     static int32 compare(const ustring& str_a, const ustring& str_b, bool ignore_case) noexcept;
-    
     /// @brief Compares two specified string objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
     /// @param str_b The second string to compare.
@@ -1009,7 +950,6 @@ namespace xtd {
     /// @param str_d The fourth string to concatenate.
     /// @return The concatenation of str_a, str_b, str_c and str_d.
     static ustring concat(const ustring& str_a, const ustring& str_b, const ustring& str_c, const ustring& str_d) noexcept;
-    
     /// @brief Concatenates four specified instances of object.
     /// @param obj_a The first object to concatenate.
     /// @param obj_b The second object to concatenate.
@@ -1020,14 +960,12 @@ namespace xtd {
     static ustring concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c, object_d_t obj_d) noexcept {
       return format("{}{}{}{}", obj_a, obj_b, obj_c, obj_d);
     }
-    
     /// @brief Concatenates three specified instances of string.
     /// @param str_a The first string to concatenate.
     /// @param str_b The second string to concatenate.
     /// @param str_c The third string to concatenate.
     /// @return string The concatenation of str_a, str_b and str_c.
     static ustring concat(const ustring& str_a, const ustring& str_b, const ustring& str_c) noexcept;
-    
     /// @brief Concatenates three specified instances of object.
     /// @param obj_a The first object to concatenate.
     /// @param obj_b The second object to concatenate.
@@ -1037,13 +975,11 @@ namespace xtd {
     static ustring concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c) noexcept {
       return format("{}{}{}", obj_a, obj_b, obj_c);
     }
-    
     /// @brief Concatenates two specified instances of string.
     /// @param str_a The first string to concatenate.
     /// @param str_b The second string to concatenate.
     /// @return string The concatenation of str_a and str_b.
     static ustring concat(const ustring& str_a, const ustring& str_b) noexcept;
-    
     /// @brief Concatenates two specified instances of object.
     /// @param obj_a The first object to concatenate.
     /// @param obj_b The second object to concatenate.
@@ -1052,12 +988,10 @@ namespace xtd {
     static ustring concat(object_a_t obj_a, object_b_t obj_b) noexcept {
       return format("{}{}", obj_a, obj_b);
     }
-    
     /// @brief Concatenates the elements of a specified string array.
     /// @param values An array of string instances.
     /// @return The concatenated elements of values.
     static ustring concat(const std::vector<ustring>& values) noexcept;
-    
     /// @cond
     static ustring concat(const std::vector<const value_type*>& values) noexcept;
 #if defined(__cpp_lib_char8_t)
@@ -1069,7 +1003,6 @@ namespace xtd {
     static ustring concat(const std::initializer_list<const char8*>& values) noexcept;
 #endif
     /// @endcond
-    
     /// @brief Concatenates the string representations of the elements in a specified object array.
     /// @param args An object array that contains the elements to concatenate.
     /// @return The concatenated string representations of the values of the elements in args.
@@ -1080,7 +1013,6 @@ namespace xtd {
         result += format("{}", arg);
       return result;
     }
-    
     /// @cond
     template<typename object_t>
     static ustring concat(const std::initializer_list<object_t>& args) noexcept {
@@ -1090,7 +1022,6 @@ namespace xtd {
       return result;
     }
     /// @endcond
-    
     /// @brief Creates the string representation of a specified object.
     /// @param value The object to represent.
     /// @return The string representation of the value of arg.
@@ -1210,7 +1141,6 @@ namespace xtd {
     template<typename object_t>
     [[deprecated("Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0")]]
     static ustring full_class_name() {return demangle(typeid(object_t).name());}
-    
     /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
     /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
     /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
@@ -1218,7 +1148,6 @@ namespace xtd {
     template<typename object_t>
     [[deprecated("Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0")]]
     static ustring full_class_name(const object_t& object) {return demangle(typeid(object).name());}
-    
     /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
     /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
     /// @remarks For example, the fully qualified name of the ustring type is xtd::ustring.
@@ -1239,7 +1168,6 @@ namespace xtd {
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
     static ustring join(const ustring separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
-    
     /// @brief Concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
     /// @param separator A string separator.
     /// @param values An array of Object.
@@ -1249,7 +1177,6 @@ namespace xtd {
     /// @remarks stream << operator is called on each object to generate the content.
     template<typename collection_t>
     static ustring join(const ustring& separator, const collection_t& values, size_t index) noexcept {return join(separator, values, index, values.size() - index);}
-    
     /// @brief Concatenates a specified separator string between each element of a specified Object array, yielding a single concatenated string.
     /// @param separator A string separator.
     /// @param values An array of Object.
@@ -1271,7 +1198,6 @@ namespace xtd {
       }
       return result;
     }
-    
     /// @cond
     template<typename value_t>
     static ustring join(const ustring& separator, const std::initializer_list<value_t>& values) noexcept {return join(separator, std::vector<value_t>(values));}
