@@ -697,6 +697,16 @@ ustring ustring::demangle(const ustring& name) {
   return native::types::demangle(name);
 }
 
+bool ustring::contains(value_type value) const noexcept {
+  return find(value) != npos;
+}
+
+#if defined(__cpp_lib_char8_t)
+bool ustring::contains(char8 value) const noexcept {
+  return find(value) != npos;
+}
+#endif
+
 bool ustring::contains(const ustring& value) const noexcept {
   return find(value) != npos;
 }
