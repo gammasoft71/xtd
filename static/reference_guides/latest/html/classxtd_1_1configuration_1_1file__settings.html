@@ -84,6 +84,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classxtd_1_1configuration_1_1file__settings-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::configuration::file_settings Class Reference<div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__configuration.html">configuration</a></div></div></div>
 </div><!--header-->
@@ -107,6 +108,15 @@ Inheritance diagram for xtd::configuration::file_settings:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>An <a href="https://en.wikipedia.org/wiki/INI_file">INI file</a> is a configuration file that consists of a text-based content with a structure and syntax comprising key–value pairs for properties, and sections that organize the properties. </dd></dl>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8e9a193c59537c89712387a65a04e628"><td class="memItemLeft" align="right" valign="top"><a id="a8e9a193c59537c89712387a65a04e628" name="a8e9a193c59537c89712387a65a04e628"></a>
+virtual <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><b>convert_comment_to_text</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;text) const noexcept</td></tr>
+<tr class="separator:a8e9a193c59537c89712387a65a04e628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac931fb789ac59d5585d11ad89599d7a8"><td class="memItemLeft" align="right" valign="top"><a id="ac931fb789ac59d5585d11ad89599d7a8" name="ac931fb789ac59d5585d11ad89599d7a8"></a>
+virtual <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><b>convert_text_to_comment</b> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;text) const noexcept</td></tr>
+<tr class="separator:ac931fb789ac59d5585d11ad89599d7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliass</h2></td></tr>
 <tr class="memitem:ac7889c282efd09812795f4645920fe80"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac7889c282efd09812795f4645920fe80">string_map</a> = <a class="el" href="group__collections.html#ga563b341f7aaf8f09a45cf5c52e70bbc8">xtd::collections::specialized::string_map</a></td></tr>
 <tr class="memdesc:ac7889c282efd09812795f4645920fe80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a std::map with the key and the value strongly typed to be strings.  <br /></td></tr>
@@ -133,6 +143,12 @@ Inheritance diagram for xtd::configuration::file_settings:</div>
 <tr class="memitem:a887503e8b428178bd6b47c6683c07f9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a887503e8b428178bd6b47c6683c07f9a">auto_save</a> (bool value) noexcept</td></tr>
 <tr class="memdesc:a887503e8b428178bd6b47c6683c07f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether save should be called on the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> destructor.  <br /></td></tr>
 <tr class="separator:a887503e8b428178bd6b47c6683c07f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b482917489065b242393b4461cb92ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a0b482917489065b242393b4461cb92ca">bottom_file_comment</a> () const noexcept</td></tr>
+<tr class="memdesc:a0b482917489065b242393b4461cb92ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets top file comment text.  <br /></td></tr>
+<tr class="separator:a0b482917489065b242393b4461cb92ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92400afcf029e63b60ebad58bed6dcb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a92400afcf029e63b60ebad58bed6dcb3">bottom_file_comment</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;value) noexcept</td></tr>
+<tr class="memdesc:a92400afcf029e63b60ebad58bed6dcb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets top file comment text.  <br /></td></tr>
+<tr class="separator:a92400afcf029e63b60ebad58bed6dcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d8fc6680c5d965aea0e96b505223df1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a> () const noexcept</td></tr>
 <tr class="memdesc:a9d8fc6680c5d965aea0e96b505223df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file path of the current instance.  <br /></td></tr>
 <tr class="separator:a9d8fc6680c5d965aea0e96b505223df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,6 +170,12 @@ Inheritance diagram for xtd::configuration::file_settings:</div>
 <tr class="memitem:af82546c530f95cd52cb83be4fbeb4ea2"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::reference_wrapper&lt; std::iostream &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#af82546c530f95cd52cb83be4fbeb4ea2">stream</a> () const noexcept</td></tr>
 <tr class="memdesc:af82546c530f95cd52cb83be4fbeb4ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stream of the current instance.  <br /></td></tr>
 <tr class="separator:af82546c530f95cd52cb83be4fbeb4ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05156a465b916a91246a30d96f8a8175"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a05156a465b916a91246a30d96f8a8175">top_file_comment</a> () const noexcept</td></tr>
+<tr class="memdesc:a05156a465b916a91246a30d96f8a8175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets top file comment text.  <br /></td></tr>
+<tr class="separator:a05156a465b916a91246a30d96f8a8175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fcb46b460ee823d1a1da50d3fadcff6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a2fcb46b460ee823d1a1da50d3fadcff6">top_file_comment</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;value) noexcept</td></tr>
+<tr class="memdesc:a2fcb46b460ee823d1a1da50d3fadcff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets top file comment text.  <br /></td></tr>
+<tr class="separator:a2fcb46b460ee823d1a1da50d3fadcff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a8972971726f41b4043cf99614c4bf1c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a8972971726f41b4043cf99614c4bf1c3">equals</a> (const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> &amp;obj) const noexcept override</td></tr>
@@ -467,6 +489,69 @@ If the stream is empty, this is equivalent to using the <a class="el" href="clas
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The default is false. </dd></dl>
+
+</div>
+</div>
+<a id="a0b482917489065b242393b4461cb92ca" name="a0b482917489065b242393b4461cb92ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b482917489065b242393b4461cb92ca">&#9670;&#160;</a></span>bottom_file_comment() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::configuration::file_settings::bottom_file_comment </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets top file comment text. </p>
+<dl class="section return"><dt>Returns</dt><dd>Top file comment textr. </dd></dl>
+
+</div>
+</div>
+<a id="a92400afcf029e63b60ebad58bed6dcb3" name="a92400afcf029e63b60ebad58bed6dcb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92400afcf029e63b60ebad58bed6dcb3">&#9670;&#160;</a></span>bottom_file_comment() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> &amp; xtd::configuration::file_settings::bottom_file_comment </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets top file comment text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Top file comment textr. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
 
 </div>
 </div>
@@ -788,7 +873,7 @@ If the stream is empty, this is equivalent to using the <a class="el" href="clas
 <div class="line"><span class="keyword">auto</span> v1 = fs[<span class="stringliteral">&quot;section1&quot;</span>][<span class="stringliteral">&quot;key1&quot;</span>]; </div>
 <div class="line"><span class="comment">// Is equivalent to call :</span></div>
 <div class="line"><span class="comment">// auto v1 = fs.read(&quot;section1&quot;, &quot;key1&quot;, ustring::empty_string);</span></div>
-<div class="ttc" id="aclassxtd_1_1configuration_1_1file__settings_html"><div class="ttname"><a href="classxtd_1_1configuration_1_1file__settings.html">xtd::configuration::file_settings</a></div><div class="ttdoc">Represents an object for storing and retrieving configuration information using text files in INI for...</div><div class="ttdef"><b>Definition</b> file_settings.h:28</div></div>
+<div class="ttc" id="aclassxtd_1_1configuration_1_1file__settings_html"><div class="ttname"><a href="classxtd_1_1configuration_1_1file__settings.html">xtd::configuration::file_settings</a></div><div class="ttdoc">Represents an object for storing and retrieving configuration information using text files in INI for...</div><div class="ttdef"><b>Definition</b> file_settings.h:27</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1379,6 +1464,84 @@ To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1se
 
 </div>
 </div>
+<a id="a05156a465b916a91246a30d96f8a8175" name="a05156a465b916a91246a30d96f8a8175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05156a465b916a91246a30d96f8a8175">&#9670;&#160;</a></span>top_file_comment() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::configuration::file_settings::top_file_comment </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets top file comment text. </p>
+<dl class="section return"><dt>Returns</dt><dd>Top file comment textr. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Generally used to read descriptions of the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> : authors, copyright, version, etc. </dd></dl>
+
+</div>
+</div>
+<a id="a2fcb46b460ee823d1a1da50d3fadcff6" name="a2fcb46b460ee823d1a1da50d3fadcff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fcb46b460ee823d1a1da50d3fadcff6">&#9670;&#160;</a></span>top_file_comment() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> &amp; xtd::configuration::file_settings::top_file_comment </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets top file comment text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Top file comment textr. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Generally used to write descriptions of the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> : authors, copyright, version, etc. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a05156a465b916a91246a30d96f8a8175" title="Gets top file comment text.">xtd::configuration::file_settings::top_file_comment</a>, <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a07139bea98b8d94ffb72541aba4526de" title="Writes a specified value for specified key in the global section.">xtd::configuration::file_settings::write</a> and <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a69697b6c0561e0f9eb87f038fabd7aea" title="Save current settings.">xtd::configuration::file_settings::save</a> methods <div class="fragment"><div class="line"><span class="keyword">auto</span> file = <a class="code hl_class" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> {};</div>
+<div class="line">file.<a class="code hl_function" href="classxtd_1_1configuration_1_1file__settings.html#a05156a465b916a91246a30d96f8a8175">top_file_comment</a>(<span class="stringliteral">&quot;MyApp fsettings\nCopyright MyCompany&quot;</span>);</div>
+<div class="line">file.write(<span class="stringliteral">&quot;pictures&quot;</span>, <span class="stringliteral">&quot;file_open&quot;</span>, <span class="stringliteral">&quot;symbolic_open.png&quot;</span>)</div>
+<div class="line">file.write(<span class="stringliteral">&quot;pictures&quot;</span>, <span class="stringliteral">&quot;file_save&quot;</span>, <span class="stringliteral">&quot;symbolic_save.png&quot;</span>);</div>
+<div class="line">file.save(<span class="stringliteral">&quot;MyApp.ini&quot;</span>)</div>
+<div class="ttc" id="aclassxtd_1_1configuration_1_1file__settings_html_a05156a465b916a91246a30d96f8a8175"><div class="ttname"><a href="classxtd_1_1configuration_1_1file__settings.html#a05156a465b916a91246a30d96f8a8175">xtd::configuration::file_settings::top_file_comment</a></div><div class="ttdeci">xtd::ustring top_file_comment() const noexcept</div><div class="ttdoc">Gets top file comment text.</div></div>
+</div><!-- fragment --> Results: <div class="fragment"><div class="line"># MyApp fsettings</div>
+<div class="line"># Copyright MyCompany</div>
+<div class="line"> </div>
+<div class="line">[pictures]</div>
+<div class="line">file_open = symbolic_open.png</div>
+<div class="line">file_save = symbolic_save.png</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="a07139bea98b8d94ffb72541aba4526de" name="a07139bea98b8d94ffb72541aba4526de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a07139bea98b8d94ffb72541aba4526de">&#9670;&#160;</a></span>write() <span class="overload">[1/4]</span></h2>
 
@@ -1588,7 +1751,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 14 2024 18:01:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 17 2024 20:53:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

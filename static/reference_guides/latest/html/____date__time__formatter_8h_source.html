@@ -96,17 +96,17 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="____format__exception_8h.html">__format_exception.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="____sprintf_8h.html">__sprintf.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#if defined(_WIN32)</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">inline</span> <span class="keyword">struct </span>tm* __localtime_s(<span class="keyword">const</span> time_t* timer, <span class="keyword">struct</span> tm* buf) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  localtime_s(buf, timer);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordflow">return</span> buf;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">inline</span> <span class="keyword">struct </span>tm* __localtime_s(<span class="keyword">const</span> time_t* timer, <span class="keyword">struct</span> tm* buf) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordflow">return</span> localtime_r(timer, buf);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#if defined(_WIN32)</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">inline</span> <span class="keyword">struct </span>tm* __localtime_s(<span class="keyword">const</span> time_t* timer, <span class="keyword">struct</span> tm* buf) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  localtime_s(buf, timer);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">return</span> buf;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">inline</span> <span class="keyword">struct </span>tm* __localtime_s(<span class="keyword">const</span> time_t* timer, <span class="keyword">struct</span> tm* buf) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">return</span> localtime_r(timer, buf);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t&gt;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __to_string(<span class="keyword">const</span> char_t* fmt, <span class="keyword">const</span> std::tm&amp; value, <span class="keyword">const</span> std::locale&amp; loc) {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  std::basic_stringstream&lt;char_t&gt; result;</div>
@@ -230,7 +230,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 14 2024 18:01:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 17 2024 20:53:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
