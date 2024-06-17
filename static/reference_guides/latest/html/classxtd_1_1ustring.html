@@ -324,6 +324,12 @@ If you want the same mutable string class, you can use xtd::text::ustring_builde
 <tr class="memitem:a1a314847f67dc9eac2dbf5641b27a399"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a1a314847f67dc9eac2dbf5641b27a399">compare_to</a> (const <a class="el" href="classxtd_1_1ustring.html">ustring</a> &amp;tzi) const noexcept override</td></tr>
 <tr class="memdesc:a1a314847f67dc9eac2dbf5641b27a399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
 <tr class="separator:a1a314847f67dc9eac2dbf5641b27a399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382c837c730894233030313753ddbdf1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a382c837c730894233030313753ddbdf1">contains</a> (value_type value) const noexcept</td></tr>
+<tr class="memdesc:a382c837c730894233030313753ddbdf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether a specified char occurs within this string.  <br /></td></tr>
+<tr class="separator:a382c837c730894233030313753ddbdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21f351446d11746852f4bf41f16fd4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#ad21f351446d11746852f4bf41f16fd4f">contains</a> (<a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> value) const noexcept</td></tr>
+<tr class="memdesc:ad21f351446d11746852f4bf41f16fd4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether a specified char occurs within this string.  <br /></td></tr>
+<tr class="separator:ad21f351446d11746852f4bf41f16fd4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea0e43190da2d939a59a911e46302af1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#aea0e43190da2d939a59a911e46302af1">contains</a> (const <a class="el" href="classxtd_1_1ustring.html">ustring</a> &amp;value) const noexcept</td></tr>
 <tr class="memdesc:aea0e43190da2d939a59a911e46302af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether a specified substring occurs within this string.  <br /></td></tr>
 <tr class="separator:aea0e43190da2d939a59a911e46302af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4037,8 +4043,43 @@ template&lt;typename value_t &gt; </div>
 
 </div>
 </div>
+<a id="ad21f351446d11746852f4bf41f16fd4f" name="ad21f351446d11746852f4bf41f16fd4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad21f351446d11746852f4bf41f16fd4f">&#9670;&#160;</a></span>contains() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::ustring::contains </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a value indicating whether a specified char occurs within this string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The char to seek. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the value parameter occurs within this string; otherwise, false. </dd></dl>
+
+</div>
+</div>
 <a id="aea0e43190da2d939a59a911e46302af1" name="aea0e43190da2d939a59a911e46302af1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea0e43190da2d939a59a911e46302af1">&#9670;&#160;</a></span>contains()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0e43190da2d939a59a911e46302af1">&#9670;&#160;</a></span>contains() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4069,6 +4110,41 @@ template&lt;typename value_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the value parameter occurs within this string, or if value is the empty string (""); otherwise, false. </dd></dl>
+
+</div>
+</div>
+<a id="a382c837c730894233030313753ddbdf1" name="a382c837c730894233030313753ddbdf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382c837c730894233030313753ddbdf1">&#9670;&#160;</a></span>contains() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::ustring::contains </td>
+          <td>(</td>
+          <td class="paramtype">value_type&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a value indicating whether a specified char occurs within this string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The char to seek. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the value parameter occurs within this string; otherwise, false. </dd></dl>
 
 </div>
 </div>
@@ -7124,7 +7200,7 @@ template&lt;typename value_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 14 2024 18:01:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 17 2024 20:53:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
