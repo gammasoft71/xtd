@@ -19,21 +19,25 @@ namespace xtd::configuration::tests {
     void test_method_(default_ctor) {
       auto fs = file_settings {};
       assert::is_false(fs.auto_save(), csf_);
+      assert::is_empty(fs.bottom_file_comment(), csf_);
       assert::is_empty(fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.keys(), csf_);
       assert::is_empty(fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
+      assert::is_empty(fs.top_file_comment(), csf_);
     }
 
     void test_method_(ctor_with_empty_string) {
       auto fs = file_settings {ustring::empty_string};
       assert::is_false(fs.auto_save(), csf_);
+      assert::is_empty(fs.bottom_file_comment(), csf_);
       assert::is_empty(fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.keys(), csf_);
       assert::is_empty(fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
+      assert::is_empty(fs.top_file_comment(), csf_);
     }
 
     void test_method_(ctor_with_non_existent_file_name) {
@@ -41,11 +45,13 @@ namespace xtd::configuration::tests {
       file_assume::does_not_exist(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
+      assert::is_empty(fs.bottom_file_comment(), csf_);
       assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.keys(), csf_);
       assert::is_empty(fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
+      assert::is_empty(fs.top_file_comment(), csf_);
     }
 
     void test_method_(ctor_with_empty_file) {
@@ -54,11 +60,13 @@ namespace xtd::configuration::tests {
       file_assume::exists(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
+      assert::is_empty(fs.bottom_file_comment(), csf_);
       assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.keys(), csf_);
       assert::is_empty(fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
+      assert::is_empty(fs.top_file_comment(), csf_);
       file::remove(file_name);
     }
 
@@ -69,6 +77,7 @@ namespace xtd::configuration::tests {
       file_assume::exists(file_name);
       auto fs = file_settings {file_name};
       assert::is_false(fs.auto_save(), csf_);
+      assert::is_empty(fs.bottom_file_comment(), csf_);
       assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.key_values("section1"), csf_);
@@ -76,6 +85,7 @@ namespace xtd::configuration::tests {
       assert::is_empty(fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
       assert::is_false(fs.stream().has_value(), csf_);
+      assert::is_empty(fs.top_file_comment(), csf_);
       file::remove(file_name);
     }
 
@@ -444,25 +454,67 @@ namespace xtd::configuration::tests {
       assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
       file::remove(file_name);
     }
-
+    
     void test_method_(to_string) {
       auto content = 
       "[section1]\n"
-      "key1=value1\n"
-      "key2=value2\n"
-      "key3=value3\n"
-      "key4=value4\n"
-      "key5=value5\n"
+      "key1 = value1\n"
+      "key2 = value2\n"
+      "key3 = value3\n"
+      "key4 = value4\n"
+      "key5 = value5\n"
       "\n"
       "[section2]\n"
-      "key1=value6\n"
-      "key2=value7\n"
-      "key3=value8\n"
-      "key4=value9\n"
-      "key5=value10\n";
+      "key1 = value6\n"
+      "key2 = value7\n"
+      "key3 = value8\n"
+      "key4 = value9\n"
+      "key5 = value10\n";
       auto fs = file_settings {};
       fs.from_string(content);
       assert::are_equal(content, fs.to_string(), csf_);
+    }
+    
+    void test_method_(to_string_empty) {
+      auto fs = file_settings {};
+      assert::is_empty(fs.to_string(), csf_);
+    }
+    
+    void test_method_(to_string_with_global_key_values) {
+      auto fs = file_settings {};
+      fs.write("key1", "value1");
+      fs.write("key2", "value2");
+      assert::are_equal("key1 = value1\n"
+                        "key2 = value2\n", fs.to_string(), csf_);
+    }
+    
+    void test_method_(to_string_with_section_key_values) {
+      auto fs = file_settings {};
+      fs.write("section1", "key1", "value1");
+      fs.write("section1", "key2", "value2");
+      fs.write("section2", "key1", "value1");
+      fs.write("section2", "key2", "value2");
+      assert::are_equal("[section1]\n"
+                        "key1 = value1\n"
+                        "key2 = value2\n"
+                        "\n"
+                        "[section2]\n"
+                        "key1 = value1\n"
+                        "key2 = value2\n", fs.to_string(), csf_);
+    }
+    
+    void test_method_(top_file_comment_on_one_line) {
+      auto fs = file_settings {};
+      
+      fs.top_file_comment("Top file comment on one line");
+      assert::are_equal("Top file comment on one line", fs.top_file_comment(), csf_);
+    }
+    
+    void test_method_(top_file_comment_on_multi_line) {
+      auto fs = file_settings {};
+      
+      fs.top_file_comment("Top file comment\non multi line");
+      assert::are_equal("Top file comment\non multi line", fs.top_file_comment(), csf_);
     }
     
     void test_method_(write) {
