@@ -76,6 +76,14 @@ namespace xtd {
       /// @remarks The default is false.
       void auto_save(bool value) noexcept;
 
+      /// @brief Gets top file comment text.
+      /// @return Top file comment textr.
+      xtd::ustring bottom_file_comment() const noexcept;
+      /// @brief Sets top file comment text.
+      /// @param value Top file comment textr.
+      /// @return This current instance.
+      file_settings& bottom_file_comment(const xtd::ustring& value) noexcept;
+
       /// @brief Gets the file path of the current instance.
       /// @return The file path of the current instance.
       /// @remarks If no file the property can be return xtd::ustring::empty_string.
@@ -110,6 +118,16 @@ namespace xtd {
       /// @return The stream of the current instance.
       /// @warning Don't manipulate the stream yourself, otherwise the expected result may be undefined.
       std::optional<std::reference_wrapper<std::iostream>> stream() const noexcept;
+
+      /// @brief Gets top file comment text.
+      /// @return Top file comment textr.
+      /// @remarks Generally used to read descriptions of the xtd::configuration::file_settings : authors, copyright, version, etc.
+      xtd::ustring top_file_comment() const noexcept;
+      /// @brief Sets top file comment text.
+      /// @param value Top file comment textr.
+      /// @return This current instance.
+      /// @remarks Generally used to write descriptions of the xtd::configuration::file_settings : authors, copyright, version, etc.
+      file_settings& top_file_comment(const xtd::ustring& value) noexcept;
       /// @}
       
       /// @name Public Methods
@@ -273,22 +291,26 @@ namespace xtd {
       string_map& operator [](const xtd::ustring& section) noexcept;
       /// @}
       
+    protected:
+      virtual xtd::ustring convert_comment_to_text(const xtd::ustring& text) const noexcept;
+      virtual xtd::ustring convert_text_to_comment(const xtd::ustring& text) const noexcept;
+
     private:
       xtd::ustring read_string(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& default_value) noexcept;
       void write_string(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& value) noexcept;
 
       bool auto_save_ = false;
-      xtd::ustring after_all_comment_;
       std::map<xtd::ustring, xtd::ustring> after_key_comment_;
       std::map<xtd::ustring, xtd::ustring> after_section_comment_;
-      xtd::ustring before_all_comment_;
       std::map<xtd::ustring, xtd::ustring> before_key_comment_;
       std::map<xtd::ustring, xtd::ustring> before_section_comment_;
+      xtd::ustring bottom_file_comment_;
       xtd::ustring file_path_;
       std::map<xtd::ustring, xtd::ustring> key_comment_;
       std::map<xtd::ustring, xtd::ustring> section_comment_;
       std::map<xtd::ustring, string_map> section_key_values_;
       std::iostream* stream_ = nullptr;
+      xtd::ustring top_file_comment_;
     };
   }
 }
