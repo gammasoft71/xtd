@@ -70,18 +70,80 @@ namespace xtd {
       /// @brief Gets whether save should be called on the xtd::configuration::file_settings destructor.
       /// @return true if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
       /// @remarks The default is false.
+      /// @par Examples
+      /// The following example shows how to use xtd::configuration::file_settings::auto_save property, xtd::configuration::file_settings::write methods.
+      /// ```cpp
+      /// auto file = file_settings {"MyApp.ini"};
+      /// file.auto_save(true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
+      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
+      /// ```
+      /// MyApp.ini:
+      /// ```ini
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       bool auto_save() const noexcept;
       /// @brief Sets whether save should be called on the xtd::configuration::file_settings destructor.
       /// @param value true if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
       /// @remarks The default is false.
-      void auto_save(bool value) noexcept;
+      /// @par Examples
+      /// The following example shows how to use xtd::configuration::file_settings::auto_save property, xtd::configuration::file_settings::write methods.
+      /// ```cpp
+      /// auto file = file_settings {"MyApp.ini"};
+      /// file.auto_save(true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
+      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
+      /// ```
+      /// MyApp.ini:
+      /// ```ini
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
+     void auto_save(bool value) noexcept;
 
-      /// @brief Gets top file comment text.
-      /// @return Top file comment textr.
+      /// @brief Gets bottom file comment text.
+      /// @return Bottom file comment text.
+      /// @par Examples
+      /// The following example shows how to use xtd::configuration::file_settings::bottom_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// ```cpp
+      /// auto file = file_settings {};
+      /// file.bottom_file_comment("Modifications must be made with care, as they may result in incorrect behavior.");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
+      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
+      /// file.save_as("MyApp.ini")
+      /// ```
+      /// MyApp.ini:
+      /// ```ini
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      ///
+      /// # Modifications must be made with care, as they may result in incorrect behavior.
+      /// ```
       xtd::ustring bottom_file_comment() const noexcept;
-      /// @brief Sets top file comment text.
-      /// @param value Top file comment textr.
+      /// @brief Sets bottom file comment text.
+      /// @param value Bottom file comment text.
       /// @return This current instance.
+      /// @par Examples
+      /// The following example shows how to use xtd::configuration::file_settings::bottom_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// ```cpp
+      /// auto file = file_settings {};
+      /// file.bottom_file_comment("Modifications must be made with care, as they may result in incorrect behavior.");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
+      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
+      /// file.save_as("MyApp.ini")
+      /// ```
+      /// MyApp.ini:
+      /// ```ini
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      ///
+      /// # Modifications must be made with care, as they may result in incorrect behavior.
+      /// ```
       file_settings& bottom_file_comment(const xtd::ustring& value) noexcept;
 
       /// @brief Gets the file path of the current instance.
@@ -122,11 +184,47 @@ namespace xtd {
       /// @brief Gets top file comment text.
       /// @return Top file comment textr.
       /// @remarks Generally used to read descriptions of the xtd::configuration::file_settings : authors, copyright, version, etc.
+      /// @par Examples
+      /// The following example shows how to use xtd::configuration::file_settings::top_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// ```cpp
+      /// auto file = file_settings {};
+      /// file.top_file_comment("Contains settings for MyApp application.\nCopyright, (c) 2024 MyCompany. All rights reserved.");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
+      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
+      /// file.save_as("MyApp.ini")
+      /// ```
+      /// MyApp.ini:
+      /// ```ini
+      /// # Contains settings for MyApp application.
+      /// # Copyright, (c) 2024 MyCompany. All rights reserved.
+      ///
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       xtd::ustring top_file_comment() const noexcept;
       /// @brief Sets top file comment text.
       /// @param value Top file comment textr.
       /// @return This current instance.
       /// @remarks Generally used to write descriptions of the xtd::configuration::file_settings : authors, copyright, version, etc.
+      /// @par Examples
+      /// The following example shows how to use xtd::configuration::file_settings::top_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// ```cpp
+      /// auto file = file_settings {};
+      /// file.top_file_comment("Contains settings for MyApp application.\nCopyright, (c) 2024 MyCompany. All rights reserved.");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
+      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
+      /// file.save_as("MyApp.ini")
+      /// ```
+      /// MyApp.ini:
+      /// ```ini
+      /// # Contains settings for MyApp application.
+      /// # Copyright, (c) 2024 MyCompany. All rights reserved.
+      ///
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       file_settings& top_file_comment(const xtd::ustring& value) noexcept;
       /// @}
       
