@@ -137,16 +137,16 @@ void file_settings::from_string(const xtd::ustring& text) {
         //comment = ustring::empty_string;
         auto key_value = line.split({key_value_separator});
         if (key_value.size() == 1 ) {
-          if (!ustring::is_empty(comment)) before_key_comment_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = comment;
+          if (!ustring::is_empty(comment)) before_key_value_comment_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = comment;
           section_key_values_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = "";
         } else {
           auto key_comment = ustring::empty_string;
           auto value = separate_comment(ustring::join(ustring::format("{}", key_value_separator), key_value, 1), key_comment);
           if (value.starts_with(string_delimiter) && value.ends_with(string_delimiter)) value = value.trim(string_delimiter);
           if (value.starts_with(alt_string_delimiter) && value.ends_with(alt_string_delimiter)) value = value.trim(alt_string_delimiter);
-          if (!ustring::is_empty(key_comment)) key_comment_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = key_comment;
+          if (!ustring::is_empty(key_comment)) key_value_comment_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = key_comment;
           section_key_values_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = unescaping(value);
-          if (!ustring::is_empty(comment)) before_key_comment_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = comment;
+          if (!ustring::is_empty(comment)) before_key_value_comment_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = comment;
         }
         comment = ustring::empty_string;
       }
@@ -233,20 +233,20 @@ ustring file_settings::to_string() const noexcept {
     auto as_it = after_section_comment_.find(section);
     if (as_it != after_section_comment_.end() && !ustring::is_empty(as_it->second)) text += split_comment(as_it->second);
     for (auto [key, value] : key_value) {
-      if (before_key_comment_.find(section) != before_key_comment_.end()) {
-        auto bk_it = before_key_comment_.at(section).find(key);
-        if (bk_it != before_key_comment_.at(section).end() && !ustring::is_empty(bk_it->second)) text += split_comment(bk_it->second);
+      if (before_key_value_comment_.find(section) != before_key_value_comment_.end()) {
+        auto bk_it = before_key_value_comment_.at(section).find(key);
+        if (bk_it != before_key_value_comment_.at(section).end() && !ustring::is_empty(bk_it->second)) text += split_comment(bk_it->second);
       }
-      if (key_comment_.find(section) == key_comment_.end())
+      if (key_value_comment_.find(section) == key_value_comment_.end())
         text += ustring::format("{} {} {}\n", key, key_value_separator, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains(comment_delimiter) || value.contains(alt_comment_delimiter) || value.contains(key_value_separator) ? ustring::format("\"{}\"", value) : value);
      else {
-        auto k_it = key_comment_.at(section).find(key);
-        text += ustring::format("{} {} {}{}\n", key, key_value_separator, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains(comment_delimiter) || value.contains(alt_comment_delimiter) || value.contains(key_value_separator) ? ustring::format("\"{}\"", value) : value, k_it != key_comment_.at(section).end() && !ustring::is_empty(k_it->second) ? ustring::format(" {}", k_it->second) : "");
+        auto k_it = key_value_comment_.at(section).find(key);
+        text += ustring::format("{} {} {}{}\n", key, key_value_separator, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains(comment_delimiter) || value.contains(alt_comment_delimiter) || value.contains(key_value_separator) ? ustring::format("\"{}\"", value) : value, k_it != key_value_comment_.at(section).end() && !ustring::is_empty(k_it->second) ? ustring::format(" {}", k_it->second) : "");
       }
 
-      if (after_key_comment_.find(section) != after_key_comment_.end()) {
-        auto ak_it = after_key_comment_.at(section).find(key);
-        if (ak_it != after_key_comment_.at(section).end() && !ustring::is_empty(ak_it->second)) text += split_comment(ak_it->second);
+      if (after_key_value_comment_.find(section) != after_key_value_comment_.end()) {
+        auto ak_it = after_key_value_comment_.at(section).find(key);
+        if (ak_it != after_key_value_comment_.at(section).end() && !ustring::is_empty(ak_it->second)) text += split_comment(ak_it->second);
       }
     }
   }
