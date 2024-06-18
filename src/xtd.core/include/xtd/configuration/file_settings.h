@@ -398,13 +398,13 @@ namespace xtd {
       void write_string(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& value) noexcept;
 
       bool auto_save_ = false;
-      std::map<xtd::ustring, string_map> after_key_comment_;
+      std::map<xtd::ustring, string_map> after_key_value_comment_;
       std::map<xtd::ustring, xtd::ustring> after_section_comment_;
-      std::map<xtd::ustring, string_map> before_key_comment_;
+      std::map<xtd::ustring, string_map> before_key_value_comment_;
       std::map<xtd::ustring, xtd::ustring> before_section_comment_;
       xtd::ustring bottom_file_comment_;
       xtd::ustring file_path_;
-      std::map<xtd::ustring, string_map> key_comment_;
+      std::map<xtd::ustring, string_map> key_value_comment_;
       std::map<xtd::ustring, xtd::ustring> section_comment_;
       std::map<xtd::ustring, string_map> section_key_values_;
       std::iostream* stream_ = nullptr;
