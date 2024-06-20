@@ -71,12 +71,12 @@ namespace xtd {
       /// @return true if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
       /// @remarks The default is false.
       /// @par Examples
-      /// The following example shows how to use xtd::configuration::file_settings::auto_save property, xtd::configuration::file_settings::write methods.
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::auto_save property, xtd::configuration::file_settings::write methods.
       /// ```cpp
       /// auto file = file_settings {"my_app.ini"};
       /// file.auto_save(true);
-      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
-      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
       /// ```
       /// my_app.ini:
       /// ```ini
@@ -89,12 +89,12 @@ namespace xtd {
       /// @param value true if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
       /// @remarks The default is false.
       /// @par Examples
-      /// The following example shows how to use xtd::configuration::file_settings::auto_save property, xtd::configuration::file_settings::write methods.
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::auto_save property, xtd::configuration::file_settings::write methods.
       /// ```cpp
       /// auto file = file_settings {"my_app.ini"};
       /// file.auto_save(true);
-      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
-      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
       /// ```
       /// my_app.ini:
       /// ```ini
@@ -107,12 +107,12 @@ namespace xtd {
       /// @brief Gets bottom file comment text.
       /// @return Bottom file comment text.
       /// @par Examples
-      /// The following example shows how to use xtd::configuration::file_settings::bottom_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::bottom_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
       /// ```cpp
       /// auto file = file_settings {};
       /// file.bottom_file_comment("Modifications must be made with care, as they may result in incorrect behavior.");
-      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
-      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
       /// file.save_as("my_app.ini")
       /// ```
       /// my_app.ini:
@@ -128,13 +128,13 @@ namespace xtd {
       /// @param value Bottom file comment text.
       /// @return This current instance.
       /// @par Examples
-      /// The following example shows how to use xtd::configuration::file_settings::bottom_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::bottom_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
       /// ```cpp
       /// auto file = file_settings {};
       /// file.bottom_file_comment("Modifications must be made with care, as they may result in incorrect behavior.");
-      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
-      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
-      /// file.save_as("my_app.ini")
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save_as("my_app.ini");
       /// ```
       /// my_app.ini:
       /// ```ini
@@ -185,13 +185,13 @@ namespace xtd {
       /// @return Top file comment textr.
       /// @remarks Generally used to read descriptions of the xtd::configuration::file_settings : authors, copyright, version, etc.
       /// @par Examples
-      /// The following example shows how to use xtd::configuration::file_settings::top_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::top_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
       /// ```cpp
       /// auto file = file_settings {};
       /// file.top_file_comment("Contains settings for my_app application.\nCopyright, (c) 2024 MyCompany. All rights reserved.");
-      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
-      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
-      /// file.save_as("my_app.ini")
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save_as("my_app.ini");
       /// ```
       /// my_app.ini:
       /// ```ini
@@ -208,13 +208,13 @@ namespace xtd {
       /// @return This current instance.
       /// @remarks Generally used to write descriptions of the xtd::configuration::file_settings : authors, copyright, version, etc.
       /// @par Examples
-      /// The following example shows how to use xtd::configuration::file_settings::top_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::top_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
       /// ```cpp
       /// auto file = file_settings {};
       /// file.top_file_comment("Contains settings for my_app application.\nCopyright, (c) 2024 MyCompany. All rights reserved.");
-      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
-      /// file.write("pictures", "file_save", "resources/symbolic_save.png");
-      /// file.save_as("my_app.ini")
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save_as("my_app.ini");
       /// ```
       /// my_app.ini:
       /// ```ini
@@ -244,6 +244,21 @@ namespace xtd {
 
       /// @brief Loads settings from specified file.
       /// @param file_path The file path to load settings.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::load, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// ```cpp
+      /// auto file = file_settings {};
+      /// file.load("my_app.ini");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save_as("my_app.ini");
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       void load(const xtd::ustring& file_path);
       /// @brief Loads settings from specified stream.
       /// @param stream The stream to load settings.
@@ -288,36 +303,161 @@ namespace xtd {
       /// @param key The key to remove from the global section.
       /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::remove (const xtd::ustring& section) with xtd::ustring::empty_string paramreter.
+      /// @brief Removes the specified key from the specified section.
+      /// @param section The section where the key is removed.
+      /// @param key The key to remove from the specified section.
+      /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
+      /// @remarks Use xtd::ustring::empty_string paramreter to remove key of the global section.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write, xtd::configuration::file_settings::remove and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write(quit_application_on_main_form_closed", true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.remove("quit_application_on_main_form_closed");
+      /// file.save();
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       void remove(const xtd::ustring& key) noexcept;
       /// @brief Removes the specified key from the specified section.
       /// @param section The section where the key is removed.
       /// @param key The key to remove from the specified section.
       /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
       /// @remarks Use xtd::ustring::empty_string paramreter to remove key of the global section.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write, xtd::configuration::file_settings::remove and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write("main", "quit_application_on_main_form_closed", true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.remove("main", "quit_application_on_main_form_closed");
+      /// file.save();
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       void remove(const xtd::ustring& section, const xtd::ustring& key) noexcept;
       
       /// @brief Removes all keys from the global section.
       /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::remove_all_keys (const xtd::ustring& section) with xtd::ustring::empty_string paramreter.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write, xtd::configuration::file_settings::remove_all_keys and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write("main", "quit_application_on_main_form_closed", true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.remove_all_keys();
+      /// file.save();
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       void remove_all_keys() noexcept;
       /// @brief Removes all key from the specified section.
       /// @param section The section where all keys are removed.
       /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
       /// @remarks Use xtd::ustring::empty_string paramreter to remove all keys of the global section.
+      /// @remarks Use xtd::ustring::empty_string paramreter to remove key of the global section.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write, xtd::configuration::file_settings::remove_all_keys and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write("main", "quit_application_on_main_form_closed", true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.remove_all_keys("pictures \"Menu\"");
+      /// file.save()
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// [main]
+      /// quit_application_on_main_form_closed = true
+      /// ```
       void remove_all_keys(const xtd::ustring& section) noexcept;
       
       /// @brief Reset current settings.
       /// @remarks The settings are cleared and the settings file is removed.
       /// @remarks To write permanently use the xtd::configuration::settings::save method.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write("main", "quit_application_on_main_form_closed", true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save();
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// [main]
+      /// quit_application_on_main_form_closed = true
+      ///
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       void reset();
       
       /// @brief Save current settings.
       /// @remarks The settings are saved in the settings file.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write("main", "quit_application_on_main_form_closed", true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save();
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// [main]
+      /// quit_application_on_main_form_closed = true
+      ///
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       void save();
       
       /// @brief Save current settings in the specified file path.
       /// @param file_path The file to save the current settings.
       /// @remarks The settings are saved in the specified settings file.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
+      /// ```cpp
+      /// auto file = file_settings {};
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save_as("my_app.ini")
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       void save_as(const xtd::ustring& file_path);
       /// @brief Save current settings in the specified stream.
       /// @param stream The stream to save the current settings.
@@ -334,11 +474,47 @@ namespace xtd {
       /// @param key The key used to write a value.
       /// @param value A string to write.
       /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write("quit_application_on_main_form_closed", "true");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save();
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// quit_application_on_main_form_closed = true
+      ///
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       void write(const xtd::ustring& key, const xtd::ustring& value) noexcept;
       /// @brief Writes a specified value for specified key in the global section.
       /// @param key The key used to write a value.
       /// @param value A string to write.
       /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write("quit_application_on_main_form_closed", true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save();
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// quit_application_on_main_form_closed = true
+      ///
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       template<typename type_t>
       void write(const xtd::ustring& key, type_t&& value) {
         write_string(xtd::ustring::empty_string, key, xtd::ustring::format("{}", value));
@@ -348,12 +524,49 @@ namespace xtd {
       /// @param key The key used to write a value.
       /// @param value A string to write.
       /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write("quit_application_on_main_form_closed", "true");
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save();
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// quit_application_on_main_form_closed = true
+      ///
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       void write(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& value) noexcept;
       /// @brief Writes a specified value for specified key in the specified section.
       /// @param section The section where the key is write.
       /// @param key The key used to write a value.
       /// @param value A string to write.
       /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
+      /// @par Examples
+      /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::reset, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save methods.
+      /// ```cpp
+      /// auto file = file_settings {"my_app.ini"};
+      /// file.reset();
+      /// file.write("main", "quit_application_on_main_form_closed", true);
+      /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png")
+      /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
+      /// file.save();
+      /// ```
+      /// my_app.ini:
+      /// ```ini
+      /// [main]
+      /// quit_application_on_main_form_closed = true
+      ///
+      /// [pictures "Menu"]
+      /// file_open = resources/symbolic_open.png
+      /// file_save = resources/symbolic_save.png
+      /// ```
       template<typename type_t>
       void write(const xtd::ustring& section, const xtd::ustring& key, type_t&& value) {
         write_string(section, key, xtd::ustring::format("{}", value));
@@ -368,24 +581,24 @@ namespace xtd {
       /// @return The key-value pairs of the section.
       /// @par Examples
       /// Use this operator to read value from section like xtd::configuration::file_settings::read method.
-      /// @code
+      /// ```cpp
       /// auto fs = file_settings {"my_file.ini"};
       /// auto v1 = fs["section1"]["key1"]; 
       /// // Is equivalent to call :
       /// // auto v1 = fs.read("section1", "key1", ustring::empty_string);
-      /// @endcode
+      /// ```
       const string_map& operator [](const xtd::ustring& section) const noexcept;
       /// @brief Gets key-value pairs of the specified section.
       /// @param secion The section to get the key-value pairs
       /// @return The key-value pairs of the section.
       /// @par Examples
       /// Use this operator to write value to section like xtd::configuration::file_settings::write method.
-      /// @code
+      /// ```cpp
       /// auto fs = file_settings {"my_file.ini"};
       /// fs["section1"]["key1"] = "value1";
       /// // Is equivalent to call :
       /// // fs.write("section1", "key1", "value1");
-      /// @endcode
+      /// ```
       string_map& operator [](const xtd::ustring& section) noexcept;
       /// @}
       
