@@ -6,6 +6,7 @@
 #include "icomparable.h"
 #include "iequatable.h"
 #include "object.h"
+#include "parse.h"
 #include "ticks.h"
 #include "types.h"
 
@@ -513,6 +514,30 @@ namespace xtd {
   };
   /// @}
 
+  /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @param value A string that specifies the time interval to convert.
+  /// @return A time interval that corresponds to value.
+  /// @exception xtd::format_exception value has an invalid format.
+  /// @exception value represents a number that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>At least one of the days, hours, minutes, or seconds components is outside its valid range.
+  template<>
+  inline xtd::time_span parse<time_span>(const std::string& str) {return time_span::parse(str);}
+
+  /// @brief Convert a specified xtd::time_span value into a string with specified format and locale.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @param value Value to convert.
+  /// @param fmt A composite format string.
+  /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
+  /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
+  /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::string to_string(const time_span& value, const std::string& fmt, const std::locale& loc) {return value.to_string(fmt);}
 }
