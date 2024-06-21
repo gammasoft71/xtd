@@ -8,6 +8,7 @@ add_projects(
   about_dialog_from_executing_assembly_informations
   anchors
   application_run
+  application_settings2
   auto_scroll
   bitmap_button_with_text
   border_style
@@ -54,7 +55,6 @@ add_projects(
   message_dialog_show_sheet
   painting
   screen_informations
-  settings_example2
   smileys
   some_controls
   some_system_controls

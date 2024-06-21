@@ -4,6 +4,7 @@
 
 * [about_dialog_system](about_dialog_system/README.md) represents a dialog box that displays about box.
 * [anchors](anchors/README.md) demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) container with [xtd::forms::control::anchor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1tool__bar.html).
+* [application_settings2](application_settings2/README.md) represents settings application.
 * [auto_scroll](auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1panel.html).
 * [bitmap_button_with_text](bitmap_button_with_text/README.md) demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html).
 * [border_style](border_style/README.md) demonstrates the use of [xtd::forms::label::border_style](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html#a572b81ed9b6e7ba3a3b97501aeb43c69) property.
@@ -49,7 +50,6 @@
 * [main_menu_create_standard_items](main_menu_create_standard_items/README.md) demonstrates the use of [xtd::forms::main_menu::create_standard_items](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1main__menu.html#a6bbc2f6a58ca79e0329f882c3cef77e1) method.
 * [painting](painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1track__bar.html) and [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) controls with mouse_down, mouse_move and paint events..
 * [screen_informations](screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1screen.html) control.
-* [settings2](settings_example2/README.md) represents settings application.
 * [smileys](smileys/README.md) demonstrates the use of [xtd::forms::label](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html) control.
 * [some_controls](some_controls/README.md) demonstrates the use of some controls.
 * [some_system_controls](some_system_controls/README.md) demonstrates the use of some system controls.

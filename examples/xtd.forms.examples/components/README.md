@@ -2,6 +2,7 @@
 
 [This folder](.) contains xtd.forms components examples.
 
+* [application_settings](application_settings/README.md) represents settings application.
 * [background_worker](background_worker/README.md) executes an operation on a separate thread.
 * [button_images](button_images/README.md) represents common images collection can be used for button.
 * [button_renderer](button_renderer/README.md) show how to use [xtd::forms::button_renderer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button__renderer.html) renderer.
@@ -22,7 +23,6 @@
 * [process](process_form/README.md) provides access to local and remote processes and enables you to start and stop local system processes.
 * [radio_button_renderer](radio_button_renderer/README.md) show how to use [xtd::forms::radio_button_renderer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1radio__button__renderer.html) renderer.
 * [screen](screen/README.md) represents a display device or multiple display devices on a single system.
-* [settings](settings_example/README.md) represents settings application.
 * **serial_port** represents a serial port resource.
 * **service_controler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
 * [texts](texts/README.md) shows how to used [xtd::forms::system_texts](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1system__texts.html) collection.

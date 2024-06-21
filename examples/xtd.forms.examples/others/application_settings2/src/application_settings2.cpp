@@ -4,12 +4,11 @@
 #include <xtd/forms/color_picker>
 #include <xtd/forms/form>
 
-using namespace xtd::configuration;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
 auto main() -> int {
-  settings settings;
+  auto settings = xtd::configuration::settings {};
   auto main_form = form::create("Settings example", form_start_position::manual);
   
   auto back_color_picker = color_picker::create(main_form, main_form.back_color(), {10, 10}, {75, 25});
