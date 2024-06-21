@@ -4,6 +4,7 @@ project(components)
 find_package(xtd REQUIRED)
 
 add_projects(
+  application_settings
   background_worker
   button_images
   button_renderer
@@ -18,7 +19,6 @@ add_projects(
   process_form
   radio_button_renderer
   screen
-  settings_example
   texts
   translator
   translator_with_language
