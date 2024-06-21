@@ -4,7 +4,6 @@
 #include <xtd/forms/color_picker>
 #include <xtd/forms/form>
 
-using namespace xtd::configuration;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -26,7 +25,6 @@ auto main() -> int {
   
   auto reload_button = button::create(main_form, "&Reload", {170, 10});
   reload_button.click += [&] {
-    application_settings::properties::settings::default_settings().reload();
     main_form.client_size(application_settings::properties::settings::default_settings().size());
     main_form.location(application_settings::properties::settings::default_settings().location());
     main_form.back_color(application_settings::properties::settings::default_settings().back_color());
