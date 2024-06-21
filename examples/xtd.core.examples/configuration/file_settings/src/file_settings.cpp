@@ -9,7 +9,7 @@ auto write_file_settings() {
   file.top_file_comment("Settings file used by file_settings example.\nCopyright (c) 2024 Gammasoft. All rights reserved.");
   file.write("auto_close", true);
   file.write("caption", "file_settings example");
-  file.write("Thread \"Process\"", "timeout_", 100_ms);
+  file.write("Thread \"Process\"", "timeout", 100_ms);
   file.save();
 }
 
@@ -27,7 +27,7 @@ auto read_file_settings() {
   console::write_line("read keys :");
   console::write_line("auto_close = {}", file.read("auto_close", false));
   console::write_line("caption = {}", file.read("caption", "example"));
-  console::write_line("Thread \"Process\"", "time_out = {}", file.read("timeout_", 50_ms));
+  console::write_line("Thread \"Process\"", "time_out = {}", file.read("timeout", 50_ms));
   console::write_line("----------------------------------------");
 }
 
@@ -49,7 +49,7 @@ auto main() -> int {
 // caption = file_settings example
 //
 // [Thread "Process"]
-// timeout_ = 00:00:00.1000000
+// timeout = 00:00:00.1000000
 //
 // ----------------------------------------
 // read keys :
