@@ -403,7 +403,12 @@ int32 time_span::try_parse_internal(const ustring& value, time_span& result) {
     if (int32_object::try_parse(items[2], seconds) == false) return parse_format;
   }
   
-  if (items.size() == 4_z) {
+  if (items.size() == 4_z && value.index_of('.') > value.index_of(':')) {
+    if (int32_object::try_parse(items[0], hours) == false) return parse_format;
+    if (int32_object::try_parse(items[1], minutes) == false) return parse_format;
+    if (int32_object::try_parse(items[2], seconds) == false) return parse_format;
+    if (int32_object::try_parse(items[3], ticks) == false) return false;
+  } else {
     if (int32_object::try_parse(items[0], days) == false) return parse_format;
     if (int32_object::try_parse(items[1], hours) == false) return parse_format;
     if (int32_object::try_parse(items[2], minutes) == false) return parse_format;
