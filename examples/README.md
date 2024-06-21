@@ -12,8 +12,8 @@
 * [Bit Converter](xtd.core.examples/bit_converter/README.md) contains bit converter examples.
 * [Boxing](xtd.core.examples/boxing/README.md) contains boxing and unboxing examples.
 * [Collections](xtd.core.examples/collections/README.md) contains collections examples.
-* [Console](xtd.core.examples/console/README.md) contains console examples.
 * [Configuration](xtd.core.examples/configuration/README.md) contains configuration examples.
+* [Console](xtd.core.examples/console/README.md) contains console examples.
 * [Convert](xtd.core.examples/convert/README.md) contains convert examples.
 * [Date time](xtd.core.examples/date_time/README.md) contains date time examples.
 * [Delegates](xtd.core.examples/delegates/README.md) contains delegates examples.
