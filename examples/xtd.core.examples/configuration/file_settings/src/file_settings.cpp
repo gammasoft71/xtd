@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::configuration;
 
 auto write_file_settings() {
-  auto file = file_settings("example.ini");
+  auto file = file_settings {"example.ini"};
   file.top_file_comment("Settings file used by file_settings example.\nCopyright (c) 2024 Gammasoft. All rights reserved.");
   file.write("auto_close", true);
   file.write("caption", "file_settings example");
@@ -14,12 +14,12 @@ auto write_file_settings() {
 }
 
 auto reset_file_settings() {
-  auto file = file_settings("example.ini");
+  auto file = file_settings {"example.ini"};
   file.reset();
 }
 
 auto read_file_settings() {
-  auto file = file_settings("example.ini");
+  auto file = file_settings {"example.ini"};
   console::write_line("----------------------------------------");
   console::write_line("\"exemple.ini\" file content :");
   console::write_line(file.to_string());
