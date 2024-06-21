@@ -29,6 +29,10 @@
 * [vector_list](collections/vector_list/README.md) shows how to use [xtd::collections::vector_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) class.
 * [vector_list2](collections/vector_list2/README.md) shows how to use [xtd::collections::vector_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) class.
 
+## [Configuration](configuration/README.md)
+
+* [file_settings](configuration/file_settings/README.md) shows how to use [xtd::consiguration::file_settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1file__settings.html) object.
+
 ## [Console](console/README.md)
 
 * [console_background_color](console/console_background_color/README.md) shows how to use [xtd::console::background_color](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a16386e533bc0bbb8cc4dfb4b079c828a) property.
@@ -53,10 +57,6 @@
 * [console_window_size](console/console_window_size/README.md) shows how to use [xtd::console::set_window_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5) method.
 * [redirect_output](console/redirect_output/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
 * [wconsole](console/wconsole/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
-
-## [Configuration](configuration/README.md)
-
-* [file_settings](configuration/file_settings/README.md) shows how to use [xtd::consiguration::file_settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1file__settings.html) object.
 
 ## [Convert](convert/README.md)
 

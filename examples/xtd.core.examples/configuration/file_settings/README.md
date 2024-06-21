@@ -28,7 +28,7 @@ auto_close = true
 caption = file_settings example
 
 [Thread "Process"]
-timeout_ = 00:00:00.1000000
+timeout = 00:00:00.1000000
 
 ----------------------------------------
 read keys :

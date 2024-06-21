@@ -8,8 +8,8 @@ add_projects(
   bit_converter
   boxing
   collections
-  console
   configuration
+  console
   convert
   date_time
   delegates
