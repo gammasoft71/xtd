@@ -54,6 +54,10 @@
 * [redirect_output](console/redirect_output/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
 * [wconsole](console/wconsole/README.md) shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1console.html) class.
 
+## [Configuration](configuration/README.md)
+
+* [file_settings](configuration/file_settings/README.md) shows how to use [xtd::consiguration::file_settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1file__settings.html) object.
+
 ## [Convert](convert/README.md)
 
 * [as](convert/as/README.md) shows how to use [xtd::as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operator.
