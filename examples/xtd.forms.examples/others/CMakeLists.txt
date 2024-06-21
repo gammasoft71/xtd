@@ -5,10 +5,8 @@ find_package(xtd REQUIRED)
 
 add_projects(
   about_dialog_system
-  about_dialog_from_executing_assembly_informations
   anchors
   application_run
-  application_settings2
   auto_scroll
   bitmap_button_with_text
   border_style

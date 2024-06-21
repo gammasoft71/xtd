@@ -2,7 +2,8 @@
 
 [This folder](.) contains xtd.forms components examples.
 
-* [application_settings](application_settings/README.md) represents settings application.
+* [application_settings](application_settings/README.md) represents settings application with [CMake setting commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection).
+* [application_settings_without_cmake_setting_commands](application_settings_without_cmake_setting_commands/README.md) represents settings application without [CMake setting commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection).
 * [background_worker](background_worker/README.md) executes an operation on a separate thread.
 * [button_images](button_images/README.md) represents common images collection can be used for button.
 * [button_renderer](button_renderer/README.md) show how to use [xtd::forms::button_renderer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button__renderer.html) renderer.

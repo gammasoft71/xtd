@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   application_settings
+  application_settings_without_cmake_setting_commands
   background_worker
   button_images
   button_renderer
