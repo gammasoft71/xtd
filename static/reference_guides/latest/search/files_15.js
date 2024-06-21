@@ -1,18 +1,12 @@
 var searchData=
 [
-  ['xml_5fsyntax_5fexception_2eh_0',['xml_syntax_exception.h',['../xml__syntax__exception_8h.html',1,'']]],
-  ['xtd_2ecore_2eh_1',['xtd.core.h',['../xtd_8core_8h.html',1,'']]],
-  ['xtd_2edrawing_2eh_2',['xtd.drawing.h',['../xtd_8drawing_8h.html',1,'']]],
-  ['xtd_2eforms_2eh_3',['xtd.forms.h',['../xtd_8forms_8h.html',1,'']]],
-  ['xtd_2eh_4',['xtd.h',['../xtd_8h.html',1,'']]],
-  ['xtd_2etunit_2eh_5',['xtd.tunit.h',['../xtd_8tunit_8h.html',1,'']]],
-  ['xtd_5fabout_5fbox_2eh_6',['xtd_about_box.h',['../xtd__about__box_8h.html',1,'']]],
-  ['xtd_5fabout_5fdialog_2eh_7',['xtd_about_dialog.h',['../xtd__about__dialog_8h.html',1,'']]],
-  ['xtd_5fcmake_5fexamples_2edox_8',['xtd_cmake_examples.dox',['../xtd__cmake__examples_8dox.html',1,'']]],
-  ['xtd_5fcore_5fexamples_2edox_9',['xtd_core_examples.dox',['../xtd__core__examples_8dox.html',1,'']]],
-  ['xtd_5fdrawing_5fexamples_2edox_10',['xtd_drawing_examples.dox',['../xtd__drawing__examples_8dox.html',1,'']]],
-  ['xtd_5fforms_5fexamples_2edox_11',['xtd_forms_examples.dox',['../xtd__forms__examples_8dox.html',1,'']]],
-  ['xtd_5fnamespace_5faliases_2eh_12',['xtd_namespace_aliases.h',['../xtd__namespace__aliases_8h.html',1,'']]],
-  ['xtd_5fsystem_5fimages_2eh_13',['xtd_system_images.h',['../xtd__system__images_8h.html',1,'']]],
-  ['xtd_5ftunit_5fexamples_2edox_14',['xtd_tunit_examples.dox',['../xtd__tunit__examples_8dox.html',1,'']]]
+  ['wait_5fcallback_2eh_0',['wait_callback.h',['../wait__callback_8h.html',1,'']]],
+  ['wait_5fhandle_2eh_1',['wait_handle.h',['../wait__handle_8h.html',1,'']]],
+  ['wait_5fhandle_5fcannot_5fbe_5fopened_5fexception_2eh_2',['wait_handle_cannot_be_opened_exception.h',['../wait__handle__cannot__be__opened__exception_8h.html',1,'']]],
+  ['wait_5for_5ftimer_5fcallback_2eh_3',['wait_or_timer_callback.h',['../wait__or__timer__callback_8h.html',1,'']]],
+  ['wchar_2eh_4',['wchar.h',['../wchar_8h.html',1,'']]],
+  ['wchar_5fobject_2eh_5',['wchar_object.h',['../wchar__object_8h.html',1,'']]],
+  ['web_5fexception_2eh_6',['web_exception.h',['../web__exception_8h.html',1,'']]],
+  ['white_5fcolors_2eh_7',['white_colors.h',['../white__colors_8h.html',1,'']]],
+  ['white_5fspace_2eh_8',['white_space.h',['../white__space_8h.html',1,'']]]
 ];
