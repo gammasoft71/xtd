@@ -9,6 +9,7 @@ add_projects(
   boxing
   collections
   console
+  configuration
   convert
   date_time
   delegates
