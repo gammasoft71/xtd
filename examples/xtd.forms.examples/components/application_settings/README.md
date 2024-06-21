@@ -1,6 +1,6 @@
 # application_settings
 
-demonstrates the use of [xtd::settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1settings.html) component.
+demonstrates the use of [xtd::settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1settings.html) component with [CMake setting commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection).
 
 ## Sources
 

@@ -167,7 +167,7 @@ namespace xtd {
     /// #pragma endregion
     /// ```
     /// The following code example demonstrates the use of xtd::configuration::settings class without [CMake setting commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection).
-    /// @include application_settings2.cpp
+    /// @include application_settings_without_cmake_setting_commands.cpp
     class core_export_ settings : public object {
       struct data;
       
