@@ -272,14 +272,14 @@ file_settings::string_map& file_settings::operator [](const ustring& section) no
 
 xtd::ustring file_settings::convert_comment_to_text(const xtd::ustring& text) const noexcept {
   auto lines = text.split({10, 13});
-  for (auto line : lines)
+  for (auto& line : lines)
     if (line.starts_with(comment_delimiter) || line.starts_with(alt_comment_delimiter)) line = line.remove(0, 1).trim();
   return ustring::join(environment::new_line(), lines);
 }
 
 xtd::ustring file_settings::convert_text_to_comment(const xtd::ustring& text) const noexcept {
   auto lines = text.split({10, 13});
-  for (auto line : lines)
+  for (auto& line : lines)
     if (!line.starts_with(comment_delimiter) && !line.starts_with(alt_comment_delimiter))
       line = ustring::format("{} {}", comment_delimiter, line);
   return ustring::join(environment::new_line(), lines);
