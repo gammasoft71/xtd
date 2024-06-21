@@ -150,6 +150,7 @@
 
 ## [Components](components/README.md)
 
+* [application_settings](components/application_settings/README.md) represents settings application.
 * [background_worker](components/background_worker/README.md) executes an operation on a separate thread.
 * [button_images](components/button_images/README.md) represents common images collection can be used for button.
 * [button_renderer](components/button_renderer/README.md) show how to use [xtd::forms::button_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button__renderer.html) renderer.
@@ -170,7 +171,6 @@
 * [process](components/process_form/README.md) provides access to local and remote processes and enables you to start and stop local system processes.
 * [radio_button_renderer](components/radio_button_renderer/README.md) show how to use [xtd::forms::radio_button_renderer](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1radio__button__renderer.html) renderer.
 * [screen](components/screen/README.md) represents a display device or multiple display devices on a single system.
-* [settings](components/settings_example/README.md) represents settings application.
 * **serial_port** represents a serial port resource.
 * **service_controller** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
 * [texts](components/texts/README.md) shows how to used [xtd::forms::system_texts](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1system__texts.html) collection.
@@ -257,6 +257,7 @@
 
 * [about_dialog_system](others/about_dialog_system/README.md) represents a dialog box that displays about box.
 * [anchors](others/anchors/README.md) demonstrates the use of [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) container with [xtd::forms::control::anchor](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1tool__bar.html).
+* [application_settings2](others/application_settings2/README.md) represents settings application.
 * [auto_scroll](others/auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1panel.html).
 * [bitmap_button_with_text](others/bitmap_button_with_text/README.md) demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html) control with [xtd::drawing::image](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image.html).
 * [border_style](others/border_style/README.md) demonstrates the use of [xtd::forms::label::border_style](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html#a572b81ed9b6e7ba3a3b97501aeb43c69) property.
@@ -302,7 +303,6 @@
 * [main_menu_create_standard_items](others/main_menu_create_standard_items/README.md) demonstrates the use of [xtd::forms::main_menu::create_standard_items](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1main__menu.html#a6bbc2f6a58ca79e0329f882c3cef77e1) method.
 * [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1track__bar.html) and [xtd::forms::button](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1button.html) controls with mouse_down, mouse_move and paint events..
 * [screen_informations](others/screen_informations/README.md) shows how to get screen information of [xtd::forms::screen](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1screen.html) control.
-* [settings2](others/settings_example2/README.md) represents settings application.
 * [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](https://codedocs.xyz/gammasoft71/xtd/classxtd_1_1forms_1_1label.html) control.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
 * [some_system_controls](others/some_system_controls/README.md) demonstrates the use of some system controls.
