@@ -490,7 +490,7 @@ private:
   label label1;
 };
 
-startup_(form1);
+startup_(form1::main);
 
 // This example produces the following output display if you launch the application,
 // then double-click the button1 and then close the application:
