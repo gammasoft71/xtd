@@ -19,7 +19,7 @@ auto __listeners__ = trace_listener_collection {make_shared<default_trace_listen
 auto __debug_use_debug_global_lock__ = true;
 
 trace_listener_collection& debug::listeners_ = __listeners__;
-ustring debug::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
+ustring debug::source_name_ = environment::get_command_line_args()[0];
 
 bool debug::auto_flush() noexcept {
   return auto_flush_;

@@ -13,7 +13,7 @@ extern std::recursive_mutex __debug_mutex__;
 extern trace_listener_collection __listeners__;
 
 trace_listener_collection& trace::listeners_ = __listeners__;
-ustring trace::source_name_ = environment::get_command_line_args().size() == 0 ? "(unknown)" : environment::get_command_line_args()[0];
+ustring trace::source_name_ = environment::get_command_line_args()[0];
 
 bool trace::auto_flush() noexcept {
   return auto_flush_;

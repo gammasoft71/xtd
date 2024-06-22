@@ -170,7 +170,6 @@ xtd::ustring application::executable_name() noexcept {
 }
 
 xtd::ustring application::executable_path() noexcept {
-  if (environment::get_command_line_args().size() == 0) return "";
   return environment::get_command_line_args()[0];
 }
 
@@ -259,7 +258,6 @@ xtd::ustring application::product_version() noexcept {
 }
 
 xtd::ustring application::startup_path() noexcept {
-  if (environment::get_command_line_args().size() == 0) return "";
   return io::path::get_directory_name(environment::get_command_line_args()[0]);
 }
 
