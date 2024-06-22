@@ -276,7 +276,7 @@ private:
 };
 
 auto main() -> int {
-  application::run(form1());
+  application::run(form1 {});
 }
 ```
 

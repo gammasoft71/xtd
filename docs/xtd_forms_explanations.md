@@ -427,7 +427,7 @@ class form1 : public form {
 public:
   static auto main() {
     debug_form dbg_fmt;
-    application::run(form1());
+    application::run(form1 {});
   }
 
   form1() {
