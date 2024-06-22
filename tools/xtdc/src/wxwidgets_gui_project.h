@@ -64,7 +64,7 @@ namespace xtdc_command {
         "/// @file",
         "/// @brief Contains Frame1 class.",
         "#pragma once",
-        "#include <wx/frame>",
+        "#include <wx/frame.h>",
         "",
         xtd::ustring::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
