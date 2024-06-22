@@ -10,8 +10,5 @@ var searchData=
   ['uintptr_5fobject_7',['uintptr_object',['../group__types.html#gadee39054ccaefc6ad4b507a42b361a91',1,'xtd']]],
   ['ulong_8',['ulong',['../group__types.html#ga313036ce703450f07d94c71ed78f2b21',1,'xtd']]],
   ['ulong_5fobject_9',['ulong_object',['../group__types.html#gac21c40190f1da798c4f81bdb7cf22604',1,'xtd']]],
-  ['user_5fcontrol_10',['user_control',['../group__style__sheets.html#ga06078af6a78aeadf53ca7917ee51d433',1,'xtd::forms::style_sheets']]],
-  ['user_5fcontrol_5fstate_11',['user_control_state',['../group__xtd__forms.html#ga10d894ad82c3f4961cb09cf15bcff510',1,'xtd::forms::visual_styles']]],
-  ['user_5fcontrols_5ft_12',['user_controls_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a93ca4fcf2e6cddd91b4a094b79c908ed',1,'xtd::forms::style_sheets::style_sheet']]],
-  ['user_5ftab_5fpage_5fcollection_13',['user_tab_page_collection',['../classxtd_1_1forms_1_1about__dialog.html#a80e85f89515ea8b47b1b867ec9bc5514',1,'xtd::forms::about_dialog']]]
+  ['user_5ftab_5fpage_5fcollection_10',['user_tab_page_collection',['../classxtd_1_1forms_1_1about__dialog.html#a80e85f89515ea8b47b1b867ec9bc5514',1,'xtd::forms::about_dialog']]]
 ];

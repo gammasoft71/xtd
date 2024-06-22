@@ -101,7 +101,7 @@ Inheritance diagram for xtd::net::ip_address:</div>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Provides an Internet Protocol (IP) address. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/ip_address&gt;</span> </div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/ip_address&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1net.html" title="The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...">xtd::net</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -280,7 +280,7 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <tr class="separator:abe8b6ba90366e5081b4870fda645fa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:aac71bd917d3323d6eb19483354b07bf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1ip__address.html#aac71bd917d3323d6eb19483354b07bf5">address_family</a> () const noexcept</td></tr>
+<tr class="memitem:aac71bd917d3323d6eb19483354b07bf5"><td class="memItemLeft" align="right" valign="top">sockets::address_family&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1ip__address.html#aac71bd917d3323d6eb19483354b07bf5">address_family</a> () const noexcept</td></tr>
 <tr class="memdesc:aac71bd917d3323d6eb19483354b07bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address family of the IP address.  <br /></td></tr>
 <tr class="separator:aac71bd917d3323d6eb19483354b07bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af612d35827ddd1cab111165226c1c38c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1ip__address.html#af612d35827ddd1cab111165226c1c38c">is_ip_v4_mapped_to_ip_v6</a> () const noexcept</td></tr>
@@ -619,7 +619,7 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a> xtd::net::ip_address::address_family </td>
+          <td class="memname">sockets::address_family xtd::net::ip_address::address_family </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -633,7 +633,7 @@ The byte array is assumed to be in network byte order with the most significant 
 </div><div class="memdoc">
 
 <p>Gets the address family of the IP address. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns <a class="el" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a1f418e7c6026fdaf0077607eedd4ccaa" title="Address for IP version 4.">sockets::address_family::inter_network</a> for IPv4 or <a class="el" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a927e80579d412742c19c0a31fe89369a" title="Address for IP version 6.">sockets::address_family::inter_network_v6</a> for IPv6. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns sockets::address_family::inter_network for IPv4 or sockets::address_family::inter_network_v6 for IPv6. </dd></dl>
 
 </div>
 </div>
@@ -1563,7 +1563,7 @@ The number of parts (each part is separated by a period) in str determines how t
 <dl class="section return"><dt>Returns</dt><dd>A uint32 that specifies the scope of the address. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>if address_family = <a class="el" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a1f418e7c6026fdaf0077607eedd4ccaa" title="Address for IP version 4.">sockets::address_family::inter_network</a> </td></tr>
+    <tr><td class="paramname">xtd::net::sockets::socket_exception</td><td>if address_family = sockets::address_family::inter_network </td></tr>
   </table>
   </dd>
 </dl>
@@ -1595,7 +1595,7 @@ The number of parts (each part is separated by a period) in str determines how t
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>if address_family = <a class="el" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a1f418e7c6026fdaf0077607eedd4ccaa" title="Address for IP version 4.">sockets::address_family::inter_network</a> </td></tr>
+    <tr><td class="paramname">xtd::net::sockets::socket_exception</td><td>if address_family = sockets::address_family::inter_network </td></tr>
   </table>
   </dd>
 </dl>
@@ -1863,7 +1863,7 @@ The <a class="el" href="classxtd_1_1net_1_1ip__address.html#a470e4a32d7ceedb7c04
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 21 2024 21:24:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jun 22 2024 15:29:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

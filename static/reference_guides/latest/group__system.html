@@ -246,10 +246,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga5aa911c016af5795d0482eefb481fcc9">xtd::unboxing</a> (const <a class="el" href="classxtd_1_1box.html">xtd::box</a>&lt; type_t &gt; &amp;value) noexcept</td></tr>
 <tr class="memdesc:ga5aa911c016af5795d0482eefb481fcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to unbox an object.  <br /></td></tr>
 <tr class="separator:ga5aa911c016af5795d0482eefb481fcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga690f99e87ad4402abed7510a5e18bc15"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga690f99e87ad4402abed7510a5e18bc15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga690f99e87ad4402abed7510a5e18bc15">xtd::unregister_any_stringer</a> ()</td></tr>
-<tr class="memdesc:ga690f99e87ad4402abed7510a5e18bc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister an any stringer method for a specified type.  <br /></td></tr>
-<tr class="separator:ga690f99e87ad4402abed7510a5e18bc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga020fbeceaf011505de3ac30168375664" name="ga020fbeceaf011505de3ac30168375664"></a>
@@ -267,9 +263,9 @@ Functions</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="boolean__object_8h.html">xtd.core/include/xtd/boolean_object.h</a>&gt;</code></p>
 
 <p>Represent a boxed bool. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boolean_object&gt;</span> </div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boolean_object&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#ga020fbeceaf011505de3ac30168375664" title="Represent a boxed bool.">xtd::boolean_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
 <div class="line"><span class="keywordtype">bool</span> unboxed_object = <span class="keyword">true</span>;</div>
@@ -277,7 +273,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = true;</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__system_html_ga020fbeceaf011505de3ac30168375664"><div class="ttname"><a href="group__system.html#ga020fbeceaf011505de3ac30168375664">xtd::boolean_object</a></div><div class="ttdeci">box&lt; bool &gt; boolean_object</div><div class="ttdoc">Represent a boxed bool.</div><div class="ttdef"><b>Definition</b> boolean_object.h:26</div></div>
+<div class="ttc" id="agroup__system_html_ga020fbeceaf011505de3ac30168375664"><div class="ttname"><a href="group__system.html#ga020fbeceaf011505de3ac30168375664">xtd::boolean_object</a></div><div class="ttdeci">box&lt; bool &gt; boolean_object</div><div class="ttdoc">Represent a boxed bool.</div><div class="ttdef"><b>Definition</b> boolean_object.h:28</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -347,9 +343,9 @@ template&lt;typename type_t , typename ... args_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boxed object. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The boxed object must implement operator == and operator &lt; because a <a class="el" href="classxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> and <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> interfaces. </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boxing&gt;</span> </div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boxing&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. </dd></dl>
 
@@ -392,9 +388,9 @@ template&lt;typename type_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boxed object. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The boxed object must implement operator == and operator &lt; because a <a class="el" href="classxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> and <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> interfaces. </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boxing&gt;</span> </div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boxing&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. </dd></dl>
 
@@ -484,7 +480,7 @@ template&lt;class type_t , class function_t &gt; </div>
 <div class="line"><span class="comment">// After unregister_any_stringer : (unregistered)</span></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:47</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1062</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gabff6a04b06200c06d782196536e4a8af"><div class="ttname"><a href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">xtd::to_string</a></div><div class="ttdeci">std::string to_string(const date_time &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</div><div class="ttdoc">Convert a specified value into a string with specified format and locale.</div><div class="ttdef"><b>Definition</b> date_time.h:1080</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gabff6a04b06200c06d782196536e4a8af"><div class="ttname"><a href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">xtd::to_string</a></div><div class="ttdeci">std::string to_string(const date_time &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</div><div class="ttdoc">Convert a specified value into a string with specified format and locale.</div><div class="ttdef"><b>Definition</b> date_time.h:1082</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -526,92 +522,11 @@ template&lt;typename type_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unboxed object. </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/unboxing&gt;</span> </div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. </dd></dl>
-
-</div>
-</div>
-<a id="ga690f99e87ad4402abed7510a5e18bc15" name="ga690f99e87ad4402abed7510a5e18bc15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga690f99e87ad4402abed7510a5e18bc15">&#9670;&#160;</a></span>unregister_any_stringer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void xtd::unregister_any_stringer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="unregister__any__stringer_8h.html">xtd.core/include/xtd/unregister_any_stringer.h</a>&gt;</code></p>
-
-<p>Unregister an any stringer method for a specified type. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/any&gt;</span> </div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/unboxing&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>Show how to register your own class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/unregister_any_stringer&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>character {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  character(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; name, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; rank) noexcept : name_(name), rank_(rank) {}</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; name() const noexcept {<span class="keywordflow">return</span> name_;}</div>
-<div class="line">  <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; rank() const noexcept {<span class="keywordflow">return</span> rank_;}</div>
-<div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> <a class="code hl_function" href="group__xtd__core.html#gabff6a04b06200c06d782196536e4a8af">to_string</a>() const noexcept {<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
-<div class="line">   </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> name_;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> rank_;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> value = make_any&lt;int&gt;(42);</div>
-<div class="line">  cout &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
-<div class="line">  </div>
-<div class="line">  value = make_any&lt;ustring&gt;(<span class="stringliteral">&quot;Star Trek: The Next Generation&quot;</span>);</div>
-<div class="line">  cout &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
-<div class="line">  </div>
-<div class="line">  value = make_any&lt;character&gt;(<span class="stringliteral">&quot;Jean-Luc Picard&quot;</span>, <span class="stringliteral">&quot;Captain&quot;</span>);</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Before register_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
-<div class="line">  </div>
-<div class="line">  register_any_stringer&lt;character&gt;([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> value.to_string();});</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;After register_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
-<div class="line">  </div>
-<div class="line">  unregister_any_stringer&lt;character&gt;();</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;After unregister_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 42</span></div>
-<div class="line"><span class="comment">// Star Trek: The Next Generation</span></div>
-<div class="line"><span class="comment">// Before register_any_stringer : (unregistered)</span></div>
-<div class="line"><span class="comment">// After register_any_stringer : Jean-Luc Picard (Captain)</span></div>
-<div class="line"><span class="comment">// After unregister_any_stringer : (unregistered)</span></div>
-</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. </dd></dl>
 
 </div>
 </div>
@@ -619,7 +534,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 21 2024 21:24:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jun 22 2024 15:29:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
