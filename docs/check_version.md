@@ -22,7 +22,7 @@ The [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/README.md) 
 
 # More information
 
-You can see the versions of the different libraries composing xtd with the command ```xtdc --info```.
+You can see the versions of the different libraries composing xtd with the command `xtdc --info`.
 You'll also get other environmental related information, such as the operating system version, compiler version and c++ version.
 
 # See also
