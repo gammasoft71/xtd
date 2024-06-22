@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a loading indicator control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/loading_indicator>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

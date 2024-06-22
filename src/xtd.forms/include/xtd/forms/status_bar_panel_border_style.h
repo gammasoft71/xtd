@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the appearance of the border for a xtd::forms::status_bar_panel on a xtd::forms::status_bar control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/status_bar_panel_bo>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

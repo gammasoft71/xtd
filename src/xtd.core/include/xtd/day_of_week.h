@@ -10,9 +10,9 @@ namespace xtd {
   /// @par Namespace
   /// xtd
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/day_of_week>
-  /// @endcode
+  /// ```
     /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

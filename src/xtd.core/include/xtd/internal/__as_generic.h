@@ -15,19 +15,19 @@ namespace xtd {
   /// @return A new bool object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// std::any value = 42;
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(std::any value) {
     try {
@@ -41,19 +41,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// bool value = true;
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(bool value) {
     return static_cast<new_type_t>(value);
@@ -63,19 +63,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// xtd::byte value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(xtd::byte value) {
     return static_cast<new_type_t>(value);
@@ -85,19 +85,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char value = 'a';
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(char value) {
     return static_cast<new_type_t>(value);
@@ -108,19 +108,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char8 value = u8'a';
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(char8 value) {
     return static_cast<new_type_t>(value);
@@ -131,19 +131,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char8 value = u'a';
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(char16 value) {
     return static_cast<new_type_t>(value);
@@ -153,19 +153,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char8 value = U'a';
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(char32 value) {
     return static_cast<new_type_t>(value);
@@ -175,19 +175,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char8 value = L'a';
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(wchar value) {
     return static_cast<new_type_t>(value);
@@ -197,19 +197,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// decimal value = 42.0l;
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(decimal value) {
     return static_cast<new_type_t>(value);
@@ -219,19 +219,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// double value = 42.0;
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(double value) {
     return static_cast<new_type_t>(value);
@@ -241,19 +241,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// float value = 42.0f;
   /// int result = as<int>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(float value) {
     return static_cast<new_type_t>(value);
@@ -263,19 +263,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int16 value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(int16 value) {
     return static_cast<new_type_t>(value);
@@ -285,19 +285,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int32 value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(int32 value) {
     return static_cast<new_type_t>(value);
@@ -307,19 +307,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int64 value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(int64 value) {
     return static_cast<new_type_t>(value);
@@ -329,19 +329,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// slong value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(slong value) {
     return static_cast<new_type_t>(value);
@@ -351,19 +351,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// sbyte value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(sbyte value) {
     return static_cast<new_type_t>(value);
@@ -373,19 +373,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint16 value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(uint16 value) {
     return static_cast<new_type_t>(value);
@@ -395,19 +395,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint32 value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(uint32 value) {
     return static_cast<new_type_t>(value);
@@ -417,19 +417,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint64 value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(uint64 value) {
     return static_cast<new_type_t>(value);
@@ -439,19 +439,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// xtd::ulong value = 42;
   /// float result = as<float>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(xtd::ulong value) {
     return static_cast<new_type_t>(value);
@@ -462,19 +462,19 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// ustring value = "Gammasoft";
   /// object result = as<object>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(const xtd::ustring& value) {
     try {
@@ -490,19 +490,19 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// ustring value = "Gammasoft";
   /// object result = as<object>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(xtd::ustring& value) {
     try {
@@ -565,9 +565,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -588,9 +588,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -612,9 +612,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -635,9 +635,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -659,9 +659,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -682,9 +682,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -705,9 +705,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -728,9 +728,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -751,9 +751,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -774,9 +774,9 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -796,19 +796,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const char* value = "Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(const char* value) {
     return reinterpret_cast<new_type_t>(value);
@@ -818,19 +818,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char* value = "Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(char* value) {
     return reinterpret_cast<new_type_t>(value);
@@ -841,19 +841,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const char8* value = u8"Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(const char8* value) {
     return reinterpret_cast<new_type_t>(value);
@@ -863,19 +863,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char8* value = u8"Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(char8* value) {
     return reinterpret_cast<new_type_t>(value);
@@ -886,19 +886,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const char16* value = u"Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(const char16* value) {
     return reinterpret_cast<new_type_t>(value);
@@ -908,19 +908,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char16* value = u"Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(char16* value) {
     return reinterpret_cast<new_type_t>(value);
@@ -930,19 +930,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const char32* value = U"Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(const char32* value) {
     return reinterpret_cast<new_type_t>(value);
@@ -952,19 +952,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char32* value = U"Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(char32* value) {
     return reinterpret_cast<new_type_t>(value);
@@ -974,19 +974,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const wchar* value = L"Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(const wchar* value) {
     return reinterpret_cast<new_type_t>(value);
@@ -996,19 +996,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// wchar* value = L"Gammasoft";
   /// intptr result = as<intptr>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t>
   new_type_t as(wchar* value) {
     return reinterpret_cast<new_type_t>(value);

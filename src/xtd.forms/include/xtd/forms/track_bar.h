@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a standard Windows track bar.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/track_bar>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

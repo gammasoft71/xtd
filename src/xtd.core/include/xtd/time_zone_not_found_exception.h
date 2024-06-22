@@ -89,11 +89,11 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::time_zone_not_found_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw time_zone_not_found_exception_(); // same as : throw time_zone_not_found_exception {csf_};
 ///   if (invalid_value) throw time_zone_not_found_exception_("Bad value"); // same as : throw time_zone_not_found_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define time_zone_not_found_exception_(...) time_zone_not_found_exception(add_csf_(__VA_ARGS__))

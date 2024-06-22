@@ -17,15 +17,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class core_export_ directory_info final : public xtd::io::file_system_info
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::io::file_system_info → xtd::io::directory_info
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/directory_info>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -33,7 +33,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     /// @par Examples
     /// The following example demonstrates some of the main members of the xtd::io::directory_info class.
-    /// @code
+    /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
@@ -67,10 +67,10 @@ namespace xtd {
     /// };
     ///
     /// startup_(program::main);
-    /// @endcode
+    /// ```
     /// @par Examples
     /// The following example demonstrates how to copy a directory and its contents.
-    /// @code
+    /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
@@ -115,7 +115,7 @@ namespace xtd {
     /// startup_(copy_dir::main);
     ///
     /// // Output will vary based on the contents of the source directory.
-    /// @endcode
+    /// ```
     /// @remarks Use the xtd::io::directory_info class for typical operations such as copying, moving, renaming, creating, and deleting directories.
     /// @remarks If you are going to reuse an object several times, consider using the instance method of xtd::io::directory_info instead of the corresponding static methods of the xtd::io::directory class, because a security check will not always be necessary.
     /// @note In members that accept a path as an input string, that path must be well-formed or an exception is raised. For example, if a path is fully qualified but begins with a space, the path is not trimmed in methods of the class. Therefore, the path is malformed and an exception is raised. Similarly, a path or a combination of paths cannot be fully qualified twice. For example, "c:\temp c:\windows" also raises an exception in most cases. Ensure that your paths are well-formed when using methods that accept a path string.
@@ -250,7 +250,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @par Examples
       /// The following example uses this constructor to create the specified directory and subdirectory, and demonstrates that a directory that contains subdirectories cannot be deleted.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -279,7 +279,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks This constructor does not check if a directory exists. This constructor is a placeholder for a string that is used to access the disk in subsequent operations.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       explicit directory_info(const xtd::ustring& path);
@@ -292,7 +292,7 @@ namespace xtd {
       /// @return true if the directory exists; otherwise, false.
       /// @par Examples
       /// The following example demonstrates a use of the Exists property in the context of copying a source directory to a target directory.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -330,7 +330,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The xtd::io::directory_info::exists property returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
       bool exists() const override;
       
@@ -338,7 +338,7 @@ namespace xtd {
       /// @return The directory name.
       /// @par Examples
       /// The following example displays the name of the current xtd::io::directory_info instance only.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -354,7 +354,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks This xtd::io::directory_info::name property returns only the name of the directory, such as "Bin". To get the full path, such as "c:\public\Bin", use the xtd::io::directory_info::full_name property.
       /// @remarks The xtd::io::directory_info::name property of a xtd::io::directory_info requires no permission (beyond the read permission to the directory necessary to construct the Exists) but can give out the directory name. If it is necessary to hand out a xtd::io::directory_info to a protected directory with a cryptographically secure name, create a dummy directory for the untrusted code's use.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
@@ -365,7 +365,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @par Examples
       /// The following example refers to the parent directory of a specified directory.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -394,7 +394,7 @@ namespace xtd {
       /// };
       /// ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks To ensure consistent behavior across versions and to make your intent explicit, retrieve the value of one of the following properties on the xtd::io::directory_info instance returned by xtd::io::directory_info::parent.
       /// * xtd::io::directory_info::name, which returns the simple name of the directory (such as bin).
       /// * xtd::io::directory_info::full_name, which returns the absolute path of the directory.
@@ -406,7 +406,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @par Examples
       /// The following example displays root locations for specified directories.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -437,7 +437,7 @@ namespace xtd {
       ///  The root path of 'x:\tempdir' is 'x:\'
       ///  The root path of 'c:\' is 'c:\'
       ///  */
-      /// @endcode
+      /// ```
       xtd::io::directory_info root() const;
       /// @}
       
@@ -448,7 +448,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception The directory cannot be created.
       /// @par Examples
       /// The following example checks whether a specified directory exists, creates the directory if it does not exist, and deletes the directory.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -482,7 +482,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks If the directory already exists, this method does nothing.
       /// @remarks If the directory did not exist before calling this method, then any cached attribute information about the directory will be flushed if the creation is successful.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
@@ -499,7 +499,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example demonstrates creating a subdirectory. In this example, the created directories are removed once created. Therefore, to test this sample, comment out the delete lines in the code.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -530,7 +530,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks Any and all directories specified in path are created, unless some part of path is invalid. The path parameter specifies a directory path, not a file path. If the subdirectory already exists, this method does nothing.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       xtd::io::directory_info create_subdirectory(const xtd::ustring& path) const;
@@ -541,7 +541,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @par Examples
       /// The following example enumerates the subdirectories under the "My Documents" directory.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -562,7 +562,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The xtd::io::directory_info::enumerate_directories and xtd::io::directory_info::get_directories methods differ as follows:
       /// @remarks * When you use xtd::io::directory_info::enumerate_directories, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
       /// @remarks * When you use xtd::io::directory_info::get_directories, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
@@ -603,7 +603,7 @@ namespace xtd {
       /// The following example enumerates the files under a specified directory.
       ///
       /// If you only need the names of the files, use the static xtd::io::directory class for better performance. For an example, see the xtd::io::directory::enumerate_files method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -626,10 +626,10 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @par Examples
       /// The following example shows how to enumerate files in a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.txt.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -681,7 +681,7 @@ namespace xtd {
       ///  test2.txt
       ///  test3.txt
       ///  */
-      /// @endcode
+      /// ```
       /// @remarks The xtd::io::directory_info::enumerate_files and xtd::io::directory_info::get_files methods differ as follows:
       /// * When you use xtd::io::directory_info::enumerate_files, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
       /// * When you use xtd::io::directory_info::get_files, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
@@ -700,7 +700,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @par Examples
       /// The following example shows how to enumerate files in a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.txt.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -752,7 +752,7 @@ namespace xtd {
       ///  test2.txt
       ///  test3.txt
       ///  */
-      /// @endcode
+      /// ```
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
@@ -815,7 +815,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @par Examples
       /// The following example retrieves all the directories in the root directory and displays the directory names.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -838,7 +838,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks If there are no subdirectories, this method returns an empty array. This method is not recursive.
       /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
       /// * xtd::io::file_system_info::attributes
@@ -854,7 +854,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @par Examples
       /// TThe following example counts the directories in a path that contain the specified letter.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -881,7 +881,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
@@ -902,7 +902,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @par Examples
       /// The following example shows how to get a list of files from a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.tx
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -954,7 +954,7 @@ namespace xtd {
       ///  test2.txt
       ///  test3.txt
       ///  */
-      /// @endcode
+      /// ```
       /// @remarks The xtd::io::directory_info::enumerate_files and xtd::io::directory_info::get_files methods differ as follows:
       /// * When you use xtd::io::directory_info::enumerate_files, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
       /// * When you use xtd::io::directory_info::get_files, you must wait for the whole array of xtd::io::directory_info objects to be returned before you can access the array.
@@ -973,7 +973,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @par Examples
       /// The following example shows how to get a list of files from a directory by using different search options. The example assumes a directory that has files named log1.txt, log2.txt, test1.txt, test2.txt, test3.tx
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1025,7 +1025,7 @@ namespace xtd {
       ///  test2.txt
       ///  test3.txt
       ///  */
-      /// @endcode
+      /// ```
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
@@ -1050,7 +1050,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @par Examples
       /// The following example counts the files and directories under the specified directory.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1116,7 +1116,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The xtd::io::directory_info::enumerate_file_system_infos and xtd::io::directory_info::get_file_system_infos methods differ as follows:
       /// * When you use xtd::io::directory_info::enumerate_file_system_infos, you can start enumerating the collection of xtd::io::file_system_info objects before the whole collection is returned.
       /// * When you use xtd::io::directory_info::get_file_system_infos, you must wait for the whole array of xtd::io::file_system_info objects to be returned before you can access the array.
@@ -1135,7 +1135,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @par Examples
       /// The following example counts the files and directories that match the specified search pattern.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1205,7 +1205,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
@@ -1231,7 +1231,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have code access permission to create the directory.
       /// @par Examples
       /// The following example demonstrates moving a directory.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1272,7 +1272,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks This method throws an IOException if, for example, you try to move c:\mydir to c:\public, and c:\public already exists. You must specify "c:\\public\\mydir" as the destDirName parameter, or specify a new directory name such as "c:\\newdir".
       /// @remarks This method permits moving a directory to a read-only directory. The read/write attribute of neither directory is affected.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
@@ -1285,7 +1285,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @par Examples
       /// The following example throws an exception if you attempt to delete a directory that is not empty.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1313,7 +1313,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       void remove() const override;
       
@@ -1325,7 +1325,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @par Examples
       /// The following example demonstrates deleting a directory. Because the directory is removed, first comment out the Delete line to test that the directory exists. Then uncomment the same line of code to test that the directory was removed successfully.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1357,7 +1357,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks If the xtd::io::directory_info has no files or subdirectories, this method deletes the xtd::io::directory_info even if recursive is false. Attempting to delete a xtd::io::directory_info that is not empty when recursive is false throws an xtd::io::io_exception.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       void remove(bool recursive) const;

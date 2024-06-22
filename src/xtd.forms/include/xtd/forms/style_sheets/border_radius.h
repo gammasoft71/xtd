@@ -14,16 +14,16 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The radius is used to add rounded borders to an element.
-      /// @code
+      /// ```cpp
       /// class forms_export_ border_radius : public xtd::iequatable<border_radius>, public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::border_radius
       /// @par Implements
       /// xtd::iequatable <>
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/brer_rzdius> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/brer_rzdius> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

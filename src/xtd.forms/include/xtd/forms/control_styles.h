@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the style and behavior of a control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/control_styles>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -20,9 +20,9 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks This enumeration has a flags  attribute that allows a bitwise combination of its member values.
     /// @remarks Controls use this enumeration in various properties and methods to specify functionality. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit (or bits) and the bool value to set the bit(s) to. For example, the following line code would enable double-buffering.
-    /// @code
+    /// ```cpp
     /// my_control.set_style(control_styles::user_paint | control_styles::all_painting_in_wm_paint | double_buffer, true);
-    /// @endcode
+    /// ```
     /// @remarks If the all_painting_in_wm_paint bit is set to true, the window message WM_ERASEBKGND is ignored, and both on_paint_background and on_paint methods are called directly from the window message WM_PAINT. This generally reduces flicker unless other controls send the window message WM_ERASEBKGND to the control. You might send the window message WM_ERASEBKGRND to achieve a pseudo-transparent effect similar to supports_transparent_back_color; for example, a tool_bar with flat appearance does this.
     /// @remarks To fully enable double-buffering, you can set the optimized_double_buffer and all_painting_in_wm_paint bits to true. However the preferred method for enabling double buffering, which yields the same result, is to set the double_buffered property for the control to true.
     /// @remarks If the supports_transparent_back_color bit is set to true, and the back_color is set to a color whose alpha component is less than 255, on_paint_background will simulate transparency by asking its parent control to paint the background. This is not true transparency.

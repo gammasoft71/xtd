@@ -15,19 +15,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// std::any value = true;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(std::any value) {
     return xtd::convert::to_llong(value);
@@ -37,19 +37,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// bool value = true;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(bool value) {
     return xtd::convert::to_llong(value);
@@ -59,19 +59,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// xtd::byte value = 42;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(xtd::byte value) {
     return xtd::convert::to_llong(value);
@@ -82,19 +82,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char value = 'a';
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(char value) {
     return xtd::convert::to_llong(value);
@@ -106,19 +106,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char8 value = u8'a';
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(char8 value) {
     return xtd::convert::to_llong(value);
@@ -130,19 +130,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char16 value = u'a';
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(char16 value) {
     return xtd::convert::to_llong(value);
@@ -153,19 +153,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char32 value = u'a';
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(char32 value) {
     return xtd::convert::to_llong(value);
@@ -176,19 +176,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// wchar value = u'a';
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(wchar value) {
     return xtd::convert::to_llong(value);
@@ -198,19 +198,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// decimal value = 42.50l;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(decimal value) {
     return xtd::convert::to_llong(value);
@@ -220,19 +220,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// double value = 42.50;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(double value) {
     return xtd::convert::to_llong(value);
@@ -242,19 +242,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// float value = 42.50f;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(float value) {
     return xtd::convert::to_llong(value);
@@ -264,19 +264,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int16 value = 42;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(int16 value) {
     return xtd::convert::to_llong(value);
@@ -286,19 +286,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int32 value = 42;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(int32 value) {
     return xtd::convert::to_llong(value);
@@ -308,19 +308,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int64 value = 42l;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(int64 value) {
     return xtd::convert::to_llong(value);
@@ -330,19 +330,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// slong value = 42ll;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(slong value) {
     return xtd::convert::to_llong(value);
@@ -352,19 +352,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// sbyte value = 42ll;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(sbyte value) {
     return xtd::convert::to_llong(value);
@@ -374,19 +374,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint16 value = 42u;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(uint16 value) {
     return xtd::convert::to_llong(value);
@@ -396,19 +396,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint32 value = 42u;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(uint32 value) {
     return xtd::convert::to_llong(value);
@@ -418,19 +418,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint64 value = 42ul;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(uint64 value) {
     return xtd::convert::to_llong(value);
@@ -440,19 +440,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new slong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// xtd::ulong value = 42ull;
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(xtd::ulong value) {
     return xtd::convert::to_llong(value);
@@ -463,19 +463,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// ustring value = "42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const xtd::ustring& value) {
     return xtd::convert::to_llong(value);
@@ -486,19 +486,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// ustring value = "42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(xtd::ustring& value) {
     return xtd::convert::to_llong(value);
@@ -510,19 +510,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a slong.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// ustring value = "0x2A";
   /// slong result = as<slong>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const xtd::ustring& value, xtd::byte from_base) {
     return xtd::convert::to_llong(value, from_base);
@@ -533,19 +533,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// string value = "42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const std::string& value) {
     return xtd::convert::to_llong(value);
@@ -556,19 +556,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// string value = "42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(std::string& value) {
     return xtd::convert::to_llong(value);
@@ -580,19 +580,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// u8string value = u8"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const std::u8string& value) {
     return xtd::convert::to_llong(value);
@@ -603,19 +603,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// u8string value = u8"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(std::u8string& value) {
     return xtd::convert::to_llong(value);
@@ -627,19 +627,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// u16string value = u"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const std::u16string& value) {
     return xtd::convert::to_llong(value);
@@ -650,19 +650,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// u16string value = u"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(std::u16string& value) {
     return xtd::convert::to_llong(value);
@@ -673,19 +673,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// u32string value = U"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const std::u32string& value) {
     return xtd::convert::to_llong(value);
@@ -696,19 +696,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// u32string value = U"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(std::u32string& value) {
     return xtd::convert::to_llong(value);
@@ -719,19 +719,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// wstring value = L"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const std::wstring& value) {
     return xtd::convert::to_llong(value);
@@ -742,19 +742,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// wstring value = L"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(std::wstring& value) {
     return xtd::convert::to_llong(value);
@@ -765,19 +765,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const char* value = "42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const char* value) {
     return xtd::convert::to_llong(value);
@@ -788,19 +788,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char* value = "42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(char* value) {
     return xtd::convert::to_llong(value);
@@ -812,19 +812,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const char8* value = u8"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const char8* value) {
     return xtd::convert::to_llong(value);
@@ -835,19 +835,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char8* value = u8"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(char8* value) {
     return xtd::convert::to_llong(value);
@@ -859,19 +859,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const char16* value = u"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const char16* value) {
     return xtd::convert::to_llong(value);
@@ -882,19 +882,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char16* value = u"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(char16* value) {
     return xtd::convert::to_llong(value);
@@ -905,19 +905,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const char32* value = U"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const char32* value) {
     return xtd::convert::to_llong(value);
@@ -928,19 +928,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char32* value = U"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(char32* value) {
     return xtd::convert::to_llong(value);
@@ -951,19 +951,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const wchar* value = L"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(const wchar* value) {
     return xtd::convert::to_llong(value);
@@ -974,19 +974,19 @@ namespace xtd {
   /// @return A new slong object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// wchar* value = L"42";
   /// slong result = as<slong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline slong as<slong>(wchar* value) {
     return xtd::convert::to_llong(value);

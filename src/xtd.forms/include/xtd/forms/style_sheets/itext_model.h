@@ -22,14 +22,14 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The text model allows you to specify the alignment, color, decoration, transformation, and font of a text.
-      /// @code
+      /// ```cpp
       /// class itext_model interface_
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::interface → xtd::forms::style_sheets::itext_model
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/itext_model> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/itext_model> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

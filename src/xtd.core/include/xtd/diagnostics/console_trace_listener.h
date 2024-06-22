@@ -10,15 +10,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Directs tracing or debugging output to either the standard output or the standard error stream.
-    /// @code
+    /// ```cpp
     /// class core_export_ console_trace_listener : public xtd::diagnostics::ostream_trace_listener
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::abstract_object → xtd::diagnostics::trace_listener → xtd::diagnostics::ostream_trace_listener → xtd::diagnostics::console_trace_listener
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/console_trace_listener>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

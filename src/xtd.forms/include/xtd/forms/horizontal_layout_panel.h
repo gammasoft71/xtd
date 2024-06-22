@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Used to group collections of horizontally aligned controls.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/horizontal_layout_panel>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

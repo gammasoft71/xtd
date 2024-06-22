@@ -12,8 +12,8 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The length_unit enum class specifies the units for xtd::forms::style_sheets::length.
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/length_unit> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/length_unit> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
@@ -24,7 +24,7 @@ namespace xtd {
       /// @remarks <b>Length</b> is a number followed by a length unit, such as 10px, 2em, etc.CSS has several different units for expressing a length.
       /// @par Example
       /// Set different length values, using px (pixels):
-      /// @code
+      /// ```cpp
       /// control {
       ///   border-width: 3px;
       /// }
@@ -33,7 +33,7 @@ namespace xtd {
       ///   border-width: 1px;
       ///   border-radius: 5px;
       /// }
-      /// @endcode
+      /// ```
       /// @note A whitespace cannot appear between the number and the unit. However, if the value is 0, the unit can be omitted.
       /// @remarks For some CSS properties, negative lengths are allowed.
       /// @remarks There are two types of length units: <b>absolute</b> and </b>relative</b>.

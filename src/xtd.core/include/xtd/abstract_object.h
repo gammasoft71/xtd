@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief Represent an abstract class.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/abstract_object>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -18,12 +18,12 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @remarks This class has no other use than to tag a class to abstract.
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// class foo abstract_object {
   /// public:
   ///   virtual std::string to_string() = 0;
   /// };
-  /// @endcode
+  /// ```
   class abstract_object : public xtd::object {
   public:
     /// @cond
@@ -41,20 +41,20 @@ namespace xtd {
   
   /// @brief This keyword is used to represents an abstract class.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/abstract_object>
-  /// @endcode
+  /// ```
     /// @par Library
   /// xtd.core
   /// @ingroup xtd_core keywords
   /// @remarks This keyword has no other use than to tag a class to abstract.
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// class foo abstract_object_ {
   /// public:
   ///   virtual std::string to_string() = 0;
   /// };
-  /// @endcode
+  /// ```
   #define abstract_object_ \
     : xtd::abstract_object
 }

@@ -20,9 +20,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides information about the current system environment.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/system_information>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

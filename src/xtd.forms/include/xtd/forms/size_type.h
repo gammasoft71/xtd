@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies how rows or columns of user interface (UI) elements should be sized relative to their container.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/size_type>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -7,12 +7,12 @@
 /// These specific CMake commands are automatically added when you add find_package(xtd REQUIRED) to your CMakeLists.txt file.
 ///
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
 ///  find_package(xtd REQUIRED)
-/// @endcode
+/// ```
 ///
 /// @par xtd Specific CMake commands
 /// * @ref GenericCommandsSection
@@ -110,7 +110,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional. 
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -119,7 +119,7 @@
 ///  
 ///  choice_options(TARGET_TYPE "Choose library dynamic, static, interface or module" DYNAMIC_LIBRARY STATIC_LIBRARY INTERFACE_LIBRARY MODULE_LIBRARY)
 ///  target_type(${TARGET_TYPE})
-/// @endcode
+/// ```
 ///
 /// @section TargetPropertiesCommandsSection Target properties commands
 ///
@@ -133,7 +133,7 @@
 /// @remarks This method is optional.
 /// @remarks For more inforamtion see [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -142,7 +142,7 @@
 ///
 ///  target_categories(Development IDE GUIDesigner)
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection TargetDefaultNamespaceSubSection target_default_namespace
 /// @brief Specifies the the base namespace for files added to the project.
@@ -152,7 +152,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -161,7 +161,7 @@
 ///
 ///  target_default_namespace("my_namespace")
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection TargetDisplaySubSection target_display
 /// @brief Specifies if application is displaying in GNOME or KDE menu.
@@ -173,7 +173,7 @@
 /// @remarks This method is optional.
 /// @remarks For more inforamtion see [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -182,7 +182,7 @@
 ///
 ///  target_display(ON)
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection TargetIconSubSection target_icon
 /// @brief Specifies the icon file (.ico for Windows, icons for maOS and png or svg for linux) that you want to use as your program icon.
@@ -210,7 +210,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -219,7 +219,7 @@
 ///
 ///  target_icon(my_icon)
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection TargetNameSubSection target_name
 /// @brief Specifies the name of the output file.
@@ -229,7 +229,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -238,7 +238,7 @@
 ///
 ///  target_name("my_exe")
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection TargetRegisteredSubSection target_registered
 /// @brief Specify the application is registered in the system.
@@ -248,7 +248,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -257,7 +257,7 @@
 ///
 ///  target_registered(OFF)
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection TargetStartupSubSection target_startup
 /// @brief Specifies the entry point to be called when the application is load.
@@ -268,7 +268,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -277,7 +277,7 @@
 ///
 ///  target_startup("my_project::my_class" my_project.cpp)
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection TargetTypeSubSection target_type
 /// @brief Specifies the type of application to build.
@@ -295,7 +295,7 @@
 /// @remarks This method must be the last method.
 /// @remarks Call only once by project.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -304,7 +304,7 @@
 ///  add_references(xtd.drawing xtd.drawing.native)
 ///
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @section AssemblyInformationsCommandsSection Assembly informations commands
 ///
@@ -315,7 +315,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -325,7 +325,7 @@
 ///  assembly_company("Gammasoft")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AssemblyConfigurationSubSection assembly_configuration
 /// @brief Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
@@ -334,7 +334,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -344,7 +344,7 @@
 ///  assembly_configuration("Beta public")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AssemblyCopyrightSubSection assembly_copyright
 /// @brief Specifies a copyright notice for the assembly manifest. Corresponds to AssemblyCopyrightAttribute.
@@ -353,7 +353,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -363,7 +363,7 @@
 ///  assembly_copyright("© 2024 by Gammasoft.")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AssemblyCultureSubSection assembly_culture
 /// @brief Specifies the culture for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
@@ -379,7 +379,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -389,7 +389,7 @@
 ///  assembly_description("The application to stuff it.")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AssemblyFileVersionSubSection assembly_file_version
 /// @brief Specifies a version number that instructs the compiler to use a specific version for the Win32 file version resource. Corresponds to AssemblyFileVersionAttribute.
@@ -398,7 +398,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -408,7 +408,7 @@
 ///  assembly_file_version("1.2.3")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AssemblyGuidSubSection assembly_guid
 /// @brief Specifies an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
@@ -417,7 +417,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -427,7 +427,7 @@
 ///  assembly_guid("fc5beb89-a4cc-445e-8ef7-07a9e471ef9a")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AssemblyProductSubSection assembly_product
 /// @brief Specifies a product name for the assembly manifest. Corresponds to AssemblyProductAttribute.
@@ -436,7 +436,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -446,7 +446,7 @@
 ///  assembly_product("my_project")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AssemblyTitleSubSection assembly_title
 /// @brief Specifies a title for the assembly manifest. Corresponds to AssemblyTitleAttribute.
@@ -455,7 +455,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -465,7 +465,7 @@
 ///  assembly_title("My Project")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AssemblyTrademarkSubSection assembly_trademark
 /// @brief Specifies a trademark for the assembly manifest. Corresponds to AssemblyTrademarkAttribute.
@@ -481,7 +481,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -491,7 +491,7 @@
 ///  assembly_version("1.2.3")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @section BuildOptionsCommandsSection Build options commands
 ///
@@ -500,7 +500,7 @@
 /// @param OUTPUT_DIRECTORY the directory where runtime target files should be built.
 /// @remarks This option is use mainly when a solution as more than one project.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(MySolution)
@@ -510,7 +510,7 @@
 ///
 ///  add_projects(lib_project1 lib_project2 lib_project3)
 ///  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project3)
-/// @endcode
+/// ```
 ///
 /// @section InstallCommandsSection Install commands
 ///
@@ -520,7 +520,7 @@
 /// @remarks This method is required for install package.
 /// @remarks This method can be call more than once in the same project.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -532,7 +532,7 @@
 ///  add_install_include_directories(include/my_project)
 ///  install_component()
 ///  install_application()
-/// @endcode
+/// ```
 ///
 /// @subsection AddInstallIncludeFilesSubSection add_install_include_files
 /// @brief Installs include files.
@@ -540,7 +540,7 @@
 /// @remarks This method is required for install package.
 /// @remarks This method can be call more than once in the same project.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -552,7 +552,7 @@
 ///  install_include_files(my_project1.h my_project2.h)
 ///  install_component()
 ///  install_application()
-/// @endcode
+/// ```
 ///
 /// @subsection InstallComponentSubSection install_component
 /// @param ARGV0 Install name (optional).
@@ -561,7 +561,7 @@
 /// @remarks This method must be call after target_type.
 /// @remarks Call only once by project.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -573,7 +573,7 @@
 ///  add_install_include_files(my_project.h)
 ///  install_component()
 ///  install_package()
-/// @endcode
+/// ```
 ///
 /// @subsection InstallPackageSubSection install_package
 /// @brief Installs package MODULE_LIBRARY, STATIC_LIBRARY or SHARED_LIBRARY package.
@@ -583,7 +583,7 @@
 /// @remarks This method must be after target_type.
 /// @remarks Call only once by project.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -595,7 +595,7 @@
 ///  add_install_include_files(my_project.h)
 ///  install_component()
 ///  install_package()
-/// @endcode
+/// ```
 ///
 /// @subsection InstallNameSubSection install_name
 /// @brief Specifies the install name.
@@ -604,7 +604,7 @@
 /// @remarks This method must be after add_references.
 /// @remarks Call only once by project.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -617,7 +617,7 @@
 ///  add_install_include_files(my_project.h)
 ///  install_component()
 ///  install_application()
-/// @endcode
+/// ```
 ///
 /// @section ProjectCommandsSection Project commands
 ///
@@ -628,7 +628,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -637,7 +637,7 @@
 ///  add_sources(my_project.cpp include/my_project/my_project.h)
 ///
 ///  target_type(STATIC_LIBRARY)
-/// @endcode
+/// ```
 ///
 /// @subsection AddPackagesSubSection add_packages
 /// @brief Adds, finds and loads settings from external required projects to current project.
@@ -646,7 +646,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -656,7 +656,7 @@
 ///  add_sources(my_project.cpp)
 ///
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AddProjectsSubSection add_projects
 /// @brief Add child projects to parent project.
@@ -666,14 +666,14 @@
 /// @remarks This method is optional except container project like Solution.
 /// @remarks This method must be call before target_type().
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(MySolution)
 ///  find_package(xtd REQUIRED)
 ///  add_projects(lib_project1 lib_project2 lib_project3)
 ///  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project3)
-/// @endcode
+/// ```
 ///
 /// @subsection AddReferencesSubSection add_references
 /// @brief Add references (libraries) to current project.
@@ -681,7 +681,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -692,7 +692,7 @@
 ///  add_references(xtd.forms)
 ///
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AddResourcesSubSection resource
 /// @brief Add resources to current project.
@@ -703,7 +703,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -714,7 +714,7 @@
 ///  resource(animation1 animations/ani1.gif)
 ///
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AddResourceStringSubSection resource_string
 /// @brief Add resource string to current project.
@@ -725,7 +725,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -735,7 +735,7 @@
 ///  resource_string(button_close_text "\"Close\"" "Text of close button.")
 ///
 ///  target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AddSettingSubSection setting
 /// @brief Add a setting to current project.
@@ -749,7 +749,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -759,7 +759,7 @@
 ///  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ///
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AddSettingIncludeSubSection setting_include
 /// @brief Adds a setting include file to current project.
@@ -768,7 +768,7 @@
 /// @remarks This method must be call before target_type().
 /// @remarks This method is optional.
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -781,7 +781,7 @@
 ///  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ///
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsection AddSourcesSubSection add_sources
 /// @brief Add source and header files to current project.
@@ -791,7 +791,7 @@
 /// @remarks This method is required except container project like Solution.
 /// @remarks This method must be call before target_type().
 /// @par Examples
-/// @code
+/// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
 ///
 ///  project(my_project)
@@ -800,7 +800,7 @@
 ///  add_sources(file1.cpp file2.cpp options/file3.cpp)
 ///
 ///  target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @section TargetPropertiesVariablesSection Target properties Variables
 ///

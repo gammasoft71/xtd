@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represent dot matrix style used by dot_matrix_display control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/dot_matrix_style>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -10,9 +10,9 @@ namespace xtd {
   namespace net {
     /// @brief The exception that is thrown when an error is made adding a xtd::net::cookie to a xtd::net::cookie_container.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/net/cookie_exception>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::net
     /// @par Library
@@ -93,18 +93,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::net::cookie_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/net/cookie_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::net::cookie_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw cookie_exception_(); // same as : throw cookie_exception {csf_};
 ///   if (invalid_value) throw cookie_exception_("Bad value"); // same as : throw cookie_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define cookie_exception_(...) cookie_exception(add_csf_(__VA_ARGS__))

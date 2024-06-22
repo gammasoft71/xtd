@@ -11,13 +11,13 @@ namespace xtd {
   namespace threading {
     /// @brief Represents the method that executes on a xtd::threading::thread.
     /// @param obj An object that contains data for the thread procedure.
-    /// @code
+    /// ```cpp
     /// using parameterized_thread_start = action<std::any>
-    /// @endcode
+    /// ```
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/threading/parameterized_thread_start>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::threading
     /// @par Library

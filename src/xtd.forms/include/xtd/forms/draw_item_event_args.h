@@ -19,9 +19,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the @verbatim draw_item @endverbatim event.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/draw_item_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

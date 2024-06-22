@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the known system colors.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/known_themed_color>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

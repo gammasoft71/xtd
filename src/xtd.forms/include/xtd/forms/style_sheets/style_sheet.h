@@ -43,16 +43,16 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The xtd::forms::style_sheets::style_sheet allows you to specify an xtd style sheet.
-      /// @code
+      /// ```cpp
       /// class forms_export_ style_sheet final : public xtd::iequatable<style_sheet>, public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::style_sheet
       /// @par Implements
       /// xtd::iequatable <>
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/style_sheet> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/style_sheet> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

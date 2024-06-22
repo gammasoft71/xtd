@@ -8,15 +8,15 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the base class for custom attributes.
-  /// @code
+  /// ```cpp
   /// class attribute : public xtd::object
-  /// @endcode
+  /// ```
   /// @par Inheritance
   /// xtd::object → xtd::attribute
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/attribute>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

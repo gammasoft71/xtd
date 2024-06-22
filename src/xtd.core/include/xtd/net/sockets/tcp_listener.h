@@ -13,14 +13,14 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Listens for connections from TCP network clients.
-      /// @code
+      /// ```cpp
       /// class core_export_ tcp_listener : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::tcp_listener
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/tcp_listener> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/tcp_listener> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

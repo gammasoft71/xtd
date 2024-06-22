@@ -9,15 +9,15 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief The exception that is thrown when reading is attempted past the end of a stream.
-    /// @code
+    /// ```cpp
     /// class end_of_stream_exception : public xtd::io::io_exception
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::end_of_stream_exception
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/end_of_stream_exception>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -98,18 +98,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::io::end_of_stream_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/io/end_of_stream_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::io::end_of_stream_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw end_of_stream_exception_(); // same as : throw end_of_stream_exception {csf_};
 ///   if (invalid_value) throw end_of_stream_exception_("Bad value"); // same as : throw end_of_stream_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define end_of_stream_exception_(...) end_of_stream_exception(add_csf_(__VA_ARGS__))

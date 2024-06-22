@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a Windows progress bar control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/progress_bar>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

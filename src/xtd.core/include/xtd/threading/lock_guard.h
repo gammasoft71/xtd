@@ -11,15 +11,15 @@ namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
     /// @brief Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.
-    /// @code
+    /// ```cpp
     /// class core_export_ lock_guard final : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::lock_guard
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/threading/lock_guard>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::threading
     /// @par Library
@@ -119,7 +119,7 @@ namespace xtd {
 }
 
 /// @brief The lock_guard_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
-/// @code
+/// ```cpp
 /// class account : public object {
 /// public:
 ///   void withdraw(decimal amount) {
@@ -133,7 +133,7 @@ namespace xtd {
 /// private:
 ///   decimal balance;
 /// };
-/// @endcode
+/// ```
 /// For more information, see Thread Synchronization.
 /// @par Namespace
 /// xtd
@@ -151,7 +151,7 @@ namespace xtd {
 /// @remarks You can't use the await_ keyword in the body of a lock_guard_ statement.
 /// @par Examples
 /// The following sample shows a simple use of threads without locking in C++.
-/// @code
+/// ```cpp
 /// #include <xtd/xtd>
 ///
 /// using namespace xtd;
@@ -173,7 +173,7 @@ namespace xtd {
 /// startup_(thread_test::main)
 ///
 /// // Output: run_me called
-/// @endcode
+/// ```
 /// @par Examples
 /// The following sample uses threads and lock_guard_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number.
 /// @include lock_guard_keyword.cpp

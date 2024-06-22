@@ -10,9 +10,9 @@ namespace xtd {
   namespace security {
     /// @brief The exception that is thrown when an I/O error occurs.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/security/security_exception>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -93,18 +93,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::security::security_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/security/security_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::security::security_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw security_exception_(); // same as : throw security_exception {csf_};
 ///   if (invalid_value) throw security_exception_("Bad value"); // same as : throw security_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define security_exception_(...) security_exception(add_csf_(__VA_ARGS__))

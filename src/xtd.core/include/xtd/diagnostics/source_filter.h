@@ -9,15 +9,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Indicates whether a listener should trace a message based on the source of a trace.
-    /// @code
+    /// ```cpp
     /// class core_export_ source_filter : public xtd::diagnostics::trace_filter
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::abstract_object → xtd::diagnostics::trace_filter → xtd::diagnostics::source_filter
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/source_filter>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

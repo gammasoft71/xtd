@@ -14,16 +14,16 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The control selector allows you to specify the box and color of a control.
-      /// @code
+      /// ```cpp
       /// class forms_export_ control : public xtd::forms::style_sheets::ibox_model, public xtd::forms::style_sheets::itext_model, public xtd::iequatable<control>, public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::ibox_model → xtd::forms::style_sheets::control
       /// @par Implements
       /// xtd::forms::style_sheets::ibox_model, xtd::forms::style_sheets::itext_model, xtd::iequatable <>
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/control> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/control> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

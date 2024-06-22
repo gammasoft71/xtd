@@ -18,9 +18,9 @@ namespace xtd {
     
     /// @brief Represents a common dialog box that displays exception box.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/exception_box>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

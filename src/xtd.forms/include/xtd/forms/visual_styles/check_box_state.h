@@ -12,8 +12,8 @@ namespace xtd {
     namespace visual_styles {
       /// @brief Specifies the visual state of a check box that is drawn with visual styles.
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/visual_styles/check_box_state> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/visual_styles/check_box_state> ```
       /// @par Namespace
       /// xtd::forms::visual_style
       /// @par Library

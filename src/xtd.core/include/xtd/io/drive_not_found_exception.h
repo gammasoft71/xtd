@@ -9,15 +9,15 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief The exception that is thrown when trying to access a drive or share that is not available.
-    /// @code
+    /// ```cpp
     /// class drive_not_found_exception : public xtd::io::io_exception
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::drive_not_found_exception
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/drive_not_found_exception>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -98,18 +98,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::io::drive_not_found_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/io/drive_not_found_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::io::drive_not_found_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw drive_not_found_exception_(); // same as : throw drive_not_found_exception {csf_};
 ///   if (invalid_value) throw drive_not_found_exception_("Bad value"); // same as : throw drive_not_found_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define drive_not_found_exception_(...) drive_not_found_exception(add_csf_(__VA_ARGS__))

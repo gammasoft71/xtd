@@ -16,9 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represent a emoticon with name and codepoints.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/emoticon>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

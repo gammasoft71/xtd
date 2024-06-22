@@ -16,9 +16,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Encapsulates text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ string_format final : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::string_dormat
     /// @par Namespace

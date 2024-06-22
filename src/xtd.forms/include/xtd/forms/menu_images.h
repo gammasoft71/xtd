@@ -13,9 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a menu images factories for use by a menu control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/menu_images>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

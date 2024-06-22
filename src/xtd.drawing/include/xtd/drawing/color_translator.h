@@ -12,9 +12,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Translates colors to and from GDI+ xtd::drawing::color structures. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ color_translator final static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static_object → xtd::drawing::color_translator
     /// @par Namespace

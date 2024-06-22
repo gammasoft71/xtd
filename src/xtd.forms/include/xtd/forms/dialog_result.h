@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies identifiers to indicate the return value of a dialog box.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/dialog_result>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -21,7 +21,7 @@ namespace xtd {
     /// @remarks The xtd::forms::button::dialog_result property and the xtd::forms::form::show_dialog method use this enumeration.
     /// @par Examples
     /// The following code example demonstrates how to display a xtd::forms::message_box with the options supported by this overload of xtd::forms::message_box::show. After verifying that a string variable, ServerName, is empty, the example displays a MessageBox, offering the user the option to cancel the operation. If the Show method's return value evaluates to Yes, the form that displayed the MessageBox is closed.
-    /// @code
+    /// ```cpp
     /// void validate_user_entry() {
     ///   // Checks the value of the text.
     ///   if (server_name.text().size() == 0) {
@@ -39,7 +39,7 @@ namespace xtd {
     ///     }
     ///   }
     /// }
-    /// @endcode
+    /// ```
     enum class dialog_result {
       /// @brief Nothing is returned from the dialog box. This means that the modal dialog continues running.
       none = 0,

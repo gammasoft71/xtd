@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a choice control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/choice>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

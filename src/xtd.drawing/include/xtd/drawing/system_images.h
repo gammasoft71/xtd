@@ -9,9 +9,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Each property of the xtd::drawing::system_images class is an xtd::drawing::image object for Windows system-wide images. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ system_images final : private system_images_base
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::drawing::system_images_base → xtd::drawing::system_images
     /// @par Namespace

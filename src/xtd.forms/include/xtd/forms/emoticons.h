@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a collection of xtd::forms:emoticon for all known emoticons. This class cannot be inherited.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/emoticons>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

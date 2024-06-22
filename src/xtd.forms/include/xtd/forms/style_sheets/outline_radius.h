@@ -11,12 +11,12 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The radius is used to add rounded outlines to an element.
-      /// @code
+      /// ```cpp
       /// using outline_radius = xtd::forms::style_sheets::border_radius
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/outline_radius> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/outline_radius> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

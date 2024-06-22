@@ -15,14 +15,14 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Contains option values for joining an IPv6 multicast group.
-      /// @code
+      /// ```cpp
       /// class core_export_ ip_v6_multicast_option : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::ip_v6_multicast_option
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/ip_v6_multicast_option> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/ip_v6_multicast_option> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

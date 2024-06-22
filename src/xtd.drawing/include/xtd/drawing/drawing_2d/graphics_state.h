@@ -17,9 +17,9 @@ namespace xtd {
     /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Represents the state of a xtd::drawing::graphics object. This object is returned by a call to the xtd::drawing::graphics::save() methods. This class cannot be inherited.
-      /// @code
+      /// ```cpp
       /// class drawing_export_ graphics_state final : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::object → xtd::drawing::drawing_2d::graphics_state
       /// @par Namespace

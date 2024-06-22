@@ -14,16 +14,16 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The xtd::forms::style_sheets::border_color is used to set the color of the borders.
-      /// @code
+      /// ```cpp
       /// class forms_export_ border_color : public xtd::iequatable<border_color>, public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::border_color
       /// @par Implements
       /// xtd::iequatable <>
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/border_color> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/border_color> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

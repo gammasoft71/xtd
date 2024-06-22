@@ -18,9 +18,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a Windows label control that can display hyperlinks.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/link_label>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

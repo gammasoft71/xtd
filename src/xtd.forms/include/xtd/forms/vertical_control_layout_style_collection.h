@@ -14,9 +14,9 @@ namespace xtd {
   namespace forms {
     /// @brief A collection that stores vertical_control_layout_style objects.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/pavertical_control_layout_style_collectionnel>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a standard Windows numeric up down.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/numeric_up_down>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

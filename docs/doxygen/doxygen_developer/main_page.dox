@@ -50,7 +50,7 @@
 ///
 /// @subsection ExamplesConsoleSubsection Console
 /// hello_world_console.cpp:
-/// @code
+/// ```cpp
 /// #include <xtd/xtd>
 ///
 /// using namespace xtd;
@@ -60,32 +60,32 @@
 ///   console::foreground_color(console_color::white);
 ///   console::write_line("Hello, World!");
 /// }
-/// @endcode
+/// ```
 ///
 /// CMakeLists.txt:
-/// @code
+/// ```cpp
 /// cmake_minimum_required(VERSION 3.20)
 ///
 /// project(hello_world_console)
 /// find_package(xtd REQUIRED)
 /// add_sources(hello_world_console.cpp)
 /// target_type(CONSOLE_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsubsection ExamplesConsoleBuildAndRunSubsubsection Build and run
 /// Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
-/// @code
+/// ```cpp
 /// xtdc run
-/// @endcode
+/// ```
 ///
 /// @subsubsection ExamplesConsoleOutputSubsubsection Output
-/// @code
+/// ```cpp
 /// Hello, World!
-/// @endcode
+/// ```
 ///
 /// @subsection ExamplesFormsSubsection Forms
 /// hello_world_forms.cpp:
-/// @code
+/// ```cpp
 /// #include <xtd/xtd>
 /// 
 /// using namespace xtd::forms;
@@ -110,23 +110,23 @@
 /// auto main() -> int {
 ///   application::run(main_form());
 /// }
-/// @endcode
+/// ```
 ///
 /// CMakeLists.txt:
-/// @code
+/// ```cpp
 /// cmake_minimum_required(VERSION 3.20)
 ///
 /// project(hello_world_forms)
 /// find_package(xtd REQUIRED)
 /// add_sources(hello_world_forms.cpp)
 /// target_type(GUI_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsubsection ExamplesFormsBuildAndRunSubsubsection Build and run
 /// Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
-/// @code
+/// ```cpp
 /// xtdc run
-/// @endcode
+/// ```
 ///
 /// @subsubsection ExamplesFormsOutputSubsubsection Output
 ///
@@ -147,7 +147,7 @@
 ///
 /// @subsection ExamplesUnitTestSubsection Unit tests
 /// hello_world_test.cpp:
-/// @code
+/// ```cpp
 /// #include <xtd/xtd>
 /// #include <string>
 ///
@@ -173,23 +173,23 @@
 /// auto main() -> int {
 ///   return console_unit_test(argv, argc).run();
 /// }
-/// @endcode
+/// ```
 ///
 /// CMakeLists.txt:
-/// @code
+/// ```cpp
 /// cmake_minimum_required(VERSION 3.20)
 ///
 /// project(hello_world_test)
 /// find_package(xtd REQUIRED)
 /// add_sources(hello_world_test.cpp)
 /// target_type(TEST_APPLICATION)
-/// @endcode
+/// ```
 ///
 /// @subsubsection ExamplesUnitTestBuildAndRunSubsubsection Build and run
 /// Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
-/// @code
+/// ```cpp
 /// xtdc run
-/// @endcode
+/// ```
 ///
 /// @subsubsection ExamplesUnitTestOutputSubsubsection Output
 ///

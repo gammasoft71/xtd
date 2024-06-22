@@ -15,19 +15,19 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// std::any value = true;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(std::any value) {
     return xtd::convert::to_string(value);
@@ -37,19 +37,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// bool value = true;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(bool value) {
     return xtd::convert::to_string(value);
@@ -59,19 +59,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// xtd::byte value = 42;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(xtd::byte value) {
     return xtd::convert::to_string(value);
@@ -83,19 +83,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// xtd::byte value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(xtd::byte value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
@@ -106,19 +106,19 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char value = 'a';
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(char value) {
     return xtd::convert::to_string(value);
@@ -130,19 +130,19 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char8 value = u8'a';
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(char8 value) {
     return xtd::convert::to_string(value);
@@ -154,19 +154,19 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char16 value = u'a';
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(char16 value) {
     return xtd::convert::to_string(value);
@@ -177,19 +177,19 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// char32 value = u'a';
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(char32 value) {
     return xtd::convert::to_string(value);
@@ -200,19 +200,19 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// wchar value = u'a';
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(wchar value) {
     return xtd::convert::to_string(value);
@@ -222,19 +222,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// decimal value = 42.50l;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(decimal value) {
     return xtd::convert::to_string(value);
@@ -244,19 +244,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// double value = 42.50;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(double value) {
     return xtd::convert::to_string(value);
@@ -266,19 +266,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// float value = 42.50f;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(float value) {
     return xtd::convert::to_string(value);
@@ -288,19 +288,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int16 value = 42;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(int16 value) {
     return xtd::convert::to_string(value);
@@ -312,19 +312,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int16 value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(int16 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
@@ -334,19 +334,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int32 value = 42;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(int32 value) {
     return xtd::convert::to_string(value);
@@ -358,19 +358,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int32 value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(int32 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
@@ -380,19 +380,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int64 value = 42l;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(int64 value) {
     return xtd::convert::to_string(value);
@@ -404,19 +404,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// int64 value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(int64 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
@@ -426,19 +426,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// slong value = 42ll;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(slong value) {
     return xtd::convert::to_string(value);
@@ -450,19 +450,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// slong value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(slong value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
@@ -472,19 +472,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// sbyte value = 42ll;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(sbyte value) {
     return xtd::convert::to_string(value);
@@ -496,19 +496,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// sbyte value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(sbyte value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
@@ -518,19 +518,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint16 value = 42u;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(uint16 value) {
     return xtd::convert::to_string(value);
@@ -542,19 +542,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint16 value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(uint16 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
@@ -564,19 +564,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint32 value = 42u;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(uint32 value) {
     return xtd::convert::to_string(value);
@@ -588,19 +588,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint32 value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(uint32 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
@@ -610,19 +610,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint64 value = 42ul;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(uint64 value) {
     return xtd::convert::to_string(value);
@@ -634,19 +634,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// uint64 value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(uint64 value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);
@@ -656,19 +656,19 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// xtd::ulong value = 42ull;
   /// xtd::ulong result = as<xtd::ulong>(value);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(xtd::ulong value) {
     return xtd::convert::to_string(value);
@@ -680,19 +680,19 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// xtd::ulong value = 42;
   /// ustring result = as<ustring>(value, 16);
-  /// @endcode
+  /// ```
   template<>
   inline ustring as<ustring>(xtd::ulong value, xtd::byte from_base) {
     return xtd::convert::to_string(value, from_base);

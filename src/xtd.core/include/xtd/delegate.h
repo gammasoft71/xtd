@@ -25,9 +25,9 @@ namespace xtd {
   /// @brief References a method to be called when a corresponding asynchronous operation completes.
   /// @param ar The result of the asynchronous operation.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/async_callback>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -37,9 +37,9 @@ namespace xtd {
 
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/delegate>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -353,9 +353,9 @@ namespace xtd {
   
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/delegate>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

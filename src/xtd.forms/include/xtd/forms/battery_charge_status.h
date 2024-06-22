@@ -11,9 +11,9 @@ namespace xtd {
     /// @brief Defines identifiers that indicate the current battery charge level or charging state information.
     /// This enumeration supports a bitwise combination of its member values.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/battery_change_status>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

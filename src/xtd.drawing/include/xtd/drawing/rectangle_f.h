@@ -20,9 +20,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores a set of four floating-point numbers that represent the location and size of a rectangle. For more advanced region functions, use a xtd::drawing::region object.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ rectangle_f : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::rectangle_f
     /// @par Namespace

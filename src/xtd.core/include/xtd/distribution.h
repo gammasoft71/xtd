@@ -15,9 +15,9 @@
 namespace xtd {
   /// @brief Represents information about an operating system distribution, such as the version and name. This class cannot be inherited.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/distribution>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

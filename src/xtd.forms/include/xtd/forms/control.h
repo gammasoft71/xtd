@@ -63,9 +63,9 @@ namespace xtd {
     
     /// @brief Defines the base class for controls, which are components with visual representation.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/control>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

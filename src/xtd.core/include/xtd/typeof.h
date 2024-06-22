@@ -33,14 +33,14 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core keywords
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// // Get the type object of a type :
   /// xtd::type_object type1 = typeof_<int32>();
   ///
   /// int32 i = 42;
   /// // Get the type object of an object :
   /// xtd::type_object type2 = typeof_(i);
-  /// @endcode
+  /// ```
   /// @remarks The typeof_ operator cannot be overloaded.
 #define typeof_ \
   xtd::__s__::__typeof_

@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies constants defining the default button on a message_box.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/message_box_default_button>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

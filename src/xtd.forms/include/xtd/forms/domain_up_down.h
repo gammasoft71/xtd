@@ -14,9 +14,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a Windows spin box (also known as an up-down control) that displays string values.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/domain_up_down>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

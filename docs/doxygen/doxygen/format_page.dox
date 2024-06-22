@@ -40,23 +40,23 @@
 /// * Overriding the operator << object method to define a custom string representation of an object’s value. For more information, see the @ref OverridingShiftLeftoperatorMethodSection section later in this topic.
 /// * Defining format specifiers that enable the string representation of an object’s value to take multiple forms. For example, the "X" format specifier in the following statement converts an integer to the string representation of a hexadecimal value.
 ///
-/// @code
+/// ```cpp
 /// int integer_value = 60312;
 /// xtd::console::write_line(xtd::to_string(integer_value, "X"));   // Displays EB98.
-/// @endcode
+/// ```
 ///
 /// For more information about format specifiers, see the @ref ToStringMethodAndFormatStringsSection section.
 ///
 /// * Using format providers to take advantage of the formatting conventions of a specific culture. For example, the following statement displays a currency value by using the formatting conventions of the en-US culture.
 ///
-/// @code
+/// ```cpp
 /// double cost = 1632.54;
 /// xtd::console::write_line(xtd::to_string(cost, "C", std::locale("en_US.UTF-8")));
 ///
 /// // The example displays the following output:
 /// //
 /// // $1,632.54
-/// @endcode
+/// ```
 ///
 /// For more information about formatting with format providers, see the @ref CultureSensitiveFormattingSection section.
 ///
@@ -80,10 +80,10 @@
 ///
 /// Consider the following Format code fragment.
 ///
-/// @code
+/// ```cpp
 /// string name = "Fred";
 /// xtd::ustring::format("Name = {0}, age = {1:D3}", name, 42);
-/// @endcode
+/// ```
 ///
 /// The fixed text is "Name = " and ", age = ". The format items are "{0}", whose index is 0, which corresponds to the object name, and "{1:D3}", whose index is 1, which corresponds to the integer 42.
 ///
@@ -99,24 +99,24 @@
 ///
 /// The optional index component, also called a parameter specifier, is a number starting from 0 that identifies a corresponding item in the list of objects. That is, the format item whose parameter specifier is 0 formats the first object in the list, the format item whose parameter specifier is 1 formats the second object in the list, and so on. The following example includes four parameter specifiers, numbered zero through three, to represent prime numbers less than ten:
 ///
-/// @code
+/// ```cpp
 /// std::string primes;
 /// primes = xtd::ustring::format("Prime numbers less than 10: {0}, {1}, {2}, {3}", 2, 3, 5, 7 );
 /// std::cout << primes << std::endl;
 /// // The example displays the following output:
 /// //
 /// // Prime numbers less than 10: 2, 3, 5, 7
-/// @endcode
+/// ```
 ///
 /// Multiple format items can refer to the same element in the list of objects by specifying the same parameter specifier. For example, you can format the same numeric value in hexadecimal, scientific, and number format by specifying a composite format string such as : "0x{0:X} {0:E} {0:N}", as the following example shows.
 ///
-/// @code
+/// ```cpp
 /// std::string multiple = xtd::ustring::format("0x{0:X} {0:E} {0:N}", std::numeric_limits<long long>::max());
 /// std::cout << multiple << std::endl;
 /// // The example displays the following output:
 /// //
 /// // 0x7FFFFFFFFFFFFFFF 9.223372E+18 9,223,372,036,854,775,807.00
-/// @endcode
+/// ```
 ///
 /// Each format item can refer to any object in the list. For example, if there are three objects, you can format the second, first, and third object by specifying a composite format string like this: "{1} {0} {2}". An object that is not referenced by a format item is ignored. A std::argument_error is thrown at runtime if a parameter specifier designates an item outside the bounds of the list of objects.
 ///
@@ -124,12 +124,12 @@
 ///
 /// The following example shows format without specified index:
 ///
-/// @code
+/// ```cpp
 /// std::cout << xtd::ustring::format("{} {} {:F2}", 1, "two", 3.0) << std::endl;
 /// // The example displays the following output:
 /// //
 /// // 1 two 3.00
-/// @endcode
+/// ```
 ///
 /// @subsubsection AlignmentComponentSection Alignment Component
 ///
@@ -137,7 +137,7 @@
 ///
 /// The following example defines two arrays, one containing the names of employees and the other containing the hours they worked over a two-week period. The composite format string left-aligns the names in a 20-character field, and right-aligns their hours in a 5-character field. Note that the "N1" standard format string is also used to format the hours with one fractional digit.
 ///
-/// @code
+/// ```cpp
 /// #include <iostream>
 /// #include <vector>
 /// #include <xtd/xtd>
@@ -162,7 +162,7 @@
 /// // Ebenezer              40.3
 /// // Francine              80.0
 /// // George                16.8
-/// @endcode
+/// ```
 ///
 /// @subsubsection FormatStringComponentSection Format String Component
 ///
@@ -192,47 +192,47 @@
 ///
 /// One way to write your code to avoid misinterpreting escaped braces and format items is to format the braces and format item separately. That is, in the first format operation display a literal opening brace, in the next operation display the result of the format item, then in the final operation display a literal closing brace. The following example illustrates this approach.
 ///
-/// @code
+/// ```cpp
 /// int value = 6324;
 /// std::string output = xtd::ustring::format("{0}{1:D}{2}", "{", value, "}");
 /// std::cout << output << std::endl;
 /// // The example displays the following output:
 /// //
 /// // {6324}
-/// @endcode
+/// ```
 ///
 /// @subsection CodeExamplesSection Code Examples
 ///
 /// The following example shows one string created using composite formatting and another created using xtd::to_string method. Both types of formatting produce equivalent results.
 ///
-/// @code
+/// ```cpp
 /// std::string format_string1 = xtd::ustring::format("0:X4", std::numeric_limits<short>::max());
 /// std::string format_string2 = xtd::to_ustring::format(std::numeric_limits<short>::max(), "X4");
-/// @endcode
+/// ```
 ///
 /// xtd::console::write_line exposes the same functionality as xtd::ustring::format. The only difference between the two methods is that xtd::ustring::format returns its result as a string, while xtd::console::write_line writes the result to the output stream (std::cout) associated with the console object. The following example uses the xtd::console::write_line method to format the value of my_int to a currency value.
 ///
-/// @code
+/// ```cpp
 /// int my_int = 100;
 /// xtd::console::write_line("{0:C}", my_int);
 /// // The example displays the following output if en-US is the current culture:
 /// //
 /// // $100.00
-/// @endcode
+/// ```
 ///
 /// The following example demonstrates formatting multiple objects, including formatting one object two different ways.
 ///
-/// @code
+/// ```cpp
 /// std::string my_name = "Fred";
 /// xtd::console::write_line(xtd::ustring::format("Name = {0}, hours = {1:hh}, minutes = {1:mm}", myName, date_time::now()));
 /// // Depending on the current time, the example displays output like the following:
 /// //
 /// // Name = Fred, hours = 11, minutes = 30
-/// @endcode
+/// ```
 ///
 /// The following example demonstrates the use of alignment in formatting. The arguments that are formatted are placed between vertical bar characters (|) to highlight the resulting alignment.
 ///
-/// @code
+/// ```cpp
 /// std::string my_first_name = "Fred";
 /// std::string my_last_name = "Opals";
 /// int myInt = 100;
@@ -260,7 +260,7 @@
 /// // First Name = |Fred      |
 /// // Last Name = |Opals     |
 /// // Price = |$100.00   |
-/// @endcode
+/// ```
 ///
 /// @section NumericFormatSection Numeric format
 ///

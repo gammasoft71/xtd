@@ -15,9 +15,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a common dialog box that displays a file save dialog to the user to select a location for saving a file.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/save_file_box>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

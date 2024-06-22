@@ -24,17 +24,17 @@ namespace xtd {
   
   /// @{
   /// @brief Represents an instant in time, typically expressed as a date and time of day.
-  /// @code
+  /// ```cpp
   /// class core_export_ date_time : public xtd::icomparable<date_time>, public xtd::iequatable<date_time>, public xtd::object
-  /// @endcode
+  /// ```
   /// @par Inheritance
   /// xtd::object → xtd::date_time
   /// @par Implements
   /// xtd::icomparable <>, xtd::iequatable <>
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/date_time>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -48,32 +48,32 @@ namespace xtd {
   /// @par Instantiating a xtd::date_time object
   /// You can create a new xtd::dateTime value in any of the following ways:
   ///    * By calling any of the overloads of the xtd::date_time constructor that allow you to specify specific elements of the date and time value (such as the year, month, and day, or the number of ticks). The following statement illustrates a call to one of the xtd::date_time constructors to create a date with a specific year, month, day, hour, minute, and second.
-  /// @code
+  /// ```cpp
   /// xtd::date_time date1(2008, 5, 1, 8, 30, 52);
-  /// @endcode
+  /// ```
   ///
   ///    * By assigning the xtd::date_time object a date and time value returned by a property or method. The following example assigns the current date and time, the current Coordinated Universal Time (UTC) date and time, and the current date to three new date_time variables.
-  /// @code
+  /// ```cpp
   /// date_time date1 = date_time::now();
   /// date_time date2 = date_time::utc_now();
   /// date_time date3 = date_time::today();
-  /// @endcode
+  /// ```
   ///
   ///    * By parsing the xtd::ustring representation of a date and time value. The xtd::date_time::parse, xtd::date_time::parse_exact, xtd::date_time::try_parse, and xtd::date_time::try_parse_exact methods all convert a xtd::ustring to its equivalent date and time value. The following example uses the xtd::date_time::parse method to parse a xtd::ustring and convert it to a xtd::date_time value.
-  /// @code
+  /// ```cpp
   /// ustring date_string = "5/1/2008 8:30:52";
   /// date_time date1 = date_time::parse(date_string);
-  /// @endcode
+  /// ```
   /// Note that the xtd::date_time::try_parse and xtd::date_time::try_parse_exact methods indicate whether a particular xtd::ustring contains a valid representation of a xtd::date_time value in addition to performing the conversion.
   ///
   ///    * By calling the xtd::date_time structure's implicit default constructor. The following example illustrates a call to the xtd::date_time implicit default constructor.
-  /// @code
+  /// ```cpp
   /// date_time dat1;
   /// // The following method call displays 1/01/0001 00:00:00.
   /// console::write_line(dat1.to_string());
   /// // The following method call displays true.
   /// console::write_line(dat1.equals(date_time::min_value));
-  /// @endcode
+  /// ```
   /// @remarks For more information about xtd::date_time, see [Date and time](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/date_time).
   /// @par Examples
   /// The following example demonstrates how to compare roughly equivalent xtd::date_time values, accepting a small margin of difference when declaring them equal.
@@ -142,12 +142,12 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.
     /// @par Examples
     /// The following example uses the date_time(uint32, uint32, uint32) constructor to instantiate a xtd::date_time value. The example also illustrates that this overload creates a xtd::date_time value whose time component equals midnight (or 0:00).
-    /// @code
+    /// ```cpp
     /// date_time date1(2010, 8, 18);
     /// console::write_line(date1.to_string());
     /// // The example displays the following output:
     /// //      8/18/2010 12:00:00 AM
-    /// @endcode
+    /// ```
     /// @remarks This constructor interprets year, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32 year, uint32 month, uint32 day);
     /// @brief Initializes a new instance of the xttd::date_time structure to the specified year, month, day, hour, minute, and second.
@@ -172,12 +172,12 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59.
     /// @par Examples
     /// The following example uses the date_time(uint32, uint32, uint32t, uint32t, uint32, uint32, xtd::date_time_kind) constructor to instantiate a xtd::date_time value.
-    /// @code
+    /// ```cpp
     /// date_time date1(2010, 8, 18, 16, 32, 0, date_time_kind::local);
     /// console::write_line("{0} {1}", date1, date1.kind());
     /// // The example displays the following output, in this case for en-us culture:
     /// //      8/18/2010 4:32:00 PM Localv
-    /// @endcode
+    /// ```
     /// @remarks The xtd::date_time::kind property is initialized to xtd::date_time_kind::unspecified.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, date_time_kind kind);
@@ -229,7 +229,7 @@ namespace xtd {
     /// @return The day component, expressed as a value between 1 and 31.
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::day property.
-    /// @code
+    /// ```cpp
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
     /// uint32 year = moment.year();
@@ -251,7 +251,7 @@ namespace xtd {
     ///
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
-    /// @endcode
+    /// ```
     /// @remarks The xtd::date_time::day property always returns the day of the month in the Gregorian calendar.
     uint32 day() const noexcept;
     
@@ -276,7 +276,7 @@ namespace xtd {
     /// @return The hour component, expressed as a value between 0 and 23.
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::hour property.
-    /// @code
+    /// ```cpp
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
     /// uint32 year = moment.year();
@@ -298,13 +298,13 @@ namespace xtd {
     ///
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
-    /// @endcode
+    /// ```
     /// @remarks The value of the xtd::date_time::hour property is always expressed using a 24-hour clock. To retrieve a string that represents the hour of a date and time using a 12-hour clock, call the xtd::date_time::to_string(ustring) method with the "x" format specifier. For example:
-    /// @code
+    /// ```cpp
     /// date_time date1(2008, 4, 1, 18, 53, 0);
     /// console::write_line(date1.to_string("X"));                                   // Displays 6
     /// console::write_line("{0}, {1}", date1.to_string("X"), date1.to_string("a")); // Displays 6 PM
-    /// @endcode
+    /// ```
     uint32 hour() const noexcept;
     
     /// @brief Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.
@@ -320,7 +320,7 @@ namespace xtd {
     /// @return The milliseconds component, expressed as a value between 0 and 999.
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::millisecond property.
-    /// @code
+    /// ```cpp
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
     /// uint32 year = moment.year();
@@ -342,26 +342,26 @@ namespace xtd {
     ///
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
-    /// @endcode
+    /// ```
     /// @remarks You can display the string representation of the xtd::date::time::millisecond property by using the "b" or "B" format specifier. For example, the following code displays a string that contains the number of milliseconds in a date and time to the console.
-    /// @code
+    /// ```cpp
     /// date_time date1(2008, 1, 1, 0, 30, 45, 125);
     /// console::write_line("milliseconds: {0:b}", date1); // displays milliseconds: 125
-    /// @endcode
+    /// ```
     /// @remarks You can also display the millisecond component together with the other components of a date and time value by using the "s" standard format specifier. For example:
-    /// @code
+    /// ```cpp
     /// date_time date2(2008, 1, 1, 0, 30, 45, 125);
     /// Console.WriteLine("Date: {0:s}", date2);
     /// // Displays the following output to the console:
     /// //      Date: 2008-01-01T00:30:45.1250000
-    /// @endcode
+    /// ```
     uint32 millisecond() const noexcept;
     
     /// @brief Gets the minute component of the date represented by this instance.
     /// @return The minute component, expressed as a value between 0 and 59.
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::minute property.
-    /// @code
+    /// ```cpp
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
     /// uint32 year = moment.year();
@@ -383,14 +383,14 @@ namespace xtd {
     ///
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
-    /// @endcode
+    /// ```
     uint32 minute() const noexcept;
     
     /// @brief Gets the month component of the date represented by this instance.
     /// @return The month component, expressed as a value between 1 and 12.
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::month property.
-    /// @code
+    /// ```cpp
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
     /// uint32 year = moment.year();
@@ -412,14 +412,14 @@ namespace xtd {
     ///
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
-    /// @endcode
+    /// ```
     uint32 month() const noexcept;
     
     /// @brief Gets the seconds component of the date represented by this instance.
     /// @return The seconds component, expressed as a value between 0 and 59.
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::second property.
-    /// @code
+    /// ```cpp
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
     /// uint32 year = moment.year();
@@ -441,7 +441,7 @@ namespace xtd {
     ///
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
-    /// @endcode
+    /// ```
     uint32 second() const noexcept;
 
     /// @brief Gets the number of ticks that represent the date and time of this instance.
@@ -471,7 +471,7 @@ namespace xtd {
     /// @return The year, between 1 and 9999.
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::year property.
-    /// @code
+    /// ```cpp
     /// xtd::date_time moment(1999, 1, 13, 3, 57, 32, 11);
     /// // year gets 1999.
     /// uint32 year = moment.year();
@@ -493,7 +493,7 @@ namespace xtd {
     ///
     /// // millisecond gets 11.
     /// uint23_t millisecond = moment.millisecond();
-    /// @endcode
+    /// ```
     /// @remarks The xtd::date_time::year property returns the year of the current instance in the Gregorian calendar.
     uint32 year() const noexcept;
     /// @}
@@ -868,7 +868,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception file_time is less than 0 or represents a time greater than xtd::date_time:::max_value.
     /// @par Examples
     /// The following example demonstrates the xtd::date_time::from_file_time method.
-    /// @code
+    /// ```cpp
     /// xtd::ticks file_age(int64 file_creation_time) {
     ///   xtd::date_time now = xtd::date_time::now();
     ///   try {
@@ -880,7 +880,7 @@ namespace xtd {
     ///     throw;
     ///   }
     /// }
-    /// @endcode
+    /// ```
     /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
     /// @remarks The file_time parameter specifies a file time expressed in 100-nanosecond ticks.
     /// @remarks The return value is a xtd::date_time whose xtd::date_time::kind property is xtd::date_time_kind::local.

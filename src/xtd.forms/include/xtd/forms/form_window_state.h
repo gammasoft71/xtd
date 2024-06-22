@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies how a form window is displayed.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/form_window_state>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

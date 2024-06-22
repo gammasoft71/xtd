@@ -18,9 +18,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores an ordered pair of integers, which specify a height and width.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ size : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::size
     /// @par Namespace

@@ -12,9 +12,9 @@
 namespace xtd {
   /// @brief Specifies the standard keys on a console.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/console_key_info>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

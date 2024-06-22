@@ -50,7 +50,7 @@ namespace xtd {
 /// @ingroup xtd_tunit tunit
 /// @par Examples
 /// The following code show how to create a test class @c derived_class inherited from @c base_class :
-/// @code
+/// ```cpp
 /// #include <xtd/xtd.tunit>
 ///
 /// using namespace xtd::tunit;
@@ -74,7 +74,7 @@ namespace xtd {
 /// auto main() -> int {
 ///   return console_unit_test().run();
 /// }
-/// @endcode
+/// ```
 #define test_class_from_(class_name, from_class_name) \
   class_name; \
   xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {typeof_<class_name>().full_name()}; \

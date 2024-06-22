@@ -18,7 +18,7 @@ namespace xtd {
   /// @tparam type_t The object that provides notification information. This type parameter is covariant. That is, you can use either the type you specified or any type that is more derived.
   /// @par Examples
   /// The following example illustrates the observer design pattern. It defines a @p location class that contains latitude and longitude information.
-  /// @code
+  /// ```cpp
   /// struct location {
   /// public:
   ///   location(double latitude, double longitude) : latitutde_(latitude), longitude_(longitude) {}
@@ -30,9 +30,9 @@ namespace xtd {
   ///   double latitutde_ = .0;
   ///   double longitude_ = .0;
   /// };
-  /// @endcode
+  /// ```
   /// The @p location_tracker class provides the xtd::iobservable implementation. Its @p track_location method is passed a nullable @p location object that contains the latitude and longitude data. If the Location value is not @p nullopt, the @p track_location method calls the xtd::iobserver::on_next method of each observer.
-  /// @code
+  /// ```cpp
   /// class location_tracker : public iobservable<location> {
   /// public:
   ///   location_tracker() = default;
@@ -66,14 +66,14 @@ namespace xtd {
   /// private:
   ///   vector<iobserver<location>*> observers_;
   /// };
-  /// @endcode
+  /// ```
   /// If the @p location value is @p nullopt, the @p tack_location method instantiates a @p location_unknown_exception object, which is shown in the following example. It then calls each observer's @p on_error method and passes it the @p location_unknown_exception object. Note that @p location_unknown_exception derives from xtd::system_exception, but does not add any new members.
-  /// @code
+  /// ```cpp
   /// class location_unknown_exception : public system_exception {
   /// public:
   ///   location_unknown_exception() {}
   /// };
-  /// @endcode
+  /// ```
   /// Observers subscribe to receive notifications from an @p location_tracker object by calling its xtd::iobservable::subscribe method. And unsubscribe by calling its xtd::unobservable <type_t>::unsubscribe method. The @p location_tracker class also includes an @ end_transmission method. When no further location data is available, this method calls each observer's xtd::iobserver::on_completed method, and then clears the internal list of observers.
   ///
   /// In this example, the @p location_reporter class provides the xtd::iobserver implementation. It displays information about the current location to the console.
@@ -81,7 +81,7 @@ namespace xtd {
   /// It also includes a @c subscribe method, which wraps a call to the provider's xtd::iobservable::subscribe method.
   /// The @p location_reporter class also includes an @p unsubscribe method, to remove the subscription.
   /// The following code defines the @p location_reporter class.
-  /// @code
+  /// ```cpp
   /// class location_reporter : iobserver<location> {
   /// public:
   ///   location_reporter(ustring name) : name_(name) {}
@@ -116,9 +116,9 @@ namespace xtd {
   ///   ustring name_;
   ///   iobservable<location>* provider_ = nullptr;
   /// };
-  /// @endcode
+  /// ```
   /// The following code then instantiates the provider and the observer.
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   // Define a provider and two observers.
   ///   location_tracker provider;
@@ -141,7 +141,7 @@ namespace xtd {
   /// // Mobile GPS: The current location is 47.6677, -122.1199
   /// // Mobile GPS: The location cannot be determined.
   /// // The location Tracker has completed transmitting data to Mobile GPS.
-  /// @endcode
+  /// ```
   /// See You can show this example here
   /// @remarks The xtd::iobserver and xtd::iobservable <type_t> interfaces provide a generalized mechanism for push-based notification, also known as the observer design pattern. The xtd::iobservable interface represents the class that sends notifications (the provider); the xtd::io::bserver <type_t> interface represents the class that receives them (the observer). @p type_t represents the class that provides the notification information. In some push-based notifications, the xtd::iobserver <type_t> implementation and @p type_t can represent the same type.
   /// @remarks The provider must implement two methods :

@@ -11,12 +11,12 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief Margins are used to create space around elements, outside of any defined borders.
-      /// @code
+      /// ```cpp
       /// using margin = xtd::forms::style_sheets::lengths
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/margin> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/margin> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

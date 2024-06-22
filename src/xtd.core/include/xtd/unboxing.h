@@ -29,9 +29,9 @@ namespace xtd {
   /// @param value Object to box.
   /// @return Unboxed object.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/unboxing>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

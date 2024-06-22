@@ -15,15 +15,15 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides panel control renderer methods.
-    /// @code
+    /// ```cpp
     /// class forms_export_ panel_renderer static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static → xtd::forms::panel_renderer
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/panel_renderer>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms::style_sheets
     /// @par Library

@@ -16,9 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Displays a dialog box and write trace.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/trace_message_box>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

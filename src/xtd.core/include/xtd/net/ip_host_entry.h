@@ -15,9 +15,9 @@ namespace xtd {
   namespace net {
     /// @brief Provides a container class for Internet host address information.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/net/ip_host_entry>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::net
     /// @par Library

@@ -89,11 +89,11 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::not_finite_number_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw not_finite_number_exception_(); // same as : throw not_finite_number_exception {csf_};
 ///   if (invalid_value) throw not_finite_number_exception_("Bad value"); // same as : throw not_finite_number_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define not_finite_number_exception_(...) not_finite_number_exception(add_csf_(__VA_ARGS__))

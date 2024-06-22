@@ -18,15 +18,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a Windows status bar control.
-    /// @code
+    /// ```cpp
     /// class forms_export_ status_bar : public xtd::forms::control
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::status_bar
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/status_bar>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

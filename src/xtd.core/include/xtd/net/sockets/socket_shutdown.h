@@ -15,12 +15,12 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Defines constants that are used by the xtd::net::sockets::socket::shutdown method.
-      /// @code
+      /// ```cpp
       /// enum class socket_shutdown
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/socket_shutdown> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/socket_shutdown> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

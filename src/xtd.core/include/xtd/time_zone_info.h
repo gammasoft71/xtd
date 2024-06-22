@@ -14,9 +14,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents any time zone in the world.
-  /// @code
+  /// ```cpp
   /// class core_export_ time_zone_info : public xtd::icomparable<time_zone_info>, public xtd::iequatable<time_zone_info>, public xtd::object
-  /// @endcode
+  /// ```
   /// @par Inheritance
   /// xtd::object → xtd::time_zone_info
   /// @par Implements
@@ -41,9 +41,9 @@ namespace xtd {
     
     /// @{
     /// @brief Provides information about a specific time change, such as the change from daylight saving time to standard time or vice versa, in a particular time zone.
-    /// @code
+    /// ```cpp
     /// class transition_time : public xtd::iequatable<transition_time>, public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::time_zone_info::transition_time
     /// @par Implements
@@ -92,13 +92,13 @@ namespace xtd {
       /// @return true if the time change rule is fixed-date; false if the time change rule is floating-date.
       /// @remarks A fixed-date rule indicates that the transition occurs on the same date and time of each year to which the adjustment rule applies. For example, a time change that occurs every November 3 follows a fixed-date rule. A floating-date rule indicates that the transition occurs on a specific day of a specific week of a specific month for each year to which the adjustment rule applies. For example, a time change that occurs on the first Sunday of November follows a floating-date rule.
       /// @remarks The value of the xtd::time_zone_info::transition_time::is_fixed_date_rule property determines which properties of a xtd::time_zone_info::transition_time object have valid values. The following table indicates which properties are affected by the value of the xtd::time_zone_info::transition_time::is_fixed_date_rule property.
-      /// | transition_time property   | is_fixed_date_rule = true | is_fixed_date_rule = false |
-      /// | -------------------------- | ------------------------- | -------------------------- |
-      /// | `day`                      | Valid                     | Unused                     |
-      /// | `day_of_week`              | Unused                    | Valid                      |
-      /// | `week`                     | Unused                    | Valid                      |
-      /// | `month`                    | Valid                     | Valid                      |
-      /// | `time_of_day`              | Valid                     | Valid                      |
+      /// | transition_time property     | is_fixed_date_rule = true | is_fixed_date_rule = false |
+      /// | ---------------------------- | ------------------------- | -------------------------- |
+      /// | transition_time::day         | Valid                     | Unused                     |
+      /// | transition_time::day_of_week | Unused                    | Valid                      |
+      /// | transition_time::week        | Unused                    | Valid                      |
+      /// | transition_time::month       | Valid                     | Valid                      |
+      /// | transition_time::time_of_day | Valid                     | Valid                      |
       bool is_fixed_rule() const noexcept;
       
       /// @brief Gets the month in which the time change occurs.
@@ -168,9 +168,9 @@ namespace xtd {
     };
     
     /// @brief Provides information about a time zone adjustment, such as the transition to and from daylight saving time.
-    /// @code
+    /// ```cpp
     /// class adjustement_rule : public xtd::iequatable<adjustement_rule>, public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::adjustement_rule
     /// @par Implements
@@ -212,9 +212,9 @@ namespace xtd {
       /// @brief Gets the amount of time that is required to form the time zone's daylight saving time. This amount of time is added to the time zone's offset from Coordinated Universal Time (UTC).
       /// @return A xtd::time_span object that indicates the amount of time to add to the standard time changes as a result of the adjustment rule.
       /// @remarks The following formula defines a time zone's daylight saving time:
-      /// @code
+      /// ```cpp
       /// time_tone_time = base_utc_offset + daylight_delta + utc_time
-      /// @endcode
+      /// ```
       /// @remarks The value of the xtd::time_zone_info::adjustement_rule::daylight_delta property can range from 14 hours to -14 hours.
       /// @note The xtd::time_zone_info::adjustement_rule::daylight_delta property measures the difference between the time zone's standard time and its daylight saving time. It does not apply to changes in a time zone's standard offset from Coordinated Universal Time (UTC). To represent a time zone that has changed its standard time offset from UTC, you must call the CreateCustomTimeZone method to create a new time zone.
       /// @remarks The most common value of the xtd::time_zone_info::adjustement_rule::daylight_delta property is 1.0 hours. The application of the daylight saving time adjustment rule increases the time zone's offset from Coordinated Universal Time (UTC) by one hour.
@@ -279,12 +279,12 @@ namespace xtd {
     /// @return string The time zone's general display name.
     /// @remarks The display name is localized based on the culture installed with the Windows operating system.
     /// @remarks Time zone display names for Windows system time zones follow a fairly standard format. The first portion of the display name is the time zone's base offset from Coordinated Universal Time, which is indicated by the acronym GMT (for Greenwich Mean Time), enclosed in parentheses. For Coordinated Universal Time, the GMT acronym with no offset is enclosed in parentheses. This is followed by a string that identifies the time zone or one or more of the cities, regions, or countries in the time zone. For example:
-    /// @code
+    /// ```cpp
     /// (GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London
     /// (GMT+02:00) Athens, Beirut, Istanbul, Minsk
     /// (GMT-02:00) Mid-Atlantic
     /// (GMT-07:00) Mountain Time (US & Canada)
-    /// @endcode
+    /// ```
     const ustring& display_name() const noexcept;
     
     /// @brief Gets the time zone identifier.

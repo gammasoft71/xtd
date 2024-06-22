@@ -9,13 +9,13 @@ namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
     /// @brief The exception that is thrown when a Thread is interrupted while it is in a waiting state.
-    /// @code
+    /// ```cpp
     /// class thread_abort_exception : public xtd::system_exception
-    /// @endcode
+    /// ```
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/threading/thread_interrupted_exception>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::threading
     /// @par Library
@@ -96,11 +96,11 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::thread_interrupted_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw thread_interrupted_exception_(); // same as : throw thread_interrupted_exception {csf_};
 ///   if (invalid_value) throw thread_interrupted_exception_("Bad value"); // same as : throw thread_interrupted_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define thread_interrupted_exception_(...) thread_interrupted_exception(add_csf_(__VA_ARGS__))

@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies shortcut keys that can be used by menu items.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/shortcut>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

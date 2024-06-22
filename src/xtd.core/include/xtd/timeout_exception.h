@@ -89,11 +89,11 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::timeout_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw timeout_exception_(); // same as : throw timeout_exception {csf_};
 ///   if (invalid_value) throw timeout_exception_("Bad value"); // same as : throw timeout_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define timeout_exception_(...) timeout_exception(add_csf_(__VA_ARGS__))

@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/key_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -13,9 +13,9 @@ namespace xtd {
   
   /// @brief Provides an std::ostream for xtd::diagnostics::debug.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/cdebug>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -25,9 +25,9 @@ namespace xtd {
   #else
   /// @brief Provides an std::ostream for xtd::diagnostics::debug.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/cdebug>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

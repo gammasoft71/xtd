@@ -11,12 +11,12 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The style specifies what kind of outlines to display.
-      /// @code
+      /// ```cpp
       /// using outline_style = xtd::forms::style_sheets::border_style
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/outline_style> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/outline_style> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

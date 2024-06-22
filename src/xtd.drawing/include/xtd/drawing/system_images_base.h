@@ -18,9 +18,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents the base for all system_images clases (xtd::drawing::system_images).
-    /// @code
+    /// ```cpp
     /// class drawing_export_ system_images_base final static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static_object → xtd::drawing::system_images_base
     /// @par Namespace

@@ -17,14 +17,14 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The theme data allows you to specify the theme informations.
-      /// @code
+      /// ```cpp
       /// class forms_export_ system_colors : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::system_colors
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/system_colors> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/system_colors> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

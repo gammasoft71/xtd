@@ -13,9 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides properties that specify the appearance of xtd::forms::button controls whose xtd::forms::flat_style is xtd::forms::flat_style::flat.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/flat_button_appearance>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

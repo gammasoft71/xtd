@@ -14,9 +14,9 @@ namespace xtd {
     
     /// @brief Represents a menu item reference.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/const_menu_item_ref>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

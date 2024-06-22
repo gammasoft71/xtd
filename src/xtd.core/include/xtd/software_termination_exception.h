@@ -89,11 +89,11 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::software_termination_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw software_termination_exception_(); // same as : throw software_termination_exception {csf_};
 ///   if (invalid_value) throw software_termination_exception_("Bad value"); // same as : throw software_termination_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define software_termination_exception_(...) software_termination_exception(add_csf_(__VA_ARGS__))

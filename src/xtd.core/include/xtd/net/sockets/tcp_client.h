@@ -20,14 +20,14 @@ namespace xtd {
       /// @endcond
       
       /// @brief Provides client connections for TCP network services.
-      /// @code
+      /// ```cpp
       /// class core_export_ tcp_client : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::tcp_client
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/tcp_client> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/tcp_client> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

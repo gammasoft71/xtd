@@ -16,9 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a control that displays a month calendar.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/month_calendar>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

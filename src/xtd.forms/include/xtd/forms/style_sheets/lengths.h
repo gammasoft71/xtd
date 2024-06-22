@@ -14,16 +14,16 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The length specifies the length of the borders.
-      /// @code
+      /// ```cpp
       /// class forms_export_ lengths : public xtd::iequatable<lengths>, public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::lengths
       /// @par Implements
       /// xtd::iequatable <>
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/lengths> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/lengths> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

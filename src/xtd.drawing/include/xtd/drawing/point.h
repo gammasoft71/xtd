@@ -19,9 +19,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional plane.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ point : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::point
     /// @par Namespace
@@ -32,7 +32,7 @@ namespace xtd {
     /// @remarks To convert a point to a point_f, use Implicit cast operator.
     /// @par Examples
     ///
-    /// @code
+    /// ```cpp
     /// void create_points_and_sizes(paint_event_args& e) {
     ///   // Create the starting point.
     ///   point start_point = subtract_button.size();
@@ -50,7 +50,7 @@ namespace xtd {
     ///     e.graphics().draw_string("The sizes are equal.", font(font, font_style.italic), brushes::indigo, 10.0F, 65.0F);
     ///   }
     /// }
-    /// @endcode
+    /// ```
     class drawing_export_ point : public xtd::object, public xtd::iequatable<point> {
     public:
       /// @name Public Fields
@@ -72,7 +72,7 @@ namespace xtd {
       /// @remarks The low-order 16 bits of the dw parameter specify the horizontal x-coordinate and the higher 16 bits specify the vertical y-coordinate for the new point.
       /// @par Examples
       /// The following code example demonstrates how to use the point and size. size constructors and the xtd::drawing::content_alignment enumeration. To run this example, paste this code into a Windows Form (xtd::forms) that contains a label named label1, and call the initialize_label1 method in the form's constructor.
-      /// @code
+      /// ```cpp
       /// void initialize_label1() {
       ///   // Set a border.
       ///   label1.border_style = border_style::fixed_single;
@@ -88,7 +88,7 @@ namespace xtd {
       ///   label1.text_align = content_alignment::bottom_right;
       ///   label1.text = "Bottom Right Alignment";
       /// }
-      /// @endcode
+      /// ```
       explicit point(int32 dw) noexcept;
       
       /// @brief Initializes a new instance of the xtd::drawing::point class with the specified coordinates.
@@ -96,7 +96,7 @@ namespace xtd {
       /// @param y The vertical position of the point.
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
-      /// @code
+      /// ```cpp
       /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
@@ -112,14 +112,14 @@ namespace xtd {
       ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
-      /// @endcode
+      /// ```
       point(int32 x, int32 y) noexcept;
       
       /// @brief Initializes a new instance of the xtd::drawing::point class from a xtd::drawing::size.
       /// @param sz A size that specifies the coordinates for the new point.
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
-      /// @code
+      /// ```cpp
       /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
@@ -135,7 +135,7 @@ namespace xtd {
       ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
-      /// @endcode
+      /// ```
       explicit point(const size& sz) noexcept;
       /// @}
       
@@ -156,7 +156,7 @@ namespace xtd {
       /// @return The x-coordinate of this xtd::drawing::point.
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
-      /// @code
+      /// ```cpp
       /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
@@ -172,14 +172,14 @@ namespace xtd {
       ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
-      /// @endcode
+      /// ```
       int32 x() const noexcept;
       
       /// @brief Sets the x-coordinate of this xtd::drawing::point.
       /// @param x The x-coordinate of this xtd::drawing::point.
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
-      /// @code
+      /// ```cpp
       /// void button1_click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
@@ -195,14 +195,14 @@ namespace xtd {
       ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
-      /// @endcode
+      /// ```
       void x(int32 x) noexcept;
       
       /// @brief Gets the y-coordinate of this xtd::drawing::point.
       /// @return The y-coordinate of this xtd::drawing::point.
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
-      /// @code
+      /// ```cpp
       /// void button1_Click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
@@ -218,14 +218,14 @@ namespace xtd {
       ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
-      /// @endcode
+      /// ```
       int32 y() const noexcept;
       
       /// @brief Sets the y-coordinate of this xtd::drawing::point.
       /// @param y The x-coordinate of this xtd::drawing::point.
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
-      /// @code
+      /// ```cpp
       /// void button1_Click(object& sender, const event_args& e) {
       ///   // Construct a new point with integers.
       ///   point point1(100, 100);
@@ -241,7 +241,7 @@ namespace xtd {
       ///     form_graphics.draw_string(ustring::format("point1.x: {}, point2.x: {}, point1.y: {}, point2.y {}", point1.x(), point2.x(), point1.y(), point2.y()), font(), brushes::black, point_f(10, 70));
       ///   }
       /// }
-      /// @endcode
+      /// ```
       void y(int32 y) noexcept;
       /// @}
       
@@ -260,14 +260,14 @@ namespace xtd {
       /// @remarks This method adjusts the xtd::drawing::point::x and xtd::drawing::point::y values of this xtd::drawing::point to the sum of the xtd::drawing::point::x and xtd::drawing::point::y values of this xtd::drawing::point and p.
       /// @par Examples
       /// The following example shows how to use the Offset method. To run this example, paste it into a Windows Form. Handle the form's xtd::forms::control::paint event and call the Offsetpoint method from the xtd::forms::control::paint event-handling method, passing e as xtd::forms::paint_event_args.
-      /// @code
+      /// ```cpp
       /// void offset_point(paint_event_args& e) {
       ///   point point1(10, 10);
       ///   point1.offset(50, 0);
       ///   point point2(250, 10);
       ///   e.graphics().draw_line(pens::red, point1, point2);
       /// }
-      /// @endcode
+      /// ```
       void offset(const point& p) noexcept;
       
       /// @brief Converts this point to a human-readable string.
@@ -290,13 +290,13 @@ namespace xtd {
       /// @remarks The xtd::drawing::point::add adds the xtd::drawing::size::width and xtd::drawing::size::height of the specified size to the xtd::drawing::point::x and xtd::drawing::point::y values of the specified xtd::drawing::point.
       /// @par Examples
       /// The following example shows how to use the add method. To run this example, paste it into a Windows Form (xtd::forms. Handle the form's xtd::forms::control::paint event and call the add_point method from the paint event-handling method, passing e as paint_event_args.
-      /// @code
+      /// ```cpp
       /// void add_point(paint_event_args& e) {
       ///   point point1(10, 10);
       ///   point point2 = point::add(point1, drawing::size(250,0));
       ///   e.graphics().draw_line(pens::red, point1, point2);
       /// }
-      /// @endcode
+      /// ```
       static point add(const point& pt, const size& sz) noexcept;
       /// @brief Adds the specified xtd::drawing::point to the specified xtd::drawing::point.
       /// @param pt1 The xtd::drawing::point to add.

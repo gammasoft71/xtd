@@ -7,9 +7,9 @@
 
 /// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/diagnostics/assert>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core debug

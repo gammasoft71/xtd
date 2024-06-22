@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides an interface to expose Win32 HWND handles.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/iwin32_windpw>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -11,12 +11,12 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief Padding is used to create space around an element's content, inside of any defined borders.
-      /// @code
+      /// ```cpp
       /// using padding = xtd::forms::style_sheets::lengths
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/padding> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/padding> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

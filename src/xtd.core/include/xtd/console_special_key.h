@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief Specifies combinations of modifier and console keys that can interrupt the current process.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/console_special_key>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

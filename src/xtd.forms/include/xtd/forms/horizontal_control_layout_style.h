@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Implements the basic functionality that represents the appearance and behavior of a control layout.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/horizontal_control_layout_style>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

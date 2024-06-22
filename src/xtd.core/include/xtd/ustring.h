@@ -1035,7 +1035,7 @@ namespace xtd {
     /// @return The demangled string of name.
     /// @par Examples
     /// The following example shows how to use xtd::ustring::demangle.
-    /// @code
+    /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
@@ -1049,7 +1049,7 @@ namespace xtd {
     /// //
     /// // name = N3xtd9date_timeE
     /// // demangled name = xtd::date_time
-    /// @endcode
+    /// ```
     static ustring demangle(const ustring& name);
     
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.

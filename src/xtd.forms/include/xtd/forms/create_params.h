@@ -16,9 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Encapsulates the information needed when creating a control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/create_params>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

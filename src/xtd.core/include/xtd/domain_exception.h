@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief The exception that is thrown for errors in domain. That is, situations where the inputs are outside of the domain on which an operation is defined..
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/domain_exception>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -90,18 +90,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::domain_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/domain_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::domain_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw domain_exception_(); // same as : throw domain_exception {csf_};
 ///   if (invalid_value) throw domain_exception_("Bad value"); // same as : throw domain_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define domain_exception_(...) domain_exception(add_csf_(__VA_ARGS__))

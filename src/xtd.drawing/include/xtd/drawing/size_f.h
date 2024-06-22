@@ -18,9 +18,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores an ordered pair of floating-point, which specify a height and width.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ size_f : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::size_f
     /// @par Namespace

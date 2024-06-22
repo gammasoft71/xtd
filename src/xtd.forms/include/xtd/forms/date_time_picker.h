@@ -14,9 +14,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a picker control that displays available date time along with controls.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/date_time_picker>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

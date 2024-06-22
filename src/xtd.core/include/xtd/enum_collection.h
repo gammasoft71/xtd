@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief Represents a pair of an enum_t value and a string of an enum of type enum_t.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/enum_collection>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

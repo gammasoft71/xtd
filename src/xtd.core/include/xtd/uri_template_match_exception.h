@@ -85,11 +85,11 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::uri_template_match_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw uri_template_match_exception_(); // same as : throw uri_template_match_exception {csf_};
 ///   if (invalid_value) throw uri_template_match_exception_("Bad value"); // same as : throw uri_template_match_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define uri_template_match_exception_(...) uri_template_match_exception(add_csf_(__VA_ARGS__))

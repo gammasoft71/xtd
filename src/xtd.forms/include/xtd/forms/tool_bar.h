@@ -23,15 +23,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a Windows toolbar.
-    /// @code
+    /// ```cpp
     /// class forms_export_ tool_bar : public xtd::forms::control
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::tool_bar
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tool_bar>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

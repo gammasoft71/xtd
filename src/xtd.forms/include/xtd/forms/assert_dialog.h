@@ -16,9 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a common dialog box that displays assert dialog.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/assert_dialog>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

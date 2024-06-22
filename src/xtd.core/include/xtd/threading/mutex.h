@@ -16,13 +16,13 @@ namespace xtd {
     /// @endcond
     
     /// @brief A synchronization primitive that can also be used for interprocess synchronization.
-    /// @code
+    /// ```cpp
     /// class mutex : public xtd::threading::wait_handle, public icomparable<mutex>, public xtd::iequatable<mutex>
-    /// @endcode
+    /// ```
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/threading/mutex>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::threading
     /// @par Library

@@ -8,20 +8,20 @@
 namespace xtd {
   /// @brief This keyword is used to represents an abstract class.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/abstract>
-  /// @endcode
+  /// ```
     /// @par Library
   /// xtd.core
   /// @ingroup xtd_core keywords
   /// @remarks This keyword has no other use than to tag a class to abstract.
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// class foo abstract_ {
   /// public:
   ///   virtual std::string to_string() = 0;
   /// };
-  /// @endcode
+  /// ```
   #define abstract_ \
     : public xtd::abstract_object
 }

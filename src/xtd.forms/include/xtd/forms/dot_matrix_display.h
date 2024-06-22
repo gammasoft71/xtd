@@ -13,9 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a dot matrix display class.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/dot_matrix_display>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

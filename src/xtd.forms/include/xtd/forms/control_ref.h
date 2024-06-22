@@ -14,9 +14,9 @@ namespace xtd {
     
     /// @brief Represents a control reference.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/control_ref>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

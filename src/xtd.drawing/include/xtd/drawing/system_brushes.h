@@ -11,9 +11,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Each property of the xtd::drawing::system_brushes class is a xtd::drawing::solid_brush that is the color of a Windows display element.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ system_brushes final static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static_object → xtd::drawing::system_brushes
     /// @par Namespace

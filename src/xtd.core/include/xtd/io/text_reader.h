@@ -19,15 +19,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a reader that can read a sequential series of characters.
-    /// @code
+    /// ```cpp
     /// class core_export_ text_reader : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::io::text_reader
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/text_reader>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -110,9 +110,9 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    /// @code
+    /// ```cpp
     /// class core_export_ null_text_reader : public xtd::io::text_reader
-    /// @endcode
+    /// ```
     class core_export_ null_text_reader : public xtd::io::text_reader {
     public:
       /// @name Public Methods
@@ -123,9 +123,9 @@ namespace xtd {
     };
     
     /// @brief Represents a synchronized text reader.
-    /// @code
+    /// ```cpp
     /// class core_export_ synchronized_text_reader : public xtd::io::text_reader
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::io::text_reader → xtd::io::synchronized_text_reader
     /// @par Namespace

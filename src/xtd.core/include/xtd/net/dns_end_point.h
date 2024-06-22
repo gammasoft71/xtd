@@ -10,9 +10,9 @@ namespace xtd {
   namespace net {
     /// @brief Represents a network endpoint as a host name or a string representation of an IP address and a port number.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/net/dns_end_point>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::net
     /// @par Library

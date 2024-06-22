@@ -18,9 +18,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a dialog box that displays about dialog.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/about_dialog>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

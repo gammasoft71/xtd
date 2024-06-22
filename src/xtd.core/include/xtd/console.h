@@ -20,9 +20,9 @@ namespace xtd {
   
   /// @brief Represents the standard input, output, and error streams for console applications.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/console>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

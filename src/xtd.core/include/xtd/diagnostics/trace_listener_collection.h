@@ -12,15 +12,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Represents a collection of xtd::diagnostics::trace_listener.
-    /// @code
+    /// ```cpp
     /// class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> → xtd::diagnostics::trace_listener_collection
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/trace_listener_collection>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -67,7 +67,7 @@ namespace xtd {
       /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator [] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
       /// @par Examples
       /// This example shows how to write "User message" text on the default trace listener of debug with name operator:
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using xtd::diagnostics;
@@ -75,7 +75,7 @@ namespace xtd {
       /// auto main() -> int {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
-      /// @endcode
+      /// ```
       const_reference operator [](const xtd::ustring& name) const;
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
@@ -83,7 +83,7 @@ namespace xtd {
       /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two listeners exist with the names "Lname" and "lname", operator [] property will find only the xtd::diagnostics::trace_listener with the xtd::diagnostics::trace_listener::name() that you specify, not both.
       /// @par Examples
       /// This example shows how to write "User message" text on the default trace listener of debug with name operator:
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using xtd::diagnostics;
@@ -91,7 +91,7 @@ namespace xtd {
       /// auto main() -> int {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
-      /// @endcode
+      /// ```
       reference operator [](const xtd::ustring& name);
       /// @}
       

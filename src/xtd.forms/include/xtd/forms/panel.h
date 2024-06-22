@@ -13,9 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Used to group collections of controls.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/panel>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

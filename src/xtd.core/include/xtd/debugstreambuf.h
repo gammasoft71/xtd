@@ -10,9 +10,9 @@
 namespace xtd {
   /// @brief Provides an std::stringbuf for xtd::diagnostics::debug.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/debugstreambuf>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

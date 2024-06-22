@@ -13,9 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a standard Windows user control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/user_control>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents an xtd::forms::shadow array.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/shadows>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

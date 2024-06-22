@@ -25,9 +25,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Defines a group of type faces having a similar basic design and certain variations in styles. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ font_family final : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::font_family
     /// @par Namespace

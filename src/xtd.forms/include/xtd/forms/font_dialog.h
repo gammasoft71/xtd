@@ -15,9 +15,9 @@ namespace xtd {
   namespace forms {
     /// @brief Prompts the user to choose a font from among those installed on the local computer.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/font_dialog>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

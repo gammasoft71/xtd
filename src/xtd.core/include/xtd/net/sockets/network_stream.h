@@ -12,14 +12,14 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Provides the underlying stream of data for network access.
-      /// @code
+      /// ```cpp
       /// class core_export_ network_stream : public std::iostream
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// std::iostream → xtd::net::sockets::network_stream
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/network_stream> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/network_stream> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

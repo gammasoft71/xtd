@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief The exception that is thrown when one of the arguments provided to a method is out of range.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/argument_out_of_range_exception>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -90,18 +90,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::argument_out_of_range_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/argument_out_of_range_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::argument_out_of_range_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw argument_out_of_range_exception_(); // same as : throw argument_out_of_range_exception {csf_};
 ///   if (invalid_value) throw argument_out_of_range_exception_("Bad value"); // same as : throw argument_out_of_range_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define argument_out_of_range_exception_(...) argument_out_of_range_exception(add_csf_(__VA_ARGS__))

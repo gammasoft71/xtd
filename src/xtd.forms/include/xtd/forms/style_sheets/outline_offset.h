@@ -11,12 +11,12 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The width specifies the width of the borders.
-      /// @code
+      /// ```cpp
       /// using outline_offset = xtd::forms::style_sheets::lengths
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/outline_offset> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/outline_offset> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

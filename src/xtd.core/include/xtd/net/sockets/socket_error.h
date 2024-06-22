@@ -15,12 +15,12 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Defines error codes for the xtd::net::sockets::socket class.
-      /// @code
+      /// ```cpp
       /// enum class socket_error
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/socket_error> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/socket_error> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

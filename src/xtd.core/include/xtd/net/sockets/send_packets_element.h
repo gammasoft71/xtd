@@ -23,14 +23,14 @@ namespace xtd {
       /// @endcond
       
       /// @brief Represents an element in a xtd::net::sockets::send_packets_element array.
-      /// @code
+      /// ```cpp
       /// class core_export_ send_packets_element : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::send_packets_element
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/send_packets_element> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/send_packets_element> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

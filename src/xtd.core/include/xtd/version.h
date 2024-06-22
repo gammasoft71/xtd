@@ -48,21 +48,21 @@ namespace xtd {
   /// @par Retrieving Version Information
   /// xtd::version objects are most frequently used to store version information about some system or application component (such as the operating system), the current application's executable, or a particular assembly. The following examples illustrate some of the most common scenarios:
   /// * Retrieving the operating system version. The following example uses the xtd::operating_system::version property to retrieve the version number of the operating system.
-  /// @code
+  /// ```cpp
   /// // Get the operating system version.
   /// operating_system os = environment::os_version();
   /// version ver = os.version();
   /// console::write_line("Operating System: {0} ({1})", os.version_string(), ver.to_string());
-  /// @endcode
+  /// ```
   /// * Retrieving the version of xtd. The following example uses the xtd::environment::version property to retrieve version information about xtd.
-  /// @code
+  /// ```cpp
   /// // Get the xtd version.
   /// version ver = environment::version();
   /// console::write_line("xtd version {0}", ver.to_string());
-  /// @endcode
+  /// ```
   /// @par Comparing xtd::version objects
   /// You can use the xtd::version::compare_to method to determine whether one xtd::version object is earlier than, the same as, or later than a second xtd::version object. The following example indicates that xtd::version 2.1 is later than xtd::version 2.0.
-  /// @code
+  /// ```cpp
   /// version v1(2, 0);
   /// version v2("2.1");
   /// console::write("version {0} is ", v1);
@@ -74,9 +74,9 @@ namespace xtd {
   /// console::write_line(" version {0}.", v2);
   /// // The example displays the following output:
   /// //       version 2.0 is earlier than version 2.1.
-  /// @endcode
+  /// ```
   /// For two versions to be equal, the major, minor, build, and revision numbers of the first xtd::version object must be identical to those of the second xtd::version object. If the build or revision number of a xtd::version object is undefined, that xtd::version object is considered to be earlier than a xtd::vVersion object whose build or revision number is equal to zero. The following example illustrates this by comparing three xtd::version objects that have undefined version components.
-  /// @code
+  /// ```cpp
   ///
   /// using namespace xtd;
   ///
@@ -106,7 +106,7 @@ namespace xtd {
   /// // The example displays the following output:
   /// //       Relationship of 1.1 to 1.1.0: earlier
   /// //       Relationship of 1.1.0.0 to 1.1.0: later
-  /// @endcode
+  /// ```
   class version final : public object, public icomparable<version>, public xtd::iequatable<version> {
   public:
     /// @name Public Constructors

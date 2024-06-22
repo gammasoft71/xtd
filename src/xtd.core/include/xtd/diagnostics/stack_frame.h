@@ -17,15 +17,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the call stack for the current thread.
-    /// @code
+    /// ```cpp
     /// class core_export_ stack_frame : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::stack_frame
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/stack_frame>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -109,7 +109,7 @@ namespace xtd {
       /// @return The file column number, or 0 (zero) if the file column number cannot be determined.
       /// @par Examples
       /// The following example demonstrates the use of the get_file_column_number() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
-      /// @code
+      /// ```cpp
       /// // Display the stack frame properties.
       /// stack_frame sf = st.get_frame(i);
       /// console::write_line(" File: {}", sf.get_file_name());
@@ -119,14 +119,14 @@ namespace xtd {
       /// console::write_line(" Method: {}", sf.get_method());
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
-      /// @endcode
+      /// ```
       virtual uint32 get_file_column_number() const noexcept;
       
       /// @brief Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file line number, or 0 (zero) if the file line number cannot be determined.
       /// @par Examples
       /// The following example demonstrates the use of the get_file_line_number() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
-      /// @code
+      /// ```cpp
       /// // Display the stack frame properties.
       /// stack_frame sf = st.get_frame(i);
       /// console::write_line(" File: {}", sf.get_file_name());
@@ -136,14 +136,14 @@ namespace xtd {
       /// console::write_line(" Method: {}", sf.get_method());
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
-      /// @endcode
+      /// ```
       virtual uint32 get_file_line_number() const noexcept;
       
       /// @brief Gets the file name that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file name, or empty ("") if the file name cannot be determined.
       /// @par Examples
       /// The following example demonstrates the use of the get_file_name() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
-      /// @code
+      /// ```cpp
       /// // Display the stack frame properties.
       /// stack_frame sf = st.get_frame(i);
       /// console::write_line(" File: {}", sf.get_file_name());
@@ -153,14 +153,14 @@ namespace xtd {
       /// console::write_line(" Method: {}", sf.get_method());
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
-      /// @endcode
+      /// ```
       virtual const xtd::ustring& get_file_name() const noexcept;
       
       /// @brief Gets the method in which the frame is executing.
       /// @return The method in which the frame is executing.
       /// @par Examples
       /// The following example demonstrates the use of the get_method() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
-      /// @code
+      /// ```cpp
       /// // Display the stack frame properties.
       /// stack_frame sf = st.get_frame(i);
       /// console::write_line(" File: {}", sf.get_file_name());
@@ -170,14 +170,14 @@ namespace xtd {
       /// console::write_line(" Method: {}", sf.get_method());
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
-      /// @endcode
+      /// ```
       virtual const xtd::ustring& get_method() const noexcept;
       
       /// @brief Gets the offset from the start of the code for the method that is being executed.
       /// @return The offset from the code for the method that is being executed.
       /// @par Examples
       /// The following example demonstrates the use of the get_offset() method. This code example is part of a larger example provided for the xtd::diagnostics::stack_frame class.
-      /// @code
+      /// ```cpp
       /// // Display the stack frame properties.
       /// stack_frame sf = st.get_frame(i);
       /// console::write_line(" File: {}", sf.get_file_name());
@@ -187,7 +187,7 @@ namespace xtd {
       /// console::write_line(" Method: {}", sf.get_method());
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
-      /// @endcode
+      /// ```
       virtual uint32 get_offset() const noexcept;
       
       /// @brief Builds a readable representation of the stack trace.

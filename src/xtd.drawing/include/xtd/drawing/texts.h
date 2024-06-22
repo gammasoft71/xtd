@@ -12,9 +12,9 @@ namespace xtd {
   namespace drawing {
     /// @brief Provides a collection of string objects for use by a Windows Forms application.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/texts>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

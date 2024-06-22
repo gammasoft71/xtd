@@ -14,7 +14,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @remarks See also #call_once_ keyword helper.
   ///
-  /// @code
+  /// ```cpp
   /// #include <xtd/xtd>
   ///
   /// using namespace xtd;
@@ -50,7 +50,7 @@ namespace xtd {
   /// //   (thread_proc) running 2 times
   /// //   (thread_proc) running 3 times
   /// // (main) end
-  /// @endcode
+  /// ```
   struct call_once {
   };
   
@@ -80,7 +80,7 @@ namespace xtd {
 /// @ingroup xtd_core keywords
 /// @remarks See also xtd::call_once struct.
 ///
-/// @code
+/// ```cpp
 /// #include <xtd/xtd>
 ///
 /// using namespace xtd;
@@ -116,5 +116,5 @@ namespace xtd {
 /// //   (thread_proc) running 2 times
 /// //   (thread_proc) running 3 times
 /// // (main) end
-/// @endcode
+/// ```
 #define call_once_ [[maybe_unused]] static auto __xtd_call_once_id__(__xtd__call_once__, __LINE__) = xtd::call_once {} + [&]

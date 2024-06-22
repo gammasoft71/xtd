@@ -11,12 +11,12 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// class foo : public static_object {
   /// public:
   ///   static std::string to_string() {return "foo";}
   /// };
-  /// @endcode
+  /// ```
   class static_object {
     static_object() = delete;
   };
@@ -28,12 +28,12 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core keywords
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// class foo static_ {
   /// public:
   ///   static std::string to_string() {return "foo";}
   /// };
-  /// @endcode
+  /// ```
 #define static_ \
 : xtd::static_object
   
@@ -44,12 +44,12 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core keywords
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// class foo static_object_ {
   /// public:
   ///   static std::string to_string() {return "foo";}
   /// };
-  /// @endcode
+  /// ```
 #define static_object_ \
 : xtd::static_object
 }

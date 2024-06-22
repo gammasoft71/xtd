@@ -32,9 +32,9 @@ namespace xtd {
     
     /// @brief Represents a window or dialog box that makes up an application's user interface.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/form>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

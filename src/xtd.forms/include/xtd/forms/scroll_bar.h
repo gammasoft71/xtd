@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a standard Windows scroll bar.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/scroll_bar>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

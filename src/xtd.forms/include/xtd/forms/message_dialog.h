@@ -23,9 +23,9 @@ namespace xtd {
   namespace forms {
     /// @brief Displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A message_dialog can contain text, buttons, and symbols that inform and instruct the user.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/message_dialog>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -13,7 +13,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// @include <xtd/interface>
   ///
   /// class istringable : public interface {
@@ -27,7 +27,7 @@ namespace xtd {
   ///
   ///   std:string to_string() const override {return "foo";}
   /// };
-  /// @endcode
+  /// ```
   class interface {
     /// @cond
   public:
@@ -40,7 +40,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core keywords
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// @include <xtd/interface>
   ///
   /// class istringable interface_ {
@@ -54,7 +54,7 @@ namespace xtd {
   ///
   ///   std:::string to_string() const override {return "foo";}
   /// };
-  /// @endcode
+  /// ```
 #define interface_ \
 : public xtd::interface
 }

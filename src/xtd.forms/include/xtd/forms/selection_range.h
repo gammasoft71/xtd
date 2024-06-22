@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a date selection range in a month calendar control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/selection_range>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -24,7 +24,7 @@ namespace xtd {
     /// The following example sets the xtd::forms::month_calendar::selection_range property of a xtd::forms::month_calendar control based on two dates entered into two xtd::forms::text_box controls when a xtd::forms::button is clicked.
     /// This code assumes new instances of a xtd::forms::month_calendar control, two xtd::forms::text_box controls, and a xtd::forms::button have been created on a xtd::forms::form.
     /// You might consider adding code to validate the xtd::forms::control::text assigned to the text boxes to verify that they contain valid dates.
-    /// @code
+    /// ```cpp
     /// void button1_click(const object& sender, const event_args& e) {
     ///   // Set the selection_range with start and end dates from text boxes.
     ///   try {
@@ -33,7 +33,7 @@ namespace xtd {
     ///     message_box::show(ex.message());
     ///   }
     /// }
-    /// @endcode
+    /// ```
     /// @remarks The xtd::forms::selection_range is the date or dates selected and highlighted on the xtd::forms::month_calendar control. If only one date is selected, the xtd::forms::selection_range::start and xtd::forms::selection_range::end property values will be equal. The xtd::forms::selection_range can be changed by the user clicking a date while dragging the mouse pointer across the desired dates, or you can set the range in code. For example, you might want to have the user enter a date range into two xtd::forms::text_box controls or two xtd::forms::date_time_picker controls and set the xtd::forms::selection_range based on those dates.
     class forms_export_ selection_range : public object {
     public:

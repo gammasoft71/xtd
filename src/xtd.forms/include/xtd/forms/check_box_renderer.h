@@ -21,9 +21,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides check box renderer methods.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/check_box_renderer>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -18,9 +18,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a lcd label.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/lcd_label>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

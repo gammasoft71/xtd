@@ -382,10 +382,10 @@ namespace xtd {
     /// The following example creates several xtd::time_span objects using the xtd::time_span::from_days method.
     /// @include time_span_from_days.cpp
     /// @remarks The value parameter is converted to milliseconds, which is converted to ticks, and that number of ticks is used to initialize the new xd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the Double data type, this conversion can cause an xtd::overflow_exception for values that are near to but still in the range of either xd::time_span::min_value or xd::time_span::max_value. For example, this causes an xtd:overflow_exception in the following attempt to instantiate a xd::time_span object.
-    /// @code
+    /// ```cpp
     /// // The following throws an overflow_exception at runtime
     /// auto max_span = time_span::from_days(time_span::max_value.total_days());
-    /// @endcode
+    /// ```
     static time_span from_days(double value);
     /// @brief Returns a xtd::time_span that represents a specified number of days, where the specification is accurate to the nearest millisecond.
     /// @param value A number of days, accurate to the nearest millisecond.
@@ -398,10 +398,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
     /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
     /// @remarks The value parameter is converted to milliseconds, which is converted to ticks, and that number of ticks is used to initialize the new xtd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the double data type, this conversion can generate an xtd::overflow_exception for values that are near to but still in the range of either xtd::time_span::min_value or xtd::time_span::max_value. For example, this causes an xtd::overflow_exception in the following attempt to instantiate a xtd::time_span object.
-    /// @code
+    /// ```cpp
     /// // The following throws an overflow_exception at runtime
     /// auto max_span = time_span::from_hours(time_span::max_value::total_hours());
-    /// @endcode
+    /// ```
     /// @par Examples
     /// The following example creates several xtd::time_span objects using the xtd::time_span::from_hours method.
     /// @include time_span_from_hours.cpp
@@ -428,10 +428,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
     /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
     /// @remarks The value parameter is converted to ticks, and that number of ticks is used to initialize the new xtd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the Double data type, this conversion can generate an xtd::overflow_exception for values that are near to but still in the range of either xtd::time_span::min_value or xtd::time_span::max_value. For example, this causes an xtd::overflow_exception in the following attempt to instantiate a xtd::time_span object.
-    /// @code
+    /// ```cpp
     /// // The following throws an overflow_exception at runtime
     /// auto max_span = time_span::from_milliseconds(time_span::max_value::total_milliseconds);
-    /// @endcode
+    /// ```
     static time_span from_milliseconds(double value);
     /// @brief Returns a xtd::time_span that represents a specified number of milliseconds.
     /// @param value A number of milliseconds.
@@ -444,10 +444,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
     /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
     /// @remarks The value parameter is converted to milliseconds, which is converted to ticks, and that number of ticks is used to initialize the new xtd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the Double data type, this conversion can generate an xtd::overflow_exception for values that are near to but still in the range of either xtd::time_span::min_value or xtd::time_span::max_value. For example, this causes an xtd::overflow_exception in the following attempt to instantiate a xtd::time_span object.
-    /// @code
+    /// ```cpp
     /// // The following throws an overflow_exception at runtime
     /// auto max_span = time_span::from_minutes(time_span::max_value::total_miminutes);
-    /// @endcode
+    /// ```
     static time_span from_minutes(double value);
     /// @brief Returns a xtd::time_span that represents a specified number of minutes.
     /// @param value A number of minutes.
@@ -469,10 +469,10 @@ namespace xtd {
     /// @exception xtd::overflow_exception value is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>value is xtd::double_object::positive_infinity.<br>-or-<br>value is xtd::double_object::negative_infinity.
     /// @exception xtd::argument_exception value is equal to xtd::double_object::NaN.
     /// @remarks The value parameter is converted to milliseconds, which is converted to ticks, and that number of ticks is used to initialize the new xtd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the Double data type, this conversion can generate an xtd::overflow_exception for values that are near to but still in the range of either xtd::time_span::min_value or xtd::time_span::max_value. For example, this causes an xtd::overflow_exception in the following attempt to instantiate a xtd::time_span object.
-    /// @code
+    /// ```cpp
     /// // The following throws an overflow_exception at runtime
     /// auto max_span = time_span::from_seconds(time_span::max_value::total_seconds);
-    /// @endcode
+    /// ```
     static time_span from_seconds(double value);
     /// @brief Returns a xtd::time_span that represents a specified number of seconds.
     /// @param value A number of seconds.

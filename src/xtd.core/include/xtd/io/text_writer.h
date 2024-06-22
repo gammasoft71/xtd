@@ -19,15 +19,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents a writer that can write a sequential series of characters.
-    /// @code
+    /// ```cpp
     /// class core_export_ text_writer : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::io::text_writer
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/text_writer>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -238,9 +238,9 @@ namespace xtd {
     };
     
     /// @brief Represents a null text writer.
-    /// @code
+    /// ```cpp
     /// class core_export_ null_text_writer : public xtd::io::text_writer
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::io::text_writer → xtd::io::null_text_writer
     /// @par Namespace
@@ -254,9 +254,9 @@ namespace xtd {
     };
     
     /// @brief Represents a synchronized text writer.
-    /// @code
+    /// ```cpp
     /// class core_export_ synchronized_text_writer : public xtd::io::text_writer
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::io::text_writer → xtd::io::synchronized_text_writer
     /// @par Namespace

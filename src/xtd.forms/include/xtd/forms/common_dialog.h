@@ -22,9 +22,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the base class used for displaying dialog boxes on the screen.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/common_dialog>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

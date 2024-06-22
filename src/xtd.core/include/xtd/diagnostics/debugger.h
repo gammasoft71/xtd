@@ -17,15 +17,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Enables communication with a debugger. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class core_export_ debugger static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static_object → xtd::diagnostics::debugger
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/debugger>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -43,10 +43,10 @@ namespace xtd {
       /// @brief Signals a breakpoint to an attached debugger.
       /// @par Examples
       /// The following code example demonstrates how to stop the debugger at the call to write_line.
-      /// @code
+      /// ```cpp
       /// debugger_break_();
       /// console::write_line("Hello, world.");
-      /// @endcode
+      /// ```
       static void debug_break();
       
       /// @brief Checks to see if logging is enabled by an attached debugger.

@@ -23,9 +23,9 @@
 /// @param last_arg The last argument to add to variadic arguments
 /// @param ... Variadic arguments.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/add_last_arg_to_command>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core

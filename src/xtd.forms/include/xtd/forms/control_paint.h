@@ -28,9 +28,9 @@ namespace xtd {
     
     /// @brief Provides methods used to paint common Windows controls and their elements. This class cannot be inherited.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/control_paint>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -48,9 +48,9 @@ namespace xtd {
       /// @param average_alpha if true alpha was compute to; otherwise the alpha result is the alpha of color1
       /// @return The average color.
       /// @remarks The alpha, red, green and blue values are averages using the following formula:
-      /// @code
+      /// ```cpp
       /// color = color1 * (1 - weight) + color2 * weight;
-      /// @endcode
+      /// ```
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
       static xtd::drawing::color average(const xtd::drawing::color& color1, const xtd::drawing::color& color2, double weight, bool average_alpha);
       
@@ -60,9 +60,9 @@ namespace xtd {
       /// @param weight The weighting factor
       /// @return The average color.
       /// @remarks The red, green and blue values are averages using the following formula:
-      /// @code
+      /// ```cpp
       /// color = color1 * (1 - weight) + color2 * 1 - weight;
-      /// @endcode
+      /// ```
       /// @remarks Thus, a weight value of 1.0 will return the second color, while a value of 0.0 will return the first color.
       static xtd::drawing::color average(const xtd::drawing::color& color1, const xtd::drawing::color& color2, double weight);
       

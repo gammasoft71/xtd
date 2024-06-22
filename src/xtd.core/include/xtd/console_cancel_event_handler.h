@@ -11,9 +11,9 @@ namespace xtd {
   /// @param sender The source of the event.
   /// @param e A xtd::console_cancel_event_args object that contains the event data.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/console_cancel_event_handler>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

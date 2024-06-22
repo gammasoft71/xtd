@@ -14,9 +14,9 @@ namespace xtd {
     
     /// @brief Creates a panel that is associated with a split_container.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/splitter_panel>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

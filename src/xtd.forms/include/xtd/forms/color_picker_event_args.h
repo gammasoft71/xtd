@@ -16,9 +16,9 @@ namespace xtd {
     
     /// @brief Provides data for the xtd::forms::color_picker::color_picker_changed event.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/color_picker_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

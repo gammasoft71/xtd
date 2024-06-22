@@ -12,15 +12,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a multilevel switch to control tracing and debug output without recompiling your code.
-    /// @code
+    /// ```cpp
     /// class core_export_ source_switch : public xtd::diagnostics::switch_base
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::switch_base → xtd::diagnostics::source_switch
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/source_switch>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

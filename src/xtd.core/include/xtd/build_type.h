@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief Identifies the build type
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/build_type>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

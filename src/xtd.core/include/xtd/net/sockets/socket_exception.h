@@ -12,14 +12,14 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief The exception that is thrown when a socket error occurs.
-      /// @code
+      /// ```cpp
       /// class socket_exception : public xtd::system_exception
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::system_exception → xtd::net::sockets::socket_exception
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/socket_exception> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/socket_exception> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
@@ -105,18 +105,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::net::sockets::socket_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/net/sockets/socket_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::net::sockets::socket_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw socket_exception_(); // same as : throw socket_exception {csf_};
 ///   if (invalid_value) throw socket_exception_("Bad value"); // same as : throw socket_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define socket_exception_(...) socket_exception(add_csf_(__VA_ARGS__))

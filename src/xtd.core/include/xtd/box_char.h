@@ -7,15 +7,15 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents a boxed char object.
-  /// @code
+  /// ```cpp
   /// class box_char : public xtd::box_integer<type_t>
-  /// @endcode
+  /// ```
   /// @par Inheritance
   /// xtd::object → xtd::box <type_t> → xtd::box_integer <type_t> → xtd::box_char <type_t>
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/box_char>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -27,13 +27,13 @@ namespace xtd {
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
   /// @par Examples
   /// The following example shows how to create and use xtd::box_char<char8>.
-  /// @code
+  /// ```cpp
   /// auto stringer = [](const object& value) {return value.to_string();};
   /// char8 unboxed_object = u8'a';
   /// box_char<char8> boxed_object = unboxed_object;
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = a;
-  /// @endcode
+  /// ```
   template<typename type_t>
   class box_char : public xtd::box_integer<type_t> {
   public:

@@ -9,15 +9,15 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief The exception that is thrown when a path or file name is longer than the system-defined maximum length.
-    /// @code
+    /// ```cpp
     /// class path_too_long_exception : public xtd::io::io_exception
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::path_too_long_exception
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/path_too_long_exception>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -97,18 +97,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::io::path_too_long_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/io/path_too_long_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::io::path_too_long_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw path_too_long_exception_(); // same as : throw path_too_long_exception {csf_};
 ///   if (invalid_value) throw path_too_long_exception_("Bad value"); // same as : throw path_too_long_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define path_too_long_exception_(...) path_too_long_exception(add_csf_(__VA_ARGS__))

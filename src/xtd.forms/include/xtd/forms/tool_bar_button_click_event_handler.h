@@ -13,9 +13,9 @@ namespace xtd {
     /// @param sender The source of the event.
     /// @param e A xtd::forms::tool_bar_button_click_event_args that contains the event data.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tool_bar_button_click_event_handler>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

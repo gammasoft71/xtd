@@ -11,15 +11,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a set of methods and properties that you can use to accurately measure elapsed time.
-    /// @code
+    /// ```cpp
     /// class core_export_ stopwatch : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::stopwatch
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/stopwatch>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

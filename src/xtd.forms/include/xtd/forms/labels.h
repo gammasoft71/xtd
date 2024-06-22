@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a collection of label objects for use by a Windows Forms application.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/labels>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

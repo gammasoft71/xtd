@@ -19,9 +19,9 @@ namespace xtd {
     
     /// @brief Represents the menu structure of a form.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/main_menu>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -99,15 +99,15 @@ namespace xtd {
       ///
       /// @par Examples
       /// The following example shows how to access to edit menu item.
-      /// @code
+      /// ```cpp
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& edit_menu = main_menu.menu_items()[1].get();
-      /// @endcode
+      /// ```
       /// The following example shows how to access to search help menu item.
-      /// @code
+      /// ```cpp
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& search_help_menu = main_menu.menu_items()[3].get()[2].get();
-      /// @endcode
+      /// ```
       static xtd::forms::main_menu create_standard_items(const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified image size and on click event handler.
       /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
@@ -149,15 +149,15 @@ namespace xtd {
       ///
       /// @par Examples
       /// The following example shows how to access to edit menu item.
-      /// @code
+      /// ```cpp
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& edit_menu = main_menu.menu_items()[1].get();
-      /// @endcode
+      /// ```
       /// The following example shows how to access to search help menu item.
-      /// @code
+      /// ```cpp
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& search_help_menu = main_menu.menu_items()[3].get()[2].get();
-      /// @endcode
+      /// ```
       static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& image_size, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified theme and on click event handler.
       /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
@@ -199,15 +199,15 @@ namespace xtd {
       ///
       /// @par Examples
       /// The following example shows how to access to edit menu item.
-      /// @code
+      /// ```cpp
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& edit_menu = main_menu.menu_items()[1].get();
-      /// @endcode
+      /// ```
       /// The following example shows how to access to search help menu item.
-      /// @code
+      /// ```cpp
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& search_help_menu = main_menu.menu_items()[3].get()[2].get();
-      /// @endcode
+      /// ```
       static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::event_handler& on_click);
       /// @brief A factory to create a main menu with specified theme, image size and on click event handler.
       /// @param menu_items an array xtd::forms::menu_item which will contain the created menu items.
@@ -250,15 +250,15 @@ namespace xtd {
       ///
       /// @par Examples
       /// The following example shows how to access to edit menu item.
-      /// @code
+      /// ```cpp
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& edit_menu = main_menu.menu_items()[1].get();
-      /// @endcode
+      /// ```
       /// The following example shows how to access to search help menu item.
-      /// @code
+      /// ```cpp
       /// auto main_menu = create_standard_items(on_click_menu_items);
       /// auto& search_help_menu = main_menu.menu_items()[3].get()[2].get();
-      /// @endcode
+      /// ```
       static xtd::forms::main_menu create_standard_items(const xtd::ustring& theme, const xtd::drawing::size& size, const xtd::event_handler& on_click);
       /// @}
       
