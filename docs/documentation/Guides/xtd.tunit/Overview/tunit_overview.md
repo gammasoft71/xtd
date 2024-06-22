@@ -42,7 +42,7 @@ namespace unit_test_project2 {
 
 * CMakeLists.txt :
 
-```makefile
+```cmake
 cmake_minimum_required(VERSION 3.20)
 
 # Project
