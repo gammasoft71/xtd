@@ -36,6 +36,6 @@ osascript -e "do shell script \"/System/Applications/TextEdit.app/Contents/MacOS
 
 * TextEdit example with system :
 
-```c++
+```cpp
 system("osascript -e \"do shell script \\\"/System/Applications/TextEdit.app/Contents/MacOS/TextEdit\\\" with administrator privileges\"");
 ```
