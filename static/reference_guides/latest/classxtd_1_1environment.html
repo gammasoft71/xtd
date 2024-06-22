@@ -217,7 +217,7 @@ Inheritance diagram for xtd::environment:</div>
 <div class="line"><span class="comment">// !---OMITTED---!</span></div>
 <div class="line"><span class="comment">// get_folder_path: /System</span></div>
 <div class="line"><span class="comment">// GetLogicalDrives: /, /dev, /System/Volumes/Hardware, /System/Volumes/Update, /System/Volumes/Preboot, /System/Volumes/xarts, /System/Volumes/VM, /System/Volumes/Data, /System/Volumes/iSCPreboot, /System/Volumes/Data/home, /Volumes/Data</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:33</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:35</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:66</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:167</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb"><div class="ttname"><a href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">xtd::uri_components::query</a></div><div class="ttdeci">@ query</div><div class="ttdoc">The xtd::uri::query data.</div></div>
@@ -435,7 +435,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:a4b3f67dc9a3a0f67d13b60bf4f09386f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">new_line</a> () noexcept</td></tr>
 <tr class="memdesc:a4b3f67dc9a3a0f67d13b60bf4f09386f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the newline string defined for this environment.  <br /></td></tr>
 <tr class="separator:a4b3f67dc9a3a0f67d13b60bf4f09386f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a198247a29a2991f831c2b2add9f49aa3"><td class="memTemplParams" colspan="2">template&lt;class char_t , class traits_t &gt; </td></tr>
+<tr class="memitem:a198247a29a2991f831c2b2add9f49aa3"><td class="memTemplParams" colspan="2">template&lt;typename char_t , class traits_t &gt; </td></tr>
 <tr class="memitem:a198247a29a2991f831c2b2add9f49aa3"><td class="memTemplItemLeft" align="right" valign="top">static std::basic_ostream&lt; char_t, traits_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a198247a29a2991f831c2b2add9f49aa3">new_line</a> (std::basic_ostream&lt; char_t, traits_t &gt; &amp;os)</td></tr>
 <tr class="memdesc:a198247a29a2991f831c2b2add9f49aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new-line character and flushes the stream.  <br /></td></tr>
 <tr class="separator:a198247a29a2991f831c2b2add9f49aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -504,7 +504,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:aafe787566bc6c20c39491e295c2b48a7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#aafe787566bc6c20c39491e295c2b48a7">expand_environment_variables</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;name)</td></tr>
 <tr class="memdesc:aafe787566bc6c20c39491e295c2b48a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.  <br /></td></tr>
 <tr class="separator:aafe787566bc6c20c39491e295c2b48a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67b0e929793847d994dce7b741dc2ad3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__collections.html#gadc1dbfbb41611242c5aa2e857e574256">xtd::collections::specialized::string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a67b0e929793847d994dce7b741dc2ad3">get_command_line_args</a> ()</td></tr>
+<tr class="memitem:a67b0e929793847d994dce7b741dc2ad3"><td class="memItemLeft" align="right" valign="top">static xtd::collections::specialized::string_vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a67b0e929793847d994dce7b741dc2ad3">get_command_line_args</a> ()</td></tr>
 <tr class="memdesc:a67b0e929793847d994dce7b741dc2ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string array containing the command-line arguments for the current process.  <br /></td></tr>
 <tr class="separator:a67b0e929793847d994dce7b741dc2ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc571cecc9691249a326323123b98c29"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#abc571cecc9691249a326323123b98c29">get_environment_variable</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;variable)</td></tr>
@@ -525,7 +525,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:a439eb24e8d422f07f3d4d5e0b2470c6f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a439eb24e8d422f07f3d4d5e0b2470c6f">get_folder_path</a> (<a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057">environment::special_folder</a> folder, <a class="el" href="classxtd_1_1environment.html#aa3283d0bed4263754162eb02707e90c1">environment::special_folder_option</a> option)</td></tr>
 <tr class="memdesc:a439eb24e8d422f07f3d4d5e0b2470c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path to the system special folder that is identified by the specified enumeration, and uses a specified option for accessing special folders.  <br /></td></tr>
 <tr class="separator:a439eb24e8d422f07f3d4d5e0b2470c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14aadec8d39b75867476f9f97267b96"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__collections.html#gadc1dbfbb41611242c5aa2e857e574256">xtd::collections::specialized::string_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#ab14aadec8d39b75867476f9f97267b96">get_logical_drives</a> ()</td></tr>
+<tr class="memitem:ab14aadec8d39b75867476f9f97267b96"><td class="memItemLeft" align="right" valign="top">static xtd::collections::specialized::string_vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#ab14aadec8d39b75867476f9f97267b96">get_logical_drives</a> ()</td></tr>
 <tr class="memdesc:ab14aadec8d39b75867476f9f97267b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of string containing the names of the logical drives on the current computer.  <br /></td></tr>
 <tr class="separator:ab14aadec8d39b75867476f9f97267b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a921f99140b6bc8d9ba6e769ab613c9ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1environment.html#a921f99140b6bc8d9ba6e769ab613c9ae">quick_exit</a> () noexcept</td></tr>
@@ -1361,7 +1361,7 @@ The maximum size of the command-line buffer is not set to a specific number of c
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__collections.html#gadc1dbfbb41611242c5aa2e857e574256">xtd::collections::specialized::string_vector</a> xtd::environment::get_command_line_args </td>
+          <td class="memname">static xtd::collections::specialized::string_vector xtd::environment::get_command_line_args </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1663,7 +1663,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__collections.html#gadc1dbfbb41611242c5aa2e857e574256">xtd::collections::specialized::string_vector</a> xtd::environment::get_logical_drives </td>
+          <td class="memname">static xtd::collections::specialized::string_vector xtd::environment::get_logical_drives </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1860,7 +1860,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t , class traits_t &gt; </div>
+template&lt;typename char_t , class traits_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2655,7 +2655,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 21 2024 21:24:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jun 22 2024 15:29:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

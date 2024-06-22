@@ -25,10 +25,8 @@ var searchData=
   ['progress_5fbox_22',['progress_box',['../classxtd_1_1forms_1_1progress__box.html',1,'xtd::forms']]],
   ['progress_5fchanged_5fevent_5fargs_23',['progress_changed_event_args',['../classxtd_1_1forms_1_1progress__changed__event__args.html',1,'xtd::forms']]],
   ['progress_5fdialog_24',['progress_dialog',['../classxtd_1_1forms_1_1progress__dialog.html',1,'xtd::forms']]],
-  ['prompt_25',['prompt',['../classxtd_1_1speech_1_1synthesis_1_1prompt.html',1,'xtd::speech::synthesis']]],
-  ['prompt_5fevent_5fargs_26',['prompt_event_args',['../classxtd_1_1speech_1_1synthesis_1_1prompt__event__args.html',1,'xtd::speech::synthesis']]],
-  ['property_27',['property',['../classxtd_1_1web_1_1css_1_1property.html',1,'xtd::web::css']]],
-  ['property_5fitem_28',['property_item',['../classxtd_1_1drawing_1_1imaging_1_1property__item.html',1,'xtd::drawing::imaging']]],
-  ['protocol_5fviolation_5fexception_29',['protocol_violation_exception',['../classxtd_1_1net_1_1protocol__violation__exception.html',1,'xtd::net']]],
-  ['purple_5fcolors_30',['purple_colors',['../classxtd_1_1drawing_1_1purple__colors.html',1,'xtd::drawing']]]
+  ['property_25',['property',['../classxtd_1_1web_1_1css_1_1property.html',1,'xtd::web::css']]],
+  ['property_5fitem_26',['property_item',['../classxtd_1_1drawing_1_1imaging_1_1property__item.html',1,'xtd::drawing::imaging']]],
+  ['protocol_5fviolation_5fexception_27',['protocol_violation_exception',['../classxtd_1_1net_1_1protocol__violation__exception.html',1,'xtd::net']]],
+  ['purple_5fcolors_28',['purple_colors',['../classxtd_1_1drawing_1_1purple__colors.html',1,'xtd::drawing']]]
 ];

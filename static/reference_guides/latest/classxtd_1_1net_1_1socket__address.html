@@ -99,17 +99,17 @@ Inheritance diagram for xtd::net::socket_address:</div>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Stores serialized information from <a class="el" href="classxtd_1_1net_1_1end__point.html" title="Identifies a network address. This is an abstract class.">end_point</a> derived classes. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/socket_address&gt;</span> </div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/socket_address&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1net.html" title="The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...">xtd::net</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The first 2 bytes of the underlying buffer are reserved for the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> enumerated value. When the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> is used to store a serialized xtd::net::ipend_point, the third and fourth bytes are used to store port number information. The next bytes are used to store the IP address. You can access any information within this underlying byte buffer by referring to its index position; the byte buffer uses zero-based indexing. You can also use the xtd::net::socket_address::family and <a class="el" href="classxtd_1_1net_1_1socket__address.html#ad3584178b7a64c84783853a124ab03b2" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> properties to get the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> value and the buffer size, respectively. To view any of this information as a string, use the <a class="el" href="classxtd_1_1net_1_1socket__address.html#afee4426f1d082620c75f7861fcd1e88a" title="Returns information about the socket address.">xtd::net::socket_address::to_string</a> method. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The first 2 bytes of the underlying buffer are reserved for the xtd::net::sockets::address_family enumerated value. When the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> is used to store a serialized xtd::net::ipend_point, the third and fourth bytes are used to store port number information. The next bytes are used to store the IP address. You can access any information within this underlying byte buffer by referring to its index position; the byte buffer uses zero-based indexing. You can also use the xtd::net::socket_address::family and <a class="el" href="classxtd_1_1net_1_1socket__address.html#ad3584178b7a64c84783853a124ab03b2" title="Gets the underlying buffer size of the xtd::net::socket_address.">xtd::net::socket_address::size</a> properties to get the xtd::net::sockets::address_family value and the buffer size, respectively. To view any of this information as a string, use the <a class="el" href="classxtd_1_1net_1_1socket__address.html#afee4426f1d082620c75f7861fcd1e88a" title="Returns information about the socket address.">xtd::net::socket_address::to_string</a> method. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:a6f1f2b3d35bbc2210ea81b363210826d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#a6f1f2b3d35bbc2210ea81b363210826d">socket_address</a> (<a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a> <a class="el" href="classxtd_1_1net_1_1socket__address.html#ae2ee8c0e19c6313e09ab31ef50c6c819">address_family</a>)</td></tr>
+<tr class="memitem:a6f1f2b3d35bbc2210ea81b363210826d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#a6f1f2b3d35bbc2210ea81b363210826d">socket_address</a> (sockets::address_family <a class="el" href="classxtd_1_1net_1_1socket__address.html#ae2ee8c0e19c6313e09ab31ef50c6c819">address_family</a>)</td></tr>
 <tr class="memdesc:a6f1f2b3d35bbc2210ea81b363210826d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> class for the given address family.  <br /></td></tr>
 <tr class="separator:a6f1f2b3d35bbc2210ea81b363210826d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0baef7ec0cff0fe891bc8dfff1fe0e18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#a0baef7ec0cff0fe891bc8dfff1fe0e18">socket_address</a> (<a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a> <a class="el" href="classxtd_1_1net_1_1socket__address.html#ae2ee8c0e19c6313e09ab31ef50c6c819">address_family</a>, size_t buffer_size)</td></tr>
+<tr class="memitem:a0baef7ec0cff0fe891bc8dfff1fe0e18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#a0baef7ec0cff0fe891bc8dfff1fe0e18">socket_address</a> (sockets::address_family <a class="el" href="classxtd_1_1net_1_1socket__address.html#ae2ee8c0e19c6313e09ab31ef50c6c819">address_family</a>, size_t buffer_size)</td></tr>
 <tr class="memdesc:a0baef7ec0cff0fe891bc8dfff1fe0e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a> class using the specified address family and buffer size.  <br /></td></tr>
 <tr class="separator:a0baef7ec0cff0fe891bc8dfff1fe0e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d7ab2f450967159fd78cfb13ae93af3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#a1d7ab2f450967159fd78cfb13ae93af3">socket_address</a> (const std::vector&lt; <a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> &gt; &amp;buffer)</td></tr>
@@ -117,7 +117,7 @@ Inheritance diagram for xtd::net::socket_address:</div>
 <tr class="separator:a1d7ab2f450967159fd78cfb13ae93af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:ae2ee8c0e19c6313e09ab31ef50c6c819"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#ae2ee8c0e19c6313e09ab31ef50c6c819">address_family</a> () const</td></tr>
+<tr class="memitem:ae2ee8c0e19c6313e09ab31ef50c6c819"><td class="memItemLeft" align="right" valign="top">sockets::address_family&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#ae2ee8c0e19c6313e09ab31ef50c6c819">address_family</a> () const</td></tr>
 <tr class="memdesc:ae2ee8c0e19c6313e09ab31ef50c6c819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address family to which the endpoint belongs.  <br /></td></tr>
 <tr class="separator:ae2ee8c0e19c6313e09ab31ef50c6c819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3584178b7a64c84783853a124ab03b2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1socket__address.html#ad3584178b7a64c84783853a124ab03b2">size</a> () const</td></tr>
@@ -177,7 +177,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::net::socket_address::socket_address </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a>&#160;</td>
+          <td class="paramtype">sockets::address_family&#160;</td>
           <td class="paramname"><em>address_family</em></td><td>)</td>
           <td></td>
         </tr>
@@ -202,7 +202,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::net::socket_address::socket_address </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a>&#160;</td>
+          <td class="paramtype">sockets::address_family&#160;</td>
           <td class="paramname"><em>address_family</em>, </td>
         </tr>
         <tr>
@@ -259,7 +259,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a> xtd::net::socket_address::address_family </td>
+          <td class="memname">sockets::address_family xtd::net::socket_address::address_family </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -268,7 +268,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the address family to which the endpoint belongs. </p>
-<dl class="section return"><dt>Returns</dt><dd>One of the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">sockets::address_family</a> values. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>One of the sockets::address_family values. </dd></dl>
 
 </div>
 </div>
@@ -387,7 +387,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns information about the socket address. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string that contains information about the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">xtd::net::socket_address</a>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1net_1_1socket__address.html#afee4426f1d082620c75f7861fcd1e88a" title="Returns information about the socket address.">xtd::net::socket_address::to_string</a> method returns a string that contains the <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3" title="Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.">xtd::net::sockets::address_family</a> enumerated value, the size of the underlying buffer of the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">socket_address</a> structure, and the remaining contents of the buffer. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1net_1_1socket__address.html#afee4426f1d082620c75f7861fcd1e88a" title="Returns information about the socket address.">xtd::net::socket_address::to_string</a> method returns a string that contains the xtd::net::sockets::address_family enumerated value, the size of the underlying buffer of the <a class="el" href="classxtd_1_1net_1_1socket__address.html" title="Stores serialized information from end_point derived classes.">socket_address</a> structure, and the remaining contents of the buffer. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507">xtd::object</a>.</p>
 
@@ -400,7 +400,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 21 2024 21:24:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jun 22 2024 15:29:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
