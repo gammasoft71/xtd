@@ -38,7 +38,7 @@ start_position(xtd::forms::form_start_position::center_screen);
 The method [start_position](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html#aef5f579130f9834f4f35a85a94b0cf97) centers the [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html) on the screen, both horizontally and vertically.
 
 ```cpp
-startup_(tutorial::simple);
+startup_(tutorial::simple::main);
 ```
 
 The code behind [startup_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd) macro can be replaced by :

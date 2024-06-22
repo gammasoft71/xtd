@@ -50,7 +50,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // The example creates a file named "log.txt" and writes the following lines to it,
 // or appends them to the existing "log.txt" file:

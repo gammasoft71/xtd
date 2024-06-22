@@ -49,7 +49,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
 
 ## See also

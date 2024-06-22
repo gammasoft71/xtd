@@ -127,7 +127,7 @@ class program {
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
 
 ## Static and dynamic event handlers
