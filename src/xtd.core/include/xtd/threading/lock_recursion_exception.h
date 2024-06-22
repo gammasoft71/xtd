@@ -14,7 +14,9 @@ namespace xtd {
     /// class lock_recursion_exception : public xtd::system_exception
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/lock_recursion_exception> @endcode
+    /// @code
+    /// #include <xtd/threading/lock_recursion_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

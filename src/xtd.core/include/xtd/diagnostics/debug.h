@@ -35,7 +35,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static_object → xtd::diagnostics::debug
     /// @par Header
-    /// @code #include <xtd/diagnostics/debug> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/debug>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -505,7 +507,9 @@ namespace xtd {
 /// @par Inheritance
 /// xtd::static_object → xtd::diagnostics::debug
 /// @par Header
-/// @code #include <xtd/diagnostics/debug> @endcode
+/// @code
+/// #include <xtd/diagnostics/debug>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core debug

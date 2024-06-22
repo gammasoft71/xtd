@@ -13,8 +13,10 @@ namespace xtd {
   
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
   /// @par Header
-  /// @code #include <xtd/ctrace> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/ctrace>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -23,8 +25,10 @@ namespace xtd {
   #else
   /// @brief Provides an std::ostream for xtd::diagnostics::trace.
   /// @par Header
-  /// @code #include <xtd/ctrace> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/ctrace>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

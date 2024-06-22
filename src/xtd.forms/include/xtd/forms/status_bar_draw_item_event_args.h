@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the xtd::forms::status_bar::draw_item event.
     /// @par Header
-    /// @code #include <xtd/forms/status_bar_draw_item_event_args> @endcode
+    /// @code
+    /// #include <xtd/forms/status_bar_draw_item_event_args>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -19,7 +19,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static_object → xtd::threading::interlocked
     /// @par Header
-    /// @code #include <xtd/threading/interlocked> @endcode
+    /// @code
+    /// #include <xtd/threading/interlocked>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

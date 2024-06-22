@@ -16,8 +16,10 @@ xtd::int32 __get_file_attributes(const char* path);
 namespace xtd {
   /// @brief Provides a null std::ostream.
   /// @par Header
-  /// @code #include <xtd/cnull> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/cnull>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

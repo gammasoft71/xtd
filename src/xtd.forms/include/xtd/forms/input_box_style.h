@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies constants defining which input_box style is used.
     /// @par Header
-    /// @code #include <xtd/forms/input_box_style> @endcode
+    /// @code
+    /// #include <xtd/forms/input_box_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

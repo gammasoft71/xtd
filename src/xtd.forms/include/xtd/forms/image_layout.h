@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the position of the image on the control.
     /// @par Header
-    /// @code #include <xtd/forms/image_layout> @endcode
+    /// @code
+    /// #include <xtd/forms/image_layout>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

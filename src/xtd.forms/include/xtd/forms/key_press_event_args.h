@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the xtd::forms::control::key_press event.
     /// @par Header
-    /// @code #include <xtd/forms/key_press_event_args> @endcode
+    /// @code
+    /// #include <xtd/forms/key_press_event_args>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

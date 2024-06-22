@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the position and manner in which a control is docked.
     /// @par Header
-    /// @code #include <xtd/forms/dock_style> @endcode
+    /// @code
+    /// #include <xtd/forms/dock_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

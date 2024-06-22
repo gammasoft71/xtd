@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Defines identifiers that indicate a suspended system power activity mode.
     /// @par Header
-    /// @code #include <xtd/forms/power_state> @endcode
+    /// @code
+    /// #include <xtd/forms/power_state>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

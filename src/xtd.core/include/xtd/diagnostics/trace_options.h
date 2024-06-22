@@ -13,7 +13,9 @@ namespace xtd {
     /// enum class trace_options
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/diagnostics/trace_options> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/trace_options>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

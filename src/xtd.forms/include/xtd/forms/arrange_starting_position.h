@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the starting position that the system uses to arrange minimized windows.
     /// @par Header
-    /// @code #include <xtd/forms/arrange_starting_position> @endcode
+    /// @code
+    /// #include <xtd/forms/arrange_starting_position>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies constants defining which information to display.
     /// @par Header
-    /// @code #include <xtd/forms/message_dialog_icon> @endcode
+    /// @code
+    /// #include <xtd/forms/message_dialog_icon>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

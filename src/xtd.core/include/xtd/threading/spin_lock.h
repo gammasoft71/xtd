@@ -14,7 +14,9 @@ namespace xtd {
     /// class spin_lock : public xtd::object
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/spin_lock> @endcode
+    /// @code
+    /// #include <xtd/threading/spin_lock>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

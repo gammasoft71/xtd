@@ -12,7 +12,8 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The xtd::forms::style_sheets::text_transformation enum class  is used to specify uppercase and lowercase letters in a text.
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/text_transformation> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/text_transformation> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

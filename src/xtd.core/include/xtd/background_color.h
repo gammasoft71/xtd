@@ -9,8 +9,10 @@
 namespace xtd {
   /// @brief Represent background color output manipulator class.
   /// @par Header
-  /// @code #include <xtd/background_color> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/background_color>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

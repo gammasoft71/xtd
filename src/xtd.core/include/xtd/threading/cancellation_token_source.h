@@ -18,7 +18,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::threading::cancellation_token_source
     /// @par Header
-    /// @code #include <xtd/threading/cancellation_token_source> @endcode
+    /// @code
+    /// #include <xtd/threading/cancellation_token_source>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

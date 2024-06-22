@@ -51,7 +51,8 @@ namespace xtd {
       /// @par Implements
       /// xtd::iequatable <>
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/style_sheet> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/style_sheet> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

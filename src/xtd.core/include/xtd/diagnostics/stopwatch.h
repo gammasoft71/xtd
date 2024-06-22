@@ -17,7 +17,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::stopwatch
     /// @par Header
-    /// @code #include <xtd/diagnostics/stopwatch> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/stopwatch>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a Windows combo box control.
     /// @par Header
-    /// @code #include <xtd/forms/combo_box> @endcode
+    /// @code
+    /// #include <xtd/forms/combo_box>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -11,8 +11,10 @@ namespace xtd {
   /// @{
   /// @brief Represent a boxed wchar.
   /// @par Header
-  /// @code #include <xtd/wchar_object> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/wchar_object>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

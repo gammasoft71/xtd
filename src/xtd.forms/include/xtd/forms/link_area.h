@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents an area within a xtd::forms::link_label control that represents a hyperlink within the control.
     /// @par Header
-    /// @code #include <xtd/forms/link_area> @endcode
+    /// @code
+    /// #include <xtd/forms/link_area>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

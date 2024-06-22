@@ -16,7 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a common dialog box that displays a dialog to the user to choose a font from among those installed on the local computer.
     /// @par Header
-    /// @code #include <xtd/forms/font_box> @endcode
+    /// @code
+    /// #include <xtd/forms/font_box>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

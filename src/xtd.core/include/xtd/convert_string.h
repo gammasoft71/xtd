@@ -9,8 +9,10 @@
 namespace xtd {
   /// @brief Represents API to convert string containers.
   /// @par Header
-  /// @code #include <xtd/convert_string> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/convert_string>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

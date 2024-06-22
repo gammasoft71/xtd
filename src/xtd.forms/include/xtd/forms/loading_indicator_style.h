@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the appearance of a loading indicator control.
     /// @par Header
-    /// @code #include <xtd/forms/loading_indicator_style> @endcode
+    /// @code
+    /// #include <xtd/forms/loading_indicator_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -16,7 +16,9 @@ namespace xtd {
     /// class countdown_event : public xtd::object
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/countdown_event> @endcode
+    /// @code
+    /// #include <xtd/threading/countdown_event>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

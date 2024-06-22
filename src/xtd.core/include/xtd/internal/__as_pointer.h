@@ -12,8 +12,10 @@
 namespace xtd {
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -32,8 +34,10 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -52,8 +56,10 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -70,8 +76,10 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -88,8 +96,10 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -107,8 +117,10 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -125,8 +137,10 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -144,8 +158,10 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -162,8 +178,10 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

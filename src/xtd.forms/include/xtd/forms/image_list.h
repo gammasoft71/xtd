@@ -14,7 +14,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides methods to manage a collection of xtd::drawing::image objects. This class cannot be inherited.
     /// @par Header
-    /// @code #include <xtd/forms/image_list> @endcode
+    /// @code
+    /// #include <xtd/forms/image_list>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

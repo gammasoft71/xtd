@@ -18,7 +18,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::switch_base → xtd::diagnostics::source_switch
     /// @par Header
-    /// @code #include <xtd/diagnostics/source_switch> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/source_switch>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

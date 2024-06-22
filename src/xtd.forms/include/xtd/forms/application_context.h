@@ -11,7 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the contextual information about an application thread.
     /// @par Header
-    /// @code #include <xtd/forms/application_context> @endcode
+    /// @code
+    /// #include <xtd/forms/application_context>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

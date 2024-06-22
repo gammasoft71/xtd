@@ -17,7 +17,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::switch_base → xtd::diagnostics::trace_switch
     /// @par Header
-    /// @code #include <xtd/diagnostics/trace_switch> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/trace_switch>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

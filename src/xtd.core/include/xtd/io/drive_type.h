@@ -15,7 +15,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::drive_not_found_exception
     /// @par Header
-    /// @code #include <xtd/io/drive_type> @endcode
+    /// @code
+    /// #include <xtd/io/drive_type>
+    /// @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

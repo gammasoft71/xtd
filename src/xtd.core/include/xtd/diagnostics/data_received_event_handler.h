@@ -16,7 +16,9 @@ namespace xtd {
     /// @param sender The source of the event.
     /// @param e A xtd::diagnostics::process::data_received_event_args that contains the event data.
     /// @par Header
-    /// @code #include <xtd/diagnostics/data_received_event_handler> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/data_received_event_handler>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

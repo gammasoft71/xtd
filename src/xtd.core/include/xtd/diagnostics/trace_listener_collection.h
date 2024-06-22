@@ -18,7 +18,9 @@ namespace xtd {
     /// @par Inheritance
     /// std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> → xtd::diagnostics::trace_listener_collection
     /// @par Header
-    /// @code #include <xtd/diagnostics/trace_listener_collection> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/trace_listener_collection>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

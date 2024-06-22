@@ -15,7 +15,8 @@ namespace xtd {
       /// enum class synthesizer_state
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/speech/synthesis/synthesizer_state> @endcode
+      /// @code
+    /// #include <xtd/speech/synthesis/synthesizer_state> @endcode
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

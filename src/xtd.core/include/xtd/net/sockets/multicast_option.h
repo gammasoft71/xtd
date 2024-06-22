@@ -21,7 +21,8 @@ namespace xtd {
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::multicast_option
       /// @par Header
-      /// @code #include <xtd/net/sockets/multicast_option> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/multicast_option> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

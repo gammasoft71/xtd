@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the xtd::forms::background_worker::do_work event handler.
     /// @par Header
-    /// @code #include <xtd/forms/do_work_event_args> @endcode
+    /// @code
+    /// #include <xtd/forms/do_work_event_args>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the appearance of a control.
     /// @par Header
-    /// @code #include <xtd/forms/appearance> @endcode
+    /// @code
+    /// #include <xtd/forms/appearance>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

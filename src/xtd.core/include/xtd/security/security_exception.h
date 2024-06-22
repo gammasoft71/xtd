@@ -10,7 +10,9 @@ namespace xtd {
   namespace security {
     /// @brief The exception that is thrown when an I/O error occurs.
     /// @par Header
-    /// @code #include <xtd/security/security_exception> @endcode
+    /// @code
+    /// #include <xtd/security/security_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -91,7 +93,9 @@ namespace xtd {
 
 /// @brief Helper on xtd::security::security_exception to call it with current stack frame information.
 /// @par Header
-/// @code #include <xtd/security/security_exception> @endcode
+/// @code
+/// #include <xtd/security/security_exception>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

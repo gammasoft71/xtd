@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the xtd::forms::background_worker::run_worker_completed event handler.
     /// @par Header
-    /// @code #include <xtd/forms/run_wrker_completed_event_args> @endcode
+    /// @code
+    /// #include <xtd/forms/run_wrker_completed_event_args>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

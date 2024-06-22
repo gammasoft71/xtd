@@ -15,7 +15,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::end_of_stream_exception
     /// @par Header
-    /// @code #include <xtd/io/end_of_stream_exception> @endcode
+    /// @code
+    /// #include <xtd/io/end_of_stream_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -96,7 +98,9 @@ namespace xtd {
 
 /// @brief Helper on xtd::io::end_of_stream_exception to call it with current stack frame information.
 /// @par Header
-/// @code #include <xtd/io/end_of_stream_exception> @endcode
+/// @code
+/// #include <xtd/io/end_of_stream_exception>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

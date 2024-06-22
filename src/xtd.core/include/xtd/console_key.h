@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief Specifies the standard keys on a console.
   /// @par Header
-  /// @code #include <xtd/console_key> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/console_key>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

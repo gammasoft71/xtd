@@ -14,7 +14,9 @@ namespace xtd {
   namespace forms {
     /// @brief Implements the basic functionality required by text controls.
     /// @par Header
-    /// @code #include <xtd/forms/text_box_base> @endcode
+    /// @code
+    /// #include <xtd/forms/text_box_base>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

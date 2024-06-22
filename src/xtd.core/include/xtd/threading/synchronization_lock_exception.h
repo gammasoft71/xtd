@@ -14,7 +14,9 @@ namespace xtd {
     /// class synchronization_lock_exception : public xtd::system_exception
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/synchronization_lock_exception> @endcode
+    /// @code
+    /// #include <xtd/threading/synchronization_lock_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

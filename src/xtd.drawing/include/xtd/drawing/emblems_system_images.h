@@ -16,7 +16,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::drawing::system_images_base → xtd::drawing::emblems_system_images
     /// @par Header
-    /// @code #include <xtd/drawing/emblems_system_images> @endcode
+    /// @code
+    /// #include <xtd/drawing/emblems_system_images>
+    /// @endcode
     /// @par Namespace
     /// xtd::drawing
     /// @par Library

@@ -13,7 +13,9 @@ namespace xtd {
     /// enum class event_reset_mode
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/event_reset_mode> @endcode
+    /// @code
+    /// #include <xtd/threading/event_reset_mode>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

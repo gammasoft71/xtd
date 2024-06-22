@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the search direction for xtd::forms::find_dialog dialog.
     /// @par Header
-    /// @code #include <xtd/forms/search_direction> @endcode
+    /// @code
+    /// #include <xtd/forms/search_direction>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

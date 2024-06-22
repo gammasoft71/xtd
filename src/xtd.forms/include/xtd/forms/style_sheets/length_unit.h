@@ -12,7 +12,8 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The length_unit enum class specifies the units for xtd::forms::style_sheets::length.
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/length_unit> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/length_unit> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

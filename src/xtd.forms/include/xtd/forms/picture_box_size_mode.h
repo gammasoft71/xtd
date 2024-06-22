@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies how an image is positioned within a picture_box.
     /// @par Header
-    /// @code #include <xtd/forms/picture_box_size_mode> @endcode
+    /// @code
+    /// #include <xtd/forms/picture_box_size_mode>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

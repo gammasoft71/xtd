@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the direction the system uses to arrange minimized windows.
     /// @par Header
-    /// @code #include <xtd/forms/arrange_direction> @endcode
+    /// @code
+    /// #include <xtd/forms/arrange_direction>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

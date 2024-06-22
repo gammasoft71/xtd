@@ -13,7 +13,9 @@ namespace xtd {
     /// enum class search_option
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/io/search_option> @endcode
+    /// @code
+    /// #include <xtd/io/search_option>
+    /// @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

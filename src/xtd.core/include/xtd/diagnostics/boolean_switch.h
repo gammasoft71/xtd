@@ -16,7 +16,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::switch_base → xtd::diagnostics::boolean_switch
     /// @par Header
-    /// @code #include <xtd/diagnostics/boolean_switch> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/boolean_switch>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

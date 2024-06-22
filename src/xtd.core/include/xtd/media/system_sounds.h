@@ -17,7 +17,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static_object → xtd::media::system_sounds
     /// @par Header
-    /// @code #include <xtd/media/system_sounds> @endcode
+    /// @code
+    /// #include <xtd/media/system_sounds>
+    /// @endcode
     /// @par Namespace
     /// xtd::media
     /// @par Library

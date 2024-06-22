@@ -15,7 +15,8 @@ namespace xtd {
       /// using margin = xtd::forms::style_sheets::lengths
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/margin> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/margin> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

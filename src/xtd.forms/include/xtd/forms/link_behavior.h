@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the behaviors of a link in a xtd::forms::link_label.
     /// @par Header
-    /// @code #include <xtd/forms/link_behavior> @endcode
+    /// @code
+    /// #include <xtd/forms/link_behavior>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

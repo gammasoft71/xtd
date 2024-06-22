@@ -15,7 +15,8 @@ namespace xtd {
       /// using outline_width = xtd::forms::style_sheets::lengths
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/outline_width> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/outline_width> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

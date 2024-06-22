@@ -18,8 +18,10 @@ new_type_t* __convert_value__(current_type_t* value);
 namespace xtd {
   /// @brief Represents API to convert pointers.
   /// @par Header
-  /// @code #include <xtd/convert_pointer> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/convert_pointer>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

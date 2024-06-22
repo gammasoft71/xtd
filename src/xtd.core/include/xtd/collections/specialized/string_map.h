@@ -16,7 +16,8 @@ namespace xtd {
       /// using string_map = std::map<xtd::ustring, xtd::ustring>
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/collections/specialized/string_map> @endcode
+      /// @code
+    /// #include <xtd/collections/specialized/string_map> @endcode
       /// @par Namespace
       /// xtd::collections
       /// @par Library

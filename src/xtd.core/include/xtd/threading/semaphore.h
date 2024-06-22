@@ -17,7 +17,9 @@ namespace xtd {
     /// class core_export_ semaphore : public xtd::threading::wait_handle, public xtd::icomparable<semaphore>, public xtd::iequatable<semaphore>
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/semaphore> @endcode
+    /// @code
+    /// #include <xtd/threading/semaphore>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

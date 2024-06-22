@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief The exception that is thrown when one of the arguments provided to a method is not valid.
   /// @par Header
-  /// @code #include <xtd/argument_exception> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/argument_exception>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -89,7 +91,9 @@ namespace xtd {
 
 /// @brief Helper on xtd::argument_exception to call it with current stack frame information.
 /// @par Header
-/// @code #include <xtd/argument_exception> @endcode
+/// @code
+/// #include <xtd/argument_exception>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

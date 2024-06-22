@@ -20,7 +20,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides radio button renderer methods.
     /// @par Header
-    /// @code #include <xtd/forms/radio_button_renderer> @endcode
+    /// @code
+    /// #include <xtd/forms/radio_button_renderer>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

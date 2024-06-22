@@ -15,7 +15,8 @@ namespace xtd {
       /// using outline_radius = xtd::forms::style_sheets::border_radius
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/outline_radius> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/outline_radius> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

@@ -11,7 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a collection of xtd::forms::cursor objects for use by a Windows Forms application.
     /// @par Header
-    /// @code #include <xtd/forms/cursors> @endcode
+    /// @code
+    /// #include <xtd/forms/cursors>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

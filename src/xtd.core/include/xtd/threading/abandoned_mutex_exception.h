@@ -13,7 +13,9 @@ namespace xtd {
     /// class abandoned_mutex_exception : public xtd::system_exception
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/abandoned_mutex_exception> @endcode
+    /// @code
+    /// #include <xtd/threading/abandoned_mutex_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

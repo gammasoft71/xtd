@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies how an object or text in a control is horizontally aligned relative to an element of the control.
     /// @par Header
-    /// @code #include <xtd/forms/horizontal_alignment> @endcode
+    /// @code
+    /// #include <xtd/forms/horizontal_alignment>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -22,7 +22,8 @@ namespace xtd {
       /// @par Implements
       /// xtd::iequatable <>
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/lengths> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/lengths> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

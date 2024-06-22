@@ -21,7 +21,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::attribute → xtd::reflection::assembly_version_attribute
     /// @par Header
-    /// @code #include <xtd/reflection/assembly_version_attribute> @endcode
+    /// @code
+    /// #include <xtd/reflection/assembly_version_attribute>
+    /// @endcode
     /// @par Namespace
     /// xtd::reflection
     /// @par Library
@@ -64,7 +66,9 @@ std::shared_ptr<xtd::reflection::assembly_version_attribute>& __assembly_version
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
 /// @param version The version information.
 /// @par Header
-/// @code #include <xtd/reflection/assembly_version_attribute> @endcode
+/// @code
+/// #include <xtd/reflection/assembly_version_attribute>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords

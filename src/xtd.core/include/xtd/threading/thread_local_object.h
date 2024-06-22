@@ -20,7 +20,9 @@ namespace xtd {
     /// class thread_local_object : public xtd::object
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/thread_local_object> @endcode
+    /// @code
+    /// #include <xtd/threading/thread_local_object>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

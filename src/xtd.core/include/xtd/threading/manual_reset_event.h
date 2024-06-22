@@ -13,7 +13,9 @@ namespace xtd {
     /// class manual_reset_event : public xtd::threading::event_wait_handle
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/manual_reset_event> @endcode
+    /// @code
+    /// #include <xtd/threading/manual_reset_event>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

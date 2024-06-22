@@ -22,8 +22,10 @@ namespace xtd {
   /// @{
   /// @brief Provides the base class for enumerations.
   /// @par Header
-  /// @code #include <xtd/enum_object> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/enum_object>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -290,8 +292,10 @@ namespace xtd {
   
   /// @brief Provides the base class for enumerations.
   /// @par Header
-  /// @code #include <xtd/enum_object> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/enum_object>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

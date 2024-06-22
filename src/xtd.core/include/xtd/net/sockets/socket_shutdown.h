@@ -19,7 +19,8 @@ namespace xtd {
       /// enum class socket_shutdown
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/net/sockets/socket_shutdown> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/socket_shutdown> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

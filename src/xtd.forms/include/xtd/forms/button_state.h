@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the appearance of a button.
     /// @par Header
-    /// @code #include <xtd/forms/button_state> @endcode
+    /// @code
+    /// #include <xtd/forms/button_state>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

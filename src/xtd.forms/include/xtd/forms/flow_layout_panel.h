@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Used to group collections of fixed aligned controls.
     /// @par Header
-    /// @code #include <xtd/forms/flow_layout_panel> @endcode
+    /// @code
+    /// #include <xtd/forms/flow_layout_panel>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

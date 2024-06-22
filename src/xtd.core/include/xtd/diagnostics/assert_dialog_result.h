@@ -13,7 +13,9 @@ namespace xtd {
     /// enum class assert_dialog_result
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/diagnostics/assert_dialog_result> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/assert_dialog_result>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

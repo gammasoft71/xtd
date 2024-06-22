@@ -13,7 +13,9 @@ namespace xtd {
     /// enum class thread_priority
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/thread_priority> @endcode
+    /// @code
+    /// #include <xtd/threading/thread_priority>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

@@ -13,7 +13,9 @@ namespace xtd {
     /// enum class trace_level
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/diagnostics/trace_level> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/trace_level>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

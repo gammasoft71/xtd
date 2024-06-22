@@ -15,7 +15,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static_object → xtd::diagnostics::trace
     /// @par Header
-    /// @code #include <xtd/diagnostics/trace> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/trace>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

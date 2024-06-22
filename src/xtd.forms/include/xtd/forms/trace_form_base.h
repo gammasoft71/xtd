@@ -19,7 +19,9 @@ namespace xtd {
     
     /// @brief Represents a base form for debug_form and trace_form forms. This class cannot be instantiated.
     /// @par Header
-    /// @code #include <xtd/forms/trace_form_base> @endcode
+    /// @code
+    /// #include <xtd/forms/trace_form_base>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

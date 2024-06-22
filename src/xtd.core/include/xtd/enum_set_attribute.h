@@ -12,8 +12,10 @@ namespace xtd {
   /// struct enum_set_attribute
   /// @endcode
   /// @par Header
-  /// @code #include <xtd/enum_set_attribute> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/enum_set_attribute>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

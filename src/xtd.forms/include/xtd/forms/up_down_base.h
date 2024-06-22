@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Implements the basic functionality required by a spin box (also known as an up-down control).
     /// @par Header
-    /// @code #include <xtd/forms/up_down_base> @endcode
+    /// @code
+    /// #include <xtd/forms/up_down_base>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

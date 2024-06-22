@@ -20,7 +20,9 @@ namespace xtd {
     
     /// @brief Manages a related set of tab pages.
     /// @par Header
-    /// @code #include <xtd/forms/tab_control> @endcode
+    /// @code
+    /// #include <xtd/forms/tab_control>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -14,7 +14,9 @@ namespace xtd {
     
     /// @brief Represent an xtd::forms::form reference.
     /// @par Header
-    /// @code #include <xtd/forms/form_ref> @endcode
+    /// @code
+    /// #include <xtd/forms/form_ref>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

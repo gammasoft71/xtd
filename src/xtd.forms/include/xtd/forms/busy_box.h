@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a dialog box that displays busy box.
     /// @par Header
-    /// @code #include <xtd/forms/busy_box> @endcode
+    /// @code
+    /// #include <xtd/forms/busy_box>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -19,7 +19,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::threading::timer
     /// @par Header
-    /// @code #include <xtd/threading/timer> @endcode
+    /// @code
+    /// #include <xtd/threading/timer>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

@@ -26,7 +26,8 @@ namespace xtd {
       /// @par Inheritance
       /// xtd::event_args → xtd::speech::synthesis::prompt_event_args
       /// @par Header
-      /// @code #include <xtd/speech/synthesis/prompt_event_args> @endcode
+      /// @code
+    /// #include <xtd/speech/synthesis/prompt_event_args> @endcode
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

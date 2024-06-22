@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief Represent a boxed bool.
   /// @par Header
-  /// @code #include <xtd/boolean_object> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/boolean_object>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

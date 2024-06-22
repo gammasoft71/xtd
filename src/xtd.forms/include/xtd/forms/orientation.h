@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the orientation of controls or elements of controls.
     /// @par Header
-    /// @code #include <xtd/forms/orientation> @endcode
+    /// @code
+    /// #include <xtd/forms/orientation>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

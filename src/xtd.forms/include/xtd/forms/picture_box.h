@@ -15,7 +15,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a standard Windows picture box.
     /// @par Header
-    /// @code #include <xtd/forms/picture_box> @endcode
+    /// @code
+    /// #include <xtd/forms/picture_box>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

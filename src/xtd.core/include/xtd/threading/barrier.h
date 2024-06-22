@@ -17,7 +17,9 @@ namespace xtd {
     /// class barrier : public xtd::object
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/barrier> @endcode
+    /// @code
+    /// #include <xtd/threading/barrier>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

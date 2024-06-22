@@ -16,7 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a standard Windows label.
     /// @par Header
-    /// @code #include <xtd/forms/label> @endcode
+    /// @code
+    /// #include <xtd/forms/label>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies alignment of content on the drawing surface.
     /// @par Header
-    /// @code #include <xtd/forms/content_alignment> @endcode
+    /// @code
+    /// #include <xtd/forms/content_alignment>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

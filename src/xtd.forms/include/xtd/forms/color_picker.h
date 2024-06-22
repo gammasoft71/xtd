@@ -11,7 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a picker control that displays available colors along with controls that enable the user to define custom colors.
     /// @par Header
-    /// @code #include <xtd/forms/color_picker> @endcode
+    /// @code
+    /// #include <xtd/forms/color_picker>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

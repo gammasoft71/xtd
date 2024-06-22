@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief Identifies the processor architecture, supported by an assembly.
   /// @par Header
-  /// @code #include <xtd/architecture_id> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/architecture_id>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

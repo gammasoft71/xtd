@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represent menu item kind used by xtd::forms::menu_item component.
     /// @par Header
-    /// @code #include <xtd/forms/menu_item_kind> @endcode
+    /// @code
+    /// #include <xtd/forms/menu_item_kind>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

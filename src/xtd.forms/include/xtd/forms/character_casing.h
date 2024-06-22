@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the case of characters in a text_box control.
     /// @par Header
-    /// @code #include <xtd/forms/character_casing> @endcode
+    /// @code
+    /// #include <xtd/forms/character_casing>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

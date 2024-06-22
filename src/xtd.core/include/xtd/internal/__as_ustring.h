@@ -15,8 +15,10 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -35,8 +37,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -55,8 +59,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -77,8 +83,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -98,8 +106,10 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -120,8 +130,10 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -142,8 +154,10 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -163,8 +177,10 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -184,8 +200,10 @@ namespace xtd {
   /// @return A new xtd::ulong object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -204,8 +222,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -224,8 +244,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -244,8 +266,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -264,8 +288,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -286,8 +312,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -306,8 +334,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -328,8 +358,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -348,8 +380,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -370,8 +404,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -390,8 +426,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -412,8 +450,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -432,8 +472,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -454,8 +496,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -474,8 +518,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -496,8 +542,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -516,8 +564,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -538,8 +588,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -558,8 +610,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -580,8 +634,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -600,8 +656,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -622,8 +680,10 @@ namespace xtd {
   /// @return A new ustring object converted from value.
   /// @exception xtd::argument_exception vfrom_base is not 2, 8, 10, or 16.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

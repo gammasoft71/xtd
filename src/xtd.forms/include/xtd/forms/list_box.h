@@ -14,7 +14,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a standard Windows list box.
     /// @par Header
-    /// @code #include <xtd/forms/list_box> @endcode
+    /// @code
+    /// #include <xtd/forms/list_box>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

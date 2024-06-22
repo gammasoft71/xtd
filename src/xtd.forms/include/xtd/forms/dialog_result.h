@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies identifiers to indicate the return value of a dialog box.
     /// @par Header
-    /// @code #include <xtd/forms/dialog_result> @endcode
+    /// @code
+    /// #include <xtd/forms/dialog_result>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

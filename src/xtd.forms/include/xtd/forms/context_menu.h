@@ -17,7 +17,9 @@ namespace xtd {
     
     /// @brief Represents a shortcut menu.
     /// @par Header
-    /// @code #include <xtd/forms/context_menu> @endcode
+    /// @code
+    /// #include <xtd/forms/context_menu>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

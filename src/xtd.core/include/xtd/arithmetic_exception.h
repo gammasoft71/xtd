@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief The exception that is thrown for errors in an arithmetic, casting, or conversion operation.
   /// @par Header
-  /// @code #include <xtd/arithmetic_exception> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/arithmetic_exception>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -88,7 +90,9 @@ namespace xtd {
 
 /// @brief Helper on xtd::arithmetic_exception to call it with current stack frame information.
 /// @par Header
-/// @code #include <xtd/arithmetic_exception> @endcode
+/// @code
+/// #include <xtd/arithmetic_exception>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

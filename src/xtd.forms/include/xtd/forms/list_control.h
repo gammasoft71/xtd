@@ -14,7 +14,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a common implementation of members for the list_box, choice and combo_box classes.
     /// @par Header
-    /// @code #include <xtd/forms/list_control> @endcode
+    /// @code
+    /// #include <xtd/forms/list_control>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

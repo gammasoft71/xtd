@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents an animation control.
     /// @par Header
-    /// @code #include <xtd/forms/animation> @endcode
+    /// @code
+    /// #include <xtd/forms/animation>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -6,8 +6,10 @@
 namespace xtd {
   /// @brief The specified expression is cleared automatically when the scope is ended.
   /// @par Header
-  /// @code #include <xtd/block_scope> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/block_scope>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

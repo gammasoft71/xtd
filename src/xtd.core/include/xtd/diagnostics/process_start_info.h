@@ -22,7 +22,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::process_start_info
     /// @par Header
-    /// @code #include <xtd/diagnostics/process_start_info> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/process_start_info>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

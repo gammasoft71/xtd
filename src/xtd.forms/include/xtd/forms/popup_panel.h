@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a special type of panel container that can be used for context menus, combo_box popups and more.
     /// @par Header
-    /// @code #include <xtd/forms/popup_panel> @endcode
+    /// @code
+    /// #include <xtd/forms/popup_panel>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

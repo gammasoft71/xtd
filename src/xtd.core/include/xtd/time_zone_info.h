@@ -94,11 +94,11 @@ namespace xtd {
       /// @remarks The value of the xtd::time_zone_info::transition_time::is_fixed_date_rule property determines which properties of a xtd::time_zone_info::transition_time object have valid values. The following table indicates which properties are affected by the value of the xtd::time_zone_info::transition_time::is_fixed_date_rule property.
       /// | transition_time property   | is_fixed_date_rule = true | is_fixed_date_rule = false |
       /// | -------------------------- | ------------------------- | -------------------------- |
-      /// | @code day @endcode         | Valid                     | Unused                     |
-      /// | @code day_of_week @endcode | Unused                    | Valid                      |
-      /// | @code week @endcode        | Unused                    | Valid                      |
-      /// | @code month @endcode       | Valid                     | Valid                      |
-      /// | @code time_of_day @endcode | Valid                     | Valid                      |
+      /// | `day`                      | Valid                     | Unused                     |
+      /// | `day_of_week`              | Unused                    | Valid                      |
+      /// | `week`                     | Unused                    | Valid                      |
+      /// | `month`                    | Valid                     | Valid                      |
+      /// | `time_of_day`              | Valid                     | Valid                      |
       bool is_fixed_rule() const noexcept;
       
       /// @brief Gets the month in which the time change occurs.
