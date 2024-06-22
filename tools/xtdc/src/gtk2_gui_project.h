@@ -59,7 +59,7 @@ namespace xtdc_command {
     
     void create_source(const xtd::ustring& name, const xtd::ustring& path) const {
       std::vector<xtd::ustring> lines {
-        "#include <gtk/gtk>",
+        "#include <gtk/gtk.h>",
         "",
         "/* The main entry point for the application. */",
         "int main(int argc, char* argv[]) {",

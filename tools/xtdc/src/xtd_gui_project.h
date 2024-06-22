@@ -128,7 +128,7 @@ namespace xtdc_command {
         "}",
         "",
         "auto form1::main() -> void {",
-        "  application::run(form1());",
+        "  application::run(form1 {});",
         "}",
       };
       
