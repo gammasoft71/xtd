@@ -9,13 +9,13 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Specifies whether to search the current directory, or the current directory and all subdirectories.
-    /// @code
+    /// ```cpp
     /// enum class search_option
-    /// @endcode
+    /// ```
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/search_option>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library

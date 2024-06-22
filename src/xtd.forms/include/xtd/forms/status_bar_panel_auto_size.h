@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies how a xtd::forms::status_bar_panel on a xtd::forms::status_bar content behaves when the content resizes.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/status_bar_panel_auto_size>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

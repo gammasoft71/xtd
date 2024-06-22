@@ -14,12 +14,12 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @par Examples
   /// The following example shows how to create and use xtd::size_object.
-  /// @code
+  /// ```cpp
   /// auto stringer = [](const object& value) {return value.to_string();};
   /// size_t unboxed_object = 42;
   /// size_object boxed_object = unboxed_object;
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = 42;
-  /// @endcode
+  /// ```
   using size_object = box_integer<size_t>;
 }

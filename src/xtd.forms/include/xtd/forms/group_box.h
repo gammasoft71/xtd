@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a Windows control that displays a frame around a group of controls with an optional caption.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/group_box>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

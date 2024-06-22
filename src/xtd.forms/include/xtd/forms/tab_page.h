@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a single tab page in a tab_control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tab_page>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

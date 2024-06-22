@@ -89,11 +89,11 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::invalid_operation_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw invalid_operation_exception_(); // same as : throw invalid_operation_exception {csf_};
 ///   if (invalid_value) throw invalid_operation_exception_("Bad value"); // same as : throw invalid_operation_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define invalid_operation_exception_(...) invalid_operation_exception(add_csf_(__VA_ARGS__))

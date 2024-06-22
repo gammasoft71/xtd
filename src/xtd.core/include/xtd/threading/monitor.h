@@ -23,15 +23,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides a mechanism that synchronizes access to objects.
-    /// @code
+    /// ```cpp
     /// class core_export_ monitor static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static_object → xtd::threading::monitor
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/threading/monitor>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::threading
     /// @par Library
@@ -72,7 +72,7 @@ namespace xtd {
     /// @note It is therefore advisable to use the xtd::threading::lock_guard class or the #lock_ keyword instead of calling the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods, to ensure that no critical sections remain in the xtd::threading::monitor class.
     /// @par
     /// The folowing code shows the use use of xtd:threading::monitor::enter and xtd:threading::monitor::exit when an exception occured :
-    /// @code
+    /// ```cpp
     /// // Define the lock object.
     /// auto obj = object {};
     ///
@@ -88,9 +88,9 @@ namespace xtd {
     ///   // You also need to define the end of the critical section.
     ///   monitor::exit(obj);
     /// }
-    /// @endcode
+    /// ```
     /// <br>The same code with the xtd::threading::lock_guard class :
-    /// @code
+    /// ```cpp
     /// // Define the lock object.
     /// auto obj = object {};
     ///
@@ -103,9 +103,9 @@ namespace xtd {
     /// } catch(...) {
     ///
     /// }
-    /// @endcode
+    /// ```
     /// <br>The same code with the #lock_ keyword :
-    /// @code
+    /// ```cpp
     /// // Define the lock object.
     /// auto obj = object {};
     ///
@@ -117,7 +117,7 @@ namespace xtd {
     /// } catch(...) {
     ///
     /// }
-    /// @endcode
+    /// ```
     /// @par pulse, pulse_all, and wait
     /// Once a thread owns the lock and has entered the critical section that the lock protects, it can call the xtd::threading::monitor::wait, xtd::threading::monitor::pulse, and xtd::threading::monitor::pulse_all methods.
     /// <br><br>When the thread that holds the lock calls xtd::threading::monitor::wait, the lock is released and the thread is added to the waiting queue of the synchronized object. The first thread in the ready queue, if any, acquires the lock and enters the critical section. The thread that called Wait is moved from the waiting queue to the ready queue when either the xtd::threading::monitor::pulse or the xtd::threading::monitor::pulse_all method is called by the thread that holds the lock (to be moved, the thread must be at the head of the waiting queue). The xtd::threading::monitor::wait method returns when the calling thread reacquires the lock.

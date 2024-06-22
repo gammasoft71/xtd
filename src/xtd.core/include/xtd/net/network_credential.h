@@ -15,9 +15,9 @@ namespace xtd {
   namespace net {
     /// @brief Provides credentials for password-based authentication schemes such as basic, digest, NTLM, and Kerberos authentication.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/net/network_credential>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::net
     /// @par Library

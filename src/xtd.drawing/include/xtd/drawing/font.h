@@ -32,9 +32,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ font final : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::font
     /// @par Namespace

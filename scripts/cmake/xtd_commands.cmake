@@ -44,7 +44,7 @@ set(__CMAKE_TARGET_ID_CUSTOM_TARGET__ 8)
 ## @param ... Other options.
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -53,7 +53,7 @@ set(__CMAKE_TARGET_ID_CUSTOM_TARGET__ 8)
 ##  
 ##  choice_options(TARGET_TYPE "Choose library dynamic, static, interface or module" DINAMIC_LIBRARY STATIC_LIBRARY INTERFACE_LIBRARY MODULE_LIBRARY)
 ##  target_type(${TARGET_TYPE})
-## @endcode
+## ```
 macro(choice_options OPTION MESSAGE DEFAULT_OPTION)
   set(${OPTION} ${DEFAULT_OPTION} CACHE STRING ${MESSAGE})
   set_property(CACHE ${OPTION} PROPERTY STRINGS ${DEFAULT_OPTION} ${ARGN})
@@ -63,7 +63,7 @@ endmacro ()
 ## @param OPERATING_SYSTEM_NAME The variable containing the name of the operating system.
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -72,7 +72,7 @@ endmacro ()
 ##  
 ##  get_operating_system_name(OPERATING_SYSTEM_NAME)
 ##  message("The current operating system name is \"${OPERATING_SYSTEM_NAME}\"")
-## @endcode
+## ```
 macro(get_operating_system_name OPERATING_SYSTEM_NAME)
   if (WIN32)
     if ("$ENV{MSYSTEM}" STREQUAL "")
@@ -102,7 +102,7 @@ endmacro ()
 ## @remarks This method is optional. 
 ## @remarks For more inforamtion see [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -111,7 +111,7 @@ endmacro ()
 ##
 ##  target_categories(Development IDE GUIDesigner)
 ##  target_type(CONSOLE_APPLICATION)
-## @endcode
+## ```
 macro(target_categories MAIN_CATEGORY)
   message(VERBOSE "Add application categories [MAIN_CATEGORY] [${ARGV0}]...")
   set(TARGET_CATEGORIES ${MAIN_CATEGORY} ${ARGV0})
@@ -124,7 +124,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -133,7 +133,7 @@ endmacro()
 ##
 ##  target_default_namespace("my_namespace")
 ##  target_type(CONSOLE_APPLICATION)
-## @endcode
+## ```
 macro(target_default_namespace DEFAULT_NAMESPACE)
   message(VERBOSE "Add application default namespace [${DEFAULT_NAMESPACE}]...")
   set(TARGET_DEFAULT_NAMESPACE ${DEFAULT_NAMESPACE})
@@ -147,7 +147,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -156,7 +156,7 @@ endmacro()
 ##
 ##  target_display(ON)
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(target_display DISPLAY)
   message(VERBOSE "Add assembly display [${DISPLAY}]...")
   set(TARGET_DISPLAY ${DISPLAY})
@@ -187,7 +187,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -196,7 +196,7 @@ endmacro()
 ##
 ##  target_icon(my_icon)
 ##  target_type(CONSOLE_APPLICATION)
-## @endcode
+## ```
 macro(target_icon)
   message(VERBOSE "Add application icon [${ARGV0}]...")
   if (${ARGC} GREATER 1)
@@ -236,7 +236,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -245,7 +245,7 @@ endmacro()
 ##
 ##  target_name("my_exe")
 ##  target_type(CONSOLE_APPLICATION)
-## @endcode
+## ```
 macro(target_name NAME)
   message(VERBOSE "Add application name [${NAME}]...")
   set(TARGET_NAME ${NAME})
@@ -258,7 +258,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -267,7 +267,7 @@ endmacro()
 ##
 ##  target_registered(OFF)
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(target_registered REGISTERED)
   message(VERBOSE "Set application registered [${REGISTERED}]...")
   set(TARGET_REGISTERED ${REGISTERED})
@@ -284,7 +284,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -293,7 +293,7 @@ endmacro()
 ##
 ##  target_startup("my_project::my_class::main" my_project.cpp)
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(target_startup ...)
   message(VERBOSE "Add application startup [\"${ARGV0}\" ${ARGV1}]...")
   set(STARTUP_FILE properties/startup.cpp)
@@ -339,7 +339,7 @@ endmacro()
 ## @remarks This method must be the last method.
 ## @remarks Call only once by project.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -348,7 +348,7 @@ endmacro()
 ##  add_references(xtd.string xtd.core)
 ##
 ##  target_type(CONSOLE_APPLICATION)
-## @endcode
+## ```
 macro(target_type TYPE)
   message(VERBOSE "Add application type [${TYPE}]...")
   set(TARGET_TYPE "${TYPE}")
@@ -528,7 +528,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -538,7 +538,7 @@ endmacro()
 ##  assembly_company("Gammasoft")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_company COMPANY)
   message(VERBOSE "Add assembly company [${COMPANY}]...")
   set(ASSEMBLY_COMPANY "${COMPANY}")
@@ -550,7 +550,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -560,7 +560,7 @@ endmacro()
 ##  assembly_configuration("Beta public")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_configuration CONFIGURATION)
   message(VERBOSE "Add assembly configuration [${CONFIGURATION}]...")
   set(ASSEMBLY_CONFIGURATION "${CONFIGURATION}")
@@ -572,7 +572,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -582,7 +582,7 @@ endmacro()
 ##  assembly_copyright("© 2024 by Gammasoft.")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_copyright COPYRIGHT)
   message(VERBOSE "Add assembly copyright [${COPYRIGHT}]...")
   set(ASSEMBLY_COPYRIGHT "${COPYRIGHT}")
@@ -604,7 +604,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -614,7 +614,7 @@ endmacro()
 ##  assembly_description("The application to stuff it.")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_description DESCRIPTION)
   message(VERBOSE "Add assembly description [${DESCRIPTION}]...")
   set(ASSEMBLY_DESCRIPTION "${DESCRIPTION}")
@@ -627,7 +627,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -637,7 +637,7 @@ endmacro()
 ##  assembly_file_version("1.2.3")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_file_version FILE_VERSION)
   message(VERBOSE "Add assembly file version [${FILE_VERSION}]...")
   set(ASSEMBLY_FILE_VERSION "${FILE_VERSION}")
@@ -649,7 +649,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -659,7 +659,7 @@ endmacro()
 ##  assembly_guid("54278852-4afa-4d73-b0ea-de21264f59f6")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_guid GUID)
   message(VERBOSE "Add assembly guid [${GUID}]...")
   set(ASSEMBLY_GUID "${GUID}")
@@ -671,7 +671,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -681,7 +681,7 @@ endmacro()
 ##  assembly_name("My Project")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_name NAME)
   message(VERBOSE "Add assembly name [${NAME}]...")
   set(ASSEMBLY_NAME "${NAME}")
@@ -694,7 +694,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -704,7 +704,7 @@ endmacro()
 ##  assembly_product("my_project")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_product PRODUCT)
   message(VERBOSE "Add assembly product [${PRODUCT}]...")
   set(ASSEMBLY_PRODUCT "${PRODUCT}")
@@ -716,7 +716,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -726,7 +726,7 @@ endmacro()
 ##  assembly_title("My Project")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_title TITLE)
   message(VERBOSE "Add assembly title [${TITLE}]...")
   set(ASSEMBLY_TITLE "${TITLE}")
@@ -748,7 +748,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -758,7 +758,7 @@ endmacro()
 ##  assembly_version("1.2.3")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(assembly_version VERSION)
   message(VERBOSE "Add assembly version [${VERSION}]...")
   set(ASSEMBLY_VERSION "${VERSION}")
@@ -772,7 +772,7 @@ endmacro()
 ## @param OUTPUT_DIRECTORY the directory where runtime target files should be built.
 ## @remark This option is use mainly when a solution as more than one projec.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(MySolution)
@@ -782,7 +782,7 @@ endmacro()
 ##
 ##  add_projects(lib_project1 lib_project2 lib_project3)
 ##  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project_3)
-## @endcode
+## ```
 macro(build_output_directory OUTPUT_DIRECTORY)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIRECTORY}")
   set(BUILD_OUTPUT_DIRECTORY "${OUTPUT_DIRECTORY}")
@@ -847,7 +847,7 @@ endmacro()
 ## @remarks This method is required for install package.
 ## @remarks This method can be call more than once in the same project.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -859,7 +859,7 @@ endmacro()
 ##  add_install_include_directories(include/my_project)
 ##  install_component()
 ##  install_application()
-## @endcode
+## ```
 macro(add_install_include_directories)
   foreach(DIRECTORY ${ARGN})
     install(DIRECTORY ${DIRECTORY}/. DESTINATION include/${INSTALL_NAME})
@@ -872,7 +872,7 @@ endmacro()
 ## @remarks This method is required for install package.
 ## @remarks This method can be call more than once in the same project.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -884,7 +884,7 @@ endmacro()
 ##  add_install_include_files(my_project1.h my_project2.h)
 ##  install_component()
 ##  install_application()
-## @endcode
+## ```
 macro(add_install_include_files)
   install(FILES ${ARGN} DESTINATION include/${INSTALL_NAME})
   set(INSTALL_INCLUDE_FILES "${INSTALL_INCLUDE_FILES};${${ARGN}}")
@@ -897,7 +897,7 @@ endmacro()
 ## @remarks This method must be call after add_references.
 ## @remarks Call only once by project.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -909,7 +909,7 @@ endmacro()
 ##  add_install_include_files(my_project.h)
 ##  install_component()
 ##  install_package()
-## @endcode
+## ```
 macro(install_component)
   if (${ARGC} GREATER 1)
     message(FATAL_ERROR "Only INSTALL_NAME argument authorized or none.")
@@ -953,7 +953,7 @@ endmacro()
 ## @remarks This method must be after add_references.
 ## @remarks Call only once by project.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -966,7 +966,7 @@ endmacro()
 ##  add_install_include_files(my_project.h)
 ##  install_component()
 ##  install_application()
-## @endcode
+## ```
 macro(install_name NAME)
   set(INSTALL_NAME ${NAME})
 endmacro()
@@ -978,7 +978,7 @@ endmacro()
 ## @remarks This method must be after add_references.
 ## @remarks Call only once by project.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -990,7 +990,7 @@ endmacro()
 ##  add_install_include_files(my_project.h)
 ##  install_component()
 ##  install_package()
-## @endcode
+## ```
 macro(install_package)
   if (${ARGC} GREATER 1)
     message(FATAL_ERROR "Only INSTALL_NAME argument authorized or none.")
@@ -1013,7 +1013,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -1022,7 +1022,7 @@ endmacro()
 ##  add_sources(my_project.cpp include/my_project/my_project.h)
 ##
 ##  target_type(STATIC_LIBRARY)
-## @endcode
+## ```
 macro(add_include_directories)
   message(VERBOSE "Add include directories [${ARGN}]...")
   foreach(INCLUDE_DIRECTORY ${ARGN})
@@ -1037,7 +1037,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -1048,7 +1048,7 @@ endmacro()
 ##
 ##  target_type(CONSOLE_APPLICATION)
 ##
-## @endcode
+## ```
 macro(add_packages)
   message(VERBOSE "Add packages [${ARGN}]...")
   foreach(PACKAGE ${ARGN})
@@ -1064,14 +1064,14 @@ endmacro()
 ## @remarks This method is optional except container project like Solution.
 ## @remarks This method must be call before target_type().
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(MySolution)
 ##  find_package(xtd REQUIRED)
 ##  add_projects(lib_project1 lib_project2 lib_project3)
 ##  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project_3)
-## @endcode
+## ```
 macro(add_projects)
   message(VERBOSE "Add projects [${ARGN}]...")
   foreach (PROJECT ${ARGN})
@@ -1091,7 +1091,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -1102,7 +1102,7 @@ endmacro()
 ##
 ##  target_type(CONSOLE_APPLICATION)
 ##
-## @endcode
+## ```
 macro(add_references)
   message(VERBOSE "Add references [${ARGN}]...")
   set(PROJECT_REFERENCES "${PROJECT_REFERENCES};${ARGN}")
@@ -1116,7 +1116,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -1127,7 +1127,7 @@ endmacro()
 ##  resource(animation1 animations/ani1.gif)
 ##
 ##  target_type(CONSOLE_APPLICATION)
-## @endcode
+## ```
 macro(resource NAME FILE)
   if ("${NAME}" IN_LIST PROJECT_RESOURCE_NAMES)
     message(FATAL_ERROR "Duplicate resource NAME : ${NAME}")
@@ -1154,7 +1154,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -1164,7 +1164,7 @@ endmacro()
 ##  resource_string(button_close_text "\"Close\"" "Text of close button.")
 ##
 ##  target_type(GUI_APPLICATION)
-## @endcode
+## ```
 macro(resource_string NAME VALUE COMMENT)
   if ("${NAME}" IN_LIST PROJECT_RESOURCE_STRING_NAMES)
     message(FATAL_ERROR "Duplicate resource string NAME : ${NAME}")
@@ -1188,7 +1188,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -1198,7 +1198,7 @@ endmacro()
 ##  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ##
 ##  target_type(CONSOLE_APPLICATION)
-## @endcode
+## ```
 macro(setting NAME TYPE SCOPE VALUE)
   if ("${NAME}" IN_LIST PROJECT_SETTING_NAMES)
     message(FATAL_ERROR "Duplicate setting NAME : ${NAME}")
@@ -1224,7 +1224,7 @@ endmacro()
 ## @remarks This method must be call before target_type().
 ## @remarks This method is optional.
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -1237,7 +1237,7 @@ endmacro()
 ##  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ##
 ##  target_type(CONSOLE_APPLICATION)
-## @endcode
+## ```
 macro(setting_include SETTIING_INCLUDE_FILE)
   if ("${SETTIING_INCLUDE_FILE}" IN_LIST PROJECT_SETTING_INCLUDE_FILES)
     message(FATAL_ERROR "Duplicate setting include : ${SETTIING_INCLUDE_FILE}")
@@ -1255,7 +1255,7 @@ endmacro()
 ## @remarks This method is required except container project like Solution.
 ## @remarks This method must be call before target_type().
 ## @par Examples
-## @code
+## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
 ##
 ##  project(my_project)
@@ -1264,7 +1264,7 @@ endmacro()
 ##  add_sources(file1.cpp file2.cpp options/file3.cpp)
 ##  
 ##  target_type(CONSOLE_APPLICATION)
-## @endcode
+## ```
 macro(add_sources)
   message(VERBOSE "Add sources [${ARGN}]...")
   foreach (FILE ${ARGN})

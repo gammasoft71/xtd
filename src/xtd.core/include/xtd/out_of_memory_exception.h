@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief The exception that is thrown when one of the arguments provided to a method is not valid.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/out_of_memory_exception>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -91,18 +91,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::out_of_memory_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/out_of_memory_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::out_of_memory_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw out_of_memory_exception_(); // same as : throw out_of_memory_exception {csf_};
 ///   if (invalid_value) throw out_of_memory_exception_("Bad value"); // same as : throw out_of_memory_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define out_of_memory_exception_(...) out_of_memory_exception(add_csf_(__VA_ARGS__))

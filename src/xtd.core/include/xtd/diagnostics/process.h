@@ -24,15 +24,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides access to local and remote processes and enables you to start and stop local system processes.
-    /// @code
+    /// ```cpp
     /// class core_export_ process final : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::process
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/process>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -396,7 +396,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @par Examples
       /// The following example uses the net use command together with a user supplied argument to map a network resource. It then reads the standard error stream of the net command and writes it to console.
-      /// @code
+      /// ```cpp
       /// using_(xtd::diagnostics::process my_process) {
       ///   xtd::diagnostics::process_start_info my_process_start_info("net ", "use " + args[0]);
       ///
@@ -409,14 +409,14 @@ namespace xtd {
       ///   // Read the standard error of net.exe and write it on to console.
       ///   xtd::console::write_line(my_stream_reader.read_line());
       /// }
-      /// @endcode
+      /// ```
       /// @remarks When a xtd::diagnostics::process writes text to its standard error stream, that text is normally displayed on the console. By redirecting the xtd::diagnostics::process::standard_error stream, you can manipulate or suppress the error output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
       /// @note To use xtd::diagnostics::process::standard_error, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_error to true. Otherwise, reading from the xtd::diagnostics::process::standard_error stream throws an exception.
       /// @remarks The redirected xtd::diagnostics::process::standard_error stream can be read synchronously or asynchronously. Methods such as xtd::io::stream_reader::read, xtd::io::stream_reader::read_line, and xtd::io::stream_reader::read_to_end perform synchronous read operations on the error output stream of the process. These synchronous read operations do not complete until the associated xtd::diagnostics::process writes to its xtd::diagnostics::process::standard_error stream, or closes the stream.
       /// @remarks In contrast, xtd::diagnostics::process::begin_error_read_line starts asynchronous read operations on the xtd::diagnostics::process::standard_error stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
       /// @remarks Synchronous read operations introduce a dependency between the caller reading from the xtd::diagnostics::process::standard_error stream and the child process writing to that stream. These dependencies can result in deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits on the read operation until the child writes to the stream or closes the stream. When the child process writes enough data to fill its redirected stream, it is dependent on the parent. The child process waits on the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait on each other to complete an operation, and neither can proceed. You can avoid deadlocks by evaluating dependencies between the caller and child process.
       /// @remarks The last two examples in this section use the xtd::diagnostics:process::start method to launch an executable named Write500Lines.exe. The following example contains its source code.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -435,9 +435,9 @@ namespace xtd {
       /// //      '
       /// //
       /// //      Successfully wrote 500 lines.
-      /// @endcode
+      /// ```
       /// @remarks The following example shows how to read from a redirected error stream and wait for the child process to exit. It avoids a deadlock condition by calling stream_reader(p.standard_error()).read_to_end() before p.wait_for_exit. A deadlock condition can result if the parent process calls p.wait_for_exit before stream_reader(p.standard_error()).read_to_end() and the child process writes enough text to fill the redirected stream. The parent process would wait indefinitely for the child process to exit. The child process would wait indefinitely for the parent to read from the full xtd::diagnostics::process::standard_error stream.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -460,9 +460,9 @@ namespace xtd {
       /// }
       /// // The end of the output produced by the example includes the following:
       /// //      Error stream: Successfully wrote 500 lines.
-      /// @endcode
+      /// ```
       /// @remarks There is a similar issue when you read all text from both the standard output and standard error streams. The following example performs a read operation on both streams. It avoids the deadlock condition by performing asynchronous read operations on the xtd::diagnostics::process::standard_error stream. A deadlock condition results if the parent process calls stream_reader(p.standard_output()).read_to_end() followed by stream_reader(p.standard_error()).read_to_end() and the child process writes enough text to fill its error stream. The parent process would wait indefinitely for the child process to close its xtd::diagnostics::process::standard_output stream. The child process would wait indefinitely for the parent to read from the full xtd::diagnostics::process::standard_error stream.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -496,7 +496,7 @@ namespace xtd {
       /// //      '
       /// //
       /// //      Error stream: Successfully wrote 500 lines.
-      /// @endcode
+      /// ```
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
       /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_error_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::process::standard_error stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::sstream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       std::istream& standard_error();
@@ -506,7 +506,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::processes object.
       /// @par Examples
       /// The following example illustrates how to redirect the xtd::diagnostics::process::standard_input stream of a process. The example starts the sort command with redirected input. It then prompts the user for text, and passes that to the sort process by means of the redirected xtd::diagnostics::process::standard_input stream. The sort results are displayed to the user on the console.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -561,7 +561,7 @@ namespace xtd {
       ///     my_process.wait_for_exit();
       ///   }
       /// }
-      /// @endcode
+      /// ```
       /// @remarks A xtd::diagnostics::process can read input text from its standard input stream, typically the keyboard. By redirecting the xtd::diagnostics::process::standard_input stream, you can programmatically specify the input. For example, instead of using keyboard input, you can provide text from the contents of a designated file or output from another application.
       /// @note To use xtd::diagnostics::process::standard_input, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_input to true. Otherwise, writing to the xtd::diagnostics::process::standard_input stream throws an exception.
       std::ostream& standard_input();
@@ -571,7 +571,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception There is no process associated with this xtd::diagnostics::process object.
       /// @par Examples
       /// The following example runs the ipconfig.exe command and redirects its standard output to the example's console window.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -599,14 +599,14 @@ namespace xtd {
       ///   console::write_line("\n\nPress any key to exit.");
       ///   console::read_line();
       /// }
-      /// @endcode
+      /// ```
       /// @remarks When a xtd::diagnostics::process writes text to its standard stream, that text is normally displayed on the console. By redirecting the xtd::diagnostics::process::standard_output stream, you can manipulate or suppress the output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.
       /// @note To use xtd::diagnostics::process::standard_output, you must set xtd::diagnostics::process_start_info::use_shell_execute to false, and you must set xtd::diagnostics::process_start_info::redirect_standard_output to true. Otherwise, reading from the xtd::diagnostics::process::standard_output stream throws an exception.
       /// @remarks The redirected xtd::diagnostics::process::standard_output stream can be read synchronously or asynchronously. Methods such as xtd::io::stream_reader::read, xtd::io::stream_reader::read_line, and xtd::io::stream_reader::read_to_end perform synchronous read operations on the output stream of the process. These synchronous read operations do not complete until the associated Process writes to its xtd::diagnostics::process::xtd::diagnostics::process::standard_output stream, or closes the stream.
       /// @remarks In contrast, xtd::diagnostics::process::begin_output_read_line starts asynchronous read operations on the xtd::diagnostics::process::standard_output stream. This method enables a designated event handler for the stream output and immediately returns to the caller, which can perform other work while the stream output is directed to the event handler.
       /// @remarks Synchronous read operations introduce a dependency between the caller reading from the xtd::diagnostics::process::standard_output stream and the child process writing to that stream. These dependencies can result in deadlock conditions. When the caller reads from the redirected stream of a child process, it is dependent on the child. The caller waits on the read operation until the child writes to the stream or closes the stream. When the child process writes enough data to fill its redirected stream, it is dependent on the parent. The child process waits on the next write operation until the parent reads from the full stream or closes the stream. The deadlock condition results when the caller and child process wait on each other to complete an operation, and neither can proceed. You can avoid deadlocks by evaluating dependencies between the caller and child process.
       /// @remarks The last two examples in this section use the xtd::diagnostics:process::start method to launch an executable named Write500Lines.exe. The following example contains its source code.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -625,9 +625,9 @@ namespace xtd {
       /// //      '
       /// //
       /// //      Successfully wrote 500 lines.
-      /// @endcode
+      /// ```
       /// @remarks The following example shows how to read from a redirected error stream and wait for the child process to exit. It avoids a deadlock condition by calling stream_reader(p.standard_error()).read_to_end() before p.wait_for_exit. A deadlock condition can result if the parent process calls p.wait_for_exit before stream_reader(p.standard_error()).read_to_end() and the child process writes enough text to fill the redirected stream. The parent process would wait indefinitely for the child process to exit. The child process would wait indefinitely for the parent to read from the full xtd::diagnostics::process::standard_error stream.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -650,9 +650,9 @@ namespace xtd {
       /// }
       /// // The end of the output produced by the example includes the following:
       /// //      Error stream: Successfully wrote 500 lines.
-      /// @endcode
+      /// ```
       /// @remarks There is a similar issue when you read all text from both the standard output and standard error streams. The following example performs a read operation on both streams. It avoids the deadlock condition by performing asynchronous read operations on the xtd::diagnostics::process::standard_error stream. A deadlock condition results if the parent process calls stream_reader(p.standard_output()).read_to_end() followed by stream_reader(p.standard_error()).read_to_end() and the child process writes enough text to fill its error stream. The parent process would wait indefinitely for the child process to close its xtd::diagnostics::process::standard_output stream. The child process would wait indefinitely for the parent to read from the full xtd::diagnostics::process::standard_error stream.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -686,7 +686,7 @@ namespace xtd {
       /// //      '
       /// //
       /// //      Error stream: Successfully wrote 500 lines.
-      /// @endcode
+      /// ```
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
       /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_output_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::process::standard_output stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::stream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       std::istream& standard_output();

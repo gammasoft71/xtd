@@ -25,9 +25,9 @@ namespace xtd {
     /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Encapsulates a 3-by-3 affine matrix that represents a geometric transform. This class cannot be inherited.
-      /// @code
+      /// ```cpp
       /// class drawing_export_ matrix final : public object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::drawing::drawing_2d::matrix
       /// @par Namespace
@@ -64,12 +64,12 @@ namespace xtd {
       /// The fact that the matrix of a composite transformation can be formed by multiplying the individual transformation matrices means that any sequence of affine transformations can be stored in a single xtd::drawing::drawing_2d::matrix object.
       /// <b>Caution: The order of a composite transformation is important. In general, rotate, then scale, then translate is not the same as scale, then rotate, then translate. Similarly, the order of matrix multiplication is important. In general, ABC is not the same as BAC.</b>
       /// <br><br>The xtd::drawing::drawing_2d::matrix class provides several methods for building a composite transformation: xtd::drawing::drawing_2d::matrix::multiply, xtd::drawing::drawing_2d::matrix::rotate, xtd::drawing::drawing_2d::matrix::rotate_at, xtd::drawing::drawing_2d::matrix::scale, xtd::drawing::drawing_2d::matrix::shear, and xtd::drawing::drawing_2d::matrix::translate. The following example creates the matrix of a composite transformation that first rotates 30 degrees, then scales by a factor of 2 in the y direction, and then translates 5 units in the x direction:
-      /// @code
+      /// ```cpp
       /// matrix my_matrix;
       /// my_matrix.rotate(30);
       /// my_matrix.scale(1, 2, matrix_order::append);
       /// my_matrix.translate(5, 0, matrix_order::append);
-      /// @endcode
+      /// ```
       class drawing_export_ matrix final : public object, public xtd::iequatable<matrix> {
         struct data;
         

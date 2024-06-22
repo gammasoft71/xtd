@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies how a control anchors to the edges of its container.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/segments>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

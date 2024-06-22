@@ -12,8 +12,8 @@ namespace xtd {
     namespace visual_styles {
       /// @brief Specifies the visual state of a button that is drawn with visual styles.
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/visual_styles/push_button_state> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/visual_styles/push_button_state> ```
       /// @par Namespace
       /// xtd::forms::visual_style
       /// @par Library

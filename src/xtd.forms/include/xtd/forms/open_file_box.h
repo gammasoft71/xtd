@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a common dialog box that displays a file selection dialog. This class cannot be inherited.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/open_file_box>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

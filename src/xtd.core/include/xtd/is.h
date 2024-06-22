@@ -45,21 +45,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   bool b = false;
   ///   std::cout << "b " << is<bool>(b) ? "is" : "isn't" << " bool" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<bool>(bool value) {
     return true;
@@ -67,21 +67,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   decimal d = 4.2;
   ///   std::cout << "d " << is<decimal>(d) ? "is" : "isn't" << " decimal" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<decimal>(decimal value) {
     return true;
@@ -89,21 +89,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   double d = 4.2;
   ///   std::cout << "d " << is<double>(d) ? "is" : "isn't" << " double" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<double>(double value) {
     return true;
@@ -111,21 +111,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   float f = 4.2;
   ///   std::cout << "f " << is<float>(f) ? "is" : "isn't" << " float" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<float>(float value) {
     return true;
@@ -133,21 +133,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   sbyte i = 42;
   ///   std::cout << "i " << is<sbyte>(i) ? "is" : "isn't" << " sbyte" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<sbyte>(sbyte value) {
     return true;
@@ -155,21 +155,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   int16 i = 42;
   ///   std::cout << "i " << is<int16>(i) ? "is" : "isn't" << " int16" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<int16>(int16 value) {
     return true;
@@ -177,21 +177,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   int32 i = 42;
   ///   std::cout << "i " << is<int32>(i) ? "is" : "isn't" << " int32" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<int32>(int32 value) {
     return true;
@@ -199,21 +199,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   int64 i = 42;
   ///   std::cout << "i " << is<int64>(i) ? "is" : "isn't" << " int64" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<int64>(int64 value) {
     return true;
@@ -221,21 +221,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   slong i = 42;
   ///   std::cout << "i " << is<slong>(i) ? "is" : "isn't" << " slong" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<slong>(slong value) {
     return true;
@@ -243,21 +243,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   xtd::byte u = 42;
   ///   std::cout << "u " << is<xtd::byte>(u) ? "is" : "isn't" << " xtd::byte" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<xtd::byte>(xtd::byte value) {
     return true;
@@ -265,21 +265,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   uint16 u = 42;
   ///   std::cout << "u " << is<uint16>(u) ? "is" : "isn't" << " uint16" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<uint16>(uint16 value) {
     return true;
@@ -287,21 +287,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   uint32 u = 42;
   ///   std::cout << "u " << is<uint32>(u) ? "is" : "isn't" << " uint32" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<uint32>(uint32 value) {
     return true;
@@ -309,21 +309,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   uint64 u = 42;
   ///   std::cout << "u " << is<uint64>(u) ? "is" : "isn't" << " uint64" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<uint64>(uint64 value) {
     return true;
@@ -331,21 +331,21 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// auto main() -> int {
   ///   xtd::ulong u = 42;
   ///   std::cout << "u " << is<xtd::ulong>(i) ? "is" : "isn't" << " xtd::ulong" << endl;
   /// }
-  /// @endcode
+  /// ```
   template<>
   inline bool is<xtd::ulong>(xtd::ulong value) {
     return true;
@@ -353,9 +353,9 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -373,9 +373,9 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -388,9 +388,9 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -408,9 +408,9 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -423,9 +423,9 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -443,9 +443,9 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -458,9 +458,9 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/is>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

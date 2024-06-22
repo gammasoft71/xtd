@@ -19,9 +19,9 @@ namespace xtd {
     
     /// @brief Stores serialized information from end_point derived classes.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/net/socket_address>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::net
     /// @par Library

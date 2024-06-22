@@ -11,15 +11,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides the default output methods and behavior for tracing.
-    /// @code
+    /// ```cpp
     /// class core_export_ default_trace_listener : public xtd::diagnostics::trace_listener
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::abstract_object → xtd::diagnostics::trace_listener → xtd::diagnostics::default_trace_listener
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/default_trace_listener>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -38,7 +38,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the default_trace_listener class with "default" as its xtd::diagnostics::default_trace_listener::name property value.
       /// @par Examples
       /// The following code example removes the xtd::diagnostics::default_trace_listener provided by the application from the xtd::diagnostics::trace::listeners collection and then creates a new xtd::diagnostics::default_trace_listener and adds it to the xtd::diagnostics::trace::listeners collection.
-      /// @code
+      /// ```cpp
       /// // Remove the original default trace listener.
       /// trace::listeners().erase(trace::listeners().begin());
       ///
@@ -49,7 +49,7 @@ namespace xtd {
       /// // Assign the log file specification from the command line, if entered.
       /// if (args.size() >= 2)
       ///   default_listener->log_file_name(args[1]);
-      /// @endcode
+      /// ```
       default_trace_listener();
       /// @cond
       ~default_trace_listener();
@@ -63,7 +63,7 @@ namespace xtd {
       /// @return true if user-interface mode is enabled; otherwise, false.
       /// @par Examples
       /// The following code example calls a function that calls the xtd::diagnostics::default_trace_listener::fail method to log an error message if the function throws an exception. If the xtd::diagnostics::default_trace_listener::assert_ui_enabled property is false, the method also writes the error message to the console.
-      /// @code
+      /// ```cpp
       /// // Compute the next binomial coefficient and handle all exceptions.
       /// /// try {
       ///   result = calc_binomial(possibilities, iter);
@@ -74,13 +74,13 @@ namespace xtd {
       ///     console::write_line(fail_message + "\n" + ex.message());
       ///   return;
       /// }
-      /// @endcode
+      /// ```
       bool assert_ui_enabled() const noexcept;
       /// @brief Sets a value indicating whether the application is running in user-interface mode.
       /// @param assert_ui_enabled true if user-interface mode is enabled; otherwise, false.
       /// @par Examples
       /// The following code example calls a function that calls the xtd::diagnostics::default_trace_listener::fail method to log an error message if the function throws an exception. If the xtd::diagnostics::default_trace_listener::assert_ui_enabled property is false, the method also writes the error message to the console.
-      /// @code
+      /// ```cpp
       /// // Compute the next binomial coefficient and handle all exceptions.
       /// /// try {
       ///   result = calc_binomial(possibilities, iter);
@@ -91,14 +91,14 @@ namespace xtd {
       ///     console::write_line(fail_message + "\n" + ex.message());
       ///   return;
       /// }
-      /// @endcode
+      /// ```
       void assert_ui_enabled(bool assert_ui_enabled) noexcept;
       
       /// @brief Gets the name of a log file to write trace or debug messages to.
       /// @return The name of a log file to write trace or debug messages to.
       /// @par Examples
       /// The following code example creates a new xtd::diagnostics::default_trace_listener, adds it to the xtd::diagnostics::trace::listeners collection, and sets the xtd::diagnostics::default_trace_listener::log_file_name property to the log file specified in the command-line arguments.
-      /// @code
+      /// ```cpp
       /// // Create and add a new default trace listener.
       /// shared_ptr<default_trace_listener> default_listener = make_shared<default_trace_listener>();
       /// trace::listeners().push_back(default_listener);
@@ -106,13 +106,13 @@ namespace xtd {
       /// // Assign the log file specification from the command line, if entered.
       /// if (args.size() >= 2)
       ///   default_listener->log_file_name(args[1]);
-      /// @endcode
+      /// ```
       xtd::ustring log_file_name() const noexcept;
       /// @brief Sets the name of a log file to write trace or debug messages to.
       /// @param log_file_name The name of a log file to write trace or debug messages to.
       /// @par Examples
       /// The following code example creates a new xtd::diagnostics::default_trace_listener, adds it to the xtd::diagnostics::trace::listeners collection, and sets the xtd::diagnostics::default_trace_listener::log_file_name property to the log file specified in the command-line arguments.
-      /// @code
+      /// ```cpp
       /// // Create and add a new default trace listener.
       /// shared_ptr<default_trace_listener> default_listener = make_shared<default_trace_listener>();
       /// trace::listeners().push_back(default_listener);
@@ -120,7 +120,7 @@ namespace xtd {
       /// // Assign the log file specification from the command line, if entered.
       /// if (args.size() >= 2)
       ///   default_listener->log_file_name(args[1]);
-      /// @endcode
+      /// ```
       void log_file_name(const xtd::ustring log_file_name) noexcept;
       /// @}
       

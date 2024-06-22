@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies a value indicating whether the text appears from right to left, such as when using Hebrew or Arabic fonts.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/right_to_left>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

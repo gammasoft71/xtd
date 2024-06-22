@@ -20,9 +20,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Represents an ARGB (alpha, red, green, blue) color.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ color : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::color
     /// @par Namespace
@@ -35,7 +35,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
     /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's  xtd::forms::control::paint event-handling method, passing e as xtd::forms::paint_event_args.
-    /// @code
+    /// ```cpp
     /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
     ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
     ///   xtd::byte a = slate_blue.a();
@@ -45,7 +45,7 @@ namespace xtd {
     ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green:{2}, blue:{3}", a, r, g, b);
     ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
     /// }
-    /// @endcode
+    /// ```
     class drawing_export_ color : public xtd::object, public xtd::iequatable<color> {
     public:
       /// @name Public Fields
@@ -507,7 +507,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's  xtd::forms::control::paint event-handling method, passing e as xtd::forms::paint_event_args.
-      /// @code
+      /// ```cpp
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
       ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
       ///   byte g = slate_blue.g();
@@ -517,7 +517,7 @@ namespace xtd {
       ///   string text = xtd::string::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
-      /// @endcode
+      /// ```
       xtd::byte a() const noexcept;
       
       /// @brief Gets the blue component value of this xtd::drawing::color class.
@@ -526,7 +526,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's  xtd::forms::control::paint event-handling method, passing e as xtd::forms::paint_event_args.
-      /// @code
+      /// ```cpp
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
       ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
       ///   byte g = slate_blue.g();
@@ -536,7 +536,7 @@ namespace xtd {
       ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
-      /// @endcode
+      /// ```
       xtd::byte b() const noexcept;
       
       /// @brief Gets the green component value of this xtd::drawing::color class.
@@ -545,7 +545,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's  xtd::forms::control::paint event-handling method, passing e as xtd::forms::paint_event_args.
-      /// @code
+      /// ```cpp
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
       ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
       ///   byte g = slate_blue.g();
@@ -555,7 +555,7 @@ namespace xtd {
       ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
-      /// @endcode
+      /// ```
       xtd::byte g() const noexcept;
       
       /// @brief Gets the native handle of this xtd::drawing::color class.
@@ -597,7 +597,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's  xtd::forms::control::paint event-handling method, passing e as xtd::forms::paint_event_args.
-      /// @code
+      /// ```cpp
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
       ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
       ///   byte g = slate_blue.g();
@@ -607,7 +607,7 @@ namespace xtd {
       ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
-      /// @endcode
+      /// ```
       xtd::byte r() const noexcept;
       /// @}
       
@@ -625,7 +625,7 @@ namespace xtd {
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
       /// * Uses a brush to paint rectangles.
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
-      /// @code
+      /// ```cpp
       /// void known_color_brightness_example2(paint_event_args& e) {
       ///   graphics g = e.graphics();
       ///
@@ -664,7 +664,7 @@ namespace xtd {
       ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
       ///   }
       /// }
-      /// @endcode
+      /// ```
       float get_brightness() const noexcept;
       
       /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
@@ -676,7 +676,7 @@ namespace xtd {
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
       /// * Uses a brush to paint rectangles.
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
-      /// @code
+      /// ```cpp
       /// void known_color_brightness_example2(paint_event_args& e) {
       ///   graphics g = e.graphics();
       ///
@@ -715,7 +715,7 @@ namespace xtd {
       ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
       ///   }
       /// }
-      /// @endcode
+      /// ```
       float get_hue() const noexcept;
       
       /// @brief Gets the hue-saturation-lightness (HSL) lightness value for this xtd::drawing::color structure.
@@ -731,7 +731,7 @@ namespace xtd {
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
       /// * Uses a brush to paint rectangles.
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
-      /// @code
+      /// ```cpp
       /// void known_color_brightness_example2(paint_event_args& e) {
       ///   graphics g = e.graphics();
       ///
@@ -770,7 +770,7 @@ namespace xtd {
       ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
       ///   }
       /// }
-      /// @endcode
+      /// ```
       float get_saturation() const noexcept;
       
       /// @brief Gets the Y'UV color model `U` (chroma) value for this xtd::drawing::color structure.
@@ -795,7 +795,7 @@ namespace xtd {
       /// * Uses a brush to paint rectangles.
       /// Each of the rectangles is painted a xtd::drawing::known_color that matches the criteria stated in the first bullet. The name of the xtd::drawing::known_color and its component values are also displayed.
       /// This example displays certain known colors, the names of the colors, and their four component values. The xtd::drawing::color::to_argb method is used as a preliminary step to display the component values.
-      /// @code
+      /// ```cpp
       /// void to_argb_to_string_example1(paint_event_args& e) {
       ///   graphics g = e.graphics();
       ///   ///
@@ -839,7 +839,7 @@ namespace xtd {
       ///     y += 40;
       ///   }
       /// }
-      /// @endcode
+      /// ```
       uint32 to_argb() const noexcept;
       
       /// @brief Gets the xtd::drawing::known_color value of this xtd::drawing::color class.
@@ -856,7 +856,7 @@ namespace xtd {
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
       /// * Uses a brush to paint rectangles.
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
-      /// @code
+      /// ```cpp
       /// void known_color_brightness_example2(paint_event_args& e) {
       ///   graphics g = e.graphics();
       ///
@@ -895,7 +895,7 @@ namespace xtd {
       ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
       ///   }
       /// }
-      /// @endcode
+      /// ```
       xtd::ustring to_string() const noexcept override;
       /// @}
       
@@ -909,9 +909,9 @@ namespace xtd {
       /// @return The average color.
       /// @remarks The alpha of color1 is conserved.
       /// @remarks The red, green and blue values are averages using the following formula:
-      /// @code
+      /// ```cpp
       /// color = color1 * (1 - weight) + color2 * weight;
-      /// @endcode
+      /// ```
       /// @remarks Thus, a weight value of `1.0` will return the second color, while a value of `0.0` will return the first color.
       /// @deprecated Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0
       [[deprecated("Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0")]]
@@ -923,9 +923,9 @@ namespace xtd {
       /// @param average_alpha if true alpha was compute to; otherwise the alpha result is the alpha of color1
       /// @return The average color.
       /// @remarks The alpha, red, green and blue values are averages using the following formula:
-      /// @code
+      /// ```cpp
       /// color = color1 * (1 - weight) + color2 * weight;
-      /// @endcode
+      /// ```
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
       /// @deprecated Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0
       [[deprecated("Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0")]]
@@ -953,7 +953,7 @@ namespace xtd {
       /// * Creates three brushes, each a different color. Each xtd::drawing::color structure that is used to create a brush is created from four component values (alpha, red, green, blue).
       /// * Uses an imaginary triangle to position three circles.
       /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
-      /// @code
+      /// ```cpp
       /// void from_argb1(paint_event_args& e) {
       ///   graphics g = e.graphics();
       ///
@@ -975,7 +975,7 @@ namespace xtd {
       ///   g.fill_ellipse(trns_green_brush, x1 + tri_base / 2, y1 + tri_height, 2 * tri_height, 2 * tri_height);
       ///   g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
       /// }
-      /// @endcode
+      /// ```
       static xtd::drawing::color from_argb(uint32 argb) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the specified xtd::drawing::color structure, but with the new specified alpha value. Although this method allows a 32-bit value to be passed for the alpha value, the value is limited to 8 bits.
@@ -989,7 +989,7 @@ namespace xtd {
       /// * During each iteration, sets the color of a brush to the modified color and paints a rectangle to show the color.
       /// * Repeats steps 2 and 3 for each primary color.
       /// The alpha value is never fully opaque and the rectangles overlap so you get color-combination effects.
-      /// @code
+      /// ```cpp
       /// void from_argb2(paint_event_aArgs& e) {
       ///   graphics g = e.graphics();
       ///
@@ -1040,7 +1040,7 @@ namespace xtd {
       ///     x += 50;
       ///   }
       /// }
-      /// @endcode
+      /// ```
       static xtd::drawing::color from_argb(xtd::byte alpha, const xtd::drawing::color& base_color) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
@@ -1054,7 +1054,7 @@ namespace xtd {
       /// * Creates three brushes, each a different color. Each xtd::drawing::color structure that is used to create a brush is created from four component values (alpha, red, green, blue).
       /// * Uses an imaginary triangle to position three circles.
       /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
-      /// @code
+      /// ```cpp
       /// void from_argb1(paint_event_args& e) {
       ///   graphics g = e.graphics();
       ///
@@ -1076,7 +1076,7 @@ namespace xtd {
       ///   g.fill_ellipse(trns_green_brush, x1 + tri_base / 2, y1 + tri_height, 2 * tri_height, 2 * tri_height);
       ///   g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
       /// }
-      /// @endcode
+      /// ```
       static xtd::drawing::color from_argb(xtd::byte alpha, xtd::byte red, xtd::byte green, xtd::byte blue) noexcept;
       
       /// @brief Creates a xtd::drawing::color structure from the specified 8-bit color values (red, green, and blue). The alpha value is implicitly 255 (fully opaque). Although this method allows a 32-bit value to be passed for each color component, the value of each component is limited to 8 bits.
@@ -1091,7 +1091,7 @@ namespace xtd {
       /// * During each iteration, sets the color of a brush to the modified color and paints a rectangle to show the color.
       /// * Repeats steps 2 and 3 for each primary color.
       /// The alpha value is never fully opaque and the rectangles overlap so you get color-combination effects.
-      /// @code
+      /// ```cpp
       /// void from_argb2(paint_event_aArgs& e) {
       ///   graphics g = e.graphics();
       ///
@@ -1142,7 +1142,7 @@ namespace xtd {
       ///     x += 50;
       ///   }
       /// }
-      /// @endcode
+      /// ```
       static xtd::drawing::color from_argb(xtd::byte red, xtd::byte green, xtd::byte blue) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from native handle.
@@ -1179,7 +1179,7 @@ namespace xtd {
       /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
       /// * Uses a brush to paint rectangles.
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
-      /// @code
+      /// ```cpp
       /// void known_color_brightness_example2(paint_event_args& e) {
       ///   graphics g = e.graphics();
       ///
@@ -1218,7 +1218,7 @@ namespace xtd {
       ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
       ///   }
       /// }
-      /// @endcode
+      /// ```
       static xtd::drawing::color from_known_color(xtd::drawing::known_color color);
       
       /// @brief Creates a xtd::drawing::color class from the specified name of a predefined color.
@@ -1228,7 +1228,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the xtd::drawing::color::a, xtd::drawing::color::r, xtd::drawing::color::g, and xtd::drawing::color::b properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's  xtd::forms::control::paint event-handling method, passing e as xtd::forms::paint_event_args.
-      /// @code
+      /// ```cpp
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
       ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
       ///   byte g = slate_blue.g();
@@ -1238,7 +1238,7 @@ namespace xtd {
       ///   string text = xtd::ustring::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), size()));
       /// }
-      /// @endcode
+      /// ```
       static xtd::drawing::color from_name(const xtd::ustring& name) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the three YUV components (luma and choma) values.

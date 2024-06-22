@@ -22,15 +22,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Creates and controls a thread, sets its priority, and gets its status.
-    /// @code
+    /// ```cpp
     /// class core_export_ thread final : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::threading::thread
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/threading/thread>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::threading
     /// @par Library

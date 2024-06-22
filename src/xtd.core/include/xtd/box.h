@@ -15,17 +15,17 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents a boxed object.
-  /// @code
+  /// ```cpp
   /// class box : public xtd::icomparable<box<type_t>>, public xtd::iequatable<box<type_t>>, public xtd::object
-  /// @endcode
+  /// ```
   /// @par Inheritance
   /// xtd::object → xtd::box <type_t>
   /// @par Implements
   /// xtd::icomparable <>, xtd::iequatable <>
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/box>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -38,13 +38,13 @@ namespace xtd {
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
   /// @par Examples
   /// The following example shows how to create and use xtd::box<bool>.
-  /// @code
+  /// ```cpp
   /// auto stringer = [](const object& value) {return value.to_string();};
   /// bool unboxed_object = true;
   /// box<bool> boxed_object = unboxed_bool;
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = true;
-  /// @endcode
+  /// ```
   template<typename type_t>
   class box : public xtd::icomparable<box<type_t>>, public xtd::iequatable<box<type_t>>, public xtd::object {
   public:

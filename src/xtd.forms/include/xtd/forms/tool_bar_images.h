@@ -13,9 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a tool bar images factories for use by a tool_bar control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tool_bar_images>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

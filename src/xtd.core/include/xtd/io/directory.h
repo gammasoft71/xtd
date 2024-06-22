@@ -14,15 +14,15 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Exposes static methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class core_export_ directory static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static_object → xtd::io::directory
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/directory>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -30,7 +30,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     /// @par Examples
     /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
-    /// @code
+    /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
@@ -56,10 +56,10 @@ namespace xtd {
     /// };
     ///
     /// startup_(program::main);
-    /// @endcode
+    /// ```
     /// @par Examples
     /// The following example demonstrates how to move a directory and all its files to a new directory. The original directory no longer exists after it has been moved.
-    /// @code
+    /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
@@ -80,7 +80,7 @@ namespace xtd {
     /// };
     ///
     /// startup_(program::main);
-    /// @endcode
+    /// ```
     /// @remarks Use the xtd::io::directory class for typical operations such as copying, moving, renaming, creating, and deleting directories.
     /// * To create a directory, use one of the xtd::io::directory::create_directory methods.
     /// * To delete a directory, use one of the xtd::io::directory::remove methods.
@@ -206,7 +206,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example creates and deletes the specified directory:
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -240,14 +240,14 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @par Examples
       /// To create the directory C:\Users\User1\Public\Html when the current directory is C:\Users\User1, use any of the following calls to ensure that the backslash is interpreted properly:
-      /// @code
+      /// ```cpp
       /// directory::create_directory("Public\\Html");
       /// directory::create_directory("\\Users\\User1\\Public\\Html");
       /// directory::create_directory("c:\\Users\\User1\\Public\\Html");
-      /// @endcode
+      /// ```
       /// @remarks Any and all directories specified in path are created, unless they already exist or unless some part of path is invalid. If the directory already exists, this method does not create a new directory, but it returns a DirectoryInfo object for the existing directory.
       /// @remarks The path parameter specifies a directory path, not a file path.
       /// @remarks Trailing spaces are removed from the end of the path parameter before creating the directory.
@@ -265,7 +265,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par rExample
       /// The following example enumerates the top-level directories in a specified path.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -294,7 +294,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks You can specify relative or absolute path information in the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method. The returned directory names are prefixed with the value you provided in the path parameter. For example, if you provide a relative path in the path parameter, the returned directory names will contain a relative path.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
       static xtd::io::directory::directory_iterator enumerate_directories(const xtd::ustring& path);
@@ -309,7 +309,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par rExample
       /// The following example enumerates the top-level directories in a specified path that match a specified search pattern.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -340,7 +340,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
@@ -362,7 +362,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -388,7 +388,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks You can specify relative path information with the path parameter. Relative path information is interpreted as relative to the current working directory, which you can determine by using the xtd::io::directory::get_current_directory method.
       /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned. When you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
       static xtd::io::directory::file_iterator enumerate_files(const xtd::ustring& path);
@@ -403,7 +403,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -429,7 +429,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in searchPattern.
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
@@ -477,7 +477,7 @@ namespace xtd {
       /// @return true if path refers to an existing directory; false if the directory does not exist or an error occurs when trying to determine if the specified directory exists.
       /// @par rExample
       /// The following example takes an array of file or directory names on the command line, determines what kind of name it is, and processes it appropriately.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -521,7 +521,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before checking whether the directory exists.
       /// @remarks The path parameter is not case-sensitive.
@@ -539,7 +539,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       ///
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -569,7 +569,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       static xtd::date_time get_creation_time(const xtd::ustring& path);
       
       /// @brief Gets the current working directory of the application.
@@ -578,7 +578,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception The operating system does not have current directory functionality.
       /// @par Examples
       /// The following example demonstrates how to use the xtd::io::directory::get_current_directory method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -610,7 +610,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The current directory is distinct from the original directory, which is the one from which the process was started.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static xtd::ustring get_current_directory();
@@ -625,7 +625,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example takes an array of file or directory names on the command line, determines what kind of name it is, and processes it appropriately.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -669,7 +669,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks This method is identical to xtd::io::directory::get_directories(ustring, ustring) with the asterisk (*) specified as the search pattern, so it returns all subdirectories.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
@@ -688,7 +688,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       ///
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -712,7 +712,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program);
-      /// @endcode
+      /// ```
       /// @remarks This method returns all subdirectories directly under the specified directory that match the specified search pattern. If the specified directory has no subdirectories, or no subdirectories match the search_pattern parameter, this method returns an empty array. Only the top directory is searched.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
@@ -736,7 +736,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example illustrates how to set the current directory and display the directory root.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -761,7 +761,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks This method obtains the fully qualified path name of path, as returned by xtd::io::path::get_full_path, and returns root directory information. The specified path is not required to exist.
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
@@ -778,7 +778,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example demonstrates how to use the GetFiles method to return file names from a user-specified location. The example is configured to catch all errors common to this method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -822,7 +822,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
       /// @remarks The returned file names are appended to the supplied path parameter.
       /// @remarks This method is identical to xtd::io::directory::get_files(ustring, ustring) with the asterisk (*) specified as the search pattern.
@@ -842,7 +842,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example counts the number of files that begin with the specified letter.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -866,7 +866,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
@@ -896,7 +896,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example uses the xtd::io::directory::get_file_system_entries method to fill an array of strings with the names of all files and subdirectories in a user-specified location and prints each string in the array to the console. The example is configured to catch all errors common to this method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -991,7 +991,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The order of the returned file and directory names is not guaranteed; use the std::sort method if a specific sort order is required.
       /// @remarks The xtd::io::directory::enumerate_fileSystem_entries and xtd::io::directory::get_file_system_entries methods differ as follows: When you use xtd::io::directory::enumerate_file_system_entries, you can start enumerating the collection of entries before the whole collection is returned; when you use xtd::io::directory::get_file_system_entries, you must wait for the whole array of entries to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_file_system_enties can be more efficient.
       /// @remarks This method is identical to xtd::io::directory::get_file_system_entries with the asterisk (*) specified as the search pattern.
@@ -1010,7 +1010,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example uses the xtd::io::directory::get_file_system_entries method to fill an array of strings with the names of all files matching a user-specified filter in a specific location and prints each string in the array to the console. The example is configured to catch all errors common to this method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -1105,7 +1105,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
       /// | Wildcard specifier | Matches                                   |
@@ -1135,7 +1135,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example demonstrates how to use GetLastAccessTime.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std::chrono;
@@ -1169,7 +1169,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @note This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks This method is identical to xtd::io::file::get_last_access_time.
       /// @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
@@ -1188,7 +1188,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example demonstrates how to use xtd::io::directory::get_last_write_time.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std::chrono;
@@ -1222,7 +1222,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @note This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
@@ -1236,7 +1236,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception The caller does not have the required permission.
       /// @par Examples
       /// The following example uses the xtd::io::directory::get_logical_drives method to assign the name of each drive on the calling computer to an array of strings. Each member of this string array is then printed to the console. The example is configured to catch all errors common to this method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -1331,7 +1331,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks xtd::io::directory::get_logical_drives returns all of the accessible drives on a particular machine, including the floppy drive and any optical drives.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       static std::vector<xtd::ustring> get_logical_drives();
@@ -1346,7 +1346,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example demonstrates how to use the xtd::io::directory::get_parent method to retrieve the parent directory of a user-specified location, "path". The value returned by the xtd::io::directory::get_parent method is then printed to the console. The example is configured to catch all errors common to this method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -1441,7 +1441,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before getting the directory.
       /// @remarks The string returned by this method consists of all characters in the path up to, but not including, the last xtd::io::path::directory_separator_char or alt_directory_separator_char. For example, passing the path "C:\Directory\SubDirectory\test.txt" to xtd::io::directory::get_parent returns "C:\Directory\SubDirectory". Passing "C:\Directory\SubDirectory" returns "C:\Directory". However, passing "C:\Directory\SubDirectory\" returns "C:\Directory\SubDirectory", because the ending directory separator is after "SubDirectory".
@@ -1464,7 +1464,7 @@ namespace xtd {
       /// @exception xtd::io::directory_not_found_exception The path specified by sourceDirName is invalid (for example, it is on an unmapped drive).
       /// @par Examples
       /// The following example demonstrates how to move a directory and all its files to a new directory. The original directory no longer exists after it has been moved.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1485,7 +1485,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks This method creates a new directory with the name specified by destDirName and moves the contents of sourceDirName to the newly created destination directory. If you try to move a directory to a directory that already exists, an IOException will occur. For example, an exception will occur if you try to move c:\mydir to c:\public, and c:\public already exists. Alternatively, you could specify "c:\\public\\mydir" as the destDirName parameter, provided that "mydir" does not exist under "c:\\public", or specify a new directory name such as "c:\\newdir".
       /// @remarks The sourceDirName and destDirName arguments are permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
       /// @remarks Trailing spaces are removed from the end of the path parameters before moving the directory.
@@ -1501,7 +1501,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Exaample
       /// The following example shows how to create a new directory and subdirectory, and then delete only the subdirectory.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1528,7 +1528,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks This method behaves identically to xtd::io::dirctory::remove(const xtd::ustring&, bool) with false specified for the second parameter.
       /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
@@ -1547,7 +1547,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       /// The following example shows how to create a new directory, subdirectory, and file in the subdirectory, and then recursively delete all the new items.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1578,7 +1578,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
       /// @remarks The path parameter is not case-sensitive.
@@ -1597,7 +1597,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       ///
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1639,7 +1639,7 @@ namespace xtd {
       /// //Last write time: 12/31/1998 4:00:00 PM
       /// //Last access time: 1/2/2002 4:00:00 PM
       /// //Changed last write time: 1/1/1999 12:00:00 AM
-      /// @endcode
+      /// ```
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       static void set_creation_time(const xtd::ustring& path, const xtd::date_time& creation_time);
@@ -1653,7 +1653,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
       /// @par Examples
       ///
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1695,7 +1695,7 @@ namespace xtd {
       /// //Last write time: 12/31/1998 4:00:00 PM
       /// //Last access time: 1/2/2002 4:00:00 PM
       /// //Changed last write time: 1/1/1999 12:00:00 AM
-      /// @endcode
+      /// ```
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       static void set_creation_time(const xtd::ustring& path, time_t creation_time);
@@ -1708,7 +1708,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
       /// @par Examples
       /// The following example illustrates how to set the current directory and display the directory root.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -1733,7 +1733,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks When the application terminates, the working directory is restored to its original location (the directory where the process was started).
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before setting the directory.
@@ -1754,7 +1754,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
       /// @par Examples
       /// The following example demonstrates how to use xtd::directory::set_last_access_time.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std::chrono;
@@ -1788,7 +1788,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
@@ -1803,7 +1803,7 @@ namespace xtd {
       /// @exception xtd::security::security_exception The caller does not have the appropriate permission.
       /// @par Examples
       /// The following example demonstrates how to use xtd::io::set_last_write_time.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std::chrono;
@@ -1837,7 +1837,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).

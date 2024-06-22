@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Used to group collections of fixed aligned controls.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/table_layout_panel>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -7,9 +7,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.
-  /// @code
+  /// ```cpp
   /// using lock = xtd::threading::lock_guard
-  /// @endcode
+  /// ```
   /// @par Namespace
   /// xtd
   /// @par Library
@@ -23,7 +23,7 @@ namespace xtd {
 }
 
 /// @brief The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
-/// @code
+/// ```cpp
 /// class account : public object {
 /// public:
 ///   void withdraw(decimal amount) {
@@ -37,7 +37,7 @@ namespace xtd {
 /// private:
 ///   decimal balance;
 /// };
-/// @endcode
+/// ```
 /// For more information, see Thread Synchronization.
 /// @par Namespace
 /// xtd
@@ -55,7 +55,7 @@ namespace xtd {
 /// @remarks You can't use the await_ keyword in the body of a lock_ statement.
 /// @par Examples
 /// The following sample shows a simple use of threads without locking in C++.
-/// @code
+/// ```cpp
 /// #include <xtd/xtd>
 ///
 /// using namespace xtd;
@@ -77,7 +77,7 @@ namespace xtd {
 /// startup_(thread_test::main)
 ///
 /// // Output: run_me called
-/// @endcode
+/// ```
 /// @par Examples
 /// The following sample uses threads and lock_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number.
 /// @include lock.cpp

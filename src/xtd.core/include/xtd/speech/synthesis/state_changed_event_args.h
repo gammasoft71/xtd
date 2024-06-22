@@ -20,14 +20,14 @@ namespace xtd {
       /// @endcond
       
       /// @brief Returns data from the xtd::speech::synthesis::speech_synthesizer::state_changed event.
-      /// @code
+      /// ```cpp
       /// class state_changed_event_args : public xtd::event_args
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::event_args → xtd::speech::synthesis::state_changed_event_args
       /// @par Header
-      /// @code
-    /// #include <xtd/speech/synthesis/state_changed_event_args> @endcode
+      /// ```cpp
+    /// #include <xtd/speech/synthesis/state_changed_event_args> ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the type of toolbar to display.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tool_bar_appearance>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

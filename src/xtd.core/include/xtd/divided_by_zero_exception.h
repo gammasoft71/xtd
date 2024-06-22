@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief The exception that is thrown when there is an attempt to divide an integral or decimal value by zero.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/divided_by_zero_exception>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -90,18 +90,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::divided_by_zero_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/divided_by_zero_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::divided_by_zero_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw divided_by_zero_exception_(); // same as : throw divided_by_zero_exception {csf_};
 ///   if (invalid_value) throw divided_by_zero_exception_("Bad value"); // same as : throw divided_by_zero_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define divided_by_zero_exception_(...) divided_by_zero_exception(add_csf_(__VA_ARGS__))

@@ -17,15 +17,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Propagates notification that operations should be canceled.
-    /// @code
+    /// ```cpp
     /// class core_export_ cancellation_token : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::threading::cancellation_token
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/threading/cancellation_token>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::threading
     /// @par Library

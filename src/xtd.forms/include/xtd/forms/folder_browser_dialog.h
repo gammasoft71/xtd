@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Prompts the user to select a folder. This class cannot be inherited.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/folder_browser_dialog>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

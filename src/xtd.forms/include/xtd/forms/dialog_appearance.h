@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the appearance of a dialog.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/dialog_appearance>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

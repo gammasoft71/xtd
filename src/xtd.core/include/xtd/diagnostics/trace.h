@@ -9,15 +9,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a set of methods and properties that help you debug the execution of your code. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class core_export_ trace static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static_object → xtd::diagnostics::trace
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/trace>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

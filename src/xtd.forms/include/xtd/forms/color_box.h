@@ -16,9 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/color_box>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

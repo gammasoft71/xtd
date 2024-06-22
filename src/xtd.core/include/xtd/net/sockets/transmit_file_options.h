@@ -15,12 +15,12 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief The TransmitFileOptions enumeration defines values used in file transfer requests.
-      /// @code
+      /// ```cpp
       /// enum class transmit_file_options
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/transmit_file_options> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/transmit_file_options> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

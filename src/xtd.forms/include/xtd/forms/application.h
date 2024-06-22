@@ -28,9 +28,9 @@ namespace xtd {
     
     /// @brief Provides static methods and properties to manage an application, such as methods to start and stop an application, to process Windows messages, and methods to get information about an application. This class cannot be inherited.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/application>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -94,11 +94,11 @@ namespace xtd {
       /// @return The company name.
       /// @par Examples
       /// The following code example gets this property and displays its value in a text box. The example requires that textBox1 has been placed on a form.
-      /// @code
+      /// ```cpp
       /// void PrintCompanyName() {
       ///   textBox1.Text(xtd::ustring::format("The company name is: {0}", application::company_name);
       /// }
-      /// @endcode
+      /// ```
       static xtd::ustring company_name() noexcept;
 
       /// @brief Gets a value indicating whether dark mode is enabled for the application.

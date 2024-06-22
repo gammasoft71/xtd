@@ -21,9 +21,9 @@ namespace xtd {
   /// @{
   /// @brief Represents a boolean.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/bool>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -33,9 +33,9 @@ namespace xtd {
   using bool_ = bool;
   /// @brief Represents a 8-bit unsigned integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/byte>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -45,9 +45,9 @@ namespace xtd {
   using byte = uint_least8_t;
   /// @brief Represents a character.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/char>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -60,9 +60,9 @@ namespace xtd {
 #if defined(__cpp_lib_char8_t)
   /// @brief Represents a 8-bit unicode character.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/char8>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -74,9 +74,9 @@ namespace xtd {
   
   /// @brief Represents a 16-bit unicode character.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/char16>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -87,9 +87,9 @@ namespace xtd {
   
   /// @brief Represents a 32-bit unicode character.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/char32>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -100,9 +100,9 @@ namespace xtd {
   
   /// @brief Represents a decimal-precision floating-point number.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/decimal>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -113,9 +113,9 @@ namespace xtd {
 
   /// @brief Represents a double-precision floating-point number.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/double>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -126,9 +126,9 @@ namespace xtd {
 
   /// @brief Represents a 16-bit signed integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/int16>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -139,9 +139,9 @@ namespace xtd {
   
   /// @brief Represents a 32-bit signed integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/int32>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -152,9 +152,9 @@ namespace xtd {
   
   /// @brief Represents a 64-bit signed integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/int64>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -165,9 +165,9 @@ namespace xtd {
   
   /// @brief Represent a pointer or a handle.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/intptr>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -178,9 +178,9 @@ namespace xtd {
   
   /// @brief Represent the signed integer type of the result of subtracting two pointers.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/ptrdiff>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -191,9 +191,9 @@ namespace xtd {
   
   /// @brief Represents a 8-bit signed integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/sbyte>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -204,9 +204,9 @@ namespace xtd {
 
   /// @brief Represents a single-precision floating-point number.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/single>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -217,9 +217,9 @@ namespace xtd {
 
   /// @brief Represents a size of any object in bytes
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/size>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -230,9 +230,9 @@ namespace xtd {
   
   /// @brief Represents a 32-bit or 64-bit signed integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/slong>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -243,9 +243,9 @@ namespace xtd {
   
   /// @brief Stores information about a type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/type>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -256,9 +256,9 @@ namespace xtd {
   
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/uint16>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -269,9 +269,9 @@ namespace xtd {
   
   /// @brief Represents a 32-bit unsigned integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/uint32>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -282,9 +282,9 @@ namespace xtd {
   
   /// @brief Represents a 64-bit unsigned integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/uint64>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -295,9 +295,9 @@ namespace xtd {
   
   /// @brief Represent a pointer or a handle.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/uintptr>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -308,9 +308,9 @@ namespace xtd {
   
   /// @brief Represents a 32-bit or 64-bit unsigned integer.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/ulong>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -321,9 +321,9 @@ namespace xtd {
   
   /// @brief Represents a wide character.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/wchar>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -336,19 +336,19 @@ namespace xtd {
   
   /// @brief Represents a null pointer value.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/null>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// std::unique_ptr<foo_class> foo = std::make_unique<foo_class>();
   /// ...
   /// foo = null; // release the unique pointer.
-  /// @endcode
+  /// ```
   /// @ingroup xtd_core types
   extern core_export_ std::nullptr_t null;
 }

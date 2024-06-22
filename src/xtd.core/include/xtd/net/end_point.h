@@ -16,9 +16,9 @@ namespace xtd {
   namespace net {
     /// @brief Identifies a network address. This is an abstract class.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/net/end_point>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::net
     /// @par Library

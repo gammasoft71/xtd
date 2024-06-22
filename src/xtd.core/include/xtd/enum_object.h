@@ -22,9 +22,9 @@ namespace xtd {
   /// @{
   /// @brief Provides the base class for enumerations.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/enum_object>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -148,15 +148,15 @@ namespace xtd {
     /// @remarks The format parameter can be one of the following format strings: "G" or "g", "D" or "d", "X" or "x", and "F" or "f" (the format string is not case-sensitive). If format is null or an empty string (""), the general format specifier ("G") is used. For more information about the enumeration format strings and formatting enumeration values, see [Enumeration Format Strings](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/enumeration_format_strings). For more information about formatting in general, see [Formatting Types](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/overview).
     /// @par Notes to caller
     /// If multiple enumeration members have the same underlying value and you attempt to retrieve the string representation of an enumeration member's name based on its underlying value, your code should not make any assumptions about which name the method will return. For example, the following enumeration defines two members, shade::gray and shade::grey, that have the same underlying value.
-    /// @code
+    /// ```cpp
     /// enum shade {
     ///   white = 0, gray = 1, grey = 1, black = 2
     /// };
-    /// @endcode
+    /// ```
     /// The following method call attempts to retrieve the name of a member of the shade enumeration whose underlying value is 1. The method can return either "gray" or "grey", and your code should not make any assumptions about which string will be returned.
-    /// @code
+    /// ```cpp
     /// ustring shade_name = enum_object<shade>(as<shade>(1)).to_string("F");
-    /// @endcode
+    /// ```
     xtd::ustring to_string(const xtd::ustring& format) const {
       init();
       auto fmt = format;
@@ -292,9 +292,9 @@ namespace xtd {
   
   /// @brief Provides the base class for enumerations.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/enum_object>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

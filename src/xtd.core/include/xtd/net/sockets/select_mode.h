@@ -15,12 +15,12 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Defines the polling modes for the xtd::net::sockets::socket::poll method.
-      /// @code
+      /// ```cpp
       /// enum class select_mode
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/select_mode> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/select_mode> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

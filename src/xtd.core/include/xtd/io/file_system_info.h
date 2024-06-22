@@ -15,15 +15,15 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.
-    /// @code
+    /// ```cpp
     /// class core_export_ file_system_info abstract_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::abstract_object → xtd::io::file_system_info
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/file_system_info>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -38,7 +38,7 @@ namespace xtd {
     /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
     /// @par Examples
     /// The following example shows how to loop through all the files and directories, querying some information about each entry.
-    /// @code
+    /// ```cpp
     /// #include <xtd/xtd>
     ///
     /// using namespace xtd;
@@ -83,7 +83,7 @@ namespace xtd {
     /// // File entry C:\IO.SYS was created on Tuesday, November 25, 2003
     /// // File entry C:\MSDOS.SYS was created on Tuesday, November 25, 2003
     /// // File entry C:\pagefile.sys was created on Saturday, December 27, 2003
-    /// @endcode
+    /// ```
     class core_export_ file_system_info abstract_ {
     public:
       /// @cond
@@ -115,7 +115,7 @@ namespace xtd {
       /// @verbatim example_file.attributes(example_file.attributes() | file_attributes::read_only; @endverbatim
       /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::attribute property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
-      /// @code
+      /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
       ///     ustring entry_type = "File";
@@ -127,7 +127,7 @@ namespace xtd {
       ///     //  Show this entry's type, name, and creation date.
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
-      /// @endcode
+      /// ```
       xtd::io::file_attributes attributes() const;
       /// @brief Sets the attributes for the current file or directory.
       /// @param value xtd::io::file_attributes of the current xtd::io::file_system_info.
@@ -151,7 +151,7 @@ namespace xtd {
       /// @verbatim example_file.attributes(example_file.attributes() | file_attributes::read_only; @endverbatim
       /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::attribute property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
-      /// @code
+      /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
       ///     ustring entry_type = "File";
@@ -163,7 +163,7 @@ namespace xtd {
       ///     //  Show this entry's type, name, and creation date.
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
-      /// @endcode
+      /// ```
       xtd::io::file_system_info& attributes(xtd::io::file_attributes value);
       
       /// @brief Gets the creation time of the current file or directory.
@@ -173,7 +173,7 @@ namespace xtd {
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
       /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::creation_time property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
-      /// @code
+      /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
       ///     ustring entry_type = "File";
@@ -185,7 +185,7 @@ namespace xtd {
       ///     //  Show this entry's type, name, and creation date.
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
-      /// @endcode
+      /// ```
       const xtd::date_time& creation_time() const;
       /// @brief Gets the creation time of the current file or directory.
       /// @param value The creation date and time of the current xtd::io::file_system_info object.
@@ -194,7 +194,7 @@ namespace xtd {
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
       /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::creation_time property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
-      /// @code
+      /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
       ///     ustring entry_type = "File";
@@ -206,7 +206,7 @@ namespace xtd {
       ///     //  Show this entry's type, name, and creation date.
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
-      /// @endcode
+      /// ```
       xtd::io::file_system_info& creation_time(const xtd::date_time& value);
       
       /// @brief Gets the creation time, in coordinated universal time (UTC), of the current file or directory.
@@ -270,7 +270,7 @@ namespace xtd {
       /// @return A string containing the full path.
       /// @par Examples
       /// The following example demonstrates the xtd::io::file_system_info::full_name property. This code example is part of a larger example provided for the xtd::io::file_system_info class.
-      /// @code
+      /// ```cpp
       ///   static void display_file_system_info_attributes(const file_system_info& fsi) {
       ///     //  Assume that this entry is a file.
       ///     ustring entry_type = "File";
@@ -282,7 +282,7 @@ namespace xtd {
       ///     //  Show this entry's type, name, and creation date.
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
-      /// @endcode
+      /// ```
       /// @remarks For example, for a file c:\new_file.txt, this property returns "c:\new_file.txt".
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       xtd::ustring full_name() const;
@@ -294,7 +294,7 @@ namespace xtd {
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
       /// @par Examples
       /// The following code example demonstrates the updating of the xtd::io::file_system_info::last_access_time property through a "touch" operation. In this example, the file is "touched", updating the xtd::io::file_system_info::creation_time, xtd::io::file_system_info::last_access_time and xtd::io::file_system_info::last_write_time properties to the current date and time.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -331,7 +331,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(touch::main);
-      /// @endcode
+      /// ```
       /// @note This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks The value of the xtd::io::file_system_info::last_access_time property is pre-cached if the current instance of the xtd::io::file_system_info object was returned from any of the following xtd::io::directory_info methods:
       /// * xtd::io::directory_info::get_directories
@@ -349,7 +349,7 @@ namespace xtd {
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
       /// @par Examples
       /// The following code example demonstrates the updating of the xtd::io::file_system_info::last_access_time property through a "touch" operation. In this example, the file is "touched", updating the xtd::io::file_system_info::creation_time, xtd::io::file_system_info::last_access_time and xtd::io::file_system_info::last_write_time properties to the current date and time.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -386,7 +386,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(touch::main);
-      /// @endcode
+      /// ```
       /// @note This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks The value of the xtd::io::file_system_info::last_access_time property is pre-cached if the current instance of the xtd::io::file_system_info object was returned from any of the following xtd::io::directory_info methods:
       /// * xtd::io::directory_info::get_directories
@@ -436,7 +436,7 @@ namespace xtd {
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
       /// @par Examples
       /// The following code example demonstrates the updating of the xtd::io::file_system_info::last_write_time property through a "touch" operation. In this example, the file is "touched", updating the xtd::io::file_system_info::creation_time, xtd::io::file_system_info::last_access_time and xtd::io::file_system_info::last_write_time properties to the current date and time.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -473,7 +473,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(touch::main);
-      /// @endcode
+      /// ```
       /// @note This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks The value of the xtd::io::file_system_info::last_write_time property is pre-cached if the current instance of the xtd::io::file_system_info object was returned from any of the following xtd::io::directory_info methods:
       /// * xtd::io::directory_info::get_directories
@@ -491,7 +491,7 @@ namespace xtd {
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
       /// @par Examples
       /// The following code example demonstrates the updating of the xtd::io::file_system_info::last_write_time property through a "touch" operation. In this example, the file is "touched", updating the xtd::io::file_system_info::creation_time, xtd::io::file_system_info::last_access_time and xtd::io::file_system_info::last_write_time properties to the current date and time.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -528,7 +528,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(touch::main);
-      /// @endcode
+      /// ```
       /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
       /// @remarks The value of the xtd::io::file_system_info::last_write_time property is pre-cached if the current instance of the xtd::io::file_system_info object was returned from any of the following xtd::io::directory_info methods:
       /// * xtd::io::directory_info::get_directories

@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for a cancelable event.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/cancel_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -24,9 +24,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides control renderers methods.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/renderer>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

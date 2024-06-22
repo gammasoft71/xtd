@@ -16,9 +16,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ region final : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::region
     /// @par Namespace

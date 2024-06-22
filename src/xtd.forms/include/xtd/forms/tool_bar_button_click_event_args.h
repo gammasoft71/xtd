@@ -13,9 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the xtd::forms::tool_bar::button_click event.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tool_bar_button_click_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

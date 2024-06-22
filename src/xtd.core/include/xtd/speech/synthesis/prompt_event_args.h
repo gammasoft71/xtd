@@ -20,14 +20,14 @@ namespace xtd {
       /// @endcond
       
       /// @brief Provides data for the method_name_completed event.
-      /// @code
+      /// ```cpp
       /// class prompt_event_args : public xtd::event_args
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::event_args → xtd::speech::synthesis::prompt_event_args
       /// @par Header
-      /// @code
-    /// #include <xtd/speech/synthesis/prompt_event_args> @endcode
+      /// ```cpp
+    /// #include <xtd/speech/synthesis/prompt_event_args> ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

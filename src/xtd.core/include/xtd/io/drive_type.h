@@ -9,15 +9,15 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Defines constants for drive types, including CDRom, Fixed, Network, NoRootDirectory, Ram, Removable, and Unknown.
-    /// @code
+    /// ```cpp
     /// enum class drive_type
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::drive_not_found_exception
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/drive_type>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library

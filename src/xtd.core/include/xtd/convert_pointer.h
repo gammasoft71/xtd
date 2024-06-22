@@ -18,9 +18,9 @@ new_type_t* __convert_value__(current_type_t* value);
 namespace xtd {
   /// @brief Represents API to convert pointers.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/convert_pointer>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -39,10 +39,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const button* value = new xtd::forms::button();
     /// const control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     template<typename type_t>
     static const type_t* to_ptr(const type_t& value) {
       return &value;
@@ -55,10 +55,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// button* value = new xtd::forms::button();
     /// control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     template<typename type_t>
     static type_t* to_ptr(type_t& value) {
       return &value;
@@ -71,10 +71,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const button* value = new xtd::forms::button();
     /// const control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     template<typename type_t>
     static const type_t* to_ptr(const type_t* value) {
       return value;
@@ -87,10 +87,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// button* value = new xtd::forms::button();
     /// control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     template<typename type_t>
     static type_t* to_ptr(type_t* value) {
       return value;
@@ -103,10 +103,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const button* value = new xtd::forms::button();
     /// const control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     template<typename new_type_t, typename current_type_t>
     static const new_type_t* to_ptr(const current_type_t* value) {
       if (value == nullptr) return nullptr;
@@ -120,10 +120,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// button* value = new xtd::forms::button();
     /// control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     template<typename new_type_t, typename current_type_t>
     static new_type_t* to_ptr(current_type_t* value) {
       if (value == nullptr) return nullptr;
@@ -137,10 +137,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const button* value = new xtd::forms::button();
     /// const control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     template<typename new_type_t, typename current_type_t>
     static const new_type_t* to_ptr(const current_type_t& value) {
       return &to_ref<new_type_t>(value);
@@ -153,10 +153,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// button* value = new xtd::forms::button();
     /// control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     template<typename new_type_t, typename current_type_t>
     static new_type_t* to_ptr(current_type_t& value) {
       return &to_ref<new_type_t>(value);
@@ -169,10 +169,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const button* value = new xtd::forms::button();
     /// const button& result = convert::to_ref<xtd::forms::control>(*value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename type_t>
     static const type_t& to_ref(const type_t& value) {
@@ -186,10 +186,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// button* value = new xtd::forms::button();
     /// button& result = convert::to_ref<xtd::forms::control>(*value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename type_t>
     static type_t& to_ref(type_t& value) {
@@ -202,10 +202,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const button* value = new xtd::forms::button();
     /// const button& result = convert::to_ref<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename type_t>
     static const type_t& to_ref(const type_t* value) {
@@ -219,10 +219,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// button* value = new xtd::forms::button();
     /// button& result = convert::to_ref<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename type_t>
     static type_t& to_ref(type_t* value) { // value parameter can't be const by design.
@@ -237,10 +237,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const button* value = new xtd::forms::button();
     /// const control& result = convert::to_ref<xtd::forms::control>(*value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static const new_type_t& to_ref(const current_type_t& value) {
@@ -259,10 +259,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// button* value = new xtd::forms::button();
     /// control& result = convert::to_ref<xtd::forms::control>(*value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static new_type_t& to_ref(current_type_t& value) {
@@ -281,10 +281,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const button* value = new xtd::forms::button();
     /// const control& result = convert::to_ref<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static const new_type_t& to_ref(const current_type_t* value) {
@@ -304,10 +304,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// button* value = new xtd::forms::button();
     /// control& result = convert::to_ref<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static new_type_t& to_ref(current_type_t* value) {
@@ -327,10 +327,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// std::unique_ptr<button> value = std::make_unique<xtd::forms::button>();
     /// std::unique_ptr<control> result = as<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>& value) {
@@ -351,9 +351,9 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// std::unique_ptr<control> result = as<xtd::forms::control>(std::make_unique<xtd::forms::button>());
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>&& value) {
@@ -374,10 +374,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const std::shared_ptr<button> value = std::make_shared<xtd::forms::button>();
     /// const std::shared_ptr<control> result = as<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static std::shared_ptr<new_type_t> to_shared_ptr(const std::shared_ptr<current_type_t>& value) {
@@ -396,9 +396,9 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// std::shared_ptr<control> result = as<xtd::forms::control>(std::make_shared<xtd::forms::button>());
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static std::shared_ptr<new_type_t> to_shared_ptr(std::shared_ptr<current_type_t>& value) {
@@ -417,10 +417,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @par Examples
-    /// @code
+    /// ```cpp
     /// const std::shared_ptr<button> value = std::make_shared<xtd::forms::button>();
     /// const std::shared_ptr<control> result = as<xtd::forms::control>(value);
-    /// @endcode
+    /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
     static std::shared_ptr<new_type_t> to_shared_ptr(std::shared_ptr<current_type_t>&& value) {

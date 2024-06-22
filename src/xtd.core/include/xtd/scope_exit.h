@@ -15,7 +15,7 @@ namespace xtd {
   /// @remarks See also #scope_exit_ keyword helper.
   /// @warning Prefer use [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) then xtd::scope_exit.
   ///
-  /// @code
+  /// ```cpp
   /// #include <xtd/xtd>
   ///
   /// using namespace xtd;
@@ -41,7 +41,7 @@ namespace xtd {
   /// //
   /// // end
   /// // scope_exit
-  /// @endcode
+  /// ```
   struct scope_exit {
   };
   
@@ -73,7 +73,7 @@ namespace xtd {
 /// @remarks See also xtd::scope_exit struct.
 /// @warning Prefer use [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) then #scope_exit_.
 ///
-/// @code
+/// ```cpp
 /// #include <xtd/xtd>
 ///
 /// using namespace xtd;
@@ -99,5 +99,5 @@ namespace xtd {
 /// //
 /// // end
 /// // scope_exit
-/// @endcode
+/// ```
 #define scope_exit_ [[maybe_unused]] auto __xtd_scope_exit_id__(__xtd__scope_exit__, __LINE__) = xtd::scope_exit {} + [&]

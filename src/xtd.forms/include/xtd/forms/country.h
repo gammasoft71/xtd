@@ -20,9 +20,9 @@ namespace xtd {
     
     /// @brief Represent a country with name, alpha codes, numeric code, emoticon and flag.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/country>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

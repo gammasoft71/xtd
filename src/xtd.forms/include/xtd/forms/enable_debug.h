@@ -15,9 +15,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represent enable debug class.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/enable_debug>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a splitter control that enables the user to resize docked controls.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/splitter>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

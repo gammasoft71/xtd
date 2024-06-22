@@ -15,17 +15,17 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Implements the basic functionality common to button controls.
-    /// @code
+    /// ```cpp
     /// class forms_export_ button_base : public xtd::forms::control
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::button_base
     /// @par Derived
     /// xtd::forms::button, xtd::forms::check_box, xtd::forms::command_link_button, xtd::forms::light_button, xtd::forms::radio_button, xtd::forms::switch_button, xtd::forms::toggle_button, xtd::forms::up_down_button
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/button_base>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

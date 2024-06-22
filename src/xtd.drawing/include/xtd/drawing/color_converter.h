@@ -11,9 +11,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Converts colors to and from xtd::drawing::color class. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ color_converter final static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static_object → xtd::drawing::image_converter
     /// @par Namespace
@@ -33,9 +33,9 @@ namespace xtd {
       /// @return The combined color.
       /// @remarks The alpha of color1 is conserved.
       /// @remarks The red, green and blue values are averages using the following formula:
-      /// @code
+      /// ```cpp
       /// color = fore_core * (1 - weight) + back_color * weight;
-      /// @endcode
+      /// ```
       /// @remarks Thus, a weight value of `1.0` will return the background color, while a value of `0.0` will return the foreground color.
       static xtd::drawing::color alpha_blend(const xtd::drawing::color& fore_core, const xtd::drawing::color& back_color, double alpha) noexcept;
       
@@ -46,9 +46,9 @@ namespace xtd {
       /// @return The average color.
       /// @remarks The alpha of color1 is conserved.
       /// @remarks The red, green and blue values are averages using the following formula:
-      /// @code
+      /// ```cpp
       /// color = color1 * (1 - weight) + color2 * weight;
-      /// @endcode
+      /// ```
       /// @remarks Thus, a weight value of `1.0` will return the second color, while a value of `0.0` will return the first color.
       static xtd::drawing::color average(const xtd::drawing::color& color1, const xtd::drawing::color& color2, double weight) noexcept;
       /// @brief Returns the weighted average color between the two given colors.
@@ -58,9 +58,9 @@ namespace xtd {
       /// @param average_alpha if true alpha was compute to; otherwise the alpha result is the alpha of color1
       /// @return The average color.
       /// @remarks The alpha, red, green and blue values are averages using the following formula:
-      /// @code
+      /// ```cpp
       /// color = color1 * (1 - weight) + color2 * weight;
-      /// @endcode
+      /// ```
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
       static xtd::drawing::color average(const xtd::drawing::color& color1, const xtd::drawing::color& color2, double weight, bool average_alpha) noexcept;
 

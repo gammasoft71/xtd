@@ -7,14 +7,14 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Provides the set attribute struct for enumerations.
-  /// @code
+  /// ```cpp
   /// template<typename enum_t>
   /// struct enum_set_attribute
-  /// @endcode
+  /// ```
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/enum_set_attribute>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -34,7 +34,7 @@ namespace xtd {
     /// @remarks To set attribute to an enumeration just override xtd::enum_set_attribute.
     /// @par Examples
     /// The following code show how to set attribute to the value_flags enum class.
-    /// @code
+    /// ```cpp
     /// enum class value_flags {
     ///   value_none = 0,
     ///   value_one = 0b1,
@@ -46,7 +46,7 @@ namespace xtd {
     /// xtd::enum_set_attribute<value_flags> {
     ///   explicit operator auto() const noexcept {return xtd::enum_attribute::flags;}
     /// };
-    /// @endcode
+    /// ```
     explicit operator auto() const noexcept {return xtd::enum_attribute::standard;}
   };
 }

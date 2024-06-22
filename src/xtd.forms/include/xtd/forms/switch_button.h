@@ -7,15 +7,15 @@
 namespace xtd {
   namespace forms {
     /// @brief Represents a standard Windows switch button.
-    /// @code
+    /// ```cpp
     /// class forms_export_ switch_button : public xtd::forms::button_base
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::forms::component → xtd::forms::control → xtd::forms::button_base → xtd::forms::switch_button
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/switch_button>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

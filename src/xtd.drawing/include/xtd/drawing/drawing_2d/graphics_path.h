@@ -22,9 +22,9 @@ namespace xtd {
     /// @brief The xtd::drawing::drawing_2d namespace provides advanced two-dimensional and vector graphics functionality.
     namespace drawing_2d {
       /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
-      /// @code
+      /// ```cpp
       /// class drawing_export_ graphics_path final : public object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::drawing::drawing_2d::graphics_path
       /// @par Namespace

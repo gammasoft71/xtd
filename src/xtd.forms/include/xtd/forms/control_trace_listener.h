@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Directs tracing or debugging output to a icontrol_trace object.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/control_trace_listener>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

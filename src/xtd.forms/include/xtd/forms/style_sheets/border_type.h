@@ -12,8 +12,8 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The border_type enum class specifies what kind of border to display.
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/border_type> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/border_type> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

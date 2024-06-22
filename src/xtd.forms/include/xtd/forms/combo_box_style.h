@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the combo_box style.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/combo_box_style>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

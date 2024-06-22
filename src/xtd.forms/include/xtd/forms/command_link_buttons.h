@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a collection of command_link_button objects for use by a Windows Forms application.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/command_link_buttons>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

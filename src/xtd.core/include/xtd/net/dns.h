@@ -13,9 +13,9 @@ namespace xtd {
   namespace net {
     /// @brief Provides simple domain name resolution functionality.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/net/dns>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::net
     /// @par Library

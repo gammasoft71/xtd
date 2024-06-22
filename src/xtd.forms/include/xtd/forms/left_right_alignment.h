@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies whether an object or text is aligned to the left or right of a reference point.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/left_right_alignment>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

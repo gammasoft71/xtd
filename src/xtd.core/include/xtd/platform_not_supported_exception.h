@@ -89,11 +89,11 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::platform_not_supported_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw platform_not_supported_exception_(); // same as : throw platform_not_supported_exception {csf_};
 ///   if (invalid_value) throw platform_not_supported_exception_("Bad value"); // same as : throw platform_not_supported_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define platform_not_supported_exception_(...) platform_not_supported_exception(add_csf_(__VA_ARGS__))

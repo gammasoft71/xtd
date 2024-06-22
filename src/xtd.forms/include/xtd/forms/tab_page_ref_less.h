@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents less comparator for tab_page_ref.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tab_page_ref_less>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

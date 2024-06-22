@@ -16,9 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a common dialog box that displays input box.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/input_box>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

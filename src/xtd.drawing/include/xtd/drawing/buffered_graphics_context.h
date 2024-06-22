@@ -15,9 +15,9 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Provides methods for creating graphics buffers that can be used for double buffering.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ buffered_graphics_context : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::drawing::buffered_graphics_context
     /// @par Namespace

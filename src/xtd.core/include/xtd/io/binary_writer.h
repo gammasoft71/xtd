@@ -14,15 +14,15 @@ namespace xtd {
   /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Writes primitive types in binary to a stream and supports writing strings.
-    /// @code
+    /// ```cpp
     /// class core_export_ binary_writer : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::io::binary_writer
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/binary_writer>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library

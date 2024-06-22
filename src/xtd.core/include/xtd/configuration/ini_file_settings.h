@@ -10,9 +10,9 @@ namespace xtd {
   namespace configuration {
     /// @brief Represents an object for storing and retrieving configuration information using text files in [INI format](https://en.wikipedia.org/wiki/INI_file).
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/configuration/ini_file_settings>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd
     /// @par Library

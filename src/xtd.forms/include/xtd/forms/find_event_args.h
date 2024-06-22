@@ -14,9 +14,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the xtd::forms::find_dialog::find_next and xtd::forms::replace_dialog::find_next events.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/find_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

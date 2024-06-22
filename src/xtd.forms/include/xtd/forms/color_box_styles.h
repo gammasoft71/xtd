@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies constants defining which color_box styles is used.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/color_box_styles>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

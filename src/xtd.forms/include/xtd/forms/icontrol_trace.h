@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Allow a control to be called by control_trace_listener for writing debug or trace message.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/ibutton_trace>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -89,11 +89,11 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::invalid_program_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw invalid_program_exception_(); // same as : throw invalid_program_exception {csf_};
 ///   if (invalid_value) throw invalid_program_exception_("Bad value"); // same as : throw invalid_program_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define invalid_program_exception_(...) invalid_program_exception(add_csf_(__VA_ARGS__))

@@ -22,9 +22,9 @@ namespace xtd {
     
     /// @brief Provides an Internet Protocol (IP) address.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/net/ip_address>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::net
     /// @par Library

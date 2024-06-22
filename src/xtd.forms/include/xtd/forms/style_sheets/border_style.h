@@ -14,16 +14,16 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The style specifies what kind of borders to display.
-      /// @code
+      /// ```cpp
       /// class forms_export_ border_style : public xtd::iequatable<border_style>, public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::border_style
       /// @par Implements
       /// xtd::iequatable <>
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/border_style> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/border_style> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

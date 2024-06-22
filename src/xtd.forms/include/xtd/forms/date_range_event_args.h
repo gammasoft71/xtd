@@ -16,9 +16,9 @@ namespace xtd {
     
     /// @brief Provides data for the xtd::forms::month_calendar::date_changed or xtd::forms::month_calendar::date_selected events of the xtd::forms::month_calendar control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/date_range_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

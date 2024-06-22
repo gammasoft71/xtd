@@ -12,14 +12,14 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Provides the registration struct for enumerations.
-  /// @code
+  /// ```cpp
   /// template<typename enum_t>
   /// struct enum_register
-  /// @endcode
+  /// ```
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/enum_register>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
@@ -41,7 +41,7 @@ namespace xtd {
     /// @remarks To register an enumeration just override xtd::enum_register.
     /// @par Examples
     /// The following code show how to register the values enum class.
-    /// @code
+    /// ```cpp
     /// enum class values {
     ///   value_one,
     ///   value_two
@@ -51,7 +51,7 @@ namespace xtd {
     /// xtd::enum_register<values> {
     ///   explicit operator auto() const noexcept {return xtd::enum_collection<values> {{values::value_one, "value_one"}, {values::value_two, "value_two"}};}
     /// };
-    /// @endcode
+    /// ```
     explicit operator auto() const noexcept {return xtd::enum_collection<enum_t> {};}
   };
 }

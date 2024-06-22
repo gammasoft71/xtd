@@ -13,15 +13,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides trace event data specific to a thread and a process.
-    /// @code
+    /// ```cpp
     /// class core_export_ trace_event_cache : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::trace_event_cache
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/trace_event_cache>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

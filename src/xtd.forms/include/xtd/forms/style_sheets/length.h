@@ -15,16 +15,16 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The xtd::forms::style_sheets::length specifies the legth and unit of many properties of the xtd::forms::style_sheets::ibox_model.
-      /// @code
+      /// ```cpp
       /// class forms_export_ length : public xtd::iequatable<length>, public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::length
       /// @par Implements
       /// xtd::iequatable <>
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/lenght> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/lenght> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library
@@ -35,7 +35,7 @@ namespace xtd {
       /// @remarks <b>Length</b> is a number followed by a length unit, such as 10px, 2em, etc.CSS has several different units for expressing a length.
       /// @par Example
       /// Set different length values, using px (pixels):
-      /// @code
+      /// ```cpp
       /// control {
       ///   border-width: 3px;
       /// }
@@ -44,7 +44,7 @@ namespace xtd {
       ///   border-width: 1px;
       ///   border-radius: 5px;
       /// }
-      /// @endcode
+      /// ```
       /// @note A whitespace cannot appear between the number and the unit. However, if the value is 0, the unit can be omitted.
       /// @remarks For some CSS properties, negative lengths are allowed.
       /// @remarks There are two types of length units: <b>absolute</b> and </b>relative</b>.

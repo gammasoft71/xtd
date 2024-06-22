@@ -134,7 +134,7 @@ private:
 /// The original code for Conical gradient :
 /// https://github.com/ekubyshin/conicalGradient
 ///
-/// @code
+/// ```cpp
 /// import UIKit
 ///
 /// class ConicalGradient: UIView {
@@ -213,11 +213,11 @@ private:
 ///
 /// }
 ///
-/// @endcode
+/// ```
 /// The original code for GetPointsOnLine function :
 ///  http://ericw.ca/notes/bresenhams-line-algorithm-in-csharp.html
 ///
-/// @code
+/// ```cpp
 /// public static IEnumerable<Point> GetPointsOnLine(xtd::int32 x0, xtd::int32 y0, xtd::int32 x1, xtd::int32 y1)
 /// {
 ///   bool steep = Math.Abs(y1 - y0) > Math.Abs(x1 - x0);
@@ -258,4 +258,4 @@ private:
 ///   }
 ///   yield break;
 /// }
-/// @endcode
+/// ```

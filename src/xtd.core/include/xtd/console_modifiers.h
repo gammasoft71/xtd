@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief Represents the SHIFT, ALT, and CTRL modifier keys on a keyboard.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/console_modifiers>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

@@ -16,14 +16,14 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief Provides User Datagram Protocol (UDP) network services.
-      /// @code
+      /// ```cpp
       /// class coore_export_ udp_client : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::udp_client
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/udp_client> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/udp_client> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

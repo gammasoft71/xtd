@@ -18,9 +18,9 @@ namespace xtd {
     
     /// @brief Provides data for the xtd::forms::control::paint event.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/paint_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

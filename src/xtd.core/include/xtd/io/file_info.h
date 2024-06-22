@@ -16,15 +16,15 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::fstream objects.
-    /// @code
+    /// ```cpp
     /// class core_export_ file_info : public xtd::io::file_system_info
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::io::file_system_info → xtd::io::file_info
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/io/file_info>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -80,7 +80,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @par Exemple
       /// The following example retrieves the full path of the specified file.
-      /// @code
+      /// ```cpp
       /// ustring file_name = R"(C:\TMP\log.txt)";
       /// file_info file_info(file_name);
       /// if (!file_info.exists())
@@ -92,7 +92,7 @@ namespace xtd {
       ///  *
       ///  * C:\TMP\log.txt has a directory name of C:\TMP
       ///  */
-      /// @endcode
+      /// ```
       /// @remarks To get the parent directory as a xtd::io::directory_info object, use the xtd::io::file_info::directory property.
       /// @remarks When first called, xtd::io::file_info calls xtd::io::file_info::refresh and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       xtd::ustring directory_name() const;
@@ -101,7 +101,7 @@ namespace xtd {
       /// @return true if the file exists; false if the file does not exist or if the file is a directory.
       /// @par Examples
       /// The following code example uses the xtd::io::file_info::exists property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found.
-      /// @code
+      /// ```cpp
       /// std::vector<char> open_data_file(const ustring& file_name) {
       ///   // Check the FileName argument.
       ///   if (file_name.size() == 0)
@@ -127,7 +127,7 @@ namespace xtd {
       ///   // return the buffer.
       ///   return buffer;
       /// }
-      /// @endcode
+      /// ```
       /// @remarks When first called, xtd::io::file_info calls xtd::io::file_info::refresh and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       /// @remarks The xtd::io::file_info::exists property returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
       bool exists() const override;
@@ -140,7 +140,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
       /// @par Examples
       /// The following example uses the xtd::io::file_info::is_read_only property to mark a file as read only and then mark it as read-write.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -197,7 +197,7 @@ namespace xtd {
       /// // The file read-only value for c:\test.xml is: True
       /// // Changing the read-only value for c:\test.xml to true.
       /// // The file read-only value for c:\test.xml is: True
-      /// @endcode
+      /// ```
       /// @remarks Use the xtd::io::file_info::is_read_only property to quickly determine or change whether the current file is read only.
       /// @remarks When first called, file_info calls xtd::io::file_info::refresh and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       bool is_read_only() const;
@@ -209,7 +209,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
       /// @par Examples
       /// The following example uses the xtd::io::file_info::is_read_only property to mark a file as read only and then mark it as read-write.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace xtd;
@@ -266,7 +266,7 @@ namespace xtd {
       /// // The file read-only value for c:\test.xml is: True
       /// // Changing the read-only value for c:\test.xml to true.
       /// // The file read-only value for c:\test.xml is: True
-      /// @endcode
+      /// ```
       /// @remarks Use the xtd::io::file_info::is_read_only property to quickly determine or change whether the current file is read only.
       /// @remarks When first called, file_info calls xtd::io::file_info::refresh and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       void is_read_only(bool value);
@@ -277,7 +277,7 @@ namespace xtd {
       /// @exception xtd::io::file_not_found_exception The file does not exist.<br>-or-<br>The xtd::io::file_info::size property is called for a directory.
       /// @par Examples
       ///
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -315,7 +315,7 @@ namespace xtd {
       /// // The size of UpdatePatch.log is 22778 bytes.
       /// // The size of UpdatePatch.txt is 30 bytes.
       /// // The size of wt3d.ini is 234 bytes.
-      /// @endcode
+      /// ```
       /// @remarks The value of the Length property is pre-cached if the current instance of the xtd::io::file_info object was returned from any of the following DirectoryInfo methods:
       /// * xtd::io::file_info::get_directories
       /// * xtd::io::file_info::_det_files
@@ -331,7 +331,7 @@ namespace xtd {
       ///
       /// @par Examples
       ///
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -356,7 +356,7 @@ namespace xtd {
       /// // fileinfoname.exe
       /// // fileinfoname.pdb
       /// // newTemp.txt
-      /// @endcode
+      /// ```
       /// @remarks When first called, xtd::io::file_info calls Refresh and caches information about the file. On subsequent calls, you must call Refresh to get the latest copy of the information.
       /// @remarks The name of the file includes the file extension.
       xtd::ustring name() const override;
@@ -372,7 +372,7 @@ namespace xtd {
       /// @include file_info_append_text.cpp
       /// @par Examples
       /// The following example demonstrates appending text to the end of a file and also displays the result of the append operation to the console. The first time this routine is called, the file is created if it does not exist. After that, the specified text is appended to the file.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -404,7 +404,7 @@ namespace xtd {
       /// // results may vary based on the computer/file structure/etc.:
       /// // Add as many lines as you like...
       /// // Add another line to the output...
-      /// @endcode
+      /// ```
       xtd::io::stream_writer append_text() const;
       
       /// @brief Copies an existing file to a new file, disallowing the overwriting of an existing file.
@@ -419,7 +419,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
       /// @par Examples
       /// The following example demonstrates both overloads of the xtd::io::file_info::copy_to method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -458,10 +458,10 @@ namespace xtd {
       /// // results may vary based on the computer/file structure/etc.:
       /// // Add as many lines as you like...
       /// // Add another line to the output...
-      /// @endcode
+      /// ```
       /// @par Examples
       /// The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -514,7 +514,7 @@ namespace xtd {
       /// // This is the information in the second file:
       /// // Add as many lines as you like...
       /// // Add another line to the output...
-      /// @endcode
+      /// ```
       /// @remarks Use the xtd::io::file_info::copy_to(ustring, bool) method to allow overwriting of an existing file.
       /// @warning Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior
       xtd::io::file_info copy_to(const xtd::ustring& dest_file_name) const;
@@ -531,7 +531,7 @@ namespace xtd {
       /// @exception xtd::not_supported_exception dest_file_name contains a colon (:) in the middle of the string.
       /// @par Examples
       /// The following example demonstrates both overloads of the xtd::io::file_info::copy_to method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -570,10 +570,10 @@ namespace xtd {
       /// // results may vary based on the computer/file structure/etc.:
       /// // Add as many lines as you like...
       /// // Add another line to the output...
-      /// @endcode
+      /// ```
       /// @par Examples
       /// The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -626,7 +626,7 @@ namespace xtd {
       /// // Add another line to the output...
       /// // Add as many lines as you like...
       /// // Add another line to the output...
-      /// @endcode
+      /// ```
       /// @remarks Use this method to allow or prevent overwriting of an existing file. Use the xtd::io::file_info::copy_to(ustring) method to prevent overwriting of an existing file by default.
       /// @warning Whenever possible, avoid using short file names (such as XXXXXX~1.XXX) with this method. If two files have equivalent short file names then this method may fail and raise an exception and/or result in undesirable behavior
       xtd::io::file_info copy_to(const xtd::ustring& dest_file_name, bool overwrite) const;
@@ -635,7 +635,7 @@ namespace xtd {
       /// @return A new file.
       /// @par Examples
       /// The following example creates a reference to a file, and then creates the file on disk using xtd::io::file_info.create().
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -657,7 +657,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @par Examples
       /// The following example creates a file, adds some text to it, and reads from the file.
       /// @include file_info_open.cpp
@@ -760,7 +760,7 @@ namespace xtd {
       /// @exception xtd::unauthorized_access_exception The path is a directory.
       /// @par Examples
       /// The following example demonstrates the xtd::io::file_info::remove method.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -801,10 +801,10 @@ namespace xtd {
       /// //
       /// //c:\MyTest.txt was copied to c:\MyTest.txttemp.
       /// //c:\MyTest.txttemp was successfully deleted.
-      /// @endcode
+      /// ```
       /// @par Examples
       /// The following example creates, closes, and deletes a file.
-      /// @code
+      /// ```cpp
       /// #include <xtd/xtd>
       ///
       /// using namespace std;
@@ -825,7 +825,7 @@ namespace xtd {
       /// };
       ///
       /// startup_(program::main);
-      /// @endcode
+      /// ```
       /// @remarks If the file does not exist, this method does nothing.
       void remove() const override;
       

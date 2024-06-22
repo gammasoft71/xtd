@@ -19,9 +19,9 @@ namespace xtd {
     
     /// @brief Represents a link within a xtd::forms::link_label control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/link>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

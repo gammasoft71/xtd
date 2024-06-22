@@ -12,8 +12,8 @@ namespace xtd {
     namespace synthesis {
       /// @brief Returns notification from the xtd::speech::synthesis::speech_synthesizer::speak_started event.
       /// @par Header
-      /// @code
-    /// #include <xtd/speech/synthesis/speak_started_event_args> @endcode
+      /// ```cpp
+    /// #include <xtd/speech/synthesis/speak_started_event_args> ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

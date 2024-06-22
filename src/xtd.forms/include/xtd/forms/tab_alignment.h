@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the locations of the tabs in a tab control.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tab_alignment>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -12,9 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the xtd::forms::background_worker::progress_changed event handler.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/progress_changed_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

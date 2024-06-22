@@ -12,8 +12,8 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The xtd::forms::style_sheets::text_decoration enum class is used to set or remove decorations from text.
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/text_decoration> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/text_decoration> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

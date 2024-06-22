@@ -14,9 +14,9 @@ namespace xtd {
     
     /// @brief Represents a tab_page reference.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tab_page_ref>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

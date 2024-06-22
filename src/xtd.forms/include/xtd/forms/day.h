@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the day of the week.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/day>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

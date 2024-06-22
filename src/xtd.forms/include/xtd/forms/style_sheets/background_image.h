@@ -24,14 +24,14 @@ namespace xtd {
       /// @endcond
       
       /// @brief The image data allows you to specify the url or gradient mode.
-      /// @code
+      /// ```cpp
       /// class forms_export_ background_image : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::forms::style_sheets::background_image
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/background_image> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/background_image> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

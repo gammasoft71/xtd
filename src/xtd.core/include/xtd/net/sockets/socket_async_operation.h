@@ -15,12 +15,12 @@ namespace xtd {
     /// @brief The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface for developers who need to tightly control access to the network.
     namespace sockets {
       /// @brief The type of asynchronous socket operation most recently performed with this context object.
-      /// @code
+      /// ```cpp
       /// enum class socket_async_operation
-      /// @endcode
+      /// ```
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/socket_async_operation> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/socket_async_operation> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

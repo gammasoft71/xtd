@@ -13,9 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a seven segment display class.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/seven_segment_display>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

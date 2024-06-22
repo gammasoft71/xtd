@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the date and time format the date_time_picker control displays.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/date_time_picker_format>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -11,9 +11,9 @@
 namespace xtd {
   /// @brief Represents information about c++ libraries, such as the version and language identifier. This class cannot be inherited.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/cpp_language>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

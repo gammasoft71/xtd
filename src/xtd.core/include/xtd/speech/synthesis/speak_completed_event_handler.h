@@ -13,8 +13,8 @@ namespace xtd {
     namespace synthesis {
       /// @brief Represents the method that will handle xtd::speech::synthesis::speech_synthesizer::speak_completed event.
       /// @par Header
-      /// @code
-    /// #include <xtd/speech/synthesis/speak_completed_event_handler> @endcode
+      /// ```cpp
+    /// #include <xtd/speech/synthesis/speak_completed_event_handler> ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

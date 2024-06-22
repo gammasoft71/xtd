@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies key codes and modifiers.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/keys>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library
@@ -37,7 +37,7 @@ namespace xtd {
     /// @remarks On Apple platforms, references to xtd::forms::keys::control_key and xtd::forms::keys::control correspond to the `command` keys on the Macintosh keyboard, and references to xtd::forms::keys::lwin, xtd::forms::keys::rwin and xtd::forms::keys::meta correspond to the `control` keys. In effect, developers can use the same shortcut descriptions across all platforms, and their applications will automatically work as expected on Apple platforms.
     /// @par Examples
     /// The following code example uses the KeyDown event to determine the type of character entered into the control.
-    /// @code
+    /// ```cpp
     /// // bool flag used to determine when a character other than a number is entered.
     /// bool non_number_entered = false;
     ///
@@ -73,7 +73,7 @@ namespace xtd {
     ///     e.handled(true);
     ///   }
     /// }
-    /// @endcode
+    /// ```
     enum class keys : long long {
       /// @brief No key pressed.
       none = 0x00000000,

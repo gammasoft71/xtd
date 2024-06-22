@@ -19,15 +19,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Represents a stack trace, which is an ordered collection of one or more stack frames.
-    /// @code
+    /// ```cpp
     /// class core_export_ stack_trace : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::stack_trace
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/stack_trace>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -53,7 +53,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class from the caller's frame.
       /// @par Examples
       /// The following code example displays the first and last function calls in a stack trace.
-      /// @code
+      /// ```cpp
       /// void Level_5_method() {
       ///   try {
       ///     class_level_6 nested_class;
@@ -83,7 +83,7 @@ namespace xtd {
       ///     throw;
       ///   }
       /// }
-      /// @endcode
+      /// ```
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread, and does not contain file name, line number, or column information.
       /// @remarks Use this parameterless constructor when you want a complete trace with only summary method information about the call stack.
       stack_trace();
@@ -91,7 +91,7 @@ namespace xtd {
       /// @param need_file_info true to capture the file name, line number, and column number; otherwise, false.
       /// @par Examples
       /// The following code example displays the first and last function calls in a stack trace.
-      /// @code
+      /// ```cpp
       /// void Level_5_method() {
       ///   try {
       ///     class_level_6 nested_class;
@@ -121,18 +121,18 @@ namespace xtd {
       ///     throw;
       ///   }
       /// }
-      /// @endcode
+      /// ```
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread.
       explicit stack_trace(bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class that contains a single frame.
       /// @param frame The frame that the xtd::diagnostics::stack_trace object should contain.
       /// @par Examples
       /// The following code example writes stack trace information to an event log entry.
-      /// @code
+      /// ```cpp
       /// stack_frame fr(1, true);
       /// stack_trace st(fr);
       /// debug::write_line(ustring::format("{}\n{}", fr.get_method(), st.to_string());
-      /// @endcode
+      /// ```
       /// @remarks Use this constructor when you do not want the overhead of a full stack trace.
       explicit stack_trace(const xtd::diagnostics::stack_frame& frame);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class using the provided exception object.
@@ -157,7 +157,7 @@ namespace xtd {
       /// @param need_file_info true to capture the file name, line number, and column number; otherwise, false.
       /// @par Examples
       /// The following code example displays the first and last function calls in a stack trace.
-      /// @code
+      /// ```cpp
       /// void Level_5_method() {
       ///   try {
       ///     class_level_6 nested_class;
@@ -187,7 +187,7 @@ namespace xtd {
       ///     throw;
       ///   }
       /// }
-      /// @endcode
+      /// ```
       /// @remarks If the number of frames to skip is greater than or equal to the total number of frames on the call stack at the time the instance is created, the xtd::diagnostics::stack_trace will contain no frames.
       stack_trace(size_t skip_frames, bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class using the provided exception object, skipping the specified number of frames and optionally capturing source information.
@@ -223,7 +223,7 @@ namespace xtd {
       /// @return The number of frames in the stack trace.
       /// @par Examples
       /// The following code example displays the first and last function calls in a stack trace.
-      /// @code
+      /// ```cpp
       /// void Level_5_method() {
       ///   try {
       ///     class_level_6 nested_class;
@@ -253,7 +253,7 @@ namespace xtd {
       ///     throw;
       ///   }
       /// }
-      /// @endcode
+      /// ```
       size_t frame_count() const noexcept;
       /// @}
       
@@ -265,7 +265,7 @@ namespace xtd {
       /// @return The specified stack frame.
       /// @par Examples
       /// The following code example displays the first and last function calls in a stack trace.
-      /// @code
+      /// ```cpp
       /// void Level_5_method() {
       ///   try {
       ///     class_level_6 nested_class;
@@ -295,7 +295,7 @@ namespace xtd {
       ///     throw;
       ///   }
       /// }
-      /// @endcode
+      /// ```
       /// @remarks Stack frames are numbered starting at 0, which is the last stack frame pushed.
       const xtd::diagnostics::stack_frame& get_frame(size_t index) noexcept;
       
@@ -303,14 +303,14 @@ namespace xtd {
       /// @return An array of type xtd::diagnostics::stack_frame representing the function calls in the stack trace.
       /// @par Examples
       /// The following code example demonstrates enumerating the frames in a xtd::diagnostics::stack_trace.
-      /// @code
+      /// ```cpp
       /// stack_trace st(1, true);
       /// stack_trace::stack_frame_collection st_frames = st.get_frames();
       ///
       /// for(const stack_frame& sf : st_frames) {
       ///   console::write_line("Method: {}", sf.get_method());
       /// }
-      /// @endcode
+      /// ```
       /// @remarks Use the returned xtd::diagnostics::stack_frame array to enumerate and examine function calls in the xtd::diagnostics::stack_trace. The size of the returned array is equal to the frame_count() property value.
       /// @remarks The xtd::diagnostics::stack_frame array elements are in reverse chronological order. The xtd::diagnostics::stack_frame at array index 0 represents the most recent function call in the stack trace and the last frame pushed onto the call stack. The xtd::diagnostics::stack_frame at array index frame_count() minus 1 represents the oldest function call in the stack trace and the first frame pushed onto the call stack.
       /// @remarks Use the get_frames() method to obtain all stack frames in a stack trace; use the get_frame(size_t) method to obtain a specific stack frame in a stack trace. The xtd::diagnostics::stack_frame indexes are ordered alike by the two methods. For example, the xtd::diagnostics::stack_frame at index 0 in the array returned by get_frames() is equivalent to the xtd::diagnostics::stack_frame returned by get_frame(size_t) with an input index of 0.
@@ -320,11 +320,11 @@ namespace xtd {
       /// @return A readable representation of the stack trace.
       /// @par Examples
       /// The following code example writes stack trace information to an event log entry.
-      /// @code
+      /// ```cpp
       /// stack_frame fr(1, true);
       /// stack_trace st(fr);
       /// debug::write_line(ustring::format("{}\n{}", fr.get_method(), st.to_string());
-      /// @endcode
+      /// ```
       xtd::ustring to_string() const noexcept override;
       /// @}
       

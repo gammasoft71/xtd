@@ -8,15 +8,15 @@
 namespace xtd {
   namespace collections {
     /// @brief The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
-    /// @code
+    /// ```cpp
     /// class key_not_found_exception : public xtd::system_exception
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::system_exception → xtd::collections::key_not_found_exception
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/collections/key_not_found_exception>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::collections
     /// @par Library
@@ -97,18 +97,18 @@ namespace xtd {
 
 /// @brief Helper on xtd::collections::key_not_found_exception to call it with current stack frame information.
 /// @par Header
-/// @code
+/// ```cpp
 /// #include <xtd/collections/key_not_found_exception>
-/// @endcode
+/// ```
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions
 /// @remarks Is equivalent to xtd::collections::key_not_found_exception {{any argument}, csf_}
-/// @code
+/// ```cpp
 /// void my_func() {
 ///   if (invalid_info) throw key_not_found_exception_(); // same as : throw key_not_found_exception {csf_};
 ///   if (invalid_value) throw key_not_found_exception_("Bad value"); // same as : throw key_not_found_exception {"Bad value", csf_};
 ///   ...
 /// }
-/// @endcode
+/// ```
 #define key_not_found_exception_(...) key_not_found_exception(add_csf_(__VA_ARGS__))

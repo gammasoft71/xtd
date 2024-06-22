@@ -14,9 +14,9 @@ namespace xtd {
     
     /// @brief Represents a xtd::forms::tool_bar_item reference.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/tool_bar_button_ref>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

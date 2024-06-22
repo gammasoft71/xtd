@@ -16,14 +16,14 @@ namespace xtd {
       /// @endcond
       
       /// @brief Represents information about what can be rendered, either text or an audio file, by the xtd::speech::synthesis::speech_synthesizer.
-      /// @code
+      /// ```cpp
       /// class core_export_ prompt : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::speech::synthesis::prompt
       /// @par Header
-      /// @code
-    /// #include <xtd/speech/synthesis/prompt> @endcode
+      /// ```cpp
+    /// #include <xtd/speech/synthesis/prompt> ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

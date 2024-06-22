@@ -9,9 +9,9 @@
 namespace xtd {
   /// @brief Represent beep output manipulator class.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/beep>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

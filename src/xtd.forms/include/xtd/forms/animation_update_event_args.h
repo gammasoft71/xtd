@@ -11,9 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the animation update event.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/animation_event_args>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

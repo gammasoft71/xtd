@@ -14,9 +14,9 @@ namespace xtd {
     
     /// @brief Represents a const xtd::forms::form reference.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/const_form_ref>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

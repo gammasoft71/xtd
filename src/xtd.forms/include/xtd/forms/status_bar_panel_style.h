@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies whether a xtd::forms::status_bar_panel object on a xtd::forms::status_bar control is owner-drawn or system-drawn.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/status_bar_panel_style>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms:
     /// @par Library

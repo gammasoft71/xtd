@@ -10,15 +10,15 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a simple on/off switch that controls debugging and tracing output.
-    /// @code
+    /// ```cpp
     /// class core_export_ boolean_switch : public xtd::diagnostics::switch_base
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::switch_base → xtd::diagnostics::boolean_switch
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/diagnostics/boolean_switch>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library
@@ -28,7 +28,7 @@ namespace xtd {
     /// @remarks You can create a xtd::diagnostics::boolean_switch in your code and set the xtd::diagnostics::boolean_switch::enabled property directly to instrument a specific section of code.
     /// @par Examples
     /// This example configuration section defines a xtd::diagnostics::boolean_switch with the xtd::diagnostics::boolean_switch::display_name property set to my_switch and the xtd::diagnostics::boolean_switch::enabled value set to true. Within your application, you can use the configured switch value by creating a xtd::diagnostics::boolean_switch with the same name, as shown in the following code example.
-    /// @code
+    /// ```cpp
     /// private:
     ///   inline static xtd::diagnostics::boolean_switch boolean_switch("my_switch", "This is my switch");
     ///
@@ -40,7 +40,7 @@ namespace xtd {
     ///       //...
     ///     }
     ///   }
-    /// @endcode
+    /// ```
     /// @remarks You must enable tracing or debugging to use a switch. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.
     ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file.
     ///  * To enable trace mode with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your project, or you can add #define TRACE to the top of your file.
@@ -57,7 +57,7 @@ namespace xtd {
       /// @param description The description of the switch.
       /// @par Examples
       /// The following example creates a xtd::diagnostics::boolean_switch and uses the switch to determine whether to print an error message. The switch is created at the class level. The Main method passes its location to MyMethod, which prints an error message and where the error occurred.
-      /// @code
+      /// ```cpp
       /// /* Class level declaration.*/
       /// private:
       ///   // Create a BooleanSwitch for data.
@@ -74,7 +74,7 @@ namespace xtd {
       ///     //Run the method which writes an error message specifying the location of the error.
       ///     my_method("in Main");
       ///   }
-      /// @endcode
+      /// ```
       /// @remarks When you create a xtd::diagnostics::boolean_switch, the display_name parameter is used to find initial switch settings. If the constructor cannot find initial settings, the xtd::diagnostics::boolean_switch::enabled property is set to false (disabled).
       /// @remarks The switches you created should be static.
       boolean_switch(const xtd::ustring& display_name, const xtd::ustring& description);

@@ -18,14 +18,14 @@ namespace xtd {
     /// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
     namespace synthesis {
       /// @brief Provides access to the functionality of an installed speech synthesis engine.
-      /// @code
+      /// ```cpp
       /// class core_export_ speech_synthesizer : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::speech::synthesis::speech_synthesizer
       /// @par Header
-      /// @code
-    /// #include <xtd/speech/synthesis/speech_synthesizer> @endcode
+      /// ```cpp
+    /// #include <xtd/speech/synthesis/speech_synthesizer> ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

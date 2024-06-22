@@ -12,19 +12,19 @@
 namespace xtd {
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const button* value = new xtd::forms::button();
   /// const control& result = as<xtd::forms::control>(*value);
-  /// @endcode
+  /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   const new_type_t& as(const current_type_t& value) {
@@ -34,19 +34,19 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// button* value = new xtd::forms::button();
   /// control& result = as<xtd::forms::control>(*value);
-  /// @endcode
+  /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   new_type_t& as(current_type_t& value) {
@@ -56,19 +56,19 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const button* value = new xtd::forms::button();
   /// const control* result = as<xtd::forms::control>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t, typename current_type_t>
   const new_type_t* as(const current_type_t* value) {
     return xtd::convert_pointer::to_ptr<new_type_t>(value);
@@ -76,19 +76,19 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// button* value = new xtd::forms::button();
   /// control* result = as<xtd::forms::control>(value);
-  /// @endcode
+  /// ```
   template<typename new_type_t, typename current_type_t>
   new_type_t* as(current_type_t* value) {
     return xtd::convert_pointer::to_ptr<new_type_t>(value);
@@ -96,19 +96,19 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// std::unique_ptr<button> value = std::make_unique<xtd::forms::button>();
   /// std::unique_ptr<control> result = as<xtd::forms::control>(value);
-  /// @endcode
+  /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   std::unique_ptr<new_type_t> as(std::unique_ptr<current_type_t>& value) {
@@ -117,18 +117,18 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// std::unique_ptr<control> result = as<xtd::forms::control>(std::make_unique<xtd::forms::button>());
-  /// @endcode
+  /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   std::unique_ptr<new_type_t> as(std::unique_ptr<current_type_t>&& value) {
@@ -137,19 +137,19 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const std::shared_ptr<button> value = std::make_shared<xtd::forms::button>();
   /// const std::shared_ptr<control> result = as<xtd::forms::control>(value);
-  /// @endcode
+  /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   std::shared_ptr<new_type_t> as(const std::shared_ptr<current_type_t>& value) {
@@ -158,18 +158,18 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// std::shared_ptr<control> result = as<xtd::forms::control>(std::make_shared<xtd::forms::button>());
-  /// @endcode
+  /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   std::shared_ptr<new_type_t> as(std::shared_ptr<current_type_t>& value) {
@@ -178,19 +178,19 @@ namespace xtd {
   
   /// @brief Casts a type into another type.
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/as>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// const std::shared_ptr<button> value = std::make_shared<xtd::forms::button>();
   /// const std::shared_ptr<control> result = as<xtd::forms::control>(value);
-  /// @endcode
+  /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
   std::shared_ptr<new_type_t> as(std::shared_ptr<current_type_t>&& value) {

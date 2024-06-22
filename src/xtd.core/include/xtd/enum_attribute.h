@@ -5,13 +5,13 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies the enum attribute.
-  /// @code
+  /// ```cpp
   /// enum class enum_attribute
-  /// @endcode
+  /// ```
   /// @par Header
-  /// @code
+  /// ```cpp
   /// #include <xtd/enum_attribute>
-  /// @endcode
+  /// ```
     /// @par Namespace
   /// xtd
   /// @par Library

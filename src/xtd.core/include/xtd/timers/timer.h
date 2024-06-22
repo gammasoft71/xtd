@@ -15,15 +15,15 @@ namespace xtd {
   /// @brief Provides the xtd::timers::timer component, which allows you to raise an event on a specified interval.
   namespace timers {
     /// @brief Generates an event after a set interval, with an option to generate recurring events.
-    /// @code
+    /// ```cpp
     /// class core_export_ timer : public xtd::object
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::object → xtd::timers::timer
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/threading/timer>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::threading
     /// @par Library

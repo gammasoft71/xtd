@@ -19,14 +19,14 @@ namespace xtd {
       /// @endcond
       
       /// @brief Gets the network interface information that is associated with a call to xtd::net::sockets::socket::receive_message_from or xtd::net::sockets::socket::end_receive_message_from.
-      /// @code
+      /// ```cpp
       /// class core_export_ ip_packet_information : public xtd::object
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::ip_packet_information
       /// @par Header
-      /// @code
-    /// #include <xtd/net/sockets/ip_packet_information> @endcode
+      /// ```cpp
+    /// #include <xtd/net/sockets/ip_packet_information> ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

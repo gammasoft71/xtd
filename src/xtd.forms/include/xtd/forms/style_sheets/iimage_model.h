@@ -20,14 +20,14 @@ namespace xtd {
     /// @brief The xtd::forms::style_sheets namespace contains various properties, states, and subcontrols that make it possible to customize the look of control.
     namespace style_sheets {
       /// @brief The image model allows you to specify the alignment  of an image.
-      /// @code
+      /// ```cpp
       /// class iimage_model interface_
-      /// @endcode
+      /// ```
       /// @par Inheritance
       /// xtd::interface → xtd::forms::style_sheets::iimage_model
       /// @par Header
-      /// @code
-    /// #include <xtd/forms/style_sheets/iimage_model> @endcode
+      /// ```cpp
+    /// #include <xtd/forms/style_sheets/iimage_model> ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

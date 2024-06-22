@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the reason that a form was closed.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/close_reason>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

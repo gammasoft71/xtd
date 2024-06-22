@@ -10,9 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a collection of check_box objects for use by a Windows Forms application.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/check_boxes>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

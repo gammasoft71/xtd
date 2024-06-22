@@ -18,9 +18,9 @@ namespace xtd {
     
     /// @brief Indicates current system power status information.
     /// @par Header
-    /// @code
+    /// ```cpp
     /// #include <xtd/forms/power_status>
-    /// @endcode
+    /// ```
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -16,9 +16,9 @@ namespace xtd {
     /// @endcond
     
     /// @brief Converts images to and from xtd::drawing::image class. This class cannot be inherited.
-    /// @code
+    /// ```cpp
     /// class drawing_export_ image_converter final static_
-    /// @endcode
+    /// ```
     /// @par Inheritance
     /// xtd::static_object → xtd::drawing::image_converter
     /// @par Namespace

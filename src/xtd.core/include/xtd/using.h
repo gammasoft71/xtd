@@ -11,24 +11,24 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core keywords
   /// @par Examples
-  /// @code
+  /// ```cpp
   /// // values is released automatically after the end closure }.
   /// using_(auto values = {1, 2, 3, 4, 5}) {
   ///   cout << ustring::join(", ", values) << endl;
   /// }
-  /// @endcode
+  /// ```
   /// same as :
-  /// @code
+  /// ```cpp
   /// using_(auto values = {1, 2, 3, 4, 5})
   ///   cout << ustring::join(", ", values) << endl;
-  /// @endcode
+  /// ```
   /// same as :
-  /// @code
+  /// ```cpp
   /// {
   ///   auto values = {1, 2, 3, 4, 5};
   ///   cout << ustring::join(", ", values) << endl;
   /// }
-  /// @endcode
+  /// ```
   /// @remarks same as #block_scope_
 #define using_(...) \
   for (bool __xtd_using__ = true; __xtd_using__; __xtd_using__ = false)\
