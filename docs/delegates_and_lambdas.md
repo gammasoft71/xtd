@@ -33,7 +33,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
 
 
@@ -64,7 +64,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
 
 The following example demonstrates the use of delegates with static method.
@@ -92,7 +92,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
 
 * The `using reverse = delegate<ustring(const ustring& s)>;` line creates a delegate type of a certain signature, in this case a method that takes a string parameter and then returns a string parameter.
@@ -131,7 +131,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
 
 For this simple example, having a method defined outside of the `main` method seems a bit superfluous. c++11 introduced the concept of [lambda expressions](https://en.cppreference.com/w/cpp/language/lambda), which let you create "inline" methods without having to specify any additional type or method.
@@ -157,7 +157,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
 
 As you can see, the delegate body is just a set of expressions, like any other delegate. 

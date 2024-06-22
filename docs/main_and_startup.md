@@ -50,10 +50,10 @@ Behind this keyword there is a `main` global function that call `main` static me
 ## startup_ definition
 
 ```cpp
-#define startup_(main_class) \
+#define startup_(main_method) \
   auto main(int argc, char* argv[]) -> int {\
     try {\
-      return __startup__::run(main_class::main, argc, argv);\
+      return __startup__::run(main_method, argc, argv);\
     } catch(const std::exception& e) {\
       __startup_catch_exception__(e);\
     } catch(...) {\
@@ -87,7 +87,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 See [try-block](https://en.cppreference.com/w/cpp/language/try_catch) for more information.
@@ -115,7 +115,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 * Static `main` member function without argument and with int return value.
@@ -138,7 +138,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 * Static `main` member function with string array argument and without return value.
@@ -163,7 +163,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 * Static `main` member function with string array argument and with int return value.
@@ -210,7 +210,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 * Static `main` member function with int and char*[] arguments and with int return value.
@@ -234,7 +234,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 ## Windows main definitions

@@ -25,7 +25,7 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::simple);
+startup_(tutorial::simple::main);
 ```
 
 This very basic example shows a small window on the screen. The window is centered.
@@ -37,7 +37,7 @@ start_position(xtd::forms::form_start_position::center_screen);
 This method centers the form on the screen, both horizontally and vertically.
 
 ```cpp
-startup_(tutorial::simple);
+startup_(tutorial::simple::main);
 ```
 
 The code behind ***startup_*** macro can be replaced by :
@@ -88,7 +88,7 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::form_icon);
+startup_(tutorial::form_icon::main);
 ```
 
 In our example we show a small gammasoft icon.
@@ -139,7 +139,7 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::form_button);
+startup_(tutorial::form_button::main);
 ```
 
 ```cpp
@@ -252,7 +252,7 @@ namespace tutorial {
   };
 }
 
-startup_(tutorial::communicate);
+startup_(tutorial::communicate::main);
 ```
 In our example we have two panels. A left and right panel. The left panel has two buttons. The right panel has one label. The buttons change the number displayed in the label. The question is, how do we grab the pointer to the label?
 

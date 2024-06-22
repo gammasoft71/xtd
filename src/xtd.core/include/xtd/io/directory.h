@@ -711,7 +711,7 @@ namespace xtd {
       ///   }
       /// };
       ///
-      /// startup_(program);
+      /// startup_(program::main);
       /// ```
       /// @remarks This method returns all subdirectories directly under the specified directory that match the specified search pattern. If the specified directory has no subdirectories, or no subdirectories match the search_pattern parameter, this method returns an empty array. Only the top directory is searched.
       /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.

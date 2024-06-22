@@ -218,7 +218,7 @@ public:
   }
 };
 
-startup_(math_class);
+startup_(math_class::main);
 
 /* Output:
  Invoking the delegate using 'multiply_numbers':
@@ -263,7 +263,7 @@ public:
   }
 };
 
-startup_(test_sample_class);
+startup_(test_sample_class::main);
 
 /* Output:
  A message from the instance method.
