@@ -17,18 +17,9 @@ struct settings::data {
 };
 
 settings::settings() : data_(std::make_shared<data>()) {
-  auto product_name = [] {
-    if (assembly::get_executing_assembly().product() != ustring::empty_string) return assembly::get_executing_assembly().product();
-    if (environment::get_command_line_args().size() != 0) return path::get_file_name_without_extension(environment::get_command_line_args()[0]);
-    return "noname"_s;
-  };
-  
-  auto company_name = [&] {
-    if (assembly::get_executing_assembly().company() != ustring::empty_string) return assembly::get_executing_assembly().company();
-    return product_name();
-  };
-
-  data_->file_settings = file_settings {native::settings::get_path(company_name(), product_name())};
+  auto product_name = assembly::get_executing_assembly().product() != ustring::empty_string ? assembly::get_executing_assembly().product() : path::get_file_name_without_extension(environment::get_command_line_args()[0]);
+  auto company_name = assembly::get_executing_assembly().company() != ustring::empty_string ? assembly::get_executing_assembly().company() : product_name;
+  data_->file_settings = file_settings {native::settings::get_path(company_name, product_name)};
 }
 
 const ustring& settings::file_path() const noexcept {

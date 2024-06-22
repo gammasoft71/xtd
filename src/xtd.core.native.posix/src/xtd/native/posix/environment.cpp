@@ -16,7 +16,7 @@ using namespace std::literals;
 using namespace xtd::native;
 
 extern char** environ;
-int_least32_t __environment_argc;
+int_least32_t __environment_argc = 0;
 char** __environment_argv;
 
 namespace {
@@ -60,6 +60,7 @@ int_least32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
 }
 
 vector<string> environment::get_command_line_args() {
+  if (__environment_argc == 0) return {"a.out"};
   return {__environment_argv, __environment_argv + __environment_argc};
 }
 
