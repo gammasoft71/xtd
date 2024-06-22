@@ -6,14 +6,14 @@ sidebar_position: 14
 
 ## Default styles
 
-```c++
+```cpp
 #define wxDEFAULT_FRAME_STYLE    wxSYSTEM_MENU|wxRESIZE_BORDER|wxMINIMIZE_BOX|wxMAXIMIZE_BOX|wxCLOSE_BOX|wxCAPTION|wxCLIP_CHILDREN
 #define wxDEFAULT_DIALOG_STYLE   wxSYSTEM_MENU|wxCLOSE_BOX|wxCAPTION
 ```
 
 ## wxStyles definitions for wxFrame and wxDialog
 
-```c++
+```cpp
 #define wxCENTRE                 0x00000001
 #define wxFRAME_NO_TASKBAR       0x00000002
 #define wxFRAME_TOOL_WINDOW      0x00000004
@@ -62,7 +62,7 @@ sidebar_position: 14
 
 ## wxExtraStyles definitions for wxFrame and wxDialog
 
-```c++
+```cpp
 #define wxWS_EX_VALIDATE_RECURSIVELY    0x00000000 // This flag is obsolete and should not be used.
 #define wxWS_EX_BLOCK_EVENTS            0x00000002
 #define wxWS_EX_TRANSIENT               0x00000004
