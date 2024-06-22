@@ -58,7 +58,7 @@ namespace console_application1 {
   };
 }
 
-startup_(console_application1::program);
+startup_(console_application1::program::main);
 ```
 
 ## Example 2
@@ -137,7 +137,7 @@ namespace console_application1 {
   };
 }
 
-startup_(console_application1::program);
+startup_(console_application1::program::main);
 ```
 
 ## Example 3
@@ -220,7 +220,7 @@ namespace console_application1 {
   };
 }
 
-startup_(console_application1::program);
+startup_(console_application1::program::main);
 ```
 
 # See also

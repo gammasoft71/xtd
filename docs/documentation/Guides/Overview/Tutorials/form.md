@@ -137,7 +137,7 @@ namespace example {
   };
 }
 
-startup_(example::form1);
+startup_(example::form1::main);
 ```
 
 ### Start position

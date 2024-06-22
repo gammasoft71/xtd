@@ -39,7 +39,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // The example creates a file named "write_lines.txt" with the following contents:
 // First line
@@ -70,7 +70,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // The example adds the following line to the contents of "write_lines.txt":
 // Fourth Line
@@ -106,7 +106,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 
 // The example creates a file named "write_file.txt" with the contents:
 // First line

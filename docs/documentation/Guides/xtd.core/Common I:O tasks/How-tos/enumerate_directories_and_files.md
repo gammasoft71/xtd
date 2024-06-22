@@ -51,7 +51,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
  
 ## Examples: Use the directory_info class
@@ -86,7 +86,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
 
 The following example uses the [directory_info::enumerate_files](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a) method to list all files whose [length](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file__info.html#a7bbc1abbd603c19f70d687770961d195) exceeds 10MB. 
@@ -145,7 +145,7 @@ public:
   }
 };
 
-startup_(program);
+startup_(program::main);
 ```
  
 ## See also

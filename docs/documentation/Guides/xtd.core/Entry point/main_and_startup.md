@@ -246,7 +246,7 @@ Behind this keyword there is a `main` global function that call `main` static me
 ## startup_ definition
 
 ```cpp
-#define startup_(main_class) \
+#define startup_(main_method) \
   auto main(int argc, char* argv[]) -> int {\
     return xtd::startup::safe_run(main_method, argc, argv);\
   }\
@@ -305,7 +305,7 @@ namespace examples {
   };
 }
 
-startup_(examples::program);
+startup_(examples::program::main);
 ```
 
 * Static `main` member function without argument and with int return value.
