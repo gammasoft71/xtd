@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a common dialog box that displays a replace dialog. This class cannot be inherited.
     /// @par Header
-    /// @code #include <xtd/forms/replace_box> @endcode
+    /// @code
+    /// #include <xtd/forms/replace_box>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

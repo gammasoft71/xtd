@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the location of tick marks in a track_bar control.
     /// @par Header
-    /// @code #include <xtd/forms/tick_style> @endcode
+    /// @code
+    /// #include <xtd/forms/tick_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

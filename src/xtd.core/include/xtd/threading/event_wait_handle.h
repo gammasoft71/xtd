@@ -16,7 +16,9 @@ namespace xtd {
     /// class event_wait_handle : public xtd::threading::wait_handle, public xtd::icomparable < xtd::threading::event_wait_handle >, public xtd::iequatable<xtd::threading::event_wait_handle>
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/event_wait_handle> @endcode
+    /// @code
+    /// #include <xtd/threading/event_wait_handle>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

@@ -9,8 +9,10 @@
 namespace xtd {
   /// @brief Represents an object reference.
   /// @par Header
-  /// @code #include <xtd/forms/object_ref> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/forms/object_ref>
+  /// @endcode
+    /// @par Namespace
   /// xtd::forms
   /// @par Library
   /// xtd.forms

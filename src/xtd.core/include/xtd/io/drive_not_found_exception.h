@@ -15,7 +15,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::io::io_exception → xtd::io::drive_not_found_exception
     /// @par Header
-    /// @code #include <xtd/io/drive_not_found_exception> @endcode
+    /// @code
+    /// #include <xtd/io/drive_not_found_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -96,7 +98,9 @@ namespace xtd {
 
 /// @brief Helper on xtd::io::drive_not_found_exception to call it with current stack frame information.
 /// @par Header
-/// @code #include <xtd/io/drive_not_found_exception> @endcode
+/// @code
+/// #include <xtd/io/drive_not_found_exception>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

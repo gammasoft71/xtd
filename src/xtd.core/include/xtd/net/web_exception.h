@@ -10,7 +10,9 @@ namespace xtd {
   namespace net {
     /// @brief The exception that is thrown when an error is made adding a xtd::net::cookie to a xtd::net::cookie_container.
     /// @par Header
-    /// @code #include <xtd/net/web_exception> @endcode
+    /// @code
+    /// #include <xtd/net/web_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::net
     /// @par Library
@@ -91,7 +93,9 @@ namespace xtd {
 
 /// @brief Helper on xtd::net::web_exception to call it with current stack frame information.
 /// @par Header
-/// @code #include <xtd/net/web_exception> @endcode
+/// @code
+/// #include <xtd/net/web_exception>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

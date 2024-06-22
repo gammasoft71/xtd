@@ -15,7 +15,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::abstract_object → xtd::diagnostics::trace_filter → xtd::diagnostics::source_filter
     /// @par Header
-    /// @code #include <xtd/diagnostics/source_filter> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/source_filter>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

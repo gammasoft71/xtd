@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a date selection range in a month calendar control.
     /// @par Header
-    /// @code #include <xtd/forms/selection_range> @endcode
+    /// @code
+    /// #include <xtd/forms/selection_range>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

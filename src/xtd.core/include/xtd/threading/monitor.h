@@ -29,7 +29,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static_object → xtd::threading::monitor
     /// @par Header
-    /// @code #include <xtd/threading/monitor> @endcode
+    /// @code
+    /// #include <xtd/threading/monitor>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

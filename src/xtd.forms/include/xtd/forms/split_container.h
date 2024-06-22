@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
     /// @par Header
-    /// @code #include <xtd/forms/split_container> @endcode
+    /// @code
+    /// #include <xtd/forms/split_container>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

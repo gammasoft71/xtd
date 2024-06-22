@@ -13,7 +13,9 @@ namespace xtd {
     /// @param sender The source of the event.
     /// @param e A date_range_event_args that contains the event data.
     /// @par Header
-    /// @code #include <xtd/forms/date_range_event_handlef> @endcode
+    /// @code
+    /// #include <xtd/forms/date_range_event_handlef>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

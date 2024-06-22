@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represent lcd label style used by lcd_label control.
     /// @par Header
-    /// @code #include <xtd/forms/lcd_style> @endcode
+    /// @code
+    /// #include <xtd/forms/lcd_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

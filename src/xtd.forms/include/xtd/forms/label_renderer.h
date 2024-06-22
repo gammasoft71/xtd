@@ -26,7 +26,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static → xtd::forms::label_renderer
     /// @par Header
-    /// @code #include <xtd/forms/label_renderer> @endcode
+    /// @code
+    /// #include <xtd/forms/label_renderer>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms::style_sheets
     /// @par Library

@@ -18,7 +18,8 @@ namespace xtd {
       /// @par Inheritance
       /// xtd::system_exception → xtd::net::sockets::socket_exception
       /// @par Header
-      /// @code #include <xtd/net/sockets/socket_exception> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/socket_exception> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library
@@ -104,7 +105,9 @@ namespace xtd {
 
 /// @brief Helper on xtd::net::sockets::socket_exception to call it with current stack frame information.
 /// @par Header
-/// @code #include <xtd/net/sockets/socket_exception> @endcode
+/// @code
+/// #include <xtd/net/sockets/socket_exception>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies options on a xtd::forms::progress_box.
     /// @par Header
-    /// @code #include <xtd/forms/progress_box_options> @endcode
+    /// @code
+    /// #include <xtd/forms/progress_box_options>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

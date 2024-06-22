@@ -27,7 +27,9 @@ namespace xtd {
     
     /// @brief Represents a xtd::forms::status_bar panel.
     /// @par Header
-    /// @code #include <xtd/forms/status_bar_panel> @endcode
+    /// @code
+    /// #include <xtd/forms/status_bar_panel>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

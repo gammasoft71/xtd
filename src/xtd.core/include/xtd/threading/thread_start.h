@@ -13,7 +13,9 @@ namespace xtd {
     /// using thread_start = xtd::action<>
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/thread_start> @endcode
+    /// @code
+    /// #include <xtd/threading/thread_start>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

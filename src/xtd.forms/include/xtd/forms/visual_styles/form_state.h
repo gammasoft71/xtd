@@ -12,7 +12,8 @@ namespace xtd {
     namespace visual_styles {
       /// @brief Specifies the visual state of a form that is drawn with visual styles.
       /// @par Header
-      /// @code #include <xtd/forms/visual_styles/form_state> @endcode
+      /// @code
+    /// #include <xtd/forms/visual_styles/form_state> @endcode
       /// @par Namespace
       /// xtd::forms::visual_style
       /// @par Library

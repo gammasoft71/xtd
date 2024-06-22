@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Allows a control to act like a button on a form.
     /// @par Header
-    /// @code #include <xtd/forms/ibutton_cntrol> @endcode
+    /// @code
+    /// #include <xtd/forms/ibutton_cntrol>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

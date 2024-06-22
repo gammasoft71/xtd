@@ -19,7 +19,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a dialog box that displays find dialog.
     /// @par Header
-    /// @code #include <xtd/forms/find_dialog> @endcode
+    /// @code
+    /// #include <xtd/forms/find_dialog>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

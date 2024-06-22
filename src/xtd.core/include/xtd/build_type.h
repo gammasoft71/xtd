@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief Identifies the build type
   /// @par Header
-  /// @code #include <xtd/build_type> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/build_type>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

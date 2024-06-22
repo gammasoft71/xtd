@@ -14,7 +14,9 @@ namespace xtd {
     /// using wait_callback = xtd::action<std::any>
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/wait_callback> @endcode
+    /// @code
+    /// #include <xtd/threading/wait_callback>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

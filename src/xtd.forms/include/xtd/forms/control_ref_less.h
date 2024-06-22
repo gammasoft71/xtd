@@ -11,7 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents less comparator for control_ref.
     /// @par Header
-    /// @code #include <xtd/forms/control_ref_less> @endcode
+    /// @code
+    /// #include <xtd/forms/control_ref_less>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

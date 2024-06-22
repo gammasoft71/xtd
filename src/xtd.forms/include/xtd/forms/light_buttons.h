@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a collection of light_button objects for use by a Windows Forms application.
     /// @par Header
-    /// @code #include <xtd/forms/light_buttons> @endcode
+    /// @code
+    /// #include <xtd/forms/light_buttons>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

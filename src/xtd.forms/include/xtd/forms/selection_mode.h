@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the selection behavior of a list box.
     /// @par Header
-    /// @code #include <xtd/forms/selection_mode> @endcode
+    /// @code
+    /// #include <xtd/forms/selection_mode>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

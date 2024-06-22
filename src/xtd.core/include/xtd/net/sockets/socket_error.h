@@ -19,7 +19,8 @@ namespace xtd {
       /// enum class socket_error
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/net/sockets/socket_error> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/socket_error> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

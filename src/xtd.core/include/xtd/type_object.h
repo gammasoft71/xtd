@@ -26,8 +26,10 @@ namespace xtd {
   /// @{
   /// @brief Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
   /// @par Header
-  /// @code #include <xtd/type_object> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/type_object>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

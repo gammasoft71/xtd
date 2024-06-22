@@ -45,8 +45,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -65,8 +67,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -85,8 +89,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -105,8 +111,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -125,8 +133,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -145,8 +155,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -165,8 +177,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -185,8 +199,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -205,8 +221,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -225,8 +243,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -245,8 +265,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -265,8 +287,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -285,8 +309,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -305,8 +331,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -325,8 +353,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -343,8 +373,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -356,8 +388,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -374,8 +408,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -387,8 +423,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -405,8 +443,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -418,8 +458,10 @@ namespace xtd {
   
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
-  /// @code #include <xtd/is> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/is>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

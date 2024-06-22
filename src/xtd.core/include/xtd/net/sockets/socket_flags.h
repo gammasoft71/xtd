@@ -19,7 +19,8 @@ namespace xtd {
       /// enum class socket_flags
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/net/sockets/socket_flags> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/socket_flags> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

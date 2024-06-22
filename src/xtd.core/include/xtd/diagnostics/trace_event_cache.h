@@ -19,7 +19,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::trace_event_cache
     /// @par Header
-    /// @code #include <xtd/diagnostics/trace_event_cache> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/trace_event_cache>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

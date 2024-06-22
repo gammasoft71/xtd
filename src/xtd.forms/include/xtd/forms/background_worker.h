@@ -15,7 +15,9 @@ namespace xtd {
   namespace forms {
     /// @brief Executes an operation on a separate thread.
     /// @par Header
-    /// @code #include <xtd/forms/background_worker> @endcode
+    /// @code
+    /// #include <xtd/forms/background_worker>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

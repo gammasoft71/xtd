@@ -11,7 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Prompts the user to select a location for saving a file. This class cannot be inherited.
     /// @par Header
-    /// @code #include <xtd/forms/save_file_dialog> @endcode
+    /// @code
+    /// #include <xtd/forms/save_file_dialog>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

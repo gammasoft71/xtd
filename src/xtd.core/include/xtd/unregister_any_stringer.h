@@ -18,7 +18,9 @@ extern std::unordered_map<std::type_index, std::function<std::string(std::any co
 namespace xtd {
   /// @brief Unregister an any stringer method for a specified type.
   /// @par Header
-  /// @code #include <xtd/any> @endcode
+  /// @code
+  /// #include <xtd/any>
+/// @endcode
 /// @par Namespace
   /// xtd
   /// @par Library

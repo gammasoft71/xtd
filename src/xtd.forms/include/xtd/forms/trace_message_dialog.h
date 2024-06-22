@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Displays a message window and write debug, which presents a debug message to the user.
     /// @par Header
-    /// @code #include <xtd/forms/trace_message_dialog> @endcode
+    /// @code
+    /// #include <xtd/forms/trace_message_dialog>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

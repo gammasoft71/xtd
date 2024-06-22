@@ -25,7 +25,8 @@ namespace xtd {
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::ip_packet_information
       /// @par Header
-      /// @code #include <xtd/net/sockets/ip_packet_information> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/ip_packet_information> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

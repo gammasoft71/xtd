@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Used to group collections of controls in a collapsible panel.
     /// @par Header
-    /// @code #include <xtd/forms/collapsible_panel> @endcode
+    /// @code
+    /// #include <xtd/forms/collapsible_panel>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

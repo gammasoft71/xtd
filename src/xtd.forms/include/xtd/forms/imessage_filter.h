@@ -11,7 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Defines a message filter interface.
     /// @par Header
-    /// @code #include <xtd/forms/imessage_filter> @endcode
+    /// @code
+    /// #include <xtd/forms/imessage_filter>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

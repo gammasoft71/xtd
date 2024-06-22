@@ -16,7 +16,9 @@ namespace xtd {
   namespace forms {
     /// @brief Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
     /// @par Header
-    /// @code #include <xtd/forms/timer> @endcode
+    /// @code
+    /// #include <xtd/forms/timer>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

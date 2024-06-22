@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies constants that define which mouse button was pressed. This enumeration has a flag attribute that allows a bitwise combination of its member values.
     /// @par Header
-    /// @code #include <xtd/forms/mouse_buttons> @endcode
+    /// @code
+    /// #include <xtd/forms/mouse_buttons>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

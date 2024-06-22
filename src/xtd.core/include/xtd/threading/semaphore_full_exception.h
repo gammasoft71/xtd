@@ -13,7 +13,9 @@ namespace xtd {
     /// class semaphore_full_exception : public xtd::system_exception
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/semaphore_full_exception> @endcode
+    /// @code
+    /// #include <xtd/threading/semaphore_full_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

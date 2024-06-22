@@ -13,7 +13,9 @@ namespace xtd {
     /// @param sender The source of the event.
     /// @param e An ItemCheckEventArgs that contains the event data.
     /// @par Header
-    /// @code #include <xtd/forms/item_check_event_handler> @endcode
+    /// @code
+    /// #include <xtd/forms/item_check_event_handler>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

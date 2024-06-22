@@ -22,7 +22,9 @@ namespace xtd {
     /// @par Implements
     /// xtd::forms::ibutton_control
     /// @par Header
-    /// @code #include <xtd/forms/button> @endcode
+    /// @code
+    /// #include <xtd/forms/button>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

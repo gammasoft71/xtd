@@ -14,7 +14,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a display device or multiple display devices on a single system.
     /// @par Header
-    /// @code #include <xtd/forms/padding> @endcode
+    /// @code
+    /// #include <xtd/forms/padding>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

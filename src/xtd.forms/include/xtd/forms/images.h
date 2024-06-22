@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides images factories for use by control.
     /// @par Header
-    /// @code #include <xtd/forms/images> @endcode
+    /// @code
+    /// #include <xtd/forms/images>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

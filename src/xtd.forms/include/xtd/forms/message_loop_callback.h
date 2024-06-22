@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a method that will check whether the hosting environment is still sending messages.
     /// @par Header
-    /// @code #include <xtd/forms/message_loop_callback> @endcode
+    /// @code
+    /// #include <xtd/forms/message_loop_callback>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

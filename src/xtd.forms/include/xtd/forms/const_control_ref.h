@@ -14,7 +14,9 @@ namespace xtd {
 
     /// @brief Represents a const control reference.
     /// @par Header
-    /// @code #include <xtd/forms/const_control_ref> @endcode
+    /// @code
+    /// #include <xtd/forms/const_control_ref>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

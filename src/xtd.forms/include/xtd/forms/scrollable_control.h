@@ -11,7 +11,9 @@ namespace xtd {
   namespace forms {
     /// @brief Defines a base class for controls that support auto-scrolling behavior.
     /// @par Header
-    /// @code #include <xtd/forms/scrollable_control> @endcode
+    /// @code
+    /// #include <xtd/forms/scrollable_control>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a common dialog box that displays a folder browser dialog. This class cannot be inherited.
     /// @par Header
-    /// @code #include <xtd/forms/folder_browser_box> @endcode
+    /// @code
+    /// #include <xtd/forms/folder_browser_box>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

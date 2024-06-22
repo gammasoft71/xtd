@@ -8,7 +8,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a nine segment display class.
     /// @par Header
-    /// @code #include <xtd/forms/nine_segment_display> @endcode
+    /// @code
+    /// #include <xtd/forms/nine_segment_display>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

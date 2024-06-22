@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief Identifies the compiler, supported by an assembly.
   /// @par Header
-  /// @code #include <xtd/compiler_id> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/compiler_id>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

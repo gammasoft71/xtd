@@ -19,7 +19,8 @@ namespace xtd {
       /// enum class socket_async_operation
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/net/sockets/socket_async_operation> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/socket_async_operation> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

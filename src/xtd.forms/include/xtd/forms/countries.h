@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a collection of xtd::forms::country for all countries in the world. This class cannot be inherited.
     /// @par Header
-    /// @code #include <xtd/forms/countries> @endcode
+    /// @code
+    /// #include <xtd/forms/countries>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

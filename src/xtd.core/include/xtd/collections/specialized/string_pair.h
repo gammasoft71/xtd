@@ -16,7 +16,8 @@ namespace xtd {
       /// using string_pair = std::pair<xtd::ustring, xtd::ustring>
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/collections/specialized/string_pair> @endcode
+      /// @code
+    /// #include <xtd/collections/specialized/string_pair> @endcode
       /// @par Namespace
       /// xtd::collections
       /// @par Library

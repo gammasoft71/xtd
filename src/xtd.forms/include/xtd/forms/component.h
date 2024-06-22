@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides the base implementation and enables object sharing between applications.
     /// @par Header
-    /// @code #include <xtd/forms/component> @endcode
+    /// @code
+    /// #include <xtd/forms/component>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the bounds of the control to use when defining a control's size and position. This enumeration has a flags attribute that allows a bitwise combination of its member values.
     /// @par Header
-    /// @code #include <xtd/forms/bounds_specified> @endcode
+    /// @code
+    /// #include <xtd/forms/bounds_specified>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the display and layout information for text strings.
     /// @par Header
-    /// @code #include <xtd/forms/text_format_flags> @endcode
+    /// @code
+    /// #include <xtd/forms/text_format_flags>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

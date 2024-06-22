@@ -13,7 +13,9 @@ namespace xtd {
     /// enum class trace_event_type
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/diagnostics/trace_event_type> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/trace_event_type>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

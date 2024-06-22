@@ -12,7 +12,8 @@ namespace xtd {
     namespace style_sheets {
       /// @brief The buttton data allows you to specify the box of a toggle_button control.
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/togle_button> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/togle_button> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

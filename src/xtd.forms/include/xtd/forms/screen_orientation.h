@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the angle of the screen.
     /// @par Header
-    /// @code #include <xtd/forms/screen_orientation> @endcode
+    /// @code
+    /// #include <xtd/forms/screen_orientation>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

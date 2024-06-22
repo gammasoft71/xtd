@@ -24,7 +24,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static_object → xtd::threading::thread_pool
     /// @par Header
-    /// @code #include <xtd/threading/thread_pool> @endcode
+    /// @code
+    /// #include <xtd/threading/thread_pool>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

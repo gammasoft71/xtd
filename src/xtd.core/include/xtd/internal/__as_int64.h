@@ -15,8 +15,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -35,8 +37,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -55,8 +59,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -76,8 +82,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -98,8 +106,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -120,8 +130,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -141,8 +153,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -162,8 +176,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::invalid_cast_exception throws always exception.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -182,8 +198,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -202,8 +220,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -222,8 +242,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -242,8 +264,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -262,8 +286,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -282,8 +308,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -302,8 +330,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -322,8 +352,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -342,8 +374,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -362,8 +396,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -382,8 +418,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -402,8 +440,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new int64 object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -423,8 +463,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -444,8 +486,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -466,8 +510,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a int64.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -487,8 +533,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -508,8 +556,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -530,8 +580,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -551,8 +603,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -573,8 +627,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -594,8 +650,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -615,8 +673,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -636,8 +696,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -657,8 +719,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -678,8 +742,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -699,8 +765,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -720,8 +788,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -742,8 +812,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -763,8 +835,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -785,8 +859,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -806,8 +882,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -827,8 +905,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -848,8 +928,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -869,8 +951,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -890,8 +974,10 @@ namespace xtd {
   /// @return A new int64 object converted from value.
   /// @exception xtd::argument_exception value does not represent a bool.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

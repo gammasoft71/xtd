@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies options on a xtd::forms::font_box.
     /// @par Header
-    /// @code #include <xtd/forms/font_box_options> @endcode
+    /// @code
+    /// #include <xtd/forms/font_box_options>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

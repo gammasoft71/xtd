@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief Specifies combinations of modifier and console keys that can interrupt the current process.
   /// @par Header
-  /// @code #include <xtd/console_special_key> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/console_special_key>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

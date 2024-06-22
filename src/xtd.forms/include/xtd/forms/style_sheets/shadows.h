@@ -13,7 +13,8 @@ namespace xtd {
     namespace style_sheets {
       /// @brief Represents an xtd::forms::style_sheets::shadow array.
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/shadows> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/shadows> @endcode
       /// @par Namespace
       /// xtd::forms
       /// @par Library

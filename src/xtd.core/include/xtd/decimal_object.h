@@ -11,8 +11,10 @@ namespace xtd {
   /// @{
   /// @brief Represent a boxed decimal.
   /// @par Header
-  /// @code #include <xtd/decimal_object> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/decimal_object>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

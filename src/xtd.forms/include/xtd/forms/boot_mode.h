@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the mode to start the computer in.
     /// @par Header
-    /// @code #include <xtd/forms/boot_mode> @endcode
+    /// @code
+    /// #include <xtd/forms/boot_mode>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -15,7 +15,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a shadow within a xtd::forms::shadow_label control.
     /// @par Header
-    /// @code #include <xtd/forms/shadow> @endcode
+    /// @code
+    /// #include <xtd/forms/shadow>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

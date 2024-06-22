@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief The exception that is thrown when there is an attempt to divide an integral or decimal value by zero.
   /// @par Header
-  /// @code #include <xtd/divided_by_zero_exception> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/divided_by_zero_exception>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -88,7 +90,9 @@ namespace xtd {
 
 /// @brief Helper on xtd::divided_by_zero_exception to call it with current stack frame information.
 /// @par Header
-/// @code #include <xtd/divided_by_zero_exception> @endcode
+/// @code
+/// #include <xtd/divided_by_zero_exception>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core exceptions

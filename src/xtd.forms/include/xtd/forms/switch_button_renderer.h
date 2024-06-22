@@ -19,7 +19,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides switch button renderer methods.
     /// @par Header
-    /// @code #include <xtd/forms/switch_button_renderer> @endcode
+    /// @code
+    /// #include <xtd/forms/switch_button_renderer>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

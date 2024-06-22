@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a form that displays trace form.  This class cannot be inherited.
     /// @par Header
-    /// @code #include <xtd/forms/trace_form> @endcode
+    /// @code
+    /// #include <xtd/forms/trace_form>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

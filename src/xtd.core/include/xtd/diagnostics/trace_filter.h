@@ -22,7 +22,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::abstract_object → xtd::diagnostics::trace_filter
     /// @par Header
-    /// @code #include <xtd/diagnostics/trace_filter> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/trace_filter>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

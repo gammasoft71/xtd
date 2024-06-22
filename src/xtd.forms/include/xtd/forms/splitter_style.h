@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represent splitter style used by splitter control.
     /// @par Header
-    /// @code #include <xtd/forms/splitter_style> @endcode
+    /// @code
+    /// #include <xtd/forms/splitter_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

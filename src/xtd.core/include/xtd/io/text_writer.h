@@ -25,7 +25,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::io::text_writer
     /// @par Header
-    /// @code #include <xtd/io/text_writer> @endcode
+    /// @code
+    /// #include <xtd/io/text_writer>
+    /// @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

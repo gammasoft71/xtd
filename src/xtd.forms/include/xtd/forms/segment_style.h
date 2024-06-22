@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represent segment style used by seven_segment_display, fourteen_segment_display, nine_segment_display and sixteen_segment_display controls.
     /// @par Header
-    /// @code #include <xtd/forms/segment_style> @endcode
+    /// @code
+    /// #include <xtd/forms/segment_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

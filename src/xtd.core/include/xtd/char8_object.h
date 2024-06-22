@@ -12,8 +12,10 @@ namespace xtd {
   /// @{
   /// @brief Represent a boxed char8.
   /// @par Header
-  /// @code #include <xtd/char8_object> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/char8_object>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

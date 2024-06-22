@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides focus-management functionality for controls that can function as a container for other controls.
     /// @par Header
-    /// @code #include <xtd/forms/container_control> @endcode
+    /// @code
+    /// #include <xtd/forms/container_control>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

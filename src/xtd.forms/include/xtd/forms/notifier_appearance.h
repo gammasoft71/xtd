@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the appearance of a notifier.
     /// @par Header
-    /// @code #include <xtd/forms/notifier_appearance> @endcode
+    /// @code
+    /// #include <xtd/forms/notifier_appearance>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

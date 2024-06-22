@@ -23,7 +23,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static → xtd::forms::toggle_button_renderer
     /// @par Header
-    /// @code #include <xtd/forms/toggle_button_renderer> @endcode
+    /// @code
+    /// #include <xtd/forms/toggle_button_renderer>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms::style_sheets
     /// @par Library

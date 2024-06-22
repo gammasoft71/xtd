@@ -14,7 +14,9 @@ namespace xtd {
     /// using wait_or_timer_callback = xtd::action<std::any, bool>
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/wait_or_timer_callback> @endcode
+    /// @code
+    /// #include <xtd/threading/wait_or_timer_callback>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

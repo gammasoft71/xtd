@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief Represents a xtd::delegate that has variable parameters and does not return a value.
   /// @par Header
-  /// @code #include <xtd/action> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/action>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

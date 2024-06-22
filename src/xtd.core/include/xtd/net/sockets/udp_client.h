@@ -22,7 +22,8 @@ namespace xtd {
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::udp_client
       /// @par Header
-      /// @code #include <xtd/net/sockets/udp_client> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/udp_client> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

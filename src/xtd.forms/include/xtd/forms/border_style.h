@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the border style for a control.
     /// @par Header
-    /// @code #include <xtd/forms/border_style> @endcode
+    /// @code
+    /// #include <xtd/forms/border_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

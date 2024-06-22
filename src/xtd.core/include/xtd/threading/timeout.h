@@ -18,7 +18,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static_object → xtd::threading::timeout
     /// @par Header
-    /// @code #include <xtd/threading/timeout> @endcode
+    /// @code
+    /// #include <xtd/threading/timeout>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

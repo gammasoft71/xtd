@@ -35,8 +35,10 @@ namespace xtd {
   /// @return Boxed object.
   /// @remarks The boxed object must implement operator == and operator < because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
   /// @par Header
-  /// @code #include <xtd/boxing> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/boxing>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -49,8 +51,10 @@ namespace xtd {
   /// @return Boxed object.
   /// @remarks The boxed object must implement operator == and operator < because a xtd::box implement xtd::icomparable and xtd::iequatable interfaces.
   /// @par Header
-  /// @code #include <xtd/boxing> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/boxing>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

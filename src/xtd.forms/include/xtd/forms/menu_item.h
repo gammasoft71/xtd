@@ -20,7 +20,9 @@ namespace xtd {
     
     /// @brief Represents an individual item that is displayed within a main_menu or context_menu.
     /// @par Header
-    /// @code #include <xtd/forms/menu_item> @endcode
+    /// @code
+    /// #include <xtd/forms/menu_item>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

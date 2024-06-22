@@ -15,8 +15,10 @@ namespace xtd {
   /// @return A new bool object converted from value.
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -39,8 +41,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -59,8 +63,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -79,8 +85,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -100,8 +108,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -121,8 +131,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -141,8 +153,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -161,8 +175,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -181,8 +197,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -201,8 +219,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -221,8 +241,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -241,8 +263,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -261,8 +285,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -281,8 +307,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -301,8 +329,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -321,8 +351,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -341,8 +373,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -361,8 +395,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -381,8 +417,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -401,8 +439,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -422,8 +462,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -448,8 +490,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -521,8 +565,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -542,8 +588,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -564,8 +612,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -585,8 +635,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -607,8 +659,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -628,8 +682,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -649,8 +705,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -670,8 +728,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -691,8 +751,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -712,8 +774,10 @@ namespace xtd {
   /// @return A new new_type_t object converted from value.
   /// @exception xtd::invalid_cast_exception value bad type
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -732,8 +796,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -752,8 +818,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -773,8 +841,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -793,8 +863,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -814,8 +886,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -834,8 +908,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -854,8 +930,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -874,8 +952,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -894,8 +974,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -914,8 +996,10 @@ namespace xtd {
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
   /// @par Header
-  /// @code #include <xtd/as> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/as>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

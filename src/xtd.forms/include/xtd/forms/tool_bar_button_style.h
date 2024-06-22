@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the button style within a toolbar.
     /// @par Header
-    /// @code #include <xtd/forms/tool_bar_button_style> @endcode
+    /// @code
+    /// #include <xtd/forms/tool_bar_button_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms:
     /// @par Library

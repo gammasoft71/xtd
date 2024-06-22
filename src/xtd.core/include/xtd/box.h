@@ -23,8 +23,10 @@ namespace xtd {
   /// @par Implements
   /// xtd::icomparable <>, xtd::iequatable <>
   /// @par Header
-  /// @code #include <xtd/box> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/box>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

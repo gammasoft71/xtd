@@ -29,7 +29,8 @@ namespace xtd {
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::send_packets_element
       /// @par Header
-      /// @code #include <xtd/net/sockets/send_packets_element> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/send_packets_element> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

@@ -30,7 +30,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::diagnostics::process
     /// @par Header
-    /// @code #include <xtd/diagnostics/process> @endcode
+    /// @code
+    /// #include <xtd/diagnostics/process>
+    /// @endcode
     /// @par Namespace
     /// xtd::diagnostics
     /// @par Library

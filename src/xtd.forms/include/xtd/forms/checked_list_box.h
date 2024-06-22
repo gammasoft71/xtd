@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.
     /// @par Header
-    /// @code #include <xtd/forms/checked_list_box> @endcode
+    /// @code
+    /// #include <xtd/forms/checked_list_box>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

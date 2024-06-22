@@ -22,7 +22,8 @@ namespace xtd {
       /// @par Implements
       /// xtd::forms::style_sheets::ibox_model, xtd::forms::style_sheets::itext_model, xtd::iequatable <>
       /// @par Header
-      /// @code #include <xtd/forms/style_sheets/control> @endcode
+      /// @code
+    /// #include <xtd/forms/style_sheets/control> @endcode
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

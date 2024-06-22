@@ -13,7 +13,9 @@ namespace xtd {
     /// class wait_handle_cannot_be_opened_exception : public xtd::system_exception
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/wait_handle_cannot_be_opened_exception> @endcode
+    /// @code
+    /// #include <xtd/threading/wait_handle_cannot_be_opened_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

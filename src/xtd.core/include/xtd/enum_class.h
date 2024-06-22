@@ -11,7 +11,9 @@
 
 /// @brief Provides the registration struct for enum class with specified underlying type.
 /// @par Header
-/// @code #include <xtd/enum> @endcode
+/// @code
+/// #include <xtd/enum>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core system keywords
@@ -32,7 +34,9 @@
 
 /// @brief Provides the registration struct for enum class.
 /// @par Header
-/// @code #include <xtd/enum> @endcode
+/// @code
+/// #include <xtd/enum>
+/// @endcode
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core system keywords

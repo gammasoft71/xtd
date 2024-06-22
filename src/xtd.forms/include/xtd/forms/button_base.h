@@ -23,7 +23,9 @@ namespace xtd {
     /// @par Derived
     /// xtd::forms::button, xtd::forms::check_box, xtd::forms::command_link_button, xtd::forms::light_button, xtd::forms::radio_button, xtd::forms::switch_button, xtd::forms::toggle_button, xtd::forms::up_down_button
     /// @par Header
-    /// @code #include <xtd/forms/button_base> @endcode
+    /// @code
+    /// #include <xtd/forms/button_base>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a common dialog box that displays progress dialog.
     /// @par Header
-    /// @code #include <xtd/forms/progress_dialog> @endcode
+    /// @code
+    /// #include <xtd/forms/progress_dialog>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

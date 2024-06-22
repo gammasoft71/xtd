@@ -14,7 +14,9 @@ namespace xtd {
     
     /// @brief Represents a const tab_page reference.
     /// @par Header
-    /// @code #include <xtd/forms/const_tab_page_ref> @endcode
+    /// @code
+    /// #include <xtd/forms/const_tab_page_ref>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -13,7 +13,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides a form button images factories for use by a form control.
     /// @par Header
-    /// @code #include <xtd/forms/form_button_images> @endcode
+    /// @code
+    /// #include <xtd/forms/form_button_images>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

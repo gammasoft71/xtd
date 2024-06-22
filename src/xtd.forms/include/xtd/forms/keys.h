@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies key codes and modifiers.
     /// @par Header
-    /// @code #include <xtd/forms/keys> @endcode
+    /// @code
+    /// #include <xtd/forms/keys>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

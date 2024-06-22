@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Provides data for the xtd::forms::replace_dialog::replace and xtd::forms::replace_dialog::replace_all events.
     /// @par Header
-    /// @code #include <xtd/forms/replace_event_args> @endcode
+    /// @code
+    /// #include <xtd/forms/replace_event_args>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

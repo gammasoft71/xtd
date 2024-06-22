@@ -13,7 +13,9 @@ namespace xtd {
     /// enum class thread_state
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/thread_state> @endcode
+    /// @code
+    /// #include <xtd/threading/thread_state>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

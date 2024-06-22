@@ -28,7 +28,9 @@ namespace xtd {
     
     /// @brief Provides methods used to paint common Windows controls and their elements. This class cannot be inherited.
     /// @par Header
-    /// @code #include <xtd/forms/control_paint> @endcode
+    /// @code
+    /// #include <xtd/forms/control_paint>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

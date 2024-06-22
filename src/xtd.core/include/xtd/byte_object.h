@@ -11,8 +11,10 @@ namespace xtd {
   /// @{
   /// @brief Represent a boxed byte.
   /// @par Header
-  /// @code #include <xtd/byte_object> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/byte_object>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

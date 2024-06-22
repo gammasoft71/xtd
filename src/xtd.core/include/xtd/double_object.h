@@ -11,8 +11,10 @@ namespace xtd {
   /// @{
   /// @brief Represent a boxed double.
   /// @par Header
-  /// @code #include <xtd/double_object> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/double_object>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

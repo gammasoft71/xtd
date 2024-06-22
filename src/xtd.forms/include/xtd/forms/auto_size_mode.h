@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies how a control will behave when its auto_size property is enabled.
     /// @par Header
-    /// @code #include <xtd/forms/auto_size_mode> @endcode
+    /// @code
+    /// #include <xtd/forms/auto_size_mode>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

@@ -13,7 +13,9 @@ namespace xtd {
     /// enum class file_attributes
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/io/file_attributes> @endcode
+    /// @code
+    /// #include <xtd/io/file_attributes>
+    /// @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library

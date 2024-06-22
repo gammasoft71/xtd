@@ -28,7 +28,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::object → xtd::threading::thread
     /// @par Header
-    /// @code #include <xtd/threading/thread> @endcode
+    /// @code
+    /// #include <xtd/threading/thread>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

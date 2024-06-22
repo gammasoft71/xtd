@@ -20,7 +20,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static_object → xtd::io::directory
     /// @par Header
-    /// @code #include <xtd/io/directory> @endcode
+    /// @code
+    /// #include <xtd/io/directory>
+    /// @endcode
     /// @par Namespace
     /// xtd::io
     /// @par Library
@@ -28,7 +30,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     /// @par Examples
     /// The following example shows how to retrieve all the text files from a directory and move them to a new directory. After the files are moved, they no longer exist in the original directory.
-    /// @code 
+    /// @code
     /// #include <xtd/xtd>
     ///
     /// using namespace xtd;

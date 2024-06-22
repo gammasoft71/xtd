@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the progress_bar_style of controls or elements of controls.
     /// @par Header
-    /// @code #include <xtd/forms/progress_bar_style> @endcode
+    /// @code
+    /// #include <xtd/forms/progress_bar_style>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

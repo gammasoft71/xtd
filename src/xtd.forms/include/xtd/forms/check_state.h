@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the state of a control, such as a check box, that can be checked, unchecked, or set to an indeterminate state.
     /// @par Header
-    /// @code #include <xtd/forms/check_state> @endcode
+    /// @code
+    /// #include <xtd/forms/check_state>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

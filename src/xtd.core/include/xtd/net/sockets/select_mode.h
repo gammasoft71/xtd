@@ -19,7 +19,8 @@ namespace xtd {
       /// enum class select_mode
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/net/sockets/select_mode> @endcode
+      /// @code
+    /// #include <xtd/net/sockets/select_mode> @endcode
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

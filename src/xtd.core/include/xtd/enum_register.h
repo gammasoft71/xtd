@@ -17,8 +17,10 @@ namespace xtd {
   /// struct enum_register
   /// @endcode
   /// @par Header
-  /// @code #include <xtd/enum_register> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/enum_register>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

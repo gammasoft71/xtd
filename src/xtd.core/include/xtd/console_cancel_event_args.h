@@ -9,8 +9,10 @@
 namespace xtd {
   /// @brief Provides data for the console::cancel_key_press event. This class cannot be inherited.
   /// @par Header
-  /// @code #include <xtd/console_cancel_event_args> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/console_cancel_event_args>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

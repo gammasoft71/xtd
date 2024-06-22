@@ -13,7 +13,9 @@ namespace xtd {
     /// class barrier_post_phase_exception : public xtd::system_exception
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/barrier_post_phase_exception> @endcode
+    /// @code
+    /// #include <xtd/threading/barrier_post_phase_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

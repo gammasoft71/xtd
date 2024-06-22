@@ -16,7 +16,8 @@ namespace xtd {
       /// using string_vector = std::vector<xtd::ustring>
       /// @endcode
       /// @par Header
-      /// @code #include <xtd/collections/specialized/string_vector> @endcode
+      /// @code
+    /// #include <xtd/collections/specialized/string_vector> @endcode
       /// @par Namespace
       /// xtd::collections
       /// @par Library

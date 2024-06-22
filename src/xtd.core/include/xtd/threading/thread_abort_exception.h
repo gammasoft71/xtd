@@ -13,7 +13,9 @@ namespace xtd {
     /// class thread_abort_exception : public xtd::system_exception
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/thread_abort_exception> @endcode
+    /// @code
+    /// #include <xtd/threading/thread_abort_exception>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

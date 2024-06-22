@@ -17,7 +17,9 @@ namespace xtd {
     
     /// @brief Provides data for the xtd::forms::font_picker::font_picker_changed events.
     /// @par Header
-    /// @code #include <xtd/forms/font_picker_event_args> @endcode
+    /// @code
+    /// #include <xtd/forms/font_picker_event_args>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

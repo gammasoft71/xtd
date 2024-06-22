@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the initial position of a form.
     /// @par Header
-    /// @code #include <xtd/forms/form_start_position> @endcode
+    /// @code
+    /// #include <xtd/forms/form_start_position>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

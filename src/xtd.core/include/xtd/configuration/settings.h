@@ -13,7 +13,9 @@ namespace xtd {
   namespace configuration {
     /// @brief Represent settings associate to the application.
     /// @par Header
-    /// @code #include <xtd/configuration/settings> @endcode
+    /// @code
+    /// #include <xtd/configuration/settings>
+    /// @endcode
     /// @par Namespace
     /// xtd
     /// @par Library

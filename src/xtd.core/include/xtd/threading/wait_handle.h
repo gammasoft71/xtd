@@ -26,7 +26,9 @@ namespace xtd {
     /// class core_export_ wait_handle abstract_
     /// @endcode
     /// @par Header
-    /// @code #include <xtd/threading/wait_handle> @endcode
+    /// @code
+    /// #include <xtd/threading/wait_handle>
+    /// @endcode
     /// @par Namespace
     /// xtd::threading
     /// @par Library

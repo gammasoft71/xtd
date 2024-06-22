@@ -8,8 +8,10 @@
 namespace xtd {
   /// @brief Represents the SHIFT, ALT, and CTRL modifier keys on a keyboard.
   /// @par Header
-  /// @code #include <xtd/console_modifiers> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/console_modifiers>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

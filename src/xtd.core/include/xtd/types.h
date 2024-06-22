@@ -21,8 +21,10 @@ namespace xtd {
   /// @{
   /// @brief Represents a boolean.
   /// @par Header
-  /// @code #include <xtd/bool> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/bool>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -31,8 +33,10 @@ namespace xtd {
   using bool_ = bool;
   /// @brief Represents a 8-bit unsigned integer.
   /// @par Header
-  /// @code #include <xtd/byte> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/byte>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -41,8 +45,10 @@ namespace xtd {
   using byte = uint_least8_t;
   /// @brief Represents a character.
   /// @par Header
-  /// @code #include <xtd/char> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/char>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -54,8 +60,10 @@ namespace xtd {
 #if defined(__cpp_lib_char8_t)
   /// @brief Represents a 8-bit unicode character.
   /// @par Header
-  /// @code #include <xtd/char8> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/char8>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -66,8 +74,10 @@ namespace xtd {
   
   /// @brief Represents a 16-bit unicode character.
   /// @par Header
-  /// @code #include <xtd/char16> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/char16>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -77,8 +87,10 @@ namespace xtd {
   
   /// @brief Represents a 32-bit unicode character.
   /// @par Header
-  /// @code #include <xtd/char32> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/char32>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -88,8 +100,10 @@ namespace xtd {
   
   /// @brief Represents a decimal-precision floating-point number.
   /// @par Header
-  /// @code #include <xtd/decimal> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/decimal>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -99,8 +113,10 @@ namespace xtd {
 
   /// @brief Represents a double-precision floating-point number.
   /// @par Header
-  /// @code #include <xtd/double> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/double>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -110,8 +126,10 @@ namespace xtd {
 
   /// @brief Represents a 16-bit signed integer.
   /// @par Header
-  /// @code #include <xtd/int16> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/int16>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -121,8 +139,10 @@ namespace xtd {
   
   /// @brief Represents a 32-bit signed integer.
   /// @par Header
-  /// @code #include <xtd/int32> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/int32>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -132,8 +152,10 @@ namespace xtd {
   
   /// @brief Represents a 64-bit signed integer.
   /// @par Header
-  /// @code #include <xtd/int64> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/int64>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -143,8 +165,10 @@ namespace xtd {
   
   /// @brief Represent a pointer or a handle.
   /// @par Header
-  /// @code #include <xtd/intptr> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/intptr>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -154,8 +178,10 @@ namespace xtd {
   
   /// @brief Represent the signed integer type of the result of subtracting two pointers.
   /// @par Header
-  /// @code #include <xtd/ptrdiff> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/ptrdiff>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -165,8 +191,10 @@ namespace xtd {
   
   /// @brief Represents a 8-bit signed integer.
   /// @par Header
-  /// @code #include <xtd/sbyte> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/sbyte>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -176,8 +204,10 @@ namespace xtd {
 
   /// @brief Represents a single-precision floating-point number.
   /// @par Header
-  /// @code #include <xtd/single> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/single>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -187,8 +217,10 @@ namespace xtd {
 
   /// @brief Represents a size of any object in bytes
   /// @par Header
-  /// @code #include <xtd/size> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/size>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -198,8 +230,10 @@ namespace xtd {
   
   /// @brief Represents a 32-bit or 64-bit signed integer.
   /// @par Header
-  /// @code #include <xtd/slong> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/slong>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -209,8 +243,10 @@ namespace xtd {
   
   /// @brief Stores information about a type.
   /// @par Header
-  /// @code #include <xtd/type> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/type>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -220,8 +256,10 @@ namespace xtd {
   
   /// @brief Represents a 16-bit unsigned integer.
   /// @par Header
-  /// @code #include <xtd/uint16> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/uint16>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -231,8 +269,10 @@ namespace xtd {
   
   /// @brief Represents a 32-bit unsigned integer.
   /// @par Header
-  /// @code #include <xtd/uint32> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/uint32>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -242,8 +282,10 @@ namespace xtd {
   
   /// @brief Represents a 64-bit unsigned integer.
   /// @par Header
-  /// @code #include <xtd/uint64> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/uint64>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -253,8 +295,10 @@ namespace xtd {
   
   /// @brief Represent a pointer or a handle.
   /// @par Header
-  /// @code #include <xtd/uintptr> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/uintptr>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -264,8 +308,10 @@ namespace xtd {
   
   /// @brief Represents a 32-bit or 64-bit unsigned integer.
   /// @par Header
-  /// @code #include <xtd/ulong> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/ulong>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -275,8 +321,10 @@ namespace xtd {
   
   /// @brief Represents a wide character.
   /// @par Header
-  /// @code #include <xtd/wchar> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/wchar>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -288,8 +336,10 @@ namespace xtd {
   
   /// @brief Represents a null pointer value.
   /// @par Header
-  /// @code #include <xtd/null> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/null>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

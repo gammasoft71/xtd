@@ -15,8 +15,10 @@
 namespace xtd {
   /// @brief Represents API to convert base type code.
   /// @par Header
-  /// @code #include <xtd/convert> @endcode
-  /// @par Namespace
+  /// @code
+  /// #include <xtd/convert>
+  /// @endcode
+    /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

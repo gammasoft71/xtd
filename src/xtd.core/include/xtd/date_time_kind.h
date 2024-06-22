@@ -10,8 +10,10 @@ namespace xtd {
   /// @par Namespace
   /// xtd
   /// @par Header
-  /// @code #include <xtd/date_time_kind> @endcode
-  /// @par Library
+  /// @code
+  /// #include <xtd/date_time_kind>
+  /// @endcode
+    /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @remarks A member of the xtd::date_time_kind enumeration is returned by the xtd::date_time::kind property.

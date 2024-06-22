@@ -12,7 +12,9 @@ namespace xtd {
   namespace forms {
     /// @brief Represents a collection of form objects.
     /// @par Header
-    /// @code #include <xtd/forms/form_collection> @endcode
+    /// @code
+    /// #include <xtd/forms/form_collection>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

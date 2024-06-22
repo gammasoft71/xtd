@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies options on a message_box.
     /// @par Header
-    /// @code #include <xtd/forms/message_box_options> @endcode
+    /// @code
+    /// #include <xtd/forms/message_box_options>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library

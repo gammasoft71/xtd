@@ -20,7 +20,9 @@ namespace xtd {
     /// @par Inheritance
     /// xtd::static → xtd::forms::user_control_renderer
     /// @par Header
-    /// @code #include <xtd/forms/user_control_renderer> @endcode
+    /// @code
+    /// #include <xtd/forms/user_control_renderer>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms::style_sheets
     /// @par Library

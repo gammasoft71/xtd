@@ -10,7 +10,9 @@ namespace xtd {
   namespace forms {
     /// @brief Creates a use wait cursor class.
     /// @par Header
-    /// @code #include <xtd/forms/use_wait_cursor> @endcode
+    /// @code
+    /// #include <xtd/forms/use_wait_cursor>
+    /// @endcode
     /// @par Namespace
     /// xtd::forms
     /// @par Library
