@@ -23,7 +23,7 @@ Unlike other members, properties should be given noun phrase or adjective names.
 
 **✔️ DO** name properties using a noun, noun phrase, or adjective.
 
-**❌ DO NOT** have properties that match the name of "get_" or "set_" methods as in the following example:
+**❌ DO NOT** have properties that match the name of `get_` or `set_` methods as in the following example:
 
 ```cpp
 ustring text_writer() const { ... }
@@ -33,9 +33,9 @@ ustring get_text_writer(int value) { ... }
 
 This pattern typically indicates that the property should really be a method.
 
-**✔️ DO** name collection properties with a plural phrase describing the items in the collection instead of using a singular phrase followed by "_list" or "_collection."
+**✔️ DO** name collection properties with a plural phrase describing the items in the collection instead of using a singular phrase followed by `_list` or `_collection`.
 
-**✔️ DO** name boolean properties with an affirmative phrase (can_seek instead of cant_seek). Optionally, you can also prefix boolean properties with "is_", "can_", or "has_" but only where it adds value.
+**✔️ DO** name boolean properties with an affirmative phrase (can_seek instead of cant_seek). Optionally, you can also prefix boolean properties with `is_`, `can_`, or `has_` but only where it adds value.
 
 **✔️ CONSIDER** giving a property the same name as its type.
 
@@ -67,9 +67,9 @@ Examples include clicked, painting, dropped_down, and so on.
 
 For example, a close event that is raised before a window is closed would be called closing, and one that is raised after the window is closed would be called closed.
 
-**❌ DO NOT** use "before_" or "after_" prefixes or postfixes to indicate pre- and post-events. Use present and past tenses as just described.
+**❌ DO NOT** use `before_` or `after_` prefixes or postfixes to indicate pre- and post-events. Use present and past tenses as just described.
 
-**✔️ DO** name event handlers (delegates used as types of events) with the "_event_handler" suffix, as shown in the following example:
+**✔️ DO** name event handlers (delegates used as types of events) with the `_event_handler` suffix, as shown in the following example:
 
 ```cpp
 using clicked_event_handler = delegate<void(object&, const event_args&)>;
@@ -78,7 +78,7 @@ using clicked_event_handler = delegate<void(object&, const event_args&)>;
 
 The *sender* parameter represents the object that raised the event. The *sender* parameter is typically of type object, even if it is possible to employ a more specific type.
 
-**✔️ DO** name event argument classes with the "_event_args" suffix.
+**✔️ DO** name event argument classes with the `_event_args` suffix.
 
 ## Names of Fields
 
@@ -90,7 +90,7 @@ The field-naming guidelines apply to static public and protected fields. Interna
 
 **❌ DO NOT** use a prefix for field names.
 
-For example, do not use "g_" or "s_" to indicate static fields.
+For example, do not use `g_` or `s_` to indicate static fields.
 
 ## See also
 ​
