@@ -41,31 +41,31 @@ template <typename char_t>
 inline int __parse_remove_signs(std::basic_string<char_t>& str, xtd::number_styles styles) {
   int sign = 0;
   
-  while ((styles & xtd::number_styles::allow_leading_sign) == xtd::number_styles::allow_leading_sign && str.find('+') == 0) {
+  while ((styles & xtd::number_styles::allow_leading_sign) == xtd::number_styles::allow_leading_sign && !str.empty() && str.find('+') == 0) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
     str = str.substr(1, str.size() - 1);
     sign += 1;
   }
   
-  while ((styles & xtd::number_styles::allow_leading_sign) == xtd::number_styles::allow_leading_sign && str.find('-') == 0) {
+  while ((styles & xtd::number_styles::allow_leading_sign) == xtd::number_styles::allow_leading_sign && !str.empty() && str.find('-') == 0) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
     str = str.substr(1, str.size() - 1);
     sign -= 1;
   }
   
-  while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && str.rfind('+') + 1 == str.size()) {
+  while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && !str.empty() && str.rfind('+') + 1 == str.size()) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
     str.pop_back();
     sign += 1;
   }
   
-  while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && str.rfind('-') + 1 == str.size()) {
+  while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && !str.empty() && str.rfind('-') + 1 == str.size()) {
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
     str.pop_back();
     sign -= 1;
   }
   
-  while ((styles & xtd::number_styles::allow_parentheses) == xtd::number_styles::allow_parentheses && str.find('(') == 0 && str.rfind(')') + 1 == str.size()) {
+  while ((styles & xtd::number_styles::allow_parentheses) == xtd::number_styles::allow_parentheses && !str.empty() && str.find('(') == 0 && str.rfind(')') + 1 == str.size()) {
     str = str.substr(1, str.size() - 2);
     if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
     sign -= 1;
