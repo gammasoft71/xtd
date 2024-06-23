@@ -238,7 +238,7 @@ map<string, string>& environment::get_environment_variables(int_least32_t target
 
 string environment::get_know_folder_path(int_least32_t id) {
   if (id == CSIDL_HOME)
-    return get_environment_variable("HOMEPATH", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
+    return get_environment_variable("HOMEDRIVE", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + get_environment_variable("HOMEPATH", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   auto path = wstring(65535 , '\0');
   return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path.data()) == S_OK ? win32::strings::to_string(path) : "";
 }
