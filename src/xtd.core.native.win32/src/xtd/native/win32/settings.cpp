@@ -12,5 +12,5 @@ __declspec(dllimport) extern int __argc;
 __declspec(dllimport) extern char** __argv;
 
 string settings::get_path(const string& company_name, const string& product_name) {
-  return path {__argv[0]}.parent_path().string() + product_name + ".ini"s;
+  return path {path {__argv[0]}.parent_path() / path {product_name + ".ini"s}}.string();
 }
