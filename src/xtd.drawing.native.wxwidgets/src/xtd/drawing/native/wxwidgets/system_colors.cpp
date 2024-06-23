@@ -113,7 +113,7 @@ intptr system_colors::button_face() {
   #if defined(__WXOSX__)
   return __xtd__macos_system_colors_button_face__();
   #elif defined(__WXMSW__)
-  if (is_windows_dark_mode()) return 0xFF353535;
+  if (is_windows_dark_mode()) return 0xFF373737;
   return ::to_argb(0xFFFFFFFF);
   #else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
@@ -134,7 +134,7 @@ intptr system_colors::button_shadow() {
 
 intptr system_colors::control() {
   toolkit::initialize(); // Must be first
-  if (is_windows_dark_mode()) return 0xFF191919;
+  if (is_windows_dark_mode()) return 0xFF303030;
   #if defined(__WXOSX__)
   return __xtd__macos_system_colors_control__();
   #else
