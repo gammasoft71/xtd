@@ -27,7 +27,7 @@ private:
 auto main() -> int {
   try {
     //locale::global(locale {"fr_FR.utf-8"});
-    locale::global(locale {"zh_CN.utf-8"});
+    //locale::global(locale {"zh_CN.utf-8"});
   } catch (const std::exception& e) {
     message_box::show(ustring::format("Make sure specified locale is installed on your system :\n\n{}", e.what()), "Exception");
     return -1;
