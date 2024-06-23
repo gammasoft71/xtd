@@ -51,8 +51,8 @@ bool folder_browser_dialog::run_dialog(intptr hwnd, const ustring& description, 
   
   auto result = SHBrowseForFolder(&browserInfo);
   if (result) {
-    auto path = wstring {MAX_PATH, 0};
-    SHGetPathFromIDList(result, path.data());
+    wchar_t path[MAX_PATH];
+    SHGetPathFromIDList(result, path);
     selected_path = wxString(path).ToUTF8().data();
     return true;
   }
