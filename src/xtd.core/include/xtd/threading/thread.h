@@ -23,7 +23,7 @@ namespace xtd {
     
     /// @brief Creates and controls a thread, sets its priority, and gets its status.
     /// ```cpp
-    /// class core_export_ thread final : public xtd::object
+    /// class core_export_ thread : public xtd::object
     /// ```
     /// @par Inheritance
     /// xtd::object → xtd::threading::thread
