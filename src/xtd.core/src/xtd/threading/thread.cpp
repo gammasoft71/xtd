@@ -125,21 +125,22 @@ bool thread::is_background() const noexcept {
 }
 
 thread& thread::is_background(bool value) {
+  if (!data_) return *this;
   if (value) data_->state |= xtd::threading::thread_state::background;
   else data_->state &= ~xtd::threading::thread_state::background;
   return *this;
 }
 
 bool thread::is_main_thread() const noexcept {
-  return data_->managed_thread_id == main_managed_thread_id;
+  return data_ && data_->managed_thread_id == main_managed_thread_id;
 }
 
 bool thread::is_thread_pool_thread() const noexcept {
-  return data_->is_thread_pool_thread;
+  return data_ && data_->is_thread_pool_thread;
 }
 
 bool thread::joinable() const noexcept {
-  return data_ ? data_->joinable && !is_background() : false;
+  return data_ && data_->joinable && !is_background();
 }
 
 thread& thread::main_thread() {
@@ -417,8 +418,8 @@ bool thread::join_all(const std::vector<std::unique_ptr<thread>>& threads, const
 
 void thread::close() {
   if (is_main_thread() || is_unmanaged_thread()) return;
-  if (data_->joinable) join();
-  if (!is_unstarted() && !is_stopped()) native::thread::cancel(handle());
+  if (data_ && data_->joinable) join();
+  if (data_ && !is_unstarted() && !is_stopped()) native::thread::cancel(handle());
 }
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
@@ -484,31 +485,32 @@ void thread::interrupt_internal() {
 }
 
 bool thread::is_aborted() const noexcept {
-  return enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::aborted);
+  return data_ && enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::aborted);
 }
 
 bool thread::is_stopped() const noexcept {
-  return enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::stopped);
+  return data_ && enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::stopped);
 }
 
 bool thread::is_suspended() const noexcept {
-  return enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::suspended);
+  return data_ && enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::suspended);
 }
 
 void thread::is_thread_pool_thread(bool value) noexcept {
+  if (!data_) return;
   data_->is_thread_pool_thread = value;
 }
 
 bool thread::is_unmanaged_thread() const noexcept {
-  return data_->managed_thread_id == unmanaged_thread_id;
+  return data_ && data_->managed_thread_id == unmanaged_thread_id;
 }
 
 bool thread::is_unstarted() const noexcept {
-  return enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::unstarted);
+  return data_ && enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::unstarted);
 }
 
 bool thread::is_wait_sleep_join() const noexcept {
-  return enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::wait_sleep_join);
+  return data_ && enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::wait_sleep_join);
 }
 
 bool thread::join_all_ptr(const std::vector<thread*>& threads, int32 milliseconds_timeout) {
