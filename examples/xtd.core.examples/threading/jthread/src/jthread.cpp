@@ -5,7 +5,7 @@
 using namespace xtd;
 using namespace xtd::threading;
 
-int main() {
+auto main() -> int {
   auto thread_proc = [] {
     thread::current_thread().name("thread_proc");
     for (auto index = 0; index < 10; ++index, thread::sleep(100_ms))
