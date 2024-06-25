@@ -103,7 +103,14 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      
+      /// @brief Gets a value indicating the current thread wiil be joined when destroyed.
+      /// @return true if this thread will be joined when destroyed; otherwise, false.
+      bool auto_join() const noexcept;
+      /// @brief Sets a value indicating the current thread wiil be joined when destroyed.
+      /// @param value true if this thread will be joined when destroyed; otherwise, false.
+      /// @return The xtd::threading::thread current instance.
+      thread& auto_join(bool value);
+
       /// @brief Gets the native operating system handle.
       /// @return An intptr representing the native operating system handle.
       intptr handle() const noexcept;
@@ -125,6 +132,7 @@ namespace xtd {
       bool is_background() const noexcept;
       /// @brief Sets a value indicating whether or not a thread is a background thread.
       /// @param value true if this thread is or is to become a background thread; otherwise, false.
+      /// @return The xtd::threading::thread current instance.
       /// @exception xtd::threadng::thread_state_exception The thread is dead.
       /// @remarks A thread is either a background thread or a foreground thread. Background threads are identical to foreground threads, except that background threads do not prevent a process from terminating. Once all foreground threads belonging to a process have terminated, the system ends the process. Any remaining background threads are stopped and do not complete.
       /// @remarks By default, the following threads execute in the foreground (that is, their xtd::threading::thread::is_background property returns false):
@@ -161,6 +169,7 @@ namespace xtd {
       ustring name() const noexcept;
       /// @brief Sets the name of the thread.
       /// @param value A string containing the name of the thread, or empty ("") if no name was set.
+      /// @return The xtd::threading::thread current instance.
       thread& name(const ustring& value);
 
       /// @brief Gets a value indicating the scheduling priority of a thread.
