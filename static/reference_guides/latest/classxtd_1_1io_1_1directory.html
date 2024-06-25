@@ -2639,7 +2639,7 @@ public:
     try {
       directory::create_directory(sub_path);
 
-      using_ (stream_writer writer(sub_path + R"(\example.txt)")) {
+      block_scope_(stream_writer writer(sub_path + R"(\example.txt)")) {
         writer.write_line("content added");
       }
 
@@ -3187,7 +3187,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 23 2024 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jun 25 2024 22:36:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
