@@ -8,15 +8,15 @@
 namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::jthread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
-    /// @brief Creates and controls a auto join thread, sets its priority, and gets its status.
+    /// @brief Creates and controls an automatically rejoins on destruction thread, sets its priority, and gets its status.
     /// ```cpp
-    /// class core_export_ thread final : public xtd::object
+    /// class core_export_ jthread final : public xtd::threading::thread
     /// ```
     /// @par Inheritance
     /// xtd::object → xtd::threading::jthread
     /// @par Header
     /// ```cpp
-    /// #include <xtd/threading/thread>
+    /// #include <xtd/threading/jthread>
     /// ```
     /// @par Namespace
     /// xtd::threading
@@ -24,9 +24,10 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core threading
     /// @par Examples
-    /// The following example demonstrates simple threading functionality.
-    /// @include thread.cpp
+    /// The following example shows how to use xtd::threading::jthread.
+    /// @include jthread.cpp
     /// @remarks When a process starts, the system automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the xtd::threading::jthread_pool class to execute code on worker threads that are managed by the framework xrd.
+    /// @remarks An xtd::threading::jthread object is identical to an xtd::threading::thread whose xtd::threading::thread::auto_join property is set to true.
     class core_export_ jthread final : public xtd::threading::thread {
     public:
       /// @name Cosntructors
@@ -60,11 +61,11 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
-      /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
+      /// @brief Create and immedialtely start a xtd::threading::jthread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @exception xtd::argument_exception The start parameter is empty.
       static jthread start_new(const xtd::threading::thread_start& start);
-      /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
+      /// @brief Create and immedialtely start a xtd::threading::jthread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::argument_exception The start parameter is empty.
