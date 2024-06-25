@@ -2,7 +2,7 @@
 /// @brief Contains xtd.forms examples.
 ///
 /// @example application.cpp
-/// Shows how to create an application with  xtd::forms::application class.
+/// Shows how to create an application with xtd::forms::application class.
 /// @par Windows
 /// @image html application_w.png
 /// <br>
@@ -17,7 +17,7 @@
 /// @image html application_gd.png
 ///
 /// @example application_and_assert.cpp
-/// Shows how to create an application with  xtd::forms::application class and how to manage assert.
+/// Shows how to create an application with xtd::forms::application class and how to manage assert.
 /// @par Windows
 /// @image html application_and_assert_w.png
 /// <br>
@@ -32,7 +32,7 @@
 /// @image html application_and_assert_gd.png
 ///
 /// @example application_and_exception.cpp
-/// Shows how to create an application with  xtd::forms::application class and how to manage exception.
+/// Shows how to create an application with xtd::forms::application class and how to manage exception.
 /// @par Windows
 /// @image html application_and_exception_w.png
 /// <br>
@@ -47,7 +47,7 @@
 /// @image html application_and_exception_gd.png
 ///
 /// @example application_context.cpp
-/// Shows how to create an application with  xtd::forms::application class with  xtd::forms::application_context class.
+/// Shows how to create an application with xtd::forms::application class with xtd::forms::application_context class.
 /// @par Windows
 /// @image html application_context_w.png
 /// <br>
@@ -62,7 +62,7 @@
 /// @image html application_context_gd.png
 ///
 /// @example application_restart.cpp
-/// Shows how to create an application with  xtd::forms::application::restart method.
+/// Shows how to create an application with xtd::forms::application::restart method.
 /// @par Windows
 /// @image html application_restart_w.png
 /// <br>
@@ -77,7 +77,7 @@
 /// @image html application_restart_gd.png
 ///
 /// @example application_use_wait_cursor.cpp
-/// Shows how to create an application_use_wait_cursor with  xtd::forms::application::use_wait_cursor method.
+/// Shows how to create an application_use_wait_cursor with xtd::forms::application::use_wait_cursor method.
 /// @par Windows
 /// @image html application_use_wait_cursor_w.png
 /// <br>
@@ -120,6 +120,36 @@
 /// @image html application_with_manual_assembly_info_g.png
 /// <br>
 /// @image html application_with_manual_assembly_info_gd.png
+///
+/// @example application_settings.cpp
+/// demonstrates the use of xtd::settings component with CMake setting commands.
+/// @par Windows
+/// @image html application_settings_w.png
+/// <br>
+/// @image html application_settings_wd.png
+/// @par macOS
+/// @image html application_settings_m.png
+/// <br>
+/// @image html application_settings_md.png
+/// @par Gnome
+/// @image html application_settings_g.png
+/// <br>
+/// @image html application_settings_gd.png
+///
+/// @example application_settings_without_cmake_setting_commands.cpp
+/// demonstrates the use of xtd::settings component without CMake setting commands.
+/// @par Windows
+/// @image html application_settings_without_cmake_setting_commands_w.png
+/// <br>
+/// @image html application_settings_without_cmake_setting_commands_wd.png
+/// @par macOS
+/// @image html application_settings_without_cmake_setting_commands_m.png
+/// <br>
+/// @image html application_settings_without_cmake_setting_commands_md.png
+/// @par Gnome
+/// @image html application_settings_without_cmake_setting_commands_g.png
+/// <br>
+/// @image html application_settings_without_cmake_setting_commands_gd.png
 ///
 /// @example background_worker.cpp
 /// demonstrates the use of xtd::forms::background_worker component.
@@ -331,21 +361,6 @@
 /// <br>
 /// @image html screen_gd.png
 ///
-/// @example settings_example.cpp
-/// demonstrates the use of xtd::settings component.
-/// @par Windows
-/// @image html settings_example_w.png
-/// <br>
-/// @image html settings_example_wd.png
-/// @par macOS
-/// @image html settings_example_m.png
-/// <br>
-/// @image html settings_example_md.png
-/// @par Gnome
-/// @image html settings_example_g.png
-/// <br>
-/// @image html settings_example_gd.png
-///
 /// @example texts.cpp
 /// demonstrates the use of xtd::drawing::texts strings.
 /// @par Windows
@@ -392,7 +407,7 @@
 /// @image html translator_with_language_gd.png
 ///
 /// @example use_wait_cursor.cpp
-/// Shows how to create an use_wait_cursor with  xtd::forms::application class.
+/// Shows how to create an use_wait_cursor with xtd::forms::application class.
 /// @par Windows
 /// @image html use_wait_cursor_w.png
 /// <br>
@@ -1877,7 +1892,7 @@
 /// @image html image_converter_gd.png
 ///
 /// @example application_add_message_filter.cpp
-/// Shows how to create an application with  xtd::forms::application::add_message_filter method.
+/// Shows how to create an application with xtd::forms::application::add_message_filter method.
 /// @par Windows
 /// @image html application_add_message_filter_w.png
 /// <br>
@@ -1892,7 +1907,7 @@
 /// @image html application_add_message_filter_gd.png
 ///
 /// @example application_application_exit.cpp
-/// Shows how to create an application with  xtd::forms::application::application_exit event.
+/// Shows how to create an application with xtd::forms::application::application_exit event.
 /// @par Windows
 /// @image html application_application_exit_w.png
 /// <br>
@@ -2221,8 +2236,23 @@
 /// <br>
 /// @image html minesweeper_gd.png
 ///
+/// @example tetris.cpp
+/// The Tetris game is one of the most popular computer games ever created.
+/// @par Windows
+/// @image html tetris_w.png
+/// <br>
+/// @image html tetris_wd.png
+/// @par macOS
+/// @image html tetris_m.png
+/// <br>
+/// @image html tetris_md.png
+/// @par Gnome
+/// @image html tetris_g.png
+/// <br>
+/// @image html tetris_gd.png
+///
 /// @example hello_world_emoticons.cpp
-/// The classic first application "Hello, World!" with  xtd::forms::emoticon control.
+/// The classic first application "Hello, World!" with xtd::forms::emoticon control.
 /// @par Windows
 /// @image html hello_world_emoticons_w.png
 /// <br>
@@ -2237,7 +2267,7 @@
 /// @image html hello_world_emoticons_gd.png
 ///
 /// @example hello_world_label.cpp
-/// The classic first application "Hello, World!" with  xtd::forms::label control.
+/// The classic first application "Hello, World!" with xtd::forms::label control.
 /// @par Windows
 /// @image html hello_world_label_w.png
 /// <br>
@@ -2252,7 +2282,7 @@
 /// @image html hello_world_label_gd.png
 ///
 /// @example hello_world_message_box.cpp
-/// The classic first application "Hello, World!" with  xtd::forms::message_box control.
+/// The classic first application "Hello, World!" with xtd::forms::message_box dialog.
 /// @par Windows
 /// @image html hello_world_message_box_w.png
 /// <br>
@@ -2267,7 +2297,7 @@
 /// @image html hello_world_message_box_gd.png
 ///
 /// @example hello_world_message_box2.cpp
-/// The classic first application "Hello, World!" with  xtd::forms::message_box control.
+/// The classic first application "Hello, World!" with xtd::forms::message_box control.
 /// @par Windows
 /// @image html hello_world_message_box2_w.png
 /// <br>
@@ -2282,7 +2312,7 @@
 /// @image html hello_world_message_box2_gd.png
 ///
 /// @example hello_world_message_box3.cpp
-/// The classic first application "Hello, World!" with  xtd::forms::message_box control.
+/// The classic first application "Hello, World!" with xtd::forms::message_box control.
 /// @par Windows
 /// @image html hello_world_message_box3_w.png
 /// <br>
@@ -2447,7 +2477,7 @@
 /// @image html anchors_gd.png
 ///
 /// @example application_run.cpp
-/// Shows how to create an application with  xtd::forms::application class.
+/// Shows how to create an application with xtd::forms::application class.
 /// @par Windows
 /// @image html application_run_w.png
 /// <br>
@@ -2685,6 +2715,21 @@
 /// @image html docked_panels_g.png
 /// <br>
 /// @image html docked_panels_gd.png
+///
+/// @example emplace.cpp
+/// demonstrates the use of xtd::forms::control::control_collection::emplace, xtd::forms::control::control_collection::emplace_at, xtd::forms::control::control_collection::emplace_back methods.
+/// @par Windows
+/// @image html emplace_w.png
+/// <br>
+/// @image html emplace_wd.png
+/// @par macOS
+/// @image html emplace_m.png
+/// <br>
+/// @image html emplace_md.png
+/// @par Gnome
+/// @image html emplace_g.png
+/// <br>
+/// @image html emplace_gd.png
 ///
 /// @example flat_button.cpp
 /// demonstrates the use of xtd::forms::button control with flat style.
@@ -3136,21 +3181,6 @@
 /// <br>
 /// @image html screen_informations_gd.png
 ///
-/// @example settings_example2.cpp
-/// demonstrates the use of xtd::settings component.
-/// @par Windows
-/// @image html settings_example2_w.png
-/// <br>
-/// @image html settings_example2_wd.png
-/// @par macOS
-/// @image html settings_example2_m.png
-/// <br>
-/// @image html settings_example2_md.png
-/// @par Gnome
-/// @image html settings_example2_g.png
-/// <br>
-/// @image html settings_example2_gd.png
-///
 /// @example smileys.cpp
 /// demonstrates the use of xtd::forms::label control.
 /// @par Windows
@@ -3362,7 +3392,7 @@
 /// @image html test_forms_gd.png
 ///
 /// @example application_enable_dark_mode.cpp
-/// Shows how to create an application with  xtd::forms::application::enable_dark_mode method.
+/// Shows how to create an application with xtd::forms::application::enable_dark_mode method.
 /// @par Windows
 /// @image html application_enable_dark_mode_w.png
 /// <br>
@@ -3377,7 +3407,7 @@
 /// @image html application_enable_dark_mode_gd.png
 ///
 /// @example application_enable_light_mode.cpp
-/// Shows how to create an application with  xtd::forms::application::enable_light_mode method.
+/// Shows how to create an application with xtd::forms::application::enable_light_mode method.
 /// @par Windows
 /// @image html application_enable_light_mode_w.png
 /// <br>

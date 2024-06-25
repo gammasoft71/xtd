@@ -28,6 +28,9 @@
 /// @example vector_list2.cpp
 /// Shows how to use xtd::collections::vector_list class.
 ///
+/// @example file_settings.cpp
+/// Shows how to use xtd::consiguration::file_settings object.
+///
 /// @example console_background_color.cpp
 /// Shows how to use xtd::console::background_color property.
 ///
@@ -771,6 +774,9 @@
 ///
 /// @example interlocked_decrement.cpp
 /// Shows how to use xtd::threading::interlocked::decrement and xtd::threading::interlocked::increment methods.
+///
+/// @example jthread.cpp
+/// Shows how to use xtd::threading::jthread class.
 ///
 /// @example lock_guard.cpp
 /// Shows how to use xtd::threading::lock_guard class.
