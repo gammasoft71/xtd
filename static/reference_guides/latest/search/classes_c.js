@@ -1,16 +1,20 @@
 var searchData=
 [
-  ['network_5fcredential_0',['network_credential',['../classxtd_1_1net_1_1network__credential.html',1,'xtd::net']]],
-  ['nine_5fsegment_5fdisplay_1',['nine_segment_display',['../classxtd_1_1forms_1_1nine__segment__display.html',1,'xtd::forms']]],
-  ['non_5fconst_5foverload_2',['non_const_overload',['../structxtd_1_1non__const__overload.html',1,'xtd']]],
-  ['non_5fconst_5foverload_3c_20args_5ft_2e_2e_2e_20_3e_3',['non_const_overload&lt; args_t... &gt;',['../structxtd_1_1non__const__overload.html',1,'xtd']]],
-  ['not_5ffinite_5fnumber_5fexception_4',['not_finite_number_exception',['../classxtd_1_1not__finite__number__exception.html',1,'xtd']]],
-  ['not_5fimplemented_5fexception_5',['not_implemented_exception',['../classxtd_1_1not__implemented__exception.html',1,'xtd']]],
-  ['not_5fsupported_5fexception_6',['not_supported_exception',['../classxtd_1_1not__supported__exception.html',1,'xtd']]],
-  ['notifier_5fbutton_5fclick_5fevent_5fargs_7',['notifier_button_click_event_args',['../classxtd_1_1forms_1_1notifier__button__click__event__args.html',1,'xtd::forms']]],
-  ['notifier_5fclosed_5fevent_5fargs_8',['notifier_closed_event_args',['../classxtd_1_1forms_1_1notifier__closed__event__args.html',1,'xtd::forms']]],
-  ['null_5fpointer_5fexception_9',['null_pointer_exception',['../classxtd_1_1null__pointer__exception.html',1,'xtd']]],
-  ['null_5ftext_5freader_10',['null_text_reader',['../classxtd_1_1io_1_1null__text__reader.html',1,'xtd::io']]],
-  ['null_5ftext_5fwriter_11',['null_text_writer',['../classxtd_1_1io_1_1null__text__writer.html',1,'xtd::io']]],
-  ['numeric_5fup_5fdown_12',['numeric_up_down',['../classxtd_1_1forms_1_1numeric__up__down.html',1,'xtd::forms']]]
+  ['main_5fmenu_0',['main_menu',['../classxtd_1_1forms_1_1main__menu.html',1,'xtd::forms']]],
+  ['manual_5freset_5fevent_1',['manual_reset_event',['../classxtd_1_1threading_1_1manual__reset__event.html',1,'xtd::threading']]],
+  ['math_2',['math',['../classxtd_1_1math.html',1,'xtd']]],
+  ['matrix_3',['matrix',['../classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html',1,'xtd::drawing::drawing_2d']]],
+  ['menu_4',['menu',['../classxtd_1_1forms_1_1menu.html',1,'xtd::forms']]],
+  ['menu_5fimages_5',['menu_images',['../classxtd_1_1forms_1_1menu__images.html',1,'xtd::forms']]],
+  ['menu_5fitem_6',['menu_item',['../classxtd_1_1forms_1_1menu__item.html',1,'xtd::forms']]],
+  ['message_7',['message',['../classxtd_1_1forms_1_1message.html',1,'xtd::forms']]],
+  ['message_5fbox_8',['message_box',['../classxtd_1_1forms_1_1message__box.html',1,'xtd::forms']]],
+  ['message_5fdialog_9',['message_dialog',['../classxtd_1_1forms_1_1message__dialog.html',1,'xtd::forms']]],
+  ['message_5fnotifier_10',['message_notifier',['../classxtd_1_1forms_1_1message__notifier.html',1,'xtd::forms']]],
+  ['message_5fnotifier_5fbutton_11',['message_notifier_button',['../classxtd_1_1forms_1_1message__notifier__button.html',1,'xtd::forms']]],
+  ['mimetypes_5fsystem_5fimages_12',['mimetypes_system_images',['../classxtd_1_1drawing_1_1mimetypes__system__images.html',1,'xtd::drawing']]],
+  ['monitor_13',['monitor',['../classxtd_1_1threading_1_1monitor.html',1,'xtd::threading']]],
+  ['month_5fcalendar_14',['month_calendar',['../classxtd_1_1forms_1_1month__calendar.html',1,'xtd::forms']]],
+  ['mouse_5fevent_5fargs_15',['mouse_event_args',['../classxtd_1_1forms_1_1mouse__event__args.html',1,'xtd::forms']]],
+  ['mutex_16',['mutex',['../classxtd_1_1threading_1_1mutex.html',1,'xtd::threading']]]
 ];

@@ -112,9 +112,9 @@ Inheritance diagram for xtd::io::file_info:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates some of the main members of the <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> class. When the properties are first retrieved, <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> calls the <a class="el" href="classxtd_1_1io_1_1file__system__info.html#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_info::refresh</a> method and caches information about the file. On subsequent calls, you must call <a class="el" href="classxtd_1_1io_1_1file__system__info.html#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_info::refresh</a> to get the latest copy of the information. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -127,14 +127,14 @@ Inheritance diagram for xtd::io::file_info:</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a file to write to.</span></div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sw = fi1.create_text()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sw = fi1.create_text()) {</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;And&quot;</span>);</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;Welcome&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Open the file to read from.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sr = fi1.open_text()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sr = fi1.open_text()) {</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
 <div class="line">    }</div>
@@ -170,7 +170,7 @@ Inheritance diagram for xtd::io::file_info:</div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html"><div class="ttname"><a href="classxtd_1_1io_1_1path.html">xtd::io::path</a></div><div class="ttdoc">Performs operations on std::basic_string instances that contain file or directory path information....</div><div class="ttdef"><b>Definition</b> path.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:167</div></div>
-<div class="ttc" id="agroup__keywords_html_ga73249a3d4ad48e36724bccf5f3e48f2f"><div class="ttname"><a href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a></div><div class="ttdeci">#define using_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> using.h:33</div></div>
+<div class="ttc" id="agroup__keywords_html_ga9ba81b3bf268ec1eb95752f516f563e9"><div class="ttname"><a href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a></div><div class="ttdeci">#define block_scope_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> block_scope.h:25</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:16</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -405,9 +405,9 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates some of the main members of the <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> class. When the properties are first retrieved, <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> calls the <a class="el" href="classxtd_1_1io_1_1file__system__info.html#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_info::refresh</a> method and caches information about the file. On subsequent calls, you must call <a class="el" href="classxtd_1_1io_1_1file__system__info.html#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_info::refresh</a> to get the latest copy of the information. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -420,14 +420,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a file to write to.</span></div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sw = fi1.create_text()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sw = fi1.create_text()) {</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;And&quot;</span>);</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;Welcome&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Open the file to read from.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sr = fi1.open_text()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sr = fi1.open_text()) {</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
 <div class="line">    }</div>
@@ -485,9 +485,9 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>a new A new std::ofstream. </dd></dl>
 <dl class="section user"><dt>Examplle</dt><dd>The following example appends text to a file and reads from the file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -500,7 +500,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <span class="comment">// This text is added only once to the file.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!fi.exists())  {</div>
 <div class="line">      <span class="comment">//Create a file to write to.</span></div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sw = fi.create_text()) {</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sw = fi.create_text()) {</div>
 <div class="line">        sw.write_line(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line">        sw.write_line(<span class="stringliteral">&quot;And&quot;</span>);</div>
 <div class="line">        sw.write_line(<span class="stringliteral">&quot;Welcome&quot;</span>);</div>
@@ -509,14 +509,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// This text will always be added, making the file longer over time</span></div>
 <div class="line">    <span class="comment">// if it is not deleted.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sw = fi.append_text()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sw = fi.append_text()) {</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;This&quot;</span>);</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;is Extra&quot;</span>);</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;Text&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//Open the file to read from.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sr = fi.open_text()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sr = fi.open_text()) {</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
 <div class="line">    }</div>
@@ -638,7 +638,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="stringliteral"></span> </div>
 <div class="line"><span class="stringliteral">    </span><span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="comment">// Create the source file.</span></div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(ofstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>(fi1.create())) {</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(ofstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>(fi1.create())) {</div>
 <div class="line">      }</div>
 <div class="line"> </div>
 <div class="line">      <span class="comment">//Ensure that the target file does not exist.</span></div>
@@ -791,7 +791,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="stringliteral"></span> </div>
 <div class="line"><span class="stringliteral">    </span><span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="comment">// Create the source file.</span></div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(ofstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>(fi1.create())) {</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(ofstream <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>(fi1.create())) {</div>
 <div class="line">      }</div>
 <div class="line"> </div>
 <div class="line">      <span class="comment">//Ensure that the target file does not exist.</span></div>
@@ -914,9 +914,9 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd>The following example creates a file, adds some text to it, and reads from the file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_reader&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -933,13 +933,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">      fi.remove();</div>
 <div class="line">      </div>
 <div class="line">    <span class="comment">//Create the file.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = fi.create()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.create()) {</div>
 <div class="line">      <span class="keyword">auto</span> sw = <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> {fs};</div>
 <div class="line">      sw.<a class="code hl_function" href="classxtd_1_1io_1_1text__writer.html#ad9bfc3262634aa04d439143f62e51c0c">write_line</a>(<span class="stringliteral">&quot;This is some text in the file.&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//Open the stream and read it back.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = fi.open(ios::in)) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.open(ios::in)) {</div>
 <div class="line">      <span class="keyword">auto</span> sr = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> {fs};</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
@@ -986,9 +986,9 @@ This method is a wrapper for the functionality provided by <a class="el" href="c
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="classxtd_1_1io_1_1file__info.html#aa75f914801aa7d552d6745c784298db7" title="Creates a std::ofstream that writes a new text file.">xtd::io::file_info::create_text</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -1001,7 +1001,7 @@ This method is a wrapper for the functionality provided by <a class="el" href="c
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (!fi.exists()) {</div>
 <div class="line">      <span class="comment">//Create a file to write to.</span></div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sw = fi.create_text()) {</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sw = fi.create_text()) {</div>
 <div class="line">        sw.write_line(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line">        sw.write_line(<span class="stringliteral">&quot;And&quot;</span>);</div>
 <div class="line">        sw.write_line(<span class="stringliteral">&quot;Welcome&quot;</span>);</div>
@@ -1009,7 +1009,7 @@ This method is a wrapper for the functionality provided by <a class="el" href="c
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//Open the file to read from.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sr = fi.open_text()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sr = fi.open_text()) {</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
 <div class="line">    }</div>
@@ -2109,9 +2109,9 @@ The name of the file includes the file extension. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example opens a file, adds some information to the file, and reads the file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_reader&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -2128,13 +2128,13 @@ The name of the file includes the file extension. </dd></dl>
 <div class="line">      fi.remove();</div>
 <div class="line">      </div>
 <div class="line">    <span class="comment">//Create the file.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = fi.create()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.create()) {</div>
 <div class="line">      <span class="keyword">auto</span> sw = <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> {fs};</div>
 <div class="line">      sw.<a class="code hl_function" href="classxtd_1_1io_1_1text__writer.html#ad9bfc3262634aa04d439143f62e51c0c">write_line</a>(<span class="stringliteral">&quot;This is some text in the file.&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//Open the stream and read it back.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = fi.open(ios::in)) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.open(ios::in)) {</div>
 <div class="line">      <span class="keyword">auto</span> sr = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> {fs};</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
@@ -2179,9 +2179,9 @@ The name of the file includes the file extension. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example opens a file as read-only and reads from it. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_reader&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -2193,13 +2193,13 @@ The name of the file includes the file extension. </dd></dl>
 <div class="line">    <span class="keyword">auto</span> fi = <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> {<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>};</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//Create the file.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = fi.create()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.create()) {</div>
 <div class="line">      <span class="keyword">auto</span> sw = <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> {fs};</div>
 <div class="line">      sw.<a class="code hl_function" href="classxtd_1_1io_1_1text__writer.html#ad9bfc3262634aa04d439143f62e51c0c">write_line</a>(<span class="stringliteral">&quot;This is some text in the file.&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//Open the stream and read it back.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = fi.open_read()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.open_read()) {</div>
 <div class="line">      <span class="keyword">auto</span> sr = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> {fs};</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
@@ -2246,9 +2246,9 @@ The name of the file includes the file extension. </dd></dl>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="classxtd_1_1io_1_1file__info.html#aa75f914801aa7d552d6745c784298db7" title="Creates a std::ofstream that writes a new text file.">xtd::io::file_info::create_text</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -2261,7 +2261,7 @@ The name of the file includes the file extension. </dd></dl>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">if</span> (!fi.exists()) {</div>
 <div class="line">      <span class="comment">//Create a file to write to.</span></div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sw = fi.create_text()) {</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sw = fi.create_text()) {</div>
 <div class="line">        sw.write_line(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line">        sw.write_line(<span class="stringliteral">&quot;And&quot;</span>);</div>
 <div class="line">        sw.write_line(<span class="stringliteral">&quot;Welcome&quot;</span>);</div>
@@ -2269,7 +2269,7 @@ The name of the file includes the file extension. </dd></dl>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//Open the file to read from.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> sr = fi.open_text()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> sr = fi.open_text()) {</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
 <div class="line">    }</div>
@@ -2317,9 +2317,9 @@ The name of the file includes the file extension. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example opens a file for writing and then reads from the file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/file_info&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_reader&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_writer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/using&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -2336,13 +2336,13 @@ The name of the file includes the file extension. </dd></dl>
 <div class="line">      fi.remove();</div>
 <div class="line">      </div>
 <div class="line">    <span class="comment">//Create the file.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = fi.create()) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.create()) {</div>
 <div class="line">      <span class="keyword">auto</span> sw = <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> {fs};</div>
 <div class="line">      sw.<a class="code hl_function" href="classxtd_1_1io_1_1text__writer.html#ad9bfc3262634aa04d439143f62e51c0c">write_line</a>(<span class="stringliteral">&quot;This is some text in the file.&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">//Open the stream and read it back.</span></div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(<span class="keyword">auto</span> fs = fi.open(ios::in)) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = fi.open(ios::in)) {</div>
 <div class="line">      <span class="keyword">auto</span> sr = <a class="code hl_class" href="classxtd_1_1io_1_1stream__reader.html">stream_reader</a> {fs};</div>
 <div class="line">      <span class="keywordflow">while</span> (!sr.end_of_stream())</div>
 <div class="line">        console::write_line(sr.read_line());</div>
@@ -2407,7 +2407,7 @@ There is an open handle on the file, and the operating system is Windows XP or e
 <div class="line"><span class="stringliteral">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi1(<a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a>);</span></div>
 <div class="line"><span class="stringliteral"></span> </div>
 <div class="line"><span class="stringliteral">    </span><span class="keywordflow">try</span> {</div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a> (ofstream ofs = fi1.create_text()) {}</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(ofstream ofs = fi1.create_text()) {}</div>
 <div class="line">      <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> path2 = <a class="code hl_class" href="classxtd_1_1io_1_1path.html">path</a> + <span class="stringliteral">&quot;temp&quot;</span>;</div>
 <div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi2(path2);</div>
 <div class="line"> </div>
@@ -2602,7 +2602,7 @@ Pass an empty string ("") to the dest_backup_file_name parameter if you do not w
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 23 2024 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jun 25 2024 22:36:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
