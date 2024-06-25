@@ -1,9 +1,9 @@
 #include <xtd/io/binary_reader>
 #include <xtd/io/binary_writer>
 #include <xtd/io/file>
+#include <xtd/block_scope>
 #include <xtd/console>
 #include <xtd/startup>
-#include <xtd/using>
 
 using namespace std;
 using namespace xtd;
@@ -18,7 +18,7 @@ public:
   }
   
   static void write_default_values() {
-    using_(auto fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {
+    block_scope_(auto fs = file::open(file_name, ios::out | ios::binary | ios::trunc)) {
       auto writer = binary_writer {fs};
       writer << 1.250F;
       writer << R"(c:\Temp)";
@@ -34,7 +34,7 @@ public:
     auto show_status_bar = false;
 
     if (file::exists(file_name)) {
-      using_(auto fs = file::open(file_name, ios::in | ios::binary)) {
+      block_scope_(auto fs = file::open(file_name, ios::in | ios::binary)) {
         auto reader = binary_reader {fs};
         reader >> aspect_ratio;
         reader >> temp_directory;

@@ -29,16 +29,16 @@ public:
       return;
     }
     
-    using_ (ofstream fs(FILE_NAME, ios::binary | ios::out)) {
-      using_ (binary_writer w(fs)) {
+    block_scope_(ofstream fs(FILE_NAME, ios::binary | ios::out)) {
+      block_scope_(binary_writer w(fs)) {
         for (int i = 0; i < 11; i++) {
           w.write(i);
         }
       }
     }
     
-    using_ (ifstream fs(FILE_NAME, ios::binary | ios::in)) {
-      using_ (binary_reader r(fs)) {
+    block_scope_(ifstream fs(FILE_NAME, ios::binary | ios::in)) {
+      block_scope_(binary_reader r(fs)) {
         for (int i = 0; i < 11; i++) {
           console::write_line(r.read_int32());
         }

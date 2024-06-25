@@ -34,7 +34,7 @@ public:
     ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
     // Write the string array to a new file named "write_lines.txt".
-    using_ (stream_writer output_file(path::combine(doc_path, "write_lines.txt"))) {
+    block_scope_(stream_writer output_file(path::combine(doc_path, "write_lines.txt"))) {
       for (const ustring& line : lines)
         output_file.write_line(line);
     }
@@ -66,7 +66,7 @@ public:
     ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
     // Append text to an existing file named "write_lines.txt".
-    using_ (stream_writer output_file(path::combine(doc_path, "write_lines.txt"), true)) {
+    block_scope_(stream_writer output_file(path::combine(doc_path, "write_lines.txt"), true)) {
       output_file.write_line("Fourth Line");
     }
   }

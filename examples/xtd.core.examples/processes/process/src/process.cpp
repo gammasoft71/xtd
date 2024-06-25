@@ -1,6 +1,6 @@
 #include <xtd/diagnostics/process>
+#include <xtd/block_scope>
 #include <xtd/console>
-#include <xtd/using>
 
 using namespace std;
 using namespace xtd;
@@ -8,7 +8,7 @@ using namespace xtd::diagnostics;
 
 auto main() -> int {
   try {
-    using_(auto my_process = process {}) {
+    block_scope_(auto my_process = process {}) {
       my_process.start_info().use_shell_execute(false);
       // You can start any process other guidgen.
       my_process.start_info().file_name("guidgen");

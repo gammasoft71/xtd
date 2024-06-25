@@ -13,7 +13,7 @@ namespace xtd::tests {
     void test_method_(lock_object) {
       object lock_object;
       assert::is_false(monitor::is_entered(lock_object), csf_);
-      using_(lock_guard lock {lock_object}) {
+      block_scope_(lock_guard lock {lock_object}) {
         assert::is_true(monitor::is_entered(lock_object), csf_);
       }
       assert::is_false(monitor::is_entered(lock_object), csf_);
@@ -21,7 +21,7 @@ namespace xtd::tests {
     
     void test_method_(lock_string) {
       assert::is_false(monitor::is_entered("lock_string"), csf_);
-      using_(lock_guard lock {"lock_string"}) {
+      block_scope_(lock_guard lock {"lock_string"}) {
         assert::is_true(monitor::is_entered("lock_string"), csf_);
       }
       assert::is_false(monitor::is_entered("lock_string"), csf_);
@@ -30,7 +30,7 @@ namespace xtd::tests {
     void test_method_(lock_int) {
       int lock_int = 0;
       assert::is_false(monitor::is_entered(lock_int), csf_);
-      using_(lock_guard lock {lock_int}) {
+      block_scope_(lock_guard lock {lock_int}) {
         assert::is_true(monitor::is_entered(lock_int), csf_);
       }
       assert::is_false(monitor::is_entered(lock_int), csf_);
@@ -39,9 +39,9 @@ namespace xtd::tests {
     void test_method_(double_lock_guard) {
       object lock_object;
       assert::is_false(monitor::is_entered(lock_object), csf_);
-      using_(lock_guard lock1 {lock_object}) {
+      block_scope_(lock_guard lock1 {lock_object}) {
         assert::is_true(monitor::is_entered(lock_object), csf_);
-        using_(lock_guard lock2 {lock_object}) {
+        block_scope_(lock_guard lock2 {lock_object}) {
           assert::is_true(monitor::is_entered(lock_object), csf_);
         }
       }

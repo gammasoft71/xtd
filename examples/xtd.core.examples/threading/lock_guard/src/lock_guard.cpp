@@ -26,7 +26,7 @@ namespace lock_guard_example {
           auto thread_total = 0;
           auto thread_n = 0;
           auto ctr = 0;
-          using_(lock_guard lock {rnd}) {
+          block_scope_(lock_guard lock {rnd}) {
             // Generate 10,000 random integers
             for (ctr = 0; ctr < 10000; ++ctr)
               values[ctr] = rnd.next(0, 1001);
