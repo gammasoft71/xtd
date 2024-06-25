@@ -27,6 +27,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::threading;
 
 struct thread::data {
+  bool auto_join = false;
   manual_reset_event end_thread_event;
   intptr handle {invalid_handle};
   thread* safe_thread = nullptr;
@@ -97,7 +98,18 @@ thread& thread::operator=(const thread& value) {
 }
 
 thread::~thread() {
-  if (data_.use_count() == 1 && !is_stopped()) close();
+  auto auto_join = data_ && data_->auto_join && data_.use_count() == 2;
+  if (data_ && (auto_join || data_.use_count() == 1) && !is_stopped()) close();
+}
+
+bool thread::auto_join() const noexcept {
+  return  data_->auto_join;
+}
+
+thread& thread::auto_join(bool value) {
+  if (is_aborted() || is_stopped()) throw thread_state_exception {csf_};
+  data_->auto_join = value;
+  return *this;
 }
 
 intptr thread::handle() const noexcept {
