@@ -2,7 +2,7 @@
 #include <cmath>
 #include <xtd/bit_converter>
 #include <xtd/argument_out_of_range_exception>
-#include <xtd/using>
+#include <xtd/block_scope>
 #include "bytes_assert.h"
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -14,386 +14,386 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(bit_converter_tests) {
     void test_method_(get_bytes_boolean) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(false)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(false)) {
         bytes_assert::are_equal(0, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(true)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(true)) {
         bytes_assert::are_equal(1, bytes, csf_);
       }
     }
     
     void test_method_(get_bytes_char) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(' ')) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(' ')) {
         bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes('*')) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes('*')) {
         bytes_assert::are_equal(0x2A, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes('3')) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes('3')) {
         bytes_assert::are_equal(0x33, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes('A')) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes('A')) {
         bytes_assert::are_equal(0x41, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes('[')) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes('[')) {
         bytes_assert::are_equal(0x5B, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes('a')) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes('a')) {
         bytes_assert::are_equal(0x61, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes('{')) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes('{')) {
         bytes_assert::are_equal(0x7B, 0x00, 0x00, 0x00, bytes, csf_);
       }
     }
     
     void test_method_(get_bytes_double) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.0)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.0)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.0)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.0)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0x3F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(255.0)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(255.0)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0xE0, 0x6F, 0x40, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(4294967295.0)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(4294967295.0)) {
         bytes_assert::are_equal(0x00, 0x00, 0xE0, 0xFF, 0xFF, 0xFF, 0xEF, 0x41, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.00390625)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.00390625)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x70, 0x3F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.00000000023283064365386962890625)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.00000000023283064365386962890625)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0x3D, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.23456789012345E-300)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.23456789012345E-300)) {
         bytes_assert::are_equal(0xDF, 0x88, 0x1E, 0x1C, 0xFE, 0x74, 0xAA, 0x01, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345678901234565)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345678901234565)) {
         bytes_assert::are_equal(0xFA, 0x59, 0x8C, 0x42, 0xCA, 0xC0, 0xF3, 0x3F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345678901234567)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345678901234567)) {
         bytes_assert::are_equal(0xFB, 0x59, 0x8C, 0x42, 0xCA, 0xC0, 0xF3, 0x3F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345678901234569)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345678901234569)) {
         bytes_assert::are_equal(0xFC, 0x59, 0x8C, 0x42, 0xCA, 0xC0, 0xF3, 0x3F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.23456789012345678E+300)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.23456789012345678E+300)) {
         bytes_assert::are_equal(0x52, 0xD3, 0xBB, 0xBC, 0xE8, 0x7E, 0x3D, 0x7E, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<double>::lowest())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<double>::lowest())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xEF, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<double>::max())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<double>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xEF, 0x7F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(DBL_EPSILON)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(DBL_EPSILON)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xB0, 0x3C, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<double>::quiet_NaN())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<double>::quiet_NaN())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0x7F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(-std::numeric_limits<double>::infinity())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(-std::numeric_limits<double>::infinity())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<double>::infinity())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<double>::infinity())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0x7F, bytes, csf_);
       }
     }
     
     void test_method_(get_bytes_int16) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(0))) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(0))) {
         bytes_assert::are_equal(0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(15))) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(15))) {
         bytes_assert::are_equal(0x0F, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(-15))) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(-15))) {
         bytes_assert::are_equal(0xF1, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(10000))) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(10000))) {
         bytes_assert::are_equal(0x10, 0x27, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(-10000))) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(-10000))) {
         bytes_assert::are_equal(0xF0, 0xD8, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int16>::lowest())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int16>::lowest())) {
         bytes_assert::are_equal(0x00, 0x80, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int16>::max())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int16>::max())) {
         bytes_assert::are_equal(0xFF, 0x7F, bytes, csf_);
       }
     }
     
     void test_method_(get_bytes_int32) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(15)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(15)) {
         bytes_assert::are_equal(0x0F, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(-15)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(-15)) {
         bytes_assert::are_equal(0xF1, 0xFF, 0xFF, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1048576)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1048576)) {
         bytes_assert::are_equal(0x00, 0x00, 0x10, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(-1048576)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(-1048576)) {
         bytes_assert::are_equal(0x00, 0x00, 0xF0, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000)) {
         bytes_assert::are_equal(0x00, 0xCA, 0x9A, 0x3B, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(-1000000000)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(-1000000000)) {
         bytes_assert::are_equal(0x00, 0x36, 0x65, 0xC4, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int32>::lowest())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int32>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x80, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int32>::max())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int32>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0x7F, bytes, csf_);
       }
     }
     
     void test_method_(get_bytes_int64) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0LL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0LL)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xFFFFFFLL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xFFFFFFLL)) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000LL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000LL)) {
         bytes_assert::are_equal(0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(-1000000000LL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(-1000000000LL)) {
         bytes_assert::are_equal(0x00, 0x36, 0x65, 0xC4, 0xFF, 0xFF, 0xFF, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000000LL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000000LL)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(-0x100000000LL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(-0x100000000LL)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xAAAAAAAAAAAALL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xAAAAAAAAAAAALL)) {
         bytes_assert::are_equal(0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(-0xAAAAAAAAAAAALL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(-0xAAAAAAAAAAAALL)) {
         bytes_assert::are_equal(0x56, 0x55, 0x55, 0x55, 0x55, 0x55, 0xFF, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000000000000LL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000000000000LL)) {
         bytes_assert::are_equal(0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(-1000000000000000000LL)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(-1000000000000000000LL)) {
         bytes_assert::are_equal(0x00, 0x00, 0x9C, 0x58, 0x4C, 0x49, 0x1F, 0xF2, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int64>::lowest())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int64>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int64>::max())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<int64>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, bytes, csf_);
       }
     }
     
     void test_method_(get_bytes_float) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.0f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.0f)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.0f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.0f)) {
         bytes_assert::are_equal(0x00, 0x00, 0x80, 0x3F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(15.0f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(15.0f)) {
         bytes_assert::are_equal(0x00, 0x00, 0x70, 0x41, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(65535.0f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(65535.0f)) {
         bytes_assert::are_equal(0x00, 0xFF, 0x7F, 0x47, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.00390625f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.00390625f)) {
         bytes_assert::are_equal(0x00, 0x00, 0x80, 0x3B, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.00000000023283064365386962890625f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0.00000000023283064365386962890625f)) {
         bytes_assert::are_equal(0x00, 0x00, 0x80, 0x2F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345E-35f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345E-35f)) {
         bytes_assert::are_equal(0x49, 0x46, 0x83, 0x05, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345671f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345671f)) {
         bytes_assert::are_equal(0x4B, 0x06, 0x9E, 0x3F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345673f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345673f)) {
         bytes_assert::are_equal(0x4D, 0x06, 0x9E, 0x3F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345677f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.2345677f)) {
         bytes_assert::are_equal(0x50, 0x06, 0x9E, 0x3F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.23456789E+35f)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1.23456789E+35f)) {
         bytes_assert::are_equal(0x1E, 0x37, 0xBE, 0x79, bytes, csf_);
       }
       
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<float>::lowest())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<float>::lowest())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0x7F, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<float>::max())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<float>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0x7F, 0x7F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(FLT_EPSILON)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(FLT_EPSILON)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x34, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<float>::quiet_NaN())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<float>::quiet_NaN())) {
         bytes_assert::are_equal(0x00, 0x00, 0xC0, 0x7F, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(-std::numeric_limits<float>::infinity())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(-std::numeric_limits<float>::infinity())) {
         bytes_assert::are_equal(0x00, 0x00, 0x80, 0xFF, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<float>::infinity())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<float>::infinity())) {
         bytes_assert::are_equal(0x00, 0x00, 0x80, 0x7F, bytes, csf_);
       }
     }
     
     void test_method_(get_bytes_uint16_t) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<uint16>(15))) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<uint16>(15))) {
         bytes_assert::are_equal(0x0F, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<uint16>(1023))) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<uint16>(1023))) {
         bytes_assert::are_equal(0xFF, 0x03, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<uint16>(10000))) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<uint16>(10000))) {
         bytes_assert::are_equal(0x10, 0x27, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<uint16>(0))) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(static_cast<uint16>(0))) {
         bytes_assert::are_equal(0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint16>::lowest())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint16>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint16>::max())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint16>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, bytes, csf_);
       }
     }
     
     void test_method_(get_bytes_uint32) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(15u)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(15u)) {
         bytes_assert::are_equal(0x0F, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1023u)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1023u)) {
         bytes_assert::are_equal(0xFF, 0x03, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000u)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000u)) {
         bytes_assert::are_equal(0x00, 0x00, 0x10, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000u)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000u)) {
         bytes_assert::are_equal(0x00, 0xCA, 0x9A, 0x3B, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint32>::lowest())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint32>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint32>::max())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint32>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0xFF, bytes, csf_);
       }
     }
     
     void test_method_(getBytesUInt64) {
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xFFFFFFull)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xFFFFFFull)) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000ull)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000ull)) {
         bytes_assert::are_equal(0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000000ull)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0x100000000ull)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xAAAAAAAAAAAAull)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(0xAAAAAAAAAAAAull)) {
         bytes_assert::are_equal(0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000000000000ull)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(1000000000000000000ull)) {
         bytes_assert::are_equal(0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(10000000000000000000ull)) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(10000000000000000000ull)) {
         bytes_assert::are_equal(0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint64>::lowest())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint64>::lowest())) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, bytes, csf_);
       }
       
-      using_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint64>::max())) {
+      block_scope_(vector<xtd::byte> bytes = bit_converter::get_bytes(std::numeric_limits<uint64>::max())) {
         bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, bytes, csf_);
       }
     }

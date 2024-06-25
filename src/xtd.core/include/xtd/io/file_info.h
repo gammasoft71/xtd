@@ -436,7 +436,7 @@ namespace xtd {
       ///
       ///     try {
       ///       // Create the source file.
-      ///       using_(ofstream s(fi1.create())) {
+      ///       block_scope_(ofstream s(fi1.create())) {
       ///       }
       ///
       ///       //Ensure that the target file does not exist.
@@ -548,7 +548,7 @@ namespace xtd {
       ///
       ///     try {
       ///       // Create the source file.
-      ///       using_(ofstream s(fi1.create())) {
+      ///       block_scope_(ofstream s(fi1.create())) {
       ///       }
       ///
       ///       //Ensure that the target file does not exist.
@@ -774,7 +774,7 @@ namespace xtd {
       ///     file_info fi1(path);
       ///
       ///     try {
-      ///       using_ (ofstream ofs = fi1.create_text()) {}
+      ///       block_scope_(ofstream ofs = fi1.create_text()) {}
       ///       ustring path2 = path + "temp";
       ///       file_info fi2(path2);
       ///

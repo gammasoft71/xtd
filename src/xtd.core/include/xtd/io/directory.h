@@ -1562,7 +1562,7 @@ namespace xtd {
       ///     try {
       ///       directory::create_directory(sub_path);
       ///
-      ///       using_ (stream_writer writer(sub_path + R"(\example.txt)")) {
+      ///       block_scope_(stream_writer writer(sub_path + R"(\example.txt)")) {
       ///         writer.write_line("content added");
       ///       }
       ///

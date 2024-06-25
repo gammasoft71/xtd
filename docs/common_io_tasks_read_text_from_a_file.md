@@ -23,7 +23,7 @@ public:
   static auto main() {
     try {
       // Open the text file using a stream reader.
-      using_ (stream_reader sr("test_file.txt")) {
+      block_scope_(stream_reader sr("test_file.txt")) {
         // Read the stream as a string, and write the string to the console.
         console::write_line(sr.read_to_end());
       }

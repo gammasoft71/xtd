@@ -1,9 +1,9 @@
 #include <xtd/io/file_info>
 #include <xtd/io/stream_reader>
 #include <xtd/io/stream_writer>
+#include <xtd/block_scope>
 #include <xtd/console>
 #include <xtd/startup>
-#include <xtd/using>
 
 using namespace xtd;
 using namespace xtd::io;
@@ -19,13 +19,13 @@ public:
       fi.remove();
       
     // Open the stream for writing.
-    using_(auto fs = fi.open_write()) {
+    block_scope_(auto fs = fi.open_write()) {
       auto sw = stream_writer {fs};
       sw.write_line("This is some text in the file.");
     }
     
     //Open the stream and read it back.
-    using_(auto fs = fi.open_read()) {
+    block_scope_(auto fs = fi.open_read()) {
       auto sr = stream_reader {fs};
       while (!sr.end_of_stream())
         console::write_line(sr.read_line());

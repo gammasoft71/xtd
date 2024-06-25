@@ -192,7 +192,7 @@ namespace xtd {
       /// @par Examples
       /// The following example uses the net use command together with a user supplied argument to map a network resource. It then reads the standard error stream of the net command and writes it to console.
       /// ```cpp
-      /// using_(xtd::diagnostics::process my_process) {
+      /// block_scope_(xtd::diagnostics::process my_process) {
       ///   xtd::diagnostics::process_start_info my_process_start_info("net ", "use " + args[0]);
       ///
       ///   my_process_start_info.use_shell_execute(false);
@@ -301,7 +301,7 @@ namespace xtd {
       /// @par Examples
       /// The following example uses the net use command together with a user supplied argument to map a network resource. It then reads the standard error stream of the net command and writes it to console.
       /// ```cpp
-      /// using_(xtd::diagnostics::process my_process) {
+      /// block_scope_(xtd::diagnostics::process my_process) {
       ///   xtd::diagnostics::process_start_info my_process_start_info("net ", "use " + args[0]);
       ///
       ///   my_process_start_info.use_shell_execute(false);
@@ -422,7 +422,7 @@ namespace xtd {
       ///
       ///   // Start the sort process with redirected input.
       ///   // Use the sort command to sort the input text.
-      ///   using_(process my_process) {
+      ///   block_scope_(process my_process) {
       ///     my_process.start_info().file_name("sort");
       ///     my_process.start_info().use_shell_execute(false);
       ///     my_process.start_info().redirect_standard_input(true);
@@ -486,7 +486,7 @@ namespace xtd {
       ///
       ///   // Start the sort process with redirected input.
       ///   // Use the sort command to sort the input text.
-      ///   using_(process my_process) {
+      ///   block_scope_(process my_process) {
       ///     my_process.start_info().file_name("sort");
       ///     my_process.start_info().use_shell_execute(false);
       ///     my_process.start_info().redirect_standard_input(true);
@@ -546,7 +546,7 @@ namespace xtd {
       /// using namespace xtd::io;
       ///
       /// auto main() -> int {
-      ///   using_(process process) {
+      ///   block_scope_(process process) {
       ///     process.start_info().file_name("ipconfig");
       ///     process.start_info().use_shell_execute(false);
       ///     process.start_info().redirect_standard_output(true);
@@ -670,7 +670,7 @@ namespace xtd {
       /// using namespace xtd::io;
       ///
       /// auto main() -> int {
-      ///   using_(process process) {
+      ///   block_scope_(process process) {
       ///     process.start_info().file_name("ipconfig");
       ///     process.start_info().use_shell_execute(false);
       ///     process.start_info().redirect_standard_output(true);
