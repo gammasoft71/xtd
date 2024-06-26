@@ -459,7 +459,7 @@ namespace xtd::tests {
     void test_method_(get_folder_path_special_folder_application_data) {
       auto sf = environment::special_folder::application_data;
       if (environment::os_version().is_windows_platform()) assert::are_equal(__get_know_folder_path__(as<int>(sf)), environment::get_folder_path(sf), csf_);
-      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine({ environment::get_folder_path(environment::special_folder::user_profile), ".config" }), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
+      else if (environment::os_version().is_macos_platform()) assert::are_equal(io::path::combine({ environment::get_folder_path(environment::special_folder::user_profile), "Library/Preferences" }), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else if (environment::os_version().is_unix_platform()) assert::are_equal(io::path::combine({ environment::get_folder_path(environment::special_folder::user_profile), ".config" }), environment::get_folder_path(sf, environment::special_folder_option::do_not_verify), csf_);
       else assert::fail("Operating System unknown", csf_);
     }
