@@ -6,6 +6,6 @@ using namespace std;
 using namespace std::literals;
 using namespace xtd::native;
 
-string settings::get_path(const string& company_name, const string& product_name) {
-  return string {getenv("HOME")} + "/.config/"s + company_name + "/"s + product_name + ".conf"s;
+std::string settings::get_file_extension() {
+  return ".conf";
 }

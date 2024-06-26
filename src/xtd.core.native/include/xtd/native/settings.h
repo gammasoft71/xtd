@@ -30,9 +30,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms.native
     /// @ingroup xtd_forms_native native
-    /// @remarks On Windows settings are stored in registry with "HKEY_CURRENT_USER\Software\company_name\product_name" key.
-    /// @remarks On macos settings are stored in "~/Library/Preferences/product_name Preferences" file.
-    /// @remarks On linux settings are stored in "~/.product_name" file.
     /// @warning Internal use only
     class core_native_export_ settings final static_ {
       friend xtd::configuration::settings;
@@ -41,14 +38,12 @@ namespace xtd {
       
       /// @{
       /// @brief Gets settings path from product name and company name.
-      /// @param company_name The company name to make the settings path.
-      /// @param product_name The product name to make the settings path.
-      /// @return A string that represents the settings path.
-      /// @remarks On Windows settings are stored in "application_path/product_name.ini" file.
-      /// @remarks On macos settings are stored in "~/Library/Preferences/company_name/product_name Preferences" file.
-      /// @remarks On linux settings are stored in "~/.consig/company_name/product_name.conf" file.
+      /// @return A string that represents the settings file extension :
+      /// @remarks * ".ini" on Windows
+      /// @remarks * " Preferences" on macos.
+      /// @remarks * ".conf" on linux.
       /// @warning Internal use only
-      static std::string get_path(const std::string& company_name, const std::string& product_name);
+      static std::string get_file_extension();
       /// @}
     };
   }

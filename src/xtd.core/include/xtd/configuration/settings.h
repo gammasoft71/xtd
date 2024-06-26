@@ -21,7 +21,8 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core configuration
-    /// @remarks On Windows settings are stored in `application_path/product_name.ini` file.
+    /// @remarks The basic settings path can be obtained with the command : `xtd::environment::get_know_folder_path(xtd::environment::special_folder::application_data);`.
+    /// @remarks On Windows settings are stored in `/Users/($USER)/AppData/Roaming/company_name/product_name.ini` file.
     /// @remarks On macos settings are stored in `~/Library/Preferences/company_name/product_name Preferences` file.
     /// @remarks On linux settings are stored in `~/.consig/company_name/product_name.conf` file.
     /// @remarks The `product_name` is equal to the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to the filename of the first arguemnt of main.
@@ -186,7 +187,8 @@ namespace xtd {
       /// @{
       /// @brief Gets the file path of the application settings.
       /// @return The file path of the application settings.
-      /// @remarks On Windows settings are stored in `application_path/product_name.ini` file.
+      /// @remarks The basic settings path can be obtained with the command : `xtd::environment::get_know_folder_path(xtd::environment::special_folder::application_data);`.
+      /// @remarks On Windows settings are stored in `/Users/($USER)/AppData/Roaming/company_name/product_name.ini` file.
       /// @remarks On macos settings are stored in `~/Library/Preferences/company_name/product_name Preferences` file.
       /// @remarks On linux settings are stored in `~/.consig/company_name/product_name.conf` file.
       /// @remarks The `product_name` is equal to the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to the filename of the first arguemnt of main.
