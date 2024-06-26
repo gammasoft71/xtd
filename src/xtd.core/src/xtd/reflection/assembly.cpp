@@ -41,7 +41,7 @@ const ustring& assembly::identifier() const noexcept {
 }
 
 ustring assembly::location() const noexcept {
-  return path::get_directory_name(path::get_full_path(environment::get_command_line_args()[0]));
+  return environment::get_command_line_args()[0];
 }
 
 const ustring& assembly::name() const noexcept {
