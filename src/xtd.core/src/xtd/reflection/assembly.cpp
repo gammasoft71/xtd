@@ -1,8 +1,11 @@
 #include "../../../include/xtd/reflection/assembly.h"
 #include "../../../include/xtd/reflection/assembly_info.h"
+#include "../../../include/xtd/io/path.h"
+#include "../../../include/xtd/environment.h"
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::io;
 using namespace xtd::reflection;
 
 const ustring& assembly::company() const noexcept {
@@ -35,6 +38,10 @@ const ustring& assembly::guid() const noexcept {
 
 const ustring& assembly::identifier() const noexcept {
   return identifier_;
+}
+
+ustring assembly::location() const noexcept {
+  return path::get_directory_name(path::get_full_path(environment::get_command_line_args()[0]));
 }
 
 const ustring& assembly::name() const noexcept {

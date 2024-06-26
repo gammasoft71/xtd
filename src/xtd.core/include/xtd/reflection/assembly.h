@@ -66,6 +66,11 @@ namespace xtd {
       /// @return A string containing the identifier information.
       const ustring& identifier() const noexcept;
       
+      /// @brief Gets location path.
+      /// @return A string containing the location_path.
+      /// @warning If the assembly is not an executable, the result will be indeterminate.
+      ustring location() const noexcept;
+      
       /// @brief Gets name information.
       /// @return A string containing the name information.
       const ustring& name() const noexcept;
