@@ -19,7 +19,7 @@ struct settings::data {
 settings::settings() : data_(std::make_shared<data>()) {
   auto product_name = assembly::get_executing_assembly().product() != ustring::empty_string ? assembly::get_executing_assembly().product() : path::get_file_name_without_extension(environment::get_command_line_args()[0]);
   auto company_name = assembly::get_executing_assembly().company() != ustring::empty_string ? assembly::get_executing_assembly().company() : product_name;
-  data_->file_settings = file_settings {native::settings::get_path(company_name, product_name)};
+  data_->file_settings = file_settings {io::path::combine(environment::get_folder_path(environment::special_folder::application_data), company_name, product_name + native::settings::get_file_extension().c_str())};
 }
 
 const ustring& settings::file_path() const noexcept {
