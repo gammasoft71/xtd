@@ -23,6 +23,7 @@ namespace xtd::native {
   class named_semaphore;
   class path;
   class process;
+  class thread;
   class translator;
   namespace win32 {
     class strings final {
@@ -39,6 +40,7 @@ namespace xtd::native {
       friend xtd::native::named_semaphore;
       friend xtd::native::path;
       friend xtd::native::process;
+      friend xtd::native::thread;
       friend xtd::native::translator;
     protected:
       strings() = delete;
