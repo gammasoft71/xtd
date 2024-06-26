@@ -122,26 +122,24 @@ $(function() {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
 <div class="line">    text(<span class="stringliteral">&quot;About dialog with user pages example&quot;</span>);</div>
-<div class="line">    controls().push_back(button1);</div>
 <div class="line">    </div>
 <div class="line">    user_tab_page1.back_color(color::from_name(user_tab_page1.text()));</div>
 <div class="line">    user_tab_page2.back_color(color::from_name(user_tab_page2.text()));</div>
 <div class="line">    </div>
-<div class="line">    user_label1.text_align(content_alignment::middle_center).font({user_label1.font(),32}).dock(dock_style::fill).fore_color(color::black);</div>
+<div class="line">    user_label1.text_align(content_alignment::middle_center).font({user_label1.font(), 32}).dock(dock_style::fill).fore_color(color::black);</div>
 <div class="line">    user_label2.text_align(content_alignment::middle_center).font({user_label2.font(), 32}).dock(dock_style::fill).fore_color(color::black);</div>
 <div class="line"> </div>
-<div class="line">    button1.location({10, 10});</div>
-<div class="line">    button1.text(<span class="stringliteral">&quot;About...&quot;</span>);</div>
+<div class="line">    dialog.icon(system_images::from_name(<span class="stringliteral">&quot;symbolic&quot;</span>, <span class="stringliteral">&quot;contact-new&quot;</span>, <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> {64, 64}));</div>
+<div class="line">    dialog.name(<span class="stringliteral">&quot;User about dialog&quot;</span>);</div>
+<div class="line">    dialog.version(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
+<div class="line">    dialog.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
+<div class="line">    dialog.description(<span class="stringliteral">&quot;About dialog with user pages.&quot;</span>);</div>
+<div class="line">    dialog.copyright(<span class="stringliteral">&quot;Copyright (c) 2024 Gammasoft.\nAll rights reserved.&quot;</span>);</div>
+<div class="line">    dialog.website(<span class="stringliteral">&quot;https://gammasoft71.wixsite.com/gammasoft&quot;</span>);</div>
+<div class="line">    dialog.website_label(<span class="stringliteral">&quot;gammasoft website&quot;</span>);</div>
+<div class="line">    dialog.user_tab_pages().push_back_range({user_tab_page1, user_tab_page2});</div>
+<div class="line"> </div>
 <div class="line">    button1.click += [&amp;] {</div>
-<div class="line">      dialog.icon(system_images::from_name(<span class="stringliteral">&quot;symbolic&quot;</span>, <span class="stringliteral">&quot;contact-new&quot;</span>, <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> {64, 64}));</div>
-<div class="line">      dialog.name(<span class="stringliteral">&quot;User about dialog&quot;</span>);</div>
-<div class="line">      dialog.version(<span class="stringliteral">&quot;1.0&quot;</span>);</div>
-<div class="line">      dialog.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
-<div class="line">      dialog.description(<span class="stringliteral">&quot;About dialog with user pages.&quot;</span>);</div>
-<div class="line">      dialog.copyright(<span class="stringliteral">&quot;Copyright (c) 2024 Gammasoft.\nAll rights reserved.&quot;</span>);</div>
-<div class="line">      dialog.website(<span class="stringliteral">&quot;https://gammasoft71.wixsite.com/gammasoft&quot;</span>);</div>
-<div class="line">      dialog.website_label(<span class="stringliteral">&quot;gammasoft website&quot;</span>);</div>
-<div class="line">      dialog.user_tab_pages().push_back_range({user_tab_page1, user_tab_page2});</div>
 <div class="line">      dialog.show(*<span class="keyword">this</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -152,8 +150,7 @@ $(function() {
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tab__page.html">tab_page</a> user_tab_page2 = tab_page::create(<span class="stringliteral">&quot;Spring Green&quot;</span>);</div>
 <div class="line">  <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> user_label1 = label::create(user_tab_page1, color_translator::to_rgb(color::from_name(user_tab_page1.<a id="a5" name="a5"></a><a class="code hl_function" href="classxtd_1_1forms_1_1tab__page.html#a355c25c669b2e8b873a84078c486e4ed">text</a>())));</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> user_label2 = label::create(user_tab_page2, color_translator::to_rgb(color::from_name(user_tab_page2.<a class="code hl_function" href="classxtd_1_1forms_1_1tab__page.html#a355c25c669b2e8b873a84078c486e4ed">text</a>())));</div>
-<div class="line"> </div>
-<div class="line">  <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button1;</div>
+<div class="line">  <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button1 = button::create(*<span class="keyword">this</span>, <span class="stringliteral">&quot;About...&quot;</span>, {10, 10});</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -172,7 +169,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 25 2024 22:36:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jun 26 2024 12:27:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
