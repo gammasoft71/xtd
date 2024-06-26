@@ -490,7 +490,7 @@ namespace xtd::tests {
       assert::are_equal("06:12:00", time_span::parse("6:12").to_string(), csf_);
       assert::are_equal("06:12:14", time_span::parse("6:12:14").to_string(), csf_);
       assert::are_equal("06:12:14", time_span::parse("06:12:14").to_string(), csf_);
-      assert::are_equal("6.12:14:45", time_span::parse("6:12:14:45").to_string(), csf_);
+      assert::are_equal("06:12:14.0000045", time_span::parse("6:12:14:45").to_string(), csf_);
       assert::are_equal("6.12:14:45", time_span::parse("06.12:14:45").to_string(), csf_);
       assert::are_equal("6.12:14:45.3440000", time_span::parse("6.12:14:45.3440000").to_string(), csf_);
       assert::are_equal("-6.12:14:45.3440000", time_span::parse("-6.12:14:45.3440000").to_string(), csf_);
@@ -664,7 +664,7 @@ namespace xtd::tests {
       assert::are_equal("06:12:14", ts.to_string(), csf_);
       
       assert::is_true(time_span::try_parse("6:12:14:45", ts), csf_);
-      assert::are_equal("6.12:14:45", ts.to_string(), csf_);
+      assert::are_equal("06:12:14.0000045", ts.to_string(), csf_);
       
       assert::is_true(time_span::try_parse("06.12:14:45", ts), csf_);
       assert::are_equal("6.12:14:45", ts.to_string(), csf_);
