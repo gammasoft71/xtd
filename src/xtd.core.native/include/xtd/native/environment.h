@@ -153,7 +153,7 @@ namespace xtd {
       /// @brief Gets the path of the resources folder.
       /// @return A string that represents the path of the resources folder.
       /// @warning Internal use only
-      static std::string get_resources_path();
+      static std::string get_resources_path(bool gui_app);
       /// @brief Gets the service pack version represented by this operating_system object.
       /// @return string The service pack version, if service packs are supported and at least one is installed; otherwise, an empty string ("").
       /// @warning Internal use only

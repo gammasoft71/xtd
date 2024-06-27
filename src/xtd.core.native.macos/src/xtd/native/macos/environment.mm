@@ -256,8 +256,7 @@ uint_least32_t environment::get_processor_count() {
 #define __XTD_CURRENT_TARGET_ID__ __XTD_TARGET_ID_UNKNOWN__
 #endif
 
-std::string environment::get_resources_path() {
-  auto gui_app = __XTD_CURRENT_TARGET_ID__ == 2 /*__XTD_TARGET_ID_GUI_APPLICATION__*/ || __XTD_CURRENT_TARGET_ID__ == 0 /*__XTD_TARGET_ID_UNKNOWN__*/;
+std::string environment::get_resources_path(bool gui_app) {
   return (path {get_command_line_args()[0]}.parent_path() / (gui_app ? path {".."} / "Resources" : "Resources")).string();
 }
 
