@@ -98,7 +98,7 @@ namespace minesweeper {
     xtd::forms::menu_item game_marks_menu_item_ {"&Marks [?]", {*this, &minesweeper_form::on_marks_menu_click}, xtd::forms::menu_item_kind::check, properties::settings::default_settings().marks()};
     xtd::forms::menu_item game_original_color_menu_item_ {"&Original color", {*this, &minesweeper_form::on_original_color_menu_click}, xtd::forms::menu_item_kind::check, properties::settings::default_settings().original_color()};
     xtd::forms::menu_item game_separator3_menu_item_ {"-"};
-    xtd::forms::menu_item game_best_times_menu_item_ {"Best &times...", {[&] {high_scores_dialog().show_dialog(*this);}}};
+    xtd::forms::menu_item game_best_times_menu_item_ {"Best &times...", {[&] {high_scores_dialog().show_sheet_dialog(*this);}}};
     xtd::forms::menu_item game_separator4_menu_item_ {"-"};
     xtd::forms::menu_item game_exit_menu_item_ {xtd::drawing::texts::exit(), {overload_<>(xtd::forms::application::exit)}};
     xtd::forms::menu_item game_menu_item_ {"&Game", {game_new_game_menu_item_, game_separator1_menu_item_, game_beginner_menu_item_, game_inermediate_menu_item_, game_expert_menu_item_, game_custom_menu_item_, game_separator2_menu_item_, game_marks_menu_item_, game_original_color_menu_item_, game_separator3_menu_item_, game_best_times_menu_item_, game_separator4_menu_item_, game_exit_menu_item_}};
