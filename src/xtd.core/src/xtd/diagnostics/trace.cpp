@@ -1,19 +1,20 @@
 #include "../../../include/xtd/diagnostics/trace.h"
 #include "../../../include/xtd/diagnostics/debugger.h"
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
-#include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/reflection/assembly.h"
 #include "../../../include/xtd/lock.h"
 #include <mutex>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
+using namespace xtd::reflection;
 
 extern std::recursive_mutex __debug_mutex__;
 extern trace_listener_collection __listeners__;
 
 trace_listener_collection& trace::listeners_ = __listeners__;
-ustring trace::source_name_ = environment::get_command_line_args()[0];
+ustring trace::source_name_ = assembly::get_executing_assembly().location();
 
 bool trace::auto_flush() noexcept {
   return auto_flush_;

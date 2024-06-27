@@ -3,9 +3,9 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../tunit_export.h"
+#include <xtd/reflection/assembly>
 #include <xtd/io/path>
 #include <xtd/date_time>
-#include <xtd/environment>
 #include <xtd/ustring>
 #include <cstdint>
 #include <cstdlib>
@@ -249,7 +249,7 @@ namespace xtd {
       bool output_xml_ = false;
       std::optional<xtd::ustring> output_json_path_;
       std::optional<xtd::ustring> output_xml_path_;
-      xtd::ustring file_name_ = xtd::io::path::get_full_path(xtd::environment::get_command_line_args()[0]);
+      xtd::ustring file_name_ = xtd::io::path::get_full_path(xtd::reflection::assembly::get_executing_assembly().location());
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
       uint32 random_seed_ = 0;
