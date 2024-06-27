@@ -68,7 +68,7 @@ minesweeper_form::minesweeper_form() {
 }
 
 void minesweeper_form::change_level(level l) {
-  properties::settings::default_settings().level(as<int>(l));
+  properties::settings::default_settings().level(l);
   properties::settings::default_settings().save();
   
   level_ = l;
