@@ -1,3 +1,4 @@
+#include <xtd/as>
 #include <xtd/console_key_info>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>

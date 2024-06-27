@@ -1,3 +1,4 @@
+#include <xtd/convert_string>
 #include <xtd/ustring>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>

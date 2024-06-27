@@ -3,6 +3,7 @@
 #include <xtd/threading/thread_state_exception>
 #include <xtd/threading/interlocked>
 #include <xtd/diagnostics/stopwatch>
+#include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>
 #include <xtd/tunit/test_class_attribute>

@@ -1,4 +1,5 @@
-#include <xtd/convert>
+#include <xtd/convert_pointer>
+#include <xtd/environment>
 #include <xtd/guid>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
