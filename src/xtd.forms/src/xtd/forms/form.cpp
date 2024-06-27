@@ -545,6 +545,12 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
 }
 
 void form::show_sheet(const iwin32_window& owner) {
+  auto backup_text = text();
+  auto backup_control_box = control_box();
+  auto backuo_start_position = start_position();
+  auto backup_location = location();
+  start_position(form_start_position::center_parent).control_box(false).text("");
+
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
@@ -554,9 +560,16 @@ void form::show_sheet(const iwin32_window& owner) {
   data_->dialog_result = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
   if (is_handle_created()) native::form::show_sheet(handle());
+  start_position(backuo_start_position).control_box(backup_control_box).text(backup_text).location(backup_location);
 }
 
 forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
+  auto backup_text = text();
+  auto backup_control_box = control_box();
+  auto backuo_start_position = start_position();
+  auto backup_location = location();
+  start_position(form_start_position::center_parent).control_box(false).text("");
+  
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
@@ -565,7 +578,10 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   recreate_handle();
   data_->dialog_result = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
-  return is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
+  
+  auto result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
+  start_position(backuo_start_position).control_box(backup_control_box).text(backup_text).location(backup_location);
+  return result;
 }
 
 forms::create_params form::create_params() const noexcept {
