@@ -8,7 +8,6 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <filesystem>
 #include <string>
 #include <vector>
 #include <direct.h>
@@ -17,7 +16,6 @@
 #include <Lmcons.h>
 
 using namespace std;
-using namespace std::filesystem;
 using namespace xtd::native;
 
 #undef min
@@ -268,7 +266,9 @@ uint_least32_t environment::get_processor_count() {
 }
 
 std::string environment::get_resources_path(bool gui_app) {
-  return (path {get_command_line_args()[0]}.parent_path() / "Resources").string();
+  auto app_path = get_command_line_args()[0];
+  auto pos = app_path.rfind('\\');
+  return (pos == app_path.npos ? "" : app_path.substr(0, pos) + '\\') + "Resources";
 }
 
 string environment::get_service_pack() {

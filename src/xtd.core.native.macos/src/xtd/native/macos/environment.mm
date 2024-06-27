@@ -5,7 +5,6 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>
-#include <filesystem>
 #include <map>
 #include <numeric>
 #include <thread>
@@ -16,7 +15,6 @@
 #include <unistd.h>
 
 using namespace std;
-using namespace std::filesystem;
 using namespace std::literals;
 using namespace xtd::native;
 
@@ -257,7 +255,9 @@ uint_least32_t environment::get_processor_count() {
 #endif
 
 std::string environment::get_resources_path(bool gui_app) {
-  return (path {get_command_line_args()[0]}.parent_path() / (gui_app ? path {".."} / "Resources" : "Resources")).string();
+  auto app_path = get_command_line_args()[0];
+  auto pos = app_path.rfind('/');
+  return (pos == app_path.npos ? "" : app_path.substr(0, pos) + '/') + (gui_app ? "../Resources" : "Resources");
 }
 
 string environment::get_service_pack() {
