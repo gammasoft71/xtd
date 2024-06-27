@@ -1,4 +1,5 @@
 #include <xtd/drawing/texts>
+#include <xtd/translator>
 #include "custom_field_dialog.h"
 #include "../properties/settings.h"
 
