@@ -545,9 +545,9 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
 }
 
 namespace {
-  class show_sheet_params {
+  class show_sheet_params_saver {
   public:
-    show_sheet_params(form* form) : form_ {form} {
+    show_sheet_params_saver(form* form) : form_ {form} {
       if (!form_) return;
       text_ = form_->text();
       control_box_ = form_->control_box();
@@ -555,7 +555,7 @@ namespace {
       location_ = form_->location();
       form_->start_position(form_start_position::center_parent).control_box(false).text("");
     }
-    ~show_sheet_params() {
+    ~show_sheet_params_saver() {
       if (!form_) return;
       form_->start_position(start_position_).control_box(control_box_).text(text_).location(location_);
     }
@@ -569,7 +569,7 @@ namespace {
 }
 
 void form::show_sheet(const iwin32_window& owner) {
-  auto params = show_sheet_params {this};
+  auto params_saver = show_sheet_params_saver {this};
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
@@ -582,7 +582,7 @@ void form::show_sheet(const iwin32_window& owner) {
 }
 
 forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
-  auto params = show_sheet_params {this};
+  auto params_saver = show_sheet_params_saver {this};
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
