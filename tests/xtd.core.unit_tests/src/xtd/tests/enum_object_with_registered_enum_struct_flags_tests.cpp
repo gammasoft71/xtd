@@ -1,3 +1,4 @@
+#include <xtd/as>
 #include <xtd/enum_struct>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>

@@ -1,3 +1,4 @@
+#include <xtd/overflow_exception>
 #include <xtd/time_span>
 #include <xtd/divided_by_zero_exception>
 #include <xtd/int64_object>

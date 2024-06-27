@@ -1,6 +1,7 @@
 #include <xtd/forms/style_sheets/background_image>
 #include <xtd/drawing/system_colors>
 #include <xtd/not_supported_exception>
+#include <xtd/argument_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/test_class_attribute>

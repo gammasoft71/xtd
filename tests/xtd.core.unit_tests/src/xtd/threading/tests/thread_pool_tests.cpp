@@ -1,5 +1,6 @@
 #include <xtd/threading/thread_pool>
 #include <xtd/threading/interlocked>
+#include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>
 #include <xtd/tunit/test_class_attribute>

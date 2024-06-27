@@ -1,6 +1,7 @@
 #include <xtd/net/sockets/socket>
 #include <xtd/net/sockets/socket_exception>
 #include <xtd/net/ip_end_point>
+#include <xtd/environment>
 #include <xtd/object_closed_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/assume>

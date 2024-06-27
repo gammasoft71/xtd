@@ -1,3 +1,4 @@
+#include <xtd/as>
 #include <xtd/interface>
 #include <xtd/ustring>
 #include <xtd/tunit/assert>

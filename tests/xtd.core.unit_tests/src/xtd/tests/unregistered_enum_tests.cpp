@@ -1,3 +1,4 @@
+#include <xtd/as>
 #include <xtd/enum>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>

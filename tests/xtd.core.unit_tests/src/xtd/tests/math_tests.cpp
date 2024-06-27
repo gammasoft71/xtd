@@ -1,3 +1,4 @@
+#include <xtd/as>
 #include <xtd/math>
 #include <xtd/double_object>
 #include <xtd/overflow_exception>
