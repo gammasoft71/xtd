@@ -1,5 +1,6 @@
 #include <xtd/drawing/color_converter>
 #include <xtd/forms/about_dialog>
+#include <xtd/forms/tab_page>
 #include <xtd/diagnostics/process>
 #include <xtd/drawing/brushes>
 #include <xtd/random>
@@ -286,12 +287,37 @@ void minesweeper_form::mark_cell(int x, int y) {
 
 void minesweeper_form::on_about_menu_click(object& sender, const xtd::event_args& e) {
   static auto dialog = about_dialog {};
+  static auto information_page = tab_page::create("Information");
+  information_page.auto_scroll(true);
+  static auto information_label = label::create(information_page,
+                                                "The goal of the game is to uncover all the squares that do not contain\n"
+                                                "mines.\n"
+                                                "\n"
+                                                "To mark a mine use right click. Minesweeper is one of the most\n"
+                                                "interesting logic games.\n"
+                                                "\n"
+                                                "The objective of the game is to clear a rectangular board containing\n"
+                                                "hidden \"mines\" or landmine without detonating any of them, with help\n"
+                                                "from clues about the number of neighboring landmine in each field.\n"
+                                                "\n"
+                                                "Minesweeper features:\n"
+                                                "\n"
+                                                "  • Variable minefield.\n"
+                                                "  • Very addictive puzzle.\n"
+                                                "  • Its a real classic minesweeper free.\n"
+                                                "  • Adapted to the screen.\n"
+                                                "\n"
+                                                "If you like minesweeper, you're going to love this game!\n"
+                                                "\n\n");
+  information_label.left(5);
+  information_label.auto_size(true);
   dialog.icon(properties::resources::minesweeper_png());
   dialog.name("Minesweeper"_t);
   dialog.version("1.0");
   dialog.long_version("1.0.0");
   dialog.description("The goal of the game is to uncover all the squares\nthat do not contain mines."_t);
   dialog.copyright("Copyright (c) 2024 Gammasoft.\nAll rights reserved."_t);
+  dialog.user_tab_pages().push_back(information_page);
   dialog.website("https://gammasoft71.wixsite.com/gammasoft"_t);
   dialog.website_label("gammasoft website"_t);
   dialog.license("MIT License\n"
@@ -462,6 +488,6 @@ void minesweeper_form::you_win() {
     set_settings_high_scores_names[level_](gamer_name);
     properties::settings::default_settings().save();
     
-    minesweeper::high_scores_dialog().show_dialog(*this);
+    minesweeper::high_scores_dialog().show_sheet_dialog(*this);
   }
 }
