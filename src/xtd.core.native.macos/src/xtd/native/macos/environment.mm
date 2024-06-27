@@ -5,6 +5,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>
+#include <filesystem>
 #include <map>
 #include <numeric>
 #include <thread>
@@ -15,6 +16,7 @@
 #include <unistd.h>
 
 using namespace std;
+using namespace std::filesystem;
 using namespace std::literals;
 using namespace xtd::native;
 
@@ -246,12 +248,21 @@ void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int
   if (numbers.size() < 4 || !macos::strings::try_parse(numbers[3], revision)) revision = 0;
 }
 
-string environment::get_service_pack() {
-  return "";
-}
-
 uint_least32_t environment::get_processor_count() {
   return thread::hardware_concurrency();
+}
+
+#if !defined(__XTD_CURRENT_TARGET_ID__)
+#define __XTD_CURRENT_TARGET_ID__ __XTD_TARGET_ID_UNKNOWN__
+#endif
+
+std::string environment::get_resources_path() {
+  auto gui_app = __XTD_CURRENT_TARGET_ID__ == 2 /*__XTD_TARGET_ID_GUI_APPLICATION__*/ || __XTD_CURRENT_TARGET_ID__ == 0 /*__XTD_TARGET_ID_UNKNOWN__*/;
+  return (path {get_command_line_args()[0]}.parent_path() / (gui_app ? path {".."} / "Resources" : "Resources")).string();
+}
+
+string environment::get_service_pack() {
+  return "";
 }
 
 size_t environment::get_system_page_size() {
