@@ -544,13 +544,32 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   return is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_dialog(handle())) : dialog_result::cancel;
 }
 
-void form::show_sheet(const iwin32_window& owner) {
-  auto backup_text = text();
-  auto backup_control_box = control_box();
-  auto backuo_start_position = start_position();
-  auto backup_location = location();
-  start_position(form_start_position::center_parent).control_box(false).text("");
+namespace {
+  class show_sheet_params {
+  public:
+    show_sheet_params(form* form) : form_ {form} {
+      if (!form_) return;
+      text_ = form_->text();
+      control_box_ = form_->control_box();
+      start_position_ = form_->start_position();
+      location_ = form_->location();
+      form_->start_position(form_start_position::center_parent).control_box(false).text("");
+    }
+    ~show_sheet_params() {
+      if (!form_) return;
+      form_->start_position(start_position_).control_box(control_box_).text(text_).location(location_);
+    }
+  private:
+    form* form_ = nullptr;
+    ustring text_;
+    bool control_box_ = false;
+    form_start_position start_position_ = form_start_position::manual;
+    point location_;
+  };
+}
 
+void form::show_sheet(const iwin32_window& owner) {
+  auto params = show_sheet_params {this};
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
@@ -560,16 +579,10 @@ void form::show_sheet(const iwin32_window& owner) {
   data_->dialog_result = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
   if (is_handle_created()) native::form::show_sheet(handle());
-  start_position(backuo_start_position).control_box(backup_control_box).text(backup_text).location(backup_location);
 }
 
 forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
-  auto backup_text = text();
-  auto backup_control_box = control_box();
-  auto backuo_start_position = start_position();
-  auto backup_location = location();
-  start_position(form_start_position::center_parent).control_box(false).text("");
-  
+  auto params = show_sheet_params {this};
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
@@ -577,11 +590,8 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   data_->previous_screen = std::make_shared<screen>(screen::from_control(*this));
   recreate_handle();
   data_->dialog_result = forms::dialog_result::none;
-  application::raise_enter_thread_modal(event_args::empty);
-  
-  auto result = is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
-  start_position(backuo_start_position).control_box(backup_control_box).text(backup_text).location(backup_location);
-  return result;
+  application::raise_enter_thread_modal(event_args::empty);  
+  return is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
 }
 
 forms::create_params form::create_params() const noexcept {
