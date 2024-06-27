@@ -52,6 +52,10 @@ const ustring& assembly::product() const noexcept {
   return product_;
 }
 
+ustring assembly::location_path() const noexcept {
+  return path::get_directory_name(location());
+}
+
 const ustring& assembly::title() const noexcept {
   return title_;
 }
