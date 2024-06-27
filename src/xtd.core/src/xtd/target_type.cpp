@@ -8,7 +8,7 @@ bool target_type::is_console_application() const noexcept {
 }
 
 bool target_type::is_guid_application() const noexcept {
-  return target_id_ == xtd::target_id::gui_application;
+  return target_id_ == xtd::target_id::gui_application || target_id_ == xtd::target_id::unknown;
 }
 
 bool target_type::is_test_application() const noexcept {
