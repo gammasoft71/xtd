@@ -660,7 +660,8 @@ namespace xtd {
     static void on_cancel_signal(signal_cancel_event_args& e);
     static void on_program_exit(const program_exit_event_args& e);
 
-    inline static const ustring xtd_root_path() {return ustring::is_empty(__XTD_ROOT_PATH__) ? (ustring::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(__FILE__), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__;}
+    inline static bool is_gui_application() noexcept {return target_type().is_guid_application();}
+    inline static const ustring xtd_root_path() {return xtd::io::path::get_full_path(ustring::is_empty(__XTD_ROOT_PATH__) ? (ustring::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(__FILE__), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
     static signal_catcher signal_catcher_;
   };
 }

@@ -200,7 +200,7 @@ uint_least32_t environment::get_processor_count() {
   return thread::hardware_concurrency();
 }
 
-std::string environment::get_resources_path() {
+std::string environment::get_resources_path(bool gui_app) {
   return (path {get_command_line_args()[0]}.parent_path() / "Resources").string();
 }
 
