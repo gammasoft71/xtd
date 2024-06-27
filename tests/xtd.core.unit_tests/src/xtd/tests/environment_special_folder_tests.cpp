@@ -290,12 +290,18 @@ namespace xtd::tests {
       assert::are_equal(environment::special_folder::home, enum_object<>::parse<environment::special_folder>("home"), csf_);
     }
     
+    void test_method_(application_resources) {
+      assert::are_equal(999, enum_object<>::to_int32(environment::special_folder::application_resources), csf_);
+      assert::are_equal("application_resources", enum_object<>::to_string(environment::special_folder::application_resources), csf_);
+      assert::are_equal(environment::special_folder::application_resources, enum_object<>::parse<environment::special_folder>("application_resources"), csf_);
+    }
+    
     void test_method_(xtd_install) {
       assert::are_equal(1000, enum_object<>::to_int32(environment::special_folder::xtd_install), csf_);
       assert::are_equal("xtd_install", enum_object<>::to_string(environment::special_folder::xtd_install), csf_);
       assert::are_equal(environment::special_folder::xtd_install, enum_object<>::parse<environment::special_folder>("xtd_install"), csf_);
     }
-    
+
     void test_method_(xtd_locale) {
       assert::are_equal(1001, enum_object<>::to_int32(environment::special_folder::xtd_locale), csf_);
       assert::are_equal("xtd_locale", enum_object<>::to_string(environment::special_folder::xtd_locale), csf_);

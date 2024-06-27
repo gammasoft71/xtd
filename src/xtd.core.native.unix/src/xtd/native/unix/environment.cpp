@@ -5,6 +5,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <cstdio>
 #include <cstdlib>
+#include <filesystem>
 #include <map>
 #include <numeric>
 #include <thread>
@@ -13,6 +14,7 @@
 #include <unistd.h>
 
 using namespace std;
+using namespace std::filesystem;
 using namespace std::literals;
 using namespace xtd::native;
 
@@ -190,12 +192,16 @@ void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int
   if (numbers.size() < 4 || !unix::strings::try_parse(numbers[3], revision)) revision = 0;
 }
 
-string environment::get_service_pack() {
-  return "";
-}
-
 uint_least32_t environment::get_processor_count() {
   return thread::hardware_concurrency();
+}
+
+std::string environment::get_resources_path() {
+  return (path {get_command_line_args()[0]}.parent_path() / "Resources").string();
+}
+
+string environment::get_service_pack() {
+  return "";
 }
 
 size_t environment::get_system_page_size() {

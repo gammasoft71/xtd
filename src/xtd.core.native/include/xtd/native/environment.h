@@ -150,6 +150,10 @@ namespace xtd {
       /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
       /// @warning Internal use only
       static uint_least32_t get_processor_count();
+      /// @brief Gets the path of the resources folder.
+      /// @return A string that represents the path of the resources folder.
+      /// @warning Internal use only
+      static std::string get_resources_path();
       /// @brief Gets the service pack version represented by this operating_system object.
       /// @return string The service pack version, if service packs are supported and at least one is installed; otherwise, an empty string ("").
       /// @warning Internal use only

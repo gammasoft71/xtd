@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <filesystem>
 #include <string>
 #include <vector>
 #include <direct.h>
@@ -16,6 +17,7 @@
 #include <Lmcons.h>
 
 using namespace std;
+using namespace std::filesystem;
 using namespace xtd::native;
 
 #undef min
@@ -259,6 +261,16 @@ void environment::get_os_version(int_least32_t& major, int_least32_t& minor, int
   return get_windows_version(major, minor, build, revision);
 }
 
+uint_least32_t environment::get_processor_count() {
+  auto system_info = SYSTEM_INFO {};
+  GetNativeSystemInfo(&system_info);
+  return system_info.dwNumberOfProcessors;
+}
+
+std::string environment::get_resources_path() {
+  return (path {get_command_line_args()[0]}.parent_path() / "Resources").string();
+}
+
 string environment::get_service_pack() {
 #pragma warning(push)
 #pragma warning(disable : 4996)
@@ -268,12 +280,6 @@ string environment::get_service_pack() {
     return win32::strings::to_string(version_info.szCSDVersion);
 #pragma warning(pop)
   return "";
-}
-
-uint_least32_t environment::get_processor_count() {
-  auto system_info = SYSTEM_INFO {};
-  GetNativeSystemInfo(&system_info);
-  return system_info.dwNumberOfProcessors;
 }
 
 size_t environment::get_system_page_size() {
