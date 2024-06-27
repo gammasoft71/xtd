@@ -257,7 +257,7 @@ uint_least32_t environment::get_processor_count() {
 std::string environment::get_resources_path(bool gui_app) {
   auto app_path = get_command_line_args()[0];
   auto pos = app_path.rfind('/');
-  return (pos == app_path.npos ? "" : app_path.substr(0, pos) + '/') + (gui_app ? "../Resources" : "Resources");
+  return (pos == app_path.npos ? "" : app_path.substr(0, pos) + '/') + (gui_app ? "../Resources" : "resources");
 }
 
 string environment::get_service_pack() {
