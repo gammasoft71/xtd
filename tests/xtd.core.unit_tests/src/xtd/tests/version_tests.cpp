@@ -1,4 +1,5 @@
 #include <sstream>
+#include <xtd/argument_exception>
 #include <xtd/version>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>

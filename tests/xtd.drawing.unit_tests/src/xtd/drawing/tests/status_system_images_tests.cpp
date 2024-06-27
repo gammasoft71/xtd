@@ -1,5 +1,6 @@
 #include <xtd/drawing/status_system_images>
 #include <xtd/drawing/system_images>
+#include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

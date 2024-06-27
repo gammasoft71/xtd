@@ -6,6 +6,7 @@
 #include <xtd/tunit/file_assume>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
+#include <xtd/environment>
 #include <xtd/as>
 
 using namespace std;

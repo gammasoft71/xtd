@@ -1,3 +1,4 @@
+#include <xtd/environment>
 #include <xtd/drawing/animations_system_images>
 #include <xtd/drawing/system_images>
 #include <xtd/tunit/assert>
