@@ -170,7 +170,7 @@ xtd::ustring application::executable_name() noexcept {
 }
 
 xtd::ustring application::executable_path() noexcept {
-  return environment::get_command_line_args()[0];
+  return assembly::get_executing_assembly().location();
 }
 
 bool application::font_size_correction() {
@@ -258,7 +258,7 @@ xtd::ustring application::product_version() noexcept {
 }
 
 xtd::ustring application::startup_path() noexcept {
-  return io::path::get_directory_name(environment::get_command_line_args()[0]);
+  return assembly::get_executing_assembly().location_path();
 }
 
 const xtd::forms::style_sheets::style_sheet& application::style_sheet() noexcept {

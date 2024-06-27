@@ -1,7 +1,7 @@
 #include "../../../include/xtd/diagnostics/debug.h"
 #include "../../../include/xtd/diagnostics/debug_break.h"
 #include "../../../include/xtd/diagnostics/default_trace_listener.h"
-#include "../../../include/xtd/environment.h"
+#include "../../../include/xtd/reflection/assembly.h"
 #include "../../../include/xtd/literals.h"
 #include "../../../include/xtd/lock.h"
 #include <mutex>
@@ -12,6 +12,7 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
+using namespace xtd::reflection;
 
 extern char** __diagnostics_argv;
 auto __debug_mutex__ = recursive_mutex {};
@@ -19,7 +20,7 @@ auto __listeners__ = trace_listener_collection {make_shared<default_trace_listen
 auto __debug_use_debug_global_lock__ = true;
 
 trace_listener_collection& debug::listeners_ = __listeners__;
-ustring debug::source_name_ = environment::get_command_line_args()[0];
+ustring debug::source_name_ = assembly::get_executing_assembly().location();
 
 bool debug::auto_flush() noexcept {
   return auto_flush_;
