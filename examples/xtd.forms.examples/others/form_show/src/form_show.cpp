@@ -62,6 +62,7 @@ namespace example {
       button_sheet.text("Show sheet");
       button_sheet.click += [&] {
         auto dialog = make_unique<form>();
+        dialog->form_border_style(form_border_style::fixed_3d);
         dialog->text("dialog show sheet").size({250, 100});
         dialog->key_up += [&](object & control, key_event_args & e) {
           if (e.key_code() == keys::escape) as<form&>(control).close();
@@ -73,6 +74,7 @@ namespace example {
       button_sheet_modal.text("Show sheet modal");
       button_sheet_modal.click += [&] {
         auto dialog = form::create("dialog show sheet modal", drawing::size {250, 100});
+        dialog.form_border_style(form_border_style::fixed_3d);
         dialog.key_up += [&](object & control, key_event_args & e) {
           if (e.key_code() == keys::escape) as<form&>(control).close();
         };
