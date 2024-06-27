@@ -569,7 +569,7 @@ namespace {
 }
 
 void form::show_sheet(const iwin32_window& owner) {
-  auto params_saver = show_sheet_params_saver {this};
+  auto params_saver = show_sheet_params_saver {environment::os_version().is_macos_platform() ? nullptr : this};
   data_->closed = false;
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
