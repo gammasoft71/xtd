@@ -69,22 +69,19 @@ const ustring& assembly::version() const noexcept {
 }
 
 const assembly& assembly::get_executing_assembly() noexcept {
-  static auto current_assembly = unique_ptr<assembly> {};
-  if (!current_assembly) {
-    current_assembly = unique_ptr<assembly> {new assembly {}};
-    if (__assembly_company_attribute__()) current_assembly->company_ = __assembly_company_attribute__()->company();
-    if (__assembly_configuration_attribute__()) current_assembly->configuration_ = __assembly_configuration_attribute__()->configuration();
-    if (__assembly_copyright_attribute__()) current_assembly->copyright_ = __assembly_copyright_attribute__()->copyright();
-    if (__assembly_culture_attribute__()) current_assembly->culture_ = __assembly_culture_attribute__()->culture();
-    if (__assembly_description_attribute__()) current_assembly->description_ = __assembly_description_attribute__()->description();
-    if (__assembly_file_version_attribute__()) current_assembly->file_version_ = __assembly_file_version_attribute__()->version();
-    if (__assembly_guid_attribute__()) current_assembly->guid_ = __assembly_guid_attribute__()->guid();
-    if (__assembly_identifier_attribute__()) current_assembly->identifier_ = __assembly_identifier_attribute__()->identifier();
-    if (__assembly_name_attribute__()) current_assembly->name_ = __assembly_name_attribute__()->name();
-    if (__assembly_product_attribute__()) current_assembly->product_ = __assembly_product_attribute__()->product();
-    if (__assembly_title_attribute__()) current_assembly->title_ = __assembly_title_attribute__()->title();
-    if (__assembly_trademark_attribute__()) current_assembly->trademarks_ = __assembly_trademark_attribute__()->trademark();
-    if (__assembly_version_attribute__()) current_assembly->version_ = __assembly_version_attribute__()->version();
-  }
-  return *current_assembly;
+  static auto current_assembly = assembly {};
+  if (__assembly_company_attribute__() && current_assembly.company_ != __assembly_company_attribute__()->company()) current_assembly.company_ = __assembly_company_attribute__()->company();
+  if (__assembly_configuration_attribute__() && current_assembly.configuration_ != __assembly_configuration_attribute__()->configuration()) current_assembly.configuration_ = __assembly_configuration_attribute__()->configuration();
+  if (__assembly_copyright_attribute__() && current_assembly.copyright_ != __assembly_copyright_attribute__()->copyright()) current_assembly.copyright_ = __assembly_copyright_attribute__()->copyright();
+  if (__assembly_culture_attribute__() && current_assembly.culture_ != __assembly_culture_attribute__()->culture()) current_assembly.culture_ = __assembly_culture_attribute__()->culture();
+  if (__assembly_description_attribute__() && current_assembly.description_ != __assembly_description_attribute__()->description()) current_assembly.description_ = __assembly_description_attribute__()->description();
+  if (__assembly_file_version_attribute__() && current_assembly.file_version_ != __assembly_file_version_attribute__()->version()) current_assembly.file_version_ = __assembly_file_version_attribute__()->version();
+  if (__assembly_guid_attribute__() && current_assembly.guid_ != __assembly_guid_attribute__()->guid()) current_assembly.guid_ = __assembly_guid_attribute__()->guid();
+  if (__assembly_identifier_attribute__() && current_assembly.identifier_ != __assembly_identifier_attribute__()->identifier()) current_assembly.identifier_ = __assembly_identifier_attribute__()->identifier();
+  if (__assembly_name_attribute__() && current_assembly.name_ != __assembly_name_attribute__()->name()) current_assembly.name_ = __assembly_name_attribute__()->name();
+  if (__assembly_product_attribute__() && current_assembly.product_ != __assembly_product_attribute__()->product()) current_assembly.product_ = __assembly_product_attribute__()->product();
+  if (__assembly_title_attribute__() && current_assembly.title_ != __assembly_title_attribute__()->title()) current_assembly.title_ = __assembly_title_attribute__()->title();
+  if (__assembly_trademark_attribute__() && current_assembly.trademarks_ != __assembly_trademark_attribute__()->trademark()) current_assembly.trademarks_ = __assembly_trademark_attribute__()->trademark();
+  if (__assembly_version_attribute__() && current_assembly.version_ != __assembly_version_attribute__()->version()) current_assembly.version_ = __assembly_version_attribute__()->version();
+  return current_assembly;
 }
