@@ -1,4 +1,4 @@
-# Game settings
+# Settings file
 # =============
 
 # Remarks
