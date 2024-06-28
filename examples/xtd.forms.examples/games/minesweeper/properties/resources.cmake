@@ -1,4 +1,4 @@
-# Game resources
+# Resources file
 # ==============
 
 # Remarks
