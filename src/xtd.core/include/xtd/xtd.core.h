@@ -2,7 +2,7 @@
 /// @brief Contains xtd.core library headers.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-//#include "std.h"
+#include "std.h"
 
 #include "collections/any_pair.h"
 #include "collections/key_not_found_exception.h"
