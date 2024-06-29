@@ -139,3 +139,14 @@ namespace xtd {
 }
 
 #include "type.h"
+
+/// @cond
+/// Needed for std::format
+#if __cplusplus > 202002
+template <>
+struct std::formatter<xtd::object> : std::formatter<std::string> {
+  template <typename object_t, typename format_context_t>
+  auto format(const object_t& obj, format_context_t& ctx) const {return std::format_to(ctx.out(), "{}", std::string {obj.to_string()});}
+};
+#endif
+/// @endcond
