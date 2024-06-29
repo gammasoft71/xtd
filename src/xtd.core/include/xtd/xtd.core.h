@@ -290,6 +290,7 @@
 #include "iclonable.h"
 #include "icomparable.h"
 #include "iequatable.h"
+#include "iformatable.h"
 #include "index_out_of_range_exception.h"
 #include "int16.h"
 #include "int16_object.h"
