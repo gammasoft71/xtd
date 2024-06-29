@@ -196,6 +196,8 @@ add_sources(
   include/xtd/icomparable
   include/xtd/iequatable.h
   include/xtd/iequatable
+  include/xtd/iformatable.h
+  include/xtd/iformatable
   include/xtd/index_out_of_range_exception.h
   include/xtd/index_out_of_range_exception
   include/xtd/int16.h
@@ -336,6 +338,8 @@ add_sources(
   include/xtd/startup
   include/xtd/static.h
   include/xtd/static
+  include/xtd/std.h
+  include/xtd/std
   include/xtd/string_comparison.h
   include/xtd/string_comparison
   include/xtd/string_split_options.h
@@ -589,6 +593,8 @@ add_sources(
   include/xtd/internal/__format_stringer
   include/xtd/internal/__generic_stream_output.h
   include/xtd/internal/__generic_stream_output
+  include/xtd/internal/__iformatable_formatter.h
+  include/xtd/internal/__iformatable_formatter
   include/xtd/internal/__natural_formatter.h
   include/xtd/internal/__natural_formatter
   include/xtd/internal/__numeric_formatter.h
@@ -908,6 +914,7 @@ add_sources(
   src/xtd/distribution.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
+  src/xtd/iformatable.cpp
   src/xtd/literals.cpp
   src/xtd/math.cpp
   src/xtd/object.cpp

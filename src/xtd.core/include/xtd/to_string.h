@@ -10,7 +10,7 @@
 #include "internal/__currency_formatter.h"
 #include "internal/__date_time_formatter.h"
 #include "internal/__duration_formatter.h"
-#include "internal/__enum_formatter.h"
+#include "internal/__iformatable_formatter.h"
 #include "internal/__fixed_point_formatter.h"
 #include "internal/__natural_formatter.h"
 #include "internal/__numeric_formatter.h"
@@ -33,7 +33,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
-  inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc) {return __to_string_enum(value, fmt, loc, std::is_enum<value_t>());}
+  inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc) {return __to_string_polymorphic(value, fmt, loc, std::is_polymorphic<value_t>());}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -368,7 +368,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
-  inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc) {return __to_string_enum(value, fmt, loc, std::is_enum<value_t>());}
+  inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc) {return __to_string_polymorphic(value, fmt, loc, std::is_polymorphic<value_t>());}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
