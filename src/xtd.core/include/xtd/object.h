@@ -5,6 +5,9 @@
 #include "core_export.h"
 #include "iequatable.h"
 #include "types.h"
+#if __cplusplus > 202002
+#include <format>
+#endif
 #include <string>
 #include <memory>
 
