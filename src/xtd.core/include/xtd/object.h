@@ -5,7 +5,7 @@
 #include "core_export.h"
 #include "iequatable.h"
 #include "types.h"
-#if __cplusplus >= 202002
+#if defined(__cpp_lib_format) || (defined(_MSC_VER) && _MSC_VER >= 1929) || (defined(__APPLE__) && __cplusplus > 202002)
 #include <format>
 #endif
 #include <string>
@@ -145,7 +145,7 @@ namespace xtd {
 
 /// @cond
 /// Needed for std::format
-#if __cplusplus >= 202002
+#if defined(__cpp_lib_format) || (defined(_MSC_VER) && _MSC_VER >= 1929) || (defined(__APPLE__) && __cplusplus > 202002)
 template <>
 struct std::formatter<xtd::object> : std::formatter<std::string> {
   template <typename object_t, typename format_context_t>
