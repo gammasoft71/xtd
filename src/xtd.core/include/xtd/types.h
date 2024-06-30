@@ -6,6 +6,9 @@
 #include "core_namespace_aliases.h"
 #include "self.h"
 /// @cond
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 #define __XTD_VALUE_TYPE_NATIVE__
 #include <xtd/native/value_types>
 #undef __XTD_VALUE_TYPE_NATIVE__
@@ -57,7 +60,7 @@ namespace xtd {
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
   using char_ = char;
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Represents a 8-bit unicode character.
   /// @par Header
   /// ```cpp

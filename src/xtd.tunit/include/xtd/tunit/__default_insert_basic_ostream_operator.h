@@ -39,7 +39,7 @@ template<> struct __tunit_is_printable<char> : std::true_type {};
 template<> struct __tunit_is_printable<signed char> : std::true_type {};
 template<> struct __tunit_is_printable<unsigned char> : std::true_type {};
 template<> struct __tunit_is_printable<wchar_t> : std::true_type {};
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 template<> struct __tunit_is_printable<xtd::char8> : std::true_type {};
 #endif
 template<> struct __tunit_is_printable<xtd::char16> : std::true_type {};
@@ -59,7 +59,7 @@ template<> struct __tunit_is_printable<double> : std::true_type {};
 template<> struct __tunit_is_printable<long double> : std::true_type {};
 template<> struct __tunit_is_printable<std::string> : std::true_type {};
 template<> struct __tunit_is_printable<xtd::ustring> : std::true_type {};
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 template<> struct __tunit_is_printable<std::u8string> : std::true_type {};
 #endif
 template<> struct __tunit_is_printable<std::u16string> : std::true_type {};
@@ -152,7 +152,7 @@ struct __tunit_value_printer<char_t, char_traits_t, xtd::ustring> {
   }
 };
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, std::u8string> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::u8string& value) {
@@ -212,7 +212,7 @@ struct __tunit_value_printer<char_t, char_traits_t, char> {
   }
 };
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 template <typename char_t, typename char_traits_t>
 struct __tunit_value_printer<char_t, char_traits_t, const xtd::char8*> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const xtd::char8* const& value) {
@@ -608,7 +608,7 @@ inline std::string __tunit_codepoint_to_string(xtd::char32 codepoint) {
   return result;
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 inline xtd::ustring __tunit_to_string(const xtd::char8& value) {
   std::stringstream ss;
   ss << std::quoted(__tunit_codepoint_to_string(value));
@@ -646,7 +646,7 @@ inline xtd::ustring __tunit_to_string(const xtd::ustring& value) {
   return ss.str();
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 inline xtd::ustring __tunit_to_string(const std::u8string& value) {
   std::stringstream ss;
   ss << std::quoted(value);
@@ -699,7 +699,7 @@ inline xtd::ustring __tunit_to_string(const char* value) {
   return ss.str();
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 inline xtd::ustring __tunit_to_string(const xtd::char8* value) {
   return __tunit_to_string(std::u8string(value));
 }

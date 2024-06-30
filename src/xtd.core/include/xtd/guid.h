@@ -5,6 +5,7 @@
 #include "core_export.h"
 #include "icomparable.h"
 #include "iequatable.h"
+#include "iformatable.h"
 #include "object.h"
 #include "ustring.h"
 #include <vector>
@@ -20,7 +21,7 @@ namespace xtd {
   /// @par Examples
   /// The following code example demonstrates the use of xtd::guid struct.
   /// @include guid.cpp
-  struct core_export_ guid final : public object, public icomparable<guid>, public xtd::iequatable<guid> {
+  struct core_export_ guid final : public object, public icomparable<guid>, public xtd::iequatable<guid>, public xtd::iformatable {
   public:
     /// @name Public Fields
     
@@ -170,7 +171,26 @@ namespace xtd {
     /// |           | (00000000-0000-0000-0000-000000000000)                                                                                                      |
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
-    ustring to_string(ustring format) const;
+    ustring to_string(const ustring& format) const;
+    /// @brief Returns a string representation of the value of this xtd::guid instance, according to the provided format specifier, and locale.
+    /// @param format A single format specifier that indicates how to format the value of this xtd::guid. The format parameter can be "N", "D", "B", "P", or "X". If format is null or an empty string (""), "D" is used.
+    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @return The value of this xtd::guid, represented as a series of lowercase hexadecimal digits in the specified format.
+    /// @exception xtd::format_exception The value of format is not null, an empty string (""), "N", "D", "B", "P", or "X".
+    /// @remarks The following table shows the accepted format specifiers for the format parameter. "0" represents a digit; hyphens ("-"), braces ("{", "}"), and parentheses ("(", ")") appear as shown.
+    /// | Specifier | Format of return value                                                                                                                      |
+    /// | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+    /// | N         | 32 digits:                                                                                                                                  |
+    /// |           | 00000000000000000000000000000000                                                                                                            |
+    /// | D         | 32 digits separated by hyphens:                                                                                                             |
+    /// |           | 00000000-0000-0000-0000-000000000000                                                                                                        |
+    /// | B         | 32 digits separated by hyphens, enclosed in braces:                                                                                         |
+    /// |           | {00000000-0000-0000-0000-000000000000}                                                                                                      |
+    /// | P         | 32 digits separated by hyphens, enclosed in parentheses:                                                                                    |
+    /// |           | (00000000-0000-0000-0000-000000000000)                                                                                                      |
+    /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
+    /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
+    ustring to_string(const ustring& format, const std::locale& loc) const override;
     /// @}
 
     /// @name Public Static Methods
@@ -186,11 +206,4 @@ namespace xtd {
   private:
     std::vector<xtd::byte> data_ = std::vector<xtd::byte>(16);
   };
-  
-  /// @cond
-  template<>
-  inline std::string to_string(const guid& value, const std::string& fmt, const std::locale& loc) {
-    return value.to_string(fmt);
-  }
-  /// @endcond
 }

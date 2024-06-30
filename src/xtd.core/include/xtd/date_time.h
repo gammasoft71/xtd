@@ -7,6 +7,7 @@
 #include "day_of_week.h"
 #include "icomparable.h"
 #include "iequatable.h"
+#include "iformatable.h"
 #include "month_of_year.h"
 #include "object.h"
 #include "ticks.h"
@@ -78,7 +79,7 @@ namespace xtd {
   /// @par Examples
   /// The following example demonstrates how to compare roughly equivalent xtd::date_time values, accepting a small margin of difference when declaring them equal.
   /// @include date_time.cpp
-  class core_export_ date_time : public xtd::icomparable<date_time>, public xtd::iequatable<date_time>, public xtd::object {
+  class core_export_ date_time : public xtd::object, public xtd::icomparable<date_time>, public xtd::iequatable<date_time>, public xtd::iformatable {
   public:
     /// @name Public Fields
     
@@ -765,7 +766,65 @@ namespace xtd {
     /// | 'z'    | writes time zone "local" or "UTC".                                                                                          |
     /// | 'Z'    | writes time zone "local" or "UTC".                                                                                          |
     xtd::ustring to_string(const ustring& format) const;
-    
+    /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the specified format and the formatting conventions of the current culture.
+    /// @param format A standard or custom date and time format string.
+    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @return A string representation of value of the current xtd::date_time object as specified by format.
+    /// @exception xtd::format_excpetion The length of format is 1, and it is not a valid format characters<br>-or-<br>The length si greater than 1.
+    /// @par Examples
+    /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::ustring&) with differentt formats.
+    /// @include date_time_to_string_format.cpp
+    /// @remarks The formatting codes for xtd::date_time::to_string (const xtd::ustring&) are listed below:
+    /// | Format | Print                                                                                                                       |
+    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+    /// | 'a'    | writes "PM" or "AM"                                                                                                         |
+    /// | 'b'    | writes 3 digit millisecond, e.G. 012                                                                                        |
+    /// | 'B'    | wrties millisecond, eg 12                                                                                                   |
+    /// | 'c'    | writes 7 digit tick, e.G. 0000123                                                                                           |
+    /// | 'C'    | writes tick, e.G. 123                                                                                                       |
+    /// | 'd'    | writes date MM/dd/y, e.g. 01/05/42                                                                                          |
+    /// | 'D'    | writes date M/dd/y, e.g. 1/055/42                                                                                           |
+    /// | 'e'    | writes 2 digit second, e.G. 03                                                                                              |
+    /// | 'B'    | writes second, e.G. 3                                                                                                       |
+    /// | 'f'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
+    /// | 'F'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
+    /// | 'g'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
+    /// | 'G'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
+    /// | 'h'    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
+    /// | 'H'    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
+    /// | 'i'    | writes 2 digit day, e.g. 05                                                                                                 |
+    /// | 'I'    | writes day, e.G. 5                                                                                                          |
+    /// | 'j'    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
+    /// | 'J'    | writes full month name, e.g. October (locale dependent).                                                                    |
+    /// | 'k'    | writes 2 digit month, e.g. 01                                                                                               |
+    /// | 'K'    | writes month, e.g. 1                                                                                                        |
+    /// | 'l'    | writes 2 digit year, e.g. 71                                                                                                |
+    /// | 'L'    | writes 4 digit year, e.g. 1971                                                                                              |
+    /// | 'm'    | writes year, e.g. 42                                                                                                        |
+    /// | 'M'    | writes full month name and day, e.g. October, 5 (locale dependent).                                                         |
+    /// | 'n'    | writes full weekday name, day, fulll month and year, e.g. Tuesday, 1 April 2008                                             |
+    /// | 'N'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
+    /// | 'o'    | writes day, full month and year, e.g. 5 January 42                                                                          |
+    /// | 'O'    | writes day, full month and year, e.g. 5 January 42                                                                          |
+    /// | 'p'    | writes 2 digit minute, e.G. 06                                                                                              |
+    /// | 'P'    | writes minute, e.G. 6                                                                                                       |
+    /// | 's'    | writes sortable date/time pattern yyyy-MM-ddThh:mm:ss.ttttttt. e.g. 1971-05-01T21:32:24:42.004567                           |
+    /// | 't'    | writes time hh/mm/ss, e.g. 02:04:06                                                                                         |
+    /// | 'T'    | writes time h/mm/ss, e.g. 2:04:06                                                                                           |
+    /// | 'u'    | writes sortable short date/time pattern y-MM-dd hh:mm:ss. e.g. 1971-05-01 9:32:24:42                                        |
+    /// | 'U'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
+    /// | 'v'    | writes time hh/mm, e.g. 02:04                                                                                               |
+    /// | 'V'    | writes time h/mm, e.g. 2:04                                                                                                 |
+    /// | 'w'    | writes 2 digit hour (24H), e.g. 07                                                                                          |
+    /// | 'W'    | writes hour (24H), e.g. 7                                                                                                   |
+    /// | 'x'    | writes 2 digit hour (12H), e.g. 07                                                                                          |
+    /// | 'X'    | writes hour (12H), e.g. 7                                                                                                   |
+    /// | 'y'    | writes full month name and year, e.g. October, 71 (locale dependent).                                                       |
+    /// | 'Y'    | writes full month name and year, e.g. October, 1971 (locale dependent).                                                     |
+    /// | 'z'    | writes time zone "local" or "UTC".                                                                                          |
+    /// | 'Z'    | writes time zone "local" or "UTC".                                                                                          |
+    xtd::ustring to_string(const ustring& format, const std::locale& loc) const override;
+
     /// @brief Converts the value of the current xtd::date_time object to [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
     /// @return The value of the current xtd::date_time object expressed as [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
     /// @remarks [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t) is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
@@ -1067,19 +1126,26 @@ namespace xtd {
     date_time_kind kind_ {date_time_kind::unspecified};
   };
   /// @}
-  
-  /// @brief Convert a specified value into a string with specified format and locale.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core
-  /// @param value Value to convert.
-  /// @param fmt A composite format string.
-  /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
-  /// @remarks for more information about format see @ref FormatPage "Format".
-  template<>
-  inline std::string to_string(const date_time& value, const std::string& fmt, const std::locale& loc) {
-    return value.to_string(fmt);
-  }
 }
+
+/// @cond
+/// Needed for std::format
+#if defined(__xtd__cpp_lib_format)
+template <>
+struct std::formatter<xtd::date_time> : std::formatter<std::string> {
+  template<typename format_context_t>
+  constexpr auto parse(format_context_t& ctx) {
+    auto iterator = ctx.begin();
+    for (; iterator != ctx.end() && *iterator != '}'; ++iterator)
+      format_value += *iterator;
+    return iterator;
+  }
+  
+  template <typename object_t, typename format_context_t>
+  auto format(const object_t& obj, format_context_t& ctx) const {return std::format_to(ctx.out(), "{}", std::string {obj.to_string(format_value)});}
+  
+private:
+  std::string format_value;
+};
+#endif
+/// @endcond

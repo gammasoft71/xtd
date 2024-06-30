@@ -22,6 +22,9 @@
 #include "uint64.h"
 #include "uintptr.h"
 #include "wchar.h"
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -67,7 +70,7 @@ namespace xtd {
   template<>
   inline const char* unboxing<char>(ustring& value) {return value.c_str();}
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   template<>
   inline const char8* unboxing<char8>(const ustring& value) {
     thread_local static std::u8string result;
@@ -147,14 +150,14 @@ namespace xtd {
    */
 
   inline char unboxing(const char& value) noexcept {return value;}
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   inline char8 unboxing(const char8& value) noexcept {return value;}
 #endif
   inline char16 unboxing(const char16& value) noexcept {return value;}
   inline char32 unboxing(const char32& value) noexcept {return value;}
   inline wchar unboxing(const wchar& value) noexcept {return value;}
   inline char unboxing(char& value) noexcept {return value;}
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   inline char8 unboxing(char8& value) noexcept {return value;}
 #endif
   inline char16 unboxing(char16& value) noexcept {return value;}
@@ -186,25 +189,5 @@ namespace xtd {
   inline float unboxing(float& value) noexcept {return value;}
   inline double unboxing(double& value) noexcept {return value;}
   inline decimal unboxing(decimal& value) noexcept {return value;}
-
-  template<typename type_t>
-  inline std::string to_string(const xtd::box<type_t>& value, const std::string& fmt, const std::locale& loc) {
-    return value.to_string(fmt);
-  }
-  
-  template<typename type_t>
-  inline std::string to_string(const xtd::box_char<type_t>& value, const std::string& fmt, const std::locale& loc) {
-    return value.to_string(fmt);
-  }
-  
-  template<typename type_t>
-  inline std::string to_string(const xtd::box_integer<type_t>& value, const std::string& fmt, const std::locale& loc) {
-    return value.to_string(fmt);
-  }
-  
-  template<typename type_t>
-  inline std::string to_string(const xtd::box_floating_point<type_t>& value, const std::string& fmt, const std::locale& loc) {
-    return value.to_string(fmt);
-  }
   /// @endcond
 }

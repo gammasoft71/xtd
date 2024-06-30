@@ -4,6 +4,9 @@
 #pragma once
 #include "static.h"
 #include "ustring.h"
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -70,7 +73,7 @@ namespace xtd {
     /// string s2 = string_converter::to_string(s1);
     /// ```
     static std::string to_string(const xtd::ustring& str) noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -249,7 +252,7 @@ namespace xtd {
     /// ustring s2 = string_converter::to_ustring(s1);
     /// ```
     static const xtd::ustring& to_ustring(const xtd::ustring& str) noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts std::u8string to xtd::ustring.
     /// @param str string to convert.
     /// @return The converted string.
@@ -379,7 +382,7 @@ namespace xtd {
     /// ```
     static xtd::ustring to_ustring(wchar* str) noexcept;
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts std::string to std::u8string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -422,7 +425,7 @@ namespace xtd {
     /// u8string s2 = string_converter::to_u8string(s1);
     /// ```
     static std::u8string to_u8string(const xtd::ustring& str) noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::u8string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -588,7 +591,7 @@ namespace xtd {
     /// u16string s2 = string_converter::to_u16string(s1);
     /// ```
     static std::u16string to_u16string(const xtd::ustring& str) noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -759,7 +762,7 @@ namespace xtd {
     /// u32string s2 = string_converter::to_u32string(s1);
     /// ```
     static std::u32string to_u32string(const xtd::ustring& str) noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::u32string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -928,7 +931,7 @@ namespace xtd {
     /// wstring s2 = string_converter::to_wstring(s1);
     /// ```
     static std::wstring to_wstring(const xtd::ustring& str) noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::wstring.
     /// @param str string to convert.
     /// @return The converted string.

@@ -56,7 +56,7 @@ namespace xtd::tests {
       assert::are_equal("test", s, csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(constructor_with_u8string) {
       u8string s1 = u8"test";
       ustring s2 = s1;
@@ -101,7 +101,7 @@ namespace xtd::tests {
       assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(constructor_with_char8_ptr_null) {
       char8* ptr = nullptr;
       assert::throws<null_pointer_exception>([&]{ustring s = ptr;}, csf_);
@@ -151,7 +151,7 @@ namespace xtd::tests {
       assert::are_equal("test", s2, csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_equal_with_u8string1) {
       auto s1 = u8string {u8"test"};
       ustring s2;
@@ -217,7 +217,7 @@ namespace xtd::tests {
       assert::are_equal("test", s, csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_equal_with_non_const_u8_literal) {
       auto p = u8"test";
       ustring s;
@@ -287,7 +287,7 @@ namespace xtd::tests {
       assert::throws<null_pointer_exception>([&]{s = ptr;}, csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_equal_with_char8_ptr_null) {
       char8* ptr = nullptr;
       ustring s;
@@ -345,7 +345,7 @@ namespace xtd::tests {
       assert::are_equal("s2s1", s2, csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_plus_equal_with_u8string) {
       auto s1 = u8string {u8"s1"};
       ustring s2 = "s2";
@@ -435,7 +435,7 @@ namespace xtd::tests {
       assert::are_equal("s2s1", s2, csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_plus_equal_with_const_cast_u8_literal) {
       auto s1 = u8"s1";
       ustring s2 = "s2";
@@ -481,7 +481,7 @@ namespace xtd::tests {
       assert::throws<null_pointer_exception>([&] {s2 += s1;}, csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_plus_equal_with_char8_ptr_null) {
       char8* s1 = nullptr;
       ustring s2 = "s2";
@@ -539,7 +539,7 @@ namespace xtd::tests {
       assert::are_equal("s2s1", s3, csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_plus_with_u8string) {
       auto s1 = u8string {u8"s1"};
       ustring s2 = "s2";
@@ -629,7 +629,7 @@ namespace xtd::tests {
       assert::are_equal("s2s1", s3, csf_);
     }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_plus_with_const_cast_u8_literal) {
       auto s1 = u8"s1";
       ustring s2 = "s2";
@@ -675,7 +675,7 @@ namespace xtd::tests {
       assert::throws<null_pointer_exception>([&]{ustring s3 = s2 + s1;}, csf_);
     }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_plus_with_char8_ptr_null) {
       char8* s1 = nullptr;
       ustring s2 = "s2";

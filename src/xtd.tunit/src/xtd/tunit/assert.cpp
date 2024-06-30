@@ -13,7 +13,7 @@ void assert::are_equal(const char* expected, const char* actual, const ustring& 
     fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void assert::are_equal(const char8* expected, const char8* actual, const ustring& message, const stack_frame& stack_frame) {
   if (ustring {actual} == ustring {expected})
     succeed(message, stack_frame);
@@ -134,7 +134,7 @@ void assert::are_not_equal(const char* expected, const char* actual, const ustri
     fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void assert::are_not_equal(const char8* expected, const char8* actual, const ustring& message, const stack_frame& stack_frame) {
   if (ustring {actual} != ustring {expected})
     succeed(message, stack_frame);
@@ -173,7 +173,7 @@ void assert::contains(char item, const char* values, const ustring& message, con
     fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void assert::contains(char8 item, const char8* values, const ustring& message, const stack_frame& stack_frame) {
   auto s = u8string {values};
   auto result = find(s.begin(), s.end(), item);
@@ -242,7 +242,7 @@ void assert::is_empty(const char* value, const ustring& message, const stack_fra
     fail("collection <empty>", join_items(s), message, stack_frame);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void assert::is_empty(const char8* value, const ustring& message, const stack_frame& stack_frame) {
   auto s = ustring {value};
   if (ustring::is_empty(s))
@@ -302,7 +302,7 @@ void assert::is_greater(const char* val1, const char* val2, const ustring& messa
     fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void assert::is_greater(const char8* val1, const char8* val2, const ustring& message, const stack_frame& stack_frame) {
   if (ustring {val1} > ustring {val2})
     succeed(message, stack_frame);
@@ -339,7 +339,7 @@ void assert::is_greater_or_equal(const char* val1, const char* val2, const ustri
     fail("greater than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void assert::is_greater_or_equal(const char8* val1, const char8* val2, const ustring& message, const stack_frame& stack_frame) {
   if (ustring {val1} >= ustring {val2})
     succeed(message, stack_frame);
@@ -376,7 +376,7 @@ void assert::is_less(const char* val1, const char* val2, const ustring& message,
     fail("less than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void assert::is_less(const char8* val1, const char8* val2, const ustring& message, const stack_frame& stack_frame) {
   if (ustring {val1} < ustring {val2})
     succeed(message, stack_frame);
@@ -413,7 +413,7 @@ void assert::is_less_or_equal(const char* val1, const char* val2, const ustring&
     fail("less than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void assert::is_less_or_equal(const char8* val1, const char8* val2, const ustring& message, const stack_frame& stack_frame) {
   if (ustring {val1} <= ustring {val2})
     succeed(message, stack_frame);
@@ -507,7 +507,7 @@ void assert::is_not_empty(const char* value, const ustring& message, const stack
     fail("collection not <empty>", "<empty>", message, stack_frame);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void assert::is_not_empty(const char8* value, const ustring& message, const stack_frame& stack_frame) {
   if (!ustring::is_empty(ustring(value)))
     succeed(message, stack_frame);

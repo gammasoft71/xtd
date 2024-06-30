@@ -5,6 +5,9 @@
 #include "time_span.h"
 #include "types.h"
 #include "ustring.h"
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -46,7 +49,7 @@ namespace xtd {
     /// ```
     xtd::byte operator""_b(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -132,7 +135,7 @@ namespace xtd {
     /// ```
     double operator""_d(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -218,7 +221,7 @@ namespace xtd {
     /// ```
     float operator""_f(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -406,7 +409,7 @@ namespace xtd {
     /// ```
     xtd::ustring operator""_s(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into xtd::ustring.
     /// @par Namespace
     /// xtd
@@ -730,7 +733,7 @@ namespace xtd {
     /// ```
     sbyte operator""_s8(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -816,7 +819,7 @@ namespace xtd {
     /// ```
     int16 operator""_s16(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -902,7 +905,7 @@ namespace xtd {
     /// ```
     int32 operator""_s32(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -988,7 +991,7 @@ namespace xtd {
     /// ```
     int64 operator""_s64(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -1046,7 +1049,7 @@ namespace xtd {
     /// @ingroup xtd_core literals translate
     const char* operator""_t(const char* s, size_t n) noexcept;
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
     /// xtd
@@ -1129,7 +1132,7 @@ namespace xtd {
     /// ```
     xtd::byte operator""_u8(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -1215,7 +1218,7 @@ namespace xtd {
     /// ```
     uint16 operator""_u16(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -1301,7 +1304,7 @@ namespace xtd {
     /// ```
     uint32 operator""_u32(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -1387,7 +1390,7 @@ namespace xtd {
     /// ```
     uint64 operator""_u64(const char* s, size_t n);
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -1487,7 +1490,7 @@ namespace xtd {
   /// ```
   size_t operator""_uz(const char* s, size_t n);
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Used to convert specified value into size_t.
   /// @par Namespace
   /// xtd
@@ -1573,7 +1576,7 @@ namespace xtd {
   /// ```
   size_t operator""_z(const char* s, size_t n);
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Used to convert specified value into signed size_t.
   /// @par Namespace
   /// xtd

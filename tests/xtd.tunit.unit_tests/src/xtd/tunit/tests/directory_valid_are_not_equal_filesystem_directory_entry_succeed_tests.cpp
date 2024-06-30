@@ -3,7 +3,7 @@
 #include <xtd/tunit/test_method_attribute>
 #include "../../../assert_unit_tests/assert_unit_tests.h"
 
-#if defined(__cpp_lib_filesystem)
+#if defined(__xtd__cpp_lib_filesystem)
 namespace xtd::tunit::tests {
   class test_class_(directory_valid_are_not_equal_filesystem_directory_entry_succeed_tests) {
   public:

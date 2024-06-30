@@ -24,6 +24,9 @@
 #include "uintptr.h"
 #include "ulong.h"
 #include "wchar.h"
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 #define __XTD_CORE_INTERNAL__
 #include "internal/__box_enum_or_object.h"
 #undef __XTD_CORE_INTERNAL__
@@ -66,21 +69,21 @@ namespace xtd {
   /// @cond
   inline const object& boxing(const object& value) noexcept {return value;}
   inline ustring boxing(const char* value) noexcept {return ustring(value);}
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   inline ustring boxing(const char8* value) noexcept {return ustring(value);}
 #endif
   inline ustring boxing(const char16* value) noexcept {return ustring(value);}
   inline ustring boxing(const char32* value) noexcept {return ustring(value);}
   inline ustring boxing(const wchar* value) noexcept {return ustring(value);}
   inline char_object boxing(const char& value) noexcept {return char_object(value);}
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   inline char8_object boxing(const char8& value) noexcept {return char8_object(value);}
 #endif
   inline char16_object boxing(const char16& value) noexcept {return char16_object(value);}
   inline char32_object boxing(const char32& value) noexcept {return char32_object(value);}
   inline wchar_object boxing(const wchar& value) noexcept {return wchar_object(value);}
   inline char_object boxing(char& value) noexcept {return char_object(value);}
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   inline char8_object boxing(char8& value) noexcept {return char8_object(value);}
 #endif
   inline char16_object boxing(char16& value) noexcept {return char16_object(value);}

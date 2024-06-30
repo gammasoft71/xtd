@@ -3,16 +3,13 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 
-/// @cond
-#if (defined(_MSC_VER) && _MSC_VER >= 1932) || (defined(__apple_build_version__) && __apple_build_version__ >= 15000300) || (!defined(__APPLE__) && defined(__GNUC__) && __GNUC__ >= 13) || (!defined(__APPLE__) && defined(__clang_major__) && __clang_major__ >= 15)
-#define __xtd__std_lib_format_available
-#endif
-/// @endcond
-
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 #include "core_export.h"
 #include "iequatable.h"
 #include "types.h"
-#if defined(__xtd__std_lib_format_available)
+#if defined(__xtd__cpp_lib_format)
 #include <format>
 #endif
 #include <string>
@@ -152,7 +149,7 @@ namespace xtd {
 
 /// @cond
 /// Needed for std::format
-#if defined(__xtd__std_lib_format_available)
+#if defined(__xtd__cpp_lib_format)
 template <>
 struct std::formatter<xtd::object> : std::formatter<std::string> {
   template <typename object_t, typename format_context_t>

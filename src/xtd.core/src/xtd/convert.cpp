@@ -20,7 +20,7 @@ std::any convert::to_any(char value) noexcept {
   return value;
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(char8 value) {
   //return value;
   throw invalid_cast_exception {csf_};
@@ -95,7 +95,7 @@ std::any convert::to_any(const string& value) noexcept {
   return value;
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(const u8string& value) noexcept {
   return value;
 }
@@ -121,7 +121,7 @@ std::any convert::to_any(char* value) noexcept {
   return value;
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(const char8* value) {
   //return value;
   throw invalid_cast_exception {csf_};
@@ -177,7 +177,7 @@ bool convert::to_boolean(char value) {
   throw invalid_cast_exception {csf_};
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(char8 value) {
   throw invalid_cast_exception {csf_};
 }
@@ -251,7 +251,7 @@ bool convert::to_boolean(const string& value) {
   return ustring::parse<bool>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(const u8string& value) {
   return ustring::parse<bool>(value);
 }
@@ -277,7 +277,7 @@ bool convert::to_boolean(char* value) {
   return ustring::parse<bool>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(const char8* value) {
   return ustring::parse<bool>(value);
 }
@@ -331,7 +331,7 @@ xtd::byte convert::to_byte(char value) noexcept {
   return static_cast<xtd::byte>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 xtd::byte convert::to_byte(char8 value) noexcept {
   return static_cast<xtd::byte>(value);
 }
@@ -430,7 +430,7 @@ xtd::byte convert::to_byte(const string& value) {
   return ustring::parse<xtd::byte>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 xtd::byte convert::to_byte(const u8string& value) {
   return ustring::parse<xtd::byte>(value);
 }
@@ -456,7 +456,7 @@ xtd::byte convert::to_byte(char* value) {
   return ustring::parse<xtd::byte>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 xtd::byte convert::to_byte(const char8* value) {
   return ustring::parse<xtd::byte>(value);
 }
@@ -510,7 +510,7 @@ char convert::to_char(char value) noexcept {
   return value;
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char convert::to_char(char8 value) noexcept {
   return static_cast<char>(value);
 }
@@ -601,7 +601,7 @@ char convert::to_char(const string& value) {
   return to_char(value[0]);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char convert::to_char(const u8string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
@@ -633,7 +633,7 @@ char convert::to_char(char* value) {
   return to_char(value[0]);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char convert::to_char(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception {csf_};
   return to_char(value[0]);
@@ -675,7 +675,7 @@ char convert::to_char(wchar* value) {
   return to_char(value[0]);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char8 convert::to_char8(any value) {
   throw invalid_cast_exception {csf_};
 }
@@ -876,7 +876,7 @@ char16 convert::to_char16(char value) noexcept {
   return static_cast<char16>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char16 convert::to_char16(char8 value) noexcept {
   return static_cast<char16>(value);
 }
@@ -964,7 +964,7 @@ char16 convert::to_char16(const string& value) {
   return to_char(value[0]);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char16 convert::to_char16(const u8string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
@@ -996,7 +996,7 @@ char16 convert::to_char16(char* value) {
   return to_char(value[0]);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char16 convert::to_char16(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception {csf_};
   return to_char(value[0]);
@@ -1062,7 +1062,7 @@ char32 convert::to_char32(char value) noexcept {
   return static_cast<char32>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char32 convert::to_char32(char8 value) noexcept {
   return static_cast<char32>(value);
 }
@@ -1148,7 +1148,7 @@ char32 convert::to_char32(const string& value) {
   return to_char(value[0]);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char32 convert::to_char32(const u8string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
@@ -1180,7 +1180,7 @@ char32 convert::to_char32(char* value) {
   return to_char(value[0]);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 char32 convert::to_char32(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception {csf_};
   return to_char(value[0]);
@@ -1246,7 +1246,7 @@ wchar convert::to_wchar(char value) noexcept {
   return static_cast<wchar>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 wchar convert::to_wchar(char8 value) noexcept {
   return static_cast<wchar>(value);
 }
@@ -1334,7 +1334,7 @@ wchar convert::to_wchar(const string& value) {
   return to_char(value[0]);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 wchar convert::to_wchar(const u8string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
@@ -1366,7 +1366,7 @@ wchar convert::to_wchar(char* value) {
   return to_char(value[0]);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 wchar convert::to_wchar(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw format_exception {csf_};
   return to_char(value[0]);
@@ -1428,7 +1428,7 @@ decimal convert::to_decimal(char value) noexcept {
   return static_cast<decimal>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 decimal convert::to_decimal(char8 value) noexcept {
   return static_cast<decimal>(value);
 }
@@ -1502,7 +1502,7 @@ decimal convert::to_decimal(const string& value) {
   return ustring::parse<decimal>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 decimal convert::to_decimal(const u8string& value) {
   return ustring::parse<decimal>(value);
 }
@@ -1528,7 +1528,7 @@ decimal convert::to_decimal(char* value) {
   return ustring::parse<decimal>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 decimal convert::to_decimal(const char8* value) {
   return ustring::parse<decimal>(value);
 }
@@ -1582,7 +1582,7 @@ double convert::to_double(char value) noexcept {
   return static_cast<double>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 double convert::to_double(char8 value) noexcept {
   return static_cast<double>(value);
 }
@@ -1656,7 +1656,7 @@ double convert::to_double(const string& value) {
   return ustring::parse<double>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 double convert::to_double(const u8string& value) {
   return ustring::parse<double>(value);
 }
@@ -1682,7 +1682,7 @@ double convert::to_double(char* value) {
   return ustring::parse<double>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 double convert::to_double(const char8* value) {
   return ustring::parse<double>(value);
 }
@@ -1736,7 +1736,7 @@ float convert::to_single(char value) noexcept {
   return static_cast<float>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 float convert::to_single(char8 value) noexcept {
   return static_cast<float>(value);
 }
@@ -1810,7 +1810,7 @@ float convert::to_single(const string& value) {
   return ustring::parse<float>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 float convert::to_single(const u8string& value) {
   return ustring::parse<float>(value);
 }
@@ -1836,7 +1836,7 @@ float convert::to_single(char* value) {
   return ustring::parse<float>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 float convert::to_single(const char8* value) {
   return ustring::parse<float>(value);
 }
@@ -1890,7 +1890,7 @@ int16 convert::to_int16(char value) noexcept {
   return static_cast<int16>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 int16 convert::to_int16(char8 value) noexcept {
   return static_cast<int16>(value);
 }
@@ -1985,7 +1985,7 @@ int16 convert::to_int16(const string& value) {
   return ustring::parse<int16>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 int16 convert::to_int16(const u8string& value) {
   return ustring::parse<int16>(value);
 }
@@ -2011,7 +2011,7 @@ int16 convert::to_int16(char* value) {
   return ustring::parse<int16>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 int16 convert::to_int16(const char8* value) {
   return ustring::parse<int16>(value);
 }
@@ -2065,7 +2065,7 @@ int32 convert::to_int32(char value) noexcept {
   return static_cast<int32>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 int32 convert::to_int32(char8 value) noexcept {
   return static_cast<int32>(value);
 }
@@ -2156,7 +2156,7 @@ int32 convert::to_int32(const string& value) {
   return ustring::parse<int32>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 int32 convert::to_int32(const u8string& value) {
   return ustring::parse<int32>(value);
 }
@@ -2182,7 +2182,7 @@ int32 convert::to_int32(char* value) {
   return ustring::parse<int32>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 int32 convert::to_int32(const char8* value) {
   return ustring::parse<int32>(value);
 }
@@ -2236,7 +2236,7 @@ int64 convert::to_int64(char value) noexcept {
   return static_cast<int64>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 int64 convert::to_int64(char8 value) noexcept {
   return static_cast<int64>(value);
 }
@@ -2322,7 +2322,7 @@ int64 convert::to_int64(const string& value) {
   return ustring::parse<int64>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 int64 convert::to_int64(const u8string& value) {
   return ustring::parse<int64>(value);
 }
@@ -2348,7 +2348,7 @@ int64 convert::to_int64(char* value) {
   return ustring::parse<int64>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 int64 convert::to_int64(const char8* value) {
   return ustring::parse<int64>(value);
 }
@@ -2402,7 +2402,7 @@ slong convert::to_llong(char value) noexcept {
   return static_cast<slong>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 slong convert::to_llong(char8 value) noexcept {
   return static_cast<slong>(value);
 }
@@ -2488,7 +2488,7 @@ slong convert::to_llong(const string& value) {
   return ustring::parse<slong>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 slong convert::to_llong(const u8string& value) {
   return ustring::parse<slong>(value);
 }
@@ -2514,7 +2514,7 @@ slong convert::to_llong(char* value) {
   return ustring::parse<slong>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 slong convert::to_llong(const char8* value) {
   return ustring::parse<slong>(value);
 }
@@ -2568,7 +2568,7 @@ sbyte convert::to_sbyte(char value) noexcept {
   return static_cast<sbyte>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 sbyte convert::to_sbyte(char8 value) noexcept {
   return static_cast<sbyte>(value);
 }
@@ -2666,7 +2666,7 @@ sbyte convert::to_sbyte(const string& value) {
   return ustring::parse<sbyte>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 sbyte convert::to_sbyte(const u8string& value) {
   return ustring::parse<sbyte>(value);
 }
@@ -2692,7 +2692,7 @@ sbyte convert::to_sbyte(char* value) {
   return ustring::parse<sbyte>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 sbyte convert::to_sbyte(const char8* value) {
   return ustring::parse<sbyte>(value);
 }
@@ -2746,7 +2746,7 @@ uint16 convert::to_uint16(char value) noexcept {
   return static_cast<uint16>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 uint16 convert::to_uint16(char8 value) noexcept {
   return static_cast<uint16>(value);
 }
@@ -2842,7 +2842,7 @@ uint16 convert::to_uint16(const string& value) {
   return ustring::parse<uint16>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 uint16 convert::to_uint16(const u8string& value) {
   return ustring::parse<uint16>(value);
 }
@@ -2868,7 +2868,7 @@ uint16 convert::to_uint16(char* value) {
   return ustring::parse<uint16>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 uint16 convert::to_uint16(const char8* value) {
   return ustring::parse<uint16>(value);
 }
@@ -2922,7 +2922,7 @@ uint32 convert::to_uint32(char value) noexcept {
   return static_cast<uint32>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 uint32 convert::to_uint32(char8 value) noexcept {
   return static_cast<uint32>(value);
 }
@@ -3016,7 +3016,7 @@ uint32 convert::to_uint32(const string& value) {
   return ustring::parse<uint32>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 uint32 convert::to_uint32(const u8string& value) {
   return ustring::parse<uint32>(value);
 }
@@ -3042,7 +3042,7 @@ uint32 convert::to_uint32(char* value) {
   return ustring::parse<uint32>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 uint32 convert::to_uint32(const char8* value) {
   return ustring::parse<uint32>(value);
 }
@@ -3096,7 +3096,7 @@ uint64 convert::to_uint64(char value) noexcept {
   return static_cast<uint64>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 uint64 convert::to_uint64(char8 value) noexcept {
   return static_cast<uint64>(value);
 }
@@ -3188,7 +3188,7 @@ uint64 convert::to_uint64(const ustring& value, xtd::byte from_base) {
   }
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 uint64 convert::to_uint64(const u8string& value) {
   return ustring::parse<uint64>(value);
 }
@@ -3214,7 +3214,7 @@ uint64 convert::to_uint64(char* value) {
   return ustring::parse<uint64>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 uint64 convert::to_uint64(const char8* value) {
   return ustring::parse<uint64>(value);
 }
@@ -3268,7 +3268,7 @@ xtd::ulong convert::to_ullong(char value) noexcept {
   return static_cast<xtd::ulong>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 xtd::ulong convert::to_ullong(char8 value) noexcept {
   return static_cast<xtd::ulong>(value);
 }
@@ -3360,7 +3360,7 @@ xtd::ulong convert::to_ullong(const string& value) {
   return ustring::parse<xtd::ulong>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 xtd::ulong convert::to_ullong(const u8string& value) {
   return ustring::parse<xtd::ulong>(value);
 }
@@ -3386,7 +3386,7 @@ xtd::ulong convert::to_ullong(char* value) {
   return ustring::parse<xtd::ulong>(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 xtd::ulong convert::to_ullong(const char8* value) {
   return ustring::parse<xtd::ulong>(value);
 }
@@ -3446,7 +3446,7 @@ ustring convert::to_string(char value) noexcept {
   return ustring::format("{}", value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 ustring convert::to_string(char8 value) noexcept {
   return ustring::format("{}", value);
 }
@@ -3610,7 +3610,7 @@ ustring convert::to_string(const string& value) {
   return value;
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 ustring convert::to_string(const u8string& value) {
   return value;
 }
@@ -3636,7 +3636,7 @@ ustring convert::to_string(char* value) {
   return value;
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 ustring convert::to_string(const char8* value) {
   return value;
 }
@@ -3690,7 +3690,7 @@ ustring convert::to_ustring(char value) noexcept {
   return to_string(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 ustring convert::to_ustring(char8 value) noexcept {
   return to_string(value);
 }
@@ -3800,7 +3800,7 @@ ustring convert::to_ustring(const string& value) {
   return to_string(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 ustring convert::to_ustring(const u8string& value) {
   return to_string(value);
 }
@@ -3826,7 +3826,7 @@ ustring convert::to_ustring(char* value) {
   return to_string(value);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 ustring convert::to_ustring(const char8* value) {
   return to_string(value);
 }

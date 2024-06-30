@@ -2,7 +2,11 @@
 /// @brief Contains std::any type and std::bad_any_cast exception.
 #pragma once
 /// @cond
-#if defined(__cpp_lib_any) || __cplusplus >= 201703l
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
+
+#if defined(__xtd__cpp_lib_any)
 #include <any>
 #else
 #include <typeinfo>

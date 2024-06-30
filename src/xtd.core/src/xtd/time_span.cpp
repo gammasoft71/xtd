@@ -331,6 +331,10 @@ xtd::ustring time_span::to_string() const noexcept {
 }
 
 ustring time_span::to_string(const ustring& format) const {
+  return to_string(format, std::locale {});
+}
+
+ustring time_span::to_string(const ustring& format, const std::locale& loc) const {
   auto fmt = format;
   if (fmt.empty()) fmt =  "G";
   if (fmt.size() > 1) throw format_exception("Invalid format"_t, csf_);
