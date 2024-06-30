@@ -16,6 +16,9 @@
 #include "internal/__numeric_formatter.h"
 #include "internal/__string_formatter.h"
 #undef __XTD_CORE_INTERNAL__
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 /// @endcond
 #include "types.h"
 #include <string>
@@ -269,7 +272,7 @@ namespace xtd {
   template<typename type_t, typename Period>
   inline std::string to_string(const std::chrono::duration<type_t, Period>& value, const std::string& fmt, const std::locale& loc) {return __duration_formatter(fmt, value, loc);}
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -325,7 +328,7 @@ namespace xtd {
   
   /// @cond
   std::string to_string(const char* value, const std::string& fmt, const std::locale& loc);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   std::string to_string(const char8* value, const std::string& fmt, const std::locale& loc);
 #endif
   std::string to_string(const char16* value, const std::string& fmt, const std::locale& loc);
@@ -333,7 +336,7 @@ namespace xtd {
   std::string to_string(const wchar* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const xtd::ustring& value, const std::string& fmt, const std::locale& loc);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   std::string to_string(const std::u8string& value, const std::string& fmt, const std::locale& loc);
 #endif
   std::string to_string(const std::u16string& value, const std::string& fmt, const std::locale& loc);
@@ -617,7 +620,7 @@ namespace xtd {
   template<>
   inline std::wstring to_string(const std::wstring& value, const std::wstring& fmt, const std::locale& loc) {return __string_formatter(fmt, value, loc);}
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd

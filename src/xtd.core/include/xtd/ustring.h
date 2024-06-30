@@ -8,6 +8,9 @@
 #include "internal/__format_stringer.h"
 #include "internal/__sprintf.h"
 #undef __XTD_CORE_INTERNAL__
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 /// @endcond
 #include "icomparable.h"
 #include "iequatable.h"
@@ -73,7 +76,7 @@ namespace xtd {
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(size_t count, value_type character, const allocator_type& allocator);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::ustring with specified count copies of character.
     /// @param str The string to copy.
     /// @param count The number of copies of character.
@@ -174,7 +177,7 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(const std::string& str, const allocator_type& allocator) noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::ustring with specified string to copy.
     /// @param str The string to copy.
     ustring(const std::u8string& str) noexcept; // Can't be explicit by design.
@@ -289,7 +292,7 @@ namespace xtd {
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this string.
     ustring(std::initializer_list<value_type> il, const allocator_type& allocator);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::ustring with specified initializer list.
     /// @param il The initializer list to fill.
     ustring(std::initializer_list<char8> il);
@@ -341,7 +344,7 @@ namespace xtd {
     ustring& operator =(const ustring& str) noexcept;
     ustring& operator =(const std::string& str) noexcept;
     ustring& operator =(const value_type* str);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     ustring& operator =(const std::u8string& str) noexcept;
     ustring& operator =(const char8* str);
 #endif
@@ -354,14 +357,14 @@ namespace xtd {
     ustring& operator =(ustring&& str) noexcept;
     
     ustring& operator =(value_type character);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     ustring& operator =(char8 character);
 #endif
     ustring& operator =(char16 character);
     ustring& operator =(char32 character);
     ustring& operator =(wchar character);
     ustring& operator =(const std::initializer_list<value_type>& il);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     ustring& operator =(const std::initializer_list<char8>& il);
 #endif
     ustring& operator =(const std::initializer_list<char16>& il);
@@ -394,7 +397,7 @@ namespace xtd {
     ustring& operator +=(const ustring& str);
     ustring& operator +=(const std::string& str);
     ustring& operator +=(const value_type* str);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     ustring& operator +=(const std::u8string& str);
     ustring& operator +=(const char8* str);
 #endif
@@ -405,14 +408,14 @@ namespace xtd {
     ustring& operator +=(const std::wstring& str);
     ustring& operator +=(const wchar* str);
     ustring& operator +=(value_type character);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     ustring& operator +=(char8 character);
 #endif
     ustring& operator +=(char16 character);
     ustring& operator +=(char32 character);
     ustring& operator +=(wchar character);
     ustring& operator +=(const std::initializer_list<value_type>& il);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     ustring& operator +=(const std::initializer_list<char8>& il);
 #endif
     ustring& operator +=(const std::initializer_list<char16>& il);
@@ -430,7 +433,7 @@ namespace xtd {
     bool operator !=(const std::string& other) const;
     bool operator ==(const value_type* other) const;
     bool operator !=(const value_type* other) const;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     bool operator ==(const std::u8string& other) const;
     bool operator !=(const std::u8string& other) const;
     bool operator ==(const char8* other) const;
@@ -462,7 +465,7 @@ namespace xtd {
     /// @param value The char to seek.
     /// @return true if the value parameter occurs within this string; otherwise, false.
     bool contains(value_type value) const noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Returns a value indicating whether a specified char occurs within this string.
     /// @param value The char to seek.
     /// @return true if the value parameter occurs within this string; otherwise, false.
@@ -479,7 +482,7 @@ namespace xtd {
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
     bool ends_with(value_type value) const noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Determines whether the end of this string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @return true if value matches the end of this instance; otherwise, false.
@@ -994,12 +997,12 @@ namespace xtd {
     static ustring concat(const std::vector<ustring>& values) noexcept;
     /// @cond
     static ustring concat(const std::vector<const value_type*>& values) noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     static ustring concat(const std::vector<const char8*>& values) noexcept;
 #endif
     static ustring concat(const std::initializer_list<ustring>& values) noexcept;
     static ustring concat(const std::initializer_list<const value_type*>& values) noexcept;
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     static ustring concat(const std::initializer_list<const char8*>& values) noexcept;
 #endif
     /// @endcond
@@ -1319,7 +1322,7 @@ namespace xtd {
       return result;
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     friend ustring operator +(const ustring& str_a, const std::u8string& str_b) {
       ustring result = str_a;
       result.append(ustring(str_b));
@@ -1375,7 +1378,7 @@ namespace xtd {
       return result;
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     friend ustring operator +(const ustring& str_a, char8 character) {
       ustring result = str_a;
       result.append(ustring(1, character));
@@ -1407,7 +1410,7 @@ namespace xtd {
       return result;
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     friend ustring operator +(const ustring& str_a, const std::initializer_list<char8>& il) {
       ustring result = str_a;
       result.append(ustring(il));
@@ -1445,7 +1448,7 @@ namespace xtd {
       return result;
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     friend ustring operator +(const std::u8string& str_a, const ustring& str_b) {
       ustring result(str_a);
       result.append(str_b);
@@ -1501,7 +1504,7 @@ namespace xtd {
       return result;
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     friend ustring operator +(char8 character, const ustring& str_b) {
       ustring result(1, character);
       result.append(str_b);
@@ -1533,7 +1536,7 @@ namespace xtd {
       return result;
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     friend ustring operator +(const std::initializer_list<char8>& il, const ustring& str_b) {
       ustring result(il);
       result.append(str_b);
@@ -1663,4 +1666,15 @@ void __ustring_extract_format_arg(xtd::ustring& fmt, std::vector<__format_inform
   (__ustring_extract_format_arg(fmt, index, formats, args), ...);
   unused_(index); // workaround to mute gcc warning: unused-but-set-variable
 }
+/// @endcond
+
+/// @cond
+/// Needed for std::format
+#if defined(__xtd__cpp_lib_format)
+template <>
+struct std::formatter<xtd::ustring> : std::formatter<std::string> {
+  template <typename object_t, typename format_context_t>
+  auto format(const object_t& obj, format_context_t& ctx) const {return std::format_to(ctx.out(), "{}", std::string {obj.to_string()});}
+};
+#endif
 /// @endcond

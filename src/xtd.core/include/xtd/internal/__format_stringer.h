@@ -7,6 +7,9 @@
 #endif
 /// @endcond
 
+#define __XTD_STD_INTERNAL__
+#include "__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 #include "../chrono.h"
 #include "../types.h"
 #include <algorithm>
@@ -64,7 +67,7 @@ namespace xtd {
   inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc);
   template<typename type_t, typename period_t = std::ratio<1>>
   inline std::string to_string(const std::chrono::duration<type_t, period_t>& value, const std::string& fmt, const std::locale& loc);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   template<>
   inline std::string to_string(const xtd::char8& value, const std::string& fmt, const std::locale& loc);
 #endif
@@ -114,7 +117,7 @@ namespace xtd {
   
   template<typename type_t, typename period_t = std::ratio<1>>
   inline std::wstring to_string(const std::chrono::duration<type_t, period_t>& value, const std::wstring& fmt, const std::locale& loc);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   template<>
   inline std::wstring to_string(const xtd::char8& value, const std::wstring& fmt, const std::locale& loc);
 #endif
@@ -200,7 +203,7 @@ inline std::basic_string<char_t> __to_string(xtd::char16 codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 template<typename char_t>
 inline std::basic_string<char_t> __to_string(xtd::char8 codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
@@ -240,7 +243,7 @@ std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const st
   return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 std::ostream& operator <<(std::ostream& os, const xtd::char8* str);
 #endif
 std::ostream& operator <<(std::ostream& os, const xtd::char16* str);
@@ -297,14 +300,14 @@ std::string __format_stringer_to_std_string(const value_t& value) {
 }
 
 std::string __format_stringer_to_std_string(const char& c);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 std::string __format_stringer_to_std_string(const xtd::char8& c);
 #endif
 std::string __format_stringer_to_std_string(const xtd::char16& c);
 std::string __format_stringer_to_std_string(const xtd::char32& c);
 std::string __format_stringer_to_std_string(const xtd::wchar& c);
 std::string __format_stringer_to_std_string(const char* str);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 std::string __format_stringer_to_std_string(const xtd::char8* str);
 #endif
 std::string __format_stringer_to_std_string(const xtd::char16* str);
@@ -312,7 +315,7 @@ std::string __format_stringer_to_std_string(const xtd::char32* str);
 std::string __format_stringer_to_std_string(const xtd::wchar* str);
 std::string __format_stringer_to_std_string(const std::string& str);
 std::string __format_stringer_to_std_string(const xtd::ustring& str);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 std::string __format_stringer_to_std_string(const std::u8string& str);
 #endif
 std::string __format_stringer_to_std_string(const std::u16string& str);
@@ -347,7 +350,7 @@ inline std::basic_string<char_t> __format_stringer(const char* const& value) {
   return ss.str();
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __format_stringer(const xtd::char8*& value) {
   auto s = std::u8string(value);
@@ -407,7 +410,7 @@ inline std::basic_string<char_t> __format_stringer(const xtd::wchar* const& valu
   return ss.str();
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::string __format_stringer<char, std::u8string&>(std::u8string& value) {
   std::basic_stringstream<char> ss;
@@ -527,7 +530,7 @@ inline std::string __format_stringer<char, xtd::wchar&>(xtd::wchar& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::string __format_stringer<char, xtd::char8&>(xtd::char8& value) {
   return xtd::to_string(value, "G", std::locale());
@@ -544,7 +547,7 @@ inline std::string __format_stringer<char, xtd::char32&>(xtd::char32& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::wstring __format_stringer<xtd::wchar, std::u8string&>(std::u8string& value) {
   std::basic_stringstream<xtd::wchar> ss;

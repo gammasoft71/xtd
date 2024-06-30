@@ -5,7 +5,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-#if defined(__cpp_lib_filesystem)
+#if defined(__xtd__cpp_lib_filesystem)
 using namespace std::filesystem;
 
 void directory_assume::are_equal(const directory_entry& expected, const directory_entry& actual) {
@@ -49,7 +49,7 @@ void directory_assume::are_equal(const directory_info& expected, const directory
   }
 }
 
-#if defined(__cpp_lib_filesystem)
+#if defined(__xtd__cpp_lib_filesystem)
 void directory_assume::are_not_equal(const directory_entry& expected, const directory_entry& actual) {
   are_not_equal(expected, actual, ustring::empty_string, stack_frame::empty());
 }
@@ -91,7 +91,7 @@ void directory_assume::are_not_equal(const directory_info& expected, const direc
   }
 }
 
-#if defined(__cpp_lib_filesystem)
+#if defined(__xtd__cpp_lib_filesystem)
 void directory_assume::does_not_exist(const std::filesystem::directory_entry& directory) {
   does_not_exist(directory, ustring::empty_string, stack_frame::empty());
 }
@@ -129,7 +129,7 @@ void directory_assume::does_not_exist(const directory_info& directory, const std
   }
 }
 
-#if defined(__cpp_lib_filesystem)
+#if defined(__xtd__cpp_lib_filesystem)
 void directory_assume::exists(const std::filesystem::directory_entry& directory) {
   exists(directory, ustring::empty_string, stack_frame::empty());
 }

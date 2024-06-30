@@ -53,7 +53,7 @@ xtd::ustring compiler::to_string() const noexcept {
 }
 
 xtd::ustring compiler::get_apple_clang_additional_information() const noexcept {
-  // https://en.wikipedia.org/wiki/Xcode#:~:text=Starting%20with%20Xcode%204.2%2C%20the,end%20for%20the%20IDE%27s%20debugger.
+  // https://en.wikipedia.org/wiki/Xcode
   auto version_string = get_compiler_version_string("clang");
   if (version_string.contains("15.0.0 (clang-1500.3.9.4)")) return "Xcode 15.3";
   if (version_string.contains("15.0.0 (clang-1500.1.0.2.5)")) return "Xcode 15.2";

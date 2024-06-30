@@ -2,6 +2,9 @@
 /// @brief Contains xtd::io::binary_writer class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#define __XTD_STD_INTERNAL__
+#include "../internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 #include "../optional.h"
 #include "../object.h"
 #include "../ustring.h"
@@ -194,14 +197,14 @@ namespace xtd {
       virtual void write(const ustring& value);
       /// @cond
       virtual void write(const std::string& value);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       virtual void write(const std::u8string& value);
 #endif
       virtual void write(const std::u16string& value);
       virtual void write(const std::u32string& value);
       virtual void write(const std::wstring& value);
       virtual void write(const char* value);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       virtual void write(const char8* value);
 #endif
       virtual void write(const char16* value);
@@ -246,14 +249,14 @@ namespace xtd {
       binary_writer& operator <<(float value) {write(value); return *this;}
       binary_writer& operator <<(const ustring& value) {write(value); return *this;}
       binary_writer& operator <<(const std::string& value) {write(value); return *this;}
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       binary_writer& operator <<(const std::u8string& value) {write(value); return *this;}
 #endif
       binary_writer& operator <<(const std::u16string& value) {write(value); return *this;}
       binary_writer& operator <<(const std::u32string& value) {write(value); return *this;}
       binary_writer& operator <<(const std::wstring& value) {write(value); return *this;}
       binary_writer& operator <<(const char* value) {write(value); return *this;}
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       binary_writer& operator <<(const char8* value) {write(value); return *this;}
 #endif
       binary_writer& operator <<(const char16* value) {write(value); return *this;}

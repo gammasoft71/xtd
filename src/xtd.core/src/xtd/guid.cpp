@@ -94,15 +94,19 @@ ustring guid::to_string() const noexcept {
   return to_string("D");
 }
 
-ustring guid::to_string(ustring format) const {
-  format = format.empty() ? "d" : format.to_lower();
+ustring guid::to_string(const ustring& format) const {
+  return to_string(format, std::locale {});
+}
+
+ustring guid::to_string(const ustring& format, const std::locale& loc) const {
+  auto fmt = format.empty() ? "d" : format.to_lower();
   
-  if (format.size() != 1 || ustring("ndbpx").index_of(format) == ustring::npos) throw format_exception {csf_};
+  if (fmt.size() != 1 || ustring("ndbpx").index_of(fmt) == ustring::npos) throw format_exception {csf_};
     
-  auto hyphens = format != "n" && format != "x";
-  auto braces = format == "b";
-  auto parentheses = format == "p";
-  auto hexadecimal = format == "x";
+  auto hyphens = fmt != "n" && fmt != "x";
+  auto braces = fmt == "b";
+  auto parentheses = fmt == "p";
+  auto hexadecimal = fmt == "x";
   
   auto result = ustring::empty_string;
   for (auto index = 0_z; index < data_.size(); ++index) {

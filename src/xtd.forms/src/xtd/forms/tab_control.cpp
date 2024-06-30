@@ -55,7 +55,7 @@ void tab_control::tab_page_collection::push_back(const char* text) {
   push_back(text, ustring::empty_string);
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void tab_control::tab_page_collection::push_back(const char8* text) {
   push_back(text, ustring::empty_string);
 }

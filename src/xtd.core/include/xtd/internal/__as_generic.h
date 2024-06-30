@@ -8,6 +8,10 @@
 #endif
 /// @endcond
 
+#define __XTD_STD_INTERNAL__
+#include "__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Casts a type into another type.
@@ -103,7 +107,7 @@ namespace xtd {
     return static_cast<new_type_t>(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -606,7 +610,7 @@ namespace xtd {
     throw std::bad_cast();
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -836,7 +840,7 @@ namespace xtd {
     return reinterpret_cast<new_type_t>(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.

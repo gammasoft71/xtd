@@ -7,6 +7,7 @@
 #include "iequatable.h"
 #include "invalid_cast_exception.h"
 #include "iequatable.h"
+#include "iformatable.h"
 #include "enum.h"
 #include "object.h"
 #include "ustring.h"
@@ -46,7 +47,7 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = true;
   /// ```
   template<typename type_t>
-  class box : public xtd::icomparable<box<type_t>>, public xtd::iequatable<box<type_t>>, public xtd::object {
+  class box : public xtd::object, public xtd::icomparable<box<type_t>>, public xtd::iequatable<box<type_t>>, public xtd::iformatable {
   public:
     using underlying_type = type_t;
     /// @name Public Constructors
@@ -111,9 +112,12 @@ namespace xtd {
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
     /// @return The string representation of the value of this instance as specified by format.
-    xtd::ustring to_string(const xtd::ustring& format) const noexcept {
-      return xtd::ustring::format(xtd::ustring::format("{{:{}}}", format), value_);
-    }
+    xtd::ustring to_string(const xtd::ustring& format) const {return to_string(format, std::locale {});}
+    /// @brief Converts the value of this instance to its equivalent string representation, using the specified format, and locale.
+    /// @param format A value type format string.
+    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @return The string representation of the value of this instance as specified by format.
+    xtd::ustring to_string(const xtd::ustring& format, const std::locale& loc) const override {return xtd::ustring::format(xtd::ustring::format("{{:{}}}", format), value_);}
     /// @}
 
     /// @name Public Static Methods

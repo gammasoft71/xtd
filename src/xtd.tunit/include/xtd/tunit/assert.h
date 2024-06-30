@@ -92,7 +92,7 @@ namespace xtd {
       
       /// @cond
       static void are_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       static void are_equal(const char8* expected, const char8* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #endif
       static void are_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
@@ -316,7 +316,7 @@ namespace xtd {
       
       /// @cond
       static void are_not_equal(const char* expected, const char* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       static void are_not_equal(const char8* expected, const char8* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #endif
       static void are_not_equal(const char16* expected, const char16* actual, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
@@ -531,7 +531,7 @@ namespace xtd {
           fail("collection containing " + to_string(item), join_items(values), message, stack_frame);
       }
       static void contains(char item, const char* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       static void contains(char8 item, const char8* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #endif
       static void contains(char16 item, const char16* values, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
@@ -657,7 +657,7 @@ namespace xtd {
           fail("collection <empty>", join_items(values), message, stack_frame);
       }
       static void is_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       static void is_empty(const char8* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #endif
       static void is_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
@@ -770,7 +770,7 @@ namespace xtd {
       
       /// @cond
       static void is_greater(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       static void is_greater(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #endif
       static void is_greater(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
@@ -838,7 +838,7 @@ namespace xtd {
       
       /// @cond
       static void is_greater_or_equal(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       static void is_greater_or_equal(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #endif
       static void is_greater_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
@@ -957,7 +957,7 @@ namespace xtd {
       
       /// @cond
       static void is_less(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       static void is_less(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #endif
       static void is_less(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
@@ -1025,7 +1025,7 @@ namespace xtd {
       
       /// @cond
       static void is_less_or_equal(const char* val1, const char* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       static void is_less_or_equal(const char8* val1, const char8* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #endif
       static void is_less_or_equal(const char16* val1, const char16* val2, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
@@ -1309,7 +1309,7 @@ namespace xtd {
           fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       static void is_not_empty(const char* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
       static void is_not_empty(const char8* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);
 #endif
       static void is_not_empty(const char16* value, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame);

@@ -42,7 +42,7 @@ namespace xtd::tests {
       assert::are_equal(L"string", ustring::format(L"{}", ustring("string")), csf_);
     }
     
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(format_string_with_u8string) {
       assert::are_equal(L"string", ustring::format(L"{}", u8string(u8"string")), csf_);
     }

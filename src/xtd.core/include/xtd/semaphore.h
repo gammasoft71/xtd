@@ -2,7 +2,10 @@
 /// @brief Contains std::counting_semaphore and std::binary_semaphore types.
 #pragma once
 /// @cond
-#if defined(__cpp_lib_semaphore) || __cplusplus >= 202002l
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
+#if defined(__xtd__cpp_lib_semaphore)
 #include <semaphore>
 #else
 

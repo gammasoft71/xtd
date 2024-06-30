@@ -124,7 +124,7 @@ void binary_writer::write(const string& value) {
   write(ustring(value));
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void binary_writer::write(const std::u8string& value) {
   write(ustring(value));
 }
@@ -146,7 +146,7 @@ void binary_writer::write(const char* value) {
   write(ustring(value));
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 void binary_writer::write(const char8* value) {
   write(ustring(value));
 }

@@ -9,6 +9,7 @@
 #include "format_exception.h"
 #include "icomparable.h"
 #include "iequatable.h"
+#include "iformatable.h"
 #include "number_styles.h"
 #include "optional.h"
 #include "static.h"
@@ -37,7 +38,7 @@ namespace xtd {
   /// The following code show how to use xtd::enum_object class for an enum flags.
   /// @include enum_class_flags.cpp
   template<typename enum_t = std::nullptr_t>
-  class enum_object : public xtd::object, public xtd::icomparable<enum_object<enum_t>>, public xtd::iequatable<enum_object<enum_t>> {
+  class enum_object : public xtd::object, public xtd::icomparable<enum_object<enum_t>>, public xtd::iequatable<enum_object<enum_t>>, public xtd::iformatable {
   public:
     /// @name Public Aliases
     
@@ -157,7 +158,26 @@ namespace xtd {
     /// ```cpp
     /// ustring shade_name = enum_object<shade>(as<shade>(1)).to_string("F");
     /// ```
-    xtd::ustring to_string(const xtd::ustring& format) const {
+    xtd::ustring to_string(const xtd::ustring& format) const {return to_string(format, std::locale {});}
+    
+    /// @brief Converts the value of this instance to its equivalent string representation using the specified format, and locale.
+    /// @param format A format string.
+    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @return The string representation of the value of this instance as specified by format.
+    /// @exception xtd::format_exception format contains an invalid specification.
+    /// @remarks The format parameter can be one of the following format strings: "G" or "g", "D" or "d", "X" or "x", and "F" or "f" (the format string is not case-sensitive). If format is null or an empty string (""), the general format specifier ("G") is used. For more information about the enumeration format strings and formatting enumeration values, see [Enumeration Format Strings](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/enumeration_format_strings). For more information about formatting in general, see [Formatting Types](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/overview).
+    /// @par Notes to caller
+    /// If multiple enumeration members have the same underlying value and you attempt to retrieve the string representation of an enumeration member's name based on its underlying value, your code should not make any assumptions about which name the method will return. For example, the following enumeration defines two members, shade::gray and shade::grey, that have the same underlying value.
+    /// ```cpp
+    /// enum shade {
+    ///   white = 0, gray = 1, grey = 1, black = 2
+    /// };
+    /// ```
+    /// The following method call attempts to retrieve the name of a member of the shade enumeration whose underlying value is 1. The method can return either "gray" or "grey", and your code should not make any assumptions about which string will be returned.
+    /// ```cpp
+    /// ustring shade_name = enum_object<shade>(as<shade>(1)).to_string("F");
+    /// ```
+    xtd::ustring to_string(const xtd::ustring& format, const std::locale& loc) const override {
       init();
       auto fmt = format;
       if (fmt.empty()) fmt =  "G";
@@ -617,13 +637,6 @@ namespace xtd {
     /// @}
   };
   /// @}
-  
-  /// @cond
-  template<typename type_t>
-  inline std::string to_string(const xtd::enum_object<type_t>& value, const std::string& fmt, const std::locale& loc) {
-    return value.to_string(fmt);
-  }
-  /// @endcond
 }
 
 /// @cond

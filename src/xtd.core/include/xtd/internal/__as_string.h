@@ -8,6 +8,10 @@
 #endif
 /// @endcond
 
+#define __XTD_STD_INTERNAL__
+#include "__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Casts a type into another type.
@@ -78,7 +82,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -280,7 +284,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -402,7 +406,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -564,7 +568,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -726,7 +730,7 @@ namespace xtd {
     return xtd::convert_string::to_wstring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -968,7 +972,7 @@ namespace xtd {
   }
 #endif
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -1290,7 +1294,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -1492,7 +1496,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -1614,7 +1618,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -1776,7 +1780,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -1978,7 +1982,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -2100,7 +2104,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -2262,7 +2266,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -2464,7 +2468,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp
@@ -2586,7 +2590,7 @@ namespace xtd {
     return xtd::convert_string::to_ustring(value);
   }
   
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @par Header
   /// ```cpp

@@ -53,7 +53,7 @@ string convert_string::to_string(const ustring& str) noexcept {
   return str;
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 string convert_string::to_string(const u8string& str) noexcept {
   return reinterpret_cast<const char*>(str.c_str());
 }
@@ -119,7 +119,7 @@ const ustring& convert_string::to_ustring(const ustring& str) noexcept {
   return str;
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 ustring convert_string::to_ustring(const u8string& str) noexcept {
   return reinterpret_cast<const char*>(str.c_str());
 }
@@ -169,7 +169,7 @@ ustring convert_string::to_ustring(wchar* str) noexcept {
   return to_string(wstring(str));
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 u8string convert_string::to_u8string(const string& str) noexcept {
   return reinterpret_cast<const char8*>(str.c_str());
 }
@@ -269,7 +269,7 @@ u16string convert_string::to_u16string(const ustring& str) noexcept {
   return to_u16string(reinterpret_cast<const char*>(str.c_str()));
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 u16string convert_string::to_u16string(const u8string& str) noexcept {
   return to_u16string(reinterpret_cast<const char*>(str.c_str()));
 }
@@ -348,7 +348,7 @@ u32string convert_string::to_u32string(const ustring& str) noexcept {
   return to_u32string(reinterpret_cast<const char*>(str.c_str()));
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 u32string convert_string::to_u32string(const u8string& str) noexcept {
   return to_u32string(reinterpret_cast<const char*>(str.c_str()));
 }
@@ -434,7 +434,7 @@ wstring convert_string::to_wstring(const ustring& str) noexcept {
   return to_wstring(reinterpret_cast<const char*>(str.c_str()));
 }
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 wstring convert_string::to_wstring(const u8string& str) noexcept {
   return to_wstring(reinterpret_cast<const char*>(str.c_str()));
 }

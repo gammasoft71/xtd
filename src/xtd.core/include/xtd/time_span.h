@@ -5,6 +5,7 @@
 #include "chrono.h"
 #include "icomparable.h"
 #include "iequatable.h"
+#include "iformatable.h"
 #include "object.h"
 #include "parse.h"
 #include "ticks.h"
@@ -24,7 +25,7 @@ namespace xtd {
   /// @par Examples
   /// The following example instantiates a The following example instantiates a xtd::time_span object that represents the difference between two dates. It then displays the xtd::time_span object's properties. object that represents the difference between two dates. It then displays the xtd::time_span object's properties.
   /// @include time_span.cpp
-  struct time_span : public xtd::object, xtd::iequatable<time_span>, icomparable<time_span> {
+  struct time_span : public xtd::object, xtd::iequatable<time_span>, public icomparable<time_span>, public iformatable {
   public:
     /// @name Public Fields
 
@@ -336,6 +337,7 @@ namespace xtd {
 
     xtd::ustring to_string() const noexcept override;
     /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format.
+    /// @param format A single format specifier that indicates how to format the value of this xtd::time_span.
     /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
     /// @exception xtd::format_exception The format parameter is not recognized or is not supported.
     /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::ustring::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
@@ -362,6 +364,36 @@ namespace xtd {
     /// | 't'    | write absolute value of ticks                                                                                               |
     /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
     ustring to_string(const ustring& format) const;
+
+    /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format, and locale.
+    /// @param format A single format specifier that indicates how to format the value of this xtd::time_span.
+    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
+    /// @exception xtd::format_exception The format parameter is not recognized or is not supported.
+    /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::ustring::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
+    /// @remarks The formatting codes for xtd::time_span::to_string (const xtd::ustring&) are listed below:
+    /// | Format | Print                                                                                                                       |
+    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+    /// | 'c'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
+    /// | 'd'    | write absolute value of days d                                                                                              |
+    /// | 'D'    | write absolute value of days dd                                                                                              |
+    /// | 'f'    | write duration d.h.mm.ss.ticks                                                                                              |
+    /// | 'F'    | write duration d.hh.mm.ss.ticks                                                                                             |
+    /// | 'g'    | write duration with optional ticks d.h.mm.ss.ticks                                                                          |
+    /// | 'G'    | write duration with optional ticks d.hh.mm.ss.ticks                                                                         |
+    /// | 'h'    | write absolute value of hours h                                                                                             |
+    /// | 'H'    | write absolute value of hours hh                                                                                            |
+    /// | 'l'    | write absolute value of milliseconds                                                                                        |
+    /// | 'L'    | write absolute value of milliseconds fixed at 3 digits                                                                      |
+    /// | 'm'    | write absolute value of minutes m                                                                                           |
+    /// | 'M'    | write absolute value of minutes mm                                                                                          |
+    /// | 'o'    | write optional minus sign                                                                                                   |
+    /// | 'o'    | write minus or plus sign                                                                                                    |
+    /// | 's'    | write absolute value of seconds s                                                                                           |
+    /// | 'S'    | write absolute value of seconds ss                                                                                          |
+    /// | 't'    | write absolute value of ticks                                                                                               |
+    /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
+    ustring to_string(const ustring& format, const std::locale& loc) const override;
     /// @}
     
     /// @name Public Static Methods
@@ -526,19 +558,5 @@ namespace xtd {
   /// @exception value represents a number that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>At least one of the days, hours, minutes, or seconds components is outside its valid range.
   template<>
   inline xtd::time_span parse<time_span>(const std::string& str) {return time_span::parse(str);}
-
-  /// @brief Convert a specified xtd::time_span value into a string with specified format and locale.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core
-  /// @param value Value to convert.
-  /// @param fmt A composite format string.
-  /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
-  /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
-  /// @remarks for more information about format see @ref FormatPage "Format".
-  template<>
-  inline std::string to_string(const time_span& value, const std::string& fmt, const std::locale& loc) {return value.to_string(fmt);}
 }
 

@@ -3,8 +3,11 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "box_char.h"
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 
-#if defined(__cpp_lib_char8_t)
+#if defined(__xtd__cpp_lib_char8_t)
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @name Boxed types

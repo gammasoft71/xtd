@@ -29,7 +29,7 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
-      #if defined(__cpp_lib_filesystem)
+      #if defined(__xtd__cpp_lib_filesystem)
       /// @brief Validates that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -132,7 +132,7 @@ namespace xtd {
       /// ```
       static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
-      #if defined(__cpp_lib_filesystem)
+      #if defined(__xtd__cpp_lib_filesystem)
       /// @brief Validates that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -247,7 +247,7 @@ namespace xtd {
       /// ```
       static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame);
       
-      #if defined(__cpp_lib_filesystem)
+      #if defined(__xtd__cpp_lib_filesystem)
       /// @brief Validates that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -425,7 +425,7 @@ namespace xtd {
       static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame) {does_not_exist(std::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
       
-      #if defined(__cpp_lib_filesystem)
+      #if defined(__xtd__cpp_lib_filesystem)
       /// @brief Validates that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
