@@ -4,7 +4,7 @@
 #pragma once
 
 /// @cond
-#if (defined(_MSC_VER) && _MSC_VER >= 1932) || (!defined(__APPLE__) && defined(__GNUC__) && __GNUC__ >= 13) || (!defined(__APPLE__) && defined(__clang_major__) && __clang_major__ >= 15) || (defined(__APPLE__) && (__clang_major__ > 14 || (__clang_major__ == 14 && __clang_minor__ > 0) ||  (__clang_major__ == 14 && __clang_minor__ == 0 && __clang_patchlevel__ >= 3)))
+#if (defined(_MSC_VER) && _MSC_VER >= 1932) || (defined(__apple_build_version__) && __apple_build_version__ >= 15000300) || (!defined(__APPLE__) && defined(__GNUC__) && __GNUC__ >= 13) || (!defined(__APPLE__) && defined(__clang_major__) && __clang_major__ >= 15)
 #define __xtd__std_lib_format_available
 #endif
 /// @endcond
