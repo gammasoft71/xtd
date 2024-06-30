@@ -2,10 +2,17 @@
 /// @brief Contains xtd::object class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+
+/// @cond
+#if (defined(_MSC_VER) && _MSC_VER >= 1932) || (!defined(__APPLE__) && defined(__GNUC__) && __GNUC__ >= 13) || (!defined(__APPLE__) && defined(__clang_major__) && __clang_major__ >= 15) || (defined(__APPLE__) && (__clang_major__ > 14 || (__clang_major__ == 14 && __clang_minor__ > 0) ||  (__clang_major__ == 14 && __clang_minor__ == 0 && __clang_patchlevel__ >= 3)))
+#define __xtd__std_lib_format_available
+#endif
+/// @endcond
+
 #include "core_export.h"
 #include "iequatable.h"
 #include "types.h"
-#if defined(__cpp_lib_format) || (defined(_MSC_VER) && _MSC_VER >= 1929) || (defined(__apple_build_version__) && __apple_build_version__ >= 15000300)
+#if defined(__xtd__std_lib_format_available)
 #include <format>
 #endif
 #include <string>
@@ -145,7 +152,7 @@ namespace xtd {
 
 /// @cond
 /// Needed for std::format
-#if defined(__cpp_lib_format) || (defined(_MSC_VER) && _MSC_VER >= 1929) || (defined(__apple_build_version__) && __apple_build_version__ >= 15000300)
+#if defined(__xtd__std_lib_format_available)
 template <>
 struct std::formatter<xtd::object> : std::formatter<std::string> {
   template <typename object_t, typename format_context_t>
