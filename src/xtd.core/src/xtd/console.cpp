@@ -5,9 +5,6 @@
 #include "../../include/xtd/int16_object.h"
 #include "../../include/xtd/lock.h"
 #include "../../include/xtd/io/stream_reader.h"
-#define __XTD_CORE_INTERNAL__
-#include "../../include/xtd/internal/__generic_stream_output.h"
-#undef __XTD_CORE_INTERNAL__
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/console>
 #undef __XTD_CORE_NATIVE_LIBRARY__

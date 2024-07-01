@@ -893,7 +893,9 @@ ustring ustring::quoted() const {
 }
 
 ustring ustring::quoted(value_type delimiter, value_type escape) const {
-  return ustring::format("{}", std::quoted(*this, delimiter, escape));
+  std::stringstream ss;
+  ss << std::quoted(*this, delimiter, escape);
+  return ss.str();
 }
 
 ustring ustring::remove(size_t start_index) const noexcept {

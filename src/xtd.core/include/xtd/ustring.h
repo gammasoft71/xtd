@@ -3,7 +3,6 @@
 #pragma once
 /// @cond
 #define __XTD_CORE_INTERNAL__
-#include "internal/__generic_stream_output.h"
 #include "internal/__format_information.h"
 #include "internal/__format_stringer.h"
 #include "internal/__sprintf.h"
