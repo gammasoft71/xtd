@@ -20,6 +20,7 @@
 #include "internal/__xtd_std_version.h"
 #undef __XTD_STD_INTERNAL__
 /// @endcond
+#include "register_any_stringer.h"
 #include "types.h"
 #include <string>
 
@@ -37,7 +38,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc) {return __to_string_polymorphic(value, fmt, loc, std::is_polymorphic<value_t>());}
-  
+
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -75,7 +76,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::string to_string(const char& value, const std::string& fmt, const std::locale& loc) {return __numeric_formatter(fmt, value, loc);}
+  inline std::string to_string(const char& value, const std::string& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -271,7 +272,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename type_t, typename Period>
   inline std::string to_string(const std::chrono::duration<type_t, Period>& value, const std::string& fmt, const std::locale& loc) {return __duration_formatter(fmt, value, loc);}
-  
+
 #if defined(__xtd__cpp_lib_char8_t)
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -360,6 +361,90 @@ namespace xtd {
   inline std::string to_string(const char*  value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
   /// @endcond
   
+  template<>
+  inline std::string to_string(const std::any& value, const std::string& fmt, const std::locale& loc) {
+    auto iterator = __any_stringer__.find(std::type_index(value.type()));
+    return iterator != __any_stringer__.cend() ? xtd::to_string(iterator->second(value), fmt, loc) : "(unregistered)";
+  }
+  
+  template<typename type_t>
+  inline std::string to_string(const std::optional<type_t>& value, const std::string& fmt, const std::locale& loc) {return !value.has_value() ? "(null)" : std::string {"("} + to_string(value.value(), fmt, loc) + std::string {")"};}
+
+  template<>
+  inline std::string to_string(const std::nullopt_t& value, const std::string& fmt, const std::locale& loc) {return "(null)";}
+
+  template<typename type1_t, typename type2_t>
+  inline std::string to_string(const std::pair<type1_t, type2_t>& value, const std::string& fmt, const std::locale& loc) {
+    return std::string {"("} + to_string(value.first, fmt, loc) + std::string {", "} + to_string(value.second, fmt, loc) + std::string {")"};
+  }
+  
+  template<typename type_t, unsigned n_t, unsigned last_t>
+  struct __xtd_tuple_stringer {
+    static std::string to_string(const std::string& str, const type_t& value, const std::string& fmt, const std::locale& loc) {return __xtd_tuple_stringer<type_t, n_t + 1, last_t >::to_string(str + xtd::to_string(std::get<n_t>(value), fmt, loc) + ", ", value, fmt, loc);}
+  };
+  
+  template<typename type_t, unsigned n_t>
+  struct __xtd_tuple_stringer<type_t, n_t, n_t> {
+    static std::string to_string(const std::string& str, const type_t& value, const std::string& fmt, const std::locale& loc) {return str + xtd::to_string(std::get<n_t>(value), fmt, loc);}
+  };
+
+  template<typename ... types_t>
+  inline std::string to_string(const std::tuple<types_t ...>& value, const std::string& fmt, const std::locale& loc) {return __xtd_tuple_stringer<std::tuple<types_t ...>, 0, sizeof...(types_t) - 1 >::to_string(std::string {"("}, value, fmt, loc) + ")";}
+
+  template<typename iterator_t>
+  inline std::string __xtd_iterator_to_string(const std::string& str, iterator_t iterator, const iterator_t& begin, const iterator_t& end, const std::string& fmt, const std::locale& loc) {return iterator != end ? __xtd_iterator_to_string(str + (iterator == begin ? "" : ", ") + xtd::to_string(*iterator, fmt, loc), ++iterator, begin, end, fmt, loc) : str;}
+
+  template<typename iterator_t>
+  inline std::string __xtd_sequence_container_to_string(const iterator_t& begin, const iterator_t& end, const std::string& fmt, const std::locale& loc) {return __xtd_iterator_to_string("[", begin, begin, end, fmt, loc) + "]";}
+  
+  template<typename type_t, size_t size>
+  inline std::string to_string(const std::array<type_t, size>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
+
+  template<typename type_t, typename allocator_t>
+  inline std::string to_string(const std::deque<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
+
+  template<typename type_t, typename allocator_t>
+  inline std::string to_string(const std::forward_list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
+
+  template<typename type_t>
+  inline std::string to_string(const std::initializer_list<type_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
+
+  template<typename type_t, typename allocator_t>
+  inline std::string to_string(const std::list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
+
+  template<typename type_t>
+  inline std::string to_string(const std::valarray<type_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(std::begin(values), std::end(values), fmt, loc);}
+
+  template<typename type_t, typename allocator_t>
+  inline std::string to_string(const std::vector<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
+
+  template<typename iterator_t>
+  inline std::string __xtd_associative_container_to_string(const iterator_t& begin, const iterator_t& end, const std::string& fmt, const std::locale& loc) {return __xtd_iterator_to_string("{", begin, begin, end, fmt, loc) + "}";}
+
+  template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
+  inline std::string to_string(const std::map<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
+  
+  template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
+  inline std::string to_string(const std::multimap<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
+  
+  template<typename key_t, typename compare_t, typename allocator_t>
+  inline std::string to_string(const std::multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
+  
+  template<typename key_t, typename compare_t, typename allocator_t>
+  inline std::string to_string(const std::set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
+
+  template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
+  inline std::string to_string(const std::unordered_map<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
+  
+  template<typename key_t, typename value_t, typename compare_t, typename allocator_t>
+  inline std::string to_string(const std::unordered_multimap<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
+  
+  template<typename key_t, typename compare_t, typename allocator_t>
+  inline std::string to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
+  
+  template<typename key_t, typename compare_t, typename allocator_t>
+  inline std::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
+
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd

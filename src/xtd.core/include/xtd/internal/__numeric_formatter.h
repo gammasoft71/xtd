@@ -16,7 +16,7 @@
 /// @cond
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __numeric_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
-  std::basic_string<char_t> format = fmt;
+  auto format = fmt;
   if (format.empty()) format = {'G'};
   
   std::vector<char_t> possible_formats {'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'o', 'O', 'p', 'P', 'x', 'X'};

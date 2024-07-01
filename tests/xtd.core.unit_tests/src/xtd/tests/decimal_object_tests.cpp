@@ -122,11 +122,11 @@ namespace xtd::tests {
       assert::are_equal("0", decimal_object(0.0l).to_string(), csf_);
       assert::are_equal("1", decimal_object(1.0l).to_string(), csf_);
       assert::are_equal("255", decimal_object(255.0l).to_string(), csf_);
-      assert::are_equal("4.29497e+09", decimal_object(4294967295.0l).to_string(), csf_);
+      assert::are_equal("4294967295", decimal_object(4294967295.0l).to_string(), csf_);
       assert::are_equal("0.00390625", decimal_object(0.00390625l).to_string(), csf_);
-      assert::are_equal("2.32831e-10", decimal_object(0.00000000023283064365386962890625l).to_string(), csf_);
-      assert::are_equal("1.23457e-300", decimal_object(1.23456789012345E-300l).to_string(), csf_);
-      assert::are_equal("1.23457", decimal_object(1.2345678901234565l).to_string(), csf_);
+      assert::are_equal("2.3283064365387E-10", decimal_object(0.00000000023283064365386962890625l).to_string(), csf_);
+      assert::are_equal("1.23456789012345E-300", decimal_object(1.23456789012345E-300l).to_string(), csf_);
+      assert::are_equal("1.23456789012346", decimal_object(1.2345678901234565l).to_string(), csf_);
       assert::are_equal("nan", decimal_object(decimal_object::NaN).to_string(), csf_);
       assert::are_equal("-inf", decimal_object(decimal_object::negative_infinity).to_string(), csf_);
       assert::are_equal("inf", decimal_object(decimal_object::positive_infinity).to_string(), csf_);

@@ -117,7 +117,7 @@ namespace xtd::tests {
       assert::are_equal("2.3283064365387E-10", ustring::format("{}", 0.00000000023283064365386962890625), csf_);
       assert::are_equal("1.23456789012345E-300", ustring::format("{}", 1.23456789012345E-300), csf_);
       assert::are_equal("1.23456789012346", ustring::format("{}", 1.2345678901234565), csf_);
-      assert::are_equal("4.94066e-324", ustring::format("{}", double_object::epsilon), csf_);
+      assert::are_equal("4.94065645841247E-324", ustring::format("{}", double_object::epsilon), csf_);
       assert::are_equal("nan", ustring::format("{}", double_object::NaN), csf_);
       assert::are_equal("-inf", ustring::format("{}", double_object::negative_infinity), csf_);
       assert::are_equal("inf", ustring::format("{}", double_object::positive_infinity), csf_);
@@ -127,12 +127,12 @@ namespace xtd::tests {
       assert::are_equal("0", double_object(0.0).to_string(), csf_);
       assert::are_equal("1", double_object(1.0).to_string(), csf_);
       assert::are_equal("255", double_object(255.0).to_string(), csf_);
-      assert::are_equal("4.29497e+09", double_object(4294967295.0).to_string(), csf_);
+      assert::are_equal("4294967295", double_object(4294967295.0).to_string(), csf_);
       assert::are_equal("0.00390625", double_object(0.00390625).to_string(), csf_);
-      assert::are_equal("2.32831e-10", double_object(0.00000000023283064365386962890625).to_string(), csf_);
-      assert::are_equal("1.23457e-300", double_object(1.23456789012345E-300).to_string(), csf_);
-      assert::are_equal("1.23457", double_object(1.2345678901234565).to_string(), csf_);
-      assert::are_equal("4.94066e-324", double_object(double_object::epsilon).to_string(), csf_);
+      assert::are_equal("2.3283064365387E-10", double_object(0.00000000023283064365386962890625).to_string(), csf_);
+      assert::are_equal("1.23456789012345E-300", double_object(1.23456789012345E-300).to_string(), csf_);
+      assert::are_equal("1.23456789012346", double_object(1.2345678901234565).to_string(), csf_);
+      assert::are_equal("4.94065645841247E-324", double_object(double_object::epsilon).to_string(), csf_);
       assert::are_equal("nan", double_object(double_object::NaN).to_string(), csf_);
       assert::are_equal("-inf", double_object(double_object::negative_infinity).to_string(), csf_);
       assert::are_equal("inf", double_object(double_object::positive_infinity).to_string(), csf_);

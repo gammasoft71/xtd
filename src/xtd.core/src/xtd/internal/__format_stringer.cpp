@@ -1,10 +1,15 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../../include/xtd/internal/__format_stringer.h"
 #undef __XTD_CORE_INTERNAL__
+#include "../../../include/xtd/iformatable.h"
 #include "../../../include/xtd/ustring.h"
 
 using namespace std;
 using namespace xtd;
+
+std::string __iformatable_to_string(const iformatable& value) noexcept {
+  return value.to_string("", std::locale {});
+}
 
 std::string __object_to_string(const object& value) noexcept {
   return value.to_string();

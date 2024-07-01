@@ -13,7 +13,6 @@ namespace xtd::tests {
   template <typename Value>
   class wstring_numeric_format_tests;
   
-  test_class_attribute<wstring_numeric_format_tests<char>> wstring_numeric_format_tests_class_char_attr {"wstring_numeric_format_tests<char>"};
   test_class_attribute<wstring_numeric_format_tests<unsigned char>> wstring_numeric_format_tests_class_unsigned_char_attr {"wstring_numeric_format_tests<unsigned_char>"};
   test_class_attribute<wstring_numeric_format_tests<short>> wstring_numeric_format_tests_class_short_attr {"wstring_numeric_format_tests<short>"};
   test_class_attribute<wstring_numeric_format_tests<unsigned short>> wstring_numeric_format_tests_class_unsigned_short_attr {"wstring_numeric_format_tests<unsigned_short>"};
@@ -48,10 +47,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_default_argument) {
-      if (std::is_same<Value, char>::value)
-        assert::are_equal(L"*", ustring::format(L"{0}", static_cast<Value>(42)), csf_);
-      else
-        assert::are_equal(L"42", ustring::format(L"{0}", static_cast<Value>(42)), csf_);
+      assert::are_equal(L"42", ustring::format(L"{0}", static_cast<Value>(42)), csf_);
     }
     
     void test_method_(format_without_format_argument_separator) {
@@ -59,45 +55,27 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_left_alignment) {
-      if (std::is_same<Value, char>::value)
-        assert::are_equal(L"   *", ustring::format(L"{0,4}", static_cast<Value>(42)), csf_);
-      else
-        assert::are_equal(L"  42", ustring::format(L"{0,4}", static_cast<Value>(42)), csf_);
+      assert::are_equal(L"  42", ustring::format(L"{0,4}", static_cast<Value>(42)), csf_);
     }
     
     void test_method_(format_with_left_alignment_with_plus) {
-      if (std::is_same<Value, char>::value)
-        assert::are_equal(L"   *", ustring::format(L"{0,+4}", static_cast<Value>(42)), csf_);
-      else
-        assert::are_equal(L"  42", ustring::format(L"{0,+4}", static_cast<Value>(42)), csf_);
+      assert::are_equal(L"  42", ustring::format(L"{0,+4}", static_cast<Value>(42)), csf_);
     }
     
     void test_method_(format_with_left_alignment_to_zero) {
-      if (std::is_same<Value, char>::value)
-        assert::are_equal(L"*", ustring::format(L"{0,0}", static_cast<Value>(42)), csf_);
-      else
-        assert::are_equal(L"42", ustring::format(L"{0,0}", static_cast<Value>(42)), csf_);
+      assert::are_equal(L"42", ustring::format(L"{0,0}", static_cast<Value>(42)), csf_);
     }
     
     void test_method_(format_with_right_alignment) {
-      if (std::is_same<Value, char>::value)
-        assert::are_equal(L"*   ", ustring::format(L"{0,-4}", static_cast<Value>(42)), csf_);
-      else
-        assert::are_equal(L"42  ", ustring::format(L"{0,-4}", static_cast<Value>(42)), csf_);
+      assert::are_equal(L"42  ", ustring::format(L"{0,-4}", static_cast<Value>(42)), csf_);
     }
     
     void test_method_(format_with_right_alignment_to_zero) {
-      if (std::is_same<Value, char>::value)
-        assert::are_equal(L"*", ustring::format(L"{0,-0}", static_cast<Value>(42)), csf_);
-      else
-        assert::are_equal(L"42", ustring::format(L"{0,-0}", static_cast<Value>(42)), csf_);
+      assert::are_equal(L"42", ustring::format(L"{0,-0}", static_cast<Value>(42)), csf_);
     }
     
     void test_method_(format_with_alignment_empty) {
-      if (std::is_same<Value, char>::value)
-        assert::are_equal(L"*", ustring::format(L"{0,}", static_cast<Value>(42)), csf_);
-      else
-        assert::are_equal(L"42", ustring::format(L"{0,}", static_cast<Value>(42)), csf_);
+      assert::are_equal(L"42", ustring::format(L"{0,}", static_cast<Value>(42)), csf_);
     }
     
     void test_method_(format_with_alignment_invalid) {
@@ -271,7 +249,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_number_argument) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, sbyte>::value || std::is_same<Value, xtd::byte>::value)
+      if (std::is_same<Value, unsigned char>::value || std::is_same<Value, sbyte>::value || std::is_same<Value, xtd::byte>::value)
         assert::are_equal(L"123.00", ustring::format(L"{0:n}", static_cast<Value>(123)), csf_);
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal(L"1,234.00", ustring::format(L"{0:n}", static_cast<Value>(1234)), csf_);
@@ -280,7 +258,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_number_argument_and_one_digit_precision) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, sbyte>::value || std::is_same<Value, xtd::byte>::value)
+      if (std::is_same<Value, unsigned char>::value || std::is_same<Value, sbyte>::value || std::is_same<Value, xtd::byte>::value)
         assert::are_equal(L"123.0000", ustring::format(L"{0:N4}", static_cast<Value>(123)), csf_);
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal(L"1,234.0000", ustring::format(L"{0:N4}", static_cast<Value>(1234)), csf_);
@@ -289,7 +267,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_number_argument_and_two_digits_precision) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, sbyte>::value || std::is_same<Value, xtd::byte>::value)
+      if (std::is_same<Value, unsigned char>::value || std::is_same<Value, sbyte>::value || std::is_same<Value, xtd::byte>::value)
         assert::are_equal(L"123.0000000000", ustring::format(L"{0:N10}", static_cast<Value>(123)), csf_);
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal(L"1,234.0000000000", ustring::format(L"{0:N10}", static_cast<Value>(1234)), csf_);
