@@ -17,7 +17,7 @@ namespace xtd::tunit::tests {
                                        "  FAILED  xtd::tunit::tests::file_valid_exists_failed_tests.test_case_failed\n"
                                        "    Expected: file exists\n"
                                        "    But was:  {}\n"
-                                       "End 1 test from 1 test case ran.\n", std::quoted(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"))), output);
+                                       "End 1 test from 1 test case ran.\n", xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt").quoted()), output);
   }
   
   void test_(file_valid_exists_failed_tests, test_result) {
