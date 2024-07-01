@@ -17,8 +17,9 @@
 
 /// @cond
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __fixed_point_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
-  if (fmt.empty()) return __format_stringer<char_t>(value);
+inline std::basic_string<char_t> __fixed_point_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
+  auto fmt = format;
+  if (fmt.empty()) fmt = {'G'};
   
   std::vector<char_t> possible_formats {'c', 'C', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'p', 'P'};
   if (fmt.size() > 3 || std::find(possible_formats.begin(), possible_formats.end(), fmt[0]) == possible_formats.end() || (fmt.size() >= 2 && !std::isdigit(fmt[1])) || (fmt.size() == 3 && !std::isdigit(fmt[2])))

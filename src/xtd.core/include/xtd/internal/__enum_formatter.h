@@ -12,9 +12,10 @@
 
 /// @cond
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
-  if (fmt.empty()) return __format_stringer<char_t>(value);
-  
+inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
+  auto fmt = format;
+  if (fmt.empty()) fmt = {'G'};
+
   switch (fmt[0]) {
     case 'b':
     case 'B':

@@ -10,22 +10,41 @@
 #define __XTD_STD_INTERNAL__
 #include "__xtd_std_version.h"
 #undef __XTD_STD_INTERNAL__
+#include "../any.h"
 #include "../chrono.h"
+#include "../optional.h"
 #include "../types.h"
 #include <algorithm>
+#include <array>
 #include <cctype>
 #include <cstddef>
 #include <cstdint>
+#include <deque>
+#include <forward_list>
+#include <functional>
 #include <iomanip>
+#include <iostream>
 #include <locale>
+#include <list>
 #include <map>
+#include <set>
 #include <sstream>
+#include <stdexcept>
 #include <string>
+#include <system_error>
+#include <tuple>
 #include <type_traits>
+#include <typeindex>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <valarray>
 #include <vector>
+
 
 /// @cond
 namespace xtd {
+  class iformatable;
   class object;
   class ustring;
   
@@ -77,7 +96,47 @@ namespace xtd {
   inline std::string to_string(const xtd::char32& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const xtd::wchar& value, const std::string& fmt, const std::locale& loc);
-  
+  template<>
+  inline std::string to_string(const std::any& value, const std::string& fmt, const std::locale& loc);
+  template<typename types_t>
+  inline std::string to_string(const std::optional<types_t>& value, const std::string& fmt, const std::locale& loc);
+  template<>
+  inline std::string to_string(const std::nullopt_t& value, const std::string& fmt, const std::locale& loc);
+  template<typename type1_t, typename type2_t>
+  inline std::string to_string(const std::pair<type1_t, type2_t>& value, const std::string& fmt, const std::locale& loc);
+  template<typename ... types_t>
+  inline std::string to_string(const std::tuple<types_t ...>& value, const std::string& fmt, const std::locale& loc);
+  template<typename type_t, size_t size>
+  inline std::string to_string(const std::array<type_t, size>& values, const std::string& fmt, const std::locale& loc);
+  template<typename type_t, typename allocator_t = std::allocator<type_t>>
+  inline std::string to_string(const std::deque<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename type_t, typename allocator_t = std::allocator<type_t>>
+  inline std::string to_string(const std::forward_list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename type_t>
+  inline std::string to_string(const std::initializer_list<type_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename type_t, typename allocator_t = std::allocator<type_t>>
+  inline std::string to_string(const std::list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename type_t>
+  inline std::string to_string(const std::valarray<type_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename type_t, typename allocator_t = std::allocator<type_t>>
+  inline std::string to_string(const std::vector<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+  inline std::string to_string(const std::map<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+  inline std::string to_string(const std::multimap<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+  inline std::string to_string(const std::multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+  inline std::string to_string(const std::set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+  inline std::string to_string(const std::unordered_map<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+  inline std::string to_string(const std::unordered_multimap<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+  inline std::string to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+  inline std::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+
   template<typename value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc);
   template<>
@@ -252,6 +311,7 @@ std::ostream& operator <<(std::ostream& os, const xtd::wchar* str);
 
 template<typename enum_t>
 std::string __enum_to_string(enum_t value) noexcept;
+std::string __iformatable_to_string(const xtd::iformatable& value) noexcept;
 std::string __object_to_string(const xtd::object& value) noexcept;
 
 template <typename char_t, typename type_t, typename bool_t>
@@ -267,7 +327,8 @@ struct __enum_ostream__<char_t, type_t, std::true_type> {
 template <typename char_t, typename type_t>
 struct __enum_ostream__<char_t, type_t, std::false_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
-    return os << value;
+    //return os << value;
+    return os << xtd::to_string(value, std::basic_string<char_t> {}, std::locale {});
   }
 };
 
@@ -277,8 +338,8 @@ struct __enum_or_polymorphic_ostream__ {};
 template <typename char_t, typename type_t>
 struct __enum_or_polymorphic_ostream__<char_t, type_t, std::true_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
-    auto ptr = dynamic_cast<const xtd::object*>(&value);
-    if (ptr != nullptr) return os << __object_to_string(dynamic_cast<const xtd::object&>(value));
+    if (dynamic_cast<const xtd::iformatable*>(&value)) return os << __iformatable_to_string(dynamic_cast<const xtd::iformatable&>(value));
+    if (dynamic_cast<const xtd::object*>(&value)) return os << __object_to_string(dynamic_cast<const xtd::object&>(value));
     return os << value;
   }
 };

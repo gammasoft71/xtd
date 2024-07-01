@@ -150,23 +150,23 @@ inline std::basic_ostream<char_t, char_traits_t>& __xtd_console_print_associativ
   return os << "}";
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename value_t, typename Compare = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
-inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::map<key_t, value_t, Compare, allocator_t>& values) {
+template <typename char_t, typename char_traits_t, typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::map<key_t, value_t, compare_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename value_t, typename Compare = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
-inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::multimap<key_t, value_t, Compare, allocator_t>& values) {
+template <typename char_t, typename char_traits_t, typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::multimap<key_t, value_t, compare_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename Compare = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
-inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::multiset<key_t, Compare, allocator_t>& values) {
+template <typename char_t, typename char_traits_t, typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::multiset<key_t, compare_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename Compare = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
-inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::set<key_t, Compare, allocator_t>& values) {
+template <typename char_t, typename char_traits_t, typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::set<key_t, compare_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
