@@ -11,6 +11,9 @@
 #include "__format_exception.h"
 
 /// @cond
+template<typename enum_t>
+std::string __enum_to_string(enum_t value) noexcept;
+
 template<typename char_t, typename value_t>
 inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
   auto fmt = format;
@@ -26,7 +29,7 @@ inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t
     case 'x':
     case 'X': return __numeric_formatter(fmt, static_cast<long long int>(value), loc);
     case 'g':
-    case 'G': return __format_stringer<char_t>(value);
+    case 'G': return __enum_to_string(value);
     default: __format_exception("Invalid format expression"); return {};
   }
 }
