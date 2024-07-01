@@ -591,8 +591,6 @@ add_sources(
   include/xtd/internal/__format_information
   include/xtd/internal/__format_stringer.h
   include/xtd/internal/__format_stringer
-  include/xtd/internal/__generic_stream_output.h
-  include/xtd/internal/__generic_stream_output
   include/xtd/internal/__iformatable_formatter.h
   include/xtd/internal/__iformatable_formatter
   include/xtd/internal/__natural_formatter.h

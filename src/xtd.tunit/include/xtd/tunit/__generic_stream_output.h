@@ -3,13 +3,13 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
+#if !defined(__XTD_TUNIT_INTERNAL__)
 #error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
-#include "../any.h"
-#include "../optional.h"
+#include <xtd/any>
+#include <xtd/optional>
 #include <array>
 #include <deque>
 #include <stdexcept>
