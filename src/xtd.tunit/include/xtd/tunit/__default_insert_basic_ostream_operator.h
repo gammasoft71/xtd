@@ -8,7 +8,6 @@
 #endif
 /// @endcond
 
-#include "__generic_stream_output.h"
 #include <array>
 #include <cstdint>
 #include <deque>

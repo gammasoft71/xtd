@@ -1,0 +1,2 @@
+#pragma once
+#include "generic_stream_output.h"

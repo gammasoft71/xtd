@@ -177,27 +177,7 @@ namespace xtd {
     /// ```cpp
     /// ustring shade_name = enum_object<shade>(as<shade>(1)).to_string("F");
     /// ```
-    xtd::ustring to_string(const xtd::ustring& format, const std::locale& loc) const override {
-      init();
-      auto fmt = format;
-      if (fmt.empty()) fmt =  "G";
-      
-      switch (fmt[0]) {
-        case 'b':
-        case 'B':
-        case 'd':
-        case 'D':
-        case 'o':
-        case 'O':
-        case 'x':
-        case 'X': return __numeric_formatter(fmt, static_cast<long long int>(value_), std::locale());
-        case 'f':
-        case 'F':
-        case 'g':
-        case 'G': return __format_stringer<char>(value_);
-      }
-      throw format_exception("Invalid format"_t);
-    }
+    xtd::ustring to_string(const xtd::ustring& format, const std::locale& loc) const override;
     /// @}
     
     /// @cond
@@ -637,6 +617,31 @@ namespace xtd {
     /// @}
   };
   /// @}
+  
+  /// @cond
+  template<typename enum_t>
+  xtd::ustring enum_object<enum_t>::to_string(const xtd::ustring& format, const std::locale& loc) const {
+    init();
+    auto fmt = format;
+    if (fmt.empty()) fmt =  "G";
+    
+    switch (fmt[0]) {
+      case 'b':
+      case 'B':
+      case 'd':
+      case 'D':
+      case 'o':
+      case 'O':
+      case 'x':
+      case 'X': return __numeric_formatter(fmt, static_cast<long long int>(value_), std::locale());
+      case 'f':
+      case 'F':
+      case 'g':
+      case 'G': return xtd::enum_object<>::get_name(value_);
+    }
+    throw format_exception("Invalid format"_t);
+  }
+  /// @endcond
 }
 
 /// @cond

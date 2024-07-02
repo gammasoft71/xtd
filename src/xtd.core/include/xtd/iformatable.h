@@ -43,6 +43,7 @@ namespace xtd {
     virtual xtd::ustring to_string(const xtd::ustring& format, const std::locale& loc) const = 0;
     /// @}
   
+    
     /// @cond
     std::string __opague_internal_formatable__(intptr, intptr, intptr, intptr) const;
     /// @endcond

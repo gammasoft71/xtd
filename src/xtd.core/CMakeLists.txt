@@ -186,6 +186,8 @@ add_sources(
   include/xtd/format_exception
   include/xtd/func.h
   include/xtd/func
+  include/xtd/generic_stream_output.h
+  include/xtd/generic_stream_output
   include/xtd/guid.h
   include/xtd/guid
   include/xtd/iasync_result.h
@@ -603,8 +605,6 @@ add_sources(
   include/xtd/internal/__show_generic_exception_message
   include/xtd/internal/__sprintf.h
   include/xtd/internal/__sprintf
-  include/xtd/internal/__string_formatter.h
-  include/xtd/internal/__string_formatter
   include/xtd/internal/__xtd_debugbreak.h
   include/xtd/internal/__xtd_debugbreak
   include/xtd/internal/__xtd_std_version.h

@@ -2,12 +2,6 @@
 /// @brief Contains generic stream output methods.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_TUNIT_INTERNAL__)
-#error "Do not include this file: Internal use only"
-#endif
-/// @endcond
-
 #include <xtd/any>
 #include <xtd/optional>
 #include <array>
@@ -199,7 +193,7 @@ template <typename char_t, typename char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::error_code& value) {
   return os << "(value = " << value.value() << "category= " << value.category().name() << ")";
 }
-        
+
 template <typename char_t, typename char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, std::any value) {
   auto it = __any_stringer__.find(std::type_index(value.type()));

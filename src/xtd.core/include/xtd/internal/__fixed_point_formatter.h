@@ -10,7 +10,6 @@
 #include "__character_formatter.h"
 #include "__currency_formatter.h"
 #include "__format_exception.h"
-#include "__format_stringer.h"
 #include "__natural_formatter.h"
 #include "__sprintf.h"
 #include <algorithm>

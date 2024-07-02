@@ -1,4 +1,5 @@
 #include "../../include/xtd/as.h"
+#include "../../include/xtd/iformatable.h"
 #include "../../include/xtd/object.h"
 #include "../../include/xtd/type_object.h"
 #include "../../include/xtd/ustring.h"
@@ -28,6 +29,7 @@ bool object::reference_equals(const object& object_a, const object& object_b) no
 }
 
 ustring object::to_string() const noexcept {
+  if (dynamic_cast<const iformatable*>(this)) return dynamic_cast<const iformatable*>(this)->to_string("", std::locale {});
   return get_type().full_name();
 }
 
