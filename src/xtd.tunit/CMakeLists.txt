@@ -8,7 +8,6 @@ add_include_directories(include)
 add_references(xtd.core)
 add_sources(
   include/xtd/tunit/__default_insert_basic_ostream_operator.h
-  include/xtd/tunit/__generic_stream_output.h
   include/xtd/tunit/__google_test_markers.h
   include/xtd/tunit/__tunit_join__items.h
   include/xtd/tunit/abort_error.h

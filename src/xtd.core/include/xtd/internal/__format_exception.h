@@ -8,7 +8,9 @@
 /// @endcond
 
 #include <string>
+#include "../types.h"
 
 /// @cond
+void __format_exception(const xtd::type& type);
 void __format_exception(const std::string& message);
 /// @endcond

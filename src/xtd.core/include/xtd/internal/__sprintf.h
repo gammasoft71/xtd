@@ -7,6 +7,7 @@
 #endif
 /// @endcond
 
+#include "../types.h"
 #include <cstdarg>
 #include <string>
 

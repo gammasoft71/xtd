@@ -4,7 +4,6 @@
 /// @cond
 #define __XTD_CORE_INTERNAL__
 #include "internal/__format_information.h"
-#include "internal/__format_stringer.h"
 #include "internal/__sprintf.h"
 #undef __XTD_CORE_INTERNAL__
 #define __XTD_STD_INTERNAL__
@@ -1640,7 +1639,6 @@ void __ustring_extract_format_arg(std::string& fmt, size_t& index, std::vector<_
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
-      //xtd::ustring arg_str = format.format.empty() ? __format_stringer<char, arg_t>(arg) : xtd::to_string(arg, format.format);
       xtd::ustring arg_str = xtd::to_string(arg, format.format);
       
       if (!format.alignment.empty()) {

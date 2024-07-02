@@ -10,6 +10,7 @@
 #include "__binary_formatter.h"
 
 #include <cmath>
+#include <iomanip>
 #include <locale>
 #include <sstream>
 

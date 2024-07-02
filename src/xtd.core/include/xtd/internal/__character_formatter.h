@@ -7,7 +7,8 @@
 #endif
 /// @endcond
 
-#include "__format_stringer.h"
+#include "../types.h"
+#include <locale>
 
 /// @cond
 template<typename char_t, typename value_t>

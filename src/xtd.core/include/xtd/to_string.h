@@ -14,12 +14,13 @@
 #include "internal/__fixed_point_formatter.h"
 #include "internal/__natural_formatter.h"
 #include "internal/__numeric_formatter.h"
-#include "internal/__string_formatter.h"
+#include "internal/__format_stringer.h"
 #undef __XTD_CORE_INTERNAL__
 #define __XTD_STD_INTERNAL__
 #include "internal/__xtd_std_version.h"
 #undef __XTD_STD_INTERNAL__
 /// @endcond
+#include "generic_stream_output.h"
 #include "register_any_stringer.h"
 #include "types.h"
 #include <string>
@@ -691,7 +692,14 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<typename type_t, typename Period>
   inline std::wstring to_string(const std::chrono::duration<type_t, Period>& value, const std::wstring& fmt, const std::locale& loc) {return __duration_formatter(fmt, value, loc);}
-  
+ 
+  /// @cond
+  template<typename char_t, typename value_t>
+  inline std::basic_string<char_t> __string_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
+    return __format_stringer<char_t>(value);
+  }
+  /// @endcond
+
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
