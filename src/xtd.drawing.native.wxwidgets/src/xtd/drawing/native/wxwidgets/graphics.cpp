@@ -99,6 +99,7 @@ void graphics::copy_from_graphics(intptr handle, intptr handle_source, int32 sou
     default: raster_operation_mode = wxRasterOperationMode::wxCOPY; break;
   }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().Blit(destination_x, destination_y, block_region_width, block_region_height, &reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle_source)->hdc(), source_x, source_y, raster_operation_mode);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::clear(intptr handle, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b) {
@@ -153,6 +154,7 @@ void graphics::copy_from_screen(intptr handle, int32 source_x, int32 source_y, i
     default: raster_operation_mode = wxRasterOperationMode::wxCOPY; break;
   }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc().Blit(destination_x, destination_y, block_region_width, block_region_height, &screen_dc, source_x, source_y, raster_operation_mode);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::destroy(intptr handle) {
