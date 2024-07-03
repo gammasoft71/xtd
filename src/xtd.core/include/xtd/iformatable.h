@@ -31,6 +31,9 @@ namespace xtd {
   /// @par Notes to Implementers
   /// Classes that require more control over the formatting of strings than xtd::iformattable::to_string() provides should implement xtd::iformattable.
   /// A class that implements xtd::iformattable must support the "G" (general) format specifier. Besides the "G" specifier, the class can define the list of format specifiers that it supports. In addition, the class must be prepared to handle a format specifier that is null. For more information about formatting and formatting codes, see [Formatting Type]()s
+  /// @par Examples
+  /// The following example shows how to use xtd::iformatable interface.
+  /// @include iformatable.cpp
   class iformatable interface_ {
   public:
     /// @name Public Methods
