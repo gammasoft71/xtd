@@ -44,14 +44,14 @@ var searchData=
   ['_5f_5fformat_5fexception_2eh_41',['__format_exception.h',['../____format__exception_8h.html',1,'']]],
   ['_5f_5fformat_5finformation_2eh_42',['__format_information.h',['../____format__information_8h.html',1,'']]],
   ['_5f_5fformat_5fstringer_2eh_43',['__format_stringer.h',['../____format__stringer_8h.html',1,'']]],
-  ['_5f_5fgeneric_5fstream_5foutput_2eh_44',['__generic_stream_output.h',['../____generic__stream__output_8h.html',1,'']]],
-  ['_5f_5fgoogle_5ftest_5fmarkers_2eh_45',['__google_test_markers.h',['../____google__test__markers_8h.html',1,'']]],
+  ['_5f_5fgoogle_5ftest_5fmarkers_2eh_44',['__google_test_markers.h',['../____google__test__markers_8h.html',1,'']]],
+  ['_5f_5fiformatable_5fformatter_2eh_45',['__iformatable_formatter.h',['../____iformatable__formatter_8h.html',1,'']]],
   ['_5f_5fnatural_5fformatter_2eh_46',['__natural_formatter.h',['../____natural__formatter_8h.html',1,'']]],
   ['_5f_5fnumeric_5fformatter_2eh_47',['__numeric_formatter.h',['../____numeric__formatter_8h.html',1,'']]],
   ['_5f_5fparse_2eh_48',['__parse.h',['../____parse_8h.html',1,'']]],
   ['_5f_5fshow_5fgeneric_5fexception_5fmessage_2eh_49',['__show_generic_exception_message.h',['../____show__generic__exception__message_8h.html',1,'']]],
   ['_5f_5fsprintf_2eh_50',['__sprintf.h',['../____sprintf_8h.html',1,'']]],
-  ['_5f_5fstring_5fformatter_2eh_51',['__string_formatter.h',['../____string__formatter_8h.html',1,'']]],
-  ['_5f_5ftunit_5fjoin_5f_5fitems_2eh_52',['__tunit_join__items.h',['../____tunit__join____items_8h.html',1,'']]],
-  ['_5f_5fxtd_5fdebugbreak_2eh_53',['__xtd_debugbreak.h',['../____xtd__debugbreak_8h.html',1,'']]]
+  ['_5f_5ftunit_5fjoin_5f_5fitems_2eh_51',['__tunit_join__items.h',['../____tunit__join____items_8h.html',1,'']]],
+  ['_5f_5fxtd_5fdebugbreak_2eh_52',['__xtd_debugbreak.h',['../____xtd__debugbreak_8h.html',1,'']]],
+  ['_5f_5fxtd_5fstd_5fversion_2eh_53',['__xtd_std_version.h',['../____xtd__std__version_8h.html',1,'']]]
 ];
