@@ -66,7 +66,7 @@ private:
 
 // The following class which inherits from `xtd::object` works correctly with the `xtd::console::write_line` method 
 // and works correctly with output stream thanks to the << operator.
-// Remarks: You needs to write to_string method without param and to verride to_string method with params.
+// Remarks: You needs to write to_string method without param and to verride to_string method with params and << operator.
 class foo5 : public iformatable {
 public:
   explicit foo5(int value) : value_ {value} {}
@@ -82,7 +82,7 @@ private:
 
 // The following class which inherits from `xtd::object` works correctly with the `xtd::console::write_line` method
 // and works correctly with output stream thanks to the << operator.
-// Remarks: You needs to write to_string methods.
+// Remarks: You needs to write to_string methods and the << operator.
 class foo6 {
 public:
   explicit foo6(int value) : value_ {value} {}
@@ -96,23 +96,16 @@ private:
   int value_ = 0;
 };
 
+// xtd::to_string specialisation for foo6 class.
 template<>
 std::string xtd::to_string(const foo6& value, const std::string& format, const std::locale& loc) {return value.to_string(format, loc);}
 
+// The following class which inherits from `xtd::object` and `xtd::iformatable` works correctly with the `xtd::console::write_line` method
+// and with output stream.
+// Remarks: All you have to do is override the method parameterised to_string.
 class foo7 : public object, public iformatable {
 public:
   explicit foo7(int value) : value_ {value} {}
-  
-  using object::to_string;
-  ustring to_string(const ustring& format, const std::locale& loc) const override {return ustring::format(ustring::format("{{:{}}}", format), value_);}
-  
-private:
-  int value_ = 0;
-};
-
-class foo8 : public object, public iformatable {
-public:
-  explicit foo8(int value) : value_ {value} {}
   
   using object::to_string;
   ustring to_string(const ustring& format, const std::locale& loc) const override {return ustring::format(ustring::format("{{:{}}}", format), value_);}
@@ -389,20 +382,6 @@ auto main() -> int {
 //   0b00101010
 //
 // foo7 write_line :
-//   42
-//   42
-//   42
-//   0b00101010
-//   0b00101010
-//
-// foo8 standard output :
-//   42
-//   42
-//   42
-//   0b00101010
-//   0b00101010
-//
-// foo8 write_line :
 //   42
 //   42
 //   42
