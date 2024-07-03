@@ -170,6 +170,7 @@ $(function() {
 <div class="line">      button_sheet.text(<span class="stringliteral">&quot;Show sheet&quot;</span>);</div>
 <div class="line">      button_sheet.click += [&amp;] {</div>
 <div class="line">        <span class="keyword">auto</span> dialog = make_unique&lt;form&gt;();</div>
+<div class="line">        dialog-&gt;form_border_style(form_border_style::fixed_3d);</div>
 <div class="line">        dialog-&gt;text(<span class="stringliteral">&quot;dialog show sheet&quot;</span>).size({250, 100});</div>
 <div class="line">        dialog-&gt;key_up += [&amp;](<span class="keywordtype">object</span> &amp; <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1control.html">control</a>, <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1key__event__args.html">key_event_args</a> &amp; e) {</div>
 <div class="line">          <span class="keywordflow">if</span> (e.key_code() == keys::escape) as&lt;form&amp;&gt;(<a class="code hl_class" href="classxtd_1_1forms_1_1control.html">control</a>).close();</div>
@@ -181,6 +182,7 @@ $(function() {
 <div class="line">      button_sheet_modal.text(<span class="stringliteral">&quot;Show sheet modal&quot;</span>);</div>
 <div class="line">      button_sheet_modal.click += [&amp;] {</div>
 <div class="line">        <span class="keyword">auto</span> dialog = form::create(<span class="stringliteral">&quot;dialog show sheet modal&quot;</span>, <a class="code hl_class" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> {250, 100});</div>
+<div class="line">        dialog.form_border_style(form_border_style::fixed_3d);</div>
 <div class="line">        dialog.key_up += [&amp;](<span class="keywordtype">object</span> &amp; <a class="code hl_class" href="classxtd_1_1forms_1_1control.html">control</a>, <a class="code hl_class" href="classxtd_1_1forms_1_1key__event__args.html">key_event_args</a> &amp; e) {</div>
 <div class="line">          <span class="keywordflow">if</span> (e.key_code() == keys::escape) as&lt;form&amp;&gt;(<a class="code hl_class" href="classxtd_1_1forms_1_1control.html">control</a>).close();</div>
 <div class="line">        };</div>
@@ -219,7 +221,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 26 2024 12:27:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 3 2024 07:45:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

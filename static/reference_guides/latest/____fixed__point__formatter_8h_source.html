@@ -95,14 +95,14 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="____character__formatter_8h.html">__character_formatter.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="____currency__formatter_8h.html">__currency_formatter.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="____format__exception_8h.html">__format_exception.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="____format__stringer_8h.html">__format_stringer.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="____natural__formatter_8h.html">__natural_formatter.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="____sprintf_8h.html">__sprintf.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t, <span class="keyword">typename</span> value_t&gt;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __fixed_point_formatter(<span class="keyword">const</span> std::basic_string&lt;char_t&gt;&amp; fmt, value_t value, <span class="keyword">const</span> std::locale&amp; loc) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordflow">if</span> (fmt.empty()) <span class="keywordflow">return</span> __format_stringer&lt;char_t&gt;(value);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="____natural__formatter_8h.html">__natural_formatter.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="____sprintf_8h.html">__sprintf.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t, <span class="keyword">typename</span> value_t&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __fixed_point_formatter(<span class="keyword">const</span> std::basic_string&lt;char_t&gt;&amp; format, value_t value, <span class="keyword">const</span> std::locale&amp; loc) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">auto</span> fmt = format;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordflow">if</span> (fmt.empty()) fmt = {<span class="charliteral">&#39;G&#39;</span>};</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  std::vector&lt;char_t&gt; possible_formats {<span class="charliteral">&#39;c&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;e&#39;</span>, <span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;f&#39;</span>, <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;g&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;n&#39;</span>, <span class="charliteral">&#39;N&#39;</span>, <span class="charliteral">&#39;p&#39;</span>, <span class="charliteral">&#39;P&#39;</span>};</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">if</span> (fmt.size() &gt; 3 || std::find(possible_formats.begin(), possible_formats.end(), fmt[0]) == possible_formats.end() || (fmt.size() &gt;= 2 &amp;&amp; !std::isdigit(fmt[1])) || (fmt.size() == 3 &amp;&amp; !std::isdigit(fmt[2])))</div>
@@ -138,14 +138,13 @@ $(function() {
 <div class="ttc" id="a____character__formatter_8h_html"><div class="ttname"><a href="____character__formatter_8h.html">__character_formatter.h</a></div><div class="ttdoc">Contains __character_formatter method.</div></div>
 <div class="ttc" id="a____currency__formatter_8h_html"><div class="ttname"><a href="____currency__formatter_8h.html">__currency_formatter.h</a></div><div class="ttdoc">Contains __currency_formatter method.</div></div>
 <div class="ttc" id="a____format__exception_8h_html"><div class="ttname"><a href="____format__exception_8h.html">__format_exception.h</a></div><div class="ttdoc">Contains throw format exception method.</div></div>
-<div class="ttc" id="a____format__stringer_8h_html"><div class="ttname"><a href="____format__stringer_8h.html">__format_stringer.h</a></div><div class="ttdoc">Contains __format_stringer methods.</div></div>
 <div class="ttc" id="a____natural__formatter_8h_html"><div class="ttname"><a href="____natural__formatter_8h.html">__natural_formatter.h</a></div><div class="ttdoc">Contains __natural_formatter method.</div></div>
 <div class="ttc" id="a____sprintf_8h_html"><div class="ttname"><a href="____sprintf_8h.html">__sprintf.h</a></div><div class="ttdoc">Contains __format method.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 26 2024 12:27:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 3 2024 07:45:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
