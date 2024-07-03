@@ -9,8 +9,6 @@ class foo : public object, public iformatable {
 public:
   explicit foo(int value) : value_ {value} {}
   
-  int value() const noexcept {return value_;}
-  
   using object::to_string;
   ustring to_string(const ustring& format, const locale& loc) const override {return ustring::format(ustring::format("{{:{}}}", format), value_);}
   
@@ -19,22 +17,38 @@ private:
 };
 
 auto main() -> int {
-  console::out << "format :" << environment::new_line;
-  console::out << ustring::format("  {}", foo {42}) << environment::new_line;
-  console::out << ustring::format("  0b{:b8}", foo {42}) << environment::new_line;
+  auto f = foo {42};  
+  console::out << "standard output :" << environment::new_line;
+  console::out << "  " << f << environment::new_line;
+  console::out << "  " << f.to_string() << environment::new_line;
+  console::out << ustring::format("  {}", f) << environment::new_line;
+  console::out << ustring::format("  0b{:b8}", f) << environment::new_line;
+  console::out << "  0b" << f.to_string("b8", locale {}) << environment::new_line;
   console::write_line();
-
   console::write_line("write_line :");
-  console::write_line("  {}", foo {84});
-  console::write_line("  0b{:b8}", foo {84});
+  console::write("  ");
+  console::write_line(f);
+  console::write("  ");
+  console::write_line(f.to_string());
+  console::write_line("  {}", f);
+  console::write_line("  0b{:b8}", f);
+  console::write("  0b");
+  console::write_line(f.to_string("b8", locale {}));
+  console::write_line();
 }
 
 // This code produces the following output :
 //
-// format :
+// standard output :
 //   42
+//   42
+//   42
+//   0b00101010
 //   0b00101010
 //
 // write_line :
-//   84
-//   0b01010100
+//   42
+//   42
+//   42
+//   0b00101010
+//   0b00101010

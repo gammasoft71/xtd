@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   iformatable
+  iformatable_vs_to_string
   iobservable_iobserver
   iprogress
 )
