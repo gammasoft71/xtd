@@ -18,6 +18,5 @@ add_projects(
   sprintf_numeric
   sprintf_string
   sprintf_with_alignment
-  #sprintf_with_order
 )
 
