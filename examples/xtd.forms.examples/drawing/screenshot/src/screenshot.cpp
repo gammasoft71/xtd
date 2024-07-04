@@ -14,20 +14,20 @@ namespace screenshot_example {
       screenshot_picture_box.size_mode(picture_box_size_mode::zoom);
 
       screenshot_delay_label.auto_size(true);
-      screenshot_delay_numeric_up_down.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+      screenshot_delay_numeric_up_down.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
       hide_this_window_check_box.auto_size(true);
 
-      screenshot_picture_box.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
+      screenshot_picture_box.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right|anchor_styles::bottom);
       
-      options_group_box.anchor(anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+      options_group_box.anchor(anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
       
-      screenshot_button.anchor(anchor_styles::left | anchor_styles::bottom);
+      screenshot_button.anchor(anchor_styles::left|anchor_styles::bottom);
       screenshot_button.click += {*this, &form1::on_screenshot_button_click};
       
-      save_screenshot_button.anchor(anchor_styles::left | anchor_styles::bottom);
+      save_screenshot_button.anchor(anchor_styles::left|anchor_styles::bottom);
       save_screenshot_button.click += {*this, &form1::on_save_screenshot_button_click};
 
-      quit_button.anchor(anchor_styles::left | anchor_styles::bottom);
+      quit_button.anchor(anchor_styles::left|anchor_styles::bottom);
       quit_button.click += {*this, &form1::close};
       
       take_screen_shot_timer.tick += {*this, &form1::on_take_screen_shot_timer_tick};
@@ -48,16 +48,14 @@ namespace screenshot_example {
     auto on_screenshot_button_click() -> void {
       screenshot_button.enabled(false);
       if (hide_this_window_check_box.checked()) hide();
-      application::do_events();
-      if (screenshot_delay_numeric_up_down.value() == 0) on_take_screen_shot_timer_tick();
-      else take_screen_shot_timer.interval(time_span::from_seconds(screenshot_delay_numeric_up_down.value()));
-      take_screen_shot_timer.enabled(screenshot_delay_numeric_up_down.value() != 0);
+      take_screen_shot_timer.interval(time_span::from_seconds(screenshot_delay_numeric_up_down.value()));
+      take_screen_shot_timer.enabled(true);
     }
 
     auto on_take_screen_shot_timer_tick() -> void {
       take_screen_shot_timer.enabled(false);
       take_new_screenshot();
-      show();
+      if (hide_this_window_check_box.checked()) show();
       screenshot_button.enabled(true);
     }
 
