@@ -1,10 +1,10 @@
-# format_enum
+# sprintf_enum
 
-Show how to use format [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) class.
+Show how to use [xtd::ustring::sprintf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method.
 
 ## Sources
 
-[src/format_enum.cpp](src/format_enum.cpp)
+[src/sprintf_enum.cpp](src/sprintf_enum.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,15 +20,15 @@ xtdc run
 
 ```
 saturday
-101
-00000101
+0b101
+0b101
+0b5
 5
-05
 saturday
 saturday
-5
 05
-5
 05
+0x5
+0x5
 ```
 
