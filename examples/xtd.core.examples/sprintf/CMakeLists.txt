@@ -9,8 +9,9 @@ add_projects(
   sprintf_character
   sprintf_class
   sprintf_class_with_specified_formating
+  sprintf_class_with_specified_formating_with_to_string
   sprintf_date_time
-  #sprintff_duration
+  sprintf_duration
   #sprintf_enum
   #sprintf_enum_class
   sprintf_floating_point
