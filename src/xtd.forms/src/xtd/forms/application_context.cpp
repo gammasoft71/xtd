@@ -31,7 +31,7 @@ optional<form_ref> application_context::main_form() noexcept {
 void application_context::main_form(const form& main_form) {
   if (data_->main_form != nullptr) data_->main_form->handle_destroyed -= {*this, &application_context::on_main_form_closed};
   data_->main_form = const_cast<form*>(&main_form);
-  data_->main_form->visible_changed += {*this, &application_context::on_main_form_closed};
+  data_->main_form->form_closed += {*this, &application_context::on_main_form_closed};
 }
 
 void application_context::main_form(nullptr_t) {
