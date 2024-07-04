@@ -4,7 +4,7 @@
 using namespace std;
 using namespace xtd;
 
-class character : iformatable {
+class character {
 public:
   character(const ustring& name, const ustring& rank) noexcept : name_(name), rank_(rank) {}
   
@@ -13,7 +13,7 @@ public:
   
   ustring to_string() const noexcept {return to_string("F", locale {});}
   ustring to_string(const ustring& fmt) const noexcept {return to_string(fmt, locale {});}
-  ustring to_string(const ustring& fmt, const locale& loc) const override {
+  ustring to_string(const ustring& fmt, const locale& loc) const {
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
     if (fmt == "R") return rank_;
@@ -24,6 +24,9 @@ private:
   ustring name_;
   ustring rank_;
 };
+
+template<>
+string xtd::to_string(const character& value, const string& fmt, const locale& loc) {return value.to_string(fmt, loc);}
 
 using characters = vector<character>;
 

@@ -2,11 +2,12 @@
 
 [This folder](.) contains xtd::ustring::sprintf examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
-* [sprintf](format/README.md) shows how to use [xtd::ustring::sprintf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method.
+* [sprintf](sprintf/README.md) shows how to use [xtd::ustring::sprintf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method.
 * [sprintf_boolean](sprintf_boolean/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with bool.
 * [sprintf_character](sprintf_character/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with characters (char, wchar_t, char8_t, char16_t and char32_t).
 * [sprintf_class](sprintf_class/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with owner class.
 * [sprintf_class_with_specified_formatting](sprintf_class_with_specified_formating/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with owner class and with specified formatting args.
+* [sprintf_class_with_specified_formating_with_to_string](sprintf_class_with_specified_formating_with_to_string/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with owner class and with specified formatting args.
 * [sprintf_date_time](sprintf_date_time/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with date time (time_t, std::tm and std::chrono:system_clock::time_point).
 * [sprintf_duration](sprintf_duration/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with duration (std::chrono::duration).
 * [sprintf_enum](sprintf_enum/README.md) shows how to use [xtd::ustring::sprinyf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method with owner enum.
