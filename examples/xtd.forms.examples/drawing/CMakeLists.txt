@@ -14,4 +14,5 @@ add_projects(
   fill_rectangle
   fill_rounded_rectangle
   image_converter
+  screenshot
 )
