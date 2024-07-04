@@ -12,15 +12,13 @@ namespace screenshot_example {
       client_size({380, 320});
       
       screenshot_picture_box.size_mode(picture_box_size_mode::zoom);
+      screenshot_picture_box.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right|anchor_styles::bottom);
 
+      options_group_box.anchor(anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
       screenshot_delay_label.auto_size(true);
       screenshot_delay_numeric_up_down.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
       hide_this_window_check_box.auto_size(true);
-
-      screenshot_picture_box.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right|anchor_styles::bottom);
-      
-      options_group_box.anchor(anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-      
+            
       screenshot_button.anchor(anchor_styles::left|anchor_styles::bottom);
       screenshot_button.click += {*this, &form1::on_screenshot_button_click};
       
@@ -31,7 +29,7 @@ namespace screenshot_example {
       quit_button.click += {*this, &form1::close};
       
       take_screen_shot_timer.tick += {*this, &form1::on_take_screen_shot_timer_tick};
-      
+
       take_new_screenshot();
     }
     
@@ -80,4 +78,3 @@ namespace screenshot_example {
 auto main() -> int {
   application::run(screenshot_example::form1 {});
 }
-
