@@ -20,15 +20,15 @@ xtdc run
 
 ```
 saturday
-0b101
-0b101
+101
+00000101
 5
-5
+05
 saturday
 saturday
+5
 05
+5
 05
-0x5
-0x5
 ```
 
