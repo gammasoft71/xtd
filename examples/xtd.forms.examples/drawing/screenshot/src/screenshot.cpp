@@ -36,7 +36,7 @@ namespace screenshot_example {
     }
     
   private:
-    void on_save_screenshot_button_click() {
+    auto on_save_screenshot_button_click() -> void {
       if (!screenshot_picture_box.image().has_value()) return;
       auto dialog = save_file_dialog {};
       dialog.filter("PNG image(*.png)|*.png");
@@ -45,7 +45,7 @@ namespace screenshot_example {
       if (dialog.show_sheet_dialog(*this) == dialog_result::ok) screenshot_picture_box.image().value().save(dialog.file_name());
     }
     
-    void on_screenshot_button_click() {
+    auto on_screenshot_button_click() -> void {
       screenshot_button.enabled(false);
       if (hide_this_window_check_box.checked()) hide();
       application::do_events();
@@ -54,14 +54,14 @@ namespace screenshot_example {
       take_screen_shot_timer.enabled(screenshot_delay_numeric_up_down.value() != 0);
     }
 
-    void on_take_screen_shot_timer_tick() {
+    auto on_take_screen_shot_timer_tick() -> void {
       take_screen_shot_timer.enabled(false);
       take_new_screenshot();
       show();
       screenshot_button.enabled(true);
     }
 
-    void take_new_screenshot() {
+    auto take_new_screenshot() -> void {
       auto screenshot_bitmap = bitmap {screen::primary_screen().bounds().width(), screen::primary_screen().bounds().height()};
       screenshot_bitmap.create_graphics().copy_from_screen({0, 0}, {0, 0}, screen::primary_screen().bounds().size());
       screenshot_picture_box.image(screenshot_bitmap);
