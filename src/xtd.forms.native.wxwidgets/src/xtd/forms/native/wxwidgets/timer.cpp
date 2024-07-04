@@ -12,6 +12,7 @@ using namespace xtd::forms::native;
 intptr timer::create(int32 interval, const delegate<void(const event_args&)>& tick) {
   application::initialize(); // Must be first
   wx_timer* timer = new class wx_timer(tick);
+  if (interval <= 0) interval = 1;
   timer->timer().Start(interval);
   return reinterpret_cast<intptr>(timer);
 }
