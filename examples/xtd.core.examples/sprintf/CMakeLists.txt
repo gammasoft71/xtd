@@ -13,7 +13,7 @@ add_projects(
   sprintf_date_time
   sprintf_duration
   sprintf_enum
-  #sprintf_enum_class
+  sprintf_enum_class
   sprintf_floating_point
   sprintf_numeric
   #sprintf_string

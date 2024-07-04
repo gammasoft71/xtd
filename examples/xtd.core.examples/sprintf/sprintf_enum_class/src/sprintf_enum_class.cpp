@@ -3,7 +3,7 @@
 using namespace std;
 using namespace xtd;
 
-enum week_day {
+enum class week_day {
   monday,
   tuesday,
   wednesday,

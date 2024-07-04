@@ -1,10 +1,10 @@
-# format_enum_class
+# sprintf_enum_class
 
 Show how to use format [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) class.
 
 ## Sources
 
-[src/format_enum_class.cpp](src/format_enum_class.cpp)
+[src/sprintf_enum_class.cpp](src/sprintf_enum_class.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
