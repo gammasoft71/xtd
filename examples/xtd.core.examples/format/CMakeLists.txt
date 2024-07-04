@@ -12,6 +12,7 @@ add_projects(
   format_class
   format_class_object
   format_class_with_specified_formating
+  format_class_with_specified_formating_with_to_string
   format_date_time
   format_duration
   format_enum
