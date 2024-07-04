@@ -8,6 +8,7 @@
 * [format_character](format_character/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with characters (char, wchar_t, char8_t, char16_t and char32_t).
 * [format_class](format_class/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner class.
 * [format_class_with_specified_formatting](format_class_with_specified_formating/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner class and with specified formatting args.
+* [format_class_with_specified_formating_with_to_string](format_class_with_specified_formating_with_to_string/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner class and with specified formatting args.
 * [format_date_time](format_date_time/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with date time (time_t, std::tm and std::chrono:system_clock::time_point).
 * [format_duration](format_duration/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with duration (std::chrono::duration).
 * [format_enum](format_enum/README.md) shows how to use [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) method with owner enum.
