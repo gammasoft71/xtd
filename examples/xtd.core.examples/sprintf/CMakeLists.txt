@@ -17,7 +17,7 @@ add_projects(
   sprintf_floating_point
   sprintf_numeric
   sprintf_string
-  #sprintf_with_alignment
+  sprintf_with_alignment
   #sprintf_with_order
 )
 

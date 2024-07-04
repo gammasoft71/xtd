@@ -1,6 +1,6 @@
 # sprintf_enum_class
 
-Show how to use format [xtd::format](https://codedocs.xyz/gammasoft71/xtd/_format_page.html) class.
+Shows how to use [xtd::ustring::sprintf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method.
 
 ## Sources
 
