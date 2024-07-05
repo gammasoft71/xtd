@@ -13,5 +13,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
+  /// The following example shows how to use xtd::async_result.
+  /// @include iclonable.cpp
   using async_result = std::shared_ptr<xtd::iasync_result>;
 }

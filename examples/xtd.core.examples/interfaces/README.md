@@ -2,6 +2,7 @@
 
 [This folder](.) contains guid examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
+* [iasync_result](iasync_result/README.md) shows how to use how to use [xtd:: iasync_result](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iasync__result.html) interface.
 * [iclonable](iclonable/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iclonable.html) interface.
 * [icomparable](icomparable/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1icomparable.html) interface.
 * [iequatable](iequatable/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iequatable.html) interface.

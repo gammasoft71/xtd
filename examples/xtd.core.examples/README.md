@@ -186,6 +186,7 @@
 
 ## [Interfaces](interfaces/README.md)
 
+* [iasync_result](iasync_result/README.md) shows how to use how to use [xtd:: iasync_result](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iasync__result.html) interface.
 * [iclonable](interfaces/iclonable/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iclonable.html) interface.
 * [icompatable](interfaces/icomparable/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iequatable.html) interface.
 * [iequaable](iequatable/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1icomparable.html) interface.
