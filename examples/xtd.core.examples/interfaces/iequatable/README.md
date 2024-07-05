@@ -21,10 +21,13 @@ xtdc run
 ```
 foo {42}.equals(foo {42}) = true
 foo {42}.equals(foo {84}) = false
+
 !foo {42}.equals(foo {42}) = false
 !foo {42}.equals(foo {84}) = true
+
 foo {42} == foo {42} = true
 foo {42} == foo {84} = false
+
 foo {42} != foo {42} = false
 foo {42} != foo {84} = true
 ```
