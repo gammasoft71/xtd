@@ -4,6 +4,7 @@ project(interfaces)
 find_package(xtd REQUIRED)
 
 add_projects(
+  iasync_result
   iclonable
   icomparable
   iequatable
