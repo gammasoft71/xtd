@@ -14,7 +14,10 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core interfaces
   /// @remarks This interface is implemented by types whose values can be equated (for example, the numeric and string classes). A value type or class implements the equals method to create a type-specific method suitable for determining equality of instances.
-  /// @remarks The icomparable<T> interface defines the compare_to method, which determines the sort order of instances of the implementing type. The iequatable<T> interface defines the equals method, which determines the equality of instances of the implementing type.
+  /// @remarks The xtd::icomparable<type_t> interface defines the compare_to method, which determines the sort order of instances of the implementing type. The iequatable<T> interface defines the equals method, which determines the equality of instances of the implementing type.
+  /// @par Examples
+  /// The following example shows how to use xtd::iequatable interface.
+  /// @include iequatable.cpp
   class iequatable interface_ {
   public:
     /// @name Public Methods
