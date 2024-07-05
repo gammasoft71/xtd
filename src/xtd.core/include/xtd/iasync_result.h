@@ -19,8 +19,9 @@ namespace xtd {
   /// @remarks The xtd::iasync_result interface is implemented by classes containing methods that can operate asynchronously. It is the return type of methods that initiate an asynchronous operation, such as xtd::io::file_stream.begin_read, and it is passed to methods that conclude an asynchronous operation, such as xtd::io::file_stream::end_read. xtd::iasync_result objects are also passed to methods invoked by xtd::async_callback delegates when an asynchronous operation completes.
   /// @remarks An object that supports the xtd::iasync_result interface stores state information for an asynchronous operation and provides a synchronization object to allow threads to be signaled when the operation completes.
   /// @note The async_result class is the implementation of xtd::iasync_result that is returned by the begin_invoke method when you use a delegate to call a method asynchronously.
+  /// @par Examples
   /// The following example shows how to use xtd::iasync_result interface.
-  /// @include iclonable.cpp
+  /// @include iasync_result.cpp
   class iasync_result interface_ {
   public:
     /// @name Public Methods
