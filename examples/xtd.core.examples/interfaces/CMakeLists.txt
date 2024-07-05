@@ -4,6 +4,7 @@ project(interfaces)
 find_package(xtd REQUIRED)
 
 add_projects(
+  icomparable
   iequatable
   iformatable
   iformatable_vs_to_string

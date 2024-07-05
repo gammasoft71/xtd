@@ -13,6 +13,9 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core interfaces
+  /// @par Examples
+  /// The following example shows how to use xtd::icomparable interface.
+  /// @include icomparable.cpp
   template <typename type_t>
   class icomparable interface_ {
   public:
