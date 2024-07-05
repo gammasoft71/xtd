@@ -14,6 +14,8 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core interfaces
   /// @tparam type_t The type of progress update value. This type parameter is contravariant. That is, you can use either the type you specified or any type that is less derived
+  /// The following example shows how to use xtd::iprogress interface.
+  /// @include iprogress.cpp
   class iprogress interface_ {
   public:
     /// @name Public Methods
