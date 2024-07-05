@@ -19,11 +19,12 @@ xtdc run
 ## Output
 
 ```
-format :
-  42
-  0b00101010
-
-write_line :
-  84
-  0b01010100
+foo {42}.equals(foo {42}) = true
+foo {42}.equals(foo {84}) = false
+!foo {42}.equals(foo {42}) = false
+!foo {42}.equals(foo {84}) = true
+foo {42} == foo {42} = true
+foo {42} == foo {84} = false
+foo {42} != foo {42} = false
+foo {42} != foo {84} = true
 ```
