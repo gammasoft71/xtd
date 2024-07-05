@@ -167,7 +167,7 @@ xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::asy
 template<typename result_t, typename... arguments_t>
 result_t xtd::delegate<result_t(arguments_t...)>::end_invoke(async_result async) {
   auto async_result = as<async_result_invoke>(async);
-  async_result->data_->async_event.wait_one();
+  if (!async_result->data_->is_completed) async_result->data_->async_event.wait_one();
   return __xtd_delegate_any_cast<result_t>(async_result->data_->result);
 }
 /// @endcond
