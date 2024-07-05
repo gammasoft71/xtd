@@ -16,6 +16,8 @@ namespace xtd {
   /// @remarks The xtd::iclonable interface enables you to provide a customized implementation that creates a copy of an existing object. The xtd::iclonable interface contains one member, the xtd::iclonable::clone method, which is intended to provide cloning support beyond that supplied by xtd::object::memberwise_clone. For more information about cloning, deep versus shallow copies, and examples, see the xtd::object::memberwise_clone method.
   /// @par Notes to Implementers
   /// The xtd::iclonable interface simply requires that your implementation of the xtd::iclonable::clone() method return a copy of the current object instance. It does not specify whether the cloning operation performs a deep copy, a shallow copy, or something in between. Nor does it require all property values of the original instance to be copied to the new instance. For example, the xtd::iclonable::clone() method performs a shallow copy of all properties; it always sets this property value to false in the cloned object. Because callers of xtd::iclonable::clone() cannot depend on the method performing a predictable cloning operation, we recommend that xtd::iclonable not be implemented in public APIs.
+  /// The following example shows how to use xtd::iclonable interface.
+  /// @include iclonable.cpp
   class iclonable interface_ {
   public:
     /// @name Public Methods
