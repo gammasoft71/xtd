@@ -112,7 +112,11 @@ class xtd::icomparable&lt; type_t &gt;</div><p>Defines a generalized comparison 
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">int</span> compare_to(<span class="keyword">const</span> foo&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value_ &lt; value.value_ ? -1 : (value_ &gt; value.value_) ? 1 : 0;}</div>
+<div class="line">  <span class="keywordtype">int</span> compare_to(<span class="keyword">const</span> foo&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keywordflow">if</span> (value_ &lt; value.value_) <span class="keywordflow">return</span> -1;</div>
+<div class="line">    <span class="keywordflow">if</span> (value_ &gt; value.value_) <span class="keywordflow">return</span> 1;</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
@@ -124,6 +128,11 @@ class xtd::icomparable&lt; type_t &gt;</div><p>Defines a generalized comparison 
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}}.compare_to(foo {{43}}) = {}&quot;</span>, foo {42}.compare_to(foo {43}));</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;=&gt; foo {{42}} = {}&quot;</span>, foo {42} &lt;=&gt; foo {42});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;=&gt; foo {{41}} = {}&quot;</span>, foo {42} &lt;=&gt; foo {41});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;=&gt; foo {{43}} = {}&quot;</span>, foo {42} &lt;=&gt; foo {43});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;= foo {{42}} = {}&quot;</span>, foo {42} &lt;= foo {42});</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;= foo {{41}} = {}&quot;</span>, foo {42} &lt;= foo {41});</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;= foo {{43}} = {}&quot;</span>, foo {42} &lt;= foo {43});</div>
@@ -150,6 +159,10 @@ class xtd::icomparable&lt; type_t &gt;</div><p>Defines a generalized comparison 
 <div class="line"><span class="comment">// foo {42}.compare_to(foo {41}) = 1</span></div>
 <div class="line"><span class="comment">// foo {42}.compare_to(foo {43}) = -1</span></div>
 <div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// foo {42} &lt;=&gt; foo {42} = equivalent</span></div>
+<div class="line"><span class="comment">// foo {42} &lt;=&gt; foo {41} = greater</span></div>
+<div class="line"><span class="comment">// foo {42} &lt;=&gt; foo {43} = less</span></div>
+<div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// foo {42} &lt;= foo {42} = true</span></div>
 <div class="line"><span class="comment">// foo {42} &lt;= foo {41} = false</span></div>
 <div class="line"><span class="comment">// foo {42} &lt;= foo {43} = true</span></div>
@@ -166,7 +179,7 @@ class xtd::icomparable&lt; type_t &gt;</div><p>Defines a generalized comparison 
 <div class="line"><span class="comment">// foo {42} &gt; foo {41} = true</span></div>
 <div class="line"><span class="comment">// foo {42} &gt; foo {43} = false</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.h:20</div></div>
+<div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.h:23</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -232,7 +245,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 5 2024 12:19:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 5 2024 22:11:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
