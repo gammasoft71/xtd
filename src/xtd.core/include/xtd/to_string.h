@@ -364,9 +364,23 @@ namespace xtd {
 
 #if defined(__xtd__cpp_lib_three_way_comparison)
   template<>
+  inline std::string to_string(const std::partial_ordering& value, const std::string& fmt, const std::locale& loc) {
+    if (value == std::partial_ordering::less) return "less";
+    if (value == std::partial_ordering::greater) return "greater";
+    return "equivalent";
+  }
+
+  template<>
   inline std::string to_string(const std::strong_ordering& value, const std::string& fmt, const std::locale& loc) {
     if (value == std::strong_ordering::less) return "less";
     if (value == std::strong_ordering::greater) return "greater";
+    return "equivalent";
+  }
+
+  template<>
+  inline std::string to_string(const std::weak_ordering& value, const std::string& fmt, const std::locale& loc) {
+    if (value == std::weak_ordering::less) return "less";
+    if (value == std::weak_ordering::greater) return "greater";
     return "equivalent";
   }
 #endif
