@@ -19,11 +19,17 @@ xtdc run
 ## Output
 
 ```
-format :
+standard output :
   42
+  42
+  42
+  0b00101010
   0b00101010
 
 write_line :
-  84
-  0b01010100
+  42
+  42
+  42
+  0b00101010
+  0b00101010
 ```
