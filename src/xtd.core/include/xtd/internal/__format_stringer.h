@@ -96,6 +96,10 @@ namespace xtd {
   inline std::string to_string(const xtd::char32& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const xtd::wchar& value, const std::string& fmt, const std::locale& loc);
+#if defined(__xtd__cpp_lib_three_way_comparison)
+  template<>
+  inline std::string to_string(const std::strong_ordering& value, const std::string& fmt, const std::locale& loc);
+#endif
   template<>
   inline std::string to_string(const std::any& value, const std::string& fmt, const std::locale& loc);
   template<typename types_t>

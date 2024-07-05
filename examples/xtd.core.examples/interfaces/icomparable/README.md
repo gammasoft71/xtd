@@ -23,6 +23,10 @@ foo {42}.compare_to(foo {42}) = 0
 foo {42}.compare_to(foo {41}) = 1
 foo {42}.compare_to(foo {43}) = -1
 
+foo {42} <=> foo {42} = equivalent
+foo {42} <=> foo {41} = greater
+foo {42} <=> foo {43} = less
+
 foo {42} <= foo {42} = true
 foo {42} <= foo {41} = false
 foo {42} <= foo {43} = true
