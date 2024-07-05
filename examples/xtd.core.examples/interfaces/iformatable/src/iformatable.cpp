@@ -25,6 +25,7 @@ auto main() -> int {
   console::out << ustring::format("  0b{:b8}", f) << environment::new_line;
   console::out << "  0b" << f.to_string("b8", locale {}) << environment::new_line;
   console::write_line();
+
   console::write_line("write_line :");
   console::write("  ");
   console::write_line(f);
@@ -34,7 +35,6 @@ auto main() -> int {
   console::write_line("  0b{:b8}", f);
   console::write("  0b");
   console::write_line(f.to_string("b8", locale {}));
-  console::write_line();
 }
 
 // This code produces the following output :
