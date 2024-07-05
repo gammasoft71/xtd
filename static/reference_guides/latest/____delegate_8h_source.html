@@ -250,18 +250,18 @@ $(function() {
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> result_t, <span class="keyword">typename</span>... arguments_t&gt;</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>result_t xtd::delegate&lt;result_t(arguments_t...)&gt;::end_invoke(async_result async) {</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keyword">auto</span> <a class="code hl_typedef" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">async_result</a> = as&lt;async_result_invoke&gt;(async);</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <a class="code hl_typedef" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">async_result</a>-&gt;data_-&gt;async_event.wait_one();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="keywordflow">if</span> (!<a class="code hl_typedef" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">async_result</a>-&gt;data_-&gt;is_completed) <a class="code hl_typedef" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">async_result</a>-&gt;data_-&gt;async_event.wait_one();</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordflow">return</span> __xtd_delegate_any_cast&lt;result_t&gt;(<a class="code hl_typedef" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">async_result</a>-&gt;data_-&gt;result);</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1manual__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1manual__reset__event.html">xtd::threading::manual_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, must be reset manually....</div><div class="ttdef"><b>Definition</b> manual_reset_event.h:35</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html"><div class="ttname"><a href="classxtd_1_1threading_1_1wait__handle.html">xtd::threading::wait_handle</a></div><div class="ttdoc">Encapsulates operating system specific objects that wait for exclusive access to shared resources.</div><div class="ttdef"><b>Definition</b> wait_handle.h:52</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga19b5fcfe32a5a80bd6dad2ce04423367"><div class="ttname"><a href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">xtd::async_result</a></div><div class="ttdeci">std::shared_ptr&lt; xtd::iasync_result &gt; async_result</div><div class="ttdoc">Represents the status of an asynchronous operation.</div><div class="ttdef"><b>Definition</b> async_result.h:16</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga19b5fcfe32a5a80bd6dad2ce04423367"><div class="ttname"><a href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">xtd::async_result</a></div><div class="ttdeci">std::shared_ptr&lt; xtd::iasync_result &gt; async_result</div><div class="ttdoc">Represents the status of an asynchronous operation.</div><div class="ttdef"><b>Definition</b> async_result.h:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga2c9b01f90017e6d921f8642ab99f0fcc"><div class="ttname"><a href="group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc">xtd::async_callback</a></div><div class="ttdeci">delegate&lt; void(async_result ar)&gt; async_callback</div><div class="ttdoc">References a method to be called when a corresponding asynchronous operation completes.</div><div class="ttdef"><b>Definition</b> delegate.h:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 3 2024 18:05:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 5 2024 12:18:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

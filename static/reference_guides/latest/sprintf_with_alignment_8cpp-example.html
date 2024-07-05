@@ -83,11 +83,28 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format xtd::format class.</p>
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>std;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;[%10d]&quot;</span>, 42) &lt;&lt; endl;</div>
+<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;[%-10d]&quot;</span>, 42) &lt;&lt; endl;</div>
+<div class="line">  cout &lt;&lt; ustring::sprintf(<span class="stringliteral">&quot;[%010d]&quot;</span>, 42) &lt;&lt; endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// [        42]</span></div>
+<div class="line"><span class="comment">// [42        ]</span></div>
+<div class="line"><span class="comment">// [0000000042]</span></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 3 2024 18:05:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 5 2024 12:18:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
