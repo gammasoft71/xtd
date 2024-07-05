@@ -16,10 +16,16 @@ private:
 auto main() -> int {
   console::write_line("foo {{42}}.equals(foo {{42}}) = {}", foo {42}.equals(foo {42}));
   console::write_line("foo {{42}}.equals(foo {{84}}) = {}", foo {42}.equals(foo {84}));
+  console::write_line();
+  
   console::write_line("!foo {{42}}.equals(foo {{42}}) = {}", !foo {42}.equals(foo {42}));
   console::write_line("!foo {{42}}.equals(foo {{84}}) = {}", !foo {42}.equals(foo {84}));
+  console::write_line();
+  
   console::write_line("foo {{42}} == foo {{42}} = {}", foo {42} == foo {42});
   console::write_line("foo {{42}} == foo {{84}} = {}", foo {42} == foo {84});
+  console::write_line();
+  
   console::write_line("foo {{42}} != foo {{42}} = {}", foo {42} != foo {42});
   console::write_line("foo {{42}} != foo {{84}} = {}", foo {42} != foo {84});
 }
@@ -28,9 +34,12 @@ auto main() -> int {
 //
 // foo {42}.equals(foo {42}) = true
 // foo {42}.equals(foo {84}) = false
+
 // !foo {42}.equals(foo {42}) = false
 // !foo {42}.equals(foo {84}) = true
+
 // foo {42} == foo {42} = true
 // foo {42} == foo {84} = false
+
 // foo {42} != foo {42} = false
 // foo {42} != foo {84} = true
