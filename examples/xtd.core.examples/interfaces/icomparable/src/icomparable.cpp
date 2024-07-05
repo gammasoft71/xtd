@@ -7,7 +7,11 @@ class foo : public icomparable<foo> {
 public:
   explicit foo(int value) : value_ {value} {}
 
-  int compare_to(const foo& value) const noexcept override {return value_ < value.value_ ? -1 : (value_ > value.value_) ? 1 : 0;}
+  int compare_to(const foo& value) const noexcept override {
+    if (value_ < value.value_) return -1;
+    if (value_ > value.value_) return 1;
+    return 0;
+  }
   
 private:
   int value_ = 0;
@@ -19,6 +23,11 @@ auto main() -> int {
   console::write_line("foo {{42}}.compare_to(foo {{43}}) = {}", foo {42}.compare_to(foo {43}));
   console::write_line();
 
+  console::write_line("foo {{42}} <=> foo {{42}} = {}", foo {42} <=> foo {42});
+  console::write_line("foo {{42}} <=> foo {{41}} = {}", foo {42} <=> foo {41});
+  console::write_line("foo {{42}} <=> foo {{43}} = {}", foo {42} <=> foo {43});
+  console::write_line();
+  
   console::write_line("foo {{42}} <= foo {{42}} = {}", foo {42} <= foo {42});
   console::write_line("foo {{42}} <= foo {{41}} = {}", foo {42} <= foo {41});
   console::write_line("foo {{42}} <= foo {{43}} = {}", foo {42} <= foo {43});
@@ -44,6 +53,10 @@ auto main() -> int {
 // ffoo {42}.compare_to(foo {42}) = 0
 // foo {42}.compare_to(foo {41}) = 1
 // foo {42}.compare_to(foo {43}) = -1
+//
+// foo {42} <=> foo {42} = equivalent
+// foo {42} <=> foo {41} = greater
+// foo {42} <=> foo {43} = less
 //
 // foo {42} <= foo {42} = true
 // foo {42} <= foo {41} = false

@@ -4,6 +4,9 @@
 #pragma once
 #include "interface.h"
 #include "types.h"
+#define __XTD_STD_INTERNAL__
+#include "internal/__xtd_std_version.h"
+#undef __XTD_STD_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -39,6 +42,13 @@ namespace xtd {
     friend bool operator <=(const type_t& a, const type_t& b) noexcept {return a.compare_to(b) <= 0;}
     friend bool operator >(const type_t& a, const type_t& b) noexcept {return a.compare_to(b) > 0;}
     friend bool operator >=(const type_t& a, const type_t& b) noexcept {return a.compare_to(b) >= 0;}
+#if defined(__xtd__cpp_lib_three_way_comparison)
+    friend std::strong_ordering operator <=>(const type_t& a, const type_t& b) noexcept {
+      if (a.compare_to(b) < 0) return std::strong_ordering::less;
+      if (a.compare_to(b) > 0) return std::strong_ordering::greater;
+      return std::strong_ordering::equivalent;
+    }
+#endif
     template<typename object_t>
     friend bool operator <(const type_t& a, const icomparable<object_t>& b) noexcept {return dynamic_cast<const type_t*>(&b) && a.compare_to(dynamic_cast<const type_t&>(b)) < 0;}
     template<typename object_t>

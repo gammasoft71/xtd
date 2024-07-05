@@ -361,7 +361,16 @@ namespace xtd {
   /// @cond
   inline std::string to_string(const char*  value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
   /// @endcond
-  
+
+#if defined(__xtd__cpp_lib_three_way_comparison)
+  template<>
+  inline std::string to_string(const std::strong_ordering& value, const std::string& fmt, const std::locale& loc) {
+    if (value == std::strong_ordering::less) return "less";
+    if (value == std::strong_ordering::greater) return "greater";
+    return "equivalent";
+  }
+#endif
+
   template<>
   inline std::string to_string(const std::any& value, const std::string& fmt, const std::locale& loc) {
     auto iterator = __any_stringer__.find(std::type_index(value.type()));
