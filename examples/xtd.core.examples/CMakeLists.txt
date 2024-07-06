@@ -26,6 +26,7 @@ add_projects(
   math
   media
   network
+  object
   parse
   processes
   random
