@@ -13,44 +13,9 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @remarks See also #call_once_ keyword helper.
-  ///
-  /// ```cpp
-  /// #include <xtd/xtd>
-  ///
-  /// using namespace xtd;
-  /// using namespace xtd::threading;
-  ///
-  /// auto main() -> int {
-  ///   console::write_line("(main) begin");
-  ///
-  ///   auto mre = manual_reset_event {};
-  ///
-  ///   auto thread_proc = [&] {
-  ///     static auto cpt = 0;
-  ///     [[maybe_unused]] auto __call_once__ = call_once {} + [&] {
-  ///       console::write_line("  (thread_proc) call once {} times", cpt + 1);
-  ///     };
-  ///     console::write_line("  (thread_proc) running {} times", ++cpt);
-  ///     if (cpt == 3) mre.set();
-  ///   };
-  ///
-  ///   thread_pool::register_wait_for_single_object(mre, thread_proc, {}, 100, false);
-  ///
-  ///   mre.wait_one();
-  ///
-  ///   thread::join_all();
-  ///   console::write_line("(main) end");
-  /// }
-  ///
-  /// // This code produces the following output:
-  /// //
-  /// // (main) begin
-  /// //   (thread_proc) call once 1 times
-  /// //   (thread_proc) running 1 times
-  /// //   (thread_proc) running 2 times
-  /// //   (thread_proc) running 3 times
-  /// // (main) end
-  /// ```
+  /// @par Examples
+  /// The following example shows how to use xtd::call_once struct.
+  /// @include call_once2.cpp
   struct call_once {
   };
   
@@ -79,42 +44,7 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core keywords
 /// @remarks See also xtd::call_once struct.
-///
-/// ```cpp
-/// #include <xtd/xtd>
-///
-/// using namespace xtd;
-/// using namespace xtd::threading;
-///
-/// auto main() -> int {
-///   console::write_line("(main) begin");
-///
-///   auto mre = manual_reset_event {};
-///
-///   auto thread_proc = [&] {
-///     static auto cpt = 0;
-///     call_once_ {
-///       console::write_line("  (thread_proc) call once {} times", cpt + 1);
-///     };
-///     console::write_line("  (thread_proc) running {} times", ++cpt);
-///     if (cpt == 3) mre.set();
-///   };
-///
-///   thread_pool::register_wait_for_single_object(mre, thread_proc, {}, 100, false);
-///
-///   mre.wait_one();
-///
-///   thread::join_all();
-///   console::write_line("(main) end");
-/// }
-///
-/// // This code produces the following output:
-/// //
-/// // (main) begin
-/// //   (thread_proc) call once 1 times
-/// //   (thread_proc) running 1 times
-/// //   (thread_proc) running 2 times
-/// //   (thread_proc) running 3 times
-/// // (main) end
-/// ```
+/// @par Examples
+/// The following example shows how to use #call_once_ keyword.
+/// @include call_once.cpp
 #define call_once_ [[maybe_unused]] static auto __xtd_call_once_id__(__xtd__call_once__, __LINE__) = xtd::call_once {} + [&]
