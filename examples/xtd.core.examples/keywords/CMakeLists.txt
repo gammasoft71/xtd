@@ -5,6 +5,8 @@ find_package(xtd REQUIRED)
 
 add_projects(
   block_scope
+  call_once
+  call_once2
   current_stack_frame
   csf
   interface
