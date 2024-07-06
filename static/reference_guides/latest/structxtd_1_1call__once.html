@@ -90,30 +90,30 @@ $(function() {
 <div class="textblock"><p>The <a class="el" href="structxtd_1_1call__once.html" title="The xtd::call_once struct can be used to execute a routine exactly once. This can be used to initiali...">xtd::call_once</a> struct can be used to execute a routine exactly once. This can be used to initialise data in a thread-safe way. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85" title="The xtd keyword call_once_ can be used to execute a routine exactly once. This can be used to initial...">call_once_</a> keyword helper.</dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85" title="The xtd keyword call_once_ can be used to execute a routine exactly once. This can be used to initial...">call_once_</a> keyword helper. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="structxtd_1_1call__once.html" title="The xtd::call_once struct can be used to execute a routine exactly once. This can be used to initiali...">xtd::call_once</a> struct. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(main) begin&quot;</span>);</div>
-<div class="line"> </div>
+<div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> mre = <a class="code hl_class" href="classxtd_1_1threading_1_1manual__reset__event.html">manual_reset_event</a> {};</div>
-<div class="line"> </div>
+<div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> thread_proc = [&amp;] {</div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> cpt = 0;</div>
-<div class="line">    [[maybe_unused]] <span class="keyword">auto</span> __call_once__ = <a class="code hl_struct" href="structxtd_1_1call__once.html">call_once</a> {} + [&amp;] {</div>
+<div class="line">    [[maybe_unused]] <span class="keyword">static</span> <span class="keyword">auto</span> __call_once__ = <a class="code hl_struct" href="structxtd_1_1call__once.html">call_once</a> {} + [&amp;] {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  (thread_proc) call once {} times&quot;</span>, cpt + 1);</div>
 <div class="line">    };</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  (thread_proc) running {} times&quot;</span>, ++cpt);</div>
 <div class="line">    <span class="keywordflow">if</span> (cpt == 3) mre.set();</div>
 <div class="line">  };</div>
-<div class="line"> </div>
+<div class="line">  </div>
 <div class="line">  thread_pool::register_wait_for_single_object(mre, thread_proc, {}, 100, <span class="keyword">false</span>);</div>
-<div class="line"> </div>
+<div class="line">  </div>
 <div class="line">  mre.wait_one();</div>
-<div class="line"> </div>
+<div class="line">  </div>
 <div class="line">  thread::join_all();</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(main) end&quot;</span>);</div>
 <div class="line">}</div>
@@ -130,15 +130,16 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1threading_1_1manual__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1manual__reset__event.html">xtd::threading::manual_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, must be reset manually....</div><div class="ttdef"><b>Definition</b> manual_reset_event.h:35</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
-<div class="ttc" id="astructxtd_1_1call__once_html"><div class="ttname"><a href="structxtd_1_1call__once.html">xtd::call_once</a></div><div class="ttdoc">The xtd::call_once struct can be used to execute a routine exactly once. This can be used to initiali...</div><div class="ttdef"><b>Definition</b> call_once.h:54</div></div>
-</div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="ttc" id="astructxtd_1_1call__once_html"><div class="ttname"><a href="structxtd_1_1call__once.html">xtd::call_once</a></div><div class="ttdoc">The xtd::call_once struct can be used to execute a routine exactly once. This can be used to initiali...</div><div class="ttdef"><b>Definition</b> call_once.h:19</div></div>
+</div><!-- fragment --> </dd></dl>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="call__once_8h_source.html">call_once.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 5 2024 22:11:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 6 2024 12:15:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
