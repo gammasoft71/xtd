@@ -215,6 +215,8 @@
 ## [Keywords](keywords/README.md)
 
 * [block_scope](keywords/block_scope/README.md) shows how to use [block_scope_](https://gammasoft71.github.io/xtd/reference_guides/latest/block__scope_8h.html) keyword.
+* [call_once](keywords/call_once/README.md) shows how to use [call_once_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85) keyword.
+* [call_once2](keywords/call_once2/README.md) shows how to use [call_once](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1call__once.html) struct.
 * [current_stack_frame](keywords/current_stack_frame/README.md) shows how to use [current_stack_frame_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee) keyword.
 * [csf](keywords/csf/README.md) shows how to use [csf_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6) keyword.
 * [interface](keywords/interface/README.md) shows how to use [interface_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#ga64c32b24bd922fc8189a487213592ccf) keyword.
