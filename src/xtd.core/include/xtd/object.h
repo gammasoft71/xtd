@@ -34,7 +34,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @par Examples
-  /// The following example defines a point type derived from the object class and victuals many of the virtual methods of the object class. In addition, the example shows how to call many of the static and instance methods of the object class.
+  /// The following example defines a `point` type derived from the xtd::object class and overrides many of the virtual methods of the xtd::object class. In addition, the example shows how to call many of the static and instance methods of the xtd::object class.
   /// @include object.cpp
   class core_export_ object {
   public:
