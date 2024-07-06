@@ -262,6 +262,10 @@
 * [udp_client_ip_v4](network/udp_client_ip_v4/README.md) shows hows how to use [xtd::net::sockets::udp_client](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1udp__client.html) class.
 * [udp_client_ip_v6](network/udp_client_ip_v6/README.md) shows hows how to use [xtd::net::sockets::udp_client](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1net_1_1sockets_1_1udp__client.html) class.
 
+## [Object](object/README.md)
+
+* [object](object/object/README.md) shows hows how to use [xtd::object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html) class.
+
 ## [Parse](parse/README.md)
 
 * [parse_boolean](parse/parse_boolean/README.md) shows how to use [xtd::parse](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with boolean value.
