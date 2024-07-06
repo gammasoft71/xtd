@@ -103,18 +103,19 @@ $(function() {
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html">graphics_state</a>&amp; operator =(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html">graphics_state</a>&amp; value) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html">graphics_state</a>&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">using </span>object::equals;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html">graphics_state</a>&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">friend</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">explicit</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html">graphics_state</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle) : handle_(handle) {}</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">mutable</span> <a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle_ = 0;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      };</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">friend</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">explicit</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html">graphics_state</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle) : handle_(handle) {}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">mutable</span> <a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle_ = 0;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      };</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1graphics__state_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1drawing__2d_1_1graphics__state.html">xtd::drawing::drawing_2d::graphics_state</a></div><div class="ttdoc">Represents the state of a xtd::drawing::graphics object. This object is returned by a call to the xtd...</div><div class="ttdef"><b>Definition</b> graphics_state.h:30</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1graphics_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a></div><div class="ttdoc">Defines an object used to draw lines and curves. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> graphics.h:70</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.h:21</div></div>
@@ -126,7 +127,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 12:14:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 6 2024 18:10:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

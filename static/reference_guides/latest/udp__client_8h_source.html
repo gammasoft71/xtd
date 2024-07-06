@@ -187,32 +187,33 @@ $(function() {
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        </div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>        <span class="keywordtype">size_t</span> end_send(std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; async_result);</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        </div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        <span class="keywordtype">bool</span> equals(const udp_client&amp; s) const noexcept override;</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>        </div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        <span class="keywordtype">void</span> join_multicast_group(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; multicast_address);</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>        <span class="keywordtype">void</span> join_multicast_group(uint32 if_index, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; multicast_address);</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>        <span class="keywordtype">void</span> join_multicast_group(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; multicast_address, <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span> ttl);</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>        <span class="keywordtype">void</span> join_multicast_group(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; multicast_address, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; local_address);</div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>        </div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt; receive(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_end_point&amp; remote_end_point);</div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        </div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        <span class="keywordtype">size_t</span> send(const std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;&amp; dgram, <span class="keywordtype">size_t</span> bytes, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::ustring&amp; hostname, uint16 port);</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>        <span class="keywordtype">size_t</span> send(const std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;&amp; dgram, <span class="keywordtype">size_t</span> bytes, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_end_point&amp; end_point);</div>
-<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>        <span class="keywordtype">size_t</span> send(const std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;&amp; dgram, <span class="keywordtype">size_t</span> bytes);</div>
-<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>        </div>
-<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>      protected:</div>
-<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>        </div>
-<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>        <span class="keywordtype">bool</span> active() const noexcept;</div>
-<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>        udp_client&amp; active(<span class="keywordtype">bool</span> value) noexcept;</div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>        </div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>      private:</div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        udp_client(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::socket&amp; socket);</div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>        </div>
-<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>        std::shared_ptr&lt;data&gt; data_;</div>
-<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>      };</div>
-<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>    }</div>
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>  }</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>}</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        using <span class="keywordtype">object</span>::equals;</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>        <span class="keywordtype">bool</span> equals(const udp_client&amp; s) const noexcept override;</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>        </div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        <span class="keywordtype">void</span> join_multicast_group(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; multicast_address);</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>        <span class="keywordtype">void</span> join_multicast_group(uint32 if_index, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; multicast_address);</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        <span class="keywordtype">void</span> join_multicast_group(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; multicast_address, <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span> ttl);</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>        <span class="keywordtype">void</span> join_multicast_group(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; multicast_address, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; local_address);</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        </div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt; receive(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_end_point&amp; remote_end_point);</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        </div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        <span class="keywordtype">size_t</span> send(const std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;&amp; dgram, <span class="keywordtype">size_t</span> bytes, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::ustring&amp; hostname, uint16 port);</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>        <span class="keywordtype">size_t</span> send(const std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;&amp; dgram, <span class="keywordtype">size_t</span> bytes, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_end_point&amp; end_point);</div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>        <span class="keywordtype">size_t</span> send(const std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;&amp; dgram, <span class="keywordtype">size_t</span> bytes);</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>        </div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>      protected:</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>        </div>
+<div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span>        <span class="keywordtype">bool</span> active() const noexcept;</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>        udp_client&amp; active(<span class="keywordtype">bool</span> value) noexcept;</div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>        </div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>      private:</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>        udp_client(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::socket&amp; socket);</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>        </div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>        std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>      };</div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>    }</div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>  }</div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>}</div>
 <div class="ttc" id="aclassxtd_1_1iasync__result_html"><div class="ttname"><a href="classxtd_1_1iasync__result.html">xtd::iasync_result</a></div><div class="ttdoc">Represents the status of an asynchronous operation.</div><div class="ttdef"><b>Definition</b> iasync_result.h:25</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1ip__end__point_html"><div class="ttname"><a href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a></div><div class="ttdoc">Represents a network endpoint as an IP address and a port number.</div><div class="ttdef"><b>Definition</b> ip_end_point.h:23</div></div>
@@ -227,7 +228,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 12:14:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 6 2024 18:10:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -157,24 +157,25 @@ $(function() {
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        </div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="keywordtype">void</span> end_connect(std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; async_result);</div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keywordtype">bool</span> equals(const tcp_client&amp; s) const noexcept override;</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::network_stream get_stream() const;</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        </div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>      protected:</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        </div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        <span class="keywordtype">bool</span> active() const noexcept;</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        tcp_client&amp; active(<span class="keywordtype">bool</span> value) noexcept;</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        </div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>      private:</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        friend tcp_listener;</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        explicit tcp_client(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::socket&amp; socket);</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        </div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        std::shared_ptr&lt;data&gt; data_;</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>      };</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    }</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  }</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>}</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        using <span class="keywordtype">object</span>::equals;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <span class="keywordtype">bool</span> equals(const tcp_client&amp; s) const noexcept override;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::network_stream get_stream() const;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>      protected:</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        <span class="keywordtype">bool</span> active() const noexcept;</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        tcp_client&amp; active(<span class="keywordtype">bool</span> value) noexcept;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>      private:</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        friend tcp_listener;</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        explicit tcp_client(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::socket&amp; socket);</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        </div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>      };</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    }</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  }</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>}</div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1ip__end__point_html"><div class="ttname"><a href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a></div><div class="ttdoc">Represents a network endpoint as an IP address and a port number.</div><div class="ttdef"><b>Definition</b> ip_end_point.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:39</div></div>
@@ -187,7 +188,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 12:14:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 6 2024 18:10:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
