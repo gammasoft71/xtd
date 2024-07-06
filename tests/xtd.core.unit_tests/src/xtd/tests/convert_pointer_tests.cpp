@@ -14,7 +14,7 @@ namespace xtd::tests {
     void test_method_(const_object_to_ptr) {
       const guid* g1 = new guid();
       
-      const guid* g2 = convert_pointer::to_ptr(*g1);
+      const guid* g2 = convert_pointer::to_ptr<guid>(*g1);
       assert::are_equal(g1, g2, csf_);
       delete g1;
     }
@@ -22,7 +22,7 @@ namespace xtd::tests {
     void test_method_(object_to_ptr) {
       guid* g1 = new guid();
       
-      guid* g2 = convert_pointer::to_ptr(*g1);
+      guid* g2 = convert_pointer::to_ptr<guid>(*g1);
       assert::are_equal(g1, g2, csf_);
       delete g1;
     }
@@ -60,7 +60,7 @@ namespace xtd::tests {
     void test_method_(const_ptr_to_ptr) {
       const guid* g1 = new guid();
       
-      const guid* g2 = convert_pointer::to_ptr(g1);
+      const guid* g2 = convert_pointer::to_ptr<guid>(g1);
       assert::are_equal(g1, g2, csf_);
       delete g1;
     }
@@ -68,14 +68,14 @@ namespace xtd::tests {
     void test_method_(const_null_ptr_to_ptr) {
       const guid* g1 = null;
       
-      const guid* g2 = convert_pointer::to_ptr(g1);
+      const guid* g2 = convert_pointer::to_ptr<guid>(g1);
       assert::is_null(g2, csf_);
     }
     
     void test_method_(ptr_to_ptr) {
       guid* g1 = new guid();
       
-      guid* g2 = convert_pointer::to_ptr(g1);
+      guid* g2 = convert_pointer::to_ptr<guid>(g1);
       assert::are_equal(g1, g2, csf_);
       delete g1;
     }
@@ -83,7 +83,7 @@ namespace xtd::tests {
     void test_method_(null_ptr_to_ptr) {
       guid* g1 = null;
       
-      guid* g2 = convert_pointer::to_ptr(g1);
+      guid* g2 = convert_pointer::to_ptr<guid>(g1);
       assert::is_null(g2, csf_);
     }
     
@@ -134,7 +134,7 @@ namespace xtd::tests {
     void test_method_(const_object_to_ref) {
       const guid* g1 = new guid();
       
-      const guid& g2 = convert_pointer::to_ref(*g1);
+      const guid& g2 = convert_pointer::to_ref<guid>(*g1);
       assert::are_equal(g1, &g2, csf_);
       delete g1;
     }
@@ -142,7 +142,7 @@ namespace xtd::tests {
     void test_method_(object_to_ref) {
       guid* g1 = new guid();
       
-      guid& g2 = convert_pointer::to_ref(*g1);
+      guid& g2 = convert_pointer::to_ref<guid>(*g1);
       assert::are_equal(g1, &g2, csf_);
       delete g1;
     }
@@ -179,26 +179,26 @@ namespace xtd::tests {
     
     void test_method_(const_pointer_to_ref) {
       const guid* g1 = new guid();
-      const guid& g2 = convert_pointer::to_ref(g1);
+      const guid& g2 = convert_pointer::to_ref<guid>(g1);
       assert::are_equal(g1, &g2, csf_);
       delete g1;
     }
     
     void test_method_(const_null_pointer_to_ref) {
       const guid* g1 = null;
-      assert::throws<argument_null_exception>([&] {convert_pointer::to_ref(g1);}, csf_);
+      assert::throws<argument_null_exception>([&] {convert_pointer::to_ref<guid>(g1);}, csf_);
     }
     
     void test_method_(pointer_to_ref) {
       guid* g1 = new guid();
-      guid& g2 = convert_pointer::to_ref(g1);
+      guid& g2 = convert_pointer::to_ref<guid>(g1);
       assert::are_equal(g1, &g2, csf_);
       delete g1;
     }
     
     void test_method_(null_pointer_to_ref) {
       guid* g = null;
-      assert::throws<argument_null_exception>([&] {convert_pointer::to_ref(g);}, csf_);
+      assert::throws<argument_null_exception>([&] {convert_pointer::to_ref<guid>(g);}, csf_);
     }
     
     void test_method_(const_pointer_to_other_ref) {
