@@ -121,6 +121,7 @@ namespace xtd {
       
       int32 compare_to(const event_wait_handle& value) const noexcept override;
       
+      using object::equals;
       bool equals(const event_wait_handle& value) const noexcept override;
 
       /// @brief Sets the state of the event to nonsignaled, causing threads to block.

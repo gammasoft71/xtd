@@ -194,6 +194,7 @@ namespace xtd {
         
         /// @{
         int32 compare_to(const image_format& value) const noexcept override {return guid_ < value.guid_ ? -1 : guid_ > value.guid_ ? 1 : 0;}
+        using object::equals;
         bool equals(const image_format& value) const noexcept override {return guid_ == value.guid_;}
         
         /// @brief Converts this image_format object to a human-readable string.

@@ -67,7 +67,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example compares the current instance with another object.
     /// @include object_equals.cpp
-    bool equals(const object& obj) const noexcept;
+    virtual bool equals(const object& obj) const noexcept;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.

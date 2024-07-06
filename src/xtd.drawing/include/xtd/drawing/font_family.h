@@ -96,6 +96,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const font_family& value) const noexcept override;
       
       /// @brief Returns the cell ascent, in design units, of the font_family of the specified style.

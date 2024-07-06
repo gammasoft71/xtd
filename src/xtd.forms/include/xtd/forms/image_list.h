@@ -101,6 +101,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const image_list& value) const noexcept override;
       /// @}
       

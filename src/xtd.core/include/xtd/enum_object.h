@@ -181,6 +181,7 @@ namespace xtd {
     /// @}
     
     /// @cond
+    using object::equals;
     bool equals(const enum_object& value) const noexcept override {return value_ == value.value_;}
     bool equals(enum_type value) const noexcept {return value_ == value;}
     template<typename attribute_t>

@@ -183,6 +183,7 @@ namespace xtd {
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(int32 x, int32 y) const noexcept;
       
+      using object::equals;
       bool equals(const rectangle& value) const noexcept override;
       
       /// @brief Determines if this rectangle intersects with rect.

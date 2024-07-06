@@ -235,6 +235,7 @@ namespace xtd {
     /// * xtd::version 1.2.5 is newer than version 1.2.3.4
     int32 compare_to(const version& version) const noexcept override;
     
+    using object::equals;
     bool equals(const version& v) const noexcept override;
     
     /// @brief Converts the value of the current xtd::version object to its equivalent xtd::ustring representation.

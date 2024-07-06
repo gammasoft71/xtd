@@ -129,6 +129,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const encoder_parameter& value) const noexcept override;
         /// @}
         

@@ -220,6 +220,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const control& other) const noexcept override;
         
         /// @brief Gets solid background color.

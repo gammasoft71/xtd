@@ -83,6 +83,7 @@ namespace xtd {
       /// @param region The xtd::drawing::region object to complement this xtd::drawing::region object.
       void complement(const xtd::drawing::region& region) noexcept;
       
+      using object::equals;
       bool equals(const region& value) const noexcept override;
       
       /// @brief Updates this xtd::drawing::region to contain only the portion of its interior that does not intersect with the specified xtd::drawing::graphics_path.

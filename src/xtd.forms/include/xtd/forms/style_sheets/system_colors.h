@@ -339,6 +339,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const system_colors& other) const noexcept override;
         /// @}
         

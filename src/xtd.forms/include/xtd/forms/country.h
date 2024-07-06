@@ -84,6 +84,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const country& value) const noexcept override;
       
       /// @brief Returns a string containing the name, alpha codes and numeric code of the country.

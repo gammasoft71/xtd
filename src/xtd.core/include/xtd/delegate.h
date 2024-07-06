@@ -165,6 +165,7 @@ namespace xtd {
     /// @include delegate_begin_invoke.cpp
     result_t invoke() const {return operator()();}
     
+    using object::equals;
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
@@ -596,6 +597,7 @@ namespace xtd {
     /// @include delegate_begin_invoke.cpp
     result_t invoke(arguments_t... arguments) const {return operator()(arguments...);}
     
+    using object::equals;
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.

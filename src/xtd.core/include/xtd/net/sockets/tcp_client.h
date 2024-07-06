@@ -327,6 +327,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void end_connect(std::shared_ptr<xtd::iasync_result> async_result);
         
+        using object::equals;
         bool equals(const tcp_client& s) const noexcept override;
         
         /// @brief Returns the xtd::net::sockets::network_stream used to send and receive data.

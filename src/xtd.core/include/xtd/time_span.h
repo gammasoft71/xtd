@@ -306,6 +306,7 @@ namespace xtd {
     /// @return A new object whose value is the absolute value of the current xtd::time_span object.
     time_span duration() const noexcept;
     
+    using object::equals;
     bool equals(const time_span& value) const noexcept override;
     
     /// @brief Returns a new xtd::time_spam object which value is the result of multiplication of this instance and the specified factor.

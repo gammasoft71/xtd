@@ -139,6 +139,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const ip_address& other) const noexcept override;
       
       /// @brief Provides a copy of the IPAddress as an array of bytes.

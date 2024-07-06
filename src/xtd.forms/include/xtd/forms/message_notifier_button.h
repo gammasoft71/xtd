@@ -21,6 +21,7 @@ namespace xtd {
       }
       
       //TODO:
+      using object::equals;
       bool equals(const message_notifier_button& other) const noexcept override {
         return text_ == other.text_;
       }

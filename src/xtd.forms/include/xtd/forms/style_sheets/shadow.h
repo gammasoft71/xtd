@@ -83,6 +83,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const shadow& other) const noexcept override;
         /// @}
         

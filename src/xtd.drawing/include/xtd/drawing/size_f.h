@@ -89,6 +89,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const xtd::drawing::size_f& value) const noexcept override;
       
       /// @brief Creates a human-readable string that represents this xtd::drawing::size_f class.

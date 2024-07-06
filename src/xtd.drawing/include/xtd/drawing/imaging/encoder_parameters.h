@@ -56,6 +56,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const encoder_parameters& value) const noexcept override {return params_ == value.params_;}
         /// @}
         

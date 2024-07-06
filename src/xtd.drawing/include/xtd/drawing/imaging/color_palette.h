@@ -52,6 +52,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const color_palette& value) const noexcept override {return entries_ == value.entries_ && flags_ == value.flags_;}
         /// @}
         

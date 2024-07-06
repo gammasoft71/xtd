@@ -60,6 +60,7 @@ namespace xtd {
     xtd::ustring namespace_() const noexcept;
     /// @}
     
+    using object::equals;
     /// @par Methods
     /// @{
     bool equals(const type_object& type) const noexcept override;

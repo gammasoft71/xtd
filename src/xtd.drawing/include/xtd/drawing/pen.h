@@ -205,6 +205,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const xtd::drawing::pen& value) const noexcept override;
       
       xtd::ustring to_string() const noexcept override;

@@ -248,6 +248,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const point& value) const noexcept override;
       
       /// @brief Translates this xtd::drawing::point by the specified amount.

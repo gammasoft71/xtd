@@ -344,6 +344,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const style_sheet& other) const noexcept override;
         /// @}
         

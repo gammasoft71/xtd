@@ -35,6 +35,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const system_sound& sound) const noexcept override;
       
       /// @brief Plays the system sound type.

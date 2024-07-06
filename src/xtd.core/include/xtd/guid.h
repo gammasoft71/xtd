@@ -142,6 +142,7 @@ namespace xtd {
     /// | Greater than zero | This instance is greater than obj. |
     int32 compare_to(const guid& value) const noexcept override;
     
+    using object::equals;
     bool equals(const guid& g) const noexcept override;
     
     /// @brief Returns a 16-element byte array that contains the value of this instance.

@@ -171,6 +171,7 @@ namespace xtd {
       /// @return A xtd::drawing::graphics for the image.
       graphics create_graphics();
       
+      using object::equals;
       bool equals(const image& image) const noexcept override;
 
       /// @brief Gets the image alpha pointer, which represents the alpha data of the image.

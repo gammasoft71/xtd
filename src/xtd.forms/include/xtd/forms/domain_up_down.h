@@ -73,6 +73,7 @@ namespace xtd {
         
         /// @{
         int32 compare_to(const item& value) const noexcept override;
+        using object::equals;
         bool equals(const item& value) const noexcept override;
         /// @brief Returns a string containing the vague of the item.
         /// @return A string containing the value of the item.
