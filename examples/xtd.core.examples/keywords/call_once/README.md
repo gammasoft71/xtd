@@ -1,6 +1,6 @@
 # call_once
 
-Shows how to use [call_once_](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1call__once.html) keywod.
+Shows how to use [call_once_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85) keyword.
 
 ## Sources
 
