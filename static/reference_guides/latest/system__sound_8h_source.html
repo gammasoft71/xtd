@@ -100,17 +100,18 @@ $(function() {
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      <a class="code hl_class" href="classxtd_1_1media_1_1system__sound.html">system_sound</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1media_1_1system__sound.html">system_sound</a>&amp; sound) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1media_1_1system__sound.html#a7ee819fbc785d67761847a73ef112ee0">   47</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1media_1_1system__sound.html#a7ee819fbc785d67761847a73ef112ee0">play</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1media_1_1system__sounds.html">system_sounds</a>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <span class="keyword">explicit</span> <a class="code hl_class" href="classxtd_1_1media_1_1system__sound.html">system_sound</a>(<a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> <a class="code hl_typedef" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">type</a>);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> type_ = 0;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    };</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="keyword">using </span>object::equals;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1media_1_1system__sound.html">system_sound</a>&amp; sound) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classxtd_1_1media_1_1system__sound.html#a7ee819fbc785d67761847a73ef112ee0">   48</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1media_1_1system__sound.html#a7ee819fbc785d67761847a73ef112ee0">play</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1media_1_1system__sounds.html">system_sounds</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="keyword">explicit</span> <a class="code hl_class" href="classxtd_1_1media_1_1system__sound.html">system_sound</a>(<a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> <a class="code hl_typedef" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">type</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> type_ = 0;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1media_1_1system__sound_html"><div class="ttname"><a href="classxtd_1_1media_1_1system__sound.html">xtd::media::system_sound</a></div><div class="ttdoc">Represents a system sound type.</div><div class="ttdef"><b>Definition</b> system_sound.h:29</div></div>
 <div class="ttc" id="aclassxtd_1_1media_1_1system__sound_html_a7ee819fbc785d67761847a73ef112ee0"><div class="ttname"><a href="classxtd_1_1media_1_1system__sound.html#a7ee819fbc785d67761847a73ef112ee0">xtd::media::system_sound::play</a></div><div class="ttdeci">void play() const</div><div class="ttdoc">Plays the system sound type.</div></div>
@@ -124,7 +125,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 12:14:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 6 2024 18:10:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -157,29 +157,30 @@ $(function() {
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        </div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::tcp_client end_accept_tcp_client(std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; async_result);</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keywordtype">bool</span> equals(const tcp_listener&amp; s) const noexcept override;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordtype">bool</span> pending();</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        </div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordtype">void</span> start();</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        </div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        <span class="keywordtype">void</span> start(<span class="keywordtype">size_t</span> backlog);</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <span class="keywordtype">void</span> stop();</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        </div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        static tcp_listener create(uint16 port);</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>      protected:</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordtype">bool</span> active() const noexcept;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      private:</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        std::shared_ptr&lt;data&gt; data_;</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>      };</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  }</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>}</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        using <span class="keywordtype">object</span>::equals;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keywordtype">bool</span> equals(const tcp_listener&amp; s) const noexcept override;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keywordtype">bool</span> pending();</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keywordtype">void</span> start();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keywordtype">void</span> start(<span class="keywordtype">size_t</span> backlog);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        <span class="keywordtype">void</span> stop();</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        static tcp_listener create(uint16 port);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>      protected:</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordtype">bool</span> active() const noexcept;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      private:</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>      };</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    }</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  }</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>}</div>
 <div class="ttc" id="aclassxtd_1_1iasync__result_html"><div class="ttname"><a href="classxtd_1_1iasync__result.html">xtd::iasync_result</a></div><div class="ttdoc">Represents the status of an asynchronous operation.</div><div class="ttdef"><b>Definition</b> iasync_result.h:25</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1end__point_html"><div class="ttname"><a href="classxtd_1_1net_1_1end__point.html">xtd::net::end_point</a></div><div class="ttdoc">Identifies a network address. This is an abstract class.</div><div class="ttdef"><b>Definition</b> end_point.h:27</div></div>
@@ -195,7 +196,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 12:14:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 6 2024 18:10:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

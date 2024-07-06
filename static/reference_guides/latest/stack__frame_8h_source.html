@@ -121,34 +121,35 @@ $(function() {
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a905552095a96ae3144ea7e63fd38b859">  100</a></span>      static constexpr <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> OFFSET_UNKNOWN = 4294967295u;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <span class="keywordtype">bool</span> equals(const <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&amp; sf) const noexcept override;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a7496f96bd9e3f7cd9e79f294aee72ac9">  123</a></span>      virtual <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> get_file_column_number() const noexcept;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a1832cdfb7233ada545f1af44983843ae">  140</a></span>      virtual <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> get_file_line_number() const noexcept;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a3c7c3064010482060dc20aeb53b48797">  157</a></span>      virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; get_file_name() const noexcept;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">  174</a></span>      virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; get_method() const noexcept;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">  191</a></span>      virtual <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> get_offset() const noexcept;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5aa33a16f44ae88f1f7e6068ec32e376">  195</a></span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> to_string() const noexcept override;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    private:</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      friend class <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a>;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      static std::vector&lt;<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&gt; get_stack_frames(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; str, <span class="keywordtype">size_t</span> skip_frames, <span class="keywordtype">bool</span> need_file_info) noexcept;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> file_name_;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> file_line_number_ = 0;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> method_name_;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> file_column_number_ = 0;</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> offset_ = OFFSET_UNKNOWN;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    };</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  }</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">#include &quot;current_stack_frame.h&quot;</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      using <span class="keywordtype">object</span>::equals;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordtype">bool</span> equals(const <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&amp; sf) const noexcept override;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a7496f96bd9e3f7cd9e79f294aee72ac9">  124</a></span>      virtual <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> get_file_column_number() const noexcept;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a1832cdfb7233ada545f1af44983843ae">  141</a></span>      virtual <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> get_file_line_number() const noexcept;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a3c7c3064010482060dc20aeb53b48797">  158</a></span>      virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; get_file_name() const noexcept;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">  175</a></span>      virtual const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; get_method() const noexcept;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5d3c0caad738e5c22c17909a7e8db9ce">  192</a></span>      virtual <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> get_offset() const noexcept;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1stack__frame.html#a5aa33a16f44ae88f1f7e6068ec32e376">  196</a></span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> to_string() const noexcept override;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    private:</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      friend class <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a>;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      static std::vector&lt;<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a>&gt; get_stack_frames(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; str, <span class="keywordtype">size_t</span> skip_frames, <span class="keywordtype">bool</span> need_file_info) noexcept;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> file_name_;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> file_line_number_ = 0;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> method_name_;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> file_column_number_ = 0;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      <a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> offset_ = OFFSET_UNKNOWN;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    };</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#include &quot;current_stack_frame.h&quot;</span></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:39</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a25af3522596dfd97dded1fa68d2089a4"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a25af3522596dfd97dded1fa68d2089a4">xtd::diagnostics::stack_frame::stack_frame</a></div><div class="ttdeci">stack_frame(const xtd::ustring &amp;file_name, uint32 line_number, const xtd::ustring &amp;method_name, uint32 column_number, uint32 offset)</div><div class="ttdoc">Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given fi...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a2a4018fdec1c7379214cd1809e70b8e3"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a2a4018fdec1c7379214cd1809e70b8e3">xtd::diagnostics::stack_frame::stack_frame</a></div><div class="ttdeci">stack_frame(size_t skip_frame)</div><div class="ttdoc">Initializes a new instance of the xtd::diagnostics::stack_frame class that corresponds to a frame abo...</div></div>
@@ -171,7 +172,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 12:14:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 6 2024 18:10:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
