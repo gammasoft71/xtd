@@ -416,7 +416,12 @@ namespace xtd {
   inline std::string to_string(const std::tuple<types_t ...>& value, const std::string& fmt, const std::locale& loc) {return __xtd_tuple_stringer<std::tuple<types_t ...>, 0, sizeof...(types_t) - 1 >::to_string(std::string {"("}, value, fmt, loc) + ")";}
 
   template<typename iterator_t>
-  inline std::string __xtd_iterator_to_string(const std::string& str, iterator_t iterator, const iterator_t& begin, const iterator_t& end, const std::string& fmt, const std::locale& loc) {return iterator != end ? __xtd_iterator_to_string(str + (iterator == begin ? "" : ", ") + xtd::to_string(*iterator, fmt, loc), ++iterator, begin, end, fmt, loc) : str;}
+  inline std::string __xtd_iterator_to_string(const std::string& str, iterator_t iterator, const iterator_t& begin, const iterator_t& end, const std::string& fmt, const std::locale& loc) {
+    if (iterator == end) return str;
+    auto prefix = iterator == begin ? std::string {} : std::string {", "};
+    ++iterator;
+    return __xtd_iterator_to_string(str + prefix + xtd::to_string(*iterator, fmt, loc), iterator, begin, end, fmt, loc);
+  }
 
   template<typename iterator_t>
   inline std::string __xtd_sequence_container_to_string(const iterator_t& begin, const iterator_t& end, const std::string& fmt, const std::locale& loc) {return __xtd_iterator_to_string("[", begin, begin, end, fmt, loc) + "]";}
