@@ -418,9 +418,8 @@ namespace xtd {
   template<typename iterator_t>
   inline std::string __xtd_iterator_to_string(const std::string& str, iterator_t iterator, const iterator_t& begin, const iterator_t& end, const std::string& fmt, const std::locale& loc) {
     if (iterator == end) return str;
-    auto prefix = iterator == begin ? std::string {} : std::string {", "};
-    ++iterator;
-    return __xtd_iterator_to_string(str + prefix + xtd::to_string(*iterator, fmt, loc), iterator, begin, end, fmt, loc);
+    auto new_str = str + (iterator == begin ? std::string {} : std::string {", "}) + xtd::to_string(*iterator, fmt, loc);
+    return __xtd_iterator_to_string(new_str, ++iterator, begin, end, fmt, loc);
   }
 
   template<typename iterator_t>
