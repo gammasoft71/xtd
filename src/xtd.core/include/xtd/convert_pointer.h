@@ -31,71 +31,6 @@ namespace xtd {
   public:
     /// @name Public Static Methods
     
-    /// @{
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// const button* value = new xtd::forms::button();
-    /// const control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// ```
-    template<typename type_t>
-    static const type_t* to_ptr(const type_t& value) {
-      return &value;
-    }
-    
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// button* value = new xtd::forms::button();
-    /// control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// ```
-    template<typename type_t>
-    static type_t* to_ptr(type_t& value) {
-      return &value;
-    }
-    
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// const button* value = new xtd::forms::button();
-    /// const control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// ```
-    template<typename type_t>
-    static const type_t* to_ptr(const type_t* value) {
-      return value;
-    }
-    
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// button* value = new xtd::forms::button();
-    /// control* result = convert::to_ptr<xtd::forms::control>(value);
-    /// ```
-    template<typename type_t>
-    static type_t* to_ptr(type_t* value) {
-      return value;
-    }
-    
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd
@@ -161,75 +96,7 @@ namespace xtd {
     static new_type_t* to_ptr(current_type_t& value) {
       return &to_ref<new_type_t>(value);
     }
-    
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// const button* value = new xtd::forms::button();
-    /// const button& result = convert::to_ref<xtd::forms::control>(*value);
-    /// ```
-    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename type_t>
-    static const type_t& to_ref(const type_t& value) {
-      return value;
-    }
-    
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// button* value = new xtd::forms::button();
-    /// button& result = convert::to_ref<xtd::forms::control>(*value);
-    /// ```
-    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename type_t>
-    static type_t& to_ref(type_t& value) {
-      return value;
-    }
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// const button* value = new xtd::forms::button();
-    /// const button& result = convert::to_ref<xtd::forms::control>(value);
-    /// ```
-    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename type_t>
-    static const type_t& to_ref(const type_t* value) {
-      if (value == nullptr) throw argument_null_exception {csf_};
-      return *value;
-    }
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// button* value = new xtd::forms::button();
-    /// button& result = convert::to_ref<xtd::forms::control>(value);
-    /// ```
-    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename type_t>
-    static type_t& to_ref(type_t* value) { // value parameter can't be const by design.
-      if (value == nullptr) throw argument_null_exception {csf_};
-      return *value;
-    }
-    
+        
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd

@@ -267,25 +267,6 @@ auto main() -> int {
   console::write("  0b");
   console::write_line(f7.to_string("b8", locale {}));
   console::write_line();
-
-  auto f8 = foo8 {42};
-  console::out << "foo8 standard output :" << environment::new_line;
-  console::out << "  " << f8 << environment::new_line;
-  console::out << "  " << f8.to_string() << environment::new_line;
-  console::out << ustring::format("  {}", f8) << environment::new_line;
-  console::out << ustring::format("  0b{:b8}", f8) << environment::new_line;
-  console::out << "  0b" << f8.to_string("b8", locale {}) << environment::new_line;
-  console::write_line();
-  console::write_line("foo8 write_line :");
-  console::write("  ");
-  console::write_line(f8);
-  console::write("  ");
-  console::write_line(f8.to_string());
-  console::write_line("  {}", f8);
-  console::write_line("  0b{:b8}", f8);
-  console::write("  0b");
-  console::write_line(f8.to_string("b8", locale {}));
-  console::write_line();
 }
 
 // This code produces the following output :
