@@ -236,6 +236,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       /// @brief Indicates whether the current object is equal to another object of the same type.
       /// @param obj An object to compare with this object.
       /// @return true if the current object is equal to the other parameter; otherwise, false.

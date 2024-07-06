@@ -17,6 +17,7 @@ namespace xtd::tests {
       iequatable_test(iequatable_test&&) = default;
       iequatable_test(const iequatable_test&) = default;
       
+      using object::equals;
       bool equals(const iequatable_test& ie) const noexcept override {return value_ == ie.value_;}
       
     private:

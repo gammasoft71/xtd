@@ -155,6 +155,7 @@ namespace xtd {
       /// @remarks For transitions from standard time to daylight saving time, the time_of_day argument represents the time of the transition in the time zone's standard time. For transitions from daylight saving time to standard time, it represents the time of the transition in the time zone's daylight saving time. Note that this is a xtd::date_time value whose year, month, and date values must all equal 1.
       static transition_time create_floating_date_rule(date_time time_of_day, uint32 month, uint32 week, xtd::day_of_week day_of_week);
       
+      using object::equals;
       bool equals(const transition_time& tt) const noexcept override;
       /// @}
       
@@ -234,6 +235,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const adjustement_rule& ar) const noexcept override;
       /// @}
       
@@ -322,6 +324,7 @@ namespace xtd {
     /// @{
     int32 compare_to(const time_zone_info& tzi) const noexcept override;
     
+    using object::equals;
     bool equals(const time_zone_info& tzi) const noexcept override;
     
     /// @brief Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::time_zone_info object.

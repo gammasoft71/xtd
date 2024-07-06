@@ -272,6 +272,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const font& value) const noexcept override;
       
       /// @brief Returns the line spacing, in pixels, of this font.

@@ -575,6 +575,7 @@ namespace xtd {
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
     bool is_well_formed_original_string();
      
+    using object::equals;
     bool equals(const xtd::uri& uri) const noexcept override;
     
     /// @brief Gets a canonical string representation for the specified xtd::uri instance.

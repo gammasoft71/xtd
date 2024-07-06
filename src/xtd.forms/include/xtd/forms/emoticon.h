@@ -132,6 +132,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const emoticon& value) const noexcept override;
       
       /// @brief Returns a string containing the codepoints of the emoticons.

@@ -148,6 +148,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const background_image& other) const noexcept override {return image_type_ == other.image_type_ && colors_ == other.colors_ && angle_ == other.angle_;}
                 
         xtd::ustring to_string() const noexcept override;

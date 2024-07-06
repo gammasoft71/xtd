@@ -139,6 +139,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const icon& icon) const noexcept override;
       
       /// @brief Saves this xtd::drawing::icon to the specified output filename.

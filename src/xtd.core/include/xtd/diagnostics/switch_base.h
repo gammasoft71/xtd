@@ -67,6 +67,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const switch_base& value) const noexcept override;
       /// @}
       

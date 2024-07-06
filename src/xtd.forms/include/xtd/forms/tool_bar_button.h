@@ -198,6 +198,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const tool_bar_button& other) const noexcept override;
       
       /// @brief Returns a string that represents the xtd::forms::tool_bar_button control.

@@ -159,6 +159,7 @@ namespace xtd {
       
       int32 compare_to(const semaphore& value) const noexcept override;
       
+      using object::equals;
       bool equals(const semaphore& value) const noexcept override;
 
       /// @brief Exits the semaphore and returns the previous count.

@@ -978,6 +978,7 @@ namespace xtd {
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
       std::optional<object_ref> end_invoke(xtd::async_result async) override;
       
+      using object::equals;
       bool equals(const control& value) const noexcept override;
       
       /// @brief Sets input focus to the control.

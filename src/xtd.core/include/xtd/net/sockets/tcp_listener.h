@@ -206,6 +206,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         xtd::net::sockets::tcp_client end_accept_tcp_client(std::shared_ptr<xtd::iasync_result> async_result);
         
+        using object::equals;
         bool equals(const tcp_listener& s) const noexcept override;
         
         /// @brief Determines if there are pending connection requests.

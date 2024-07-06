@@ -63,6 +63,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const frame_dimension& value) const noexcept override {return guid_ == value.guid_;}
         /// @}
         

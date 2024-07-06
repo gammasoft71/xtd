@@ -137,6 +137,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using object::equals;
         bool equals(const xtd::drawing::drawing_2d::matrix& value) const noexcept override;
         
         /// @brief Inverts this xtd::drawing::drawing_2d::matrix, if it is invertible.

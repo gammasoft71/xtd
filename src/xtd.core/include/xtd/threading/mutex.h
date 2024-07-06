@@ -116,6 +116,7 @@ namespace xtd {
       
       int32 compare_to(const mutex& value) const noexcept override;
       
+      using object::equals;
       bool equals(const mutex& value) const noexcept override;
       
       /// @brief Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution until the lock is acquired.

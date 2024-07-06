@@ -605,6 +605,7 @@ namespace xtd {
     
     int32 compare_to(const date_time& value) const noexcept override;
     
+    using object::equals;
     bool equals(const date_time&) const noexcept override;
     
     /// @brief Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.

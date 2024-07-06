@@ -51,6 +51,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const brush& value) const noexcept override;
       
       /// @brief Converts this brush object to a human-readable string.

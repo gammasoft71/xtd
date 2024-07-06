@@ -100,6 +100,7 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    using object::equals;
     bool equals(const box& value) const noexcept override {return value_ == value.value_;}
     
     int32 compare_to(const box& value) const noexcept override {

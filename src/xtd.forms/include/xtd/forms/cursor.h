@@ -123,6 +123,7 @@ namespace xtd {
       /// @remarks The handle created as a result of calling this method must be deleted of when you are done with it.
       intptr copy_handle() const;
       
+      using object::equals;
       bool equals(const cursor& value) const noexcept override;
       
       /// @brief Returns a string containing the name of the cursor.

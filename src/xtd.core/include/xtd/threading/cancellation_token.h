@@ -86,6 +86,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const cancellation_token& other) const noexcept;
       /// @}
 

@@ -96,6 +96,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      using object::equals;
       bool equals(const control_layout_style& value) const noexcept override;
       
       /// @brief Returns a string that represent xtd::forms::control_layout_style.

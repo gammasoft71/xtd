@@ -172,6 +172,7 @@ namespace xtd {
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(float x, float y) const noexcept;
       
+      using object::equals;
       bool equals(const rectangle_f& value) const noexcept override;
       
       /// @brief Enlarges this xtd::drawing::rectangle_f by the specified amount.
