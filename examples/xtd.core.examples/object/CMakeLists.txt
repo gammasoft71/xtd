@@ -10,4 +10,5 @@ add_projects(
   object_get_type
   object_memberwise_clone
   object_reference_equals
+  object_to_string
 )
