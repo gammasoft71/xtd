@@ -353,7 +353,7 @@ xtd::ustring environment::get_folder_path(environment::special_folder folder) {
 
 ustring environment::get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
   switch (folder) {
-    case environment::special_folder::application_resources: return path::get_full_path(native::environment::get_resources_path(is_gui_application));
+    case environment::special_folder::application_resources: return path::get_full_path(native::environment::get_resources_path(is_gui_application()));
     case environment::special_folder::xtd_install: return xtd_root_path();
     case environment::special_folder::xtd_locale: return path::combine(xtd_root_path(), "share", "xtd", "locale");
     case environment::special_folder::xtd_reference_guide: return path::combine(xtd_root_path(), "share", "xtd", "reference_guide");
