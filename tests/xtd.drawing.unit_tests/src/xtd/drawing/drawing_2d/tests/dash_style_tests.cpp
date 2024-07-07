@@ -1,9 +1,9 @@
-#include <xtd/drawing/dash_style>
+#include <xtd/drawing/drawing_2d/dash_style>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace xtd::drawing;
+using namespace xtd::drawing::drawing_2d;
 using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {

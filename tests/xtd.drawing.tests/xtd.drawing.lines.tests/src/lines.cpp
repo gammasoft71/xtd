@@ -100,10 +100,10 @@ private:
   void draw_pens_with_dash(object& sender, paint_event_args& e) {
     draw_grid(e.clip_rectangle(), e.graphics());
     
-    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::dash_style::dot), point(50, 50), point(250, 50));
-    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::dash_style::dash), point(50, 100), point(250, 100));
-    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::dash_style::dash_dot), point(50, 150), point(250, 150));
-    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::dash_style::dash_dot_dot), point(50, 200), point(250, 200));
+    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::drawing_2d::dash_style::dot), point(50, 50), point(250, 50));
+    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::drawing_2d::dash_style::dash), point(50, 100), point(250, 100));
+    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::drawing_2d::dash_style::dash_dot), point(50, 150), point(250, 150));
+    e.graphics().draw_line(pen(color::red, 10).dash_style(drawing::drawing_2d::dash_style::dash_dot_dot), point(50, 200), point(250, 200));
   }
   
   void draw_pens_with_cap(object& sender, paint_event_args& e) {

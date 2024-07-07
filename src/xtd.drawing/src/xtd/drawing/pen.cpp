@@ -24,7 +24,7 @@ struct pen::data {
   xtd::drawing::color color;
   float dash_offset = 0.0f;
   std::vector<float> dash_pattern;
-  xtd::drawing::dash_style dash_style = xtd::drawing::dash_style::solid;
+  xtd::drawing::drawing_2d::dash_style dash_style = xtd::drawing::drawing_2d::dash_style::solid;
   xtd::drawing::drawing_2d::line_cap end_cap = xtd::drawing::drawing_2d::line_cap::flat;
   xtd::drawing::drawing_2d::line_join line_join = xtd::drawing::drawing_2d::line_join::miter;
   float miter_limit = 10.0f;
@@ -99,17 +99,17 @@ xtd::drawing::pen& pen::dash_pattern(const std::initializer_list<float>& value) 
 pen& pen::dash_pattern(const vector<float>& value) {
   if (data_->dash_pattern != value) {
     data_->dash_pattern = value;
-    if (!data_->dash_pattern.empty()) data_->dash_style = drawing::dash_style::custom;
+    if (!data_->dash_pattern.empty()) data_->dash_style = drawing::drawing_2d::dash_style::custom;
     recreate_handle();
   }
   return *this;
 }
 
-drawing::dash_style pen::dash_style() const noexcept {
+drawing::drawing_2d::dash_style pen::dash_style() const noexcept {
   return data_->dash_style;
 }
 
-pen& pen::dash_style(drawing::dash_style value) {
+pen& pen::dash_style(drawing::drawing_2d::dash_style value) {
   if (data_->dash_style != value) {
     data_->dash_style = value;
     recreate_handle();
@@ -215,12 +215,12 @@ void pen::recreate_handle() {
   
   vector<float> dashes;
   switch (data_->dash_style) {
-    case drawing::dash_style::solid: break;
-    case drawing::dash_style::dash: dashes = {3, 2};  break;
-    case drawing::dash_style::dot: dashes = {1, 1};  break;
-    case drawing::dash_style::dash_dot: dashes = {3, 1, 1, 1};  break;
-    case drawing::dash_style::dash_dot_dot: dashes = {3, 1, 1, 1, 1, 1};  break;
-    case drawing::dash_style::custom: dashes = data_->dash_pattern; break;
+    case drawing::drawing_2d::dash_style::solid: break;
+    case drawing::drawing_2d::dash_style::dash: dashes = {3, 2};  break;
+    case drawing::drawing_2d::dash_style::dot: dashes = {1, 1};  break;
+    case drawing::drawing_2d::dash_style::dash_dot: dashes = {3, 1, 1, 1};  break;
+    case drawing::drawing_2d::dash_style::dash_dot_dot: dashes = {3, 1, 1, 1, 1, 1};  break;
+    case drawing::drawing_2d::dash_style::custom: dashes = data_->dash_pattern; break;
     default: break;
   }
   

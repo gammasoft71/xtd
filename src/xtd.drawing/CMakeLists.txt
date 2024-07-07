@@ -50,8 +50,6 @@ add_sources(
   include/xtd/drawing/crayons_colors
   include/xtd/drawing/cyan_colors.h
   include/xtd/drawing/cyan_colors
-  include/xtd/drawing/dash_style.h
-  include/xtd/drawing/dash_style
   include/xtd/drawing/devices_system_images.h
   include/xtd/drawing/devices_system_images
   include/xtd/drawing/emblems_system_images.h
@@ -161,6 +159,8 @@ add_sources(
   include/xtd/drawing/drawing_2d/compositing_mode
   include/xtd/drawing/drawing_2d/compositing_quality.h
   include/xtd/drawing/drawing_2d/compositing_quality
+  include/xtd/drawing/drawing_2d/dash_style.h
+  include/xtd/drawing/drawing_2d//dash_style
   include/xtd/drawing/drawing_2d/fill_mode.h
   include/xtd/drawing/drawing_2d/fill_mode
   include/xtd/drawing/drawing_2d/flush_intention.h
