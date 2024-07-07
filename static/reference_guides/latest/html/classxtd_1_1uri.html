@@ -192,7 +192,7 @@ Inheritance diagram for xtd::uri:</div>
 <div class="ttc" id="aclassxtd_1_1uri_html_ae0573a91ba65157a2cfc2211bc320770"><div class="ttname"><a href="classxtd_1_1uri.html#ae0573a91ba65157a2cfc2211bc320770">xtd::uri::port</a></div><div class="ttdeci">int32 port() const</div><div class="ttdoc">Gets the port number of this URI.</div></div>
 <div class="ttc" id="aclassxtd_1_1uri_html_af4381a2278f13bb39325b76deacfd17b"><div class="ttname"><a href="classxtd_1_1uri.html#af4381a2278f13bb39325b76deacfd17b">xtd::uri::is_unc</a></div><div class="ttdeci">bool is_unc() const</div><div class="ttdoc">Gets whether the specified xtd::uri is a universal naming convention (UNC) path.</div></div>
 <div class="ttc" id="aclassxtd_1_1uri_html_af520270c8c651906e849240bbdffc3ba"><div class="ttname"><a href="classxtd_1_1uri.html#af520270c8c651906e849240bbdffc3ba">xtd::uri::host_name_type</a></div><div class="ttdeci">xtd::uri_host_name_type host_name_type() const</div><div class="ttdoc">Gets the type of the host name specified in the URI.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html_a95694998a854ba65dde682b879eec355"><div class="ttname"><a href="classxtd_1_1ustring.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a></div><div class="ttdeci">static ustring join(const ustring separator, const collection_t &amp;values) noexcept</div><div class="ttdoc">Concatenates a specified separator string between each element of a specified object array,...</div><div class="ttdef"><b>Definition</b> ustring.h:1172</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html_a95694998a854ba65dde682b879eec355"><div class="ttname"><a href="classxtd_1_1ustring.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a></div><div class="ttdeci">static ustring join(const ustring separator, const collection_t &amp;values) noexcept</div><div class="ttdoc">Concatenates a specified separator string between each element of a specified object array,...</div><div class="ttdef"><b>Definition</b> ustring.h:1173</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:167</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A URI is a compact representation of a resource available to your application on the intranet or Internet. The <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> class defines the properties and methods for handling URIs, including parsing, comparing, and combining. The <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> class properties are read-only; to create a modifiable object, use the xtd::uri_builder class. </dd>
@@ -256,7 +256,7 @@ When dealing with untrusted user input, confirm assumptions about the newly crea
 <div class="line"><span class="keywordflow">if</span> (!base_uri.isbase_of(new_uri)) {</div>
 <div class="line">  <span class="comment">// Fail: the uri base has been modified - the created uri is not rooted in the original directory.</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:49</div></div>
 </div><!-- fragment --> This validation can be used in other cases, like when dealing with UNC paths, by simply changing the base_uri: <div class="fragment"><div class="line">aauto base_uri = <a class="code hl_function" href="classxtd_1_1uri.html#a4e9abcaee8852c7e0722e8bd8d78440d">uri</a>(<span class="stringliteral">@&quot;\\host\share\some\directory\name\&quot;</span>);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="uri_8cpp-example.html#_a0">uri.cpp</a>.</dd>
@@ -393,7 +393,7 @@ When dealing with untrusted user input, confirm assumptions about the newly crea
 <tr class="memdesc:ac75706ca90ad17345c4c8d5e533436e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the string used to construct this <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> was well-formed and is not required to be further escaped.  <br /></td></tr>
 <tr class="separator:ac75706ca90ad17345c4c8d5e533436e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6d87c0c1a113a19bc0d13c15b52052b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#ab6d87c0c1a113a19bc0d13c15b52052b">equals</a> (const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;<a class="el" href="classxtd_1_1uri.html">uri</a>) const noexcept override</td></tr>
-<tr class="memdesc:ab6d87c0c1a113a19bc0d13c15b52052b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
+<tr class="memdesc:ab6d87c0c1a113a19bc0d13c15b52052b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates wheth er the current object is equal to another object of the same type.  <br /></td></tr>
 <tr class="separator:ab6d87c0c1a113a19bc0d13c15b52052b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe35132b6ca4abf9aa8bb0ac11764d83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#afe35132b6ca4abf9aa8bb0ac11764d83">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:afe35132b6ca4abf9aa8bb0ac11764d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a canonical string representation for the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance.  <br /></td></tr>
@@ -448,10 +448,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;typename object_t &gt; </td></tr>
-<tr class="memitem:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86">memberwise_clone</a> () const noexcept</td></tr>
-<tr class="memdesc:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="separator:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;typename object_t &gt; </td></tr>
+<tr class="memitem:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a7d1d6739fb74be554719eced219de59a">memberwise_clone</a> () const</td></tr>
+<tr class="memdesc:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="separator:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classxtd_1_1object"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classxtd_1_1object')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classxtd_1_1object.html">xtd::object</a></td></tr>
 <tr class="memitem:a75cb9ed56172fb088ca6697d5d836b13 inherit pub_static_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a75cb9ed56172fb088ca6697d5d836b13">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;object_a, const <a class="el" href="classxtd_1_1object.html">object</a> &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a75cb9ed56172fb088ca6697d5d836b13 inherit pub_static_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
@@ -1003,7 +1003,25 @@ For more information on URI support, see the Remarks section for the <a class="e
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the specified object is equal to the current object. otherwise, false. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> object1 = std::make_shared&lt;object&gt;();</div>
+<div class="line">  <span class="keyword">auto</span> object2 = std::make_shared&lt;object&gt;();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> object3 = object2;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
+<div class="line">  object3 = object1;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// false</span></div>
+<div class="line"><span class="comment">// true</span></div>
+</div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
 
@@ -1052,7 +1070,41 @@ For more information on URI support, see the Remarks section for the <a class="e
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> s2 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Carol&quot;) =&gt; false</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Tom&quot;) =&gt; true</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;Tom&quot;) =&gt; false</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;Carol&quot;, &quot;&quot;) =&gt; false</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;&quot;) =&gt; true</span></div>
+<div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1080,7 +1132,7 @@ For more information on URI support, see the Remarks section for the <a class="e
 </table>
 </div><div class="memdoc">
 
-<p>Indicates whether the current object is equal to another object of the same type. </p>
+<p>Indicates wheth er the current object is equal to another object of the same type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>An object to compare with this object. </td></tr>
@@ -2346,7 +2398,7 @@ Many Web browsers escape spaces inside of URIs into plus ("+") characters; howev
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} is not a well formed uri&quot;</span>, uri_string);</div>
 <div class="ttc" id="aclassxtd_1_1uri_html_a5dc07126aa8e4fe6c364c33d1e32b1f6"><div class="ttname"><a href="classxtd_1_1uri.html#a5dc07126aa8e4fe6c364c33d1e32b1f6">xtd::uri::uri_scheme_http</a></div><div class="ttdeci">static const xtd::ustring uri_scheme_http</div><div class="ttdoc">Specifies that the URI is accessed through the Hypertext Transfer Protocol (HTTP)....</div><div class="ttdef"><b>Definition</b> uri.h:165</div></div>
 <div class="ttc" id="aclassxtd_1_1uri_html_acbf3126399a2464ea7b759c5d54ae124"><div class="ttname"><a href="classxtd_1_1uri.html#acbf3126399a2464ea7b759c5d54ae124">xtd::uri::scheme_delimiter</a></div><div class="ttdeci">static const xtd::ustring scheme_delimiter</div><div class="ttdoc">Specifies the characters that separate the communication protocol scheme from the address portion of ...</div><div class="ttdef"><b>Definition</b> uri.h:120</div></div>
-<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1064</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1065</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2643,7 +2695,7 @@ Many Web browsers escape spaces inside of URIs into plus ("+") characters; howev
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 20:10:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jul 7 2024 14:11:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
