@@ -20,6 +20,9 @@
 #include "to_string.h"
 #include "types.h"
 #include "unused.h"
+#if defined(__xtd__cpp_lib_format)
+#include <format>
+#endif
 #include <ostream>
 #include <string>
 

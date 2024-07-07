@@ -14,6 +14,9 @@
 #include "time_span.h"
 #include "ustring.h"
 #include <ctime>
+#if defined(__xtd__cpp_lib_format)
+#include <format>
+#endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
