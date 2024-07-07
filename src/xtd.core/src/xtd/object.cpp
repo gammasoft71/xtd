@@ -1,5 +1,6 @@
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/iformatable.h"
+#include "../../include/xtd/invalid_cast_exception.h"
 #include "../../include/xtd/object.h"
 #include "../../include/xtd/type_object.h"
 #include "../../include/xtd/ustring.h"
@@ -12,6 +13,7 @@ bool object::equals(const object& obj) const noexcept {
 }
 
 bool object::equals(const object& object_a, const object& object_b) noexcept {
+  if (dynamic_cast<const iequatable<decltype(object_a)>*>(&object_a)) return dynamic_cast<const iequatable<decltype(object_a)>*>(&object_a)->equals(object_b);
   return object_a.equals(object_b);
   //return object_a == object_b;
 }
@@ -33,6 +35,11 @@ ustring object::to_string() const noexcept {
   return get_type().full_name();
 }
 
+void object::__throw_invalid_cast_exception(const ustring& file, uint32 line, const ustring& method) const {
+  throw invalid_cast_exception {{file, line, method}};
+}
+
 std::ostream& xtd::operator <<(std::ostream& os, const object& obj) noexcept {
   return os << obj.to_string();
 }
+
