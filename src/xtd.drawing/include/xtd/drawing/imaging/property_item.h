@@ -2,6 +2,7 @@
 /// @brief Contains xtd::drawing::imaging::property_item class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/iequatable>
 #include <xtd/object>
 #include <cstdint>
 #include <vector>
@@ -22,7 +23,7 @@ namespace xtd {
       /// @remarks The data consists of: an identifier, the length (in bytes) of the property, the property type, and a pointer to the property value.
       /// @remarks A property_item is not intended to be used as a stand-alone object. A property_item object is intended to be used by classes that are derived from image. A property_item object is used to retrieve and to change the metadata of existing image files, not to create the metadata. Therefore, the property_item class does not have a defined Public constructor, and you cannot create an instance of a property_item object.
       /// @remarks To work around the absence of a Public constructor, use an existing property_item object instead of creating a new instance of the property_item class. For more information, see image.Getproperty_item.
-      class property_item final : public object {
+      class property_item final : public object, iequatable<property_item> {
       public:
         /// @cond
         property_item() = default;
@@ -527,7 +528,14 @@ namespace xtd {
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
         void value(const std::vector<xtd::byte>& value) noexcept {value_ = value;}
         /// @}
+
+        /// @name Public Properties
         
+        /// @{
+        using object::equals;
+        bool equals(const property_item& value) const noexcept override {return id_ == value.id_ && len_ == value.len_ && type_ == value.type_ && value_ != value.value_;}
+        /// @}
+
       private:
         int32 id_ = 0;
         int32 len_ = 0;
