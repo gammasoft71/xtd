@@ -42,6 +42,8 @@ In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gam
 
    *Remarks: Verify if you can execute 'cmake --version' in "Command Prompt", if it's no, add cmake install directory to your path.*
 
+> :warning: The "Command prompt" must be open in ADMINISTRATOR MODE.
+
 3. After installing Microsoft Visual Studio and CMake, do the following in "Command Prompt" to build and install xtd :
 
 ```shell
