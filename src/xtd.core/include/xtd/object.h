@@ -50,12 +50,6 @@ namespace xtd {
     object(const object&) = default;
     object& operator =(const object&) = default;
     virtual ~object() = default;
-    friend bool operator ==(const object& a, const object& b) noexcept {return a.equals(b);}
-    friend bool operator !=(const object& a, const object& b) noexcept {return !a.equals(b);}
-    template<typename object_t>
-    friend bool operator ==(const iequatable<object_t>& a, const iequatable<object_t>& b) noexcept {return dynamic_cast<const iequatable<object_t>*>(&b) && a.equals(dynamic_cast<const iequatable<object_t>&>(b));}
-    template<typename object_t>
-    friend bool operator !=(const iequatable<object_t>& a, const iequatable<object_t>& b) noexcept {return !dynamic_cast<const iequatable<object_t>*>(&b) || !a.equals(dynamic_cast<const iequatable<object_t>&>(b));}
     /// @endcond
     
     /// @name Public Methods
@@ -76,7 +70,7 @@ namespace xtd {
     /// @brief Gets the type of the current instance.
     /// @return The type instance that represents the exact runtime type of the current instance.
     /// @par Examples
-    /// The following code example demonstrates that GetType returns the runtime type of the current instance.
+    /// The following code example demonstrates that xtd::object::get_type returns the runtime type of the current instance.
     /// @include object_get_type.cpp
     virtual type_object get_type() const noexcept;
     
@@ -85,7 +79,10 @@ namespace xtd {
     /// @par Examples
     /// The following example illustrates the xtd::object::memberwise_clone method. It defines a `shallow_copy` method that calls the xtd::object::memberwise_clone method to perform a shallow copy operation on a `person` object. It also defines a `deep_copy` method that performs a deep copy operation on a `person` object.
     /// @include object_memberwise_clone.cpp
-    /// In this example, the `perso::iId_info` property returns an IdInfo object. As the output from the example shows, when a `person` object is cloned by calling the xtd::object::memberwise_clone method, the cloned `person` object is an independent copy of the original object, except that they share the same `perso::iId_info` object reference. As a result, modifying the clone's `perso::iId_info` property changes the original object's `perso::iId_info` property. On the other hand, when a deep copy operation is performed, the cloned `person` object, including its `perso::iId_info` property, can be modified without affecting the original object.
+    /// In this example, the `person::id_info` property returns an `id_info` object.
+    /// As the output from the example shows, when a `person` object is cloned by calling the xtd::object::memberwise_clone method, the cloned `person` object is an independent copy of the original object, except that they share the same `person::id_info` object reference.
+    /// As a result, modifying the clone's `person::id_info` property changes the original object's `person::id_info` property.
+    /// On the other hand, when a deep copy operation is performed, the cloned `person` object, including its `person::id_info` property, can be modified without affecting the original object.
     /// @remarks The xtd::object::memberwise_clone method creates a shallow copy by creating a new object, and then copying the nonstatic fields of the current object to the new object. If a field is a value type, a bit-by-bit copy of the field is performed. If a field is a reference type, the reference is copied but the referred object is not; therefore, the original object and its clone refer to the same object.
     /// @remarks For example, consider an object called X that references objects A and B. Object B, in turn, references object C. A shallow copy of X creates new object X2 that also references objects A and B. In contrast, a deep copy of X creates a new object X2 that references the new objects A2 and B2, which are copies of A and B. B2, in turn, references the new object C2, which is a copy of C. The example illustrates the difference between a shallow and a deep copy operation.
     /// @remarks There are numerous ways to implement a deep copy operation if the shallow copy operation performed by the xtd::object::memberwise_clone method does not meet your needs. These include the following:
@@ -94,7 +91,11 @@ namespace xtd {
     /// * Serialize the object to be deep copied, and then restore the serialized data to a different object variable.
     /// * Use reflection with recursion to perform the deep copy operation.
     template<typename object_t>
-    std::unique_ptr<object_t> memberwise_clone() const noexcept {return std::make_unique<object_t>(dynamic_cast<const object_t&>(*this));}
+    std::unique_ptr<object_t> memberwise_clone() const {
+      auto object_ptr = dynamic_cast<const object_t*>(this);
+      if (object_ptr == nullptr) __throw_invalid_cast_exception(__FILE__, __LINE__, __func__);
+      return std::make_unique<object_t>(*object_ptr);
+    }
     
     /// @brief Returns a xtd::ustring that represents the current object.
     /// @return A string that represents the current object.
@@ -121,23 +122,27 @@ namespace xtd {
     /// @param object_b The second object to compare.
     /// @return true if object_a is the same instance as object_b or if both are null references; otherwise, false.
     /// @par Examples
-    /// The following code example uses reference_equals to determine if two objects are the same instance.
+    /// The following code example uses xtd::object::reference_equals to determine if two objects are the same instance.
     /// @include object_reference_equals.cpp
     static bool reference_equals(const object& object_a, const object& object_b) noexcept;
     /// @}
 
     /// @cond
     template<typename object_t>
-    bool equals(const iequatable<object_t>& obj) const noexcept {
+    bool equals(const object_t& obj) const noexcept {
       if (dynamic_cast<const iequatable<object_t>*>(this)) return dynamic_cast<const iequatable<object_t>*>(this)->equals(obj);
       return this == &obj;
     }
     
     template<typename object_t>
-    static bool equals(const iequatable<object_t>& object_a, const iequatable<object_t>& object_b) noexcept {
+    static bool equals(const object_t& object_a, const object_t& object_b) noexcept {
+      if (dynamic_cast<const iequatable<object_t>*>(&object_a)) return dynamic_cast<const iequatable<object_t>*>(&object_a)->equals(object_b);
       return object_a.equals(object_b);
     }
     /// @endcond
+    
+  private:
+    void __throw_invalid_cast_exception(const ustring& file, uint32 line, const ustring& method) const;
   };
   
   /// @cond
