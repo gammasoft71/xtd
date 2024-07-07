@@ -114,23 +114,23 @@ private:
     static const auto fereground_color = color::red;
     
     static auto pen_dot = pen(fereground_color, 5);
-    pen_dot.dash_style(drawing::dash_style::dot);
+    pen_dot.dash_style(dash_style::dot);
     e.graphics().draw_rounded_rectangle(pen_dot, rectangle(50, 50, 150, 100), 20);
     
     static auto pen_dash = pen(fereground_color, 5);
-    pen_dash.dash_style(drawing::dash_style::dash);
+    pen_dash.dash_style(dash_style::dash);
     e.graphics().draw_rounded_rectangle(pen_dash, rectangle(250, 50, 150, 100), 20);
     
     static auto pen_dash_dot = pen(fereground_color, 5);
-    pen_dash_dot.dash_style(drawing::dash_style::dash_dot);
+    pen_dash_dot.dash_style(dash_style::dash_dot);
     e.graphics().draw_rounded_rectangle(pen_dash_dot, rectangle(450, 50, 150, 100), 20);
     
     static auto pen_dash_dot_dot = pen(fereground_color, 5);
-    pen_dash_dot_dot.dash_style(drawing::dash_style::dash_dot_dot);
+    pen_dash_dot_dot.dash_style(dash_style::dash_dot_dot);
     e.graphics().draw_rounded_rectangle(pen_dash_dot_dot, rectangle(650, 50, 150, 100), 20);
     
     static auto pen_custom = pen(fereground_color, 5);
-    pen_custom.dash_style(drawing::dash_style::custom);
+    pen_custom.dash_style(dash_style::custom);
     pen_custom.dash_pattern({6, 2, 4, 2, 4, 2});
     e.graphics().draw_rounded_rectangle(pen_custom, rectangle(50, 200, 150, 100), 20);
   }

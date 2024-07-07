@@ -38,7 +38,7 @@ namespace xtd {
       /// @}
       
     private:
-      static xtd::drawing::dash_style border_type_to_dash_style(xtd::forms::style_sheets::border_type value);
+      static xtd::drawing::drawing_2d::dash_style border_type_to_dash_style(xtd::forms::style_sheets::border_type value);
       static void draw_line_top(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width);
       static void draw_line_right(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width);
       static void draw_line_bottom(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, const xtd::forms::style_sheets::border_color& border_color, const xtd::forms::style_sheets::border_radius& border_radius, const xtd::forms::style_sheets::border_style& border_style, const xtd::forms::style_sheets::border_width& border_width);

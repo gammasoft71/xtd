@@ -9,6 +9,7 @@ add_sources(
   src/main.cpp 
   src/xtd/drawing/drawing_2d/tests/compositing_mode_tests.cpp
   src/xtd/drawing/drawing_2d/tests/compositing_quality_tests.cpp
+  src/xtd/drawing/drawing_2d/tests/dash_style_tests.cpp
   src/xtd/drawing/drawing_2d/tests/fill_mode_tests.cpp
   src/xtd/drawing/drawing_2d/tests/flush_intention_tests.cpp
   src/xtd/drawing/drawing_2d/tests/hatch_style_tests.cpp
@@ -32,7 +33,6 @@ add_sources(
   src/xtd/drawing/tests/color_tests.cpp
   src/xtd/drawing/tests/color_translator_tests.cpp
   src/xtd/drawing/tests/copy_pixel_operation_tests.cpp
-  src/xtd/drawing/tests/dash_style_tests.cpp
   src/xtd/drawing/tests/devices_system_images_tests.cpp
   src/xtd/drawing/tests/emblems_system_images_tests.cpp
   src/xtd/drawing/tests/emotes_system_images_tests.cpp
