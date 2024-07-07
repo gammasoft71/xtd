@@ -19,4 +19,9 @@ xtdc run
 ## Output
 
 ```
+object::equals("Tom", "Carol") => false
+object::equals("Tom", "Tom") => true
+object::equals("", "Tom") => false
+object::equals("Carol", "") => false
+object::equals("", "") => true
 ```
