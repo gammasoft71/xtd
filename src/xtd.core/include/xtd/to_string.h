@@ -385,6 +385,18 @@ namespace xtd {
   }
 #endif
 
+  template<typename type_t>
+  inline std::string to_string(const std::shared_ptr<type_t>& value, const std::string& fmt, const std::locale& loc) {
+    if (!value) return "(null)";
+    return __numeric_formatter(fmt, reinterpret_cast<intptr>(value.get()), loc);
+  }
+  
+  template<typename type_t>
+  inline std::string to_string(const std::unique_ptr<type_t>& value, const std::string& fmt, const std::locale& loc) {
+    if (!value) return "(null)";
+    return __numeric_formatter(fmt, reinterpret_cast<intptr>(value.get()), loc);
+  }
+
   template<>
   inline std::string to_string(const std::any& value, const std::string& fmt, const std::locale& loc) {
     auto iterator = __any_stringer__.find(std::type_index(value.type()));
