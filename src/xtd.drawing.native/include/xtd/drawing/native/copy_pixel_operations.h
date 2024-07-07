@@ -53,7 +53,7 @@ constexpr xtd::int32 CPO_MERGE_PAINT = 12255782;
 /// @ingroup xtd_drawing_native cpo
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr xtd::int32 CPO_NO_MIRROR_BITMAP = -2147483648;
+constexpr xtd::int32 CPO_NO_MIRROR_BITMAP = -2147483648ll;
 
 /// @brief The inverted source area is copied to the destination.
 /// @par Library
