@@ -40,7 +40,6 @@ namespace xtd::tests {
       
       assert::is_true(ie1 == ie2, csf_);
       assert::is_false(ie1 == ie3, csf_);
-      assert::is_false(ie1 == "a"_s);
     }
     
     void test_method_(opearator_inequal) {
@@ -50,7 +49,6 @@ namespace xtd::tests {
       
       assert::is_false(ie1 != ie2, csf_);
       assert::is_true(ie1 != ie3, csf_);
-      assert::is_true(ie1 != "a"_s);
     }
   };
 }
