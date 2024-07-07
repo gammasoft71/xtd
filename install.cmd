@@ -4,5 +4,9 @@
 :: Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.
 
 set xtd_version=0.2.0
-call scripts\install\install.cmd %* | scripts\install\tee.cmd install.log
-move install.log build\install.log
+call scripts\install\install.cmd %*
+
+:------------------------------------------
+:: tee.cmd does not work correctly. It will be necessary to debug tee.
+::call scripts\install\install.cmd %* | scripts\install\tee.cmd install.log
+::move install.log build\install.log
