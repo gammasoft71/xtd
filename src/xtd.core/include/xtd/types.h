@@ -359,7 +359,7 @@ namespace xtd {
   /// @brief The xtd::sptr object is a shared pointer.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core types
   /// @par Examples
   /// This example shows to use xtd::sptr with xtd::version class
   /// @code
@@ -374,7 +374,7 @@ namespace xtd {
   /// @brief The xtd::uptr object is a unique pointer.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core types
   /// @par Examples
   /// This example shows to use xtd::uptr with xtd::version class
   /// @code
@@ -389,7 +389,7 @@ namespace xtd {
   /// @brief The xtd::ptr object is a shared pointer.
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
+  /// @ingroup xtd_core types
   /// @par Examples
   /// this is example shows to use xtd::new_ with xtd::version class
   /// @code
