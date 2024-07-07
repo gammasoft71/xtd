@@ -41,8 +41,8 @@ cd cmake_install_prefix
 cmake ..\..\scripts\install\cmake_install_prefix %*
 cd ..
 cd ..
-set /p cmake_install_prefix=<build\cmake_install_prefix\cmake_install_prefix.txt
-echo cmake_install_prefix="%cmake_install_prefix%"
+:set /p cmake_install_prefix_base=<build\cmake_install_prefix\cmake_install_prefix.txt
+echo cmake_install_prefix_base="%cmake_install_prefix_base%"
 
 ::______________________________________________________________________________
 ::                                                   Check and install wxWidgets
@@ -51,6 +51,7 @@ mkdir build
 cd build
 mkdir test_wxwidgets
 cd test_wxwidgets
+set /p cmake_install_prefix=%cmake_install_prefix_base%\wxwidgets
 cmake ..\..\scripts\install\test_wxwidgets %*
 cd ..
 cd ..
@@ -74,6 +75,7 @@ if not exist "build\test_wxwidgets\wxwidgets.lck" (
 echo Installing xtd...
 mkdir build
 cd build
+set /p cmake_install_prefix=%cmake_install_prefix_base%\xtd
 cmake .. -DXTD_BUILD_CPP_STANDARD="17" %*
 cmake --build . --target install --config Debug
 cmake --build . --target install --config Release
@@ -83,23 +85,23 @@ cd ..
 ::                    create gui tools shortcut in system operating applications
 set xtd_program_path=%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd
 if not exist "%xtd_program_path%" mkdir "%xtd_program_path%"
-call scripts\install\shortcut.cmd "%xtd_program_path%\keycodes.lnk" "%cmake_install_prefix%\xtd\bin\keycodes.exe"
-call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%cmake_install_prefix%\xtd\bin\xtdc-gui.exe"
-call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%cmake_install_prefix%\xtd\bin\guidgen-gui.exe"
+call scripts\install\shortcut.cmd "%xtd_program_path%\keycodes.lnk" "%cmake_install_prefix%\bin\keycodes.exe"
+call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%cmake_install_prefix%\bin\xtdc-gui.exe"
+call scripts\install\shortcut.cmd "%xtd_program_path%\guidgen-gui.lnk" "%cmake_install_prefix%\bin\guidgen-gui.exe"
 
 ::______________________________________________________________________________
 ::                                                             Add xtdc-gui path
-build\tools\set_path\Release\set_path "%cmake_install_prefix%\xtd\bin"
-set Path=%cmake_install_prefix%\xtd\bin;%Path%
+build\tools\set_path\Release\set_path "%cmake_install_prefix%\bin"
+set Path=%cmake_install_prefix%\bin;%Path%
 
 ::______________________________________________________________________________
 ::                                     Create xtd root path environment variable
-build\tools\set_environment_variable\Release\set_environment_variable XTD_ROOT_PATH "%cmake_install_prefix%\xtd"
-set XTD_ROOT_PATH="%cmake_install_prefix%\xtd"
-set XTD_TOOLKIT_PATH="%cmake_install_prefix%\wxWidgets"
+build\tools\set_environment_variable\Release\set_environment_variable XTD_ROOT_PATH "%cmake_install_prefix%"
+set XTD_ROOT_PATH="%cmake_install_prefix%"
+set XTD_TOOLKIT_PATH="%cmake_install_prefix_base%\wxWidgets"
 
 ::______________________________________________________________________________
 ::                                                               launch xtdc-gui
 echo Launching xtdc-gui...
-::start "xtdc-gui" "%cmake_install_prefix%\xtd\bin\xtdc-gui.exe"
+::start "xtdc-gui" "%cmake_install_prefix%\bin\xtdc-gui.exe"
 start "xtdc-gui" "xtdc-gui"
