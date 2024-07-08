@@ -7,4 +7,4 @@ if (MSVC)
   string(REPLACE "\\cmake_install_prefix" "" XTD_INSTALL_PREFIX ${XTD_INSTALL_PREFIX})
 endif ()
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/cmake_install_prefix.txt 
-"${XTD_INSTALL_PREFIX}")
+"${XTD_INSTALL_PREFIX}\n")
