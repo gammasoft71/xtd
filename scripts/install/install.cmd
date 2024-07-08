@@ -34,9 +34,9 @@ if %ERRORLEVEL% neq 0 (
 ::                                                      Get cmake_install_prefix
 echo "Get cmake_install_prefix..."
 if exist "build" rd /S /Q "build"
-mkdir build
+if not exist "build" mkdir build
 cd build
-mkdir cmake_install_prefix
+if not exist "cmake_install_prefix" mkdir cmake_install_prefix
 cd cmake_install_prefix
 cmake ..\..\scripts\install\cmake_install_prefix %*
 cd ..
@@ -47,9 +47,9 @@ echo cmake_install_prefix_base="%cmake_install_prefix_base%"
 ::______________________________________________________________________________
 ::                                                   Check and install wxWidgets
 echo "Checks wxWidgets..."
-mkdir build
+if not exist "build" mkdir build
 cd build
-mkdir test_wxwidgets
+if not exist "test_wxwidgets" mkdir test_wxwidgets
 cd test_wxwidgets
 set /p cmake_install_prefix=%cmake_install_prefix_base%\wxwidgets
 cmake ..\..\scripts\install\test_wxwidgets %*
@@ -73,7 +73,7 @@ if not exist "build\test_wxwidgets\wxwidgets.lck" (
 ::______________________________________________________________________________
 ::                                               Generate, build and install xtd
 echo Installing xtd...
-mkdir build
+if not exist "build" mkdir build
 cd build
 set /p cmake_install_prefix=%cmake_install_prefix_base%\xtd
 cmake .. -DXTD_BUILD_CPP_STANDARD="17" %*
