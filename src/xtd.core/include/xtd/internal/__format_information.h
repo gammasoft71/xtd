@@ -13,7 +13,7 @@
 template<typename char_t>
 struct __format_information {
   size_t index = 18446744073709551615u; //std::numeric_limits<size_t>::max();
-  size_t location;
+  size_t location = 0;
   std::basic_string<char_t> alignment;
   std::basic_string<char_t> format;
 };
