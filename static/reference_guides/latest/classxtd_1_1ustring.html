@@ -103,11 +103,13 @@ Inheritance diagram for xtd::ustring:</div>
 <div class="textblock"><p>Represents text as a sequence of UTF-8 code units. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A string is a sequential collection of characters that's used to represent text. A <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> object is the content of the sequential collection of char, and unlike std::basic_string that value is immutable (that is, it is read-only). </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>A string is a sequential collection of characters that's used to represent text. A <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> object is a sequential collection of char that represent a string; a char corresponds to a UTF-8 code unit. The value of the <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> object is the content of the sequential collection of char, and unlike <a href="https://en.cppreference.com/w/cpp/string/basic_string">std::basic_string&lt;char&gt;</a> that value is immutable (that is, it is read-only). </dd>
 <dd>
 If you want the same mutable string class, you can use xtd::text::ustring_builder class. </dd>
 <dd>
-<a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> is inherited from std::basic_string&lt;char&gt; and therefore offers the full (immutable) API of std::string. </dd></dl>
+<a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> is inherited from <a href="https://en.cppreference.com/w/cpp/string/basic_string">std::basic_string&lt;char&gt;</a> and therefore offers the full (immutable) API of std::string. </dd>
+<dd>
+<a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> cannot inherit from <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;<a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a>&gt; because <a href="https://en.cppreference.com/w/cpp/string/basic_string">std::basic_string&lt;char&gt;</a> defines the <a href="https://en.cppreference.com/w/cpp/string/basic_string/operator_cmp">== and != operators</a>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="action_8cpp-example.html#_a0">action.cpp</a>, <a class="el" href="action1_8cpp-example.html#_a0">action1.cpp</a>, <a class="el" href="action2_8cpp-example.html#_a0">action2.cpp</a>, <a class="el" href="action3_8cpp-example.html#_a0">action3.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#_a8">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#_a8">application_enable_light_mode.cpp</a>, <a class="el" href="as_8cpp-example.html#_a0">as.cpp</a>, <a class="el" href="auto_reset_event_8cpp-example.html#_a0">auto_reset_event.cpp</a>, <a class="el" href="binary_reader_8cpp-example.html#_a0">binary_reader.cpp</a>, <a class="el" href="binary_reader2_8cpp-example.html#_a0">binary_reader2.cpp</a>, <a class="el" href="binary_reader3_8cpp-example.html#_a0">binary_reader3.cpp</a>, <a class="el" href="boxed_info_8cpp-example.html#_a0">boxed_info.cpp</a>, <a class="el" href="boxing_8cpp-example.html#_a1">boxing.cpp</a>, <a class="el" href="console_clear_8cpp-example.html#_a0">console_clear.cpp</a>, <a class="el" href="console_cursor_8cpp-example.html#_a0">console_cursor.cpp</a>, <a class="el" href="console_firework_8cpp-example.html#_a1">console_firework.cpp</a>, <a class="el" href="console_read_line_8cpp-example.html#_a0">console_read_line.cpp</a>, <a class="el" href="console_read_line2_8cpp-example.html#_a0">console_read_line2.cpp</a>, <a class="el" href="contains_8cpp-example.html#_a0">contains.cpp</a>, <a class="el" href="csf_8cpp-example.html#_a0">csf.cpp</a>, <a class="el" href="current_stack_frame_8cpp-example.html#_a0">current_stack_frame.cpp</a>, <a class="el" href="date_time_specify_kind_8cpp-example.html#_a1">date_time_specify_kind.cpp</a>, <a class="el" href="delegate_8cpp-example.html#_a0">delegate.cpp</a>, <a class="el" href="delegate_begin_invoke_8cpp-example.html#_a0">delegate_begin_invoke.cpp</a>, <a class="el" href="delegate_lambda_8cpp-example.html#_a0">delegate_lambda.cpp</a>, <a class="el" href="delegate_member_method_8cpp-example.html#_a0">delegate_member_method.cpp</a>, <a class="el" href="delegate_multicast_8cpp-example.html#_a0">delegate_multicast.cpp</a>, <a class="el" href="event_8cpp-example.html#_a2">event.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#_a0">file_info_move_to.cpp</a>, <a class="el" href="file_info_replace_8cpp-example.html#_a1">file_info_replace.cpp</a>, <a class="el" href="folder_browser_box_8cpp-example.html#_a3">folder_browser_box.cpp</a>, <a class="el" href="folder_browser_dialog_8cpp-example.html#_a5">folder_browser_dialog.cpp</a>, <a class="el" href="format_any_8cpp-example.html#_a0">format_any.cpp</a>, <a class="el" href="format_class_8cpp-example.html#_a0">format_class.cpp</a>, <a class="el" href="format_class_object_8cpp-example.html#_a1">format_class_object.cpp</a>, <a class="el" href="format_class_with_specified_formating_8cpp-example.html#_a1">format_class_with_specified_formating.cpp</a>, <a class="el" href="interface_8cpp-example.html#_a1">interface.cpp</a>, <a class="el" href="interface2_8cpp-example.html#_a1">interface2.cpp</a>, <a class="el" href="interlocked_8cpp-example.html#_a1">interlocked.cpp</a>, <a class="el" href="iobservable_iobserver_8cpp-example.html#_a3">iobservable_iobserver.cpp</a>, <a class="el" href="ip_address_8cpp-example.html#_a0">ip_address.cpp</a>, <a class="el" href="iprogress_8cpp-example.html#_a0">iprogress.cpp</a>, <a class="el" href="manual_reset_event_8cpp-example.html#_a1">manual_reset_event.cpp</a>, <a class="el" href="minesweeper_8cpp-example.html#_a23">minesweeper.cpp</a>, <a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#_a0">mixing_std_and_xtd_threads.cpp</a>, <a class="el" href="open_file_box_8cpp-example.html#_a1">open_file_box.cpp</a>, <a class="el" href="open_file_dialog_8cpp-example.html#_a5">open_file_dialog.cpp</a>, <a class="el" href="socket_tcp_ip_v4_8cpp-example.html#_a2">socket_tcp_ip_v4.cpp</a>, <a class="el" href="socket_tcp_ip_v4_without_thread_8cpp-example.html#_a0">socket_tcp_ip_v4_without_thread.cpp</a>, <a class="el" href="socket_tcp_ip_v6_8cpp-example.html#_a2">socket_tcp_ip_v6.cpp</a>, <a class="el" href="socket_udp_ip_v4_8cpp-example.html#_a2">socket_udp_ip_v4.cpp</a>, <a class="el" href="socket_udp_ip_v6_8cpp-example.html#_a2">socket_udp_ip_v6.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#_a8">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#_a8">some_system_controls.cpp</a>, <a class="el" href="split_8cpp-example.html#_a0">split.cpp</a>, <a class="el" href="sprintf_class_8cpp-example.html#_a0">sprintf_class.cpp</a>, <a class="el" href="sprintf_class_with_specified_formating_8cpp-example.html#_a1">sprintf_class_with_specified_formating.cpp</a>, <a class="el" href="sprintf_string_8cpp-example.html#_a0">sprintf_string.cpp</a>, <a class="el" href="stack_trace_simple_8cpp-example.html#_a2">stack_trace_simple.cpp</a>, <a class="el" href="static_8cpp-example.html#_a1">static.cpp</a>, <a class="el" href="static_object_8cpp-example.html#_a1">static_object.cpp</a>, <a class="el" href="static_object2_8cpp-example.html#_a1">static_object2.cpp</a>, <a class="el" href="test_forms_8cpp-example.html#_a27">test_forms.cpp</a>, <a class="el" href="test_tunit_8cpp-example.html#_a2">test_tunit.cpp</a>, <a class="el" href="themes_8cpp-example.html#_a8">themes.cpp</a>, <a class="el" href="time_span_from_hours_8cpp-example.html#_a1">time_span_from_hours.cpp</a>, <a class="el" href="timers_timer_synchronizing_object_8cpp-example.html#_a10">timers_timer_synchronizing_object.cpp</a>, <a class="el" href="udp_client_ip_v4_8cpp-example.html#_a2">udp_client_ip_v4.cpp</a>, <a class="el" href="udp_client_ip_v6_8cpp-example.html#_a2">udp_client_ip_v6.cpp</a>, <a class="el" href="user_dialog_8cpp-example.html#_a1">user_dialog.cpp</a>, <a class="el" href="user_dialog_show_sheet_8cpp-example.html#_a1">user_dialog_show_sheet.cpp</a>, <a class="el" href="wconsole_8cpp-example.html#_a0">wconsole.cpp</a>, and <a class="el" href="wconsole2_8cpp-example.html#_a0">wconsole2.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
@@ -613,10 +615,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;typename object_t &gt; </td></tr>
-<tr class="memitem:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86">memberwise_clone</a> () const noexcept</td></tr>
-<tr class="memdesc:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="separator:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;typename object_t &gt; </td></tr>
+<tr class="memitem:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a7d1d6739fb74be554719eced219de59a">memberwise_clone</a> () const</td></tr>
+<tr class="memdesc:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="separator:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1icomparable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1icomparable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1icomparable.html">xtd::icomparable&lt; ustring &gt;</a></td></tr>
 <tr class="inherit_header pub_static_methods_classxtd_1_1object"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classxtd_1_1object')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classxtd_1_1object.html">xtd::object</a></td></tr>
 <tr class="memitem:a75cb9ed56172fb088ca6697d5d836b13 inherit pub_static_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a75cb9ed56172fb088ca6697d5d836b13">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;object_a, const <a class="el" href="classxtd_1_1object.html">object</a> &amp;object_b) noexcept</td></tr>
@@ -3787,7 +3789,7 @@ template&lt;typename value_t &gt; </div>
 <div class="line"><span class="comment">// name = N3xtd9date_timeE</span></div>
 <div class="line"><span class="comment">// demangled name = xtd::date_time</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:82</div></div>
+<div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:85</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html_a238165aaab69fb9f6c909da1fcdb072f"><div class="ttname"><a href="classxtd_1_1ustring.html#a238165aaab69fb9f6c909da1fcdb072f">xtd::ustring::demangle</a></div><div class="ttdeci">static ustring demangle(const ustring &amp;name)</div><div class="ttdoc">Gets demangled string of name,.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -3986,7 +3988,25 @@ template&lt;typename value_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the specified object is equal to the current object. otherwise, false. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> object1 = std::make_shared&lt;object&gt;();</div>
+<div class="line">  <span class="keyword">auto</span> object2 = std::make_shared&lt;object&gt;();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> object3 = object2;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
+<div class="line">  object3 = object1;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// false</span></div>
+<div class="line"><span class="comment">// true</span></div>
+</div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
 
@@ -4035,7 +4055,42 @@ template&lt;typename value_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> s2 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Carol&quot;) =&gt; false</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Tom&quot;) =&gt; true</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;Tom&quot;) =&gt; false</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;Carol&quot;, &quot;&quot;) =&gt; false</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;&quot;) =&gt; true</span></div>
+<div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -6379,7 +6434,36 @@ If count is greater than the number of substrings, the available substrings are 
 
 <p>Returns a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> that represents the current object. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string that represents the current object. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates what to_string returns. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates what to_string returns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line">  <span class="keyword">namespace </span>object_test {</div>
+<div class="line">    <span class="keyword">class </span>object1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
+<div class="line">    };</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr&lt;object&gt;</a> obj1 = new_sptr&lt;examples::object_test::object1&gt;();</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj1-&gt;to_string());</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr&lt;object&gt;</a> obj2 = new_sptr&lt;date_time&gt;(1971, 1, 5, 23, 5, 0);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj2-&gt;to_string());</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr&lt;object&gt;</a> obj3 = new_sptr&lt;boolean_object&gt;();</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj3-&gt;to_string());</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// examples::object_test::object1</span></div>
+<div class="line"><span class="comment">// Tue Jan  5 23:05:00 1971</span></div>
+<div class="line"><span class="comment">// false</span></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:39</div></div>
+<div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> types.h:372</div></div>
+</div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507">xtd::object</a>.</p>
 
@@ -6843,7 +6927,7 @@ template&lt;typename value_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 18:10:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 9 2024 21:22:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

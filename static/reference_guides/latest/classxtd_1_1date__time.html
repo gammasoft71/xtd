@@ -106,7 +106,7 @@ Inheritance diagram for xtd::date_time:</div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Represents an instant in time, typically expressed as a date and time of day. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1icomparable.html">xtd::icomparable</a>&lt;date_time&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;date_time&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:82</div></div>
+<div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:85</div></div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.h:21</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:39</div></div>
@@ -135,7 +135,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <li>By parsing the <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> representation of a date and time value. The <a class="el" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a>, xtd::date_time::parse_exact, <a class="el" href="classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d" title="Converts the specified string representation of a date and time to its xtd::date_time equivalent and ...">xtd::date_time::try_parse</a>, and xtd::date_time::try_parse_exact methods all convert a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> to its equivalent date and time value. The following example uses the <a class="el" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a> method to parse a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> and convert it to a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> date_string = <span class="stringliteral">&quot;5/1/2008 8:30:52&quot;</span>;</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> date1 = <a class="code hl_function" href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740">date_time::parse</a>(date_string);</div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_a546b0f90e2a358dd2c61a44d9ac7d740"><div class="ttname"><a href="classxtd_1_1date__time.html#a546b0f90e2a358dd2c61a44d9ac7d740">xtd::date_time::parse</a></div><div class="ttdeci">static date_time parse(const xtd::ustring &amp;s)</div><div class="ttdoc">Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
 </div><!-- fragment --> Note that the <a class="el" href="classxtd_1_1date__time.html#aed2927509532db28cee470cf231dc16d" title="Converts the specified string representation of a date and time to its xtd::date_time equivalent and ...">xtd::date_time::try_parse</a> and xtd::date_time::try_parse_exact methods indicate whether a particular <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> contains a valid representation of a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value in addition to performing the conversion.</li>
 <li>By calling the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure's implicit default constructor. The following example illustrates a call to the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> implicit default constructor. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> dat1;</div>
 <div class="line"><span class="comment">// The following method call displays 1/01/0001 00:00:00.</span></div>
@@ -143,9 +143,9 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <div class="line"><span class="comment">// The following method call displays true.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dat1.<a class="code hl_function" href="classxtd_1_1date__time.html#a956731f527035ac773da7a01d3df9782">equals</a>(<a class="code hl_variable" href="classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd">date_time::min_value</a>));</div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html_a2052693f474e549778be006a9bf9ffcd"><div class="ttname"><a href="classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd">xtd::date_time::min_value</a></div><div class="ttdeci">static const date_time min_value</div><div class="ttdoc">Represents the smallest possible value of xtd::date_time. This field is read-only.</div><div class="ttdef"><b>Definition</b> date_time.h:104</div></div>
+<div class="ttc" id="aclassxtd_1_1date__time_html_a2052693f474e549778be006a9bf9ffcd"><div class="ttname"><a href="classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd">xtd::date_time::min_value</a></div><div class="ttdeci">static const date_time min_value</div><div class="ttdoc">Represents the smallest possible value of xtd::date_time. This field is read-only.</div><div class="ttdef"><b>Definition</b> date_time.h:107</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_a58e9d766b5af37b77d5d8239a8320ab7"><div class="ttname"><a href="classxtd_1_1date__time.html#a58e9d766b5af37b77d5d8239a8320ab7">xtd::date_time::to_string</a></div><div class="ttdeci">xtd::ustring to_string() const noexcept override</div><div class="ttdoc">Converts the value of the current xtd::date_time object to its equivalent string representation using...</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html_a956731f527035ac773da7a01d3df9782"><div class="ttname"><a href="classxtd_1_1date__time.html#a956731f527035ac773da7a01d3df9782">xtd::date_time::equals</a></div><div class="ttdeci">bool equals(const date_time &amp;) const noexcept override</div><div class="ttdoc">Indicates whether the current object is equal to another object of the same type.</div></div>
+<div class="ttc" id="aclassxtd_1_1date__time_html_a956731f527035ac773da7a01d3df9782"><div class="ttname"><a href="classxtd_1_1date__time.html#a956731f527035ac773da7a01d3df9782">xtd::date_time::equals</a></div><div class="ttdeci">bool equals(const date_time &amp;) const noexcept override</div><div class="ttdoc">Indicates wheth er the current object is equal to another object of the same type.</div></div>
 </div><!-- fragment --> </li>
 </ul>
 </dd></dl>
@@ -342,7 +342,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memdesc:a78daaabc891e23e228e59cb43f731411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
 <tr class="separator:a78daaabc891e23e228e59cb43f731411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a956731f527035ac773da7a01d3df9782"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a956731f527035ac773da7a01d3df9782">equals</a> (const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;) const noexcept override</td></tr>
-<tr class="memdesc:a956731f527035ac773da7a01d3df9782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
+<tr class="memdesc:a956731f527035ac773da7a01d3df9782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates wheth er the current object is equal to another object of the same type.  <br /></td></tr>
 <tr class="separator:a956731f527035ac773da7a01d3df9782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a986723d16d20808a9dbdc1f3dd6f4c1a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classxtd_1_1ustring.html">ustring</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a986723d16d20808a9dbdc1f3dd6f4c1a">get_date_time_formats</a> () const noexcept</td></tr>
 <tr class="memdesc:a986723d16d20808a9dbdc1f3dd6f4c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.  <br /></td></tr>
@@ -476,10 +476,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;typename object_t &gt; </td></tr>
-<tr class="memitem:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86">memberwise_clone</a> () const noexcept</td></tr>
-<tr class="memdesc:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="separator:af734e36ea583a842339d7c4444fb6d86 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;typename object_t &gt; </td></tr>
+<tr class="memitem:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a7d1d6739fb74be554719eced219de59a">memberwise_clone</a> () const</td></tr>
+<tr class="memdesc:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="separator:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1icomparable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1icomparable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1icomparable.html">xtd::icomparable&lt; date_time &gt;</a></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1iequatable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1iequatable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1iequatable.html">xtd::iequatable&lt; date_time &gt;</a></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1iformatable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1iformatable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1iformatable.html">xtd::iformatable</a></td></tr>
@@ -1862,7 +1862,7 @@ Because the <a class="el" href="classxtd_1_1date__time.html" title="Represents a
 <div class="ttc" id="aclassxtd_1_1date__time_html_aab8d1f41e620866ff93a0a04a611940a"><div class="ttname"><a href="classxtd_1_1date__time.html#aab8d1f41e620866ff93a0a04a611940a">xtd::date_time::millisecond</a></div><div class="ttdeci">uint32 millisecond() const noexcept</div><div class="ttdoc">Gets the milliseconds component of the date represented by this instance.</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_ae084c4d68a46500b8e64f4aec4869a15"><div class="ttname"><a href="classxtd_1_1date__time.html#ae084c4d68a46500b8e64f4aec4869a15">xtd::date_time::second</a></div><div class="ttdeci">uint32 second() const noexcept</div><div class="ttdoc">Gets the seconds component of the date represented by this instance.</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_af6d5ec7775b954da23afcf5543cb7fbc"><div class="ttname"><a href="classxtd_1_1date__time.html#af6d5ec7775b954da23afcf5543cb7fbc">xtd::date_time::hour</a></div><div class="ttdeci">uint32 hour() const noexcept</div><div class="ttdoc">Gets the hour component of the date represented by this instance.</div></div>
-<div class="ttc" id="agroup__types_html_gae7af83eab478757e17f0eb7af57571df"><div class="ttname"><a href="group__types.html#gae7af83eab478757e17f0eb7af57571df">xtd::uint32</a></div><div class="ttdeci">uint_least32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:284</div></div>
+<div class="ttc" id="agroup__types_html_gae7af83eab478757e17f0eb7af57571df"><div class="ttname"><a href="group__types.html#gae7af83eab478757e17f0eb7af57571df">xtd::uint32</a></div><div class="ttdeci">uint_least32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:285</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1date__time.html#a64d8c6b7c2a6ad3628934e5058cca23a" title="Gets the day of the month represented by this instance.">xtd::date_time::day</a> property always returns the day of the month in the Gregorian calendar. </dd></dl>
 
@@ -2298,7 +2298,7 @@ year is less than 1 or greater than 9999. </td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indicates whether the current object is equal to another object of the same type. </p>
+<p>Indicates wheth er the current object is equal to another object of the same type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>An object to compare with this object. </td></tr>
@@ -2343,7 +2343,25 @@ year is less than 1 or greater than 9999. </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the specified object is equal to the current object. otherwise, false. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> object1 = std::make_shared&lt;object&gt;();</div>
+<div class="line">  <span class="keyword">auto</span> object2 = std::make_shared&lt;object&gt;();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> object3 = object2;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
+<div class="line">  object3 = object1;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// false</span></div>
+<div class="line"><span class="comment">// true</span></div>
+</div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
 
@@ -2392,7 +2410,41 @@ year is less than 1 or greater than 9999. </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> s2 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">  </div>
+<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Carol&quot;) =&gt; false</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Tom&quot;) =&gt; true</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;Tom&quot;) =&gt; false</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;Carol&quot;, &quot;&quot;) =&gt; false</span></div>
+<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;&quot;) =&gt; true</span></div>
+<div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2584,7 +2636,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="ttc" id="aclassxtd_1_1argument__out__of__range__exception_html"><div class="ttname"><a href="classxtd_1_1argument__out__of__range__exception.html">xtd::argument_out_of_range_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is out of range.</div><div class="ttdef"><b>Definition</b> argument_out_of_range_exception.h:22</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_a54e1458a771b7ffe6c3ccb3efe7eec66"><div class="ttname"><a href="classxtd_1_1date__time.html#a54e1458a771b7ffe6c3ccb3efe7eec66">xtd::date_time::from_file_time</a></div><div class="ttdeci">static date_time from_file_time(int64 file_time)</div><div class="ttdoc">Converts the specified Windows file time to an equivalent local time.</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_aaf1f38f9b51733e38b5db3b5dfde6bb6"><div class="ttname"><a href="classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6">xtd::date_time::subtract</a></div><div class="ttdeci">xtd::time_span subtract(const date_time &amp;value) const</div><div class="ttdoc">Returns a new xtd::time_span that subtracts the specified date and time from the value of this instan...</div></div>
-<div class="ttc" id="agroup__types_html_ga7ab879ebcae19d6021222f00537cfdce"><div class="ttname"><a href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">xtd::int64</a></div><div class="ttdeci">int_least64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:167</div></div>
+<div class="ttc" id="agroup__types_html_ga7ab879ebcae19d6021222f00537cfdce"><div class="ttname"><a href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">xtd::int64</a></div><div class="ttdeci">int_least64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:168</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file. </dd>
 <dd>
@@ -5726,7 +5778,7 @@ An alternative to using <a class="el" href="classxtd_1_1date__time.html#a15f9bf4
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 18:10:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 9 2024 21:22:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

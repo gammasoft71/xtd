@@ -165,7 +165,7 @@ var searchData=
   ['medium_5fwhite_5fcircle_162',['medium_white_circle',['../classxtd_1_1forms_1_1emoticons.html#ad7fd50a50a17f3ad01cbaa3fbc8c2baa',1,'xtd::forms::emoticons']]],
   ['melon_163',['melon',['../classxtd_1_1forms_1_1emoticons.html#ae6864b39e59a5f4915cb6f8dd2371569',1,'xtd::forms::emoticons']]],
   ['member_5fname_164',['member_name',['../classxtd_1_1system__exception.html#a10693b2266ee7be0fc6740066b6dfbbc',1,'xtd::system_exception']]],
-  ['memberwise_5fclone_165',['memberwise_clone',['../classxtd_1_1object.html#af734e36ea583a842339d7c4444fb6d86',1,'xtd::object']]],
+  ['memberwise_5fclone_165',['memberwise_clone',['../classxtd_1_1object.html#a7d1d6739fb74be554719eced219de59a',1,'xtd::object']]],
   ['memo_166',['memo',['../classxtd_1_1forms_1_1emoticons.html#a33959b2d60b95d1cf50c4692bda78911',1,'xtd::forms::emoticons']]],
   ['memory_5fbarrier_167',['memory_barrier',['../classxtd_1_1threading_1_1interlocked.html#a6506b65f92ae0ed6fa25596b4911850f',1,'xtd::threading::interlocked']]],
   ['memory_5fbmp_168',['memory_bmp',['../classxtd_1_1drawing_1_1imaging_1_1image__format.html#abc980526963dac58695de16e82f2d977',1,'xtd::drawing::imaging::image_format']]],

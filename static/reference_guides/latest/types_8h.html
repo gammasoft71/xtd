@@ -85,6 +85,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">types.h File Reference</div></div>
 </div><!--header-->
@@ -93,6 +95,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="core__namespace__aliases_8h_source.html">core_namespace_aliases.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="self_8h_source.html">self.h</a>&quot;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;typeinfo&gt;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -106,6 +109,44 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacextd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd.html">xtd</a></td></tr>
 <tr class="memdesc:namespacextd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gacc27c17cf3dce949a4fb25f71d781557"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:gacc27c17cf3dce949a4fb25f71d781557"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">xtd::ptr</a> = <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:gacc27c17cf3dce949a4fb25f71d781557"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object is a shared pointer.  <br /></td></tr>
+<tr class="separator:gacc27c17cf3dce949a4fb25f71d781557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac95736233f2252af878f18687efabb92"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:gac95736233f2252af878f18687efabb92"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a> = std::shared_ptr&lt; type_t &gt;</td></tr>
+<tr class="memdesc:gac95736233f2252af878f18687efabb92"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object is a shared pointer.  <br /></td></tr>
+<tr class="separator:gac95736233f2252af878f18687efabb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ac188feb2d52b21e188417441519bb2"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga4ac188feb2d52b21e188417441519bb2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a> = std::unique_ptr&lt; type_t &gt;</td></tr>
+<tr class="memdesc:ga4ac188feb2d52b21e188417441519bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a unique pointer.  <br /></td></tr>
+<tr class="separator:ga4ac188feb2d52b21e188417441519bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">xtd::delete_ptr</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">ptr</a>)</td></tr>
+<tr class="memdesc:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> or <a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
+<tr class="separator:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga485087288ed3d32c97b73af209aea50c"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga485087288ed3d32c97b73af209aea50c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga485087288ed3d32c97b73af209aea50c">xtd::delete_ptr</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">ptr</a>)</td></tr>
+<tr class="memdesc:ga485087288ed3d32c97b73af209aea50c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object.  <br /></td></tr>
+<tr class="separator:ga485087288ed3d32c97b73af209aea50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">ptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a> (args_t &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ga2fd68f03198b2bf84b1e93149494b685"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> operator creates a <a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
+<tr class="separator:ga2fd68f03198b2bf84b1e93149494b685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7cc491fa6479b6976a467c83b82a902e"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga7cc491fa6479b6976a467c83b82a902e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr</a> (args_t &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ga7cc491fa6479b6976a467c83b82a902e"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::news_sptr operator creates a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object.  <br /></td></tr>
+<tr class="separator:ga7cc491fa6479b6976a467c83b82a902e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6380fbc5438993d147b093cfa5718caf"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga6380fbc5438993d147b093cfa5718caf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">xtd::new_uptr</a> (args_t &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ga6380fbc5438993d147b093cfa5718caf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf" title="xtd::new_uptr operator. This operator creates a xtd::uptr object.">xtd::new_uptr</a> operator. This operator creates a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object.  <br /></td></tr>
+<tr class="separator:ga6380fbc5438993d147b093cfa5718caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -188,7 +229,7 @@ Variables</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 18:10:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 9 2024 21:22:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

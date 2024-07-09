@@ -2160,7 +2160,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a1832cdfb7233ada545f1af44983843ae"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a1832cdfb7233ada545f1af44983843ae">xtd::diagnostics::stack_frame::get_file_line_number</a></div><div class="ttdeci">virtual uint32 get_file_line_number() const noexcept</div><div class="ttdoc">Gets the line number in the file that contains the code that is executing. This information is typica...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a3c7c3064010482060dc20aeb53b48797"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a3c7c3064010482060dc20aeb53b48797">xtd::diagnostics::stack_frame::get_file_name</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_file_name() const noexcept</div><div class="ttdoc">Gets the file name that contains the code that is executing. This information is typically extracted ...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_ae946fcdc9bfcf32e2a832815c40eeb08"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#ae946fcdc9bfcf32e2a832815c40eeb08">xtd::diagnostics::stack_frame::get_method</a></div><div class="ttdeci">virtual const xtd::ustring &amp; get_method() const noexcept</div><div class="ttdoc">Gets the method in which the frame is executing.</div></div>
-<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:48</div></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
 <div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>same as <a class="el" href="group__keywords.html#gae15b54f63b03b198d02fc94bdd0479ee" title="Provides information about the current stack frame.">current_stack_frame_</a> </dd></dl>
@@ -3026,7 +3026,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_typedef" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">decimal</a> balance;</div>
 <div class="line">};</div>
 <div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.h:85</div></div>
-<div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> types.h:115</div></div>
+<div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> types.h:116</div></div>
 </div><!-- fragment --><p> For more information, see Thread Synchronization. </p><dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The lock_ keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. If another thread tries to enter a locked code, it will wait, block, until the object is released. </dd>
@@ -3439,7 +3439,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line">    log(<a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;{0}.{1}&quot;</span>, <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(C), <a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(f)), <span class="stringliteral">&quot;method entry&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1064</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1068</div></div>
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.h:45</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -3891,7 +3891,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2024 18:10:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 9 2024 21:22:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
