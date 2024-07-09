@@ -10,5 +10,6 @@ var searchData=
   ['uintptr_5fobject_7',['uintptr_object',['../group__types.html#gadee39054ccaefc6ad4b507a42b361a91',1,'xtd']]],
   ['ulong_8',['ulong',['../group__types.html#ga313036ce703450f07d94c71ed78f2b21',1,'xtd']]],
   ['ulong_5fobject_9',['ulong_object',['../group__types.html#gac21c40190f1da798c4f81bdb7cf22604',1,'xtd']]],
-  ['user_5ftab_5fpage_5fcollection_10',['user_tab_page_collection',['../classxtd_1_1forms_1_1about__dialog.html#a80e85f89515ea8b47b1b867ec9bc5514',1,'xtd::forms::about_dialog']]]
+  ['uptr_10',['uptr',['../group__types.html#ga4ac188feb2d52b21e188417441519bb2',1,'xtd']]],
+  ['user_5ftab_5fpage_5fcollection_11',['user_tab_page_collection',['../classxtd_1_1forms_1_1about__dialog.html#a80e85f89515ea8b47b1b867ec9bc5514',1,'xtd::forms::about_dialog']]]
 ];

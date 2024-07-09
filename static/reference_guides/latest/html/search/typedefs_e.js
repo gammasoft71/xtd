@@ -11,5 +11,6 @@ var searchData=
   ['program_5fexit_5fevent_5fhandler_8',['program_exit_event_handler',['../group__events.html#ga05028567f0783e489a1c6e338026b99d',1,'xtd']]],
   ['progress_5fchanged_5fevent_5fhandler_9',['progress_changed_event_handler',['../group__events.html#gab622f963701c9e772309591048e9f180',1,'xtd::forms']]],
   ['property_5fmap_10',['property_map',['../property__map_8h.html#a8f98379cbe916d9dcf3e0cfac9eeaae6',1,'xtd::web::css']]],
-  ['ptrdiff_11',['ptrdiff',['../group__types.html#gac047942a62f03ba75e1b4f0bde7401ca',1,'xtd']]]
+  ['ptr_11',['ptr',['../group__types.html#gacc27c17cf3dce949a4fb25f71d781557',1,'xtd']]],
+  ['ptrdiff_12',['ptrdiff',['../group__types.html#gac047942a62f03ba75e1b4f0bde7401ca',1,'xtd']]]
 ];
