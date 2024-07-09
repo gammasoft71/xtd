@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['dash_5fstyle_0',['dash_style',['../group__xtd__drawing.html#ga0cbd1157b3472daeb1b4e86722fa2349',1,'xtd::drawing']]],
+  ['dash_5fstyle_0',['dash_style',['../group__xtd__drawing.html#gaf3c876b96fe581fd839e9586377f02b8',1,'xtd::drawing::drawing_2d']]],
   ['date_5ftime_5fkind_1',['date_time_kind',['../group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea',1,'xtd']]],
   ['date_5ftime_5fpicker_5fformat_2',['date_time_picker_format',['../group__xtd__forms.html#ga3aba202fc852006258f3a8da4f7bd0d1',1,'xtd::forms']]],
   ['day_3',['day',['../group__xtd__forms.html#ga108529868f1e8670d0a2cb08f311c36b',1,'xtd::forms']]],
