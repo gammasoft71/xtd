@@ -27,6 +27,6 @@ namespace xtd {
   uptr<type_t> new_uptr(const type_t& arg) {return uptr<type_t> {new type_t(arg)};}
   
   template<typename type_t>
-  uptr<type_t> new_uptr() {return uptr<type_t>(new type_t {});}
+  uptr<type_t> new_uptr() {return uptr<type_t>(new type_t);}
   /// @endcond
 }
