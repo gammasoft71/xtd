@@ -318,7 +318,7 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      std::unique_ptr<xtd::object> clone() const override;
+      xtd::uptr<xtd::object> clone() const override;
       
       void on_back_color_changed(const event_args& e) override;
       

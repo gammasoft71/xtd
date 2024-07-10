@@ -398,7 +398,7 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      std::unique_ptr<xtd::object> clone() const override;
+      xtd::uptr<xtd::object> clone() const override;
       
       /// @brief Raises the xtd::forms::tool_bar::button_click event.
       /// @param e A xtd::forms::tool_bar_button_click_event_args that contains the event data.

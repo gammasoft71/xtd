@@ -33,13 +33,13 @@ namespace xtd {
       /// @brief Initializes a new instance of xtd::tunit::unit_test with specified xtd::tunit::event_listener.
       /// @param event_listener The event listener associate to the unit tests.
       /// @remarks The arguments of the unit test application are detected automatically.
-      explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept;
+      explicit unit_test(xtd::uptr<xtd::tunit::event_listener> event_listener) noexcept;
       
       /// @brief Initializes a new instance of xtd::tunit::unit_test with specified xtd::tunit::event_listener, argument counts and arguments array.
       /// @param event_listener The event listener associate to the unit tests.
       /// @param argc Argument count from main method.
       /// @param argv Arguments array from main method.
-      unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, int argc, char* argv[]) noexcept;
+      unit_test(xtd::uptr<xtd::tunit::event_listener> event_listener, int argc, char* argv[]) noexcept;
       /// @}
       
       /// @cond
@@ -171,7 +171,7 @@ namespace xtd {
       
       std::vector<ustring> arguments;
       xtd::ustring name_ = "AllTests";
-      std::unique_ptr<xtd::tunit::event_listener> event_listener_;
+      xtd::uptr<xtd::tunit::event_listener> event_listener_;
       xtd::date_time end_time_point_;
       int32 repeat_iteration_ = 0;
       xtd::date_time start_time_point_;

@@ -95,7 +95,7 @@ namespace xtd {
       /// @brief Gets the xtd::drawing::brush that determines attributes of this xtd::drawing::pen.
       /// @return A Brush that determines attributes of this xtd::drawing::pen.
       /// @remarks Assigning this property causes the pen to draw filled lines and curves. It overrides thextd::drawing::pen::color property of the xtd::drawing::pen.
-      const std::unique_ptr<xtd::drawing::brush>& brush() const noexcept;
+      const xtd::uptr<xtd::drawing::brush>& brush() const noexcept;
       /// @brief Sets the xtd::drawing::brush that determines attributes of this xtd::drawing::pen.
       /// @param value A xtd::drawing::brush that determines attributes of this xtd::drawing::pen.
       /// @remarks Assigning this property causes the pen to draw filled lines and curves. It overrides thextd::drawing::pen::color property of the xtd::drawing::pen.
@@ -213,7 +213,7 @@ namespace xtd {
       
     private:
       pen();
-      void brush_(std::unique_ptr<xtd::drawing::brush>&& brush);
+      void brush_(xtd::uptr<xtd::drawing::brush>&& brush);
       void color_(const xtd::drawing::color& color);
       void create_data();
       void recreate_handle();

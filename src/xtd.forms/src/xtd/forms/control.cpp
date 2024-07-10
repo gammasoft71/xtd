@@ -92,7 +92,7 @@ forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
 map<intptr, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 
-std::vector<std::unique_ptr<xtd::forms::control>> control::control_collection::controls_;
+std::vector<xtd::uptr<xtd::forms::control>> control::control_collection::controls_;
 
 control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
 }
@@ -1676,7 +1676,7 @@ void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawi
   on_context_menu_item_click(menu, native::control::user_context_menu(handle(), menu.handle(), pos));
 }
 
-unique_ptr<xtd::object> control::clone() const {
+xtd::uptr<xtd::object> control::clone() const {
   auto result = make_unique<control>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;

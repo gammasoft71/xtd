@@ -6,5 +6,5 @@ struct xtd::forms::tab_control::data {
   forms::image_list image_list;
   size_t selected_index = npos;
   tab_page_collection tab_pages;
-  std::vector<std::unique_ptr<tab_page>> text_tab_pages;
+  std::vector<xtd::uptr<tab_page>> text_tab_pages;
 };

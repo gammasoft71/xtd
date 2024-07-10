@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-std::unique_ptr<busy_dialog> busy_box::dialog_;
+xtd::uptr<busy_dialog> busy_box::dialog_;
 
 void busy_box::hide() {dialog_.reset();}
 

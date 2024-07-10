@@ -436,7 +436,7 @@ xtd::forms::visual_styles::check_box_state light_button::state() const noexcept 
   return data_->state;
 }
 
-unique_ptr<xtd::object> light_button::clone() const {
+xtd::uptr<xtd::object> light_button::clone() const {
   auto result = make_unique<light_button>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;

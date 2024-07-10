@@ -150,7 +150,7 @@ namespace xtd {
         std::vector<xtd::byte> buffer_;
         std::vector<std::vector<xtd::byte>> buffer_list_;
         size_t bytes_transferred_ = 0;
-        std::unique_ptr<xtd::system_exception> connect_by_name_error_;
+        xtd::uptr<xtd::system_exception> connect_by_name_error_;
         xtd::net::sockets::socket connect_socket_;
         size_t count_ = 0;
         bool disconnect_reuse_socket_ = false;
@@ -158,7 +158,7 @@ namespace xtd {
         std::vector<xtd::byte> memory_buffer_;
         size_t offset_ = 0;
         xtd::net::sockets::ip_packet_information receive_message_from_packet_info_;
-        std::unique_ptr<xtd::net::end_point> remote_end_point_;
+        xtd::uptr<xtd::net::end_point> remote_end_point_;
         std::vector<xtd::net::sockets::send_packets_element> send_packets_elements_;
         xtd::net::sockets::transmit_file_options send_packets_flags_ = xtd::net::sockets::transmit_file_options::use_default_worker_thread;
         size_t send_packets_send_size_ = 0;

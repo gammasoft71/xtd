@@ -20,7 +20,7 @@ using namespace xtd::drawing::drawing_2d;
 struct pen::data {
   intptr handle_ = 0;
   xtd::drawing::drawing_2d::pen_alignment alignment = xtd::drawing::drawing_2d::pen_alignment::center;
-  std::unique_ptr<xtd::drawing::brush> brush;
+  xtd::uptr<xtd::drawing::brush> brush;
   xtd::drawing::color color;
   float dash_offset = 0.0f;
   std::vector<float> dash_pattern;
@@ -71,7 +71,7 @@ pen& pen::alignment(drawing_2d::pen_alignment value) {
   return *this;
 }
 
-const std::unique_ptr<drawing::brush>& pen::brush() const noexcept {
+const xtd::uptr<drawing::brush>& pen::brush() const noexcept {
   return data_->brush;
 }
 
@@ -193,7 +193,7 @@ xtd::ustring pen::to_string() const noexcept {
   return get_type().full_name();
 }
 
-void pen::brush_(std::unique_ptr<xtd::drawing::brush>&& brush) {
+void pen::brush_(xtd::uptr<xtd::drawing::brush>&& brush) {
   data_->brush = std::move(brush);
 }
 

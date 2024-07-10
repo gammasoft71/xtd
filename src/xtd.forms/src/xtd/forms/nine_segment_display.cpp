@@ -212,7 +212,7 @@ nine_segment_display nine_segment_display::create(const control& parent, xtd::fo
   return item;
 }
 
-unique_ptr<xtd::object> nine_segment_display::clone() const {
+xtd::uptr<xtd::object> nine_segment_display::clone() const {
   auto result = make_unique<nine_segment_display>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;

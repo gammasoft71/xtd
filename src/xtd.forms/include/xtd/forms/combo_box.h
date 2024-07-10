@@ -301,7 +301,7 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      std::unique_ptr<xtd::object> clone() const override;
+      xtd::uptr<xtd::object> clone() const override;
       
       /// @brief Raises the xtd::forms::combo_box::drop_down event.
       /// @remarks This event is raised each time the drop-down is displayed.

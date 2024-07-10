@@ -176,7 +176,7 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      std::unique_ptr<xtd::object> clone() const override;
+      xtd::uptr<xtd::object> clone() const override;
       
       drawing::size measure_control() const noexcept override;
       void on_font_changed(const xtd::event_args& e) override;

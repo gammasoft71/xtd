@@ -204,7 +204,7 @@ xtd::ustring status_bar_panel::to_string() const noexcept {
   return ustring::format("{}, style: {}", get_type().full_name(), data_->style);
 }
 
-unique_ptr<xtd::object> status_bar_panel::clone() const {
+xtd::uptr<xtd::object> status_bar_panel::clone() const {
   auto result = make_unique<status_bar_panel>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;

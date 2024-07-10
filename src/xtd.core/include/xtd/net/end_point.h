@@ -47,7 +47,7 @@ namespace xtd {
       /// @param socket_address The socket address that serves as the endpoint for a connection.
       /// @return A new xtd::net::end_point instance that is initialized from the specified xtd::net::socket_address instance.
       /// @exception xtd::not_supported_exception Any attempt is made to access the method when the method is not overridden in a descendant class.
-      virtual std::unique_ptr<end_point> create(const socket_address& socket_address) const;
+      virtual xtd::uptr<end_point> create(const socket_address& socket_address) const;
       
       /// @brief Serializes endpoint information into a socket_address instance.
       /// @return A new xtd::net::socket_address instance that contains the endpoint information.

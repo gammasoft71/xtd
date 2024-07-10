@@ -24,10 +24,10 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
-unit_test::unit_test(unique_ptr<event_listener> event_listener) noexcept : unit_test(std::move(event_listener), __tunit_argc, __tunit_argv) {
+unit_test::unit_test(xtd::uptr<event_listener> event_listener) noexcept : unit_test(std::move(event_listener), __tunit_argc, __tunit_argv) {
 }
 
-unit_test::unit_test(unique_ptr<event_listener> event_listener, int argc, char* argv[]) noexcept : arguments(argv == nullptr ? 0 : argv + 1, argv == nullptr ? 0 : argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {
+unit_test::unit_test(xtd::uptr<event_listener> event_listener, int argc, char* argv[]) noexcept : arguments(argv == nullptr ? 0 : argv + 1, argv == nullptr ? 0 : argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {
 }
 
 unit_test::~unit_test() {

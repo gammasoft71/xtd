@@ -231,7 +231,7 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      std::unique_ptr<xtd::object> clone() const override;
+      xtd::uptr<xtd::object> clone() const override;
       
       /// @brief Raises the xtd::forms::control::font_changed event.
       /// @param e An event_args that contains the event data.

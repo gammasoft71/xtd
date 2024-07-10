@@ -14,7 +14,7 @@ struct background_worker::data {
   bool worker_reports_progress = false;
   bool worker_supports_cancellation = false;
   progress_changed_event_args event {0, any()};
-  unique_ptr<form> invoker;
+  xtd::uptr<form> invoker;
   action<> worker;
   async_result worker_result;
 };

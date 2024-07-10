@@ -39,7 +39,7 @@ namespace xtd {
           hdc_ = std::move(handle);
         }
         
-        void create_buffered_hdc(std::unique_ptr<wxDC>&& hdc_base) {
+        void create_buffered_hdc(xtd::uptr<wxDC>&& hdc_base) {
           hdc_base_ = std::move(hdc_base);
           auto handle = std::make_unique<wxBufferedDC>(hdc_base_.get());
           graphics_ = create_graphics(*handle);
@@ -60,12 +60,12 @@ namespace xtd {
         
       private:
         template<typename hdc_t>
-        std::unique_ptr<wxGraphicsContext> create_graphics(const hdc_t& hdc) {return std::unique_ptr<wxGraphicsContext>(wxGraphicsContext::Create(hdc));}
-        std::unique_ptr<wxGraphicsContext> create_graphics(const wxScreenDC& hdc) {return std::unique_ptr<wxGraphicsContext>(wxGraphicsContext::Create());}
-        std::unique_ptr<wxBitmap> bitmap_;
-        std::unique_ptr<wxGraphicsContext> graphics_;
-        std::unique_ptr<wxDC> hdc_;
-        std::unique_ptr<wxDC> hdc_base_;
+        xtd::uptr<wxGraphicsContext> create_graphics(const hdc_t& hdc) {return xtd::uptr<wxGraphicsContext>(wxGraphicsContext::Create(hdc));}
+        xtd::uptr<wxGraphicsContext> create_graphics(const wxScreenDC& hdc) {return xtd::uptr<wxGraphicsContext>(wxGraphicsContext::Create());}
+        xtd::uptr<wxBitmap> bitmap_;
+        xtd::uptr<wxGraphicsContext> graphics_;
+        xtd::uptr<wxDC> hdc_;
+        xtd::uptr<wxDC> hdc_base_;
         intptr image_ = 0;
       };
     }

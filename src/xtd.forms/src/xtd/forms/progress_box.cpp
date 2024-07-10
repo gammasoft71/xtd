@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-std::unique_ptr<progress_dialog> progress_box::dialog_;
+xtd::uptr<progress_dialog> progress_box::dialog_;
 
 bool progress_box::cancelled() {
   return dialog_ && dialog_->cancelled();

@@ -27,9 +27,9 @@ struct process::data {
   int32 id_ = 0;
   ustring machine_name_;
   xtd::diagnostics::process_priority_class priority_class_ = xtd::diagnostics::process_priority_class::normal;
-  std::unique_ptr<std::ostream> standard_input_;
-  std::unique_ptr<std::istream> standard_output_;
-  std::unique_ptr<std::istream> standard_error_;
+  xtd::uptr<std::ostream> standard_input_;
+  xtd::uptr<std::istream> standard_output_;
+  xtd::uptr<std::istream> standard_error_;
   thread thread_;
   xtd::date_time start_time_;
   xtd::date_time exit_time_;
