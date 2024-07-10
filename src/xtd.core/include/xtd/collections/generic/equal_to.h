@@ -2,9 +2,9 @@
 /// @brief Contains xtd::collections::generic::equal_to struct.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/object>>
+#include <xtd/object>
 #include <functional>
-#include <type_traits>>
+#include <type_traits>
 
 /// @cond
 template<typename key_t, typename bool_t>
