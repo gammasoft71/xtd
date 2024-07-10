@@ -64,137 +64,137 @@ private:
     
     // Text only labels
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({10, 10});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({120, 10}).enabled(false);
     
     // Image only labels
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({230, 10});
     ++label_number;
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({340, 10}).enabled(false);
     ++label_number;
     
     // Image and text labels
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->image(button_images::from_name("xtd")).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({450, 10});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->image(button_images::from_name("xtd")).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({560, 10}).enabled(false);
     
     // Fore Color
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({10, 50}).fore_color(color::dodger_blue);
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({120, 50}).enabled(false).fore_color(color::dodger_blue);
     
     // Back Color
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({230, 50}).back_color(color::dodger_blue);
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({340, 50}).enabled(false).back_color(color::dodger_blue);
     
     // Text align labels
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).text_align(content_alignment::top_left).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({10, 90}).size({100, 50});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).text_align(content_alignment::top_center).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({120, 90}).size({100, 50});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).text_align(content_alignment::top_right).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({230, 90}).size({100, 50});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).text_align(content_alignment::middle_left).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({340, 90}).size({100, 50});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).text_align(content_alignment::middle_center).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({450, 90}).size({100, 50});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).text_align(content_alignment::middle_right).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({560, 90}).size({100, 50});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).text_align(content_alignment::bottom_left).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({670, 90}).size({100, 50});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).text_align(content_alignment::bottom_center).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({780, 90}).size({100, 50});
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).text_align(content_alignment::bottom_right).flat_style(style).text(ustring::format("Label {}", ++label_number)).parent(parent_control).location({890, 90}).size({100, 50});
     
     // Image align labels
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).image_align(content_alignment::top_left).image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({10, 155}).size({100, 50});
     ++label_number;
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).image_align(content_alignment::top_center).image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({120, 155}).size({100, 50});
     ++label_number;
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).image_align(content_alignment::top_right).image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({230, 155}).size({100, 50});
     ++label_number;
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).image_align(content_alignment::middle_left).image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({340, 155}).size({100, 50});
     ++label_number;
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).image_align(content_alignment::middle_center).image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({450, 155}).size({100, 50});
     ++label_number;
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).image_align(content_alignment::middle_right).image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({560, 155}).size({100, 50});
     ++label_number;
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).image_align(content_alignment::bottom_left).image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({670, 155}).size({100, 50});
     ++label_number;
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).image_align(content_alignment::bottom_center).image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({780, 155}).size({100, 50});
     ++label_number;
     
-    label_ptr = make_shared<label>();
+    label_ptr = xtd::new_sptr<label>();
     labels.push_back(label_ptr);
     label_ptr->border_style(xtd::forms::border_style::solid).image_align(content_alignment::bottom_right).image(button_images::from_name("xtd")).flat_style(style).parent(parent_control).location({890, 155}).size({100, 50});
     ++label_number;

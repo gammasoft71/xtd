@@ -19,11 +19,11 @@ struct country::data {
   xtd::ustring emoticon;
 };
 
-country::country() : data_(std::make_shared<data>()) {
+country::country() : data_(xtd::new_sptr<data>()) {
 
 }
 
-country::country(const country& other) : data_(std::make_shared<data>()) {
+country::country(const country& other) : data_(xtd::new_sptr<data>()) {
   *data_ = *other.data_;
 }
 
@@ -95,7 +95,7 @@ ustring country::to_string() const noexcept {
   return ustring::format("country [name={}, alpha_2_code={}, alpha_3_code={}, numeric_code={}]", name(), alpha_2_code(), alpha_3_code(), numeric_code());
 }
 
-country::country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int32 numeric_code) : data_(std::make_shared<data>()) {
+country::country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int32 numeric_code) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   data_->alpha_2_code = alpha_2_code;
   data_->alpha_3_code = alpha_3_code;

@@ -70,7 +70,7 @@ trace_form_base& trace_form_base::show_time(bool value) {
   return *this;
 }
 
-trace_form_base::trace_form_base(const ustring& text) : data_(std::make_shared<data>()) {
+trace_form_base::trace_form_base(const ustring& text) : data_(xtd::new_sptr<data>()) {
   close_box(false);
   minimize_box(false);
   name(__xtd_forms_trace_form_base_default_form_name__());

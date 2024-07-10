@@ -22,7 +22,7 @@ struct message_dialog::data {
   xtd::ustring text;
 };
 
-message_dialog::message_dialog() : data_(std::make_shared<data>()) {
+message_dialog::message_dialog() : data_(xtd::new_sptr<data>()) {
   data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 

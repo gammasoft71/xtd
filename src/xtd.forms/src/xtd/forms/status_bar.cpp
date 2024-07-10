@@ -50,12 +50,12 @@ struct status_bar::data {
   std::vector<intptr> system_status_bar_panel_handles;
 };
 
-status_bar::status_bar() : data_(std::make_shared<data>()) {
+status_bar::status_bar() : data_(xtd::new_sptr<data>()) {
   data_->main_panel.parent(*this);
   data_->main_panel.dock(dock_style::fill);
   data_->main_panel.paint += {*this, &status_bar::on_main_panel_paint};
   
-  data_->sizing_grip_control = std::make_shared<sizing_grip_control>();
+  data_->sizing_grip_control = xtd::new_sptr<sizing_grip_control>();
   data_->sizing_grip_control->cursor(cursors::from_name(native::status_bar::sizing_grip_cursor_name()));
   data_->sizing_grip_control->dock(dock_style::right);
   data_->sizing_grip_control->parent(*this);
@@ -416,7 +416,7 @@ void status_bar::fill() {
       data_->system_status_bar_panel_handles.push_back(control_handle);
       button_item.data_->rectangle = drawing::rectangle(native::status_bar::status_bar_item_rectangle(handle(), control_handle));
     } else {
-      auto button_control = std::make_shared<status_bar_panel_control>();
+      auto button_control = xtd::new_sptr<status_bar_panel_control>();
       button_item.data_->handle = reinterpret_cast<intptr>(button_control.get());
       button_control->parent(*this);
       button_control->status_bar_panel(button_item);

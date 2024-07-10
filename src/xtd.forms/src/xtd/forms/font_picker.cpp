@@ -16,7 +16,7 @@ struct font_picker::data {
   drawing::font font = xtd::drawing::system_fonts::default_font();
 };
 
-font_picker::font_picker() : data_(std::make_shared<data>()) {
+font_picker::font_picker() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
 }

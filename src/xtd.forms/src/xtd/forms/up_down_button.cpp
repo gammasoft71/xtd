@@ -20,7 +20,7 @@ struct up_down_button::data {
   int32 value = 0;
 };
 
-up_down_button::up_down_button() : data_(std::make_shared<data>()) {
+up_down_button::up_down_button() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
 }

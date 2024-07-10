@@ -9,43 +9,43 @@ struct control_layout_style::data {
   xtd::forms::content_alignment align = xtd::forms::content_alignment::top_left;
 };
 
-control_layout_style::control_layout_style() : data_(std::make_shared<data>()) {
+control_layout_style::control_layout_style() : data_(xtd::new_sptr<data>()) {
 }
 
-control_layout_style::control_layout_style(xtd::forms::size_type size_type) : data_(std::make_shared<data>()) {
+control_layout_style::control_layout_style(xtd::forms::size_type size_type) : data_(xtd::new_sptr<data>()) {
   data_->size_type = size_type;
 }
 
-control_layout_style::control_layout_style(bool expanded) : data_(std::make_shared<data>())  {
+control_layout_style::control_layout_style(bool expanded) : data_(xtd::new_sptr<data>())  {
   data_->expanded = expanded;
 }
 
-control_layout_style::control_layout_style(xtd::forms::content_alignment align) : data_(std::make_shared<data>()) {
+control_layout_style::control_layout_style(xtd::forms::content_alignment align) : data_(xtd::new_sptr<data>()) {
   data_->align = align;
 }
 
-control_layout_style::control_layout_style(xtd::forms::size_type size_type, bool expanded) : data_(std::make_shared<data>()) {
+control_layout_style::control_layout_style(xtd::forms::size_type size_type, bool expanded) : data_(xtd::new_sptr<data>()) {
   data_->size_type = size_type;
   data_->expanded = expanded;
 }
 
-control_layout_style::control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align) : data_(std::make_shared<data>()) {
+control_layout_style::control_layout_style(xtd::forms::size_type size_type, xtd::forms::content_alignment align) : data_(xtd::new_sptr<data>()) {
   data_->size_type = size_type;
   data_->align = align;
 }
 
-control_layout_style::control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : data_(std::make_shared<data>()) {
+control_layout_style::control_layout_style(xtd::forms::size_type size_type, bool expanded, xtd::forms::content_alignment align) : data_(xtd::new_sptr<data>()) {
   data_->size_type = size_type;
-  data_->expanded = expanded;
-  data_->align = align;
-}
-
-control_layout_style::control_layout_style(bool expanded, xtd::forms::content_alignment align) : data_(std::make_shared<data>()) {
   data_->expanded = expanded;
   data_->align = align;
 }
 
-control_layout_style::control_layout_style(const control_layout_style& other) : data_(std::make_shared<data>()) {
+control_layout_style::control_layout_style(bool expanded, xtd::forms::content_alignment align) : data_(xtd::new_sptr<data>()) {
+  data_->expanded = expanded;
+  data_->align = align;
+}
+
+control_layout_style::control_layout_style(const control_layout_style& other) : data_(xtd::new_sptr<data>()) {
   *data_ = *other.data_;
 }
 

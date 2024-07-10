@@ -4,7 +4,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-file_dialog::file_dialog() : data_(std::make_shared<data>()) {
+file_dialog::file_dialog() : data_(xtd::new_sptr<data>()) {
 }
 
 bool file_dialog::add_extension() const noexcept {

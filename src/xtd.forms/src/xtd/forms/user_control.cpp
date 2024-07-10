@@ -19,7 +19,7 @@ struct user_control::data {
   optional<forms::border_style> border_style;
 };
 
-user_control::user_control() : data_(std::make_shared<data>()) {
+user_control::user_control() : data_(xtd::new_sptr<data>()) {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_style(control_styles::supports_transparent_back_color, true);
 }

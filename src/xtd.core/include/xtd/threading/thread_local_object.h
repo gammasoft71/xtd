@@ -137,7 +137,7 @@ namespace xtd {
       /// @}
 
     private:
-      mutable xtd::sptr<data> data_ = std::make_shared<data>();
+      mutable xtd::sptr<data> data_ = xtd::new_sptr<data>();
     };
   }
 }

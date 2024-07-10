@@ -52,7 +52,7 @@ link_label::link_collection::reference link_label::link_collection::operator [](
   return link_empty;
 }
 
-link_label::link_label() : data_(std::make_shared<data>()) {
+link_label::link_label() : data_(xtd::new_sptr<data>()) {
   double_buffered(true);
   set_style(control_styles::all_painting_in_wm_paint | control_styles::optimized_double_buffer | control_styles::opaque | control_styles::user_paint | control_styles::standard_click | control_styles::resize_redraw, true);
   data_->links.item_added += {*this, &link_label::on_links_link_added};

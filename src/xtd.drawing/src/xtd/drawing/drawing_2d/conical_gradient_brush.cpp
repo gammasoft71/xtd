@@ -41,7 +41,7 @@ conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& cent
 conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& conical_colors,  float angle) : conical_gradient_brush(point_f(as<float>(center.x()), as<float>(center.y())), conical_colors, angle) {
 }
 
-conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& conical_colors, float angle) : data_(std::make_shared<data>()) {
+conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& conical_colors, float angle) : data_(xtd::new_sptr<data>()) {
   if (conical_colors.size() < 2) throw argument_exception {csf_};
   
   data_->center_point = center;

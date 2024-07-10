@@ -37,7 +37,7 @@ struct label::data {
   xtd::forms::content_alignment text_align = xtd::forms::content_alignment::top_left;
 };
 
-label::label() : data_(std::make_shared<data>()) {
+label::label() : data_(xtd::new_sptr<data>()) {
   if (application::system_controls()) data_->flat_style = xtd::forms::flat_style::system;
   double_buffered(true);
   set_can_focus(false);

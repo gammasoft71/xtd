@@ -14,7 +14,7 @@ struct animation::data {
   timer frames_timer;
 };
 
-animation::animation() : data_(make_shared<data>()) {
+animation::animation() : data_(xtd::new_sptr<data>()) {
   double_buffered(true);
   set_can_focus(false);
   set_style(control_styles::resize_redraw, true);

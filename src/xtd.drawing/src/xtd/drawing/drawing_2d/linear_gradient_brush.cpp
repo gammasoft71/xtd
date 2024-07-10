@@ -59,7 +59,7 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rect, linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, float angle) : data_(std::make_shared<data>()) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, float angle) : data_(xtd::new_sptr<data>()) {
   if (linear_colors.size() < 2) throw argument_exception {csf_};
   while (angle < 0)
     angle = 360 - angle;

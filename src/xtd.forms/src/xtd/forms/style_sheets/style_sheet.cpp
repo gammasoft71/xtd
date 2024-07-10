@@ -59,13 +59,13 @@ style_sheet::style_sheets_t style_sheet::style_sheets_;
 style_sheet::style_sheet_names_t style_sheet::style_sheet_names_;
 style_sheet style_sheet::system_style_sheet_;
 
-style_sheet::style_sheet() : data_(std::make_shared<data>()) {
+style_sheet::style_sheet() : data_(xtd::new_sptr<data>()) {
 }
 
 style_sheet::style_sheet(const ustring& css_text) : style_sheet(css_text, true) {
 }
 
-style_sheet::style_sheet(const ustring& css_text, bool init_system) : data_(std::make_shared<data>()) {
+style_sheet::style_sheet(const ustring& css_text, bool init_system) : data_(xtd::new_sptr<data>()) {
   if (init_system) *this = system_style_sheet();
   else {
     data_->system_colors.accent(drawing::system_colors::accent());
@@ -130,7 +130,7 @@ style_sheet::style_sheet(const ustring& css_text, bool init_system) : data_(std:
   user_control_reader(reader);
 }
 
-style_sheet::style_sheet(const style_sheet& value) : data_(std::make_shared<data>()) {
+style_sheet::style_sheet(const style_sheet& value) : data_(xtd::new_sptr<data>()) {
   // memberwise clone...
   *data_ = *value.data_;
 }

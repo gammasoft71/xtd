@@ -11,11 +11,11 @@ struct brush::data {
   intptr handle_ = 0;
 };
 
-brush::brush() : data_(std::make_shared<data>()) {
+brush::brush() : data_(xtd::new_sptr<data>()) {
   set_native_brush(native::brush::create());
 }
 
-brush::brush(const brush& value) : data_(std::make_shared<data>()) {
+brush::brush(const brush& value) : data_(xtd::new_sptr<data>()) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
   data_ = value.data_;
 }

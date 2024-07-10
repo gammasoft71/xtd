@@ -13,14 +13,14 @@ struct font_family::data {
   xtd::ustring name_;
 };
 
-font_family::font_family(const ustring& name) : data_(std::make_shared<data>()) {
+font_family::font_family(const ustring& name) : data_(xtd::new_sptr<data>()) {
   data_->name_ = name;
   if (data_->name_.empty()) throw xtd::argument_exception("name is an empty string"_t, csf_);
   data_->handle_ = native::font_family::create(name);
   if (data_->handle_ == 0) throw xtd::argument_exception("name specifies a font that is not installed on the computer running the application."_t, csf_);
 }
 
-font_family::font_family(text::generic_font_families generic_font_families) : data_(std::make_shared<data>()) {
+font_family::font_family(text::generic_font_families generic_font_families) : data_(xtd::new_sptr<data>()) {
   switch (generic_font_families) {
     case text::generic_font_families::serif: *this = font_family(native::font_family::generic_serif_name()); break;
     case text::generic_font_families::sans_serif: *this = font_family(native::font_family::generic_sans_serif_name()); break;
@@ -29,19 +29,19 @@ font_family::font_family(text::generic_font_families generic_font_families) : da
   }
 }
 
-font_family::font_family(const ustring& name, const text::font_collection& font_collection) : data_(std::make_shared<data>()) {
+font_family::font_family(const ustring& name, const text::font_collection& font_collection) : data_(xtd::new_sptr<data>()) {
   auto font_families = font_collection.families();
   auto iterator = find_if(font_families.begin(), font_families.end(), [&](const font_family & font_family) {return name == font_family.name();});
   if (iterator == font_families.end()) throw xtd::argument_exception("name specifies a font that is not a part of specified font_collection."_t, csf_);
   *this = *iterator;
 }
 
-font_family::font_family(const font_family& value) : data_(std::make_shared<data>()) {
+font_family::font_family(const font_family& value) : data_(xtd::new_sptr<data>()) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::font_family::destroy(data_->handle_);
   data_ = value.data_;
 }
 
-font_family::font_family() : data_(std::make_shared<data>()) {
+font_family::font_family() : data_(xtd::new_sptr<data>()) {
 
 }
 

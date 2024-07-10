@@ -33,7 +33,7 @@ struct timer::data {
 timer::timer() : timer(100) {
 }
 
-timer::timer(double interval) : data_(std::make_shared<data>()) {
+timer::timer(double interval) : data_(xtd::new_sptr<data>()) {
   timer::interval(interval);
 }
 

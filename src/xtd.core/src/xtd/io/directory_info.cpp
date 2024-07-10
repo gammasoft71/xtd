@@ -27,11 +27,11 @@ struct directory_info::directory_iterator::data {
 };
 
 directory_info::directory_iterator::directory_iterator(const ustring& path, const ustring& pattern) {
-  data_ = make_shared<data>(path, pattern);
+  data_ = xtd::new_sptr<data>(path, pattern);
 }
 
 directory_info::directory_iterator::directory_iterator() {
-  data_ = make_shared<data>();
+  data_ = xtd::new_sptr<data>();
 }
 
 directory_info::directory_iterator& directory_info::directory_iterator::operator ++() {
@@ -77,11 +77,11 @@ struct directory_info::file_iterator::data {
 };
 
 directory_info::file_iterator::file_iterator(const std::string& path, const std::string& pattern) {
-  data_ = make_shared<data>(path, pattern);
+  data_ = xtd::new_sptr<data>(path, pattern);
 }
 
 directory_info::file_iterator::file_iterator() {
-  data_ = make_shared<data>();
+  data_ = xtd::new_sptr<data>();
 }
 
 directory_info::file_iterator& directory_info::file_iterator::operator ++() {
@@ -126,11 +126,11 @@ struct directory_info::file_system_info_iterator::data {
 };
 
 directory_info::file_system_info_iterator::file_system_info_iterator(const std::string& path, const std::string& pattern) {
-  data_ = make_shared<data>(path, pattern);
+  data_ = xtd::new_sptr<data>(path, pattern);
 }
 
 directory_info::file_system_info_iterator::file_system_info_iterator() {
-  data_ = make_shared<data>();
+  data_ = xtd::new_sptr<data>();
 }
 
 directory_info::file_system_info_iterator& directory_info::file_system_info_iterator::operator ++() {
@@ -165,11 +165,11 @@ ustring directory_info::file_system_info_iterator::pattern() const {
 }
 
 directory_info::file_system_info_iterator::value_type directory_info::file_system_info_iterator::operator *() const {
-  if (data_ == nullptr) return std::make_shared<file_info>("");
+  if (data_ == nullptr) return xtd::new_sptr<file_info>("");
   auto attributes = -1;
   native::file_system::get_attributes(*data_->iterator_, attributes);
-  if ((as<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory) return std::make_shared<directory_info>(*data_->iterator_);
-  return std::make_shared<file_info>(*data_->iterator_);
+  if ((as<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory) return xtd::new_sptr<directory_info>(*data_->iterator_);
+  return xtd::new_sptr<file_info>(*data_->iterator_);
 }
 
 const directory_info directory_info::empty;

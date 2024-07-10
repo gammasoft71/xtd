@@ -31,17 +31,17 @@ struct graphics::data {
   int32 text_contrast = 4;
 };
 
-graphics::graphics(intptr handle) : data_(std::make_shared<data>()) {
+graphics::graphics(intptr handle) : data_(xtd::new_sptr<data>()) {
   data_->handle = handle;
 }
 
-graphics::graphics(intptr handle, const drawing::region& region) : data_(std::make_shared<data>()) {
+graphics::graphics(intptr handle, const drawing::region& region) : data_(xtd::new_sptr<data>()) {
   data_->handle = handle;
   if (!region.is_empty() && !region.is_infinite())
     clip(region);
 }
 
-graphics::graphics(const graphics& value) : data_(std::make_shared<data>()) {
+graphics::graphics(const graphics& value) : data_(xtd::new_sptr<data>()) {
   if (data_.use_count() == 1 && handle() != 0) native::graphics::destroy(handle());
   data_ = value.data_;
 }

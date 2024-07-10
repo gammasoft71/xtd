@@ -45,7 +45,7 @@ up_down_base& up_down_base::border_style(std::nullptr_t) {
   return *this;
 }
 
-up_down_base::up_down_base() : data_(std::make_shared<data>()) {
+up_down_base::up_down_base() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::opaque | control_styles::fixed_height | control_styles::resize_redraw, true);
   set_style(control_styles::standard_click, false);
   set_style(control_styles::use_text_for_accessibility, false);

@@ -9,10 +9,10 @@ struct application_context::data {
   std::any tag;
 };
 
-application_context::application_context() : data_(std::make_shared<data>()) {
+application_context::application_context() : data_(xtd::new_sptr<data>()) {
 }
 
-application_context::application_context(const form& main_form) noexcept : data_(std::make_shared<data>()) {
+application_context::application_context(const form& main_form) noexcept : data_(xtd::new_sptr<data>()) {
   this->main_form(main_form);
 }
 

@@ -20,7 +20,7 @@ struct graphics_path::data {
 graphics_path::graphics_path() : graphics_path(drawing_2d::fill_mode::alternate) {
 }
 
-graphics_path::graphics_path(drawing_2d::fill_mode mode) : data_(std::make_shared<data>()) {
+graphics_path::graphics_path(drawing_2d::fill_mode mode) : data_(xtd::new_sptr<data>()) {
   data_->fill_mode = mode;
   recreate_handle();
 }

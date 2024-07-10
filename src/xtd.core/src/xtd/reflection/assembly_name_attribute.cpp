@@ -8,7 +8,7 @@ assembly_name_attribute::assembly_name_attribute(const ustring& name) : name_(na
 }
 
 assembly_name_attribute::assembly_name_attribute(const ustring& name, const object& executing_assembly) : name_(name) {
-  __assembly_name_attribute__() = make_shared<xtd::reflection::assembly_name_attribute>(name);
+  __assembly_name_attribute__() = xtd::new_sptr<xtd::reflection::assembly_name_attribute>(name);
 }
 
 const ustring& assembly_name_attribute::name() const noexcept {

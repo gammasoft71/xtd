@@ -198,7 +198,7 @@ struct exception_dialog::data {
   ustring text;
 };
 
-exception_dialog::exception_dialog() : data_(std::make_shared<data>()) {
+exception_dialog::exception_dialog() : data_(xtd::new_sptr<data>()) {
   data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 

@@ -16,7 +16,7 @@ using namespace xtd::reflection;
 
 extern char** __diagnostics_argv;
 auto __debug_mutex__ = recursive_mutex {};
-auto __listeners__ = trace_listener_collection {make_shared<default_trace_listener>()};
+auto __listeners__ = trace_listener_collection {xtd::new_sptr<default_trace_listener>()};
 auto __debug_use_debug_global_lock__ = true;
 
 trace_listener_collection& debug::listeners_ = __listeners__;

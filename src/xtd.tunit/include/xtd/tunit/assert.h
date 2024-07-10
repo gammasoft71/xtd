@@ -1552,7 +1552,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1 = xtd::new_sptr<std::string>("Anything");
       /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1); // test ok.
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assert_error exception.
@@ -1565,7 +1565,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1 = xtd::new_sptr<std::string>("Anything");
       /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, csf_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, csf_); // test throws an assert_error exception.
@@ -1578,7 +1578,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1 = xtd::new_sptr<std::string>("Anything");
       /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assert_error exception.
@@ -1592,7 +1592,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1 = xtd::new_sptr<std::string>("Anything");
       /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message...", csf_); // test throws an assert_error exception.
@@ -1608,7 +1608,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1); // test ok.
@@ -1621,7 +1621,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, csf_); // test ok.
@@ -1634,7 +1634,7 @@ namespace xtd {
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
@@ -1648,7 +1648,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message...", csf_); // test ok.
@@ -1853,7 +1853,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// std::optional<std::string> s1;
-      /// std::optional<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// std::optional<std::string> s2 = xtd::new_sptr<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
@@ -1941,7 +1941,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s1;
-      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2 = xtd::new_sptr<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1); // test ok.
       /// xtd::tunit::assert::is_null(s2); // test throws an assert_error exception.
       /// ```
@@ -1954,7 +1954,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s1;
-      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2 = xtd::new_sptr<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, csf_); // test ok.
       /// xtd::tunit::assert::is_null(s2, csf_); // test throws an assert_error exception.
       /// ```
@@ -1967,7 +1967,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s1;
-      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2 = xtd::new_sptr<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
@@ -1981,7 +1981,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s1;
-      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2 = xtd::new_sptr<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message...", csf_); // test throws an assert_error exception.
       /// ```
@@ -1997,7 +1997,7 @@ namespace xtd {
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assert::is_null(s1); // test throws an assert_error exception.
@@ -2011,7 +2011,7 @@ namespace xtd {
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assert::is_null(s1, csf_); // test throws an assert_error exception.
@@ -2025,7 +2025,7 @@ namespace xtd {
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assert::is_null(s1, "User message..."); // test throws an assert_error exception.
@@ -2040,7 +2040,7 @@ namespace xtd {
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assert::is_null(s1, "User message...", csf_); // test throws an assert_error exception.

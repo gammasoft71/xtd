@@ -10,11 +10,11 @@ struct texture_brush::data {
   drawing::image image_;
 };
 
-texture_brush::texture_brush(const drawing::image& image) : data_(std::make_shared<data>()) {
+texture_brush::texture_brush(const drawing::image& image) : data_(xtd::new_sptr<data>()) {
   this->image(image);
 }
 
-texture_brush::texture_brush() : data_(std::make_shared<data>()) {
+texture_brush::texture_brush() : data_(xtd::new_sptr<data>()) {
 }
 
 texture_brush& texture_brush::operator =(const texture_brush& value) {

@@ -18,7 +18,7 @@ struct command_link_button::data {
   ustring text;
 };
 
-command_link_button::command_link_button() : data_ {make_shared<data>()} {
+command_link_button::command_link_button() : data_ {xtd::new_sptr<data>()} {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   text_align(content_alignment::middle_left);

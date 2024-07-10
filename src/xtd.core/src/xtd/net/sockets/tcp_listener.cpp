@@ -16,7 +16,7 @@ struct tcp_listener::data {
   bool active = false;
 };
 
-tcp_listener::tcp_listener(const ip_end_point& local_end_point) : data_(make_shared<tcp_listener::data>()) {
+tcp_listener::tcp_listener(const ip_end_point& local_end_point) : data_(xtd::new_sptr<tcp_listener::data>()) {
   data_->local_end_point = local_end_point;
   data_->server_socket = socket(data_->local_end_point.address_family(), socket_type::stream, protocol_type::tcp);
   data_->server_socket.set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::reuse_address, true);
@@ -58,7 +58,7 @@ xtd::net::sockets::tcp_client tcp_listener::accept_tcp_client() {
 }
 
 xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callback callback, const std::any& state) {
-  auto ar = make_shared<async_result_accept_socket>(state);
+  auto ar = xtd::new_sptr<async_result_accept_socket>(state);
   auto operation_thread = thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_socket> ar, xtd::async_callback callback) {
     try {
       ar->socket_ = listener->accept_socket();
@@ -74,7 +74,7 @@ xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callb
 }
 
 xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::async_callback callback, const std::any& state) {
-  auto ar = make_shared<async_result_accept_tcp_client>(state);
+  auto ar = xtd::new_sptr<async_result_accept_tcp_client>(state);
   auto operation_thread = thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_tcp_client> ar, xtd::async_callback callback) {
     try {
       ar->tcp_client_ = listener->accept_tcp_client();

@@ -16,7 +16,7 @@ struct group_box::data {
   xtd::forms::flat_style flat_style = xtd::forms::flat_style::system;
 };
 
-group_box::group_box() : data_(std::make_shared<data>()) {
+group_box::group_box() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   if (application::system_controls()) data_->flat_style = xtd::forms::flat_style::system;

@@ -13,10 +13,10 @@ struct flat_button_appearance::data {
   std::optional<xtd::drawing::color> mouse_over_back_color;
 };
 
-flat_button_appearance::flat_button_appearance() : data_(std::make_shared<data>()) {
+flat_button_appearance::flat_button_appearance() : data_(xtd::new_sptr<data>()) {
 }
 
-flat_button_appearance::flat_button_appearance(const flat_button_appearance& other) : data_(std::make_shared<data>()) {
+flat_button_appearance::flat_button_appearance(const flat_button_appearance& other) : data_(xtd::new_sptr<data>()) {
   *data_ = *other.data_;
 }
 

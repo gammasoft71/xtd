@@ -14,7 +14,7 @@ struct folder_browser_dialog::data {
   size_t options =  BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
 };
 
-folder_browser_dialog::folder_browser_dialog() : data_(std::make_shared<data>()) {
+folder_browser_dialog::folder_browser_dialog() : data_(xtd::new_sptr<data>()) {
 }
 
 bool folder_browser_dialog::auto_upgrade_enable() const noexcept {

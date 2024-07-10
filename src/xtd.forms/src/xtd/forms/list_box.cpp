@@ -26,7 +26,7 @@ struct list_box::data {
   bool sorted = false;
 };
 
-list_box::list_box() : data_(std::make_shared<data>()) {
+list_box::list_box() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::standard_click | control_styles::use_text_for_accessibility, false);

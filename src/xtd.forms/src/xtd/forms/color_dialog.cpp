@@ -14,7 +14,7 @@ struct color_dialog::data {
   xtd::ustring title;
 };
 
-color_dialog::color_dialog() : data_(std::make_shared<data>()) {
+color_dialog::color_dialog() : data_(xtd::new_sptr<data>()) {
 }
 
 bool color_dialog::alpha_color() const noexcept {

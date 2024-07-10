@@ -78,7 +78,7 @@ ustring system_exception::stack_trace_to_string() const noexcept {
 
 system_exception::system_exception(const ustring& message, const std::exception* inner_exception, const std::error_code& error, const ustring& help_link, const xtd::diagnostics::stack_frame& information) : message_(message), error_(error), help_link_(help_link), information_(information) {
   if (inner_exception) inner_exception_ = *inner_exception;
-  if (enable_stack_trace_) stack_trace_ = std::make_shared<xtd::diagnostics::stack_trace>(0, true);
+  if (enable_stack_trace_) stack_trace_ = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
   //if (!stack_trace_.size()) stack_trace_.push_back(information_.to_string());
 }
 

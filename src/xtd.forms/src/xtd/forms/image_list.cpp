@@ -17,7 +17,7 @@ struct image_list::data {
 
 image_list image_list::empty;
 
-image_list::image_list() : data_(std::make_shared<data>()) {
+image_list::image_list() : data_(xtd::new_sptr<data>()) {
   data_->handle_ = native::image_list::create(data_->image_size_);
   data_->images_.item_added += [&](size_t pos, drawing::image & item) {
     if (data_->image_size_ != item.size()) item = drawing::bitmap(item, data_->image_size_);

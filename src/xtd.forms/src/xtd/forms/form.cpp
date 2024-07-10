@@ -53,7 +53,7 @@ struct form::data {
 
 std::optional<form_ref> form::active_form_;
 
-form::form() : data_(std::make_shared<data>()) {
+form::form() : data_(xtd::new_sptr<data>()) {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   data_->icon = system_icons::xtd_forms_logo();
   set_state(state::visible, false);
@@ -348,7 +348,7 @@ control& form::visible(bool visible) {
   std::optional<forms::form_window_state> current_window_state;
   if (!data_->previous_screen) {
     current_window_state = data_->window_state;
-    data_->previous_screen = std::make_shared<screen>(screen::from_control(*this));
+    data_->previous_screen = xtd::new_sptr<screen>(screen::from_control(*this));
     recreate_handle();
   }
   
@@ -523,7 +523,7 @@ bool form::pre_process_message(const xtd::forms::message& message) {
 forms::dialog_result form::show_dialog() {
   data_->closed = false;
   set_state(state::modal, true);
-  data_->previous_screen = std::make_shared<screen>(screen::from_control(*this));
+  data_->previous_screen = xtd::new_sptr<screen>(screen::from_control(*this));
   recreate_handle();
   data_->dialog_result = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
@@ -537,7 +537,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
   if (owner.handle() != handle()) set_parent(owner.handle());
-  data_->previous_screen = std::make_shared<screen>(screen::from_control(*this));
+  data_->previous_screen = xtd::new_sptr<screen>(screen::from_control(*this));
   recreate_handle();
   data_->dialog_result = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
@@ -574,7 +574,7 @@ void form::show_sheet(const iwin32_window& owner) {
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
   if (owner.handle() != handle()) set_parent(owner.handle());
-  data_->previous_screen = std::make_shared<screen>(screen::from_control(*this));
+  data_->previous_screen = xtd::new_sptr<screen>(screen::from_control(*this));
   recreate_handle();
   data_->dialog_result = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
@@ -587,7 +587,7 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   data_->parent_before_show_dialog = parent().has_value() ? parent().value().get().handle() : 0;
   set_state(state::modal, true);
   if (owner.handle() != handle()) set_parent(owner.handle());
-  data_->previous_screen = std::make_shared<screen>(screen::from_control(*this));
+  data_->previous_screen = xtd::new_sptr<screen>(screen::from_control(*this));
   recreate_handle();
   data_->dialog_result = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);  

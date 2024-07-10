@@ -44,7 +44,7 @@ struct check_box::data {
   xtd::forms::visual_styles::check_box_state state = xtd::forms::visual_styles::check_box_state::unchecked_normal;
 };
 
-check_box::check_box() : data_(std::make_shared<data>()) {
+check_box::check_box() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
   text_align(content_alignment::middle_left);
 }

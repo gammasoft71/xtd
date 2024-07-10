@@ -15,7 +15,7 @@ struct xtd_about_dialog::data {
   text_box text_reports_text_box;
 };
 
-xtd_about_dialog::xtd_about_dialog() : data_(std::make_shared<data>()) {
+xtd_about_dialog::xtd_about_dialog() : data_(xtd::new_sptr<data>()) {
   data_->informations_tag_page.text("Informations");
 
   data_->dialog.icon(properties::resources::xtd());

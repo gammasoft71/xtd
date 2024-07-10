@@ -17,7 +17,7 @@ struct collapsible_panel::data {
   bool expanded = false;
 };
 
-collapsible_panel::collapsible_panel() : data_(std::make_shared<data>()) {
+collapsible_panel::collapsible_panel() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_auto_size_mode(forms::auto_size_mode::grow_and_shrink);

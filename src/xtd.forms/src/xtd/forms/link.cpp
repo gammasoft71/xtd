@@ -15,21 +15,21 @@ struct xtd::forms::link::data {
   bool active = false;
 };
 
-xtd::forms::link::link() : data_(std::make_shared<data>()) {
+xtd::forms::link::link() : data_(xtd::new_sptr<data>()) {
 }
 
-xtd::forms::link::link(size_t start, size_t length) : data_(std::make_shared<data>()) {
+xtd::forms::link::link(size_t start, size_t length) : data_(xtd::new_sptr<data>()) {
   data_->length = length;
   data_->start = start;
 }
 
-xtd::forms::link::link(size_t start, size_t length, std::any link_data) : data_(std::make_shared<data>()) {
+xtd::forms::link::link(size_t start, size_t length, std::any link_data) : data_(xtd::new_sptr<data>()) {
   data_->length = length;
   data_->link_data = link_data;
   data_->start = start;
 }
 
-xtd::forms::link::link(const link& value) : data_(std::make_shared<data>()) {
+xtd::forms::link::link(const link& value) : data_(xtd::new_sptr<data>()) {
   *data_ = *value.data_;
 }
 

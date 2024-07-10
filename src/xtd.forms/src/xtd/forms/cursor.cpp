@@ -25,7 +25,7 @@ struct cursor::data {
 
 cursor cursor::none(0, false, "none");
 
-cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) : data_(make_shared<data>()) {
+cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) : data_(xtd::new_sptr<data>()) {
   data_->handle_ = handle;
   data_->destroyable_ = destroyable;
   data_->name_ = name;
@@ -33,7 +33,7 @@ cursor::cursor(intptr handle, bool destroyable, const xtd::ustring& name) : data
   data_->size_ = native::cursor::size(data_->handle_);
 }
 
-cursor::cursor() : data_(make_shared<data>()) {
+cursor::cursor() : data_(xtd::new_sptr<data>()) {
   data_->handle_ = native::cursor::create();
   data_->hot_spot_ = native::cursor::hot_spot(data_->handle_);
   data_->size_ = native::cursor::size(data_->handle_);
@@ -42,7 +42,7 @@ cursor::cursor() : data_(make_shared<data>()) {
 cursor::cursor(intptr handle) : cursor(handle, false, ustring::empty_string) {
 }
 
-cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) : data_(make_shared<data>()) {
+cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) : data_(xtd::new_sptr<data>()) {
   data_->handle_ = native::cursor::create(bitmap, hot_spot);
   data_->hot_spot_ = hot_spot;
   data_->size_ = native::cursor::size(data_->handle_);

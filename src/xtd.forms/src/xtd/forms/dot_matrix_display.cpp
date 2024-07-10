@@ -15,7 +15,7 @@ struct dot_matrix_display::data {
   std::optional<int32> thickness;
 };
 
-dot_matrix_display::dot_matrix_display() : data_(std::make_shared<data>()) {
+dot_matrix_display::dot_matrix_display() : data_(xtd::new_sptr<data>()) {
   auto_size(true);
   double_buffered(true);
 }

@@ -25,7 +25,7 @@ struct combo_box::data {
   //bool user_set_size = false;
 };
 
-combo_box::combo_box() : data_(std::make_shared<data>()) {
+combo_box::combo_box() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint | control_styles::use_text_for_accessibility | control_styles::standard_click, false);

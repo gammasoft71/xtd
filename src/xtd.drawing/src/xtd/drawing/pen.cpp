@@ -40,11 +40,11 @@ pen::pen(const drawing::color& color, float width) : pen(solid_brush(color), wid
   data_->color = color;
 }
 
-pen::pen() : data_(std::make_shared<data>()) {
+pen::pen() : data_(xtd::new_sptr<data>()) {
   recreate_handle();
 }
 
-pen::pen(const pen& value) : data_(std::make_shared<data>()) {
+pen::pen(const pen& value) : data_(xtd::new_sptr<data>()) {
   if (data_.use_count() == 1 && data_->handle_ != 0) native::pen::destroy(data_->handle_);
   data_ = value.data_;
 }
@@ -202,7 +202,7 @@ void pen::color_(const xtd::drawing::color& color) {
 }
 
 void pen::create_data() {
-  data_ = std::make_shared<data>();
+  data_ = xtd::new_sptr<data>();
 }
 
 void pen::recreate_handle() {

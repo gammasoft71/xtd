@@ -11,17 +11,17 @@ struct find_event_args::data {
   bool whole_word = false;
 };
 
-find_event_args::find_event_args() : data_(make_shared<data>()) {
+find_event_args::find_event_args() : data_(xtd::new_sptr<data>()) {
 }
 
-find_event_args::find_event_args(const xtd::ustring& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word) : data_(make_shared<data>()) {
+find_event_args::find_event_args(const xtd::ustring& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word) : data_(xtd::new_sptr<data>()) {
   data_->find_string = find_string;
   data_->match_case = match_case;
   data_->search_direction = search_direction;
   data_->whole_word = whole_word;
 }
 
-find_event_args::find_event_args(const find_event_args& other) : data_(make_shared<data>()) {
+find_event_args::find_event_args(const find_event_args& other) : data_(xtd::new_sptr<data>()) {
   *data_ = *other.data_;
 }
 

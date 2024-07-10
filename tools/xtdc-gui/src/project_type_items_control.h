@@ -77,7 +77,7 @@ namespace xtdc_gui {
       };
       
       for (auto item : project_type_items) {
-        auto item_control = std::make_shared<project_type_item_control>(item);
+        auto item_control = xtd::new_sptr<project_type_item_control>(item);
         item_control->parent(*this);
         item_control->dock(xtd::forms::dock_style::top);
         item_control->tag(project_type_item_controls_.size());

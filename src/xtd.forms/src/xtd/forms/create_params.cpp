@@ -15,10 +15,10 @@ struct create_params::data {
   drawing::size size;
 };
 
-create_params::create_params() : data_(std::make_shared<data>()) {
+create_params::create_params() : data_(xtd::new_sptr<data>()) {
 }
 
-create_params::create_params(const create_params& other) : data_(std::make_shared<data>()) {
+create_params::create_params(const create_params& other) : data_(xtd::new_sptr<data>()) {
   *data_ = *other.data_;
 }
 

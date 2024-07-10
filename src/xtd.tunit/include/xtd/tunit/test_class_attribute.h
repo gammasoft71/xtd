@@ -28,7 +28,7 @@ namespace xtd {
       /// @{
       /// @brief Creates a new instance of test_class_attribute with specified name.
       /// @param name The name of the test class attribute.
-      explicit test_class_attribute(const xtd::ustring& name) noexcept {xtd::tunit::unit_test::add({name, std::make_shared<test_class_t>()});}
+      explicit test_class_attribute(const xtd::ustring& name) noexcept {xtd::tunit::unit_test::add({name, xtd::new_sptr<test_class_t>()});}
       /// @}
     };
   }

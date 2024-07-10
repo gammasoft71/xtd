@@ -30,7 +30,7 @@ struct replace_dialog::data {
   bool whole_word = false;
 };
 
-replace_dialog::replace_dialog() : data_(std::make_shared<data>()) {
+replace_dialog::replace_dialog() : data_(xtd::new_sptr<data>()) {
   data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 

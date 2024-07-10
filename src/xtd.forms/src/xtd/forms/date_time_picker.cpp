@@ -19,7 +19,7 @@ struct date_time_picker::data {
   date_time value = date_time::now();
 };
 
-date_time_picker::date_time_picker() : data_(std::make_shared<data>()) {
+date_time_picker::date_time_picker() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::fixed_height, true);

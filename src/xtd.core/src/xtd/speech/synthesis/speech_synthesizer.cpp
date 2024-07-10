@@ -17,7 +17,7 @@ struct speech_synthesizer::data {
   xtd::speech::synthesis::prompt* used_prompt = &prompt;
 };
 
-speech_synthesizer::speech_synthesizer() : data_(std::make_shared<data>()) {
+speech_synthesizer::speech_synthesizer() : data_(xtd::new_sptr<data>()) {
   data_->handle = native::speech_synthesizer::create();
 }
 

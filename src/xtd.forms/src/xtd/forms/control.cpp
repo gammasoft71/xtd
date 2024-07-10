@@ -62,11 +62,11 @@ namespace {
 
 struct control::async_result_invoke::data {
   std::any async_state;
-  xtd::sptr<bool> is_completed = std::make_shared<bool>(false);
-  xtd::sptr<xtd::threading::manual_reset_event> async_event = std::make_shared<xtd::threading::manual_reset_event>();
+  xtd::sptr<bool> is_completed = xtd::new_sptr<bool>(false);
+  xtd::sptr<xtd::threading::manual_reset_event> async_event = xtd::new_sptr<xtd::threading::manual_reset_event>();
 };
 
-control::async_result_invoke::async_result_invoke(std::any async_state) : data_(std::make_shared<data>()) {
+control::async_result_invoke::async_result_invoke(std::any async_state) : data_(xtd::new_sptr<data>()) {
   data_->async_state = async_state;
 }
 
@@ -184,7 +184,7 @@ struct control::data {
   xtd::ustring text;
 };
 
-control::control() : data_(std::make_shared<data>()) {
+control::control() : data_(xtd::new_sptr<data>()) {
   static auto id = 1u;
   data_->id = id++;
   if (application::system_controls()) data_->control_appearance = xtd::forms::control_appearance::system;
@@ -884,7 +884,7 @@ async_result control::begin_invoke(delegate<void()> method) {
 }
 
 async_result control::begin_invoke(delegate<void(vector<any>)> method, const vector<any>& args) {
-  xtd::sptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
+  xtd::sptr<async_result_invoke> async = xtd::new_sptr<async_result_invoke>(std::reference_wrapper(*this));
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_event, async->data_->is_completed);
   threading::thread::yield();
   return async;

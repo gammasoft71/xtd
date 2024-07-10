@@ -20,7 +20,7 @@ struct spin_lock::data {
 spin_lock::spin_lock() : spin_lock(false) {
 }
 
-spin_lock::spin_lock(bool enable_thread_owner_tracking) : data_(std::make_shared<data>()) {
+spin_lock::spin_lock(bool enable_thread_owner_tracking) : data_(xtd::new_sptr<data>()) {
   data_->enable_thread_owner_tracking = enable_thread_owner_tracking;
   data_->flag.clear();
 }

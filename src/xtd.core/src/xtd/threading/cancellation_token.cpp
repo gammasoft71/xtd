@@ -26,7 +26,7 @@ bool cancellation_token::is_cancellation_requested() const noexcept {
 
 threading::wait_handle& cancellation_token::wait_handle() noexcept {
   if (token_source_) return token_source_->wait_handle();
-  if (!wait_handle_) wait_handle_ = std::make_shared<manual_reset_event>();
+  if (!wait_handle_) wait_handle_ = xtd::new_sptr<manual_reset_event>();
   return *wait_handle_;
 }
 

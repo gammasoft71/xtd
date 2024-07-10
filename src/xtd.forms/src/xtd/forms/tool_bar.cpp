@@ -56,7 +56,7 @@ struct tool_bar::data {
   bool wrappable = false;
 };
 
-tool_bar::tool_bar() : data_(std::make_shared<data>()) {
+tool_bar::tool_bar() : data_(xtd::new_sptr<data>()) {
   data_->buttons.item_added += {*this, &tool_bar::on_item_added};
   data_->buttons.item_updated += {*this, &tool_bar::on_item_updated};
   data_->buttons.item_removed += {*this, &tool_bar::on_item_removed};
@@ -575,7 +575,7 @@ void tool_bar::fill() {
       data_->system_tool_bar_button_handles.push_back(control_handle);
       button_item.data_->rectangle = drawing::rectangle(native::tool_bar::tool_bar_item_rectangle(handle(), control_handle));
     } else {
-      auto button_control = std::make_shared<tool_bar_button_control>();
+      auto button_control = xtd::new_sptr<tool_bar_button_control>();
       button_item.data_->handle = reinterpret_cast<intptr>(button_control.get());
       button_control->parent(*this);
       button_control->tool_bar_button(button_item);
