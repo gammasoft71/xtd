@@ -104,6 +104,10 @@ namespace xtd {
   template<>
   inline std::string to_string(const std::weak_ordering& value, const std::string& fmt, const std::locale& loc);
 #endif
+  template<typename value_t>
+  inline std::string to_string(const value_t* value, const std::string& fmt, const std::locale& loc);
+  template<typename value_t>
+  inline std::string to_string(value_t* const value, const std::string& fmt, const std::locale& loc);
   template<typename type_t>
   inline std::string to_string(const std::shared_ptr<type_t>& value, const std::string& fmt, const std::locale& loc);
   template<typename type_t>
@@ -359,7 +363,7 @@ struct __enum_or_polymorphic_ostream__<char_t, type_t, std::true_type> {
 template <typename char_t, typename type_t>
 struct __enum_or_polymorphic_ostream__<char_t, type_t, std::false_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
-    __enum_ostream__<char, type_t, typename std::conditional<std::is_enum<type_t>::value, std::true_type, std::false_type>::type>().to_stream(os, value);
+    __enum_ostream__<char, type_t, typename std::is_enum<type_t>::type>().to_stream(os, value);
     return os;
   }
 };
@@ -368,7 +372,7 @@ template<typename value_t>
 std::string __format_stringer_to_std_string(const value_t& value) {
   std::basic_stringstream<char> ss;
   //ss << value;
-  __enum_or_polymorphic_ostream__<char, value_t, typename std::conditional<std::is_polymorphic<value_t>::value, std::true_type, std::false_type>::type>().to_stream(ss, value);
+  __enum_or_polymorphic_ostream__<char, value_t, typename std::is_polymorphic<value_t>::type>().to_stream(ss, value);
   return ss.str();
 }
 
