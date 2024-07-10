@@ -21,7 +21,7 @@ struct numeric_up_down::data {
   bool wrapped = false;
 };
 
-numeric_up_down::numeric_up_down() : data_(std::make_shared<data>()) {
+numeric_up_down::numeric_up_down() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
 }
@@ -394,8 +394,8 @@ forms::create_params numeric_up_down::create_params() const noexcept {
   return create_params;
 }
 
-unique_ptr<xtd::object> numeric_up_down::clone() const {
-  auto result = make_unique<numeric_up_down>(*this);
+xtd::uptr<xtd::object> numeric_up_down::clone() const {
+  auto result = xtd::new_uptr<numeric_up_down>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
@@ -404,8 +404,8 @@ void numeric_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
   native::numeric_up_down::decimal_place(handle(), data_->decimal_place);
   native::numeric_up_down::increment(handle(), data_->increment);
-  native::numeric_up_down::maximum(handle(), data_->maximum);
   native::numeric_up_down::minimum(handle(), data_->minimum);
+  native::numeric_up_down::maximum(handle(), data_->maximum);
   native::numeric_up_down::value(handle(), data_->value);
 }
 
