@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::zqual_to struct.
+/// @brief Contains xtd::collections::generic::equal_to struct.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/object>>
