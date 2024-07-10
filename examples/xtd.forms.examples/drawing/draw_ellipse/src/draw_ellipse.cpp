@@ -2,6 +2,7 @@
 #include <xtd/forms/form>
 
 using namespace xtd::drawing;
+using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
 
 namespace draw_ellipe_example {
