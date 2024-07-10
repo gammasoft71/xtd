@@ -82,7 +82,7 @@ void vertical_control_layout_style::height(float height) {
 }
 
 bool vertical_control_layout_style::equals(const vertical_control_layout_style& value) const noexcept {
-  return height_ == value.height_ && control_layout_style::equals(value);
+  return height_ == value.height_ && as<control_layout_style>(*this).equals(as<control_layout_style>(value));
 }
 
 xtd::ustring vertical_control_layout_style::to_string() const noexcept {
