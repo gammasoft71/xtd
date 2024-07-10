@@ -83,7 +83,7 @@ void horizontal_control_layout_style::width(float width) {
 }
 
 bool horizontal_control_layout_style::equals(const horizontal_control_layout_style& value) const noexcept {
-  return width_ == value.width_ && control_layout_style::equals(value);
+  return width_ == value.width_ && as<control_layout_style>(*this).equals(as<control_layout_style>(value));
 }
 
 ustring horizontal_control_layout_style::to_string() const noexcept {
