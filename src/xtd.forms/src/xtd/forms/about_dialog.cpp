@@ -258,7 +258,7 @@ namespace {
 }
 
 struct about_dialog::data {
-  shared_ptr<about_dialog_standard> dialog;
+  xtd::sptr<about_dialog_standard> dialog;
   forms::dialog_appearance dialog_appearance = forms::dialog_appearance::standard;
   intptr handle = 0;
   image icon;

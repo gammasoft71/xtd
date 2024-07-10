@@ -285,7 +285,7 @@ namespace xtd {
       void wm_mouse_down(message& message);
       void wm_mouse_up(message& message);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

@@ -154,7 +154,7 @@ namespace xtd {
     private:
       void arrange_children();
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

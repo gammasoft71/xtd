@@ -242,12 +242,12 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @par Examples
     /// ```cpp
-    /// const std::shared_ptr<button> value = std::make_shared<xtd::forms::button>();
-    /// const std::shared_ptr<control> result = as<xtd::forms::control>(value);
+    /// const xtd::sptr<button> value = std::make_shared<xtd::forms::button>();
+    /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
-    static std::shared_ptr<new_type_t> to_shared_ptr(const std::shared_ptr<current_type_t>& value) {
+    static xtd::sptr<new_type_t> to_shared_ptr(const xtd::sptr<current_type_t>& value) {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
@@ -264,11 +264,11 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @par Examples
     /// ```cpp
-    /// std::shared_ptr<control> result = as<xtd::forms::control>(std::make_shared<xtd::forms::button>());
+    /// xtd::sptr<control> result = as<xtd::forms::control>(std::make_shared<xtd::forms::button>());
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
-    static std::shared_ptr<new_type_t> to_shared_ptr(std::shared_ptr<current_type_t>& value) {
+    static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>& value) {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
@@ -285,12 +285,12 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @par Examples
     /// ```cpp
-    /// const std::shared_ptr<button> value = std::make_shared<xtd::forms::button>();
-    /// const std::shared_ptr<control> result = as<xtd::forms::control>(value);
+    /// const xtd::sptr<button> value = std::make_shared<xtd::forms::button>();
+    /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
-    static std::shared_ptr<new_type_t> to_shared_ptr(std::shared_ptr<current_type_t>&& value) {
+    static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>&& value) {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {

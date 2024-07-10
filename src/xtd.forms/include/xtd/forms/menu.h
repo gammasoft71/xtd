@@ -187,7 +187,7 @@ namespace xtd {
       virtual void destroy_menu();
       void recreate_menu();
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
       static std::map<intptr, std::reference_wrapper<menu>> handles_;
       /// @endcond
     };

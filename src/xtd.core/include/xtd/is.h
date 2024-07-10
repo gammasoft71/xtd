@@ -467,7 +467,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<typename new_type_t, typename current_type_t>
-  bool is(std::shared_ptr<current_type_t>& value) {
+  bool is(xtd::sptr<current_type_t>& value) {
     auto result = std::dynamic_pointer_cast<new_type_t>(value);
     if (result) return true;
     return false;

@@ -231,7 +231,7 @@ namespace xtd {
         friend class xtd::drawing::graphics;
         explicit matrix(intptr handle);
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
     }
   }

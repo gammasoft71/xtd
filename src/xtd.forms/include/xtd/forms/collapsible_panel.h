@@ -277,7 +277,7 @@ namespace xtd {
       control& size(const xtd::drawing::size& size) override;
       void wm_command_control(message& message);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

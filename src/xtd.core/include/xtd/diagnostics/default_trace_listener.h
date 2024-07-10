@@ -43,7 +43,7 @@ namespace xtd {
       /// trace::listeners().erase(trace::listeners().begin());
       ///
       /// // Create and add a new default trace listener.
-      /// shared_ptr<default_trace_listener> default_listener = make_shared<default_trace_listener>();
+      /// xtd::sptr<default_trace_listener> default_listener = make_shared<default_trace_listener>();
       /// trace::listeners().push_back(default_listener);
       ///
       /// // Assign the log file specification from the command line, if entered.
@@ -100,7 +100,7 @@ namespace xtd {
       /// The following code example creates a new xtd::diagnostics::default_trace_listener, adds it to the xtd::diagnostics::trace::listeners collection, and sets the xtd::diagnostics::default_trace_listener::log_file_name property to the log file specified in the command-line arguments.
       /// ```cpp
       /// // Create and add a new default trace listener.
-      /// shared_ptr<default_trace_listener> default_listener = make_shared<default_trace_listener>();
+      /// xtd::sptr<default_trace_listener> default_listener = make_shared<default_trace_listener>();
       /// trace::listeners().push_back(default_listener);
       ///
       /// // Assign the log file specification from the command line, if entered.
@@ -114,7 +114,7 @@ namespace xtd {
       /// The following code example creates a new xtd::diagnostics::default_trace_listener, adds it to the xtd::diagnostics::trace::listeners collection, and sets the xtd::diagnostics::default_trace_listener::log_file_name property to the log file specified in the command-line arguments.
       /// ```cpp
       /// // Create and add a new default trace listener.
-      /// shared_ptr<default_trace_listener> default_listener = make_shared<default_trace_listener>();
+      /// xtd::sptr<default_trace_listener> default_listener = make_shared<default_trace_listener>();
       /// trace::listeners().push_back(default_listener);
       ///
       /// // Assign the log file specification from the command line, if entered.

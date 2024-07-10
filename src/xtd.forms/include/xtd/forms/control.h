@@ -136,7 +136,7 @@ namespace xtd {
         bool completed_synchronously() const noexcept override;
         bool is_completed() const noexcept override;
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
       /// @endcond
       
@@ -2273,7 +2273,7 @@ namespace xtd {
       static std::map<intptr, control*> handles_;
       static control_collection top_level_controls_;
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

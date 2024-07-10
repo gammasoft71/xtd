@@ -290,7 +290,7 @@ namespace xtd {
       virtual bool run_file_dialog(intptr hwnd_owner) = 0;
       virtual void run_file_sheet(intptr hwnd_owner) = 0;
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

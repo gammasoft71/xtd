@@ -232,7 +232,7 @@ namespace xtd {
       void set_option(size_t flag, bool value);
       void recreate_dialog();
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

@@ -49,7 +49,7 @@ namespace keycodes {
     xtd::forms::menu_item help_about_menu_item_ {xtd::drawing::texts::about(), {*this, &main_form::show_about_dialog}, xtd::forms::menu_images::help_about()};
     xtd::forms::menu_item help_menu_item_ {xtd::drawing::texts::help(), {help_about_menu_item_}};
     xtd::forms::main_menu main_menu_ {file_menu_item_, help_menu_item_};
-    std::vector<std::shared_ptr<xtd::forms::control>> key_controls_;
+    std::vector<xtd::sptr<xtd::forms::control>> key_controls_;
     bool handled_key_press_ = false;  // used to prevent receive more than one WM_CHAR event.
   };
 }

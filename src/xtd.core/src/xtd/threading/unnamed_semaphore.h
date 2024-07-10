@@ -63,5 +63,5 @@ private:
     std::atomic<int32> maximum_count = std::numeric_limits<int>::max();
     std::counting_semaphore<int32_object::max_value> semaphore {0};
   };
-  std::shared_ptr<data> handle_;
+  xtd::sptr<data> handle_;
 };

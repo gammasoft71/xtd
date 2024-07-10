@@ -40,5 +40,5 @@ public:
   }
   
 private:
-  std::shared_ptr<intptr> handle_;
+  xtd::sptr<intptr> handle_;
 };

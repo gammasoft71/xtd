@@ -15,11 +15,11 @@ const ustring& assembly_name_attribute::name() const noexcept {
   return name_;
 }
 
-shared_ptr<object> assembly_name_attribute::get_type_id() const noexcept {
+xtd::sptr<object> assembly_name_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
 
-shared_ptr<xtd::reflection::assembly_name_attribute>& __assembly_name_attribute__() {
-  static auto title = shared_ptr<xtd::reflection::assembly_name_attribute> {};
+xtd::sptr<xtd::reflection::assembly_name_attribute>& __assembly_name_attribute__() {
+  static auto title = xtd::sptr<xtd::reflection::assembly_name_attribute> {};
   return title;
 }

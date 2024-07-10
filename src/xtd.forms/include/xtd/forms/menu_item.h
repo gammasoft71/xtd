@@ -357,7 +357,7 @@ namespace xtd {
       /// @}
       
     private:
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

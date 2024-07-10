@@ -160,7 +160,7 @@ namespace xtd {
         friend xtd::io::directory;
         friend xtd::io::directory_info;
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
       
       /// @brief Represent file iterator used by xtd::io::directory_info.
@@ -195,7 +195,7 @@ namespace xtd {
         friend xtd::io::directory;
         friend xtd::io::directory_info;
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
       
       /// @brief Represent file system iterator used by xtd::io::directory_info.
@@ -206,10 +206,10 @@ namespace xtd {
       public:
         /// @cond
         using iterator_category = std::input_iterator_tag;
-        using value_type = std::shared_ptr<xtd::io::file_system_info>;
-        using difference_type = std::shared_ptr<xtd::io::file_system_info>;
-        using pointer = std::shared_ptr<xtd::io::file_system_info>* ;
-        using reference = std::shared_ptr<xtd::io::file_system_info>& ;
+        using value_type = xtd::sptr<xtd::io::file_system_info>;
+        using difference_type = xtd::sptr<xtd::io::file_system_info>;
+        using pointer = xtd::sptr<xtd::io::file_system_info>* ;
+        using reference = xtd::sptr<xtd::io::file_system_info>& ;
         
         file_system_info_iterator();
         file_system_info_iterator(const file_system_info_iterator&) = default;
@@ -230,7 +230,7 @@ namespace xtd {
         friend xtd::io::directory;
         friend xtd::io::directory_info;
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
       
       /// @name Public Fields
@@ -1072,7 +1072,7 @@ namespace xtd {
       ///       }
       ///
       ///       // Call the GetFileSystemInfos method.
-      ///       std::vector<std::shared_ptr<file_system_info>> infos = dir.get_file_system_infos();
+      ///       std::vector<xtd::sptr<file_system_info>> infos = dir.get_file_system_infos();
       ///
       ///       console::write_line("Working...");
       ///
@@ -1089,16 +1089,16 @@ namespace xtd {
       ///   }
       ///
       /// private:
-      ///   static void list_directories_and_files(std::vector<std::shared_ptr<file_system_info>> fs_info) {
+      ///   static void list_directories_and_files(std::vector<xtd::sptr<file_system_info>> fs_info) {
       ///     // Iterate through each item.
-      ///     for (std::shared_ptr<file_system_info> i : fs_info) {
+      ///     for (xtd::sptr<file_system_info> i : fs_info) {
       ///       // Check to see if this is a directory_info object.
       ///       if (is<directory_info>(i)) {
       ///         // Add one to the directory count.
       ///         directories++;
       ///
       ///         // Cast the object to a directory_info object.
-      ///         std::shared_ptr<directory_info> d_info = as<directory_info>(i);
+      ///         xtd::sptr<directory_info> d_info = as<directory_info>(i);
       ///
       ///         // Iterate through all sub-directories.
       ///         list_directories_and_files(d_info->get_file_system_infos());
@@ -1127,7 +1127,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<std::shared_ptr<xtd::io::file_system_info>> get_file_system_infos() const;
+      std::vector<xtd::sptr<xtd::io::file_system_info>> get_file_system_infos() const;
       /// @brief Retrieves an array of strongly typed FileSystemInfo objects representing the files and subdirectories that match the specified search criteria.
       /// @param search_pattern The search string to match against the names of directories and files. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An array of strongly typed xtd::io::file_system_info entries.
@@ -1161,7 +1161,7 @@ namespace xtd {
       ///       }
       ///
       ///       // Call the GetFileSystemInfos method.
-      ///       std::vector<std::shared_ptr<file_system_info>> infos = dir.get_file_system_infos(search_string);
+      ///       std::vector<xtd::sptr<file_system_info>> infos = dir.get_file_system_infos(search_string);
       ///
       ///       console::write_line("Working...");
       ///
@@ -1178,16 +1178,16 @@ namespace xtd {
       ///   }
       ///
       /// private:
-      ///   static void list_directories_and_files(std::vector<std::shared_ptr<file_system_info>> fs_info, const ustring& search_string) {
+      ///   static void list_directories_and_files(std::vector<xtd::sptr<file_system_info>> fs_info, const ustring& search_string) {
       ///     // Iterate through each item.
-      ///     for (std::shared_ptr<file_system_info> i : fs_info) {
+      ///     for (xtd::sptr<file_system_info> i : fs_info) {
       ///       // Check to see if this is a directory_info object.
       ///       if (is<directory_info>(i)) {
       ///         // Add one to the directory count.
       ///         directories++;
       ///
       ///         // Cast the object to a directory_info object.
-      ///         std::shared_ptr<directory_info> d_info = as<directory_info>(i);
+      ///         xtd::sptr<directory_info> d_info = as<directory_info>(i);
       ///
       ///         // Iterate through all sub-directories.
       ///         list_directories_and_files(d_info->get_file_system_infos(search_string), search_string);
@@ -1222,7 +1222,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<std::shared_ptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::ustring& search_pattern) const;
+      std::vector<xtd::sptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::ustring& search_pattern) const;
       
       /// @brief Moves a DirectoryInfo instance and its contents to a new path.
       /// @param dest_dir_name The name and path to which to move this directory. The destination cannot be another disk volume or a directory with the identical name. It can be an existing directory to which you want to add this directory as a subdirectory.

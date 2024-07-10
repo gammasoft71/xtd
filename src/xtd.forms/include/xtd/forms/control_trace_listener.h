@@ -85,7 +85,7 @@ namespace xtd {
       /// @{
       /// @brief Create new control_trace_listener.
       /// @return New created trace listener.
-      static std::shared_ptr<xtd::diagnostics::trace_listener> create(xtd::forms::icontrol_trace& control_trace) {return std::make_shared<control_trace_listener>(control_trace);}
+      static xtd::sptr<xtd::diagnostics::trace_listener> create(xtd::forms::icontrol_trace& control_trace) {return std::make_shared<control_trace_listener>(control_trace);}
       /// @}
       
     private:

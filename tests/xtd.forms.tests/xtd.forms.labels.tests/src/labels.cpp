@@ -14,7 +14,7 @@ using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
 
 class labels_form : public form {
-  using label_ptr_t = shared_ptr<label>;
+  using label_ptr_t = xtd::sptr<label>;
   using labels_t = vector<label_ptr_t>;
   
 public:

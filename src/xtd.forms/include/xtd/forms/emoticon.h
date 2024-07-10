@@ -146,7 +146,7 @@ namespace xtd {
       std::vector<char32>& codepoints_();
       void codepoints_(std::vector<char32>&& codepoints);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

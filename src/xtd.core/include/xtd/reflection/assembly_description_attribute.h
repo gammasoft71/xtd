@@ -48,7 +48,7 @@ namespace xtd {
       /// @}
       
     protected:
-      std::shared_ptr<object> get_type_id() const noexcept override;
+      xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
       ustring description_;
@@ -57,7 +57,7 @@ namespace xtd {
 }
 
 /// @cond
-std::shared_ptr<xtd::reflection::assembly_description_attribute>& __assembly_description_attribute__();
+xtd::sptr<xtd::reflection::assembly_description_attribute>& __assembly_description_attribute__();
 /// @endcond
 
 /// @brief Sets the assembly description information. Must be called once in your application.

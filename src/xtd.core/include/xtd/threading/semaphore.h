@@ -213,8 +213,8 @@ namespace xtd {
 
     private:
       void create(int32 initial_count, int32 maximum_count, bool& created_new);
-      std::shared_ptr<semaphore_base> semaphore_;
-      std::shared_ptr<data> data_;
+      xtd::sptr<semaphore_base> semaphore_;
+      xtd::sptr<data> data_;
     };
   }
 }

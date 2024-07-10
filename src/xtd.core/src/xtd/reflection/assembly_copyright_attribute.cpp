@@ -15,11 +15,11 @@ const ustring& assembly_copyright_attribute::copyright() const noexcept {
   return copyright_;
 }
 
-shared_ptr<object> assembly_copyright_attribute::get_type_id() const noexcept {
+xtd::sptr<object> assembly_copyright_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
 
-shared_ptr<xtd::reflection::assembly_copyright_attribute>& __assembly_copyright_attribute__() {
-  static auto copyright = shared_ptr<xtd::reflection::assembly_copyright_attribute> {};
+xtd::sptr<xtd::reflection::assembly_copyright_attribute>& __assembly_copyright_attribute__() {
+  static auto copyright = xtd::sptr<xtd::reflection::assembly_copyright_attribute> {};
   return copyright;
 }

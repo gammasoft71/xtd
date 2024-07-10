@@ -172,7 +172,7 @@ namespace xtd {
       void on_dialog_find(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool whole_word, bool match_case);
       void on_dialog_replace(const xtd::drawing::point& location, const ustring& find_string, const ustring& replace_string, bool replace_all, bool whole_word, bool match_case);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

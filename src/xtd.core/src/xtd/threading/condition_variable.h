@@ -28,5 +28,5 @@ public:
   bool wait(const monitor::critical_section& critical_section, int32 milliseconds_timeout) {return xtd::native::condition_variable::wait(*handle_, critical_section.handle(), milliseconds_timeout);}
   
 private:
-  std::shared_ptr<intptr> handle_;
+  xtd::sptr<intptr> handle_;
 };

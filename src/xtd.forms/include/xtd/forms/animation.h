@@ -216,7 +216,7 @@ namespace xtd {
     private:
       void on_frames_timer_tick(object& timer, const xtd::event_args& e);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

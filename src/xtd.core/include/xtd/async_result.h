@@ -16,5 +16,5 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to use xtd::async_result.
   /// @include iasync_result.cpp
-  using async_result = std::shared_ptr<xtd::iasync_result>;
+  using async_result = xtd::sptr<xtd::iasync_result>;
 }

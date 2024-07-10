@@ -1391,7 +1391,7 @@ namespace xtd {
       graphics(intptr handle, const drawing::region& region);
       void draw_image_disabled(const xtd::drawing::image& image, float x, float y, float width, float height, float brightness);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

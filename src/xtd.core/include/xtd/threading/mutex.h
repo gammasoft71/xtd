@@ -195,7 +195,7 @@ namespace xtd {
     private:
       friend class thread;
       void create(bool initially_owned, bool& created_new);
-      std::shared_ptr<mutex_base> mutex_;
+      xtd::sptr<mutex_base> mutex_;
       ustring name_;
     };
   }

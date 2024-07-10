@@ -515,7 +515,7 @@ namespace xtd {
         static style_sheet_names_t style_sheet_names_;
         static style_sheet system_style_sheet_;
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
     }
   }

@@ -109,7 +109,7 @@ namespace xtd {
   template<typename value_t>
   inline std::string to_string(value_t* const value, const std::string& fmt, const std::locale& loc);
   template<typename type_t>
-  inline std::string to_string(const std::shared_ptr<type_t>& value, const std::string& fmt, const std::locale& loc);
+  inline std::string to_string(const xtd::sptr<type_t>& value, const std::string& fmt, const std::locale& loc);
   template<typename type_t>
   inline std::string to_string(const xtd::uptr<type_t>& value, const std::string& fmt, const std::locale& loc);
   template<>

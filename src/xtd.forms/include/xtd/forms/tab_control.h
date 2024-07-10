@@ -297,7 +297,7 @@ namespace xtd {
       
       void wm_command_control(message& message);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

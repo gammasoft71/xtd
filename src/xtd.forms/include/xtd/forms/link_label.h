@@ -420,7 +420,7 @@ namespace xtd {
       void on_links_link_removed(size_t pos, const link& link);
       void on_links_link_updated(size_t pos, const link& link);
 
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

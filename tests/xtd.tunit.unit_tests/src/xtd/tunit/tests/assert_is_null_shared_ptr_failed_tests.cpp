@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(assert_is_null_shared_ptr_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      std::shared_ptr<int> p = std::make_shared<int>(42);
+      xtd::sptr<int> p = std::make_shared<int>(42);
       xtd::tunit::assert::is_null(p);
     }
   };

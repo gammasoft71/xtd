@@ -64,5 +64,5 @@ private:
     bool manual_reset = false;
     std::binary_semaphore semaphore {0};
   };
-  std::shared_ptr<data> handle_;
+  xtd::sptr<data> handle_;
 };

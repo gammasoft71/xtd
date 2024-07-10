@@ -169,7 +169,7 @@ namespace xtd {
       bool get_option(size_t flag) const noexcept;
       void set_option(size_t flag, bool value);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

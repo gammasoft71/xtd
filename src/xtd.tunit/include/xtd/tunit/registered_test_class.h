@@ -25,15 +25,15 @@ namespace xtd {
       /// @brief Creates a new registered_test_class instance.
       /// @param name The name associate to the test_class.
       /// @remarks The name is the name of the test class displayed when running the tests.
-      registered_test_class(const xtd::ustring& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept;
+      registered_test_class(const xtd::ustring& name, xtd::sptr<xtd::tunit::test_class> test_class) noexcept;
       /// @}
       
     private:
       friend class xtd::tunit::unit_test;
       
-      const std::shared_ptr<xtd::tunit::test_class>& test() const noexcept;
+      const xtd::sptr<xtd::tunit::test_class>& test() const noexcept;
       
-      std::shared_ptr<xtd::tunit::test_class> tc_;
+      xtd::sptr<xtd::tunit::test_class> tc_;
     };
   }
 }

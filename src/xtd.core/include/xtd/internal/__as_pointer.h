@@ -147,12 +147,12 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// const std::shared_ptr<button> value = std::make_shared<xtd::forms::button>();
-  /// const std::shared_ptr<control> result = as<xtd::forms::control>(value);
+  /// const xtd::sptr<button> value = std::make_shared<xtd::forms::button>();
+  /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
-  std::shared_ptr<new_type_t> as(const std::shared_ptr<current_type_t>& value) {
+  xtd::sptr<new_type_t> as(const xtd::sptr<current_type_t>& value) {
     return xtd::convert_pointer::to_shared_ptr<new_type_t>(value);
   }
   
@@ -168,11 +168,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::shared_ptr<control> result = as<xtd::forms::control>(std::make_shared<xtd::forms::button>());
+  /// xtd::sptr<control> result = as<xtd::forms::control>(std::make_shared<xtd::forms::button>());
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
-  std::shared_ptr<new_type_t> as(std::shared_ptr<current_type_t>& value) {
+  xtd::sptr<new_type_t> as(xtd::sptr<current_type_t>& value) {
     return xtd::convert_pointer::to_shared_ptr<new_type_t>(value);
   }
   
@@ -188,12 +188,12 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// const std::shared_ptr<button> value = std::make_shared<xtd::forms::button>();
-  /// const std::shared_ptr<control> result = as<xtd::forms::control>(value);
+  /// const xtd::sptr<button> value = std::make_shared<xtd::forms::button>();
+  /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
-  std::shared_ptr<new_type_t> as(std::shared_ptr<current_type_t>&& value) {
+  xtd::sptr<new_type_t> as(xtd::sptr<current_type_t>&& value) {
     return xtd::convert_pointer::to_shared_ptr<new_type_t>(value);
   }
 }

@@ -177,7 +177,7 @@ namespace xtd {
     private:
       explicit icon(const bitmap& bitmap);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

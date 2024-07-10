@@ -56,7 +56,7 @@ namespace xtd::tests {
       }
 
     private:
-      std::shared_ptr<std::recursive_timed_mutex> mutex_ = std::make_shared<std::recursive_timed_mutex>();
+      xtd::sptr<std::recursive_timed_mutex> mutex_ = std::make_shared<std::recursive_timed_mutex>();
       bool locked_ = false;
     };
     

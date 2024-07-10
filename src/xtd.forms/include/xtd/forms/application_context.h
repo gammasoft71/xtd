@@ -106,7 +106,7 @@ namespace xtd {
       virtual void on_main_form_closed(object& sender, const event_args& e);
       
     private:
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

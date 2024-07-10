@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(valid_is_null_weak_ptr_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      std::shared_ptr<int> i = std::make_shared<int>(42);
+      xtd::sptr<int> i = std::make_shared<int>(42);
       std::weak_ptr<int> p = i;
       xtd::tunit::valid::is_null(p);
     }

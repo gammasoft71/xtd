@@ -181,7 +181,7 @@ namespace xtd {
     private:
       void create(bool initial_state, bool& created_new);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

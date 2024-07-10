@@ -159,7 +159,7 @@ namespace xtd {
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
       cursor(intptr handle, bool destroyable, const xtd::ustring& name);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

@@ -116,7 +116,7 @@ namespace xtd {
         class async_result_receive_from : public async_result_socket {
         public:
           explicit async_result_receive_from(std::any async_state) : async_result_socket(async_state) {}
-          std::shared_ptr<xtd::net::end_point> end_point_;
+          xtd::sptr<xtd::net::end_point> end_point_;
           size_t number_of_bytes_received_ = 0;
         };
         
@@ -124,7 +124,7 @@ namespace xtd {
         class async_result_receive_message_from : public async_result_socket {
         public:
           explicit async_result_receive_message_from(std::any async_state) : async_result_socket(async_state) {}
-          std::shared_ptr<xtd::net::end_point> end_point_;
+          xtd::sptr<xtd::net::end_point> end_point_;
           xtd::net::sockets::socket_flags socket_flags_ = xtd::net::sockets::socket_flags::none;
           size_t number_of_bytes_received_ = 0;
           xtd::net::sockets::ip_packet_information ip_packet_information_;
@@ -348,7 +348,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::socket::local_end_point property gets an xtd::net::end_point that contains the local IP address and port number to which your xtd::net::sockets::socket is bound. You must cast this xtd::net::end_point to an xtd::net::ip_end_point before retrieving any information. You can then call the xtd::net::ip_end_point::address method to retrieve the local xtd::net::ip_address, and the xtd::net::ip_end_point::port method to retrieve the local port number.
         /// @remarks The xtd::net::sockets::socket::local_end_point property is usually set after you make a call to the xtd::net::sockets::socket::bind method. If you allow the system to assign your socket's local IP address and port number, the xtd::net::sockets::socket::local_end_point property will be set after the first I/O operation. For connection-oriented protocols, the first I/O operation would be a call to the xtd::net::sockets::socket::connect or xtd::net::sockets::socket::accept method. For connectionless protocols, the first I/O operation would be any of the send or receive calls.
-        std::shared_ptr<xtd::net::end_point> local_end_point() const;
+        xtd::sptr<xtd::net::end_point> local_end_point() const;
         
         /// @brief Gets a value that specifies whether outgoing multicast packets are delivered to the sending application.
         /// @return true if the xtd::net::sockets::socket receives outgoing multicast packets; otherwise, false.
@@ -433,7 +433,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks If you are using a connection-oriented protocol, the xtd::net::sockets::socket::remote_end_point property gets the xtd::net::sockets::end_point that contains the remote IP address and port number to which the xtd::net::sockets::socket is connected. If you are using a connectionless protocol, xtd::net::sockets::socket::remote_end_point contains the default remote IP address and port number with which the xtd::net::sockets::socket will communicate. You must cast this xtd::net::end_point to an xtd::net::ip_end_point before retrieving any information. You can then call the xtd::net::ip_end_point::address method to retrieve the remote xtd::net::ip_address, and the xtd::net::ip_end_point::port method to retrieve the remote port number.
         /// @remarks The xtd::net::sockets::socket::remote_end_point is set after a call to either xtd::net::sockets::socket::accept or xtd::net::sockets::socket::connect. If you try to access this property earlier, xtd::net::sockets::socket::remote_end_point will throw a xtd::net::sockets::socket_exception. If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
-        std::shared_ptr<xtd::net::end_point> remote_end_point() const;
+        xtd::sptr<xtd::net::end_point> remote_end_point() const;
         
         /// @brief Gets a value that specifies the size of the send buffer of the xtd::net::sockets::socket.
         /// @return An size_t that contains the size, in bytes, of the send buffer. The default is 8192.
@@ -558,7 +558,7 @@ namespace xtd {
         /// @remarks To cancel a pending call to the xtd::net::sockets::socket::begin_accept method, close the xtd::net::sockets::socket::socket. When the xtd::sockets::socket::close method is called while an asynchronous operation is in progress, the callback provided to the xtd::net::sockets::socket::begin_accept method is called. A subsequent call to the xtd::net::sockets::socket::end_accept method will throw an xtd::object_closed_exception to indicate that the operation has been cancelled.
         /// @note You can use the xtd::net::sockets::socket::remote_end_point property of the returned xtd::net::sockets::socket::socket to identify the remote host's network address and port number.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_accept(xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_accept(xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins an asynchronous request for a remote host connection.
         /// @param remote_end_point An xtd::net::end_point that represents the remote host.
@@ -576,7 +576,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note If this socket has previously been disconnected, then xtd::net::sockets::socket::begin_connect must be called on a thread that will not exit until the operation is complete. This is a limitation of the underlying provider.
         template<typename end_point_t>
-        std::shared_ptr<xtd::iasync_result> begin_connect(const end_point_t& remote_end_point, xtd::async_callback callback, const std::any& state) {
+        xtd::sptr<xtd::iasync_result> begin_connect(const end_point_t& remote_end_point, xtd::async_callback callback, const std::any& state) {
           return begin_connect_(std::make_shared<end_point_t>(remote_end_point), callback, state);
         }
         /// @brief Begins an asynchronous request for a remote host connection. The host is specified by an xtd::net::ip_address and a port number.
@@ -592,7 +592,7 @@ namespace xtd {
         /// @remarks To cancel a pending call to the xtd::net::sockets::socket::begin_connect method, close the xtd::net::sockets::socket::socket. When the xtd::net::sockets::socket::socket::close method is called while an asynchronous operation is in progress, the callback provided to the xtd::net::sockets::socket::begin_connect method is called. A subsequent call to the xtd::net::sockets::socket::end_connect method will throw an xtd::object_closed_exception to indicate that the operation has been cancelled.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note If this socket has previously been disconnected, then xtd::net::sockets::socket::begin_connect must be called on a thread that will not exit until the operation is complete. This is a limitation of the underlying provider. Also the xtd::net::end_point that is used must be different.
-        std::shared_ptr<xtd::iasync_result> begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const std::any& state);
         /// @brief Begins an asynchronous request for a remote host connection. The host is specified by an xtd::net::ip_address array and a port number.
         /// @param addresses At least one xtd::net::ip_address, designating the remote host.
         /// @param port The port number of the remote host.
@@ -606,7 +606,7 @@ namespace xtd {
         /// @remarks To cancel a pending call to the xtd::net::sockets::socket::begin_connect method, close the xtd::net::sockets::socket::socket. When the xtd::net::sockets::socket::socket::close method is called while an asynchronous operation is in progress, the callback provided to the xtd::net::sockets::socket::begin_connect method is called. A subsequent call to the xtd::net::sockets::socket::end_connect method will throw an xtd::object_closed_exception to indicate that the operation has been cancelled.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note If this socket has previously been disconnected, then xtd::net::sockets::socket::begin_connect must be called on a thread that will not exit until the operation is complete. This is a limitation of the underlying provider. Also the xtd::net::end_point that is used must be different.
-        std::shared_ptr<xtd::iasync_result> begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state);
         /// @brief Begins an asynchronous request for a remote host connection. The host is specified by a host name and a port number.
         /// @param host The name of the remote host.
         /// @param port The port number of the remote host.
@@ -620,7 +620,7 @@ namespace xtd {
         /// @remarks To cancel a pending call to the xtd::net::sockets::socket::begin_connect method, close the xtd::net::sockets::socket::socket. When the xtd::net::sockets::socket::socket::close method is called while an asynchronous operation is in progress, the callback provided to the xtd::net::sockets::socket::begin_connect method is called. A subsequent call to the xtd::net::sockets::socket::end_connect method will throw an xtd::object_closed_exception to indicate that the operation has been cancelled.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note If this socket has previously been disconnected, then xtd::net::sockets::socket::begin_connect must be called on a thread that will not exit until the operation is complete. This is a limitation of the underlying provider. Also the xtd::net::end_point that is used must be different.
-        std::shared_ptr<xtd::iasync_result> begin_connect(const xtd::ustring& host, uint16 port, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_connect(const xtd::ustring& host, uint16 port, xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins an asynchronous request to disconnect from a remote endpoint.
         /// @param reuse_socket true if this socket can be reused after the connection is closed; otherwise, false.
@@ -632,7 +632,7 @@ namespace xtd {
         /// @remarks If you are using a connection-oriented protocol, you can call the xtd::net::sockets::socket::begin_disconnect method to request a disconnect from a remote endpoint. If reuse_socket is true, you can reuse the socket.
         /// @remarks The xtd::net::sockets::socket::begin_disconnect method uses a separate thread to invoke the specified callback method. The xtd::net::sockets::socket::end_disconnect method blocks until the pending disconnect is complete.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_disconnect(bool reuse_socket, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_disconnect(bool reuse_socket, xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins to asynchronously receive data from a connected xtd::net::sockets::socket::socket.
         /// @param buffer An array of type xtd::byte that is the storage location for the received data.
@@ -651,7 +651,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note state is an instantiation of a user-defined class.
-        std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
         /// @brief Begins to asynchronously receive data from a connected xtd::net::sockets::socket::socket.
         /// @param buffer An array of type xtd::byte that is the storage location for the received data.
         /// @param offset The zero-based position in the buffer parameter at which to store the received data.
@@ -670,7 +670,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note state is an instantiation of a user-defined class.
-        std::shared_ptr<xtd::iasync_result> begin_receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_receive(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins to asynchronously receive data from a specified network device.
         /// @param buffer An array of type xtd::byte that is the storage location for the received data.
@@ -694,7 +694,7 @@ namespace xtd {
         /// @remarks With connection-oriented sockets, xtd::net::sockets::socket::begin_receive_from will read as much data as is available up to the number of bytes specified by the size parameter.
         /// @remarks To cancel a pending xtd::net::sockets::socket::begin_receive_from, call the xtd::net::sockets::socket::socket::close method.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_receive_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_receive_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins to asynchronously receive the specified number of bytes of data into the specified location of the data buffer, using the specified xtd::net::sockets::socket_flags, and stores the endpoint and packet information.
         /// @param buffer An array of type xtd::byte that is the storage location for the received data.
@@ -713,7 +713,7 @@ namespace xtd {
         /// @remarks To cancel a pending xtd::net::sockets::socket::begin_receive_message_from, call the xtd::net::sockets::socket::socket::close method.
         /// @remarks This method reads data into the buffer parameter, and captures the remote host endpoint from which the data is sent, as well as information about the received packet. For information on how to retrieve this endpoint, refer to xtd::net::sockets::socket::end_receive_from. This method is most useful if you intend to asynchronously receive connectionless datagrams from an unknown host or multiple hosts.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_receive_message_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_receive_message_from(std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
         
         /// @brief Sends data asynchronously to a connected xtd::net::sockets::socket::socket.
         /// @param buffer An array of type xtd::byte that contains the data to send.
@@ -735,7 +735,7 @@ namespace xtd {
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note state is an instantiation of a user-defined class.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
-        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state);
         /// @brief Sends data asynchronously to a connected xtd::net::sockets::socket::socket.
         /// @param buffer An array of type xtd::byte that contains the data to send.
         /// @param offset The zero-based position in the buffer parameter at which to begin sending data.
@@ -757,7 +757,7 @@ namespace xtd {
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note state is an instantiation of a user-defined class.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
-        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state);
         
         /// @brief Sends data asynchronously to a specific remote host.
         /// @param buffer An array of type xtd::byte that contains the data to send.
@@ -779,7 +779,7 @@ namespace xtd {
         /// @remarks If you want to send data to a broadcast address, you must first call the xtd::net::sockets::socket::set_socket_option method and set the socket option to xtd::net::sockets::socket::socket_option_name::broadcast. -You must also be sure that the size of your buffer does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and xtd::net::sockets::socket::end_send_to will throw a xtd::net::sockets::socket_exception.
         /// @remarks If you specify the xtd::net::sockets::socket_flags::dont_route flag as the socket_flags parameter, the data you are sending will not be routed.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_send_to(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_send_to(const std::vector<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state);
         
         /// @brief Associates a xtd::net::sockets::socket with a local endpoint.
         /// @param localEndPoint The local xtd::net::sockets::end_point to associate with the xtd::net::sockets::socket.
@@ -874,7 +874,7 @@ namespace xtd {
         /// @remarks Within the callback method, call the xtd::iasync_result::async_state method of the asyncResult parameter to obtain the xtd::net::sockets::socket::socket on which the connection attempt is being made. After obtaining the xtd::net::sockets::socket::socket, you can call the xtd::net::sockets::socket::end_accept method to successfully complete the connection attempt.
         /// @remarks The xtd::net::sockets::socket::end_accept method blocks until a connection is pending in the incoming connection queue. The xtd::net::sockets::socket::end_accept method accepts the incoming connection and returns a new xtd::net::sockets::socket::socket that can be used to send data to and receive data from the remote host.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        socket end_accept(std::shared_ptr<xtd::iasync_result> async_result);
+        socket end_accept(xtd::sptr<xtd::iasync_result> async_result);
         
         /// @brief Ends a pending asynchronous connection request.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
@@ -885,7 +885,7 @@ namespace xtd {
         /// @remarks Before calling xtd::net::sockets::socket::begin_connect, you need to create a callback method that implements the xtd::async_callback delegate. This callback method executes in a separate thread and is called by the system after xtd::net::sockets::socket::begin_connect returns. The callback method must accept the xtd::iasync_result returned by the xtd::net::sockets::socket::begin_connect method as a parameter.
         /// @remarks Within the callback method, call the xtd::iasync_result::async_state method of the xtd::iasync_result parameter to obtain the xtd::net::sockets::socket::socket on which the connection attempt is being made. After obtaining the xtd::net::sockets::socket::socket, you can call the xtd::net::sockets::socket::end_connect method to successfully complete the connection attempt.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void end_connect(std::shared_ptr<xtd::iasync_result> async_result);
+        void end_connect(xtd::sptr<xtd::iasync_result> async_result);
         
         /// @brief Ends a pending asynchronous disconnect request.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
@@ -894,7 +894,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks xtd::net::sockets::socket::end_disconnect completes a call to xtd::net::sockets::socket::begin_disconnect. The xtd::net::sockets::socket::end_disconnect method blocks until the disconnect completes. For information about asynchronous operations, see Asynchronous Programming Model (APM).
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void end_disconnect(std::shared_ptr<xtd::iasync_result> async_result);
+        void end_disconnect(xtd::sptr<xtd::iasync_result> async_result);
         
         /// @brief Ends a pending asynchronous read.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
@@ -910,7 +910,7 @@ namespace xtd {
         /// @remarks To cancel a pending xtd::net::sockets::socket::begin_receive, call the xtd::net::sockets::socket::socket::close method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
-        size_t end_receive(std::shared_ptr<xtd::iasync_result> async_result);
+        size_t end_receive(xtd::sptr<xtd::iasync_result> async_result);
         /// @brief Ends a pending asynchronous read.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
         /// @param error_code A xtd::net::sockets::socket_error object that stores the socket error.
@@ -925,7 +925,7 @@ namespace xtd {
         /// @remarks To obtain the received data, call the xtd::iasync_result::async_state method of the xtd::iasync_result, and extract the buffer contained in the resulting state object.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
-        size_t end_receive(std::shared_ptr<xtd::iasync_result> async_result, xtd::net::sockets::socket_error& error_code);
+        size_t end_receive(xtd::sptr<xtd::iasync_result> async_result, xtd::net::sockets::socket_error& error_code);
         
         /// @brief Ends a pending asynchronous read from a specific endpoint.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
@@ -938,7 +938,7 @@ namespace xtd {
         /// @remarks Within the callback method, call the xtd::iasync_result::async_state method of the xtd::iasync_result to obtain the state object passed to the xtd::net::sockets::socket::begin_receive_from method. Extract the receiving xtd::net::sockets::socket::socket from this state object. After obtaining the xtd::net::sockets::socket::socket, you can call the xtd::net::sockets::socket::end_receive_from method to successfully complete the read operation and return the number of bytes read.
         /// @remarks The xtd::net::sockets::socket::end_receive_from method will block until data is available. If you are using a connectionless protocol, xtd::net::sockets::socket::end_receive_from will read the first enqueued datagram available in the incoming network buffer. If you are using a connection-oriented protocol, the xtd::net::sockets::socket::end_receive_from method will read as much data as is available up to the number of bytes you specified in the size parameter of the xtd::net::sockets::socket::begin_receive_from method. If the remote host shuts down the xtd::net::sockets::socket::socket connection with the Shutdown method, and all available data has been received, the xtd::net::sockets::socket::end_receive_from method will complete immediately and return zero bytes. To obtain the received data, call the xtd::iasync_result::async_state method of the xtd::iasync_result object, and extract the buffer contained in the resulting state object. To identify the originating host, extract the xtd::net::end_point and cast it to an IPEndPoint. Use the IPEndPoint.Address method to obtain the IP address and the IPEndPoint.Port method to obtain the port number.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t end_receive_from(std::shared_ptr<xtd::iasync_result> async_result, std::shared_ptr<xtd::net::end_point>& end_point);
+        size_t end_receive_from(xtd::sptr<xtd::iasync_result> async_result, xtd::sptr<xtd::net::end_point>& end_point);
         
         /// @brief Ends a pending asynchronous read from a specific endpoint. This method also reveals more information about the packet than xtd::net::sockets::socket::end_receive_from(xtd::iasync_result, xtd::net::end_point).
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
@@ -953,7 +953,7 @@ namespace xtd {
         /// @remarks To perform this operation synchronously, use the xtd::net::sockets::socket::receive_message_from method.
         /// @remarks Examine ipPacketInformation if you need to know if the datagram was sent using a unicast, multicast, or broadcast address.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t end_receive_message_from(std::shared_ptr<xtd::iasync_result> async_result, xtd::net::sockets::socket_flags& socket_flags, std::shared_ptr<xtd::net::end_point>& end_point, xtd::net::sockets::ip_packet_information& ip_packet_information);
+        size_t end_receive_message_from(xtd::sptr<xtd::iasync_result> async_result, xtd::net::sockets::socket_flags& socket_flags, xtd::sptr<xtd::net::end_point>& end_point, xtd::net::sockets::ip_packet_information& ip_packet_information);
         
         /// @brief Ends a pending asynchronous send.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
@@ -969,7 +969,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
-        size_t end_send(std::shared_ptr<xtd::iasync_result> async_result);
+        size_t end_send(xtd::sptr<xtd::iasync_result> async_result);
         /// @brief Ends a pending asynchronous send.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
         /// @param error_code A xtd::net::sockets::socket_error object that stores the socket error.
@@ -985,7 +985,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note All I/O initiated by a given thread is canceled when that thread exits. A pending asynchronous operation can fail if the thread exits before the operation completes.
         /// @note The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode.
-        size_t end_send(std::shared_ptr<xtd::iasync_result> async_result, xtd::net::sockets::socket_error& error_code);
+        size_t end_send(xtd::sptr<xtd::iasync_result> async_result, xtd::net::sockets::socket_error& error_code);
         
         /// @brief Ends a pending asynchronous send to a specific location.
         /// @param async_result An xtd::iasync_result that stores state information for this asynchronous operation as well as any user defined data.
@@ -998,7 +998,7 @@ namespace xtd {
         /// @remarks Within the callback method, call the xtd::iasync_result::async_state method of the xtd::iasync_result parameter to obtain the sending xtd::net::sockets::socket::socket. After obtaining the xtd::net::sockets::socket::socket, you can call the xtd::net::sockets::socket::end_send_to method to successfully complete the send operation and return the number of bytes sent.
         /// @remarks If you are using a connectionless protocol, xtd::net::sockets::socket::end_send_to will block until the datagram is sent. If you are using a connection-oriented protocol, xtd::net::sockets::socket::end_send_to will block until the requested number of bytes are sent. There is no guarantee that the data you send will appear on the network immediately. To increase network efficiency, the underlying system may delay transmission until a significant amount of outgoing data is collected. A successful completion of the xtd::net::sockets::socket::begin_send_to method means that the underlying system has had room to buffer your data for a network send.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t end_send_to(std::shared_ptr<xtd::iasync_result> async_result);
+        size_t end_send_to(xtd::sptr<xtd::iasync_result> async_result);
         
         using object::equals;
         bool equals(const socket& s) const noexcept override;
@@ -1561,11 +1561,11 @@ namespace xtd {
 
       private:
         static xtd::net::sockets::socket_error get_last_error_();
-        std::shared_ptr<xtd::iasync_result> begin_connect_(std::shared_ptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const std::any& state);
-        void bind_(std::shared_ptr<xtd::net::end_point> local_end_point);
-        void connect_(std::shared_ptr<xtd::net::end_point> remote_end_point);
+        xtd::sptr<xtd::iasync_result> begin_connect_(xtd::sptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const std::any& state);
+        void bind_(xtd::sptr<xtd::net::end_point> local_end_point);
+        void connect_(xtd::sptr<xtd::net::end_point> remote_end_point);
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
     }
   }

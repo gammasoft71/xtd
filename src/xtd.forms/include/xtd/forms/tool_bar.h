@@ -439,7 +439,7 @@ namespace xtd {
       
       void wm_click(const message& message);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

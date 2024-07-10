@@ -255,7 +255,7 @@ namespace xtd {
         /// @return An xtd::iasync_result object that references the asynchronous receive.
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_receive operation must be completed by calling the xtd::net::sockets::udp_client::end_receive method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation is complete. To block until the operation is complete, use the xtd::net::sockets::udp_client::receive method.
-        std::shared_ptr<xtd::iasync_result> begin_receive(xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_receive(xtd::async_callback callback, const std::any& state);
         
         /// @brief xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by the host name and port number.
         /// @param dgram A byte array that contains the data to be sent.
@@ -267,7 +267,7 @@ namespace xtd {
         /// @return An xtd::iasync_result object that references the asynchronous send.
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_send operation must be completed by calling the xtd::net::sockets::udp_client::end_send method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation is complete. To block until the operation is complete, use one of the xtd::net::sockets::udp_client::send method overloads.
-        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring& hostname, uint16 port, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::ustring& hostname, uint16 port, xtd::async_callback callback, const std::any& state);
         
         /// @brief xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by a EndPoint.
         /// @param dgram A byte array that contains the data to be sent.
@@ -278,7 +278,7 @@ namespace xtd {
         /// @return An xtd::iasync_result object that references the asynchronous send.
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_send operation must be completed by calling the xtd::net::sockets::udp_client::end_send method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation is complete. To block until the operation is complete, use one of the xtd::net::sockets::udp_client::send method overloads.
-        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const std::any& state);
         /// @brief xtd::net::sockets::udp_client::sends a datagram to a remote host asynchronously. The destination was specified previously by a call to xtd::net::sockets::udp_client::connect.
         /// @param dgram A byte array that contains the data to be sent.
         /// @param bytes The number of bytes to send.
@@ -287,7 +287,7 @@ namespace xtd {
         /// @return An xtd::iasync_result object that references the asynchronous send.
         /// @remarks The asynchronous xtd::net::sockets::udp_client::begin_send operation must be completed by calling the xtd::net::sockets::udp_client::end_send method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation is complete, use one of the xtd::net::sockets::udp_client::send method overloads.
-        std::shared_ptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_send(const std::vector<xtd::byte>& dgram, size_t bytes, xtd::async_callback callback, const std::any& state);
         
         /// @brief  Closes the UDP connection
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
@@ -357,7 +357,7 @@ namespace xtd {
         /// @remarks This method blocks until the operation is complete.
         /// @remarks To perform this operation synchronously, use the xtd::net::sockets::udp_client::receive method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::vector<xtd::byte> end_receive(std::shared_ptr<xtd::iasync_result> async_result, xtd::net::ip_end_point& remote_end_point);
+        std::vector<xtd::byte> end_receive(xtd::sptr<xtd::iasync_result> async_result, xtd::net::ip_end_point& remote_end_point);
         
         /// @brief Ends a pending asynchronous send.
         /// @param async_result An xtd::iasync_result object returned by a call to xtd::net::sockets::udp_client::begin_send.
@@ -368,7 +368,7 @@ namespace xtd {
         /// @remarks This method blocks until the operation is complete.
         /// @remarks To perform this operation synchronously, use the xtd::net::sockets::udp_client::send method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        size_t end_send(std::shared_ptr<xtd::iasync_result> async_result);
+        size_t end_send(xtd::sptr<xtd::iasync_result> async_result);
         
         using object::equals;
         bool equals(const udp_client& s) const noexcept override;
@@ -490,7 +490,7 @@ namespace xtd {
       private:
         udp_client(const xtd::net::sockets::socket& socket);
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
     }
   }

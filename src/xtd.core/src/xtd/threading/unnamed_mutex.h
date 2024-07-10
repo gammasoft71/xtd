@@ -48,5 +48,5 @@ public:
   }
   
 private:
-  std::shared_ptr<std::recursive_timed_mutex> handle_;
+  xtd::sptr<std::recursive_timed_mutex> handle_;
 };

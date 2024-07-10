@@ -14,9 +14,9 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 class tool_bars_form : public form {
-  using tool_bar_ptr_t = shared_ptr<forms::tool_bar>;
+  using tool_bar_ptr_t = xtd::sptr<forms::tool_bar>;
   using tool_bars_t = vector<tool_bar_ptr_t>;
-  using tool_bar_button_ptr_t = shared_ptr<tool_bar_button>;
+  using tool_bar_button_ptr_t = xtd::sptr<tool_bar_button>;
   using tool_bar_items_t = vector<tool_bar_button_ptr_t>;
   
 public:

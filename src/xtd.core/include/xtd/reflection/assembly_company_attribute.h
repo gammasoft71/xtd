@@ -46,7 +46,7 @@ namespace xtd {
       /// @}
       
     protected:
-      std::shared_ptr<object> get_type_id() const noexcept override;
+      xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
       ustring company_;
@@ -55,7 +55,7 @@ namespace xtd {
 }
 
 /// @cond
-std::shared_ptr<xtd::reflection::assembly_company_attribute>& __assembly_company_attribute__();
+xtd::sptr<xtd::reflection::assembly_company_attribute>& __assembly_company_attribute__();
 /// @endcond
 
 /// @brief Sets the assembly company information. Must be called once in your application.

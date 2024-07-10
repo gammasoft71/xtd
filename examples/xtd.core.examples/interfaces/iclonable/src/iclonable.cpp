@@ -7,7 +7,7 @@ class foo : public object, public iclonable {
 public:
   explicit foo(int value) : value_ {value} {}
 
-  uptr<xtd::object> clone() const override {return new_uptr<foo>(value_);}
+  uptr<object> clone() const override {return new_uptr<foo>(value_);}
 
   ustring to_string() const noexcept override {return ustring::format("{}", value_);}
 

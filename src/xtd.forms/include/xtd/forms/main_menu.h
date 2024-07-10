@@ -292,7 +292,7 @@ namespace xtd {
     private:
       friend class form;
       void wm_click(message& message);
-      std::vector<std::shared_ptr<menu_item>> standard_menu_items_;
+      std::vector<xtd::sptr<menu_item>> standard_menu_items_;
     };
   }
 }

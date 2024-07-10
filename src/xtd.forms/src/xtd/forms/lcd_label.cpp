@@ -28,7 +28,7 @@ struct lcd_label::data {
   forms::lcd_style lcd_style = forms::lcd_style::seven_segment_display;
   forms::segment_style segment_style = forms::segment_style::standard;
   forms::dot_matrix_style dot_matrix_style = forms::dot_matrix_style::standard;
-  std::vector<std::shared_ptr<idigit>> digits;
+  std::vector<xtd::sptr<idigit>> digits;
   std::optional<int32> thickness;
 };
 
@@ -872,7 +872,7 @@ control& lcd_label::text(const xtd::ustring& value) {
 }
 
 std::vector<char32> lcd_label::valid_characters() {
-  std::shared_ptr<idigit> digit;
+  xtd::sptr<idigit> digit;
   switch (data_->lcd_style) {
     case lcd_style::seven_segment_display: digit = std::make_shared<seven_segment_display_digit>(); break;
     case lcd_style::nine_segment_display: digit = std::make_shared<nine_segment_display_digit>(); break;

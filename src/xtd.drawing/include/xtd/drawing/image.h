@@ -341,7 +341,7 @@ namespace xtd {
       void resize(int32 width, int32 height);
       void update_properties();
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

@@ -117,7 +117,7 @@ namespace xtd {
       static const std::vector<xtd::ustring> enclosed_letters;
       country(const xtd::ustring& name, const xtd::ustring& alpha_2_code, const xtd::ustring& alpha_3_code, int32 numeric_code);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }
