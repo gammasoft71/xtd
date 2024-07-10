@@ -7,6 +7,7 @@
 #include "collections/any_pair.h"
 #include "collections/key_not_found_exception.h"
 #include "collections/vector_list.h"
+#include "collections/generic/equal_to.h"
 #include "collections/specialized/string_map.h"
 #include "collections/specialized/string_pair.h"
 #include "collections/specialized/string_vector.h"

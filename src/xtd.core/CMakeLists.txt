@@ -472,6 +472,8 @@ add_sources(
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
   include/xtd/collections/vector_list
+  include/xtd/collections/generic/equal_to.h
+  include/xtd/collections/generic/equal_to
   include/xtd/collections/specialized/string_map.h
   include/xtd/collections/specialized/string_map
   include/xtd/collections/specialized/string_pair.h
