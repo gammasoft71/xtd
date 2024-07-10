@@ -851,7 +851,7 @@ namespace xtd {
       /// @}
       
     private:
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
       friend __init_process_message_box_message__;
       inline static xtd::delegate<void(const ustring&)> message_box_message_;
     };

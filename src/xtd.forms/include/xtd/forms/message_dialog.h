@@ -160,7 +160,7 @@ namespace xtd {
       /// @remarks This method is invoked when the message dialog box is closed.
       virtual void on_dialog_closed(const dialog_closed_event_args& e);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

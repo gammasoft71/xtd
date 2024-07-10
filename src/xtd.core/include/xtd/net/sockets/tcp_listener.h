@@ -170,7 +170,7 @@ namespace xtd {
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_socket method.
         /// @note You can call the xtd::net::sockets::socket::remote_end_point property of the returned xtd::net::sockets::socket to identify the remote host's network address and port number.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_accept_socket(xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_accept_socket(xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins an asynchronous operation to accept an incoming connection attempt.
         /// @param async_result An xtd::async_callback delegate that references the method to invoke when the operation is complete.
@@ -181,7 +181,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_listener::begin_accept_tcp_client operation must be completed by calling the xtd::net::sockets::tcp_listener::end_accept_tcp_client method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_ccp_client method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_accept_tcp_client(xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_accept_tcp_client(xtd::async_callback callback, const std::any& state);
         
         /// @brief Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host communication.
         /// @param async_result tAn xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_socket(xtd::async_callback, std::any) method.
@@ -192,7 +192,7 @@ namespace xtd {
         /// @remarks This method blocks until the operation is complete. To perform this operation synchronously, use the xtd::net::sockets::tcp_listener::accept_socket method.
         /// @note You can call the xtd::net::sockets::socket::remote_end_point property of the returned xtd::net::sockets::socket to identify the remote host's network address and port number.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::net::sockets::socket end_accept_socket(std::shared_ptr<xtd::iasync_result> async_result);
+        xtd::net::sockets::socket end_accept_socket(xtd::sptr<xtd::iasync_result> async_result);
         
         /// @brief Asynchronously accepts an incoming connection attempt and creates a new xtd::net::sockets::tcp_client to handle remote host communication.
         /// @param async_result An xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_tcp_client(xtd::async_callback, std::any) method.
@@ -204,7 +204,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_listener::begin_accept_tcp_client operation must be completed by calling the xtd::net::sockets::tcp_listener::end_accept_tcp_client method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_tcp_client method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::net::sockets::tcp_client end_accept_tcp_client(std::shared_ptr<xtd::iasync_result> async_result);
+        xtd::net::sockets::tcp_client end_accept_tcp_client(xtd::sptr<xtd::iasync_result> async_result);
         
         using object::equals;
         bool equals(const tcp_listener& s) const noexcept override;
@@ -265,7 +265,7 @@ namespace xtd {
         /// @}
         
       private:
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
     }
   }

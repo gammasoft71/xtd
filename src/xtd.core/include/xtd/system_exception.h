@@ -168,7 +168,7 @@ namespace xtd {
     std::error_code error_;
     xtd::ustring help_link_;
     xtd::diagnostics::stack_frame information_;
-    std::shared_ptr<xtd::diagnostics::stack_trace> stack_trace_;
+    xtd::sptr<xtd::diagnostics::stack_trace> stack_trace_;
   };
 }
 

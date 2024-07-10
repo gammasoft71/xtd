@@ -64,7 +64,7 @@ namespace xtd {
       bool completed_synchronously() const noexcept override;
       bool is_completed() const noexcept override;
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
 
   public:
@@ -349,7 +349,7 @@ namespace xtd {
       if (iterator != end) return iterator;
       return end;
     }
-    std::shared_ptr<data> data_ = std::make_shared<data>();
+    xtd::sptr<data> data_ = std::make_shared<data>();
   };
   
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
@@ -382,7 +382,7 @@ namespace xtd {
       bool completed_synchronously() const noexcept override;
       bool is_completed() const noexcept override;
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
 
   public:
@@ -864,7 +864,7 @@ namespace xtd {
       return end;
     }
     
-    std::shared_ptr<data> data_ = std::make_shared<data>();
+    xtd::sptr<data> data_ = std::make_shared<data>();
   };
 }
 

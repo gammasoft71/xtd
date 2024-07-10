@@ -523,7 +523,7 @@ namespace xtd {
       void wm_recreate(message& message);
       void wm_syscolor_change(message& message);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
       static std::optional<form_ref> active_form_;
     };
   }

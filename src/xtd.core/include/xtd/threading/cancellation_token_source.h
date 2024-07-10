@@ -70,7 +70,7 @@ namespace xtd {
       threading::wait_handle& wait_handle() noexcept;
 
       friend class cancellation_token;
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

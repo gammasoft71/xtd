@@ -90,7 +90,7 @@ namespace xtd {
       /// @}
       
     private:
-      std::shared_ptr<xtd::diagnostics::trace_listener> listener_ = xtd::forms::control_trace_listener::create(*this);
+      xtd::sptr<xtd::diagnostics::trace_listener> listener_ = xtd::forms::control_trace_listener::create(*this);
       bool defined = false;
     };
   }

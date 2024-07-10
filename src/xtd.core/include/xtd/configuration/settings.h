@@ -244,7 +244,7 @@ namespace xtd {
       xtd::ustring read_string(const xtd::ustring& key, const xtd::ustring& default_value);
       void write_string(const xtd::ustring& key, const xtd::ustring& value);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

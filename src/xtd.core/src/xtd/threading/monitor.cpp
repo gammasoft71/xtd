@@ -21,7 +21,7 @@ using namespace xtd::threading;
 
 struct monitor::item {
   monitor::critical_section critical_section;
-  std::shared_ptr<std::atomic<int32>> used_count = std::make_shared<std::atomic<int32>>(0);
+  xtd::sptr<std::atomic<int32>> used_count = std::make_shared<std::atomic<int32>>(0);
   std::optional<ustring> name;
   thread_local_object<intptr> thread_id {[] {return thread::invalid_thread_id;}};
   monitor::condition_variable condition_variable;

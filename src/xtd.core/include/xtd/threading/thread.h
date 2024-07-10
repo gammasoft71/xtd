@@ -45,7 +45,7 @@ namespace xtd {
 
       struct static_data;
 
-      using thread_collection = std::vector<std::shared_ptr<thread>>;
+      using thread_collection = std::vector<xtd::sptr<thread>>;
 
     public:
       /// @name Public Fields
@@ -372,15 +372,15 @@ namespace xtd {
       }
       template<typename item_t>
       static bool join_all(const std::initializer_list<item_t>& threads, const time_span& timeout) {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
-      static bool join_all(const std::initializer_list<std::shared_ptr<thread>>& threads);
-      static bool join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const std::initializer_list<xtd::sptr<thread>>& threads);
+      static bool join_all(const std::initializer_list<xtd::sptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::initializer_list<xtd::sptr<thread>>& threads, const time_span& timeout);
       static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads);
       static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
       static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const std::vector<std::shared_ptr<thread>>& threads);
-      static bool join_all(const std::vector<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const std::vector<std::shared_ptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const std::vector<xtd::sptr<thread>>& threads);
+      static bool join_all(const std::vector<xtd::sptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::vector<xtd::sptr<thread>>& threads, const time_span& timeout);
       static bool join_all(const std::vector<xtd::uptr<thread>>& threads);
       static bool join_all(const std::vector<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
       static bool join_all(const std::vector<xtd::uptr<thread>>& threads, const time_span& timeout);
@@ -416,7 +416,7 @@ namespace xtd {
       static constexpr int32 main_managed_thread_id = 1;
       static constexpr int32 unmanaged_thread_id = 0;
 
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
       static intptr main_thread_id_;
     };
   }

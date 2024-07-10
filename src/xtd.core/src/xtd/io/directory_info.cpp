@@ -257,11 +257,11 @@ vector<file_info> directory_info::get_files(const ustring& pattern) const {
   return {begin(enumerate_files(pattern)), end(enumerate_files(pattern))};
 }
 
-vector<shared_ptr<file_system_info>> directory_info::get_file_system_infos() const {
+vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos() const {
   return get_file_system_infos("*");
 }
 
-vector<shared_ptr<file_system_info>> directory_info::get_file_system_infos(const ustring& pattern) const {
+vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos(const ustring& pattern) const {
   return {begin(enumerate_file_system_infos(pattern)), end(enumerate_file_system_infos(pattern))};
 }
 

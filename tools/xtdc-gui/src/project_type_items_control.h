@@ -162,7 +162,7 @@ namespace xtdc_gui {
       selected_project_type_item_changed(*this, e);
     }
     
-    std::vector<std::shared_ptr<project_type_item_control>> project_type_item_controls_;
+    std::vector<xtd::sptr<project_type_item_control>> project_type_item_controls_;
     size_t previous_selected_index_ = npos;
     size_t selected_index_ = npos;
     project_type_item selected_project_type_item_;

@@ -287,7 +287,7 @@ namespace xtd {
       
     private:
       friend xtd::forms::tool_bar;
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

@@ -691,7 +691,7 @@ namespace xtd {
       void wm_date_changed(xtd::forms::message& message);
       void wm_view_changed(xtd::forms::message& message);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

@@ -41,7 +41,7 @@ struct form::data {
   double opacity = 1.0;
   const control* owner = nullptr;
   intptr parent_before_show_dialog = 0;
-  std::shared_ptr<screen> previous_screen;
+  xtd::sptr<screen> previous_screen;
   bool show_icon = true;
   bool show_in_taskbar = true;
   form_start_position start_position = form_start_position::windows_default_location;

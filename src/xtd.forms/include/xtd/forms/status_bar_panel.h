@@ -273,7 +273,7 @@ namespace xtd {
       
     private:
       friend xtd::forms::status_bar;
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
     
     /// @brief Represents a xtd::forms::status_bar_item reference.

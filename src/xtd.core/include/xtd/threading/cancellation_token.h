@@ -96,7 +96,7 @@ namespace xtd {
 
       bool canceled_ = false;
       cancellation_token_source* token_source_ = nullptr;
-      std::shared_ptr<threading::wait_handle> wait_handle_;
+      xtd::sptr<threading::wait_handle> wait_handle_;
     };
   }
 }

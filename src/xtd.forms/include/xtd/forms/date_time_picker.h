@@ -361,7 +361,7 @@ namespace xtd {
       void wm_nottify_control_dropdown(message& message);
       void wm_nottify_control_datetimechange(message& message);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

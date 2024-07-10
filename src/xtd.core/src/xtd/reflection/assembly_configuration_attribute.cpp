@@ -15,11 +15,11 @@ const ustring& assembly_configuration_attribute::configuration() const noexcept 
   return configuration_;
 }
 
-shared_ptr<object> assembly_configuration_attribute::get_type_id() const noexcept {
+xtd::sptr<object> assembly_configuration_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
 
-shared_ptr<xtd::reflection::assembly_configuration_attribute>& __assembly_configuration_attribute__() {
-  static auto configuration = shared_ptr<xtd::reflection::assembly_configuration_attribute> {};
+xtd::sptr<xtd::reflection::assembly_configuration_attribute>& __assembly_configuration_attribute__() {
+  static auto configuration = xtd::sptr<xtd::reflection::assembly_configuration_attribute> {};
   return configuration;
 }

@@ -188,7 +188,7 @@ namespace xtd {
 
     private:
       void on_elpased(const elapsed_event_args& e);
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

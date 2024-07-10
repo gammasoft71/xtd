@@ -114,7 +114,7 @@ namespace xtd {
       
     private:
     void set_message() noexcept;
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

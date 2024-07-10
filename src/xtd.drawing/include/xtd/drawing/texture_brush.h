@@ -64,7 +64,7 @@ namespace xtd {
     private:
       texture_brush();
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

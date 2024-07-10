@@ -14,7 +14,7 @@ using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
 
 class toggle_buttons_form : public form {
-  using toggle_button_ptr_t = shared_ptr<toggle_button>;
+  using toggle_button_ptr_t = xtd::sptr<toggle_button>;
   using buttons_t = vector<toggle_button_ptr_t>;
   
 public:

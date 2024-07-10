@@ -128,7 +128,7 @@ namespace xtd {
       private:
         friend xtd::io::directory;
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
       
       /// @brief Represent file iterator used by xtd::io::directory.
@@ -159,7 +159,7 @@ namespace xtd {
       private:
         friend xtd::io::directory;
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
       
       /// @brief Represent file system iterator used by xtd::io::directory.
@@ -190,7 +190,7 @@ namespace xtd {
       private:
         friend xtd::io::directory;
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
       
       /// @name Public Static Methods

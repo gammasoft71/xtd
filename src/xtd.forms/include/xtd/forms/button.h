@@ -240,7 +240,7 @@ namespace xtd {
       void auto_repeat_perform_click();
       void on_auto_repeat_timer_tick(object& sender, const event_args& e);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

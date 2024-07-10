@@ -44,7 +44,7 @@ namespace xtd {
       /// @}
       
     protected:
-      std::shared_ptr<object> get_type_id() const noexcept override;
+      xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
       ustring product_;
@@ -53,7 +53,7 @@ namespace xtd {
 }
 
 /// @cond
-std::shared_ptr<xtd::reflection::assembly_product_attribute>& __assembly_product_attribute__();
+xtd::sptr<xtd::reflection::assembly_product_attribute>& __assembly_product_attribute__();
 /// @endcond
 
 /// @brief Sets the assembly product information. Must be called once in your application.

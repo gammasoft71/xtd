@@ -261,7 +261,7 @@ namespace xtd {
       void on_digit_mouse_up(object& sender, const mouse_event_args& e);
       void set_digits_params();
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

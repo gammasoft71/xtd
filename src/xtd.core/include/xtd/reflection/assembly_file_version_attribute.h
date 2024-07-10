@@ -44,7 +44,7 @@ namespace xtd {
       /// @}
       
     protected:
-      std::shared_ptr<object> get_type_id() const noexcept override;
+      xtd::sptr<object> get_type_id() const noexcept override;
       
     private:
       ustring version_;
@@ -53,7 +53,7 @@ namespace xtd {
 }
 
 /// @cond
-std::shared_ptr<xtd::reflection::assembly_file_version_attribute>& __assembly_file_version_attribute__();
+xtd::sptr<xtd::reflection::assembly_file_version_attribute>& __assembly_file_version_attribute__();
 /// @endcond
 
 /// @brief Sets the assembly file version information. Must be called once in your application.

@@ -323,5 +323,5 @@ private:
     this->size(current_size);
   }
   
-  std::shared_ptr<data> data_ = std::make_shared<data>();
+  xtd::sptr<data> data_ = std::make_shared<data>();
 };

@@ -13,10 +13,10 @@ namespace xtd {
   namespace diagnostics {
     /// @brief Represents a collection of xtd::diagnostics::trace_listener.
     /// ```cpp
-    /// class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>
+    /// class core_export_ trace_listener_collection : public std::vector<xtd::sptr<xtd::diagnostics::trace_listener>>
     /// ```
     /// @par Inheritance
-    /// std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>> → xtd::diagnostics::trace_listener_collection
+    /// std::vector<xtd::sptr<xtd::diagnostics::trace_listener>> → xtd::diagnostics::trace_listener_collection
     /// @par Header
     /// ```cpp
     /// #include <xtd/diagnostics/trace_listener_collection>
@@ -26,7 +26,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class core_export_ trace_listener_collection : public std::vector<std::shared_ptr<xtd::diagnostics::trace_listener>>, public xtd::iequatable<trace_listener_collection> {
+    class core_export_ trace_listener_collection : public std::vector<xtd::sptr<xtd::diagnostics::trace_listener>>, public xtd::iequatable<trace_listener_collection> {
     public:
       /// @name Public Aliases
       

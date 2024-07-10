@@ -57,9 +57,9 @@ xtd::net::sockets::tcp_client tcp_listener::accept_tcp_client() {
   return tcp_client(data_->server_socket.accept());
 }
 
-std::shared_ptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callback callback, const std::any& state) {
   auto ar = make_shared<async_result_accept_socket>(state);
-  auto operation_thread = thread {[](tcp_listener * listener, std::shared_ptr<async_result_accept_socket> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_socket> ar, xtd::async_callback callback) {
     try {
       ar->socket_ = listener->accept_socket();
       ar->is_completed_ = true;
@@ -73,9 +73,9 @@ std::shared_ptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async
   return ar;
 }
 
-std::shared_ptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::async_callback callback, const std::any& state) {
   auto ar = make_shared<async_result_accept_tcp_client>(state);
-  auto operation_thread = thread {[](tcp_listener * listener, std::shared_ptr<async_result_accept_tcp_client> ar, xtd::async_callback callback) {
+  auto operation_thread = thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_tcp_client> ar, xtd::async_callback callback) {
     try {
       ar->tcp_client_ = listener->accept_tcp_client();
       ar->is_completed_ = true;
@@ -93,7 +93,7 @@ tcp_listener tcp_listener::create(uint16 port) {
   return tcp_listener(ip_address::any, port);
 }
 
-xtd::net::sockets::socket tcp_listener::end_accept_socket(std::shared_ptr<xtd::iasync_result> async_result) {
+xtd::net::sockets::socket tcp_listener::end_accept_socket(xtd::sptr<xtd::iasync_result> async_result) {
   if (async_result == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_accept_socket>(async_result)) throw argument_exception {csf_};
   async_result->async_wait_handle().wait_one();
@@ -101,7 +101,7 @@ xtd::net::sockets::socket tcp_listener::end_accept_socket(std::shared_ptr<xtd::i
   return as<async_result_accept_socket>(async_result)->socket_;
 }
 
-xtd::net::sockets::tcp_client tcp_listener::end_accept_tcp_client(std::shared_ptr<xtd::iasync_result> async_result) {
+xtd::net::sockets::tcp_client tcp_listener::end_accept_tcp_client(xtd::sptr<xtd::iasync_result> async_result) {
   if (async_result == nullptr) throw argument_null_exception {csf_};
   if (!is<async_result_accept_tcp_client>(async_result)) throw argument_exception {csf_};
   async_result->async_wait_handle().wait_one();

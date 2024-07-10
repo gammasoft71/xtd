@@ -325,7 +325,7 @@ namespace xtd {
       font();
       explicit font(intptr hfont);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

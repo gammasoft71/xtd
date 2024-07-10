@@ -150,5 +150,5 @@ private:
     xtd::ustring tool_tip_text;
   };
   
-  std::shared_ptr<data> data_ = std::make_shared<data>();
+  xtd::sptr<data> data_ = std::make_shared<data>();
 };

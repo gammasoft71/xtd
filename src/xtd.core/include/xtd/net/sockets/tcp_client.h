@@ -257,7 +257,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_client::client::begin_connect operation must be completed by calling the xtd::net::sockets::tcp_client::end_connect method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use one of the xtd::net::sockets::tcp_client::connect method overloads.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const std::any& state);
         /// @brief Begins an asynchronous request for a remote host connection. The remote host is specified by an xtd::net::ip_address array and a port number (uint16).
         /// @param addresses At least one xtd::net::ip_address that designates the remote hosts.
         /// @param port The port number of the remote host.
@@ -269,7 +269,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_client::client::begin_connect operation must be completed by calling the xtd::net::sockets::tcp_client::end_connect method. Typically, the method is invoked by the asyncCallback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use one of the xtd::net::sockets::tcp_client::connect method overloads.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state);
         /// @brief Begins an asynchronous request for a remote host connection. The remote host is specified by a host name (xtd::ustring) and a port number (uint16).
         /// @param host The name of the remote host.
         /// @param port The port number of the remote host.
@@ -281,7 +281,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_client::client::begin_connect operation must be completed by calling the xtd::net::sockets::tcp_client::end_connect method. Typically, the method is invoked by the asyncCallback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use one of the xtd::net::sockets::tcp_client::connect method overloads.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        std::shared_ptr<xtd::iasync_result> begin_connect(const xtd::ustring& host, uint16 port, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_connect(const xtd::ustring& host, uint16 port, xtd::async_callback callback, const std::any& state);
         
         /// @brief Disposes this xtd::net::sockets::tcp_client instance and requests that the underlying TCP connection be closed.
         /// @remarks The xtd::net::sockets::tcp_client::close method marks the instance as disposed and requests that the associated xtd::net::sockets::socket close the TCP connection. Based on the xtd::net::sockets::tcp_client::linger_state property,
@@ -325,7 +325,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks This method blocks until the operation is complete. To perform this operation synchronously, use a xtd::net::sockets::tcp_client::connect method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void end_connect(std::shared_ptr<xtd::iasync_result> async_result);
+        void end_connect(xtd::sptr<xtd::iasync_result> async_result);
         
         using object::equals;
         bool equals(const tcp_client& s) const noexcept override;
@@ -357,7 +357,7 @@ namespace xtd {
         friend tcp_listener;
         explicit tcp_client(const xtd::net::sockets::socket& socket);
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
     }
   }

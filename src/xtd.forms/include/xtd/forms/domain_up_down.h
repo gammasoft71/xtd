@@ -351,7 +351,7 @@ namespace xtd {
       void on_items_item_removed(size_t pos, const item& item);
       void on_items_item_updated(size_t pos, const item& item);
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

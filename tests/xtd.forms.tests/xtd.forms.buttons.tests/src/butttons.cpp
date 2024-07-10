@@ -13,7 +13,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 class buttons_form : public form {
-  using button_ptr_t = shared_ptr<button>;
+  using button_ptr_t = xtd::sptr<button>;
   using buttons_t = vector<button_ptr_t>;
   
 public:

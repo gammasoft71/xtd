@@ -44,9 +44,9 @@ struct status_bar::data {
   bool show_tool_tips = false;
   bool sizing_grip = true;
   panel main_panel;
-  std::shared_ptr<class sizing_grip_control> sizing_grip_control;
-  std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> spring_panels;
-  std::vector<std::shared_ptr<xtd::forms::status_bar::status_bar_panel_control>> status_bar_panels;
+  xtd::sptr<class sizing_grip_control> sizing_grip_control;
+  std::vector<xtd::sptr<xtd::forms::status_bar::status_bar_panel_control>> spring_panels;
+  std::vector<xtd::sptr<xtd::forms::status_bar::status_bar_panel_control>> status_bar_panels;
   std::vector<intptr> system_status_bar_panel_handles;
 };
 

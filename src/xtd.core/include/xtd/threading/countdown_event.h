@@ -167,7 +167,7 @@ namespace xtd {
       /// @}
 
     private:
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
       bool wait_wtih_cancellation_token();
       bool wait_wtih_cancellation_token(int32 milliseconds_timeout);
     };

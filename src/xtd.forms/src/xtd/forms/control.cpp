@@ -62,8 +62,8 @@ namespace {
 
 struct control::async_result_invoke::data {
   std::any async_state;
-  std::shared_ptr<bool> is_completed = std::make_shared<bool>(false);
-  std::shared_ptr<xtd::threading::manual_reset_event> async_event = std::make_shared<xtd::threading::manual_reset_event>();
+  xtd::sptr<bool> is_completed = std::make_shared<bool>(false);
+  xtd::sptr<xtd::threading::manual_reset_event> async_event = std::make_shared<xtd::threading::manual_reset_event>();
 };
 
 control::async_result_invoke::async_result_invoke(std::any async_state) : data_(std::make_shared<data>()) {
@@ -884,7 +884,7 @@ async_result control::begin_invoke(delegate<void()> method) {
 }
 
 async_result control::begin_invoke(delegate<void(vector<any>)> method, const vector<any>& args) {
-  shared_ptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
+  xtd::sptr<async_result_invoke> async = make_shared<async_result_invoke>(std::reference_wrapper(*this));
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_event, async->data_->is_completed);
   threading::thread::yield();
   return async;

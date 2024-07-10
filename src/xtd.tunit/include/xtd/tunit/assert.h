@@ -1552,39 +1552,39 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
-      /// std::shared_ptr<std::string> s2;
+      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1); // test ok.
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const std::shared_ptr<pointer_t>& pointer) {is_not_null(pointer, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void is_not_null(const xtd::sptr<pointer_t>& pointer) {is_not_null(pointer, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
-      /// std::shared_ptr<std::string> s2;
+      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, csf_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, csf_); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, xtd::ustring::empty_string, stack_frame);}
+      static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, xtd::ustring::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
-      /// std::shared_ptr<std::string> s2;
+      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
+      static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1592,13 +1592,13 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
-      /// std::shared_ptr<std::string> s2;
+      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message...", csf_); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (pointer != nullptr)
           succeed(message, stack_frame);
         else
@@ -1608,7 +1608,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1); // test ok.
@@ -1621,7 +1621,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, csf_); // test ok.
@@ -1634,7 +1634,7 @@ namespace xtd {
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
@@ -1648,7 +1648,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message...", csf_); // test ok.
@@ -1940,39 +1940,39 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s1;
-      /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1;
+      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1); // test ok.
       /// xtd::tunit::assert::is_null(s2); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const std::shared_ptr<pointer_t>& pointer) {is_null(pointer, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void is_null(const xtd::sptr<pointer_t>& pointer) {is_null(pointer, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s1;
-      /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1;
+      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, csf_); // test ok.
       /// xtd::tunit::assert::is_null(s2, csf_); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const std::shared_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, xtd::ustring::empty_string, stack_frame);}
+      static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, xtd::ustring::empty_string, stack_frame);}
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s1;
-      /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1;
+      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
+      static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1980,13 +1980,13 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s1;
-      /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1;
+      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message...", csf_); // test throws an assert_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const std::shared_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         if (pointer == nullptr)
           succeed(message, stack_frame);
         else
@@ -1997,7 +1997,7 @@ namespace xtd {
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assert::is_null(s1); // test throws an assert_error exception.
@@ -2011,7 +2011,7 @@ namespace xtd {
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assert::is_null(s1, csf_); // test throws an assert_error exception.
@@ -2025,7 +2025,7 @@ namespace xtd {
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assert::is_null(s1, "User message..."); // test throws an assert_error exception.
@@ -2040,7 +2040,7 @@ namespace xtd {
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// ```cpp
-      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assert::is_null(s1, "User message...", csf_); // test throws an assert_error exception.

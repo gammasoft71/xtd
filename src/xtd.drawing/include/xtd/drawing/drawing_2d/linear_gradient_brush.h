@@ -180,7 +180,7 @@ namespace xtd {
         static float linear_gradient_mode_to_angle(xtd::drawing::drawing_2d::linear_gradient_mode);
         void recreate_handle();
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
     }
 

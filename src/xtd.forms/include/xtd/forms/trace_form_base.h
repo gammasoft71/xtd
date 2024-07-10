@@ -106,7 +106,7 @@ namespace xtd {
       
       void update_format();
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

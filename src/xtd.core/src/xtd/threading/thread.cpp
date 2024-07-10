@@ -356,18 +356,18 @@ bool thread::yield() {
   return native::thread::yield();
 }
 
-bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& threads){
+bool thread::join_all(const std::initializer_list<xtd::sptr<thread>>& threads){
   return join_all(threads, timeout::infinite);
 }
 
-bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout) {
+bool thread::join_all(const std::initializer_list<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) {
   auto threads_pointers = std::vector<thread*> {};
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
-bool thread::join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, const time_span& timeout) {
+bool thread::join_all(const std::initializer_list<xtd::sptr<thread>>& threads, const time_span& timeout) {
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
@@ -386,18 +386,18 @@ bool thread::join_all(const std::initializer_list<xtd::uptr<thread>>& threads, c
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads) {
+bool thread::join_all(const std::vector<xtd::sptr<thread>>& threads) {
   return join_all(threads, timeout::infinite);
 }
 
-bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout) {
+bool thread::join_all(const std::vector<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) {
   auto threads_pointers = std::vector<thread*> {};
   for (auto& thread : threads)
     threads_pointers.push_back(thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
-bool thread::join_all(const std::vector<std::shared_ptr<thread>>& threads, const time_span& timeout) {
+bool thread::join_all(const std::vector<xtd::sptr<thread>>& threads, const time_span& timeout) {
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 

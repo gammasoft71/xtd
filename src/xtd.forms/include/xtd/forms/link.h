@@ -148,7 +148,7 @@ namespace xtd {
       bool active_() const noexcept;
       void active_(bool active) noexcept;
       
-      std::shared_ptr<data> data_;
+      xtd::sptr<data> data_;
     };
   }
 }

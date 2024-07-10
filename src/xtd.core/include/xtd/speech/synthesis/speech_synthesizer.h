@@ -99,7 +99,7 @@ namespace xtd {
         void on_speak_started();
         void set_state(synthesizer_state value);
         
-        std::shared_ptr<data> data_;
+        xtd::sptr<data> data_;
       };
     }
   }
