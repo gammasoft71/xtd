@@ -6,6 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
     /// @brief The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.
     /// ```cpp
