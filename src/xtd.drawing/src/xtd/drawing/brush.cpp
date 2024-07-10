@@ -2,6 +2,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/type_object>
 
 using namespace xtd;
 using namespace xtd::drawing;

@@ -2,6 +2,7 @@
 /// @brief Contains xtd::box_enum alias.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "bool.h"
 #include "box.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

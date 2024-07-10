@@ -300,6 +300,8 @@ add_sources(
   include/xtd/program_exit_event_handler
   include/xtd/ptrdiff.h
   include/xtd/ptrdiff
+  include/xtd/ptrdiff_object.h
+  include/xtd/ptrdiff_object
   include/xtd/random.h
   include/xtd/random
   include/xtd/register_any_stringer.h
