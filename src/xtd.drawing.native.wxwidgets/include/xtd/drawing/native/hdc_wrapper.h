@@ -33,7 +33,7 @@ namespace xtd {
         
         template<typename hdc_t, typename ...args_type>
         void create(args_type&& ...args) {
-          auto handle = std::make_unique<hdc_t>(args...);
+          auto handle = xtd::new_uptr<hdc_t>(args...);
           graphics_.reset();
           graphics_ = create_graphics(*handle);
           hdc_ = std::move(handle);
@@ -41,15 +41,15 @@ namespace xtd {
         
         void create_buffered_hdc(xtd::uptr<wxDC>&& hdc_base) {
           hdc_base_ = std::move(hdc_base);
-          auto handle = std::make_unique<wxBufferedDC>(hdc_base_.get());
+          auto handle = xtd::new_uptr<wxBufferedDC>(hdc_base_.get());
           graphics_ = create_graphics(*handle);
           hdc_ = std::move(handle);
         }
         
         void create_memory_hdc(intptr image) {
           image_ = image;
-          bitmap_ = std::make_unique<wxBitmap>(*reinterpret_cast<wxImage*>(image_));
-          auto handle = std::make_unique<wxMemoryDC>(*bitmap_);
+          bitmap_ = xtd::new_uptr<wxBitmap>(*reinterpret_cast<wxImage*>(image_));
+          auto handle = xtd::new_uptr<wxMemoryDC>(*bitmap_);
           graphics_ = create_graphics(*handle);
           hdc_ = std::move(handle);
         }

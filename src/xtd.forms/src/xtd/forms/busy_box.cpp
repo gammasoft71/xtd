@@ -65,7 +65,7 @@ void busy_box::show(const xtd::ustring& text, const xtd::ustring& caption, const
 
 void busy_box::show_busy_dialog(const iwin32_window* owner, const xtd::ustring& text, const xtd::ustring& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float opacity) {
   if (dialog_) return;
-  dialog_ = std::make_unique<busy_dialog>();
+  dialog_ = xtd::new_uptr<busy_dialog>();
   dialog_->description(text);
   dialog_->text(caption);
   dialog_->icon(icon);

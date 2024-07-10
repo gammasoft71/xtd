@@ -341,7 +341,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback callback,
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const std::any& state) {
-  return begin_connect_(make_unique<ip_end_point>(ip_end_point(address, port)), callback, state);
+  return begin_connect_(xtd::new_uptr<ip_end_point>(ip_end_point(address, port)), callback, state);
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state) {
@@ -543,7 +543,7 @@ void socket::close() {
 }
 
 void socket::connect(const xtd::net::ip_address& address, uint16 port) {
-  connect_(make_unique<ip_end_point>(ip_end_point(address, port)));
+  connect_(xtd::new_uptr<ip_end_point>(ip_end_point(address, port)));
 }
 
 void socket::connect(const std::vector<ip_address>& addresses, uint16 port) {

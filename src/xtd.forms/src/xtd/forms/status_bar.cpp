@@ -308,7 +308,7 @@ drawing::size status_bar::default_size() const noexcept {
 }
 
 xtd::uptr<xtd::object> status_bar::clone() const {
-  auto result = make_unique<status_bar>(*this);
+  auto result = xtd::new_uptr<status_bar>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

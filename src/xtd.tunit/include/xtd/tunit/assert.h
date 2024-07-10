@@ -1495,7 +1495,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::uptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s1 = xtd::new_uptr<std::string>("Anything");
       /// xtd::uptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1); // test ok.
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assert_error exception.
@@ -1508,7 +1508,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::uptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s1 = xtd::new_uptr<std::string>("Anything");
       /// xtd::uptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, csf_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, csf_); // test throws an assert_error exception.
@@ -1521,7 +1521,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::uptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s1 = xtd::new_uptr<std::string>("Anything");
       /// xtd::uptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assert_error exception.
@@ -1535,7 +1535,7 @@ namespace xtd {
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::uptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s1 = xtd::new_uptr<std::string>("Anything");
       /// xtd::uptr<std::string> s2;
       /// xtd::tunit::assert::is_not_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message...", csf_); // test throws an assert_error exception.
@@ -1884,7 +1884,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::uptr<std::string> s1;
-      /// xtd::uptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s2 = xtd::new_uptr<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1); // test ok.
       /// xtd::tunit::assert::is_null(s2); // test throws an assert_error exception.
       /// ```
@@ -1897,7 +1897,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::uptr<std::string> s1;
-      /// xtd::uptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s2 = xtd::new_uptr<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, csf_); // test ok.
       /// xtd::tunit::assert::is_null(s2, csf_); // test throws an assert_error exception.
       /// ```
@@ -1910,7 +1910,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::uptr<std::string> s1;
-      /// xtd::uptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s2 = xtd::new_uptr<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assert_error exception.
       /// ```
@@ -1924,7 +1924,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::uptr<std::string> s1;
-      /// xtd::uptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s2 = xtd::new_uptr<std::string>("Anything");
       /// xtd::tunit::assert::is_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message...", csf_); // test throws an assert_error exception.
       /// ```

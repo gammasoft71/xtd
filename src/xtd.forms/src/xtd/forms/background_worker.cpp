@@ -84,7 +84,7 @@ void background_worker::run_worker_async() {
   if (data_->is_busy) throw invalid_operation_exception {csf_};
   data_->is_busy = true;
   if (data_->worker_result) data_->worker.end_invoke(data_->worker_result);
-  data_->invoker = make_unique<form>();
+  data_->invoker = xtd::new_uptr<form>();
   data_->worker = action<> {[&] {
     auto e = do_work_event_args {data_->argument};
     on_do_work(e);

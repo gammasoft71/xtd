@@ -82,7 +82,7 @@ const xtd::drawing::color& pen::color() const noexcept {
 pen& pen::color(const drawing::color& value) {
   if (data_->color != value) {
     data_->color = value;
-    data_->brush = make_unique<solid_brush>(value);
+    data_->brush = xtd::new_uptr<solid_brush>(value);
     recreate_handle();
   }
   return *this;

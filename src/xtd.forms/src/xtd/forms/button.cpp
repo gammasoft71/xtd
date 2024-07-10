@@ -229,7 +229,7 @@ xtd::forms::visual_styles::push_button_state button::state() const noexcept {
 }
 
 xtd::uptr<xtd::object> button::clone() const {
-  auto result = make_unique<button>(*this);
+  auto result = xtd::new_uptr<button>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

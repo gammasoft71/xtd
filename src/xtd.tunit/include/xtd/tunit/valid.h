@@ -1458,7 +1458,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @par Examples
       /// ```cpp
-      /// xtd::uptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s1 = xtd::new_uptr<std::string>("Anything");
       /// xtd::uptr<std::string> s2;
       /// xtd::tunit::valid::is_not_null(s1); // test ok.
       /// xtd::tunit::valid::is_not_null(s2); // test fails.
@@ -1471,7 +1471,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// xtd::uptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s1 = xtd::new_uptr<std::string>("Anything");
       /// xtd::uptr<std::string> s2;
       /// xtd::tunit::valid::is_not_null(s1, csf_); // test ok.
       /// xtd::tunit::valid::is_not_null(s2, csf_); // test fails.
@@ -1484,7 +1484,7 @@ namespace xtd {
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// ```cpp
-      /// xtd::uptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s1 = xtd::new_uptr<std::string>("Anything");
       /// xtd::uptr<std::string> s2;
       /// xtd::tunit::valid::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test fails.
@@ -1498,7 +1498,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// xtd::uptr<std::string> s1 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s1 = xtd::new_uptr<std::string>("Anything");
       /// xtd::uptr<std::string> s2;
       /// xtd::tunit::valid::is_not_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::is_not_null(s2, "User message...", csf_); // test fails.
@@ -1850,7 +1850,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::uptr<std::string> s1;
-      /// xtd::uptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s2 = xtd::new_uptr<std::string>("Anything");
       /// xtd::tunit::valid::is_null(s1); // test ok.
       /// xtd::tunit::valid::is_null(s2); // test fails.
       /// ```
@@ -1863,7 +1863,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::uptr<std::string> s1;
-      /// xtd::uptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s2 = xtd::new_uptr<std::string>("Anything");
       /// xtd::tunit::valid::is_null(s1, csf_); // test ok.
       /// xtd::tunit::valid::is_null(s2, csf_); // test fails.
       /// ```
@@ -1876,7 +1876,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::uptr<std::string> s1;
-      /// xtd::uptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s2 = xtd::new_uptr<std::string>("Anything");
       /// xtd::tunit::valid::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// ```
@@ -1890,7 +1890,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::uptr<std::string> s1;
-      /// xtd::uptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::uptr<std::string> s2 = xtd::new_uptr<std::string>("Anything");
       /// xtd::tunit::valid::is_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::is_null(s2, "User message...", csf_); // test fails.
       /// ```

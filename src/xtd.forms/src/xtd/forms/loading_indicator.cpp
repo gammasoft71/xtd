@@ -149,7 +149,7 @@ forms::create_params loading_indicator::create_params() const noexcept {
 }
 
 xtd::uptr<xtd::object> loading_indicator::clone() const {
-  auto result = make_unique<loading_indicator>(*this);
+  auto result = xtd::new_uptr<loading_indicator>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

@@ -133,7 +133,7 @@ forms::create_params user_control::create_params() const noexcept {
 }
 
 xtd::uptr<xtd::object> user_control::clone() const {
-  auto result = make_unique<user_control>(*this);
+  auto result = xtd::new_uptr<user_control>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

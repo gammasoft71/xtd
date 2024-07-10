@@ -238,7 +238,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_unique_ptr) {
-      xtd::uptr<guid> g = make_unique<guid>();
+      xtd::uptr<guid> g = xtd::new_uptr<guid>();
       guid* ptr = g.get();
       xtd::uptr<object> o = convert_pointer::to_unique_ptr<object>(g);
       assert::are_equal(ptr, o.get(), csf_);
@@ -246,17 +246,17 @@ namespace xtd::tests {
     }
     
     void test_method_(to_unique_ptr_invalid) {
-      xtd::uptr<guid> g = make_unique<guid>();
+      xtd::uptr<guid> g = xtd::new_uptr<guid>();
       assert::throws<invalid_cast_exception>([&] {convert_pointer::to_unique_ptr<ustring>(g);}, csf_);
     }
     
     void test_method_(move_to_unique_ptr) {
-      xtd::uptr<object> o = convert_pointer::to_unique_ptr<object>(make_unique<guid>());
+      xtd::uptr<object> o = convert_pointer::to_unique_ptr<object>(xtd::new_uptr<guid>());
       assert::is_not_null(o.get(), csf_);
     }
     
     void test_method_(move_to_unique_ptr_invalid) {
-      assert::throws<invalid_cast_exception>([] {convert_pointer::to_unique_ptr<ustring>(make_unique<guid>());}, csf_);
+      assert::throws<invalid_cast_exception>([] {convert_pointer::to_unique_ptr<ustring>(xtd::new_uptr<guid>());}, csf_);
     }
     
     void test_method_(to_shared_ptr) {

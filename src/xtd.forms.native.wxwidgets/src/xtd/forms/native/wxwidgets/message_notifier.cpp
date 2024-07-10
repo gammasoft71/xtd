@@ -35,7 +35,7 @@ void message_notifier::show(intptr hwnd, const xtd::ustring& title,
   xtd::delegate<void()> on_notifier_closed) {
   
   if (!wxTheApp) throw argument_exception {csf_};
-  auto notifmsg = std::make_unique<wxNotificationMessage>();
+  auto notifmsg = xtd::new_uptr<wxNotificationMessage>();
   notifmsg->SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
   notifmsg->SetTitle(convert_string::to_wstring(title));
   notifmsg->SetMessage(convert_string::to_wstring(message));

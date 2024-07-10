@@ -6,10 +6,10 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
-ostream_unit_test::ostream_unit_test(std::ostream& os) noexcept : unit_test(make_unique<ostream_event_listener>(os)), os_(os) {
+ostream_unit_test::ostream_unit_test(std::ostream& os) noexcept : unit_test(xtd::new_uptr<ostream_event_listener>(os)), os_(os) {
 }
 
-ostream_unit_test::ostream_unit_test(std::ostream& os, int argc, char* argv[]) noexcept : unit_test(make_unique<ostream_event_listener>(os), argc, argv), os_(os) {
+ostream_unit_test::ostream_unit_test(std::ostream& os, int argc, char* argv[]) noexcept : unit_test(xtd::new_uptr<ostream_event_listener>(os), argc, argv), os_(os) {
 }
 
 ostream& ostream_unit_test::ostream() {

@@ -370,7 +370,7 @@ forms::create_params date_time_picker::create_params() const noexcept {
 }
 
 xtd::uptr<xtd::object> date_time_picker::clone() const {
-  auto result = make_unique<date_time_picker>(*this);
+  auto result = xtd::new_uptr<date_time_picker>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

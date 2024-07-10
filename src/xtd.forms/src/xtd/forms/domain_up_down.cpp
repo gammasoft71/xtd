@@ -338,7 +338,7 @@ drawing::color domain_up_down::default_fore_color() const noexcept {
 }
 
 xtd::uptr<xtd::object> domain_up_down::clone() const {
-  auto result = make_unique<domain_up_down>(*this);
+  auto result = xtd::new_uptr<domain_up_down>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
