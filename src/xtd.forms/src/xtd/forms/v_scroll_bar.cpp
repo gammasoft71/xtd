@@ -296,7 +296,7 @@ xtd::drawing::size v_scroll_bar::default_size() const noexcept {
   return {control::default_size().width(), 80};
 }
 
-unique_ptr<xtd::object> v_scroll_bar::clone() const {
+xtd::uptr<xtd::object> v_scroll_bar::clone() const {
   auto result = make_unique<v_scroll_bar>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;

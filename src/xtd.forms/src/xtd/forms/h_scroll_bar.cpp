@@ -296,7 +296,7 @@ h_scroll_bar h_scroll_bar::create(const control& parent, int32 value, int32 mini
   return result;
 }
 
-unique_ptr<xtd::object> h_scroll_bar::clone() const {
+xtd::uptr<xtd::object> h_scroll_bar::clone() const {
   auto result = make_unique<h_scroll_bar>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;

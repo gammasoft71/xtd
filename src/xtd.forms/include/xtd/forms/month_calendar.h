@@ -663,7 +663,7 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      std::unique_ptr<xtd::object> clone() const override;
+      xtd::uptr<xtd::object> clone() const override;
       
       /// @brief Raises the xtd::forms::month_calendar::date_changed event.
       /// @param e A xtd::forms::date_range_event_args that contains the event data.

@@ -106,12 +106,12 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::unique_ptr<button> value = std::make_unique<xtd::forms::button>();
-  /// std::unique_ptr<control> result = as<xtd::forms::control>(value);
+  /// xtd::uptr<button> value = std::make_unique<xtd::forms::button>();
+  /// xtd::uptr<control> result = as<xtd::forms::control>(value);
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
-  std::unique_ptr<new_type_t> as(std::unique_ptr<current_type_t>& value) {
+  xtd::uptr<new_type_t> as(xtd::uptr<current_type_t>& value) {
     return xtd::convert_pointer::to_unique_ptr<new_type_t>(value);
   }
   
@@ -127,11 +127,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::unique_ptr<control> result = as<xtd::forms::control>(std::make_unique<xtd::forms::button>());
+  /// xtd::uptr<control> result = as<xtd::forms::control>(std::make_unique<xtd::forms::button>());
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
-  std::unique_ptr<new_type_t> as(std::unique_ptr<current_type_t>&& value) {
+  xtd::uptr<new_type_t> as(xtd::uptr<current_type_t>&& value) {
     return xtd::convert_pointer::to_unique_ptr<new_type_t>(value);
   }
   

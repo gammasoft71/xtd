@@ -9,7 +9,7 @@ sockets::address_family end_point::address_family() const noexcept {
   return address_family_;
 }
 
-std::unique_ptr<end_point> end_point::create(const socket_address&) const {
+xtd::uptr<end_point> end_point::create(const socket_address&) const {
   throw not_implemented_exception {csf_};
 }
 

@@ -375,15 +375,15 @@ namespace xtd {
       static bool join_all(const std::initializer_list<std::shared_ptr<thread>>& threads);
       static bool join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout);
       static bool join_all(const std::initializer_list<std::shared_ptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const std::initializer_list<std::unique_ptr<thread>>& threads);
-      static bool join_all(const std::initializer_list<std::unique_ptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const std::initializer_list<std::unique_ptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads);
+      static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, const time_span& timeout);
       static bool join_all(const std::vector<std::shared_ptr<thread>>& threads);
       static bool join_all(const std::vector<std::shared_ptr<thread>>& threads, int32 milliseconds_timeout);
       static bool join_all(const std::vector<std::shared_ptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const std::vector<std::unique_ptr<thread>>& threads);
-      static bool join_all(const std::vector<std::unique_ptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const std::vector<std::unique_ptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const std::vector<xtd::uptr<thread>>& threads);
+      static bool join_all(const std::vector<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::vector<xtd::uptr<thread>>& threads, const time_span& timeout);
       template <typename start_t>
       static thread start_new(start_t start) {return start_new(thread_start {start});}
       template <typename start_t>

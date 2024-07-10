@@ -161,7 +161,7 @@ namespace xtd {
         /// @param image Contains image data.
         /// @param rect The xtd::drawing::rectangle neeed for linear gradient brush
         /// @return New instance of brush.
-        static std::unique_ptr<xtd::drawing::brush> make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect);
+        static xtd::uptr<xtd::drawing::brush> make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect);
         /// @}
 
       private:

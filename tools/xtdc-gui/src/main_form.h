@@ -67,8 +67,8 @@ namespace xtdc_gui {
     void update_open_xtd_examples_picture(const xtd::drawing::image& picture);
     void update_open_xtd_examples_output(const xtd::ustring& output);
     
-    std::unique_ptr<xtd::forms::background_worker> background_worker_;
-    std::unique_ptr<xtd::forms::progress_dialog> progress_dialog_;
+    xtd::uptr<xtd::forms::background_worker> background_worker_;
+    xtd::uptr<xtd::forms::progress_dialog> progress_dialog_;
     xtd::forms::panel startup_panel_;
     xtd::forms::label startup_title_label_;
     xtd::forms::label startup_open_recent_project_title_label_;

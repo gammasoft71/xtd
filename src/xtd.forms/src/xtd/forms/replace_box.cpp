@@ -3,7 +3,7 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-std::unique_ptr<xtd::forms::replace_dialog> replace_box::dialog_;
+xtd::uptr<xtd::forms::replace_dialog> replace_box::dialog_;
 
 void replace_box::show_replace_box(const iwin32_window& owner, xtd::forms::find_event_handler find_next, xtd::forms::replace_event_handler replace, xtd::forms::replace_event_handler replace_all, const xtd::ustring& find_string, const xtd::ustring& replace_string, const xtd::ustring& title, bool match_case, bool whole_word) {
   if (dialog_) return;

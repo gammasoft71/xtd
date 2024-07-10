@@ -155,7 +155,7 @@ namespace {
     }
     
   private:
-    static std::unique_ptr<message_notifier_standard> message_notifier_;
+    static xtd::uptr<message_notifier_standard> message_notifier_;
     picture_box picture_box_icon_;
     label label_title_;
     label label_message_;
@@ -163,7 +163,7 @@ namespace {
     vertical_layout_panel v_layout_icon_;
     vertical_layout_panel v_layout_title_message_;
     vertical_layout_panel v_layout_buttons_;
-    std::vector<std::unique_ptr<button>> buttons_;
+    std::vector<xtd::uptr<button>> buttons_;
     timer timer_;
     
     // TODO: spawn notifications bellow or above each other
@@ -171,7 +171,7 @@ namespace {
       drawing::point location;
       drawing::size size;
     };
-    inline static std::unique_ptr<previous_message_notifier_coords> previous_notifier_coords_;
+    inline static xtd::uptr<previous_message_notifier_coords> previous_notifier_coords_;
     
     /*
             Standard Notification
@@ -184,7 +184,7 @@ namespace {
     */
   };
   
-  std::unique_ptr<message_notifier_standard> message_notifier_standard::message_notifier_;
+  xtd::uptr<message_notifier_standard> message_notifier_standard::message_notifier_;
 }
 
 

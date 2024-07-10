@@ -250,15 +250,15 @@ namespace xtd {
       static bool wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles);
       static bool wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
       static bool wait_all(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout);
-      static bool wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles);
-      static bool wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
-      static bool wait_all(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static bool wait_all(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles);
+      static bool wait_all(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
+      static bool wait_all(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout);
       static bool wait_all(const std::vector<std::shared_ptr<wait_handle>>& wait_handles);
       static bool wait_all(const std::vector<std::shared_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
       static bool wait_all(const std::vector<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout);
-      static bool wait_all(const std::vector<std::unique_ptr<wait_handle>>& wait_handles);
-      static bool wait_all(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
-      static bool wait_all(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static bool wait_all(const std::vector<xtd::uptr<wait_handle>>& wait_handles);
+      static bool wait_all(const std::vector<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
+      static bool wait_all(const std::vector<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout);
       static bool wait_all(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout);
 
       template <typename... items_t>
@@ -285,15 +285,15 @@ namespace xtd {
       static size_t wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles);
       static size_t wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
       static size_t wait_any(const std::initializer_list<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout);
-      static size_t wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles);
-      static size_t wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
-      static size_t wait_any(const std::initializer_list<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static size_t wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles);
+      static size_t wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
+      static size_t wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout);
       static size_t wait_any(const std::vector<std::shared_ptr<wait_handle>>& wait_handles);
       static size_t wait_any(const std::vector<std::shared_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
       static size_t wait_any(const std::vector<std::shared_ptr<wait_handle>>& wait_handles, const time_span& timeout);
-      static size_t wait_any(const std::vector<std::unique_ptr<wait_handle>>& wait_handles);
-      static size_t wait_any(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
-      static size_t wait_any(const std::vector<std::unique_ptr<wait_handle>>& wait_handles, const time_span& timeout);
+      static size_t wait_any(const std::vector<xtd::uptr<wait_handle>>& wait_handles);
+      static size_t wait_any(const std::vector<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
+      static size_t wait_any(const std::vector<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout);
       static size_t wait_any(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout);
       /// @endcond
 

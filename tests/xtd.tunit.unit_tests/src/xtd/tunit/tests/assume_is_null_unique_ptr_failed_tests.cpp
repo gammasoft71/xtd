@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(assume_is_null_unqiue_ptr_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      std::unique_ptr<int> p = std::make_unique<int>(42);
+      xtd::uptr<int> p = std::make_unique<int>(42);
       xtd::tunit::assume::is_null(p);
     }
   };

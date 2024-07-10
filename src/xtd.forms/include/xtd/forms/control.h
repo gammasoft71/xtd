@@ -313,7 +313,7 @@ namespace xtd {
 
       private:
         bool keep_cloned_controls_ = false;
-        static std::vector<std::unique_ptr<xtd::forms::control>> controls_;
+        static std::vector<xtd::uptr<xtd::forms::control>> controls_;
       };
       
       /// @name Public Constructors
@@ -1905,7 +1905,7 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      std::unique_ptr<xtd::object> clone() const override;
+      xtd::uptr<xtd::object> clone() const override;
       
       /// @brief Creates a handle for the control.
       /// @remarks You typically should not call the create_handle method directly. The preferred method is to call the create_control method, which forces a handle to be created for the control and its child controls when the control is created.

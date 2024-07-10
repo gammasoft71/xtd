@@ -12,7 +12,7 @@ using namespace xtd;
 using namespace xtd::threading;
 
 struct event_wait_handle::data {
-  std::unique_ptr<event_wait_handle_base> event_wait_handle;
+  xtd::uptr<event_wait_handle_base> event_wait_handle;
   event_reset_mode mode = event_reset_mode::auto_reset;
   std::atomic<bool> is_set = false;
   ustring name;

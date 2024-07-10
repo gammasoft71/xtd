@@ -404,7 +404,7 @@ namespace xtd {
   }
   
   template<typename type_t>
-  inline std::string to_string(const std::unique_ptr<type_t>& value, const std::string& fmt, const std::locale& loc) {
+  inline std::string to_string(const xtd::uptr<type_t>& value, const std::string& fmt, const std::locale& loc) {
     if (!value) return "(null)";
     return __numeric_formatter(fmt, reinterpret_cast<intptr>(value.get()), loc);
   }

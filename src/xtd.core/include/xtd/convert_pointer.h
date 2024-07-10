@@ -195,17 +195,17 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @par Examples
     /// ```cpp
-    /// std::unique_ptr<button> value = std::make_unique<xtd::forms::button>();
-    /// std::unique_ptr<control> result = as<xtd::forms::control>(value);
+    /// xtd::uptr<button> value = std::make_unique<xtd::forms::button>();
+    /// xtd::uptr<control> result = as<xtd::forms::control>(value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
-    static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>& value) {
+    static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>& value) {
       auto ptr = value.release();
       try {
-        return std::unique_ptr<new_type_t>(__convert_value__<new_type_t>(ptr));
+        return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
       } catch (const std::exception& e) {
-        value = std::unique_ptr<current_type_t>(ptr);
+        value = xtd::uptr<current_type_t>(ptr);
         throw invalid_cast_exception(e.what(), csf_);
       }
       throw invalid_cast_exception {csf_};
@@ -219,16 +219,16 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @par Examples
     /// ```cpp
-    /// std::unique_ptr<control> result = as<xtd::forms::control>(std::make_unique<xtd::forms::button>());
+    /// xtd::uptr<control> result = as<xtd::forms::control>(std::make_unique<xtd::forms::button>());
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<typename new_type_t, typename current_type_t>
-    static std::unique_ptr<new_type_t> to_unique_ptr(std::unique_ptr<current_type_t>&& value) {
+    static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>&& value) {
       auto ptr = value.release();
       try {
-        return std::unique_ptr<new_type_t>(__convert_value__<new_type_t>(ptr));
+        return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
       } catch (const std::exception& e) {
-        value = std::unique_ptr<current_type_t>(ptr);
+        value = xtd::uptr<current_type_t>(ptr);
         throw invalid_cast_exception(e.what(), csf_);
       }
       throw invalid_cast_exception {csf_};

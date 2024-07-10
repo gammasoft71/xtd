@@ -93,7 +93,7 @@ namespace xtd {
     /// * Serialize the object to be deep copied, and then restore the serialized data to a different object variable.
     /// * Use reflection with recursion to perform the deep copy operation.
     template<typename object_t>
-    std::unique_ptr<object_t> memberwise_clone() const {
+    xtd::uptr<object_t> memberwise_clone() const {
       auto object_ptr = dynamic_cast<const object_t*>(this);
       if (object_ptr == nullptr) __throw_invalid_cast_exception(__FILE__, __LINE__, __func__);
       return std::make_unique<object_t>(*object_ptr);
