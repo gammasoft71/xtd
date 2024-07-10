@@ -138,6 +138,12 @@ add_sources(
   include/xtd/debugstreambuf
   include/xtd/delegate.h
   include/xtd/delegate
+  include/xtd/delete_ptr.h
+  include/xtd/delete_ptr
+  include/xtd/delete_sptr.h
+  include/xtd/delete_sptr
+  include/xtd/delete_uptr.h
+  include/xtd/delete_uptr
   include/xtd/distribution.h
   include/xtd/distribution
   include/xtd/divided_by_zero_exception.h
@@ -254,6 +260,12 @@ add_sources(
   include/xtd/month_of_year
   include/xtd/nameof.h
   include/xtd/nameof
+  include/xtd/new_ptr.h
+  include/xtd/new_ptr
+  include/xtd/new_sptr.h
+  include/xtd/new_sptr
+  include/xtd/new_uptr.h
+  include/xtd/new_uptr
   include/xtd/not_finite_number_exception.h
   include/xtd/not_finite_number_exception
   include/xtd/not_implemented_exception.h
@@ -298,6 +310,8 @@ add_sources(
   include/xtd/program_exit_event_args
   include/xtd/program_exit_event_handler.h
   include/xtd/program_exit_event_handler
+  include/xtd/ptr.h
+  include/xtd/ptr
   include/xtd/ptrdiff.h
   include/xtd/ptrdiff
   include/xtd/ptrdiff_object.h
@@ -338,6 +352,8 @@ add_sources(
   include/xtd/slong_object
   include/xtd/software_termination_exception.h
   include/xtd/software_termination_exception
+  include/xtd/sptr.h
+  include/xtd/sptr
   include/xtd/startup.h
   include/xtd/startup
   include/xtd/static.h
@@ -412,6 +428,8 @@ add_sources(
   include/xtd/unregister_any_stringer
   include/xtd/unused.h
   include/xtd/unused
+  include/xtd/uptr.h
+  include/xtd/uptr
   include/xtd/uri.h
   include/xtd/uri
   include/xtd/uri_components.h
