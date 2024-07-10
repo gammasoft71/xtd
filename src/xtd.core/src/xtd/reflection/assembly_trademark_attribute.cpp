@@ -8,7 +8,7 @@ assembly_trademark_attribute::assembly_trademark_attribute(const ustring& tradem
 }
 
 assembly_trademark_attribute::assembly_trademark_attribute(const ustring& trademark, const object& executing_assembly) : trademark_(trademark) {
-  __assembly_trademark_attribute__() = make_shared<xtd::reflection::assembly_trademark_attribute>(trademark);
+  __assembly_trademark_attribute__() = xtd::new_sptr<xtd::reflection::assembly_trademark_attribute>(trademark);
 }
 
 const ustring& assembly_trademark_attribute::trademark() const noexcept {

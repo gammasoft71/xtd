@@ -6,10 +6,10 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-tool_bar_button::tool_bar_button() : data_(std::make_shared<data>()) {
+tool_bar_button::tool_bar_button() : data_(xtd::new_sptr<data>()) {
 }
 
-tool_bar_button::tool_bar_button(const ustring& text) : data_(std::make_shared<data>()) {
+tool_bar_button::tool_bar_button(const ustring& text) : data_(xtd::new_sptr<data>()) {
   data_->text = text;
 }
 

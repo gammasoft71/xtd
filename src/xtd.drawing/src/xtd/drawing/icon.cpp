@@ -16,7 +16,7 @@ struct icon::data {
   xtd::drawing::size size;
 };
 
-icon::icon(const ustring& filename) : data_(make_shared<data>()) {
+icon::icon(const ustring& filename) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(filename);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
@@ -24,12 +24,12 @@ icon::icon(const ustring& filename) : data_(make_shared<data>()) {
 icon::icon(const xtd::ustring& filename, const xtd::drawing::size& size) : icon(filename, size.width(), size.height()) {
 }
 
-icon::icon(const xtd::ustring& filename, int32 width, int32 height) : data_(make_shared<data>()) {
+icon::icon(const xtd::ustring& filename, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(filename, width, height);
   data_->size = {width, height};
 }
 
-icon::icon(istream& stream) : data_(make_shared<data>()) {
+icon::icon(istream& stream) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(stream);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
@@ -37,12 +37,12 @@ icon::icon(istream& stream) : data_(make_shared<data>()) {
 icon::icon(istream& stream, const xtd::drawing::size& size) : icon(stream, size.width(), size.height()) {
 }
 
-icon::icon(istream& stream, int32 width, int32 height) : data_(make_shared<data>()) {
+icon::icon(istream& stream, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(stream, width, height);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
-icon::icon(const char* const* bits) : data_(make_shared<data>()) {
+icon::icon(const char* const* bits) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(bits);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
@@ -50,7 +50,7 @@ icon::icon(const char* const* bits) : data_(make_shared<data>()) {
 icon::icon(const char* const* bits, const xtd::drawing::size& size) : icon(bits, size.width(), size.height()) {
 }
 
-icon::icon(const char* const* bits, int32 width, int32 height) : data_(make_shared<data>()) {
+icon::icon(const char* const* bits, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(bits, width, height);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
@@ -58,18 +58,18 @@ icon::icon(const char* const* bits, int32 width, int32 height) : data_(make_shar
 icon::icon(const icon& original, const xtd::drawing::size& size) : icon(original, size.width(), size.height()) {
 }
 
-icon::icon(const icon& original, int32 width, int32 height) : data_(make_shared<data>()) {
+icon::icon(const icon& original, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(original.data_->handle, width, height);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
-icon::icon(const drawing::bitmap& bitmap) : data_(make_shared<data>()) {
+icon::icon(const drawing::bitmap& bitmap) : data_(xtd::new_sptr<data>()) {
   if (bitmap == drawing::bitmap::empty) return;
   data_->handle = native::icon::create(bitmap.handle());
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
-icon::icon() : data_(make_shared<data>()) {
+icon::icon() : data_(xtd::new_sptr<data>()) {
 }
 
 icon::~icon() {

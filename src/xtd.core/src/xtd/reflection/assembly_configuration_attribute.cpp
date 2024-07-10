@@ -8,7 +8,7 @@ assembly_configuration_attribute::assembly_configuration_attribute(const ustring
 }
 
 assembly_configuration_attribute::assembly_configuration_attribute(const ustring& configuration, const object& executing_assembly) : configuration_(configuration) {
-  __assembly_configuration_attribute__() = make_shared<xtd::reflection::assembly_configuration_attribute>(configuration);
+  __assembly_configuration_attribute__() = xtd::new_sptr<xtd::reflection::assembly_configuration_attribute>(configuration);
 }
 
 const ustring& assembly_configuration_attribute::configuration() const noexcept {

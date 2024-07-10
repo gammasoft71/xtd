@@ -8,7 +8,7 @@ assembly_identifier_attribute::assembly_identifier_attribute(const ustring& iden
 }
 
 assembly_identifier_attribute::assembly_identifier_attribute(const ustring& identifier, const object& executing_assembly) : identifier_(identifier) {
-  __assembly_identifier_attribute__() = make_shared<xtd::reflection::assembly_identifier_attribute>(identifier);
+  __assembly_identifier_attribute__() = xtd::new_sptr<xtd::reflection::assembly_identifier_attribute>(identifier);
 }
 
 const ustring& assembly_identifier_attribute::identifier() const noexcept {

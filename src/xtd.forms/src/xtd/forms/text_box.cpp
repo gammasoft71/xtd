@@ -26,7 +26,7 @@ struct text_box::data {
   bool use_system_password_char = false;
 };
 
-text_box::text_box() : data_(std::make_shared<data>()) {
+text_box::text_box() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
 }

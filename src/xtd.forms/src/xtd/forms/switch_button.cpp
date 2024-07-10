@@ -16,7 +16,7 @@ struct switch_button::data {
   bool checked = false;
 };
 
-switch_button::switch_button() : data_(std::make_shared<data>()) {
+switch_button::switch_button() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
 

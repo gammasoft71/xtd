@@ -26,7 +26,7 @@ struct progress_dialog::data {
   int32 value = 0;
 };
 
-progress_dialog::progress_dialog() : data_(std::make_shared<data>()) {
+progress_dialog::progress_dialog() : data_(xtd::new_sptr<data>()) {
   data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 

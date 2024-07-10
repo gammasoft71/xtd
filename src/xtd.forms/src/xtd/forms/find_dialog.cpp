@@ -31,7 +31,7 @@ struct find_dialog::data {
   bool whole_word = false;
 };
 
-find_dialog::find_dialog() : data_(std::make_shared<data>()) {
+find_dialog::find_dialog() : data_(xtd::new_sptr<data>()) {
   data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 

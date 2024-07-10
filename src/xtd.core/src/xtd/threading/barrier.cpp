@@ -31,7 +31,7 @@ barrier::barrier() : barrier(0) {
 barrier::barrier(int32 participant_count) : barrier(participant_count, {}) {
 }
 
-barrier::barrier(int32 participant_count, barrier::post_phase_action post_phase_action) : data_(std::make_shared<data>()) {
+barrier::barrier(int32 participant_count, barrier::post_phase_action post_phase_action) : data_(xtd::new_sptr<data>()) {
   if (participant_count < 0 || participant_count > int16_object::max_value) throw argument_out_of_range_exception {csf_};
   data_->participant_count = participant_count;
   data_->participants_remaining = participant_count;

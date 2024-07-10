@@ -8,7 +8,7 @@ assembly_culture_attribute::assembly_culture_attribute(const ustring& culture) :
 }
 
 assembly_culture_attribute::assembly_culture_attribute(const ustring& culture, const object& executing_assembly) : culture_(culture) {
-  __assembly_culture_attribute__() = make_shared<xtd::reflection::assembly_culture_attribute>(culture);
+  __assembly_culture_attribute__() = xtd::new_sptr<xtd::reflection::assembly_culture_attribute>(culture);
 }
 
 const ustring& assembly_culture_attribute::culture() const noexcept {

@@ -20,7 +20,7 @@ struct panel::data {
   optional<forms::border_style> border_style;
 };
 
-panel::panel() : data_(make_shared<data>()) {
+panel::panel() : data_(xtd::new_sptr<data>()) {
   set_auto_size_mode(forms::auto_size_mode::grow_only);
   set_can_focus(false);
   set_style(control_styles::selectable | control_styles::all_painting_in_wm_paint, false);

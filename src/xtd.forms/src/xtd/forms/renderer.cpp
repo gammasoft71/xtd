@@ -16,14 +16,14 @@ struct renderer::data {
   xtd::forms::renderer::radio_button_renderer radio_button_renderer = xtd::forms::renderer::radio_button_renderer(default_radio_button_renderer);
 };
 
-renderer::renderer() : data_(std::make_shared<data>()) {
+renderer::renderer() : data_(xtd::new_sptr<data>()) {
 }
 
-renderer::renderer(const xtd::ustring& name) : data_(std::make_shared<data>()) {
+renderer::renderer(const xtd::ustring& name) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
 }
 
-renderer::renderer(const renderer& value) : data_(std::make_shared<data>()) {
+renderer::renderer(const renderer& value) : data_(xtd::new_sptr<data>()) {
   *data_ = *value.data_;
 }
 

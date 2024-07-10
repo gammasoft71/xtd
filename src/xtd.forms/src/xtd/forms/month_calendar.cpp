@@ -55,7 +55,7 @@ const xtd::date_time& month_calendar::hit_test_info::time() const noexcept {
 month_calendar::hit_test_info::hit_test_info(xtd::forms::month_calendar::hit_area hit_area, const xtd::drawing::point& point, const xtd::date_time& time) : hit_area_(hit_area), point_(point), time_(time) {
 }
 
-month_calendar::month_calendar() : data_(std::make_shared<data>()) {
+month_calendar::month_calendar() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::user_paint, false);

@@ -8,7 +8,7 @@ struct component::data {
   bool design_mode = false;
 };
 
-component::component() : data_(std::make_shared<data>()) {
+component::component() : data_(xtd::new_sptr<data>()) {
 }
 
 bool component::can_raise_events() const noexcept {

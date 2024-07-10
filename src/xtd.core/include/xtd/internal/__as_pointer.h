@@ -147,7 +147,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// const xtd::sptr<button> value = std::make_shared<xtd::forms::button>();
+  /// const xtd::sptr<button> value = xtd::new_sptr<xtd::forms::button>();
   /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
@@ -168,7 +168,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// xtd::sptr<control> result = as<xtd::forms::control>(std::make_shared<xtd::forms::button>());
+  /// xtd::sptr<control> result = as<xtd::forms::control>(xtd::new_sptr<xtd::forms::button>());
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>
@@ -188,7 +188,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// const xtd::sptr<button> value = std::make_shared<xtd::forms::button>();
+  /// const xtd::sptr<button> value = xtd::new_sptr<xtd::forms::button>();
   /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.

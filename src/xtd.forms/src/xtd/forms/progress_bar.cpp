@@ -19,7 +19,7 @@ struct progress_bar::data {
   int32 value = 0;
 };
 
-progress_bar::progress_bar() : data_(std::make_shared<data>()) {
+progress_bar::progress_bar() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_can_focus(false);

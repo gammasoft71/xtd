@@ -21,7 +21,7 @@ struct countdown_event::data : object {
 countdown_event::countdown_event() : countdown_event(0) {
 }
 
-countdown_event::countdown_event(int32 initial_count) : data_(std::make_shared<data>()) {
+countdown_event::countdown_event(int32 initial_count) : data_(xtd::new_sptr<data>()) {
   if (initial_count < 0) throw argument_out_of_range_exception {csf_};
   data_->current_count = initial_count;
   data_->initial_count = initial_count;

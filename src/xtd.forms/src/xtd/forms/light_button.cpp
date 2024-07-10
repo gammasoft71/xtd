@@ -50,7 +50,7 @@ struct light_button::data {
 };
 
 
-light_button::light_button() : data_(std::make_shared<data>()) {
+light_button::light_button() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
 

@@ -14,7 +14,7 @@ struct seven_segment_display::data {
   forms::segments value = forms::segments::none;
 };
 
-seven_segment_display::seven_segment_display() : data_(std::make_shared<data>()) {
+seven_segment_display::seven_segment_display() : data_(xtd::new_sptr<data>()) {
   back_color(application::style_sheet().system_colors().control());
   double_buffered(true);
 }

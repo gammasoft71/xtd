@@ -732,7 +732,7 @@ void lcd_label::sixteen_segment_display_digit::set_thickness(int32 value) {
   thickness(value);
 }
 
-lcd_label::lcd_label() : data_(std::make_shared<data>()) {
+lcd_label::lcd_label() : data_(xtd::new_sptr<data>()) {
   set_auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   set_can_focus(false);
   set_style(control_styles::user_paint | control_styles::supports_transparent_back_color | control_styles::optimized_double_buffer, control::control_appearance() == forms::control_appearance::standard);
@@ -849,11 +849,11 @@ control& lcd_label::text(const xtd::ustring& value) {
   if (str.size() > data_->digits.size())
     for (auto index = data_->digits.size(); index < str.size(); ++index) {
       switch (data_->lcd_style) {
-        case lcd_style::seven_segment_display: data_->digits.push_back(std::make_shared<seven_segment_display_digit>()); break;
-        case lcd_style::nine_segment_display: data_->digits.push_back(std::make_shared<nine_segment_display_digit>()); break;
-        case lcd_style::fourteen_segment_display: data_->digits.push_back(std::make_shared<fourteen_segment_display_digit>()); break;
-        case lcd_style::sixteen_segment_display: data_->digits.push_back(std::make_shared<sixteen_segment_display_digit>()); break;
-        case lcd_style::dot_matrix_display: data_->digits.push_back(std::make_shared<dot_matrix_display_digit>()); break;
+        case lcd_style::seven_segment_display: data_->digits.push_back(xtd::new_sptr<seven_segment_display_digit>()); break;
+        case lcd_style::nine_segment_display: data_->digits.push_back(xtd::new_sptr<nine_segment_display_digit>()); break;
+        case lcd_style::fourteen_segment_display: data_->digits.push_back(xtd::new_sptr<fourteen_segment_display_digit>()); break;
+        case lcd_style::sixteen_segment_display: data_->digits.push_back(xtd::new_sptr<sixteen_segment_display_digit>()); break;
+        case lcd_style::dot_matrix_display: data_->digits.push_back(xtd::new_sptr<dot_matrix_display_digit>()); break;
         default: throw argument_exception("lcd_style invalid"_t, csf_);
       }
       dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->parent(*this);
@@ -874,11 +874,11 @@ control& lcd_label::text(const xtd::ustring& value) {
 std::vector<char32> lcd_label::valid_characters() {
   xtd::sptr<idigit> digit;
   switch (data_->lcd_style) {
-    case lcd_style::seven_segment_display: digit = std::make_shared<seven_segment_display_digit>(); break;
-    case lcd_style::nine_segment_display: digit = std::make_shared<nine_segment_display_digit>(); break;
-    case lcd_style::fourteen_segment_display: digit = std::make_shared<fourteen_segment_display_digit>(); break;
-    case lcd_style::sixteen_segment_display: digit = std::make_shared<sixteen_segment_display_digit>(); break;
-    case lcd_style::dot_matrix_display: digit = std::make_shared<dot_matrix_display_digit>(); break;
+    case lcd_style::seven_segment_display: digit = xtd::new_sptr<seven_segment_display_digit>(); break;
+    case lcd_style::nine_segment_display: digit = xtd::new_sptr<nine_segment_display_digit>(); break;
+    case lcd_style::fourteen_segment_display: digit = xtd::new_sptr<fourteen_segment_display_digit>(); break;
+    case lcd_style::sixteen_segment_display: digit = xtd::new_sptr<sixteen_segment_display_digit>(); break;
+    case lcd_style::dot_matrix_display: digit = xtd::new_sptr<dot_matrix_display_digit>(); break;
     default: throw argument_exception("lcd_style invalid"_t, csf_);
   }
   auto vc = digit->get_valid_characters();

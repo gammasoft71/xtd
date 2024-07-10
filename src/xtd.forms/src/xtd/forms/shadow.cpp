@@ -12,7 +12,7 @@ struct shadow::data {
   int32 radius = 0;
 };
 
-shadow::shadow() : data_(std::make_shared<data>()) {
+shadow::shadow() : data_(xtd::new_sptr<data>()) {
 }
 
 shadow::shadow(int32 x, int32 y) : shadow(point {x, y}) {

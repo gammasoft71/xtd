@@ -14,7 +14,7 @@ struct split_container::data {
   int32 splitter_width = 4;
 };
 
-split_container::split_container() : data_(std::make_shared<data>()) {
+split_container::split_container() : data_(xtd::new_sptr<data>()) {
   set_can_focus(false);
   set_style(control_styles::supports_transparent_back_color, true);
   set_style(control_styles::optimized_double_buffer, true);

@@ -58,15 +58,15 @@ struct image::data {
   xtd::drawing::imaging::encoder_parameters encoder_parameter_list_;
 };
 
-image::image() : data_(make_shared<data>()) {
+image::image() : data_(xtd::new_sptr<data>()) {
 }
 
-image::image(intptr hbitmap) : data_(make_shared<data>()) {
+image::image(intptr hbitmap) : data_(xtd::new_sptr<data>()) {
   if (hbitmap) data_->handle_ = hbitmap;
   update_properties();
 }
 
-image::image(const ustring& filename) : data_(make_shared<data>()) {
+image::image(const ustring& filename) : data_(xtd::new_sptr<data>()) {
   auto frame_resolutions = map<size_t, size_t> {};
   data_->handle_ = native::image::create(filename, frame_resolutions);
   data_->frame_dimensions.clear();
@@ -79,7 +79,7 @@ image::image(const ustring& filename) : data_(make_shared<data>()) {
   update_properties();
 }
 
-image::image(const ustring& filename, bool use_icm) : data_(make_shared<data>()) {
+image::image(const ustring& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
   auto frame_resolutions = map<size_t, size_t> {};
   data_->handle_ = native::image::create(filename, use_icm, frame_resolutions);
   data_->frame_dimensions.clear();
@@ -92,7 +92,7 @@ image::image(const ustring& filename, bool use_icm) : data_(make_shared<data>())
   update_properties();
 }
 
-image::image(istream& stream) : data_(make_shared<data>()) {
+image::image(istream& stream) : data_(xtd::new_sptr<data>()) {
   auto frame_resolutions = map<size_t, size_t> {};
   data_->handle_ = native::image::create(stream, frame_resolutions);
   data_->frame_dimensions.clear();
@@ -105,7 +105,7 @@ image::image(istream& stream) : data_(make_shared<data>()) {
   update_properties();
 }
 
-image::image(istream& stream, bool use_icm) : data_(make_shared<data>()) {
+image::image(istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) {
   auto frame_resolutions = map<size_t, size_t> {};
   data_->handle_ = native::image::create(stream, frame_resolutions);
   data_->frame_dimensions.clear();
@@ -118,19 +118,19 @@ image::image(istream& stream, bool use_icm) : data_(make_shared<data>()) {
   update_properties();
 }
 
-image::image(const char* const* bits) : data_(make_shared<data>()) {
+image::image(const char* const* bits) : data_(xtd::new_sptr<data>()) {
   data_->handle_ = native::image::create(bits);
   data_->raw_format_ = imaging::image_format::memory_xpm();
   update_properties();
 }
 
-image::image(int32 width, int32 height) : data_(make_shared<data>()) {
+image::image(int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw argument_exception {csf_};
   data_->handle_ = native::image::create(width, height);
   update_properties();
 }
 
-image::image(int32 width, int32 height, float horizontal_resolution, float vertical_resolution) : data_(make_shared<data>()) {
+image::image(int32 width, int32 height, float horizontal_resolution, float vertical_resolution) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw argument_exception {csf_};
   data_->handle_ = native::image::create(width, height, horizontal_resolution, vertical_resolution);
   update_properties();
@@ -148,14 +148,14 @@ image::image(int32 width, int32 height, int32 stride, xtd::drawing::imaging::pix
   update_properties();
 }
 
-image::image(const image& image, int32 width, int32 height) : data_(make_shared<data>()) {
+image::image(const image& image, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw argument_exception {csf_};
   *this = image;
   rescale(width, height);
   update_properties();
 }
 
-image::image(const image& image, const rectangle& rect) : data_(make_shared<data>()) {
+image::image(const image& image, const rectangle& rect) : data_(xtd::new_sptr<data>()) {
   if (rect.left() < 0 || rect.top() < 0 || rect.width() < 1 || rect.height() < 1) throw argument_exception {csf_};
   *this = image;
   crop(rect.left(), rect.top(), rect.width(), rect.height());

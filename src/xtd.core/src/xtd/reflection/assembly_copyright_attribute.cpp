@@ -8,7 +8,7 @@ assembly_copyright_attribute::assembly_copyright_attribute(const ustring& copyri
 }
 
 assembly_copyright_attribute::assembly_copyright_attribute(const ustring& copyright, const object& executing_assembly) : copyright_(copyright) {
-  __assembly_copyright_attribute__() = make_shared<xtd::reflection::assembly_copyright_attribute>(copyright);
+  __assembly_copyright_attribute__() = xtd::new_sptr<xtd::reflection::assembly_copyright_attribute>(copyright);
 }
 
 const ustring& assembly_copyright_attribute::copyright() const noexcept {

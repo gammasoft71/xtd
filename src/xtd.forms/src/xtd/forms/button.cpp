@@ -27,7 +27,7 @@ struct button::data {
   xtd::forms::visual_styles::push_button_state state = xtd::forms::visual_styles::push_button_state::normal;
 };
 
-button::button() : data_(std::make_shared<data>()) {
+button::button() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
   data_->auto_repeat_timer.tick += {*this, &button::on_auto_repeat_timer_tick};
 }

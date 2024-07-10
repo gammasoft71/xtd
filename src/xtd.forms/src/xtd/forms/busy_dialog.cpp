@@ -22,7 +22,7 @@ struct busy_dialog::data {
   intptr handle = 0;
 };
 
-busy_dialog::busy_dialog() : data_(std::make_shared<data>()) {
+busy_dialog::busy_dialog() : data_(xtd::new_sptr<data>()) {
   data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 

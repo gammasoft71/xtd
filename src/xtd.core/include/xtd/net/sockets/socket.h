@@ -577,7 +577,7 @@ namespace xtd {
         /// @note If this socket has previously been disconnected, then xtd::net::sockets::socket::begin_connect must be called on a thread that will not exit until the operation is complete. This is a limitation of the underlying provider.
         template<typename end_point_t>
         xtd::sptr<xtd::iasync_result> begin_connect(const end_point_t& remote_end_point, xtd::async_callback callback, const std::any& state) {
-          return begin_connect_(std::make_shared<end_point_t>(remote_end_point), callback, state);
+          return begin_connect_(xtd::new_sptr<end_point_t>(remote_end_point), callback, state);
         }
         /// @brief Begins an asynchronous request for a remote host connection. The host is specified by an xtd::net::ip_address and a port number.
         /// @param address The xtd::net::ip_address of the remote host.
@@ -794,7 +794,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         template<typename end_point_t>
         void bind(const end_point_t& local_end_point) {
-          bind_(std::make_shared<end_point_t>(local_end_point));
+          bind_(xtd::new_sptr<end_point_t>(local_end_point));
         }
         
         /// @brief Closes the xtd::net::sockets::socket connection and releases all associated resources.
@@ -815,7 +815,7 @@ namespace xtd {
         /// @note If the socket has been previously disconnected, then you cannot use this method to restore the connection. Use one of the asynchronous xtd::net::sockets::socket::begin_connect methods to reconnect. This is a limitation of the underlying provider.
         template<typename end_point_t>
         void connect(const end_point_t& remote_end_point) {
-          connect_(std::make_shared<end_point_t>(remote_end_point));
+          connect_(xtd::new_sptr<end_point_t>(remote_end_point));
         }
         
         /// @brief Establishes a connection to a remote host. The host is specified by an IP address and a port number.

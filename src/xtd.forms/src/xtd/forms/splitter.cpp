@@ -17,7 +17,7 @@ struct splitter::data {
   control* next_control = nullptr;
 };
 
-splitter::splitter() : data_(std::make_shared<data>()) {
+splitter::splitter() : data_(xtd::new_sptr<data>()) {
   dock(xtd::forms::dock_style::left);
   set_style(control_styles::selectable, false);
 }

@@ -14,18 +14,18 @@ struct region::data {
   intptr handle = 0;
 };
 
-region::region() : data_(std::make_shared<data>()) {
+region::region() : data_(xtd::new_sptr<data>()) {
   data_->handle = native::region::create();
 }
 
-region::region(const graphics_path& path) : data_(std::make_shared<data>()) {
+region::region(const graphics_path& path) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::region::create_from_graphics_path(path.handle());
 }
 
 region::region(const rectangle& rect) : region(rectangle_f(rect)) {
 }
 
-region::region(const rectangle_f& rect) : data_(std::make_shared<data>()) {
+region::region(const rectangle_f& rect) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::region::create_from_rect(rect.x(), rect.y(), rect.width(), rect.height());
 }
 

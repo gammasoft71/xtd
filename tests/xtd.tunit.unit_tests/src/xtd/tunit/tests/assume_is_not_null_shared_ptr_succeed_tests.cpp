@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(assume_is_not_null_shared_ptr_succeed_tests) {
   public:
     void test_method_(test_case_succeed) {
-      xtd::sptr<int> p = std::make_shared<int>(42);
+      xtd::sptr<int> p = xtd::new_sptr<int>(42);
       xtd::tunit::assume::is_not_null(p);
     }
   };

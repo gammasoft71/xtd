@@ -13,37 +13,37 @@ const emoticon emoticon::empty() {
   return emoticon();
 }
 
-emoticon::emoticon() : data_(make_shared<data>()) {
+emoticon::emoticon() : data_(xtd::new_sptr<data>()) {
 }
 
-emoticon::emoticon(const xtd::ustring& name, initializer_list<char32> codepoints) : data_(make_shared<data>()) {
+emoticon::emoticon(const xtd::ustring& name, initializer_list<char32> codepoints) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::ustring& name, const vector<char32>& codepoints) : data_(make_shared<data>()) {
+emoticon::emoticon(const xtd::ustring& name, const vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::ustring& name, char32 codepoint) : data_(make_shared<data>()) {
+emoticon::emoticon(const xtd::ustring& name, char32 codepoint) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   data_->codepoints = {codepoint};
 }
 
-emoticon::emoticon(initializer_list<char32> codepoints) : data_(make_shared<data>()) {
+emoticon::emoticon(initializer_list<char32> codepoints) : data_(xtd::new_sptr<data>()) {
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const vector<char32>& codepoints) : data_(make_shared<data>()) {
+emoticon::emoticon(const vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(char32 codepoint) : data_(make_shared<data>()) {
+emoticon::emoticon(char32 codepoint) : data_(xtd::new_sptr<data>()) {
   data_->codepoints = {codepoint};
 }
 
-emoticon::emoticon(const emoticon& other) : data_(make_shared<data>()) {
+emoticon::emoticon(const emoticon& other) : data_(xtd::new_sptr<data>()) {
   *data_ = *other.data_;
 }
 
@@ -88,7 +88,7 @@ xtd::ustring emoticon::to_string() const noexcept {
 }
 
 void emoticon::create_data() {
-  data_ = make_shared<data>();
+  data_ = xtd::new_sptr<data>();
 }
 
 void emoticon::name_(const ustring& name) {

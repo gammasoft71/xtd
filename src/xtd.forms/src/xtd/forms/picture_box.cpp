@@ -33,7 +33,7 @@ struct picture_box::data {
   picture_box_size_mode size_mode = picture_box_size_mode::normal;
 };
 
-picture_box::picture_box() : data_(std::make_shared<data>()) {
+picture_box::picture_box() : data_(xtd::new_sptr<data>()) {
   set_can_focus(false);
   set_style(control_styles::opaque | control_styles::selectable, false);
   set_style(control_styles::optimized_double_buffer | control_styles::supports_transparent_back_color, true);

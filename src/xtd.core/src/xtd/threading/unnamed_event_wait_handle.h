@@ -18,7 +18,7 @@ public:
   }
 
   bool create(bool initial_state, bool manual_reset) override {
-    handle_ = std::make_shared<data>();
+    handle_ = xtd::new_sptr<data>();
     handle_->manual_reset = manual_reset;
     if (initial_state) handle_->semaphore.release();
     return true;

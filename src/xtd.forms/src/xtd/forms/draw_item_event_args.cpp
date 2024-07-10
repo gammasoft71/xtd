@@ -13,7 +13,7 @@ struct draw_item_event_args::data {
   xtd::forms::draw_item_state state = xtd::forms::draw_item_state::none;
 };
 
-draw_item_event_args::draw_item_event_args(const draw_item_event_args& other) : data_(std::make_shared<data>()) {
+draw_item_event_args::draw_item_event_args(const draw_item_event_args& other) : data_(xtd::new_sptr<data>()) {
   *data_ = *other.data_;
 }
 
@@ -22,14 +22,14 @@ draw_item_event_args& draw_item_event_args::operator =(const draw_item_event_arg
   return *this;
 }
 
-draw_item_event_args::draw_item_event_args(xtd::drawing::graphics& graphics, const xtd::drawing::font& font, const xtd::drawing::rectangle& rect, size_t index, xtd::forms::draw_item_state state) : data_(std::make_shared<data>()) {
+draw_item_event_args::draw_item_event_args(xtd::drawing::graphics& graphics, const xtd::drawing::font& font, const xtd::drawing::rectangle& rect, size_t index, xtd::forms::draw_item_state state) : data_(xtd::new_sptr<data>()) {
   data_->font = font;
   data_->graphics = &graphics;
   data_->index = index;
   data_->state = state;
 }
 
-draw_item_event_args::draw_item_event_args(xtd::drawing::graphics& graphics, const xtd::drawing::font& font, const xtd::drawing::rectangle& rect, size_t index, xtd::forms::draw_item_state state, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_core) : data_(std::make_shared<data>()) {
+draw_item_event_args::draw_item_event_args(xtd::drawing::graphics& graphics, const xtd::drawing::font& font, const xtd::drawing::rectangle& rect, size_t index, xtd::forms::draw_item_state state, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_core) : data_(xtd::new_sptr<data>()) {
   data_->back_color = back_color;
   data_->font = font;
   data_->fore_color = back_color;

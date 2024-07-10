@@ -37,13 +37,13 @@ semaphore::semaphore(int32 initial_count, const ustring& name, bool& created_new
 semaphore::semaphore(int32 initial_count, int32 maximum_count) : semaphore(initial_count, maximum_count, ustring::empty_string) {
 }
 
-semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name) : data_(std::make_shared<data>()) {
+semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   auto created_new = false;
   create(initial_count, maximum_count, created_new);
 }
 
-semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name, bool& created_new) : data_(std::make_shared<data>()) {
+semaphore::semaphore(int32 initial_count, int32 maximum_count, const ustring& name, bool& created_new) : data_(xtd::new_sptr<data>()) {
   if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {csf_};
   if (initial_count > maximum_count) throw argument_exception {csf_};
   if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {csf_};
@@ -110,7 +110,7 @@ bool semaphore::try_open_existing(const ustring& name, semaphore& result) noexce
   if (name.size() > native::named_semaphore::max_name_size()) return false;
   auto new_semaphore = semaphore {};
   new_semaphore.data_->name = name;
-  new_semaphore.semaphore_ = std::make_shared<semaphore::named_semaphore>();
+  new_semaphore.semaphore_ = xtd::new_sptr<semaphore::named_semaphore>();
   if (!new_semaphore.semaphore_->open(new_semaphore.data_->name)) return false;
   result = new_semaphore;
   return true;
@@ -137,10 +137,10 @@ void semaphore::create(int32 initial_count, int32 maximum_count, bool& created_n
   data_->maximum_count = maximum_count;
   created_new = true;
   if (data_->name.empty()) {
-    semaphore_ = std::make_shared<semaphore::unnamed_semaphore>();
+    semaphore_ = xtd::new_sptr<semaphore::unnamed_semaphore>();
     if (!semaphore_->create(initial_count, maximum_count)) throw io::io_exception {csf_};
   } else {
-    semaphore_ = std::make_shared<semaphore::named_semaphore>();
+    semaphore_ = xtd::new_sptr<semaphore::named_semaphore>();
     created_new = semaphore_->create(initial_count, maximum_count, data_->name);
     if (!created_new && !semaphore_->open(data_->name)) throw io::io_exception {csf_};
   }

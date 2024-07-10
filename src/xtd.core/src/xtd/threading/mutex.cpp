@@ -108,7 +108,7 @@ bool mutex::try_open_existing(const ustring& name, mutex& result) noexcept {
   if (name.size() > native::named_mutex::max_name_size()) return false;
   auto new_mutex = mutex {};
   new_mutex.name_ = name;
-  new_mutex.mutex_ = std::make_shared<mutex::named_mutex>();
+  new_mutex.mutex_ = xtd::new_sptr<mutex::named_mutex>();
   if (!new_mutex.mutex_->open(new_mutex.name_)) return false;
   result = new_mutex;
   return true;
@@ -139,10 +139,10 @@ bool mutex::wait(int32 milliseconds_timeout) {
 void mutex::create(bool initially_owned, bool& created_new) {
   created_new = true;
   if (name_.empty()) {
-    mutex_ = std::make_shared<mutex::unnamed_mutex>();
+    mutex_ = xtd::new_sptr<mutex::unnamed_mutex>();
     if (!mutex_->create(initially_owned)) throw io::io_exception {csf_};
   } else {
-    mutex_ = std::make_shared<mutex::named_mutex>();
+    mutex_ = xtd::new_sptr<mutex::named_mutex>();
     created_new = mutex_->create(initially_owned, name_);
     if (!created_new && !mutex_->open(name_)) throw io::io_exception {csf_};
   }

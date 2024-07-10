@@ -151,7 +151,7 @@ void text_box_base::select_all() {
   select(0, text().size());
 }
 
-text_box_base::text_box_base() : data_(std::make_shared<data>()) {
+text_box_base::text_box_base() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::fixed_height, auto_size());
   set_style(control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::user_paint, false);
 }

@@ -63,7 +63,7 @@ scrollable_control& scrollable_control::v_scroll(bool v_scroll) {
   return *this;
 }
 
-scrollable_control::scrollable_control() : data_(std::make_shared<data>()) {
+scrollable_control::scrollable_control() : data_(xtd::new_sptr<data>()) {
   set_state(state::tab_stop, false);
   set_style(control_styles::container_control, true);
   set_style(control_styles::all_painting_in_wm_paint, false);

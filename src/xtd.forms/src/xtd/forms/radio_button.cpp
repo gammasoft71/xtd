@@ -38,7 +38,7 @@ struct radio_button::data {
   xtd::forms::visual_styles::radio_button_state state = xtd::forms::visual_styles::radio_button_state::unchecked_normal;
 };
 
-radio_button::radio_button() : data_(std::make_shared<data>()) {
+radio_button::radio_button() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
   text_align(content_alignment::middle_left);
 }

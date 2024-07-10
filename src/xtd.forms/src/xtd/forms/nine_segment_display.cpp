@@ -9,7 +9,7 @@ struct nine_segment_display::data {
   std::optional<int32> thickness;
 };
 
-nine_segment_display::nine_segment_display() : data_(std::make_shared<data>()) {
+nine_segment_display::nine_segment_display() : data_(xtd::new_sptr<data>()) {
 }
 
 int32 nine_segment_display::thickness() const noexcept {

@@ -9,7 +9,7 @@
 
 class xtd::threading::monitor::condition_variable {
 public:
-  condition_variable() : handle_(std::make_shared<intptr>(xtd::native::condition_variable::create())) {}
+  condition_variable() : handle_(xtd::new_sptr<intptr>(xtd::native::condition_variable::create())) {}
   condition_variable(const condition_variable&) = default;
   condition_variable& operator =(const condition_variable& other) {
     xtd::native::condition_variable::destroy(*handle_);

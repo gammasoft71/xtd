@@ -30,11 +30,11 @@ struct directory::directory_iterator::data {
 };
 
 directory::directory_iterator::directory_iterator(const ustring& path, const ustring& pattern) {
-  data_ = make_shared<data>(path, pattern);
+  data_ = xtd::new_sptr<data>(path, pattern);
 }
 
 directory::directory_iterator::directory_iterator() {
-  data_ = make_shared<data>();
+  data_ = xtd::new_sptr<data>();
 }
 
 directory::directory_iterator& directory::directory_iterator::operator ++() {
@@ -72,11 +72,11 @@ struct directory::file_iterator::data {
 };
 
 directory::file_iterator::file_iterator(const std::string& path, const std::string& pattern) {
-  data_ = make_shared<data>(path, pattern);
+  data_ = xtd::new_sptr<data>(path, pattern);
 }
 
 directory::file_iterator::file_iterator() {
-  data_ = make_shared<data>();
+  data_ = xtd::new_sptr<data>();
 }
 
 directory::file_iterator& directory::file_iterator::operator ++() {
@@ -114,11 +114,11 @@ struct directory::file_system_entry_iterator::data {
 };
 
 directory::file_system_entry_iterator::file_system_entry_iterator(const std::string& path, const std::string& pattern) {
-  data_ = make_shared<data>(path, pattern);
+  data_ = xtd::new_sptr<data>(path, pattern);
 }
 
 directory::file_system_entry_iterator::file_system_entry_iterator() {
-  data_ = make_shared<data>();
+  data_ = xtd::new_sptr<data>();
 }
 
 directory::file_system_entry_iterator& directory::file_system_entry_iterator::operator ++() {

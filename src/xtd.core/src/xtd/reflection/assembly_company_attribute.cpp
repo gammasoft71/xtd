@@ -7,7 +7,7 @@ using namespace xtd::reflection;
 assembly_company_attribute::assembly_company_attribute(const ustring& company) : company_(company) {}
 
 assembly_company_attribute::assembly_company_attribute(const ustring& company, const object& executing_assembly) : company_(company) {
-  __assembly_company_attribute__() = make_shared<xtd::reflection::assembly_company_attribute>(company);
+  __assembly_company_attribute__() = xtd::new_sptr<xtd::reflection::assembly_company_attribute>(company);
 }
 
 const ustring& assembly_company_attribute::company() const noexcept {

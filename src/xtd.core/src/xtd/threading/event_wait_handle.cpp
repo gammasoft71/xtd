@@ -39,7 +39,7 @@ event_wait_handle::event_wait_handle(bool initial_state, const ustring& name, bo
 event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode) : event_wait_handle(initial_state, mode, ustring::empty_string) {
   
 }
-event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name) : data_(std::make_shared<event_wait_handle::data>()) {
+event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name) : data_(xtd::new_sptr<event_wait_handle::data>()) {
   data_->mode = mode;
   data_->name = name;
   data_->is_set = initial_state;
@@ -49,7 +49,7 @@ event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, 
   create(initial_state, created_new);
 }
 
-event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name, bool& created_new) : data_(std::make_shared<event_wait_handle::data>()) {
+event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const ustring& name, bool& created_new) : data_(xtd::new_sptr<event_wait_handle::data>()) {
   data_->mode = mode;
   data_->name = name;
   data_->is_set = initial_state;

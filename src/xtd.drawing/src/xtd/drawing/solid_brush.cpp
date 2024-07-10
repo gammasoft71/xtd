@@ -10,11 +10,11 @@ struct solid_brush::data {
   drawing::color color_;
 };
 
-solid_brush::solid_brush() : data_(std::make_shared<data>()) {
+solid_brush::solid_brush() : data_(xtd::new_sptr<data>()) {
   color(drawing::color::black);
 }
 
-solid_brush::solid_brush(const xtd::drawing::color& color) : data_(std::make_shared<data>()) {
+solid_brush::solid_brush(const xtd::drawing::color& color) : data_(xtd::new_sptr<data>()) {
   this->color(color);
 }
 

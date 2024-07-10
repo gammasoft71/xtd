@@ -69,7 +69,7 @@ scroll_bar& scroll_bar::value(int32 value) {
   return *this;
 }
 
-scroll_bar::scroll_bar(bool vertical) : data_(std::make_shared<data>()) {
+scroll_bar::scroll_bar(bool vertical) : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::user_paint, false);
   set_style(control_styles::standard_click, false);
   set_style(control_styles::use_text_for_accessibility, false);

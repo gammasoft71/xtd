@@ -8,7 +8,7 @@ assembly_version_attribute::assembly_version_attribute(const ustring& version) :
 }
 
 assembly_version_attribute::assembly_version_attribute(const ustring& version, const object& executing_assembly) : version_(version) {
-  __assembly_version_attribute__() = make_shared<xtd::reflection::assembly_version_attribute>(version);
+  __assembly_version_attribute__() = xtd::new_sptr<xtd::reflection::assembly_version_attribute>(version);
 }
 
 const ustring& assembly_version_attribute::version() const noexcept {

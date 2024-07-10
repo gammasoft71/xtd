@@ -33,7 +33,7 @@ namespace xtd::tests {
     }
     
     void test_method_(memberwise_clone_on_object) {
-      xtd::sptr<object> obj = make_shared<object>();
+      xtd::sptr<object> obj = xtd::new_sptr<object>();
       auto cloned_obj = obj->memberwise_clone<object>();
       assert::is_false(obj->equals(*cloned_obj), csf_);
     }

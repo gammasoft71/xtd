@@ -38,7 +38,7 @@ xtd::ustring list_control::item::to_string() const noexcept {
   return value_;
 }
 
-list_control::list_control() : data_(std::make_shared<data>()) {
+list_control::list_control() : data_(xtd::new_sptr<data>()) {
   //back_color_ = default_back_color();
   //fore_color_ = default_fore_color();
 }

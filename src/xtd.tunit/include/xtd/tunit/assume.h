@@ -1560,7 +1560,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1 = xtd::new_sptr<std::string>("Anything");
       /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1); // test ok.
       /// xtd::tunit::assume::is_not_null(s2); // test throws an abort_error exception.
@@ -1573,7 +1573,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1 = xtd::new_sptr<std::string>("Anything");
       /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1, csf_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, csf_); // test throws an abort_error exception.
@@ -1586,7 +1586,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1 = xtd::new_sptr<std::string>("Anything");
       /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message..."); // test throws an abort_error exception.
@@ -1600,7 +1600,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s1 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s1 = xtd::new_sptr<std::string>("Anything");
       /// xtd::sptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message...", csf_); // test throws an abort_error exception.
@@ -1618,7 +1618,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1); // test ok.
@@ -1632,7 +1632,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1, csf_); // test ok.
@@ -1646,7 +1646,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1, "User message..."); // test ok.
@@ -1661,7 +1661,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1, "User message...", csf_); // test ok.
@@ -1959,7 +1959,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s1;
-      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2 = xtd::new_sptr<std::string>("Anything");
       /// xtd::tunit::assume::is_null(s1); // test ok.
       /// xtd::tunit::assume::is_null(s2); // test throws an abort_error exception.
       /// ```
@@ -1972,7 +1972,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s1;
-      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2 = xtd::new_sptr<std::string>("Anything");
       /// xtd::tunit::assume::is_null(s1, csf_); // test ok.
       /// xtd::tunit::assume::is_null(s2, csf_); // test throws an abort_error exception.
       /// ```
@@ -1985,7 +1985,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s1;
-      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2 = xtd::new_sptr<std::string>("Anything");
       /// xtd::tunit::assume::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_null(s2, "User message..."); // test throws an abort_error exception.
       /// ```
@@ -1999,7 +1999,7 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s1;
-      /// xtd::sptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s2 = xtd::new_sptr<std::string>("Anything");
       /// xtd::tunit::assume::is_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::assume::is_null(s2, "User message...", csf_); // test throws an abort_error exception.
       /// ```
@@ -2017,7 +2017,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assume::is_null(s1); // test throws an abort_error exception.
@@ -2032,7 +2032,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assume::is_null(s1, csf_); // test throws an abort_error exception.
@@ -2047,7 +2047,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assume::is_null(s1, "User message..."); // test throws an abort_error exception.
@@ -2063,7 +2063,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// xtd::sptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
       /// std::weak_ptr<std::string> s1;
       /// std::weak_ptr<std::string> s2 = s;
       /// xtd::tunit::assume::is_null(s1, "User message...", csf_); // test throws an abort_error exception.

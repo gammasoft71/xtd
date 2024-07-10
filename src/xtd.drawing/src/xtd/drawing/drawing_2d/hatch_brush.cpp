@@ -542,7 +542,7 @@ hatch_brush::hatch_brush() : hatch_brush(xtd::drawing::drawing_2d::hatch_style::
 hatch_brush::hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color& fore_color) : hatch_brush(hatch_style, fore_color, xtd::drawing::color::black) {
 }
 
-hatch_brush::hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color) : data_(std::make_shared<data>()) {
+hatch_brush::hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color& fore_color, const xtd::drawing::color& back_color) : data_(xtd::new_sptr<data>()) {
   data_->hatch_style_ = hatch_style;
   data_->fore_color_ = fore_color;
   data_->back_color_ = back_color;

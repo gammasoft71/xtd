@@ -23,7 +23,7 @@ struct toggle_button::data {
   xtd::forms::visual_styles::toggle_button_state state = xtd::forms::visual_styles::toggle_button_state::unchecked_normal;
 };
 
-toggle_button::toggle_button() : data_(std::make_shared<data>()) {
+toggle_button::toggle_button() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::standard_click | control_styles::standard_double_click, false);
 }
 

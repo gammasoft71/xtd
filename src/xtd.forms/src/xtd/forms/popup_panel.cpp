@@ -16,7 +16,7 @@ struct popup_panel::data {
   bool ignore_mouse_messages = false;
 };
 
-popup_panel::popup_panel() : data_(std::make_shared<data>()) {
+popup_panel::popup_panel() : data_(xtd::new_sptr<data>()) {
   visible(false);
 }
 

@@ -113,7 +113,7 @@ struct input_dialog::data {
   bool word_wrap = true;
 };
 
-input_dialog::input_dialog() : data_(std::make_shared<data>()) {
+input_dialog::input_dialog() : data_(xtd::new_sptr<data>()) {
   data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
@@ -240,7 +240,7 @@ void input_dialog::run_sheet(intptr owner) {
     run_dialog(owner);
   else {
     if (data_->dialog_appearance == xtd::forms::dialog_appearance::standard) {
-      auto dialog = make_shared<input_dialog_standard>(data_->text, data_->message, data_->value, data_->character_casing, data_->multiline, data_->use_system_password_char, data_->word_wrap);
+      auto dialog = xtd::new_sptr<input_dialog_standard>(data_->text, data_->message, data_->value, data_->character_casing, data_->multiline, data_->use_system_password_char, data_->word_wrap);
       dialog->form_closed += [&, dialog](object & sender, const form_closed_event_args & e) {
         if (dialog->dialog_result() == dialog_result::ok) data_->value = dialog->value();
         on_dialog_closed(dialog_closed_event_args(dialog->dialog_result()));

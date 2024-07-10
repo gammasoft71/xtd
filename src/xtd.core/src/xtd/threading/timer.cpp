@@ -40,7 +40,7 @@ timer::timer(const timer_callback& callback, const time_span& due_time, const ti
 timer::timer(const timer_callback& callback, uint32 due_time, uint32 period) : timer(callback, this, as<int32>(due_time), as<int32>(period)) {
 }
 
-timer::timer(const timer_callback& callback, std::any state, int32 due_time, int32 period) : data_(std::make_shared<data>()) {
+timer::timer(const timer_callback& callback, std::any state, int32 due_time, int32 period) : data_(xtd::new_sptr<data>()) {
   data_->callback = callback;
   data_->state = state;
   data_->due_time = due_time;

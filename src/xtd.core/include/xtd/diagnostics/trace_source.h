@@ -194,7 +194,7 @@ namespace xtd {
       xtd::ustring name_;
       /// @todo Update source_switch with this...
       xtd::diagnostics::source_levels switch_levels_ = xtd::diagnostics::source_levels::off;
-      xtd::diagnostics::trace_listener_collection listeners_ {std::make_shared<xtd::diagnostics::default_trace_listener>()};
+      xtd::diagnostics::trace_listener_collection listeners_ {xtd::new_sptr<xtd::diagnostics::default_trace_listener>()};
       xtd::diagnostics::source_switch source_switch_ {""};
     };
   }

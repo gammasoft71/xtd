@@ -9,7 +9,7 @@
 
 class xtd::threading::monitor::critical_section {
 public:
-  critical_section() : handle_(std::make_shared<intptr>(native::critical_section::create())) {}
+  critical_section() : handle_(xtd::new_sptr<intptr>(native::critical_section::create())) {}
   critical_section(const critical_section&) = default;
   critical_section& operator =(const critical_section& other) {
     xtd::native::critical_section::destroy(*handle_);

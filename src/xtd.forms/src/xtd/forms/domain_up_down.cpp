@@ -49,7 +49,7 @@ struct domain_up_down::data {
   bool wrap = false;
 };
 
-domain_up_down::domain_up_down() : data_(make_shared<data>()) {
+domain_up_down::domain_up_down() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
 

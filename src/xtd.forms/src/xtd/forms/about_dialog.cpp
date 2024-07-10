@@ -277,7 +277,7 @@ struct about_dialog::data {
   ustring license;
 };
 
-about_dialog::about_dialog() : data_(std::make_shared<data>()) {
+about_dialog::about_dialog() : data_(xtd::new_sptr<data>()) {
   data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
 }
 
@@ -478,7 +478,7 @@ void about_dialog::reset() noexcept {
 void about_dialog::show() {
   if (data_->dialog_appearance == dialog_appearance::system) native::about_dialog::show(0, icon::from_bitmap(bitmap {data_->icon}), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
   else {
-    if (!data_->dialog) data_->dialog = make_shared<about_dialog_standard>();
+    if (!data_->dialog) data_->dialog = xtd::new_sptr<about_dialog_standard>();
     data_->dialog->show(nullptr, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license, data_->user_tab_pages);
   }
 }
@@ -486,7 +486,7 @@ void about_dialog::show() {
 void about_dialog::show(const iwin32_window& owner) {
   if (data_->dialog_appearance == dialog_appearance::system) native::about_dialog::show(owner.handle(), icon::from_bitmap(bitmap {data_->icon}), data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license);
   else {
-    if (!data_->dialog) data_->dialog = make_shared<about_dialog_standard>();
+    if (!data_->dialog) data_->dialog = xtd::new_sptr<about_dialog_standard>();
     data_->dialog->show(&owner, data_->icon, data_->name, data_->description, data_->version, data_->long_version, data_->copyright, data_->website, data_->website_label, data_->authors.to_array(), data_->artists.to_array(), data_->documenters.to_array(), data_->translators.to_array(), data_->license, data_->user_tab_pages);
   }
 }

@@ -16,7 +16,7 @@ struct cancellation_token_source::data {
 cancellation_token_source::cancellation_token_source() : cancellation_token_source(0) {
 }
 
-cancellation_token_source::cancellation_token_source(int32 milliseconds_delay) : data_(std::make_shared<data>()) {
+cancellation_token_source::cancellation_token_source(int32 milliseconds_delay) : data_(xtd::new_sptr<data>()) {
   data_->token = cancellation_token {*this};
   data_->milliseconds_delay = milliseconds_delay;
 }

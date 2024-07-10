@@ -16,7 +16,7 @@ public:
   }
 
   bool create(bool initially_owned) override {
-    handle_ = std::make_shared<std::recursive_timed_mutex>();
+    handle_ = xtd::new_sptr<std::recursive_timed_mutex>();
     if (initially_owned) wait(0);
     return true;
   }

@@ -16,7 +16,7 @@ struct font_dialog::data {
   bool show_color = false;
 };
 
-font_dialog::font_dialog() : data_(std::make_shared<data>()) {
+font_dialog::font_dialog() : data_(xtd::new_sptr<data>()) {
 }
 
 bool font_dialog::allow_script_change() const noexcept {

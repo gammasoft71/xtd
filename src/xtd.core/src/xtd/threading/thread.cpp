@@ -60,19 +60,19 @@ thread& thread::current_thread() noexcept {
   return get_thread(get_current_thread_id());
 }
 
-thread::thread() : data_(std::make_shared<data>()) {
+thread::thread() : data_(xtd::new_sptr<data>()) {
 }
 
 thread::thread(const xtd::threading::thread_start& start) : thread::thread(start, 0) {
 }
 
-thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) : data_(std::make_shared<data>()) {
+thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) : data_(xtd::new_sptr<data>()) {
   if (start.is_empty() || max_stack_size < 0) throw argument_exception {csf_};
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
   auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
-  auto safe_thread = std::make_shared<thread>(*this);
+  auto safe_thread = xtd::new_sptr<thread>(*this);
   data_->safe_thread = safe_thread.get();
   get_static_data().threads.push_back(safe_thread);
 }
@@ -80,13 +80,13 @@ thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) 
 thread::thread(const xtd::threading::parameterized_thread_start& start) : thread(start, 0) {
 }
 
-thread::thread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size) : data_(std::make_shared<data>()) {
+thread::thread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size) : data_(xtd::new_sptr<data>()) {
   if (start.is_empty() || max_stack_size < 0) throw argument_exception {csf_};
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
   auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
-  auto safe_thread = std::make_shared<thread>(*this);
+  auto safe_thread = xtd::new_sptr<thread>(*this);
   data_->safe_thread = safe_thread.get();
   get_static_data().threads.push_back(safe_thread);
 }

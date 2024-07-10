@@ -95,7 +95,7 @@ void main_form::on_form_resize(xtd::object& sender, const xtd::event_args& e) {
 void main_form::on_message_key_down(const xtd::forms::key_event_args& e) {
   if (!properties::settings::default_settings().show_key_down()) return;
   main_panel_.suspend_layout();
-  auto key_control = make_shared<keycodes::key_control>();
+  auto key_control = xtd::new_sptr<keycodes::key_control>();
   key_control->parent(main_panel_);
   key_control->dock(xtd::forms::dock_style::top);
   key_control->key_event("Key down"_t);
@@ -111,7 +111,7 @@ void main_form::on_message_key_down(const xtd::forms::key_event_args& e) {
 void main_form::on_message_key_press(const xtd::forms::key_press_event_args& e) {
   if (handled_key_press_ || !properties::settings::default_settings().show_key_press()) return;
   main_panel_.suspend_layout();
-  auto key_press_control = make_shared<keycodes::key_press_control>();
+  auto key_press_control = xtd::new_sptr<keycodes::key_press_control>();
   key_press_control->parent(main_panel_);
   key_press_control->dock(xtd::forms::dock_style::top);
   key_press_control->key_char(ustring::format("{} (0x{:X2})", e.key_char(), static_cast<int>(e.key_char())));
@@ -122,7 +122,7 @@ void main_form::on_message_key_press(const xtd::forms::key_press_event_args& e) 
 
 void main_form::on_message_key_up(const xtd::forms::key_event_args& e) {
   main_panel_.suspend_layout();
-  auto key_control = make_shared<keycodes::key_control>();
+  auto key_control = xtd::new_sptr<keycodes::key_control>();
   key_control->parent(main_panel_);
   key_control->dock(xtd::forms::dock_style::top);
   key_control->key_event("Key up"_t);

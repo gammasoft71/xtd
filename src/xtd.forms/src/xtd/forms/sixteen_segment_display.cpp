@@ -9,7 +9,7 @@ struct sixteen_segment_display::data {
   std::optional<int32> thickness;
 };
 
-sixteen_segment_display::sixteen_segment_display() : data_(std::make_shared<data>()) {
+sixteen_segment_display::sixteen_segment_display() : data_(xtd::new_sptr<data>()) {
 }
 
 int32 sixteen_segment_display::thickness() const noexcept {

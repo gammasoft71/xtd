@@ -19,7 +19,7 @@ struct background_worker::data {
   async_result worker_result;
 };
 
-background_worker::background_worker() noexcept : data_(make_shared<data>()) {
+background_worker::background_worker() noexcept : data_(xtd::new_sptr<data>()) {
 }
 
 background_worker::~background_worker() noexcept {

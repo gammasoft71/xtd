@@ -21,7 +21,7 @@ public:
   }
 
   bool create(int32 initial_count, int32 maximum_count) override {
-    handle_ = std::make_shared<data>();
+    handle_ = xtd::new_sptr<data>();
     handle_->maximum_count = maximum_count;
     handle_->semaphore.release(static_cast<std::ptrdiff_t>(initial_count));
     handle_->count += initial_count;

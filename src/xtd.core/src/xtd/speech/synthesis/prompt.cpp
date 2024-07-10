@@ -13,7 +13,7 @@ struct prompt::data {
 prompt::prompt() : prompt(ustring::empty_string) {
 }
 
-prompt::prompt(const ustring& text_to_speak) : data_(make_shared<data>()) {
+prompt::prompt(const ustring& text_to_speak) : data_(xtd::new_sptr<data>()) {
   data_->text_to_speak = text_to_speak;
 }
 

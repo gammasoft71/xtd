@@ -8,7 +8,7 @@ assembly_guid_attribute::assembly_guid_attribute(const ustring& guid) : guid_(gu
 }
 
 assembly_guid_attribute::assembly_guid_attribute(const ustring& guid, const object& executing_assembly) : guid_(guid) {
-  __assembly_guid_attribute__() = make_shared<xtd::reflection::assembly_guid_attribute>(guid);
+  __assembly_guid_attribute__() = xtd::new_sptr<xtd::reflection::assembly_guid_attribute>(guid);
 }
 
 const ustring& assembly_guid_attribute::guid() const noexcept {

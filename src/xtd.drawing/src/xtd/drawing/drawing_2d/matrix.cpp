@@ -17,21 +17,21 @@ struct matrix::data {
 matrix::matrix() : matrix(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f) {
 }
 
-matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) : data_(std::make_shared<data>()) {
+matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::matrix::create(m11, m12, m21, m22, dx, dy);
 }
 
-matrix::matrix(const rectangle& rect, const vector<point>& plgpts) : data_(std::make_shared<data>()) {
+matrix::matrix(const rectangle& rect, const vector<point>& plgpts) : data_(xtd::new_sptr<data>()) {
   if (plgpts.size() != 3) throw argument_exception {csf_};
   init_from_rect_3points(rectangle_f(rect), point_f(plgpts[0]), point_f(plgpts[1]), point_f(plgpts[2]));
 }
 
-matrix::matrix(const rectangle_f& rect, const vector<point_f>& plgpts) : data_(std::make_shared<data>()) {
+matrix::matrix(const rectangle_f& rect, const vector<point_f>& plgpts) : data_(xtd::new_sptr<data>()) {
   if (plgpts.size() != 3) throw argument_exception {csf_};
   init_from_rect_3points(rect, plgpts[0], plgpts[1], plgpts[2]);
 }
 
-matrix::matrix(intptr handle) : data_(std::make_shared<data>()) {
+matrix::matrix(intptr handle) : data_(xtd::new_sptr<data>()) {
   data_->handle = handle;
 }
 

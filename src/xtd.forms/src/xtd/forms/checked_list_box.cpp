@@ -60,7 +60,7 @@ struct checked_list_box::data {
   item selected_item;
 };
 
-checked_list_box::checked_list_box() : data_(std::make_shared<data>()) {
+checked_list_box::checked_list_box() : data_(xtd::new_sptr<data>()) {
   /// @todo Delete the next line when the standard control is developed.
   control_appearance(forms::control_appearance::system);
   set_style(control_styles::resize_redraw, true);

@@ -8,7 +8,7 @@ assembly_title_attribute::assembly_title_attribute(const ustring& title) : title
 }
 
 assembly_title_attribute::assembly_title_attribute(const ustring& title, const object& executing_assembly) : title_(title) {
-  __assembly_title_attribute__() = make_shared<xtd::reflection::assembly_title_attribute>(title);
+  __assembly_title_attribute__() = xtd::new_sptr<xtd::reflection::assembly_title_attribute>(title);
 }
 
 const ustring& assembly_title_attribute::title() const noexcept {
