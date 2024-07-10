@@ -9,7 +9,7 @@ namespace xtd::tunit::tests {
   public:
     void test_method_(test_case_failed) {
       xtd::sptr<int> i = xtd::new_sptr<int>(42);
-      std::weak_ptr<int> p = i;
+      xtd::wptr<int> p = i;
       xtd::tunit::assert::is_null(p);
     }
   };

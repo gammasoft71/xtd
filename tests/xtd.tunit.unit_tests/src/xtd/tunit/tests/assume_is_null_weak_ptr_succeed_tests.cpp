@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(assume_is_null_weak_ptr_succeed_tests) {
   public:
     void test_method_(test_case_succeed) {
-      std::weak_ptr<int> p;
+      xtd::wptr<int> p;
       xtd::tunit::assume::is_null(p);
     }
   };
