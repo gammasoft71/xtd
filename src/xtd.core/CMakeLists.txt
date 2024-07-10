@@ -474,6 +474,8 @@ add_sources(
   include/xtd/collections/vector_list
   include/xtd/collections/generic/equal_to.h
   include/xtd/collections/generic/equal_to
+  include/xtd/collections/generic/key_value_pair.h
+  include/xtd/collections/generic/key_value_pair
   include/xtd/collections/specialized/string_map.h
   include/xtd/collections/specialized/string_map
   include/xtd/collections/specialized/string_pair.h
