@@ -28,29 +28,29 @@ namespace example {
       
       button_normal.text("Show normal");
       button_normal.click += [&] {
-        auto dialog = make_unique<form>();
+        auto dialog = new_ptr<form>();
         dialog->text("dialog show normal");
         dialog->size({250, 100});
         dialog->show();
-        dialogs.push_back(std::move(dialog));
+        dialogs.push_back(dialog);
       };
       
       button_modeless.text("Show modeless");
       button_modeless.click += [&] {
-        auto dialog = make_unique<form>();
+        auto dialog = new_ptr<form>();
         dialog->text("dialog show modeless");
         dialog->size({250, 100});
         dialog->owner(*this).show();
-        dialogs.push_back(std::move(dialog));
+        dialogs.push_back(dialog);
       };
       
       button_top_most.text("Show top most");
       button_top_most.click += [&] {
-        auto dialog = make_unique<form>();
+        auto dialog = new_ptr<form>();
         dialog->text("dialog top most");
         dialog->size({250, 100});
         dialog->top_most(true).show();
-        dialogs.push_back(std::move(dialog));
+        dialogs.push_back(dialog);
       };
       
       button_modal.text("Show modal");
@@ -61,14 +61,14 @@ namespace example {
       
       button_sheet.text("Show sheet");
       button_sheet.click += [&] {
-        auto dialog = make_unique<form>();
+        auto dialog = new_ptr<form>();
         dialog->form_border_style(form_border_style::fixed_3d);
         dialog->text("dialog show sheet").size({250, 100});
         dialog->key_up += [&](object & control, key_event_args & e) {
           if (e.key_code() == keys::escape) as<form&>(control).close();
         };
         dialog->show_sheet(*this);
-        dialogs.push_back(std::move(dialog));
+        dialogs.push_back(dialog);
       };
       
       button_sheet_modal.text("Show sheet modal");
@@ -94,7 +94,7 @@ namespace example {
     button button_modal;
     button button_sheet;
     button button_sheet_modal;
-    vector<shared_ptr<form>> dialogs;
+    vector<ptr<form>> dialogs;
   };
 }
 

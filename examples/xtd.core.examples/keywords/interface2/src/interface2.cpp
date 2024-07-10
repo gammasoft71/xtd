@@ -19,7 +19,7 @@ namespace interface2_example {
 }
 
 auto main() -> int {
-  auto stringable = as<interface2_example::istringable>(make_shared<interface2_example::program>());
+  auto stringable = as<interface2_example::istringable>(new_ptr<interface2_example::program>());
   console::write_line(stringable->to_string());
 }
 

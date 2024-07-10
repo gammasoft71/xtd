@@ -12,17 +12,17 @@ public:
 class person : public object {
 public:
   int age = 0;
-  std::shared_ptr<ustring> name = std::make_shared<ustring>();
-  std::shared_ptr<::id_info> id_info = std::make_shared<::id_info>(0);
+  ptr<ustring> name = new_ptr<ustring>();
+  ptr<::id_info> id_info = new_ptr<::id_info>(0);
   
-  std::unique_ptr<person> shallow_copy() {
+  uptr<person> shallow_copy() {
     return memberwise_clone<person>();
   }
   
-  std::unique_ptr<person> deep_copy() {
+  uptr<person> deep_copy() {
     auto other = memberwise_clone<person>();
-    other->id_info = std::make_shared<::id_info>(this->id_info->id_number);
-    other->name = std::make_shared<ustring>(*name);
+    other->id_info = new_ptr<::id_info>(this->id_info->id_number);
+    other->name = new_ptr<ustring>(*name);
     return other;
   }
 };
@@ -34,7 +34,7 @@ void display_values(const person p) {
 
 auto main() -> int {
   // Create an instance of person and assign values to its fields.
-  auto p1 = std::make_unique<person>();
+  auto p1 = new_uptr<person>();
   p1->age = 42;
   *p1->name = "Sam";
   *p1->id_info = id_info {6565};

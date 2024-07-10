@@ -2,9 +2,7 @@
 #include <xtd/console>
 #include <xtd/convert>
 #include <xtd/random>
-#include <memory>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
@@ -18,13 +16,13 @@ auto main() -> int {
   ustring s2 = as<ustring>(i);
   console::write_line("i = {0}, convert::to_string(i) = {1}, as<ustring>(i) = {2}", i, s1, s2);
   
-  any a = "string";
+  std::any a = "string";
   s1 = convert::to_string(a);
   s2 = as<ustring>(a);
   console::write_line("a = {0}, convert::to_string(a) = {1}, as<ustring>(a) = {2}", a, s1, s2);
   
-  shared_ptr<object> value = make_shared<ustring>("a");
-  shared_ptr<ustring> value2 = as<ustring>(value);
+  ptr<object> value = new_ptr<ustring>("a");
+  ptr<ustring> value2 = as<ustring>(value);
   console::write_line("value = {0}, as<ustring>(value) = {1}", *value, *value2);
   
   xtd::random rand;
@@ -34,8 +32,8 @@ auto main() -> int {
     console::write_line("Bad cast : {0} !", e.message());
   }
   
-  shared_ptr<object> ver = make_shared<version>(1, 1, 5);
-  shared_ptr<ustring> str = as<ustring>(ver);
+  ptr<object> ver = new_ptr<version>(1, 1, 5);
+  ptr<ustring> str = as<ustring>(ver);
   if (str == nullptr)
     console::write_line("Bad cast!");
 }

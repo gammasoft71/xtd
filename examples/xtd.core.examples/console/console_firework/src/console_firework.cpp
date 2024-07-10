@@ -141,13 +141,13 @@ namespace console_firework_example {
       console::clear();
       
       auto rand = xtd::random {};
-      auto fireworks = list<shared_ptr<firework>> {};
+      auto fireworks = list<ptr<firework>> {};
       auto colors = vector {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
       
       while (!console::key_available()) {
-        fireworks.push_back(make_shared<firework_start>(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.size())], rand.next(1, 5)));
+        fireworks.push_back(new_ptr<firework_start>(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.size())], rand.next(1, 5)));
         
-        auto fireworks_to_removed = list<shared_ptr<firework>> {};
+        auto fireworks_to_removed = list<ptr<firework>> {};
         for (auto& firework : fireworks) {
           if (is<firework_end>(firework)) fireworks_to_removed.push_back(firework);
           explode(firework);
@@ -165,14 +165,14 @@ namespace console_firework_example {
     }
 
   private:
-    static void explode(shared_ptr<firework>& firework) {
+    static void explode(ptr<firework>& firework) {
       firework->paint();
-      if (is<firework_start_expanded4>(firework)) firework = make_shared<firework_end>(*firework);
-      if (is<firework_start_expanded3>(firework)) firework = make_shared<firework_start_expanded4>(*firework);
-      if (is<firework_start_expanded2>(firework)) firework = make_shared<firework_start_expanded3>(*firework);
-      if (is<firework_start_expanded1>(firework)) firework = make_shared<firework_start_expanded2>(*firework);
-      if (is<firework_exploded>(firework)) firework = make_shared<firework_start_expanded1>(*firework);
-      if (date_time::now().ticks() % firework->delay() == 0 && is<firework_start>(firework)) firework = make_shared<firework_exploded>(*firework);
+      if (is<firework_start_expanded4>(firework)) firework = new_ptr<firework_end>(*firework);
+      if (is<firework_start_expanded3>(firework)) firework = new_ptr<firework_start_expanded4>(*firework);
+      if (is<firework_start_expanded2>(firework)) firework = new_ptr<firework_start_expanded3>(*firework);
+      if (is<firework_start_expanded1>(firework)) firework = new_ptr<firework_start_expanded2>(*firework);
+      if (is<firework_exploded>(firework)) firework = new_ptr<firework_start_expanded1>(*firework);
+      if (date_time::now().ticks() % firework->delay() == 0 && is<firework_start>(firework)) firework = new_ptr<firework_exploded>(*firework);
     }
   };
 }

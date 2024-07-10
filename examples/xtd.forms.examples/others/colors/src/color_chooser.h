@@ -107,7 +107,7 @@ namespace colors_example {
     
   private:
     void add_color_panel(const xtd::drawing::color& color) {
-      auto color_panel = std::make_shared<color_chooser::color_panel>();
+      auto color_panel = xtd::new_ptr<color_chooser::color_panel>();
       color_panel->dock(xtd::forms::dock_style::top);
       color_panel->color(color);
       color_panel->tag(colors_.size());
@@ -162,6 +162,6 @@ namespace colors_example {
     xtd::drawing::color selected_color_ = xtd::drawing::color::empty;
     xtd::forms::choice colors_choice_;
     xtd::forms::panel main_panel_;
-    std::vector<std::shared_ptr<color_panel>> colors_;
+    std::vector<xtd::ptr<color_panel>> colors_;
   };
 }

@@ -19,7 +19,7 @@ public:
     trace::listeners().erase(trace::listeners().begin());
     
     // Create and add a new default trace listener.
-    auto default_listener = make_shared<default_trace_listener>();
+    auto default_listener = new_ptr<default_trace_listener>();
     trace::listeners().push_back(default_listener);
     
     // Assign the log file specification from the command line, if entered.

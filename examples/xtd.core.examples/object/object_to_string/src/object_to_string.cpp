@@ -10,13 +10,13 @@ namespace examples {
 }
 
 auto main() -> int {
-  sptr<object> obj1 = new_sptr<examples::object_test::object1>();
+  ptr<object> obj1 = new_ptr<examples::object_test::object1>();
   console::write_line(obj1->to_string());
 
-  sptr<object> obj2 = new_sptr<date_time>(1971, 1, 5, 23, 5, 0);
+  ptr<object> obj2 = new_ptr<date_time>(1971, 1, 5, 23, 5, 0);
   console::write_line(obj2->to_string());
 
-  sptr<object> obj3 = new_sptr<boolean_object>();
+  ptr<object> obj3 = new_ptr<boolean_object>();
   console::write_line(obj3->to_string());
 }
 

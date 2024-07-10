@@ -3,8 +3,8 @@
 using namespace xtd;
 
 auto main() -> int {
-  auto object1 = std::make_shared<object>();
-  auto object2 = std::make_shared<object>();
+  auto object1 = new_ptr<object>();
+  auto object2 = new_ptr<object>();
   
   auto object3 = object2;
   console::write_line(object1->equals(*object3));

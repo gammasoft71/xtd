@@ -22,9 +22,9 @@ public:
     for(auto color : {colors::light_pink(), colors::light_green(), colors::light_blue(), colors::light_yellow()}) {
       color_image_list.images().push_back(image_from_color(color_image_list.image_size(), color));
       
-      auto colored_tab_page = make_unique<forms::tab_page>();
+      auto colored_tab_page = new_ptr<forms::tab_page>();
       colored_tab_page->image_index(colored_tab_pages.size()).parent(colored_tab_control).text(color.name()).back_color(color);
-      colored_tab_pages.push_back(std::move(colored_tab_page));
+      colored_tab_pages.push_back(colored_tab_page);
     };
     
     colored_tab_control.image_list(color_image_list);
@@ -43,7 +43,7 @@ private:
   
   image_list color_image_list;
   tab_control colored_tab_control;
-  vector<unique_ptr<tab_page>> colored_tab_pages;
+  vector<ptr<tab_page>> colored_tab_pages;
 };
 
 auto main() -> int {
