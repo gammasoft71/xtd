@@ -385,6 +385,18 @@ namespace xtd {
   }
 #endif
 
+  template<typename value_t>
+  inline std::string to_string(const value_t* value, const std::string& fmt, const std::locale& loc) {
+    if (!value) return "(null)";
+    return __numeric_formatter(fmt, reinterpret_cast<intptr>(value), loc);
+  }
+  
+  template<typename value_t>
+  inline std::string to_string(value_t* const value, const std::string& fmt, const std::locale& loc) {
+    if (!value) return "(null)";
+    return __numeric_formatter(fmt, reinterpret_cast<intptr>(value), loc);
+  }
+  
   template<typename type_t>
   inline std::string to_string(const std::shared_ptr<type_t>& value, const std::string& fmt, const std::locale& loc) {
     if (!value) return "(null)";
