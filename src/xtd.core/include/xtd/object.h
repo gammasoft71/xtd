@@ -50,6 +50,8 @@ namespace xtd {
     object(const object&) = default;
     object& operator =(const object&) = default;
     virtual ~object() = default;
+    bool operator ==(const object& obj) const noexcept {return equals(*this, obj);}
+    bool operator !=(const object& obj) const noexcept {return !operator==(obj);}
     /// @endcond
     
     /// @name Public Methods
@@ -131,13 +133,13 @@ namespace xtd {
     template<typename object_t>
     bool equals(const object_t& obj) const noexcept {
       if (dynamic_cast<const iequatable<object_t>*>(this)) return dynamic_cast<const iequatable<object_t>*>(this)->equals(obj);
-      return this == &obj;
+      return equals(dynamic_cast<const object&>(*this), dynamic_cast<const object&>(obj));
     }
     
     template<typename object_t>
     static bool equals(const object_t& object_a, const object_t& object_b) noexcept {
       if (dynamic_cast<const iequatable<object_t>*>(&object_a)) return dynamic_cast<const iequatable<object_t>*>(&object_a)->equals(object_b);
-      return object_a.equals(object_b);
+      return equals(dynamic_cast<const object&>(object_a), dynamic_cast<const object&>(object_b));
     }
     /// @endcond
     

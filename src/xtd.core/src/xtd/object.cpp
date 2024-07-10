@@ -9,13 +9,12 @@ using namespace std;
 using namespace xtd;
 
 bool object::equals(const object& obj) const noexcept {
-  return this == &obj;
+  return equals(*this, obj);
 }
 
 bool object::equals(const object& object_a, const object& object_b) noexcept {
   if (dynamic_cast<const iequatable<decltype(object_a)>*>(&object_a)) return dynamic_cast<const iequatable<decltype(object_a)>*>(&object_a)->equals(object_b);
-  return object_a.equals(object_b);
-  //return object_a == object_b;
+  return &object_a == &object_b;
 }
 
 size_t object::get_hash_code() const noexcept {
