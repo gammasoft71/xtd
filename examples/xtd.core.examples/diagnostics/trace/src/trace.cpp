@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 auto main() -> int {
-  trace::listeners().push_back(make_shared<ostream_trace_listener>(console::out));
+  trace::listeners().push_back(new_ptr<ostream_trace_listener>(console::out));
   trace::auto_flush(true);
   trace::indent();
   trace::write_line("Entering Main");

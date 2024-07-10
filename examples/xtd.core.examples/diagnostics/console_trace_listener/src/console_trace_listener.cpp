@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 auto main() -> int {
-  debug::listeners({make_shared<console_trace_listener>()});
+  debug::listeners({new_ptr<console_trace_listener>()});
   debug::write_line("Begin");
   debug::indent();
   /// Simulate work...

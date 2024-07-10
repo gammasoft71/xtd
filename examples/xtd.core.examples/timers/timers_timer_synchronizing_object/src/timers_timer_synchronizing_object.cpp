@@ -70,7 +70,7 @@ namespace timer_example {
     void button1_click(object& sender, const event_args& e) {
       if (ustring::is_empty(save_file_dialog1.file_name())) {
         if (save_file_dialog1.show_dialog() == dialog_result::ok)
-          sw = std::make_shared<stream_writer>(save_file_dialog1.file_name(), false);
+          sw = new_ptr<stream_writer>(save_file_dialog1.file_name(), false);
       }
       txt = text_box1.text();
       has_changed = false;
@@ -97,7 +97,7 @@ namespace timer_example {
     bool dialog_is_open = false;
     int elapsed_minutes = 0;
     bool has_changed = false;
-    std::shared_ptr<stream_writer> sw;
+    ptr<stream_writer> sw;
     ustring txt;
 
     // Create a timer with a 1-minute interval

@@ -29,7 +29,7 @@ public:
   }
   
   // Return a copy of this point object by making a simple field copy.
-  std::unique_ptr<point> copy() const {
+  uptr<point> copy() const {
     return memberwise_clone<point>();
   }
 };

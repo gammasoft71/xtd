@@ -27,7 +27,7 @@ namespace painting_example {
       panel_colors_container.client_size({512, 32});
       
       for (auto color : {color::dark_magenta, color::dark_cyan, color::brown, color::dark_blue, color::dark_green, color::dark_red, color::gray, color::dark_gray, color::magenta, color::cyan, color::yellow, color::blue, color::green, color::red, color::white, color::black}) {
-        auto panel_color = make_shared<panel>();
+        auto panel_color = new_ptr<panel>();
         panel_color->parent(panel_colors_container);
         panel_color->size({32, 32});
         panel_color->back_color(color);
@@ -147,7 +147,7 @@ namespace painting_example {
     bitmap picture {32, 32};
     
     panel panel_colors_container;
-    vector<shared_ptr<panel>> panel_colors;
+    vector<ptr<panel>> panel_colors;
     button button_clear;
     button button_open;
     panel panel_main;

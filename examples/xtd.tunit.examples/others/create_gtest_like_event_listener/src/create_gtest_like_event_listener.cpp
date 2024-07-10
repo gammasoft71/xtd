@@ -123,7 +123,7 @@ private:
 // Simulate gtest unit test test output
 class gtest_unit_test final : public unit_test {
 public:
-  gtest_unit_test() : unit_test(make_unique<gtest_event_listener>()) {}
+  gtest_unit_test() : unit_test(new_uptr<gtest_event_listener>()) {}
 };
 
 namespace unit_tests {
@@ -146,7 +146,7 @@ namespace unit_tests {
 auto main() -> int {
   return gtest_unit_test().run();
   // is same :
-  // return unit_test(std::make_unique<gtest_event_listener>()).run();
+  // return unit_test(std::new_uptr<gtest_event_listener>()).run();
 }
 
 // This code can produce the following output:

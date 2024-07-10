@@ -1,19 +1,18 @@
 #include <xtd/xtd.tunit>
 #include <memory>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
-      auto s = make_shared<ustring>("string");
+      auto s = new_ptr<ustring>("string");
       assert::is_not_null(s);
     }
     
     void test_method_(test_case_failed) {
-      auto s = shared_ptr<ustring> {};
+      auto s = ptr<ustring> {};
       assert::is_not_null(s);
     }
   };

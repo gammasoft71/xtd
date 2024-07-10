@@ -34,11 +34,11 @@ public:
     button_add.location({10, 0});
     button_add.text("Add");
     button_add.click += [&] {
-      auto item = std::make_unique<label>();
+      auto item = new_ptr<label>();
       item->parent(collapsible_panel2);
       item->text(ustring::format("item{}", ++count));
       item->dock(dock_style::top);
-      control_items.push_back(std::move(item));
+      control_items.push_back(item);
     };
     
     button_remove.parent(collapsible_panel1);
@@ -67,7 +67,7 @@ private:
   button button_add;
   button button_remove;
   toggle_button button_expand;
-  list<shared_ptr<control>> control_items;
+  list<ptr<control>> control_items;
 };
 
 auto main() -> int {
