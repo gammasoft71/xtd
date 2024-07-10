@@ -38,3 +38,4 @@
 #include "ulong.h"
 #include "uptr.h"
 #include "wchar.h"
+#include "wptr.h"

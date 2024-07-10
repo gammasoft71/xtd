@@ -458,6 +458,8 @@ add_sources(
   include/xtd/wchar
   include/xtd/wchar_object.h
   include/xtd/wchar_object
+  include/xtd/wptr.h
+  include/xtd/wptr
   include/xtd/xml_syntax_exception.h
   include/xtd/xml_syntax_exception
   include/xtd/xtd.core
