@@ -48,11 +48,11 @@ forms::check_state checked_list_box::item::check_state() const {
 }
 
 int32 checked_list_box::item::compare_to(const item& value) const noexcept {
-  return list_box::item::compare_to(value);
+  return list_box::item::compare_to(as<list_box::item>(value));
 }
 
 bool checked_list_box::item::equals(const item& value) const noexcept {
-  return list_box::item::equals(value);
+  return list_box::item::equals(as<list_box::item>(value));
 }
 
 struct checked_list_box::data {
