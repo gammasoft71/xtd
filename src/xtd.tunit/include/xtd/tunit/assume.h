@@ -1619,13 +1619,13 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
-      /// std::weak_ptr<std::string> s1 = s;
-      /// std::weak_ptr<std::string> s2;
+      /// xtd::wptr<std::string> s1 = s;
+      /// xtd::wptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1); // test ok.
       /// xtd::tunit::assume::is_not_null(s2); // test ok.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const std::weak_ptr<pointer_t>& pointer) {is_not_null(pointer, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void is_not_null(const xtd::wptr<pointer_t>& pointer) {is_not_null(pointer, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
@@ -1633,13 +1633,13 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
-      /// std::weak_ptr<std::string> s1 = s;
-      /// std::weak_ptr<std::string> s2;
+      /// xtd::wptr<std::string> s1 = s;
+      /// xtd::wptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1, csf_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, csf_); // test ok.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, xtd::ustring::empty_string, stack_frame);}
+      static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_not_null(pointer, xtd::ustring::empty_string, stack_frame);}
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1647,13 +1647,13 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
-      /// std::weak_ptr<std::string> s1 = s;
-      /// std::weak_ptr<std::string> s2;
+      /// xtd::wptr<std::string> s1 = s;
+      /// xtd::wptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message..."); // test ok.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
+      static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::ustring& message) {is_not_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1662,13 +1662,13 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
-      /// std::weak_ptr<std::string> s1 = s;
-      /// std::weak_ptr<std::string> s2;
+      /// xtd::wptr<std::string> s1 = s;
+      /// xtd::wptr<std::string> s2;
       /// xtd::tunit::assume::is_not_null(s1, "User message...", csf_); // test ok.
       /// xtd::tunit::assume::is_not_null(s2, "User message...", csf_); // test ok.
       /// ```
       template<typename pointer_t>
-      static void is_not_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_not_null(pointer, message, stack_frame);
         } catch (...) {
@@ -2018,13 +2018,13 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
-      /// std::weak_ptr<std::string> s1;
-      /// std::weak_ptr<std::string> s2 = s;
+      /// xtd::wptr<std::string> s1;
+      /// xtd::wptr<std::string> s2 = s;
       /// xtd::tunit::assume::is_null(s1); // test throws an abort_error exception.
       /// xtd::tunit::assume::is_null(s2); // test throws an abort_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const std::weak_ptr<pointer_t>& pointer) {is_null(pointer, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
+      static void is_null(const xtd::wptr<pointer_t>& pointer) {is_null(pointer, xtd::ustring::empty_string, xtd::diagnostics::stack_frame::empty());}
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
@@ -2033,13 +2033,13 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
-      /// std::weak_ptr<std::string> s1;
-      /// std::weak_ptr<std::string> s2 = s;
+      /// xtd::wptr<std::string> s1;
+      /// xtd::wptr<std::string> s2 = s;
       /// xtd::tunit::assume::is_null(s1, csf_); // test throws an abort_error exception.
       /// xtd::tunit::assume::is_null(s2, csf_); // test throws an abort_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, xtd::ustring::empty_string, stack_frame);}
+      static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame) {is_null(pointer, xtd::ustring::empty_string, stack_frame);}
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2048,13 +2048,13 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
-      /// std::weak_ptr<std::string> s1;
-      /// std::weak_ptr<std::string> s2 = s;
+      /// xtd::wptr<std::string> s1;
+      /// xtd::wptr<std::string> s2 = s;
       /// xtd::tunit::assume::is_null(s1, "User message..."); // test throws an abort_error exception.
       /// xtd::tunit::assume::is_null(s2, "User message..."); // test throws an abort_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
+      static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::ustring& message) {is_null(pointer, message, xtd::diagnostics::stack_frame::empty());}
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2064,13 +2064,13 @@ namespace xtd {
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
-      /// std::weak_ptr<std::string> s1;
-      /// std::weak_ptr<std::string> s2 = s;
+      /// xtd::wptr<std::string> s1;
+      /// xtd::wptr<std::string> s2 = s;
       /// xtd::tunit::assume::is_null(s1, "User message...", csf_); // test throws an abort_error exception.
       /// xtd::tunit::assume::is_null(s2, "User message...", csf_); // test throws an abort_error exception.
       /// ```
       template<typename pointer_t>
-      static void is_null(const std::weak_ptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
+      static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           assert::is_null(pointer, message, stack_frame);
         } catch (...) {

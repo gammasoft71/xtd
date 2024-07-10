@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::uptr type.
+/// @brief Contains xtd::wptr type.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
