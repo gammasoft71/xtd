@@ -635,10 +635,10 @@ main_form::main_form() {
       directory::create_directory(target_path);
       copy_directory(xtd_example.path(), target_path, true);
       //message_box::show(*this, ustring::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
-      background_worker_ = make_unique<background_worker>();
+      background_worker_ = xtd::new_uptr<background_worker>();
       background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
         begin_invoke([&] {
-          progress_dialog_ = make_unique<progress_dialog>();
+          progress_dialog_ = xtd::new_uptr<progress_dialog>();
           progress_dialog_->text(ustring::format("Opening {} example", path::get_file_name(any_cast<ustring>(e.argument()))));
           progress_dialog_->message("Please wait...");
           progress_dialog_->marquee(true);
@@ -743,11 +743,11 @@ void main_form::new_project(const ustring& project_path, size_t project_type_ite
 
 void main_form::new_project(const ustring& project_path, project_type type, project_language language, project_sdk sdk) {
   add_to_open_recent_projects(project_path);
-  background_worker_ = make_unique<background_worker>();
+  background_worker_ = xtd::new_uptr<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     tuple<ustring, ustring, ustring> new_project = any_cast<tuple<ustring, ustring, ustring>>(e.argument());
     begin_invoke([&] {
-      progress_dialog_ = make_unique<progress_dialog>();
+      progress_dialog_ = xtd::new_uptr<progress_dialog>();
       progress_dialog_->text(ustring::format("Creating {} project", path::get_file_name(get<2>(new_project))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
@@ -775,10 +775,10 @@ void main_form::open_project() {
 
 void main_form::open_project(const ustring& project_path) {
   add_to_open_recent_projects(project_path);
-  background_worker_ = make_unique<background_worker>();
+  background_worker_ = xtd::new_uptr<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
-      progress_dialog_ = make_unique<progress_dialog>();
+      progress_dialog_ = xtd::new_uptr<progress_dialog>();
       progress_dialog_->text(ustring::format("Opening {} project", path::get_file_name(any_cast<ustring>(e.argument()))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
@@ -819,10 +819,10 @@ void main_form::run_project() {
 
 void main_form::run_project(const ustring& project_path) {
   add_to_open_recent_projects(project_path);
-  background_worker_ = make_unique<background_worker>();
+  background_worker_ = xtd::new_uptr<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
-      progress_dialog_ = make_unique<progress_dialog>();
+      progress_dialog_ = xtd::new_uptr<progress_dialog>();
       progress_dialog_->text(ustring::format("Running {} project", path::get_file_name(any_cast<ustring>(e.argument()))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);

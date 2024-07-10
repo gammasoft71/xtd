@@ -200,7 +200,7 @@ void animation::stop() {
 }
 
 xtd::uptr<xtd::object> animation::clone() const {
-  auto result = make_unique<animation>(*this);
+  auto result = xtd::new_uptr<animation>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

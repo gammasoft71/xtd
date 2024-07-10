@@ -18,7 +18,7 @@ namespace xtd {
   /// xtd.core
   /// @par Examples
   /// ```cpp
-  /// xtd::uptr<foo_class> foo = std::make_unique<foo_class>();
+  /// xtd::uptr<foo_class> foo = xtd::new_uptr<foo_class>();
   /// ...
   /// foo = null; // release the unique pointer.
   /// ```

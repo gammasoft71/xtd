@@ -59,7 +59,7 @@ namespace {
     
   protected:
     xtd::uptr<xtd::object> clone() const override {
-      auto result = std::make_unique<credits_item_panel>(*this);
+      auto result = xtd::new_uptr<credits_item_panel>(*this);
       if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
       return result;
     }

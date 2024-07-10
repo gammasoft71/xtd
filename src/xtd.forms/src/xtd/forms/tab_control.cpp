@@ -218,7 +218,7 @@ forms::create_params tab_control::create_params() const noexcept {
 }
 
 xtd::uptr<xtd::object> tab_control::clone() const {
-  auto result = make_unique<tab_control>(*this);
+  auto result = xtd::new_uptr<tab_control>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }
@@ -275,7 +275,7 @@ void tab_control::on_tab_pages_item_removed(size_t index, tab_page_ref& item) {
 }
 
 void tab_control::on_tab_pages_text_added(size_t index, const ustring& text, const ustring& name) {
-  auto item = std::make_unique<tab_page>();
+  auto item = xtd::new_uptr<tab_page>();
   item->text(text);
   item->name(name);
   if (index == tab_pages().npos) {
@@ -288,7 +288,7 @@ void tab_control::on_tab_pages_text_added(size_t index, const ustring& text, con
 }
 
 tab_control::tab_page_collection::iterator tab_control::on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const ustring& text, const ustring& name) {
-  auto item = std::make_unique<tab_page>();
+  auto item = xtd::new_uptr<tab_page>();
   item->text(text);
   item->name(name);
   tab_page_collection::iterator it = tab_pages().end();

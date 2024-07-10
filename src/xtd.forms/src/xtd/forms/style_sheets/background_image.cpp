@@ -76,9 +76,9 @@ void background_image::image_type(style_sheets::image_type value) noexcept {
 
 xtd::uptr<xtd::drawing::brush> background_image::make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect) {
   if (image.image_type() == style_sheets::image_type::linear_gradient)
-    return make_unique<linear_gradient_brush>(rect, image.colors(), as<float>(image.angle() - 90.0f));
+    return xtd::new_uptr<linear_gradient_brush>(rect, image.colors(), as<float>(image.angle() - 90.0f));
   if (image.image_type() == style_sheets::image_type::url)
-    return make_unique<texture_brush>(image::from_file(image.url().to_string()));
+    return xtd::new_uptr<texture_brush>(image::from_file(image.url().to_string()));
   return nullptr;
 }
 

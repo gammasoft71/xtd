@@ -2,14 +2,13 @@
 /// @brief Contains xtd fundamental types.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "core_namespace_aliases.h"
-#include "self.h"
 #include "bool.h"
 #include "byte.h"
 #include "char.h"
 #include "char16.h"
 #include "char32.h"
 #include "char8.h"
+#include "core_namespace_aliases.h"
 #include "decimal.h"
 #include "delete_ptr.h"
 #include "delete_sptr.h"
@@ -26,6 +25,7 @@
 #include "ptr.h"
 #include "ptrdiff.h"
 #include "sbyte.h"
+#include "self.h"
 #include "single.h"
 #include "size.h"
 #include "slong.h"

@@ -151,7 +151,7 @@ public:
     show_normal_button.size({140, 30});
     show_normal_button.text("Show normal");
     show_normal_button.click += [&] {
-      auto dialog = std::make_unique<form>();
+      auto dialog = xtd::new_uptr<form>();
       dialog->text("dialog show normal");
       dialog->size({250, 100});
       dialog->show();
@@ -162,7 +162,7 @@ public:
     show_modeless_button.size({140, 30});
     show_modeless_button.text("Show modeless");
     show_modeless_button.click += [&] {
-      auto dialog = std::make_unique<form>();
+      auto dialog = xtd::new_uptr<form>();
       dialog->text("dialog show modeless");
       dialog->size({250, 100});
       dialog->owner(*this).show();
@@ -173,7 +173,7 @@ public:
     show_top_most_button.size({140, 30});
     show_top_most_button.text("Show top most");
     show_top_most_button.click += [&] {
-      auto dialog = std::make_unique<form>();
+      auto dialog = xtd::new_uptr<form>();
       dialog->text("dialog top most");
       dialog->size({250, 100});
       dialog->top_most(true).show();
@@ -184,7 +184,7 @@ public:
     show_modal_button.size({140, 30});
     show_modal_button.text("Show modal");
     show_modal_button.click += [&] {
-      auto dialog = std::make_unique<form>();
+      auto dialog = xtd::new_uptr<form>();
       dialog->text("dialog show modal");
       dialog->size({250, 100});
       dialog->show_dialog(*this);
@@ -194,7 +194,7 @@ public:
     show_sheet_button.size({140, 30});
     show_sheet_button.text("Show sheet");
     show_sheet_button.click += [&] {
-      auto dialog = std::make_unique<form>();
+      auto dialog = xtd::new_uptr<form>();
       dialog->text("dialog show sheet");
       dialog->size({250, 100});
       dialog->key_up += [&](object & control, key_event_args & e) {
@@ -208,7 +208,7 @@ public:
     show_sheet_modal_button.size({140, 30});
     show_sheet_modal_button.text("Show sheet modal");
     show_sheet_modal_button.click += [&] {
-      auto dialog = std::make_unique<form>();
+      auto dialog = xtd::new_uptr<form>();
       dialog->text("dialog show sheet modal");
       dialog->size({250, 100});
       dialog->key_up += [&](object & control, key_event_args & e) {

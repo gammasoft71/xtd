@@ -210,7 +210,7 @@ namespace xtd {
         /// @include emplace.cpp
         template<typename control_t, typename ... args_t>
         control_t& emplace(const_iterator pos, args_t&& ...args) {
-          auto control_ptr = std::make_unique<control_t>(control_t::create(std::forward<args_t>(args)...));
+          auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
           controls_.push_back(std::move(control_ptr));
           base::insert(pos, control_ref);
@@ -228,7 +228,7 @@ namespace xtd {
         /// @include emplace.cpp
         template<typename control_t, typename ... args_t>
         control_t& emplace_at(size_t index, args_t&& ...args) {
-          auto control_ptr = std::make_unique<control_t>(control_t::create(std::forward<args_t>(args)...));
+          auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
           controls_.push_back(std::move(control_ptr));
           base::insert_at(index, control_ref);
@@ -245,7 +245,7 @@ namespace xtd {
         /// @include emplace.cpp
         template<typename control_t, typename ... args_t>
         control_t& emplace_back(args_t&& ...args) {
-          auto control_ptr = std::make_unique<control_t>(control_t::create(std::forward<args_t>(args)...));
+          auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
           controls_.push_back(std::move(control_ptr));
           base::push_back(control_ref);

@@ -175,7 +175,7 @@ void progress_box::update(const int32 value, const xtd::ustring& title, const xt
 
 void progress_box::show_progress_box(const iwin32_window* owner, const progress_box_options options, const xtd::ustring& title, const xtd::ustring& message, int32 initial_value, int32 minimum, int32 maximum, const bool marquee, size_t marquee_animation_speed, const std::vector<xtd::ustring>& informations) {
   if (dialog_) return;
-  dialog_ = std::make_unique<progress_dialog>();
+  dialog_ = xtd::new_uptr<progress_dialog>();
   dialog_->text(title)
   .value(initial_value)
   .message(message)

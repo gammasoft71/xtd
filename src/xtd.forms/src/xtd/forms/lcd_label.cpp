@@ -1009,7 +1009,7 @@ drawing::size lcd_label::default_size() const noexcept {
 }
 
 xtd::uptr<xtd::object> lcd_label::clone() const {
-  auto result = make_unique<lcd_label>(*this);
+  auto result = xtd::new_uptr<lcd_label>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

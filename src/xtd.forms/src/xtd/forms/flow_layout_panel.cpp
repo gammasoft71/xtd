@@ -60,7 +60,7 @@ flow_layout_panel flow_layout_panel::create(const control& parent, const drawing
 }
 
 xtd::uptr<xtd::object> flow_layout_panel::clone() const {
-  auto result = make_unique<flow_layout_panel>(*this);
+  auto result = xtd::new_uptr<flow_layout_panel>(*this);
   if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::ustring::format("The {} does not implement clone method.", typeof_(*this).full_name()), csf_);
   return result;
 }

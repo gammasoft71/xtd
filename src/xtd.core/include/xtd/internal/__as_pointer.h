@@ -106,7 +106,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// xtd::uptr<button> value = std::make_unique<xtd::forms::button>();
+  /// xtd::uptr<button> value = xtd::new_uptr<xtd::forms::button>();
   /// xtd::uptr<control> result = as<xtd::forms::control>(value);
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
@@ -127,7 +127,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// xtd::uptr<control> result = as<xtd::forms::control>(std::make_unique<xtd::forms::button>());
+  /// xtd::uptr<control> result = as<xtd::forms::control>(xtd::new_uptr<xtd::forms::button>());
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<typename new_type_t, typename current_type_t>

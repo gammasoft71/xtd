@@ -96,7 +96,7 @@ namespace xtd {
     xtd::uptr<object_t> memberwise_clone() const {
       auto object_ptr = dynamic_cast<const object_t*>(this);
       if (object_ptr == nullptr) __throw_invalid_cast_exception(__FILE__, __LINE__, __func__);
-      return std::make_unique<object_t>(*object_ptr);
+      return xtd::new_uptr<object_t>(*object_ptr);
     }
     
     /// @brief Returns a xtd::ustring that represents the current object.
