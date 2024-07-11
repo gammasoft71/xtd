@@ -1,4 +1,4 @@
-#include <xtd/collections/vector_list>
+#include <xtd/collections/array_list>
 #include <xtd/console>
 
 using namespace std;
@@ -14,7 +14,7 @@ void print_values(const collection_t& my_list) {
 
 auto main() -> int {
   // Creates and initializes a new vector_list.
-  vector_list my_vl;
+  auto my_vl = array_list {};
   my_vl.emplace_back("Hello");
   my_vl.emplace_back("World");
   my_vl.emplace_back("!");

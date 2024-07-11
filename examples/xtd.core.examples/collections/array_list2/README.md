@@ -1,10 +1,10 @@
-# vector_list
+# array_list2
 
-Shows how to use [vector_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) class.
+Shows how to use [xtd::collections::array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
 
 ## Sources
 
-[src/vector_list.cpp](src/vector_list.cpp)
+[src/array_list2.cpp](src/array_list2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

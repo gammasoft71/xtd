@@ -5,8 +5,8 @@
 #include "std.h"
 
 #include "collections/any_pair.h"
+#include "collections/array_list.h"
 #include "collections/key_not_found_exception.h"
-#include "collections/vector_list.h"
 #include "collections/generic/equal_to.h"
 #include "collections/generic/hasher.h"
 #include "collections/generic/key_value_pair.h"
