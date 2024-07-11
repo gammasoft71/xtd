@@ -22,7 +22,7 @@ namespace xtd {
       /// xtd::collections
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core collections
+      /// @ingroup xtd_core specialized_collections
       using string_map = std::map<xtd::ustring, xtd::ustring>;
     }
   }

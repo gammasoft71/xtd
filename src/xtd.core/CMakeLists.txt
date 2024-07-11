@@ -474,6 +474,8 @@ add_sources(
   include/xtd/collections/vector_list
   include/xtd/collections/generic/equal_to.h
   include/xtd/collections/generic/equal_to
+  include/xtd/collections/generic/hasher.h
+  include/xtd/collections/generic/hasher
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
   include/xtd/collections/specialized/string_map.h
@@ -611,6 +613,8 @@ add_sources(
   include/xtd/internal/__enum_definition_to_enum_collection
   include/xtd/internal/__enum_introspection.h
   include/xtd/internal/__enum_introspection
+  include/xtd/internal/__equal_to.h
+  include/xtd/internal/__equal_to
   include/xtd/internal/__fixed_point_formatter.h
   include/xtd/internal/__fixed_point_formatter
   include/xtd/internal/__format_exception.h
@@ -619,6 +623,8 @@ add_sources(
   include/xtd/internal/__format_information
   include/xtd/internal/__format_stringer.h
   include/xtd/internal/__format_stringer
+  include/xtd/internal/__hasher.h
+  include/xtd/internal/__hasher
   include/xtd/internal/__iformatable_formatter.h
   include/xtd/internal/__iformatable_formatter
   include/xtd/internal/__natural_formatter.h
