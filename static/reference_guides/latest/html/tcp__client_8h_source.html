@@ -145,9 +145,9 @@ $(function() {
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        tcp_client&amp; send_timeout(int32 value);</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        </div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_connect(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; address, uint16 port, <a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_connect(const std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&gt;&amp; addresses, uint16 port, <a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_connect(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::ustring&amp; host, uint16 port, <a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_connect(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; address, uint16 port, <a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_connect(const std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&gt;&amp; addresses, uint16 port, <a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_connect(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::ustring&amp; host, uint16 port, <a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        </div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordtype">void</span> close();</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        </div>
@@ -155,7 +155,7 @@ $(function() {
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        <span class="keywordtype">void</span> connect(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::ip_address&amp; ip_address, uint16 port);</div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <span class="keywordtype">void</span> connect(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::ustring&amp; hostname, uint16 port);</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="keywordtype">void</span> end_connect(std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; async_result);</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="keywordtype">void</span> end_connect(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; async_result);</div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        </div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        using <span class="keywordtype">object</span>::equals;</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <span class="keywordtype">bool</span> equals(const tcp_client&amp; s) const noexcept override;</div>
@@ -171,7 +171,7 @@ $(function() {
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        friend tcp_listener;</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        explicit tcp_client(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::socket&amp; socket);</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        </div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;data&gt; data_;</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>      };</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    }</div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  }</div>
@@ -188,7 +188,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:56:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 11 2024 11:49:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -87,9 +87,7 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/convert&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -103,13 +101,13 @@ $(function() {
 <div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> s2 = as&lt;ustring&gt;(i);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;i = {0}, convert::to_string(i) = {1}, as&lt;ustring&gt;(i) = {2}&quot;</span>, i, s1, s2);</div>
 <div class="line">  </div>
-<div class="line">  any a = <span class="stringliteral">&quot;string&quot;</span>;</div>
+<div class="line">  std::any a = <span class="stringliteral">&quot;string&quot;</span>;</div>
 <div class="line">  s1 = convert::to_string(a);</div>
 <div class="line">  s2 = as&lt;ustring&gt;(a);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;a = {0}, convert::to_string(a) = {1}, as&lt;ustring&gt;(a) = {2}&quot;</span>, a, s1, s2);</div>
 <div class="line">  </div>
-<div class="line">  shared_ptr&lt;object&gt; value = make_shared&lt;ustring&gt;(<span class="stringliteral">&quot;a&quot;</span>);</div>
-<div class="line">  shared_ptr&lt;ustring&gt; value2 = as&lt;ustring&gt;(value);</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;object&gt;</a> value = new_ptr&lt;ustring&gt;(<span class="stringliteral">&quot;a&quot;</span>);</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;ustring&gt;</a> value2 = as&lt;ustring&gt;(value);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;value = {0}, as&lt;ustring&gt;(value) = {1}&quot;</span>, *value, *value2);</div>
 <div class="line">  </div>
 <div class="line">  <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> rand;</div>
@@ -119,8 +117,8 @@ $(function() {
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Bad cast : {0} !&quot;</span>, e.message());</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  shared_ptr&lt;object&gt; ver = make_shared&lt;version&gt;(1, 1, 5);</div>
-<div class="line">  shared_ptr&lt;ustring&gt; str = as&lt;ustring&gt;(ver);</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;object&gt;</a> ver = new_ptr&lt;version&gt;(1, 1, 5);</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;ustring&gt;</a> str = as&lt;ustring&gt;(ver);</div>
 <div class="line">  <span class="keywordflow">if</span> (str == <span class="keyword">nullptr</span>)</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Bad cast!&quot;</span>);</div>
 <div class="line">}</div>
@@ -136,12 +134,13 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1invalid__cast__exception_html"><div class="ttname"><a href="classxtd_1_1invalid__cast__exception.html">xtd::invalid_cast_exception</a></div><div class="ttdoc">The exception that is thrown for invalid casting or explicit conversion.</div><div class="ttdef"><b>Definition</b> invalid_cast_exception.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.h:40</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
+<div class="ttc" id="agroup__types_html_ga14f390dd1d27bfab4cc2f26c1502c8ec"><div class="ttname"><a href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.h:27</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:56:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 11 2024 11:49:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

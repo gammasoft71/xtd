@@ -26,7 +26,7 @@ var searchData=
   ['vampire_23',['vampire',['../classxtd_1_1forms_1_1emoticons.html#abc3c871e7b8bd1a8d6944856d1ec8faf',1,'xtd::forms::emoticons']]],
   ['vanuatu_24',['vanuatu',['../classxtd_1_1forms_1_1countries.html#a94384ab93913cf4576313b8e18930618',1,'xtd::forms::countries']]],
   ['variation_5fselector_5f16_25',['variation_selector_16',['../classxtd_1_1forms_1_1emoticons.html#a4976e0a193d07d8ac922a6d2e3ff09c8',1,'xtd::forms::emoticons']]],
-  ['vector_5flist_26',['vector_list',['../group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c',1,'xtd::collections']]],
+  ['vector_5flist_26',['vector_list',['../group__collections.html#ga3c07efce71e0899524aa31dfd0431817',1,'xtd::collections']]],
   ['vector_5flist_2eh_27',['vector_list.h',['../vector__list_8h.html',1,'']]],
   ['vector_5ftransform_5fpoints_28',['vector_transform_points',['../classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html#a3342d39649ac088f584d1a7eb5f9bf2b',1,'xtd::drawing::drawing_2d::matrix']]],
   ['venezuela_29',['venezuela',['../classxtd_1_1forms_1_1countries.html#a997221d45a59fc6e4a89bf3450a1c6de',1,'xtd::forms::countries']]],

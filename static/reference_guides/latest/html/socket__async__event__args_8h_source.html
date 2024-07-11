@@ -138,7 +138,7 @@ $(function() {
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt; buffer_;</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        std::vector&lt;std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;&gt; buffer_list_;</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordtype">size_t</span> bytes_transferred_ = 0;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        std::unique_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::system_exception&gt; connect_by_name_error_;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::uptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::system_exception&gt; connect_by_name_error_;</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::socket connect_socket_;</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordtype">size_t</span> count_ = 0;</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordtype">bool</span> disconnect_reuse_socket_ = false;</div>
@@ -146,7 +146,7 @@ $(function() {
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt; memory_buffer_;</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordtype">size_t</span> offset_ = 0;</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::ip_packet_information receive_message_from_packet_info_;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        std::unique_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::end_point&gt; remote_end_point_;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::uptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::end_point&gt; remote_end_point_;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::send_packets_element&gt; send_packets_elements_;</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::transmit_file_options send_packets_flags_ = <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::transmit_file_options::use_default_worker_thread;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordtype">size_t</span> send_packets_send_size_ = 0;</div>
@@ -170,7 +170,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:56:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 11 2024 11:49:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -149,13 +149,13 @@ $(function() {
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::tcp_client accept_tcp_client();</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_accept_socket(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_accept_socket(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_accept_tcp_client(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; begin_accept_tcp_client(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::async_callback callback, const std::any&amp; state);</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::socket end_accept_socket(std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; async_result);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::socket end_accept_socket(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; async_result);</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::tcp_client end_accept_tcp_client(std::shared_ptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; async_result);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::net::sockets::tcp_client end_accept_tcp_client(<a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::iasync_result&gt; async_result);</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        </div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        using <span class="keywordtype">object</span>::equals;</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keywordtype">bool</span> equals(const tcp_listener&amp; s) const noexcept override;</div>
@@ -176,7 +176,7 @@ $(function() {
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordtype">bool</span> active() const noexcept;</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        </div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      private:</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::sptr&lt;data&gt; data_;</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>      };</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    }</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  }</div>
@@ -196,7 +196,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:56:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 11 2024 11:49:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

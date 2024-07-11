@@ -237,7 +237,7 @@ $(function() {
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>      <span class="keywordtype">void</span> resize(<a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> width, <a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> height);</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>      <span class="keywordtype">void</span> update_properties();</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>      </div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;data&gt;</a> data_;</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    };</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  }</div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>}</div>
@@ -268,8 +268,9 @@ $(function() {
 <div class="ttc" id="agraphics_8h_html"><div class="ttname"><a href="graphics_8h.html">graphics.h</a></div><div class="ttdoc">Contains xtd::drawing::graphics class.</div></div>
 <div class="ttc" id="agraphics__unit_8h_html"><div class="ttname"><a href="graphics__unit_8h.html">graphics_unit.h</a></div><div class="ttdoc">Contains xtd::drawing::graphics_unit enum class.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga0e59557a60ff5461db679dd209b6d3cd"><div class="ttname"><a href="group__keywords.html#ga0e59557a60ff5461db679dd209b6d3cd">drawing_export_</a></div><div class="ttdeci">#define drawing_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> drawing_export.h:13</div></div>
-<div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:155</div></div>
-<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> types.h:181</div></div>
+<div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.h:25</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_ga35e450ae5d06c5a8ef29e54c607add86"><div class="ttname"><a href="group__xtd__drawing.html#ga35e450ae5d06c5a8ef29e54c607add86">xtd::drawing::graphics_unit</a></div><div class="ttdeci">graphics_unit</div><div class="ttdoc">Specifies the unit of measure for the given data. This enumeration has a flags attribute that allows ...</div><div class="ttdef"><b>Definition</b> graphics_unit.h:17</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_ga9e8366816379505a879f17e5b0ce7be2"><div class="ttname"><a href="group__xtd__drawing.html#ga9e8366816379505a879f17e5b0ce7be2">xtd::drawing::imaging::pixel_format</a></div><div class="ttdeci">pixel_format</div><div class="ttdoc">Specifies the format of the color data for each pixel in the image.</div><div class="ttdef"><b>Definition</b> pixel_format.h:23</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_gab56dabbbe7320df1f0de54a00ab869fa"><div class="ttname"><a href="group__xtd__drawing.html#gab56dabbbe7320df1f0de54a00ab869fa">xtd::drawing::rotate_flip_type</a></div><div class="ttdeci">rotate_flip_type</div><div class="ttdoc">Specifies how much an image is rotated and the axis used to flip the image.</div><div class="ttdef"><b>Definition</b> rotate_flip_type.h:19</div></div>
@@ -287,7 +288,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:56:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 11 2024 11:49:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
