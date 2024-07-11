@@ -1,5 +1,6 @@
 #pragma once
 #include "tetrominoes.h"
+#include <xtd/collections/generic/key_value_pair>
 #include <array>
 
 namespace tetris {
@@ -25,7 +26,7 @@ namespace tetris {
     void y(int index, int y);
 
     inline static constexpr int coords_size = 4;
-    std::array<std::pair<int, int>, coords_size> coords_;
+    std::array<xtd::collections::generic::key_value_pair<int, int>, coords_size> coords_;
     tetris::tetrominoes tetrominoes_ = tetris::tetrominoes::no_shape;
   };
 }

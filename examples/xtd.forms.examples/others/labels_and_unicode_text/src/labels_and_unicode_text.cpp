@@ -2,12 +2,13 @@
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/forms/label>
+#include <xtd/collections/generic/key_value_pair>
 #include <xtd/literals>
-#include <utility>
 #include <vector>
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -26,7 +27,7 @@ public:
   }
   
 private:
-  vector<pair<ustring, ustring>> languages {
+  vector<key_value_pair<ustring, ustring>> languages {
     {"Arabic", u8"\u0627\u0644\u0643\u0644\u0645\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629"},
     {"Trad. Chinese", u8"\u4E2D\u570B\u7684\u6F22\u5B57"},
     {"Simpl. Chinese:", u8"\u6C49\u8BED"},
@@ -38,7 +39,7 @@ private:
     {"Japanese", u8"\u65E5\u672C\u8A9E\u306E\u3072\u3089\u304C\u306A, \u6F22\u5B57\u3068\u30AB\u30BF\u30AB\u30CA"},
     {"Korean", u8"\uB300\uD55C\uBBFC\uAD6D\uC758 \uD55C\uAE00"},
     {"Russian", u8"\u0420\u0443\u0441\u0441\u043A\u0438\u0439 \u044F\u0437\u044B\u043A"}};
-  vector<pair<label, label>> items {languages.size()};
+  vector<key_value_pair<label, label>> items {languages.size()};
 };
 
 auto main() -> int {
