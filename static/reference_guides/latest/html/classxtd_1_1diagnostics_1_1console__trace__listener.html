@@ -122,7 +122,7 @@ Inheritance diagram for xtd::diagnostics::console_trace_listener:</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda">debug::listeners</a>({make_shared&lt;console_trace_listener&gt;()});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda">debug::listeners</a>({new_ptr&lt;console_trace_listener&gt;()});</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">debug::write_line</a>(<span class="stringliteral">&quot;Begin&quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a1e85e29f94c54388d35a9b24d16a52c1">debug::indent</a>();</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= 10; step++) {</div>
@@ -283,10 +283,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;typename object_t &gt; </td></tr>
-<tr class="memitem:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a7d1d6739fb74be554719eced219de59a">memberwise_clone</a> () const</td></tr>
-<tr class="memdesc:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="separator:a7d1d6739fb74be554719eced219de59a inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb9700deaba669584080178e391d97c4 inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;typename object_t &gt; </td></tr>
+<tr class="memitem:abb9700deaba669584080178e391d97c4 inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#abb9700deaba669584080178e391d97c4">memberwise_clone</a> () const</td></tr>
+<tr class="memdesc:abb9700deaba669584080178e391d97c4 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="separator:abb9700deaba669584080178e391d97c4 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5682215ee76ab97c48580ab162c49507 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507">to_string</a> () const noexcept</td></tr>
 <tr class="memdesc:a5682215ee76ab97c48580ab162c49507 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> that represents the current object.  <br /></td></tr>
 <tr class="separator:a5682215ee76ab97c48580ab162c49507 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -378,7 +378,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:56:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 11 2024 11:49:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
