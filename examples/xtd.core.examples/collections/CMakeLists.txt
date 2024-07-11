@@ -4,6 +4,6 @@ project(collections)
 find_package(xtd REQUIRED)
 
 add_projects(
-  vector_list
-  vector_list2
+  array_list
+  array_list2
 )

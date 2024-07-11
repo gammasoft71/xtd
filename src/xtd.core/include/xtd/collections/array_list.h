@@ -1,13 +1,9 @@
 /// @file
-/// @brief Contains xtd::collections::vector_list typedef.
+/// @brief Contains xtd::collections::array_list typedef.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#if defined(_MSC_VER) && __cplusplus < 202302L
-#  pragma message("Deprecated : Replaced by #include <xtd/collection/array_list.h> - Will be removed in version 0.4.0")
-#else
-#  warning "Deprecated : Replaced by #include <xtd/collection/array_list.h> - Will be removed in version 0.4.0"
-#endif
-#include "array_list.h"
+#include "../any.h"
+#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -15,11 +11,11 @@ namespace xtd {
   namespace collections {
     /// @brief Represents a collection of std::any.
     /// ```cpp
-    /// using vector_list = std::vector<std::any>
+    /// using array_list = std::vector<std::any>
     /// ```
     /// @par Header
     /// ```cpp
-    /// #include <xtd/collections/vector_list>
+    /// #include <xtd/collections/array_list>
     /// ```
     /// @par Namespace
     /// xtd::collections
@@ -29,7 +25,6 @@ namespace xtd {
     /// @par Examples
     /// The following example shows hows to use xtd::collections::array_list.
     /// @include array_list.cpp
-    /// @deprecated Replaced by xtd::collections::array_list - Will be removed in version 0.4.0
-    using vector_list [[deprecated("Replaced by xtd::collections::array_list - Will be removed in version 0.4.0")]] = array_list;
+    using array_list = std::vector<std::any>;
   }
 }

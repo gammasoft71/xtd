@@ -468,6 +468,8 @@ add_sources(
   include/xtd/xtd.core
   include/xtd/collections/any_pair.h
   include/xtd/collections/any_pair
+  include/xtd/collections/array_list.h
+  include/xtd/collections/array_list
   include/xtd/collections/key_not_found_exception.h
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
