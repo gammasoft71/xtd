@@ -9,6 +9,7 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
 
@@ -84,7 +85,7 @@ void graphics_path::add_beziers(const std::vector<xtd::drawing::point>& points) 
 }
 
 void graphics_path::add_beziers(const std::vector<xtd::drawing::point_f>& points) {
-  auto pair_points = vector<pair<float, float>> {};
+  auto pair_points = vector<key_value_pair<float, float>> {};
   for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
   native::graphics_path::add_beziers(handle(), pair_points);
 }
@@ -104,7 +105,7 @@ void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& poi
 }
 
 void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& points, float tension) {
-  auto pair_points = vector<pair<float, float>> {};
+  auto pair_points = vector<key_value_pair<float, float>> {};
   for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
   native::graphics_path::add_closed_curve(handle(), pair_points, tension);
 }
@@ -132,7 +133,7 @@ void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points, si
 }
 
 void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
-  auto pair_points = vector<pair<float, float>> {};
+  auto pair_points = vector<key_value_pair<float, float>> {};
   for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
   native::graphics_path::add_curve(handle(), pair_points, offset, number_of_segments, tension);
 }

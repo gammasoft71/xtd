@@ -7,6 +7,7 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
@@ -141,7 +142,7 @@ void month_calendar::selection_range(intptr control, date_time date_start, date_
   wx_calendar_ctrl->SetDate(wx_date_time);
 }
 
-pair<date_time, date_time> month_calendar::selection_range(intptr control) {
+key_value_pair<date_time, date_time> month_calendar::selection_range(intptr control) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);

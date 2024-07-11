@@ -1,13 +1,14 @@
 /// @file
 /// @brief Contains xtd::register_any_stringer and xtd::unregister_any_stringer method.
 #pragma once
+#include "collections/generic/key_value_pair.h"
 #include "unregister_any_stringer.h"
 
 /// @cond
 extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;
 
 template<class type_t, class function_t>
-inline std::pair<const std::type_index, std::function<std::string(std::any const&)>> __to_any_stringer__(function_t const& func) {
+inline xtd::collections::generic::key_value_pair<const std::type_index, std::function<std::string(std::any const&)>> __to_any_stringer__(function_t const& func) {
   return {
     std::type_index(typeid(type_t)),
     [f = func](std::any const & value)->std::string {

@@ -7,6 +7,7 @@
 #include <xtd/static>
 #include <xtd/ustring>
 #include <xtd/version>
+#include <xtd/collections/generic/key_value_pair>
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>
 #include <xtd/forms/screen>
@@ -61,17 +62,17 @@ namespace xtd {
     
     /// @{
     /// @brief Represents an environment variables collection.
-    using environment_variable_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
+    using environment_variable_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>>;
     /// @brief Represents a folders collection.
-    using special_folder_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
+    using special_folder_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>>;
     /// @brief Represents a colors collection.
-    using system_color_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::color>>;
+    using system_color_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::drawing::color>>;
     /// @brief Represents a fonts collection.
-    using system_font_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::font>>;
+    using system_font_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::drawing::font>>;
     /// @brief Represents a font families collection.
-    using system_font_family_collection = std::vector<std::pair<xtd::ustring, xtd::drawing::font_family>>;
+    using system_font_family_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::drawing::font_family>>;
     /// @brief Represents a system informations collection.
-    using system_information_collection = std::vector<std::pair<xtd::ustring, xtd::ustring>>;
+    using system_information_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>>;
     /// @}
     
     /// @name Public Static Properties

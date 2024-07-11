@@ -5,7 +5,7 @@
 #include "const_control_ref.h"
 #include "control_ref.h"
 #include "vertical_control_layout_style.h"
-#include <utility>
+#include <xtd/collections/generic/key_value_pair>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -22,6 +22,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using vertical_control_layout_style_collection = std::vector<std::pair<control_ref, vertical_control_layout_style>>;
+    using vertical_control_layout_style_collection = std::vector<xtd::collections::generic::key_value_pair<control_ref, vertical_control_layout_style>>;
   }
 }

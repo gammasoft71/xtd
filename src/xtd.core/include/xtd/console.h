@@ -2,6 +2,7 @@
 /// @brief Contains xtd::console class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "collections/generic/key_value_pair.h"
 #include "io/stream_writer.h"
 #include "console_cancel_event_handler.h"
 #include "console_color.h"
@@ -316,7 +317,7 @@ namespace xtd {
     /// @brief Gets the position of the cursor.
     /// @return The column and row position of the cursor.
     /// @remarks Columns are numbered from left to right starting at 0. Rows are numbered from top to bottom starting at 0.
-    static std::pair<int32, int32> get_cursor_position();
+    static xtd::collections::generic::key_value_pair<int32, int32> get_cursor_position();
     
     /// @brief Acquires the standard error stream.
     /// @return The standard error stream.

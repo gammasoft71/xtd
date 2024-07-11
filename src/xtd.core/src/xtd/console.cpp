@@ -14,6 +14,7 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::io;
 
 namespace {
@@ -273,7 +274,7 @@ void console::clear() {
   native::console::clear();
 }
 
-std::pair<int32, int32> console::get_cursor_position() {
+key_value_pair<int32, int32> console::get_cursor_position() {
   register_cancel_key_press(); // Must be first...
   return {cursor_left(), cursor_top()};
 }

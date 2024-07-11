@@ -32,6 +32,7 @@
 #include <vector>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing::native;
 
 namespace {
@@ -186,7 +187,7 @@ void graphics::draw_bezier(intptr handle, intptr pen, float x1, float y1, float 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_beziers(intptr handle, intptr pen, const std::vector<std::pair<float, float>>& points) {
+void graphics::draw_beziers(intptr handle, intptr pen, const std::vector<key_value_pair<float, float>>& points) {
   if (!handle) return;
   auto path = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->CreatePath();
   path.MoveToPoint(points[0].first, points[0].second);
@@ -201,7 +202,7 @@ void graphics::draw_beziers(intptr handle, intptr pen, const std::vector<std::pa
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_closed_curve(intptr handle, intptr pen, std::vector<std::pair<float, float>> points, float tension) {
+void graphics::draw_closed_curve(intptr handle, intptr pen, std::vector<key_value_pair<float, float>> points, float tension) {
   if (!handle) return;
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
@@ -215,7 +216,7 @@ void graphics::draw_closed_curve(intptr handle, intptr pen, std::vector<std::pai
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_curve(intptr handle, intptr pen, std::vector<std::pair<float, float>> points, float tension) {
+void graphics::draw_curve(intptr handle, intptr pen, std::vector<key_value_pair<float, float>> points, float tension) {
   if (!handle) return;
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
@@ -274,7 +275,7 @@ void graphics::draw_line(intptr handle, intptr pen, float x1, float y1, float x2
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_lines(intptr handle, intptr pen, const std::vector<std::pair<float, float>>& points) {
+void graphics::draw_lines(intptr handle, intptr pen, const std::vector<key_value_pair<float, float>>& points) {
   if (!handle) return;
   
   auto start_line = points[0];
@@ -313,7 +314,7 @@ void graphics::draw_pie(intptr handle, intptr pen, float x, float y, float width
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_polygon(intptr handle, intptr pen, const std::vector<std::pair<float, float>>& points) {
+void graphics::draw_polygon(intptr handle, intptr pen, const std::vector<key_value_pair<float, float>>& points) {
   if (!handle) return;
   std::vector<wxPoint2DDouble> wx_points;
   for (auto [x, y] : points)
@@ -369,7 +370,7 @@ void graphics::draw_string(intptr handle, const xtd::ustring& text, intptr font,
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_closed_curve(intptr handle, intptr brush, std::vector<std::pair<float, float>> points, uint32 fill_mode, float tension) {
+void graphics::fill_closed_curve(intptr handle, intptr brush, std::vector<key_value_pair<float, float>> points, uint32 fill_mode, float tension) {
   /// @todo Using graphics_path when done...
   if (!handle) return;
   graphics_context gc(handle);
@@ -449,7 +450,7 @@ void graphics::fill_pie(intptr handle, intptr brush, float x, float y, float wid
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_polygon(intptr handle, intptr brush, const std::vector<std::pair<float, float>>& points, int32 fill_mode) {
+void graphics::fill_polygon(intptr handle, intptr brush, const std::vector<key_value_pair<float, float>>& points, int32 fill_mode) {
   if (!handle) return;
   /// @todo Using graphics_path when done...
   std::vector<wxPoint2DDouble> wx_points;

@@ -9,10 +9,11 @@
 /// @endcond
 
 #include "create_params.h"
+#include <xtd/drawing/color.h>
+#include <xtd/collections/generic/key_value_pair>
 #include <xtd/static.h>
 #include <xtd/date_time.h>
 #include <xtd/forms_native_export.h>
-#include <xtd/drawing/color.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -122,7 +123,7 @@ namespace xtd {
         /// @param control month_calendar handle.
         /// @return selection range.
         /// @warning Internal use only
-        static std::pair<date_time, date_time> selection_range(intptr control);
+        static xtd::collections::generic::key_value_pair<date_time, date_time> selection_range(intptr control);
         
         /// @brief Gets the minimum size to display one month of the calendar.
         /// @param control month_calendar handle.

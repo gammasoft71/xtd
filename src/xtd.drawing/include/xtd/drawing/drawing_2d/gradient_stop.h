@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../color.h"
-#include <utility>
+#include <xtd/collections/generic/key_value_pair>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -20,7 +20,7 @@ namespace xtd {
       /// @param color The color of the gradient stop.
       /// @param offset The location of the gradient stop within the gradient vector.
       /// @remarks A value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector.
-      using gradient_stop = std::pair<xtd::drawing::color, float>;
+      using gradient_stop = xtd::collections::generic::key_value_pair<xtd::drawing::color, float>;
     }
   }
 }
