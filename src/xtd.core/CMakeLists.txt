@@ -474,8 +474,8 @@ add_sources(
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
   include/xtd/collections/vector_list
-  include/xtd/collections/generic/equal_to.h
-  include/xtd/collections/generic/equal_to
+  include/xtd/collections/generic/equator.h
+  include/xtd/collections/generic/equator
   include/xtd/collections/generic/hasher.h
   include/xtd/collections/generic/hasher
   include/xtd/collections/generic/key_value_pair.h
@@ -618,8 +618,8 @@ add_sources(
   include/xtd/internal/__enum_definition_to_enum_collection
   include/xtd/internal/__enum_introspection.h
   include/xtd/internal/__enum_introspection
-  include/xtd/internal/__equal_to.h
-  include/xtd/internal/__equal_to
+  include/xtd/internal/__equator.h
+  include/xtd/internal/__equator
   include/xtd/internal/__fixed_point_formatter.h
   include/xtd/internal/__fixed_point_formatter
   include/xtd/internal/__format_exception.h
