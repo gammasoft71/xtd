@@ -154,7 +154,7 @@
 | -------------------------------------------------------------------------------------------- | ------------- | ------------------------------------- |
 | [any_pair](../src/xtd.core/include/xtd/collections/any_pair.h)                               | alias         | ![progress](pictures/progress100.png) |
 | [key_not_found_exception](../src/xtd.core/include/xtd/collections/key_not_found_exception.h) | class         | ![progress](pictures/progress100.png) |
-| [vector_list](../src/xtd.core/include/xtd/collections/vector_list.h)                         | alias         | ![progress](pictures/progress100.png) |
+| [array_list](../src/xtd.core/include/xtd/collections/array_list.h)                           | alias         | ![progress](pictures/progress100.png) |
 
 ## xtd::collections::specialized
 
