@@ -1,13 +1,10 @@
 /// @file
-/// @brief Contains xtd::collections::specialized::string_pair typedef.
+/// @brief Contains xtd::collections::specialized::string_key_value_pair typedef.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#if defined(_MSC_VER) && __cplusplus < 202302L
-#  pragma message("Deprecated : Replaced by #include <xtd/collection/specialized/string_key_value_pair.h> - Will be removed in version 0.4.0")
-#else
-#  warning "Deprecated : Replaced by #include <xtd/collection/specialized/string_key_value_pair.h> - Will be removed in version 0.4.0"
-#endif
-#include "string_key_value_pair.h"
+#include <utility>
+#include "../generic/key_value_pair.h"
+#include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,18 +14,17 @@ namespace xtd {
     namespace specialized {
       /// @brief Implements a std::pair with the key and the value strongly typed to be strings.
       /// ```cpp
-      /// using string_pair = xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>
+      /// using string_key_value_pair = xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>
       /// ```
       /// @par Header
       /// ```cpp
-    /// #include <xtd/collections/specialized/string_pair> ```
+    /// #include <xtd/collections/specialized/string_key_value_pair> ```
       /// @par Namespace
       /// xtd::collections
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core specialized_collections
-      /// @deprecated Replaced by xtd::collections::specialized::string_key_value_pair - Will be removed in version 0.4.0
-      using string_pair [[deprecated("Replaced by xtd::collections::specialized::string_key_value_pair - Will be removed in version 0.4.0")]] = string_key_value_pair;
+      using string_key_value_pair = xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>;
     }
   }
 }
