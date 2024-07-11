@@ -22,11 +22,11 @@
 /// @example boxing.cpp
 /// Shows how to use how to use xtd::boxing methods.
 ///
-/// @example vector_list.cpp
-/// Shows how to use vector_list class.
+/// @example array_list.cpp
+/// Shows how to use xtd::collections::array_list class.
 ///
-/// @example vector_list2.cpp
-/// Shows how to use xtd::collections::vector_list class.
+/// @example array_list2.cpp
+/// Shows how to use xtd::collections::array_list class.
 ///
 /// @example file_settings.cpp
 /// Shows how to use xtd::consiguration::file_settings object.
