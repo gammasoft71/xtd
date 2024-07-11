@@ -131,7 +131,7 @@ namespace xtd::configuration::tests {
       assert::is_false(fs.auto_save(), csf_);
       assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}}, fs.key_values("section1"), csf_);
       assert::is_empty(fs.keys(), csf_);
       collection_assert::are_equivalent({"key1"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
@@ -154,7 +154,7 @@ namespace xtd::configuration::tests {
       assert::is_false(fs.auto_save(), csf_);
       assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
       assert::is_empty(fs.keys(), csf_);
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
@@ -201,11 +201,11 @@ namespace xtd::configuration::tests {
       assert::is_false(fs.auto_save(), csf_);
       assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
-      assert::are_equal(file_settings::string_map {{"key6", "value6"}, {"key7", "value7"}, {"key8", "value8"}, {"key9", "value9"}, {"key10", "value10"}}, fs.key_values("section2"), csf_);
-      assert::are_equal(file_settings::string_map {{"key11", "value11"}, {"key12", "value12"}, {"key13", "value13"}, {"key14", "value14"}, {"key15", "value15"}}, fs.key_values("section3"), csf_);
-      assert::are_equal(file_settings::string_map {{"key16", "value16"}, {"key17", "value17"}, {"key18", "value18"}, {"key19", "value19"}, {"key20", "value20"}}, fs.key_values("section4"), csf_);
-      assert::are_equal(file_settings::string_map {{"key21", "value21"}, {"key22", "value22"}, {"key23", "value23"}, {"key24", "value24"}, {"key25", "value25"}}, fs.key_values("section5"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key6", "value6"}, {"key7", "value7"}, {"key8", "value8"}, {"key9", "value9"}, {"key10", "value10"}}, fs.key_values("section2"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key11", "value11"}, {"key12", "value12"}, {"key13", "value13"}, {"key14", "value14"}, {"key15", "value15"}}, fs.key_values("section3"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key16", "value16"}, {"key17", "value17"}, {"key18", "value18"}, {"key19", "value19"}, {"key20", "value20"}}, fs.key_values("section4"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key21", "value21"}, {"key22", "value22"}, {"key23", "value23"}, {"key24", "value24"}, {"key25", "value25"}}, fs.key_values("section5"), csf_);
       assert::is_empty(fs.keys(), csf_);
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"key6", "key7", "key8", "key9", "key10"}, fs.keys("section2"), csf_);
@@ -233,7 +233,7 @@ namespace xtd::configuration::tests {
       assert::is_false(fs.auto_save(), csf_);
       assert::is_empty(fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
       assert::is_empty(fs.keys(), csf_);
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
@@ -250,7 +250,7 @@ namespace xtd::configuration::tests {
                      "key4=value4\n"
                      "key5=value5\n");
       assert::is_empty(fs.key_values(), csf_);
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
       assert::is_empty(fs.keys(), csf_);
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
@@ -263,7 +263,7 @@ namespace xtd::configuration::tests {
                      "key5=value5\n");
       assert::is_empty(fs.key_values(), csf_);
       assert::is_empty(fs.key_values("section1"), csf_);
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section2"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section2"), csf_);
       assert::is_empty(fs.keys(), csf_);
       assert::is_empty(fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section2"), csf_);
@@ -285,7 +285,7 @@ namespace xtd::configuration::tests {
       fs.load(file_name);
       assert::are_equal(path::combine(environment::current_directory(), file_name), fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
       assert::is_empty(fs.keys(), csf_);
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
@@ -308,7 +308,7 @@ namespace xtd::configuration::tests {
       auto fs = file_settings {stream};
       assert::is_empty(fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}, {"key3", "value3"}, {"key4", "value4"}, {"key5", "value5"}}, fs.key_values("section1"), csf_);
       assert::is_empty(fs.keys(), csf_);
       collection_assert::are_equivalent({"key1", "key2", "key3", "key4", "key5"}, fs.keys("section1"), csf_);
       collection_assert::are_equivalent({"section1"}, fs.sections(), csf_);
@@ -418,7 +418,7 @@ namespace xtd::configuration::tests {
       fs.save();
       
       fs = file_settings {file_name};
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
       file::remove(file_name);
     }
 
@@ -434,7 +434,7 @@ namespace xtd::configuration::tests {
       fs.save_as(file_name);
       
       fs = file_settings {file_name};
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
       file::remove(file_name);
     }
 
@@ -452,7 +452,7 @@ namespace xtd::configuration::tests {
       stream.close();
       
       fs = file_settings {file_name};
-      assert::are_equal(file_settings::string_map {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key1", "value1"}, {"key2", "value2"}}, fs.key_values("section1"), csf_);
       file::remove(file_name);
     }
     
@@ -575,8 +575,8 @@ namespace xtd::configuration::tests {
       "  key 5 = value 10\n";
       auto fs = file_settings {};
       fs.from_string(content);
-      assert::are_equal(file_settings::string_map {{"key 1", "value  1"}, {"key 2", "value==2"}, {"key 3", "value==3"}, {"key 4", "value  4"}, {"key 5", "\tvalue  5  "}}, fs.key_values("section 1"), csf_);
-      assert::are_equal(file_settings::string_map {{"key 1", "value  6"}, {"key 2", "value  7"}, {"key 3", "value  8"}, {"key 4", "value  9"}, {"key 5", "value 10"}}, fs.key_values("section 2"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key 1", "value  1"}, {"key 2", "value==2"}, {"key 3", "value==3"}, {"key 4", "value  4"}, {"key 5", "\tvalue  5  "}}, fs.key_values("section 1"), csf_);
+      assert::are_equal(file_settings::string_dictionary {{"key 1", "value  6"}, {"key 2", "value  7"}, {"key 3", "value  8"}, {"key 4", "value  9"}, {"key 5", "value 10"}}, fs.key_values("section 2"), csf_);
       fs.save_as("test.ini");
       xtd::io::file::remove("test.ini");
     }

@@ -480,6 +480,8 @@ add_sources(
   include/xtd/collections/generic/hasher
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
+  include/xtd/collections/specialized/string_dictionary.h
+  include/xtd/collections/specialized/string_dictionary
   include/xtd/collections/specialized/string_map.h
   include/xtd/collections/specialized/string_map
   include/xtd/collections/specialized/string_pair.h
