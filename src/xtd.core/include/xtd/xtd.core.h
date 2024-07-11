@@ -12,7 +12,7 @@
 #include "collections/generic/key_value_pair.h"
 #include "collections/specialized/string_collection.h"
 #include "collections/specialized/string_dictionary.h"
-#include "collections/specialized/string_pair.h"
+#include "collections/specialized/string_key_value_pair.h"
 #include "configuration/ini_file_settings.h"
 #include "configuration/file_settings.h"
 #include "configuration/settings.h"

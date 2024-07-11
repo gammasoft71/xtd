@@ -158,11 +158,11 @@
 
 ## xtd::collections::specialized
 
-| Name                                                                                         | Type          | Status                                |
-| -------------------------------------------------------------------------------------------- | ------------- | ------------------------------------- |
-| [string_dictionary](../src/xtd.core/include/xtd/collections/specialized/string_dictionary.h) | alias         | ![progress](pictures/progress100.png) |
-| [string_pair](../src/xtd.core/include/xtd/collections/specialized/string_pair.h)             | alias         | ![progress](pictures/progress100.png) |
-| [string_collection](../src/xtd.core/include/xtd/collections/specialized/string_collection.h) | alias         | ![progress](pictures/progress100.png) |
+| Name                                                                                                 | Type          | Status                                |
+| ---------------------------------------------------------------------------------------------------- | ------------- | ------------------------------------- |
+| [string_dictionary](../src/xtd.core/include/xtd/collections/specialized/string_dictionary.h)         | alias         | ![progress](pictures/progress100.png) |
+| [string_key_value_pair](../src/xtd.core/include/xtd/collections/specialized/string_key_value_pair.h) | alias         | ![progress](pictures/progress100.png) |
+| [string_collection](../src/xtd.core/include/xtd/collections/specialized/string_collection.h)         | alias         | ![progress](pictures/progress100.png) |
 
 ## xtd::diagnostics
 
