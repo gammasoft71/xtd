@@ -1,3 +1,4 @@
+#include "../../include/xtd/collections/generic/hasher.h"
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/iformatable.h"
 #include "../../include/xtd/invalid_cast_exception.h"
@@ -7,26 +8,26 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
-bool object::equals(const object& obj) const noexcept {
-  return equals(*this, obj);
+bool object::operator ==(const object& obj) const noexcept {
+  return equals(obj);
 }
 
-bool object::equals(const object& object_a, const object& object_b) noexcept {
-  if (dynamic_cast<const iequatable<decltype(object_a)>*>(&object_a)) return dynamic_cast<const iequatable<decltype(object_a)>*>(&object_a)->equals(object_b);
-  return &object_a == &object_b;
+bool object::operator !=(const object& obj) const noexcept {
+  return !operator==(obj);
+}
+
+bool object::equals(const object& obj) const noexcept {
+  return reference_equals(*this, obj);
 }
 
 size_t object::get_hash_code() const noexcept {
-  return as<size_t>(reinterpret_cast<int64>(this) & 0x00000000FFFFFFFF) ^ as<size_t>((reinterpret_cast<int64>(this) >> 32) & 0x00000000FFFFFFFF);
+  return hasher<intptr> {}(reinterpret_cast<intptr_t>(this));
 }
 
 type_object object::get_type() const noexcept {
   return type_object(typeid(*this));
-}
-
-bool object::reference_equals(const object& object_a, const object& object_b) noexcept {
-  return &object_a == &object_b;
 }
 
 ustring object::to_string() const noexcept {
