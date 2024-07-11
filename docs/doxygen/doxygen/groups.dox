@@ -13,6 +13,14 @@
 /// @brief Contains collections definitions.
 /// @ingroup system
 
+/// @defgroup generic_collections generic collections
+/// @brief Contains generic collections definitions.
+/// @ingroup collections
+
+/// @defgroup specialized_collections specialized collections
+/// @brief Contains specialized collections definitions.
+/// @ingroup collections
+
 /// @defgroup colors colors
 /// @brief Contains colors definitions.
 /// @ingroup drawing

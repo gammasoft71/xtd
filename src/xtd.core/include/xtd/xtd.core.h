@@ -8,6 +8,7 @@
 #include "collections/key_not_found_exception.h"
 #include "collections/vector_list.h"
 #include "collections/generic/equal_to.h"
+#include "collections/generic/hasher.h"
 #include "collections/generic/key_value_pair.h"
 #include "collections/specialized/string_map.h"
 #include "collections/specialized/string_pair.h"
