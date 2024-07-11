@@ -12,6 +12,7 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing::native;
 
 namespace {
@@ -88,7 +89,7 @@ void graphics_path::add_bezier(intptr handle, float x1, float y1, float x2, floa
   reinterpret_cast<wxGraphicsPath*>(handle)->AddCurveToPoint(x2, y2, x3, y3, x4, y4);
 }
 
-void graphics_path::add_beziers(intptr handle, std::vector<std::pair<float, float>> points) {
+void graphics_path::add_beziers(intptr handle, std::vector<key_value_pair<float, float>> points) {
   if (!handle) return;
   figures::start(reinterpret_cast<wxGraphicsPath*>(handle), points[0].first, points[0].second);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddLineToPoint(points[0].first, points[0].second);
@@ -96,12 +97,12 @@ void graphics_path::add_beziers(intptr handle, std::vector<std::pair<float, floa
     reinterpret_cast<wxGraphicsPath*>(handle)->AddCurveToPoint(points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
 }
 
-void graphics_path::add_closed_curve(intptr handle, std::vector<std::pair<float, float>> points, float tension) {
+void graphics_path::add_closed_curve(intptr handle, std::vector<key_value_pair<float, float>> points, float tension) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }
 
-void graphics_path::add_curve(intptr handle, std::vector<std::pair<float, float>> points, size_t offset, size_t number_of_segments, float tension) {
+void graphics_path::add_curve(intptr handle, std::vector<key_value_pair<float, float>> points, size_t offset, size_t number_of_segments, float tension) {
   if (!handle) return;
   // Not supported by wxWidgets 3.1.5...
 }

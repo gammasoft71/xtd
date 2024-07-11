@@ -2,6 +2,7 @@
 #include "unit_tests_event_listener.h"
 #include <xtd/tunit/settings>
 #include <xtd/tunit/unit_test>
+#include <xtd/collections/generic/key_value_pair>
 #include <xtd/foreground_color>
 #include <xtd/reset_color>
 #include <xtd/startup>
@@ -20,7 +21,7 @@ namespace assert_unit_tests {
     register_assert_unit_test(const register_assert_unit_test&) = default;
     register_assert_unit_test& operator =(const register_assert_unit_test&) = default;
     
-    static std::pair<std::string, int> run_test(const std::string& filter_tests) {
+    static xtd::collections::generic::key_value_pair<std::string, int> run_test(const std::string& filter_tests) {
       xtd::tunit::settings::default_settings().exit_status(0);
       xtd::tunit::settings::default_settings().filter_tests({filter_tests});
       auto output_stream = std::stringstream {};

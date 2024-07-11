@@ -2,6 +2,7 @@
 /// @brief Contains xtd::collections::any_pair typedef.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "generic/key_value_pair.h"
 #include "../any.h"
 #include <utility>
 
@@ -11,7 +12,7 @@ namespace xtd {
   namespace collections {
     /// @brief Implements a std::pair with the key and the value strongly typed to be std::any.
     /// ```cpp
-    /// using any_pair = std::pair<std::any, std::any>
+    /// using any_pair = xtd::collections::generic::key_value_pair<std::any, std::any>
     /// ```
     /// @par Header
     /// ```cpp
@@ -22,6 +23,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core collections
-    using any_pair = std::pair<std::any, std::any>;
+    using any_pair = xtd::collections::generic::key_value_pair<std::any, std::any>;
   }
 }

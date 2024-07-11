@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <utility>
+#include "../generic/key_value_pair.h"
 #include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -13,7 +14,7 @@ namespace xtd {
     namespace specialized {
       /// @brief Implements a std::pair with the key and the value strongly typed to be strings.
       /// ```cpp
-      /// using string_pair = std::pair<xtd::ustring, xtd::ustring>
+      /// using string_pair = xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>
       /// ```
       /// @par Header
       /// ```cpp
@@ -23,7 +24,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core specialized_collections
-      using string_pair = std::pair<xtd::ustring, xtd::ustring>;
+      using string_pair = xtd::collections::generic::key_value_pair<xtd::ustring, xtd::ustring>;
     }
   }
 }
