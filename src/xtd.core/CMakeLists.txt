@@ -480,14 +480,14 @@ add_sources(
   include/xtd/collections/generic/hasher
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
+  include/xtd/collections/specialized/string_collection.h
+  include/xtd/collections/specialized/string_collection
   include/xtd/collections/specialized/string_dictionary.h
   include/xtd/collections/specialized/string_dictionary
   include/xtd/collections/specialized/string_map.h
-  include/xtd/collections/specialized/string_map
   include/xtd/collections/specialized/string_pair.h
   include/xtd/collections/specialized/string_pair
   include/xtd/collections/specialized/string_vector.h
-  include/xtd/collections/specialized/string_vector
   include/xtd/configuration/ini_file_settings.h
   include/xtd/configuration/ini_file_settings
   include/xtd/configuration/file_settings.h

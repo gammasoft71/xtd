@@ -2,7 +2,7 @@
 /// @brief Contains startup class and #startup_ keyword.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "collections/specialized/string_vector.h"
+#include "collections/specialized/string_collection.h"
 #include "core_export.h"
 #include "delegate.h"
 #include "static.h"
@@ -79,22 +79,22 @@ namespace xtd {
     static int safe_run(xtd::delegate<void()> main_function);
     static int safe_run(xtd::delegate<void(int, char* [])> main_function, int argc, char* argv[]);
     static int safe_run(xtd::delegate<void(int, char* [])> main_function);
-    static int safe_run(xtd::delegate<void(const xtd::collections::specialized::string_vector&)> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<void(const xtd::collections::specialized::string_vector&)> main_function);
+    static int safe_run(xtd::delegate<void(const xtd::collections::specialized::string_collection&)> main_function, int argc, char* argv[]);
+    static int safe_run(xtd::delegate<void(const xtd::collections::specialized::string_collection&)> main_function);
     static int safe_run(xtd::delegate<int()> main_function, int argc, char* argv[]);
     static int safe_run(xtd::delegate<int()> main_function);
     static int safe_run(xtd::delegate<int(int, char* [])> main_function, int argc, char* argv[]);
     static int safe_run(xtd::delegate<int(int, char* [])> main_function);
-    static int safe_run(xtd::delegate<int(const xtd::collections::specialized::string_vector&)> main_function, int argc, char* argv[]);
-    static int safe_run(xtd::delegate<int(const xtd::collections::specialized::string_vector&)> main_function);
+    static int safe_run(xtd::delegate<int(const xtd::collections::specialized::string_collection&)> main_function, int argc, char* argv[]);
+    static int safe_run(xtd::delegate<int(const xtd::collections::specialized::string_collection&)> main_function);
     static int safe_run(void (*main_function)(int, char* []), int argc, char* argv[]);
     static int safe_run(void (*main_function)(int, char* []));
-    static int safe_run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]);
-    static int safe_run(void (*main_function)(const xtd::collections::specialized::string_vector&));
+    static int safe_run(void (*main_function)(const xtd::collections::specialized::string_collection&), int argc, char* argv[]);
+    static int safe_run(void (*main_function)(const xtd::collections::specialized::string_collection&));
     static int safe_run(int (*main_function)(int, char* []), int argc, char* argv[]);
     static int safe_run(int (*main_function)(int, char* []));
-    static int safe_run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]);
-    static int safe_run(int (*main_function)(const xtd::collections::specialized::string_vector&));
+    static int safe_run(int (*main_function)(const xtd::collections::specialized::string_collection&), int argc, char* argv[]);
+    static int safe_run(int (*main_function)(const xtd::collections::specialized::string_collection&));
     /// @endcond
 
   private:
@@ -126,10 +126,10 @@ namespace xtd {
     static int run(xtd::delegate<void(int, char* [])> main_function);
     static int run(void (*main_function)(int, char* []), int argc, char* argv[]);
     static int run(void (*main_function)(int, char* []));
-    static int run(xtd::delegate<void(const xtd::collections::specialized::string_vector&)> main_function, int argc, char* argv[]);
-    static int run(xtd::delegate<void(const xtd::collections::specialized::string_vector&)> main_function);
-    static int run(void (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]);
-    static int run(void (*main_function)(const xtd::collections::specialized::string_vector&));
+    static int run(xtd::delegate<void(const xtd::collections::specialized::string_collection&)> main_function, int argc, char* argv[]);
+    static int run(xtd::delegate<void(const xtd::collections::specialized::string_collection&)> main_function);
+    static int run(void (*main_function)(const xtd::collections::specialized::string_collection&), int argc, char* argv[]);
+    static int run(void (*main_function)(const xtd::collections::specialized::string_collection&));
     static int run(xtd::delegate<int()> main_function, int argc, char* argv[]);
     static int run(xtd::delegate<int()> main_function);
     static int run(int (*main_function)(), int argc, char* argv[]);
@@ -138,10 +138,10 @@ namespace xtd {
     static int run(xtd::delegate<int(int, char* [])> main_function);
     static int run(int (*main_function)(int, char* []), int argc, char* argv[]);
     static int run(int (*main_function)(int, char* []));
-    static int run(xtd::delegate<int(const xtd::collections::specialized::string_vector&)> main_function, int argc, char* argv[]);
-    static int run(xtd::delegate<int(const xtd::collections::specialized::string_vector&)> main_function);
-    static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), int argc, char* argv[]);
-    static int run(int (*main_function)(const xtd::collections::specialized::string_vector&));
+    static int run(xtd::delegate<int(const xtd::collections::specialized::string_collection&)> main_function, int argc, char* argv[]);
+    static int run(xtd::delegate<int(const xtd::collections::specialized::string_collection&)> main_function);
+    static int run(int (*main_function)(const xtd::collections::specialized::string_collection&), int argc, char* argv[]);
+    static int run(int (*main_function)(const xtd::collections::specialized::string_collection&));
   };
 }
 
