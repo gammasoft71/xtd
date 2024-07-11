@@ -51,11 +51,11 @@ const xtd::ustring& file_settings::file_path() const noexcept {
   return file_path_;
 }
 
-file_settings::string_map file_settings::key_values() const noexcept {
+file_settings::string_dictionary file_settings::key_values() const noexcept {
   return key_values(ustring::empty_string);
 }
 
-file_settings::string_map file_settings::key_values(const ustring& section) const noexcept {
+file_settings::string_dictionary file_settings::key_values(const ustring& section) const noexcept {
   if (section_key_values_.find(section) == section_key_values_.end()) return {};
   return section_key_values_.at(section);
 }
@@ -262,11 +262,11 @@ void file_settings::write(const ustring& section, const ustring& key, const ustr
   write_string(section, key, value);
 }
 
-const file_settings::string_map& file_settings::operator [](const ustring& section) const noexcept {
+const file_settings::string_dictionary& file_settings::operator [](const ustring& section) const noexcept {
   return section_key_values_.at(section);
 }
 
-file_settings::string_map& file_settings::operator [](const ustring& section) noexcept {
+file_settings::string_dictionary& file_settings::operator [](const ustring& section) noexcept {
   return section_key_values_[section];
 }
 

@@ -2,7 +2,7 @@
 #include "../../include/xtd/environment.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/ustring.h"
-#include "../../include/xtd/collections/specialized/string_map.h"
+#include "../../include/xtd/collections/specialized/string_dictionary.h"
 #include "../../include/xtd/io/directory.h"
 #include "../../include/xtd/io/file.h"
 #include "../../include/xtd/io/path.h"
@@ -16,7 +16,7 @@ using namespace xtd;
 using namespace xtd::collections::specialized;
 using namespace xtd::io;
 
-map<ustring, string_map> translator::language_values_;
+map<ustring, string_dictionary> translator::language_values_;
 ustring translator::language_;
 set<ustring> translator::translated_languages_;
 
