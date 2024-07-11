@@ -4,7 +4,7 @@
 #pragma once
 #include "../core_export.h"
 #include "../collections/specialized/string_dictionary.h"
-#include "../collections/specialized/string_vector.h"
+#include "../collections/specialized/string_collection.h"
 #include "../io/directory.h"
 #include "../io/file.h"
 #include "../io/path.h"
@@ -38,7 +38,7 @@ namespace xtd {
       using string_dictionary = xtd::collections::specialized::string_dictionary;
 
       /// @brief Represents a collection of strings.
-      using string_vector = xtd::collections::specialized::string_vector;
+      using string_collection = xtd::collections::specialized::string_collection;
       /// @}
       
       /// @name Public Constructors
@@ -170,16 +170,16 @@ namespace xtd {
       /// @brief Gets all keys from global section.
       /// @return The keys vector.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::keys (const xtd::ustring& section) with xtd::ustring::empty_string paramreter.
-      string_vector keys() const noexcept;
+      string_collection keys() const noexcept;
       /// @brief Gets all keys from a specified section.
       /// @param section The section to get keys.
       /// @return The keys vector from the specified section.
       /// @remarks Use xtd::ustring::empty_string paramreter to get keys of the global section.
-      string_vector keys(const xtd::ustring& section) const noexcept;
+      string_collection keys(const xtd::ustring& section) const noexcept;
 
       /// @brief Gets all sections.
       /// @return The sections vector.
-      string_vector sections() const noexcept;
+      string_collection sections() const noexcept;
       
       /// @brief Gets the stream of the current instance.
       /// @return The stream of the current instance.
