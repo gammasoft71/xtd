@@ -196,6 +196,8 @@ add_sources(
   include/xtd/generic_stream_output
   include/xtd/guid.h
   include/xtd/guid
+  include/xtd/hash_code.h
+  include/xtd/hash_code
   include/xtd/iasync_result.h
   include/xtd/iasync_result
   include/xtd/iclonable.h
