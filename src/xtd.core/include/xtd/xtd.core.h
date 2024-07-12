@@ -293,6 +293,7 @@
 #include "get_in_rdbuf.h"
 #include "get_out_rdbuf.h"
 #include "guid.h"
+#include "hash_code.h"
 #include "iasync_result.h"
 #include "iclonable.h"
 #include "icomparable.h"
