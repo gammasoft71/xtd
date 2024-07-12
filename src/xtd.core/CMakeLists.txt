@@ -953,6 +953,7 @@ add_sources(
   src/xtd/distribution.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
+  src/xtd/hash_code.cpp
   src/xtd/iformatable.cpp
   src/xtd/literals.cpp
   src/xtd/math.cpp
