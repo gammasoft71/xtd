@@ -2899,7 +2899,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"> </div>
 <div class="line"><span class="comment">// Only this operator is needed for text_styles enum class to be recognized by xtd::ustring::format().</span></div>
 <div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt;text_styles&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection&lt;text_styles&gt;</a> {{text_styles::normal, <span class="stringliteral">&quot;normal&quot;</span>}, {text_styles::bold, <span class="stringliteral">&quot;bold&quot;</span>}, {text_styles::italic, <span class="stringliteral">&quot;italic&quot;</span>}, {text_styles::underline, <span class="stringliteral">&quot;underline&quot;</span>}, {text_styles::strikeout, <span class="stringliteral">&quot;strikeout&quot;</span>}};}</div>
+<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga027f28f28cc82b406e03b0020a62891d">xtd::enum_collection&lt;text_styles&gt;</a> {{text_styles::normal, <span class="stringliteral">&quot;normal&quot;</span>}, {text_styles::bold, <span class="stringliteral">&quot;bold&quot;</span>}, {text_styles::italic, <span class="stringliteral">&quot;italic&quot;</span>}, {text_styles::underline, <span class="stringliteral">&quot;underline&quot;</span>}, {text_styles::strikeout, <span class="stringliteral">&quot;strikeout&quot;</span>}};}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -2930,7 +2930,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// 0x5</span></div>
 <div class="line"><span class="comment">// 0x5</span></div>
 <div class="ttc" id="agroup__keywords_html_gaea49fae71107df8769685efb159c181a"><div class="ttname"><a href="group__keywords.html#gaea49fae71107df8769685efb159c181a">flags_attribute_</a></div><div class="ttdeci">#define flags_attribute_(namespace_name, enum_type)</div><div class="ttdoc">Provides the set attribute struct for enumerations helper.</div><div class="ttdef"><b>Definition</b> flags_attribute.h:34</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gaa289cd12f69682df4a6d194b5b10e191"><div class="ttname"><a href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::ustring &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:21</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga027f28f28cc82b406e03b0020a62891d"><div class="ttname"><a href="group__xtd__core.html#ga027f28f28cc82b406e03b0020a62891d">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; xtd::collections::generic::key_value_pair&lt; enum_t, xtd::ustring &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.h:22</div></div>
 <div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.h:38</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_flags_8cpp-example.html#a1">enum_class_flags.cpp</a>, <a class="el" href="enum_class_flags_introspection_8cpp-example.html#a1">enum_class_flags_introspection.cpp</a>, and <a class="el" href="format_enum_class_flags_8cpp-example.html#a0">format_enum_class_flags.cpp</a>.</dd>
@@ -3026,7 +3026,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  <a class="code hl_typedef" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">decimal</a> balance;</div>
 <div class="line">};</div>
 <div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.h:85</div></div>
-<div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> types.h:116</div></div>
+<div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> decimal.h:23</div></div>
 </div><!-- fragment --><p> For more information, see Thread Synchronization. </p><dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The lock_ keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. If another thread tries to enter a locked code, it will wait, block, until the object is released. </dd>
@@ -3190,7 +3190,7 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line"><span class="comment">// Balance before Withdrawal :  2</span></div>
 <div class="line"><span class="comment">// Amount to Withdraw        : -2</span></div>
 <div class="line"><span class="comment">// Balance after Withdrawal  :  0</span></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:39</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:40</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.h:40</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html_a629a30d5ddd8035f45afe7d982fda712"><div class="ttname"><a href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">xtd::random::next</a></div><div class="ttdeci">virtual int32 next() const</div><div class="ttdoc">Returns a nonnegative random number.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
@@ -3576,7 +3576,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line"><span class="comment">// two</span></div>
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:35</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.h:66</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt></dt><dd>This example show a main method with a return code and without arguments <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
@@ -3813,7 +3813,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <div class="line">int32 i = 42;</div>
 <div class="line"><span class="comment">// Get the type object of an object :</span></div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1type__object.html">xtd::type_object</a> type2 = <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(i);</div>
-<div class="ttc" id="aclassxtd_1_1type__object_html"><div class="ttname"><a href="classxtd_1_1type__object.html">xtd::type_object</a></div><div class="ttdoc">Represents type declarations: class types, interface types, array types, value types,...</div><div class="ttdef"><b>Definition</b> type_object.h:38</div></div>
+<div class="ttc" id="aclassxtd_1_1type__object_html"><div class="ttname"><a href="classxtd_1_1type__object.html">xtd::type_object</a></div><div class="ttdoc">Represents type declarations: class types, interface types, array types, value types,...</div><div class="ttdef"><b>Definition</b> type_object.h:39</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The typeof_ operator cannot be overloaded. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="boxed_info_8cpp-example.html#a1">boxed_info.cpp</a>, and <a class="el" href="file_info_move_to_8cpp-example.html#a14">file_info_move_to.cpp</a>.</dd>
@@ -3891,7 +3891,7 @@ If you need to get the fully-qualified name, you can use the typeof_ expression 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:22:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 12 2024 12:06:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
