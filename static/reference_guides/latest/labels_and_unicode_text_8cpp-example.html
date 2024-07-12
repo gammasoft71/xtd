@@ -110,12 +110,13 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/key_value_pair&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/literals&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
@@ -134,7 +135,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  vector&lt;pair&lt;ustring, ustring&gt;&gt; languages {</div>
+<div class="line">  vector&lt;key_value_pair&lt;ustring, ustring&gt;&gt; languages {</div>
 <div class="line">    {<span class="stringliteral">&quot;Arabic&quot;</span>, u8<span class="stringliteral">&quot;\u0627\u0644\u0643\u0644\u0645\u0629 \u0627\u0644\u0639\u0631\u0628\u064A\u0629&quot;</span>},</div>
 <div class="line">    {<span class="stringliteral">&quot;Trad. Chinese&quot;</span>, u8<span class="stringliteral">&quot;\u4E2D\u570B\u7684\u6F22\u5B57&quot;</span>},</div>
 <div class="line">    {<span class="stringliteral">&quot;Simpl. Chinese:&quot;</span>, u8<span class="stringliteral">&quot;\u6C49\u8BED&quot;</span>},</div>
@@ -146,7 +147,7 @@ $(function() {
 <div class="line">    {<span class="stringliteral">&quot;Japanese&quot;</span>, u8<span class="stringliteral">&quot;\u65E5\u672C\u8A9E\u306E\u3072\u3089\u304C\u306A, \u6F22\u5B57\u3068\u30AB\u30BF\u30AB\u30CA&quot;</span>},</div>
 <div class="line">    {<span class="stringliteral">&quot;Korean&quot;</span>, u8<span class="stringliteral">&quot;\uB300\uD55C\uBBFC\uAD6D\uC758 \uD55C\uAE00&quot;</span>},</div>
 <div class="line">    {<span class="stringliteral">&quot;Russian&quot;</span>, u8<span class="stringliteral">&quot;\u0420\u0443\u0441\u0441\u043A\u0438\u0439 \u044F\u0437\u044B\u043A&quot;</span>}};</div>
-<div class="line">  vector&lt;pair&lt;label, label&gt;&gt; items {languages.size()};</div>
+<div class="line">  vector&lt;key_value_pair&lt;label, label&gt;&gt; items {languages.size()};</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -154,6 +155,7 @@ $(function() {
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1point_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1point.html">xtd::drawing::point</a></div><div class="ttdoc">Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...</div><div class="ttdef"><b>Definition</b> point.h:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:54</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> equator.h:14</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.h:11</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
@@ -161,7 +163,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:22:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 12 2024 12:06:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -219,7 +219,7 @@ $(function() {
 <div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>      private:</div>
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <span class="keywordtype">void</span> recreate_handle();</div>
 <div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>        </div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        std::shared_ptr&lt;data&gt; data_;</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt;data&gt; data_;</div>
 <div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>      };</div>
 <div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    }</div>
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>  }</div>
@@ -235,20 +235,21 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.h:44</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1string__format_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1string__format.html">xtd::drawing::string_format</a></div><div class="ttdoc">Encapsulates text layout information (such as alignment, orientation and tab stops) display manipulat...</div><div class="ttdef"><b>Definition</b> string_format.h:30</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.h:21</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:39</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:40</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
 <div class="ttc" id="afill__mode_8h_html"><div class="ttname"><a href="fill__mode_8h.html">fill_mode.h</a></div><div class="ttdoc">Contains xtd::drawing::drawing_2d::fill_mode enum class.</div></div>
 <div class="ttc" id="agroup__fonts_html_ga5622feb39a9d16672cef53957d224571"><div class="ttname"><a href="group__fonts.html#ga5622feb39a9d16672cef53957d224571">xtd::drawing::font_style</a></div><div class="ttdeci">font_style</div><div class="ttdoc">Specifies style information applied to text. This enumeration has a flags attribute that allows a bit...</div><div class="ttdef"><b>Definition</b> font_style.h:17</div></div>
 <div class="ttc" id="agroup__keywords_html_ga0e59557a60ff5461db679dd209b6d3cd"><div class="ttname"><a href="group__keywords.html#ga0e59557a60ff5461db679dd209b6d3cd">drawing_export_</a></div><div class="ttdeci">#define drawing_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> drawing_export.h:13</div></div>
-<div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:155</div></div>
-<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> types.h:181</div></div>
+<div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.h:23</div></div>
+<div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.h:25</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_ga76b473fa8836766bb44992275e6a0b8e"><div class="ttname"><a href="group__xtd__drawing.html#ga76b473fa8836766bb44992275e6a0b8e">xtd::drawing::drawing_2d::fill_mode</a></div><div class="ttdeci">fill_mode</div><div class="ttdoc">Specifies how the interior of a closed path is filled.</div><div class="ttdef"><b>Definition</b> fill_mode.h:23</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:22:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 12 2024 12:06:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

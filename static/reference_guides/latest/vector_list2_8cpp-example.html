@@ -82,58 +82,12 @@ $(function() {
   <div class="headertitle"><div class="title">vector_list2.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c" title="Represents a collection of std::any.">xtd::collections::vector_list</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/vector_list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/is&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/platform_id&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;any&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;locale&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;ostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  register_any_stringer&lt;platform_id&gt;([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value);});</div>
-<div class="line">  register_any_stringer&lt;seconds&gt;([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value);});</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Creates and initializes a new vector_list.</span></div>
-<div class="line">  <span class="keyword">auto</span> list = <a class="code hl_typedef" href="group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c">vector_list</a> {<span class="keyword">true</span>, 42, <span class="stringliteral">&quot;This is a string&quot;</span>_s, platform_id::win32s, u8<span class="stringliteral">&quot;Another string&quot;</span>_s, 4.2f, hours(2) + minutes(25) + seconds(43)};</div>
-<div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;vector_list = {{{}}}&quot;</span>, ustring::join(<span class="stringliteral">&quot;, &quot;</span>, list));</div>
-<div class="line">  console::write_line();</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> any&amp; item : list) {</div>
-<div class="line">    <span class="keywordflow">if</span> (is&lt;ustring&gt;(item)) console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, std::quoted(as&lt;ustring&gt;(item).to_upper()));</div>
-<div class="line">    <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, item);</div>
-<div class="line">  }</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code can produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// vector_list = {true, 42, This is a string, win32s, Another string, 4.2, 02:25:43}</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// true</span></div>
-<div class="line"><span class="comment">// 42</span></div>
-<div class="line"><span class="comment">// &quot;THIS IS A STRING&quot;</span></div>
-<div class="line"><span class="comment">// &quot;ANOTHER STRING&quot;</span></div>
-<div class="line"><span class="comment">// 4.2</span></div>
-<div class="line"><span class="comment">// 02:25:43</span></div>
-<div class="ttc" id="agroup__collections_html_gaf18249e78122f5f0f0f09003cf6abc5c"><div class="ttname"><a href="group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c">xtd::collections::vector_list</a></div><div class="ttdeci">std::vector&lt; std::any &gt; vector_list</div><div class="ttdoc">Represents a collection of std::any.</div><div class="ttdef"><b>Definition</b> vector_list.h:27</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.h:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
-</div><!-- fragment --> </div><!-- contents -->
+<p>Shows how to use <a class="el" href="group__collections.html#ga3c07efce71e0899524aa31dfd0431817" title="Represents a collection of std::any.">xtd::collections::vector_list</a> class.</p>
+<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:22:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 11 2024 11:49:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

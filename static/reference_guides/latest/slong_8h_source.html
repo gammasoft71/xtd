@@ -88,15 +88,21 @@ $(function() {
 <div class="contents">
 <a href="slong_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="slong__object_8h.html">slong_object.h</a>&quot;</span></div>
-<div class="ttc" id="aslong__object_8h_html"><div class="ttname"><a href="slong__object_8h.html">slong_object.h</a></div><div class="ttdoc">Contains xtd::slong_object alias.</div></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div><div class="ttdoc">Contains xtd fundamental types.</div></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define __XTD_VALUE_TYPE_NATIVE__</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;xtd/native/value_types&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#undef __XTD_VALUE_TYPE_NATIVE__</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="group__types.html#gaf4ae7b4402a8b6bb42003cc42fa6d17b">   27</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__types.html#gaf4ae7b4402a8b6bb42003cc42fa6d17b">slong</a> = __slong__; <span class="comment">// Workaround : On linux 64 bits unfortunately &#39;int_least64_t&#39; is an alias on &#39;long&#39; and not on &#39;long long int&#39; as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"></span>}</div>
+<div class="ttc" id="agroup__types_html_gaf4ae7b4402a8b6bb42003cc42fa6d17b"><div class="ttname"><a href="group__types.html#gaf4ae7b4402a8b6bb42003cc42fa6d17b">xtd::slong</a></div><div class="ttdeci">__slong__ slong</div><div class="ttdoc">Represents a 32-bit or 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> slong.h:27</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:22:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 12 2024 12:06:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

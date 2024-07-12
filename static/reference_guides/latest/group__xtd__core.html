@@ -138,6 +138,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1call__once.html">xtd::call_once</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1call__once.html" title="The xtd::call_once struct can be used to execute a routine exactly once. This can be used to initiali...">xtd::call_once</a> struct can be used to execute a routine exactly once. This can be used to initialise data in a thread-safe way.  <a href="structxtd_1_1call__once.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1equator.html">xtd::collections::generic::equator&lt; key_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a function object for performing comparisons. Unless specialised, invokes operator== on type type_t. xtd::equator with the key and the value strongly typed to be std::any.  <a href="structxtd_1_1collections_1_1generic_1_1equator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1hasher.html">xtd::collections::generic::hasher&lt; key_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a function object for hashing data.  <a href="structxtd_1_1collections_1_1generic_1_1hasher.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1key__not__found__exception.html">xtd::collections::key_not_found_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.  <a href="classxtd_1_1collections_1_1key__not__found__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,6 +305,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1guid.html">xtd::guid</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a globally unique identifier (GUID). A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.  <a href="structxtd_1_1guid.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1hash__code.html">xtd::hash_code</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines the hash code for multiple values into a single hash code. This is the ultimate base class of all classes in the xtd. It is the root of the type hierarchy.  <a href="classxtd_1_1hash__code.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the status of an asynchronous operation.  <a href="classxtd_1_1iasync__result.html#details">More...</a><br /></td></tr>
@@ -763,19 +772,19 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga53c721aac682a7ccf19ee17d92280e31"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action</a> = delegate&lt; void(arguments_t...)&gt;</td></tr>
 <tr class="memdesc:ga53c721aac682a7ccf19ee17d92280e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a xtd::delegate that has variable parameters and does not return a value.  <br /></td></tr>
 <tr class="separator:ga53c721aac682a7ccf19ee17d92280e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2c9b01f90017e6d921f8642ab99f0fcc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc">xtd::async_callback</a> = delegate&lt; void(<a class="el" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">async_result</a> ar)&gt;</td></tr>
+<tr class="memitem:ga2c9b01f90017e6d921f8642ab99f0fcc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc">xtd::async_callback</a> = delegate&lt; void(<a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a> ar)&gt;</td></tr>
 <tr class="memdesc:ga2c9b01f90017e6d921f8642ab99f0fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">References a method to be called when a corresponding asynchronous operation completes.  <br /></td></tr>
 <tr class="separator:ga2c9b01f90017e6d921f8642ab99f0fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga19b5fcfe32a5a80bd6dad2ce04423367"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">xtd::async_result</a> = std::shared_ptr&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
-<tr class="memdesc:ga19b5fcfe32a5a80bd6dad2ce04423367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the status of an asynchronous operation.  <br /></td></tr>
-<tr class="separator:ga19b5fcfe32a5a80bd6dad2ce04423367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bc34012935a93e10b5dba765c8d0d5a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">xtd::async_result</a> = <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
+<tr class="memdesc:ga1bc34012935a93e10b5dba765c8d0d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the status of an asynchronous operation.  <br /></td></tr>
+<tr class="separator:ga1bc34012935a93e10b5dba765c8d0d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f5f8c3f8cde130d9b2c4d79b15542bf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1f5f8c3f8cde130d9b2c4d79b15542bf">xtd::const_object_ref</a> = std::reference_wrapper&lt; const <a class="el" href="classxtd_1_1object.html">object</a> &gt;</td></tr>
 <tr class="memdesc:ga1f5f8c3f8cde130d9b2c4d79b15542bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an object reference.  <br /></td></tr>
 <tr class="separator:ga1f5f8c3f8cde130d9b2c4d79b15542bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa289cd12f69682df4a6d194b5b10e191"><td class="memTemplParams" colspan="2">template&lt;typename enum_t &gt; </td></tr>
-<tr class="memitem:gaa289cd12f69682df4a6d194b5b10e191"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection</a> = std::vector&lt; std::pair&lt; enum_t, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt; &gt;</td></tr>
-<tr class="memdesc:gaa289cd12f69682df4a6d194b5b10e191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pair of an enum_t value and a string of an enum of type enum_t.  <br /></td></tr>
-<tr class="separator:gaa289cd12f69682df4a6d194b5b10e191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga027f28f28cc82b406e03b0020a62891d"><td class="memTemplParams" colspan="2">template&lt;typename enum_t &gt; </td></tr>
+<tr class="memitem:ga027f28f28cc82b406e03b0020a62891d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga027f28f28cc82b406e03b0020a62891d">xtd::enum_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; enum_t, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt; &gt;</td></tr>
+<tr class="memdesc:ga027f28f28cc82b406e03b0020a62891d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pair of an enum_t value and a string of an enum of type enum_t.  <br /></td></tr>
+<tr class="separator:ga027f28f28cc82b406e03b0020a62891d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga655ac2d710f5daaa327ac82c8c235de9"><td class="memTemplParams" colspan="2">template&lt;typename result_t , typename... arguments_t&gt; </td></tr>
 <tr class="memitem:ga655ac2d710f5daaa327ac82c8c235de9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">xtd::func</a> = delegate&lt; result_t(arguments_t...)&gt;</td></tr>
 <tr class="memdesc:ga655ac2d710f5daaa327ac82c8c235de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a delegate that has variables parameters and returns a value of the type specified by the result_t type.  <br /></td></tr>
@@ -1772,10 +1781,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga83d9ee2904cca824c3628b76e6c08c74"><td class="memTemplItemLeft" align="right" valign="top">const new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga83d9ee2904cca824c3628b76e6c08c74">xtd::as</a> (const current_type_t *value)</td></tr>
 <tr class="memdesc:ga83d9ee2904cca824c3628b76e6c08c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga83d9ee2904cca824c3628b76e6c08c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga50ecb6a168197844aad29305c4640bd6"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga50ecb6a168197844aad29305c4640bd6"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga50ecb6a168197844aad29305c4640bd6">xtd::as</a> (const std::shared_ptr&lt; current_type_t &gt; &amp;value)</td></tr>
-<tr class="memdesc:ga50ecb6a168197844aad29305c4640bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga50ecb6a168197844aad29305c4640bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga08a770dea01753c1c09658407f1a6e15"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
 <tr class="memitem:ga08a770dea01753c1c09658407f1a6e15"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga08a770dea01753c1c09658407f1a6e15">xtd::as</a> (const std::string &amp;value)</td></tr>
 <tr class="memdesc:ga08a770dea01753c1c09658407f1a6e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
@@ -1796,6 +1801,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga164caf14abb3ff1ab8ff49b595961819"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga164caf14abb3ff1ab8ff49b595961819">xtd::as</a> (const <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> *value)</td></tr>
 <tr class="memdesc:ga164caf14abb3ff1ab8ff49b595961819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga164caf14abb3ff1ab8ff49b595961819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4421fd9fdc93a75de07753ddb4d3c00"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:gaa4421fd9fdc93a75de07753ddb4d3c00"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa4421fd9fdc93a75de07753ddb4d3c00">xtd::as</a> (const <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
+<tr class="memdesc:gaa4421fd9fdc93a75de07753ddb4d3c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:gaa4421fd9fdc93a75de07753ddb4d3c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5efbb506d01b3cba5f08ee6a3f09c1a5"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
 <tr class="memitem:ga5efbb506d01b3cba5f08ee6a3f09c1a5"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga5efbb506d01b3cba5f08ee6a3f09c1a5">xtd::as</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;value)</td></tr>
 <tr class="memdesc:ga5efbb506d01b3cba5f08ee6a3f09c1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
@@ -1844,14 +1853,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga19379a1158ccd320e208b362f11295b7"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7">xtd::as</a> (std::any value)</td></tr>
 <tr class="memdesc:ga19379a1158ccd320e208b362f11295b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga19379a1158ccd320e208b362f11295b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga635ec8322f76d7d771353b6b60c0f9b1"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga635ec8322f76d7d771353b6b60c0f9b1"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga635ec8322f76d7d771353b6b60c0f9b1">xtd::as</a> (std::shared_ptr&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
-<tr class="memdesc:ga635ec8322f76d7d771353b6b60c0f9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga635ec8322f76d7d771353b6b60c0f9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga25147496276b976413665c1259acb591"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga25147496276b976413665c1259acb591"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga25147496276b976413665c1259acb591">xtd::as</a> (std::shared_ptr&lt; current_type_t &gt; &amp;value)</td></tr>
-<tr class="memdesc:ga25147496276b976413665c1259acb591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga25147496276b976413665c1259acb591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3048b276128e5a49f49afa6a55274593"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
 <tr class="memitem:ga3048b276128e5a49f49afa6a55274593"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3048b276128e5a49f49afa6a55274593">xtd::as</a> (std::string &amp;value)</td></tr>
 <tr class="memdesc:ga3048b276128e5a49f49afa6a55274593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
@@ -1864,14 +1865,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga87c048af6b25eb3e8ece7f94f832dcdc"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga87c048af6b25eb3e8ece7f94f832dcdc">xtd::as</a> (std::u32string &amp;value)</td></tr>
 <tr class="memdesc:ga87c048af6b25eb3e8ece7f94f832dcdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga87c048af6b25eb3e8ece7f94f832dcdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4c8a145d4419cc252358fc12f92556a"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:gae4c8a145d4419cc252358fc12f92556a"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gae4c8a145d4419cc252358fc12f92556a">xtd::as</a> (std::unique_ptr&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
-<tr class="memdesc:gae4c8a145d4419cc252358fc12f92556a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:gae4c8a145d4419cc252358fc12f92556a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga895cecd323ab44aad71eb796eafcac9a"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga895cecd323ab44aad71eb796eafcac9a"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga895cecd323ab44aad71eb796eafcac9a">xtd::as</a> (std::unique_ptr&lt; current_type_t &gt; &amp;value)</td></tr>
-<tr class="memdesc:ga895cecd323ab44aad71eb796eafcac9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga895cecd323ab44aad71eb796eafcac9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7e670c9a6158d0f06ab243514a2c0d92"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
 <tr class="memitem:ga7e670c9a6158d0f06ab243514a2c0d92"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga7e670c9a6158d0f06ab243514a2c0d92">xtd::as</a> (std::wstring &amp;value)</td></tr>
 <tr class="memdesc:ga7e670c9a6158d0f06ab243514a2c0d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
@@ -1900,10 +1893,26 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0f4d4c149a3f3b7e6f2f0ae32ca49f82"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga0f4d4c149a3f3b7e6f2f0ae32ca49f82">xtd::as</a> (<a class="el" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> value)</td></tr>
 <tr class="memdesc:ga0f4d4c149a3f3b7e6f2f0ae32ca49f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga0f4d4c149a3f3b7e6f2f0ae32ca49f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga76d1e4c11965d16c16a3ba475f7a6cfb"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga76d1e4c11965d16c16a3ba475f7a6cfb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga76d1e4c11965d16c16a3ba475f7a6cfb">xtd::as</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
+<tr class="memdesc:ga76d1e4c11965d16c16a3ba475f7a6cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga76d1e4c11965d16c16a3ba475f7a6cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa32e24433fc5ff09bbe62d38cf9e74f4"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:gaa32e24433fc5ff09bbe62d38cf9e74f4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa32e24433fc5ff09bbe62d38cf9e74f4">xtd::as</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
+<tr class="memdesc:gaa32e24433fc5ff09bbe62d38cf9e74f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:gaa32e24433fc5ff09bbe62d38cf9e74f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6aa64e93856c066e0fff91d9113a6de8"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
 <tr class="memitem:ga6aa64e93856c066e0fff91d9113a6de8"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6aa64e93856c066e0fff91d9113a6de8">xtd::as</a> (<a class="el" href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">xtd::ulong</a> value)</td></tr>
 <tr class="memdesc:ga6aa64e93856c066e0fff91d9113a6de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga6aa64e93856c066e0fff91d9113a6de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e0cd9031b4b13c267574740e6e25b0c"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga8e0cd9031b4b13c267574740e6e25b0c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga8e0cd9031b4b13c267574740e6e25b0c">xtd::as</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
+<tr class="memdesc:ga8e0cd9031b4b13c267574740e6e25b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga8e0cd9031b4b13c267574740e6e25b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9f94f9bcb81c27601253e3958b8a271"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:gad9f94f9bcb81c27601253e3958b8a271"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gad9f94f9bcb81c27601253e3958b8a271">xtd::as</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
+<tr class="memdesc:gad9f94f9bcb81c27601253e3958b8a271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:gad9f94f9bcb81c27601253e3958b8a271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga060566518c0a804d02c348083f44070b"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
 <tr class="memitem:ga060566518c0a804d02c348083f44070b"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga060566518c0a804d02c348083f44070b">xtd::as</a> (<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;value)</td></tr>
 <tr class="memdesc:ga060566518c0a804d02c348083f44070b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
@@ -4736,13 +4745,21 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga5a5584949bd381cfe6226427741595c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a null std::ostream.  <br /></td></tr>
 <tr class="separator:ga5a5584949bd381cfe6226427741595c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
-<tr class="memitem:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">xtd::delete_ptr</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">ptr</a>)</td></tr>
-<tr class="memdesc:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> or <a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
+<tr class="memitem:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">xtd::delete_ptr</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>)</td></tr>
+<tr class="memdesc:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> or <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
 <tr class="separator:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga485087288ed3d32c97b73af209aea50c"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
-<tr class="memitem:ga485087288ed3d32c97b73af209aea50c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga485087288ed3d32c97b73af209aea50c">xtd::delete_ptr</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">ptr</a>)</td></tr>
+<tr class="memitem:ga485087288ed3d32c97b73af209aea50c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga485087288ed3d32c97b73af209aea50c">xtd::delete_ptr</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>)</td></tr>
 <tr class="memdesc:ga485087288ed3d32c97b73af209aea50c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object.  <br /></td></tr>
 <tr class="separator:ga485087288ed3d32c97b73af209aea50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99eb39a1b7705408679d5d327d969292"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga99eb39a1b7705408679d5d327d969292"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga99eb39a1b7705408679d5d327d969292">xtd::delete_sptr</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>)</td></tr>
+<tr class="memdesc:ga99eb39a1b7705408679d5d327d969292"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga99eb39a1b7705408679d5d327d969292" title="xtd::delete_sptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_sptr</a> operator delete a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> or <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
+<tr class="separator:ga99eb39a1b7705408679d5d327d969292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf4f835bee450ded314cab5cda37a2643"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:gaf4f835bee450ded314cab5cda37a2643"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaf4f835bee450ded314cab5cda37a2643">xtd::delete_uptr</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>)</td></tr>
+<tr class="memdesc:gaf4f835bee450ded314cab5cda37a2643"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#gaf4f835bee450ded314cab5cda37a2643" title="xtd::delete_uptr operator delete a xtd::uptr object.">xtd::delete_uptr</a> operator delete a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object.  <br /></td></tr>
+<tr class="separator:gaf4f835bee450ded314cab5cda37a2643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1bfa9e11607cad616748a8ef5d2a99c9"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename param_t &gt; </td></tr>
 <tr class="memitem:ga1bfa9e11607cad616748a8ef5d2a99c9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9">xtd::is</a> (const param_t &amp;value)</td></tr>
 <tr class="memdesc:ga1bfa9e11607cad616748a8ef5d2a99c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
@@ -4763,10 +4780,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga52ae9030016acf7d943cd428e943dc02"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">xtd::is</a> (std::any value)</td></tr>
 <tr class="memdesc:ga52ae9030016acf7d943cd428e943dc02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:ga52ae9030016acf7d943cd428e943dc02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4dce79c6db32b6138a86523b519f2ceb"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga4dce79c6db32b6138a86523b519f2ceb"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga4dce79c6db32b6138a86523b519f2ceb">xtd::is</a> (std::shared_ptr&lt; current_type_t &gt; &amp;value)</td></tr>
-<tr class="memdesc:ga4dce79c6db32b6138a86523b519f2ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
-<tr class="separator:ga4dce79c6db32b6138a86523b519f2ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35e088065fe87da2bfae2c36e0a115ce"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga35e088065fe87da2bfae2c36e0a115ce"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga35e088065fe87da2bfae2c36e0a115ce">xtd::is</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
+<tr class="memdesc:ga35e088065fe87da2bfae2c36e0a115ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
+<tr class="separator:ga35e088065fe87da2bfae2c36e0a115ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac624aee7825020ae6d8bd42e9d4c886e"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:gac624aee7825020ae6d8bd42e9d4c886e"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gac624aee7825020ae6d8bd42e9d4c886e">xtd::is&lt; bool &gt;</a> (bool value)</td></tr>
 <tr class="memdesc:gac624aee7825020ae6d8bd42e9d4c886e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
@@ -4828,8 +4845,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga1d399dff49889aa81935e74143eca22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:ga1d399dff49889aa81935e74143eca22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
-<tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">ptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a> (args_t &amp;&amp;... args)</td></tr>
-<tr class="memdesc:ga2fd68f03198b2bf84b1e93149494b685"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> operator creates a <a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
+<tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a> (args_t &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ga2fd68f03198b2bf84b1e93149494b685"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> operator creates a <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
 <tr class="separator:ga2fd68f03198b2bf84b1e93149494b685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7cc491fa6479b6976a467c83b82a902e"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
 <tr class="memitem:ga7cc491fa6479b6976a467c83b82a902e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr</a> (args_t &amp;&amp;... args)</td></tr>
@@ -5265,26 +5282,26 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3167fa5dbed28d039fa3a97f7e341929"><td class="memTemplItemLeft" align="right" valign="top">static new_type_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3167fa5dbed28d039fa3a97f7e341929">xtd::convert_pointer::to_ref</a> (current_type_t *value)</td></tr>
 <tr class="memdesc:ga3167fa5dbed28d039fa3a97f7e341929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga3167fa5dbed28d039fa3a97f7e341929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad07a5c51833c7dcf92a2e3fdb9146c1d"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:gad07a5c51833c7dcf92a2e3fdb9146c1d"><td class="memTemplItemLeft" align="right" valign="top">static std::unique_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gad07a5c51833c7dcf92a2e3fdb9146c1d">xtd::convert_pointer::to_unique_ptr</a> (std::unique_ptr&lt; current_type_t &gt; &amp;value)</td></tr>
-<tr class="memdesc:gad07a5c51833c7dcf92a2e3fdb9146c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:gad07a5c51833c7dcf92a2e3fdb9146c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga19d2d164656251c8b2e392c929c8a88e"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga19d2d164656251c8b2e392c929c8a88e"><td class="memTemplItemLeft" align="right" valign="top">static std::unique_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga19d2d164656251c8b2e392c929c8a88e">xtd::convert_pointer::to_unique_ptr</a> (std::unique_ptr&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
-<tr class="memdesc:ga19d2d164656251c8b2e392c929c8a88e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga19d2d164656251c8b2e392c929c8a88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8bc867e6f7c0c14219a728d751aa1be4"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga8bc867e6f7c0c14219a728d751aa1be4"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga8bc867e6f7c0c14219a728d751aa1be4">xtd::convert_pointer::to_shared_ptr</a> (const std::shared_ptr&lt; current_type_t &gt; &amp;value)</td></tr>
-<tr class="memdesc:ga8bc867e6f7c0c14219a728d751aa1be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga8bc867e6f7c0c14219a728d751aa1be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3c1ad3787845d6bbae66147453197a8d"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga3c1ad3787845d6bbae66147453197a8d"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3c1ad3787845d6bbae66147453197a8d">xtd::convert_pointer::to_shared_ptr</a> (std::shared_ptr&lt; current_type_t &gt; &amp;value)</td></tr>
-<tr class="memdesc:ga3c1ad3787845d6bbae66147453197a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga3c1ad3787845d6bbae66147453197a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9d5f50bad7fb6de0678309dc479f2e8a"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
-<tr class="memitem:ga9d5f50bad7fb6de0678309dc479f2e8a"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga9d5f50bad7fb6de0678309dc479f2e8a">xtd::convert_pointer::to_shared_ptr</a> (std::shared_ptr&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
-<tr class="memdesc:ga9d5f50bad7fb6de0678309dc479f2e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
-<tr class="separator:ga9d5f50bad7fb6de0678309dc479f2e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90e0315cccd18ff389f11fc1d4c46ed0"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga90e0315cccd18ff389f11fc1d4c46ed0"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga90e0315cccd18ff389f11fc1d4c46ed0">xtd::convert_pointer::to_unique_ptr</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
+<tr class="memdesc:ga90e0315cccd18ff389f11fc1d4c46ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga90e0315cccd18ff389f11fc1d4c46ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga354ebfc8c6ea4c19385fe376852e66a5"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga354ebfc8c6ea4c19385fe376852e66a5"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga354ebfc8c6ea4c19385fe376852e66a5">xtd::convert_pointer::to_unique_ptr</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
+<tr class="memdesc:ga354ebfc8c6ea4c19385fe376852e66a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga354ebfc8c6ea4c19385fe376852e66a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6bb66f181c61cc794e95a9cfc97d5453"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga6bb66f181c61cc794e95a9cfc97d5453"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6bb66f181c61cc794e95a9cfc97d5453">xtd::convert_pointer::to_shared_ptr</a> (const <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
+<tr class="memdesc:ga6bb66f181c61cc794e95a9cfc97d5453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga6bb66f181c61cc794e95a9cfc97d5453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1bce48582408960b1147ab78e766f21"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:gaa1bce48582408960b1147ab78e766f21"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa1bce48582408960b1147ab78e766f21">xtd::convert_pointer::to_shared_ptr</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
+<tr class="memdesc:gaa1bce48582408960b1147ab78e766f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:gaa1bce48582408960b1147ab78e766f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga654193167a5e216263ce207e1b648bda"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga654193167a5e216263ce207e1b648bda"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga654193167a5e216263ce207e1b648bda">xtd::convert_pointer::to_shared_ptr</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
+<tr class="memdesc:ga654193167a5e216263ce207e1b648bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
+<tr class="separator:ga654193167a5e216263ce207e1b648bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gade5b0d544a1e94d210515c3895a2ede5" name="gade5b0d544a1e94d210515c3895a2ede5"></a>
@@ -5431,7 +5448,7 @@ template&lt;typename... arguments_t&gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc">xtd::async_callback</a> = typedef delegate&lt;void(<a class="el" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">async_result</a> ar)&gt;</td>
+          <td class="memname">using <a class="el" href="group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc">xtd::async_callback</a> = typedef delegate&lt;void(<a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a> ar)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -5452,14 +5469,14 @@ template&lt;typename... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="ga19b5fcfe32a5a80bd6dad2ce04423367" name="ga19b5fcfe32a5a80bd6dad2ce04423367"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga19b5fcfe32a5a80bd6dad2ce04423367">&#9670;&#160;</a></span>async_result</h2>
+<a id="ga1bc34012935a93e10b5dba765c8d0d5a" name="ga1bc34012935a93e10b5dba765c8d0d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bc34012935a93e10b5dba765c8d0d5a">&#9670;&#160;</a></span>async_result</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367">xtd::async_result</a> = typedef std::shared_ptr&lt;<a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a>&gt;</td>
+          <td class="memname">using <a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">xtd::async_result</a> = typedef <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt;<a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -5469,7 +5486,7 @@ template&lt;typename... arguments_t&gt; </div>
 <p>Represents the status of an asynchronous operation. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="group__xtd__core.html#ga19b5fcfe32a5a80bd6dad2ce04423367" title="Represents the status of an asynchronous operation.">xtd::async_result</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a" title="Represents the status of an asynchronous operation.">xtd::async_result</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/iasync_result&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
 <div class="line"> </div>
@@ -5556,8 +5573,8 @@ template&lt;typename... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="gaa289cd12f69682df4a6d194b5b10e191" name="gaa289cd12f69682df4a6d194b5b10e191"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa289cd12f69682df4a6d194b5b10e191">&#9670;&#160;</a></span>enum_collection</h2>
+<a id="ga027f28f28cc82b406e03b0020a62891d" name="ga027f28f28cc82b406e03b0020a62891d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga027f28f28cc82b406e03b0020a62891d">&#9670;&#160;</a></span>enum_collection</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5565,7 +5582,7 @@ template&lt;typename... arguments_t&gt; </div>
 template&lt;typename enum_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__xtd__core.html#gaa289cd12f69682df4a6d194b5b10e191">xtd::enum_collection</a> = typedef std::vector&lt;std::pair&lt;enum_t, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="group__xtd__core.html#ga027f28f28cc82b406e03b0020a62891d">xtd::enum_collection</a> = typedef std::vector&lt;<a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt;enum_t, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -5965,7 +5982,7 @@ If you want to pass information to your callback method, create an object that c
 <tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9a506a260bf0428ca9a088399298466dfc" name="ggaeb666968a02e2d1ea1aab56ec278ffc9a506a260bf0428ca9a088399298466dfc"></a>apple_clang&#160;</td><td class="fielddoc"><p>The compiler is Apple clang. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggaeb666968a02e2d1ea1aab56ec278ffc9aea46e25cd506e68293df509ed3124e51" name="ggaeb666968a02e2d1ea1aab56ec278ffc9aea46e25cd506e68293df509ed3124e51"></a>microsoft_visual_studio&#160;</td><td class="fielddoc"><p>The compiler is Microsoft Visual Studio. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Replaced by <a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9a3a69e825de46a19a06d800acd98739a9" title="The compiler is Microsoft Visual Studio.">xtd::compiler_id::msvc</a> - Will be removed in version 0.4.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Replaced by <a class="el" href="group__xtd__core.html#ggaeb666968a02e2d1ea1aab56ec278ffc9a3a69e825de46a19a06d800acd98739a9" title="The compiler is Microsoft Visual Studio.">xtd::compiler_id::msvc</a> - Will be removed in version 0.4.0 </dd></dl>
 </td></tr>
 </table>
 
@@ -7912,7 +7929,7 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keywordtype">char</span>* value = <span class="stringliteral">&quot;Gammasoft&quot;</span>;</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> result = as&lt;intptr&gt;(value);</div>
-<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> types.h:181</div></div>
+<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -7989,7 +8006,7 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">char16</a>* value = <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c">u</a><span class="stringliteral">&quot;Gammasoft&quot;</span>;</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> result = as&lt;intptr&gt;(value);</div>
-<div class="ttc" id="agroup__types_html_ga39d5c4947c807e5f78b8a9abe3692570"><div class="ttname"><a href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a></div><div class="ttdeci">char16_t char16</div><div class="ttdoc">Represents a 16-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:90</div></div>
+<div class="ttc" id="agroup__types_html_ga39d5c4947c807e5f78b8a9abe3692570"><div class="ttname"><a href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a></div><div class="ttdeci">char16_t char16</div><div class="ttdoc">Represents a 16-bit unicode character.</div><div class="ttdef"><b>Definition</b> char16.h:26</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c">xtd::console_key::u</a></div><div class="ttdeci">@ u</div><div class="ttdoc">The U key.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -8067,7 +8084,7 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a>* value = U<span class="stringliteral">&quot;Gammasoft&quot;</span>;</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> result = as&lt;intptr&gt;(value);</div>
-<div class="ttc" id="agroup__types_html_ga989a1148b6ff15567dca430966b17c92"><div class="ttname"><a href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> types.h:103</div></div>
+<div class="ttc" id="agroup__types_html_ga989a1148b6ff15567dca430966b17c92"><div class="ttname"><a href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> char32.h:26</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -8294,45 +8311,8 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 
 </div>
 </div>
-<a id="ga50ecb6a168197844aad29305c4640bd6" name="ga50ecb6a168197844aad29305c4640bd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga50ecb6a168197844aad29305c4640bd6">&#9670;&#160;</a></span>as() <span class="overload">[13/46]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename new_type_t , typename current_type_t &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; new_type_t &gt; xtd::as </td>
-          <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; current_type_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
-
-<p>Casts a type into another type. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> std::shared_ptr&lt;button&gt; value = std::make_shared&lt;xtd::forms::button&gt;();</div>
-<div class="line"><span class="keyword">const</span> std::shared_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(value);</div>
-</div><!-- fragment --> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ga08a770dea01753c1c09658407f1a6e15" name="ga08a770dea01753c1c09658407f1a6e15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga08a770dea01753c1c09658407f1a6e15">&#9670;&#160;</a></span>as() <span class="overload">[14/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga08a770dea01753c1c09658407f1a6e15">&#9670;&#160;</a></span>as() <span class="overload">[13/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8373,7 +8353,7 @@ template&lt;typename new_type_t &gt; </div>
 </div>
 </div>
 <a id="ga87ac746f812dca4ac2b415e084454671" name="ga87ac746f812dca4ac2b415e084454671"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga87ac746f812dca4ac2b415e084454671">&#9670;&#160;</a></span>as() <span class="overload">[15/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87ac746f812dca4ac2b415e084454671">&#9670;&#160;</a></span>as() <span class="overload">[14/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8414,7 +8394,7 @@ template&lt;typename new_type_t &gt; </div>
 </div>
 </div>
 <a id="ga07aee7a8badfe62b08f9a85f2b662146" name="ga07aee7a8badfe62b08f9a85f2b662146"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga07aee7a8badfe62b08f9a85f2b662146">&#9670;&#160;</a></span>as() <span class="overload">[16/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07aee7a8badfe62b08f9a85f2b662146">&#9670;&#160;</a></span>as() <span class="overload">[15/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8455,7 +8435,7 @@ template&lt;typename new_type_t &gt; </div>
 </div>
 </div>
 <a id="ga5cf3371917d016300fc280e80193ed41" name="ga5cf3371917d016300fc280e80193ed41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5cf3371917d016300fc280e80193ed41">&#9670;&#160;</a></span>as() <span class="overload">[17/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5cf3371917d016300fc280e80193ed41">&#9670;&#160;</a></span>as() <span class="overload">[16/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8496,7 +8476,7 @@ template&lt;typename new_type_t &gt; </div>
 </div>
 </div>
 <a id="ga164caf14abb3ff1ab8ff49b595961819" name="ga164caf14abb3ff1ab8ff49b595961819"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga164caf14abb3ff1ab8ff49b595961819">&#9670;&#160;</a></span>as() <span class="overload">[18/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga164caf14abb3ff1ab8ff49b595961819">&#9670;&#160;</a></span>as() <span class="overload">[17/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -8529,8 +8509,46 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a>* value = L<span class="stringliteral">&quot;Gammasoft&quot;</span>;</div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> result = as&lt;intptr&gt;(value);</div>
-<div class="ttc" id="agroup__types_html_ga155357d92cf162b71b396e46accee518"><div class="ttname"><a href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a></div><div class="ttdeci">wchar_t wchar</div><div class="ttdoc">Represents a wide character.</div><div class="ttdef"><b>Definition</b> types.h:338</div></div>
+<div class="ttc" id="agroup__types_html_ga155357d92cf162b71b396e46accee518"><div class="ttname"><a href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a></div><div class="ttdeci">wchar_t wchar</div><div class="ttdoc">Represents a wide character.</div><div class="ttdef"><b>Definition</b> wchar.h:24</div></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="gaa4421fd9fdc93a75de07753ddb4d3c00" name="gaa4421fd9fdc93a75de07753ddb4d3c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4421fd9fdc93a75de07753ddb4d3c00">&#9670;&#160;</a></span>as() <span class="overload">[18/46]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename new_type_t , typename current_type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt; xtd::as </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
+
+<p>Casts a type into another type. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;button&gt;</a> value = xtd::new_sptr&lt;xtd::forms::button&gt;();</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(value);</div>
+<div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.h:25</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -8680,7 +8698,7 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">decimal</a> value = 42.0l;</div>
 <div class="line"><span class="keywordtype">int</span> result = as&lt;int&gt;(value);</div>
-<div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> types.h:116</div></div>
+<div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> decimal.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -8795,7 +8813,7 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga159b2a409f2b3da8165af7a5e32eccf8">int16</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_ga159b2a409f2b3da8165af7a5e32eccf8"><div class="ttname"><a href="group__types.html#ga159b2a409f2b3da8165af7a5e32eccf8">xtd::int16</a></div><div class="ttdeci">int_least16_t int16</div><div class="ttdoc">Represents a 16-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:142</div></div>
+<div class="ttc" id="agroup__types_html_ga159b2a409f2b3da8165af7a5e32eccf8"><div class="ttname"><a href="group__types.html#ga159b2a409f2b3da8165af7a5e32eccf8">xtd::int16</a></div><div class="ttdeci">int_least16_t int16</div><div class="ttdoc">Represents a 16-bit signed integer.</div><div class="ttdef"><b>Definition</b> int16.h:23</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga07e338436a48a655fe28eacd506948bb"><div class="ttname"><a href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">xtd::as&lt; float &gt;</a></div><div class="ttdeci">float as&lt; float &gt;(std::any value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_float.h:36</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -8835,7 +8853,7 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:155</div></div>
+<div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -8874,7 +8892,7 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">int64</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_ga7ab879ebcae19d6021222f00537cfdce"><div class="ttname"><a href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">xtd::int64</a></div><div class="ttdeci">int_least64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:168</div></div>
+<div class="ttc" id="agroup__types_html_ga7ab879ebcae19d6021222f00537cfdce"><div class="ttname"><a href="group__types.html#ga7ab879ebcae19d6021222f00537cfdce">xtd::int64</a></div><div class="ttdeci">int_least64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> int64.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -8913,7 +8931,7 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga3d6cac730aeed730136cd058c136edee">sbyte</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_ga3d6cac730aeed730136cd058c136edee"><div class="ttname"><a href="group__types.html#ga3d6cac730aeed730136cd058c136edee">xtd::sbyte</a></div><div class="ttdeci">int_least8_t sbyte</div><div class="ttdoc">Represents a 8-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:207</div></div>
+<div class="ttc" id="agroup__types_html_ga3d6cac730aeed730136cd058c136edee"><div class="ttname"><a href="group__types.html#ga3d6cac730aeed730136cd058c136edee">xtd::sbyte</a></div><div class="ttdeci">int_least8_t sbyte</div><div class="ttdoc">Represents a 8-bit signed integer.</div><div class="ttdef"><b>Definition</b> sbyte.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -8952,7 +8970,7 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#gaf4ae7b4402a8b6bb42003cc42fa6d17b">slong</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_gaf4ae7b4402a8b6bb42003cc42fa6d17b"><div class="ttname"><a href="group__types.html#gaf4ae7b4402a8b6bb42003cc42fa6d17b">xtd::slong</a></div><div class="ttdeci">__slong__ slong</div><div class="ttdoc">Represents a 32-bit or 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> types.h:246</div></div>
+<div class="ttc" id="agroup__types_html_gaf4ae7b4402a8b6bb42003cc42fa6d17b"><div class="ttname"><a href="group__types.html#gaf4ae7b4402a8b6bb42003cc42fa6d17b">xtd::slong</a></div><div class="ttdeci">__slong__ slong</div><div class="ttdoc">Represents a 32-bit or 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> slong.h:27</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -9001,81 +9019,8 @@ template&lt;typename new_type_t &gt; </div>
 
 </div>
 </div>
-<a id="ga635ec8322f76d7d771353b6b60c0f9b1" name="ga635ec8322f76d7d771353b6b60c0f9b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga635ec8322f76d7d771353b6b60c0f9b1">&#9670;&#160;</a></span>as() <span class="overload">[31/46]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename new_type_t , typename current_type_t &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; new_type_t &gt; xtd::as </td>
-          <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; current_type_t &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
-
-<p>Casts a type into another type. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> std::shared_ptr&lt;button&gt; value = std::make_shared&lt;xtd::forms::button&gt;();</div>
-<div class="line"><span class="keyword">const</span> std::shared_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(value);</div>
-</div><!-- fragment --> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga25147496276b976413665c1259acb591" name="ga25147496276b976413665c1259acb591"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga25147496276b976413665c1259acb591">&#9670;&#160;</a></span>as() <span class="overload">[32/46]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename new_type_t , typename current_type_t &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; new_type_t &gt; xtd::as </td>
-          <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; current_type_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
-
-<p>Casts a type into another type. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::shared_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(std::make_shared&lt;xtd::forms::button&gt;());</div>
-</div><!-- fragment --> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ga3048b276128e5a49f49afa6a55274593" name="ga3048b276128e5a49f49afa6a55274593"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3048b276128e5a49f49afa6a55274593">&#9670;&#160;</a></span>as() <span class="overload">[33/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3048b276128e5a49f49afa6a55274593">&#9670;&#160;</a></span>as() <span class="overload">[31/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9116,7 +9061,7 @@ template&lt;typename new_type_t &gt; </div>
 </div>
 </div>
 <a id="ga24e3439a7e34c3ccf8d2bdd267af3c80" name="ga24e3439a7e34c3ccf8d2bdd267af3c80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga24e3439a7e34c3ccf8d2bdd267af3c80">&#9670;&#160;</a></span>as() <span class="overload">[34/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24e3439a7e34c3ccf8d2bdd267af3c80">&#9670;&#160;</a></span>as() <span class="overload">[32/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9157,7 +9102,7 @@ template&lt;typename new_type_t &gt; </div>
 </div>
 </div>
 <a id="ga87c048af6b25eb3e8ece7f94f832dcdc" name="ga87c048af6b25eb3e8ece7f94f832dcdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga87c048af6b25eb3e8ece7f94f832dcdc">&#9670;&#160;</a></span>as() <span class="overload">[35/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87c048af6b25eb3e8ece7f94f832dcdc">&#9670;&#160;</a></span>as() <span class="overload">[33/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9197,81 +9142,8 @@ template&lt;typename new_type_t &gt; </div>
 
 </div>
 </div>
-<a id="gae4c8a145d4419cc252358fc12f92556a" name="gae4c8a145d4419cc252358fc12f92556a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae4c8a145d4419cc252358fc12f92556a">&#9670;&#160;</a></span>as() <span class="overload">[36/46]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename new_type_t , typename current_type_t &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt; new_type_t &gt; xtd::as </td>
-          <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; current_type_t &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
-
-<p>Casts a type into another type. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::unique_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(std::make_unique&lt;xtd::forms::button&gt;());</div>
-</div><!-- fragment --> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga895cecd323ab44aad71eb796eafcac9a" name="ga895cecd323ab44aad71eb796eafcac9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga895cecd323ab44aad71eb796eafcac9a">&#9670;&#160;</a></span>as() <span class="overload">[37/46]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename new_type_t , typename current_type_t &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt; new_type_t &gt; xtd::as </td>
-          <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; current_type_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
-
-<p>Casts a type into another type. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::unique_ptr&lt;button&gt; value = std::make_unique&lt;xtd::forms::button&gt;();</div>
-<div class="line">std::unique_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(value);</div>
-</div><!-- fragment --> </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ga7e670c9a6158d0f06ab243514a2c0d92" name="ga7e670c9a6158d0f06ab243514a2c0d92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7e670c9a6158d0f06ab243514a2c0d92">&#9670;&#160;</a></span>as() <span class="overload">[38/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e670c9a6158d0f06ab243514a2c0d92">&#9670;&#160;</a></span>as() <span class="overload">[34/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9312,7 +9184,7 @@ template&lt;typename new_type_t &gt; </div>
 </div>
 </div>
 <a id="gab8e44ee9759ad5c920e7b98093b7e0f7" name="gab8e44ee9759ad5c920e7b98093b7e0f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab8e44ee9759ad5c920e7b98093b7e0f7">&#9670;&#160;</a></span>as() <span class="overload">[39/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8e44ee9759ad5c920e7b98093b7e0f7">&#9670;&#160;</a></span>as() <span class="overload">[35/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9345,13 +9217,13 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga7f48d085fbe8abdb92329be2bc04a236">uint16</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_ga7f48d085fbe8abdb92329be2bc04a236"><div class="ttname"><a href="group__types.html#ga7f48d085fbe8abdb92329be2bc04a236">xtd::uint16</a></div><div class="ttdeci">uint_least16_t uint16</div><div class="ttdoc">Represents a 16-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:272</div></div>
+<div class="ttc" id="agroup__types_html_ga7f48d085fbe8abdb92329be2bc04a236"><div class="ttname"><a href="group__types.html#ga7f48d085fbe8abdb92329be2bc04a236">xtd::uint16</a></div><div class="ttdeci">uint_least16_t uint16</div><div class="ttdoc">Represents a 16-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint16.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
 <a id="ga028da63da04535e5e1acdeba4e2cd1b9" name="ga028da63da04535e5e1acdeba4e2cd1b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga028da63da04535e5e1acdeba4e2cd1b9">&#9670;&#160;</a></span>as() <span class="overload">[40/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga028da63da04535e5e1acdeba4e2cd1b9">&#9670;&#160;</a></span>as() <span class="overload">[36/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9384,13 +9256,13 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#gae7af83eab478757e17f0eb7af57571df">uint32</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_gae7af83eab478757e17f0eb7af57571df"><div class="ttname"><a href="group__types.html#gae7af83eab478757e17f0eb7af57571df">xtd::uint32</a></div><div class="ttdeci">uint_least32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:285</div></div>
+<div class="ttc" id="agroup__types_html_gae7af83eab478757e17f0eb7af57571df"><div class="ttname"><a href="group__types.html#gae7af83eab478757e17f0eb7af57571df">xtd::uint32</a></div><div class="ttdeci">uint_least32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint32.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
 <a id="gadaa2587462e9695e43082175fd6d5a9d" name="gadaa2587462e9695e43082175fd6d5a9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadaa2587462e9695e43082175fd6d5a9d">&#9670;&#160;</a></span>as() <span class="overload">[41/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gadaa2587462e9695e43082175fd6d5a9d">&#9670;&#160;</a></span>as() <span class="overload">[37/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9423,13 +9295,13 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#gae1d338ada567eb17107e17cbffea5320">uint64</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_gae1d338ada567eb17107e17cbffea5320"><div class="ttname"><a href="group__types.html#gae1d338ada567eb17107e17cbffea5320">xtd::uint64</a></div><div class="ttdeci">uint_least64_t uint64</div><div class="ttdoc">Represents a 64-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:298</div></div>
+<div class="ttc" id="agroup__types_html_gae1d338ada567eb17107e17cbffea5320"><div class="ttname"><a href="group__types.html#gae1d338ada567eb17107e17cbffea5320">xtd::uint64</a></div><div class="ttdeci">uint_least64_t uint64</div><div class="ttdoc">Represents a 64-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint64.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
 <a id="ga511b302cffed383581d3a43ad328a28f" name="ga511b302cffed383581d3a43ad328a28f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga511b302cffed383581d3a43ad328a28f">&#9670;&#160;</a></span>as() <span class="overload">[42/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga511b302cffed383581d3a43ad328a28f">&#9670;&#160;</a></span>as() <span class="overload">[38/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9467,7 +9339,7 @@ template&lt;typename new_type_t &gt; </div>
 </div>
 </div>
 <a id="gacf5d30fe5a1030fada37179515793548" name="gacf5d30fe5a1030fada37179515793548"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacf5d30fe5a1030fada37179515793548">&#9670;&#160;</a></span>as() <span class="overload">[43/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf5d30fe5a1030fada37179515793548">&#9670;&#160;</a></span>as() <span class="overload">[39/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9505,7 +9377,7 @@ template&lt;typename new_type_t &gt; </div>
 </div>
 </div>
 <a id="ga0f4d4c149a3f3b7e6f2f0ae32ca49f82" name="ga0f4d4c149a3f3b7e6f2f0ae32ca49f82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0f4d4c149a3f3b7e6f2f0ae32ca49f82">&#9670;&#160;</a></span>as() <span class="overload">[44/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f4d4c149a3f3b7e6f2f0ae32ca49f82">&#9670;&#160;</a></span>as() <span class="overload">[40/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9538,13 +9410,86 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_gaf8d0aa5786861bead085592c31c09849"><div class="ttname"><a href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a></div><div class="ttdeci">uint_least8_t byte</div><div class="ttdoc">Represents a 8-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:49</div></div>
+<div class="ttc" id="agroup__types_html_gaf8d0aa5786861bead085592c31c09849"><div class="ttname"><a href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a></div><div class="ttdeci">uint_least8_t byte</div><div class="ttdoc">Represents a 8-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> byte.h:23</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
+<a id="ga76d1e4c11965d16c16a3ba475f7a6cfb" name="ga76d1e4c11965d16c16a3ba475f7a6cfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76d1e4c11965d16c16a3ba475f7a6cfb">&#9670;&#160;</a></span>as() <span class="overload">[41/46]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename new_type_t , typename current_type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt; xtd::as </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
+
+<p>Casts a type into another type. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;button&gt;</a> value = xtd::new_sptr&lt;xtd::forms::button&gt;();</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(value);</div>
+</div><!-- fragment --> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa32e24433fc5ff09bbe62d38cf9e74f4" name="gaa32e24433fc5ff09bbe62d38cf9e74f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa32e24433fc5ff09bbe62d38cf9e74f4">&#9670;&#160;</a></span>as() <span class="overload">[42/46]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename new_type_t , typename current_type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt; xtd::as </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
+
+<p>Casts a type into another type. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(xtd::new_sptr&lt;xtd::forms::button&gt;());</div>
+</div><!-- fragment --> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga6aa64e93856c066e0fff91d9113a6de8" name="ga6aa64e93856c066e0fff91d9113a6de8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6aa64e93856c066e0fff91d9113a6de8">&#9670;&#160;</a></span>as() <span class="overload">[45/46]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6aa64e93856c066e0fff91d9113a6de8">&#9670;&#160;</a></span>as() <span class="overload">[43/46]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9577,8 +9522,82 @@ template&lt;typename new_type_t &gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">xtd::ulong</a> value = 42;</div>
 <div class="line"><span class="keywordtype">float</span> result = <a class="code hl_function" href="group__xtd__core.html#ga07e338436a48a655fe28eacd506948bb">as&lt;float&gt;</a>(value);</div>
-<div class="ttc" id="agroup__types_html_ga313036ce703450f07d94c71ed78f2b21"><div class="ttname"><a href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">xtd::ulong</a></div><div class="ttdeci">__ulong__ ulong</div><div class="ttdoc">Represents a 32-bit or 64-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> types.h:324</div></div>
+<div class="ttc" id="agroup__types_html_ga313036ce703450f07d94c71ed78f2b21"><div class="ttname"><a href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">xtd::ulong</a></div><div class="ttdeci">__ulong__ ulong</div><div class="ttdoc">Represents a 32-bit or 64-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> ulong.h:24</div></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ga8e0cd9031b4b13c267574740e6e25b0c" name="ga8e0cd9031b4b13c267574740e6e25b0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e0cd9031b4b13c267574740e6e25b0c">&#9670;&#160;</a></span>as() <span class="overload">[44/46]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename new_type_t , typename current_type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt; xtd::as </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
+
+<p>Casts a type into another type. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(xtd::new_uptr&lt;xtd::forms::button&gt;());</div>
+<div class="ttc" id="agroup__types_html_ga4ac188feb2d52b21e188417441519bb2"><div class="ttname"><a href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a></div><div class="ttdeci">std::unique_ptr&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.h:25</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gad9f94f9bcb81c27601253e3958b8a271" name="gad9f94f9bcb81c27601253e3958b8a271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad9f94f9bcb81c27601253e3958b8a271">&#9670;&#160;</a></span>as() <span class="overload">[45/46]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename new_type_t , typename current_type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt; xtd::as </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="____as__pointer_8h.html">xtd.core/include/xtd/internal/__as_pointer.h</a>&gt;</code></p>
+
+<p>Casts a type into another type. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr&lt;button&gt;</a> value = xtd::new_uptr&lt;xtd::forms::button&gt;();</div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(value);</div>
+</div><!-- fragment --> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__cast__exception.html" title="The exception that is thrown for invalid casting or explicit conversion.">xtd::invalid_cast_exception</a></td><td>the parameters is bad cast. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -45019,18 +45038,18 @@ template&lt;typename type_t &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="types_8h.html">xtd.core/include/xtd/types.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="delete__ptr_8h.html">xtd.core/include/xtd/delete_ptr.h</a>&gt;</code></p>
 
-<p><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> or <a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object. </p>
+<p><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> or <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>this is example shows to use <a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">ptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_ptr&lt;xtd::version&gt;(1, 2, 3);</div>
+<dl class="section user"><dt>Examples</dt><dd>this is example shows to use <a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_ptr&lt;xtd::version&gt;(1, 2, 3);</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">to_string</a>());</div>
 <div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
 <div class="ttc" id="aclassxtd_1_1version_html"><div class="ttname"><a href="classxtd_1_1version.html">xtd::version</a></div><div class="ttdoc">Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...</div><div class="ttdef"><b>Definition</b> version.h:110</div></div>
 <div class="ttc" id="aclassxtd_1_1version_html_acba0ed89b1b36de5bd12f538e456c9bd"><div class="ttname"><a href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">xtd::version::to_string</a></div><div class="ttdeci">xtd::ustring to_string() const noexcept override</div><div class="ttdoc">Converts the value of the current xtd::version object to its equivalent xtd::ustring representation.</div></div>
-<div class="ttc" id="agroup__types_html_gacc27c17cf3dce949a4fb25f71d781557"><div class="ttname"><a href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">xtd::ptr</a></div><div class="ttdeci">sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> types.h:402</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga4a8d88c02f04ecf312a36f95ab137d15"><div class="ttname"><a href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">xtd::delete_ptr</a></div><div class="ttdeci">void delete_ptr(sptr&lt; type_t &gt; &amp;ptr)</div><div class="ttdoc">xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.</div><div class="ttdef"><b>Definition</b> types.h:491</div></div>
+<div class="ttc" id="agroup__types_html_ga14f390dd1d27bfab4cc2f26c1502c8ec"><div class="ttname"><a href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.h:27</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga4a8d88c02f04ecf312a36f95ab137d15"><div class="ttname"><a href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">xtd::delete_ptr</a></div><div class="ttdeci">void delete_ptr(sptr&lt; type_t &gt; &amp;ptr)</div><div class="ttdoc">xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.</div><div class="ttdef"><b>Definition</b> delete_ptr.h:27</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This operator does not have to be called because when an <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object leaves the scope, its value is automatically reset. </dd>
 <dd>
@@ -45056,7 +45075,7 @@ template&lt;typename type_t &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="types_8h.html">xtd.core/include/xtd/types.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="delete__ptr_8h.html">xtd.core/include/xtd/delete_ptr.h</a>&gt;</code></p>
 
 <p><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -45064,11 +45083,76 @@ template&lt;typename type_t &gt; </div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">to_string</a>());</div>
 <div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
-<div class="ttc" id="agroup__types_html_ga4ac188feb2d52b21e188417441519bb2"><div class="ttname"><a href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a></div><div class="ttdeci">std::unique_ptr&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> types.h:387</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This operator does not have to be called because when an <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object leaves the scope, its value is automatically reset. </dd>
 <dd>
-Use it when you want to reset the <a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object at a specific time. </dd></dl>
+Use it when you want to reset the <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object at a specific time. </dd></dl>
+
+</div>
+</div>
+<a id="ga99eb39a1b7705408679d5d327d969292" name="ga99eb39a1b7705408679d5d327d969292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga99eb39a1b7705408679d5d327d969292">&#9670;&#160;</a></span>delete_sptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::delete_sptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="delete__sptr_8h.html">xtd.core/include/xtd/delete_sptr.h</a>&gt;</code></p>
+
+<p><a class="el" href="group__xtd__core.html#ga99eb39a1b7705408679d5d327d969292" title="xtd::delete_sptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_sptr</a> operator delete a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> or <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>this is example shows to use <a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_ptr&lt;xtd::version&gt;(1, 2, 3);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">to_string</a>());</div>
+<div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This operator does not have to be called because when an <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object leaves the scope, its value is automatically reset. </dd>
+<dd>
+Use it when you want to reset the <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object at a specific time. </dd></dl>
+
+</div>
+</div>
+<a id="gaf4f835bee450ded314cab5cda37a2643" name="gaf4f835bee450ded314cab5cda37a2643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf4f835bee450ded314cab5cda37a2643">&#9670;&#160;</a></span>delete_uptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::delete_uptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>&lt; type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="delete__uptr_8h.html">xtd.core/include/xtd/delete_uptr.h</a>&gt;</code></p>
+
+<p><a class="el" href="group__xtd__core.html#gaf4f835bee450ded314cab5cda37a2643" title="xtd::delete_uptr operator delete a xtd::uptr object.">xtd::delete_uptr</a> operator delete a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>this is example shows to use <a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_uptr&lt;xtd::version&gt;(1, 2, 3);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">to_string</a>());</div>
+<div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This operator does not have to be called because when an <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object leaves the scope, its value is automatically reset. </dd>
+<dd>
+Use it when you want to reset the <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object at a specific time. </dd></dl>
 
 </div>
 </div>
@@ -45212,8 +45296,8 @@ template&lt;typename type_t &gt; </div>
 
 </div>
 </div>
-<a id="ga4dce79c6db32b6138a86523b519f2ceb" name="ga4dce79c6db32b6138a86523b519f2ceb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4dce79c6db32b6138a86523b519f2ceb">&#9670;&#160;</a></span>is() <span class="overload">[6/6]</span></h2>
+<a id="ga35e088065fe87da2bfae2c36e0a115ce" name="ga35e088065fe87da2bfae2c36e0a115ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35e088065fe87da2bfae2c36e0a115ce">&#9670;&#160;</a></span>is() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -45223,7 +45307,7 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
         <tr>
           <td class="memname">bool xtd::is </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; current_type_t &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -45877,7 +45961,7 @@ template&lt;&gt; </div>
 template&lt;typename type_t , typename ... args_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">ptr</a>&lt; type_t &gt; xtd::new_ptr </td>
+          <td class="memname"><a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>&lt; type_t &gt; xtd::new_ptr </td>
           <td>(</td>
           <td class="paramtype">args_t &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -45886,16 +45970,16 @@ template&lt;typename type_t , typename ... args_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="types_8h.html">xtd.core/include/xtd/types.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="new__ptr_8h.html">xtd.core/include/xtd/new_ptr.h</a>&gt;</code></p>
 
-<p>The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> operator creates a <a class="el" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object. </p>
+<p>The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> operator creates a <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>this is example shows to use <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#gacc27c17cf3dce949a4fb25f71d781557">ptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_ptr&lt;xtd::version&gt;(1, 2, 3);</div>
+<dl class="section user"><dt>Examples</dt><dd>this is example shows to use <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_ptr&lt;xtd::version&gt;(1, 2, 3);</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">to_string</a>());</div>
 <div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared">std::make_shared</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/xtd::new_sptr">xtd::new_sptr</a>. </dd></dl>
 
 </div>
 </div>
@@ -45917,7 +46001,7 @@ template&lt;typename type_t , typename ... args_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="types_8h.html">xtd.core/include/xtd/types.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="new__sptr_8h.html">xtd.core/include/xtd/new_sptr.h</a>&gt;</code></p>
 
 <p>xtd::news_sptr operator creates a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -45925,9 +46009,8 @@ template&lt;typename type_t , typename ... args_t&gt; </div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">to_string</a>());</div>
 <div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
-<div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> types.h:372</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e" title="xtd::news_sptr operator creates a xtd::sptr object.">xtd::new_sptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared">std::make_shared</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e" title="xtd::news_sptr operator creates a xtd::sptr object.">xtd::new_sptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/xtd::new_sptr">xtd::new_sptr</a>. </dd></dl>
 
 </div>
 </div>
@@ -45949,7 +46032,7 @@ template&lt;typename type_t , typename ... args_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p><code>#include &lt;<a class="el" href="types_8h.html">xtd.core/include/xtd/types.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="new__uptr_8h.html">xtd.core/include/xtd/new_uptr.h</a>&gt;</code></p>
 
 <p><a class="el" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf" title="xtd::new_uptr operator. This operator creates a xtd::uptr object.">xtd::new_uptr</a> operator. This operator creates a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -45958,7 +46041,7 @@ template&lt;typename type_t , typename ... args_t&gt; </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">to_string</a>());</div>
 <div class="line">delete_(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf" title="xtd::new_uptr operator. This operator creates a xtd::uptr object.">xtd::new_uptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/unique_ptr/make_unique">std::make_unique</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf" title="xtd::new_uptr operator. This operator creates a xtd::uptr object.">xtd::new_uptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/xtd::uptr/make_unique">std::make_unique</a>. </dd></dl>
 
 </div>
 </div>
@@ -47966,8 +48049,8 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 
 </div>
 </div>
-<a id="ga8bc867e6f7c0c14219a728d751aa1be4" name="ga8bc867e6f7c0c14219a728d751aa1be4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8bc867e6f7c0c14219a728d751aa1be4">&#9670;&#160;</a></span>to_shared_ptr() <span class="overload">[1/3]</span></h2>
+<a id="ga6bb66f181c61cc794e95a9cfc97d5453" name="ga6bb66f181c61cc794e95a9cfc97d5453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6bb66f181c61cc794e95a9cfc97d5453">&#9670;&#160;</a></span>to_shared_ptr() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -47978,9 +48061,9 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::shared_ptr&lt; new_type_t &gt; xtd::convert_pointer::to_shared_ptr </td>
+          <td class="memname">static <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt; xtd::convert_pointer::to_shared_ptr </td>
           <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; current_type_t &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -47997,8 +48080,8 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 <p>Casts a type into another type. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> std::shared_ptr&lt;button&gt; value = std::make_shared&lt;xtd::forms::button&gt;();</div>
-<div class="line"><span class="keyword">const</span> std::shared_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(value);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;button&gt;</a> value = xtd::new_sptr&lt;xtd::forms::button&gt;();</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(value);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -48009,8 +48092,8 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 
 </div>
 </div>
-<a id="ga9d5f50bad7fb6de0678309dc479f2e8a" name="ga9d5f50bad7fb6de0678309dc479f2e8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9d5f50bad7fb6de0678309dc479f2e8a">&#9670;&#160;</a></span>to_shared_ptr() <span class="overload">[2/3]</span></h2>
+<a id="ga654193167a5e216263ce207e1b648bda" name="ga654193167a5e216263ce207e1b648bda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga654193167a5e216263ce207e1b648bda">&#9670;&#160;</a></span>to_shared_ptr() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -48021,9 +48104,9 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::shared_ptr&lt; new_type_t &gt; xtd::convert_pointer::to_shared_ptr </td>
+          <td class="memname">static <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt; xtd::convert_pointer::to_shared_ptr </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; current_type_t &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -48040,8 +48123,8 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 <p>Casts a type into another type. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> std::shared_ptr&lt;button&gt; value = std::make_shared&lt;xtd::forms::button&gt;();</div>
-<div class="line"><span class="keyword">const</span> std::shared_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(value);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;button&gt;</a> value = xtd::new_sptr&lt;xtd::forms::button&gt;();</div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(value);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -48052,8 +48135,8 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 
 </div>
 </div>
-<a id="ga3c1ad3787845d6bbae66147453197a8d" name="ga3c1ad3787845d6bbae66147453197a8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3c1ad3787845d6bbae66147453197a8d">&#9670;&#160;</a></span>to_shared_ptr() <span class="overload">[3/3]</span></h2>
+<a id="gaa1bce48582408960b1147ab78e766f21" name="gaa1bce48582408960b1147ab78e766f21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa1bce48582408960b1147ab78e766f21">&#9670;&#160;</a></span>to_shared_ptr() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -48064,9 +48147,9 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::shared_ptr&lt; new_type_t &gt; xtd::convert_pointer::to_shared_ptr </td>
+          <td class="memname">static <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt; xtd::convert_pointer::to_shared_ptr </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; current_type_t &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -48083,7 +48166,7 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 <p>Casts a type into another type. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::shared_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(std::make_shared&lt;xtd::forms::button&gt;());</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(xtd::new_sptr&lt;xtd::forms::button&gt;());</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -50855,8 +50938,8 @@ template&lt;&gt; </div>
 
 </div>
 </div>
-<a id="ga19d2d164656251c8b2e392c929c8a88e" name="ga19d2d164656251c8b2e392c929c8a88e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga19d2d164656251c8b2e392c929c8a88e">&#9670;&#160;</a></span>to_unique_ptr() <span class="overload">[1/2]</span></h2>
+<a id="ga354ebfc8c6ea4c19385fe376852e66a5" name="ga354ebfc8c6ea4c19385fe376852e66a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga354ebfc8c6ea4c19385fe376852e66a5">&#9670;&#160;</a></span>to_unique_ptr() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -50867,9 +50950,9 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::unique_ptr&lt; new_type_t &gt; xtd::convert_pointer::to_unique_ptr </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt; xtd::convert_pointer::to_unique_ptr </td>
           <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; current_type_t &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -50886,7 +50969,7 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 <p>Casts a type into another type. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::unique_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(std::make_unique&lt;xtd::forms::button&gt;());</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(xtd::new_uptr&lt;xtd::forms::button&gt;());</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -50897,8 +50980,8 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 
 </div>
 </div>
-<a id="gad07a5c51833c7dcf92a2e3fdb9146c1d" name="gad07a5c51833c7dcf92a2e3fdb9146c1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad07a5c51833c7dcf92a2e3fdb9146c1d">&#9670;&#160;</a></span>to_unique_ptr() <span class="overload">[2/2]</span></h2>
+<a id="ga90e0315cccd18ff389f11fc1d4c46ed0" name="ga90e0315cccd18ff389f11fc1d4c46ed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90e0315cccd18ff389f11fc1d4c46ed0">&#9670;&#160;</a></span>to_unique_ptr() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -50909,9 +50992,9 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::unique_ptr&lt; new_type_t &gt; xtd::convert_pointer::to_unique_ptr </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt; xtd::convert_pointer::to_unique_ptr </td>
           <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; current_type_t &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -50928,8 +51011,8 @@ template&lt;typename new_type_t , typename current_type_t &gt; </div>
 <p>Casts a type into another type. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::unique_ptr&lt;button&gt; value = std::make_unique&lt;xtd::forms::button&gt;();</div>
-<div class="line">std::unique_ptr&lt;control&gt; result = as&lt;xtd::forms::control&gt;(value);</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr&lt;button&gt;</a> value = xtd::new_uptr&lt;xtd::forms::button&gt;();</div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr&lt;control&gt;</a> result = as&lt;xtd::forms::control&gt;(value);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -51377,7 +51460,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 9 2024 21:22:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 12 2024 12:06:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
