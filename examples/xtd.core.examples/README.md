@@ -184,6 +184,10 @@
 
 * [guid](guid/guid/README.md) shows how to use [xtd::guid](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1guid.html) class.
 
+## [Hash code](hash_code/README.md)
+
+* [hash_code](hash_code/hash_code/README.md) shows how to use [xtd::hash_code](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1hash__code.html) class.
+
 ## [Interfaces](interfaces/README.md)
 
 * [iasync_result](iasync_result/README.md) shows how to use how to use [xtd:: iasync_result](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iasync__result.html) interface.
