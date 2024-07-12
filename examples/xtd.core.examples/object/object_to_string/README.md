@@ -19,4 +19,7 @@ xtdc run
 ## Output
 
 ```
+xamples::object_test::object1
+Tue Jan  5 23:05:00 1971
+false
 ```
