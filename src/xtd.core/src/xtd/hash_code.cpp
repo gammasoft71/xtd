@@ -4,27 +4,30 @@
 #include "../../include/xtd/random.h"
 
 using namespace xtd;
-
-bool hash_code::force_uniqueness_by_os_process_ = true;
+using namespace xtd::collections::generic;
 
 bool hash_code::equals(const object& other) const noexcept {
   return is<hash_code>(other) ? hash_code_ == as<hash_code>(other).hash_code_ : object::equals(other);
 }
 
-size_t hash_code::get_hash_code() const noexcept {
+size hash_code::get_hash_code() const noexcept {
   return hash_code_;
 }
 
-size_t hash_code::to_hash_code() const noexcept {
+size hash_code::to_hash_code() const noexcept {
   return hash_code_;
 }
 
-xtd::size hash_code::hash_combine(xtd::size seed, xtd::size value) noexcept {
+size hash_code::combine_iterator(size seed) noexcept {
+  return seed;
+}
+
+size hash_code::hash_combine(size seed, size value) noexcept {
   // https://stackoverflow.com/questions/35985960/c-why-is-boosthash-combine-the-best-way-to-combine-hash-values
   return seed ^ value + 0x9e3779b9 + (seed << 6) + (seed >> 2);
 }
 
-size_t hash_code::combine() noexcept {
-  static auto uniqueness = xtd::random {}.next<xtd::size>(); // Force the uniqueness by operating system process.
-  return force_uniqueness_by_os_process_ ? uniqueness : 0;
+size hash_code::generate_uniqueness_seed() noexcept {
+  static auto uniqueness_seed = hasher<int32> {}(random {}.next());
+  return hash_combine(0, uniqueness_seed);
 }

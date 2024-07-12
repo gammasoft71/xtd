@@ -1,5 +1,5 @@
-#include "../../include/xtd/collections/generic/hasher.h"
 #include "../../include/xtd/as.h"
+#include "../../include/xtd/hash_code.h"
 #include "../../include/xtd/iformatable.h"
 #include "../../include/xtd/invalid_cast_exception.h"
 #include "../../include/xtd/object.h"
@@ -23,7 +23,7 @@ bool object::equals(const object& obj) const noexcept {
 }
 
 size_t object::get_hash_code() const noexcept {
-  return hasher<intptr> {}(reinterpret_cast<intptr_t>(this));
+  return hash_code::combine(reinterpret_cast<intptr_t>(this));
 }
 
 type_object object::get_type() const noexcept {
