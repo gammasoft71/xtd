@@ -19,16 +19,16 @@ xtdc run
 ## Output
 
 ```
-foo1 equals foo2: true
-foo1 equals foo3: false
-foo1 equals foo2 (object): true
-foo1 equals foo3 (object): false
-foo1 hash code: 9105846386475545849
-foo2 hash code: 9105846386475545849
-foo3 hash code: 4537660354082115200
-foo1 == foo2: true
-foo1 != foo3: true
-foo: id = 1, name = Example
-foo: id = 1, name = Example
-foo: id = 2, name = Different
+user1 equals user2: true
+user1 equals user3: false
+user1 equals user2 (object): true
+user1 equals user3 (object): false
+user1 hash code: 9105846386475545849
+user2 hash code: 9105846386475545849
+user3 hash code: 4537660354082115200
+user1 == user2: true
+user1 != user3: true
+user: id = 1, name = Example
+user: id = 1, name = Example
+user: id = 2, name = Different
 ```
