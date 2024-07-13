@@ -196,6 +196,8 @@ add_sources(
   include/xtd/generic_stream_output
   include/xtd/guid.h
   include/xtd/guid
+  include/xtd/hash_code.h
+  include/xtd/hash_code
   include/xtd/iasync_result.h
   include/xtd/iasync_result
   include/xtd/iclonable.h
@@ -474,18 +476,21 @@ add_sources(
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
   include/xtd/collections/vector_list
-  include/xtd/collections/generic/equal_to.h
-  include/xtd/collections/generic/equal_to
+  include/xtd/collections/generic/equator.h
+  include/xtd/collections/generic/equator
   include/xtd/collections/generic/hasher.h
   include/xtd/collections/generic/hasher
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
+  include/xtd/collections/specialized/string_collection.h
+  include/xtd/collections/specialized/string_collection
+  include/xtd/collections/specialized/string_dictionary.h
+  include/xtd/collections/specialized/string_dictionary
+  include/xtd/collections/specialized/string_key_value_pair.h
+  include/xtd/collections/specialized/string_key_value_pair
   include/xtd/collections/specialized/string_map.h
-  include/xtd/collections/specialized/string_map
   include/xtd/collections/specialized/string_pair.h
-  include/xtd/collections/specialized/string_pair
   include/xtd/collections/specialized/string_vector.h
-  include/xtd/collections/specialized/string_vector
   include/xtd/configuration/ini_file_settings.h
   include/xtd/configuration/ini_file_settings
   include/xtd/configuration/file_settings.h
@@ -615,8 +620,8 @@ add_sources(
   include/xtd/internal/__enum_definition_to_enum_collection
   include/xtd/internal/__enum_introspection.h
   include/xtd/internal/__enum_introspection
-  include/xtd/internal/__equal_to.h
-  include/xtd/internal/__equal_to
+  include/xtd/internal/__equator.h
+  include/xtd/internal/__equator
   include/xtd/internal/__fixed_point_formatter.h
   include/xtd/internal/__fixed_point_formatter
   include/xtd/internal/__format_exception.h
@@ -948,6 +953,7 @@ add_sources(
   src/xtd/distribution.cpp
   src/xtd/event_args.cpp
   src/xtd/guid.cpp
+  src/xtd/hash_code.cpp
   src/xtd/iformatable.cpp
   src/xtd/literals.cpp
   src/xtd/math.cpp

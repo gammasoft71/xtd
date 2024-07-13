@@ -23,6 +23,7 @@
 * [Exceptions](xtd.core.examples/exceptions/README.md) contains exceptions examples.
 * [Format](xtd.core.examples/format/README.md) contains format examples.
 * [Guid](xtd.core.examples/guid/README.md) contains guid examples.
+* [Hash code](xtd.core.examples/hash_code/README.md) contains hash_code examples.
 * [Interfaces](xtd.core.examples/interfaces/README.md) contains interfaces examples.
 * [IO](xtd.core.examples/io/README.md) contains io examples.
 * [Keywords](xtd.core.examples/keywords/README.md) contains keywords examples.
@@ -30,6 +31,7 @@
 * [Math](xtd.core.examples/math/README.md) contains math examples.
 * [Media](xtd.core.examples/media/README.md) contains media examples.
 * [Network](xtd.core.examples/network/README.md) contains network examples.
+* [Object](xtd.core.examples/object/README.md) contains object examples.
 * [Parse](xtd.core.examples/parse/README.md) contains parse examples.
 * [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.

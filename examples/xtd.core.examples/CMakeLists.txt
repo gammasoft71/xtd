@@ -19,6 +19,7 @@ add_projects(
   exceptions
   format
   guid
+  hash_code
   interfaces
   io
   keywords

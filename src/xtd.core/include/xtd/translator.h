@@ -2,7 +2,7 @@
 /// @brief Contains xtd::translator class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "collections/specialized/string_map.h"
+#include "collections/specialized/string_dictionary.h"
 #include "static.h"
 #include "ustring.h"
 #include <string>
@@ -99,7 +99,7 @@ namespace xtd {
   private:
     static void initialize();
     static xtd::ustring locale_to_language(xtd::ustring locale);
-    static std::map<xtd::ustring, xtd::collections::specialized::string_map> language_values_;
+    static std::map<xtd::ustring, xtd::collections::specialized::string_dictionary> language_values_;
     static xtd::ustring language_;
     static std::set<ustring> translated_languages_;
   };

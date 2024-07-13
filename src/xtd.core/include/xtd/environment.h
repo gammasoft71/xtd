@@ -2,7 +2,7 @@
 /// @brief Contains xtd::environment class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "collections/specialized/string_vector.h"
+#include "collections/specialized/string_collection.h"
 #include "diagnostics/stack_trace.h"
 #include "io/directory.h"
 #include "io/path.h"
@@ -568,7 +568,7 @@ namespace xtd {
     /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
     /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
-    static xtd::collections::specialized::string_vector get_command_line_args();
+    static xtd::collections::specialized::string_collection get_command_line_args();
     
     /// @brief Retrieves the value of an environment variable from the current process.
     /// @param variable The name of the environment variable.
@@ -616,7 +616,7 @@ namespace xtd {
     
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
-    static xtd::collections::specialized::string_vector get_logical_drives();
+    static xtd::collections::specialized::string_collection get_logical_drives();
 
     /// @brief Terminates this process and returns an exit code to the operating system without completely cleaning the resources..
     /// @remarks Use xtd::environment::exit_code method to return to the operating system.

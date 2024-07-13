@@ -5,12 +5,15 @@
 #include "../../include/xtd/typeof.h"
 #include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/format_exception.h"
+#include "../../include/xtd/hash_code.h"
 #include "../../include/xtd/null_pointer_exception.h"
+//#include "../../include/xtd/collections/generic/hasher.h"
 #include "../../include/xtd/diagnostics/stack_frame.h"
 #include <iomanip>
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 void __throw_ustring_format_exception(const char* file, uint32 line, const char* func) {
   throw format_exception { {file, line, func}};
@@ -744,7 +747,7 @@ ustring ustring::full_class_name(const type_info& info) {
 }
 
 size_t ustring::get_hash_code() const noexcept {
-  return hash<basic_string<value_type>>()(*this);
+  return hash_code::combine(basic_string<value_type> {*this});
 }
 
 size_t ustring::index_of(value_type value) const noexcept {
