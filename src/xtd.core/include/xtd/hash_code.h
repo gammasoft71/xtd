@@ -2,7 +2,7 @@
 /// @brief Contains xtd::hash_code class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "collections/generic/hasher"
+#include "collections/generic/helpers/hasher.h"
 #include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -41,7 +41,7 @@ namespace xtd {
     /// @return The current instance.
     template<typename type_t>
     hash_code& add(const type_t value) noexcept {
-      hash_code_ = hash_combine(hash_code_, xtd::collections::generic::hasher<type_t> {}(value));
+      hash_code_ = hash_combine(hash_code_, xtd::collections::generic::helpers::hasher<type_t> {}(value));
       return *this;
     }
     
@@ -67,7 +67,7 @@ namespace xtd {
 
   private:
     template<typename type_t, typename ...args_t>
-    static xtd::size combine_iterator(xtd::size seed, type_t value, args_t... values) noexcept {return combine_iterator(hash_combine(seed, xtd::collections::generic::hasher<type_t> {}(value)), values...);}
+    static xtd::size combine_iterator(xtd::size seed, type_t value, args_t... values) noexcept {return combine_iterator(hash_combine(seed, xtd::collections::generic::helpers::hasher<type_t> {}(value)), values...);}
     static xtd::size combine_iterator(xtd::size seed) noexcept;
     static xtd::size hash_combine(xtd::size seed, xtd::size value) noexcept;
     static xtd::size generate_uniqueness_seed() noexcept;

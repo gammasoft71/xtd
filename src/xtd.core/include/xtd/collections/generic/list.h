@@ -2,7 +2,7 @@
 /// @brief Contains xtd::collections::generic::list struct.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "allocator.h"
+#include "helpers/allocator.h"
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -14,7 +14,7 @@ namespace xtd {
       /// @brief Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.
       /// ```cpp
       /// template<typename type_t>
-      /// class list : public std::vector<type_t, xtd::collections::generic::allocator<type_t>>
+      /// class list : public std::vector<type_t, helpers::allocator<type_t>>
       /// ```
       /// @par Header
       /// ```cpp
@@ -24,13 +24,13 @@ namespace xtd {
       /// xtd::collections::generic
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core generic_collections
-      /// @remarks The xtd::collections::generic::list class is same as [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator).
+      /// @ingroup xtd_core helpers_generic_collections
+      /// @remarks The xtd::collections::generic::list class is same as [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator).
       template<typename type_t>
-      class list : public std::vector<type_t, xtd::collections::generic::allocator<type_t>> {
+      class list : public std::vector<type_t, helpers::allocator<type_t>> {
       public:
         /// @brief Represents the allocator type of list.
-        using allocator_type = xtd::collections::generic::allocator<type_t>;
+        using allocator_type = helpers::allocator<type_t>;
         /// @brief Represents the base type of list.
         using base_type = std::vector<type_t, allocator_type>;
         /// @brief Represents the size type of list.

@@ -4,7 +4,7 @@
 #include "../../include/xtd/random.h"
 
 using namespace xtd;
-using namespace xtd::collections::generic;
+using namespace xtd::collections::generic::helpers;
 
 bool hash_code::equals(const object& other) const noexcept {
   return is<hash_code>(other) ? hash_code_ == as<hash_code>(other).hash_code_ : object::equals(other);
