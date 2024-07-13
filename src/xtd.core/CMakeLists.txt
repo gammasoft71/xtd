@@ -18,8 +18,6 @@ add_sources(
   include/xtd/action
   include/xtd/add_last_arg_to_command.h
   include/xtd/add_last_arg_to_command
-  include/xtd/allocator.h
-  include/xtd/allocator
   include/xtd/any.h
   include/xtd/any
   include/xtd/architecture_id.h
@@ -470,6 +468,8 @@ add_sources(
   include/xtd/xtd.core
   include/xtd/xtd.core.h
   include/xtd/xtd.core
+  include/xtd/collections/allocator.h
+  include/xtd/collections/allocator
   include/xtd/collections/any_pair.h
   include/xtd/collections/any_pair
   include/xtd/collections/array_list.h
@@ -484,6 +484,8 @@ add_sources(
   include/xtd/collections/generic/hasher
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
+  include/xtd/collections/generic/list.h
+  include/xtd/collections/generic/list
   include/xtd/collections/specialized/string_collection.h
   include/xtd/collections/specialized/string_collection
   include/xtd/collections/specialized/string_dictionary.h
