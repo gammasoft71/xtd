@@ -16,7 +16,7 @@ var searchData=
   ['enum_5fregister_13',['enum_register',['../structxtd_1_1enum__register.html',1,'xtd']]],
   ['enum_5fset_5fattribute_14',['enum_set_attribute',['../structxtd_1_1enum__set__attribute.html',1,'xtd']]],
   ['environment_15',['environment',['../classxtd_1_1environment.html',1,'xtd']]],
-  ['equator_16',['equator',['../structxtd_1_1collections_1_1generic_1_1equator.html',1,'xtd::collections::generic']]],
+  ['equator_16',['equator',['../structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html',1,'xtd::collections::generic::helpers']]],
   ['error_5fdata_5freceived_5fevent_17',['error_data_received_event',['../classxtd_1_1diagnostics_1_1process_1_1error__data__received__event.html',1,'xtd::diagnostics::process']]],
   ['event_18',['event',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aconsole_2c_20console_5fcancel_5fevent_5fhandler_20_3e_19',['event&lt; xtd::console, console_cancel_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],

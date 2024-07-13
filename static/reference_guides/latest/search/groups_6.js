@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generic_20collections_0',['generic collections',['../group__generic__collections.html',1,'']]]
+  ['generic_0',['generic',['../group__generic__collections.html',1,'']]]
 ];
