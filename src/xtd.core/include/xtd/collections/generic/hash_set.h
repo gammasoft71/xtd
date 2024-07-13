@@ -2,7 +2,7 @@
 /// @brief Contains xtd::collections::generic::hash_set struct.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "../allocator.h"
+#include "allocator.h"
 #include "equator.h"
 #include "hasher.h"
 #include <unordered_set>
@@ -17,7 +17,7 @@ namespace xtd {
       /// @par Definition
       /// ```cpp
       /// template<typename type_t>
-      /// using hash_set = std::unordered_set<type_t, xtd::collections::generic::hasher<type_t>, xtd::collections::generic::equator<type_t>, xtd::collections::allocator<type_t>>;
+      /// using hash_set = std::unordered_set<type_t, xtd::collections::generic::hasher<type_t>, xtd::collections::generic::equator<type_t>, xtd::collections::generic::allocator<type_t>>;
       /// ```
       /// @par Header
       /// ```cpp
@@ -30,7 +30,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::hash_set class is same as [std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set).
       template<typename type_t>
-      using hash_set = std::unordered_set<type_t, xtd::collections::generic::hasher<type_t>, xtd::collections::generic::equator<type_t>, xtd::collections::allocator<type_t>>;
+      using hash_set = std::unordered_set<type_t, xtd::collections::generic::hasher<type_t>, xtd::collections::generic::equator<type_t>, xtd::collections::generic::allocator<type_t>>;
     }
   }
 }
