@@ -2,8 +2,8 @@
 /// @brief Contains xtd::collections::array_list typedef.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "generic/list.h"
 #include "../any.h"
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,6 +25,6 @@ namespace xtd {
     /// @par Examples
     /// The following example shows hows to use xtd::collections::array_list.
     /// @include array_list.cpp
-    using array_list = std::vector<std::any>;
+    using array_list = generic::list<std::any>;
   }
 }
