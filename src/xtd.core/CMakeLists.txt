@@ -480,6 +480,8 @@ add_sources(
   include/xtd/collections/vector_list
   include/xtd/collections/generic/equator.h
   include/xtd/collections/generic/equator
+  include/xtd/collections/generic/hash_set.h
+  include/xtd/collections/generic/hash_set
   include/xtd/collections/generic/hasher.h
   include/xtd/collections/generic/hasher
   include/xtd/collections/generic/key_value_pair.h
