@@ -130,6 +130,10 @@ namespace xtd {
     static int run(xtd::delegate<void(const xtd::collections::specialized::string_collection&)> main_function);
     static int run(void (*main_function)(const xtd::collections::specialized::string_collection&), int argc, char* argv[]);
     static int run(void (*main_function)(const xtd::collections::specialized::string_collection&));
+    static int run(xtd::delegate<void(const std::vector<ustring>&)> main_function, int argc, char* argv[]);
+    static int run(xtd::delegate<void(const std::vector<ustring>&)> main_function);
+    static int run(void (*main_function)(const std::vector<ustring>&), int argc, char* argv[]);
+    static int run(void (*main_function)(const std::vector<ustring>&));
     static int run(xtd::delegate<int()> main_function, int argc, char* argv[]);
     static int run(xtd::delegate<int()> main_function);
     static int run(int (*main_function)(), int argc, char* argv[]);
@@ -142,6 +146,10 @@ namespace xtd {
     static int run(xtd::delegate<int(const xtd::collections::specialized::string_collection&)> main_function);
     static int run(int (*main_function)(const xtd::collections::specialized::string_collection&), int argc, char* argv[]);
     static int run(int (*main_function)(const xtd::collections::specialized::string_collection&));
+    static int run(xtd::delegate<int(const std::vector<ustring>&)> main_function, int argc, char* argv[]);
+    static int run(xtd::delegate<int(const std::vector<ustring>&)> main_function);
+    static int run(int (*main_function)(const std::vector<ustring>&), int argc, char* argv[]);
+    static int run(int (*main_function)(const std::vector<ustring>&));
   };
 }
 

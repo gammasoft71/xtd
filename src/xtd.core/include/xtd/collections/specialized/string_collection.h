@@ -2,7 +2,7 @@
 /// @brief Contains xtd::collections::specialized::string_collection typedef.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include <vector>
+#include "../generic/list.h"
 #include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -13,7 +13,7 @@ namespace xtd {
     namespace specialized {
       /// @brief Represents a collection of strings.
       /// ```cpp
-      /// using string_collection = std::vector<xtd::ustring>
+      /// using string_collection = xtd::collections::generic::list<xtd::ustring>
       /// ```
       /// @par Header
       /// ```cpp
@@ -23,7 +23,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core specialized_collections
-      using string_collection = std::vector<xtd::ustring>;
+      using string_collection = xtd::collections::generic::list<xtd::ustring>;
     }
   }
 }
