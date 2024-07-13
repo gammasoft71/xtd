@@ -4,10 +4,10 @@
 #pragma once
 #include "std.h"
 
-#include "collections/allocator.h"
 #include "collections/any_pair.h"
 #include "collections/array_list.h"
 #include "collections/key_not_found_exception.h"
+#include "collections/generic/allocator.h"
 #include "collections/generic/equator.h"
 #include "collections/generic/hash_set.h"
 #include "collections/generic/hasher.h"

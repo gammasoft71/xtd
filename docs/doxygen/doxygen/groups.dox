@@ -13,11 +13,11 @@
 /// @brief Contains collections definitions.
 /// @ingroup system
 
-/// @defgroup generic_collections generic collections
+/// @defgroup generic_collections generic
 /// @brief Contains generic collections definitions.
 /// @ingroup collections
 
-/// @defgroup specialized_collections specialized collections
+/// @defgroup specialized_collections specialized
 /// @brief Contains specialized collections definitions.
 /// @ingroup collections
 

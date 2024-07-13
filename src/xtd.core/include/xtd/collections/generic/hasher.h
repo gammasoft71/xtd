@@ -26,6 +26,12 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core generic_collections
       /// @remarks The unordered associative containers xtd::collections::generic::set, xtd::collections::generic::multi_set, xtd::collections::generic::dictionary, xtd::collections::generic::multi_dictionary use specializations of the template xtd::collections::generic::hasher as the default hash function.
+      /// @par Examples
+      /// The following example show how to use xtd::collections::generic::hasher with `std::unordered_map`.
+      /// ```cpp
+      /// auto key_values = std::map<xtd::date_time, xtd::ustring, xtd::collections::generic::hasher<xtd::date_time>, xtd::collections::generic::equator<xtd::date_time>, xtd::collections::generic::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::ustring>>> {};
+      /// key_values.insert({{1971, 1, 5}, "Birth date"});
+      /// ```
       template<typename key_t>
       struct hasher {
         /// @brief Serves as a hash function for a specified key with a particular type (type_t).
