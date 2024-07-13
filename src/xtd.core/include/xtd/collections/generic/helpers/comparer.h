@@ -34,11 +34,15 @@ namespace xtd {
         /// ```
         template<typename type_t = void>
         struct comparer {
+          /// @name Public Operators
+          
+          /// @{
           /// @brief Serves as a hash function for a specified key with a particular type (type_t).
           /// @param key The key to hash.
           /// @return A hash code for the spesified key.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
           constexpr bool operator()(const type_t& lhs, const type_t& rhs) const {return std::less {}(lhs, rhs);}
+          /// @}
         };
       }
     }

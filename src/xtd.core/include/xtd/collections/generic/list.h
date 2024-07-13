@@ -24,17 +24,21 @@ namespace xtd {
       /// xtd::collections::generic
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core helpers_generic_collections
+      /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::list class is same as [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator).
       template<typename type_t>
       class list : public std::vector<type_t, helpers::allocator<type_t>> {
       public:
+        /// @name Public Alias
+        
+        /// @{
         /// @brief Represents the allocator type of list.
         using allocator_type = helpers::allocator<type_t>;
         /// @brief Represents the base type of list.
         using base_type = std::vector<type_t, allocator_type>;
         /// @brief Represents the size type of list.
         using size_type = std::vector<type_t, allocator_type>::size_type;
+        /// @}
 
         /// @name Constructors
         

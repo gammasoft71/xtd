@@ -35,12 +35,16 @@ namespace xtd {
         /// ```
         template<typename key_t = void>
         struct equator {
+          /// @name Public Operators
+          
+          /// @{
           /// @brief checks if the specified a and b keys are equal.
           /// @param a The first key to check.
           /// @param b The second key to check.
           /// @return true if keys are equals; otherwise false.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
           bool operator()(const key_t& a, const key_t& b) const {return __polymorphic_equator__<key_t, typename std::is_polymorphic<key_t>::type> {}(a, b);}
+          /// @}
         };
       }
     }
