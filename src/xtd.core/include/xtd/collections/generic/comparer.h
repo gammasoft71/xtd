@@ -1,10 +1,8 @@
 /// @file
-/// @brief Contains xtd::collections::generic::hasher struct.
+/// @brief Contains xtd::collections::generic::comparer struct.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#define __XTD_CORE_INTERNAL__
-#include "../../internal/__hasher.h"
-#undef __XTD_CORE_INTERNAL__
+#include <functional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -12,33 +10,33 @@ namespace xtd {
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
-      /// @brief Implements a function object for hashing data.
+      /// @brief Implements a function object for compare data.
       /// ```cpp
-      /// class hasher
+      /// class comparer
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/hasher
+      /// #include <xtd/collections/comparer
       /// ```
       /// @par Namespace
       /// xtd::collections::generic
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      /// @remarks The unordered associative containers xtd::collections::generic::has_set, xtd::collections::generic::hash_multi_set, xtd::collections::generic::dictionary, xtd::collections::generic::multi_dictionary use specializations of the template xtd::collections::generic::hasher as the default hash function.
+      /// @remarks The associative containers xtd::collections::generic::sorted_set, xtd::collections::generic::sorted_multi_set, xtd::collections::generic::sorted_dictionary, xtd::collections::generic::sorted_multi_dictionary use specializations of the template xtd::collections::generic::comparer as the defaultcompare function.
       /// @par Examples
-      /// The following example show how to use xtd::collections::generic::hasher with `std::unordered_map`.
+      /// The following example show how to use xtd::collections::generic::comparer with `std::unordered_map`.
       /// ```cpp
-      /// auto key_values = std::unordered_map<xtd::date_time, xtd::ustring, xtd::collections::generic::hasher<xtd::date_time>, xtd::collections::generic::equator<xtd::date_time>, xtd::collections::generic::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::ustring>>> {};
+      /// auto key_values = std::map<xtd::date_time, xtd::ustring, xtd::collections::generic::comparer<xtd::date_time>, xtd::collections::generic::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::ustring>>> {};
       /// key_values.insert({{1971, 1, 5}, "Birth date"});
       /// ```
-      template<typename key_t>
-      struct hasher {
+      template<typename type_t = void>
+      struct comparer {
         /// @brief Serves as a hash function for a specified key with a particular type (type_t).
         /// @param key The key to hash.
         /// @return A hash code for the spesified key.
         /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
-        size_t operator()(const key_t& key) const {return __polymorphic_hasher__<key_t, typename std::is_polymorphic<key_t>::type> {}(key);}
+        constexpr bool operator()(const type_t& lhs, const type_t& rhs) const {return std::less {}(lhs, rhs);}
       };
     }
   }

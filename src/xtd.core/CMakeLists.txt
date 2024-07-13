@@ -478,6 +478,8 @@ add_sources(
   include/xtd/collections/vector_list
   include/xtd/collections/generic/allocator.h
   include/xtd/collections/generic/allocator
+  include/xtd/collections/generic/comparer.h
+  include/xtd/collections/generic/comparer
   include/xtd/collections/generic/equator.h
   include/xtd/collections/generic/equator
   include/xtd/collections/generic/hash_set.h

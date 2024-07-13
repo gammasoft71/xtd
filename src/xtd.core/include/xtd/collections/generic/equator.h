@@ -28,7 +28,7 @@ namespace xtd {
       /// @par Examples
       /// The following example show how to use xtd::collections::generic::equator with `std::unordered_map`.
       /// ```cpp
-      /// auto key_values = std::map<xtd::date_time, xtd::ustring, xtd::collections::generic::hasher<xtd::date_time>, xtd::collections::generic::equator<xtd::date_time>, xtd::collections::generic::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::ustring>>> {};
+      /// auto key_values = std::unordered_map<xtd::date_time, xtd::ustring, xtd::collections::generic::hasher<xtd::date_time>, xtd::collections::generic::equator<xtd::date_time>, xtd::collections::generic::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::ustring>>> {};
       /// key_values.insert({{1971, 1, 5}, "Birth date"});
       /// ```
       template<typename key_t = void>
