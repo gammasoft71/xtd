@@ -476,20 +476,20 @@ add_sources(
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
   include/xtd/collections/vector_list
-  include/xtd/collections/generic/allocator.h
-  include/xtd/collections/generic/allocator
-  include/xtd/collections/generic/comparer.h
-  include/xtd/collections/generic/comparer
-  include/xtd/collections/generic/equator.h
-  include/xtd/collections/generic/equator
   include/xtd/collections/generic/hash_set.h
   include/xtd/collections/generic/hash_set
-  include/xtd/collections/generic/hasher.h
-  include/xtd/collections/generic/hasher
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
   include/xtd/collections/generic/list.h
   include/xtd/collections/generic/list
+  include/xtd/collections/generic/helpers/allocator.h
+  include/xtd/collections/generic/helpers/allocator
+  include/xtd/collections/generic/helpers/comparer.h
+  include/xtd/collections/generic/helpers/comparer
+  include/xtd/collections/generic/helpers/equator.h
+  include/xtd/collections/generic/helpers/equator
+  include/xtd/collections/generic/helpers/hasher.h
+  include/xtd/collections/generic/helpers/hasher
   include/xtd/collections/specialized/string_collection.h
   include/xtd/collections/specialized/string_collection
   include/xtd/collections/specialized/string_dictionary.h

@@ -17,6 +17,10 @@
 /// @brief Contains generic collections definitions.
 /// @ingroup collections
 
+/// @defgroup helpers_generic_collections helpers
+/// @brief Contains helpers generic collections definitions.
+/// @ingroup generic_collections
+
 /// @defgroup specialized_collections specialized
 /// @brief Contains specialized collections definitions.
 /// @ingroup collections
