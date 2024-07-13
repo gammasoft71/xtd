@@ -1,4 +1,4 @@
-#include <xtd/collections/specialized/string_pair>
+#include <xtd/collections/specialized/string_key_value_pair>
 #include <xtd/boxing>
 #include <xtd/console>
 #include <xtd/environment>
@@ -10,7 +10,7 @@ using namespace xtd::collections::specialized;
 // This class is not realistic, it is just to illustrate the example.
 class setup_serializer : public object {
 public:
-  using pair_collection = std::vector<string_pair>;
+  using pair_collection = std::vector<string_key_value_pair>;
   
   setup_serializer() = default;
   

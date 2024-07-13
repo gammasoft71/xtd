@@ -1,7 +1,7 @@
 #include "../../include/xtd/version.h"
 #include "../../include/xtd/as.h"
 #include "../../include/xtd/is.h"
-#include "../../include/xtd/collections/specialized/string_vector.h"
+#include "../../include/xtd/collections/specialized/string_collection.h"
 #include "../../include/xtd/argument_out_of_range_exception.h"
 #include "../../include/xtd/format_exception.h"
 #include <regex>
@@ -67,7 +67,7 @@ bool version::equals(const version& v) const noexcept {
 
 version version::parse(const xtd::ustring& input) {
   auto rgx = regex {"\\."};
-  auto versions = xtd::collections::specialized::string_vector {};
+  auto versions = xtd::collections::specialized::string_collection {};
   for (auto it = sregex_token_iterator {input.begin(), input.end(), rgx, -1}, end = sregex_token_iterator {}; it != end; ++it)
     versions.push_back(it->str());
     

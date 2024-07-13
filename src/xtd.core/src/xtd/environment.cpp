@@ -324,7 +324,7 @@ xtd::ustring environment::expand_environment_variables(const xtd::ustring& name)
   return result;
 }
 
-xtd::collections::specialized::string_vector environment::get_command_line_args() {
+xtd::collections::specialized::string_collection environment::get_command_line_args() {
   auto args = native::environment::get_command_line_args();
   return {args.begin(), args.end()};
 }
@@ -381,7 +381,7 @@ ustring environment::get_folder_path(environment::special_folder folder, environ
   return path;
 }
 
-xtd::collections::specialized::string_vector environment::get_logical_drives() {
+xtd::collections::specialized::string_collection environment::get_logical_drives() {
   return io::directory::get_logical_drives();
 }
 

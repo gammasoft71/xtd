@@ -10,10 +10,11 @@
 #include "iequatable.h"
 #include "types.h"
 #if defined(__xtd__cpp_lib_format)
+#include <cassert>
 #include <format>
 #endif
 #include <string>
-#include <memory>
+#include <type_traits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -50,8 +51,8 @@ namespace xtd {
     object(const object&) = default;
     object& operator =(const object&) = default;
     virtual ~object() = default;
-    bool operator ==(const object& obj) const noexcept {return equals(*this, obj);}
-    bool operator !=(const object& obj) const noexcept {return !operator==(obj);}
+    bool operator ==(const object& obj) const noexcept;
+    bool operator !=(const object& obj) const noexcept;
     /// @endcond
     
     /// @name Public Methods
@@ -117,8 +118,13 @@ namespace xtd {
     /// @par Examples
     /// The following code example compares different objects.
     /// @include object_equals2.cpp
-    static bool equals(const object& object_a, const object& object_b) noexcept;
-    
+    template<typename object_a_t, typename object_b_t>
+    static bool equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
+      static_assert(std::is_base_of<xtd::object, object_a_t>::value, "object_a does not inherit from xtd::object");
+      static_assert(std::is_base_of<xtd::object, object_b_t>::value, "object_b does not inherit from xtd::object");
+      return object_a == object_b;
+    }
+
     /// @brief Determines whether the specified object instances are the same instance.
     /// @param object_a The first object to compare.
     /// @param object_b The second object to compare.
@@ -126,22 +132,13 @@ namespace xtd {
     /// @par Examples
     /// The following code example uses xtd::object::reference_equals to determine if two objects are the same instance.
     /// @include object_reference_equals.cpp
-    static bool reference_equals(const object& object_a, const object& object_b) noexcept;
+    template<typename object_a_t, typename object_b_t>
+    static bool reference_equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
+      static_assert(std::is_base_of<xtd::object, object_a_t>::value, "object_a does not inherit from xtd::object");
+      static_assert(std::is_base_of<xtd::object, object_b_t>::value, "object_b does not inherit from xtd::object");
+      return &object_a == &object_b;
+    }
     /// @}
-
-    /// @cond
-    template<typename object_t>
-    bool equals(const object_t& obj) const noexcept {
-      if (dynamic_cast<const iequatable<object_t>*>(this)) return dynamic_cast<const iequatable<object_t>*>(this)->equals(obj);
-      return equals(dynamic_cast<const object&>(*this), dynamic_cast<const object&>(obj));
-    }
-    
-    template<typename object_t>
-    static bool equals(const object_t& object_a, const object_t& object_b) noexcept {
-      if (dynamic_cast<const iequatable<object_t>*>(&object_a)) return dynamic_cast<const iequatable<object_t>*>(&object_a)->equals(object_b);
-      return equals(dynamic_cast<const object&>(object_a), dynamic_cast<const object&>(object_b));
-    }
-    /// @endcond
     
   private:
     void __throw_invalid_cast_exception(const ustring& file, uint32 line, const ustring& method) const;

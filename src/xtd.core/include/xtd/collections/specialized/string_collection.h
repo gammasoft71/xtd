@@ -1,13 +1,9 @@
 /// @file
-/// @brief Contains xtd::collections::specialized::string_vector typedef.
+/// @brief Contains xtd::collections::specialized::string_collection typedef.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#if defined(_MSC_VER) && __cplusplus < 202302L
-#  pragma message("Deprecated : Replaced by #include <xtd/collection/specialized/string_collection.h> - Will be removed in version 0.4.0")
-#else
-#  warning "Deprecated : Replaced by #include <xtd/collection/specialized/string_collection.h> - Will be removed in version 0.4.0"
-#endif
-#include "string_collection.h"
+#include <vector>
+#include "../../ustring.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,18 +13,17 @@ namespace xtd {
     namespace specialized {
       /// @brief Represents a collection of strings.
       /// ```cpp
-      /// using string_vector = std::vector<xtd::ustring>
+      /// using string_collection = std::vector<xtd::ustring>
       /// ```
       /// @par Header
       /// ```cpp
-    /// #include <xtd/collections/specialized/string_vector> ```
+    /// #include <xtd/collections/specialized/string_collection> ```
       /// @par Namespace
       /// xtd::collections
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core specialized_collections
-      /// @deprecated Replaced by xtd::collections::specialized::string_collection - Will be removed in version 0.4.0
-      using string_vector [[deprecated("Replaced by xtd::collections::specialized::string_collection - Will be removed in version 0.4.0")]] = string_collection;
+      using string_collection = std::vector<xtd::ustring>;
     }
   }
 }

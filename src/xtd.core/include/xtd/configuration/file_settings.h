@@ -3,8 +3,8 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../core_export.h"
-#include "../collections/specialized/string_map.h"
-#include "../collections/specialized/string_vector.h"
+#include "../collections/specialized/string_dictionary.h"
+#include "../collections/specialized/string_collection.h"
 #include "../io/directory.h"
 #include "../io/file.h"
 #include "../io/path.h"
@@ -35,10 +35,10 @@ namespace xtd {
       
       /// @{
       /// @brief Represents a std::map with the key and the value strongly typed to be strings.
-      using string_map = xtd::collections::specialized::string_map;
+      using string_dictionary = xtd::collections::specialized::string_dictionary;
 
       /// @brief Represents a collection of strings.
-      using string_vector = xtd::collections::specialized::string_vector;
+      using string_collection = xtd::collections::specialized::string_collection;
       /// @}
       
       /// @name Public Constructors
@@ -160,26 +160,26 @@ namespace xtd {
       /// @brief Gets all key-value pairs from global section.
       /// @return The key-value pairs map.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::key_values (const xtd::ustring& section) with xtd::ustring::empty_string paramreter.
-      string_map key_values() const noexcept;
+      string_dictionary key_values() const noexcept;
       /// @brief Gets all key-value pairs from a specified section.
       /// @param section The section to get key-value pairs.
       /// @return The key-value pairs map from the specified section.
       /// @remarks Use xtd::ustring::empty_string paramreter to get key-value pairs of the global section.
-      string_map key_values(const xtd::ustring& section) const noexcept;
+      string_dictionary key_values(const xtd::ustring& section) const noexcept;
       
       /// @brief Gets all keys from global section.
       /// @return The keys vector.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::keys (const xtd::ustring& section) with xtd::ustring::empty_string paramreter.
-      string_vector keys() const noexcept;
+      string_collection keys() const noexcept;
       /// @brief Gets all keys from a specified section.
       /// @param section The section to get keys.
       /// @return The keys vector from the specified section.
       /// @remarks Use xtd::ustring::empty_string paramreter to get keys of the global section.
-      string_vector keys(const xtd::ustring& section) const noexcept;
+      string_collection keys(const xtd::ustring& section) const noexcept;
 
       /// @brief Gets all sections.
       /// @return The sections vector.
-      string_vector sections() const noexcept;
+      string_collection sections() const noexcept;
       
       /// @brief Gets the stream of the current instance.
       /// @return The stream of the current instance.
@@ -593,7 +593,7 @@ namespace xtd {
       /// // Is equivalent to call :
       /// // auto v1 = fs.read("section1", "key1", ustring::empty_string);
       /// ```
-      const string_map& operator [](const xtd::ustring& section) const noexcept;
+      const string_dictionary& operator [](const xtd::ustring& section) const noexcept;
       /// @brief Gets key-value pairs of the specified section.
       /// @param secion The section to get the key-value pairs
       /// @return The key-value pairs of the section.
@@ -605,7 +605,7 @@ namespace xtd {
       /// // Is equivalent to call :
       /// // fs.write("section1", "key1", "value1");
       /// ```
-      string_map& operator [](const xtd::ustring& section) noexcept;
+      string_dictionary& operator [](const xtd::ustring& section) noexcept;
       /// @}
       
     protected:
@@ -617,15 +617,15 @@ namespace xtd {
       void write_string(const xtd::ustring& section, const xtd::ustring& key, const xtd::ustring& value) noexcept;
 
       bool auto_save_ = false;
-      std::map<xtd::ustring, string_map> after_key_value_comment_;
+      std::map<xtd::ustring, string_dictionary> after_key_value_comment_;
       std::map<xtd::ustring, xtd::ustring> after_section_comment_;
-      std::map<xtd::ustring, string_map> before_key_value_comment_;
+      std::map<xtd::ustring, string_dictionary> before_key_value_comment_;
       std::map<xtd::ustring, xtd::ustring> before_section_comment_;
       xtd::ustring bottom_file_comment_;
       xtd::ustring file_path_;
-      std::map<xtd::ustring, string_map> key_value_comment_;
+      std::map<xtd::ustring, string_dictionary> key_value_comment_;
       std::map<xtd::ustring, xtd::ustring> section_comment_;
-      std::map<xtd::ustring, string_map> section_key_values_;
+      std::map<xtd::ustring, string_dictionary> section_key_values_;
       std::iostream* stream_ = nullptr;
       xtd::ustring top_file_comment_;
     };

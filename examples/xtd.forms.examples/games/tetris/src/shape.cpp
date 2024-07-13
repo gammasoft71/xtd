@@ -4,9 +4,10 @@
 using namespace std;
 using namespace tetris;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 shape::shape(tetris::tetrominoes tetrominoes) {
-  static const auto coords_map = map<tetris::tetrominoes, array<pair<int, int>, 4>> {
+  static const auto coords_map = map<tetris::tetrominoes, array<key_value_pair<int, int>, 4>> {
     {tetris::tetrominoes::no_shape, {make_pair(0, 0), make_pair(0, 0), make_pair(0, 0), make_pair(0, 0)}},
     {tetris::tetrominoes::z_shape, {make_pair(0, -1), make_pair(0, 0), make_pair(-1, 0), make_pair(-1, 1)}},
     {tetris::tetrominoes::s_shape, {make_pair(0, -1), make_pair(0, 0), make_pair(1, 0), make_pair(1, 1)}},
