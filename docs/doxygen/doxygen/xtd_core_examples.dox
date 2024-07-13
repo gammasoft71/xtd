@@ -23,10 +23,16 @@
 /// Shows how to use how to use xtd::boxing methods.
 ///
 /// @example array_list.cpp
-/// Shows how to use xtd::collections::array_list class.
+/// Shows how to use array_list alias.
 ///
 /// @example array_list2.cpp
-/// Shows how to use xtd::collections::array_list class.
+/// Shows how to use xtd::collections::array_list alias.
+///
+/// @example vector_list.cpp
+/// Shows how to use vector_list class.
+///
+/// @example vector_list2.cpp
+/// Shows how to use xtd::collections::vector_list class.
 ///
 /// @example file_settings.cpp
 /// Shows how to use xtd::consiguration::file_settings object.
@@ -352,6 +358,9 @@
 /// @example format_class_with_specified_formating.cpp
 /// Show how to use format xtd::format class with specified formatting.
 ///
+/// @example format_class_with_specified_formating_with_to_string.cpp
+/// Show how to use format xtd::format class with specified formatting.
+///
 /// @example format_date_time.cpp
 /// Show how to use format xtd::format class with std::chrono utilities.
 ///
@@ -412,6 +421,9 @@
 /// @example guid.cpp
 /// Shows how to use xtd::guid class.
 ///
+/// @example hash_code.cpp
+/// Shows how to use xtd::hash_code class.
+///
 /// @example hello_world_console.cpp
 /// The classic first application "Hello, World!" with xtd::console class.
 ///
@@ -426,6 +438,24 @@
 ///
 /// @example hello_world_ustring.cpp
 /// The classic first application "Hello, World!" with xtd::ustring class.
+///
+/// @example iasync_result.cpp
+/// Shows how to use how to use xtd:: iasync_result interface.
+///
+/// @example iclonable.cpp
+/// Shows how to use how to use xtd::iequatable interface.
+///
+/// @example icomparable.cpp
+/// Shows how to use how to use xtd::iequatable interface.
+///
+/// @example iequatable.cpp
+/// Shows how to use how to use xtd::iequatable interface.
+///
+/// @example iformatable.cpp
+/// Shows how to use how to use xtd::iformatable interface.
+///
+/// @example iformatable_vs_to_string.cpp
+/// Shows how to use how to use xtd::iformatable interface and xtd::to_string method.
 ///
 /// @example iobservable_iobserver.cpp
 /// Shows how to use how to use xtd::iobservable and xtd::iobserver interfaces.
@@ -483,6 +513,12 @@
 ///
 /// @example block_scope.cpp
 /// Shows how to use xtd::block_scope class.
+///
+/// @example call_once.cpp
+/// Shows how to use call_once_ keyword.
+///
+/// @example call_once2.cpp
+/// Shows how to use call_once struct.
 ///
 /// @example csf.cpp
 /// Shows how to use xtd::diagnostics::stack_frame class.
@@ -580,6 +616,30 @@
 /// @example udp_client_ip_v6.cpp
 /// Shows how to use xtd::net::sockets::udp_client class.
 ///
+/// @example object.cpp
+/// Shows hows how to use xtd::object class.
+///
+/// @example object_and_iequatable.cpp
+/// Shows hows how to use xtd::object and xtd::iequatable.
+///
+/// @example object_equals.cpp
+/// Shows hows how to use xtd::object::equals method.
+///
+/// @example object_equals2.cpp
+/// Shows hows how to use xtd::object::equals static method.
+///
+/// @example object_get_type.cpp
+/// Shows hows how to use xtd::object::get_type method.
+///
+/// @example object_memberwise_clone.cpp
+/// Shows hows how to use xtd::object::memberwise_clone method.
+///
+/// @example object_reference_equals.cpp
+/// Shows hows how to use xtd::object::reference_equals static method.
+///
+/// @example object_to_string.cpp
+/// Shows hows how to use xtd::object::to_string method.
+///
 /// @example console_background_color2.cpp
 /// Shows how to use xtd::console::background_color method.
 ///
@@ -665,46 +725,46 @@
 /// Shows how to use xtd::random::next method.
 ///
 /// @example sprintf.cpp
-/// Show how to use format xtd::xtd_sprintf class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_boolean.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_character.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_class.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_class_with_specified_formating.cpp
+/// Shows how to use xtd::ustring::sprintf method.
+///
+/// @example sprintf_class_with_specified_formating_with_to_string.cpp
 /// Show how to use format xtd::format class.
 ///
 /// @example sprintf_date_time.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_duration.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_enum.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_enum_class.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_floating_point.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_numeric.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_string.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example sprintf_with_alignment.cpp
-/// Show how to use format xtd::format class.
-///
-/// @example sprintf_with_order.cpp
-/// Show how to use format xtd::format class.
+/// Shows how to use xtd::ustring::sprintf method.
 ///
 /// @example startup.cpp
 /// Shows how to use xtd::startup class.
