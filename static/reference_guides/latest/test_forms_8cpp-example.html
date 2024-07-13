@@ -167,7 +167,7 @@ $(function() {
 <div class="line">        <span class="keyword">auto</span> args = command_line.split({<span class="charliteral">&#39; &#39;</span>});</div>
 <div class="line">        start_info.<a id="a31" name="a31"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#a451273cb1bd889af9cf173f6a6467a16">file_name</a>(args[0]);</div>
 <div class="line">        <span class="keywordflow">if</span> (args.size() &gt; 1)</div>
-<div class="line">          start_info.<a id="a32" name="a32"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#ada9ce33185087d235a2d0f380323bbfd">arguments</a>(<a id="a33" name="a33"></a><a class="code hl_function" href="classxtd_1_1ustring.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a>(<span class="stringliteral">&quot; &quot;</span>, std::vector&lt;xtd::ustring&gt;(args.begin() + 1, args.end())));</div>
+<div class="line">          start_info.<a id="a32" name="a32"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#ada9ce33185087d235a2d0f380323bbfd">arguments</a>(<a id="a33" name="a33"></a><a class="code hl_function" href="classxtd_1_1ustring.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a>(<span class="stringliteral">&quot; &quot;</span>, xtd::collections::specialized::string_collection(args.begin() + 1, args.end())));</div>
 <div class="line">          </div>
 <div class="line">        <a id="a34" name="a34"></a><a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ab6f558ccea3f3ee86e06e5f8cf0f0046">append_text</a>(<a id="a35" name="a35"></a><a class="code hl_function" href="classxtd_1_1environment.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a>());</div>
 <div class="line">        start_info.<a id="a36" name="a36"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">false</span>);</div>
@@ -211,7 +211,7 @@ $(function() {
 <div class="line">    e.handled(<span class="keyword">true</span>);</div>
 <div class="line">  }</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">xtd::ustring</a> prompt = <a class="code hl_function" href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a>(<span class="stringliteral">&quot;[{}] $ &quot;</span>,  <a class="code hl_function" href="classxtd_1_1environment.html#a981ec9665ba83e12a0241c37017c9ec7">xtd::environment::current_directory</a>());</div>
-<div class="line">  std::vector&lt;xtd::ustring&gt; commands;</div>
+<div class="line">  xtd::collections::specialized::string_collection commands;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -276,7 +276,7 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1ustring_html_a95694998a854ba65dde682b879eec355"><div class="ttname"><a href="classxtd_1_1ustring.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a></div><div class="ttdeci">static ustring join(const ustring separator, const collection_t &amp;values) noexcept</div><div class="ttdoc">Concatenates a specified separator string between each element of a specified object array,...</div><div class="ttdef"><b>Definition</b> ustring.h:1176</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html_ad27e596eab3904c5084c2d2cb7ae05a1"><div class="ttname"><a href="classxtd_1_1ustring.html#ad27e596eab3904c5084c2d2cb7ae05a1">xtd::ustring::substring</a></div><div class="ttdeci">ustring substring(size_t start_index) const noexcept</div><div class="ttdoc">Retrieves a substring from this instance. The substring starts at a specified character position and ...</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1068</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:167</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:175</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a5075140835d0bc504791c76b04c33d2b"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a5075140835d0bc504791c76b04c33d2b">xtd::console_key::process</a></div><div class="ttdeci">@ process</div><div class="ttdoc">The IME PROCESS key.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970dea46c48bec0d282018b9d167eef7711b2c"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea46c48bec0d282018b9d167eef7711b2c">xtd::forms::keys::up</a></div><div class="ttdeci">@ up</div><div class="ttdoc">The UP key.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970dea74e8333ad11685ff3bdae589c8f6e34d"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea74e8333ad11685ff3bdae589c8f6e34d">xtd::forms::keys::down</a></div><div class="ttdeci">@ down</div><div class="ttdoc">The DOWN key.</div></div>
@@ -288,7 +288,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 13 2024 00:11:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jul 14 2024 00:09:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -18,7 +18,7 @@ var searchData=
   ['gem_5fstone_15',['gem_stone',['../classxtd_1_1forms_1_1emoticons.html#abc2bb283bd365bf7c10836295ab55eee',1,'xtd::forms::emoticons']]],
   ['gemini_16',['gemini',['../classxtd_1_1forms_1_1emoticons.html#a87ab4ea25b62d9831a6d3dc0c31cc2f6',1,'xtd::forms::emoticons']]],
   ['generator_17',['generator',['../classxtd_1_1random.html#a615a01fbaffc5b8b28f0032dc5f5fb65',1,'xtd::random']]],
-  ['generic_20collections_18',['generic collections',['../group__generic__collections.html',1,'']]],
+  ['generic_18',['generic',['../group__generic__collections.html',1,'']]],
   ['generic_5fdefault_19',['generic_default',['../classxtd_1_1drawing_1_1string__format.html#a80d159f1515d8867225588e8151426be',1,'xtd::drawing::string_format']]],
   ['generic_5fevent_5fhandler_20',['generic_event_handler',['../group__events.html#ga531b610b74cb14c6047fb0843ab686b4',1,'xtd']]],
   ['generic_5ffont_5ffamilies_21',['generic_font_families',['../classxtd_1_1system__report.html#a13e6cb77fe2fbe0001f7bc147518a946',1,'xtd::system_report::generic_font_families() noexcept'],['../classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba7fb8c42d34b4c9f189bcc788c1588d14',1,'xtd::system_report::generic_font_families'],['../group__fonts.html#gafd5e2026334cf194adc28812c433c203',1,'xtd::drawing::text::generic_font_families']]],

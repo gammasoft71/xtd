@@ -138,11 +138,17 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1call__once.html">xtd::call_once</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structxtd_1_1call__once.html" title="The xtd::call_once struct can be used to execute a routine exactly once. This can be used to initiali...">xtd::call_once</a> struct can be used to execute a routine exactly once. This can be used to initialise data in a thread-safe way.  <a href="structxtd_1_1call__once.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1equator.html">xtd::collections::generic::equator&lt; key_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a function object for performing comparisons. Unless specialised, invokes operator== on type type_t. xtd::equator with the key and the value strongly typed to be std::any.  <a href="structxtd_1_1collections_1_1generic_1_1equator.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">xtd::collections::generic::helpers::comparer&lt; type_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a function object for compare data.  <a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1hasher.html">xtd::collections::generic::hasher&lt; key_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a function object for hashing data.  <a href="structxtd_1_1collections_1_1generic_1_1hasher.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator&lt; key_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a function object for performing comparisons. Unless specialised, invokes operator== on type type_t. xtd::equator with the key and the value strongly typed to be std::any.  <a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">xtd::collections::generic::helpers::hasher&lt; key_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a function object for hashing data.  <a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list&lt; type_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.  <a href="classxtd_1_1collections_1_1generic_1_1list.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1key__not__found__exception.html">xtd::collections::key_not_found_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.  <a href="classxtd_1_1collections_1_1key__not__found__exception.html#details">More...</a><br /></td></tr>
@@ -6553,7 +6559,7 @@ The members of the <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2
 <div class="line"><span class="comment">// Is Thursday the day of the week for 05/01/2003?: true</span></div>
 <div class="line"><span class="comment">// The day of the week for 05/01/2003 is thursday.</span></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.h:85</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:167</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:175</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#gaf3aa09e1775eb8b85ca5974e8b926be2" title="Specifies the day of the week.">xtd::day_of_week</a> enumeration represents the day of the week in calendars that have seven days per week. The value of the constants in this enumeration ranges from <a class="el" href="group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2a787c74a2e618a696e34e025adda33ad3" title="Indicates sunday.">xtd::day_of_week::sunday</a> to <a class="el" href="group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2a6036c3d913f49f28f35d734589840310" title="Indicates saturday.">xtd::day_of_week::saturday</a>. If cast to an integer, its value ranges from zero (which indicates <a class="el" href="group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2a787c74a2e618a696e34e025adda33ad3" title="Indicates sunday.">xtd::day_of_week::sunday</a>) to six (which indicates <a class="el" href="group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2a6036c3d913f49f28f35d734589840310" title="Indicates saturday.">xtd::day_of_week::saturday</a>). </dd>
 <dd>
@@ -50704,7 +50710,7 @@ template&lt;typename value_t &gt; </div>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>for more information about format see <a class="el" href="_format_page.html">Format</a>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="numeric_text_box_8cpp-example.html#a1">numeric_text_box.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="format_class_with_specified_formating_with_to_string_8cpp-example.html#a3">format_class_with_specified_formating_with_to_string.cpp</a>, <a class="el" href="iformatable_vs_to_string_8cpp-example.html#a1">iformatable_vs_to_string.cpp</a>, <a class="el" href="numeric_text_box_8cpp-example.html#a1">numeric_text_box.cpp</a>, and <a class="el" href="sprintf_class_with_specified_formating_with_to_string_8cpp-example.html#a3">sprintf_class_with_specified_formating_with_to_string.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -51460,7 +51466,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 13 2024 00:11:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jul 14 2024 00:09:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
