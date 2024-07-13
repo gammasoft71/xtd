@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Represents a collection of controls.
       class link_collection : public xtd::forms::layout::arranged_element_collection<xtd::forms::link_label::link> {
       public:
-        /// @name Aliases
+        /// @name Public Aliases
         
         /// @{
         /// @brief Represents the base type of the collection.

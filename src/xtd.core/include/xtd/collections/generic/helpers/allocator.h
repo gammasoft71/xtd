@@ -21,7 +21,7 @@ namespace xtd {
         /// xtd::collections
         /// @par Library
         /// xtd.core
-        /// @ingroup xtd_core
+        /// @ingroup xtd_core helpers_generic_collections
         /// @remarks The xtd::collections::generic::helpers::allocator is the default allocator used by all xtd library containers if no user-specified allocator is provided.
         /// @remarks The xtd::collections::generic::helpers::allocator is alias on [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator).
         /// @remarks A simple alias for the moment, which leaves open the possibility of implementing a specific allocator for xtd if necessary in the future.
