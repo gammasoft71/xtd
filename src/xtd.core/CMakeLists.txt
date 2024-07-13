@@ -18,6 +18,8 @@ add_sources(
   include/xtd/action
   include/xtd/add_last_arg_to_command.h
   include/xtd/add_last_arg_to_command
+  include/xtd/allocator.h
+  include/xtd/allocator
   include/xtd/any.h
   include/xtd/any
   include/xtd/architecture_id.h
