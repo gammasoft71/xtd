@@ -1,4 +1,4 @@
-#include <xtd/double>
+#include <xtd/double_object>
 #include <xtd/ustring>
 
 using namespace std;
