@@ -1,3 +1,4 @@
+#include <xtd/collections/generic/list>
 #include <xtd/threading/interlocked>
 #include <xtd/threading/lock_guard>
 #include <xtd/threading/thread>
@@ -9,13 +10,14 @@
 #include <vector>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::threading;
 
 namespace lock_guard_example {
   class program {
   public:
     static void main() {
-      auto threads = std::vector<thread> {};
+      auto threads = list<thread> {};
       auto rnd = xtd::random {};
       auto total = 0_s64;
       auto n = 0;

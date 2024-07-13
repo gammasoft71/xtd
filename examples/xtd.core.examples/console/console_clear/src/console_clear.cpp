@@ -2,14 +2,15 @@
 #include <xtd/console>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
+using namespace xtd::collections::specialized;
 
 namespace console_clear_example {
   class program {
   public:
     // The main entry point for the application.
-    static auto main(const vector<ustring>& args) {
+    static auto main(const string_collection& args) {
       // Save colors so they can be restored when use finishes input.
       auto dft_fore_color = console::foreground_color();
       auto dft_back_color = console::background_color();
@@ -20,7 +21,7 @@ namespace console_clear_example {
         auto new_fore_color = console_color::white;
         auto new_back_color = console_color::black;
         
-        auto fore_color_selection = get_key_press("Select Text Color (B for Blue, R for Red, Y for Yellow): ", vector<char32_t> { 'B', 'R', 'Y' });
+        auto fore_color_selection = get_key_press("Select Text Color (B for Blue, R for Red, Y for Yellow): ", list<char32_t> { 'B', 'R', 'Y' });
         switch (fore_color_selection) {
           case 'B':
           case 'b': new_fore_color = console_color::dark_blue; break;
@@ -30,7 +31,7 @@ namespace console_clear_example {
           case 'y': new_fore_color = console_color::dark_yellow; break;
         }
         
-        auto back_color_selection = get_key_press("Select Background Color (W for White, G for Green, M for Magenta): ", vector<char32_t> { 'W', 'G', 'M' });
+        auto back_color_selection = get_key_press("Select Background Color (W for White, G for Green, M for Magenta): ", list<char32_t> { 'W', 'G', 'M' });
         switch (back_color_selection) {
           case 'W':
           case 'w': new_back_color = console_color::white; break;
@@ -48,7 +49,7 @@ namespace console_clear_example {
         console::background_color(new_back_color);
         console::write_line(text_to_display);
         console::write_line();
-        if (char32_object::to_upper(get_key_press("Display another message (Y/N): ", vector<char32_t> { 'Y', 'N' })) == 'N')
+        if (char32_object::to_upper(get_key_press("Display another message (Y/N): ", list<char32_t> { 'Y', 'N' })) == 'N')
           continue_flag = false;
           
         // Restore the default settings and clear the screen.
@@ -59,7 +60,7 @@ namespace console_clear_example {
     }
     
   private:
-    static char32_t get_key_press(const ustring& msg, const vector<char32_t>& valid_chars) {
+    static char32_t get_key_press(const ustring& msg, const list<char32_t>& valid_chars) {
       auto key_pressed = console_key_info {};
       auto valid = false;
       

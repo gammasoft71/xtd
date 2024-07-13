@@ -3,11 +3,12 @@
 #include <xtd/startup>
 
 using namespace xtd;
+using namespace xtd::collections::specialized;
 
 namespace startup_example {
   class program {
   public:
-    static auto main(const std::vector<ustring>& args) {
+    static auto main(const string_collection& args) {
       console::write_line("args = {}", ustring::join(", ", args));
       environment::exit_code(42);
     }

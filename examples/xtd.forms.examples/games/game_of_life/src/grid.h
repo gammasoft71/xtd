@@ -1,11 +1,10 @@
 #pragma once
 #include <xtd/event>
-#include <vector>
 #include "cell.h"
 
 namespace game_of_life {
-  using cell_row_collection = std::vector<cell>;
-  using cell_collection = std::vector<cell_row_collection>;
+  using cell_row_collection = xtd::collections::generic::list<cell>;
+  using cell_collection = xtd::collections::generic::list<cell_row_collection>;
   
   class grid : public xtd::object {
   public:
@@ -25,7 +24,7 @@ namespace game_of_life {
         int y = 0;
         cell state = cell::empty;
       };
-      std::vector<updated_cell> updated_cells;
+      xtd::collections::generic::list<updated_cell> updated_cells;
       
       for (auto y = 0; y < columns; y++) {
         for (auto x = 0; x < rows; x++) {

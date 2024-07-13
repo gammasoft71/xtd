@@ -1,3 +1,4 @@
+#include <xtd/collections/generic/list>
 #include <xtd/net/sockets/socket>
 #include <xtd/net/ip_end_point>
 #include <xtd/threading/thread>
@@ -5,6 +6,7 @@
 #include <xtd/console>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::threading;
@@ -16,7 +18,7 @@ auto main() -> int {
     auto socket = as<xtd::net::sockets::socket>(ar->async_state()).end_accept(ar);
     
     while (!terminate_app) {
-      auto buffer = std::vector<unsigned char>(256);
+      auto buffer = list<unsigned char>(256);
       auto number_of_byte_received = socket.receive(buffer);
       if (number_of_byte_received) console::write_line(ustring {buffer.begin(), buffer.begin() + number_of_byte_received});
     }
@@ -29,7 +31,7 @@ auto main() -> int {
     auto counter = 0;
     while (!terminate_app) {
       auto str = ustring::format("socket={}, counter={}", socket.handle(), ++counter);
-      socket.send(std::vector<unsigned char> {str.begin(), str.end()});
+      socket.send(list<unsigned char> {str.begin(), str.end()});
       thread::sleep(50_ms);
     }
   };

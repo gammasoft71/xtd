@@ -210,7 +210,7 @@ namespace game_of_life {
       }
     }
     
-    void fill_figure(const std::vector<xtd::ustring>& figure) {
+    void fill_figure(const xtd::collections::generic::list<xtd::ustring>& figure) {
       auto height = xtd::as<int>(figure.size());
       auto width = 0u;
       for (auto line : figure)

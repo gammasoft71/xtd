@@ -1,3 +1,4 @@
+#include <xtd/collections/generic/list>
 #include <xtd/threading/interlocked>
 #include <xtd/threading/semaphore>
 #include <xtd/threading/thread>
@@ -5,6 +6,7 @@
 #include <xtd/startup>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::threading;
 
 namespace mutex_example {
@@ -74,7 +76,7 @@ namespace mutex_example {
     }
     
   private:
-    inline static std::vector<thread> threads = std::vector<thread>(5);
+    inline static list<thread> threads = list<thread>(5);
 
     // A semaphore that simulates a limited resource pool.
     //

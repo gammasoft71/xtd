@@ -1,7 +1,6 @@
 #include <xtd/bit_converter>
 #include <xtd/console>
 #include <xtd/startup>
-#include <vector>
 
 using namespace std;
 using namespace xtd;

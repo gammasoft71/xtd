@@ -1,9 +1,11 @@
+#include <xtd/collections/generic/list>
 #include <xtd/threading/auto_reset_event>
 #include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/startup>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::threading;
 
 namespace auto_reset_event_example {
@@ -55,7 +57,7 @@ namespace auto_reset_event_example {
     }
 
   private:
-    inline static std::vector<thread> threads = std::vector<thread>(4);
+    inline static list<thread> threads = list<thread>(4);
     inline static auto_reset_event event_1 {true};
     inline static auto_reset_event event_2 {false};
   };

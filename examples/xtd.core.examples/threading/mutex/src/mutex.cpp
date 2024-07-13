@@ -1,9 +1,11 @@
+#include <xtd/collections/generic/list>
 #include <xtd/threading/mutex>
 #include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/startup>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::threading;
 
 namespace mutex_example {
@@ -51,7 +53,7 @@ namespace mutex_example {
                           thread::current_thread().name());
     }
 
-    inline static std::vector<thread> threads;
+    inline static list<thread> threads;
     // Create a new mutex. The creating thread does not own the mutex.
     inline static mutex mut;
     inline static constexpr int num_iterations = 1;
