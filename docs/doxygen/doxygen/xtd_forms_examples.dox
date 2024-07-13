@@ -1891,6 +1891,21 @@
 /// <br>
 /// @image html image_converter_gd.png
 ///
+/// @example screenshot.cpp
+/// shows how to fill ellipse in paint event using xtd::drawing::graphics::copy_from_screen.
+/// @par Windows
+/// @image html screenshot_w.png
+/// <br>
+/// @image html screenshot_wd.png
+/// @par macOS
+/// @image html screenshot_m.png
+/// <br>
+/// @image html screenshot_md.png
+/// @par Gnome
+/// @image html screenshot_g.png
+/// <br>
+/// @image html screenshot_gd.png
+///
 /// @example application_add_message_filter.cpp
 /// Shows how to create an application with xtd::forms::application::add_message_filter method.
 /// @par Windows
