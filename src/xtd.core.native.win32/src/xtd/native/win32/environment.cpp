@@ -171,7 +171,7 @@ string environment::get_distribution_version_string() {
   auto major = -1, minor = -1, build = -1, revision = -1;
   get_distribution_version(major, minor, build, revision);
   
-  return version + (version.empty() ? "" : " ") + to_string(major) + "." + to_string(minor) + "." + (code_name.empty() ? "" : to_string(build) + " (" + code_name + ")");
+  return version + (version.empty() ? "" : " ") + to_string(major) + "." + to_string(minor) + "." + to_string(build) + (code_name.empty() ? "" : " (" + code_name + ")");
 }
 
 string environment::get_environment_variable(const string& variable, int_least32_t target) {
