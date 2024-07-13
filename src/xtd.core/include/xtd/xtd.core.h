@@ -4,11 +4,13 @@
 #pragma once
 #include "std.h"
 
+#include "collections/allocator.h"
 #include "collections/any_pair.h"
 #include "collections/array_list.h"
 #include "collections/key_not_found_exception.h"
 #include "collections/generic/equator.h"
 #include "collections/generic/hasher.h"
+#include "collections/generic/list.h"
 #include "collections/generic/key_value_pair.h"
 #include "collections/specialized/string_collection.h"
 #include "collections/specialized/string_dictionary.h"
@@ -203,7 +205,6 @@
 #include "abstract_object.h"
 #include "action.h"
 #include "add_last_arg_to_command.h"
-#include "allocator.h"
 #include "architecture_id.h"
 #include "argument_exception.h"
 #include "argument_null_exception.h"
