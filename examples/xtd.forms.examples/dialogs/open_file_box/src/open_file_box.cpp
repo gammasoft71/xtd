@@ -5,6 +5,7 @@
 #include <xtd/forms/open_file_box>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -30,7 +31,7 @@ public:
     .size({150, 35})
     .text("Select multiple files")
     .click += [] {
-      auto file_names = std::vector<ustring> {};
+      auto file_names = list<ustring> {};
       auto res = open_file_box::show(file_names, "Please select multiple files...", open_file_box_options::check_file_exists | open_file_box_options::show_hidden_files);
       if (res == dialog_result::ok)
         message_box::show(ustring::format("Selected files are:\n{}", ustring::join("\n", file_names)));

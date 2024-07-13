@@ -1,9 +1,10 @@
+#include <xtd/collections/generic/list>
 #include <xtd/threading/thread>
 #include <xtd/as>
 #include <xtd/console>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 // Define the frequencies of notes in an octave, as well as
 // silence (rest).
@@ -55,7 +56,7 @@ public:
 };
 
 // Play the notes in a song.
-void play(const vector<note>& tune) {
+void play(const list<note>& tune) {
   for (auto n : tune) {
     if (n.note_tone() == tone::rest)
       threading::thread::sleep(as<int>(n.note_duration()));
@@ -66,7 +67,7 @@ void play(const vector<note>& tune) {
 
 auto main() -> int {
   // Declare the first few notes of the song, "Mary Had A Little Lamb".
-  auto mary = vector {
+  auto mary = list {
     note(tone::b, ::duration::quarter),
     note(tone::a, ::duration::quarter),
     note(tone::g_below_c, ::duration::quarter),

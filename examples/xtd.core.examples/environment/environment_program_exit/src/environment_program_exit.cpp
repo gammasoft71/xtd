@@ -4,13 +4,14 @@
 #include <xtd/startup>
 
 using namespace xtd;
+using namespace xtd::collections::specialized;
 using namespace xtd::threading;
 
 namespace environment_program_exit_example {
   class program static_ {
   public:
     // The main entry point for the application.
-    static auto main(const std::vector<ustring>& args) {
+    static auto main(const string_collection& args) {
       environment::program_exit += [](auto e) {
         console::write_line("The program is stopped {}ly!", e.exit_mode());
       };

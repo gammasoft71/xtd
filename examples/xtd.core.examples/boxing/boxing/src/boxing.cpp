@@ -1,16 +1,17 @@
 #include <xtd/collections/specialized/string_key_value_pair>
+#include <xtd/collections/generic/list>
 #include <xtd/boxing>
 #include <xtd/console>
 #include <xtd/environment>
-#include <vector>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::collections::specialized;
 
 // This class is not realistic, it is just to illustrate the example.
 class setup_serializer : public object {
 public:
-  using pair_collection = std::vector<string_key_value_pair>;
+  using pair_collection = list<string_key_value_pair>;
   
   setup_serializer() = default;
   

@@ -59,7 +59,7 @@ private:
         auto args = command_line.split({' '});
         start_info.file_name(args[0]);
         if (args.size() > 1)
-          start_info.arguments(xtd::ustring::join(" ", std::vector<xtd::ustring>(args.begin() + 1, args.end())));
+          start_info.arguments(xtd::ustring::join(" ", xtd::collections::specialized::string_collection(args.begin() + 1, args.end())));
           
         append_text(xtd::environment::new_line());
         start_info.use_shell_execute(false);
@@ -103,7 +103,7 @@ private:
     e.handled(true);
   }
   xtd::ustring prompt = xtd::ustring::format("[{}] $ ",  xtd::environment::current_directory());
-  std::vector<xtd::ustring> commands;
+  xtd::collections::specialized::string_collection commands;
 };
 
 using namespace xtd;

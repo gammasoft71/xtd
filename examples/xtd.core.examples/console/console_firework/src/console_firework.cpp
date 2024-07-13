@@ -4,10 +4,9 @@
 #include <xtd/random>
 #include <xtd/startup>
 #include <memory>
-#include <vector>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 namespace console_firework_example {
   class firework abstract_ {
@@ -141,8 +140,8 @@ namespace console_firework_example {
       console::clear();
       
       auto rand = xtd::random {};
-      auto fireworks = list<ptr<firework>> {};
-      auto colors = vector {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
+      auto fireworks = std::list<ptr<firework>> {};
+      auto colors = list {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
       
       while (!console::key_available()) {
         fireworks.push_back(new_ptr<firework_start>(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.size())], rand.next(1, 5)));

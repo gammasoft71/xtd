@@ -4,6 +4,7 @@
 #include <xtd/forms/list_box>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -24,7 +25,7 @@ namespace font_family_example {
       list_box_font_families.bounds({20, 60, 360, 420});
       list_box_font_families.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       
-      std::vector<drawing::font_family> font_families = drawing::font_family::families();
+      list<drawing::font_family> font_families = drawing::font_family::families();
       label_font_famlies_count.text(ustring::format("There are {0} font families :", font_families.size()));
       for (drawing::font_family fontFamily : font_families)
         list_box_font_families.items().push_back(fontFamily.name());

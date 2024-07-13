@@ -2,13 +2,13 @@
 #include <xtd/environment>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::specialized;
 
 namespace startup3_example {
   class program {
   public:
-    static void main(const vector<ustring>& args) {
+    static void main(const string_collection& args) {
       // Write arguments to the console output
       for (auto arg : args)
         console::write_line(arg);

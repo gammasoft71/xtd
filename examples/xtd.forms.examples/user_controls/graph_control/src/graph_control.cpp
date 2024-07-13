@@ -5,6 +5,7 @@
 #include <xtd/startup>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -80,7 +81,7 @@ protected:
   }
   
 private:
-  const std::vector<float> sinuses_ = {.0f, .38f, .71f, .92f, 1.0f, .92f, .71f, .38f, .0f, -.38f, -.71f, -.92f, -1.0f, -.92f, -.71f, -.38f};
+  const list<float> sinuses_ = {.0f, .38f, .71f, .92f, 1.0f, .92f, .71f, .38f, .0f, -.38f, -.71f, -.92f, -1.0f, -.92f, -.71f, -.38f};
   size_t index_ = 0;
 };
 
@@ -93,7 +94,7 @@ protected:
   }
   
 private:
-  const std::vector<float> sinuses_ = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f};
+  const list<float> sinuses_ = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, -1.0f};
   size_t index_ = 0;
 };
 
@@ -240,7 +241,7 @@ protected:
     auto y = as<float>(e.clip_rectangle().height()) / 2;
     auto height = as<float>(e.clip_rectangle().height()) / 2;
     auto step = as<float>(e.clip_rectangle().width()) / (signals_max_size_ -1);
-    auto points = std::vector<point_f> {};
+    auto points = list<point_f> {};
     for (auto value : values_) {
       points.emplace_back(x, y - value * height);
       x += step;
@@ -268,7 +269,7 @@ private:
     if (y_axis_line_visible_) graphics.draw_line(pen {y_axis_line_color, y_axis_line_width_}, rect.left() + rect.width() / 2, rect.top(), rect.left() + rect.width() / 2, rect.top() + rect.height());
   }
   
-  std::vector<float> values_;
+  list<float> values_;
   color signal_trace_color_ = fore_color();
   float signal_trace_width_ = 4.0f;
   std::optional<color> grid_horizontal_line_color_;

@@ -24,8 +24,8 @@ namespace minesweeper {
   /// @remarks the game contains 256 (16 x 16) cells and 40 mines for intermediate level.
   /// @remarks the game contains 480 (30 x 16 cells and 99 mines for expert and custom level.
   class minesweeper_form final : public xtd::forms::form {
-    using column_cell = std::vector<cell>;
-    using row_cell = std::vector<column_cell>;
+    using column_cell = xtd::collections::generic::list<cell>;
+    using row_cell = xtd::collections::generic::list<column_cell>;
     using grid_size = xtd::drawing::size;
     
   public:
