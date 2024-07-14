@@ -5,8 +5,8 @@
 #include <xtd/environment>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::io;
 
 class program {
@@ -90,7 +90,7 @@ private:
   // Creates and saves an Xml file to source_path.
   //
   static void write_file_content(int total_element) {
-    auto lines = vector<ustring> {};
+    auto lines = list<ustring> {};
     lines.push_back("<?xml version=\"1.0\" standalone=\"yes\"?>");
     for (auto index  = 0; index < total_element; ++index)
       lines.push_back(ustring::format("<MyElement Index=\"{0}\">\nMyElement at position {0}.", index));

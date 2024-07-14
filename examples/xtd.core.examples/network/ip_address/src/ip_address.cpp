@@ -5,20 +5,20 @@
 #include <xtd/startup>
 #include <regex>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
 class test_ip_address {
 public:
-  static auto main(const vector<ustring>& args) {
+  static auto main(const list<ustring>& args) {
     auto server = ustring::empty_string;
     
     // Define a regular expression to parse user's input.
     // This is a security check. It allows only
     // alphanumeric input string between 2 to 40 character long.
-    auto rex = regex {R"(^[a-zA-Z]\w{1,39}$)"};
+    auto rex = std::regex {R"(^[a-zA-Z]\w{1,39}$)"};
     
     if (args.size() < 1) {
       // If no server name is passed as an argument to this program, use the current

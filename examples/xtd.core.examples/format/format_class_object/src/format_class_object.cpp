@@ -1,7 +1,8 @@
+#include <xtd/collections/generic/list>
 #include <xtd/ustring>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 class character : public object {
 public:
@@ -17,11 +18,11 @@ private:
   ustring rank_;
 };
 
-using characters = vector<character>;
+using characters = list<character>;
 
 auto main() -> int {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
-    cout << ustring::format("{}", c) << endl;
+    std::cout << ustring::format("{}", c) << std::endl;
 }
 
 // This code produces the following output :

@@ -1,7 +1,8 @@
+#include <xtd/collections/generic/list>
 #include <xtd/ustring>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 class character {
 public:
@@ -13,18 +14,18 @@ public:
   ustring to_string() const noexcept {return name_ + " (" + rank_ + ")";}
   
   // Only this operator is needed for character class to be recognized by ustring::format() without specified formating.
-  friend ostream& operator <<(ostream& os, const character& value) noexcept {return os << value.to_string();}
+  friend std::ostream& operator <<(std::ostream& os, const character& value) noexcept {return os << value.to_string();}
   
 private:
   ustring name_;
   ustring rank_;
 };
 
-using characters = vector<character>;
+using characters = list<character>;
 
 auto main() -> int {
   for (auto c : characters {{"Jean-Luc Picard", "Captain"}, {"William Riker", "Commander"}, {"Data", "Commander"}, {"Beverly Crusher", "Commander"}, {"Geordi La Forge", "Lieutenant Commander"}, {"Worf", "Lieutenant Commander"}, {"Tasha Yar", "Lieutenant"}})
-    cout << ustring::format("{}", c) << endl;
+    std::cout << ustring::format("{}", c) << std::endl;
 }
 
 // This code produces the following output :
