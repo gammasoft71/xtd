@@ -1,8 +1,8 @@
+#include <xtd/collections/generic/list>
 #include <xtd/console>
-#include <vector>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 auto main() -> int {
   // Change current code page to UTF-8.
@@ -10,7 +10,7 @@ auto main() -> int {
   
   // Create a Char array for the modern Cyrillic alphabet, from U+0410 to U+044F.
   constexpr auto nchars = 0x044F - 0x0410 + 1;
-  auto chars = vector<char32_t> {nchars};
+  auto chars = list<char32_t> {nchars};
   auto code_point = U'\U00000410';
   for (auto ctr = 0_z; ctr < chars.size(); ctr++) {
     chars[ctr] = code_point;

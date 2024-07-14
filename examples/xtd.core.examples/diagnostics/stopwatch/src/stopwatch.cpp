@@ -1,9 +1,10 @@
+#include <xtd/collections/generic/list>
 #include <xtd/diagnostics/stopwatch>
 #include <xtd/console>
 #include <limits>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 
 class operations_timer {
@@ -26,7 +27,7 @@ public:
     constexpr auto num_iterations = 10000;
     
     // Define the operation title names.
-    auto operation_names = vector {"Operation: parse<int>(\"0\")", "Operation: try_parse<int>(\"0\")", "Operation: parse<int>(\"a\")", "Operation: try_parse<int>(\"a\")"};
+    auto operation_names = list {"Operation: parse<int>(\"0\")", "Operation: try_parse<int>(\"0\")", "Operation: parse<int>(\"a\")", "Operation: try_parse<int>(\"a\")"};
     
     // Time four different implementations for parsing
     // an integer from a string.
@@ -36,7 +37,7 @@ public:
       auto num_ticks = 0l;
       [[maybe_unused]] auto num_rollovers = 0l;
       auto max_ticks = 0l;
-      auto min_ticks = numeric_limits<long>::max();
+      auto min_ticks = std::numeric_limits<long>::max();
       auto index_fastest = -1;
       auto index_slowest = -1;
       auto milli_sec = 0l;

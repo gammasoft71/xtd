@@ -1,15 +1,14 @@
 #include <xtd/console>
 #include <xtd/date_time>
 #include <xtd/startup>
-#include <vector>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 class program {
 public:
   static auto main() {
-    auto hours = vector {.08333, .16667, .25, .33333, .5, .66667, 1.0, 2.0, 29.0, 30.0, 31.0, 90.0, 365.0};
+    auto hours = list {.08333, .16667, .25, .33333, .5, .66667, 1.0, 2.0, 29.0, 30.0, 31.0, 90.0, 365.0};
     auto date_value = date_time {2009, 3, 1, 12, 0, 0};
     
     for (auto hour : hours)

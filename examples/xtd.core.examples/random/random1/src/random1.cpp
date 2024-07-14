@@ -1,12 +1,12 @@
 #include <xtd/console>
 #include <xtd/random>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 auto main() -> int {
-  auto bytes1 = vector<unsigned char>(100);
-  auto bytes2 = vector<unsigned char>(100);
+  auto bytes1 = list<unsigned char>(100);
+  auto bytes2 = list<unsigned char>(100);
   auto rnd1 = xtd::random {};
   auto rnd2 = xtd::random {};
   

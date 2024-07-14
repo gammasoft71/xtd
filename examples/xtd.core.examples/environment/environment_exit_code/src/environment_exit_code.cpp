@@ -1,9 +1,7 @@
 #include <xtd/console>
 #include <xtd/environment>
 #include <xtd/startup>
-#include <vector>
 
-using namespace std;
 using namespace xtd;
 
 namespace environment_exit_code_example {
@@ -17,7 +15,7 @@ namespace environment_exit_code_example {
       else {
         auto value = 0l;
         if (try_parse(args[1], value))
-          if (value <= numeric_limits<int>::min() || value >= numeric_limits<int>::max())
+          if (value <= std::numeric_limits<int>::min() || value >= std::numeric_limits<int>::max())
             environment::exit_code(ERANGE);
           else
             console::write_line("Result: {0}", value * 2);

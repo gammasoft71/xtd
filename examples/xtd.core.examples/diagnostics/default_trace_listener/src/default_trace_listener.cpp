@@ -3,15 +3,15 @@
 #include <xtd/console>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 
 class binomial {
 public:
   // args(0) is the number of possibilities for binomial coefficients.
   // args(1) is the file specification for the trace log file.
-  static auto main(const vector<ustring>& args) {
+  static auto main(const list<ustring>& args) {
     auto possibilities = .0l;
     auto iter = .0l;
     

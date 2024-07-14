@@ -1,10 +1,12 @@
+#include <xtd/collections/generic/list>
 #include <xtd/console>
 #include <xtd/iobservable>
 #include <xtd/iobserver>
 #include <xtd/system_exception>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
+
 
 struct location {
 public:
@@ -38,7 +40,7 @@ public:
       observers_.erase(iterator);
   }
   
-  void track_location(optional<location> loc) {
+  void track_location(std::optional<location> loc) {
     for (auto observer : observers_) {
       if (!loc.has_value())
         observer->on_error(location_unknown_exception());
@@ -54,7 +56,7 @@ public:
   }
   
 private:
-  vector<iobserver<location>*> observers_;
+  list<iobserver<location>*> observers_;
 };
 
 class location_reporter : iobserver<location> {
@@ -74,7 +76,7 @@ public:
     unsubscribe();
   }
   
-  void on_error(const exception& e) noexcept override {
+  void on_error(const std::exception& e) noexcept override {
     console::write_line("{}: The location cannot be determined.", name());
   }
   
@@ -103,7 +105,7 @@ auto main() -> int {
   provider.track_location(location {47.6456, -122.1312});
   reporter1.unsubscribe();
   provider.track_location(location {47.6677, -122.1199});
-  provider.track_location(nullopt);
+  provider.track_location(std::nullopt);
   provider.end_transmission();
 }
 

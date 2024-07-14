@@ -1,15 +1,15 @@
 #include <xtd/console>
 #include <xtd/random>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 auto main() -> int {
   // Instantiate random number generator using system-supplied value as seed.
   auto rand = xtd::random {};
   
   // Generate and display 5 random byte (integer) values.
-  auto bytes = vector<unsigned char>(5);
+  auto bytes = list<unsigned char>(5);
   rand.next_bytes(bytes);
   
   console::write_line("Five random byte values:");
