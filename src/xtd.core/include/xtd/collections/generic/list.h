@@ -472,7 +472,11 @@ namespace xtd {
         /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
         /// @param other Another base type container to use as data source.
         /// @return This current instance.
-        list& operator =(const list&& other) noexcept = default;
+        list& operator =(const list&& other) noexcept {
+          operation_number_ = std::move(other.operation_number_);
+          items_ = std::move(other.items_);
+          return *this;
+        }
         /// @brief Replaces the contents with those identified by initializer list ilist.
         /// @param items Initializer list to use as data source
         /// @return This current instance.
