@@ -138,7 +138,7 @@ namespace xtd {
         /// @brief Constructs the container with the contents of the specified initializer list, and allocator.
         /// @param items The initializer list to initialize the elements of the container with.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : items_{items_, alloc} {}
+        list(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : items_{items, alloc} {}
         
         /// @brief Move constructor with specified list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
