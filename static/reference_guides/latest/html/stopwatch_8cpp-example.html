@@ -83,12 +83,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Provides a set of methods and properties that you can use to accurately measure elapsed time.">xtd::diagnostics::stopwatch</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stopwatch&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stopwatch&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;limits&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>operations_timer {</div>
@@ -111,7 +112,7 @@ $(function() {
 <div class="line">    <span class="keyword">constexpr</span> <span class="keyword">auto</span> num_iterations = 10000;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Define the operation title names.</span></div>
-<div class="line">    <span class="keyword">auto</span> operation_names = vector {<span class="stringliteral">&quot;Operation: parse&lt;int&gt;(\&quot;0\&quot;)&quot;</span>, <span class="stringliteral">&quot;Operation: try_parse&lt;int&gt;(\&quot;0\&quot;)&quot;</span>, <span class="stringliteral">&quot;Operation: parse&lt;int&gt;(\&quot;a\&quot;)&quot;</span>, <span class="stringliteral">&quot;Operation: try_parse&lt;int&gt;(\&quot;a\&quot;)&quot;</span>};</div>
+<div class="line">    <span class="keyword">auto</span> operation_names = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {<span class="stringliteral">&quot;Operation: parse&lt;int&gt;(\&quot;0\&quot;)&quot;</span>, <span class="stringliteral">&quot;Operation: try_parse&lt;int&gt;(\&quot;0\&quot;)&quot;</span>, <span class="stringliteral">&quot;Operation: parse&lt;int&gt;(\&quot;a\&quot;)&quot;</span>, <span class="stringliteral">&quot;Operation: try_parse&lt;int&gt;(\&quot;a\&quot;)&quot;</span>};</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Time four different implementations for parsing</span></div>
 <div class="line">    <span class="comment">// an integer from a string.</span></div>
@@ -121,7 +122,7 @@ $(function() {
 <div class="line">      <span class="keyword">auto</span> num_ticks = 0l;</div>
 <div class="line">      [[maybe_unused]] <span class="keyword">auto</span> num_rollovers = 0l;</div>
 <div class="line">      <span class="keyword">auto</span> max_ticks = 0l;</div>
-<div class="line">      <span class="keyword">auto</span> min_ticks = numeric_limits&lt;long&gt;::max();</div>
+<div class="line">      <span class="keyword">auto</span> min_ticks = std::numeric_limits&lt;long&gt;::max();</div>
 <div class="line">      <span class="keyword">auto</span> index_fastest = -1;</div>
 <div class="line">      <span class="keyword">auto</span> index_slowest = -1;</div>
 <div class="line">      <span class="keyword">auto</span> milli_sec = 0l;</div>
@@ -134,7 +135,7 @@ $(function() {
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt;= num_iterations; i++) {</div>
 <div class="line">        <span class="keyword">auto</span> ticks_this_time = 0l;</div>
 <div class="line">        <span class="keyword">auto</span> input_num = 0;</div>
-<div class="line">        <span class="keyword">auto</span> time_per_parse = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stopwatch.html">stopwatch</a> {};</div>
+<div class="line">        <span class="keyword">auto</span> time_per_parse = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stopwatch.html">stopwatch</a> {};</div>
 <div class="line">        </div>
 <div class="line">        <span class="keywordflow">switch</span> (operation) {</div>
 <div class="line">          <span class="keywordflow">case</span> 0:</div>
@@ -145,7 +146,7 @@ $(function() {
 <div class="line">            </div>
 <div class="line">            <span class="keywordflow">try</span> {</div>
 <div class="line">              input_num = parse&lt;int&gt;(<span class="stringliteral">&quot;0&quot;</span>);</div>
-<div class="line">            } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
+<div class="line">            } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
 <div class="line">              input_num = 0;</div>
 <div class="line">            }</div>
 <div class="line">            </div>
@@ -284,15 +285,17 @@ $(function() {
 <div class="line"><span class="comment">//   Fastest time:  #20/10000 = 5809 ticks</span></div>
 <div class="line"><span class="comment">//   Average time:  6532 ticks = 6532 nanoseconds</span></div>
 <div class="line"><span class="comment">//   Total time looping through 10000 operations: 6536 milliseconds</span></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:33</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stopwatch.html">xtd::diagnostics::stopwatch</a></div><div class="ttdoc">Provides a set of methods and properties that you can use to accurately measure elapsed time.</div><div class="ttdef"><b>Definition</b> stopwatch.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> system_exception.h:24</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> dictionary.h:15</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2024 19:23:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 15 2024 20:59:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -115,6 +115,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>calculator {</div>
@@ -202,7 +203,7 @@ $(function() {
 <div class="line">      button_decimal.size({60, 50});</div>
 <div class="line">      button_decimal.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
 <div class="line">      </div>
-<div class="line">      vector&lt;xtd::drawing::point&gt; button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};</div>
+<div class="line">      <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list&lt;xtd::drawing::point&gt;</a> button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
 <div class="line">        button_numbers[i].parent(*<span class="keyword">this</span>);</div>
 <div class="line">        button_numbers[i].back_color(drawing::color::from_argb(102, 102, 102));</div>
@@ -214,13 +215,13 @@ $(function() {
 <div class="line">        button_numbers[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">        button_numbers[i].text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, i));</div>
 <div class="line">        button_numbers[i].location(button_number_locations[i]);</div>
-<div class="line">        button_numbers[i].size({60, 50});</div>
+<div class="line">        button_numbers[i].<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a026e87f9ceab793d1046c84aab312132">size</a>({60, 50});</div>
 <div class="line">        button_numbers[i].click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
 <div class="line">      }</div>
 <div class="line">      button_numbers[0].width(121);</div>
 <div class="line">      </div>
-<div class="line">      vector button_operator_texts = {<span class="stringliteral">&quot;÷&quot;</span>, <span class="stringliteral">&quot;x&quot;</span>, <span class="stringliteral">&quot;-&quot;</span>, <span class="stringliteral">&quot;+&quot;</span>, <span class="stringliteral">&quot;=&quot;</span>};</div>
-<div class="line">      vector&lt;xtd::drawing::point&gt; button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list</a> button_operator_texts = {<span class="stringliteral">&quot;÷&quot;</span>, <span class="stringliteral">&quot;x&quot;</span>, <span class="stringliteral">&quot;-&quot;</span>, <span class="stringliteral">&quot;+&quot;</span>, <span class="stringliteral">&quot;=&quot;</span>};</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list&lt;xtd::drawing::point&gt;</a> button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) {</div>
 <div class="line">        button_operators[i].parent(*<span class="keyword">this</span>);</div>
 <div class="line">        button_operators[i].back_color(drawing::color::from_argb(255, 159, 11));</div>
@@ -232,12 +233,12 @@ $(function() {
 <div class="line">        button_operators[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">        button_operators[i].text(button_operator_texts[i]);</div>
 <div class="line">        button_operators[i].location(button_operator_locations[i]);</div>
-<div class="line">        button_operators[i].size({60, 50});</div>
+<div class="line">        button_operators[i].<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a026e87f9ceab793d1046c84aab312132">size</a>({60, 50});</div>
 <div class="line">        button_operators[i].click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_operator_click);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> form_main_key_press(<span class="keywordtype">object</span>&amp; sender, <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1forms_1_1key__press__event__args.html">key_press_event_args</a>&amp; e) {</div>
+<div class="line">    <span class="keywordtype">void</span> form_main_key_press(<span class="keywordtype">object</span>&amp; sender, <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1key__press__event__args.html">key_press_event_args</a>&amp; e) {</div>
 <div class="line">      <span class="keywordflow">if</span> (e.key_char() &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; e.key_char() &lt;= <span class="charliteral">&#39;9&#39;</span>) {</div>
 <div class="line">        button_numbers[e.key_char() - <span class="charliteral">&#39;0&#39;</span>].perform_click();</div>
 <div class="line">        e.handled(<span class="keyword">true</span>);</div>
@@ -259,7 +260,7 @@ $(function() {
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> back_space_key_press(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line">    <span class="keywordtype">void</span> back_space_key_press(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
 <div class="line">      <span class="keywordflow">if</span> (result.text().length() &gt; 0) result.text(as&lt;ustring&gt;(result.text()).remove(result.text().length() - 1));</div>
 <div class="line">      <span class="keywordflow">if</span> (result.text().length() == 0 || result.text() == <span class="stringliteral">&quot;-&quot;</span>) button_clear_click(sender, e);</div>
 <div class="line">    }</div>
@@ -308,8 +309,8 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> result;</div>
-<div class="line">    <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_clear;</div>
+<div class="line">    <a id="_a9" name="_a9"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> result;</div>
+<div class="line">    <a id="_a10" name="_a10"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_clear;</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_plus_minus;</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_percent;</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_decimal;</div>
@@ -321,7 +322,9 @@ $(function() {
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a id="a9" name="a9"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(calculator::form_main::main);</div>
+<div class="line"><a id="a11" name="a11"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(calculator::form_main::main);</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:33</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a026e87f9ceab793d1046c84aab312132"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a026e87f9ceab793d1046c84aab312132">xtd::collections::generic::list::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::...</div><div class="ttdef"><b>Definition</b> list.h:255</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1font__family_html_a8bee18d4466485c306c17adf9e2565ca"><div class="ttname"><a href="classxtd_1_1drawing_1_1font__family.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a></div><div class="ttdeci">static font_family generic_sans_serif() noexcept</div><div class="ttdoc">Gets a generic sans serif font_family.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1font_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a></div><div class="ttdoc">Defines a particular format for text, including font face, size, and style attributes....</div><div class="ttdef"><b>Definition</b> font.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.h:18</div></div>
@@ -337,13 +340,14 @@ $(function() {
 <div class="ttc" id="agroup__xtd__forms_html_ga988a6abd919c15254f45a0bf9c2dcb17"><div class="ttname"><a href="group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17">xtd::forms::auto_size_mode</a></div><div class="ttdeci">auto_size_mode</div><div class="ttdoc">Specifies how a control will behave when its auto_size property is enabled.</div><div class="ttdef"><b>Definition</b> auto_size_mode.h:22</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gae69a2e9fdce97075bf7642aed73e5907"><div class="ttname"><a href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">xtd::forms::form_border_style</a></div><div class="ttdeci">form_border_style</div><div class="ttdoc">Specifies the border styles for a form.</div><div class="ttdef"><b>Definition</b> form_border_style.h:22</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a></div><div class="ttdeci">@ flat</div><div class="ttdoc">The control appears flat.</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.h:12</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2024 19:23:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 15 2024 20:59:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

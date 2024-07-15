@@ -150,8 +150,8 @@ Typedefs</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="array__list_8h.html">xtd.core/include/xtd/collections/array_list.h</a>&gt;</code></p>
 
 <p>Represents a collection of std::any. </p>
-<div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">array_list</a> = std::vector&lt;std::any&gt;</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:32</div></div>
+<div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">array_list</a> = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list&lt;std::any&gt;</a></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:33</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/array_list&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> </dd></dl>
@@ -173,7 +173,7 @@ Typedefs</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Creates and initializes a new vector_list.</span></div>
 <div class="line">  <span class="keyword">auto</span> my_vl = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">array_list</a> {};</div>
-<div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
+<div class="line">  my_vl.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#abce67bd4908af30660def1d72b0f2de0">emplace_back</a>(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;World&quot;</span>);</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;!&quot;</span>);</div>
 <div class="line">  </div>
@@ -191,6 +191,7 @@ Typedefs</h2></td></tr>
 <div class="line"><span class="comment">//     size:    3</span></div>
 <div class="line"><span class="comment">//     Capacity: 4</span></div>
 <div class="line"><span class="comment">//     Values:   Hello   World   !</span></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_abce67bd4908af30660def1d72b0f2de0"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#abce67bd4908af30660def1d72b0f2de0">xtd::collections::generic::list::emplace_back</a></div><div class="ttdeci">reference emplace_back(args_t &amp;&amp;... args)</div><div class="ttdoc">Appends a new element to the end of the container. The element is constructed through std::allocator_...</div><div class="ttdef"><b>Definition</b> list.h:322</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.h:412</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
@@ -215,7 +216,7 @@ Typedefs</h2></td></tr>
 <p><code>#include &lt;<a class="el" href="vector__list_8h.html">xtd.core/include/xtd/collections/vector_list.h</a>&gt;</code></p>
 
 <p>Represents a collection of std::any. </p>
-<div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">vector_list</a> = std::vector&lt;std::any&gt;</div>
+<div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">vector_list</a> = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">array_list</a></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/vector_list&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> </dd></dl>
@@ -237,7 +238,7 @@ Typedefs</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Creates and initializes a new vector_list.</span></div>
 <div class="line">  <span class="keyword">auto</span> my_vl = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">array_list</a> {};</div>
-<div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
+<div class="line">  my_vl.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#abce67bd4908af30660def1d72b0f2de0">emplace_back</a>(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;World&quot;</span>);</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;!&quot;</span>);</div>
 <div class="line">  </div>
@@ -264,7 +265,7 @@ Typedefs</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2024 19:23:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 15 2024 20:59:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
