@@ -443,14 +443,6 @@ namespace xtd {
         /// @param other Another container to use as data source.
         /// @return This current instance.
         list& operator =(const list& other) = default;
-        /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of baste type other.
-        /// @param other Another base type container to use as data source.
-        /// @return This current instance.
-        list& operator =(const base_type& other) {
-          items_ = other;
-          operation_number_ = 0;
-          return *this;
-        }
         /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
         /// @param other Another base type container to use as data source.
         /// @return This current instance.
