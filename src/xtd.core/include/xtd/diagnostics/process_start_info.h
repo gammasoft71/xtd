@@ -5,7 +5,7 @@
 #include <map>
 #include <memory>
 #include <string>
-#include <vector>
+#include "../collections/generic/list.h"
 #include "../core_export.h"
 #include "../object.h"
 #include "../security/secure_string.h"
@@ -831,7 +831,7 @@ namespace xtd {
       /// @return The actions that the system can apply to the file indicated by the xtd::diagnostics::process_start_info::file_name property.
       /// @remarks The xtd::diagnostics::process_start_info::verbs property enables you to determine the verbs that can be used with the file specified by the xtd::diagnostics::process_start_info::file_name property. You can set the xtd::diagnostics::process_start_info::verb property to the value of any verb in the set. Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto".
       /// @remarks When you use the xtd::diagnostics::process_start_info::verbs property, you must include the file name extension when you set the value of the xtd::diagnostics::process_start_info::file_name property. The file name extension determines the set of possible verbs.
-      std::vector<xtd::ustring> verbs() const;
+      xtd::collections::generic::list<xtd::ustring> verbs() const;
       
       /// @brief Gets the window state to use when the process is started.
       /// @return One of the enumeration values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is xtd::diagnostics::process_window_style::normal.

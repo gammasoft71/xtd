@@ -168,17 +168,17 @@ namespace xtd {
       string_dictionary key_values(const xtd::ustring& section) const noexcept;
       
       /// @brief Gets all keys from global section.
-      /// @return The keys vector.
+      /// @return The keys colection.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::keys (const xtd::ustring& section) with xtd::ustring::empty_string paramreter.
       string_collection keys() const noexcept;
       /// @brief Gets all keys from a specified section.
       /// @param section The section to get keys.
-      /// @return The keys vector from the specified section.
+      /// @return The keys collection from the specified section.
       /// @remarks Use xtd::ustring::empty_string paramreter to get keys of the global section.
       string_collection keys(const xtd::ustring& section) const noexcept;
 
       /// @brief Gets all sections.
-      /// @return The sections vector.
+      /// @return The sections colection.
       string_collection sections() const noexcept;
       
       /// @brief Gets the stream of the current instance.

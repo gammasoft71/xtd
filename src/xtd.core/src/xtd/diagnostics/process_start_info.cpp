@@ -1,6 +1,7 @@
 #include "../../../include/xtd/diagnostics/process_start_info.h"
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 using namespace xtd::security;
 
@@ -166,7 +167,7 @@ process_start_info& process_start_info::verb(const ustring& value) noexcept {
   return *this;
 }
 
-std::vector<ustring> process_start_info::verbs() const {
+list<ustring> process_start_info::verbs() const {
   if (file_name_ == "") return {};
   // return native::process:verbs(file_name_);
   return {};

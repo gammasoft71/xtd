@@ -4,6 +4,7 @@
 #pragma once
 
 #include <cstdint>
+#include "../collections/generic/list.h"
 #include "../iequatable.h"
 #include "../object.h"
 #include "../ustring.h"
@@ -198,7 +199,7 @@ namespace xtd {
       
     private:
       friend class stack_trace;
-      static std::vector<stack_frame> get_stack_frames(const xtd::ustring& str, size_t skip_frames, bool need_file_info) noexcept;
+      static xtd::collections::generic::list<stack_frame> get_stack_frames(const xtd::ustring& str, size_t skip_frames, bool need_file_info) noexcept;
       
       xtd::ustring file_name_;
       uint32 file_line_number_ = 0;

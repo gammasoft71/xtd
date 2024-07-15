@@ -70,7 +70,7 @@ namespace xtd {
       ///       console::write_line("Error happened at {}", location);
       ///   }
       ///
-      ///   static auto main(const std::vector<xtd::ustring>& args) {
+      ///   static auto main() {
       ///     //Run the method which writes an error message specifying the location of the error.
       ///     my_method("in Main");
       ///   }

@@ -4,8 +4,8 @@
 #include <xtd/native/stack_trace>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 
 stack_frame::stack_frame() {
@@ -100,7 +100,7 @@ ustring stack_frame::to_string() const noexcept {
   return ustring::format("{} at offset {} in file:line:column {}:{}:{}", method_name_.empty() ? "<unknown method>" : method_name_, offset_ == OFFSET_UNKNOWN || file_name_.empty() ? "<unknown offset>" : std::to_string(offset_), file_name_.empty() ? "<filename unknown>" : file_name_, file_line_number_, file_column_number_);
 }
 
-std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) noexcept {
+list<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_t skip_frames, bool need_file_info) noexcept {
   auto call_stack = native::stack_trace::get_frames(2);
   auto skip_frames_before_str = 0_z;
   if (!str.empty()) {
@@ -114,7 +114,7 @@ std::vector<stack_frame> stack_frame::get_stack_frames(const ustring& str, size_
     }
   }
   
-  auto stack_frames = std::vector<stack_frame> {};
+  auto stack_frames = list<stack_frame> {};
   if (call_stack.size() == 0) return stack_frames;
   for (auto index = skip_frames_before_str + skip_frames; index < call_stack.size(); ++index) {
     auto [file, line, column, function, offset] = call_stack[index];
