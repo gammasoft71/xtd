@@ -1,10 +1,11 @@
+#include <xtd/collections/generic/list>
 #include <xtd/console>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 auto main() -> int {
-  const auto logo = vector {
+  const auto logo = list {
     u8"████████████████████████████████████████████████████████████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████",

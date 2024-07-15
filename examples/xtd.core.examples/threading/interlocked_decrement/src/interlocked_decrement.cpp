@@ -2,7 +2,6 @@
 #include <xtd/threading/thread>
 #include <xtd/console>
 #include <xtd/startup>
-#include <vector>
 
 using namespace xtd;
 using namespace xtd::threading;

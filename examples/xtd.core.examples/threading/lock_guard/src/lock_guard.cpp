@@ -6,8 +6,6 @@
 #include <xtd/literals>
 #include <xtd/random>
 #include <xtd/startup>
-#include <array>
-#include <vector>
 
 using namespace xtd;
 using namespace xtd::collections::generic;
