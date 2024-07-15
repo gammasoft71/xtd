@@ -224,11 +224,32 @@ namespace xtd {
         /// @return Maximum number of elements.
         size_type max_size() const noexcept {return items_.max_size();}
         
-        /// @brief Requests the removal of unused capacity.
-        /// @remarks It is a non-binding request to reduce xtd::collections::generic::list::capacity() to xtd::collections::generic::list::size(). It depends on the implementation whether the request is fulfilled.
-        /// @remarks If reallocation occurs, all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. If no reallocation occurs, no iterators or references are invalidated.
-        void shrink_to_fit() {items_.shrink_to_fit();}
+        /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
+        /// @return Reverse iterator to the first element.
+        /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
+        reverse_iterator rbegin() noexcept {return items_.rbegin();}
+        /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
+        /// @return Reverse iterator to the first element.
+        /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
+        const_reverse_iterator rbegin() const noexcept {return items_.rbegin();}
+        /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
+        /// @return Reverse iterator to the first element.
+        /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
+        const_reverse_iterator crbegin() const noexcept {return items_.crbegin();}
         
+        /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
+        /// @return Reverse iterator to the element following the last element.
+        /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
+        reverse_iterator rend() noexcept {return items_.rend();}
+        /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
+        /// @return Reverse iterator to the element following the last element.
+        /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
+        const_reverse_iterator rend() const noexcept {return items_.rend();}
+        /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
+        /// @return Reverse iterator to the element following the last element.
+        /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
+        const_reverse_iterator crend() const noexcept {return items_.crend();}
+
         /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()).
         /// @return The number of elements in the container.
         size_type size() const noexcept {return items_.size();}
@@ -427,7 +448,12 @@ namespace xtd {
           ++operation_number_;
           items_.resize(count, value);
         }
-        
+
+        /// @brief Requests the removal of unused capacity.
+        /// @remarks It is a non-binding request to reduce xtd::collections::generic::list::capacity() to xtd::collections::generic::list::size(). It depends on the implementation whether the request is fulfilled.
+        /// @remarks If reallocation occurs, all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. If no reallocation occurs, no iterators or references are invalidated.
+        void shrink_to_fit() {items_.shrink_to_fit();}
+
         ustring to_string() const noexcept override {return ustring::format("{}", items_);}
         
         void swap(list& other) noexcept {
