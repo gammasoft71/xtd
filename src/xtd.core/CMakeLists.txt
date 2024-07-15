@@ -476,6 +476,8 @@ add_sources(
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
   include/xtd/collections/vector_list
+  include/xtd/collections/generic/dictionary.h
+  include/xtd/collections/generic/dictionary
   include/xtd/collections/generic/hash_set.h
   include/xtd/collections/generic/hash_set
   include/xtd/collections/generic/key_value_pair.h

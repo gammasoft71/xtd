@@ -7,6 +7,7 @@
 #include "collections/any_pair.h"
 #include "collections/array_list.h"
 #include "collections/key_not_found_exception.h"
+#include "collections/generic/dictionary.h"
 #include "collections/generic/hash_set.h"
 #include "collections/generic/list.h"
 #include "collections/generic/key_value_pair.h"
