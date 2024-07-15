@@ -1,14 +1,15 @@
+#include <xtd/collections/generic/list>
 #include <xtd/background_color>
 #include <xtd/console>
+#include <xtd/environment>
 #include <xtd/foreground_color>
 #include <xtd/reset_color>
-#include <vector>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 auto main() -> int {
-  const auto logo = vector {
+  const auto logo = list {
     u8"████████████████████████████████████████████████████████████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████",
@@ -46,11 +47,11 @@ auto main() -> int {
   console::output_code_page(65001);
   
   for (auto index = 0ul; index < logo.size(); ++index)
-    console::out << (index == 0 || index == logo.size() - 1 ? "       " : "     ") << background_color(console_color::white) << foreground_color(console_color::dark_blue) << logo[index] << reset_color() << endl;
+    console::out << (index == 0 || index == logo.size() - 1 ? "       " : "     ") << background_color(console_color::white) << foreground_color(console_color::dark_blue) << logo[index] << reset_color() << environment::new_line;
     
-  console::out << foreground_color(console_color::dark_blue) << u8"                                    Gammasoft                                   " << endl;
-  console::out << foreground_color(console_color::dark_gray) << u8" More than thirty years of passion for high technology especially in development" << endl;
-  console::out << u8" (c++, c#, objective-c, ...)." << reset_color() << endl;
+  console::out << foreground_color(console_color::dark_blue) << u8"                                    Gammasoft                                   " << environment::new_line;
+  console::out << foreground_color(console_color::dark_gray) << u8" More than thirty years of passion for high technology especially in development" << environment::new_line;
+  console::out << u8" (c++, c#, objective-c, ...)." << reset_color() << environment::new_line;
 }
 
 // This code produces the following output with colors:

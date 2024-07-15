@@ -1,12 +1,14 @@
+#include <xtd/collections/generic/list>
 #include <xtd/background_color>
 #include <xtd/foreground_color>
 #include <xtd/reset_color>
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::collections;
 
 auto main() -> int {
-  const auto logo = vector {
+  const auto logo = generic::list {
     u8"████████████████████████████████████████████████████████████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████",
