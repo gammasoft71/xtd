@@ -83,13 +83,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1beep.html" title="Represent beep output manipulator class.">xtd::beep</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/beep&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Define the frequencies of notes in an octave, as well as</span></div>
 <div class="line"><span class="comment">// silence (rest).</span></div>
@@ -141,18 +142,18 @@ $(function() {
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Play the notes in a song.</span></div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> vector&lt;note&gt;&amp; tune) {</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;note&gt;</a>&amp; tune) {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : tune) {</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone() == tone::rest)</div>
 <div class="line">      threading::thread::sleep(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      cout &lt;&lt; beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
+<div class="line">      std::cout &lt;&lt; beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Declare the first few notes of the song, &quot;Mary Had A Little Lamb&quot;.</span></div>
-<div class="line">  vector mary = {</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> mary = {</div>
 <div class="line">    note(tone::b, duration::quarter),</div>
 <div class="line">    note(tone::a, duration::quarter),</div>
 <div class="line">    note(tone::g_below_c, duration::quarter),</div>
@@ -170,15 +171,17 @@ $(function() {
 <div class="line">  <span class="comment">// Play the song</span></div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(mary);</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:33</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">xtd::console_key::n</a></div><div class="ttdeci">@ n</div><div class="ttdoc">The N key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">xtd::console_key::play</a></div><div class="ttdeci">@ play</div><div class="ttdoc">The Play key.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga3aba202fc852006258f3a8da4f7bd0d1a07cc694b9b3fc636710fa08b6922c42b"><div class="ttname"><a href="group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a07cc694b9b3fc636710fa08b6922c42b">xtd::forms::date_time_picker_format::time</a></div><div class="ttdeci">@ time</div><div class="ttdoc">The date_time_picker control displays the date/time value in the time format set by the user's operat...</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> dictionary.h:15</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2024 00:09:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 15 2024 21:01:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

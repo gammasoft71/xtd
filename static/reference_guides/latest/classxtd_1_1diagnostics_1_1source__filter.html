@@ -114,7 +114,7 @@ Inheritance diagram for xtd::diagnostics::source_filter:</div>
 <dd>
 This class filters events based on a specific trace source set by the user. </dd>
 <dd>
-<a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html" title="Indicates whether a listener should trace a message based on the source of a trace.">xtd::diagnostics::source_filter</a> overrides the <a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#a13ef467a4576cd42cca6ff5f5073e1ec" title="Determines whether the trace listener should trace the event.">xtd::diagnostics::source_filter::should_trace</a> method and defines a <a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#abc4fd063b5426553cb99de16e1c5d463" title="Gets the name of the trace source.">xtd::diagnostics::source_filter::source</a> property that specifies the name of the trace source to be traced by the listener. </dd></dl>
+<a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html" title="Indicates whether a listener should trace a message based on the source of a trace.">xtd::diagnostics::source_filter</a> overrides the <a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#a55f1a8e7324f9953615db0ec9cf9a842" title="Determines whether the trace listener should trace the event.">xtd::diagnostics::source_filter::should_trace</a> method and defines a <a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#abc4fd063b5426553cb99de16e1c5d463" title="Gets the name of the trace source.">xtd::diagnostics::source_filter::source</a> property that specifies the name of the trace source to be traced by the listener. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This filter is provided because multiple trace sources can simultaneously use the same trace listener. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
@@ -131,9 +131,9 @@ This class filters events based on a specific trace source set by the user. </dd
 <tr class="separator:ae69f63f18cd9ab630aa2b1945ad41991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a13ef467a4576cd42cca6ff5f5073e1ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#a13ef467a4576cd42cca6ff5f5073e1ec">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#abc4fd063b5426553cb99de16e1c5d463">source</a>, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> id, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, std::any data1, const std::vector&lt; std::any &gt; &amp;data_array) noexcept override</td></tr>
-<tr class="memdesc:a13ef467a4576cd42cca6ff5f5073e1ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the trace listener should trace the event.  <br /></td></tr>
-<tr class="separator:a13ef467a4576cd42cca6ff5f5073e1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f1a8e7324f9953615db0ec9cf9a842"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#a55f1a8e7324f9953615db0ec9cf9a842">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1source__filter.html#abc4fd063b5426553cb99de16e1c5d463">source</a>, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> id, const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;message, std::any data1, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; std::any &gt; &amp;data_array) noexcept override</td></tr>
+<tr class="memdesc:a55f1a8e7324f9953615db0ec9cf9a842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the trace listener should trace the event.  <br /></td></tr>
+<tr class="separator:a55f1a8e7324f9953615db0ec9cf9a842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -218,8 +218,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a13ef467a4576cd42cca6ff5f5073e1ec" name="a13ef467a4576cd42cca6ff5f5073e1ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13ef467a4576cd42cca6ff5f5073e1ec">&#9670;&#160;</a></span>should_trace()</h2>
+<a id="a55f1a8e7324f9953615db0ec9cf9a842" name="a55f1a8e7324f9953615db0ec9cf9a842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55f1a8e7324f9953615db0ec9cf9a842">&#9670;&#160;</a></span>should_trace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +266,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; std::any &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; std::any &gt; &amp;&#160;</td>
           <td class="paramname"><em>data_array</em>&#160;</td>
         </tr>
         <tr>
@@ -296,7 +296,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html#a9eff01a35ecf308bdcc4d34784df3067">xtd::diagnostics::trace_filter</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html#ad409db8f326f211ae237670e9a6f34d7">xtd::diagnostics::trace_filter</a>.</p>
 
 </div>
 </div>
@@ -369,7 +369,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2024 00:09:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 15 2024 21:01:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
