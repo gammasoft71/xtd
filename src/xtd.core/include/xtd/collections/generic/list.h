@@ -446,12 +446,11 @@ namespace xtd {
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of baste type other.
         /// @param other Another base type container to use as data source.
         /// @return This current instance.
-        /*
         list& operator =(const base_type& other) {
           items_ = other;
           operation_number_ = 0;
           return *this;
-        }*/
+        }
         /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
         /// @param other Another base type container to use as data source.
         /// @return This current instance.
@@ -474,6 +473,13 @@ namespace xtd {
         /// @return Reference to the requested element.
         ///@remarks  No bounds checking is performed.
         const_reference operator [](size_type pos) const {return items_[pos];}
+        
+        /// @brief Returns a reference to the underlying base type.
+        /// @return Reference to the underlyong base type.
+        operator base_type&() noexcept {return items_;}
+        /// @brief Returns a reference to the underlying base type.
+        /// @return Reference to the underlyong base type.
+        operator const base_type&() const noexcept {return items_;}
         /// @}
         
       private:
