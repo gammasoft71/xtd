@@ -11,6 +11,7 @@
 #include "collections/generic/hash_set.h"
 #include "collections/generic/list.h"
 #include "collections/generic/key_value_pair.h"
+#include "collections/generic/sorted_dictionary.h"
 #include "collections/generic/sorted_set.h"
 #include "collections/generic/helpers/allocator.h"
 #include "collections/generic/helpers/comparer.h"
