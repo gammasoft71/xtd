@@ -91,7 +91,7 @@ namespace xtd {
       /// @cond
       thread();
       template <typename start_t>
-      thread(start_t start) : thread(parameterized_thread_start {start}) {}
+      explicit thread(start_t start) : thread(parameterized_thread_start {start}) {}
       template <typename start_t>
       thread(start_t start, int32 max_stack_size) : thread(parameterized_thread_start {start}, max_stack_size) {}
       thread(thread&&) = default;
