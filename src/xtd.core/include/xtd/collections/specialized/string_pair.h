@@ -21,7 +21,8 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-    /// #include <xtd/collections/specialized/string_pair> ```
+      /// #include <xtd/collections/specialized/string_pair>
+      /// ```
       /// @par Namespace
       /// xtd::collections
       /// @par Library
