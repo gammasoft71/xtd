@@ -1,21 +1,21 @@
 #include <xtd/xtd.tunit>
 
-using namespace std;
+using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   // The class test must be declared with test_class_ helper.
   class test_class_(test) {
     void test_method_(test_case1) {
-      collection_assume::is_empty(vector<int> {});
+      collection_assume::is_empty(list<int> {});
     }
     
     void test_method_(test_case2) {
-      collection_assume::is_empty(vector {1, 2, 3});
+      collection_assume::is_empty(list {1, 2, 3});
     }
     
     void test_method_(test_case3) {
-      collection_assume::is_ordered(vector {1, 3, 2});
+      collection_assume::is_ordered(list {1, 3, 2});
     }
   };
 }

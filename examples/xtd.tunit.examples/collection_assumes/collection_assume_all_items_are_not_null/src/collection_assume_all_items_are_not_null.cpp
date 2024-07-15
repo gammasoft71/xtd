@@ -1,6 +1,6 @@
 #include <xtd/xtd.tunit>
 
-using namespace std;
+using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
 namespace unit_tests {
@@ -8,14 +8,14 @@ namespace unit_tests {
     void test_method_(test_case_succeed) {
       auto i1 = 1;
       auto i2 = 2;
-      auto a = vector {&i1, &i2};
+      auto a = list {&i1, &i2};
       collection_assume::all_items_are_not_null(a);
     }
     
     void test_method_(test_case_aborted) {
       auto i1 = 1;
       auto i2 = 2;
-      auto a = vector<int*> {&i1, &i2, nullptr};
+      auto a = list<int*> {&i1, &i2, nullptr};
       collection_assume::all_items_are_not_null(a);
     }
   };
