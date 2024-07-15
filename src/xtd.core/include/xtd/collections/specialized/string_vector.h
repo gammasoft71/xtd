@@ -17,7 +17,7 @@ namespace xtd {
     namespace specialized {
       /// @brief Represents a collection of strings.
       /// ```cpp
-      /// using string_vector = std::vector<xtd::ustring>
+      /// using string_vector = string_collection
       /// ```
       /// @par Header
       /// ```cpp

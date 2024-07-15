@@ -11,7 +11,7 @@ namespace xtd {
   namespace collections {
     /// @brief Represents a collection of std::any.
     /// ```cpp
-    /// using array_list = std::vector<std::any>
+    /// using array_list = xtd::collections::generic::list<std::any>
     /// ```
     /// @par Header
     /// ```cpp
