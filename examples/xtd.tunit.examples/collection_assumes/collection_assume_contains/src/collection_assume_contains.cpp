@@ -1,17 +1,17 @@
 #include <xtd/xtd.tunit>
 
-using namespace std;
+using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
-      auto a = vector {1, 2, 3, 4};
+      auto a = list {1, 2, 3, 4};
       collection_assume::contains({1, 2}, a);
     }
     
     void test_method_(test_case_aborted) {
-      auto a = vector {1, 2, 3, 4};
+      auto a = list {1, 2, 3, 4};
       collection_assume::contains({1, 2, 6}, a);
     }
   };

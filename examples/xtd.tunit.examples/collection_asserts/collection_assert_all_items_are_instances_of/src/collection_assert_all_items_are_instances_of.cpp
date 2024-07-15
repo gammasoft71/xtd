@@ -1,17 +1,18 @@
 #include <xtd/xtd.tunit>
 
 using namespace std;
+using namespace xtd::collections;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
-      auto a = vector<ios_base*> {&cout, &cerr, &cin};
+      auto a = generic::list<ios_base*> {&cout, &cerr, &cin};
       collection_assert::all_items_are_instances_of<ios_base*>(a);
     }
     
     void test_method_(test_case_failed) {
-      auto a = vector<ios_base*> {&cout, &cerr, &cin};
+      auto a = generic::list<ios_base*> {&cout, &cerr, &cin};
       collection_assert::all_items_are_instances_of<basic_ostream<char>*>(a);
     }
   };

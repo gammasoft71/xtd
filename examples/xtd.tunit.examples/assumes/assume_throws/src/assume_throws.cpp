@@ -1,19 +1,18 @@
 #include <xtd/xtd.tunit>
-#include <vector>
 
-using namespace std;
+using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
-      auto v = vector {1, 2, 3, 4};
-      assume::throws<std::out_of_range>([&] {return v.at(5);});
+      auto l = list {1, 2, 3, 4};
+      assume::throws<std::out_of_range>([&] {l.at(5);});
     }
     
     void test_method_(test_case_aborted) {
-      auto v = vector {1, 2, 3, 4};
-      assume::throws<std::out_of_range>([&] {return v.at(2);});
+      auto l = list {1, 2, 3, 4};
+      assume::throws<std::out_of_range>([&] {l.at(2);});
     }
   };
 }
