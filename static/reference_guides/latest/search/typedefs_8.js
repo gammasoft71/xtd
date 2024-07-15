@@ -11,5 +11,6 @@ var searchData=
   ['int64_5fobject_8',['int64_object',['../group__types.html#gaba73256a6bc8ec54133bb544c7a40d4a',1,'xtd']]],
   ['intptr_9',['intptr',['../group__types.html#gaa7283e1dd31c385d954467f7ea324451',1,'xtd']]],
   ['intptr_5fobject_10',['intptr_object',['../group__types.html#ga80e43cf0f75b3bd8374de9e634c036fe',1,'xtd']]],
-  ['item_5fcheck_5fevent_5fhandler_11',['item_check_event_handler',['../group__events.html#gaf978ac3dcd773547450c4536f6ee40c9',1,'xtd::forms']]]
+  ['item_5fcheck_5fevent_5fhandler_11',['item_check_event_handler',['../group__events.html#gaf978ac3dcd773547450c4536f6ee40c9',1,'xtd::forms']]],
+  ['iterator_12',['iterator',['../classxtd_1_1collections_1_1generic_1_1list.html#ae39fd00c2f363da57190c4cd2d900b5e',1,'xtd::collections::generic::list']]]
 ];

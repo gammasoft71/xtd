@@ -83,25 +83,26 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31" title="Represents a xtd::delegate that has variable parameters and does not return a value.">xtd::action</a> alias.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/action&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/action&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> names = vector {<span class="stringliteral">&quot;Bruce&quot;</span>, <span class="stringliteral">&quot;Alfred&quot;</span>, <span class="stringliteral">&quot;Tim&quot;</span>, <span class="stringliteral">&quot;Richard&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> names = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {<span class="stringliteral">&quot;Bruce&quot;</span>, <span class="stringliteral">&quot;Alfred&quot;</span>, <span class="stringliteral">&quot;Tim&quot;</span>, <span class="stringliteral">&quot;Richard&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> print = <a class="code hl_typedef" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action&lt;const ustring&amp;&gt;</a> {[](<span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> &amp; value) {</div>
+<div class="line">  <span class="keyword">auto</span> print = <a class="code hl_typedef" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action&lt;const ustring&amp;&gt;</a> {[](<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> &amp; value) {</div>
 <div class="line">    console::write_line(value);</div>
 <div class="line">  }};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Display the contents of the list using the print delegate.</span></div>
-<div class="line">  for_each(names.begin(), names.end(), print);</div>
+<div class="line">  std::for_each(names.begin(), names.end(), print);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// The following demonstrates the lambda of c++ to display the contents of the list to the console.</span></div>
-<div class="line">  for_each(names.begin(), names.end(), [](<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> &amp; value) {</div>
+<div class="line">  std::for_each(names.begin(), names.end(), [](<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> &amp; value) {</div>
 <div class="line">    console::write_line(value);</div>
 <div class="line">  });</div>
 <div class="line">}</div>
@@ -116,14 +117,16 @@ $(function() {
 <div class="line"><span class="comment">// Alfred</span></div>
 <div class="line"><span class="comment">// Tim</span></div>
 <div class="line"><span class="comment">// Richard</span></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:33</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga53c721aac682a7ccf19ee17d92280e31"><div class="ttname"><a href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">xtd::action</a></div><div class="ttdeci">delegate&lt; void(arguments_t...)&gt; action</div><div class="ttdoc">Represents a xtd::delegate that has variable parameters and does not return a value.</div><div class="ttdef"><b>Definition</b> action.h:20</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> dictionary.h:15</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2024 00:09:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 15 2024 21:01:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
