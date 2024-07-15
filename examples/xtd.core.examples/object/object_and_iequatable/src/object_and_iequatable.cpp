@@ -10,7 +10,7 @@ public:
   const ustring& name() const noexcept {return name_;}
   
   // Overriding the equals method from object
-  bool equals(const object& other) const noexcept override {return is<user>(other) ? equals(as<user>(other)) : object::equals(other);}
+  bool equals(const object& other) const noexcept override {return is<user>(other) && equals(as<user>(other));}
   
   // Implementing the equals method from iequatable<type_t>
   bool equals(const user& other) const noexcept override {return id_ == other.id_ && name_ == other.name_;}
