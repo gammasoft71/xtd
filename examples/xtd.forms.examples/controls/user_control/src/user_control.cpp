@@ -3,10 +3,9 @@
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/forms/user_control>
-#include <vector>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -98,7 +97,7 @@ namespace user_control_example {
       }
     }
     
-    vector<operation> operations {5};
+    list<operation> operations {5};
   };
 }
 

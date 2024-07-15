@@ -4,8 +4,8 @@
 #include <xtd/forms/nine_segment_display>
 #include <xtd/forms/timer>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -34,7 +34,7 @@ public:
   
 private:
   int counter = 0;
-  vector<segments> chase = {
+  list<segments> chase = {
     segments::none,
     segments::a,
     segments::a | segments::b,
@@ -48,7 +48,7 @@ private:
     segments::dp,
     segments::pc
   };
-  vector<segment_style> segment_styles = {
+  list<segment_style> segment_styles = {
     segment_style::standard,
     segment_style::modern,
     segment_style::mixed,
