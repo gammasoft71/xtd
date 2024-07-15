@@ -9,8 +9,8 @@
 #include <xtd/forms/panel>
 #include <xtd/forms/track_bar>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -147,7 +147,7 @@ namespace painting_example {
     bitmap picture {32, 32};
     
     panel panel_colors_container;
-    vector<ptr<panel>> panel_colors;
+    list<ptr<panel>> panel_colors;
     button button_clear;
     button button_open;
     panel panel_main;

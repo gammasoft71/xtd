@@ -7,6 +7,7 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::collections;
 using namespace xtd::forms;
 
 namespace calculator {
@@ -94,7 +95,7 @@ namespace calculator {
       button_decimal.size({60, 50});
       button_decimal.click += event_handler(*this, &form_main::button_number_click);
       
-      vector<xtd::drawing::point> button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};
+      generic::list<xtd::drawing::point> button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};
       for (int i = 0; i < 10; i++) {
         button_numbers[i].parent(*this);
         button_numbers[i].back_color(drawing::color::from_argb(102, 102, 102));
@@ -111,8 +112,8 @@ namespace calculator {
       }
       button_numbers[0].width(121);
       
-      vector button_operator_texts = {"÷", "x", "-", "+", "="};
-      vector<xtd::drawing::point> button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};
+      generic::list button_operator_texts = {"÷", "x", "-", "+", "="};
+      generic::list<xtd::drawing::point> button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};
       for (int i = 0; i < 5; i++) {
         button_operators[i].parent(*this);
         button_operators[i].back_color(drawing::color::from_argb(255, 159, 11));

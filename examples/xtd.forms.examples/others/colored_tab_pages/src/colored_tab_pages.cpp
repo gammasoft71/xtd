@@ -6,8 +6,8 @@
 #include <xtd/forms/tab_page>
 #include <xtd/cdebug>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -43,7 +43,7 @@ private:
   
   image_list color_image_list;
   tab_control colored_tab_control;
-  vector<ptr<tab_page>> colored_tab_pages;
+  list<ptr<tab_page>> colored_tab_pages;
 };
 
 auto main() -> int {

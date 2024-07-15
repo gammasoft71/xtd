@@ -4,8 +4,8 @@
 #include <xtd/forms/vertical_layout_panel>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::forms;
 
 namespace example {
@@ -94,7 +94,7 @@ namespace example {
     button button_modal;
     button button_sheet;
     button button_sheet_modal;
-    vector<ptr<form>> dialogs;
+    list<ptr<form>> dialogs;
   };
 }
 

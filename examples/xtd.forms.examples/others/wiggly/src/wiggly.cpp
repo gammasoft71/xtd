@@ -5,8 +5,8 @@
 #include <xtd/forms/timer>
 #include <xtd/forms/user_control>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -16,16 +16,16 @@ namespace wiggly_example {
     wiggly() {
       back_color(system_colors::window());
       font({font(), font().size() + 12});
-      timer.interval(60ms);
+      timer.interval(60_ms);
       timer.tick += event_handler(*this, &wiggly::on_timer_tick);
       timer.enabled(true);
     }
     
   protected:
     void on_paint(paint_event_args& e) override {
-      static const auto sins = vector {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
+      static const auto sins = list {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
       auto pos = point {(e.clip_rectangle().size().width() - as<int>(e.graphics().measure_string(text(), font()).width())) / 2, (e.clip_rectangle().size().height() - as<int>(e.graphics().measure_string(text(), font()).height())) / 2};
-      auto wiggly_text = as<u32string>(text());
+      auto wiggly_text = as<std::u32string>(text());
       for (auto i = 0_z; i < wiggly_text.length(); i++) {
         auto index = (step + i) % sins.size();
         e.graphics().draw_string(ustring::format("{}", wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));

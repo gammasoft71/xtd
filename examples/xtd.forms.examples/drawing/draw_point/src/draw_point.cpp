@@ -3,8 +3,8 @@
 #include <xtd/forms/form>
 #include <xtd/random>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -43,7 +43,7 @@ namespace draw_point_example {
       invalidate();
     }
     
-    vector<colored_point> colored_points;
+    list<colored_point> colored_points;
     timer generate_colored_points_timer;
   };
 }

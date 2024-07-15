@@ -1,8 +1,8 @@
 #include "board_control.h"
 
-using namespace std;
 using namespace tetris;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
@@ -51,9 +51,9 @@ void board_control::clear_board() {
 }
 
 void board_control::draw_square(graphics& graphics, int x, int y, tetris::tetrominoes tetrominoes) {
-  static const auto colors = vector<color> {color::from_argb(0, 0, 0), color::from_argb(204, 102, 102), color::from_argb(102, 204, 102), color::from_argb(102, 102, 204), color::from_argb(204, 204, 102), color::from_argb(204, 102, 204), color::from_argb(102, 204, 204), color::from_argb(218, 170, 0)};
-  static const auto lights = vector<color> {color::from_argb(0, 0, 0), color::from_argb(248, 159, 171), color::from_argb(121, 252, 121), color::from_argb(121, 121, 252), color::from_argb(252, 252, 121), color::from_argb(252, 121, 252), color::from_argb(121, 252, 252), color::from_argb(252, 198, 0)};
-  static const auto darks = vector<color> {color::from_argb(0, 0, 0), color::from_argb(128, 59, 59), color::from_argb(59, 128, 59), color::from_argb(59, 59, 128), color::from_argb(128, 128, 59), color::from_argb(128, 59, 128), color::from_argb(59, 128, 128), color::from_argb(128, 98, 0)};
+  static const auto colors = list<color> {color::from_argb(0, 0, 0), color::from_argb(204, 102, 102), color::from_argb(102, 204, 102), color::from_argb(102, 102, 204), color::from_argb(204, 204, 102), color::from_argb(204, 102, 204), color::from_argb(102, 204, 204), color::from_argb(218, 170, 0)};
+  static const auto lights = list<color> {color::from_argb(0, 0, 0), color::from_argb(248, 159, 171), color::from_argb(121, 252, 121), color::from_argb(121, 121, 252), color::from_argb(252, 252, 121), color::from_argb(252, 121, 252), color::from_argb(121, 252, 252), color::from_argb(252, 198, 0)};
+  static const auto darks = list<color> {color::from_argb(0, 0, 0), color::from_argb(128, 59, 59), color::from_argb(59, 128, 59), color::from_argb(59, 59, 128), color::from_argb(128, 128, 59), color::from_argb(128, 59, 128), color::from_argb(59, 128, 128), color::from_argb(128, 98, 0)};
   
   auto pen = drawing::pen {lights[as<int>(tetrominoes)]};
   pen.start_cap(line_cap::square);
