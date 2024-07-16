@@ -40,6 +40,10 @@
 #define __XTD_CORE_INTERNAL__
 #include "internal/__as_string.h"
 #undef __XTD_CORE_INTERNAL__
+#include "any_object.h"
+#define __XTD_CORE_INTERNAL__
+#include "internal/__as_any_object.h"
+#undef __XTD_CORE_INTERNAL__
 
 /// @cond
 template<typename new_type_t, typename current_type_t>
