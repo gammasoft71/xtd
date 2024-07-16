@@ -110,8 +110,11 @@ namespace xtd {
     }
     
     xtd::ustring to_string() const noexcept override {
-      if (std::is_integral<type_t>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::object, type_t>::value)
-        return xtd::ustring::format("{}", value_);
+      if (std::is_integral<type_t>::value) return xtd::ustring::format("{}", value_);
+      if (std::is_floating_point<type_t>::value) return xtd::ustring::format("{}", value_);
+      if (std::is_enum<type>::value) return xtd::ustring::format("{}", value_);
+      if (std::is_pointer<type>::value) return xtd::ustring::format("{}", value_);
+      if (std::is_base_of<xtd::object, type_t>::value) return xtd::ustring::format("{}", value_);
       return typeof_<type_t>().full_name();
     }
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
