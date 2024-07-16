@@ -6,6 +6,7 @@
 #include "../../include/xtd/convert_string.h"
 #include "../../include/xtd/format_exception.h"
 #include "../../include/xtd/hash_code.h"
+#include "../../include/xtd/is.h"
 #include "../../include/xtd/null_pointer_exception.h"
 //#include "../../include/xtd/collections/generic/hasher.h"
 #include "../../include/xtd/diagnostics/stack_frame.h"
@@ -712,6 +713,10 @@ bool ustring::contains(char8 value) const noexcept {
 
 bool ustring::contains(const ustring& value) const noexcept {
   return find(value) != npos;
+}
+
+bool ustring::equals(const object& obj) const noexcept {
+  return is<ustring>(obj) && equals(static_cast<const ustring&>(obj));
 }
 
 bool ustring::equals(const ustring& other) const noexcept {

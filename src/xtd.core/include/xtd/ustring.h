@@ -478,7 +478,7 @@ namespace xtd {
     /// @return true if the value parameter occurs within this string, or if value is the empty string (""); otherwise, false.
     bool contains(const ustring& value) const noexcept;
 
-    using object::equals;
+    bool equals(const object& obj) const noexcept override;
     bool equals(const ustring& tzi) const noexcept;
     
     /// @brief Determines whether the end of this string matches the specified character.
