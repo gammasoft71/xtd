@@ -324,6 +324,8 @@ namespace xtd {
           return items_.emplace_back(std::forward<args_t>(args)...);
         }
         
+        //bool equals(const object& other) const noexcept override {return dynamic_cast<const list*>(&other) && static_cast<const list&>(other).items_ == items_ &&  static_cast<const list&>(other).operation_number_ == operation_number_;}
+        
         /// @brief Erases the specified elements from the container.
         /// @param pos The iterator to the element to remove.
         /// @return Iterator following the last removed element.
@@ -352,6 +354,13 @@ namespace xtd {
         /// @return The associated allocator.
         allocator_type get_allocator() const {return items_.get_allocator();}
         
+        /// @brief Returns the underlying base type.
+        /// @return The underlying base type.
+        base_type& get_base_type() noexcept {return items_;}
+        /// @brief Returns the underlying base type.
+        /// @return The underlying base type.
+        const base_type& get_base_type() const noexcept {return items_;}
+
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
         /// @param value The element value to insert.
@@ -454,12 +463,14 @@ namespace xtd {
         /// @remarks If reallocation occurs, all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. If no reallocation occurs, no iterators or references are invalidated.
         void shrink_to_fit() {items_.shrink_to_fit();}
 
-        ustring to_string() const noexcept override {return ustring::format("{}", items_);}
-        
+        /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
+        /// @remarks All iterators and references remain valid. The xtd::collections::generic::list::end() iterator is invalidated.
         void swap(list& other) noexcept {
           ++operation_number_;
           items_.swap(other.items_);
         }
+
+        ustring to_string() const noexcept override {return ustring::format("{}", items_);}
         /// @}
         
         /// @name Public Operators
