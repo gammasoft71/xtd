@@ -95,7 +95,7 @@ $(function() {
 <div class="line">  <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; name() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> name_;}</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Overriding the equals method from object</span></div>
-<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;user&gt;(other) ? equals(as&lt;user&gt;(other)) : object::equals(other);}</div>
+<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;user&gt;(other) &amp;&amp; equals(as&lt;user&gt;(other));}</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Implementing the equals method from iequatable&lt;type_t&gt;</span></div>
 <div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> user&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> id_ == other.id_ &amp;&amp; name_ == other.name_;}</div>
@@ -161,7 +161,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 15 2024 21:01:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 17 2024 00:48:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

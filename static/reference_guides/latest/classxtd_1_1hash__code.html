@@ -116,7 +116,7 @@ Inheritance diagram for xtd::hash_code:</div>
 <div class="line">  <span class="keywordtype">int</span> order_id() const noexcept {<span class="keywordflow">return</span> order_id_;}</div>
 <div class="line">  <span class="keywordtype">int</span> order_line_id() const noexcept {<span class="keywordflow">return</span> order_line_id_;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; obj) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;order_order_line&gt;(obj) ? equals(as&lt;order_order_line&gt;(obj)) : <a class="code hl_class" href="classxtd_1_1object.html">object</a>::equals(obj);}</div>
+<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; obj) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;order_order_line&gt;(obj) &amp;&amp; equals(as&lt;order_order_line&gt;(obj));}</div>
 <div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> order_order_line&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> order_id_ == <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.order_id_ &amp;&amp; order_line_id_ == <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.order_line_id_;}</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> get_hash_code() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> hash_code::combine(order_id_, order_line_id_);}</div>
@@ -441,7 +441,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 15 2024 21:01:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 17 2024 00:48:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

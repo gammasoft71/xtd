@@ -127,11 +127,16 @@ $(function() {
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="____as__string_8h.html">internal/__as_string.h</a>&quot;</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t, <span class="keyword">typename</span> current_type_t&gt;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>new_type_t* __convert_value__(current_type_t* value) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">return</span> xtd::as&lt;new_type_t&gt;(value);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;<a class="code" href="any__object_8h.html">any_object.h</a>&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &quot;<a class="code" href="____as__any__object_8h.html">internal/__as_any_object.h</a>&quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t, <span class="keyword">typename</span> current_type_t&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>new_type_t* __convert_value__(current_type_t* value) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">return</span> xtd::as&lt;new_type_t&gt;(value);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="ttc" id="a____as__any__object_8h_html"><div class="ttname"><a href="____as__any__object_8h.html">__as_any_object.h</a></div><div class="ttdoc">Contains xtd::as method.</div></div>
 <div class="ttc" id="a____as__bool_8h_html"><div class="ttname"><a href="____as__bool_8h.html">__as_bool.h</a></div><div class="ttdoc">Contains xtd::as method.</div></div>
 <div class="ttc" id="a____as__byte_8h_html"><div class="ttname"><a href="____as__byte_8h.html">__as_byte.h</a></div><div class="ttdoc">Contains xtd::as method.</div></div>
 <div class="ttc" id="a____as__char16_8h_html"><div class="ttname"><a href="____as__char16_8h.html">__as_char16.h</a></div><div class="ttdoc">Contains xtd::as method.</div></div>
@@ -157,6 +162,7 @@ $(function() {
 <div class="ttc" id="a____as__ustring_8h_html"><div class="ttname"><a href="____as__ustring_8h.html">__as_ustring.h</a></div><div class="ttdoc">Contains xtd::as method.</div></div>
 <div class="ttc" id="a____as__wchar_8h_html"><div class="ttname"><a href="____as__wchar_8h.html">__as_wchar.h</a></div><div class="ttdoc">Contains xtd::as method.</div></div>
 <div class="ttc" id="aany_8h_html"><div class="ttname"><a href="any_8h.html">any.h</a></div><div class="ttdoc">Contains std::any type and std::bad_any_cast exception.</div></div>
+<div class="ttc" id="aany__object_8h_html"><div class="ttname"><a href="any__object_8h.html">any_object.h</a></div><div class="ttdoc">Contains std::any type and xtd::any_object class.</div></div>
 <div class="ttc" id="aconvert_8h_html"><div class="ttname"><a href="convert_8h.html">convert.h</a></div><div class="ttdoc">Contains xtd::convert class.</div></div>
 <div class="ttc" id="aconvert__pointer_8h_html"><div class="ttname"><a href="convert__pointer_8h.html">convert_pointer.h</a></div><div class="ttdoc">Contains xtd::convert class.</div></div>
 <div class="ttc" id="aconvert__string_8h_html"><div class="ttname"><a href="convert__string_8h.html">convert_string.h</a></div><div class="ttdoc">Contains xtd::convert_string class.</div></div>
@@ -166,7 +172,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 15 2024 21:01:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 17 2024 00:48:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
