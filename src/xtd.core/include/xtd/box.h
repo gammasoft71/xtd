@@ -109,7 +109,11 @@ namespace xtd {
       return 1;
     }
     
-    xtd::ustring to_string() const noexcept override {return xtd::ustring::format("{}", value_);}
+    xtd::ustring to_string() const noexcept override {
+      if (std::is_integral<type_t>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::object, type_t>::value)
+        return xtd::ustring::format("{}", value_);
+      return typeof_<type_t>().full_name();
+    }
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
     /// @return The string representation of the value of this instance as specified by format.
