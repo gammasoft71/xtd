@@ -181,7 +181,7 @@ $(function() {
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      <span class="keyword">static</span> <span class="keywordtype">bool</span> wait_all(<span class="keyword">const</span> std::initializer_list&lt;item_t&gt;&amp; wait_handles, int32 milliseconds_timeout) {</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        std::vector&lt;wait_handle*&gt; wait_handle_pointers;</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; item : wait_handles)</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>          wait_handle_pointers.push_back(const_cast&lt;wait_handle*&gt;(<a class="code hl_function" href="group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7">as</a>&lt;wait_handle&gt;(&amp;item)));</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>          wait_handle_pointers.push_back(const_cast&lt;wait_handle*&gt;(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>&lt;wait_handle&gt;(&amp;item)));</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keywordflow">return</span> wait_all(wait_handle_pointers, milliseconds_timeout);</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>      }</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> item_t&gt;</div>
@@ -216,7 +216,7 @@ $(function() {
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      <span class="keyword">static</span> <span class="keywordtype">size_t</span> wait_any(<span class="keyword">const</span> std::initializer_list&lt;item_t&gt;&amp; wait_handles, int32 milliseconds_timeout) {</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        std::vector&lt;wait_handle*&gt; wait_handle_pointers;</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; item : wait_handles)</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>          wait_handle_pointers.push_back(const_cast&lt;wait_handle*&gt;(<a class="code hl_function" href="group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7">as</a>&lt;wait_handle&gt;(&amp;item)));</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>          wait_handle_pointers.push_back(const_cast&lt;wait_handle*&gt;(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>&lt;wait_handle&gt;(&amp;item)));</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keywordflow">return</span> wait_any(wait_handle_pointers, milliseconds_timeout);</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>      }</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> item_t&gt;</div>
@@ -275,7 +275,7 @@ $(function() {
 <div class="ttc" id="agroup__types_html_ga92bf6d527cbcada4a30faa2efd0d6a91"><div class="ttname"><a href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">xtd::int32</a></div><div class="ttdeci">int_least32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.h:23</div></div>
 <div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.h:23</div></div>
 <div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.h:25</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga19379a1158ccd320e208b362f11295b7"><div class="ttname"><a href="group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7">xtd::as</a></div><div class="ttdeci">new_type_t as(std::any value)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_generic.h:36</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.h:57</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 <div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.h:29</div></div>
 <div class="ttc" id="astructxtd_1_1time__span_html_a015c0edaefa53a450746c07995933f83"><div class="ttname"><a href="structxtd_1_1time__span.html#a015c0edaefa53a450746c07995933f83">xtd::time_span::total_milliseconds</a></div><div class="ttdeci">double total_milliseconds() const noexcept</div><div class="ttdoc">Gets the value of the current xtd::time_span structure expressed in whole and fractional milliseconds...</div></div>
@@ -284,7 +284,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 15 2024 21:01:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 17 2024 00:48:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
