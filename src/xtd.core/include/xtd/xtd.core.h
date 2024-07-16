@@ -210,6 +210,7 @@
 #include "abstract_object.h"
 #include "action.h"
 #include "add_last_arg_to_command.h"
+#include "any_object.h"
 #include "architecture_id.h"
 #include "argument_exception.h"
 #include "argument_null_exception.h"

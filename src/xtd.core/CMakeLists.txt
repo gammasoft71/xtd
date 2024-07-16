@@ -18,6 +18,8 @@ add_sources(
   include/xtd/action
   include/xtd/add_last_arg_to_command.h
   include/xtd/add_last_arg_to_command
+  include/xtd/any_object.h
+  include/xtd/any_object
   include/xtd/any.h
   include/xtd/any
   include/xtd/architecture_id.h
@@ -577,6 +579,7 @@ add_sources(
   include/xtd/diagnostics/trace_source
   include/xtd/diagnostics/trace_switch.h
   include/xtd/diagnostics/trace_switch
+  include/xtd/internal/__as_any_object.h
   include/xtd/internal/__as_char.h
   include/xtd/internal/__as_bool.h
   include/xtd/internal/__as_wchar.h
