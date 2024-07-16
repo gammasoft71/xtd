@@ -1,6 +1,4 @@
 #include <xtd/drawing/drawing_2d/radial_gradient_brush>
-#include <xtd/drawing/crayons_colors>
-#include <xtd/drawing/color_converter>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/form>
@@ -22,7 +20,7 @@ public:
     start_position(form_start_position::manual);
     client_size({200, 200});
     double_buffered(true);
-    location({screen::primary_screen().working_area().left() + screen::primary_screen().working_area().width() / 2 - client_size().width() / 2, screen::primary_screen().working_area().bottom() - client_size().height()});
+    location({screen::from_control(*this).working_area().left() + screen::from_control(*this).working_area().width() / 2 - client_size().width() / 2, screen::from_control(*this).working_area().bottom() - client_size().height()});
     top_most(true);
     
     // Create a circular region for the form
@@ -48,7 +46,6 @@ public:
     
     mouse_move += [&](object& sender, const mouse_event_args& e) {
       if (mouse_location == point::empty) return;
-      suspend_layout();
       auto working_area = screen::from_control(*this).working_area();
       auto new_bounds = bounds();
       new_bounds.location(new_bounds.location() + e.location() - mouse_location);
@@ -57,7 +54,6 @@ public:
       if (new_bounds.left() + new_bounds.width() > working_area.right()) new_bounds.location({working_area.right() - new_bounds.width(), new_bounds.top()});
       if (new_bounds.top() + new_bounds.height() > working_area.bottom()) new_bounds.location({new_bounds.left(), working_area.bottom() - new_bounds.height()});
       bounds(new_bounds);
-      resume_layout();
     };
   }
   
