@@ -22,7 +22,8 @@ namespace xtd {
       /// @brief Represents a collection of objects.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/layout/arranged_element_collection> ```
+      /// #include <xtd/forms/layout/arranged_element_collection> 
+      /// ```
       /// @par Namespace
       /// xtd::forms::layout
       /// @par Library
