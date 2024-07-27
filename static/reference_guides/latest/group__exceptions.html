@@ -165,6 +165,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1protocol__violation__exception.html">xtd::net::protocol_violation_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when an error is made adding a xtd::net::cookie to a xtd::net::cookie_container.  <a href="classxtd_1_1net_1_1protocol__violation__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html">xtd::net::sockets::socket_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a socket error occurs.  <a href="classxtd_1_1net_1_1sockets_1_1socket__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1web__exception.html">xtd::net::web_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when an error is made adding a xtd::net::cookie to a xtd::net::cookie_container.  <a href="classxtd_1_1net_1_1web__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -382,7 +385,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:gab6683e18e266d8a68c22442d59703610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on xtd::semaphore_full_exception to call it with current stack frame information.  <br /></td></tr>
 <tr class="separator:gab6683e18e266d8a68c22442d59703610"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga16e2144037e911c9929f8d5f59530cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#ga16e2144037e911c9929f8d5f59530cc0">socket_exception_</a>(...)</td></tr>
-<tr class="memdesc:ga16e2144037e911c9929f8d5f59530cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on xtd::net::sockets::socket_exception to call it with current stack frame information.  <br /></td></tr>
+<tr class="memdesc:ga16e2144037e911c9929f8d5f59530cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> to call it with current stack frame information.  <br /></td></tr>
 <tr class="separator:ga16e2144037e911c9929f8d5f59530cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad95df5a252437cbfda16fa452ff326d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#gad95df5a252437cbfda16fa452ff326d2">software_termination_exception_</a>(...)</td></tr>
 <tr class="memdesc:gad95df5a252437cbfda16fa452ff326d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper on <a class="el" href="classxtd_1_1software__termination__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::software_termination_exception</a> to call it with current stack frame information.  <br /></td></tr>
@@ -1657,16 +1660,16 @@ Macros</h2></td></tr>
 
 <p><code>#include &lt;<a class="el" href="socket__exception_8h.html">xtd.core/include/xtd/net/sockets/socket_exception.h</a>&gt;</code></p>
 
-<p>Helper on xtd::net::sockets::socket_exception to call it with current stack frame information. </p>
+<p>Helper on <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> to call it with current stack frame information. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/sockets/socket_exception&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Is equivalent to xtd::net::sockets::socket_exception {{any argument}, csf_} <div class="fragment"><div class="line"><span class="keywordtype">void</span> my_func() {</div>
+<dl class="section remark"><dt>Remarks</dt><dd>Is equivalent to <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> {{any argument}, csf_} <div class="fragment"><div class="line"><span class="keywordtype">void</span> my_func() {</div>
 <div class="line">  <span class="keywordflow">if</span> (invalid_info) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#ga16e2144037e911c9929f8d5f59530cc0">socket_exception_</a>(); <span class="comment">// same as : throw socket_exception {csf_};</span></div>
 <div class="line">  <span class="keywordflow">if</span> (invalid_value) <span class="keywordflow">throw</span> <a class="code hl_define" href="group__exceptions.html#ga16e2144037e911c9929f8d5f59530cc0">socket_exception_</a>(<span class="stringliteral">&quot;Bad value&quot;</span>); <span class="comment">// same as : throw socket_exception {&quot;Bad value&quot;, csf_};</span></div>
 <div class="line">  ...</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__exceptions_html_ga16e2144037e911c9929f8d5f59530cc0"><div class="ttname"><a href="group__exceptions.html#ga16e2144037e911c9929f8d5f59530cc0">socket_exception_</a></div><div class="ttdeci">#define socket_exception_(...)</div><div class="ttdoc">Helper on xtd::net::sockets::socket_exception to call it with current stack frame information.</div><div class="ttdef"><b>Definition</b> socket_exception.h:122</div></div>
+<div class="ttc" id="agroup__exceptions_html_ga16e2144037e911c9929f8d5f59530cc0"><div class="ttname"><a href="group__exceptions.html#ga16e2144037e911c9929f8d5f59530cc0">socket_exception_</a></div><div class="ttdeci">#define socket_exception_(...)</div><div class="ttdoc">Helper on xtd::net::sockets::socket_exception to call it with current stack frame information.</div><div class="ttdef"><b>Definition</b> socket_exception.h:123</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2127,7 +2130,7 @@ Macros</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 17 2024 00:48:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 27 2024 12:15:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

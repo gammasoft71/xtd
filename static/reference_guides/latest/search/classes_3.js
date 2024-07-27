@@ -46,7 +46,7 @@ var searchData=
   ['const_5ftab_5fpage_5fref_5fless_43',['const_tab_page_ref_less',['../structxtd_1_1forms_1_1const__tab__page__ref__less.html',1,'xtd::forms']]],
   ['container_5fcontrol_44',['container_control',['../classxtd_1_1forms_1_1container__control.html',1,'xtd::forms']]],
   ['context_5fmenu_45',['context_menu',['../classxtd_1_1forms_1_1context__menu.html',1,'xtd::forms']]],
-  ['control_46',['control',['../classxtd_1_1forms_1_1control.html',1,'xtd::forms']]],
+  ['control_46',['control',['../classxtd_1_1forms_1_1control.html',1,'xtd::forms::control'],['../classxtd_1_1forms_1_1style__sheets_1_1control.html',1,'xtd::forms::style_sheets::control']]],
   ['control_5fcollection_47',['control_collection',['../classxtd_1_1forms_1_1control_1_1control__collection.html',1,'xtd::forms::control']]],
   ['control_5fevent_5fargs_48',['control_event_args',['../classxtd_1_1forms_1_1control__event__args.html',1,'xtd::forms']]],
   ['control_5flayout_5fstyle_49',['control_layout_style',['../classxtd_1_1forms_1_1control__layout__style.html',1,'xtd::forms']]],

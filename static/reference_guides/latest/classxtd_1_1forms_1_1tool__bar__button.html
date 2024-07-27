@@ -247,7 +247,7 @@ To change the appearance of the toolbar buttons assigned to the toolbar, set the
 <dd>
 You can assign a <a class="el" href="classxtd_1_1forms_1_1context__menu.html" title="Represents a shortcut menu.">xtd::forms::context_menu</a> to a button if the <a class="el" href="classxtd_1_1forms_1_1tool__bar__button.html#aa7adc3fdc011b6e2f92bb4866d00b105" title="Gets the style of the toolbar button.">xtd::forms::tool_bar_button::style</a> property is set to xtd::forms::tool_bar_button_style::drop_down. When the button is clicked, the assigned menu is displayed. </dd>
 <dd>
-To create a collection of <a class="el" href="classxtd_1_1forms_1_1tool__bar__button.html" title="Represents a toolbar button.">xtd::forms::tool_bar_button</a> controls to display on a <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a>, add the buttons individually by using the xtd::forms::tool_bar::tool_bar_button_collection::push_back method of the <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#aefd9425fec9b1ec7c163ed6f16b8c612" title="Gets the collection of xtd::forms::tool_bar_button controls assigned to the toolbar control.">xtd::forms::tool_bar::buttons</a> property. Alternatively, you can add several toolbar buttons using the xtd::forms::tool_bar::tool_bar_button_collection.push_back_range method. </dd></dl>
+To create a collection of <a class="el" href="classxtd_1_1forms_1_1tool__bar__button.html" title="Represents a toolbar button.">xtd::forms::tool_bar_button</a> controls to display on a <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a>, add the buttons individually by using the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a8c7d97b53051103f818d43f62a8a6bed" title="Adds an element to the end.">xtd::forms::tool_bar::tool_bar_button_collection::push_back</a> method of the <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#aefd9425fec9b1ec7c163ed6f16b8c612" title="Gets the collection of xtd::forms::tool_bar_button controls assigned to the toolbar control.">xtd::forms::tool_bar::buttons</a> property. Alternatively, you can add several toolbar buttons using the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6" title="Adds elements to the end.">xtd::forms::tool_bar::tool_bar_button_collection.push_back_range</a> method. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_enable_dark_mode_8cpp-example.html#_a46">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#_a46">application_enable_light_mode.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#_a46">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#_a46">some_system_controls.cpp</a>, <a class="el" href="themes_8cpp-example.html#_a46">themes.cpp</a>, and <a class="el" href="tool_bar_8cpp-example.html#_a9">tool_bar.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
@@ -1439,7 +1439,7 @@ template&lt;typename object_a_t , typename object_b_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Gets the index value of the image assigned to the button. </p>
-<dl class="section return"><dt>Returns</dt><dd>The index value of the <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> assigned to the toolbar button. The default is xtd::forms::image_list::image_collection::npos. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The index value of the <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> assigned to the toolbar button. The default is <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::image_list::image_collection::npos</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1tool__bar__button.html#abee71afeba49fbd1d5c35469c737eaf7" title="Gets the index value of the image assigned to the button.">xtd::forms::tool_bar_button::image_index</a> value references the indexed value of the images in an <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#af9ea696418db42a92bab125443060e13" title="Gets the collection of images available to the toolbar button controls.">xtd::forms::tool_bar::image_list</a> assigned to the parent <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a> control. </dd></dl>
 
 </div>
@@ -1463,7 +1463,7 @@ template&lt;typename object_a_t , typename object_b_t &gt; </div>
 <p>Sets the index value of the image assigned to the button. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The index value of the <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> assigned to the toolbar button. The default is xtd::forms::image_list::image_collection::npos. </td></tr>
+    <tr><td class="paramname">value</td><td>The index value of the <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> assigned to the toolbar button. The default is <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#abe13629dbfb1ddb09bd30bc0a1707f72" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::image_list::image_collection::npos</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1966,7 +1966,7 @@ template&lt;typename object_a_t , typename object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 17 2024 00:48:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 27 2024 12:16:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
