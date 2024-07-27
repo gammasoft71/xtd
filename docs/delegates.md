@@ -84,7 +84,7 @@ Another common use of callbacks is defining a custom comparison method and passi
 
 ```cpp
 void method_with_callback(int param1, int param2, del callback) {
-  callback("The number is: " +  to_string(param1 + param2));
+  callback("The number is: " + to_string(param1 + param2));
 }
 ```
 

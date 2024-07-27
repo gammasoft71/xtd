@@ -1956,7 +1956,7 @@ void control::do_layout_with_anchor_styles() {
     else if ((data_->anchor & anchor_styles::left) != anchor_styles::left && (data_->anchor & anchor_styles::right) == anchor_styles::right)
       left(parent().value().get().client_size().width() - width() - data_->anchoring.right());
     else
-      left(parent().value().get().client_size().width() / 2 -  width() / 2);
+      left(parent().value().get().client_size().width() / 2 - width() / 2);
     
     if ((data_->anchor & anchor_styles::top) == anchor_styles::top && (data_->anchor & anchor_styles::bottom) != anchor_styles::bottom)
       top(top());

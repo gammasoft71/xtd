@@ -377,7 +377,7 @@ drawing::size dot_matrix_display::measure_control() const noexcept {
 
 void dot_matrix_display::draw_dot(drawing::graphics& graphics, const drawing::color& color, const drawing::point& point) {
   auto y = (height() - as<int32>(data_->dots.size())) / static_cast<int32>(data_->dots.size());
-  auto x = (width() - as<int32>(data_->dots[point.y()].size()))  / static_cast<int32>(data_->dots[point.y()].size());
+  auto x = (width() - as<int32>(data_->dots[point.y()].size())) / static_cast<int32>(data_->dots[point.y()].size());
   if (data_->dot_matrix_style == dot_matrix_style::standard) graphics.fill_pie(drawing::solid_brush(color), (1 + x) * point.x(), (1 + y) * point.y(), thickness(), thickness(), 0, 360);
   else if (data_->dot_matrix_style == dot_matrix_style::square) graphics.fill_rectangle(drawing::solid_brush(color), (1 + x) * point.x(), (1 + y) * point.y(), thickness(), thickness());
 }

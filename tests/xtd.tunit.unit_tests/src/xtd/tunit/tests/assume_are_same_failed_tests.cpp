@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   public:
     void test_method_(test_case_failed) {
       int a = 24;
-      int b =  24;
+      int b = 24;
       xtd::tunit::assume::are_same(b, a);
     }
   };
