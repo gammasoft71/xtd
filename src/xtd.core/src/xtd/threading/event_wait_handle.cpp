@@ -132,7 +132,7 @@ bool event_wait_handle::wait(int32 milliseconds_timeout) {
   if (result == 0xFFFFFFFF) throw io::io_exception {csf_};
   if (result == 0x00000080) throw abandoned_mutex_exception {csf_};
   if (result == 0x00000102) return false;
-  data_->is_set =  false;
+  data_->is_set = false;
   return true;
 }
 

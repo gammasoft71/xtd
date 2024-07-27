@@ -1069,8 +1069,8 @@ namespace xtd {
       ustring result;
       size_t index = 0;
       std::vector<__format_information<char>> formats;
-      auto begin_format_iterator =  fmt.end();
-      auto end_format_iterator =  fmt.end();
+      auto begin_format_iterator = fmt.end();
+      auto end_format_iterator = fmt.end();
       for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
         if (*iterator == '{') {
           if (++iterator == fmt.end())

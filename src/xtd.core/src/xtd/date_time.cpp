@@ -450,7 +450,7 @@ ustring date_time::to_string(const ustring& format) const {
 
 ustring date_time::to_string(const ustring& format, const std::locale& loc) const {
   auto fmt = format;
-  if (fmt.empty()) fmt =  "G";
+  if (fmt.empty()) fmt = "G";
   if (fmt.size() > 1) throw format_exception("Invalid format"_t, csf_);
   
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();

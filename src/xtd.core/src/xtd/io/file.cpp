@@ -190,7 +190,7 @@ ofstream file::open_write(const ustring& path) {
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   
-  auto stream =  ofstream {path, ios::binary | ios::out};
+  auto stream = ofstream {path, ios::binary | ios::out};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }

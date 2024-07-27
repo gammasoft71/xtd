@@ -371,7 +371,7 @@ namespace xtd::tests {
       bool thread_interrupted = false;
       auto thread = threading::thread {thread_start {[&] {
         try {
-          for (auto index  = 0; index < 30; ++index)
+          for (auto index = 0; index < 30; ++index)
             thread::sleep(1);
           
         } catch(const thread_interrupted_exception&) {

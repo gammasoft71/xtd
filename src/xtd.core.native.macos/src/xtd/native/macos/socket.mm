@@ -295,7 +295,7 @@ int_least32_t socket::set_blocking(intmax_t handle, bool blocking) {
     auto flags = result;
     if (blocking == true) flags &= ~O_NONBLOCK;
     else flags |= O_NONBLOCK;
-    result = fcntl(static_cast<int_least32_t>(handle), F_SETFL, flags)  == -1 ? -1 : 0;
+    result = fcntl(static_cast<int_least32_t>(handle), F_SETFL, flags) == -1 ? -1 : 0;
   }
   
   return result;

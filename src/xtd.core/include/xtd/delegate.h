@@ -204,7 +204,7 @@ namespace xtd {
     /// @return delegateType A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is null, returns b if a is a null reference, and returns a null reference if both a and b are null references.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
     static delegate combine(const delegate& a, const delegate& b) noexcept {
-      delegate result =  a;
+      delegate result = a;
       for (const function_t& function : b.data_->functions)
         result.data_->functions.push_back(function);
       return result;
@@ -642,7 +642,7 @@ namespace xtd {
     /// @return delegateType A new delegate with an invocation list that concatenates the invocation lists of a and b in that order. Returns a if b is null, returns b if a is a null reference, and returns a null reference if both a and b are null references.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
     static delegate combine(const delegate& a, const delegate& b) noexcept {
-      delegate result =  a;
+      delegate result = a;
       for (const no_arguments_function_t& function : b.data_->no_arguments_functions)
         result.data_->no_arguments_functions.push_back(function);
       for (const function_t& function : b.data_->functions)

@@ -37,10 +37,10 @@ namespace xtd {
       
       /// @{
       /// @brief Represents a dots collection.
-      using dots_collection =  std::vector<std::vector<bool>>;
+      using dots_collection = std::vector<std::vector<bool>>;
       
       /// @brief Represents a point collection.
-      using points_collection =  std::vector<xtd::drawing::point>;
+      using points_collection = std::vector<xtd::drawing::point>;
       /// @}
       
       /// @name Public Constructors

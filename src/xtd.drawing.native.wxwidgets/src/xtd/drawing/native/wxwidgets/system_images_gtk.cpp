@@ -11,7 +11,7 @@ GdkPixbuf* __gtk_get_image_from_name__(const char* name, xtd::int32 width, xtd::
   const char* icon_names[] = {name, nullptr};
   GtkIconInfo* iconInfo = gtk_icon_theme_choose_icon(icon_theme, icon_names, width, GtkIconLookupFlags::GTK_ICON_LOOKUP_FORCE_SIZE);
   GError* error = nullptr;
-  GdkPixbuf* icon =  iconInfo ? gtk_icon_info_load_icon(iconInfo, &error) : nullptr;
+  GdkPixbuf* icon = iconInfo ? gtk_icon_info_load_icon(iconInfo, &error) : nullptr;
   if (!error && icon) return icon;
   return 0;
 }

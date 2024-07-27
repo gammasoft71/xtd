@@ -18,7 +18,7 @@ drive_info::drive_info(const ustring& drive_name) : drive_name_(drive_name) {
 }
 
 size_t drive_info::available_free_space() const {
-  auto free_bytes = 0_z, total_number_of_bytes =  0_z, total_number_of_free_bytes = 0_z;
+  auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
   if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw io_exception {csf_};
   return free_bytes;
 }
@@ -54,7 +54,7 @@ size_t drive_info::total_free_space() const {
 }
 
 size_t drive_info::total_size() const {
-  auto free_bytes = 0_z, total_number_of_bytes =  0_z, total_number_of_free_bytes = 0_z;
+  auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
   if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw io_exception {csf_};
   return total_number_of_bytes;
 }

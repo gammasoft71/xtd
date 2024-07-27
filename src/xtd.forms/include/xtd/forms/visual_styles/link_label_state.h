@@ -21,7 +21,7 @@ namespace xtd {
       /// xtd.forms
       /// @ingroup xtd_forms
       /// @remarks The xtd::forms::visual_styles::link_label_state values correspond to the states of the visual style element objects exposed by the xtd::forms::link_label class. The xtd::forms::visual_styles::link_label_state values are also used as an argument in the xtd::forms::label_renderer::draw_link_label method.
-      using link_label_state  = control_state;
+      using link_label_state = control_state;
     }
   }
 }

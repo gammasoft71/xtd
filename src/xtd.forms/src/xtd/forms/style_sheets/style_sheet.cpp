@@ -330,7 +330,7 @@ const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcep
   for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     if (!file::exists(path::combine(theme_dir, "theme.css"))) continue;
     auto reader = css_reader {file::read_all_text(path::combine(theme_dir, "theme.css"))};
-    auto selectors_iterator =  reader.selectors().find("theme");
+    auto selectors_iterator = reader.selectors().find("theme");
     if (selectors_iterator == reader.selectors().end()) continue;
     auto properties_iterator = selectors_iterator->second.properties().find("name");
     if (properties_iterator != selectors_iterator->second.properties().end()) style_sheet_names_.push_back(properties_iterator->second.to_string().trim().trim('\"'));
@@ -434,7 +434,7 @@ style_sheet::forms_t style_sheet::form_from_css(const  ustring& css_text) {
 style_sheet style_sheet::get_style_sheet_from_name(const ustring& name) {
   for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     auto reader = css_reader {file::read_all_text(path::combine(theme_dir, "theme.css"))};
-    auto selectors_iterator =  reader.selectors().find("theme");
+    auto selectors_iterator = reader.selectors().find("theme");
     if (selectors_iterator == reader.selectors().end()) break;
     auto properties_iterator = selectors_iterator->second.properties().find("name");
     if (properties_iterator != selectors_iterator->second.properties().end() && properties_iterator->second.to_string().trim().trim('\"') == name) {
@@ -1059,7 +1059,7 @@ void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexce
 }
 
 void style_sheet::theme_reader(xtd::web::css::css_reader& reader) noexcept {
-  auto selectors_iterator =  reader.selectors().find("theme");
+  auto selectors_iterator = reader.selectors().find("theme");
   if (selectors_iterator == reader.selectors().end()) return;
   for (auto property : selectors_iterator->second.properties()) {
     if (property.first == "name") data_->theme.name(string_from_css(property.second.to_string(), ustring()));
