@@ -476,6 +476,8 @@ add_sources(
   include/xtd/collections/any_pair
   include/xtd/collections/array_list.h
   include/xtd/collections/array_list
+  include/xtd/collections/hashtable.h
+  include/xtd/collections/hashtable
   include/xtd/collections/key_not_found_exception.h
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
