@@ -100,6 +100,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when a method call is invalid for the object's current state.  <a href="classxtd_1_1access__violation__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a polymorphic wrapper capable of holding any type.  <a href="classxtd_1_1any__object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when one of the arguments provided to a method is not valid.  <a href="classxtd_1_1argument__exception.html#details">More...</a><br /></td></tr>
@@ -5507,6 +5508,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga1d399dff49889aa81935e74143eca22f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1d399dff49889aa81935e74143eca22f">xtd::is&lt; xtd::ulong &gt;</a> (<a class="el" href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">xtd::ulong</a> value)</td></tr>
 <tr class="memdesc:ga1d399dff49889aa81935e74143eca22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:ga1d399dff49889aa81935e74143eca22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22ae291f139e9d4ea1c669772f5b6749"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga22ae291f139e9d4ea1c669772f5b6749"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga22ae291f139e9d4ea1c669772f5b6749">xtd::make_any_object</a> (args_t &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ga22ae291f139e9d4ea1c669772f5b6749"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__xtd__core.html#ga22ae291f139e9d4ea1c669772f5b6749" title="The xtd::make_any_object operator creates a xtd::any_object object.">xtd::make_any_object</a> operator creates a <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object.  <br /></td></tr>
+<tr class="separator:ga22ae291f139e9d4ea1c669772f5b6749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
 <tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a> (args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:ga2fd68f03198b2bf84b1e93149494b685"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> operator creates a <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
@@ -47754,6 +47759,37 @@ template&lt;&gt; </div>
 
 </div>
 </div>
+<a id="ga22ae291f139e9d4ea1c669772f5b6749" name="ga22ae291f139e9d4ea1c669772f5b6749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga22ae291f139e9d4ea1c669772f5b6749">&#9670;&#160;</a></span>make_any_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t , typename ... args_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1any__object.html">any_object</a> xtd::make_any_object </td>
+          <td>(</td>
+          <td class="paramtype">args_t &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="make__any__object_8h.html">xtd.core/include/xtd/make_any_object.h</a>&gt;</code></p>
+
+<p>The <a class="el" href="group__xtd__core.html#ga22ae291f139e9d4ea1c669772f5b6749" title="The xtd::make_any_object operator creates a xtd::any_object object.">xtd::make_any_object</a> operator creates a <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>this is example shows to use <a class="el" href="group__xtd__core.html#ga22ae291f139e9d4ea1c669772f5b6749" title="The xtd::make_any_object operator creates a xtd::any_object object.">xtd::make_any_object</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1any__object.html">any_object</a> ver = make_any_object&lt;version&gt;(1, 2, 3);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, ver.<a class="code hl_function" href="classxtd_1_1any__object.html#a038b6d823c3b8f328931e8aed27d33ac">to_string</a>());</div>
+<div class="ttc" id="aclassxtd_1_1any__object_html"><div class="ttname"><a href="classxtd_1_1any__object.html">xtd::any_object</a></div><div class="ttdoc">Represent a polymorphic wrapper capable of holding any type.</div><div class="ttdef"><b>Definition</b> any_object.h:28</div></div>
+<div class="ttc" id="aclassxtd_1_1any__object_html_a038b6d823c3b8f328931e8aed27d33ac"><div class="ttname"><a href="classxtd_1_1any__object.html#a038b6d823c3b8f328931e8aed27d33ac">xtd::any_object::to_string</a></div><div class="ttdeci">ustring to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::ustring that represents the current object.</div><div class="ttdef"><b>Definition</b> any_object.h:82</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="ga2fd68f03198b2bf84b1e93149494b685" name="ga2fd68f03198b2bf84b1e93149494b685"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2fd68f03198b2bf84b1e93149494b685">&#9670;&#160;</a></span>new_ptr()</h2>
 
@@ -47781,7 +47817,7 @@ template&lt;typename type_t , typename ... args_t&gt; </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">to_string</a>());</div>
 <div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/xtd::new_sptr">xtd::new_sptr</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared">std::make_shared</a>. </dd></dl>
 
 </div>
 </div>
@@ -47812,7 +47848,7 @@ template&lt;typename type_t , typename ... args_t&gt; </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#acba0ed89b1b36de5bd12f538e456c9bd">to_string</a>());</div>
 <div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e" title="xtd::news_sptr operator creates a xtd::sptr object.">xtd::new_sptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/xtd::new_sptr">xtd::new_sptr</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e" title="xtd::news_sptr operator creates a xtd::sptr object.">xtd::new_sptr</a> is equivalent to <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared">std::make_shared</a>. </dd></dl>
 
 </div>
 </div>
@@ -53262,7 +53298,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 27 2024 20:16:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 27 2024 23:41:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
