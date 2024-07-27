@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief The user_control data allows you to specify the box of a user_control control.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/user_control> ```
+      /// #include <xtd/forms/style_sheets/user_control>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

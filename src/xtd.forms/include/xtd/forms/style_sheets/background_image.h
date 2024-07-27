@@ -31,7 +31,8 @@ namespace xtd {
       /// xtd::object → xtd::forms::style_sheets::background_image
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/background_image> ```
+      /// #include <xtd/forms/style_sheets/background_image>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

@@ -20,7 +20,8 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/io_control_code> ```
+      /// #include <xtd/net/sockets/io_control_code>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

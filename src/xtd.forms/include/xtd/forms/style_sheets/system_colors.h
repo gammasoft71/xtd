@@ -24,7 +24,8 @@ namespace xtd {
       /// xtd::object → xtd::forms::style_sheets::system_colors
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/system_colors> ```
+      /// #include <xtd/forms/style_sheets/system_colors>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

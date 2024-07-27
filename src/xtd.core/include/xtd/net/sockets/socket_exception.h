@@ -19,7 +19,8 @@ namespace xtd {
       /// xtd::system_exception → xtd::net::sockets::socket_exception
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/socket_exception> ```
+      /// #include <xtd/net/sockets/socket_exception>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

@@ -23,7 +23,8 @@ namespace xtd {
       /// xtd::iequatable <>
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/brer_rzdius> ```
+      /// #include <xtd/forms/style_sheets/brer_rzdius>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief Returns notification from the xtd::speech::synthesis::speech_synthesizer::speak_completed event.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/speech/synthesis/speak_completed_event_args> ```
+      /// #include <xtd/speech/synthesis/speak_completed_event_args>
+      /// ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

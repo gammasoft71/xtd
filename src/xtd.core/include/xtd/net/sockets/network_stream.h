@@ -19,7 +19,8 @@ namespace xtd {
       /// std::iostream → xtd::net::sockets::network_stream
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/network_stream> ```
+      /// #include <xtd/net/sockets/network_stream>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

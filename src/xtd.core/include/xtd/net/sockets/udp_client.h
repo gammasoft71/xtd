@@ -23,7 +23,8 @@ namespace xtd {
       /// xtd::object → xtd::net::sockets::udp_client
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/udp_client> ```
+      /// #include <xtd/net/sockets/udp_client>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

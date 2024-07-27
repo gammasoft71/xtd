@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief The pseudo_state enum class flag specifies the pseudo state of an element.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/pseudo_state> ```
+      /// #include <xtd/forms/style_sheets/pseudo_state>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

@@ -20,7 +20,8 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/socket_async_operation> ```
+      /// #include <xtd/net/sockets/socket_async_operation>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief The form data allows you to specify the box of a form control.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/form> ```
+      /// #include <xtd/forms/style_sheets/form>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

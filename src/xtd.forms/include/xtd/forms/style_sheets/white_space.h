@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief The white_space enum class specifies how white-space inside an element is handled.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/white_space> ```
+      /// #include <xtd/forms/style_sheets/white_space>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

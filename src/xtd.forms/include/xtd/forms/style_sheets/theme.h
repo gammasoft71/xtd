@@ -22,7 +22,8 @@ namespace xtd {
       /// xtd::object → xtd::forms::style_sheets::theme
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/theme> ```
+      /// #include <xtd/forms/style_sheets/theme>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

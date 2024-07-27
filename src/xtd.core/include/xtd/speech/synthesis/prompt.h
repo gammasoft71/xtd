@@ -23,7 +23,8 @@ namespace xtd {
       /// xtd::object → xtd::speech::synthesis::prompt
       /// @par Header
       /// ```cpp
-    /// #include <xtd/speech/synthesis/prompt> ```
+      /// #include <xtd/speech/synthesis/prompt>
+      /// ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

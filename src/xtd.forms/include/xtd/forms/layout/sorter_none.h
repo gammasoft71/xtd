@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief Represents a sorter none of objects.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/layout/sorter_none> ```
+      /// #include <xtd/forms/layout/sorter_none>
+      /// ```
       /// @par Namespace
       /// xtd::forms::layout
       /// @par Library
