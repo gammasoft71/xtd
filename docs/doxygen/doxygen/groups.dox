@@ -114,7 +114,7 @@
 /// @brief Contains menus and toolbars definitions.
 /// @ingroup gui
 
-/// @defgroup net net
+/// @defgroup net network
 /// @brief Contains network definitions.
 /// @ingroup system
 
