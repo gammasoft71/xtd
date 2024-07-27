@@ -11,5 +11,9 @@ var searchData=
   ['process_5fpriority_5fclass_8',['process_priority_class',['../group__xtd__core.html#ga2b4b54d367f7b28f69bf7709c74d13c1',1,'xtd::diagnostics']]],
   ['process_5fwindow_5fstyle_9',['process_window_style',['../group__xtd__core.html#ga3c48664c704ae96774328c9bde1d450a',1,'xtd::diagnostics']]],
   ['progress_5fbar_5fstyle_10',['progress_bar_style',['../group__xtd__forms.html#gace31288a1ab6aa0ffabd4e55f2f39d43',1,'xtd::forms']]],
-  ['progress_5fbox_5foptions_11',['progress_box_options',['../group__xtd__forms.html#ga7d89c3c0497732661a1a007b853a3054',1,'xtd::forms']]]
+  ['progress_5fbox_5foptions_11',['progress_box_options',['../group__xtd__forms.html#ga7d89c3c0497732661a1a007b853a3054',1,'xtd::forms']]],
+  ['protocol_5ffamily_12',['protocol_family',['../group__xtd__core.html#ga33cbc7eb0a0fcda4d9f2a175b8062b23',1,'xtd::net::sockets']]],
+  ['protocol_5ftype_13',['protocol_type',['../group__xtd__core.html#gac4690c745045463d3c96d043878cc1e3',1,'xtd::net::sockets']]],
+  ['pseudo_5fstate_14',['pseudo_state',['../group__style__sheets.html#gade25a31d5bc8adf30e8852f986a5aad9',1,'xtd::forms::style_sheets']]],
+  ['push_5fbutton_5fstate_15',['push_button_state',['../group__xtd__forms.html#ga4d2c9d254297fb77db586345bae2615a',1,'xtd::forms::visual_styles']]]
 ];

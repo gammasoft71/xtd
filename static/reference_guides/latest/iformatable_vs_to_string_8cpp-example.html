@@ -159,7 +159,7 @@ $(function() {
 <div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> <a class="code hl_function" href="group__xtd__core.html#gaceb0e0a25d04cce9beebad549c27c167">to_string</a>() const noexcept {<span class="keywordflow">return</span> ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> <a class="code hl_function" href="group__xtd__core.html#gaceb0e0a25d04cce9beebad549c27c167">to_string</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const override </span>{<span class="keywordflow">return</span> ustring::format(ustring::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; stream, <span class="keyword">const</span> foo5&amp; value) {<span class="keywordflow">return</span> stream &lt;&lt; value.to_string(<span class="stringliteral">&quot;&quot;</span>, std::locale {});}</div>
+<div class="line">  <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; stream, <span class="keyword">const</span> foo5&amp; value) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a> &lt;&lt; value.to_string(<span class="stringliteral">&quot;&quot;</span>, std::locale {});}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
@@ -175,7 +175,7 @@ $(function() {
 <div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> <a class="code hl_function" href="group__xtd__core.html#gaceb0e0a25d04cce9beebad549c27c167">to_string</a>() const noexcept {<span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#gaceb0e0a25d04cce9beebad549c27c167">to_string</a>(<span class="stringliteral">&quot;&quot;</span>, std::locale {});}</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> <a class="code hl_function" href="group__xtd__core.html#gaceb0e0a25d04cce9beebad549c27c167">to_string</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const </span>{<span class="keywordflow">return</span> ustring::format(ustring::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; stream, <span class="keyword">const</span> foo6&amp; value) {<span class="keywordflow">return</span> stream &lt;&lt; value.to_string();}</div>
+<div class="line">  <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; stream, <span class="keyword">const</span> foo6&amp; value) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a> &lt;&lt; value.to_string();}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
@@ -467,12 +467,13 @@ $(function() {
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a74ce2e1a498f2fa27b5542040be774dc"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a74ce2e1a498f2fa27b5542040be774dc">xtd::console_key::f5</a></div><div class="ttdeci">@ f5</div><div class="ttdoc">The F5 key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">xtd::console_key::f1</a></div><div class="ttdeci">@ f1</div><div class="ttdoc">The F1 key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b"><div class="ttname"><a href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">xtd::net::sockets::socket_type::stream</a></div><div class="ttdeci">@ stream</div><div class="ttdoc">Supports reliable, two-way, connection-based byte streams without the duplication of data and without...</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 17 2024 00:48:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 27 2024 12:15:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">namespace </span>net {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">namespace </span>sockets {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      <span class="keyword">class </span>socket;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      <span class="keyword">class </span><a class="code hl_enumvalue" href="group__xtd__core.html#gga743142f866afefad31e41e24765e74f0a61f2529360aec54f5dc9804b842cf3fa">socket</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classxtd_1_1net_1_1ip__address.html">   37</a></span>    <span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;ip_address&gt; {</div>
@@ -125,7 +125,7 @@ $(function() {
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      <a class="code hl_class" href="classxtd_1_1net_1_1ip__address.html">ip_address</a>&amp; operator =(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1net_1_1ip__address.html">ip_address</a>&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classxtd_1_1net_1_1ip__address.html#aac71bd917d3323d6eb19483354b07bf5">  105</a></span>      sockets::address_family <a class="code hl_function" href="classxtd_1_1net_1_1ip__address.html#aac71bd917d3323d6eb19483354b07bf5">address_family</a>() const noexcept;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classxtd_1_1net_1_1ip__address.html#aac71bd917d3323d6eb19483354b07bf5">  105</a></span>      <a class="code hl_enumeration" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">sockets::address_family</a> <a class="code hl_function" href="classxtd_1_1net_1_1ip__address.html#aac71bd917d3323d6eb19483354b07bf5">address_family</a>() const noexcept;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classxtd_1_1net_1_1ip__address.html#af612d35827ddd1cab111165226c1c38c">  110</a></span>      <span class="keywordtype">bool</span> is_ip_v4_mapped_to_ip_v6() const noexcept;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      </div>
@@ -228,12 +228,14 @@ $(function() {
 <div class="ttc" id="agroup__types_html_gae1d338ada567eb17107e17cbffea5320"><div class="ttname"><a href="group__types.html#gae1d338ada567eb17107e17cbffea5320">xtd::uint64</a></div><div class="ttdeci">uint_least64_t uint64</div><div class="ttdoc">Represents a 64-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint64.h:23</div></div>
 <div class="ttc" id="agroup__types_html_gae7af83eab478757e17f0eb7af57571df"><div class="ttname"><a href="group__types.html#gae7af83eab478757e17f0eb7af57571df">xtd::uint32</a></div><div class="ttdeci">uint_least32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint32.h:23</div></div>
 <div class="ttc" id="agroup__types_html_gaf8d0aa5786861bead085592c31c09849"><div class="ttname"><a href="group__types.html#gaf8d0aa5786861bead085592c31c09849">xtd::byte</a></div><div class="ttdeci">uint_least8_t byte</div><div class="ttdoc">Represents a 8-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> byte.h:23</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga5c7a488efbbc9c766286c1485399aef3"><div class="ttname"><a href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a></div><div class="ttdeci">address_family</div><div class="ttdoc">Specifies the addressing scheme that an instance of the xtd::net::sockets::socket class can use.</div><div class="ttdef"><b>Definition</b> address_family.h:30</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gga743142f866afefad31e41e24765e74f0a61f2529360aec54f5dc9804b842cf3fa"><div class="ttname"><a href="group__xtd__core.html#gga743142f866afefad31e41e24765e74f0a61f2529360aec54f5dc9804b842cf3fa">xtd::net::sockets::socket_option_level::socket</a></div><div class="ttdeci">@ socket</div><div class="ttdoc">Socket options apply to all sockets.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 17 2024 00:48:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 27 2024 12:15:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
