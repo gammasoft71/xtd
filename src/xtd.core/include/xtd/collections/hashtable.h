@@ -34,7 +34,7 @@ namespace xtd {
     /// @remarks The capacity of a xtd::collections::hashtable is the number of elements the xtd::collections::hashtable can hold. As elements are added to a xtd::collections::hashtable, the capacity is automatically increased as required through reallocation.
     /// @remarks The foreach statement returns an object of the type of the elements in the collection. Since each element of the xtd::collections::hashtable is a key/value pair, the element type is not the type of the key or the type of the value. Instead, the element type is xtd::collections::dictionary_entry. For example:
     /// @code
-    /// for (xtd::collections::dictionary_entry de : myxtd::collections::hashtable) {
+    /// for (xtd::collections::dictionary_entry de : my_hashtable) {
     ///   // ...
     /// }
     /// @endcode
@@ -43,7 +43,7 @@ namespace xtd {
     /// @note Because keys can be inherited and their behavior changed, their absolute uniqueness cannot be guaranteed by comparisons using the Equals method.
     /// @par Exemples
     /// The following example shows how to create, initialize and perform various functions to a xtd::collections::hashtable and how to print out its keys and values.
-    /// @include xtd::collections::hashtable.cpp
+    /// @include hashtable.cpp
     using hashtable = generic::dictionary<xtd::any_object, xtd::any_object>;
   }
 }
