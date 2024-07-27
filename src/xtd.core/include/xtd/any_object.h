@@ -1,14 +1,18 @@
 /// @file
 /// @brief Contains std::any type and xtd::any_object class.
 #pragma once
+#include "collections/generic/helpers/comparer.h"
 #include "as.h"
 #include "boxing.h"
+#include "icomparable.h"
+#include "iequatable.h"
+#include "invalid_operation_exception.h"
 #include "is.h"
 #include "object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represents a type-safe container for single values of any copy constructible type.
+  /// @briefRepresent a polymorphic wrapper capable of holding any type.
   /// @par Header
   /// ```cpp
   /// #include <xtd/any_object>
@@ -17,33 +21,45 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
-  class any_object : public object, iequatable<any_object> {
+  /// @ingroup xtd_core system
+  /// @par Examples
+  /// The following code example illustrates the use of xtd::any_object class.
+  /// @include any_object.cpp
+  class any_object : public object, icomparable<any_object>, iequatable<any_object> {
   public:
     /// @name Public Constructors
     
     /// @{
-    /// @breif Constructs a new any object.
+    /// @brief Initializes a new instance of the xtd::any_object class.
     any_object() noexcept = default;
-    any_object(any_object&&) = default;
-    explicit any_object(const any_object&) noexcept = default;
-    /// @brief Constructs a new any object.
-    /// @param value
+    /// @brief Initializes a new instance of the xtd::any_object class with specified value.
+    /// @param value The value to initialize the contained value with.
     template<typename type_t>
     explicit any_object(type_t&& value) : value_(boxing_ptr(value)) {}
+    /// @brief Initializes a new instance of the xtd::any_object class with specified value.
+    /// @param value The value to initialize the contained value with.
     template<typename type_t>
     explicit any_object(const type_t& value) : value_(boxing_ptr(value)) {}
     /// @}
-    
+
+    /// @cond
+    any_object(any_object&&) = default;
+    explicit any_object(const any_object&) noexcept = default;
+    /// @endcond
+
     /// @name Public Properties
     
     /// @{
-    /// @brief checks if object holds a value
-    /// @return true if this current instance conatains a value; otherwhise false.
+    /// @brief Gets a value indicating whether the current xtd::any_object object has a valid value of its underlying type.
+    /// @return true if the current xtd::any_object object has a value; false if the current xtd::any_object object has no value.
+    /// @remarks If the xtd::any_object::has_value property is true, the value of the current xtd::any_object object can be accessed with the xtd::any_object::value property. Otherwise, attempting to access its value throws an xtd::invalid_operation_exception exception.
     bool has_value() const noexcept {return value_ != null;}
     
+    /// @brief Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value.
+    /// @return The value of the current xtd::any_object object if the xtd::any_object::has_value property is true. An exception is thrown if the xtd::any_object::has_value property is false.
+    /// @exception xtd::invalid_operation_exception The xtd::any_object::has_value property is false.
     const object& value() const {
-      if (value_ == null) throw argument_exception {csf_};
+      if (value_ == null) throw invalid_operation_exception {csf_};
       return *value_;
     }
     /// @}
@@ -51,22 +67,41 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    int32 compare_to(const any_object& other) const noexcept override {
+      if (!has_value() && other.has_value()) return -1;
+      if (has_value() && !other.has_value()) return 1;
+      return equals(other) ? 0 : xtd::collections::generic::helpers::comparer<ptr<object>> {}(value_, other.value_) ? -1 : 1;
+    }
     bool equals(const object& other) const noexcept override {return is<any_object>(other) && equals(as<any_object>(other));}
-    bool equals(const any_object& other) const noexcept override {return *value_ == *other.value_;}
+    bool equals(const any_object& other) const noexcept override {
+      if (!has_value() && !other.has_value()) return true;
+      if (has_value() != other.has_value()) return false;
+      return *value_ == *other.value_;
+    }
     ustring to_string() const noexcept override {return has_value() ? value_->to_string() : "(null)";}
     
-    /// @brief If not empty, destroys the contained object.
+    /// @brief Reset the current object. Set the current object to null.
+    /// @remarks If xtd::any_object::has_values is true, destroys the contained object; otherwise does nothing.
     void reset() noexcept {value_.reset();}
     /// @}
     
     /// @name Public Operators
     
     /// @{
-    any_object& operator =(const any_object&) = default;
-    any_object& operator =(any_object&& o) {
-      value_ = std::move(o.value_);
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
+    /// @param other Another polymorphic wrapper.
+    /// @return This current instance.
+    any_object& operator =(const any_object& other) = default;
+    /// @brief Move assignment operator. Replaces the contents with a copy of the contents of other.
+    /// @param other Another polymorphic wrapper.
+    /// @return This current instance.
+    any_object& operator =(any_object&& other) {
+      value_ = std::move(other.value_);
       return *this;
     };
+    /// @brief Copy assignment operator. Replaces the contents with a copy of value.
+    /// @param value The value to assign with.
+    /// @return This current instance.
     template<typename type_t>
     any_object& operator =(const type_t& value) {
       value_ = boxing_ptr(value);

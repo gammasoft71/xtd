@@ -2,6 +2,7 @@
 /// @brief Contains xtd::box class.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "collections/generic/helpers/comparer.h"
 #include "convert_string.h"
 #include "icomparable.h"
 #include "iequatable.h"
@@ -103,11 +104,7 @@ namespace xtd {
     using object::equals;
     bool equals(const box& value) const noexcept override {return value_ == value.value_;}
     
-    int32 compare_to(const box& value) const noexcept override {
-      if (value_ == value.value_) return 0;
-      if (value_ < value.value_) return -1;
-      return 1;
-    }
+    int32 compare_to(const box& value) const noexcept override {return equals(value) ? 0 : xtd::collections::generic::helpers::comparer<type_t> {}(value_, value.value_) ? -1 : 1;}
     
     xtd::ustring to_string() const noexcept override {
       if (std::is_integral<type_t>::value) return xtd::ustring::format("{}", value_);
