@@ -85,7 +85,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1any__object-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::any_object Class Reference<div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a></div></div></div>
+  <div class="headertitle"><div class="title">xtd::any_object Class Reference<div class="ingroups"><a class="el" href="group__libraries.html">libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -94,44 +94,43 @@ Inheritance diagram for xtd::any_object:</div>
  <div class="center">
   <img src="classxtd_1_1any__object.png" usemap="#xtd::any_5Fobject_map" alt=""/>
   <map id="xtd::any_5Fobject_map" name="xtd::any_5Fobject_map">
-<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,177,24"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; any_object &gt;" shape="rect" coords="187,0,364,24"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,189,24"/>
+<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; any_object &gt;" shape="rect" coords="199,0,388,24"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; any_object &gt;" shape="rect" coords="398,0,587,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Represents a type-safe container for single values of any copy constructible type. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/any_object&gt;</span></div>
+<div class="textblock"><p>@briefRepresent a polymorphic wrapper capable of holding any type. </p><dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/any_object&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> class. <div class="fragment"></div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a7a574a2f1f7bf730d27765e441cbf14a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> () noexcept=default</td></tr>
+<tr class="memdesc:a7a574a2f1f7bf730d27765e441cbf14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> class.  <br /></td></tr>
 <tr class="separator:a7a574a2f1f7bf730d27765e441cbf14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d669f54e746291642bd8ec8c6d17e59"><td class="memItemLeft" align="right" valign="top"><a id="a4d669f54e746291642bd8ec8c6d17e59" name="a4d669f54e746291642bd8ec8c6d17e59"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>any_object</b> (<a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:a4d669f54e746291642bd8ec8c6d17e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf3796beb86dd6f7b0efca97397a6a2f"><td class="memItemLeft" align="right" valign="top"><a id="adf3796beb86dd6f7b0efca97397a6a2f" name="adf3796beb86dd6f7b0efca97397a6a2f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>any_object</b> (const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;) noexcept=default</td></tr>
-<tr class="separator:adf3796beb86dd6f7b0efca97397a6a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a725e61c04ba74c3998ebdcf32804858a"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
-<tr class="memitem:a725e61c04ba74c3998ebdcf32804858a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a725e61c04ba74c3998ebdcf32804858a">any_object</a> (type_t &amp;&amp;value)</td></tr>
-<tr class="memdesc:a725e61c04ba74c3998ebdcf32804858a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new any object.  <br /></td></tr>
+<tr class="memitem:a725e61c04ba74c3998ebdcf32804858a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a725e61c04ba74c3998ebdcf32804858a">any_object</a> (type_t &amp;&amp;<a class="el" href="classxtd_1_1any__object.html#aef3445700d50ea9699aec36b46299cac">value</a>)</td></tr>
+<tr class="memdesc:a725e61c04ba74c3998ebdcf32804858a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> class with specified value.  <br /></td></tr>
 <tr class="separator:a725e61c04ba74c3998ebdcf32804858a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a512dc705a71030a60c279cb2d439cf28"><td class="memTemplParams" colspan="2"><a id="a512dc705a71030a60c279cb2d439cf28" name="a512dc705a71030a60c279cb2d439cf28"></a>
-template&lt;typename type_t &gt; </td></tr>
-<tr class="memitem:a512dc705a71030a60c279cb2d439cf28"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>any_object</b> (const type_t &amp;value)</td></tr>
+<tr class="memitem:a512dc705a71030a60c279cb2d439cf28"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:a512dc705a71030a60c279cb2d439cf28"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a512dc705a71030a60c279cb2d439cf28">any_object</a> (const type_t &amp;<a class="el" href="classxtd_1_1any__object.html#aef3445700d50ea9699aec36b46299cac">value</a>)</td></tr>
+<tr class="memdesc:a512dc705a71030a60c279cb2d439cf28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> class with specified value.  <br /></td></tr>
 <tr class="separator:a512dc705a71030a60c279cb2d439cf28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a6c644ac6583e871820b545ffa1cddeeb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb">has_value</a> () const noexcept</td></tr>
-<tr class="memdesc:a6c644ac6583e871820b545ffa1cddeeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if object holds a value  <br /></td></tr>
+<tr class="memdesc:a6c644ac6583e871820b545ffa1cddeeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> object has a valid value of its underlying type.  <br /></td></tr>
 <tr class="separator:a6c644ac6583e871820b545ffa1cddeeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef3445700d50ea9699aec36b46299cac"><td class="memItemLeft" align="right" valign="top"><a id="aef3445700d50ea9699aec36b46299cac" name="aef3445700d50ea9699aec36b46299cac"></a>
-const <a class="el" href="classxtd_1_1object.html">object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> () const</td></tr>
+<tr class="memitem:aef3445700d50ea9699aec36b46299cac"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#aef3445700d50ea9699aec36b46299cac">value</a> () const</td></tr>
+<tr class="memdesc:aef3445700d50ea9699aec36b46299cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the current <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> object if it has been assigned a valid underlying value.  <br /></td></tr>
 <tr class="separator:aef3445700d50ea9699aec36b46299cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
+<tr class="memitem:ab66e8167b4e6e2126f3a936407764cdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#ab66e8167b4e6e2126f3a936407764cdc">compare_to</a> (const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
+<tr class="memdesc:ab66e8167b4e6e2126f3a936407764cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
+<tr class="separator:ab66e8167b4e6e2126f3a936407764cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45e2b9e89c39e64ecbbbedd094ba1924"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a45e2b9e89c39e64ecbbbedd094ba1924">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
 <tr class="memdesc:a45e2b9e89c39e64ecbbbedd094ba1924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="separator:a45e2b9e89c39e64ecbbbedd094ba1924"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,19 +141,19 @@ const <a class="el" href="classxtd_1_1object.html">object</a> &amp;&#160;</td><t
 <tr class="memdesc:a038b6d823c3b8f328931e8aed27d33ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> that represents the current object.  <br /></td></tr>
 <tr class="separator:a038b6d823c3b8f328931e8aed27d33ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a014861bcf453a936e4123fcddbdda0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a6a014861bcf453a936e4123fcddbdda0">reset</a> () noexcept</td></tr>
-<tr class="memdesc:a6a014861bcf453a936e4123fcddbdda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">If not empty, destroys the contained object.  <br /></td></tr>
+<tr class="memdesc:a6a014861bcf453a936e4123fcddbdda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the current object. Set the current object to null.  <br /></td></tr>
 <tr class="separator:a6a014861bcf453a936e4123fcddbdda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
-<tr class="memitem:ab55b0b48191e69c1fb45aaa39973307f"><td class="memItemLeft" align="right" valign="top"><a id="ab55b0b48191e69c1fb45aaa39973307f" name="ab55b0b48191e69c1fb45aaa39973307f"></a>
-<a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;)=default</td></tr>
-<tr class="separator:ab55b0b48191e69c1fb45aaa39973307f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d25eac9b034e11a3d4d5fb26f544fa2"><td class="memItemLeft" align="right" valign="top"><a id="a1d25eac9b034e11a3d4d5fb26f544fa2" name="a1d25eac9b034e11a3d4d5fb26f544fa2"></a>
-<a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>)</td></tr>
-<tr class="separator:a1d25eac9b034e11a3d4d5fb26f544fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04a94fa725b01a245f04e2916ceb2ed3"><td class="memTemplParams" colspan="2"><a id="a04a94fa725b01a245f04e2916ceb2ed3" name="a04a94fa725b01a245f04e2916ceb2ed3"></a>
-template&lt;typename type_t &gt; </td></tr>
-<tr class="memitem:a04a94fa725b01a245f04e2916ceb2ed3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (const type_t &amp;value)</td></tr>
+<tr class="memitem:a7be6c97e961c0bb5e3b128a27f5f0545"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a7be6c97e961c0bb5e3b128a27f5f0545">operator=</a> (const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>)=default</td></tr>
+<tr class="memdesc:a7be6c97e961c0bb5e3b128a27f5f0545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="separator:a7be6c97e961c0bb5e3b128a27f5f0545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6c589bdfaba97efd6e675fa968ae023"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#af6c589bdfaba97efd6e675fa968ae023">operator=</a> (<a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>)</td></tr>
+<tr class="memdesc:af6c589bdfaba97efd6e675fa968ae023"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="separator:af6c589bdfaba97efd6e675fa968ae023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a94fa725b01a245f04e2916ceb2ed3"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:a04a94fa725b01a245f04e2916ceb2ed3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a04a94fa725b01a245f04e2916ceb2ed3">operator=</a> (const type_t &amp;<a class="el" href="classxtd_1_1any__object.html#aef3445700d50ea9699aec36b46299cac">value</a>)</td></tr>
+<tr class="memdesc:a04a94fa725b01a245f04e2916ceb2ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of value.  <br /></td></tr>
 <tr class="separator:a04a94fa725b01a245f04e2916ceb2ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -185,7 +184,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7a574a2f1f7bf730d27765e441cbf14a" name="a7a574a2f1f7bf730d27765e441cbf14a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a574a2f1f7bf730d27765e441cbf14a">&#9670;&#160;</a></span>any_object() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a574a2f1f7bf730d27765e441cbf14a">&#9670;&#160;</a></span>any_object() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,12 +205,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>@breif Constructs a new any object. </p>
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> class. </p>
 
 </div>
 </div>
 <a id="a725e61c04ba74c3998ebdcf32804858a" name="a725e61c04ba74c3998ebdcf32804858a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a725e61c04ba74c3998ebdcf32804858a">&#9670;&#160;</a></span>any_object() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a725e61c04ba74c3998ebdcf32804858a">&#9670;&#160;</a></span>any_object() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,10 +236,46 @@ template&lt;typename type_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a new any object. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> class with specified value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">value</td><td>The value to initialize the contained value with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a512dc705a71030a60c279cb2d439cf28" name="a512dc705a71030a60c279cb2d439cf28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512dc705a71030a60c279cb2d439cf28">&#9670;&#160;</a></span>any_object() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::any_object::any_object </td>
+          <td>(</td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> class with specified value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to initialize the contained value with. </td></tr>
   </table>
   </dd>
 </dl>
@@ -247,6 +283,53 @@ template&lt;typename type_t &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab66e8167b4e6e2126f3a936407764cdc" name="ab66e8167b4e6e2126f3a936407764cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab66e8167b4e6e2126f3a936407764cdc">&#9670;&#160;</a></span>compare_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga92bf6d527cbcada4a30faa2efd0d6a91">int32</a> xtd::any_object::compare_to </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares the current instance with another object of the same type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>An object to compare with this instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings: <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Value   </th><th class="markdownTableHeadNone">Condition    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Less than zero   </td><td class="markdownTableBodyNone">This instance is less than obj.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Zero   </td><td class="markdownTableBodyNone">This instance is equal to obj.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Greater than zero   </td><td class="markdownTableBodyNone">This instance is greater than obj.   </td></tr>
+</table>
+</dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">xtd::icomparable&lt; any_object &gt;</a>.</p>
+
+</div>
+</div>
 <a id="a42e12ad969a9f3be8c265cca4e524ea6" name="a42e12ad969a9f3be8c265cca4e524ea6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42e12ad969a9f3be8c265cca4e524ea6">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
@@ -369,8 +452,116 @@ template&lt;typename type_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>checks if object holds a value </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this current instance conatains a value; otherwhise false. </dd></dl>
+<p>Gets a value indicating whether the current <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> object has a valid value of its underlying type. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the current <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> object has a value; false if the current <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> object has no value. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is true, the value of the current <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> object can be accessed with the <a class="el" href="classxtd_1_1any__object.html#aef3445700d50ea9699aec36b46299cac" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">xtd::any_object::value</a> property. Otherwise, attempting to access its value throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a> exception. </dd></dl>
+
+</div>
+</div>
+<a id="af6c589bdfaba97efd6e675fa968ae023" name="af6c589bdfaba97efd6e675fa968ae023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6c589bdfaba97efd6e675fa968ae023">&#9670;&#160;</a></span>operator=() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp; xtd::any_object::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move assignment operator. Replaces the contents with a copy of the contents of other. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another polymorphic wrapper. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
+
+</div>
+</div>
+<a id="a7be6c97e961c0bb5e3b128a27f5f0545" name="a7be6c97e961c0bb5e3b128a27f5f0545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7be6c97e961c0bb5e3b128a27f5f0545">&#9670;&#160;</a></span>operator=() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp; xtd::any_object::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy assignment operator. Replaces the contents with a copy of the contents of other. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another polymorphic wrapper. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
+
+</div>
+</div>
+<a id="a04a94fa725b01a245f04e2916ceb2ed3" name="a04a94fa725b01a245f04e2916ceb2ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a94fa725b01a245f04e2916ceb2ed3">&#9670;&#160;</a></span>operator=() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp; xtd::any_object::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy assignment operator. Replaces the contents with a copy of value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to assign with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
 
 </div>
 </div>
@@ -397,7 +588,8 @@ template&lt;typename type_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>If not empty, destroys the contained object. </p>
+<p>Reset the current object. Set the current object to null. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>If xtd::any_object::has_values is true, destroys the contained object; otherwise does nothing. </dd></dl>
 
 </div>
 </div>
@@ -461,6 +653,40 @@ template&lt;typename type_t &gt; </div>
 
 </div>
 </div>
+<a id="aef3445700d50ea9699aec36b46299cac" name="aef3445700d50ea9699aec36b46299cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef3445700d50ea9699aec36b46299cac">&#9670;&#160;</a></span>value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1object.html">object</a> &amp; xtd::any_object::value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the current <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> object if it has been assigned a valid underlying value. </p>
+<dl class="section return"><dt>Returns</dt><dd>The value of the current <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> object if the <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is true. An exception is thrown if the <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is false. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is false. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="any__object_8h_source.html">any_object.h</a></li>
 </ul>
@@ -468,7 +694,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 27 2024 12:15:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jul 27 2024 20:16:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
