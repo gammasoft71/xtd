@@ -12,7 +12,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @briefRepresent a polymorphic wrapper capable of holding any type.
+  /// @brief Represent a polymorphic wrapper capable of holding any type.
   /// @par Header
   /// ```cpp
   /// #include <xtd/any_object>
@@ -24,7 +24,7 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @par Examples
   /// The following code example illustrates the use of xtd::any_object class.
-  /// @include any_object.cpp
+  /// @include any.cpp
   class any_object : public object, icomparable<any_object>, iequatable<any_object> {
   public:
     /// @name Public Constructors

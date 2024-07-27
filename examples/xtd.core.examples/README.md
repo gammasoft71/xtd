@@ -12,6 +12,11 @@
 * [hello_world_io](hello_worlds/hello_world_io/README.md) The classic first application "Hello, World!" with [xtd::io::file](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file.html) and [xtd::io::path](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1path.html) classes.
 * [hello_world_strings](hello_worlds/hello_world_ustring/README.md) The classic first application "Hello, World!" with [xtd::ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html) class.
 
+## [any](any/README.md)
+
+* [any](any/any/README.md) shows how to use [xtd:: any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
+* [any](any_info/any_info/README.md) shows how to use [xtd:: any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
+
 ## [Bit converter](bit_converter/README.md)
 
 * [bit_converter](bit_converter/bit_converter/README.md) shows hows how to use [xtd::bit_converter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html) class.
