@@ -76,8 +76,9 @@ namespace xtd {
     bool equals(const any_object& other) const noexcept override {
       if (!has_value() && !other.has_value()) return true;
       if (has_value() != other.has_value()) return false;
-      return *value_ == *other.value_;
+      return value_->equals(other);
     }
+    xtd::size get_hash_code() const noexcept override {return has_value() ? value_->get_hash_code() : 0;}
     ustring to_string() const noexcept override {return has_value() ? value_->to_string() : "(null)";}
     
     /// @brief Reset the current object. Set the current object to null.
