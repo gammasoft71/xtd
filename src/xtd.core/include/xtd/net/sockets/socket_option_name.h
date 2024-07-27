@@ -20,7 +20,8 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/socket_option_name> ```
+      /// #include <xtd/net/sockets/socket_option_name>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

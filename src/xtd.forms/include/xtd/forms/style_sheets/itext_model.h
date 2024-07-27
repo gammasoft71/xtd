@@ -29,7 +29,8 @@ namespace xtd {
       /// xtd::interface → xtd::forms::style_sheets::itext_model
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/itext_model> ```
+      /// #include <xtd/forms/style_sheets/itext_model>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

@@ -16,7 +16,8 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-    /// #include <xtd/speech/synthesis/synthesizer_state> ```
+      /// #include <xtd/speech/synthesis/synthesizer_state>
+      /// ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

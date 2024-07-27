@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief Specifies the visual state of a radio button that is drawn with visual styles.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/visual_styles/radio_button_state> ```
+      /// #include <xtd/forms/visual_styles/radio_button_state>
+      /// ```
       /// @par Namespace
       /// xtd::forms::visual_style
       /// @par Library

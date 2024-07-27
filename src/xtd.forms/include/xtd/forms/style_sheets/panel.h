@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief The panel data allows you to specify the box of a panel control.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/panel> ```
+      /// #include <xtd/forms/style_sheets/panel>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

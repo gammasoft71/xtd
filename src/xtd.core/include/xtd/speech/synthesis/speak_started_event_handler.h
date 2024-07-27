@@ -14,7 +14,8 @@ namespace xtd {
       /// @brief Represents the method that will handle xtd::speech::synthesis::speech_synthesizer::speak_started event.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/speech/synthesis/speak_started_event_handler> ```
+      /// #include <xtd/speech/synthesis/speak_started_event_handler>
+      /// ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief The image_type enum class specifies what kind of image to display.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/image_type> ```
+      /// #include <xtd/forms/style_sheets/image_type>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

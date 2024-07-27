@@ -27,7 +27,8 @@ namespace xtd {
       /// xtd::object → xtd::net::sockets::tcp_client
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/tcp_client> ```
+      /// #include <xtd/net/sockets/tcp_client>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

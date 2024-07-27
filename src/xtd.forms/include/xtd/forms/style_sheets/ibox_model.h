@@ -33,7 +33,8 @@ namespace xtd {
       /// xtd::interface → xtd::forms::style_sheets::ibox_model
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/ibox_model> ```
+      /// #include <xtd/forms/style_sheets/ibox_model>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

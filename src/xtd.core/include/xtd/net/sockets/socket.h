@@ -51,7 +51,8 @@ namespace xtd {
       /// xtd::object → xtd::net::sockets::socket
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/socket> ```
+      /// #include <xtd/net/sockets/socket>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

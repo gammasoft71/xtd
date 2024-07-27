@@ -24,7 +24,8 @@ namespace xtd {
       /// xtd::iequatable <>
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/shadow> ```
+      /// #include <xtd/forms/style_sheets/shadow>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

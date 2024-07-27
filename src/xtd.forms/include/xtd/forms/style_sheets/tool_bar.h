@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief The tool_bar data allows you to specify the box of a tool_bar control.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/tool_bar> ```
+      /// #include <xtd/forms/style_sheets/tool_bar>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

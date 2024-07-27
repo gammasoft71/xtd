@@ -16,7 +16,8 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/padding> ```
+      /// #include <xtd/forms/style_sheets/padding>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

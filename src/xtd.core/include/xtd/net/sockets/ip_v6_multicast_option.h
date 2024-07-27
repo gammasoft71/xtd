@@ -22,7 +22,8 @@ namespace xtd {
       /// xtd::object → xtd::net::sockets::ip_v6_multicast_option
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/ip_v6_multicast_option> ```
+      /// #include <xtd/net/sockets/ip_v6_multicast_option>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

@@ -16,7 +16,8 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/outline_radius> ```
+      /// #include <xtd/forms/style_sheets/outline_radius>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

@@ -27,7 +27,8 @@ namespace xtd {
       /// xtd::event_args → xtd::speech::synthesis::state_changed_event_args
       /// @par Header
       /// ```cpp
-    /// #include <xtd/speech/synthesis/state_changed_event_args> ```
+      /// #include <xtd/speech/synthesis/state_changed_event_args>
+      /// ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library

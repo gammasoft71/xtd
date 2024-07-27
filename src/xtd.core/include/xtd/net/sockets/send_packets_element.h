@@ -30,7 +30,8 @@ namespace xtd {
       /// xtd::object → xtd::net::sockets::send_packets_element
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/send_packets_element> ```
+      /// #include <xtd/net/sockets/send_packets_element>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

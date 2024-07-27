@@ -27,7 +27,8 @@ namespace xtd {
       /// xtd::interface → xtd::forms::style_sheets::iimage_model
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/iimage_model> ```
+      /// #include <xtd/forms/style_sheets/iimage_model>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

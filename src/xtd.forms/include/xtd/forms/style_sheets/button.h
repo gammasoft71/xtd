@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief The buttton data allows you to specify the box of a button control.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/button> ```
+      /// #include <xtd/forms/style_sheets/button>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

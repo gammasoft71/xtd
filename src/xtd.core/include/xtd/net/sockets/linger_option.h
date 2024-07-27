@@ -22,7 +22,8 @@ namespace xtd {
       /// xtd::object → xtd::net::sockets::linger_option
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/linger_option> ```
+      /// #include <xtd/net/sockets/linger_option>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

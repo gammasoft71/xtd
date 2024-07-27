@@ -13,7 +13,8 @@ namespace xtd {
       /// @brief The link label data allows you to specify the box of a link label control.
       /// @par Header
       /// ```cpp
-    /// #include <xtd/forms/style_sheets/link_label> ```
+      /// #include <xtd/forms/style_sheets/link_label>
+      /// ```
       /// @par Namespace
       /// xtd::forms::style_sheets
       /// @par Library

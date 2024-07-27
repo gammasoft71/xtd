@@ -33,7 +33,8 @@ namespace xtd {
       /// xtd::event_args → xtd::net::sockets::socket_async_event_args
       /// @par Header
       /// ```cpp
-    /// #include <xtd/net/sockets/socket_async_event_args> ```
+      /// #include <xtd/net/sockets/socket_async_event_args>
+      /// ```
       /// @par Namespace
       /// xtd::net::sockets
       /// @par Library

@@ -25,7 +25,8 @@ namespace xtd {
       /// xtd::object → xtd::speech::synthesis::speech_synthesizer
       /// @par Header
       /// ```cpp
-    /// #include <xtd/speech/synthesis/speech_synthesizer> ```
+      /// #include <xtd/speech/synthesis/speech_synthesizer>
+      /// ```
       /// @par Namespace
       /// xtd::speech::synthesis
       /// @par Library
