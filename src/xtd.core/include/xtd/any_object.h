@@ -34,12 +34,12 @@ namespace xtd {
     any_object() noexcept = default;
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
-    template<typename type_t>
-    explicit any_object(type_t&& value) : value_(boxing_ptr(value)) {}
+    template<typename type_t> // Can't be explicit by design.
+    any_object(type_t&& value) : value_(boxing_ptr(value)) {}
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
-    template<typename type_t>
-    explicit any_object(const type_t& value) : value_(boxing_ptr(value)) {}
+    template<typename type_t> // Can't be explicit by design.
+    any_object(const type_t& value) : value_(boxing_ptr(value)) {}
     /// @}
 
     /// @cond
