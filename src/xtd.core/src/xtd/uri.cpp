@@ -401,7 +401,7 @@ void uri::set_host(ustring& escape_uri) {
     if (index_start == ustring::npos) index_start = escape_uri.size();
     if (index_start != ustring::npos) {
       host_ = escape_uri.remove(index_start + 1).to_lower();
-      escape_uri = escape_uri.substring(index_start  + 1);
+      escape_uri = escape_uri.substring(index_start + 1);
     }
   } else {
     auto index_start = escape_uri.index_of_any({':', '/', '?', '#'});

@@ -291,7 +291,7 @@ void fourteen_segment_display::draw_segment_i(drawing::graphics& graphics, const
 
 void fourteen_segment_display::draw_segment_j(drawing::graphics& graphics, const drawing::color& color) {
   for (auto offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-    graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), 2 + thickness(), size().width()  / 2 + 2 + thickness() / 2, size().height() / 2 - 2 - thickness() / 2 - abs(offset));
+    graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness() - abs(offset), 2 + thickness(), size().width() / 2 + 2 + thickness() / 2, size().height() / 2 - 2 - thickness() / 2 - abs(offset));
     graphics.draw_line(drawing::pen(color), size().width() - 3 - thickness(), 2 + thickness() + abs(offset), size().width() / 2 + 2 + thickness() / 2 + abs(offset), size().height() / 2 - 2 - thickness() / 2);
   }
 }
@@ -310,8 +310,8 @@ void fourteen_segment_display::draw_segment_l(drawing::graphics& graphics, const
 
 void fourteen_segment_display::draw_segment_m(drawing::graphics& graphics, const drawing::color& color) {
   for (auto offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++) {
-    graphics.draw_line(drawing::pen(color), size().width()  / 2 + 2 + thickness() / 2 + abs(offset), size().height() / 2 + 2 + thickness() / 2, size().width() - 3 - thickness(), size().height() - 3 - thickness() - abs(offset));
-    graphics.draw_line(drawing::pen(color), size().width()  / 2 + 2 + thickness() / 2, size().height() / 2 + 2 + thickness() / 2 + abs(offset), size().width() - 3 - thickness() - abs(offset), size().height() - 3 - thickness());
+    graphics.draw_line(drawing::pen(color), size().width() / 2 + 2 + thickness() / 2 + abs(offset), size().height() / 2 + 2 + thickness() / 2, size().width() - 3 - thickness(), size().height() - 3 - thickness() - abs(offset));
+    graphics.draw_line(drawing::pen(color), size().width() / 2 + 2 + thickness() / 2, size().height() / 2 + 2 + thickness() / 2 + abs(offset), size().width() - 3 - thickness() - abs(offset), size().height() - 3 - thickness());
   }
 }
 

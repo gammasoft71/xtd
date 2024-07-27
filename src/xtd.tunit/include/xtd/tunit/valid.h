@@ -311,7 +311,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::valid::are_not_same(c, a); // test ok.
       /// xtd::tunit::valid::are_not_same(b, a); // test fails.
       /// ```
@@ -326,7 +326,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::valid::are_not_same(c, a, csf_); // test ok.
       /// xtd::tunit::valid::are_not_same(b, a, stack_frame); // test fails.
       /// ```
@@ -341,7 +341,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::valid::are_not_same(c, a, "User message..."); // test ok.
       /// xtd::tunit::valid::are_not_same(b, a, "User message..."); // test fails.
       /// ```
@@ -357,7 +357,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::valid::are_not_same(c, a, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::are_not_same(b, a, "User message...", stack_frame); // test fails.
       /// ```
@@ -377,7 +377,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::valid::are_same(b, a); // test ok.
       /// xtd::tunit::valid::are_same(c, a); // test fails.
       /// ```
@@ -392,7 +392,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::valid::are_same(b, a, csf_); // test ok.
       /// xtd::tunit::valid::are_same(c, a, csf_); // test fails.
       /// ```
@@ -407,7 +407,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::valid::are_same(b, a, "User message..."); // test ok.
       /// xtd::tunit::valid::are_same(c, a, "User message..."); // test fails.
       /// ```
@@ -423,7 +423,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::valid::are_same(b, a, "User message...", csf_); // test ok.
       /// xtd::tunit::valid::are_same(c, a, "User message...", csf_); // test fails.
       /// ```

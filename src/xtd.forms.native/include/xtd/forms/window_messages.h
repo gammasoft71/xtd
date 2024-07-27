@@ -1735,7 +1735,7 @@ constexpr xtd::uint32 NM_LAST = 0u - 99u;
 constexpr xtd::uint32 LVN_FIRST = 0u - 100u; // listview
 constexpr xtd::uint32 LVN_LAST = 0u - 199u;
 
-// Property sheet reserved (0u-200u) -  (0u-299u) - see prsht.h
+// Property sheet reserved (0u-200u) - (0u-299u) - see prsht.h
 
 constexpr xtd::uint32 HDN_FIRST = 0u - 300u; // header
 constexpr xtd::uint32 HDN_LAST = 0u - 399u;
@@ -1749,7 +1749,7 @@ constexpr xtd::uint32 TTN_LAST = 0u - 549u;
 constexpr xtd::uint32 TCN_FIRST = 0u - 550u; // tab control
 constexpr xtd::uint32 TCN_LAST = 0u - 580u;
 
-// Shell reserved               (0u-580u) -  (0u-589u)
+// Shell reserved               (0u-580u) - (0u-589u)
 
 constexpr xtd::uint32 CDN_FIRST = 0u - 601u; // common dialog (new)
 constexpr xtd::uint32 CDN_LAST = 0u - 699u;

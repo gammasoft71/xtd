@@ -378,7 +378,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::assert::are_not_same(c, a, "User message...", csf_); // test ok.
       /// xtd::tunit::assert::are_not_same(b, a, "User message...", stack_frame); // test throws an assert_error exception.
       /// ```
@@ -398,7 +398,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::assert::are_same(b, a); // test ok.
       /// xtd::tunit::assert::are_same(c, a); // test throws an assert_error exception.
       /// ```
@@ -413,7 +413,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::assert::are_same(b, a, csf_); // test ok.
       /// xtd::tunit::assert::are_same(c, a, csf_); // test throws an assert_error exception.
       /// ```
@@ -428,7 +428,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::assert::are_same(b, a, "User message..."); // test ok.
       /// xtd::tunit::assert::are_same(c, a, "User message..."); // test throws an assert_error exception.
       /// ```
@@ -444,7 +444,7 @@ namespace xtd {
       /// ```cpp
       /// int a = 24;
       /// int& b = a;
-      /// int c=  24;
+      /// int c = 24;
       /// xtd::tunit::assert::are_same(b, a, "User message...", csf_); // test ok.
       /// xtd::tunit::assert::are_same(c, a, "User message...", csf_); // test throws an assert_error exception.
       /// ```
@@ -2313,15 +2313,15 @@ namespace xtd {
       static void throws(const std::function<void()>& statement, const xtd::ustring& message, const xtd::diagnostics::stack_frame& stack_frame) {
         try {
           statement();
-          fail("<"  + typeof_<exception_t>().full_name() + ">", "<nothing>", message, stack_frame);
+          fail("<" + typeof_<exception_t>().full_name() + ">", "<nothing>", message, stack_frame);
         } catch (const exception_t&) {
           succeed(message, stack_frame);
         } catch (const xtd::tunit::assert_error&) {
           throw;
         } catch (const std::exception& e) {
-          fail("<"  + typeof_<exception_t>().full_name() + ">", "<" + typeof_(e).full_name() + ">", message, stack_frame);
+          fail("<" + typeof_<exception_t>().full_name() + ">", "<" + typeof_(e).full_name() + ">", message, stack_frame);
         } catch (...) {
-          fail("<"  + typeof_<exception_t>().full_name() + ">", "<exception>", message, stack_frame);
+          fail("<" + typeof_<exception_t>().full_name() + ">", "<exception>", message, stack_frame);
         }
       }
       
@@ -2442,7 +2442,7 @@ namespace xtd {
 /// ```cpp
 /// int a = 24;
 /// int& b = a;
-/// int c=  24;
+/// int c = 24;
 /// xtd::tunit::assert::are_not_same_(c, a); // test ok.
 /// xtd::tunit::assert::are_not_same_(b, a, "User message..."); // test error.
 /// xtd::tunit::assume::are_not_same_(c, a); // test ok.
@@ -2463,7 +2463,7 @@ namespace xtd {
 /// ```cpp
 /// int a = 24;
 /// int& b = a;
-/// int c=  24;
+/// int c = 24;
 /// xtd::tunit::assert::are__same_(c, a, "User message..."); // test error.
 /// xtd::tunit::assert::are_same_(b, a); // test ok.
 /// xtd::tunit::assume::are_same_(c, a, "User message..."); // test error.
