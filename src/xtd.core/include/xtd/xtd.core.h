@@ -329,6 +329,7 @@
 #include "length_exception.h"
 #include "literals.h"
 #include "lock.h"
+#include "make_any_object.h"
 #include "math.h"
 #include "month_of_year.h"
 #include "nameof.h"

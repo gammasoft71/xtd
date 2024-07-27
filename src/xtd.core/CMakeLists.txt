@@ -258,6 +258,8 @@ add_sources(
   include/xtd/literals
   include/xtd/lock.h
   include/xtd/lock
+  include/xtd/make_any_object.h
+  include/xtd/make_any_object
   include/xtd/math.h
   include/xtd/math
   include/xtd/month_of_year.h
