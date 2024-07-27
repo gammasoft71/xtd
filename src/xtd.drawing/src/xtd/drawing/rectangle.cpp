@@ -142,7 +142,7 @@ void rectangle::inflate(int32 width, int32 height) noexcept {
   x_ -= width;
   y_ -= height;
   width_ += 2 * width;
-  height_ +=  2 * height;
+  height_ += 2 * height;
 }
 
 rectangle rectangle::inflate(const rectangle& rect, int32 x, int32 y) noexcept {

@@ -21,7 +21,7 @@ namespace xtd {
       /// xtd.forms
       /// @ingroup xtd_forms
       /// @remarks The xtd::forms::visual_styles::label_state values correspond to the states of the visual style element objects exposed by the xtd::forms::label class. The xtd::forms::visual_styles::label_state values are also used as an argument in the xtd::forms::label_renderer::draw_label method.
-      using label_state  = control_state;
+      using label_state = control_state;
     }
   }
 }

@@ -946,7 +946,7 @@ vector<ustring> ustring::split(const vector<value_type>& separators, size_t coun
   auto sub_string = ustring::empty_string;
   auto split_char_separators = separators.size() == 0 ? default_split_separators : separators;
   for (auto it = begin(); it != end(); ++it) {
-    auto is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
+    auto is_separator = std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
     if (!is_separator) sub_string.append(ustring(1, *it));
     if ((static_cast<size_t>(it - begin()) == length() - 1 || is_separator) && (sub_string.length() > 0 || (sub_string.length() == 0 && options != string_split_options::remove_empty_entries))) {
       if (list.size() == count - 1) {

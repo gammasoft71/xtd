@@ -125,7 +125,7 @@ void vertical_layout_panel::on_layout(const event_args& e) {
     if (layout_style.expanded()) left = padding().left();
     else {
       if (layout_style.align() == content_alignment::top_left || layout_style.align() == content_alignment::middle_left || layout_style.align() == content_alignment::bottom_left) left = padding().left();
-      else if (layout_style.align() == content_alignment::top_right || layout_style.align() == content_alignment::middle_right || layout_style.align() == content_alignment::bottom_right) left =  padding().top() + client_size().width() - padding().left() - padding().right() - control.get().width();
+      else if (layout_style.align() == content_alignment::top_right || layout_style.align() == content_alignment::middle_right || layout_style.align() == content_alignment::bottom_right) left = padding().top() + client_size().width() - padding().left() - padding().right() - control.get().width();
       else left = client_size().width() / 2 - control.get().width() / 2;
     }
     width = layout_style.expanded() ? client_size().width() - padding().left() - padding().right() : control.get().width();

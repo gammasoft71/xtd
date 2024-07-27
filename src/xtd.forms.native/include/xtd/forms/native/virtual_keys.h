@@ -826,7 +826,7 @@ constexpr size_t VK_DECIMAL = 0x0000006E;
 /// @ingroup xtd_forms_native virtual_keys
 /// @remarks For more info see https://docs.microsoft.com .
 /// @warning Internal use only
-constexpr size_t VK_DIVIDE =  0x00006F;
+constexpr size_t VK_DIVIDE = 0x00006F;
 /// @brief The F1 key.
 /// @par Library
 /// xtd.forms.native

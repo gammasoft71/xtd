@@ -79,7 +79,7 @@ namespace xtd::tests {
     
     void test_method_(create_version_from_version) {
       version version1(1, 2, 3, 4);
-      version version2  = version1;
+      version version2 = version1;
       assert::are_equal(1, version2.major(), csf_);
       assert::are_equal(2, version2.minor(), csf_);
       assert::are_equal(3, version2.build(), csf_);
@@ -88,7 +88,7 @@ namespace xtd::tests {
     
     void test_method_(equality_operator) {
       version version1(1, 2, 3, 4);
-      version version2  = version1;
+      version version2 = version1;
       version version3;
       assert::is_true(version1 == version2, csf_);
       assert::is_false(version1 == version3, csf_);
@@ -96,7 +96,7 @@ namespace xtd::tests {
     
     void test_method_(inequality_operator) {
       version version1(1, 2, 3, 4);
-      version version2  = version1;
+      version version2 = version1;
       version version3;
       assert::is_false(version1 != version2, csf_);
       assert::is_true(version1 != version3, csf_);

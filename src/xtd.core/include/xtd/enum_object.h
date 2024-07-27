@@ -624,7 +624,7 @@ namespace xtd {
   xtd::ustring enum_object<enum_t>::to_string(const xtd::ustring& format, const std::locale& loc) const {
     init();
     auto fmt = format;
-    if (fmt.empty()) fmt =  "G";
+    if (fmt.empty()) fmt = "G";
     
     switch (fmt[0]) {
       case 'b':

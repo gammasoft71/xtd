@@ -133,7 +133,7 @@ void rectangle_f::inflate(float width, float height) noexcept {
   x_ -= width;
   y_ -= height;
   width_ += 2 * width;
-  height_ +=  2 * height;
+  height_ += 2 * height;
 }
 
 rectangle_f rectangle_f::inflate(const rectangle_f& rect, const drawing::size_f& sz) noexcept {
