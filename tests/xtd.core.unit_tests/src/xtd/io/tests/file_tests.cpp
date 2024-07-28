@@ -232,7 +232,7 @@ namespace xtd::io::tests {
     
     void test_method_(read_all_bytes) {
       ofstream existing_file(test_file_name, ios::binary | ios::out);
-      array<unsigned char, 4> b = {0x42, 0x24, 0x12, 0x84};
+      std::array<unsigned char, 4> b = {0x42, 0x24, 0x12, 0x84};
       existing_file.write(reinterpret_cast<char*>(b.data()), b.size());
       existing_file.close();
       std::vector<unsigned char> bytes = file::read_all_bytes(test_file_name);
