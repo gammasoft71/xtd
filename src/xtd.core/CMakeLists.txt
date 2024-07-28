@@ -32,6 +32,8 @@ add_sources(
   include/xtd/argument_out_of_range_exception
   include/xtd/arithmetic_exception.h
   include/xtd/arithmetic_exception
+  include/xtd/array.h
+  include/xtd/array
   include/xtd/as.h
   include/xtd/as
   include/xtd/async_callback.h
@@ -486,6 +488,8 @@ add_sources(
   include/xtd/collections/generic/dictionary
   include/xtd/collections/generic/hash_set.h
   include/xtd/collections/generic/hash_set
+  include/xtd/collections/generic/icollection.h
+  include/xtd/collections/generic/icollection
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
   include/xtd/collections/generic/list.h
