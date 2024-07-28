@@ -35,25 +35,18 @@ namespace xtd {
       /// private:
       ///   const box_collection& collection_;
       ///   size cur_index_ = box_integer<size>::max_value;
-      ///   box cur_box_;
       ///
       /// public:
       ///   explicit box_enumerator(const box_collection& collection) : collection_ {collection} {}
       ///
+      ///   const box& current() const override {return collection_[cur_index_];}
+      ///
       ///   bool move_next() override {
       ///     //Avoids going beyond the end of the collection.
-      ///     if (++cur_index_ >= collection_.count())
-      ///       return false;
-      ///     // Set current box to next item in collection.
-      ///     cur_box_ = collection_[cur_index_];
-      ///     return true;
+      ///     return ++cur_index_ < collection_.count() ? true : false;
       ///   }
       ///
       ///   void reset() override {cur_index_ = box_integer<size>::max_value;}
-      ///
-      ///   const box& current() const override {
-      ///     return cur_box_;
-      ///   }
       /// };
       /// @endcode
       /// @remarks xtd::collections::generic::ienumerator <type_t> is the base interface for all generic enumerators.
