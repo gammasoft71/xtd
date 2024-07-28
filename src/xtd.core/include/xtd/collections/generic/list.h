@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "helpers/allocator.h"
+#include "icollection.h"
 #include "../../object.h"
 #include "../../ustring.h"
 #include <utility>
