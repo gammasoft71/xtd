@@ -490,6 +490,8 @@ add_sources(
   include/xtd/collections/generic/hash_set
   include/xtd/collections/generic/icollection.h
   include/xtd/collections/generic/icollection
+  include/xtd/collections/generic/ienumerator.h
+  include/xtd/collections/generic/ienumerator
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
   include/xtd/collections/generic/list.h
