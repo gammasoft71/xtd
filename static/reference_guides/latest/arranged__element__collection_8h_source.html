@@ -365,9 +365,9 @@ $(function() {
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        }</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>        </div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a9f6a3b93ea02bca5987a84bf6a994772">  431</a></span>        std::vector&lt;type_t&gt; <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a9f6a3b93ea02bca5987a84bf6a994772">to_array</a>() const noexcept {</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>          std::vector&lt;type_t&gt; array;</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>          std::vector&lt;type_t&gt; <a class="code hl_typedef" href="group__system.html#ga23ad3a72b3c9da7418d0b2020076a40a">array</a>;</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>          std::for_each(collection_.begin(), collection_.end(), [&amp;](<span class="keyword">auto</span> item) {array.push_back(item);});</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>          <span class="keywordflow">return</span> array;</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>          <span class="keywordflow">return</span> <a class="code hl_typedef" href="group__system.html#ga23ad3a72b3c9da7418d0b2020076a40a">array</a>;</div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        }</div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        </div>
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aac81158712ee9ae7f98d7b2a4251f39b">  439</a></span>        std::vector&lt;type_t&gt; <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aac81158712ee9ae7f98d7b2a4251f39b">to_vector</a>() const noexcept {<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a9f6a3b93ea02bca5987a84bf6a994772">to_array</a>();}</div>
@@ -489,6 +489,7 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1layout_1_1arranged__element__collection_html_afb88f05ac01b300a28611ae1324af741"><div class="ttname"><a href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#afb88f05ac01b300a28611ae1324af741">xtd::forms::layout::arranged_element_collection::difference_type</a></div><div class="ttdeci">std::ptrdiff_t difference_type</div><div class="ttdoc">Represents the pointer difference type of the collection.</div><div class="ttdef"><b>Definition</b> arranged_element_collection.h:75</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:40</div></div>
 <div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
+<div class="ttc" id="agroup__system_html_ga23ad3a72b3c9da7418d0b2020076a40a"><div class="ttname"><a href="group__system.html#ga23ad3a72b3c9da7418d0b2020076a40a">xtd::array</a></div><div class="ttdeci">std::vector&lt; type_t &gt; array</div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, there by serving as the b...</div><div class="ttdef"><b>Definition</b> array.h:23</div></div>
 <div class="ttc" id="agroup__types_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.h:23</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970deae0df5f3dfd2650ae5be9993434e2b2c0"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae0df5f3dfd2650ae5be9993434e2b2c0">xtd::forms::keys::insert</a></div><div class="ttdeci">@ insert</div><div class="ttdoc">The INSERT key.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
@@ -498,7 +499,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 27 2024 23:41:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jul 28 2024 22:17:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
