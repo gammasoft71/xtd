@@ -32,21 +32,16 @@ namespace xtd {
       /// // Defines the enumerator for the boxes collection.
       /// // (Some prefer this class nested in the collection class.)
       /// class box_enumerator : public ienumerator<box> {
-      /// private:
-      ///   const box_collection& collection;
-      ///   size cur_index = box_integer<size>::max_value;
-      ///
       /// public:
-      ///   explicit box_enumerator(const box_collection& collection) : collection {collection} {}
+      ///   explicit box_enumerator(const box_collection& boxes) : boxes {boxes} {}
       ///
-      ///   const box& current() const override {return collection[cur_index];}
-      ///
-      ///   bool move_next() override {
-      ///     //Avoids going beyond the end of the collection.
-      ///     return ++cur_index < collection_.count() ? true : false;
-      ///   }
-      ///
+      ///   const box& current() const override {return boxes[cur_index];}
+      ///   bool move_next() override {return ++cur_index < boxes.count() ? true : false;}
       ///   void reset() override {cur_index = box_integer<size>::max_value;}
+      ///
+      /// private:
+      ///   const box_collection& boxes;
+      ///   size cur_index = box_integer<size>::max_value;
       /// };
       /// @endcode
       /// @remarks xtd::collections::generic::ienumerator <type_t> is the base interface for all generic enumerators.
