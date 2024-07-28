@@ -29,7 +29,7 @@ namespace xtd {
       /// @par Examples
       /// The following example shows an implementation of the xtd::collections::generic::ienumerator <type_t> interface for a collection class of custom objects. The custom object is an instance of the type Box, and the collection class is BoxCollection. This code example is part of a larger example provided for the ICollection<T> interface.
       /// @code
-      /// // Defines the enumerator for the Boxes collection.
+      /// // Defines the enumerator for the boxes collection.
       /// // (Some prefer this class nested in the collection class.)
       /// class box_enumerator : public ienumerator<box> {
       /// private:
