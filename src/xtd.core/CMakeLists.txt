@@ -480,6 +480,8 @@ add_sources(
   include/xtd/collections/array_list
   include/xtd/collections/hashtable.h
   include/xtd/collections/hashtable
+  include/xtd/collections/ienumerator.h
+  include/xtd/collections/ienumerator
   include/xtd/collections/key_not_found_exception.h
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
