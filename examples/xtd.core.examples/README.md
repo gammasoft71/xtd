@@ -186,6 +186,10 @@
 * [format_with_alignment](format/format_with_alignment/README.md) shows how to use [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) method with specified alignment args.
 * [format_with_order](format/format_with_order/README.md) shows how to use [xtd::format](https://gammasoft71.github.io/xtd/reference_guides/latest/_format_page.html) method with specified order args.
 
+## [generic_Collections](generic_Collections/README.md)
+
+* [generic_ienumerator](generic_Collections/generic_ienumerator/README.md) shows how to use [xtd::collections::generic::ienumerator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1ienumerator.html) interface.
+
 ## [Guid](guid/README.md)
 
 * [guid](guid/guid/README.md) shows how to use [xtd::guid](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1guid.html) class.
