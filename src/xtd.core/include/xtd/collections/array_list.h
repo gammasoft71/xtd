@@ -26,6 +26,7 @@ namespace xtd {
     /// @par Examples
     /// The following example shows hows to use xtd::collections::array_list.
     /// @include array_list.cpp
+    /// @remarks TTo add a class, structure or any other type unknown to xtd, you need to implement the xtd::iequatable and xtd::icompoabale interfaces or overrride the == and < operetors.
     using array_list = generic::list<xtd::any_object>;
   }
 }
