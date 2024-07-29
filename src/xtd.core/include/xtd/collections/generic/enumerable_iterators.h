@@ -59,7 +59,10 @@ namespace xtd {
           /// @brief Initializes a new instance of the xtd::collections::generic::iterator class with specified enumerator and end.
           /// @param enumerator The enumerator to iterate with.
           /// @parem end true to specify the end iterotator; otherwise false.
-          iterator(enumerator<type_t> enumerator, bool end) : enumerator_(enumerator) {enumerator_.reset(); pos_ = enumerator_.move_next() == false || end == true ? std::numeric_limits<xtd::size>::max() : 0;}
+          iterator(enumerator<type_t> enumerator, bool end) : enumerator_(enumerator) {
+            enumerator_.reset();
+            pos_ = enumerator_.move_next() == false || end == true ? std::numeric_limits<xtd::size>::max() : 0;
+          }
           /// @}
 
           /// @name Public Operators
@@ -74,17 +77,24 @@ namespace xtd {
           
           /// @brief Pre increments the underlying iterator.
           /// @return The underlying iterator.
-          iterator& operator++() {if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 :  std::numeric_limits<xtd::size>::max(); return *this;}
+          iterator& operator ++() {
+            if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
+            return *this;
+          }
           /// @brief Post increments the underlying iterator.
           /// @return The underlying iterator.
-          iterator operator++(int) {iterator tmp = *this; ++(*this); return tmp;}
+          iterator operator ++(int) {
+            auto current = *this;
+            ++(*this);
+            return current;
+          }
           
           /// @biref The equality operator of specified underlyig itertators.
           /// @return true if underlying iterators are equels; otherwise false.
-          friend bool operator==(const iterator& a, const iterator& b) { return a.pos_ == b.pos_; }
+          friend bool operator ==(const iterator& a, const iterator& b) noexcept { return a.pos_ == b.pos_; }
           /// @biref The inequality operator of specified underlyig itertators.
           /// @return true if underlying iterators are not equels; otherwise false.
-          friend bool operator!=(const iterator& a, const iterator& b) { return !operator==(a, b); }
+          friend bool operator !=(const iterator& a, const iterator& b) noexcept { return !operator==(a, b); }
           /// @}
 
         private:
@@ -126,7 +136,7 @@ namespace xtd {
       private:
         friend enumerator_t;
         enumerable_iterators(enumerator_t* enumerator) : enumerator_(enumerator) {}
-        enumerator_t* enumerator_;
+        enumerator_t* enumerator_ = nullptr;
       };
     }
   }
