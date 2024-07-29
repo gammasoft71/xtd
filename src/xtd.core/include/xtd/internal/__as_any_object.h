@@ -14,7 +14,7 @@ namespace xtd {
   
   template<typename type_t>
   struct __enum_any_object__<type_t, std::true_type> {
-    type_t operator()(const any_object& o) const {return as<enum_object<type_t>>(o).value();}
+    type_t operator()(const any_object& o) const {return as<enum_object<type_t>>(o.value());}
   };
   
   template<typename type_t>
