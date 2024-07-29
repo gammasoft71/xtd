@@ -24,6 +24,7 @@ namespace xtd {
   /// @par Examples
   /// The following code example illustrates the use of xtd::any_object class.
   /// @include any.cpp
+  /// @remarks TTo add a class, structure or any other type unknown to xtd, you need to implement the xtd::iequatable and xtd::icompoabale interfaces or overrride the == and < operetors.
   class any_object : public object, icomparable<any_object>, iequatable<any_object> {
   public:
     /// @name Public Constructors
