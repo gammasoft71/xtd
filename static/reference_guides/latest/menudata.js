@@ -130,6 +130,7 @@ var menudata={children:[
 {text:"u",url:"functions_type.html#index_u"},
 {text:"v",url:"functions_type.html#index_v"},
 {text:"x",url:"functions_type.html#index_x"}]},
-{text:"Enumerations",url:"functions_enum.html"}]}]},
+{text:"Enumerations",url:"functions_enum.html"},
+{text:"Related Symbols",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html"},
 {text:"Examples",url:"examples.html"}]}
