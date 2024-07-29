@@ -19,6 +19,7 @@ add_projects(
   enumerations
   exceptions
   format
+  generic_collections
   guid
   hash_code
   interfaces
