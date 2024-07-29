@@ -2,7 +2,6 @@
 /// @brief Contains std::any type and xtd::any_object class.
 #pragma once
 #include "collections/generic/helpers/comparer.h"
-#include "as.h"
 #include "boxing.h"
 #include "icomparable.h"
 #include "iequatable.h"
@@ -35,16 +34,19 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
     template<typename type_t> // Can't be explicit by design.
-    any_object(type_t&& value) : value_(boxing_ptr(value)) {}
+    any_object(type_t&& value) noexcept : value_(boxing_ptr(value)) {}
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
     template<typename type_t> // Can't be explicit by design.
-    any_object(const type_t& value) : value_(boxing_ptr(value)) {}
+    any_object(type_t& value) noexcept : value_(boxing_ptr(value)) {}
+    template<typename type_t> // Can't be explicit by design.
+    any_object(const type_t& value) noexcept : value_(boxing_ptr(value)) {}
     /// @}
 
     /// @cond
-    any_object(any_object&&) = default;
-    explicit any_object(const any_object&) noexcept = default;
+    any_object(any_object&&) noexcept = default;
+    any_object(any_object&) noexcept = default;
+    any_object(const any_object&) noexcept = default;
     /// @endcond
 
     /// @name Public Properties
@@ -72,7 +74,7 @@ namespace xtd {
       if (has_value() && !other.has_value()) return 1;
       return equals(other) ? 0 : xtd::collections::generic::helpers::comparer<ptr<object>> {}(value_, other.value_) ? -1 : 1;
     }
-    bool equals(const object& other) const noexcept override {return is<any_object>(other) && equals(as<any_object>(other));}
+    bool equals(const object& other) const noexcept override {return dynamic_cast<const any_object*>(&other) && equals(static_cast<const any_object&>(other));}
     bool equals(const any_object& other) const noexcept override {
       if (!has_value() && !other.has_value()) return true;
       if (has_value() != other.has_value()) return false;
@@ -98,14 +100,6 @@ namespace xtd {
     /// @return This current instance.
     any_object& operator =(any_object&& other) {
       value_ = std::move(other.value_);
-      return *this;
-    };
-    /// @brief Copy assignment operator. Replaces the contents with a copy of value.
-    /// @param value The value to assign with.
-    /// @return This current instance.
-    template<typename type_t>
-    any_object& operator =(const type_t& value) {
-      value_ = boxing_ptr(value);
       return *this;
     };
     /// @}
@@ -167,4 +161,44 @@ namespace xtd {
     
     ptr<object> value_;
   };
+
+  /// @cond
+  template<typename type_t, typename bool_t>
+  struct __is_enum_any_object__ {};
+  
+  template<typename type_t>
+  struct __is_enum_any_object__<type_t, std::true_type> {
+    bool operator()(const any_object& o) const {return is<enum_object<type_t>>(o).value();}
+  };
+  
+  template<typename type_t>
+  struct __is_enum_any_object__<type_t, std::false_type> {
+    bool operator()(const any_object& o) const {return false;}
+  };
+  
+  template<typename type_t, typename bool_t>
+  struct __is_polymorphic_any_object__ {};
+  
+  template<typename type_t>
+  struct __is_polymorphic_any_object__<type_t, std::true_type> {
+    bool operator()(const any_object& o) const {return is<type_t>(o.value());}
+  };
+  
+  template<typename type_t>
+  struct __is_polymorphic_any_object__<type_t, std::false_type> {
+    bool operator()(const any_object& o) const {return __is_enum_any_object__<type_t, typename std::is_enum<type_t>::type> {}(o);}
+  };
+  
+  template<typename type_t>
+  bool is(any_object& o) {
+    if (is<box<type_t>>(o.value())) return true;
+    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
+  }
+  
+  template<typename type_t>
+  bool is(const any_object& o) {
+    if (is<box<type_t>>(o.value())) return true;
+    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
+  }
+  /// @endcond
 }
