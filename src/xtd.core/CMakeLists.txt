@@ -488,10 +488,16 @@ add_sources(
   include/xtd/collections/vector_list
   include/xtd/collections/generic/dictionary.h
   include/xtd/collections/generic/dictionary
+  include/xtd/collections/generic/enumerable_iterators.h
+  include/xtd/collections/generic/enumerable_iterators
+  include/xtd/collections/generic/enumerator.h
+  include/xtd/collections/generic/enumerator
   include/xtd/collections/generic/hash_set.h
   include/xtd/collections/generic/hash_set
   include/xtd/collections/generic/icollection.h
   include/xtd/collections/generic/icollection
+  include/xtd/collections/generic/ienumerable.h
+  include/xtd/collections/generic/ienumerable
   include/xtd/collections/generic/ienumerator.h
   include/xtd/collections/generic/ienumerator
   include/xtd/collections/generic/key_value_pair.h
