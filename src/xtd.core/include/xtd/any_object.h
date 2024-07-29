@@ -168,7 +168,7 @@ namespace xtd {
   
   template<typename type_t>
   struct __is_enum_any_object__<type_t, std::true_type> {
-    bool operator()(const any_object& o) const {return is<enum_object<type_t>>(o).value();}
+    bool operator()(const any_object& o) const {return is<enum_object<type_t>>(o.value());}
   };
   
   template<typename type_t>
