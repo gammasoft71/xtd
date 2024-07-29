@@ -19,8 +19,14 @@ xtdc run
 ## Output
 
 ```
-my_vl
-    size:    3
-    Capacity: 4
-    Values:   Hello   World   !
+items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]
+items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]
+
+true
+42
+"THIS IS A STRING"
+platform_id::win32s
+"ANOTHER STRING"
+4.2
+02:25:43
 ```

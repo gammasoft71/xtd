@@ -1,43 +1,34 @@
 #include <xtd/collections/array_list>
-#include <xtd/register_any_stringer>
-#include <xtd/as>
 #include <xtd/console>
-#include <xtd/is>
 #include <xtd/platform_id>
-#include <any>
-#include <chrono>
-#include <locale>
-#include <ostream>
-#include <string>
+#include <xtd/time_span>
 
-using namespace std;
-using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::collections;
 
 auto main() -> int {
-  register_any_stringer<platform_id>([](auto value) {return ustring::format("{}", value);});
-  register_any_stringer<seconds>([](auto value) {return ustring::format("{}", value);});
+  auto items = array_list {true, 42, "This is a string", platform_id::win32s, u8"Another string", 4.2f, 2_h + 25_min + 43_s};
   
-  // Creates and initializes a new vector_list.
-  auto list = array_list {true, 42, "This is a string"_s, platform_id::win32s, u8"Another string"_s, 4.2f, hours(2) + minutes(25) + seconds(43)};
-  
-  console::write_line("vector_list = {{{}}}", ustring::join(", ", list));
+  console::write_line("items = [{}]", ustring::join(", ", items));
+  console::write_line("items = {}", items);
   console::write_line();
   
-  for (const any& item : list) {
+  for (auto item : items) {
     if (is<ustring>(item)) console::write_line("{}", as<ustring>(item).to_upper().quoted());
+    else if (is<platform_id>(item)) console::write_line("{}::{}", typeof_(as<platform_id>(item)).name(), item);
     else console::write_line("{}", item);
   }
 }
 
 // This code can produces the following output :
 //
-// vector_list = {true, 42, This is a string, win32s, Another string, 4.2, 02:25:43}
+// items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]
+// items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]
 //
 // true
 // 42
 // "THIS IS A STRING"
+// platform_id::win32s
 // "ANOTHER STRING"
 // 4.2
 // 02:25:43
