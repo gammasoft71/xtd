@@ -84,56 +84,48 @@ $(function() {
 <div class="contents">
 <p>Shows how to use <a class="el" href="group__collections.html#gaf064333715d42a26e1ec3999ff384557" title="Represents a collection of std::any.">xtd::collections::array_list</a> alias.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/array_list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/is&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/platform_id&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;any&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;locale&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;ostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/time_span&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span>std::chrono;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  register_any_stringer&lt;platform_id&gt;([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value);});</div>
-<div class="line">  register_any_stringer&lt;seconds&gt;([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value);});</div>
+<div class="line">  <span class="keyword">auto</span> items = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">array_list</a> {<span class="keyword">true</span>, 42, <span class="stringliteral">&quot;This is a string&quot;</span>, platform_id::win32s, u8<span class="stringliteral">&quot;Another string&quot;</span>, 4.2f, 2_h + 25_min + 43_s};</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Creates and initializes a new vector_list.</span></div>
-<div class="line">  <span class="keyword">auto</span> list = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">array_list</a> {<span class="keyword">true</span>, 42, <span class="stringliteral">&quot;This is a string&quot;</span>_s, platform_id::win32s, u8<span class="stringliteral">&quot;Another string&quot;</span>_s, 4.2f, hours(2) + minutes(25) + seconds(43)};</div>
-<div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;vector_list = {{{}}}&quot;</span>, ustring::join(<span class="stringliteral">&quot;, &quot;</span>, list));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;items = [{}]&quot;</span>, ustring::join(<span class="stringliteral">&quot;, &quot;</span>, items));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;items = {}&quot;</span>, items);</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> any&amp; item : list) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : items) {</div>
 <div class="line">    <span class="keywordflow">if</span> (is&lt;ustring&gt;(item)) console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, as&lt;ustring&gt;(item).to_upper().quoted());</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is&lt;platform_id&gt;(item)) console::write_line(<span class="stringliteral">&quot;{}::{}&quot;</span>, <a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(as&lt;platform_id&gt;(item)).name(), item);</div>
 <div class="line">    <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, item);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// vector_list = {true, 42, This is a string, win32s, Another string, 4.2, 02:25:43}</span></div>
+<div class="line"><span class="comment">// items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]</span></div>
+<div class="line"><span class="comment">// items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// true</span></div>
 <div class="line"><span class="comment">// 42</span></div>
 <div class="line"><span class="comment">// &quot;THIS IS A STRING&quot;</span></div>
+<div class="line"><span class="comment">// platform_id::win32s</span></div>
 <div class="line"><span class="comment">// &quot;ANOTHER STRING&quot;</span></div>
 <div class="line"><span class="comment">// 4.2</span></div>
 <div class="line"><span class="comment">// 02:25:43</span></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:34</div></div>
+<div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.h:45</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 28 2024 22:17:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jul 29 2024 16:41:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
