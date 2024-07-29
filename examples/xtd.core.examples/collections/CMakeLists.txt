@@ -7,4 +7,5 @@ add_projects(
   array_list
   array_list2
   hashtable
+  ienumerator
 )
