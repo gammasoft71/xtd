@@ -22,6 +22,7 @@
 * [Environment](xtd.core.examples/environment/README.md) contains environment examples.
 * [Exceptions](xtd.core.examples/exceptions/README.md) contains exceptions examples.
 * [Format](xtd.core.examples/format/README.md) contains format examples.
+* [Generic collections](xtd.core.examples/generic_collections/README.md) contains genric collections examples.
 * [Guid](xtd.core.examples/guid/README.md) contains guid examples.
 * [Hash code](xtd.core.examples/hash_code/README.md) contains hash_code examples.
 * [Interfaces](xtd.core.examples/interfaces/README.md) contains interfaces examples.
