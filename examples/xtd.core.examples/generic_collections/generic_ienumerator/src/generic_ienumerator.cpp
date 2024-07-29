@@ -1,4 +1,4 @@
-#include <xtd/collections/generic/enumerator>
+#include <xtd/collections/generic/ienumerator>
 #include <xtd/console>
 
 using namespace xtd;
