@@ -105,41 +105,41 @@ namespace xtd {
         
         /// @brief Constructs an empty container with the given allocator.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        explicit list(const allocator_type& alloc) noexcept : items_{alloc} {}
+        explicit list(const allocator_type& alloc) noexcept : items_(alloc) {}
         /// @brief Constructs the container with specified count copies of elements with specified value.
         /// @param count The size of the container.
         /// @param value The value to initialize elements of the container with.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items_{count, value, alloc} {}
+        list(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items_(count, value, alloc) {}
         /// @brief Constructs the container with specified count default-inserted instances of type_t. No copies are made.
         /// @param count The size of the container.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        explicit list(size_type count, const allocator_type& alloc = allocator_type()) : items_{count, alloc} {}
+        explicit list(size_type count, const allocator_type& alloc = allocator_type()) : items_(count, alloc) {}
         /// @brief Constructs the container with the contents of the range [first, last).
         /// @param first The first iterator the range to copy the elements from.
         /// @param last The last iterator the range to copy the elements from.
         /// @param alloc The allocator to use for all memory allocations of this container.
         template<typename input_iterator_t>
-        list(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items_{first, last, alloc} {}
+        list(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items_(first, last, alloc) {}
         
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         list(const list& list) = default;
         /// @brief Copy constructor with specified base type list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be inserted from.
-        list(const base_type& list) : items_{list} {}
+        list(const base_type& list) : items_(list) {}
         /// @brief Default copy constructor with specified list, and allocator.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(const list& list, const allocator_type& alloc) : items_{list.items_, alloc} {}
+        list(const list& list, const allocator_type& alloc) : items_(list.items_, alloc) {}
         /// @brief Default copy constructor with specified base type list, and allocator.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(const base_type& list, const allocator_type& alloc) : items_{list, alloc} {}
+        list(const base_type& list, const allocator_type& alloc) : items_(list, alloc) {}
         /// @brief Constructs the container with the contents of the specified initializer list, and allocator.
         /// @param items The initializer list to initialize the elements of the container with.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : items_{items, alloc} {}
+        list(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : items_(items, alloc) {}
         
         /// @brief Move constructor with specified list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
@@ -150,11 +150,11 @@ namespace xtd {
         /// @brief Move constructor with specified list, and allocator.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(list&& other, const allocator_type& alloc) : items_{other.items_, alloc}, operation_number_{std::move(other.operation_number_)} {}
+        list(list&& other, const allocator_type& alloc) : items_(other.items_, alloc), operation_number_{std::move(other.operation_number_)} {}
         /// @brief Move constructor with specified base tyoe list, and allocator.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(base_type&& other, const allocator_type& alloc) : items_{other, alloc} {}
+        list(base_type&& other, const allocator_type& alloc) : items_(other, alloc) {}
         /// @}
         
         /// @name Public Properties
