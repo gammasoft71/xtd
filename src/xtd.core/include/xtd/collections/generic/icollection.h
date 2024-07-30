@@ -17,7 +17,7 @@ namespace xtd {
       /// @par Definition
       /// ```cpp
       /// template<typename type_t>
-      /// class icollection  : public xtd::collections::generic::ienumerable<type_t>
+      /// class icollection : public xtd::collections::generic::ienumerable<type_t>
       /// ```
       /// @par Header
       /// ```cpp
