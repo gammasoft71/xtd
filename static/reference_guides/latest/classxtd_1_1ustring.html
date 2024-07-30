@@ -94,9 +94,10 @@ Inheritance diagram for xtd::ustring:</div>
  <div class="center">
   <img src="classxtd_1_1ustring.png" usemap="#xtd::ustring_map" alt=""/>
   <map id="xtd::ustring_map" name="xtd::ustring_map">
-<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,165,80"/>
-<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; ustring &gt;" shape="rect" coords="175,56,340,80"/>
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="175,0,340,24"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,362,80"/>
+<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; ustring &gt;" shape="rect" coords="372,56,734,80"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="186,0,548,24"/>
+<area href="classxtd_1_1comparison__operators.html" title="Internal comparable operators definition." alt="xtd::comparison_operators&lt; type_t, comparable_t &gt;" shape="rect" coords="558,0,920,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -131,6 +132,12 @@ If you want the same mutable string class, you can use xtd::text::ustring_builde
 <tr class="memitem:a94c19dfade464033be0ffb4e86fb1ead"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a94c19dfade464033be0ffb4e86fb1ead">ustring</a> (size_t count, value_type character, const allocator_type &amp;allocator)</td></tr>
 <tr class="memdesc:a94c19dfade464033be0ffb4e86fb1ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified count copies of character and specified allocator.  <br /></td></tr>
 <tr class="separator:a94c19dfade464033be0ffb4e86fb1ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60eed64a348bd421e9fea1488611c2a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a60eed64a348bd421e9fea1488611c2a4">ustring</a> (size_t count, <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> character)</td></tr>
+<tr class="memdesc:a60eed64a348bd421e9fea1488611c2a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified count copies of character.  <br /></td></tr>
+<tr class="separator:a60eed64a348bd421e9fea1488611c2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5db46f55794c8f7ed6ce44a44c5aa87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#ae5db46f55794c8f7ed6ce44a44c5aa87">ustring</a> (size_t count, <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> character, const allocator_type &amp;allocator)</td></tr>
+<tr class="memdesc:ae5db46f55794c8f7ed6ce44a44c5aa87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified count copies of character and specified allocator.  <br /></td></tr>
+<tr class="separator:ae5db46f55794c8f7ed6ce44a44c5aa87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e8a8bc83d8eca6678303fc24e13b85c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a2e8a8bc83d8eca6678303fc24e13b85c">ustring</a> (size_t count, <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">char16</a> character)</td></tr>
 <tr class="memdesc:a2e8a8bc83d8eca6678303fc24e13b85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified count copies of character.  <br /></td></tr>
 <tr class="separator:a2e8a8bc83d8eca6678303fc24e13b85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,6 +198,24 @@ If you want the same mutable string class, you can use xtd::text::ustring_builde
 <tr class="memitem:a9c224c965990e3a8674037250c9c466d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a9c224c965990e3a8674037250c9c466d">ustring</a> (const std::string &amp;str, const allocator_type &amp;allocator) noexcept</td></tr>
 <tr class="memdesc:a9c224c965990e3a8674037250c9c466d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy and allocator.  <br /></td></tr>
 <tr class="separator:a9c224c965990e3a8674037250c9c466d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fcf93d304874f014d6a802be7666c1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a1fcf93d304874f014d6a802be7666c1c">ustring</a> (const std::u8string &amp;str) noexcept</td></tr>
+<tr class="memdesc:a1fcf93d304874f014d6a802be7666c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy.  <br /></td></tr>
+<tr class="separator:a1fcf93d304874f014d6a802be7666c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e269e43bbcacd9b0071ccb1fe5e158"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a31e269e43bbcacd9b0071ccb1fe5e158">ustring</a> (const std::u8string &amp;str, const allocator_type &amp;allocator) noexcept</td></tr>
+<tr class="memdesc:a31e269e43bbcacd9b0071ccb1fe5e158"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy and allocator.  <br /></td></tr>
+<tr class="separator:a31e269e43bbcacd9b0071ccb1fe5e158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5295f4a35fdf004ab7c4b62bf1ba56b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#af5295f4a35fdf004ab7c4b62bf1ba56b">ustring</a> (const <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *str)</td></tr>
+<tr class="memdesc:af5295f4a35fdf004ab7c4b62bf1ba56b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy.  <br /></td></tr>
+<tr class="separator:af5295f4a35fdf004ab7c4b62bf1ba56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1505227afa3c82eb5e0a2e4e1754f541"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a1505227afa3c82eb5e0a2e4e1754f541">ustring</a> (const <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *str, const allocator_type &amp;allocator)</td></tr>
+<tr class="memdesc:a1505227afa3c82eb5e0a2e4e1754f541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy, and allocator.  <br /></td></tr>
+<tr class="separator:a1505227afa3c82eb5e0a2e4e1754f541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c35e48175f6d6ea83deb119883fb23"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#ab6c35e48175f6d6ea83deb119883fb23">ustring</a> (<a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *str)</td></tr>
+<tr class="memdesc:ab6c35e48175f6d6ea83deb119883fb23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy.  <br /></td></tr>
+<tr class="separator:ab6c35e48175f6d6ea83deb119883fb23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701190baffb8aa8f2fc412d63310aaa4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a701190baffb8aa8f2fc412d63310aaa4">ustring</a> (<a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *str, const allocator_type &amp;allocator)</td></tr>
+<tr class="memdesc:a701190baffb8aa8f2fc412d63310aaa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy, and allocator.  <br /></td></tr>
+<tr class="separator:a701190baffb8aa8f2fc412d63310aaa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6819b6bf89183d64b7ac6d474772b07"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#ae6819b6bf89183d64b7ac6d474772b07">ustring</a> (const std::u16string &amp;str) noexcept</td></tr>
 <tr class="memdesc:ae6819b6bf89183d64b7ac6d474772b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy.  <br /></td></tr>
 <tr class="separator:ae6819b6bf89183d64b7ac6d474772b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,6 +298,12 @@ If you want the same mutable string class, you can use xtd::text::ustring_builde
 <tr class="memitem:a015261e2eb18d2ac46ca692829cd164d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a015261e2eb18d2ac46ca692829cd164d">ustring</a> (std::initializer_list&lt; value_type &gt; il, const allocator_type &amp;allocator)</td></tr>
 <tr class="memdesc:a015261e2eb18d2ac46ca692829cd164d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified initializer list and allocator.  <br /></td></tr>
 <tr class="separator:a015261e2eb18d2ac46ca692829cd164d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5fac71387a4d3abb9f4b59cc89c735e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#af5fac71387a4d3abb9f4b59cc89c735e">ustring</a> (std::initializer_list&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> &gt; il)</td></tr>
+<tr class="memdesc:af5fac71387a4d3abb9f4b59cc89c735e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified initializer list.  <br /></td></tr>
+<tr class="separator:af5fac71387a4d3abb9f4b59cc89c735e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68c91b16568d7b858245097921a3f3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#ad68c91b16568d7b858245097921a3f3a">ustring</a> (std::initializer_list&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> &gt; il, const allocator_type &amp;allocator)</td></tr>
+<tr class="memdesc:ad68c91b16568d7b858245097921a3f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified initializer list and allocator.  <br /></td></tr>
+<tr class="separator:ad68c91b16568d7b858245097921a3f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f312b06fc60075660894c4dea4c74a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a0f312b06fc60075660894c4dea4c74a1">ustring</a> (std::initializer_list&lt; <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">char16</a> &gt; il)</td></tr>
 <tr class="memdesc:a0f312b06fc60075660894c4dea4c74a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified initializer list.  <br /></td></tr>
 <tr class="separator:a0f312b06fc60075660894c4dea4c74a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,6 +330,9 @@ If you want the same mutable string class, you can use xtd::text::ustring_builde
 <tr class="memitem:a382c837c730894233030313753ddbdf1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a382c837c730894233030313753ddbdf1">contains</a> (value_type value) const noexcept</td></tr>
 <tr class="memdesc:a382c837c730894233030313753ddbdf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether a specified char occurs within this string.  <br /></td></tr>
 <tr class="separator:a382c837c730894233030313753ddbdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21f351446d11746852f4bf41f16fd4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#ad21f351446d11746852f4bf41f16fd4f">contains</a> (<a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> value) const noexcept</td></tr>
+<tr class="memdesc:ad21f351446d11746852f4bf41f16fd4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether a specified char occurs within this string.  <br /></td></tr>
+<tr class="separator:ad21f351446d11746852f4bf41f16fd4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea0e43190da2d939a59a911e46302af1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#aea0e43190da2d939a59a911e46302af1">contains</a> (const <a class="el" href="classxtd_1_1ustring.html">ustring</a> &amp;value) const noexcept</td></tr>
 <tr class="memdesc:aea0e43190da2d939a59a911e46302af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether a specified substring occurs within this string.  <br /></td></tr>
 <tr class="separator:aea0e43190da2d939a59a911e46302af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -311,6 +345,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:ab66c2037568657029c2695e7c5d43d84"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#ab66c2037568657029c2695e7c5d43d84">ends_with</a> (value_type value) const noexcept</td></tr>
 <tr class="memdesc:ab66c2037568657029c2695e7c5d43d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the end of this string matches the specified character.  <br /></td></tr>
 <tr class="separator:ab66c2037568657029c2695e7c5d43d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2372f570af43ddd632c3fdfbe43de030"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#a2372f570af43ddd632c3fdfbe43de030">ends_with</a> (<a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> value) const noexcept</td></tr>
+<tr class="memdesc:a2372f570af43ddd632c3fdfbe43de030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the end of this string matches the specified character.  <br /></td></tr>
+<tr class="separator:a2372f570af43ddd632c3fdfbe43de030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad02f78ca99a3dfb0ee73bc0252b329b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1ustring.html#ad02f78ca99a3dfb0ee73bc0252b329b0">ends_with</a> (const <a class="el" href="classxtd_1_1ustring.html">ustring</a> &amp;value) const noexcept</td></tr>
 <tr class="memdesc:ad02f78ca99a3dfb0ee73bc0252b329b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the end of this string matches the specified string.  <br /></td></tr>
 <tr class="separator:ad02f78ca99a3dfb0ee73bc0252b329b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -629,7 +666,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="add61d5146149ee689a7f9bed1309cfad" name="add61d5146149ee689a7f9bed1309cfad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add61d5146149ee689a7f9bed1309cfad">&#9670;&#160;</a></span>ustring() <span class="overload">[1/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#add61d5146149ee689a7f9bed1309cfad">&#9670;&#160;</a></span>ustring() <span class="overload">[1/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -656,7 +693,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a08170f266741991ebf47b057a34ba124" name="a08170f266741991ebf47b057a34ba124"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08170f266741991ebf47b057a34ba124">&#9670;&#160;</a></span>ustring() <span class="overload">[2/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a08170f266741991ebf47b057a34ba124">&#9670;&#160;</a></span>ustring() <span class="overload">[2/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -690,7 +727,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a09c6e9bc0de28607372aa298e5886f84" name="a09c6e9bc0de28607372aa298e5886f84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09c6e9bc0de28607372aa298e5886f84">&#9670;&#160;</a></span>ustring() <span class="overload">[3/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c6e9bc0de28607372aa298e5886f84">&#9670;&#160;</a></span>ustring() <span class="overload">[3/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -728,7 +765,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a94c19dfade464033be0ffb4e86fb1ead" name="a94c19dfade464033be0ffb4e86fb1ead"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94c19dfade464033be0ffb4e86fb1ead">&#9670;&#160;</a></span>ustring() <span class="overload">[4/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c19dfade464033be0ffb4e86fb1ead">&#9670;&#160;</a></span>ustring() <span class="overload">[4/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -772,8 +809,91 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a60eed64a348bd421e9fea1488611c2a4" name="a60eed64a348bd421e9fea1488611c2a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60eed64a348bd421e9fea1488611c2a4">&#9670;&#160;</a></span>ustring() <span class="overload">[5/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>&#160;</td>
+          <td class="paramname"><em>character</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified count copies of character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to copy. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of copies of character. </td></tr>
+    <tr><td class="paramname">character</td><td>The character copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae5db46f55794c8f7ed6ce44a44c5aa87" name="ae5db46f55794c8f7ed6ce44a44c5aa87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5db46f55794c8f7ed6ce44a44c5aa87">&#9670;&#160;</a></span>ustring() <span class="overload">[6/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>&#160;</td>
+          <td class="paramname"><em>character</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const allocator_type &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified count copies of character and specified allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to copy. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of copies of character. </td></tr>
+    <tr><td class="paramname">character</td><td>The character copied. </td></tr>
+    <tr><td class="paramname">allocator</td><td>The allocator to use for all memory allocations of this string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a2e8a8bc83d8eca6678303fc24e13b85c" name="a2e8a8bc83d8eca6678303fc24e13b85c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e8a8bc83d8eca6678303fc24e13b85c">&#9670;&#160;</a></span>ustring() <span class="overload">[5/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e8a8bc83d8eca6678303fc24e13b85c">&#9670;&#160;</a></span>ustring() <span class="overload">[7/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -811,7 +931,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a6b5c3469299d8c2db3306edcb65b091e" name="a6b5c3469299d8c2db3306edcb65b091e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b5c3469299d8c2db3306edcb65b091e">&#9670;&#160;</a></span>ustring() <span class="overload">[6/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b5c3469299d8c2db3306edcb65b091e">&#9670;&#160;</a></span>ustring() <span class="overload">[8/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -856,7 +976,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ad580a4e34ed9845fcc962357cdb43c91" name="ad580a4e34ed9845fcc962357cdb43c91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad580a4e34ed9845fcc962357cdb43c91">&#9670;&#160;</a></span>ustring() <span class="overload">[7/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad580a4e34ed9845fcc962357cdb43c91">&#9670;&#160;</a></span>ustring() <span class="overload">[9/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -894,7 +1014,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a0c2353536a07382b5d45accaadb5f203" name="a0c2353536a07382b5d45accaadb5f203"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c2353536a07382b5d45accaadb5f203">&#9670;&#160;</a></span>ustring() <span class="overload">[8/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2353536a07382b5d45accaadb5f203">&#9670;&#160;</a></span>ustring() <span class="overload">[10/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -939,7 +1059,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a44be94c61a89e56b681e1c765de9591c" name="a44be94c61a89e56b681e1c765de9591c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44be94c61a89e56b681e1c765de9591c">&#9670;&#160;</a></span>ustring() <span class="overload">[9/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a44be94c61a89e56b681e1c765de9591c">&#9670;&#160;</a></span>ustring() <span class="overload">[11/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -977,7 +1097,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="acf3b1d1f4a121d8cc3ad14d6a8710e96" name="acf3b1d1f4a121d8cc3ad14d6a8710e96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf3b1d1f4a121d8cc3ad14d6a8710e96">&#9670;&#160;</a></span>ustring() <span class="overload">[10/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3b1d1f4a121d8cc3ad14d6a8710e96">&#9670;&#160;</a></span>ustring() <span class="overload">[12/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1022,7 +1142,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a09e9d9b1b3d1dd5c2431aff1fb936b34" name="a09e9d9b1b3d1dd5c2431aff1fb936b34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09e9d9b1b3d1dd5c2431aff1fb936b34">&#9670;&#160;</a></span>ustring() <span class="overload">[11/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e9d9b1b3d1dd5c2431aff1fb936b34">&#9670;&#160;</a></span>ustring() <span class="overload">[13/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1066,7 +1186,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a961a9ba4c72a3ef7e30ce00744fab282" name="a961a9ba4c72a3ef7e30ce00744fab282"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a961a9ba4c72a3ef7e30ce00744fab282">&#9670;&#160;</a></span>ustring() <span class="overload">[12/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a961a9ba4c72a3ef7e30ce00744fab282">&#9670;&#160;</a></span>ustring() <span class="overload">[14/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1117,7 +1237,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ac0dd03c9c81d6dcf7686bf80ef7183b0" name="ac0dd03c9c81d6dcf7686bf80ef7183b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0dd03c9c81d6dcf7686bf80ef7183b0">&#9670;&#160;</a></span>ustring() <span class="overload">[13/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0dd03c9c81d6dcf7686bf80ef7183b0">&#9670;&#160;</a></span>ustring() <span class="overload">[15/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1154,7 +1274,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a378a1ead97b2b5db84cc20e6dfd0a71d" name="a378a1ead97b2b5db84cc20e6dfd0a71d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a378a1ead97b2b5db84cc20e6dfd0a71d">&#9670;&#160;</a></span>ustring() <span class="overload">[14/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a378a1ead97b2b5db84cc20e6dfd0a71d">&#9670;&#160;</a></span>ustring() <span class="overload">[16/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1198,7 +1318,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a175105db0d4fd8d70afd6bf68e901c43" name="a175105db0d4fd8d70afd6bf68e901c43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a175105db0d4fd8d70afd6bf68e901c43">&#9670;&#160;</a></span>ustring() <span class="overload">[15/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a175105db0d4fd8d70afd6bf68e901c43">&#9670;&#160;</a></span>ustring() <span class="overload">[17/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1234,7 +1354,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a94daf332e8506577c406ff8be31a68ed" name="a94daf332e8506577c406ff8be31a68ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94daf332e8506577c406ff8be31a68ed">&#9670;&#160;</a></span>ustring() <span class="overload">[16/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a94daf332e8506577c406ff8be31a68ed">&#9670;&#160;</a></span>ustring() <span class="overload">[18/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1278,7 +1398,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a22c52720442dea9e80a0ee939e0e8644" name="a22c52720442dea9e80a0ee939e0e8644"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22c52720442dea9e80a0ee939e0e8644">&#9670;&#160;</a></span>ustring() <span class="overload">[17/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c52720442dea9e80a0ee939e0e8644">&#9670;&#160;</a></span>ustring() <span class="overload">[19/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1298,7 +1418,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a82d9fbd84544ded58b56bb258c839977" name="a82d9fbd84544ded58b56bb258c839977"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82d9fbd84544ded58b56bb258c839977">&#9670;&#160;</a></span>ustring() <span class="overload">[18/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a82d9fbd84544ded58b56bb258c839977">&#9670;&#160;</a></span>ustring() <span class="overload">[20/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1335,7 +1455,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a4407cb0d803eaca779def996836accae" name="a4407cb0d803eaca779def996836accae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4407cb0d803eaca779def996836accae">&#9670;&#160;</a></span>ustring() <span class="overload">[19/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4407cb0d803eaca779def996836accae">&#9670;&#160;</a></span>ustring() <span class="overload">[21/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1355,7 +1475,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="aa30cffa0a677d57c60dbc300e2a63f8e" name="aa30cffa0a677d57c60dbc300e2a63f8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa30cffa0a677d57c60dbc300e2a63f8e">&#9670;&#160;</a></span>ustring() <span class="overload">[20/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa30cffa0a677d57c60dbc300e2a63f8e">&#9670;&#160;</a></span>ustring() <span class="overload">[22/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1392,7 +1512,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="acaeedea48ef4f24dafe9ec8fb70092c5" name="acaeedea48ef4f24dafe9ec8fb70092c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaeedea48ef4f24dafe9ec8fb70092c5">&#9670;&#160;</a></span>ustring() <span class="overload">[21/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acaeedea48ef4f24dafe9ec8fb70092c5">&#9670;&#160;</a></span>ustring() <span class="overload">[23/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1426,7 +1546,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a97ca1e3a8ea546462fe2490d87161e67" name="a97ca1e3a8ea546462fe2490d87161e67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97ca1e3a8ea546462fe2490d87161e67">&#9670;&#160;</a></span>ustring() <span class="overload">[22/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a97ca1e3a8ea546462fe2490d87161e67">&#9670;&#160;</a></span>ustring() <span class="overload">[24/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1471,7 +1591,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="aa1d943de2665ca7471a3c7012f0ac85a" name="aa1d943de2665ca7471a3c7012f0ac85a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1d943de2665ca7471a3c7012f0ac85a">&#9670;&#160;</a></span>ustring() <span class="overload">[23/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d943de2665ca7471a3c7012f0ac85a">&#9670;&#160;</a></span>ustring() <span class="overload">[25/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1505,7 +1625,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a9c224c965990e3a8674037250c9c466d" name="a9c224c965990e3a8674037250c9c466d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c224c965990e3a8674037250c9c466d">&#9670;&#160;</a></span>ustring() <span class="overload">[24/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c224c965990e3a8674037250c9c466d">&#9670;&#160;</a></span>ustring() <span class="overload">[26/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1549,8 +1669,201 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a1fcf93d304874f014d6a802be7666c1c" name="a1fcf93d304874f014d6a802be7666c1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fcf93d304874f014d6a802be7666c1c">&#9670;&#160;</a></span>ustring() <span class="overload">[27/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype">const std::u8string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a31e269e43bbcacd9b0071ccb1fe5e158" name="a31e269e43bbcacd9b0071ccb1fe5e158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e269e43bbcacd9b0071ccb1fe5e158">&#9670;&#160;</a></span>ustring() <span class="overload">[28/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype">const std::u8string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const allocator_type &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy and allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to copy. </td></tr>
+    <tr><td class="paramname">allocator</td><td>The allocator to use for all memory allocations of this string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af5295f4a35fdf004ab7c4b62bf1ba56b" name="af5295f4a35fdf004ab7c4b62bf1ba56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5295f4a35fdf004ab7c4b62bf1ba56b">&#9670;&#160;</a></span>ustring() <span class="overload">[29/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy. </p>
+
+</div>
+</div>
+<a id="a1505227afa3c82eb5e0a2e4e1754f541" name="a1505227afa3c82eb5e0a2e4e1754f541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1505227afa3c82eb5e0a2e4e1754f541">&#9670;&#160;</a></span>ustring() <span class="overload">[30/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const allocator_type &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy, and allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to copy. </td></tr>
+    <tr><td class="paramname">allocator</td><td>The allocator to use for all memory allocations of this string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab6c35e48175f6d6ea83deb119883fb23" name="ab6c35e48175f6d6ea83deb119883fb23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c35e48175f6d6ea83deb119883fb23">&#9670;&#160;</a></span>ustring() <span class="overload">[31/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy. </p>
+
+</div>
+</div>
+<a id="a701190baffb8aa8f2fc412d63310aaa4" name="a701190baffb8aa8f2fc412d63310aaa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a701190baffb8aa8f2fc412d63310aaa4">&#9670;&#160;</a></span>ustring() <span class="overload">[32/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const allocator_type &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified string to copy, and allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to copy. </td></tr>
+    <tr><td class="paramname">allocator</td><td>The allocator to use for all memory allocations of this string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ae6819b6bf89183d64b7ac6d474772b07" name="ae6819b6bf89183d64b7ac6d474772b07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6819b6bf89183d64b7ac6d474772b07">&#9670;&#160;</a></span>ustring() <span class="overload">[25/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6819b6bf89183d64b7ac6d474772b07">&#9670;&#160;</a></span>ustring() <span class="overload">[33/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1584,7 +1897,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="abf6c2740de5260fc6cc9d3fa7066fbfe" name="abf6c2740de5260fc6cc9d3fa7066fbfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf6c2740de5260fc6cc9d3fa7066fbfe">&#9670;&#160;</a></span>ustring() <span class="overload">[26/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6c2740de5260fc6cc9d3fa7066fbfe">&#9670;&#160;</a></span>ustring() <span class="overload">[34/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1629,7 +1942,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a409297779dcf55ae74b83a435569b328" name="a409297779dcf55ae74b83a435569b328"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a409297779dcf55ae74b83a435569b328">&#9670;&#160;</a></span>ustring() <span class="overload">[27/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a409297779dcf55ae74b83a435569b328">&#9670;&#160;</a></span>ustring() <span class="overload">[35/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1649,7 +1962,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a1c0994a9a72dd136d0abb8390be983dd" name="a1c0994a9a72dd136d0abb8390be983dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c0994a9a72dd136d0abb8390be983dd">&#9670;&#160;</a></span>ustring() <span class="overload">[28/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c0994a9a72dd136d0abb8390be983dd">&#9670;&#160;</a></span>ustring() <span class="overload">[36/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1686,7 +1999,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a31a5d9202fbeea5064291b66206aa0cd" name="a31a5d9202fbeea5064291b66206aa0cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31a5d9202fbeea5064291b66206aa0cd">&#9670;&#160;</a></span>ustring() <span class="overload">[29/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a5d9202fbeea5064291b66206aa0cd">&#9670;&#160;</a></span>ustring() <span class="overload">[37/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1706,7 +2019,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ad896767620ca29c0136fda92dcd90007" name="ad896767620ca29c0136fda92dcd90007"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad896767620ca29c0136fda92dcd90007">&#9670;&#160;</a></span>ustring() <span class="overload">[30/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad896767620ca29c0136fda92dcd90007">&#9670;&#160;</a></span>ustring() <span class="overload">[38/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1743,7 +2056,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ab8c728901774cc83ca604138421d6268" name="ab8c728901774cc83ca604138421d6268"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8c728901774cc83ca604138421d6268">&#9670;&#160;</a></span>ustring() <span class="overload">[31/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c728901774cc83ca604138421d6268">&#9670;&#160;</a></span>ustring() <span class="overload">[39/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1777,7 +2090,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ada4269aa64ca67c250c758763e6819cd" name="ada4269aa64ca67c250c758763e6819cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada4269aa64ca67c250c758763e6819cd">&#9670;&#160;</a></span>ustring() <span class="overload">[32/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ada4269aa64ca67c250c758763e6819cd">&#9670;&#160;</a></span>ustring() <span class="overload">[40/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1822,7 +2135,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a5521daa7562bf09ec4bf4b9d5bb415a1" name="a5521daa7562bf09ec4bf4b9d5bb415a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5521daa7562bf09ec4bf4b9d5bb415a1">&#9670;&#160;</a></span>ustring() <span class="overload">[33/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5521daa7562bf09ec4bf4b9d5bb415a1">&#9670;&#160;</a></span>ustring() <span class="overload">[41/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1842,7 +2155,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ab9d83e074a4787153dcdd61fd7df2180" name="ab9d83e074a4787153dcdd61fd7df2180"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9d83e074a4787153dcdd61fd7df2180">&#9670;&#160;</a></span>ustring() <span class="overload">[34/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d83e074a4787153dcdd61fd7df2180">&#9670;&#160;</a></span>ustring() <span class="overload">[42/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1879,7 +2192,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a13b3316b8b80398b29421521f343c7e7" name="a13b3316b8b80398b29421521f343c7e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13b3316b8b80398b29421521f343c7e7">&#9670;&#160;</a></span>ustring() <span class="overload">[35/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a13b3316b8b80398b29421521f343c7e7">&#9670;&#160;</a></span>ustring() <span class="overload">[43/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1899,7 +2212,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a5be6798dbe450805467abc4fd0348ae4" name="a5be6798dbe450805467abc4fd0348ae4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5be6798dbe450805467abc4fd0348ae4">&#9670;&#160;</a></span>ustring() <span class="overload">[36/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be6798dbe450805467abc4fd0348ae4">&#9670;&#160;</a></span>ustring() <span class="overload">[44/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1936,7 +2249,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ac6051d53b2892b7585b6278a2a5601b9" name="ac6051d53b2892b7585b6278a2a5601b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6051d53b2892b7585b6278a2a5601b9">&#9670;&#160;</a></span>ustring() <span class="overload">[37/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6051d53b2892b7585b6278a2a5601b9">&#9670;&#160;</a></span>ustring() <span class="overload">[45/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1970,7 +2283,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a2c026c8d5a2e188a7737ea902ae9c9f1" name="a2c026c8d5a2e188a7737ea902ae9c9f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c026c8d5a2e188a7737ea902ae9c9f1">&#9670;&#160;</a></span>ustring() <span class="overload">[38/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c026c8d5a2e188a7737ea902ae9c9f1">&#9670;&#160;</a></span>ustring() <span class="overload">[46/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2015,7 +2328,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a48913b4f219b6d5f73925a872be982fc" name="a48913b4f219b6d5f73925a872be982fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48913b4f219b6d5f73925a872be982fc">&#9670;&#160;</a></span>ustring() <span class="overload">[39/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a48913b4f219b6d5f73925a872be982fc">&#9670;&#160;</a></span>ustring() <span class="overload">[47/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2035,7 +2348,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="abe7517ca15654f917db3c61a018f6c42" name="abe7517ca15654f917db3c61a018f6c42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe7517ca15654f917db3c61a018f6c42">&#9670;&#160;</a></span>ustring() <span class="overload">[40/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7517ca15654f917db3c61a018f6c42">&#9670;&#160;</a></span>ustring() <span class="overload">[48/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2072,7 +2385,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ada1d3db0b384ec6bed989728bcc25dbb" name="ada1d3db0b384ec6bed989728bcc25dbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada1d3db0b384ec6bed989728bcc25dbb">&#9670;&#160;</a></span>ustring() <span class="overload">[41/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1d3db0b384ec6bed989728bcc25dbb">&#9670;&#160;</a></span>ustring() <span class="overload">[49/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2092,7 +2405,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a9e3306353977a648613151dbbd634fa0" name="a9e3306353977a648613151dbbd634fa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e3306353977a648613151dbbd634fa0">&#9670;&#160;</a></span>ustring() <span class="overload">[42/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e3306353977a648613151dbbd634fa0">&#9670;&#160;</a></span>ustring() <span class="overload">[50/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2129,7 +2442,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="acb84879a963d77159459e8aee6d21169" name="acb84879a963d77159459e8aee6d21169"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb84879a963d77159459e8aee6d21169">&#9670;&#160;</a></span>ustring() <span class="overload">[43/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acb84879a963d77159459e8aee6d21169">&#9670;&#160;</a></span>ustring() <span class="overload">[51/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2163,7 +2476,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a50a96f03a62a5c045296bf62e3c4c31f" name="a50a96f03a62a5c045296bf62e3c4c31f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50a96f03a62a5c045296bf62e3c4c31f">&#9670;&#160;</a></span>ustring() <span class="overload">[44/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a96f03a62a5c045296bf62e3c4c31f">&#9670;&#160;</a></span>ustring() <span class="overload">[52/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2208,7 +2521,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ae61f98b244908a02d90c8c6f6fcab6eb" name="ae61f98b244908a02d90c8c6f6fcab6eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae61f98b244908a02d90c8c6f6fcab6eb">&#9670;&#160;</a></span>ustring() <span class="overload">[45/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61f98b244908a02d90c8c6f6fcab6eb">&#9670;&#160;</a></span>ustring() <span class="overload">[53/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2255,7 +2568,7 @@ template&lt;typename input_iterator_t &gt; </div>
 </div>
 </div>
 <a id="a233f13e910222e1b5ca44df02b51e42f" name="a233f13e910222e1b5ca44df02b51e42f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a233f13e910222e1b5ca44df02b51e42f">&#9670;&#160;</a></span>ustring() <span class="overload">[46/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a233f13e910222e1b5ca44df02b51e42f">&#9670;&#160;</a></span>ustring() <span class="overload">[54/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2309,7 +2622,7 @@ template&lt;typename input_iterator_t &gt; </div>
 </div>
 </div>
 <a id="a4124167b2fe253847a09df705dda7af2" name="a4124167b2fe253847a09df705dda7af2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4124167b2fe253847a09df705dda7af2">&#9670;&#160;</a></span>ustring() <span class="overload">[47/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4124167b2fe253847a09df705dda7af2">&#9670;&#160;</a></span>ustring() <span class="overload">[55/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2356,7 +2669,7 @@ template&lt;typename string_view_like_t &gt; </div>
 </div>
 </div>
 <a id="a08586c2e61560c82f8a5fef51b217273" name="a08586c2e61560c82f8a5fef51b217273"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08586c2e61560c82f8a5fef51b217273">&#9670;&#160;</a></span>ustring() <span class="overload">[48/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a08586c2e61560c82f8a5fef51b217273">&#9670;&#160;</a></span>ustring() <span class="overload">[56/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2417,7 +2730,7 @@ template&lt;typename string_view_like_t &gt; </div>
 </div>
 </div>
 <a id="a26be076083adc627f2908488f9d5cc01" name="a26be076083adc627f2908488f9d5cc01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26be076083adc627f2908488f9d5cc01">&#9670;&#160;</a></span>ustring() <span class="overload">[49/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a26be076083adc627f2908488f9d5cc01">&#9670;&#160;</a></span>ustring() <span class="overload">[57/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2443,7 +2756,7 @@ template&lt;typename string_view_like_t &gt; </div>
 </div>
 </div>
 <a id="a015261e2eb18d2ac46ca692829cd164d" name="a015261e2eb18d2ac46ca692829cd164d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a015261e2eb18d2ac46ca692829cd164d">&#9670;&#160;</a></span>ustring() <span class="overload">[50/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a015261e2eb18d2ac46ca692829cd164d">&#9670;&#160;</a></span>ustring() <span class="overload">[58/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2479,8 +2792,71 @@ template&lt;typename string_view_like_t &gt; </div>
 
 </div>
 </div>
+<a id="af5fac71387a4d3abb9f4b59cc89c735e" name="af5fac71387a4d3abb9f4b59cc89c735e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5fac71387a4d3abb9f4b59cc89c735e">&#9670;&#160;</a></span>ustring() <span class="overload">[59/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> &gt;&#160;</td>
+          <td class="paramname"><em>il</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified initializer list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">il</td><td>The initializer list to fill. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad68c91b16568d7b858245097921a3f3a" name="ad68c91b16568d7b858245097921a3f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad68c91b16568d7b858245097921a3f3a">&#9670;&#160;</a></span>ustring() <span class="overload">[60/66]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::ustring::ustring </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> &gt;&#160;</td>
+          <td class="paramname"><em>il</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const allocator_type &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of <a class="el" href="classxtd_1_1ustring.html" title="Represents text as a sequence of UTF-8 code units.">xtd::ustring</a> with specified initializer list and allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">il</td><td>The initializer list to fill. </td></tr>
+    <tr><td class="paramname">allocator</td><td>The allocator to use for all memory allocations of this string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a0f312b06fc60075660894c4dea4c74a1" name="a0f312b06fc60075660894c4dea4c74a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f312b06fc60075660894c4dea4c74a1">&#9670;&#160;</a></span>ustring() <span class="overload">[51/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f312b06fc60075660894c4dea4c74a1">&#9670;&#160;</a></span>ustring() <span class="overload">[61/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2506,7 +2882,7 @@ template&lt;typename string_view_like_t &gt; </div>
 </div>
 </div>
 <a id="af6aad2bc1f2f7e8dd9e00cda60768c71" name="af6aad2bc1f2f7e8dd9e00cda60768c71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6aad2bc1f2f7e8dd9e00cda60768c71">&#9670;&#160;</a></span>ustring() <span class="overload">[52/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6aad2bc1f2f7e8dd9e00cda60768c71">&#9670;&#160;</a></span>ustring() <span class="overload">[62/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2543,7 +2919,7 @@ template&lt;typename string_view_like_t &gt; </div>
 </div>
 </div>
 <a id="a32687b04f00204cda172df185578ae8d" name="a32687b04f00204cda172df185578ae8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32687b04f00204cda172df185578ae8d">&#9670;&#160;</a></span>ustring() <span class="overload">[53/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a32687b04f00204cda172df185578ae8d">&#9670;&#160;</a></span>ustring() <span class="overload">[63/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2569,7 +2945,7 @@ template&lt;typename string_view_like_t &gt; </div>
 </div>
 </div>
 <a id="a53aab32b6c83dc89748c8e85e4aaac88" name="a53aab32b6c83dc89748c8e85e4aaac88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53aab32b6c83dc89748c8e85e4aaac88">&#9670;&#160;</a></span>ustring() <span class="overload">[54/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a53aab32b6c83dc89748c8e85e4aaac88">&#9670;&#160;</a></span>ustring() <span class="overload">[64/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2606,7 +2982,7 @@ template&lt;typename string_view_like_t &gt; </div>
 </div>
 </div>
 <a id="ae818479b53ee91eb8ebbcd27712e9643" name="ae818479b53ee91eb8ebbcd27712e9643"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae818479b53ee91eb8ebbcd27712e9643">&#9670;&#160;</a></span>ustring() <span class="overload">[55/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae818479b53ee91eb8ebbcd27712e9643">&#9670;&#160;</a></span>ustring() <span class="overload">[65/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2632,7 +3008,7 @@ template&lt;typename string_view_like_t &gt; </div>
 </div>
 </div>
 <a id="a305bcfad255f758ef9b7e19d6941e597" name="a305bcfad255f758ef9b7e19d6941e597"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a305bcfad255f758ef9b7e19d6941e597">&#9670;&#160;</a></span>ustring() <span class="overload">[56/56]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a305bcfad255f758ef9b7e19d6941e597">&#9670;&#160;</a></span>ustring() <span class="overload">[66/66]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3672,8 +4048,43 @@ template&lt;typename value_t &gt; </div>
 
 </div>
 </div>
+<a id="ad21f351446d11746852f4bf41f16fd4f" name="ad21f351446d11746852f4bf41f16fd4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad21f351446d11746852f4bf41f16fd4f">&#9670;&#160;</a></span>contains() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::ustring::contains </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a value indicating whether a specified char occurs within this string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The char to seek. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the value parameter occurs within this string; otherwise, false. </dd></dl>
+
+</div>
+</div>
 <a id="aea0e43190da2d939a59a911e46302af1" name="aea0e43190da2d939a59a911e46302af1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea0e43190da2d939a59a911e46302af1">&#9670;&#160;</a></span>contains() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0e43190da2d939a59a911e46302af1">&#9670;&#160;</a></span>contains() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3708,7 +4119,7 @@ template&lt;typename value_t &gt; </div>
 </div>
 </div>
 <a id="a382c837c730894233030313753ddbdf1" name="a382c837c730894233030313753ddbdf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a382c837c730894233030313753ddbdf1">&#9670;&#160;</a></span>contains() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a382c837c730894233030313753ddbdf1">&#9670;&#160;</a></span>contains() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3795,8 +4206,43 @@ template&lt;typename value_t &gt; </div>
 
 </div>
 </div>
+<a id="a2372f570af43ddd632c3fdfbe43de030" name="a2372f570af43ddd632c3fdfbe43de030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2372f570af43ddd632c3fdfbe43de030">&#9670;&#160;</a></span>ends_with() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::ustring::ends_with </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the end of this string matches the specified character. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The char_t to compare to the substring at the end of this instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value matches the end of this instance; otherwise, false. </dd></dl>
+
+</div>
+</div>
 <a id="ad02f78ca99a3dfb0ee73bc0252b329b0" name="ad02f78ca99a3dfb0ee73bc0252b329b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad02f78ca99a3dfb0ee73bc0252b329b0">&#9670;&#160;</a></span>ends_with() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad02f78ca99a3dfb0ee73bc0252b329b0">&#9670;&#160;</a></span>ends_with() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3831,7 +4277,7 @@ template&lt;typename value_t &gt; </div>
 </div>
 </div>
 <a id="ae9d72ca87fc9bcdae5c8d3db042cdec9" name="ae9d72ca87fc9bcdae5c8d3db042cdec9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9d72ca87fc9bcdae5c8d3db042cdec9">&#9670;&#160;</a></span>ends_with() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d72ca87fc9bcdae5c8d3db042cdec9">&#9670;&#160;</a></span>ends_with() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3876,7 +4322,7 @@ template&lt;typename value_t &gt; </div>
 </div>
 </div>
 <a id="a8fcc85777946011f389241af42b27aaf" name="a8fcc85777946011f389241af42b27aaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fcc85777946011f389241af42b27aaf">&#9670;&#160;</a></span>ends_with() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fcc85777946011f389241af42b27aaf">&#9670;&#160;</a></span>ends_with() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3921,7 +4367,7 @@ template&lt;typename value_t &gt; </div>
 </div>
 </div>
 <a id="ab66c2037568657029c2695e7c5d43d84" name="ab66c2037568657029c2695e7c5d43d84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab66c2037568657029c2695e7c5d43d84">&#9670;&#160;</a></span>ends_with() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab66c2037568657029c2695e7c5d43d84">&#9670;&#160;</a></span>ends_with() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6848,7 +7294,7 @@ template&lt;typename value_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 29 2024 22:44:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 30 2024 12:03:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
