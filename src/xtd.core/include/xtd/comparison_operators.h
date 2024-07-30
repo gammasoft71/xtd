@@ -11,7 +11,7 @@ namespace xtd {
   /// @brief Internal comparable operators definition.
   /// @par Definition
   /// ```cpp
-  /// template<typename lhs_t>
+  /// template<typename type_t, typename comparable_t>
   /// class comparison_operators
   /// ```
   /// @par Header
@@ -24,7 +24,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   /// @warning Internal use only for xtd::icomparable interfece.
-  template<typename lhs_t, typename comparable_t>
+  template<typename type_t, typename comparable_t>
   class comparison_operators {
   public:
     /// @name Public Operators
@@ -34,29 +34,25 @@ namespace xtd {
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
     /// @return true if lhs less than rhs; otherwise false.
-    template<typename rhs_t>
-    friend bool operator <(const lhs_t& lhs, const rhs_t& rhs) noexcept {return dynamic_cast<const lhs_t*>(&rhs) && lhs.compare_to(static_cast<const lhs_t&>(rhs)) < 0;}
+    friend bool operator <(const type_t& lhs, const type_t& rhs) noexcept {return dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) < 0;}
 
     /// @brief Less than or equal to comparison operator with specidied lhs ans rhs values.
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
     /// @return true if lhs less than or equal to rhs; otherwise false.
-    template<typename rhs_t>
-    friend bool operator <=(const lhs_t& lhs, const rhs_t& rhs) noexcept {return dynamic_cast<const lhs_t*>(&rhs) && lhs.compare_to(static_cast<const lhs_t&>(rhs)) <= 0;}
+    friend bool operator <=(const type_t& lhs, const type_t& rhs) noexcept {return dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) <= 0;}
 
     /// @brief Greater than or equal to comparison operator with specidied lhs ans rhs values.
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
     /// @return true if lhs greater than rhs; otherwise false.
-    template<typename rhs_t>
-    friend bool operator >(const lhs_t& lhs, const rhs_t& rhs) noexcept {return dynamic_cast<const lhs_t*>(&rhs) && lhs.compare_to(static_cast<const lhs_t&>(rhs)) > 0;}
+    friend bool operator >(const type_t& lhs, const type_t& rhs) noexcept {return dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) > 0;}
 
     /// @brief Less than comparison operator with specidied lhs ans rhs values.
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
     /// @return true if lhs greater than or equal to rhs; otherwise false.
-    template<typename rhs_t>
-    friend bool operator >=(const lhs_t& lhs, const rhs_t& rhs) noexcept {return dynamic_cast<const lhs_t*>(&rhs) && lhs.compare_to(static_cast<const lhs_t&>(rhs)) >= 0;}
+    friend bool operator >=(const type_t& lhs, const type_t& rhs) noexcept {return dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) >= 0;}
 
 #if defined(__xtd__cpp_lib_three_way_comparison)
     /// @brief Three-way comparison operator with specidied lhs ans rhs values.
@@ -66,11 +62,10 @@ namespace xtd {
     /// * std::strong_ordering::less : if lhs less than rhs;
     /// * std::strong_ordering::greater : if lhs greater than rhs;
     /// * std::strong_ordering::equivalent : if lhs is equal to rhs.
-    template<typename rhs_t>
-    friend std::strong_ordering operator <=>(const lhs_t& lhs, const rhs_t& rhs) noexcept {
-      if (dynamic_cast<const lhs_t*>(&rhs) && lhs.compare_to(static_cast<const lhs_t&>(rhs)) < 0) return std::strong_ordering::less;
-      if (dynamic_cast<const lhs_t*>(&rhs) && lhs.compare_to(static_cast<const lhs_t&>(rhs)) > 0) return std::strong_ordering::greater;
-      if (dynamic_cast<const lhs_t*>(&rhs) && lhs.compare_to(static_cast<const lhs_t&>(rhs)) == 0) return std::strong_ordering::equivalent;
+    friend std::strong_ordering operator <=>(const type_t& lhs, const type_t& rhs) noexcept {
+      if (dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) < 0) return std::strong_ordering::less;
+      if (dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) > 0) return std::strong_ordering::greater;
+      if (dynamic_cast<const type_t*>(&rhs) && lhs.compare_to(static_cast<const type_t&>(rhs)) == 0) return std::strong_ordering::equivalent;
       return std::strong_ordering::less;
     }
 #endif
