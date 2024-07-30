@@ -94,15 +94,17 @@ Inheritance diagram for xtd::box_char&lt; type_t &gt;:</div>
  <div class="center">
   <img src="classxtd_1_1box__char.png" usemap="#xtd::box_5Fchar_3C_20type_5Ft_20_3E_map" alt=""/>
   <map id="xtd::box_5Fchar_3C_20type_5Ft_20_3E_map" name="xtd::box_5Fchar_3C_20type_5Ft_20_3E_map">
-<area href="classxtd_1_1box__integer.html" title="Represents a boxed integer object." alt="xtd::box_integer&lt; type_t &gt;" shape="rect" coords="322,168,527,192"/>
-<area href="classxtd_1_1box.html" title="Represents a boxed object." alt="xtd::box&lt; type_t &gt;" shape="rect" coords="322,112,527,136"/>
-<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,205,80"/>
-<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; box&lt; type_t &gt; &gt;" shape="rect" coords="215,56,420,80"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; box&lt; type_t &gt; &gt;" shape="rect" coords="430,56,635,80"/>
-<area href="classxtd_1_1iformatable.html" title="Provides functionality to format the value of an object into a string representation." alt="xtd::iformatable" shape="rect" coords="645,56,850,80"/>
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="215,0,420,24"/>
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="430,0,635,24"/>
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="645,0,850,24"/>
+<area href="classxtd_1_1box__integer.html" title="Represents a boxed integer object." alt="xtd::box_integer&lt; type_t &gt;" shape="rect" coords="904,168,1346,192"/>
+<area href="classxtd_1_1box.html" title="Represents a boxed object." alt="xtd::box&lt; type_t &gt;" shape="rect" coords="904,112,1346,136"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,442,80"/>
+<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; box&lt; type_t &gt; &gt;" shape="rect" coords="452,56,894,80"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; box&lt; type_t &gt; &gt;" shape="rect" coords="1356,56,1798,80"/>
+<area href="classxtd_1_1iformatable.html" title="Provides functionality to format the value of an object into a string representation." alt="xtd::iformatable" shape="rect" coords="2034,56,2476,80"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="226,0,668,24"/>
+<area href="classxtd_1_1comparison__operators.html" title="Internal comparable operators definition." alt="xtd::comparison_operators&lt; type_t, comparable_t &gt;" shape="rect" coords="678,0,1120,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="1130,0,1572,24"/>
+<area href="classxtd_1_1equality__operators.html" title="Internal comparable operators definition." alt="xtd::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="1582,0,2024,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="2034,0,2476,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -124,12 +126,13 @@ Use <a class="el" href="group__system.html#ga5aa911c016af5795d0482eefb481fcc9" t
 <dd>
 For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use xtd::box_char&lt;char8&gt;. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; <a class="code hl_function" href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">value</a>) {<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">value</a>.to_string();};</div>
-<div class="line">char8 unboxed_object = u8<span class="charliteral">&#39;a&#39;</span>;</div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> unboxed_object = u8<span class="charliteral">&#39;a&#39;</span>;</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1box__char.html">box_char&lt;char8&gt;</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = a;</span></div>
 <div class="ttc" id="aclassxtd_1_1box_html_abc6d47e0f1df482254595e035681a10f"><div class="ttname"><a href="classxtd_1_1box.html#abc6d47e0f1df482254595e035681a10f">xtd::box::value</a></div><div class="ttdeci">const type_t &amp; value() const noexcept</div><div class="ttdoc">Gets the underlying value.</div><div class="ttdef"><b>Definition</b> box.h:85</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> char8.h:27</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
@@ -1482,7 +1485,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 29 2024 22:44:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 30 2024 12:03:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

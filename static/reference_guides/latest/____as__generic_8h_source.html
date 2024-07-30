@@ -124,7 +124,7 @@ $(function() {
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#if defined(__xtd__cpp_lib_char8_t)</span></div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t&gt;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(char8 value) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="group__xtd__core.html#gaa04bbeacd8966bb17b40b1e33cb7268b">  129</a></span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(<a class="code hl_typedef" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> value) {</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>new_type_t<span class="keyword">&gt;</span>(value);</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  }</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#endif</span></div>
@@ -291,21 +291,21 @@ $(function() {
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  </div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span><span class="preprocessor">#if defined(__xtd__cpp_lib_char8_t)</span></div>
 <div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t&gt;</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(<span class="keyword">const</span> std::u8string&amp; value) {</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno"><a class="line" href="group__xtd__core.html#gafd9a0fc4a47d4e8fd104888f7e10d0ce">  628</a></span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(<span class="keyword">const</span> std::u8string&amp; value) {</div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>      <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>new_type_t&amp;<span class="keyword">&gt;</span>(value);</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>      <span class="keywordflow">throw</span> invalid_cast_exception(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what(), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1invalid__cast__exception.html">invalid_cast_exception</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what(), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
 <div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>    }</div>
 <div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    <span class="keywordflow">throw</span> std::bad_cast();</div>
 <div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>  }</div>
 <div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>  </div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t&gt;</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(std::u8string&amp; value) {</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno"><a class="line" href="group__xtd__core.html#gaf8021657a21dbb00bb6ea53aa3a76164">  651</a></span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(std::u8string&amp; value) {</div>
 <div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>      <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>new_type_t&amp;<span class="keyword">&gt;</span>(value);</div>
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      <span class="keywordflow">throw</span> invalid_cast_exception(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what(), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1invalid__cast__exception.html">invalid_cast_exception</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what(), <a class="code hl_define" href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a>);</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>    }</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>    <span class="keywordflow">throw</span> std::bad_cast();</div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>  }</div>
@@ -383,12 +383,12 @@ $(function() {
 <div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>  </div>
 <div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span><span class="preprocessor">#if defined(__xtd__cpp_lib_char8_t)</span></div>
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t&gt;</div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(<span class="keyword">const</span> char8* value) {</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga40c8fac7096b135dbd36103b0e05ab47">  862</a></span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>* value) {</div>
 <div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>new_type_t<span class="keyword">&gt;</span>(value);</div>
 <div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>  }</div>
 <div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>  </div>
 <div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t&gt;</div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(char8* value) {</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga2e9a33f51f32f6ddf505880d6cf57817">  884</a></span>  new_type_t <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a>(<a class="code hl_typedef" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>* value) {</div>
 <div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>new_type_t<span class="keyword">&gt;</span>(value);</div>
 <div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>  }</div>
 <div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span><span class="preprocessor">#endif</span></div>
@@ -427,6 +427,7 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1invalid__cast__exception_html"><div class="ttname"><a href="classxtd_1_1invalid__cast__exception.html">xtd::invalid_cast_exception</a></div><div class="ttdoc">The exception that is thrown for invalid casting or explicit conversion.</div><div class="ttdef"><b>Definition</b> invalid_cast_exception.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
 <div class="ttc" id="agroup__keywords_html_gaf8b977f43d229f177b7b399c3b3a60a6"><div class="ttname"><a href="group__keywords.html#gaf8b977f43d229f177b7b399c3b3a60a6">csf_</a></div><div class="ttdeci">#define csf_</div><div class="ttdoc">Provides information about the current stack frame.</div><div class="ttdef"><b>Definition</b> current_stack_frame.h:30</div></div>
+<div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> char8.h:27</div></div>
 <div class="ttc" id="agroup__types_html_ga155357d92cf162b71b396e46accee518"><div class="ttname"><a href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a></div><div class="ttdeci">wchar_t wchar</div><div class="ttdoc">Represents a wide character.</div><div class="ttdef"><b>Definition</b> wchar.h:24</div></div>
 <div class="ttc" id="agroup__types_html_ga159b2a409f2b3da8165af7a5e32eccf8"><div class="ttname"><a href="group__types.html#ga159b2a409f2b3da8165af7a5e32eccf8">xtd::int16</a></div><div class="ttdeci">int_least16_t int16</div><div class="ttdoc">Represents a 16-bit signed integer.</div><div class="ttdef"><b>Definition</b> int16.h:23</div></div>
 <div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> decimal.h:23</div></div>
@@ -448,7 +449,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 29 2024 22:44:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 30 2024 12:03:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -95,9 +95,10 @@ Inheritance diagram for xtd::configuration::file_settings:</div>
  <div class="center">
   <img src="classxtd_1_1configuration_1_1file__settings.png" usemap="#xtd::configuration::file_5Fsettings_map" alt=""/>
   <map id="xtd::configuration::file_5Fsettings_map" name="xtd::configuration::file_5Fsettings_map">
-<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,181,80"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; file_settings &gt;" shape="rect" coords="191,56,372,80"/>
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="191,0,372,24"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,384,80"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; file_settings &gt;" shape="rect" coords="394,56,778,80"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="197,0,581,24"/>
+<area href="classxtd_1_1equality__operators.html" title="Internal comparable operators definition." alt="xtd::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="591,0,975,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -186,9 +187,9 @@ virtual <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td
 <tr class="separator:ac931fb789ac59d5585d11ad89599d7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliass</h2></td></tr>
-<tr class="memitem:abfb789e88468c5c5c4f715bb0d794491"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">string_dictionary</a> = <a class="el" href="group__specialized__collections.html#ga2249ba8b2968b085d427898767c71a2b">xtd::collections::specialized::string_dictionary</a></td></tr>
-<tr class="memdesc:abfb789e88468c5c5c4f715bb0d794491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a std::map with the key and the value strongly typed to be strings.  <br /></td></tr>
-<tr class="separator:abfb789e88468c5c5c4f715bb0d794491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1be0c0283e717e454f52248bb09a488"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">string_dictionary</a> = <a class="el" href="group__generic__collections.html#ga00feb24bdefb37f4fdf3a1fda87520ad">xtd::collections::generic::sorted_dictionary</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt;</td></tr>
+<tr class="memdesc:ae1be0c0283e717e454f52248bb09a488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="group__generic__collections.html#ga00feb24bdefb37f4fdf3a1fda87520ad" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> with the key and the value strongly typed to be strings.  <br /></td></tr>
+<tr class="separator:ae1be0c0283e717e454f52248bb09a488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad88cd0fcf72f291b3716eaa36fcb235"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#aad88cd0fcf72f291b3716eaa36fcb235">string_collection</a> = <a class="el" href="group__specialized__collections.html#gaf251564b11f05da91a1237f8524ffe24">xtd::collections::specialized::string_collection</a></td></tr>
 <tr class="memdesc:aad88cd0fcf72f291b3716eaa36fcb235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of strings.  <br /></td></tr>
 <tr class="separator:aad88cd0fcf72f291b3716eaa36fcb235"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,10 +221,10 @@ virtual <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td
 <tr class="memitem:a9d8fc6680c5d965aea0e96b505223df1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a9d8fc6680c5d965aea0e96b505223df1">file_path</a> () const noexcept</td></tr>
 <tr class="memdesc:a9d8fc6680c5d965aea0e96b505223df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file path of the current instance.  <br /></td></tr>
 <tr class="separator:a9d8fc6680c5d965aea0e96b505223df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93fdd58f4005e3f691794782a3de018c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">string_dictionary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a93fdd58f4005e3f691794782a3de018c">key_values</a> () const noexcept</td></tr>
+<tr class="memitem:a93fdd58f4005e3f691794782a3de018c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">string_dictionary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a93fdd58f4005e3f691794782a3de018c">key_values</a> () const noexcept</td></tr>
 <tr class="memdesc:a93fdd58f4005e3f691794782a3de018c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all key-value pairs from global section.  <br /></td></tr>
 <tr class="separator:a93fdd58f4005e3f691794782a3de018c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00a1d93a0337031be5ac6bcbac4abf29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">string_dictionary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a00a1d93a0337031be5ac6bcbac4abf29">key_values</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
+<tr class="memitem:a00a1d93a0337031be5ac6bcbac4abf29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">string_dictionary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a00a1d93a0337031be5ac6bcbac4abf29">key_values</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
 <tr class="memdesc:a00a1d93a0337031be5ac6bcbac4abf29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all key-value pairs from a specified section.  <br /></td></tr>
 <tr class="separator:a00a1d93a0337031be5ac6bcbac4abf29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a317964b9c7281b170644981133695b71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#aad88cd0fcf72f291b3716eaa36fcb235">string_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a317964b9c7281b170644981133695b71">keys</a> () const noexcept</td></tr>
@@ -322,10 +323,10 @@ virtual <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td
 <tr class="separator:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
-<tr class="memitem:a163f26e1659ff27bbdd32678cea44b7d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">string_dictionary</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a163f26e1659ff27bbdd32678cea44b7d">operator[]</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
+<tr class="memitem:a163f26e1659ff27bbdd32678cea44b7d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">string_dictionary</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#a163f26e1659ff27bbdd32678cea44b7d">operator[]</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) const noexcept</td></tr>
 <tr class="memdesc:a163f26e1659ff27bbdd32678cea44b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets key-value pairs of the specified section.  <br /></td></tr>
 <tr class="separator:a163f26e1659ff27bbdd32678cea44b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac25baeff00b22ce53f87f5b405288b16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">string_dictionary</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac25baeff00b22ce53f87f5b405288b16">operator[]</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) noexcept</td></tr>
+<tr class="memitem:ac25baeff00b22ce53f87f5b405288b16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">string_dictionary</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ac25baeff00b22ce53f87f5b405288b16">operator[]</a> (const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;section) noexcept</td></tr>
 <tr class="memdesc:ac25baeff00b22ce53f87f5b405288b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets key-value pairs of the specified section.  <br /></td></tr>
 <tr class="separator:ac25baeff00b22ce53f87f5b405288b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -376,19 +377,19 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="abfb789e88468c5c5c4f715bb0d794491" name="abfb789e88468c5c5c4f715bb0d794491"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfb789e88468c5c5c4f715bb0d794491">&#9670;&#160;</a></span>string_dictionary</h2>
+<a id="ae1be0c0283e717e454f52248bb09a488" name="ae1be0c0283e717e454f52248bb09a488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1be0c0283e717e454f52248bb09a488">&#9670;&#160;</a></span>string_dictionary</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">xtd::configuration::file_settings::string_dictionary</a> =  <a class="el" href="group__specialized__collections.html#ga2249ba8b2968b085d427898767c71a2b">xtd::collections::specialized::string_dictionary</a></td>
+          <td class="memname">using <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">xtd::configuration::file_settings::string_dictionary</a> =  <a class="el" href="group__generic__collections.html#ga00feb24bdefb37f4fdf3a1fda87520ad">xtd::collections::generic::sorted_dictionary</a>&lt;<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents a std::map with the key and the value strongly typed to be strings. </p>
+<p>Represents a <a class="el" href="group__generic__collections.html#ga00feb24bdefb37f4fdf3a1fda87520ad" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> with the key and the value strongly typed to be strings. </p>
 
 </div>
 </div>
@@ -923,7 +924,7 @@ template&lt;typename object_a_t , typename object_b_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">string_dictionary</a> xtd::configuration::file_settings::key_values </td>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">string_dictionary</a> xtd::configuration::file_settings::key_values </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -952,7 +953,7 @@ template&lt;typename object_a_t , typename object_b_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">string_dictionary</a> xtd::configuration::file_settings::key_values </td>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">string_dictionary</a> xtd::configuration::file_settings::key_values </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
           <td class="paramname"><em>section</em></td><td>)</td>
@@ -1115,7 +1116,7 @@ template&lt;typename object_a_t , typename object_b_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">string_dictionary</a> &amp; xtd::configuration::file_settings::operator[] </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">string_dictionary</a> &amp; xtd::configuration::file_settings::operator[] </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
           <td class="paramname"><em>section</em></td><td>)</td>
@@ -1155,7 +1156,7 @@ template&lt;typename object_a_t , typename object_b_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#abfb789e88468c5c5c4f715bb0d794491">string_dictionary</a> &amp; xtd::configuration::file_settings::operator[] </td>
+          <td class="memname"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#ae1be0c0283e717e454f52248bb09a488">string_dictionary</a> &amp; xtd::configuration::file_settings::operator[] </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &amp;&#160;</td>
           <td class="paramname"><em>section</em></td><td>)</td>
@@ -2172,7 +2173,7 @@ template&lt;typename type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 29 2024 22:44:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jul 30 2024 12:03:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
