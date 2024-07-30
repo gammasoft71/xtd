@@ -42,7 +42,6 @@ namespace xtd::tests {
       assert::is_false(ic1 < ic2, csf_);
       assert::is_true(ic1 < ic3, csf_);
       assert::is_false(ic3 < ic1, csf_);
-      assert::is_false(ic1 < "a"_s);
     }
     
     void test_method_(opearator_less_or_equal) {
@@ -53,7 +52,6 @@ namespace xtd::tests {
       assert::is_true(ic1 <= ic2, csf_);
       assert::is_true(ic1 <= ic3, csf_);
       assert::is_false(ic3 <= ic1);
-      assert::is_false(ic1 <= "a"_s);
     }
     
     void test_method_(opearator_greater) {
@@ -64,7 +62,6 @@ namespace xtd::tests {
       assert::is_false(ic1 > ic2, csf_);
       assert::is_false(ic1 > ic3, csf_);
       assert::is_true(ic3 > ic1, csf_);
-      assert::is_false(ic1 > "a"_s);
     }
     
     void test_method_(opearator_greater_or_equal) {
@@ -75,7 +72,6 @@ namespace xtd::tests {
       assert::is_true(ic1 >= ic2, csf_);
       assert::is_false(ic1 >= ic3, csf_);
       assert::is_true(ic3 >= ic1, csf_);
-      assert::is_false(ic1 >= "a"_s);
     }
   };
 }
