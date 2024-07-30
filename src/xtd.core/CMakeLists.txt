@@ -96,6 +96,8 @@ add_sources(
   include/xtd/chrono
   include/xtd/cnull.h
   include/xtd/cnull
+  include/xtd/comparison_operators.h
+  include/xtd/comparison_operators
   include/xtd/compiler.h
   include/xtd/compiler
   include/xtd/compiler_id.h
