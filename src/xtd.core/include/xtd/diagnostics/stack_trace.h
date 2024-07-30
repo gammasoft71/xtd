@@ -4,7 +4,6 @@
 #pragma once
 #include <exception>
 #include <memory>
-#include "../collections/generic/list.h"
 #include "../core_export.h"
 #include "../object.h"
 #include "../ustring.h"
