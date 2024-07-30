@@ -135,7 +135,7 @@ namespace xtd {
         
       private:
         friend enumerator_t;
-        enumerable_iterators(enumerator_t* enumerator) : enumerator_(enumerator) {}
+        explicit enumerable_iterators(enumerator_t* enumerator) : enumerator_(enumerator) {}
         enumerator_t* enumerator_ = nullptr;
       };
     }
