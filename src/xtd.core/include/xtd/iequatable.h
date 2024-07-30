@@ -2,6 +2,7 @@
 /// @brief Contains xtd::iequatable interface.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
+#include "equality_operators.h"
 #include "interface.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -18,7 +19,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to use xtd::iequatable interface.
   /// @include iequatable.cpp
-  class iequatable interface_ {
+  class iequatable : public interface, public equality_operators<type_t, iequatable<type_t>> {
   public:
     /// @name Public Methods
     
@@ -27,15 +28,6 @@ namespace xtd {
     /// @param obj An object to compare with this object.
     /// @return true if the current object is equal to the other parameter; otherwise, false.
     virtual bool equals(const type_t&) const noexcept = 0;
-    /// @}
-    
-    /// @cond
-    friend bool operator ==(const type_t& a, const type_t& b) noexcept {return a.equals(b);}
-    friend bool operator !=(const type_t& a, const type_t& b) noexcept {return !a.equals(b);}
-    template<typename object_t>
-    friend bool operator ==(const type_t& a, const iequatable<object_t>& b) noexcept {return dynamic_cast<const type_t*>(&b) && a.equals(dynamic_cast<const type_t&>(b));}
-    template<typename object_t>
-    friend bool operator !=(const type_t& a, const iequatable<object_t>& b) noexcept {return !dynamic_cast<const type_t*>(&b) || !a.equals(dynamic_cast<const type_t&>(b));}
-    /// @endcond
+    /// @}    
   };
 }
