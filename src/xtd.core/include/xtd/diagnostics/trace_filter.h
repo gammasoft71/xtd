@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../collections/generic/list.h"
-#include "../any.h"
+#include "../any_object.h"
 #include "../abstract.h"
 #include "../ustring.h"
 #include "default_trace_listener.h"
@@ -45,7 +45,7 @@ namespace xtd {
       /// @param message Message to write.
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
-      virtual bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::ustring& message, std::any data1, const xtd::collections::generic::list<std::any>& data_array) noexcept = 0;
+      virtual bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::ustring& source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::ustring& message, std::any data1, const xtd::collections::generic::list<xtd::any_object>& data_array) noexcept = 0;
       /// @}
       
     protected:
