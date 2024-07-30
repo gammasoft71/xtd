@@ -349,7 +349,13 @@ PREDEFINED             = "__cpp_lib_char8_t=true" \
                          "typeof_=xtd::__s__::__typeof_" \
                          "unused_=" \
                          "using_=" \
-                         __cpp_lib_filesystem
+                         __cpp_lib_filesystem \
+                         __xtd__cpp_lib_any \
+                         __xtd__cpp_lib_char8_t \
+                         __xtd__cpp_lib_format \
+                         __xtd__cpp_lib_optional \
+                         __xtd__cpp_lib_semaphore \
+                         __xtd__cpp_lib_three_way_comparison
 EXPAND_AS_DEFINED      = 
 SKIP_FUNCTION_MACROS   = YES
 
