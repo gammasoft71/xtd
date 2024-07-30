@@ -160,6 +160,8 @@ add_sources(
   include/xtd/double
   include/xtd/double_object.h
   include/xtd/double_object
+  include/xtd/equality_operators.h
+  include/xtd/equality_operators
   include/xtd/enum.h
   include/xtd/enum
   include/xtd/enum_attribute.h

@@ -1,0 +1,2 @@
+#pragma once
+#include "equality_operators.h"
