@@ -51,7 +51,7 @@ namespace xtd {
         /// @remarks Implement this method to provide a customized hash code for type `type_t`, corresponding to the customized equality comparison provided by the xtd::collections::generic::iequality_comparer::equals method.
         /// @par Notes to Implementers
         /// Implementations are required to ensure that if the xtd::collections::generic::iequality_comparer::equals method returns `true` for two objects `x` and `y`, then the value returned by the xtd::collections::generic::iequality_comparer::get_hash_code method for `x` must equal the value returned for `y`.
-        virtual xtd::size_t get_hash_code (const type_t& obj) = 0;
+        virtual xtd::size get_hash_code (const type_t& obj) = 0;
         /// @}
       };
     }
