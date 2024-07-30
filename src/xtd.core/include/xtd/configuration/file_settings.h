@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../core_export.h"
-#include "../collections/specialized/string_dictionary.h"
+#include "../collections/generic/sorted_dictionary.h"
 #include "../collections/specialized/string_collection.h"
 #include "../io/directory.h"
 #include "../io/file.h"
@@ -34,8 +34,8 @@ namespace xtd {
       /// @name Public Aliass
       
       /// @{
-      /// @brief Represents a std::map with the key and the value strongly typed to be strings.
-      using string_dictionary = xtd::collections::specialized::string_dictionary;
+      /// @brief Represents a xtd::collections::generic::sorted_dictionary with the key and the value strongly typed to be strings.
+      using string_dictionary = xtd::collections::generic::sorted_dictionary<xtd::ustring, xtd::ustring>;
 
       /// @brief Represents a collection of strings.
       using string_collection = xtd::collections::specialized::string_collection;
