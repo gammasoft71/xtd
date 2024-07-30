@@ -1,15 +1,21 @@
 #include <xtd/collections/generic/ienumerable>
+#include <xtd/collections/generic/list>
 #include <xtd/console>
 
 using namespace xtd;
 using namespace xtd::collections::generic;
 
-struct box {
+struct box : public iequatable<::box>, public icomparable<::box> {
+  box() = default;
+  box(int l, int w, int h) : length{l}, width {w}, height {h} {}
+  
   int length = 0;
   int width = 0;
   int height = 0;
   
-  ustring to_string() const noexcept {return ustring::format("box [length={}, width={}, height={}]", length, width, height);};
+  int32 compare_to(const ::box& o) const noexcept override {return 0;}
+  bool equals(const ::box& o) const noexcept override {return length == o.length && width == o.width && height == o.height;}
+  ustring to_string() const noexcept {return ustring::format("box [length={}, width={}, height={}]", length, width, height);}
 };
 
 class box_collection : public ienumerable<::box> {
