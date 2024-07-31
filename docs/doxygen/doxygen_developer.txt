@@ -11,6 +11,7 @@
 #---------------------------------------------------------------------------
 
 INPUT         = ../../docs/doxygen/doxygen_developer \
+                ../../docs/doxygen/doxygen \
                 ../../src/xtd/include \
                 ../../src/xtd.core.native/include \
                 ../../src/xtd.core/include \

@@ -1,369 +1,388 @@
 /// @file
 /// @brief Contains groups definitions.
 
-/// @defgroup address_family address family
-/// @brief address family definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup adr assert dialog result
-/// @brief assert dialog result definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup arw arranged direction window
-/// @brief arranged direction window definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup bif browser info flags
-/// @brief browser info flags definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup bs button styles
-/// @brief button styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup bst button states
-/// @brief button states definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup ca content alignment
-/// @brief content alignment definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup cbs combo box styles
-/// @brief combo box styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup cc choose color flags
-/// @brief choose color flags definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup cf choose font flags
-/// @brief choose font flags definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup cq composing quality
-/// @brief composing quality definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup cm composing mode
-/// @brief composing mode definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup cpo copy pixel operation
-/// @brief copy pixel operation definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup console_color console color
-/// @brief console color definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup console_special_key console special key
-/// @brief console special key definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup cs class styles
-/// @brief class styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup csidl constant special item ID list
-/// @brief special item ID list definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup drive_type drive type
-/// @brief drive type definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup dts date time states
-/// @brief date time states definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup environment_variable_target environment variable target
-/// @brief environment variable target definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup es edit styles
-/// @brief edit styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup ex_ws extended window styles
-/// @brief extended window styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup fdi frame dimension
-/// @brief frame dimension definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup fi flush intention
-/// @brief flush intention definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup file_attributes file attributes
-/// @brief file attributes definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup hkp hot key prefix
-/// @brief hot key prefix definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup id dialog box identifiers
-/// @brief dialog box identifiers definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup ifl image flag
-/// @brief image flag definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup ifm image format
-/// @brief image format definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup im interpolation mode
-/// @brief interpolation mode definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup lbs list box styles
-/// @brief list box styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup lc line cap
-/// @brief line cap definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup li loading indicator styles
-/// @brief loading indicator styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup lj line join
-/// @brief line join definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup mb message box styles
-/// @brief message box styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup mi menu item kind
-/// @brief menu item kind definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup mk mouse and key
-/// @brief mouse and key definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup mo matrix order
-/// @brief matrix order definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup native native API
-/// @brief Native API for access to underlying operating systems and toolkits.
-/// @warning Internal use only
-
-/// @defgroup net net
-/// @brief Network definitions.
-/// @ingroup system
-
-/// @defgroup ofn open file flags
-/// @brief open file flags definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup pbs progress bar styles
-/// @brief progress bar styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup pcf process creation flags
-/// @brief process creation flags definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup pfm path fill mode
-/// @brief path fill mode definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup po pixel offset mode
-/// @brief pixel offset mode definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup ppc process pricority class
-/// @brief process priority class definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup platform_id platform id
-/// @brief platform id definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup progdlg progress dialog flags
-/// @brief progress dialog flags definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup protocol_type protocol type
-/// @brief protocol type definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup pws process window style
-/// @brief process window style definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup rft rotate flip type
-/// @brief rotate flip type definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup sa string alignment
-/// @brief string alignment definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup sf string format
-/// @brief string format definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup sb scroll bar styles
-/// @brief scroll bar styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup select_mode select mode
-/// @brief select mode definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup socket_error socket error
-/// @brief socket error definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup socket_option_level socket option level
-/// @brief socket option level definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup socket_option_name socket option name
-/// @brief socket option name definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup socket_shutdown socket shutdown
-/// @brief socket shutdown definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup socket_type socket type
-/// @brief socket type definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup sound_type sound type
-/// @brief sound type definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup sm smooth mode
-/// @brief smooth mode definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup ss static styles
-/// @brief static styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup st string trimming
-/// @brief string trimming definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup tbs track bar styles
-/// @brief track bar styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup tcs tab control styles
-/// @brief tab control styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup tr text rendering
-/// @brief text rendering definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup uds up down styles
-/// @brief up down styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup virtual_keys virtual keys
-/// @brief virtual keys definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup wm window messages
-/// @brief window messages definitions.
-/// @ingroup native
-
-/// @defgroup ws window styles
-/// @brief window styles definitions.
-/// @warning Internal use only
-/// @ingroup native
-
-/// @defgroup xtd_core_native xtd.core.native
-/// @brief The xtd.core.native library contains internal native API definitions to access underlying ooperating system components used by xtd.core library.
-/// @warning Internal use only
-/// @ingroup libraries
-
-/// @defgroup xtd_drawing_native xtd.drawing.native
-/// @brief The xtd.drawing.native library contains internal native API definitions to access underlying toolkits used by xtd.drawing library.
-/// @warning Internal use only
-/// @ingroup libraries
-
-/// @defgroup xtd_forms_native xtd.forms.native
-/// @brief The xtd.forms.native library contains internal native API definitions to access underlying toolkits used by xtd.forms library.
-/// @warning Internal use only
-/// @ingroup libraries
+|- Categories
+    | // Contains class list by category.
+    |- libraries
+    |   | /// @brief The xtd libraries.
+    |   | /// @defgroup libraries ﹡ libraries
+    |   |- xtd_core
+    |   |     /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
+    |   |     /// @ingroup libraries
+    |   |     /// @defgroup xtd_core xtd.core
+    |   |- xtd_core_native
+    |   |     /// @brief The xtd.core.native library contains internal native API definitions to access underlying ooperating system components used by xtd.core library.
+    |   |     /// @warning Internal use only
+    |   |     /// @ingroup libraries
+    |   |     /// @defgroup xtd_core_native xtd.core.native
+    |   |- xtd_drawing
+    |   |     /// @brief The xtd.drawing library provides access to GDI+ basic graphics functionality.
+    |   |     /// @ingroup libraries
+    |   |     /// @defgroup xtd_drawing xtd.drawing
+    |   |- xtd_drawing_native
+    |   |     /// @brief The xtd.drawing.native library contains internal native API definitions to access underlying toolkits used by xtd.drawing library.
+    |   |     /// @warning Internal use only
+    |   |     /// @ingroup libraries
+    |   |     /// @defgroup xtd_drawing_native xtd.drawing.native
+    |   |- xtd_forms
+    |   |     /// @brief The xtd.forms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
+    |   |     /// @ingroup libraries
+    |   |     /// @defgroup xtd_forms xtd.forms
+    |   |- xtd_forms_native
+    |   |     /// @brief The xtd.forms.native library contains internal native API definitions to access underlying toolkits used by xtd.forms library.
+    |   |     /// @warning Internal use only
+    |   |     /// @ingroup libraries
+    |   |     /// @defgroup xtd_forms_native xtd.forms.native
+    |   |- xtd_tunit
+    |         /// @brief The xtd.tunit library contains components needed for unit testing.
+    |         /// @ingroup libraries
+    |         /// @defgroup xtd_tunit xtd.tunit
+    |- native
+        | /// @brief Native API for access to underlying operating systems and toolkits.
+        | /// @warning Internal use only
+        | /// @defgroup native ﹡ native API
+        |- address_family
+        |     /// @brief address family definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup address_family address family
+        |- arw
+        |     /// @brief arranged direction window definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup arw arranged direction window
+        |- adr
+        |     /// @brief assert dialog result definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup adr assert dialog result
+        |- bif
+        |     /// @brief browser info flags definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup bif browser info flags
+        |- bs
+        |     /// @brief button styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup bs button styles
+        |- bst
+        |     /// @brief button states definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup bst button states
+        |- cbs
+        |     /// @brief combo box styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup cbs combo box styles
+        |- cm
+        |     /// @brief composing mode definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup cm composing mode
+        |- cq
+        |     /// @brief composing quality definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup cq composing quality
+        |- console_color
+        |     /// @brief console color definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup console_color console color
+        |- console_special_key
+        |     /// @brief console special key definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup console_special_key console special key
+        |- ca
+        |     /// @brief content alignment definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup ca content alignment
+        |- cc
+        |     /// @brief choose color flags definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup cc choose color flags
+        |- cf
+        |     /// @brief choose font flags definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup cf choose font flags
+        |- cs
+        |     /// @brief class styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup cs class styles
+        |- csidl
+        |     /// @brief special item ID list definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup csidl constant special item ID list
+        |- cpo
+        |     /// @brief copy pixel operation definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup cpo copy pixel operation
+        |- dts
+        |     /// @brief date time states definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup dts date time states
+        |- id
+        |     /// @brief dialog box identifiers definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup id dialog box identifiers
+        |- drive_type
+        |     /// @brief drive type definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup drive_type drive type
+        |- es
+        |     /// @brief edit styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup es edit styles
+        |- environment_variable_target
+        |     /// @brief environment variable target definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup environment_variable_target environment variable target
+        |- ex_ws
+        |     /// @brief extended window styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup ex_ws extended window styles
+        |- file_attributes
+        |     /// @brief file attributes definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup file_attributes file attributes
+        |- fi
+        |     /// @brief flush intention definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup fi flush intention
+        |- fdi
+        |     /// @brief frame dimension definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup fdi frame dimension
+        |- hkp
+        |     /// @brief hot key prefix definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup hkp hot key prefix
+        |- ifl
+        |     /// @brief image flag definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup ifl image flag
+        |- ifm
+        |     /// @brief image format definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup ifm image format
+        |- im
+        |     /// @brief interpolation mode definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup im interpolation mode
+        |- lc
+        |     /// @brief line cap definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup lc line cap
+        |- lj
+        |     /// @brief line join definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup lj line join
+        |- lbs
+        |     /// @brief list box styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup lbs list box styles
+        |- li
+        |     /// @brief loading indicator styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup li loading indicator styles
+        |- mo
+        |     /// @brief matrix order definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup mo matrix order
+        |- mi
+        |     /// @brief menu item kind definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup mi menu item kind
+        |- mb
+        |     /// @brief message box styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup mb message box styles
+        |- mk
+        |     /// @brief mouse and key definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup mk mouse and key
+        |- ofn
+        |     /// @brief open file flags definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup ofn open file flags
+        |- pfm
+        |     /// @brief path fill mode definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup pfm path fill mode
+        |- po
+        |     /// @brief pixel offset mode definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup po pixel offset mode
+        |- platform_id
+        |     /// @brief platform id definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup platform_id platform id
+        |- pcf
+        |     /// @brief process creation flags definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup pcf process creation flags
+        |- ppc
+        |     /// @brief process priority class definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup ppc process pricority class
+        |- pws
+        |     /// @brief process window style definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup pws process window style
+        |- pbs
+        |     /// @brief progress bar styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup pbs progress bar styles
+        |- progdlg
+        |     /// @brief progress dialog flags definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup progdlg progress dialog flags
+        |- protocol_type
+        |     /// @brief protocol type definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup protocol_type protocol type
+        |- rft
+        |     /// @brief rotate flip type definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup rft rotate flip type
+        |- sb
+        |     /// @brief scroll bar styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup sb scroll bar styles
+        |- select_mode
+        |     /// @brief select mode definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup select_mode select mode
+        |- socket_error
+        |     /// @brief socket error definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup socket_error socket error
+        |- socket_option_level
+        |     /// @brief socket option level definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup socket_option_level socket option level
+        |- socket_option_name
+        |     /// @brief socket option name definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup socket_option_name socket option name
+        |- socket_shutdown
+        |     /// @brief socket shutdown definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup socket_shutdown socket shutdown
+        |- socket_type
+        |     /// @brief socket type definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup socket_type socket type
+        |- sound_type
+        |     /// @brief sound type definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup sound_type sound type
+        |- sm
+        |     /// @brief smooth mode definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup sm smooth mode
+        |- ss
+        |     /// @brief static styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup ss static styles
+        |- sa
+        |     /// @brief string alignment definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup sa string alignment
+        |- sf
+        |     /// @brief string format definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup sf string format
+        |- st
+        |     /// @brief string trimming definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup st string trimming
+        |- tcs
+        |     /// @brief tab control styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup tcs tab control styles
+        |- tr
+        |     /// @brief text rendering definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup tr text rendering
+        |- tbs
+        |     /// @brief track bar styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup tbs track bar styles
+        |- uds
+        |     /// @brief up down styles definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup uds up down styles
+        |- virtual_keys
+        |     /// @brief virtual keys definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup virtual_keys virtual keys
+        |- wm
+        |     /// @brief window messages definitions.
+        |     /// @warning Internal use only
+        |     /// @ingroup native
+        |     /// @defgroup wm window messages
+        |- ws
+              /// @brief window styles definitions.
+              /// @warning Internal use only
+              /// @ingroup native
+              /// @defgroup ws window styles
