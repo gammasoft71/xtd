@@ -3,7 +3,10 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "helpers/allocator.h"
-#include "icollection.h"
+#include "ilist.h"
+#include "../../argument_exception.h"
+#include "../../box_integer.h"
+#include "../../literals.h"
 #include "../../object.h"
 #include "../../ustring.h"
 #include <utility>
@@ -31,7 +34,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::list class instanciate as xtd::collections::generic::list::base_type a [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator).
       template<typename type_t>
-      class list : public object /*, icollection<type_t>*/ /*, ienumerable<type_t>*/ /*, ilist<type_t>*/ {
+      class list : public object, icollection<type_t> /*, ilist<type_t>*/ {
       public:
         /// @name Public Alias
         
@@ -184,7 +187,9 @@ namespace xtd {
         
         /// @brief Returns the number of elements that the container has currently allocated space for.
         /// @return Capacity of the currently allocated storage.
-        size_type capacity() const noexcept {return items_.max_size();}
+        size_type capacity() const noexcept {return items_.capacity();}
+        
+        xtd::size count() const noexcept override {return items_.size();}
         
         /// @brief Checks if the container has no elements, i.e. whether xtd::collections::generic::list::begin() == xtd::collections::generic::list::end().
         /// @return true if the container is empty, false otherwise.
@@ -221,6 +226,9 @@ namespace xtd {
         /// @remarks Calling front on an empty container causes undefined behavior.
         const_reference front() const {return items_.front();}
         
+        bool is_read_only() const noexcept override {return false;}
+        bool is_synchronized() const noexcept override {return false;}
+        
         /// @brief Returns the maximum number of elements the container is able to hold due to system or library implementation limitations, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()) for the largest container.
         /// @return Maximum number of elements.
         size_type max_size() const noexcept {return items_.max_size();}
@@ -254,11 +262,15 @@ namespace xtd {
         /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()).
         /// @return The number of elements in the container.
         size_type size() const noexcept {return items_.size();}
+
+        const xtd::object& sync_root() const noexcept override {return sync_root_;}
         /// @}
         
         /// @name Public Methods
         
         /// @{
+        void add(const type_t& item) override {items_.push_back(item);}
+        
         /// @brief Replaces the contents with count copies of value value.
         /// @param count The new size of the container.
         /// @param value The value to initialize elements of the container with.
@@ -295,14 +307,58 @@ namespace xtd {
         /// @exception std::out_of_range If pos is not within the range of the container.
         const_reference at(size_type pos) const {return items_.at(pos);}
         
-        /// @brief Erases all elements from the container. After this call, xtd::collections::generic::list::size() returns zero.
-        /// @remarks Invalidates any references, pointers, and iterators referring to contained elements. Any past-the-end iterators are also invalidated.
-        /// @remarks Leaves the xtd::collections::generic::list::capacity() of the vector unchanged (Note: the standard's restriction on the changes to capacity is in the specification of xtd::collections::generic::list::reserve(), see [SO](https://stackoverflow.com/a/18467916)).
-        void clear() {
+        void clear() override {
           ++operation_number_;
           items_.clear();
         }
         
+        bool contains(const type_t& value) const noexcept override {
+          for (const type_t& item : items_)
+            if (item == value) return true;
+          return false;
+        }
+
+        /// @brief Copies the entire List<T> to a compatible one-dimensional array.
+        /// @param array The one-dimensional Array that is the destination of the elements copied from ICollection. The Array must have zero-based indexing.
+        /// @exception ArgumentNullException array is null.
+        /// @exception ArgumentException The number of elements in the source List<T> is greater than the number of elements that the destination array can contain.
+        /// @remarks TThis method uses Array.Copy to copy the elements.
+        /// @remarks The elements are copied to the Array in the same order in which the enumerator iterates through the List<T>.
+        /// @remarks This method is an O(n) operation, where n is Count.
+        /// @par Examples
+        /// The following code example demonstrates all three overloads of the CopyTo method. A List<T> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
+        /// @include ListCopyTo.cpp
+        void copy_to(xtd::array<type_t>& array) const {copy_to(0, array, 0, count());}
+
+        void copy_to(xtd::array<type_t>& array, xtd::size array_index) const override {copy_to(0, array, array_index, count());}
+  
+        /// @brief Copies the entire List<T> to a compatible one-dimensional array, starting at the specified index of the target array.
+        /// @param index The zero-based index in the source List<T> at which copying begins.
+        /// @param array The one-dimensional Array that is the destination of the elements copied from ICollection. The Array must have zero-based indexing.
+        /// @param arrayIndex The zero-based index in array at which copying begins;
+        /// @param count The number of elements to copy.
+        /// @exception ArgumentNullException array is null.
+        /// @exception ArgumentOutOfRangeException The arrayIndex or count is less than 0.
+        /// @exception ArgumentException The number of elements in the source List<T> is greater than the number of elements that the destination array can contain.
+        /// @remarks TThis method uses Array.Copy to copy the elements.
+        /// @remarks The elements are copied to the Array in the same order in which the enumerator iterates through the List<T>.
+        /// @remarks This method is an O(n) operation, where n is Count.
+        /// @par Examples
+        /// The following code example demonstrates all three overloads of the CopyTo method. A List<T> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
+        /// @include ListCopyTo.cpp
+        void copy_to(xtd::size index, xtd::array<type_t>& array, xtd::size array_index, xtd::size count) const {
+          if (index + count > this->count() || array_index + count > array.size()) throw xtd::argument_exception {csf_};
+          auto i = 0_z, c = 0_z;
+          for (const type_t& item : *this) {
+            if (i >= index + count) return;
+            if (i >= index) {
+              array[array_index + c] = item;
+              c += 1;
+            }
+            i += 1;
+          }
+        }
+
         /// @brief Inserts a new element into the container directly before `pos`.
         /// @param pos The iterator before which the new element will be constructed.
         /// @param args arguments to forward to the constructor of the element.
@@ -361,6 +417,21 @@ namespace xtd {
         /// @brief Returns the underlying base type.
         /// @return The underlying base type.
         const base_type& get_base_type() const noexcept {return items_;}
+
+        enumerator<value_type> get_enumerator() const override {
+          class list_enumerator : public ienumerator<value_type> {
+          public:
+            explicit list_enumerator(const base_type& items) : items_(items) {}
+            const value_type& current() const override {return items_[index_];}
+            bool move_next() override {return ++index_ < items_.size();}
+            void reset() override {index_ = xtd::box_integer<xtd::size>::max_value;}
+            
+          protected:
+            const base_type& items_;
+            xtd::size index_ = xtd::box_integer<xtd::size>::max_value;
+          };
+          return {new_ptr<list_enumerator>(items_)};
+        }
 
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
@@ -439,6 +510,17 @@ namespace xtd {
         void push_back(type_t&& value) {
           ++operation_number_;
           items_.push_back(value);
+        }
+        
+        bool remove(const type_t& item) override {
+          if (count() == 0)  return false;
+          for (typename std::vector<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type, allocator_type>::iterator it = items_.begin(); it != items_.end() ; it++) {
+            if (*it == item) {
+              items_.erase(it);
+              return true;
+            }
+          }
+          return false;
         }
         
         /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
