@@ -1,3 +1,12 @@
+#if defined(WIN32)
+#define NOMINMAX
+#include <winsock2.h>
+#include <Windows.h>
+#include <Windowsx.h>
+#include <Commctrl.h>
+#include <shlobj.h>
+#endif
+
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
@@ -13,7 +22,6 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 #if defined(__WXMSW__)
-#include <ShlObj.h>
 using namespace std;
 namespace {
   auto handle_hook = HHOOK {};

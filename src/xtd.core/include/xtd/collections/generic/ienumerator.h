@@ -5,6 +5,11 @@
 #include "../../interface.h"
 #include <iterator>
 
+/// @cond
+// The `interface` define is reactivated by the win32 include files.
+#undef interface
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
