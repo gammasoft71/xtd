@@ -11,7 +11,7 @@
 
 using namespace xtd::native;
 
-intmax_t unnamed_semaphore::create(int_least32_t initial_count, int_least32_t maximum_count) {
+intmax_t unnamed_semaphore::create(int32_t initial_count, int32_t maximum_count) {
   auto semaphore = semaphore_t {};
   if (semaphore_create(current_task(), &semaphore, SYNC_POLICY_FIFO, std::min(initial_count, maximum_count)) != err_none)
     return reinterpret_cast<intmax_t>(SEM_FAILED);
@@ -23,7 +23,7 @@ void unnamed_semaphore::destroy(intmax_t handle) {
   semaphore_destroy(current_task(), static_cast<semaphore_t>(handle));
 }
 
-bool unnamed_semaphore::signal(intmax_t handle, int_least32_t release_count, int_least32_t& previous_count, bool& io_error) {
+bool unnamed_semaphore::signal(intmax_t handle, int32_t release_count, int32_t& previous_count, bool& io_error) {
   io_error = false;
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) {
     io_error = true;
@@ -36,7 +36,7 @@ bool unnamed_semaphore::signal(intmax_t handle, int_least32_t release_count, int
   return !io_error;
 }
 
-uint_least32_t unnamed_semaphore::wait(intmax_t handle, int_least32_t milliseconds_timeout) {
+uint32_t unnamed_semaphore::wait(intmax_t handle, int32_t milliseconds_timeout) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return 0xFFFFFFFF;
   auto result = milliseconds_timeout == -1 ? sem_wait(reinterpret_cast<sem_t*>(handle)) : sem_milliseconds_timedwait(reinterpret_cast<sem_t*>(handle), milliseconds_timeout);
   if (result && errno == EAGAIN) return 0xFFFFFFFF;

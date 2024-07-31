@@ -59,23 +59,23 @@ std::vector<std::string> font_family::installed_font_families() {
   return std::vector<std::string>(families().begin(), families().end());
 }
 
-int_least32_t font_family::get_cell_ascent(intmax_t font_family, int_least32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+int32_t font_family::get_cell_ascent(intmax_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
   fl_screen_dc screen_dc;
   fl_font font(font_family, em_height);
   return screen_dc.ascent(font.font(), pixel_to_native_font_graphics_untit(font.size()));
 }
 
-int_least32_t font_family::get_cell_descent(intmax_t font_family, int_least32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+int32_t font_family::get_cell_descent(intmax_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
   fl_screen_dc screen_dc;
   fl_font font(font_family, em_height);
   return screen_dc.descent(font.font(), pixel_to_native_font_graphics_untit(font.size()));
 }
 
-int_least32_t font_family::get_line_spacing(intmax_t font_family, int_least32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+int32_t font_family::get_line_spacing(intmax_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
   return 0;
 }
 
-std::string font_family::get_name(intmax_t font_family, int_least32_t language) {
+std::string font_family::get_name(intmax_t font_family, int32_t language) {
   return *reinterpret_cast<std::string*>(font_family);
 }
 

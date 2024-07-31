@@ -13,8 +13,8 @@ using namespace xtd::native;
 #undef min
 #undef max
 
-std::vector<uint_least8_t> guid::new_guid() {
+std::vector<uint8_t> guid::new_guid() {
   auto guid = UUID {};
   UuidCreate(&guid);
-  return {reinterpret_cast<uint_least8_t*>(&guid), reinterpret_cast<uint_least8_t*>(&guid) + 16};
+  return {reinterpret_cast<uint8_t*>(&guid), reinterpret_cast<uint8_t*>(&guid) + 16};
 }

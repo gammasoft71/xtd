@@ -12,7 +12,7 @@
 
 inline static constexpr size_t PSEMNAMLEN = 31;
 
-static inline int sem_milliseconds_timedwait(sem_t *sem, int_least32_t milliseconds_timeout) {
+static inline int sem_milliseconds_timedwait(sem_t *sem, int32_t milliseconds_timeout) {
   struct timespec timeout;
   clock_gettime(CLOCK_REALTIME, &timeout);
   timeout.tv_sec += milliseconds_timeout / 1000;

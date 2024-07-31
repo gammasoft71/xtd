@@ -11,7 +11,7 @@
 using namespace std;
 using namespace xtd::native;
 
-int_least32_t file::copy(const std::string& source_file, const std::string& target_file) {
+int32_t file::copy(const std::string& source_file, const std::string& target_file) {
   auto ifs = ifstream {source_file, ios::binary};
   if (!ifs) return -1;
   auto ofs = ofstream {target_file, ios::trunc | ios::binary};
@@ -33,12 +33,12 @@ size_t file::get_size(const std::string& path) {
   return static_cast<size_t>(status.st_size);
 }
 
-int_least32_t file::move(const std::string& old_path, const std::string& new_path) {
+int32_t file::move(const std::string& old_path, const std::string& new_path) {
   auto file_attributes = 0;
   if (file_system::get_attributes(new_path, file_attributes) == 0) return -1;
   return rename(old_path.c_str(), new_path.c_str());
 }
 
-int_least32_t file::remove(const std::string& file) {
+int32_t file::remove(const std::string& file) {
   return unlink(file.c_str());
 }

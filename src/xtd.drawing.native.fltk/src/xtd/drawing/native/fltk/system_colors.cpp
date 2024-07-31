@@ -6,13 +6,13 @@
 using namespace xtd::drawing::native;
 
 namespace {
-  uint_least32_t to_argb(Fl_Color color) {
-    return static_cast<uint_least32_t>(color) >> 8;
+  uint32_t to_argb(Fl_Color color) {
+    return static_cast<uint32_t>(color) >> 8;
   }
 }
 
-uint_least32_t system_colors::to_argb(intmax_t color) {
-  return static_cast<uint_least32_t>(color);
+uint32_t system_colors::to_argb(intmax_t color) {
+  return static_cast<uint32_t>(color);
 }
 
 intmax_t system_colors::active_border() {

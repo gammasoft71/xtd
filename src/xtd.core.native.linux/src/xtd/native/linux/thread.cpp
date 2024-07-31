@@ -15,7 +15,7 @@ bool thread::cancel(intmax_t handle) {
   return pthread_cancel(static_cast<pthread_t>(handle)) == 0;
 }
 
-intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size, bool suspended, intmax_t& id) {
+intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int32_t max_stack_size, bool suspended, intmax_t& id) {
   auto thread = pthread_t {};
   int error = pthread_create(&thread, nullptr, [](void* thread_arg)->void* {
     auto start_obj = reinterpret_cast<std::pair<std::function<void(intmax_t)>, intmax_t>*>(thread_arg);
@@ -58,18 +58,18 @@ bool thread::set_current_thread_name(const std::string& name) {
   return true;
 }
 
-bool thread::set_priority(intmax_t handle, int_least32_t priority) {
+bool thread::set_priority(intmax_t handle, int32_t priority) {
   if (static_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
   auto policy = 0;
   auto sched_param = ::sched_param {};
   if (::pthread_getschedparam(static_cast<pthread_t>(handle), &policy, &sched_param) != 0)
     return false;
 
-  sched_param.sched_priority = static_cast<int_least32_t>(ceil((static_cast<double>(priority) * (sched_get_priority_max(policy) - sched_get_priority_min(policy)) / 4) + sched_get_priority_min(policy)));
+  sched_param.sched_priority = static_cast<int32_t>(ceil((static_cast<double>(priority) * (sched_get_priority_max(policy) - sched_get_priority_min(policy)) / 4) + sched_get_priority_min(policy)));
   return pthread_setschedparam(static_cast<pthread_t>(handle), policy, &sched_param) == 0;
 }
 
-void thread::sleep(int_least32_t milliseconds_timeout) {
+void thread::sleep(int32_t milliseconds_timeout) {
   auto infinite_sleep = [] {while (true) std::this_thread::sleep_for(std::chrono::hours::max());};
   if (milliseconds_timeout == -1) infinite_sleep();
   else if (milliseconds_timeout == 0) yield();

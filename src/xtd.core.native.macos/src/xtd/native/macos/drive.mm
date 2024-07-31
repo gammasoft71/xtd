@@ -32,7 +32,7 @@ bool drive::get_available_free_space(const std::string& root_path_name, size_t& 
   return true;
 }
 
-int_least32_t drive::get_drive_type(const std::string& root_path_name) {
+int32_t drive::get_drive_type(const std::string& root_path_name) {
   if (root_drive == root_path_name) return DRIVE_FIXED;
   if (find(ram_drives.begin(), ram_drives.end(), root_path_name) != ram_drives.end()) return DRIVE_RAMDISK;
   if (find(network_drives.begin(), network_drives.end(), root_path_name) != network_drives.end()) return DRIVE_REMOTE;

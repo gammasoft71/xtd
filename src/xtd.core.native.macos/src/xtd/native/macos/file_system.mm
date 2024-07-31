@@ -15,9 +15,9 @@
 using namespace std;
 using namespace xtd::native;
 
-int_least32_t file_system::get_attributes(const std::string& path, int_least32_t& attributes) {
+int32_t file_system::get_attributes(const std::string& path, int32_t& attributes) {
   struct system_attribute_to_file_attribute_converter {
-    int_least32_t operator()(int_least32_t attribute) {
+    int32_t operator()(int32_t attribute) {
       auto file_attributes = 0;
       if ((attribute & S_IRUSR) == S_IRUSR && (attribute & S_IWUSR) != S_IWUSR) file_attributes |= FILE_ATTRIBUTE_READONLY;
       if ((attribute & S_IFSOCK) == S_IFSOCK || (attribute & S_IFIFO) == S_IFIFO) file_attributes |= FILE_ATTRIBUTE_SYSTEM;
@@ -34,7 +34,7 @@ int_least32_t file_system::get_attributes(const std::string& path, int_least32_t
   return 0;
 }
 
-int_least32_t file_system::get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
+int32_t file_system::get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time) {
   NSFileManager* fm = [NSFileManager defaultManager];
   creation_time = [[[fm attributesOfItemAtPath:[NSString stringWithUTF8String:path.c_str()] error:Nil] fileCreationDate] timeIntervalSince1970];
   last_access_time = [[[fm attributesOfItemAtPath:[NSString stringWithUTF8String:path.c_str()] error:Nil] fileModificationDate] timeIntervalSince1970];
@@ -68,9 +68,9 @@ string file_system::get_full_path(const string& relative_path) {
   return full_path;
 }
 
-int_least32_t file_system::get_permissions(const std::string& path, int_least32_t& permissions) {
+int32_t file_system::get_permissions(const std::string& path, int32_t& permissions) {
   struct system_permission_to_file_permission_converter {
-    int_least32_t operator()(mode_t permission) {
+    int32_t operator()(mode_t permission) {
       auto file_permissions = 0;
       if ((permission & S_IRUSR) == S_IRUSR) file_permissions |= FILE_PERMISSIONS_OWNER_READ;
       if ((permission & S_IWUSR) == S_IWUSR) file_permissions |= FILE_PERMISSIONS_OWNER_WRITE;
@@ -108,7 +108,7 @@ bool file_system::is_path_too_long(const std::string& path) {
   return file_name.size() > NAME_MAX;
 }
 
-int_least32_t file_system::set_attributes(const std::string& path, int_least32_t attributes) {
+int32_t file_system::set_attributes(const std::string& path, int32_t attributes) {
   struct stat s;
   if (stat(path.c_str(), &s) != 0) return -1;
   
@@ -122,7 +122,7 @@ int_least32_t file_system::set_attributes(const std::string& path, int_least32_t
   return chmod(path.c_str(), s.st_mode);
 }
 
-int_least32_t file_system::set_creation_time(const std::string& path, time_t creation_time) {
+int32_t file_system::set_creation_time(const std::string& path, time_t creation_time) {
   // There is no creation time on linux so we update the last modification time instead...
   auto times = utimbuf {};
   time_t creation_time_old = 0, last_access_time = 0, last_write_time = 0;
@@ -132,7 +132,7 @@ int_least32_t file_system::set_creation_time(const std::string& path, time_t cre
   return utime(path.c_str(), &times);
 }
 
-int_least32_t file_system::set_last_access_time(const std::string& path, time_t last_access_time) {
+int32_t file_system::set_last_access_time(const std::string& path, time_t last_access_time) {
   auto times = utimbuf {};
   time_t creation_time = 0, last_access_time_old = 0, last_write_time = 0;
   get_file_times(path, creation_time, last_access_time_old, last_write_time);
@@ -141,7 +141,7 @@ int_least32_t file_system::set_last_access_time(const std::string& path, time_t 
   return utime(path.c_str(), &times);
 }
 
-int_least32_t file_system::set_last_write_time(const std::string& path, time_t last_write_time) {
+int32_t file_system::set_last_write_time(const std::string& path, time_t last_write_time) {
   auto times = utimbuf {};
   time_t creation_time = 0, last_access_time = 0, last_write_time_old = 0;
   get_file_times(path, creation_time, last_access_time, last_write_time_old);
@@ -150,9 +150,9 @@ int_least32_t file_system::set_last_write_time(const std::string& path, time_t l
   return utime(path.c_str(), &times);
 }
 
-int_least32_t file_system::set_permissions(const std::string& path, int_least32_t permissions) {
+int32_t file_system::set_permissions(const std::string& path, int32_t permissions) {
   struct file_permission_to_system_permission_converter {
-    mode_t operator()(int_least32_t permission) {
+    mode_t operator()(int32_t permission) {
       auto system_permissions = 0;
       if ((permission & FILE_PERMISSIONS_OWNER_READ) == FILE_PERMISSIONS_OWNER_READ) system_permissions |= S_IRUSR;
       if ((permission & FILE_PERMISSIONS_OWNER_WRITE) == FILE_PERMISSIONS_OWNER_WRITE) system_permissions |= S_IWUSR;

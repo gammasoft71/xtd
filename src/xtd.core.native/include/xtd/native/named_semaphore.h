@@ -42,7 +42,7 @@ namespace xtd {
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created semaphore.
       /// @warning Internal use only
-      static intmax_t create(int_least32_t initial_count, int_least32_t max_count, const std::string& name);
+      static intmax_t create(int32_t initial_count, int32_t max_count, const std::string& name);
       
       /// @brief Destroy named semaphore with specified semaphore handle.
       /// @param name The name of the semaphore.
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param handle The semaphore handle to signal.
       /// @return true if succeed; otherwhise false.
       /// @warning Internal use only
-      static bool signal(intmax_t handle, int_least32_t release_count, int_least32_t& previous_count, bool& io_error);
+      static bool signal(intmax_t handle, int32_t release_count, int32_t& previous_count, bool& io_error);
       
       /// @brief Wait named semaphore with specified semaphore handle and timeout.
       /// @param handle The semaphore handle to wait.
@@ -76,7 +76,7 @@ namespace xtd {
       ///  * 0x00000102 : Timeout
       ///  * 0xFFFFFFFF : Failed
       /// @warning Internal use only
-      static uint_least32_t wait(intmax_t handle, int_least32_t milliseconds_timeout);
+      static uint32_t wait(intmax_t handle, int32_t milliseconds_timeout);
       /// @}
     };
   }

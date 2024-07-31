@@ -26,7 +26,7 @@ namespace xtd {
         control_wrapper(control_handler* event_handler, args_type&& ...args) : TControl(args...), event_handler_(event_handler) {}
         
         
-        virtual int_least32_t handle(int_least32_t event);
+        virtual int32_t handle(int32_t event);
         
       private:
         intmax_t convert_to_virtual_key(intmax_t fl_key) {
@@ -35,8 +35,8 @@ namespace xtd {
         
         control_handler* event_handler_;
         bool process_result_ = true;
-        int_least32_t height_ = 0;
-        int_least32_t width_ = 0;
+        int32_t height_ = 0;
+        int32_t width_ = 0;
       };
       
       class control_handler {
@@ -56,7 +56,7 @@ namespace xtd {
         Fl_Cursor cursor() const {return this->cursor_;}
         void cursor(Fl_Cursor cursor) {this->cursor_ = cursor;}
         
-        intmax_t call_def_wnd_proc(intmax_t hwnd, int_least32_t msg, intmax_t wparam, intmax_t lparam, intmax_t result, intmax_t handle) {return this->def_wnd_proc(hwnd, msg, wparam, lparam, result, handle);}
+        intmax_t call_def_wnd_proc(intmax_t hwnd, int32_t msg, intmax_t wparam, intmax_t lparam, intmax_t result, intmax_t handle) {return this->def_wnd_proc(hwnd, msg, wparam, lparam, result, handle);}
         
         void destroy() {
           delete this->control_;
@@ -76,8 +76,8 @@ namespace xtd {
           return result;
         }
         
-        event<control_handler, delegate<intmax_t(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t)>> wnd_proc;
-        event<control_handler, delegate<intmax_t(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t, intmax_t)>> def_wnd_proc;
+        event<control_handler, delegate<intmax_t(intmax_t, int32_t, intmax_t, intmax_t, intmax_t)>> wnd_proc;
+        event<control_handler, delegate<intmax_t(intmax_t, int32_t, intmax_t, intmax_t, intmax_t, intmax_t)>> def_wnd_proc;
         
       private:
         Fl_Widget* control_ = nullptr;
@@ -85,7 +85,7 @@ namespace xtd {
       };
       
       template<typename control_t>
-      inline int_least32_t control_wrapper<control_t>::handle(int_least32_t event) {
+      inline int32_t control_wrapper<control_t>::handle(int32_t event) {
         return this->control_t::handle(event);
         /*
         bool intercepted_event = this->control_t::handle(event) != 0;

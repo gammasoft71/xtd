@@ -60,7 +60,7 @@ directory::directory_iterator& directory::directory_iterator::operator ++() {
   return *this;
 }
 
-directory::directory_iterator directory::directory_iterator::operator ++(int_least32_t) {
+directory::directory_iterator directory::directory_iterator::operator ++(int32_t) {
   auto result = directory_iterator {*this};
   ++(*this);
   return result;
@@ -130,7 +130,7 @@ directory::file_iterator& directory::file_iterator::operator ++() {
   return *this;
 }
 
-directory::file_iterator directory::file_iterator::operator ++(int_least32_t) {
+directory::file_iterator directory::file_iterator::operator ++(int32_t) {
   auto result = file_iterator {*this};
   ++(*this);
   return result;
@@ -200,7 +200,7 @@ directory::file_and_directory_iterator& directory::file_and_directory_iterator::
   return *this;
 }
 
-directory::file_and_directory_iterator directory::file_and_directory_iterator::operator ++(int_least32_t) {
+directory::file_and_directory_iterator directory::file_and_directory_iterator::operator ++(int32_t) {
   auto result = file_and_directory_iterator {*this};
   ++(*this);
   return result;
@@ -231,7 +231,7 @@ const std::string& directory::file_and_directory_iterator::pattern() const {
   return data_->pattern_;
 }
 
-int_least32_t directory::create(const std::string& directory_name) {
+int32_t directory::create(const std::string& directory_name) {
   return mkdir(directory_name.c_str(), S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IWGRP | S_IXGRP | S_IROTH | S_IWOTH | S_IXOTH);
 }
 
@@ -260,10 +260,10 @@ string directory::get_current_directory() {
   return result ? path : "";
 }
 
-int_least32_t directory::remove(const std::string& directory_name) {
+int32_t directory::remove(const std::string& directory_name) {
   return rmdir(directory_name.c_str());
 }
 
-int_least32_t directory::set_current_directory(const std::string& directory_name) {
+int32_t directory::set_current_directory(const std::string& directory_name) {
   return chdir(directory_name.c_str());
 }

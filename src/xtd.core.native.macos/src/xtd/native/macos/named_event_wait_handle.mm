@@ -47,7 +47,7 @@ bool named_event_wait_handle::reset(intmax_t handle, bool& io_error) {
   return true;
 }
 
-uint_least32_t named_event_wait_handle::wait(intmax_t handle, int_least32_t milliseconds_timeout, bool manual_reset) {
+uint32_t named_event_wait_handle::wait(intmax_t handle, int32_t milliseconds_timeout, bool manual_reset) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return 0xFFFFFFFF;
   auto result = milliseconds_timeout == -1 ? sem_wait(reinterpret_cast<sem_t*>(handle)) : sem_milliseconds_timedwait(reinterpret_cast<sem_t*>(handle), milliseconds_timeout);
   if (result && errno == EAGAIN) return 0xFFFFFFFF;
