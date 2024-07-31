@@ -24,7 +24,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      /// @remarks xtd::collection::generic::key_value_pair is an alias of [std::pair](https://en.cppreference.com/w/cpp/utility/pair).
+      /// @remarks xtd::collections::generic::key_value_pair is an alias of [std::pair](https://en.cppreference.com/w/cpp/utility/pair).
       template<typename key_t, typename value_t>
       using key_value_pair = std::pair<key_t, value_t>;
     }
