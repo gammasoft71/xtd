@@ -1,6 +1,7 @@
 var modules =
 [
     [ "﹡ libraries", "group__libraries.html", "group__libraries" ],
+    [ "﹡ native API", "group__native.html", "group__native" ],
     [ "debug", "group__debug.html", "group__debug" ],
     [ "drawing", "group__drawing.html", "group__drawing" ],
     [ "events", "group__events.html", "group__events" ],

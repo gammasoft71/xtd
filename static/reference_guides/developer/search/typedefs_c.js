@@ -1,6 +1,14 @@
 var searchData=
 [
-  ['native_5fhandle_5ftype_0',['native_handle_type',['../classxtd_1_1threading_1_1mutex_a76d46795a5139906244351664dce7cc6.html#a76d46795a5139906244351664dce7cc6',1,'xtd::threading::mutex']]],
-  ['no_5farguments_5ffunction_5ft_1',['no_arguments_function_t',['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4_a0519c93d63e33630da52254043a7e7ab.html#a0519c93d63e33630da52254043a7e7ab',1,'xtd::delegate&lt; result_t(arguments_t...)&gt;']]],
-  ['notifier_5fappearance_2',['notifier_appearance',['../group__xtd__forms_gae09498cc1aa7e63385cb651d8f79aca0.html#gae09498cc1aa7e63385cb651d8f79aca0',1,'xtd::forms']]]
+  ['magenta_5fcolors_0',['magenta_colors',['../group__colors_ga93fe9c12f0db7ff77ce77110a1f0e430.html#ga93fe9c12f0db7ff77ce77110a1f0e430',1,'xtd::drawing']]],
+  ['main_5fmenu_5fref_1',['main_menu_ref',['../classxtd_1_1forms_1_1form_a288dbba26aafa32f55ed924e5fc29445.html#a288dbba26aafa32f55ed924e5fc29445',1,'xtd::forms::form']]],
+  ['margin_2',['margin',['../group__style__sheets_ga6e27be4676daa69a3f7135b9a9391017.html#ga6e27be4676daa69a3f7135b9a9391017',1,'xtd::forms::style_sheets']]],
+  ['menu_5fitem_5fcollection_3',['menu_item_collection',['../classxtd_1_1forms_1_1menu_a7434673bc425c4f9b9e5a965195e81d2.html#a7434673bc425c4f9b9e5a965195e81d2',1,'xtd::forms::menu']]],
+  ['menu_5fitem_5fref_4',['menu_item_ref',['../group__xtd__forms_ga06b4e12d07edb5f73def11be1110f072.html#ga06b4e12d07edb5f73def11be1110f072',1,'xtd::forms']]],
+  ['message_5fbox_5fbuttons_5',['message_box_buttons',['../group__xtd__forms_gace6785d1960c865a1438416f99fef063.html#gace6785d1960c865a1438416f99fef063',1,'xtd::forms']]],
+  ['message_5fbox_5fdefault_5fbutton_6',['message_box_default_button',['../group__xtd__forms_gab9bcd686f062a193db68d7431d66ebf7.html#gab9bcd686f062a193db68d7431d66ebf7',1,'xtd::forms']]],
+  ['message_5fbox_5ficon_7',['message_box_icon',['../group__xtd__forms_ga0c39a630e1108a1fbe6776207bd2358c.html#ga0c39a630e1108a1fbe6776207bd2358c',1,'xtd::forms']]],
+  ['message_5fbox_5foptions_8',['message_box_options',['../group__xtd__forms_ga7d4ac295cf52e41025c94ad1b3f49bd0.html#ga7d4ac295cf52e41025c94ad1b3f49bd0',1,'xtd::forms']]],
+  ['message_5floop_5fcallback_9',['message_loop_callback',['../group__events_ga4ad4df9ee7750a6194c4a00a602bc4ca.html#ga4ad4df9ee7750a6194c4a00a602bc4ca',1,'xtd::forms']]],
+  ['mouse_5fevent_5fhandler_10',['mouse_event_handler',['../group__events_ga1f6a09d177faa8d78c3db862990139d8.html#ga1f6a09d177faa8d78c3db862990139d8',1,'xtd::forms']]]
 ];

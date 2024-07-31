@@ -18,7 +18,7 @@ var searchData=
   ['enumerable_5fiterators_15',['enumerable_iterators',['../classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html',1,'xtd::collections::generic']]],
   ['enumerable_5fiterators_3c_20type_5ft_2c_20ienumerable_3c_20type_5ft_20_3e_20_3e_16',['enumerable_iterators&lt; type_t, ienumerable&lt; type_t &gt; &gt;',['../classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html',1,'xtd::collections::generic']]],
   ['enumerator_17',['enumerator',['../classxtd_1_1collections_1_1generic_1_1enumerator.html',1,'xtd::collections::generic']]],
-  ['environment_18',['environment',['../classxtd_1_1environment.html',1,'xtd']]],
+  ['environment_18',['environment',['../classxtd_1_1environment.html',1,'xtd::environment'],['../classxtd_1_1native_1_1environment.html',1,'xtd::native::environment']]],
   ['equality_5foperators_19',['equality_operators',['../classxtd_1_1equality__operators.html',1,'xtd']]],
   ['equality_5foperators_3c_20adjustement_5frule_2c_20iequatable_3c_20adjustement_5frule_20_3e_20_3e_20',['equality_operators&lt; adjustement_rule, iequatable&lt; adjustement_rule &gt; &gt;',['../classxtd_1_1equality__operators.html',1,'xtd']]],
   ['equality_5foperators_3c_20any_5fobject_2c_20iequatable_3c_20any_5fobject_20_3e_20_3e_21',['equality_operators&lt; any_object, iequatable&lt; any_object &gt; &gt;',['../classxtd_1_1equality__operators.html',1,'xtd']]],

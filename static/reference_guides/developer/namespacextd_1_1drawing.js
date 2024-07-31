@@ -10,6 +10,7 @@ var namespacextd_1_1drawing =
     ] ],
     [ "drawing_2d", "namespacextd_1_1drawing_1_1drawing__2d.html", "namespacextd_1_1drawing_1_1drawing__2d" ],
     [ "imaging", "namespacextd_1_1drawing_1_1imaging.html", "namespacextd_1_1drawing_1_1imaging" ],
+    [ "native", "namespacextd_1_1drawing_1_1native.html", "namespacextd_1_1drawing_1_1native" ],
     [ "text", "namespacextd_1_1drawing_1_1text.html", "namespacextd_1_1drawing_1_1text" ],
     [ "actions_system_images", "classxtd_1_1drawing_1_1actions__system__images.html", null ],
     [ "animations_system_images", "classxtd_1_1drawing_1_1animations__system__images.html", null ],

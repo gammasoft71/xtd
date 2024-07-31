@@ -1,14 +1,5 @@
 var searchData=
 [
-  ['action_0',['action',['../group__xtd__core_ga53c721aac682a7ccf19ee17d92280e31.html#ga53c721aac682a7ccf19ee17d92280e31',1,'xtd']]],
-  ['allocator_1',['allocator',['../group__helpers__generic__collections_gac7dc24539787a344466014161f2d39af.html#gac7dc24539787a344466014161f2d39af',1,'xtd::collections::generic::helpers']]],
-  ['allocator_5ftype_2',['allocator_type',['../classxtd_1_1collections_1_1generic_1_1list_a88eae17c8c5a4a35346476a34db53058.html#a88eae17c8c5a4a35346476a34db53058',1,'xtd::collections::generic::list::allocator_type'],['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection_a54ca9193cb356b15138bfb2458f057e7.html#a54ca9193cb356b15138bfb2458f057e7',1,'xtd::forms::layout::arranged_element_collection::allocator_type']]],
-  ['animation_5fupdated_5fevent_5fhandler_3',['animation_updated_event_handler',['../group__events_ga78fd8a84a2b923fd3c4e3b0b87f390e5.html#ga78fd8a84a2b923fd3c4e3b0b87f390e5',1,'xtd::forms']]],
-  ['any_5fpair_4',['any_pair',['../group__collections_ga8a76f3f05751df733bfba833f2016757.html#ga8a76f3f05751df733bfba833f2016757',1,'xtd::collections']]],
-  ['array_5',['array',['../group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a',1,'xtd']]],
-  ['array_5flist_6',['array_list',['../group__collections_gaf064333715d42a26e1ec3999ff384557.html#gaf064333715d42a26e1ec3999ff384557',1,'xtd::collections']]],
-  ['artist_5fcollection_7',['artist_collection',['../classxtd_1_1forms_1_1about__box_af04d25f871c2cbf1e8354d83a68fe9ad.html#af04d25f871c2cbf1e8354d83a68fe9ad',1,'xtd::forms::about_box::artist_collection'],['../classxtd_1_1forms_1_1about__dialog_adfa7c239d07256524b76c9086e52dc5b.html#adfa7c239d07256524b76c9086e52dc5b',1,'xtd::forms::about_dialog::artist_collection']]],
-  ['async_5fcallback_8',['async_callback',['../group__xtd__core_ga2c9b01f90017e6d921f8642ab99f0fcc.html#ga2c9b01f90017e6d921f8642ab99f0fcc',1,'xtd']]],
-  ['async_5fresult_9',['async_result',['../group__xtd__core_ga1bc34012935a93e10b5dba765c8d0d5a.html#ga1bc34012935a93e10b5dba765c8d0d5a',1,'xtd']]],
-  ['author_5fcollection_10',['author_collection',['../classxtd_1_1forms_1_1about__box_a1bf80cea5313f72d8660fd3cba858e42.html#a1bf80cea5313f72d8660fd3cba858e42',1,'xtd::forms::about_box::author_collection'],['../classxtd_1_1forms_1_1about__dialog_a8afc7bf1bb7627eb8703122a9d5c60cb.html#a8afc7bf1bb7627eb8703122a9d5c60cb',1,'xtd::forms::about_dialog::author_collection']]]
+  ['_5f_5fslong_5f_5f_0',['__slong__',['../value__types_8h_addcf1862bf2a19913f00854d12503861.html#addcf1862bf2a19913f00854d12503861',1,'value_types.h']]],
+  ['_5f_5fulong_5f_5f_1',['__ulong__',['../value__types_8h_a46bd12d3c5cc7e4cd2553e02eddd868a.html#a46bd12d3c5cc7e4cd2553e02eddd868a',1,'value_types.h']]]
 ];

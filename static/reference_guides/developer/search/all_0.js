@@ -59,10 +59,12 @@ var searchData=
   ['_5f_5fpolymorphic_5fany_5fobject_5f_5f_3c_20type_5ft_2c_20std_3a_3afalse_5ftype_20_3e_56',['__polymorphic_any_object__&lt; type_t, std::false_type &gt;',['../structxtd_1_1____polymorphic__any__object_____3_01type__t_00_01std_1_1false__type_01_4.html',1,'xtd']]],
   ['_5f_5fpolymorphic_5fany_5fobject_5f_5f_3c_20type_5ft_2c_20std_3a_3atrue_5ftype_20_3e_57',['__polymorphic_any_object__&lt; type_t, std::true_type &gt;',['../structxtd_1_1____polymorphic__any__object_____3_01type__t_00_01std_1_1true__type_01_4.html',1,'xtd']]],
   ['_5f_5fshow_5fgeneric_5fexception_5fmessage_2eh_58',['__show_generic_exception_message.h',['../____show__generic__exception__message_8h.html',1,'']]],
-  ['_5f_5fsprintf_2eh_59',['__sprintf.h',['../____sprintf_8h.html',1,'']]],
-  ['_5f_5ftunit_5fjoin_5f_5fitems_2eh_60',['__tunit_join__items.h',['../____tunit__join____items_8h.html',1,'']]],
-  ['_5f_5fxtd_5fdebugbreak_2eh_61',['__xtd_debugbreak.h',['../____xtd__debugbreak_8h.html',1,'']]],
-  ['_5f_5fxtd_5fstd_5fversion_2eh_62',['__xtd_std_version.h',['../____xtd__std__version_8h.html',1,'']]],
-  ['_5f_5fxtd_5ftuple_5fstringer_63',['__xtd_tuple_stringer',['../structxtd_1_1____xtd__tuple__stringer.html',1,'xtd']]],
-  ['_5f_5fxtd_5ftuple_5fstringer_3c_20type_5ft_2c_20n_5ft_2c_20n_5ft_20_3e_64',['__xtd_tuple_stringer&lt; type_t, n_t, n_t &gt;',['../structxtd_1_1____xtd__tuple__stringer_3_01type__t_00_01n__t_00_01n__t_01_4.html',1,'xtd']]]
+  ['_5f_5fslong_5f_5f_59',['__slong__',['../value__types_8h_addcf1862bf2a19913f00854d12503861.html#addcf1862bf2a19913f00854d12503861',1,'value_types.h']]],
+  ['_5f_5fsprintf_2eh_60',['__sprintf.h',['../____sprintf_8h.html',1,'']]],
+  ['_5f_5ftunit_5fjoin_5f_5fitems_2eh_61',['__tunit_join__items.h',['../____tunit__join____items_8h.html',1,'']]],
+  ['_5f_5fulong_5f_5f_62',['__ulong__',['../value__types_8h_a46bd12d3c5cc7e4cd2553e02eddd868a.html#a46bd12d3c5cc7e4cd2553e02eddd868a',1,'value_types.h']]],
+  ['_5f_5fxtd_5fdebugbreak_2eh_63',['__xtd_debugbreak.h',['../____xtd__debugbreak_8h.html',1,'']]],
+  ['_5f_5fxtd_5fstd_5fversion_2eh_64',['__xtd_std_version.h',['../____xtd__std__version_8h.html',1,'']]],
+  ['_5f_5fxtd_5ftuple_5fstringer_65',['__xtd_tuple_stringer',['../structxtd_1_1____xtd__tuple__stringer.html',1,'xtd']]],
+  ['_5f_5fxtd_5ftuple_5fstringer_3c_20type_5ft_2c_20n_5ft_2c_20n_5ft_20_3e_66',['__xtd_tuple_stringer&lt; type_t, n_t, n_t &gt;',['../structxtd_1_1____xtd__tuple__stringer_3_01type__t_00_01n__t_00_01n__t_01_4.html',1,'xtd']]]
 ];
