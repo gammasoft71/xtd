@@ -37,7 +37,7 @@ namespace xtd {
       stack_trace() = delete;
       friend xtd::diagnostics::stack_frame;
     protected:
-      /// @name Protected aliaes
+      /// @name Protected Aliases
       
       /// @{
       /// @brief Represents a frame object that contains file name,line, column, method name and offset.
