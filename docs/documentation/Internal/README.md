@@ -9,6 +9,10 @@ sidebar_position: 16
 * Internal use only
 * These documents are internal. They serve as *documentations*, *tips*, *how to*, *...* for xtd developers.
 
+## Documentation
+
+* [Developer's Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/developer/index.html)
+
 ## Development tips
 
 * [Computer Guid](/docs/documentation/Internal/computer_guid) provides information about about computer guid.
