@@ -8,6 +8,10 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
+		<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -56,6 +60,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('startup_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,11 +98,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">startup.h</div></div>
 </div><!--header-->
@@ -99,16 +115,16 @@ $(function() {
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classxtd_1_1startup.html">   23</a></span>  <span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1startup.html">startup</a> final <a class="code hl_define" href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classxtd_1_1startup.html">   23</a></span>  <span class="keyword">class </span><a class="code hl_define" href="group__keywords_gabc8f9c2aa36f6cee610a37f0e8227fd1.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1startup.html">startup</a> final <a class="code hl_define" href="group__keywords_ga28796443ec37b938df7072c79595e3f6.html#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> main_function_t&gt;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">   47</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">safe_run</a>(main_function_t main_function) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1startup_a9301437f9e6012fa2a487878639e7d23.html#a9301437f9e6012fa2a487878639e7d23">   47</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classxtd_1_1startup_a9301437f9e6012fa2a487878639e7d23.html#a9301437f9e6012fa2a487878639e7d23">safe_run</a>(main_function_t main_function) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keywordflow">return</span> internal_safe_run(main_function, std::nullopt, std::nullopt);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> main_function_t&gt;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classxtd_1_1startup.html#a052f759ab4cf62333e6f61622cb5be32">   72</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classxtd_1_1startup.html#a052f759ab4cf62333e6f61622cb5be32">safe_run</a>(main_function_t main_function, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classxtd_1_1startup_a052f759ab4cf62333e6f61622cb5be32.html#a052f759ab4cf62333e6f61622cb5be32">   72</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classxtd_1_1startup_a052f759ab4cf62333e6f61622cb5be32.html#a052f759ab4cf62333e6f61622cb5be32">safe_run</a>(main_function_t main_function, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="keywordflow">return</span> internal_safe_run(main_function, argc, argv);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
@@ -189,34 +205,38 @@ $(function() {
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  };</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">  175</a></span><span class="preprocessor">#define startup_(main_method) \</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">  175</a></span><span class="preprocessor">#define startup_(main_method) \</span></div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">  auto main(int argc, char* argv[]) -&gt; int { \</span></div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">    return xtd::startup::safe_run(main_method, argc, argv); \</span></div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">  } \</span></div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">  intptr_t __opaque_sftews__ = 0 </span><span class="comment">// force to end with semicolon</span></div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="group__keywords.html#ga8929ac8f5f6468542f8f9f0d1e0673ff">  188</a></span><span class="preprocessor">#define startup_class_(main_class) \</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="group__keywords_ga8929ac8f5f6468542f8f9f0d1e0673ff.html#ga8929ac8f5f6468542f8f9f0d1e0673ff">  188</a></span><span class="preprocessor">#define startup_class_(main_class) \</span></div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">  auto main(int argc, char* argv[]) -&gt; int { \</span></div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="preprocessor">    return xtd::startup::safe_run(main_class::main, argc, argv); \</span></div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">  } \</span></div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">  intptr_t __opaque_sftews__ = 0 </span><span class="comment">// force to end with semicolon</span></div>
 <div class="ttc" id="a____show__generic__exception__message_8h_html"><div class="ttname"><a href="____show__generic__exception__message_8h.html">__show_generic_exception_message.h</a></div><div class="ttdoc">Contains show_generic_exception_message methods.</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:34</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:37</div></div>
+<div class="ttc" id="aclassxtd_1_1startup_a052f759ab4cf62333e6f61622cb5be32_html_a052f759ab4cf62333e6f61622cb5be32"><div class="ttname"><a href="classxtd_1_1startup_a052f759ab4cf62333e6f61622cb5be32.html#a052f759ab4cf62333e6f61622cb5be32">xtd::startup::safe_run</a></div><div class="ttdeci">static int safe_run(main_function_t main_function, int argc, char *argv[])</div><div class="ttdoc">Safely call the specified application's main entry point, argc and argv.</div><div class="ttdef"><b>Definition</b> startup.h:72</div></div>
+<div class="ttc" id="aclassxtd_1_1startup_a9301437f9e6012fa2a487878639e7d23_html_a9301437f9e6012fa2a487878639e7d23"><div class="ttname"><a href="classxtd_1_1startup_a9301437f9e6012fa2a487878639e7d23.html#a9301437f9e6012fa2a487878639e7d23">xtd::startup::safe_run</a></div><div class="ttdeci">static int safe_run(main_function_t main_function)</div><div class="ttdoc">Safely call the specified application's main entry point.</div><div class="ttdef"><b>Definition</b> startup.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1startup_html"><div class="ttname"><a href="classxtd_1_1startup.html">xtd::startup</a></div><div class="ttdoc">Defines the xtd::startup object that can be used in the main method to safely call the application's ...</div><div class="ttdef"><b>Definition</b> startup.h:23</div></div>
-<div class="ttc" id="aclassxtd_1_1startup_html_a052f759ab4cf62333e6f61622cb5be32"><div class="ttname"><a href="classxtd_1_1startup.html#a052f759ab4cf62333e6f61622cb5be32">xtd::startup::safe_run</a></div><div class="ttdeci">static int safe_run(main_function_t main_function, int argc, char *argv[])</div><div class="ttdoc">Safely call the specified application's main entry point, argc and argv.</div><div class="ttdef"><b>Definition</b> startup.h:72</div></div>
-<div class="ttc" id="aclassxtd_1_1startup_html_a9301437f9e6012fa2a487878639e7d23"><div class="ttname"><a href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">xtd::startup::safe_run</a></div><div class="ttdeci">static int safe_run(main_function_t main_function)</div><div class="ttdoc">Safely call the specified application's main entry point.</div><div class="ttdef"><b>Definition</b> startup.h:47</div></div>
 <div class="ttc" id="acore__export_8h_html"><div class="ttname"><a href="core__export_8h.html">core_export.h</a></div><div class="ttdoc">Contains core_export_ keyword.</div></div>
 <div class="ttc" id="adelegate_8h_html"><div class="ttname"><a href="delegate_8h.html">delegate.h</a></div><div class="ttdoc">Contains xtd::delegate delegate.</div></div>
-<div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
-<div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
+<div class="ttc" id="agroup__keywords_ga28796443ec37b938df7072c79595e3f6_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords_ga28796443ec37b938df7072c79595e3f6.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.h:37</div></div>
+<div class="ttc" id="agroup__keywords_gabc8f9c2aa36f6cee610a37f0e8227fd1_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords_gabc8f9c2aa36f6cee610a37f0e8227fd1.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.h:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 <div class="ttc" id="astatic_8h_html"><div class="ttname"><a href="static_8h.html">static.h</a></div><div class="ttdoc">Contains xtd::static_object class.</div></div>
 <div class="ttc" id="astring__collection_8h_html"><div class="ttname"><a href="string__collection_8h.html">string_collection.h</a></div><div class="ttdoc">Contains xtd::collections::specialized::string_collection typedef.</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 30 2024 12:03:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="startup_8h.html">startup.h</a></li>
+		<li class="footer">Generated on Wed Jul 31 2024 20:10:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+  </ul>
+</div>
 </body>
 </html>

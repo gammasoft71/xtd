@@ -8,6 +8,10 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
+		<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -57,6 +61,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('modules.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -113,7 +133,7 @@ $(function() {
 <tr id="row_8_2_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a class="el" href="group__xtd__forms.html" target="_self">xtd.forms</a></td><td class="desc">The <a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a> library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system </td></tr>
 <tr id="row_8_3_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a class="el" href="group__xtd__tunit.html" target="_self">xtd.tunit</a></td><td class="desc">The <a class="el" href="namespacextd_1_1tunit.html" title="The tunit namespace contains a unit test library.">xtd.tunit</a> library contains components needed for unit testing </td></tr>
 <tr id="row_9_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__literals.html" target="_self">literals</a></td><td class="desc">Literals can be used to produce integer, float, character, duration and string types </td></tr>
-<tr id="row_10_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__style__sheets.html" target="_self">style_sheets</a></td><td class="desc">Contains various properties, states, and subcontrols that make it possible to customize the look of control </td></tr>
+<tr id="row_10_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__style__sheets.html" target="_self">style sheets</a></td><td class="desc">Contains various properties, states, and subcontrols that make it possible to customize the look of control </td></tr>
 <tr id="row_11_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_11_" class="arrow" onclick="toggleFolder('11_')">&#9660;</span><a class="el" href="group__system.html" target="_self">system</a></td><td class="desc">Contains system classes </td></tr>
 <tr id="row_11_0_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_11_0_" class="arrow" onclick="toggleFolder('11_0_')">&#9660;</span><a class="el" href="group__collections.html" target="_self">collections</a></td><td class="desc">Contains collections definitions </td></tr>
 <tr id="row_11_0_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span id="arr_11_0_0_" class="arrow" onclick="toggleFolder('11_0_0_')">&#9660;</span><a class="el" href="group__generic__collections.html" target="_self">generic</a></td><td class="desc">Contains generic collections definitions </td></tr>
@@ -139,10 +159,13 @@ $(function() {
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 30 2024 12:03:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+		<li class="footer">Generated on Wed Jul 31 2024 20:10:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+  </ul>
+</div>
 </body>
 </html>

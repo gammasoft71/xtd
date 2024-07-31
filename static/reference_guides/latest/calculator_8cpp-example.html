@@ -8,6 +8,10 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
+		<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -57,6 +61,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('calculator_8cpp-example.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -138,15 +158,15 @@ $(function() {
 <div class="line">      text(<span class="stringliteral">&quot;Calculator&quot;</span>);</div>
 <div class="line">      back_color(drawing::color::from_argb(44, 44, 47));</div>
 <div class="line">      fore_color(drawing::color::white);</div>
-<div class="line">      font(<a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1font__family.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a>(), 15));</div>
-<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17">auto_size_mode</a>(forms::auto_size_mode::grow_and_shrink);</div>
+<div class="line">      font(<a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1font__family_a8bee18d4466485c306c17adf9e2565ca.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a>(), 15));</div>
+<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms_ga988a6abd919c15254f45a0bf9c2dcb17.html#ga988a6abd919c15254f45a0bf9c2dcb17">auto_size_mode</a>(forms::auto_size_mode::grow_and_shrink);</div>
 <div class="line">      auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      maximize_box(<span class="keyword">false</span>);</div>
-<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">form_border_style</a>(forms::form_border_style::fixed_3d);</div>
-<div class="line">      key_press += <a class="code hl_typedef" href="group__events.html#gaacd8585e8139ce491fe44534f938d475">key_press_event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::form_main_key_press);</div>
+<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms_gae69a2e9fdce97075bf7642aed73e5907.html#gae69a2e9fdce97075bf7642aed73e5907">form_border_style</a>(forms::form_border_style::fixed_3d);</div>
+<div class="line">      key_press += <a class="code hl_typedef" href="group__events_gaacd8585e8139ce491fe44534f938d475.html#gaacd8585e8139ce491fe44534f938d475">key_press_event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::form_main_key_press);</div>
 <div class="line">      </div>
 <div class="line">      result.bounds({0, 0, 240, 60});</div>
-<div class="line">      result.font(<a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(font(), font().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>() * 2));</div>
+<div class="line">      result.font(<a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(font(), font().<a class="code hl_typedef" href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>() * 2));</div>
 <div class="line">      result.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      result.text_align(content_alignment::middle_right);</div>
 <div class="line">      result.text(<span class="stringliteral">&quot;0&quot;</span>);</div>
@@ -158,11 +178,11 @@ $(function() {
 <div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">        .border_radius(0)</div>
 <div class="line">        .border_size(0));</div>
-<div class="line">      button_clear.flat_style(<a id="a4" name="a4"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">      button_clear.flat_style(<a id="a4" name="a4"></a><a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">      button_clear.location({0, 60});</div>
 <div class="line">      button_clear.text(<span class="stringliteral">&quot;C&quot;</span>);</div>
 <div class="line">      button_clear.size({60, 50});</div>
-<div class="line">      button_clear.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_clear_click);</div>
+<div class="line">      button_clear.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_clear_click);</div>
 <div class="line">      </div>
 <div class="line">      button_plus_minus.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_plus_minus.back_color(drawing::color::from_argb(64, 64, 64));</div>
@@ -171,11 +191,11 @@ $(function() {
 <div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">        .border_radius(0)</div>
 <div class="line">        .border_size(0));</div>
-<div class="line">      button_plus_minus.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">      button_plus_minus.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">      button_plus_minus.location({61, 60});</div>
 <div class="line">      button_plus_minus.text(<span class="stringliteral">&quot;+/-&quot;</span>);</div>
 <div class="line">      button_plus_minus.size({60, 50});</div>
-<div class="line">      button_plus_minus.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_plus_minus_click);</div>
+<div class="line">      button_plus_minus.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_plus_minus_click);</div>
 <div class="line">      </div>
 <div class="line">      button_percent.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_percent.back_color(drawing::color::from_argb(64, 64, 64));</div>
@@ -184,11 +204,11 @@ $(function() {
 <div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">        .border_radius(0)</div>
 <div class="line">        .border_size(0));</div>
-<div class="line">      button_percent.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">      button_percent.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">      button_percent.location({122, 60});</div>
 <div class="line">      button_percent.text(<span class="stringliteral">&quot;%&quot;</span>);</div>
 <div class="line">      button_percent.size({60, 50});</div>
-<div class="line">      button_percent.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_percent_click);</div>
+<div class="line">      button_percent.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_percent_click);</div>
 <div class="line">      </div>
 <div class="line">      button_decimal.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button_decimal.back_color(drawing::color::from_argb(102, 102, 102));</div>
@@ -197,11 +217,11 @@ $(function() {
 <div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">        .border_radius(0)</div>
 <div class="line">        .border_size(0));</div>
-<div class="line">      button_decimal.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">      button_decimal.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">      button_decimal.location({122, 264});</div>
 <div class="line">      button_decimal.text(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line">      button_decimal.size({60, 50});</div>
-<div class="line">      button_decimal.click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
+<div class="line">      button_decimal.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
 <div class="line">      </div>
 <div class="line">      <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list&lt;xtd::drawing::point&gt;</a> button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
@@ -212,11 +232,11 @@ $(function() {
 <div class="line">          .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">          .border_radius(0)</div>
 <div class="line">          .border_size(0));</div>
-<div class="line">        button_numbers[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">        button_numbers[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">        button_numbers[i].text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, i));</div>
 <div class="line">        button_numbers[i].location(button_number_locations[i]);</div>
-<div class="line">        button_numbers[i].<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a026e87f9ceab793d1046c84aab312132">size</a>({60, 50});</div>
-<div class="line">        button_numbers[i].click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
+<div class="line">        button_numbers[i].<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list_a026e87f9ceab793d1046c84aab312132.html#a026e87f9ceab793d1046c84aab312132">size</a>({60, 50});</div>
+<div class="line">        button_numbers[i].click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
 <div class="line">      }</div>
 <div class="line">      button_numbers[0].width(121);</div>
 <div class="line">      </div>
@@ -230,11 +250,11 @@ $(function() {
 <div class="line">          .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">          .border_radius(0)</div>
 <div class="line">          .border_size(0));</div>
-<div class="line">        button_operators[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">        button_operators[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">        button_operators[i].text(button_operator_texts[i]);</div>
 <div class="line">        button_operators[i].location(button_operator_locations[i]);</div>
-<div class="line">        button_operators[i].<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a026e87f9ceab793d1046c84aab312132">size</a>({60, 50});</div>
-<div class="line">        button_operators[i].click += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_operator_click);</div>
+<div class="line">        button_operators[i].<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list_a026e87f9ceab793d1046c84aab312132.html#a026e87f9ceab793d1046c84aab312132">size</a>({60, 50});</div>
+<div class="line">        button_operators[i].click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_operator_click);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -314,18 +334,18 @@ $(function() {
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_plus_minus;</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_percent;</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_decimal;</div>
-<div class="line">    <a class="code hl_typedef" href="group__system.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;button, 10&gt;</a> button_numbers;</div>
-<div class="line">    <a class="code hl_typedef" href="group__system.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;button, 5&gt;</a> button_operators;</div>
+<div class="line">    <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;button, 10&gt;</a> button_numbers;</div>
+<div class="line">    <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;button, 5&gt;</a> button_operators;</div>
 <div class="line">    optional&lt;double&gt; first_operand;</div>
 <div class="line">    optional&lt;double&gt; second_operand;</div>
 <div class="line">    operators operation = operators::none;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a id="a11" name="a11"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(calculator::form_main::main);</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:34</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a026e87f9ceab793d1046c84aab312132"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a026e87f9ceab793d1046c84aab312132">xtd::collections::generic::list::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::...</div><div class="ttdef"><b>Definition</b> list.h:256</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1font__family_html_a8bee18d4466485c306c17adf9e2565ca"><div class="ttname"><a href="classxtd_1_1drawing_1_1font__family.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a></div><div class="ttdeci">static font_family generic_sans_serif() noexcept</div><div class="ttdoc">Gets a generic sans serif font_family.</div></div>
+<div class="line"><a id="a11" name="a11"></a><a class="code hl_define" href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(calculator::form_main::main);</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_a026e87f9ceab793d1046c84aab312132_html_a026e87f9ceab793d1046c84aab312132"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list_a026e87f9ceab793d1046c84aab312132.html#a026e87f9ceab793d1046c84aab312132">xtd::collections::generic::list::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::...</div><div class="ttdef"><b>Definition</b> list.h:264</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:37</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1font__family_a8bee18d4466485c306c17adf9e2565ca_html_a8bee18d4466485c306c17adf9e2565ca"><div class="ttname"><a href="classxtd_1_1drawing_1_1font__family_a8bee18d4466485c306c17adf9e2565ca.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a></div><div class="ttdeci">static font_family generic_sans_serif() noexcept</div><div class="ttdoc">Gets a generic sans serif font_family.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1font_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a></div><div class="ttdoc">Defines a particular format for text, including font face, size, and style attributes....</div><div class="ttdef"><b>Definition</b> font.h:45</div></div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:49</div></div>
@@ -333,22 +353,25 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1key__press__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1key__press__event__args.html">xtd::forms::key_press_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::control::key_press event.</div><div class="ttdef"><b>Definition</b> key_press_event_args.h:26</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.h:38</div></div>
-<div class="ttc" id="agroup__events_html_ga0b1801aa17fa22ddacfdcccd7b25316b"><div class="ttname"><a href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt;&gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.h:32</div></div>
-<div class="ttc" id="agroup__events_html_gaacd8585e8139ce491fe44534f938d475"><div class="ttname"><a href="group__events.html#gaacd8585e8139ce491fe44534f938d475">xtd::forms::key_press_event_handler</a></div><div class="ttdeci">delegate&lt; void(object &amp;sender, key_press_event_args &amp;e)&gt; key_press_event_handler</div><div class="ttdoc">Represents the method that will handle the xtd::forms::control::key_press event of a control.</div><div class="ttdef"><b>Definition</b> key_press_event_handler.h:25</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:175</div></div>
-<div class="ttc" id="agroup__system_html_ga23ad3a72b3c9da7418d0b2020076a40a"><div class="ttname"><a href="group__system.html#ga23ad3a72b3c9da7418d0b2020076a40a">xtd::array</a></div><div class="ttdeci">std::vector&lt; type_t &gt; array</div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, there by serving as the b...</div><div class="ttdef"><b>Definition</b> array.h:23</div></div>
-<div class="ttc" id="agroup__types_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.h:23</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ga988a6abd919c15254f45a0bf9c2dcb17"><div class="ttname"><a href="group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17">xtd::forms::auto_size_mode</a></div><div class="ttdeci">auto_size_mode</div><div class="ttdoc">Specifies how a control will behave when its auto_size property is enabled.</div><div class="ttdef"><b>Definition</b> auto_size_mode.h:22</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gae69a2e9fdce97075bf7642aed73e5907"><div class="ttname"><a href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">xtd::forms::form_border_style</a></div><div class="ttdeci">form_border_style</div><div class="ttdoc">Specifies the border styles for a form.</div><div class="ttdef"><b>Definition</b> form_border_style.h:22</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a></div><div class="ttdeci">@ flat</div><div class="ttdoc">The control appears flat.</div></div>
+<div class="ttc" id="agroup__events_ga0b1801aa17fa22ddacfdcccd7b25316b_html_ga0b1801aa17fa22ddacfdcccd7b25316b"><div class="ttname"><a href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt;&gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.h:32</div></div>
+<div class="ttc" id="agroup__events_gaacd8585e8139ce491fe44534f938d475_html_gaacd8585e8139ce491fe44534f938d475"><div class="ttname"><a href="group__events_gaacd8585e8139ce491fe44534f938d475.html#gaacd8585e8139ce491fe44534f938d475">xtd::forms::key_press_event_handler</a></div><div class="ttdeci">delegate&lt; void(object &amp;sender, key_press_event_args &amp;e)&gt; key_press_event_handler</div><div class="ttdoc">Represents the method that will handle the xtd::forms::control::key_press event of a control.</div><div class="ttdef"><b>Definition</b> key_press_event_handler.h:25</div></div>
+<div class="ttc" id="agroup__keywords_ga44bd440a34d147923e428eacd1c8eedd_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:175</div></div>
+<div class="ttc" id="agroup__system_ga23ad3a72b3c9da7418d0b2020076a40a_html_ga23ad3a72b3c9da7418d0b2020076a40a"><div class="ttname"><a href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">xtd::array</a></div><div class="ttdeci">std::vector&lt; type_t &gt; array</div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, there by serving as the b...</div><div class="ttdef"><b>Definition</b> array.h:23</div></div>
+<div class="ttc" id="agroup__types_ga92c4f59ae39104d31ce9c0c20810001d_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.h:23</div></div>
+<div class="ttc" id="agroup__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1_html_gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785"><div class="ttname"><a href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a></div><div class="ttdeci">@ flat</div><div class="ttdoc">The control appears flat.</div></div>
+<div class="ttc" id="agroup__xtd__forms_ga988a6abd919c15254f45a0bf9c2dcb17_html_ga988a6abd919c15254f45a0bf9c2dcb17"><div class="ttname"><a href="group__xtd__forms_ga988a6abd919c15254f45a0bf9c2dcb17.html#ga988a6abd919c15254f45a0bf9c2dcb17">xtd::forms::auto_size_mode</a></div><div class="ttdeci">auto_size_mode</div><div class="ttdoc">Specifies how a control will behave when its auto_size property is enabled.</div><div class="ttdef"><b>Definition</b> auto_size_mode.h:22</div></div>
+<div class="ttc" id="agroup__xtd__forms_gae69a2e9fdce97075bf7642aed73e5907_html_gae69a2e9fdce97075bf7642aed73e5907"><div class="ttname"><a href="group__xtd__forms_gae69a2e9fdce97075bf7642aed73e5907.html#gae69a2e9fdce97075bf7642aed73e5907">xtd::forms::form_border_style</a></div><div class="ttdeci">form_border_style</div><div class="ttdoc">Specifies the border styles for a form.</div><div class="ttdef"><b>Definition</b> form_border_style.h:22</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.h:12</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 30 2024 12:03:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+		<li class="footer">Generated on Wed Jul 31 2024 20:10:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+  </ul>
+</div>
 </body>
 </html>

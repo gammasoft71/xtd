@@ -8,6 +8,10 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
+		<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -56,6 +60,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('source__levels_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,11 +98,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="dir_3ab350d5f172502f7737abc189bf5852.html">diagnostics</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
@@ -91,7 +107,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="enum_8h_source.html">../enum.h</a>&quot;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="group__xtd__core.html#gaa67a4b789cb787af85a8a1337af56f99" title="Specifies the levels of trace messages filtered by the source switch and event type filter....">xtd::diagnostics::source_levels</a> enum class. </p>
+<div class="textblock"><p>Contains <a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#gaa67a4b789cb787af85a8a1337af56f99" title="Specifies the levels of trace messages filtered by the source switch and event type filter....">xtd::diagnostics::source_levels</a> enum class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 Gammasoft. All rights reserved. </dd></dl>
 </div>
 <p><a href="source__levels_8h_source.html">Go to the source code of this file.</a></p>
@@ -107,32 +123,36 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:gaa67a4b789cb787af85a8a1337af56f99"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa67a4b789cb787af85a8a1337af56f99">xtd::diagnostics::source_levels</a> { <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a3262d48df5d75e3452f0f16b313b7808">xtd::diagnostics::source_levels::off</a>
+<tr class="memitem:gaa67a4b789cb787af85a8a1337af56f99"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#gaa67a4b789cb787af85a8a1337af56f99">xtd::diagnostics::source_levels</a> { <br />
+&#160;&#160;<a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#ggaa67a4b789cb787af85a8a1337af56f99a3262d48df5d75e3452f0f16b313b7808">xtd::diagnostics::source_levels::off</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a7e85bcb66fb9a809d5ab4f62a8b8bea8">xtd::diagnostics::source_levels::critical</a>
+&#160;&#160;<a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#ggaa67a4b789cb787af85a8a1337af56f99a7e85bcb66fb9a809d5ab4f62a8b8bea8">xtd::diagnostics::source_levels::critical</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">xtd::diagnostics::source_levels::error</a>
+&#160;&#160;<a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#ggaa67a4b789cb787af85a8a1337af56f99acb5e100e5a9a3e7f6d1fd97512215282">xtd::diagnostics::source_levels::error</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a7b83d3f08fa392b79e3f553b585971cd">xtd::diagnostics::source_levels::warning</a>
+&#160;&#160;<a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#ggaa67a4b789cb787af85a8a1337af56f99a7b83d3f08fa392b79e3f553b585971cd">xtd::diagnostics::source_levels::warning</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99abb3ccd5881d651448ded1dac904054ac">xtd::diagnostics::source_levels::information</a>
+&#160;&#160;<a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#ggaa67a4b789cb787af85a8a1337af56f99abb3ccd5881d651448ded1dac904054ac">xtd::diagnostics::source_levels::information</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a2c7aea4237e25b4f8ee3b0bf77d6fed0">xtd::diagnostics::source_levels::verbose</a>
+&#160;&#160;<a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#ggaa67a4b789cb787af85a8a1337af56f99a2c7aea4237e25b4f8ee3b0bf77d6fed0">xtd::diagnostics::source_levels::verbose</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a69e3016169bf9b234c2f71d8c7cbbfea">xtd::diagnostics::source_levels::activity_tracing</a>
+&#160;&#160;<a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#ggaa67a4b789cb787af85a8a1337af56f99a69e3016169bf9b234c2f71d8c7cbbfea">xtd::diagnostics::source_levels::activity_tracing</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99aa181a603769c1f98ad927e7367c7aa51">xtd::diagnostics::source_levels::all</a>
+&#160;&#160;<a class="el" href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#ggaa67a4b789cb787af85a8a1337af56f99aa181a603769c1f98ad927e7367c7aa51">xtd::diagnostics::source_levels::all</a>
 <br />
  }</td></tr>
-<tr class="memdesc:gaa67a4b789cb787af85a8a1337af56f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the levels of trace messages filtered by the source switch and event type filter. This enumeration has a flags attribute that allows a bitwise combination of its member values.  <a href="group__xtd__core.html#gaa67a4b789cb787af85a8a1337af56f99">More...</a><br /></td></tr>
+<tr class="memdesc:gaa67a4b789cb787af85a8a1337af56f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the levels of trace messages filtered by the source switch and event type filter. This enumeration has a flags attribute that allows a bitwise combination of its member values.  <a href="group__xtd__core_gaa67a4b789cb787af85a8a1337af56f99.html#gaa67a4b789cb787af85a8a1337af56f99">More...</a><br /></td></tr>
 <tr class="separator:gaa67a4b789cb787af85a8a1337af56f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 30 2024 12:03:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="dir_3ab350d5f172502f7737abc189bf5852.html">diagnostics</a></li><li class="navelem"><a class="el" href="source__levels_8h.html">source_levels.h</a></li>
+		<li class="footer">Generated on Wed Jul 31 2024 20:10:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+  </ul>
+</div>
 </body>
 </html>

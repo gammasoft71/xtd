@@ -8,6 +8,10 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
+		<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -57,6 +61,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('combo_box_8cpp-example.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -124,19 +144,19 @@ $(function() {
 <div class="line">      combo_box1.location({10, 10});</div>
 <div class="line">      combo_box1.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
 <div class="line">      combo_box1.selected_index(0);</div>
-<div class="line">      combo_box1.selected_index_changed += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_combo_box_selected_index_changed);</div>
+<div class="line">      combo_box1.selected_index_changed += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_combo_box_selected_index_changed);</div>
 <div class="line">      </div>
 <div class="line">      combo_box2.location({10, 50});</div>
 <div class="line">      combo_box2.drop_down_style(combo_box_style::drop_down_list);</div>
 <div class="line">      combo_box2.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
 <div class="line">      combo_box2.selected_index(0);</div>
-<div class="line">      combo_box2.selected_index_changed += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_combo_box_selected_index_changed);</div>
+<div class="line">      combo_box2.selected_index_changed += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_combo_box_selected_index_changed);</div>
 <div class="line">      </div>
 <div class="line">      combo_box3.location({10, 90});</div>
 <div class="line">      combo_box3.drop_down_style(combo_box_style::simple);</div>
 <div class="line">      combo_box3.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
 <div class="line">      combo_box3.selected_index(0);</div>
-<div class="line">      combo_box3.selected_index_changed += <a class="code hl_typedef" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_combo_box_selected_index_changed);</div>
+<div class="line">      combo_box3.selected_index_changed += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_combo_box_selected_index_changed);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
@@ -157,15 +177,18 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.h:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1combo__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1combo__box.html">xtd::forms::combo_box</a></div><div class="ttdoc">Represents a Windows combo box control.</div><div class="ttdef"><b>Definition</b> combo_box.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:54</div></div>
-<div class="ttc" id="agroup__events_html_ga0b1801aa17fa22ddacfdcccd7b25316b"><div class="ttname"><a href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt;&gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.h:32</div></div>
+<div class="ttc" id="agroup__events_ga0b1801aa17fa22ddacfdcccd7b25316b_html_ga0b1801aa17fa22ddacfdcccd7b25316b"><div class="ttname"><a href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt;&gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.h:32</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.h:11</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 30 2024 12:03:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+		<li class="footer">Generated on Wed Jul 31 2024 20:10:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+  </ul>
+</div>
 </body>
 </html>
