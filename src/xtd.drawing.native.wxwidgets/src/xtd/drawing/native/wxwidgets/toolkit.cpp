@@ -1,3 +1,9 @@
+#include <wx/app.h>
+#include <wx/image.h>
+#include <wx/memory.h>
+#include <wx/sysopt.h>
+#include <wx/version.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/toolkit>
 #include <xtd/drawing/native/wx_application>
@@ -7,11 +13,6 @@
 #include <xtd/call_once>
 #include <xtd/delegate>
 #include <xtd/event>
-#include <wx/app.h>
-#include <wx/image.h>
-#include <wx/memory.h>
-#include <wx/sysopt.h>
-#include <wx/version.h>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

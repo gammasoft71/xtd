@@ -1,10 +1,3 @@
-#if defined(WIN32)
-#define NOMINMAX
-#include <winsock2.h>
-#include <Windows.h>
-#include <Windowsx.h>
-#include <Commctrl.h>
-#endif
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
 #include <xtd/forms/native/application>
