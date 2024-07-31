@@ -8,6 +8,7 @@ var hierarchy =
     [ "xtd::__polymorphic_any_object__< type_t, std::true_type >", "structxtd_1_1____polymorphic__any__object_____3_01type__t_00_01std_1_1true__type_01_4.html", null ],
     [ "xtd::__xtd_tuple_stringer< type_t, n_t, last_t >", "structxtd_1_1____xtd__tuple__stringer.html", null ],
     [ "xtd::__xtd_tuple_stringer< type_t, n_t, n_t >", "structxtd_1_1____xtd__tuple__stringer_3_01type__t_00_01n__t_00_01n__t_01_4.html", null ],
+    [ "xtd::native::date_time::time_zone_info::adjustement_rule", "structxtd_1_1native_1_1date__time_1_1time__zone__info_1_1adjustement__rule.html", null ],
     [ "animation_updated_event_handler", null, [
       [ "xtd::event< xtd::forms::animation, animation_updated_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
@@ -173,6 +174,8 @@ var hierarchy =
     ] ],
     [ "xtd::comparison_operators< ustring, icomparable< ustring > >", "classxtd_1_1comparison__operators.html", null ],
     [ "xtd::comparison_operators< version, icomparable< version > >", "classxtd_1_1comparison__operators.html", null ],
+    [ "xtd::native::condition_variable", "classxtd_1_1native_1_1condition__variable.html", null ],
+    [ "xtd::native::console", "classxtd_1_1native_1_1console.html", null ],
     [ "console_cancel_event_handler", null, [
       [ "xtd::event< xtd::console, console_cancel_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
@@ -184,6 +187,9 @@ var hierarchy =
     [ "control_event_handler", null, [
       [ "xtd::event< xtd::forms::control, control_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::forms::native::create_params", "structxtd_1_1forms_1_1native_1_1create__params.html", null ],
+    [ "xtd::native::critical_section", "classxtd_1_1native_1_1critical__section.html", null ],
+    [ "xtd::native::cryptography", "classxtd_1_1native_1_1cryptography.html", null ],
     [ "xtd::diagnostics::data_received_event_handler", null, [
       [ "xtd::diagnostics::process::error_data_received_event", "classxtd_1_1diagnostics_1_1process_1_1error__data__received__event.html", null ],
       [ "xtd::diagnostics::process::output_data_received_event", "classxtd_1_1diagnostics_1_1process_1_1output__data__received__event.html", null ]
@@ -191,6 +197,8 @@ var hierarchy =
     [ "xtd::forms::date_range_event_handler", null, [
       [ "xtd::event< xtd::forms::month_calendar, xtd::forms::date_range_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::date_time", "classxtd_1_1native_1_1date__time.html", null ],
+    [ "xtd::native::debugger", "classxtd_1_1native_1_1debugger.html", null ],
     [ "delegate", null, [
       [ "xtd::event< xtd::forms::layout::arranged_element_collection, delegate< void(size_t, control_ref &item)> >", "classxtd_1_1event.html", null ],
       [ "xtd::event< xtd::forms::layout::arranged_element_collection, delegate< void(size_t, xtd::forms::link_label::link &item)> >", "classxtd_1_1event.html", null ],
@@ -216,9 +224,13 @@ var hierarchy =
       [ "xtd::event< xtd::forms::find_dialog, xtd::forms::dialog_closed_event_handler >", "classxtd_1_1event.html", null ],
       [ "xtd::event< xtd::forms::replace_dialog, xtd::forms::dialog_closed_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::directory", "classxtd_1_1native_1_1directory.html", null ],
+    [ "xtd::native::directory::directory_iterator", "classxtd_1_1native_1_1directory_1_1directory__iterator.html", null ],
+    [ "xtd::native::dns", "classxtd_1_1native_1_1dns.html", null ],
     [ "do_work_event_handler", null, [
       [ "xtd::event< xtd::forms::background_worker, do_work_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::drive", "classxtd_1_1native_1_1drive.html", null ],
     [ "elapsed_event_handler", null, [
       [ "xtd::event< xtd::timers::timer, elapsed_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
@@ -233,6 +245,7 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "xtd::native::environment", "classxtd_1_1native_1_1environment.html", null ],
     [ "xtd::equality_operators< type_t, equatable_t >", "classxtd_1_1equality__operators.html", [
       [ "xtd::iequatable< any_object >", "classxtd_1_1iequatable.html", [
         [ "xtd::any_object", "classxtd_1_1any__object.html", null ]
@@ -740,6 +753,10 @@ var hierarchy =
         [ "xtd::xml_syntax_exception", "classxtd_1_1xml__syntax__exception.html", null ]
       ] ]
     ] ],
+    [ "xtd::native::file", "classxtd_1_1native_1_1file.html", null ],
+    [ "xtd::native::directory::file_and_directory_iterator", "classxtd_1_1native_1_1directory_1_1file__and__directory__iterator.html", null ],
+    [ "xtd::native::directory::file_iterator", "classxtd_1_1native_1_1directory_1_1file__iterator.html", null ],
+    [ "xtd::native::file_system", "classxtd_1_1native_1_1file__system.html", null ],
     [ "xtd::forms::find_event_handler", null, [
       [ "xtd::event< xtd::forms::find_dialog, xtd::forms::find_event_handler >", "classxtd_1_1event.html", null ],
       [ "xtd::event< xtd::forms::replace_dialog, xtd::forms::find_event_handler >", "classxtd_1_1event.html", null ]
@@ -753,6 +770,7 @@ var hierarchy =
     [ "form_closing_event_handler", null, [
       [ "xtd::event< xtd::forms::form, form_closing_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::guid", "classxtd_1_1native_1_1guid.html", null ],
     [ "handler_t", null, [
       [ "xtd::event< object_t, handler_t >", "classxtd_1_1event.html", null ]
     ] ],
@@ -762,6 +780,8 @@ var hierarchy =
       [ "xtd::event< xtd::forms::control, help_event_handler >", "classxtd_1_1event.html", null ],
       [ "xtd::event< xtd::forms::message_dialog, help_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "HELPINFO", "struct_h_e_l_p_i_n_f_o.html", null ],
+    [ "HWND__", "struct_h_w_n_d____.html", null ],
     [ "xtd::interface", "classxtd_1_1interface.html", [
       [ "xtd::icomparable< any_object >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< box< type_t > >", "classxtd_1_1icomparable.html", null ],
@@ -922,6 +942,7 @@ var hierarchy =
         [ "xtd::forms::control", "classxtd_1_1forms_1_1control.html", null ]
       ] ]
     ] ],
+    [ "xtd::native::interlocked", "classxtd_1_1native_1_1interlocked.html", null ],
     [ "std::iostream", null, [
       [ "xtd::net::sockets::network_stream", "classxtd_1_1net_1_1sockets_1_1network__stream.html", null ]
     ] ],
@@ -944,6 +965,10 @@ var hierarchy =
     [ "mouse_event_handler", null, [
       [ "xtd::event< xtd::forms::control, mouse_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::named_event_wait_handle", "classxtd_1_1native_1_1named__event__wait__handle.html", null ],
+    [ "xtd::native::named_mutex", "classxtd_1_1native_1_1named__mutex.html", null ],
+    [ "xtd::native::named_semaphore", "classxtd_1_1native_1_1named__semaphore.html", null ],
+    [ "NMHDR", "struct_n_m_h_d_r.html", null ],
     [ "xtd::non_const_overload< args_t >", "structxtd_1_1non__const__overload.html", null ],
     [ "xtd::non_const_overload< args_t... >", "structxtd_1_1non__const__overload.html", [
       [ "xtd::overload< args_t >", "structxtd_1_1overload.html", null ]
@@ -1248,12 +1273,16 @@ var hierarchy =
     [ "paint_event_handler", null, [
       [ "xtd::event< xtd::forms::control, paint_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::path", "classxtd_1_1native_1_1path.html", null ],
+    [ "POINT", "struct_p_o_i_n_t.html", null ],
+    [ "xtd::native::process", "classxtd_1_1native_1_1process.html", null ],
     [ "program_exit_event_handler", null, [
       [ "xtd::event< xtd::environment, program_exit_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
     [ "progress_changed_event_handler", null, [
       [ "xtd::event< xtd::forms::background_worker, progress_changed_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::drawing::native::image::property_item", "structxtd_1_1drawing_1_1native_1_1image_1_1property__item.html", null ],
     [ "xtd::tunit::registered_test_class", "classxtd_1_1tunit_1_1registered__test__class.html", null ],
     [ "xtd::forms::replace_event_handler", null, [
       [ "xtd::event< xtd::forms::replace_dialog, xtd::forms::replace_event_handler >", "classxtd_1_1event.html", null ]
@@ -1266,6 +1295,7 @@ var hierarchy =
     [ "signal_cancel_event_handler", null, [
       [ "xtd::event< xtd::environment, signal_cancel_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::socket", "classxtd_1_1native_1_1socket.html", null ],
     [ "xtd::forms::list_control::item::sorter", "classxtd_1_1forms_1_1list__control_1_1item_1_1sorter.html", null ],
     [ "speak_completed_event_handler", null, [
       [ "xtd::event< xtd::speech::synthesis::speech_synthesizer, speak_completed_event_handler >", "classxtd_1_1event.html", null ]
@@ -1273,6 +1303,8 @@ var hierarchy =
     [ "speak_started_event_handler", null, [
       [ "xtd::event< xtd::speech::synthesis::speech_synthesizer, speak_started_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::speech_synthesizer", "classxtd_1_1native_1_1speech__synthesizer.html", null ],
+    [ "xtd::native::stack_trace", "classxtd_1_1native_1_1stack__trace.html", null ],
     [ "state_changed_event_handler", null, [
       [ "xtd::event< xtd::speech::synthesis::speech_synthesizer, state_changed_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
@@ -1298,6 +1330,20 @@ var hierarchy =
       [ "xtd::drawing::gray_colors", "classxtd_1_1drawing_1_1gray__colors.html", null ],
       [ "xtd::drawing::green_colors", "classxtd_1_1drawing_1_1green__colors.html", null ],
       [ "xtd::drawing::image_converter", "classxtd_1_1drawing_1_1image__converter.html", null ],
+      [ "xtd::drawing::native::brush", "classxtd_1_1drawing_1_1native_1_1brush.html", null ],
+      [ "xtd::drawing::native::font", "classxtd_1_1drawing_1_1native_1_1font.html", null ],
+      [ "xtd::drawing::native::font_family", "classxtd_1_1drawing_1_1native_1_1font__family.html", null ],
+      [ "xtd::drawing::native::graphics", "classxtd_1_1drawing_1_1native_1_1graphics.html", null ],
+      [ "xtd::drawing::native::graphics_path", "classxtd_1_1drawing_1_1native_1_1graphics__path.html", null ],
+      [ "xtd::drawing::native::icon", "classxtd_1_1drawing_1_1native_1_1icon.html", null ],
+      [ "xtd::drawing::native::image", "classxtd_1_1drawing_1_1native_1_1image.html", null ],
+      [ "xtd::drawing::native::matrix", "classxtd_1_1drawing_1_1native_1_1matrix.html", null ],
+      [ "xtd::drawing::native::pen", "classxtd_1_1drawing_1_1native_1_1pen.html", null ],
+      [ "xtd::drawing::native::region", "classxtd_1_1drawing_1_1native_1_1region.html", null ],
+      [ "xtd::drawing::native::system_colors", "classxtd_1_1drawing_1_1native_1_1system__colors.html", null ],
+      [ "xtd::drawing::native::system_fonts", "classxtd_1_1drawing_1_1native_1_1system__fonts.html", null ],
+      [ "xtd::drawing::native::system_images", "classxtd_1_1drawing_1_1native_1_1system__images.html", null ],
+      [ "xtd::drawing::native::toolkit", "classxtd_1_1drawing_1_1native_1_1toolkit.html", null ],
       [ "xtd::drawing::orange_colors", "classxtd_1_1drawing_1_1orange__colors.html", null ],
       [ "xtd::drawing::pens", "classxtd_1_1drawing_1_1pens.html", null ],
       [ "xtd::drawing::pink_colors", "classxtd_1_1drawing_1_1pink__colors.html", null ],
@@ -1361,6 +1407,66 @@ var hierarchy =
       [ "xtd::forms::loading_indicators", "classxtd_1_1forms_1_1loading__indicators.html", null ],
       [ "xtd::forms::menu_images", "classxtd_1_1forms_1_1menu__images.html", null ],
       [ "xtd::forms::message_box", "classxtd_1_1forms_1_1message__box.html", null ],
+      [ "xtd::forms::native::about_dialog", "classxtd_1_1forms_1_1native_1_1about__dialog.html", null ],
+      [ "xtd::forms::native::application", "classxtd_1_1forms_1_1native_1_1application.html", null ],
+      [ "xtd::forms::native::busy_dialog", "classxtd_1_1forms_1_1native_1_1busy__dialog.html", null ],
+      [ "xtd::forms::native::button", "classxtd_1_1forms_1_1native_1_1button.html", null ],
+      [ "xtd::forms::native::check_box", "classxtd_1_1forms_1_1native_1_1check__box.html", null ],
+      [ "xtd::forms::native::checked_list_box", "classxtd_1_1forms_1_1native_1_1checked__list__box.html", null ],
+      [ "xtd::forms::native::choice", "classxtd_1_1forms_1_1native_1_1choice.html", null ],
+      [ "xtd::forms::native::collapsible_panel", "classxtd_1_1forms_1_1native_1_1collapsible__panel.html", null ],
+      [ "xtd::forms::native::color_dialog", "classxtd_1_1forms_1_1native_1_1color__dialog.html", null ],
+      [ "xtd::forms::native::color_picker", "classxtd_1_1forms_1_1native_1_1color__picker.html", null ],
+      [ "xtd::forms::native::combo_box", "classxtd_1_1forms_1_1native_1_1combo__box.html", null ],
+      [ "xtd::forms::native::command_link_button", "classxtd_1_1forms_1_1native_1_1command__link__button.html", null ],
+      [ "xtd::forms::native::context_menu", "classxtd_1_1forms_1_1native_1_1context__menu.html", null ],
+      [ "xtd::forms::native::control", "classxtd_1_1forms_1_1native_1_1control.html", null ],
+      [ "xtd::forms::native::cursor", "classxtd_1_1forms_1_1native_1_1cursor.html", null ],
+      [ "xtd::forms::native::cursors", "classxtd_1_1forms_1_1native_1_1cursors.html", null ],
+      [ "xtd::forms::native::date_time_picker", "classxtd_1_1forms_1_1native_1_1date__time__picker.html", null ],
+      [ "xtd::forms::native::domain_up_down", "classxtd_1_1forms_1_1native_1_1domain__up__down.html", null ],
+      [ "xtd::forms::native::file_dialog", "classxtd_1_1forms_1_1native_1_1file__dialog.html", null ],
+      [ "xtd::forms::native::find_dialog", "classxtd_1_1forms_1_1native_1_1find__dialog.html", null ],
+      [ "xtd::forms::native::folder_browser_dialog", "classxtd_1_1forms_1_1native_1_1folder__browser__dialog.html", null ],
+      [ "xtd::forms::native::font_dialog", "classxtd_1_1forms_1_1native_1_1font__dialog.html", null ],
+      [ "xtd::forms::native::font_picker", "classxtd_1_1forms_1_1native_1_1font__picker.html", null ],
+      [ "xtd::forms::native::form", "classxtd_1_1forms_1_1native_1_1form.html", null ],
+      [ "xtd::forms::native::group_box", "classxtd_1_1forms_1_1native_1_1group__box.html", null ],
+      [ "xtd::forms::native::image_list", "classxtd_1_1forms_1_1native_1_1image__list.html", null ],
+      [ "xtd::forms::native::input_dialog", "classxtd_1_1forms_1_1native_1_1input__dialog.html", null ],
+      [ "xtd::forms::native::label", "classxtd_1_1forms_1_1native_1_1label.html", null ],
+      [ "xtd::forms::native::light_button", "classxtd_1_1forms_1_1native_1_1light__button.html", null ],
+      [ "xtd::forms::native::list_box", "classxtd_1_1forms_1_1native_1_1list__box.html", null ],
+      [ "xtd::forms::native::loading_indicator", "classxtd_1_1forms_1_1native_1_1loading__indicator.html", null ],
+      [ "xtd::forms::native::main_menu", "classxtd_1_1forms_1_1native_1_1main__menu.html", null ],
+      [ "xtd::forms::native::menu", "classxtd_1_1forms_1_1native_1_1menu.html", null ],
+      [ "xtd::forms::native::menu_item", "classxtd_1_1forms_1_1native_1_1menu__item.html", null ],
+      [ "xtd::forms::native::message_box", "classxtd_1_1forms_1_1native_1_1message__box.html", null ],
+      [ "xtd::forms::native::message_notifier", "classxtd_1_1forms_1_1native_1_1message__notifier.html", null ],
+      [ "xtd::forms::native::month_calendar", "classxtd_1_1forms_1_1native_1_1month__calendar.html", null ],
+      [ "xtd::forms::native::numeric_up_down", "classxtd_1_1forms_1_1native_1_1numeric__up__down.html", null ],
+      [ "xtd::forms::native::panel", "classxtd_1_1forms_1_1native_1_1panel.html", null ],
+      [ "xtd::forms::native::picture_box", "classxtd_1_1forms_1_1native_1_1picture__box.html", null ],
+      [ "xtd::forms::native::popup_panel", "classxtd_1_1forms_1_1native_1_1popup__panel.html", null ],
+      [ "xtd::forms::native::progress_bar", "classxtd_1_1forms_1_1native_1_1progress__bar.html", null ],
+      [ "xtd::forms::native::progress_dialog", "classxtd_1_1forms_1_1native_1_1progress__dialog.html", null ],
+      [ "xtd::forms::native::radio_button", "classxtd_1_1forms_1_1native_1_1radio__button.html", null ],
+      [ "xtd::forms::native::replace_dialog", "classxtd_1_1forms_1_1native_1_1replace__dialog.html", null ],
+      [ "xtd::forms::native::screen", "classxtd_1_1forms_1_1native_1_1screen.html", null ],
+      [ "xtd::forms::native::scroll_bar", "classxtd_1_1forms_1_1native_1_1scroll__bar.html", null ],
+      [ "xtd::forms::native::status_bar", "classxtd_1_1forms_1_1native_1_1status__bar.html", null ],
+      [ "xtd::forms::native::switch_button", "classxtd_1_1forms_1_1native_1_1switch__button.html", null ],
+      [ "xtd::forms::native::system_information", "classxtd_1_1forms_1_1native_1_1system__information.html", null ],
+      [ "xtd::forms::native::tab_control", "classxtd_1_1forms_1_1native_1_1tab__control.html", null ],
+      [ "xtd::forms::native::tab_page", "classxtd_1_1forms_1_1native_1_1tab__page.html", null ],
+      [ "xtd::forms::native::text_box", "classxtd_1_1forms_1_1native_1_1text__box.html", null ],
+      [ "xtd::forms::native::timer", "classxtd_1_1forms_1_1native_1_1timer.html", null ],
+      [ "xtd::forms::native::toggle_button", "classxtd_1_1forms_1_1native_1_1toggle__button.html", null ],
+      [ "xtd::forms::native::tool_bar", "classxtd_1_1forms_1_1native_1_1tool__bar.html", null ],
+      [ "xtd::forms::native::toolkit", "classxtd_1_1forms_1_1native_1_1toolkit.html", null ],
+      [ "xtd::forms::native::track_bar", "classxtd_1_1forms_1_1native_1_1track__bar.html", null ],
+      [ "xtd::forms::native::up_down_button", "classxtd_1_1forms_1_1native_1_1up__down__button.html", null ],
+      [ "xtd::forms::native::user_control", "classxtd_1_1forms_1_1native_1_1user__control.html", null ],
       [ "xtd::forms::open_file_box", "classxtd_1_1forms_1_1open__file__box.html", null ],
       [ "xtd::forms::panel_renderer", "classxtd_1_1forms_1_1panel__renderer.html", null ],
       [ "xtd::forms::progress_box", "classxtd_1_1forms_1_1progress__box.html", null ],
@@ -1387,6 +1493,7 @@ var hierarchy =
       [ "xtd::io::path", "classxtd_1_1io_1_1path.html", null ],
       [ "xtd::math", "classxtd_1_1math.html", null ],
       [ "xtd::media::system_sounds", "classxtd_1_1media_1_1system__sounds.html", null ],
+      [ "xtd::native::settings", "classxtd_1_1native_1_1settings.html", null ],
       [ "xtd::net::dns", "classxtd_1_1net_1_1dns.html", null ],
       [ "xtd::startup", "classxtd_1_1startup.html", null ],
       [ "xtd::system_report", "classxtd_1_1system__report.html", null ],
@@ -1423,15 +1530,20 @@ var hierarchy =
       [ "xtd::debugstreambuf", "classxtd_1_1debugstreambuf.html", null ],
       [ "xtd::tracestreambuf", "classxtd_1_1tracestreambuf.html", null ]
     ] ],
+    [ "xtd::native::system_sound", "classxtd_1_1native_1_1system__sound.html", null ],
     [ "xtd::tunit::test", "classxtd_1_1tunit_1_1test.html", null ],
     [ "xtd::tunit::test_class", "classxtd_1_1tunit_1_1test__class.html", null ],
     [ "xtd::tunit::test_class_attribute< test_class_t >", "classxtd_1_1tunit_1_1test__class__attribute.html", null ],
     [ "xtd::tunit::test_cleanup_attribute", "classxtd_1_1tunit_1_1test__cleanup__attribute.html", null ],
     [ "xtd::tunit::test_initialize_attribute", "classxtd_1_1tunit_1_1test__initialize__attribute.html", null ],
     [ "xtd::tunit::test_method_attribute", "classxtd_1_1tunit_1_1test__method__attribute.html", null ],
+    [ "xtd::native::thread", "classxtd_1_1native_1_1thread.html", null ],
+    [ "xtd::native::date_time::time_zone_info", "structxtd_1_1native_1_1date__time_1_1time__zone__info.html", null ],
     [ "xtd::forms::tool_bar_button_click_event_handler", null, [
       [ "xtd::event< xtd::forms::tool_bar, xtd::forms::tool_bar_button_click_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
+    [ "xtd::native::date_time::time_zone_info::transition_time", "structxtd_1_1native_1_1date__time_1_1time__zone__info_1_1transition__time.html", null ],
+    [ "xtd::native::translator", "classxtd_1_1native_1_1translator.html", null ],
     [ "xtd::tunit::tunit_event_args", "classxtd_1_1tunit_1_1tunit__event__args.html", [
       [ "xtd::tunit::class_event_args", "classxtd_1_1tunit_1_1class__event__args.html", null ],
       [ "xtd::tunit::test_event_args", "classxtd_1_1tunit_1_1test__event__args.html", null ]
@@ -1439,11 +1551,15 @@ var hierarchy =
     [ "type_t", null, [
       [ "xtd::forms::layout::arranged_element_collection< type_t, sorter_t >::value_type", "classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html", null ]
     ] ],
+    [ "xtd::native::types", "classxtd_1_1native_1_1types.html", null ],
     [ "xtd::tunit::unit_test", "classxtd_1_1tunit_1_1unit__test.html", [
       [ "xtd::tunit::ostream_unit_test", "classxtd_1_1tunit_1_1ostream__unit__test.html", [
         [ "xtd::tunit::console_unit_test", "classxtd_1_1tunit_1_1console__unit__test.html", null ]
       ] ]
     ] ],
+    [ "xtd::native::unnamed_event_wait_handle", "classxtd_1_1native_1_1unnamed__event__wait__handle.html", null ],
+    [ "xtd::native::unnamed_mutex", "classxtd_1_1native_1_1unnamed__mutex.html", null ],
+    [ "xtd::native::unnamed_semaphore", "classxtd_1_1native_1_1unnamed__semaphore.html", null ],
     [ "std::vector< T >", null, [
       [ "xtd::diagnostics::trace_listener_collection", "classxtd_1_1diagnostics_1_1trace__listener__collection.html", null ]
     ] ]

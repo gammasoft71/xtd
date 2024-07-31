@@ -128,6 +128,7 @@ var namespacextd =
     ] ],
     [ "macos", "namespacextd_1_1macos.html", null ],
     [ "media", "namespacextd_1_1media.html", "namespacextd_1_1media" ],
+    [ "native", "namespacextd_1_1native.html", "namespacextd_1_1native" ],
     [ "net", "namespacextd_1_1net.html", "namespacextd_1_1net" ],
     [ "reflection", "namespacextd_1_1reflection.html", "namespacextd_1_1reflection" ],
     [ "security", "namespacextd_1_1security.html", "namespacextd_1_1security" ],

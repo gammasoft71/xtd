@@ -12,7 +12,7 @@ var dir_94985abd7ce76a434742fce249483c3e =
     [ "protocol_type.h", "protocol__type_8h.html", "protocol__type_8h" ],
     [ "select_mode.h", "select__mode_8h.html", "select__mode_8h" ],
     [ "send_packets_element.h", "send__packets__element_8h.html", null ],
-    [ "socket.h", "socket_8h.html", null ],
+    [ "socket.h", "xtd_8core_2include_2xtd_2net_2sockets_2socket_8h.html", null ],
     [ "socket_async_event_args.h", "socket__async__event__args_8h.html", null ],
     [ "socket_async_operation.h", "socket__async__operation_8h.html", "socket__async__operation_8h" ],
     [ "socket_error.h", "socket__error_8h.html", "socket__error_8h" ],

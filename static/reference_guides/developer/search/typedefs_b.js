@@ -1,14 +1,15 @@
 var searchData=
 [
-  ['magenta_5fcolors_0',['magenta_colors',['../group__colors_ga93fe9c12f0db7ff77ce77110a1f0e430.html#ga93fe9c12f0db7ff77ce77110a1f0e430',1,'xtd::drawing']]],
-  ['main_5fmenu_5fref_1',['main_menu_ref',['../classxtd_1_1forms_1_1form_a288dbba26aafa32f55ed924e5fc29445.html#a288dbba26aafa32f55ed924e5fc29445',1,'xtd::forms::form']]],
-  ['margin_2',['margin',['../group__style__sheets_ga6e27be4676daa69a3f7135b9a9391017.html#ga6e27be4676daa69a3f7135b9a9391017',1,'xtd::forms::style_sheets']]],
-  ['menu_5fitem_5fcollection_3',['menu_item_collection',['../classxtd_1_1forms_1_1menu_a7434673bc425c4f9b9e5a965195e81d2.html#a7434673bc425c4f9b9e5a965195e81d2',1,'xtd::forms::menu']]],
-  ['menu_5fitem_5fref_4',['menu_item_ref',['../group__xtd__forms_ga06b4e12d07edb5f73def11be1110f072.html#ga06b4e12d07edb5f73def11be1110f072',1,'xtd::forms']]],
-  ['message_5fbox_5fbuttons_5',['message_box_buttons',['../group__xtd__forms_gace6785d1960c865a1438416f99fef063.html#gace6785d1960c865a1438416f99fef063',1,'xtd::forms']]],
-  ['message_5fbox_5fdefault_5fbutton_6',['message_box_default_button',['../group__xtd__forms_gab9bcd686f062a193db68d7431d66ebf7.html#gab9bcd686f062a193db68d7431d66ebf7',1,'xtd::forms']]],
-  ['message_5fbox_5ficon_7',['message_box_icon',['../group__xtd__forms_ga0c39a630e1108a1fbe6776207bd2358c.html#ga0c39a630e1108a1fbe6776207bd2358c',1,'xtd::forms']]],
-  ['message_5fbox_5foptions_8',['message_box_options',['../group__xtd__forms_ga7d4ac295cf52e41025c94ad1b3f49bd0.html#ga7d4ac295cf52e41025c94ad1b3f49bd0',1,'xtd::forms']]],
-  ['message_5floop_5fcallback_9',['message_loop_callback',['../group__events_ga4ad4df9ee7750a6194c4a00a602bc4ca.html#ga4ad4df9ee7750a6194c4a00a602bc4ca',1,'xtd::forms']]],
-  ['mouse_5fevent_5fhandler_10',['mouse_event_handler',['../group__events_ga1f6a09d177faa8d78c3db862990139d8.html#ga1f6a09d177faa8d78c3db862990139d8',1,'xtd::forms']]]
+  ['label_0',['label',['../group__style__sheets_ga0095c55e57882e69ada99760a885e216.html#ga0095c55e57882e69ada99760a885e216',1,'xtd::forms::style_sheets']]],
+  ['label_5fstate_1',['label_state',['../group__xtd__forms_gafed99743dcad627755f7bbee0d3cf6f1.html#gafed99743dcad627755f7bbee0d3cf6f1',1,'xtd::forms::visual_styles']]],
+  ['labels_5ft_2',['labels_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a9fad2fb991b71077b5613cba2f7d18e6.html#a9fad2fb991b71077b5613cba2f7d18e6',1,'xtd::forms::style_sheets::style_sheet']]],
+  ['linear_5fgradient_5fbrush_3',['linear_gradient_brush',['../namespacextd_1_1drawing_1_1drawing2d_ac914892584a317dca5c48791232bc3f6.html#ac914892584a317dca5c48791232bc3f6',1,'xtd::drawing::drawing2d']]],
+  ['linear_5fgradient_5fmode_4',['linear_gradient_mode',['../namespacextd_1_1drawing_1_1drawing2d_af2908fcb248439bbc3141c3c96ddf6e2.html#af2908fcb248439bbc3141c3c96ddf6e2',1,'xtd::drawing::drawing2d']]],
+  ['link_5',['link',['../classxtd_1_1forms_1_1link__label_a0ec39d1624a179c1aa60b3a5ddcab4cb.html#a0ec39d1624a179c1aa60b3a5ddcab4cb',1,'xtd::forms::link_label']]],
+  ['link_5flabel_6',['link_label',['../group__style__sheets_ga6e21de97748b7cb3eb1f0069de0b1500.html#ga6e21de97748b7cb3eb1f0069de0b1500',1,'xtd::forms::style_sheets']]],
+  ['link_5flabel_5fclicked_5fevent_5fhandler_7',['link_label_clicked_event_handler',['../group__events_ga93db4aef76d50e8baa3b72de925206ab.html#ga93db4aef76d50e8baa3b72de925206ab',1,'xtd::forms']]],
+  ['link_5flabel_5fstate_8',['link_label_state',['../group__xtd__forms_gab8d7ac770488755bdbec24d02bc84983.html#gab8d7ac770488755bdbec24d02bc84983',1,'xtd::forms::visual_styles']]],
+  ['link_5flabels_5ft_9',['link_labels_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet_a85e8986defa85032d79151580f46504d.html#a85e8986defa85032d79151580f46504d',1,'xtd::forms::style_sheets::style_sheet']]],
+  ['listener_5fcollection_10',['listener_collection',['../classxtd_1_1diagnostics_1_1debug_a5f2023248b2a37b78e2b4f364c29909a.html#a5f2023248b2a37b78e2b4f364c29909a',1,'xtd::diagnostics::debug::listener_collection'],['../classxtd_1_1diagnostics_1_1trace_a951774bf53b93b1c0a428bb3773953e2.html#a951774bf53b93b1c0a428bb3773953e2',1,'xtd::diagnostics::trace::listener_collection']]],
+  ['lock_11',['lock',['../group__threading_ga90b16e4ed2e4bde4276f0c807e5a7112.html#ga90b16e4ed2e4bde4276f0c807e5a7112',1,'xtd']]]
 ];
