@@ -1,253 +1,200 @@
 /// @file
 /// @brief Contains groups definitions.
 
-//________________________________________________________________________________________________________
-//                                                                                              Categories
-
-/// @defgroup debug debug
-/// @brief All needed for debugging and tracing.
-
-/// @defgroup drawing drawing
-/// @brief All needed for drawing something.
-/// @remarks A xtd::drawing::graphics class is create from xtd::forms::control::create_graphics or xtd::forms::screen::create_graphics or xtd::drawing::image::create_graphics.
-/// @remarks And also when xtd::forms::control::paint event is sent, the xtd::forms::paint_event_args contains a xtd::drawing::graphics associate to the control event paint.
-
-/// @defgroup events events
-/// @brief events are event args and event handler needed to response to window messages.
-
-/// @defgroup exceptions exceptions
-/// @brief Contains exceptions definitions.
-
-/// @defgroup format_parse format and parse
-/// @brief All needed for formating or parsing object.
-/// @remarks for more information about format see @ref FormatPage "Format".
-
-/// @defgroup gui forms
-/// @brief All needed for GUI application.
-
-/// @defgroup interfaces interfaces
-/// @brief Contains interfaces definitions.
-
-/// @defgroup keywords keywords
-/// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
-
-/// @defgroup libraries libraries
-/// @brief The xtd libraries.
-
-/// @defgroup literals literals
-/// @brief Literals can be used to produce integer, float, character, duration and string types.
-
-/// @defgroup style_sheets style sheets
-/// @brief Contains various properties, states, and subcontrols that make it possible to customize the look of control.
-
-/// @defgroup system system
-/// @brief Contains system classes.
-
-/// @defgroup system_information system information
-/// @brief System information contains classes that provides informations about the current system environment.
-
-/// @defgroup translate translate
-/// @brief Contains translator definitions.
-
-/// @defgroup types types
-/// @brief Contains types definitions
-
-/// @defgroup tunit unit tests
-/// @brief Contains unit tests definitions
-
-//________________________________________________________________________________________________________
-//                                                                                                   debug
-
-//________________________________________________________________________________________________________
-//                                                                                                 drawing
-
-/// @defgroup brushes brushes
-/// @brief Represents brushes used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
-/// @ingroup drawing
-
-/// @defgroup colors colors
-/// @brief Contains colors definitions.
-/// @ingroup drawing
-
-/// @defgroup coordinates coordinates
-/// @brief Containes coordinates definitions.
-/// @ingroup drawing
-
-/// @defgroup fonts fonts
-/// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
-/// @ingroup drawing
-
-/// @defgroup images images
-/// @brief Contains images definitions.
-/// @ingroup drawing
-
-/// @defgroup pens pens
-/// @brief Contains pens definitions.
-/// @ingroup drawing
-
-/// @defgroup texts texts
-/// @brief Contains texts definitions.
-/// @ingroup drawing
-
-//________________________________________________________________________________________________________
-//                                                                                                  events
-
-//________________________________________________________________________________________________________
-//                                                                                              exceptions
-
-//________________________________________________________________________________________________________
-//                                                                                        format and parse
-
-//________________________________________________________________________________________________________
-//                                                                                                   forms
-
-/// @defgroup application application
-/// @brief Containes application definitions.
-/// @ingroup gui
-
-/// @defgroup components components
-/// @brief Components are objects that an application uses in conjunction with another window.
-/// @ingroup gui
-
-/// @defgroup containers containers
-/// @brief Containers are container for other controls.
-/// @ingroup gui
-
-/// @defgroup controls controls
-/// @brief Controls are children windows that an application uses in conjunction with another window to enable interaction with the user.
-/// @ingroup gui
-
-/// @defgroup dialogs dialogs
-/// @brief Dalogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes, ...
-/// @ingroup gui
-
-/// @defgroup forms forms
-/// @brief Contains forms definitions.
-/// @ingroup gui
-
-/// @defgroup menus_and_toolbars  menus and toolbars
-/// @brief Contains menus and toolbars definitions.
-/// @ingroup gui
-
-/// @defgroup renderers renderers
-/// @brief Contains control renderers definitions.
-/// @ingroup gui
-
-//________________________________________________________________________________________________________
-//                                                                                                keywords
-
-//________________________________________________________________________________________________________
-//                                                                                               libraries
-
-/// @defgroup xtd_core xtd.core
-/// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
-/// @ingroup libraries
-
-/// @defgroup xtd_drawing xtd.drawing
-/// @brief The xtd.drawing library provides access to GDI+ basic graphics functionality.
-/// @ingroup libraries
-
-/// @defgroup xtd_forms xtd.forms
-/// @brief The xtd.forms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
-/// @ingroup libraries
-
-/// @defgroup xtd_tunit xtd.tunit
-/// @brief The xtd.tunit library contains components needed for unit testing.
-/// @ingroup libraries
-
-//________________________________________________________________________________________________________
-//                                                                                                literals
-
-//________________________________________________________________________________________________________
-//                                                                                            style sheets
-
-//________________________________________________________________________________________________________
-//                                                                                                  system
-
-/// @defgroup collections collections
-/// @brief Contains collections definitions.
-/// @ingroup system
-
-/// @defgroup configuration configuration
-/// @brief Contains configuration definitions.
-/// @ingroup system
-
-/// @defgroup diagnostics diagnostics
-/// @brief Contains diagnostics definitions.
-/// @ingroup system
-
-/// @defgroup io io
-/// @brief Contains io definitions.
-/// @ingroup system
-
-/// @defgroup media media
-/// @brief Contains media definitions.
-/// @ingroup system
-
-/// @defgroup net network
-/// @brief Contains network definitions.
-/// @ingroup system
-
-/// @defgroup security security
-/// @brief Contains the underlying structure of the security system, including base classes for permissions.
-/// @ingroup system
-
-/// @defgroup synthesis synthesis
-/// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
-/// @ingroup system
-
-/// @defgroup threading threading
-/// @brief Contains threading definitions.
-/// @ingroup system
-
-/// @defgroup timers timers
-/// @brief Contains timers definitions.
-/// @ingroup system
-
-/// @defgroup web web
-/// @brief Contains web definitions.
-/// @ingroup system
-
-//________________________________________________________________________________________________________
-//                                                                                      system information
-
-//________________________________________________________________________________________________________
-//                                                                                               translate
-
-//________________________________________________________________________________________________________
-//                                                                                                   types
-
-//________________________________________________________________________________________________________
-//                                                                                              unit tests
-
-/// @defgroup assertions assertions
-/// @brief Contains assertions definitions
-/// @ingroup tunit
-
-/// @defgroup assumptions assumptions
-/// @brief Contains assumptions definitions
-/// @ingroup tunit
-
-/// @defgroup validations validations
-/// @brief Contains validations definitions
-/// @ingroup tunit
-
-//________________________________________________________________________________________________________
-//                                                                                             collections
-
-/// @defgroup generic_collections generic
-/// @brief Contains generic collections definitions.
-/// @ingroup collections
-
-/// @defgroup specialized_collections specialized
-/// @brief Contains specialized collections definitions.
-/// @ingroup collections
-
-//________________________________________________________________________________________________________
-//                                                                                     generic collections
-
-/// @defgroup helpers_generic_collections helpers
-/// @brief Contains helpers generic collections definitions.
-/// @ingroup generic_collections
-
-//________________________________________________________________________________________________________
+|- Categories
+    | // Contains class list by category.
+    |- libraries
+    |   | /// @brief The xtd libraries.
+    |   | /// @defgroup libraries ﹡ libraries
+    |   |- xtd_core
+    |   |     /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
+    |   |     /// @ingroup libraries
+    |   |     /// @defgroup xtd_core xtd.core
+    |   |- xtd_drawing
+    |   |     /// @brief The xtd.drawing library provides access to GDI+ basic graphics functionality.
+    |   |     /// @ingroup libraries
+    |   |     /// @defgroup xtd_drawing xtd.drawing
+    |   |- xtd_forms
+    |   |     /// @brief The xtd.forms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
+    |   |     /// @ingroup libraries
+    |   |     /// @defgroup xtd_forms xtd.forms
+    |   |- xtd_tunit
+    |         /// @brief The xtd.tunit library contains components needed for unit testing.
+    |         /// @ingroup libraries
+    |         /// @defgroup xtd_tunit xtd.tunit
+    |- debug
+    |     /// @brief All needed for debugging and tracing.
+    |     /// @defgroup debug debug
+    |- drawing
+    |   | /// @brief All needed for drawing something.
+    |   | /// @remarks A xtd::drawing::graphics class is create from xtd::forms::control::create_graphics or xtd::forms::screen::create_graphics or xtd::drawing::image::create_graphics.
+    |   | /// @remarks And also when xtd::forms::control::paint event is sent, the xtd::forms::paint_event_args contains a xtd::drawing::graphics associate to the control event paint.
+    |   | /// @defgroup drawing drawing
+    |   |- brushes
+    |   |     /// @brief Represents brushes used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
+    |   |     /// @ingroup drawing
+    |   |     /// @defgroup brushes brushes
+    |   |- colors
+    |   |     /// @brief Contains colors definitions.
+    |   |     /// @ingroup drawing
+    |   |     /// @defgroup colors colors
+    |   |- coordinates
+    |   |     /// @brief Containes coordinates definitions.
+    |   |     /// @ingroup drawing
+    |   |     /// @defgroup coordinates coordinates
+    |   |- fonts
+    |   |     /// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
+    |   |     /// @ingroup drawing
+    |   |     /// @defgroup fonts fonts
+    |   |- images
+    |   |     /// @brief Contains images definitions.
+    |   |     /// @ingroup drawing
+    |   |     /// @defgroup images images
+    |   |- pens
+    |   |     /// @brief Contains pens definitions.
+    |   |     /// @ingroup drawing
+    |   |     /// @defgroup pens pens
+    |   |- texts
+    |         /// @brief Contains texts definitions.
+    |         /// @ingroup drawing
+    |         /// @defgroup texts texts
+    |- events
+    |     /// @brief events are event args and event handler needed to response to window messages.
+    |     /// @defgroup events events
+    |- exceptions
+    |     /// @brief Contains exceptions definitions
+    |     /// @defgroup exceptions exceptions
+    |- format_parse
+    |     /// @brief All needed for formating or parsing object.
+    |     /// @remarks for more information about format see @ref FormatPage "Format".
+    |     /// @defgroup format_parse format and parse
+    |- gui
+    |   | /// @brief All needed for GUI application.
+    |   | /// @defgroup gui forms
+    |   |- application
+    |   |     /// @brief Containes application definitions.
+    |   |     /// @ingroup gui
+    |   |     /// @defgroup application application
+    |   |- components
+    |   |     /// @brief Components are objects that an application uses in conjunction with another window.
+    |   |     /// @ingroup gui
+    |   |     /// @defgroup components components
+    |   |- containers
+    |   |     /// @brief Containers are container for other controls.
+    |   |     /// @ingroup gui
+    |   |     /// @defgroup containers containers
+    |   |- controls
+    |   |     /// @brief Controls are children windows that an application uses in conjunction with another window to enable interaction with the user.
+    |   |     /// @ingroup gui
+    |   |     /// @defgroup controls controls
+    |   |- dialogs
+    |   |     /// @brief Dalogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes, ...
+    |   |     /// @ingroup gui
+    |   |     /// @defgroup dialogs dialogs
+    |   |- forms
+    |   |     /// @brief Contains forms definitions.
+    |   |     /// @ingroup gui
+    |   |     /// @defgroup forms forms
+    |   |- menus_and_toolbars
+    |   |     /// @brief Contains menus and toolbars definitions.
+    |   |     /// @ingroup gui
+    |   |     /// @defgroup menus_and_toolbars  menus and toolbars
+    |   |- renderers
+    |         /// @brief Contains control renderers definitions.
+    |         /// @ingroup gui
+    |         /// @defgroup renderers renderers
+    |- interfaces
+    |     /// @brief Contains interfaces definitions.
+    |     /// @defgroup interfaces interfaces
+    |- keywords
+    |     /// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
+    |     /// @defgroup keywords keywords
+    |- literals
+    |     /// @brief Literals can be used to produce integer, float, character, duration and string types.
+    |     /// @defgroup literals literals
+    |- style_sheets
+    |     /// @brief Contains various properties, states, and subcontrols that make it possible to customize the look of control.
+    |     /// @defgroup style_sheets style sheets
+    |- system
+    |   | /// @brief Contains system classes.
+    |   | /// @defgroup system system
+    |   |- collections
+    |   |   | /// @brief Contains collections definitions.
+    |   |   | /// @ingroup system
+    |   |   | /// @defgroup collections collections
+    |   |   |- generic_collections
+    |   |   |   | /// @brief Contains generic collections definitions.
+    |   |   |   | /// @ingroup collections
+    |   |   |   | /// @defgroup generic_collections generic
+    |   |   |   |- helpers_generic_collections
+    |   |   |         /// @brief Contains helpers generic collections definitions.
+    |   |   |         /// @ingroup generic_collections
+    |   |   |         /// @defgroup helpers_generic_collections helpers
+    |   |   |- specialized_collections
+    |   |         /// @brief Contains specialized collections definitions.
+    |   |         /// @ingroup collections
+    |   |         /// @defgroup specialized_collections specialized
+    |   |- configuration
+    |   |     /// @brief Contains configuration definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup configuration configuration
+    |   |- diagnostics
+    |   |     /// @brief Contains diagnostics definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup diagnostics diagnostics
+    |   |- io
+    |   |     /// @brief Contains io definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup io io
+    |   |- media
+    |   |     /// @brief Contains media definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup media media
+    |   |- net
+    |   |     /// @brief Contains network definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup net network
+    |   |- security
+    |   |     /// @brief Contains the underlying structure of the security system, including base classes for permissions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup security security
+    |   |- synthesis
+    |   |     /// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup synthesis synthesis
+    |   |- threading
+    |   |     /// @brief Contains threading definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup threading threading
+    |   |- timers
+    |   |     /// @brief Contains timers definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup timers timers
+    |   |- web
+    |         /// @brief Contains web definitions.
+    |         /// @ingroup system
+    |         /// @defgroup web web
+    |- system_information
+    |     /// @brief System information contains classes that provides informations about the current system environment.
+    |     /// @defgroup system_information system information
+    |- translate
+    |     /// @brief Contains translator definitions.
+    |     /// @defgroup translate translate
+    |- types
+    |     /// @brief Contains types definitions
+    |     /// @defgroup types types
+    |- tunit
+        | /// @brief Contains unit tests definitions
+        | /// @defgroup tunit unit tests
+        |- assertions
+        |     /// @brief Contains assertions definitions
+        |     /// @ingroup tunit
+        |     /// @defgroup assertions assertions
+        |- assumptions
+        |     /// @brief Contains assumptions definitions
+        |     /// @ingroup tunit
+        |     /// @defgroup assumptions assumptions
+        |- validations
+              /// @brief Contains validations definitions
+              /// @ingroup tunit
+              /// @defgroup validations validations
