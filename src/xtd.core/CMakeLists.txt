@@ -504,6 +504,10 @@ add_sources(
   include/xtd/collections/generic/ienumerable
   include/xtd/collections/generic/ienumerator.h
   include/xtd/collections/generic/ienumerator
+  include/xtd/collections/generic/iequality_comparer.h
+  include/xtd/collections/generic/iequality_comparer
+  include/xtd/collections/generic/ilist.h
+  include/xtd/collections/generic/ilist
   include/xtd/collections/generic/key_value_pair.h
   include/xtd/collections/generic/key_value_pair
   include/xtd/collections/generic/list.h
