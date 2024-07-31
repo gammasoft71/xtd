@@ -1,0 +1,28 @@
+var classxtd_1_1forms_1_1message__dialog =
+[
+    [ "message_dialog", "classxtd_1_1forms_1_1message__dialog_a54546d1e324f89606f697102eb5ddbe8.html#a54546d1e324f89606f697102eb5ddbe8", null ],
+    [ "buttons", "classxtd_1_1forms_1_1message__dialog_a6223508aa83b08a91adf024ba3b7e440.html#a6223508aa83b08a91adf024ba3b7e440", null ],
+    [ "buttons", "classxtd_1_1forms_1_1message__dialog_a7b7333b94b0fb7d8603a8dc5d4c2566f.html#a7b7333b94b0fb7d8603a8dc5d4c2566f", null ],
+    [ "default_button", "classxtd_1_1forms_1_1message__dialog_a74d8153db25e3f635238ec081f938cd5.html#a74d8153db25e3f635238ec081f938cd5", null ],
+    [ "default_button", "classxtd_1_1forms_1_1message__dialog_a10168c3ee7f65207110f982143f53a69.html#a10168c3ee7f65207110f982143f53a69", null ],
+    [ "display_help_button", "classxtd_1_1forms_1_1message__dialog_ac052865ca7cecda9f010b1aa92acffc6.html#ac052865ca7cecda9f010b1aa92acffc6", null ],
+    [ "display_help_button", "classxtd_1_1forms_1_1message__dialog_ab94c78e48ab430c1e6128e774bc9720e.html#ab94c78e48ab430c1e6128e774bc9720e", null ],
+    [ "dialog_result", "classxtd_1_1forms_1_1message__dialog_a82409e110498c2c332b36bc10dfa4475.html#a82409e110498c2c332b36bc10dfa4475", null ],
+    [ "dialog_appearance", "classxtd_1_1forms_1_1message__dialog_a9b194a11335212aaed8834d9c8c84506.html#a9b194a11335212aaed8834d9c8c84506", null ],
+    [ "dialog_appearance", "classxtd_1_1forms_1_1message__dialog_a59997edc4cef1ec0fca446a28c2b7e05.html#a59997edc4cef1ec0fca446a28c2b7e05", null ],
+    [ "icon", "classxtd_1_1forms_1_1message__dialog_aa8db25082473273089779d43c4f1978e.html#aa8db25082473273089779d43c4f1978e", null ],
+    [ "icon", "classxtd_1_1forms_1_1message__dialog_acd42b7c0b0559e0c113f9ac116905817.html#acd42b7c0b0559e0c113f9ac116905817", null ],
+    [ "options", "classxtd_1_1forms_1_1message__dialog_a7304dab493a00192fa4ce01cf41b47f7.html#a7304dab493a00192fa4ce01cf41b47f7", null ],
+    [ "options", "classxtd_1_1forms_1_1message__dialog_a60edb6a580ef811bbfafed311cc7885a.html#a60edb6a580ef811bbfafed311cc7885a", null ],
+    [ "message", "classxtd_1_1forms_1_1message__dialog_aac7057b6fcaf6e75110d507b7daf880b.html#aac7057b6fcaf6e75110d507b7daf880b", null ],
+    [ "message", "classxtd_1_1forms_1_1message__dialog_ac581b3a853ed76fed269c6eee48f4cf9.html#ac581b3a853ed76fed269c6eee48f4cf9", null ],
+    [ "text", "classxtd_1_1forms_1_1message__dialog_a27fe8eeff69beb557edae123798f179f.html#a27fe8eeff69beb557edae123798f179f", null ],
+    [ "text", "classxtd_1_1forms_1_1message__dialog_ac8e1a678fb9b32c2daf0b740ba13b6c9.html#ac8e1a678fb9b32c2daf0b740ba13b6c9", null ],
+    [ "reset", "classxtd_1_1forms_1_1message__dialog_a6e0cdd034cb73f628caf083a2c343416.html#a6e0cdd034cb73f628caf083a2c343416", null ],
+    [ "show_dialog", "classxtd_1_1forms_1_1message__dialog_a5941b14f42042478887fed574872c4a0.html#a5941b14f42042478887fed574872c4a0", null ],
+    [ "show_dialog", "classxtd_1_1forms_1_1message__dialog_a2a0a0e4e2318d64bcb3cf03818db4c71.html#a2a0a0e4e2318d64bcb3cf03818db4c71", null ],
+    [ "show_sheet", "classxtd_1_1forms_1_1message__dialog_a9b9c448ffc43c8bd32819a20affcac9b.html#a9b9c448ffc43c8bd32819a20affcac9b", null ],
+    [ "show_sheet_dialog", "classxtd_1_1forms_1_1message__dialog_ac9e4c7c7fdb43bb1d0fc9a2ed99066b7.html#ac9e4c7c7fdb43bb1d0fc9a2ed99066b7", null ],
+    [ "help_request", "classxtd_1_1forms_1_1message__dialog_ab7b63d10bb56fb1f4ead3366700c269c.html#ab7b63d10bb56fb1f4ead3366700c269c", null ],
+    [ "dialog_closed", "classxtd_1_1forms_1_1message__dialog_a81f3030949e3d4007a680b7df7c6ff00.html#a81f3030949e3d4007a680b7df7c6ff00", null ]
+];

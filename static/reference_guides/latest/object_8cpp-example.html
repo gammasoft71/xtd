@@ -8,6 +8,10 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
+		<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -57,6 +61,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('object_8cpp-example.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -96,7 +116,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; obj) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
 <div class="line">    <span class="comment">// If this and obj do not refer to the same type, then they are not equal.</span></div>
-<div class="line">    <span class="keywordflow">if</span> (obj.<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a>() != get_type()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordflow">if</span> (obj.<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1object_a322144840e8ad539c039538997b0fe40.html#a322144840e8ad539c039538997b0fe40">get_type</a>() != get_type()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Return true if  x and y fields match.</span></div>
 <div class="line">    <span class="keyword">auto</span>&amp; other = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>point&amp;<span class="keyword">&gt;</span>(obj);</div>
@@ -114,7 +134,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Return a copy of this point object by making a simple field copy.</span></div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr&lt;point&gt;</a> copy()<span class="keyword"> const </span>{</div>
+<div class="line">  <a class="code hl_typedef" href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">uptr&lt;point&gt;</a> copy()<span class="keyword"> const </span>{</div>
 <div class="line">    <span class="keywordflow">return</span> memberwise_clone&lt;point&gt;();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -148,16 +168,19 @@ $(function() {
 <div class="line"><span class="comment">// true</span></div>
 <div class="line"><span class="comment">// true</span></div>
 <div class="line"><span class="comment">// p1&#39;s value is: (1, 2)</span></div>
+<div class="ttc" id="aclassxtd_1_1object_a322144840e8ad539c039538997b0fe40_html_a322144840e8ad539c039538997b0fe40"><div class="ttname"><a href="classxtd_1_1object_a322144840e8ad539c039538997b0fe40.html#a322144840e8ad539c039538997b0fe40">xtd::object::get_type</a></div><div class="ttdeci">virtual type_object get_type() const noexcept</div><div class="ttdoc">Gets the type of the current instance.</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.h:40</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html_a322144840e8ad539c039538997b0fe40"><div class="ttname"><a href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">xtd::object::get_type</a></div><div class="ttdeci">virtual type_object get_type() const noexcept</div><div class="ttdoc">Gets the type of the current instance.</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
-<div class="ttc" id="agroup__types_html_ga4ac188feb2d52b21e188417441519bb2"><div class="ttname"><a href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a></div><div class="ttdeci">std::unique_ptr&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.h:25</div></div>
+<div class="ttc" id="agroup__types_ga4ac188feb2d52b21e188417441519bb2_html_ga4ac188feb2d52b21e188417441519bb2"><div class="ttname"><a href="group__types_ga4ac188feb2d52b21e188417441519bb2.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a></div><div class="ttdeci">std::unique_ptr&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.h:25</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 30 2024 12:03:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+		<li class="footer">Generated on Wed Jul 31 2024 20:09:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+  </ul>
+</div>
 </body>
 </html>

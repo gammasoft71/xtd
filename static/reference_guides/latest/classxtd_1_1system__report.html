@@ -8,6 +8,10 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
+		<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -56,6 +60,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classxtd_1_1system__report.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,11 +98,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="classxtd_1_1system__report.html">system_report</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -105,945 +121,145 @@ Inheritance diagram for xtd::system_report:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ad9aa20286ab053ab3e44c75417bc050b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a> { <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba3e34791c0f6d97adfae76a7464238c2c">stack_trace</a>
+<tr class="memitem:ad9aa20286ab053ab3e44c75417bc050b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a> { <br />
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba3e34791c0f6d97adfae76a7464238c2c">stack_trace</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba550d742961671466d104ab3e933c790d">libraries</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba550d742961671466d104ab3e933c790d">libraries</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba649ce0650379a0aaff63c1ce257350de">processor</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba649ce0650379a0aaff63c1ce257350de">processor</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050bac1648d725751579ba44aa410b349e8e4">operating_system</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050bac1648d725751579ba44aa410b349e8e4">operating_system</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba87f75ce3f908a819a9a2c77ffeffcc38">compiler</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba87f75ce3f908a819a9a2c77ffeffcc38">compiler</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba8512ae7d57b1396273f76fe6ed341a23">language</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba8512ae7d57b1396273f76fe6ed341a23">language</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050bafb216d9e8791e63c8d12bdc420956839">locale</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050bafb216d9e8791e63c8d12bdc420956839">locale</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050bac3351784425c6520fdbce5424919e5ad">toolkit</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050bac3351784425c6520fdbce5424919e5ad">toolkit</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba0aaf4869bb94186cb30bc221570e8983">environment_variables</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba0aaf4869bb94186cb30bc221570e8983">environment_variables</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba8c088a59f39bd9699da5130e026c35ef">special_folders</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba8c088a59f39bd9699da5130e026c35ef">special_folders</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050baba3592dcddd526f57c5c42be9d13167a">system_colors</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050baba3592dcddd526f57c5c42be9d13167a">system_colors</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba7fb8c42d34b4c9f189bcc788c1588d14">generic_font_families</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba7fb8c42d34b4c9f189bcc788c1588d14">generic_font_families</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050bab763d73992fe5b0a9318682a2dcbbc6e">system_fonts</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050bab763d73992fe5b0a9318682a2dcbbc6e">system_fonts</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050babf1bac83fb72069c93b3e1f63d41251c">screens</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050babf1bac83fb72069c93b3e1f63d41251c">screens</a>
 , <br />
-&#160;&#160;<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba7733a507e75961ea02b17295e798f31e">system_informations</a>
+&#160;&#160;<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050ba7733a507e75961ea02b17295e798f31e">system_informations</a>
 , <br />
 &#160;&#160;<b>all</b>
 <br />
  }</td></tr>
-<tr class="memdesc:ad9aa20286ab053ab3e44c75417bc050b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies enumerated constants used by <a class="el" href="classxtd_1_1system__report.html#af52fe5b76644f5f4daf55688fbc8beb3" title="Generates json format string report.">xtd::system_report::to_json</a>, <a class="el" href="classxtd_1_1system__report.html#aec0e15b7a9c242afc5fc19f7b0103548" title="Generates string report.">xtd::system_report::to_string</a> and <a class="el" href="classxtd_1_1system__report.html#a34b455e04176d9139abcb884f31c2727" title="Generates xml format string report.">xtd::system_report::to_xml</a> methods to generate reports.  <a href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">More...</a><br /></td></tr>
+<tr class="memdesc:ad9aa20286ab053ab3e44c75417bc050b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies enumerated constants used by <a class="el" href="classxtd_1_1system__report_af52fe5b76644f5f4daf55688fbc8beb3.html#af52fe5b76644f5f4daf55688fbc8beb3" title="Generates json format string report.">xtd::system_report::to_json</a>, <a class="el" href="classxtd_1_1system__report_aec0e15b7a9c242afc5fc19f7b0103548.html#aec0e15b7a9c242afc5fc19f7b0103548" title="Generates string report.">xtd::system_report::to_string</a> and <a class="el" href="classxtd_1_1system__report_a34b455e04176d9139abcb884f31c2727.html#a34b455e04176d9139abcb884f31c2727" title="Generates xml format string report.">xtd::system_report::to_xml</a> methods to generate reports.  <a href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b">More...</a><br /></td></tr>
 <tr class="separator:ad9aa20286ab053ab3e44c75417bc050b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
-<tr class="memitem:aa050a4901f240029f45b85c8928a1869"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#aa050a4901f240029f45b85c8928a1869">environment_variable_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt; &gt;</td></tr>
+<tr class="memitem:aa050a4901f240029f45b85c8928a1869"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_aa050a4901f240029f45b85c8928a1869.html#aa050a4901f240029f45b85c8928a1869">environment_variable_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections_ga0a14f2191cc30337c28e0a3b490fdd6a.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt; &gt;</td></tr>
 <tr class="memdesc:aa050a4901f240029f45b85c8928a1869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an environment variables collection.  <br /></td></tr>
 <tr class="separator:aa050a4901f240029f45b85c8928a1869"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28f5e16fd31103b52764c331fa171639"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a28f5e16fd31103b52764c331fa171639">special_folder_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt; &gt;</td></tr>
+<tr class="memitem:a28f5e16fd31103b52764c331fa171639"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a28f5e16fd31103b52764c331fa171639.html#a28f5e16fd31103b52764c331fa171639">special_folder_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections_ga0a14f2191cc30337c28e0a3b490fdd6a.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt; &gt;</td></tr>
 <tr class="memdesc:a28f5e16fd31103b52764c331fa171639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a folders collection.  <br /></td></tr>
 <tr class="separator:a28f5e16fd31103b52764c331fa171639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af97213a6ffe9d4c7c6131935fb02a734"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#af97213a6ffe9d4c7c6131935fb02a734">system_color_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &gt;</td></tr>
+<tr class="memitem:af97213a6ffe9d4c7c6131935fb02a734"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_af97213a6ffe9d4c7c6131935fb02a734.html#af97213a6ffe9d4c7c6131935fb02a734">system_color_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections_ga0a14f2191cc30337c28e0a3b490fdd6a.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &gt; &gt;</td></tr>
 <tr class="memdesc:af97213a6ffe9d4c7c6131935fb02a734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a colors collection.  <br /></td></tr>
 <tr class="separator:af97213a6ffe9d4c7c6131935fb02a734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac658082e0c421b2bf027b0fdc8e96f3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#aac658082e0c421b2bf027b0fdc8e96f3">system_font_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &gt; &gt;</td></tr>
+<tr class="memitem:aac658082e0c421b2bf027b0fdc8e96f3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_aac658082e0c421b2bf027b0fdc8e96f3.html#aac658082e0c421b2bf027b0fdc8e96f3">system_font_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections_ga0a14f2191cc30337c28e0a3b490fdd6a.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a> &gt; &gt;</td></tr>
 <tr class="memdesc:aac658082e0c421b2bf027b0fdc8e96f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a fonts collection.  <br /></td></tr>
 <tr class="separator:aac658082e0c421b2bf027b0fdc8e96f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57c207bef274635b67c51c8b8f6a380b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a57c207bef274635b67c51c8b8f6a380b">system_font_family_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1drawing_1_1font__family.html">xtd::drawing::font_family</a> &gt; &gt;</td></tr>
+<tr class="memitem:a57c207bef274635b67c51c8b8f6a380b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a57c207bef274635b67c51c8b8f6a380b.html#a57c207bef274635b67c51c8b8f6a380b">system_font_family_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections_ga0a14f2191cc30337c28e0a3b490fdd6a.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1drawing_1_1font__family.html">xtd::drawing::font_family</a> &gt; &gt;</td></tr>
 <tr class="memdesc:a57c207bef274635b67c51c8b8f6a380b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a font families collection.  <br /></td></tr>
 <tr class="separator:a57c207bef274635b67c51c8b8f6a380b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8526ffc89d0ad3e42f549f1cdd15324"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#ac8526ffc89d0ad3e42f549f1cdd15324">system_information_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt; &gt;</td></tr>
+<tr class="memitem:ac8526ffc89d0ad3e42f549f1cdd15324"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_ac8526ffc89d0ad3e42f549f1cdd15324.html#ac8526ffc89d0ad3e42f549f1cdd15324">system_information_collection</a> = std::vector&lt; <a class="el" href="group__generic__collections_ga0a14f2191cc30337c28e0a3b490fdd6a.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> &gt; &gt;</td></tr>
 <tr class="memdesc:ac8526ffc89d0ad3e42f549f1cdd15324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a system informations collection.  <br /></td></tr>
 <tr class="separator:ac8526ffc89d0ad3e42f549f1cdd15324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Properties</h2></td></tr>
-<tr class="memitem:a6899746b48fcf7d9132cb8a94c37524c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1compiler.html">xtd::compiler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a6899746b48fcf7d9132cb8a94c37524c">compiler</a> () noexcept</td></tr>
+<tr class="memitem:a6899746b48fcf7d9132cb8a94c37524c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1compiler.html">xtd::compiler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a6899746b48fcf7d9132cb8a94c37524c.html#a6899746b48fcf7d9132cb8a94c37524c">compiler</a> () noexcept</td></tr>
 <tr class="memdesc:a6899746b48fcf7d9132cb8a94c37524c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="classxtd_1_1compiler.html" title="Represents information about c++ libraries, such as the version and standard identifier....">xtd::compiler</a> object that contains the current compiler identifier and version number.  <br /></td></tr>
 <tr class="separator:a6899746b48fcf7d9132cb8a94c37524c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c0df9051309c2a3a7270e7413ca0663"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1system__report.html#aa050a4901f240029f45b85c8928a1869">environment_variable_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a8c0df9051309c2a3a7270e7413ca0663">environment_variables</a> () noexcept</td></tr>
+<tr class="memitem:a8c0df9051309c2a3a7270e7413ca0663"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1system__report_aa050a4901f240029f45b85c8928a1869.html#aa050a4901f240029f45b85c8928a1869">environment_variable_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a8c0df9051309c2a3a7270e7413ca0663.html#a8c0df9051309c2a3a7270e7413ca0663">environment_variables</a> () noexcept</td></tr>
 <tr class="memdesc:a8c0df9051309c2a3a7270e7413ca0663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all environment variable names and their values from the current process.  <br /></td></tr>
 <tr class="separator:a8c0df9051309c2a3a7270e7413ca0663"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13e6cb77fe2fbe0001f7bc147518a946"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1system__report.html#a57c207bef274635b67c51c8b8f6a380b">system_font_family_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a13e6cb77fe2fbe0001f7bc147518a946">generic_font_families</a> () noexcept</td></tr>
+<tr class="memitem:a13e6cb77fe2fbe0001f7bc147518a946"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1system__report_a57c207bef274635b67c51c8b8f6a380b.html#a57c207bef274635b67c51c8b8f6a380b">system_font_family_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a13e6cb77fe2fbe0001f7bc147518a946.html#a13e6cb77fe2fbe0001f7bc147518a946">generic_font_families</a> () noexcept</td></tr>
 <tr class="memdesc:a13e6cb77fe2fbe0001f7bc147518a946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a generic font_families.  <br /></td></tr>
 <tr class="separator:a13e6cb77fe2fbe0001f7bc147518a946"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1c6ab0a5d289ae4c8345e6873fbc156"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1cpp__language.html">xtd::cpp_language</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#ac1c6ab0a5d289ae4c8345e6873fbc156">language</a> () noexcept</td></tr>
+<tr class="memitem:ac1c6ab0a5d289ae4c8345e6873fbc156"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1cpp__language.html">xtd::cpp_language</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_ac1c6ab0a5d289ae4c8345e6873fbc156.html#ac1c6ab0a5d289ae4c8345e6873fbc156">language</a> () noexcept</td></tr>
 <tr class="memdesc:ac1c6ab0a5d289ae4c8345e6873fbc156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="classxtd_1_1cpp__language.html" title="Represents information about c++ libraries, such as the version and language identifier....">xtd::cpp_language</a> object that contains the current c++ standard identifier and version number.  <br /></td></tr>
 <tr class="separator:ac1c6ab0a5d289ae4c8345e6873fbc156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cc3b484384e479011100d0635ac3c46"><td class="memItemLeft" align="right" valign="top">static std::locale&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a6cc3b484384e479011100d0635ac3c46">locale</a> () noexcept</td></tr>
+<tr class="memitem:a6cc3b484384e479011100d0635ac3c46"><td class="memItemLeft" align="right" valign="top">static std::locale&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a6cc3b484384e479011100d0635ac3c46.html#a6cc3b484384e479011100d0635ac3c46">locale</a> () noexcept</td></tr>
 <tr class="memdesc:a6cc3b484384e479011100d0635ac3c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::global</a> or a copy of See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::classic()</a> if no call to See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::global</a> has been made.  <br /></td></tr>
 <tr class="separator:a6cc3b484384e479011100d0635ac3c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab73b3fab0585b49ac0281eaba8374e04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1operating__system.html">xtd::operating_system</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#ab73b3fab0585b49ac0281eaba8374e04">operating_system</a> () noexcept</td></tr>
+<tr class="memitem:ab73b3fab0585b49ac0281eaba8374e04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1operating__system.html">xtd::operating_system</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_ab73b3fab0585b49ac0281eaba8374e04.html#ab73b3fab0585b49ac0281eaba8374e04">operating_system</a> () noexcept</td></tr>
 <tr class="memdesc:ab73b3fab0585b49ac0281eaba8374e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="classxtd_1_1operating__system.html" title="Represents information about an operating system, such as the version and platform identifier....">xtd::operating_system</a> object that contains the current platform identifier and version number.  <br /></td></tr>
 <tr class="separator:ab73b3fab0585b49ac0281eaba8374e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a545195643d27cc9fa99de7b55ca6378f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1processor.html">xtd::processor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a545195643d27cc9fa99de7b55ca6378f">processor</a> () noexcept</td></tr>
+<tr class="memitem:a545195643d27cc9fa99de7b55ca6378f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1processor.html">xtd::processor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a545195643d27cc9fa99de7b55ca6378f.html#a545195643d27cc9fa99de7b55ca6378f">processor</a> () noexcept</td></tr>
 <tr class="memdesc:a545195643d27cc9fa99de7b55ca6378f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="classxtd_1_1processor.html" title="Represents information about a processor, such as the architecture. This class cannot be inherited.">xtd::processor</a> object that contains the processor identifier.  <br /></td></tr>
 <tr class="separator:a545195643d27cc9fa99de7b55ca6378f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a734118b6f6b2ae32d494b260d450f733"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1screen.html">xtd::forms::screen</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a734118b6f6b2ae32d494b260d450f733">screens</a> () noexcept</td></tr>
+<tr class="memitem:a734118b6f6b2ae32d494b260d450f733"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1screen.html">xtd::forms::screen</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a734118b6f6b2ae32d494b260d450f733.html#a734118b6f6b2ae32d494b260d450f733">screens</a> () noexcept</td></tr>
 <tr class="memdesc:a734118b6f6b2ae32d494b260d450f733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of all displays on the system.  <br /></td></tr>
 <tr class="separator:a734118b6f6b2ae32d494b260d450f733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac97a502674bbb12a6a45b1f7d05db391"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1system__report.html#a28f5e16fd31103b52764c331fa171639">special_folder_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#ac97a502674bbb12a6a45b1f7d05db391">special_folders</a> () noexcept</td></tr>
+<tr class="memitem:ac97a502674bbb12a6a45b1f7d05db391"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1system__report_a28f5e16fd31103b52764c331fa171639.html#a28f5e16fd31103b52764c331fa171639">special_folder_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_ac97a502674bbb12a6a45b1f7d05db391.html#ac97a502674bbb12a6a45b1f7d05db391">special_folders</a> () noexcept</td></tr>
 <tr class="memdesc:ac97a502674bbb12a6a45b1f7d05db391"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets directory paths to system special folders.  <br /></td></tr>
 <tr class="separator:ac97a502674bbb12a6a45b1f7d05db391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aded404dd540f3a69a91e469ad45dc2e5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#aded404dd540f3a69a91e469ad45dc2e5">stack_trace</a> () noexcept</td></tr>
+<tr class="memitem:aded404dd540f3a69a91e469ad45dc2e5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_aded404dd540f3a69a91e469ad45dc2e5.html#aded404dd540f3a69a91e469ad45dc2e5">stack_trace</a> () noexcept</td></tr>
 <tr class="memdesc:aded404dd540f3a69a91e469ad45dc2e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current stack trace information.  <br /></td></tr>
 <tr class="separator:aded404dd540f3a69a91e469ad45dc2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a593779f349ab959690c215afdc741762"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a593779f349ab959690c215afdc741762">stack_trace</a> (size_t skip_frames) noexcept</td></tr>
+<tr class="memitem:a593779f349ab959690c215afdc741762"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a593779f349ab959690c215afdc741762.html#a593779f349ab959690c215afdc741762">stack_trace</a> (size_t skip_frames) noexcept</td></tr>
 <tr class="memdesc:a593779f349ab959690c215afdc741762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current stack trace information with specified number of frames to skip.  <br /></td></tr>
 <tr class="separator:a593779f349ab959690c215afdc741762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa25bec57de9a3ba62b450b291b56e35b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1system__report.html#af97213a6ffe9d4c7c6131935fb02a734">system_color_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#aa25bec57de9a3ba62b450b291b56e35b">system_colors</a> () noexcept</td></tr>
+<tr class="memitem:aa25bec57de9a3ba62b450b291b56e35b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1system__report_af97213a6ffe9d4c7c6131935fb02a734.html#af97213a6ffe9d4c7c6131935fb02a734">system_color_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_aa25bec57de9a3ba62b450b291b56e35b.html#aa25bec57de9a3ba62b450b291b56e35b">system_colors</a> () noexcept</td></tr>
 <tr class="memdesc:aa25bec57de9a3ba62b450b291b56e35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets system colors.  <br /></td></tr>
 <tr class="separator:aa25bec57de9a3ba62b450b291b56e35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad695e192c65b65e254554e3f9e4e3139"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1system__report.html#aac658082e0c421b2bf027b0fdc8e96f3">system_font_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#ad695e192c65b65e254554e3f9e4e3139">system_fonts</a> () noexcept</td></tr>
+<tr class="memitem:ad695e192c65b65e254554e3f9e4e3139"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1system__report_aac658082e0c421b2bf027b0fdc8e96f3.html#aac658082e0c421b2bf027b0fdc8e96f3">system_font_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_ad695e192c65b65e254554e3f9e4e3139.html#ad695e192c65b65e254554e3f9e4e3139">system_fonts</a> () noexcept</td></tr>
 <tr class="memdesc:ad695e192c65b65e254554e3f9e4e3139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets system fonts.  <br /></td></tr>
 <tr class="separator:ad695e192c65b65e254554e3f9e4e3139"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafb7c90c57038d067b3e7dae91d85426"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1system__report.html#ac8526ffc89d0ad3e42f549f1cdd15324">system_information_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#aafb7c90c57038d067b3e7dae91d85426">system_informations</a> () noexcept</td></tr>
+<tr class="memitem:aafb7c90c57038d067b3e7dae91d85426"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1system__report_ac8526ffc89d0ad3e42f549f1cdd15324.html#ac8526ffc89d0ad3e42f549f1cdd15324">system_information_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_aafb7c90c57038d067b3e7dae91d85426.html#aafb7c90c57038d067b3e7dae91d85426">system_informations</a> () noexcept</td></tr>
 <tr class="memdesc:aafb7c90c57038d067b3e7dae91d85426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets system informations.  <br /></td></tr>
 <tr class="separator:aafb7c90c57038d067b3e7dae91d85426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e26567fe99c4764dde11009dc048070"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1toolkit.html">xtd::toolkit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a7e26567fe99c4764dde11009dc048070">toolkit</a> () noexcept</td></tr>
+<tr class="memitem:a7e26567fe99c4764dde11009dc048070"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1toolkit.html">xtd::toolkit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a7e26567fe99c4764dde11009dc048070.html#a7e26567fe99c4764dde11009dc048070">toolkit</a> () noexcept</td></tr>
 <tr class="memdesc:a7e26567fe99c4764dde11009dc048070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="classxtd_1_1toolkit.html" title="Represents a toolkit.">xtd::toolkit</a> object that contains the current toolkit identifier and version number.  <br /></td></tr>
 <tr class="separator:a7e26567fe99c4764dde11009dc048070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f20aeadfbfec9169fe4a2d817dc5810"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1environment.html#aab2a5dac26e835c40c5abeabdbeb4a86">environment::xtd_library_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a6f20aeadfbfec9169fe4a2d817dc5810">xtd_libraries</a> () noexcept</td></tr>
+<tr class="memitem:a6f20aeadfbfec9169fe4a2d817dc5810"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1environment_aab2a5dac26e835c40c5abeabdbeb4a86.html#aab2a5dac26e835c40c5abeabdbeb4a86">environment::xtd_library_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a6f20aeadfbfec9169fe4a2d817dc5810.html#a6f20aeadfbfec9169fe4a2d817dc5810">xtd_libraries</a> () noexcept</td></tr>
 <tr class="memdesc:a6f20aeadfbfec9169fe4a2d817dc5810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets xtd libraries informations.  <br /></td></tr>
 <tr class="separator:a6f20aeadfbfec9169fe4a2d817dc5810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:af52fe5b76644f5f4daf55688fbc8beb3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#af52fe5b76644f5f4daf55688fbc8beb3">to_json</a> () noexcept</td></tr>
+<tr class="memitem:af52fe5b76644f5f4daf55688fbc8beb3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_af52fe5b76644f5f4daf55688fbc8beb3.html#af52fe5b76644f5f4daf55688fbc8beb3">to_json</a> () noexcept</td></tr>
 <tr class="memdesc:af52fe5b76644f5f4daf55688fbc8beb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates json format string report.  <br /></td></tr>
 <tr class="separator:af52fe5b76644f5f4daf55688fbc8beb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0dd78a93dbda467223c4539c09fe2ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#af0dd78a93dbda467223c4539c09fe2ab">to_json</a> (<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a> <a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a>) noexcept</td></tr>
+<tr class="memitem:af0dd78a93dbda467223c4539c09fe2ab"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_af0dd78a93dbda467223c4539c09fe2ab.html#af0dd78a93dbda467223c4539c09fe2ab">to_json</a> (<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a> <a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a>) noexcept</td></tr>
 <tr class="memdesc:af0dd78a93dbda467223c4539c09fe2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates json format string report.  <br /></td></tr>
 <tr class="separator:af0dd78a93dbda467223c4539c09fe2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec0e15b7a9c242afc5fc19f7b0103548"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#aec0e15b7a9c242afc5fc19f7b0103548">to_string</a> () noexcept</td></tr>
+<tr class="memitem:aec0e15b7a9c242afc5fc19f7b0103548"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_aec0e15b7a9c242afc5fc19f7b0103548.html#aec0e15b7a9c242afc5fc19f7b0103548">to_string</a> () noexcept</td></tr>
 <tr class="memdesc:aec0e15b7a9c242afc5fc19f7b0103548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates string report.  <br /></td></tr>
 <tr class="separator:aec0e15b7a9c242afc5fc19f7b0103548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e723d5f973497cdba0f18e7a43822a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a4e723d5f973497cdba0f18e7a43822a5">to_string</a> (<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a> <a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a>) noexcept</td></tr>
+<tr class="memitem:a4e723d5f973497cdba0f18e7a43822a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a4e723d5f973497cdba0f18e7a43822a5.html#a4e723d5f973497cdba0f18e7a43822a5">to_string</a> (<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a> <a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a>) noexcept</td></tr>
 <tr class="memdesc:a4e723d5f973497cdba0f18e7a43822a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates string report.  <br /></td></tr>
 <tr class="separator:a4e723d5f973497cdba0f18e7a43822a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34b455e04176d9139abcb884f31c2727"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a34b455e04176d9139abcb884f31c2727">to_xml</a> () noexcept</td></tr>
+<tr class="memitem:a34b455e04176d9139abcb884f31c2727"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a34b455e04176d9139abcb884f31c2727.html#a34b455e04176d9139abcb884f31c2727">to_xml</a> () noexcept</td></tr>
 <tr class="memdesc:a34b455e04176d9139abcb884f31c2727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates xml format string report.  <br /></td></tr>
 <tr class="separator:a34b455e04176d9139abcb884f31c2727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e2f35a5066fbe63a9625088b142c149"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report.html#a4e2f35a5066fbe63a9625088b142c149">to_xml</a> (<a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a> <a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a>) noexcept</td></tr>
+<tr class="memitem:a4e2f35a5066fbe63a9625088b142c149"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1system__report_a4e2f35a5066fbe63a9625088b142c149.html#a4e2f35a5066fbe63a9625088b142c149">to_xml</a> (<a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a> <a class="el" href="classxtd_1_1system__report_ad9aa20286ab053ab3e44c75417bc050b.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a>) noexcept</td></tr>
 <tr class="memdesc:a4e2f35a5066fbe63a9625088b142c149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates xml format string report.  <br /></td></tr>
 <tr class="separator:a4e2f35a5066fbe63a9625088b142c149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="aa050a4901f240029f45b85c8928a1869" name="aa050a4901f240029f45b85c8928a1869"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa050a4901f240029f45b85c8928a1869">&#9670;&#160;</a></span>environment_variable_collection</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1system__report.html#aa050a4901f240029f45b85c8928a1869">xtd::system_report::environment_variable_collection</a> =  std::vector&lt;<a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt;<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents an environment variables collection. </p>
-
-</div>
-</div>
-<a id="a28f5e16fd31103b52764c331fa171639" name="a28f5e16fd31103b52764c331fa171639"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28f5e16fd31103b52764c331fa171639">&#9670;&#160;</a></span>special_folder_collection</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1system__report.html#a28f5e16fd31103b52764c331fa171639">xtd::system_report::special_folder_collection</a> =  std::vector&lt;<a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt;<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents a folders collection. </p>
-
-</div>
-</div>
-<a id="af97213a6ffe9d4c7c6131935fb02a734" name="af97213a6ffe9d4c7c6131935fb02a734"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af97213a6ffe9d4c7c6131935fb02a734">&#9670;&#160;</a></span>system_color_collection</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1system__report.html#af97213a6ffe9d4c7c6131935fb02a734">xtd::system_report::system_color_collection</a> =  std::vector&lt;<a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt;<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents a colors collection. </p>
-
-</div>
-</div>
-<a id="aac658082e0c421b2bf027b0fdc8e96f3" name="aac658082e0c421b2bf027b0fdc8e96f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac658082e0c421b2bf027b0fdc8e96f3">&#9670;&#160;</a></span>system_font_collection</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1system__report.html#aac658082e0c421b2bf027b0fdc8e96f3">xtd::system_report::system_font_collection</a> =  std::vector&lt;<a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt;<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents a fonts collection. </p>
-
-</div>
-</div>
-<a id="a57c207bef274635b67c51c8b8f6a380b" name="a57c207bef274635b67c51c8b8f6a380b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57c207bef274635b67c51c8b8f6a380b">&#9670;&#160;</a></span>system_font_family_collection</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1system__report.html#a57c207bef274635b67c51c8b8f6a380b">xtd::system_report::system_font_family_collection</a> =  std::vector&lt;<a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt;<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1drawing_1_1font__family.html">xtd::drawing::font_family</a>&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents a font families collection. </p>
-
-</div>
-</div>
-<a id="ac8526ffc89d0ad3e42f549f1cdd15324" name="ac8526ffc89d0ad3e42f549f1cdd15324"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8526ffc89d0ad3e42f549f1cdd15324">&#9670;&#160;</a></span>system_information_collection</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1system__report.html#ac8526ffc89d0ad3e42f549f1cdd15324">xtd::system_report::system_information_collection</a> =  std::vector&lt;<a class="el" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a>&lt;<a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>, <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a>&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents a system informations collection. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="ad9aa20286ab053ab3e44c75417bc050b" name="ad9aa20286ab053ab3e44c75417bc050b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9aa20286ab053ab3e44c75417bc050b">&#9670;&#160;</a></span>reports</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">xtd::system_report::reports</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specifies enumerated constants used by <a class="el" href="classxtd_1_1system__report.html#af52fe5b76644f5f4daf55688fbc8beb3" title="Generates json format string report.">xtd::system_report::to_json</a>, <a class="el" href="classxtd_1_1system__report.html#aec0e15b7a9c242afc5fc19f7b0103548" title="Generates string report.">xtd::system_report::to_string</a> and <a class="el" href="classxtd_1_1system__report.html#a34b455e04176d9139abcb884f31c2727" title="Generates xml format string report.">xtd::system_report::to_xml</a> methods to generate reports. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba3e34791c0f6d97adfae76a7464238c2c" name="ad9aa20286ab053ab3e44c75417bc050ba3e34791c0f6d97adfae76a7464238c2c"></a>stack_trace&#160;</td><td class="fielddoc"><p>Stack trace information. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba550d742961671466d104ab3e933c790d" name="ad9aa20286ab053ab3e44c75417bc050ba550d742961671466d104ab3e933c790d"></a>libraries&#160;</td><td class="fielddoc"><p>xtd libraries informations collection. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba649ce0650379a0aaff63c1ce257350de" name="ad9aa20286ab053ab3e44c75417bc050ba649ce0650379a0aaff63c1ce257350de"></a>processor&#160;</td><td class="fielddoc"><p>The procesor identifier. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050bac1648d725751579ba44aa410b349e8e4" name="ad9aa20286ab053ab3e44c75417bc050bac1648d725751579ba44aa410b349e8e4"></a>operating_system&#160;</td><td class="fielddoc"><p>The platform identifier and version number. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba87f75ce3f908a819a9a2c77ffeffcc38" name="ad9aa20286ab053ab3e44c75417bc050ba87f75ce3f908a819a9a2c77ffeffcc38"></a>compiler&#160;</td><td class="fielddoc"><p>The compiler identifier and version number. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba8512ae7d57b1396273f76fe6ed341a23" name="ad9aa20286ab053ab3e44c75417bc050ba8512ae7d57b1396273f76fe6ed341a23"></a>language&#160;</td><td class="fielddoc"><p>The c++ standard identifier and version number. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050bafb216d9e8791e63c8d12bdc420956839" name="ad9aa20286ab053ab3e44c75417bc050bafb216d9e8791e63c8d12bdc420956839"></a>locale&#160;</td><td class="fielddoc"><p>The global C++ locale. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050bac3351784425c6520fdbce5424919e5ad" name="ad9aa20286ab053ab3e44c75417bc050bac3351784425c6520fdbce5424919e5ad"></a>toolkit&#160;</td><td class="fielddoc"><p>The toolkit identifier and version number. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba0aaf4869bb94186cb30bc221570e8983" name="ad9aa20286ab053ab3e44c75417bc050ba0aaf4869bb94186cb30bc221570e8983"></a>environment_variables&#160;</td><td class="fielddoc"><p>Environment variable names and their values. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba8c088a59f39bd9699da5130e026c35ef" name="ad9aa20286ab053ab3e44c75417bc050ba8c088a59f39bd9699da5130e026c35ef"></a>special_folders&#160;</td><td class="fielddoc"><p>Directory paths to system special folders. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050baba3592dcddd526f57c5c42be9d13167a" name="ad9aa20286ab053ab3e44c75417bc050baba3592dcddd526f57c5c42be9d13167a"></a>system_colors&#160;</td><td class="fielddoc"><p>System colors collection. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba7fb8c42d34b4c9f189bcc788c1588d14" name="ad9aa20286ab053ab3e44c75417bc050ba7fb8c42d34b4c9f189bcc788c1588d14"></a>generic_font_families&#160;</td><td class="fielddoc"><p>Generic font families collection. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050bab763d73992fe5b0a9318682a2dcbbc6e" name="ad9aa20286ab053ab3e44c75417bc050bab763d73992fe5b0a9318682a2dcbbc6e"></a>system_fonts&#160;</td><td class="fielddoc"><p>System fonsts collection. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050babf1bac83fb72069c93b3e1f63d41251c" name="ad9aa20286ab053ab3e44c75417bc050babf1bac83fb72069c93b3e1f63d41251c"></a>screens&#160;</td><td class="fielddoc"><p>Displays on the system. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad9aa20286ab053ab3e44c75417bc050ba7733a507e75961ea02b17295e798f31e" name="ad9aa20286ab053ab3e44c75417bc050ba7733a507e75961ea02b17295e798f31e"></a>system_informations&#160;</td><td class="fielddoc"><p>System informations collection. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6899746b48fcf7d9132cb8a94c37524c" name="a6899746b48fcf7d9132cb8a94c37524c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6899746b48fcf7d9132cb8a94c37524c">&#9670;&#160;</a></span>compiler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1compiler.html">xtd::compiler</a> xtd::system_report::compiler </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets an <a class="el" href="classxtd_1_1compiler.html" title="Represents information about c++ libraries, such as the version and standard identifier....">xtd::compiler</a> object that contains the current compiler identifier and version number. </p>
-<dl class="section return"><dt>Returns</dt><dd>An object that contains the compiler identifier and version number. </dd></dl>
-
-</div>
-</div>
-<a id="a8c0df9051309c2a3a7270e7413ca0663" name="a8c0df9051309c2a3a7270e7413ca0663"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c0df9051309c2a3a7270e7413ca0663">&#9670;&#160;</a></span>environment_variables()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1system__report.html#aa050a4901f240029f45b85c8928a1869">environment_variable_collection</a> xtd::system_report::environment_variables </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieves all environment variable names and their values from the current process. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found. </dd></dl>
-
-</div>
-</div>
-<a id="a13e6cb77fe2fbe0001f7bc147518a946" name="a13e6cb77fe2fbe0001f7bc147518a946"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13e6cb77fe2fbe0001f7bc147518a946">&#9670;&#160;</a></span>generic_font_families()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static const <a class="el" href="classxtd_1_1system__report.html#a57c207bef274635b67c51c8b8f6a380b">system_font_family_collection</a> &amp; xtd::system_report::generic_font_families </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets a generic font_families. </p>
-<dl class="section return"><dt>Returns</dt><dd>Generic font families collection. </dd></dl>
-
-</div>
-</div>
-<a id="ac1c6ab0a5d289ae4c8345e6873fbc156" name="ac1c6ab0a5d289ae4c8345e6873fbc156"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1c6ab0a5d289ae4c8345e6873fbc156">&#9670;&#160;</a></span>language()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1cpp__language.html">xtd::cpp_language</a> xtd::system_report::language </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets an <a class="el" href="classxtd_1_1cpp__language.html" title="Represents information about c++ libraries, such as the version and language identifier....">xtd::cpp_language</a> object that contains the current c++ standard identifier and version number. </p>
-<dl class="section return"><dt>Returns</dt><dd>An object that contains the c++ standard identifier and version number. </dd></dl>
-
-</div>
-</div>
-<a id="a6cc3b484384e479011100d0635ac3c46" name="a6cc3b484384e479011100d0635ac3c46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cc3b484384e479011100d0635ac3c46">&#9670;&#160;</a></span>locale()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static std::locale xtd::system_report::locale </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::global</a> or a copy of See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::classic()</a> if no call to See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale::global</a> has been made. </p>
-<dl class="section return"><dt>Returns</dt><dd>A copy of the global C++ locale. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>See <a href="https://en.cppreference.com/w/cpp/locale/locale/locale">std::locale</a> for more information. </dd></dl>
-
-</div>
-</div>
-<a id="ab73b3fab0585b49ac0281eaba8374e04" name="ab73b3fab0585b49ac0281eaba8374e04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab73b3fab0585b49ac0281eaba8374e04">&#9670;&#160;</a></span>operating_system()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1operating__system.html">xtd::operating_system</a> xtd::system_report::operating_system </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets an <a class="el" href="classxtd_1_1operating__system.html" title="Represents information about an operating system, such as the version and platform identifier....">xtd::operating_system</a> object that contains the current platform identifier and version number. </p>
-<dl class="section return"><dt>Returns</dt><dd>An object that contains the platform identifier and version number. </dd></dl>
-
-</div>
-</div>
-<a id="a545195643d27cc9fa99de7b55ca6378f" name="a545195643d27cc9fa99de7b55ca6378f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a545195643d27cc9fa99de7b55ca6378f">&#9670;&#160;</a></span>processor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1processor.html">xtd::processor</a> xtd::system_report::processor </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets an <a class="el" href="classxtd_1_1processor.html" title="Represents information about a processor, such as the architecture. This class cannot be inherited.">xtd::processor</a> object that contains the processor identifier. </p>
-<dl class="section return"><dt>Returns</dt><dd>An object that contains the procesor identifier. </dd></dl>
-
-</div>
-</div>
-<a id="a734118b6f6b2ae32d494b260d450f733" name="a734118b6f6b2ae32d494b260d450f733"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a734118b6f6b2ae32d494b260d450f733">&#9670;&#160;</a></span>screens()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1screen.html">xtd::forms::screen</a> &gt; xtd::system_report::screens </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets an array of all displays on the system. </p>
-<dl class="section return"><dt>Returns</dt><dd>An array of type screen, containing all displays on the system. </dd></dl>
-
-</div>
-</div>
-<a id="ac97a502674bbb12a6a45b1f7d05db391" name="ac97a502674bbb12a6a45b1f7d05db391"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac97a502674bbb12a6a45b1f7d05db391">&#9670;&#160;</a></span>special_folders()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static const <a class="el" href="classxtd_1_1system__report.html#a28f5e16fd31103b52764c331fa171639">special_folder_collection</a> &amp; xtd::system_report::special_folders </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets directory paths to system special folders. </p>
-<dl class="section return"><dt>Returns</dt><dd>A special_folder_collection collection containing directory paths to system special folders. </dd></dl>
-
-</div>
-</div>
-<a id="aded404dd540f3a69a91e469ad45dc2e5" name="aded404dd540f3a69a91e469ad45dc2e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aded404dd540f3a69a91e469ad45dc2e5">&#9670;&#160;</a></span>stack_trace() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a> xtd::system_report::stack_trace </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets current stack trace information. </p>
-<dl class="section return"><dt>Returns</dt><dd>A string containing stack trace information. This value can be empty "". </dd></dl>
-
-</div>
-</div>
-<a id="a593779f349ab959690c215afdc741762" name="a593779f349ab959690c215afdc741762"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a593779f349ab959690c215afdc741762">&#9670;&#160;</a></span>stack_trace() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a> xtd::system_report::stack_trace </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>skip_frames</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets current stack trace information with specified number of frames to skip. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">skip_frames</td><td>The number of frames to skip. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A string containing stack trace information. This value can be empty "". </dd></dl>
-
-</div>
-</div>
-<a id="aa25bec57de9a3ba62b450b291b56e35b" name="aa25bec57de9a3ba62b450b291b56e35b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa25bec57de9a3ba62b450b291b56e35b">&#9670;&#160;</a></span>system_colors()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static const <a class="el" href="classxtd_1_1system__report.html#af97213a6ffe9d4c7c6131935fb02a734">system_color_collection</a> &amp; xtd::system_report::system_colors </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets system colors. </p>
-<dl class="section return"><dt>Returns</dt><dd>A system_color_collection collection containing system colors. </dd></dl>
-
-</div>
-</div>
-<a id="ad695e192c65b65e254554e3f9e4e3139" name="ad695e192c65b65e254554e3f9e4e3139"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad695e192c65b65e254554e3f9e4e3139">&#9670;&#160;</a></span>system_fonts()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static const <a class="el" href="classxtd_1_1system__report.html#aac658082e0c421b2bf027b0fdc8e96f3">system_font_collection</a> &amp; xtd::system_report::system_fonts </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets system fonts. </p>
-<dl class="section return"><dt>Returns</dt><dd>A system_font_collection collection containing system fonst. </dd></dl>
-
-</div>
-</div>
-<a id="aafb7c90c57038d067b3e7dae91d85426" name="aafb7c90c57038d067b3e7dae91d85426"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafb7c90c57038d067b3e7dae91d85426">&#9670;&#160;</a></span>system_informations()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1system__report.html#ac8526ffc89d0ad3e42f549f1cdd15324">system_information_collection</a> xtd::system_report::system_informations </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets system informations. </p>
-<dl class="section return"><dt>Returns</dt><dd>A system_information_collection collection containing system informations. </dd></dl>
-
-</div>
-</div>
-<a id="af52fe5b76644f5f4daf55688fbc8beb3" name="af52fe5b76644f5f4daf55688fbc8beb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af52fe5b76644f5f4daf55688fbc8beb3">&#9670;&#160;</a></span>to_json() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::system_report::to_json </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates json format string report. </p>
-<dl class="section return"><dt>Returns</dt><dd>An json format string report. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Implement json report </dd></dl>
-
-</div>
-</div>
-<a id="af0dd78a93dbda467223c4539c09fe2ab" name="af0dd78a93dbda467223c4539c09fe2ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0dd78a93dbda467223c4539c09fe2ab">&#9670;&#160;</a></span>to_json() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::system_report::to_json </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a>&#160;</td>
-          <td class="paramname"><em>reports</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates json format string report. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">reports</td><td>A bitwise combination of the <a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b" title="Specifies enumerated constants used by xtd::system_report::to_json, xtd::system_report::to_string and...">xtd::system_report::reports</a> values. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An json format string report. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Implement json report </dd></dl>
-
-</div>
-</div>
-<a id="aec0e15b7a9c242afc5fc19f7b0103548" name="aec0e15b7a9c242afc5fc19f7b0103548"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec0e15b7a9c242afc5fc19f7b0103548">&#9670;&#160;</a></span>to_string() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::system_report::to_string </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates string report. </p>
-<dl class="section return"><dt>Returns</dt><dd>A string report. </dd></dl>
-
-</div>
-</div>
-<a id="a4e723d5f973497cdba0f18e7a43822a5" name="a4e723d5f973497cdba0f18e7a43822a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e723d5f973497cdba0f18e7a43822a5">&#9670;&#160;</a></span>to_string() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::system_report::to_string </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a>&#160;</td>
-          <td class="paramname"><em>reports</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates string report. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">reports</td><td>A bitwise combination of the <a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b" title="Specifies enumerated constants used by xtd::system_report::to_json, xtd::system_report::to_string and...">xtd::system_report::reports</a> values. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A string report. </dd></dl>
-
-</div>
-</div>
-<a id="a34b455e04176d9139abcb884f31c2727" name="a34b455e04176d9139abcb884f31c2727"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34b455e04176d9139abcb884f31c2727">&#9670;&#160;</a></span>to_xml() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::system_report::to_xml </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates xml format string report. </p>
-<dl class="section return"><dt>Returns</dt><dd>An xml format string report. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Implement xml report </dd></dl>
-
-</div>
-</div>
-<a id="a4e2f35a5066fbe63a9625088b142c149" name="a4e2f35a5066fbe63a9625088b142c149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e2f35a5066fbe63a9625088b142c149">&#9670;&#160;</a></span>to_xml() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1ustring.html">xtd::ustring</a> xtd::system_report::to_xml </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b">reports</a>&#160;</td>
-          <td class="paramname"><em>reports</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates xml format string report. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">reports</td><td>A bitwise combination of the <a class="el" href="classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050b" title="Specifies enumerated constants used by xtd::system_report::to_json, xtd::system_report::to_string and...">xtd::system_report::reports</a> values. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An xml format string report. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Implement xml report </dd></dl>
-
-</div>
-</div>
-<a id="a7e26567fe99c4764dde11009dc048070" name="a7e26567fe99c4764dde11009dc048070"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e26567fe99c4764dde11009dc048070">&#9670;&#160;</a></span>toolkit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1toolkit.html">xtd::toolkit</a> xtd::system_report::toolkit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets an <a class="el" href="classxtd_1_1toolkit.html" title="Represents a toolkit.">xtd::toolkit</a> object that contains the current toolkit identifier and version number. </p>
-<dl class="section return"><dt>Returns</dt><dd>An object that contains the toolkit identifier and version number. </dd></dl>
-
-</div>
-</div>
-<a id="a6f20aeadfbfec9169fe4a2d817dc5810" name="a6f20aeadfbfec9169fe4a2d817dc5810"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f20aeadfbfec9169fe4a2d817dc5810">&#9670;&#160;</a></span>xtd_libraries()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static const <a class="el" href="classxtd_1_1environment.html#aab2a5dac26e835c40c5abeabdbeb4a86">environment::xtd_library_collection</a> &amp; xtd::system_report::xtd_libraries </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets xtd libraries informations. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1environment.html#aab2a5dac26e835c40c5abeabdbeb4a86" title="Represents a xtd libraries collection.">environment::xtd_library_collection</a> collection containing xtd libraries informations. </dd></dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd/include/xtd/<a class="el" href="system__report_8h_source.html">system_report.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 30 2024 12:03:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="classxtd_1_1system__report.html">system_report</a></li>
+		<li class="footer">Generated on Wed Jul 31 2024 20:10:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+  </ul>
+</div>
 </body>
 </html>

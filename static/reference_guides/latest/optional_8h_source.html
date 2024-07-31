@@ -8,6 +8,10 @@
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
+		<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 		<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -56,6 +60,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('optional_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,11 +98,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">optional.h</div></div>
 </div><!--header-->
@@ -123,17 +139,17 @@ $(function() {
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keyword">new</span> (data_) value_t(std::move(value));</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    optional(<span class="keyword">const</span> optional&amp; other) : has_value_(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    optional(<span class="keyword">const</span> optional&amp; other) : has_value_(<a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">new</span> (data_) value_t(*other);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    optional(optional&amp;&amp; other) : has_value_(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    optional(optional&amp;&amp; other) : has_value_(<a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">new</span> (data_) value_t(std::move(*other));</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.reset();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.reset();</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    optional&amp; operator=(<span class="keyword">const</span> value_t&amp; value) {</div>
@@ -161,7 +177,7 @@ $(function() {
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      }</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">if</span> (has_value()) {</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>          *<span class="keyword">reinterpret_cast&lt;</span>value_t*<span class="keyword">&gt;</span>(data_) = *other;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        } <span class="keywordflow">else</span> {</div>
@@ -179,7 +195,7 @@ $(function() {
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      }</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.has_value_) {</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">if</span> (has_value()) {</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>          *<span class="keyword">reinterpret_cast&lt;</span>value_t*<span class="keyword">&gt;</span>(data_) = std::move(*other);</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        } <span class="keywordflow">else</span> {</div>
@@ -189,7 +205,7 @@ $(function() {
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        reset();</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.reset();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.reset();</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    </div>
@@ -206,7 +222,7 @@ $(function() {
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keyword">const</span> value_t&amp; value_or(<span class="keyword">const</span> value_t&amp; other)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <span class="keywordflow">return</span> has_value() ? operator*() : <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <span class="keywordflow">return</span> has_value() ? operator*() : <a class="code hl_enumvalue" href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">void</span> reset() {</div>
@@ -244,12 +260,16 @@ $(function() {
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a____xtd__std__version_8h_html"><div class="ttname"><a href="____xtd__std__version_8h.html">__xtd_std_version.h</a></div><div class="ttdoc">Contains __xtd_std_version definitions.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf"><div class="ttname"><a href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">xtd::platform_id::other</a></div><div class="ttdeci">@ other</div><div class="ttdoc">The operating system is other.</div></div>
+<div class="ttc" id="agroup__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf"><div class="ttname"><a href="group__xtd__core_gac34b9e6b6738a27b73c2f5ffeaa2ecf2.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">xtd::platform_id::other</a></div><div class="ttdeci">@ other</div><div class="ttdoc">The operating system is other.</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 30 2024 12:03:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="optional_8h.html">optional.h</a></li>
+		<li class="footer">Generated on Wed Jul 31 2024 20:10:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+  </ul>
+</div>
 </body>
 </html>
