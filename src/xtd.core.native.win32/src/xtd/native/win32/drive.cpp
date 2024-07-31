@@ -18,7 +18,7 @@ bool drive::get_available_free_space(const std::string& root_path_name, size_t& 
   return GetDiskFreeSpaceEx(win32::strings::to_wstring(root_path_name).c_str(), reinterpret_cast<PULARGE_INTEGER>(&free_bytes), reinterpret_cast<PULARGE_INTEGER>(&total_number_of_bytes), reinterpret_cast<PULARGE_INTEGER>(&total_number_of_free_bytes)) != FALSE;
 }
 
-int_least32_t drive::get_drive_type(const std::string& root_path_name) {
+int32_t drive::get_drive_type(const std::string& root_path_name) {
   return GetDriveType(win32::strings::to_wstring(root_path_name).c_str());
 }
 

@@ -61,7 +61,7 @@ void form::restore(intmax_t form) {
   static_cast<Fl_Window*>(reinterpret_cast<control_handler*>(form)->control())->show();
 }
 
-int_least32_t form::show_dialog(intmax_t form) {
+int32_t form::show_dialog(intmax_t form) {
   if (form == 0) return 0;
   static_cast<Fl_Window*>(reinterpret_cast<control_handler*>(form)->control())->set_modal();
   static_cast<Fl_Window*>(reinterpret_cast<control_handler*>(form)->control())->show();
@@ -70,7 +70,7 @@ int_least32_t form::show_dialog(intmax_t form) {
   return reinterpret_cast<Fl_Form*>(form)->dialog_result_;
 }
 
-void form::end_dialog(intmax_t form, int_least32_t result) {
+void form::end_dialog(intmax_t form, int32_t result) {
   if (form == 0) return;
   reinterpret_cast<Fl_Form*>(form)->dialog_result_ = result;
   static_cast<Fl_Window*>(reinterpret_cast<control_handler*>(form)->control())->set_non_modal();

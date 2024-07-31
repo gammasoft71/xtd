@@ -51,7 +51,7 @@ namespace xtd {
       /// @param max_stack_size The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.
       /// @return The thread handle.
       /// @warning Internal use only
-      static intmax_t create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size, bool suspended, intmax_t& id);
+      static intmax_t create(std::function<void(intmax_t)> start, intmax_t obj, int32_t max_stack_size, bool suspended, intmax_t& id);
       
       /// @brief Detach thread with specified handle.
       /// @param handle The thread handle.
@@ -99,13 +99,13 @@ namespace xtd {
       /// * 2 : normal
       /// * 3 : above_normal
       /// * 4 : highest
-      static bool set_priority(intmax_t handle, int_least32_t priority);
+      static bool set_priority(intmax_t handle, int32_t priority);
 
       /// @brief Suspends the current thread for a specified time.
       /// @param milliseconds_timeout The number of milliseconds for which the thread is blocked. Specify zero (0) to indicate that this thread should be suspended to allow other waiting threads to execute. Specify -1 to block the thread indefinitely.
       /// @return true if succeed; otherwise false.
       /// @warning Internal use only
-      static void sleep(int_least32_t milliseconds_timeout);
+      static void sleep(int32_t milliseconds_timeout);
 
       /// @brief Suspend thread with specified handle.
       /// @param handle The thread handle.

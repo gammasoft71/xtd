@@ -153,7 +153,7 @@ namespace {
     std::vector<std::string> filter_patterns = strings::split(filter, {'|'});
     std::vector<std::pair<std::string, std::vector<std::string>>> filters;
     if (filter_patterns.size() % 2 != 0) throw std::invalid_argument("Filter bad format");
-    for (int_least32_t index = 0; index < filter_patterns.size(); index += 2)
+    for (int32_t index = 0; index < filter_patterns.size(); index += 2)
       filters.push_back({filter_patterns[index], strings::split(filter_patterns[index + 1], {';'})});
     return filters;
   }
@@ -181,8 +181,8 @@ bool file_dialog::run_open_dialog(intmax_t hwnd, const std::string& default_ext,
     file_name = [[(NSURL*)[[openPanel URLs] objectAtIndex:0] path] UTF8String];
   else {
     NSArray* urls = [openPanel URLs];
-    std::vector<std::string> fileNames((int_least32_t)[urls count]);
-    for (int_least32_t index = 0; index < (int_least32_t)[urls count]; index++)
+    std::vector<std::string> fileNames((int32_t)[urls count]);
+    for (int32_t index = 0; index < (int32_t)[urls count]; index++)
       fileNames[index] = [[(NSURL*)[urls objectAtIndex:index] path] UTF8String];
     file_name = fileNames[0];
     file_names = fileNames;

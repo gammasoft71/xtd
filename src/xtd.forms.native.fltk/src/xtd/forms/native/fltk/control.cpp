@@ -27,7 +27,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-extern int_least32_t __mainloop_runnning__;
+extern int32_t __mainloop_runnning__;
 
 color control::back_color(intmax_t control) {
   if (control == 0) return color::empty;
@@ -74,7 +74,7 @@ intmax_t control::create_graphics(intmax_t control) {
   return control;
 }
 
-intmax_t control::def_wnd_proc(intmax_t control, intmax_t hwnd, int_least32_t msg, intmax_t wparam, intmax_t lparam, intmax_t presult, intmax_t handle) {
+intmax_t control::def_wnd_proc(intmax_t control, intmax_t hwnd, int32_t msg, intmax_t wparam, intmax_t lparam, intmax_t presult, intmax_t handle) {
   if (!control || handle == 0) return 0;
   return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
 }
@@ -233,17 +233,17 @@ void control::update(intmax_t control) {
   reinterpret_cast<control_handler*>(control)->control()->redraw();
 }
 
-void control::register_wnd_proc(intmax_t control, const delegate<intmax_t(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t)>& wnd_proc) {
+void control::register_wnd_proc(intmax_t control, const delegate<intmax_t(intmax_t, int32_t, intmax_t, intmax_t, intmax_t)>& wnd_proc) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->wnd_proc += wnd_proc;
 }
 
-void control::unregister_wnd_proc(intmax_t control, const delegate<intmax_t(intmax_t, int_least32_t, intmax_t, intmax_t, intmax_t)>& wnd_proc) {
+void control::unregister_wnd_proc(intmax_t control, const delegate<intmax_t(intmax_t, int32_t, intmax_t, intmax_t, intmax_t)>& wnd_proc) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->wnd_proc -= wnd_proc;
 }
 
-intmax_t control::send_message(intmax_t control, intmax_t hwnd, int_least32_t msg, intmax_t wparam, intmax_t lparam) {
+intmax_t control::send_message(intmax_t control, intmax_t hwnd, int32_t msg, intmax_t wparam, intmax_t lparam) {
   if (hwnd == 0) return -1;
   return reinterpret_cast<control_handler*>(control)->send_message(hwnd, msg, wparam, lparam, 0);
 }

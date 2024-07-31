@@ -20,7 +20,7 @@ size_t screen::count() {
   return Fl::screen_count();
 }
 
-int_least32_t screen::bits_per_pixel(size_t index) {
+int32_t screen::bits_per_pixel(size_t index) {
   application::initialize();
   float h = 0, v = 0;
   Fl::screen_dpi(h, v, index);

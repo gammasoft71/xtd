@@ -12,6 +12,6 @@ bool font_dialog::run_dialog(intmax_t hwnd, drawing::font& font, drawing::color&
   Fl_Color flcolor = fl_rgb_color(color.r(), color.g(), color.b());
   if (fl_font_chooser("Font", flfont, flfontsize, flcolor) == 0) return false;
   font = drawing::font(reinterpret_cast<intmax_t>(new drawing::native::fl_font(flfont, flfontsize)));
-  color = drawing::color::from_argb(static_cast<uint_least32_t>(flcolor) >> 8);
+  color = drawing::color::from_argb(static_cast<uint32_t>(flcolor) >> 8);
   return true;
 }

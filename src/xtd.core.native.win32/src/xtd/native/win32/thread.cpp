@@ -13,7 +13,7 @@ bool thread::cancel(intmax_t handle) {
   return TerminateThread(reinterpret_cast<HANDLE>(handle), static_cast<DWORD>(- 1)) != FALSE;
 }
 
-intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_least32_t max_stack_size, bool suspended, intmax_t& id) {
+intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int32_t max_stack_size, bool suspended, intmax_t& id) {
   auto sa = SECURITY_ATTRIBUTES {};
   sa.bInheritHandle = TRUE;
   sa.lpSecurityDescriptor = nullptr;
@@ -22,7 +22,7 @@ intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int_l
   if (suspended) flags |= CREATE_SUSPENDED;
   auto thread_id = DWORD {};
   auto thread = CreateThread(nullptr, max_stack_size, [](void* thread_arg)->DWORD {
-    auto start_obj = reinterpret_cast<std::pair<std::function<int_least32_t(intmax_t)>, intmax_t>*>(thread_arg);
+    auto start_obj = reinterpret_cast<std::pair<std::function<int32_t(intmax_t)>, intmax_t>*>(thread_arg);
     start_obj->first(start_obj->second);
     delete start_obj;
     return 0;
@@ -60,12 +60,12 @@ bool thread::set_current_thread_name(const std::string& name) {
   return SUCCEEDED(SetThreadDescription(GetCurrentThread(), win32::strings::to_wstring(name).data()));
 }
 
-bool thread::set_priority(intmax_t handle, int_least32_t priority) {
+bool thread::set_priority(intmax_t handle, int32_t priority) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
   return SetThreadPriority((HANDLE)handle, priority - 2) != FALSE;
 }
 
-void thread::sleep(int_least32_t milliseconds_timeout) {
+void thread::sleep(int32_t milliseconds_timeout) {
   Sleep(milliseconds_timeout);
 }
 

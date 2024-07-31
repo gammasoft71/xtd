@@ -31,7 +31,7 @@ void condition_variable::pulse_all(intmax_t handle) {
   pthread_cond_broadcast(reinterpret_cast<pthread_cond_t*>(handle));
 }
 
-bool condition_variable::wait(intmax_t handle, intmax_t critical_section_handle, int_least32_t milliseconds_timeout) {
+bool condition_variable::wait(intmax_t handle, intmax_t critical_section_handle, int32_t milliseconds_timeout) {
   if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return false;
   if (reinterpret_cast<pthread_mutex_t*>(critical_section_handle) == nullptr) return false;
   

@@ -67,7 +67,7 @@ namespace xtd {
       ///  * 0x00000102 : Timeout
       ///  * 0xFFFFFFFF : Failed
       /// @warning Internal use only
-      static uint_least32_t wait(intmax_t handle, int_least32_t milliseconds_timeout);
+      static uint32_t wait(intmax_t handle, int32_t milliseconds_timeout);
       /// @}
     };
   }

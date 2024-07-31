@@ -20,8 +20,8 @@ using namespace xtd::native;
 
 namespace {
   auto treat_control_c_as_input = false;
-  auto signal_couter_ = std::vector<int_least32_t> {};
-  auto user_cancel_callback = std::function<bool(int_least32_t)> {};
+  auto signal_couter_ = std::vector<int32_t> {};
+  auto user_cancel_callback = std::function<bool(int32_t)> {};
   
   struct console_intercept_signals {
   private:
@@ -35,14 +35,14 @@ namespace {
         ::signal(signal.first, SIG_DFL);
     }
     
-    static void signal_handler(int_least32_t signal) {
+    static void signal_handler(int32_t signal) {
       ::signal(signal, console_intercept_signals::signal_handler);
       if (treat_control_c_as_input) signal_couter_.push_back(signal_keys_[signal]);
       else if (user_cancel_callback && user_cancel_callback(signal_keys_[signal]) == false) exit(EXIT_FAILURE);
     }
     
     // The SIGINT signal catcher conflicts with with xtd::environment::cancel_interrupt signal...
-    inline static std::map<int_least32_t, int_least32_t> signal_keys_ {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}/*, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}*/};
+    inline static std::map<int32_t, int32_t> signal_keys_ {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}/*, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}*/};
     static console_intercept_signals console_intercept_signals_;
   };
   
@@ -68,7 +68,7 @@ namespace {
       return tcsetattr(0, TCSANOW, &status) == 0;
     }
     
-    int_least32_t getch() {
+    int32_t getch() {
       if (peek_character != -1) {
         auto character = peek_character;
         peek_character = -1;
@@ -145,7 +145,7 @@ namespace {
     }
     
     
-    int_least8_t peek_character {-1};
+    int8_t peek_character {-1};
     std::vector<termios> statuses;
   };
   
@@ -156,8 +156,8 @@ namespace {
     class input_list {
     public:
       input_list() {}
-      explicit input_list(const std::list<int_least32_t>& chars) : chars(chars) {}
-      explicit input_list(std::initializer_list<int_least32_t> il) : chars(il) {}
+      explicit input_list(const std::list<int32_t>& chars) : chars(chars) {}
+      explicit input_list(std::initializer_list<int32_t> il) : chars(il) {}
       input_list(const input_list& il) : chars(il.chars) {}
       
       input_list& operator =(const input_list& il) {
@@ -168,8 +168,8 @@ namespace {
       bool operator ==(const input_list& il) const noexcept {return chars == il.chars;}
       bool operator !=(const input_list& il) const noexcept {return chars != il.chars;}
       
-      using const_iterator = std::list<int_least32_t>::const_iterator;
-      using iterator = std::list<int_least32_t>::iterator;
+      using const_iterator = std::list<int32_t>::const_iterator;
+      using iterator = std::list<int32_t>::iterator;
       
       const_iterator cbegin() const {return chars.begin();}
       const_iterator cend() const {return chars.end();}
@@ -178,11 +178,11 @@ namespace {
       const_iterator end() const {return chars.end();}
       iterator end() {return chars.end();}
       
-      void add(int_least32_t c) {chars.push_back(c);}
-      void add_front(int_least32_t c) {chars.push_front(c);}
-      void remove(int_least32_t c) {chars.remove(c);}
-      int_least32_t count() const {return static_cast<int_least32_t>(chars.size());}
-      int_least32_t pop() { int_least32_t c = chars.front();  chars.erase(chars.begin()); return c;}
+      void add(int32_t c) {chars.push_back(c);}
+      void add_front(int32_t c) {chars.push_front(c);}
+      void remove(int32_t c) {chars.remove(c);}
+      int32_t count() const {return static_cast<int32_t>(chars.size());}
+      int32_t pop() { int32_t c = chars.front();  chars.erase(chars.begin()); return c;}
       void clear() {chars.clear();}
       
       bool is_empty() const {return chars.empty();}
@@ -215,7 +215,7 @@ namespace {
       }
       
     private:
-      std::list<int_least32_t> chars;
+      std::list<int32_t> chars;
     };
     
     key_info(const key_info& ki) : key_(ki.key_), key_char_(ki.key_char_), has_alt_modifier_(ki.has_alt_modifier_), has_control_modifier_(ki.has_control_modifier_), has_shift_modifier_(ki.has_shift_modifier_) {}
@@ -268,18 +268,18 @@ namespace {
     
     std::string to_string() const {
       auto result = std::stringstream {};
-      result << "{key=" << std::hex << static_cast<int_least32_t>(key_) << ", key_char=" << std::dec << static_cast<char>(key_char_) << ", has_alt_modifier=" << to_string(has_alt_modifier_) << ", has_control_modifier=" << to_string(has_control_modifier_) << ", has_shift_modifier=" << to_string(has_shift_modifier_) << "}";
+      result << "{key=" << std::hex << static_cast<int32_t>(key_) << ", key_char=" << std::dec << static_cast<char>(key_char_) << ", has_alt_modifier=" << to_string(has_alt_modifier_) << ", has_control_modifier=" << to_string(has_control_modifier_) << ", has_shift_modifier=" << to_string(has_shift_modifier_) << "}";
       return result.str();
     }
     
   private:
     key_info() : key_(U'0'), key_char_(U'0'), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
-    key_info(int_least32_t key, int_least32_t key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
-    key_info(int_least32_t key, int_least32_t key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
+    key_info(int32_t key, int32_t key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
+    key_info(int32_t key, int32_t key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
     
     static std::string to_string(bool b) {return b ? "true" : "false";}
     
-    static int_least32_t to_key(input_list& inputs) {
+    static int32_t to_key(input_list& inputs) {
       auto result = 0;
       auto index = 1;
       for (auto c : inputs)
@@ -288,11 +288,11 @@ namespace {
       return result;
     }
     
-    static key_info to_key_info(int_least32_t key) {
+    static key_info to_key_info(int32_t key) {
       return to_key_info(key, false);
     }
     
-    static key_info to_key_info(int_least32_t key, bool alt) {
+    static key_info to_key_info(int32_t key, bool alt) {
       // Ctrl + Space
       if (key == 0) return key_info {' ', ' ', false, true, false};
       
@@ -586,12 +586,12 @@ namespace {
   auto window_width = 80;
 }
 
-int_least32_t console::background_color() {
+int32_t console::background_color() {
   return ::background_color;
 }
 
-bool console::background_color(int_least32_t color) {
-  static auto colors = std::map<int_least32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[49m"}, {CONSOLE_COLOR_BLACK, "\x1b[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[46m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[43m"}, {CONSOLE_COLOR_GRAY, "\x1b[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[100m"}, {CONSOLE_COLOR_BLUE, "\x1b[104m"}, {CONSOLE_COLOR_GREEN, "\x1b[102m"}, {CONSOLE_COLOR_CYAN, "\x1b[106m"}, {CONSOLE_COLOR_RED, "\x1b[101m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[105m"}, {CONSOLE_COLOR_YELLOW, "\x1b[103m"}, {CONSOLE_COLOR_WHITE, "\x1b[107m"}};
+bool console::background_color(int32_t color) {
+  static auto colors = std::map<int32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[49m"}, {CONSOLE_COLOR_BLACK, "\x1b[40m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[44m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[42m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[46m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[41m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[45m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[43m"}, {CONSOLE_COLOR_GRAY, "\x1b[47m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[100m"}, {CONSOLE_COLOR_BLUE, "\x1b[104m"}, {CONSOLE_COLOR_GREEN, "\x1b[102m"}, {CONSOLE_COLOR_CYAN, "\x1b[106m"}, {CONSOLE_COLOR_RED, "\x1b[101m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[105m"}, {CONSOLE_COLOR_YELLOW, "\x1b[103m"}, {CONSOLE_COLOR_WHITE, "\x1b[107m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   ::background_color = color;
@@ -599,10 +599,10 @@ bool console::background_color(int_least32_t color) {
   return true;
 }
 
-bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
+bool console::beep(uint32_t frequency, uint32_t duration) {
   if (frequency < 37 || frequency > 32767) return false;
   
-  static constexpr uint_least32_t simple_rate = 8000;
+  static constexpr uint32_t simple_rate = 8000;
   static snd_pcm_t* pcm_handle = nullptr;
   if (pcm_handle == nullptr) {
     if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return false;
@@ -610,9 +610,9 @@ bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
   }
   
   unsigned char buffer[2400];
-  for (uint_least32_t duration_index = 0; duration_index < duration / 200; ++duration_index) {
+  for (uint32_t duration_index = 0; duration_index < duration / 200; ++duration_index) {
     snd_pcm_prepare(pcm_handle);
-    for (uint_least32_t buffer_index = 0; buffer_index < sizeof(buffer); ++buffer_index)
+    for (uint32_t buffer_index = 0; buffer_index < sizeof(buffer); ++buffer_index)
       buffer[buffer_index] = frequency > 0 ? (255 * buffer_index * frequency / simple_rate) : 0;
     snd_pcm_sframes_t written_frames = snd_pcm_writei(pcm_handle, buffer, sizeof(buffer));
     if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);
@@ -620,25 +620,25 @@ bool console::beep(uint_least32_t frequency, uint_least32_t duration) {
   return true;
 }
 
-int_least32_t console::buffer_height() {
+int32_t console::buffer_height() {
   /// @todo console buffer Height on linux and macOS
   if (::buffer_height == -1) ::buffer_height = console::window_height();
   return ::buffer_height;
 }
 
-bool console::buffer_height(int_least32_t height) {
+bool console::buffer_height(int32_t height) {
   /// @todo set console buffer height on linux and macOS
   ::buffer_height = height;
   return true;
 }
 
-int_least32_t console::buffer_width() {
+int32_t console::buffer_width() {
   /// @todo console buffer Width on linux and macOS
   if (::buffer_width == -1) ::buffer_width = console::window_width();
   return ::buffer_width;
 }
 
-bool console::buffer_width(int_least32_t width) {
+bool console::buffer_width(int32_t width) {
   /// @todo set console buffer width on linux and macOS
   ::buffer_width = width;
   return true;
@@ -654,7 +654,7 @@ bool console::clear() {
   return set_cursor_position(0, 0);
 }
 
-int_least32_t console::cursor_left() {
+int32_t console::cursor_left() {
   if (!terminal::is_ansi_supported()) return ::cursor_left;
   std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
@@ -667,11 +667,11 @@ int_least32_t console::cursor_left() {
   return ::cursor_left;
 }
 
-int_least32_t console::cursor_size() {
+int32_t console::cursor_size() {
   return ::cursor_size;
 }
 
-bool console::cursor_size(int_least32_t size) {
+bool console::cursor_size(int32_t size) {
   ::cursor_size = size;
   if (!terminal::is_ansi_supported()) return true;
   if (size < 50) std::cout << "\x1b[4 q" << std::flush;
@@ -679,7 +679,7 @@ bool console::cursor_size(int_least32_t size) {
   return true;
 }
 
-int_least32_t console::cursor_top() {
+int32_t console::cursor_top() {
   if (!terminal::is_ansi_supported()) return ::cursor_top;
   std::cout << "\x1b[6n" << std::flush;
   terminal::terminal_.getch();
@@ -702,7 +702,7 @@ bool console::cursor_visible(bool visible) {
   return true;
 }
 
-int_least32_t console::foreground_color() {
+int32_t console::foreground_color() {
   return ::foreground_color;
 }
 
@@ -710,8 +710,8 @@ bool console::echo(bool on) {
   return terminal::terminal_.echo(on);
 }
 
-bool console::foreground_color(int_least32_t color) {
-  static auto colors = std::map<int_least32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[39m"}, {CONSOLE_COLOR_BLACK, "\x1b[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[36m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[33m"}, {CONSOLE_COLOR_GRAY, "\x1b[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[90m"}, {CONSOLE_COLOR_BLUE, "\x1b[94m"}, {CONSOLE_COLOR_GREEN, "\x1b[92m"}, {CONSOLE_COLOR_CYAN, "\x1b[96m"}, {CONSOLE_COLOR_RED, "\x1b[91m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[95m"}, {CONSOLE_COLOR_YELLOW, "\x1b[93m"}, {CONSOLE_COLOR_WHITE, "\x1b[97m"}};
+bool console::foreground_color(int32_t color) {
+  static auto colors = std::map<int32_t, const char*> {{CONSOLE_COLOR_DEFAULT, "\x1b[39m"}, {CONSOLE_COLOR_BLACK, "\x1b[30m"}, {CONSOLE_COLOR_DARK_BLUE, "\x1b[34m"}, {CONSOLE_COLOR_DARK_GREEN, "\x1b[32m"}, {CONSOLE_COLOR_DARK_CYAN, "\x1b[36m"}, {CONSOLE_COLOR_DARK_RED, "\x1b[31m"}, {CONSOLE_COLOR_DARK_MAGENTA, "\x1b[35m"}, {CONSOLE_COLOR_DARK_YELLOW, "\x1b[33m"}, {CONSOLE_COLOR_GRAY, "\x1b[37m"}, {CONSOLE_COLOR_DARK_GRAY, "\x1b[90m"}, {CONSOLE_COLOR_BLUE, "\x1b[94m"}, {CONSOLE_COLOR_GREEN, "\x1b[92m"}, {CONSOLE_COLOR_CYAN, "\x1b[96m"}, {CONSOLE_COLOR_RED, "\x1b[91m"}, {CONSOLE_COLOR_MAGENTA, "\x1b[95m"}, {CONSOLE_COLOR_YELLOW, "\x1b[93m"}, {CONSOLE_COLOR_WHITE, "\x1b[97m"}};
   auto it = colors.find(color);
   if (it == colors.end()) return false;
   ::foreground_color = color;
@@ -719,12 +719,12 @@ bool console::foreground_color(int_least32_t color) {
   return true;
 }
 
-int_least32_t console::input_code_page() {
+int32_t console::input_code_page() {
   /// @todo console input code page status on linux and macOS
   return ::input_code_page;
 }
 
-bool console::input_code_page(int_least32_t code_page) {
+bool console::input_code_page(int32_t code_page) {
   /// @todo set console input code page on linux and macOS
   ::input_code_page = code_page;
   return true;
@@ -734,11 +734,11 @@ bool console::key_available() {
   return key_info::key_available();
 }
 
-int_least32_t console::largest_window_height() {
+int32_t console::largest_window_height() {
   return ::largest_window_height;
 }
 
-int_least32_t console::largest_window_width() {
+int32_t console::largest_window_width() {
   return ::largest_window_width;
 }
 
@@ -747,12 +747,12 @@ bool console::number_lock() {
   return ::number_lock;
 }
 
-int_least32_t console::output_code_page() {
+int32_t console::output_code_page() {
   /// @todo console output code page status on linux and macOS
   return ::output_code_page;
 }
 
-bool console::output_code_page(int_least32_t code_page) {
+bool console::output_code_page(int32_t code_page) {
   /// @todo set console output code page on linux and macOS
   ::output_code_page = code_page;
   return true;
@@ -767,7 +767,7 @@ void console::read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& 
   shift = key_info.has_shift_modifier();
 }
 
-void console::register_user_cancel_callback(std::function<bool(int_least32_t)> user_cancel_callback) {
+void console::register_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback) {
   ::user_cancel_callback = user_cancel_callback;
 }
 
@@ -775,7 +775,7 @@ bool console::reset_color() {
   return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
 }
 
-bool console::set_cursor_position(int_least32_t left, int_least32_t top) {
+bool console::set_cursor_position(int32_t left, int32_t top) {
   ::cursor_left = left;
   ::cursor_top = top;
   if (terminal::is_ansi_supported()) std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
@@ -812,7 +812,7 @@ bool console::treat_control_c_as_input(bool treat_control_c_as_input) {
   return true;
 }
 
-int_least32_t console::window_height() {
+int32_t console::window_height() {
   if (!terminal::is_ansi_supported()) return ::window_height;
   auto top = console::cursor_top();
   console::set_cursor_position(console::cursor_left(), 999);
@@ -822,35 +822,35 @@ int_least32_t console::window_height() {
   return ::window_height;
 }
 
-bool console::window_height(int_least32_t height) {
+bool console::window_height(int32_t height) {
   /// @todo set console window height on linux and macOS
   ::window_height = height;
   return true;
 }
 
-int_least32_t console::window_left() {
+int32_t console::window_left() {
   /// @todo get console window left on linux and macOS
   return ::window_left;
 }
 
-bool console::window_left(int_least32_t left) {
+bool console::window_left(int32_t left) {
   /// @todo set console window left on linux and macOS
   ::window_left = left;
   return true;
 }
 
-int_least32_t console::window_top() {
+int32_t console::window_top() {
   /// @todo get console window top on linux and macOS
   return ::window_top;
 }
 
-bool console::window_top(int_least32_t top) {
+bool console::window_top(int32_t top) {
   /// @todo set console window top on linux and macOS
   ::window_top = top;
   return true;
 }
 
-int_least32_t console::window_width() {
+int32_t console::window_width() {
   if (!terminal::is_ansi_supported()) return ::window_width;
   auto left = console::cursor_left();
   console::set_cursor_position(999, console::cursor_top());
@@ -860,7 +860,7 @@ int_least32_t console::window_width() {
   return ::window_width;
 }
 
-bool console::window_width(int_least32_t width) {
+bool console::window_width(int32_t width) {
   /// @todo set console window width on linux and macOS
   ::window_width = width;
   return true;

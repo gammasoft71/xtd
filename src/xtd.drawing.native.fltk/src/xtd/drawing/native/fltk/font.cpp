@@ -39,7 +39,7 @@ namespace {
   }
 }
 
-intmax_t font::create(const std::string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint_least8_t gdi_char_set, bool gdi_vertical_font) {
+intmax_t font::create(const std::string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
   return reinterpret_cast<intmax_t>(new xtd::drawing::native::fl_font(fonts()[name], points_to_native_font_graphics_untit(em_size)));
 }
 
@@ -55,13 +55,13 @@ void font::destroy(intmax_t font) {
   delete reinterpret_cast<xtd::drawing::native::fl_font*>(font);
 }
 
-int_least32_t font::dpi() {
+int32_t font::dpi() {
   float h = 0, v = 0;
   Fl::screen_dpi(h, v);
-  return static_cast<int_least32_t>(v);
+  return static_cast<int32_t>(v);
 }
 
-void font::get_information(intmax_t font, std::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint_least8_t& gdi_char_set, bool& gdi_vertical_font) {
+void font::get_information(intmax_t font, std::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font) {
   xtd::drawing::native::fl_font* fl_font = reinterpret_cast<xtd::drawing::native::fl_font*>(font);
   std::string font_name = Fl::get_font_name(fl_font->font());
   name = xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(font_name, " Italic", ""), " italic", ""), " Bold", ""), " bold", "");

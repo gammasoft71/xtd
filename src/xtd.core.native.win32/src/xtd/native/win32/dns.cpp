@@ -23,9 +23,9 @@ void dns::destroy(intmax_t host) {
   delete reinterpret_cast<hostent*>(host);
 }
 
-intmax_t dns::get_host_by_address(const string& host_address, int_least32_t host_address_type) {
+intmax_t dns::get_host_by_address(const string& host_address, int32_t host_address_type) {
   auto lock = lock_guard<mutex> {dns_mutex};
-  auto internet_address = int_least64_t {};
+  auto internet_address = int64_t {};
   inet_pton(host_address_type, host_address.c_str(), &internet_address);
   auto host = gethostbyaddr(reinterpret_cast<char*>(&internet_address), host_address_type == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16, host_address_type);
   if (host == nullptr) return 0;
@@ -47,11 +47,11 @@ vector<string> dns::get_aliases(intmax_t host) {
   return aliases;
 }
 
-vector<vector<uint_least8_t>> dns::get_addresses(intmax_t host) {
+vector<vector<uint8_t>> dns::get_addresses(intmax_t host) {
   auto index = size_t {};
-  auto addresses = vector<vector<uint_least8_t>> {};
+  auto addresses = vector<vector<uint8_t>> {};
   while (reinterpret_cast<hostent*>(host)->h_addr_list[index] != nullptr) {
-    addresses.push_back(vector<uint_least8_t>(reinterpret_cast<const uint_least8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]), reinterpret_cast<const uint_least8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]) + (reinterpret_cast<hostent*>(host)->h_addrtype == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16)));
+    addresses.push_back(vector<uint8_t>(reinterpret_cast<const uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]), reinterpret_cast<const uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]) + (reinterpret_cast<hostent*>(host)->h_addrtype == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16)));
     index++;
   }
   return addresses;
@@ -61,9 +61,9 @@ string dns::get_host_name(intmax_t host) {
   return reinterpret_cast<hostent*>(host)->h_name;
 }
 
-int_least32_t dns::get_host_name(string& host_name) {
+int32_t dns::get_host_name(string& host_name) {
   auto name = std::string(1024, '\0');
-  int_least32_t result = gethostname(name.data(), static_cast<int>(name.size()));
+  int32_t result = gethostname(name.data(), static_cast<int>(name.size()));
   host_name = name.c_str();;
   return result;
 }

@@ -12,7 +12,7 @@
 
 inline static const pthread_mutex_t* MUTEX_FAILED = reinterpret_cast<pthread_mutex_t *>(-1);
 
-static inline int pthread_mutex_milliseconds_timedlock(pthread_mutex_t* mut, int_least32_t milliseconds_timeout) {
+static inline int pthread_mutex_milliseconds_timedlock(pthread_mutex_t* mut, int32_t milliseconds_timeout) {
   struct timespec timeout;
   clock_gettime(CLOCK_REALTIME, &timeout);
   timeout.tv_sec += milliseconds_timeout / 1000;

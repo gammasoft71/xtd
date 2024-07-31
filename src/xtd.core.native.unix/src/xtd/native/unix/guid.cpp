@@ -8,8 +8,8 @@
 
 using namespace xtd::native;
 
-std::vector<uint_least8_t> guid::new_guid() {
-  auto guid = std::vector<uint_least8_t>(16);
+std::vector<uint8_t> guid::new_guid() {
+  auto guid = std::vector<uint8_t>(16);
   uuid_generate(guid.data());
   return guid;
 }

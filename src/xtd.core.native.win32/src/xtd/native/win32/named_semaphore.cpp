@@ -9,7 +9,7 @@
 
 using namespace xtd::native;
 
-intmax_t named_semaphore::create(int_least32_t initial_count, int_least32_t max_count, const std::string& name) {
+intmax_t named_semaphore::create(int32_t initial_count, int32_t max_count, const std::string& name) {
   auto handle = CreateSemaphore(nullptr, initial_count, max_count, win32::strings::to_wstring(name).c_str());
   if (handle != INVALID_HANDLE_VALUE && GetLastError() == ERROR_ALREADY_EXISTS) {
     CloseHandle(handle);
@@ -33,7 +33,7 @@ intmax_t named_semaphore::open(const std::string& name) {
   return reinterpret_cast<intmax_t>(handle);
 }
 
-bool named_semaphore::signal(intmax_t handle, int_least32_t release_count, int_least32_t& previous_count, bool& io_error) {
+bool named_semaphore::signal(intmax_t handle, int32_t release_count, int32_t& previous_count, bool& io_error) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) {
     io_error = true;
     return false;
@@ -44,7 +44,7 @@ bool named_semaphore::signal(intmax_t handle, int_least32_t release_count, int_l
 }
 
 
-uint_least32_t named_semaphore::wait(intmax_t handle, int_least32_t milliseconds_timeout) {
+uint32_t named_semaphore::wait(intmax_t handle, int32_t milliseconds_timeout) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return WAIT_FAILED;
-  return static_cast<uint_least32_t>(WaitForSingleObject(reinterpret_cast<HANDLE>(handle), milliseconds_timeout == -1 ? INFINITE : milliseconds_timeout));
+  return static_cast<uint32_t>(WaitForSingleObject(reinterpret_cast<HANDLE>(handle), milliseconds_timeout == -1 ? INFINITE : milliseconds_timeout));
 }

@@ -16,7 +16,7 @@
 /// @ingroup xtd_core_native select_mode
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t SELECT_MODE_READ = 0;
+constexpr int32_t SELECT_MODE_READ = 0;
 
 /// @brief Write status mode.
 /// @par Library
@@ -24,7 +24,7 @@ constexpr int_least32_t SELECT_MODE_READ = 0;
 /// @ingroup xtd_core_native select_mode
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t SELECT_MODE_WRITE = 1;
+constexpr int32_t SELECT_MODE_WRITE = 1;
 
 /// @brief Error status mode.
 /// @par Library
@@ -32,4 +32,4 @@ constexpr int_least32_t SELECT_MODE_WRITE = 1;
 /// @ingroup xtd_core_native select_mode
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int_least32_t SELECT_MODE_ERROR = 2;
+constexpr int32_t SELECT_MODE_ERROR = 2;

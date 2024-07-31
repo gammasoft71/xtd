@@ -35,7 +35,7 @@ bool unnamed_mutex::signal(intmax_t handle, bool& io_error) {
   return !io_error;
 }
 
-uint_least32_t unnamed_mutex::wait(intmax_t handle, int_least32_t milliseconds_timeout) {
+uint32_t unnamed_mutex::wait(intmax_t handle, int32_t milliseconds_timeout) {
   if (reinterpret_cast<pthread_mutex_t*>(handle) == MUTEX_FAILED) return 0xFFFFFFFF;
   auto result = milliseconds_timeout == -1 ? pthread_mutex_unlock(reinterpret_cast<pthread_mutex_t*>(handle)) : pthread_mutex_milliseconds_timedlock(reinterpret_cast<pthread_mutex_t*>(handle), milliseconds_timeout);
   if (result && errno == EAGAIN) return 0xFFFFFFFF;

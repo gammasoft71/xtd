@@ -27,7 +27,7 @@ namespace {
   }
 
   static string get_unique_speak_cmd_file_name() {
-    static int_least32_t cpt = 0;
+    static int32_t cpt = 0;
     stringstream ss;
     ss << get_temp_path() << "/__xtd_speech_synthesizer_speak_process_" << ++cpt << "__.cmd";
     return  ss.str();
@@ -66,7 +66,7 @@ void speech_synthesizer::speak(intmax_t handle, const string& text_to_speak) {
 void speech_synthesizer::speak_async(intmax_t handle, const string& text_to_speak, std::function<void()> on_speak_completed) {
   reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle = native::process::shell_execute("", reinterpret_cast<speech_synthesizer_data*>(handle)->say_cmd_file_name, text_to_speak, "", PROCESS_WINDOW_STYLE_HIDDEN);
   auto wait_process_thread = thread {[on_speak_completed, handle] {
-    int_least32_t exit_code = 0;
+    int32_t exit_code = 0;
     native::process::wait(reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle, exit_code);
     on_speak_completed();
   }};
