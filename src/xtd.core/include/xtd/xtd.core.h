@@ -15,6 +15,8 @@
 #include "collections/generic/icollection.h"
 #include "collections/generic/ienumerable.h"
 #include "collections/generic/ienumerator.h"
+#include "collections/generic/iequality_comparer.h"
+#include "collections/generic/ilist.h"
 #include "collections/generic/key_value_pair.h"
 #include "collections/generic/list.h"
 #include "collections/generic/sorted_dictionary.h"
