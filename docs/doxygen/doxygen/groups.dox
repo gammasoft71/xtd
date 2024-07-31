@@ -1,64 +1,11 @@
 /// @file
 /// @brief Contains groups definitions.
 
-/// @defgroup application application
-/// @brief Containes application definitions.
-/// @ingroup gui
-
-/// @defgroup brushes brushes
-/// @brief Represents brushes used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
-/// @ingroup drawing
-
-/// @defgroup collections collections
-/// @brief Contains collections definitions.
-/// @ingroup system
-
-/// @defgroup generic_collections generic
-/// @brief Contains generic collections definitions.
-/// @ingroup collections
-
-/// @defgroup helpers_generic_collections helpers
-/// @brief Contains helpers generic collections definitions.
-/// @ingroup generic_collections
-
-/// @defgroup specialized_collections specialized
-/// @brief Contains specialized collections definitions.
-/// @ingroup collections
-
-/// @defgroup colors colors
-/// @brief Contains colors definitions.
-/// @ingroup drawing
-
-/// @defgroup components components
-/// @brief Components are objects that an application uses in conjunction with another window.
-/// @ingroup gui
-
-/// @defgroup configuration configuration
-/// @brief Contains configuration definitions.
-/// @ingroup system
-
-/// @defgroup containers containers
-/// @brief Containers are container for other controls.
-/// @ingroup gui
-
-/// @defgroup controls controls
-/// @brief Controls are children windows that an application uses in conjunction with another window to enable interaction with the user.
-/// @ingroup gui
-
-/// @defgroup coordinates coordinates
-/// @brief Containes coordinates definitions.
-/// @ingroup drawing
+//________________________________________________________________________________________________________
+//                                                                                              Categories
 
 /// @defgroup debug debug
 /// @brief All needed for debugging and tracing.
-
-/// @defgroup diagnostics diagnostics
-/// @brief Contains diagnostics definitions.
-/// @ingroup system
-
-/// @defgroup dialogs dialogs
-/// @brief Dalogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes, ...
-/// @ingroup gui
 
 /// @defgroup drawing drawing
 /// @brief All needed for drawing something.
@@ -71,31 +18,15 @@
 /// @defgroup exceptions exceptions
 /// @brief Contains exceptions definitions.
 
-/// @defgroup fonts fonts
-/// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
-/// @ingroup drawing
-
 /// @defgroup format_parse format and parse
 /// @brief All needed for formating or parsing object.
 /// @remarks for more information about format see @ref FormatPage "Format".
 
-/// @defgroup forms forms
-/// @brief Contains forms definitions.
-/// @ingroup gui
-
-/// @defgroup images images
-/// @brief Contains images definitions.
-/// @ingroup drawing
+/// @defgroup gui forms
+/// @brief All needed for GUI application.
 
 /// @defgroup interfaces interfaces
 /// @brief Contains interfaces definitions.
-
-/// @defgroup io io
-/// @brief Contains io definitions.
-/// @ingroup system
-
-/// @defgroup keywords keywords
-/// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
 
 /// @defgroup keywords keywords
 /// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
@@ -106,43 +37,14 @@
 /// @defgroup literals literals
 /// @brief Literals can be used to produce integer, float, character, duration and string types.
 
-/// @defgroup media media
-/// @brief Contains media definitions.
-/// @ingroup system
-
-/// @defgroup menus_and_toolbars  menus and toolbars
-/// @brief Contains menus and toolbars definitions.
-/// @ingroup gui
-
-/// @defgroup net network
-/// @brief Contains network definitions.
-/// @ingroup system
-
-/// @defgroup pens pens
-/// @brief Contains pens definitions.
-/// @ingroup drawing
-
-/// @defgroup renderers renderers
-/// @brief Contains control renderers definitions.
-/// @ingroup gui
-
-/// @defgroup security security
-/// @brief Contains the underlying structure of the security system, including base classes for permissions.
-/// @ingroup system
+/// @defgroup style_sheets style sheets
+/// @brief Contains various properties, states, and subcontrols that make it possible to customize the look of control.
 
 /// @defgroup system system
 /// @brief Contains system classes.
 
 /// @defgroup system_information system information
 /// @brief System information contains classes that provides informations about the current system environment.
-
-/// @defgroup threading threading
-/// @brief Contains threading definitions.
-/// @ingroup system
-
-/// @defgroup timers timers
-/// @brief Contains timers definitions.
-/// @ingroup system
 
 /// @defgroup translate translate
 /// @brief Contains translator definitions.
@@ -153,31 +55,89 @@
 /// @defgroup tunit unit tests
 /// @brief Contains unit tests definitions
 
-/// @defgroup assertions assertions
-/// @brief Contains assertions definitions
-/// @ingroup tunit
+//________________________________________________________________________________________________________
+//                                                                                                   debug
 
-/// @defgroup assumptions assumptions
-/// @brief Contains assumptions definitions
-/// @ingroup tunit
+//________________________________________________________________________________________________________
+//                                                                                                 drawing
 
-/// @defgroup validations validations
-/// @brief Contains validations definitions
-/// @ingroup tunit
+/// @defgroup brushes brushes
+/// @brief Represents brushes used to fill the interiors of graphical shapes such as rectangles, ellipses, pies, polygons, and paths.
+/// @ingroup drawing
 
-/// @defgroup gui forms
-/// @brief All needed for GUI application.
+/// @defgroup colors colors
+/// @brief Contains colors definitions.
+/// @ingroup drawing
 
-/// @defgroup synthesis synthesis
-/// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
-/// @ingroup system
+/// @defgroup coordinates coordinates
+/// @brief Containes coordinates definitions.
+/// @ingroup drawing
 
-/// @defgroup style_sheets style_sheets
-/// @brief Contains various properties, states, and subcontrols that make it possible to customize the look of control.
+/// @defgroup fonts fonts
+/// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
+/// @ingroup drawing
+
+/// @defgroup images images
+/// @brief Contains images definitions.
+/// @ingroup drawing
+
+/// @defgroup pens pens
+/// @brief Contains pens definitions.
+/// @ingroup drawing
 
 /// @defgroup texts texts
 /// @brief Contains texts definitions.
 /// @ingroup drawing
+
+//________________________________________________________________________________________________________
+//                                                                                                  events
+
+//________________________________________________________________________________________________________
+//                                                                                              exceptions
+
+//________________________________________________________________________________________________________
+//                                                                                        format and parse
+
+//________________________________________________________________________________________________________
+//                                                                                                   forms
+
+/// @defgroup application application
+/// @brief Containes application definitions.
+/// @ingroup gui
+
+/// @defgroup components components
+/// @brief Components are objects that an application uses in conjunction with another window.
+/// @ingroup gui
+
+/// @defgroup containers containers
+/// @brief Containers are container for other controls.
+/// @ingroup gui
+
+/// @defgroup controls controls
+/// @brief Controls are children windows that an application uses in conjunction with another window to enable interaction with the user.
+/// @ingroup gui
+
+/// @defgroup dialogs dialogs
+/// @brief Dalogs consist of the open file, save file, open folder, find and replace, print, page setup, font, color dialog boxes, about, busy, message dialog boxes, ...
+/// @ingroup gui
+
+/// @defgroup forms forms
+/// @brief Contains forms definitions.
+/// @ingroup gui
+
+/// @defgroup menus_and_toolbars  menus and toolbars
+/// @brief Contains menus and toolbars definitions.
+/// @ingroup gui
+
+/// @defgroup renderers renderers
+/// @brief Contains control renderers definitions.
+/// @ingroup gui
+
+//________________________________________________________________________________________________________
+//                                                                                                keywords
+
+//________________________________________________________________________________________________________
+//                                                                                               libraries
 
 /// @defgroup xtd_core xtd.core
 /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
@@ -195,6 +155,99 @@
 /// @brief The xtd.tunit library contains components needed for unit testing.
 /// @ingroup libraries
 
+//________________________________________________________________________________________________________
+//                                                                                                literals
+
+//________________________________________________________________________________________________________
+//                                                                                            style sheets
+
+//________________________________________________________________________________________________________
+//                                                                                                  system
+
+/// @defgroup collections collections
+/// @brief Contains collections definitions.
+/// @ingroup system
+
+/// @defgroup configuration configuration
+/// @brief Contains configuration definitions.
+/// @ingroup system
+
+/// @defgroup diagnostics diagnostics
+/// @brief Contains diagnostics definitions.
+/// @ingroup system
+
+/// @defgroup io io
+/// @brief Contains io definitions.
+/// @ingroup system
+
+/// @defgroup media media
+/// @brief Contains media definitions.
+/// @ingroup system
+
+/// @defgroup net network
+/// @brief Contains network definitions.
+/// @ingroup system
+
+/// @defgroup security security
+/// @brief Contains the underlying structure of the security system, including base classes for permissions.
+/// @ingroup system
+
+/// @defgroup synthesis synthesis
+/// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
+/// @ingroup system
+
+/// @defgroup threading threading
+/// @brief Contains threading definitions.
+/// @ingroup system
+
+/// @defgroup timers timers
+/// @brief Contains timers definitions.
+/// @ingroup system
+
 /// @defgroup web web
 /// @brief Contains web definitions.
 /// @ingroup system
+
+//________________________________________________________________________________________________________
+//                                                                                      system information
+
+//________________________________________________________________________________________________________
+//                                                                                               translate
+
+//________________________________________________________________________________________________________
+//                                                                                                   types
+
+//________________________________________________________________________________________________________
+//                                                                                              unit tests
+
+/// @defgroup assertions assertions
+/// @brief Contains assertions definitions
+/// @ingroup tunit
+
+/// @defgroup assumptions assumptions
+/// @brief Contains assumptions definitions
+/// @ingroup tunit
+
+/// @defgroup validations validations
+/// @brief Contains validations definitions
+/// @ingroup tunit
+
+//________________________________________________________________________________________________________
+//                                                                                             collections
+
+/// @defgroup generic_collections generic
+/// @brief Contains generic collections definitions.
+/// @ingroup collections
+
+/// @defgroup specialized_collections specialized
+/// @brief Contains specialized collections definitions.
+/// @ingroup collections
+
+//________________________________________________________________________________________________________
+//                                                                                     generic collections
+
+/// @defgroup helpers_generic_collections helpers
+/// @brief Contains helpers generic collections definitions.
+/// @ingroup generic_collections
+
+//________________________________________________________________________________________________________
