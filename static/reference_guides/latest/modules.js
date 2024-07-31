@@ -1,5 +1,6 @@
 var modules =
 [
+    [ "﹡ libraries", "group__libraries.html", "group__libraries" ],
     [ "debug", "group__debug.html", "group__debug" ],
     [ "drawing", "group__drawing.html", "group__drawing" ],
     [ "events", "group__events.html", "group__events" ],
@@ -8,7 +9,6 @@ var modules =
     [ "forms", "group__gui.html", "group__gui" ],
     [ "interfaces", "group__interfaces.html", "group__interfaces" ],
     [ "keywords", "group__keywords.html", "group__keywords" ],
-    [ "libraries", "group__libraries.html", "group__libraries" ],
     [ "literals", "group__literals.html", "group__literals" ],
     [ "style sheets", "group__style__sheets.html", "group__style__sheets" ],
     [ "system", "group__system.html", "group__system" ],
