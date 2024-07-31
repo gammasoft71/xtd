@@ -1,10 +1,10 @@
-#include <tuple>
-#include <xtd/argument_exception.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_date_time_picker.h"
 #include <xtd/forms/native/date_time_picker.h>
 #include <xtd/forms/native/content_alignment.h>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_date_time_picker.h"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/argument_exception.h>
+#include <tuple>
 
 using namespace xtd;
 using namespace xtd::drawing;
