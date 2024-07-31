@@ -1,5 +1,4 @@
-#include <wx/apptrait.h>
-#if defined(__WXMSW__)
+#if defined(WIN32)
 #define NOMINMAX
 #include <winsock2.h>
 #include <Windows.h>
