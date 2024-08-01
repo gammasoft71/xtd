@@ -89,6 +89,13 @@ namespace xtd {
             return current;
           }
           
+          template<typename value_t>
+          iterator& operator +(value_t value) {
+            for (auto index = xtd::size {}; index < value && pos_ != std::numeric_limits<xtd::size>::max(); ++index)
+              if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
+            return *this;
+          }
+          
           /// @biref The equality operator of specified underlyig itertators.
           /// @return true if underlying iterators are equels; otherwise false.
           friend bool operator ==(const iterator& a, const iterator& b) noexcept { return a.pos_ == b.pos_; }
@@ -115,22 +122,22 @@ namespace xtd {
         /// @{
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        const_iterator cbegin() const {return iterator(enumerator_->get_enumerator());}
+        const_iterator cbegin() const noexcept {return iterator(enumerator_->get_enumerator());}
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        const_iterator cend() const {return iterator(enumerator_->get_enumerator(), true);}
+        const_iterator cend() const noexcept {return iterator(enumerator_->get_enumerator(), true);}
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        const_iterator begin() const {return iterator(enumerator_->get_enumerator());}
+        const_iterator begin() const noexcept {return iterator(enumerator_->get_enumerator());}
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        iterator begin() {return iterator(enumerator_->get_enumerator());}
+        iterator begin() noexcept {return iterator(enumerator_->get_enumerator());}
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        const_iterator end() const {return iterator(enumerator_->get_enumerator(), true);}
+        const_iterator end() const noexcept {return iterator(enumerator_->get_enumerator(), true);}
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        iterator end() {return iterator(enumerator_->get_enumerator(), true);}
+        iterator end() noexcept {return iterator(enumerator_->get_enumerator(), true);}
         /// @}
         
       private:
