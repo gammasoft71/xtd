@@ -79,7 +79,7 @@ public:
     
     void copy_to(xtd::array<program::box>& array, xtd::size array_index) const override {boxes_.copy_to(array, array_index);}
     
-    enumerator<program::box> get_enumerator() const override {return {new_ptr<box_enumerator>(boxes_)};}
+    enumerator<program::box> get_enumerator() const noexcept override {return {new_ptr<box_enumerator>(boxes_)};}
     
     bool remove(const program::box& item) override {return boxes_.remove(item);}
     

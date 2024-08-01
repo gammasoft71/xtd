@@ -22,7 +22,7 @@ class box_collection : public ienumerable<::box> {
 public:
   box_collection(const std::initializer_list<::box>& boxes) : boxes_(boxes) {}
   
-  enumerator<::box> get_enumerator() const override {
+  enumerator<::box> get_enumerator() const noexcept override {
     class box_enumerator : public ienumerator<::box> {
     public:
       explicit box_enumerator(const list<::box>& items) : items_(items) {}
