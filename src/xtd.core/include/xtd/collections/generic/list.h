@@ -43,25 +43,25 @@ namespace xtd {
         /// @brief Represents the list value type.
         using value_type = type_t;
         /// @brief Represents the list allocator type.
-        using allocator_type = helpers::allocator<value_type>;
+        using allocator_type = helpers::allocator<typename std::conditional<std::is_same<bool, value_type>::value, char, value_type>::type>;
         /// @brief Represents the list base type.
-        using base_type = std::vector<value_type, allocator_type>;
+        using base_type = std::vector<typename std::conditional<std::is_same<bool, value_type>::value, char, value_type>::type, allocator_type>;
         /// @brief Represents the list size type (usually xtd::size).
         using size_type = base_type::size_type;
         /// @brief Represents the list difference type (usually xtd::ptrdiff).
         using difference_type = base_type::difference_type;
         /// @brief Represents the reference of list value type.
-        using reference = base_type::reference;
+        using reference = value_type&;
         /// @brief Represents the const reference of list value type.
-        using const_reference = base_type::const_reference;
+        using const_reference = const value_type&;
         /// @brief Represents the pointer of list value type.
-        using pointer = base_type::pointer;
+        using pointer = value_type*;
         /// @brief Represents the const pointer of list value type.
-        using const_pointer = base_type::const_pointer;
+        using const_pointer = const value_type*;
         /// @brief Represents the iterator of list value type.
-        using iterator = base_type::iterator; // ienumerable<value_type>::iterator;
+        using iterator = base_type::iterator;
         /// @brief Represents the const iterator of list value type.
-        using const_iterator = base_type::const_iterator; // ienumerable<value_type>::const_iterator;
+        using const_iterator = base_type::const_iterator;
         /// @brief Represents the reverse iterator of list value type.
         using reverse_iterator = base_type::reverse_iterator;
         /// @brief Represents the const reverse iterator of list value type.
@@ -173,25 +173,41 @@ namespace xtd {
         /// @brief Returns a reference to the last element in the container.
         /// @return Reference to the first element.
         /// @remarks Calling front on an empty container causes undefined behavior.
-        virtual reference back() {return items_.back();}
+        virtual reference back() {return (*this)[count() - 1];}
         /// @brief Returns a reference to the last element in the container.
         /// @return Reference to the first element.
         /// @remarks Calling front on an empty container causes undefined behavior.
-        virtual const_reference back() const {return items_.back();}
+        virtual const_reference back() const {return (*this)[count() - 1];}
         
         /// @brief Returns an iterator to the first element of the vector.
         /// @return Iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::end().
-        virtual iterator begin() noexcept {return items_.begin();}
+        iterator begin() noexcept {return items_.begin();}
         /// @brief Returns an iterator to the first element of the vector.
         /// @return Iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::end().
-        virtual const_iterator begin() const noexcept {return items_.begin();}
+        const_iterator begin() const noexcept {return items_.begin();}
+
         /// @brief Returns an iterator to the first element of the vector.
         /// @return Iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::end().
-        virtual const_iterator cbegin() const noexcept {return items_.cbegin();}
-        
+        const_iterator cbegin() const noexcept {return items_.cbegin();}
+
+        /// @brief Returns an iterator to the element following the last element of the vector.
+        /// @return Iterator to the element following the last element.
+        /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
+        const_iterator cend() const noexcept {return items_.cend();}
+
+        /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
+        /// @return Reverse iterator to the first element.
+        /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
+        const_reverse_iterator crbegin() const noexcept {return items_.crbegin();}
+
+        /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
+        /// @return Reverse iterator to the element following the last element.
+        /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
+        const_reverse_iterator crend() const noexcept {return items_.crend();}
+
         /// @brief Returns the number of elements that the container has currently allocated space for.
         /// @return Capacity of the currently allocated storage.
         virtual size_type capacity() const noexcept {return items_.capacity();}
@@ -205,33 +221,29 @@ namespace xtd {
         /// @brief Returns an iterator to the element following the last element of the vector.
         /// @return Iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        virtual iterator end() noexcept {return items_.end();}
+        iterator end() noexcept {return items_.end();}
         /// @brief Returns an iterator to the element following the last element of the vector.
         /// @return Iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        virtual const_iterator end() const noexcept {return items_.end();}
-        /// @brief Returns an iterator to the element following the last element of the vector.
-        /// @return Iterator to the element following the last element.
-        /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        virtual const_iterator cend() const noexcept {return items_.cend();}
+        const_iterator end() const noexcept {return items_.end();}
         
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        virtual type_t* data() noexcept {return items_.data();}
+        virtual pointer data() noexcept {return (pointer)items_.data();}
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        virtual const type_t* data() const noexcept {return items_.data();}
+        virtual const_pointer data() const noexcept {return (const_pointer)items_.data();}
         
         /// @brief Returns a reference to the first element in the container.
         /// @return Reference to the first element.
         /// @remarks Calling front on an empty container causes undefined behavior.
-        virtual reference front() {return items_.front();}
+        virtual reference front() {return (*this)[0];}
         /// @brief Returns a reference to the first element in the container.
         /// @return Reference to the first element.
         /// @remarks Calling front on an empty container causes undefined behavior.
-        virtual const_reference front() const {return items_.front();}
+        virtual const_reference front() const {return (*this)[0];}
         
         bool is_fixed_size() const noexcept override {return false;}
         bool is_read_only() const noexcept override {return false;}
@@ -244,28 +256,20 @@ namespace xtd {
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
-        virtual reverse_iterator rbegin() noexcept {return items_.rbegin();}
+        reverse_iterator rbegin() noexcept {return items_.rbegin();}
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
-        virtual const_reverse_iterator rbegin() const noexcept {return items_.rbegin();}
-        /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
-        /// @return Reverse iterator to the first element.
-        /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
-        virtual const_reverse_iterator crbegin() const noexcept {return items_.crbegin();}
+        const_reverse_iterator rbegin() const noexcept {return items_.rbegin();}
         
         /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        virtual reverse_iterator rend() noexcept {return items_.rend();}
+        reverse_iterator rend() noexcept {return items_.rend();}
         /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        virtual const_reverse_iterator rend() const noexcept {return items_.rend();}
-        /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
-        /// @return Reverse iterator to the element following the last element.
-        /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        virtual const_reverse_iterator crend() const noexcept {return items_.crend();}
+        const_reverse_iterator rend() const noexcept {return items_.rend();}
 
         /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()).
         /// @return The number of elements in the container.
@@ -301,19 +305,21 @@ namespace xtd {
         /// @param items the initializer list to copy the values from.
         virtual void assign(std::initializer_list<type_t> items) {
           ++operation_number_;
-          items_.assign(items);
+          items_.clear();
+          for (const auto& item : items)
+            items_.push_back(item);
         }
         
         /// @brief Returns a reference to the element at specified location pos, with bounds checking.
         /// @param pos The position of the element to return.
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If pos is not within the range of the container.
-        virtual reference at(size_type pos) {return items_.at(pos);}
+        virtual reference at(size_type pos) {return (reference)items_.at(pos);}
         /// @brief Returns a reference to the element at specified location pos, with bounds checking.
         /// @param pos The position of the element to return.
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If pos is not within the range of the container.
-        virtual const_reference at(size_type pos) const {return items_.at(pos);}
+        virtual const_reference at(size_type pos) const {return (const_reference)items_.at(pos);}
         
         void clear() override {
           ++operation_number_;
@@ -430,7 +436,7 @@ namespace xtd {
           class list_enumerator : public ienumerator<value_type> {
           public:
             explicit list_enumerator(const base_type& items) : items_(items) {}
-            const value_type& current() const override {return items_[index_];}
+            const_reference current() const override {return (const_reference)items_[index_];}
             bool move_next() override {return ++index_ < items_.size();}
             void reset() override {index_ = xtd::box_integer<xtd::size>::max_value;}
             
@@ -522,7 +528,10 @@ namespace xtd {
         /// @remarks Inserts elements from initializer list `items` before `pos`.
         virtual iterator insert(const_iterator pos, const std::initializer_list<type_t>& items) {
           ++operation_number_;
-          return items_.insert(pos, items);
+          auto result = iterator {};
+          for (auto item : items)
+            result = items_.insert(pos++, item);
+          return result;
         }
         
         /// @brief Inserts an element into the xtd::collections::generic::list <type_t> at the specified index.
@@ -563,7 +572,7 @@ namespace xtd {
         
         bool remove(const type_t& item) override {
           if (count() == 0)  return false;
-          for (typename std::vector<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type, allocator_type>::iterator it = items_.begin(); it != items_.end() ; it++) {
+          for (typename base_type::iterator it = items_.begin(); it != items_.end() ; it++) {
             if (*it == item) {
               items_.erase(it);
               return true;
@@ -640,23 +649,24 @@ namespace xtd {
           items_ = items;
           return *this;
         }
+
         /// @brief Returns a reference to the element at specified location pos.
         /// @param pos The position of the element to return.
         /// @return Reference to the requested element.
         ///@remarks  No bounds checking is performed.
-        reference operator [](size_type pos) override {return items_[pos];}
+        const_reference operator [](size_type pos) const override {return (const_reference)items_[pos];}
         /// @brief Returns a reference to the element at specified location pos.
         /// @param pos The position of the element to return.
         /// @return Reference to the requested element.
         ///@remarks  No bounds checking is performed.
-        const_reference operator [](size_type pos) const override {return items_[pos];}
-        
-        /// @brief Returns a reference to the underlying base type.
-        /// @return Reference to the underlyong base type.
-        virtual operator base_type&() noexcept {return items_;}
+        reference operator [](size_type pos) override {return (reference)items_[pos];}
+
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlyong base type.
         virtual operator const base_type&() const noexcept {return items_;}
+        /// @brief Returns a reference to the underlying base type.
+        /// @return Reference to the underlyong base type.
+        virtual operator base_type&() noexcept {return items_;}
         /// @}
         
       private:
