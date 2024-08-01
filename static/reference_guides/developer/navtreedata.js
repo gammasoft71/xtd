@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "xtd", "index.html", [
-    [ "⚠️ xtd - Developer's Reference Guide - Internal use only ⚠️", "index.html", "index" ],
+    [ "xtd - Developer's Reference Guide - Internal use only", "index.html", "index" ],
     [ "Categories", "modules.html", "modules" ],
     [ "Brushes", "_brushes_page.html", [
       [ "Hatch brush", "_brushes_page.html#HatchBrushSection", null ]
