@@ -129,7 +129,7 @@ namespace xtdc_gui {
     }
     
     /// @brief This is a special value equal to the maximum value representable by the type size_t.
-    static const size_t npos = xtd::size_object::max_value;
+    static constexpr xtd::size npos = xtd::size_object::max_value;
     
   protected:
     xtd::uptr<xtd::object> clone() const override {
