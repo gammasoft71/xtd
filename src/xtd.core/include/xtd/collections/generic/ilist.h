@@ -38,7 +38,16 @@ namespace xtd {
         /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
         inline static constexpr xtd::size npos = xtd::size_object::max_value;
         /// @}
-
+        
+        /// @name Public Properties
+        
+        /// @{
+        /// @brief Gets a value indicating whether the xtd::collections::generic::ilist <type_t> has a fixed size.
+        /// @return true if the xtd::collections::generic::ilist <type_t> has a fixed size; otherwise, false.
+        /// @remarks A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements.
+        virtual bool is_fixed_size() const noexcept = 0;
+        /// @}
+        
         /// @name Public Methods
         
         /// @{
