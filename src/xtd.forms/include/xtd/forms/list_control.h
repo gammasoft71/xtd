@@ -119,7 +119,7 @@ namespace xtd {
       
       /// @{
       /// @brief This is a special value equal to the maximum value representable by the type size_t.
-      static const size_t npos = size_object::max_value;
+      static constexpr xtd::size npos = size_object::max_value;
       /// @}
       
       /// @name Public Properties
