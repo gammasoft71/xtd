@@ -34,7 +34,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::list class instanciate as xtd::collections::generic::list::base_type a [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator).
       template<typename type_t>
-      class list : public object, icollection<type_t> /*, ilist<type_t>*/ {
+      class list : public object, icollection<type_t> {
       public:
         /// @name Public Alias
         
