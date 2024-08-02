@@ -43,7 +43,7 @@ public:
       public:
         explicit box_enumerator(const list<program::box>& items) : items_(items) {}
         const program::box& current() const override {return items_[index_];}
-        bool move_next() override {return ++index_ < items_.size();}
+        bool move_next() override {return ++index_ < items_.count();}
         void reset() override {index_ = box_integer<size>::max_value;}
         
       protected:
