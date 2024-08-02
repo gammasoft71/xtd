@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "enumerator.h"
+#include "../../ptrdiff.h"
 #include "../../size.h"
 #include <limits>
 
@@ -44,15 +45,19 @@ namespace xtd {
           using iterator_category = std::forward_iterator_tag;
           /// @brief Represents the value type.
           using value_type = type_t;
+          /// @brief Represents the value type.
+          using difference_type = xtd::ptrdiff;
           /// @brief Represents the pointer of the value type.
-          using pointer_type = value_type*;
+          using pointer = value_type*;
           /// @brief Represents the reference of the value type.
-          using reference_type = value_type&;
+          using reference = value_type&;
           /// @}
 
           /// @name Public Constructors
           
           /// @{
+          /// @brief Initializes a new instance of the xtd::collections::generic::iterator class.
+          iterator() = default;
           /// @brief Initializes a new instance of the xtd::collections::generic::iterator class with specified enumerator.
           /// @param enumerator The enumerator to iterate with.
           iterator(enumerator<type_t> enumerator) : iterator(enumerator, false) {}
@@ -70,10 +75,10 @@ namespace xtd {
           /// @{
           /// @brief Returns reference to the current element, or a proxy holding it.
           /// @return The reference to the current element.
-          reference_type operator *() const {return const_cast<reference_type>(enumerator_.current());}
+          reference operator *() const {return const_cast<reference>(enumerator_.current());}
           /// @brief Returns pointer to the current element, or a proxy holding it.
           /// @return The pointer to the current element.
-          pointer_type operator ->() {return &operator*();}
+          pointer operator ->() {return &operator*();}
           
           /// @brief Pre increments the underlying iterator.
           /// @return The underlying iterator.
@@ -91,9 +96,14 @@ namespace xtd {
           
           template<typename value_t>
           iterator& operator +(value_t value) {
-            for (auto index = xtd::size {}; index < value && pos_ != std::numeric_limits<xtd::size>::max(); ++index)
+            for (auto index = xtd::size {}; index < static_cast<xtd::size>(value) && pos_ != std::numeric_limits<xtd::size>::max(); ++index)
               if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
             return *this;
+          }
+          
+          difference_type operator -(iterator value) const noexcept {
+            if (pos_ == std::numeric_limits<xtd::size>::max()) return std::numeric_limits<xtd::size>::max();
+            return static_cast<difference_type>(pos_ - value.pos_);
           }
           
           /// @biref The equality operator of specified underlyig itertators.
@@ -122,22 +132,25 @@ namespace xtd {
         /// @{
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        const_iterator cbegin() const noexcept {return iterator(enumerator_->get_enumerator());}
-        /// @brief Returns an iterator to the element following the last element of the enumarable.
-        /// @return Iterator to the element following the last element.
-        const_iterator cend() const noexcept {return iterator(enumerator_->get_enumerator(), true);}
+        virtual const_iterator begin() const noexcept {return iterator(enumerator_->get_enumerator());}
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        const_iterator begin() const noexcept {return iterator(enumerator_->get_enumerator());}
+        virtual iterator begin() noexcept {return iterator(enumerator_->get_enumerator());}
+
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        iterator begin() noexcept {return iterator(enumerator_->get_enumerator());}
+        virtual const_iterator cbegin() const noexcept {return iterator(enumerator_->get_enumerator());}
+
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        const_iterator end() const noexcept {return iterator(enumerator_->get_enumerator(), true);}
+        virtual const_iterator cend() const noexcept {return iterator(enumerator_->get_enumerator(), true);}
+
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        iterator end() noexcept {return iterator(enumerator_->get_enumerator(), true);}
+        virtual const_iterator end() const noexcept {return iterator(enumerator_->get_enumerator(), true);}
+        /// @brief Returns an iterator to the element following the last element of the enumarable.
+        /// @return Iterator to the element following the last element.
+        virtual iterator end() noexcept {return iterator(enumerator_->get_enumerator(), true);}
         /// @}
         
       private:
