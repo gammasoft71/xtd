@@ -28,6 +28,15 @@ namespace xtd {
       template <typename type_t>
       class ienumerable : public interface, public enumerable_iterators<type_t, ienumerable<type_t>> {
       public:
+        /// @name Public Aliases
+        
+        /// @{
+        /// @brief Represents the iterator of xtd::collections::generic::ienumerable value type.
+        using iterator = enumerable_iterators<type_t, ienumerable<type_t>>::iterator;
+        /// @brief Represents the const iterator of xtd::collections::generic::ienumerable value type.
+        using const_iterator = enumerable_iterators<type_t, ienumerable<type_t>>::const_iterator;
+        /// @}
+
         /// @name Public Methods
         
         /// @{
