@@ -14,7 +14,7 @@ var annotated_dup =
           [ "ienumerable", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", "classxtd_1_1collections_1_1generic_1_1ienumerable" ],
           [ "ienumerator", "classxtd_1_1collections_1_1generic_1_1ienumerator.html", "classxtd_1_1collections_1_1generic_1_1ienumerator" ],
           [ "iequality_comparer", "classxtd_1_1collections_1_1generic_1_1iequality__comparer.html", "classxtd_1_1collections_1_1generic_1_1iequality__comparer" ],
-          [ "ilist", "classxtd_1_1collections_1_1generic_1_1ilist.html", null ],
+          [ "ilist", "classxtd_1_1collections_1_1generic_1_1ilist.html", "classxtd_1_1collections_1_1generic_1_1ilist" ],
           [ "list", "classxtd_1_1collections_1_1generic_1_1list.html", "classxtd_1_1collections_1_1generic_1_1list" ]
         ] ],
         [ "key_not_found_exception", "classxtd_1_1collections_1_1key__not__found__exception.html", "classxtd_1_1collections_1_1key__not__found__exception" ]
