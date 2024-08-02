@@ -29,7 +29,7 @@ public:
     // Test the Contains method overload with a specified equality comparer.
     console::write_line("Contains {}x{}x{} by volume: {}", box_check.height, box_check.length, box_check.width, boxes.contains(box_check, box_same_volume {}));
   }
-
+  
   struct box : public object, public iequatable<program::box> {
     // Public Constructors :
     box() = default;
@@ -45,7 +45,7 @@ public:
     bool equals(const program::box& o) const noexcept override {return box_same_dimensions {}.equals(*this, o);}
   };
   
-  class box_collection : public icollection<program::box> {
+  class box_collection : public ilist<program::box> {
   public:
     // Public Constructors :
     box_collection(const std::initializer_list<program::box>& boxes) : boxes_(boxes) {}
@@ -53,12 +53,12 @@ public:
     // Public Properties :
     size count() const noexcept override {return boxes_.count();}
     
+    bool is_fixed_size() const noexcept override {return false;}
     bool is_read_only() const noexcept override {return false;}
-    
     bool is_synchronized() const noexcept override {return false;}
     
     const object& sync_root() const noexcept override {return sync_root_;}
-
+    
     // Public Methods :
     void add(const program::box& item) override {
       if (!contains(item))
@@ -69,7 +69,7 @@ public:
     
     void clear() override {boxes_.clear();}
     
-    bool contains(const program::box& item) const noexcept override {return boxes_.contains(item);}
+    bool contains(const program::box& item) const noexcept override {return index_of(item) != npos;}
     
     bool contains(const program::box& item, const iequality_comparer<program::box>& comparer) const noexcept {
       for (auto box : boxes_)
@@ -81,7 +81,34 @@ public:
     
     enumerator<program::box> get_enumerator() const noexcept override {return {new_ptr<box_enumerator>(boxes_)};}
     
+    size index_of(const program::box& item) const noexcept override {
+      for (auto index = 0_z; index  < count(); ++index)
+        if (boxes_[index] == item) return index;
+      return npos;
+    }
+    
+    void insert(size index, const program::box& item) override {
+      if (index >= count()) throw argument_out_of_range_exception {csf_};
+      boxes_.insert(boxes_.begin() + index, item);
+    }
+    
     bool remove(const program::box& item) override {return boxes_.remove(item);}
+    
+    void remove_at(size index) override {
+      if (index >= count()) throw argument_out_of_range_exception {csf_};
+      boxes_.erase(boxes_.begin() + index);
+    }
+    
+    // Public Operators :
+    const program::box& operator [](size index) const override {
+      if (index >= count()) throw argument_out_of_range_exception {csf_};
+      return boxes_[index];
+    }
+    
+    program::box& operator [](size index) override {
+      if (index >= count()) throw argument_out_of_range_exception {csf_};
+      return boxes_[index];
+    }
     
   private:
     list<program::box> boxes_;
@@ -92,10 +119,10 @@ public:
   public:
     // Public Constructors :
     explicit box_enumerator(const list<program::box>& items) : items_(items) {}
-
+    
     // Public Properties :
     const program::box& current() const override {return items_[index_];}
-
+    
     // Public Methods :
     bool move_next() override {return ++index_ < items_.size();}
     void reset() override {index_ = box_integer<size>::max_value;}
@@ -104,7 +131,7 @@ public:
     const list<program::box>& items_;
     size index_ = box_integer<size>::max_value;
   };
-
+  
   // Defines two boxes as equal if they have the same dimensions.
   class box_same_dimensions : public iequality_comparer<program::box> {
   public:
@@ -126,11 +153,18 @@ public:
       return hash_code;
     }
   };
-
+  
   static void display(const box_collection& boxes) {
     console::write_line("\nheight  length  width   hash code");
-    for (auto box : boxes)
-      console::write_line("{,-6}  {,-6}  {,-6}  {}", box.height, box.length, box.width, box.get_hash_code());
+    for (auto index = 0_z; index < boxes.count(); ++index)
+      console::write_line("{,-6}  {,-6}  {,-6}  {}", boxes[index].height, boxes[index].length, boxes[index].width, boxes[index].get_hash_code());
+    
+    // Results by manipulating the iterator directly:
+    
+    //console::write_line("\nheight  length  width   hash code");
+    //for (auto box : boxes)
+    //  console::write_line("{,-6}  {,-6}  {,-6}  {}", box.height, box.length, box.width, box.get_hash_code());
+    
     
     // Results by manipulating the enumerator directly:
     
