@@ -656,6 +656,13 @@ namespace xtd {
         }
 
         ustring to_string() const noexcept override {return xtd::ustring::format("[{}]", xtd::ustring::join(", ", *this));}
+        
+        /// @brief Returns a reference to the underlying base type.
+        /// @return Reference to the underlyong base type.
+        virtual const base_type& to_base_type() const noexcept {return items_;}
+        /// @brief Returns a reference to the underlying base type.
+        /// @return Reference to the underlyong base type.
+        virtual base_type& to_base_type() noexcept {return items_;}
         /// @}
         
         /// @name Public Operators
