@@ -22,7 +22,7 @@ namespace xtd {
       /// @brief Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.
       /// ```cpp
       /// template<typename type_t>
-      /// class list : public xtd::object, xtd::collections::generic::icollection<type_t>, xtd::collections::generic::ienumerable<type_t>, xtd::collections::generic::ilist<type_t>
+      /// class list : public xtd::object, xtd::collections::generic::ilist<type_t>
       /// ```
       /// @par Header
       /// ```cpp
@@ -33,8 +33,33 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      /// @remarks The xtd::collections::generic::list <type_t> class instanciate as xtd::collections::generic::list::base_type a [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator).
-      /// @remarks The xtd::collections::generic::list <type_t> class can also be used to manage a dynamic array of `bool` unlike [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator).
+      /// @remarks The xtd::collections::generic::list <type_t> class instanciate as xtd::collections::generic::list::base_type a [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator). Use xtd::collections::generic::list::get_base_type() to access the underlying [std::vector](https://en.cppreference.com/w/cpp/container/vector).
+      /// @remarks The xtd::collections::generic::list <type_t> class can also be used to manage a dynamic array of `bool` exactly as other types unlike [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator). When the `type_t`is `bool` The underlying [std::vector](https://en.cppreference.com/w/cpp/container/vector) uses xtd::byte.
+      /// @remarks The xtd::collections::generic::list <type_t> class is the generic equivalent of the xtd::collections::array_list class. It implements the xtd::collections::generic::ilist <type_t> generic interface by using an array whose size is dynamically increased as required.
+      /// @remarks You can add items to a xtd::collections::generic::list <type_t> by using the xtd::collections::generic::list::add or xtd::collections::generic::list::add_range methods.
+      /// @remarks The xtd::collections::generic::list <type_t> class uses both an equality comparer and an ordering comparer.
+      /// * Methods such as xtd::collections::generic::list::contains, xtd::collections::generic::list::index_of, xtd::collections::generic::list::last_index_of, and xtd::collections::generic::list::remove use an equality comparer for the list elements. The default equality comparer for type `type_t` is determined as follows. If type `type_t` implements the xtd::iequatable <type_t> generic interface, then the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, if the `type_t`inherits of the xtd::object class, the default equality comparer is xtd::object::equals. If the `type_t` does not implement the xtd::iequality <type_t> interface and does not inherit from xtd::object, the `type_t` must implement the euqality operator : `bool operator ==(const type_t& rhs) const noexcept`.
+      /// * Methods such as xtd::collections::generic::list::binary_search and xtd::collections::generic::list::sort use an ordering comparer for the list elements. The default comparer for type `type_t` is determined as follows. If type `type_t` implements the xtd::icomparable <type_t> generic interface, then the default comparer is the xtd::icomaprable::compare_to method of that interface. If the `type_t` type does not implement the xtd::icomparable <type_t> interface, the `type_t` type must implement the less than operator : `bool operator <(const type_t& rhs) const noexcept`.
+      /// @remarks The xtd::collections::generic::list <type_t> is not guaranteed to be sorted. You must sort the xtd::collections::generic::list <type_t> before performing operations (such as xtd::collections::binary_search) that require the xtd::collections::generic::list <type_t> to be sorted.
+      /// @remarks Elements in this collection can be accessed using an integer index. Indexes in this collection are zero-based.
+      /// @remarks For an immutable version of the xtd::collections::generic::list <type_t> class, see xtd::collections::immutale::immutable_list <type_t>.
+      /// @par Performance considerations
+      /// As xtd::collections::generic::list <type_t> instantiates and uses only the methods of [std::vector](https://en.cppreference.com/w/cpp/container/vector), the performance of xtd::collections::generic::list <type_t> is practically identical to that of [std::vector](https://en.cppreference.com/w/cpp/container/vector).
+      /// @par Examples
+      /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
+      /// @include generic_list.cpp
+      /// The following example demonstrates several properties and methods of the xtd::collections::generic::list <type_t> generic class of type string. (For an example of a xtd::collections::generic::list <type_t> of complex types, see the xtd::collections::generic::list::contains method.)
+      ///
+      /// The parameterless constructor is used to create a list of strings with the default capacity. The xtd::collections::generic::list::capacity property is displayed and then the xtd::collections::generic::list::add method is used to add several items. The items are listed, and the xtd::collections::generic::list::capacity property is displayed again, along with the xtd::collections::generic::list::count property, to show that the capacity has been increased as needed.
+      ///
+      /// The xtd::collections::generic::list::contains method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.
+      ///
+      /// The default xtd::collections::generic::list::operator [] is used to retrieve an item, the xtd::collections::generic::list::remove method is used to remove the first instance of the duplicate item added earlier, and the contents are displayed again. The xtd::collections::generic::list::remove method always removes the first instance it encounters.
+      ///
+      /// The xtd::collections::generic::list::trim_excess method is used to reduce the capacity to match the count, and the xtd::collections::generic::list::capacity and xtd::collections::generic::list::count properties are displayed. If the unused capacity had been less than 10 percent of total capacity, the list would not have been resized.
+      ///
+      /// Finally, the xtd::collections::generic::list::clear method is used to remove all items from the list, and the xtd::collections::generic::list::capacity and xtd::collections::generic::list::count properties are displayed.
+      /// @include generic_list2.cpp
       template<typename type_t>
       class list : public object, public ilist<type_t> {
       public:
@@ -89,13 +114,13 @@ namespace xtd {
         /// @include list.cpp
         list() noexcept = default;
         
-        /// @brief Initializes a new instance of the List<T> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @brief Initializes a new instance of the xtd::collections::generic::list <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new list.
         /// @exception ArgumentNullException The parameters collection is null or element reference null in collection.
-        /// @remarks The elements are copied onto the List<T> in the same order they are read by the enumerator of the collection.
+        /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
         /// @par Examples
-        /// The following code example demonstrates the List<T> constructor and various methods of the List<T> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The Capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
+        /// The following code example demonstrates the xtd::collections::generic::list <type_t> constructor and various methods of the xtd::collections::generic::list <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The Capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
         /// @include List2.cpp
         //list(const ienumerable<type_t>& collection) : {
         //  for (const type_t& value : collection)
@@ -334,33 +359,33 @@ namespace xtd {
           return false;
         }
 
-        /// @brief Copies the entire List<T> to a compatible one-dimensional array.
+        /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array.
         /// @param array The one-dimensional Array that is the destination of the elements copied from ICollection. The Array must have zero-based indexing.
         /// @exception ArgumentNullException array is null.
-        /// @exception ArgumentException The number of elements in the source List<T> is greater than the number of elements that the destination array can contain.
+        /// @exception ArgumentException The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
         /// @remarks TThis method uses Array.Copy to copy the elements.
-        /// @remarks The elements are copied to the Array in the same order in which the enumerator iterates through the List<T>.
+        /// @remarks The elements are copied to the Array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is Count.
         /// @par Examples
-        /// The following code example demonstrates all three overloads of the CopyTo method. A List<T> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
+        /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
         virtual void copy_to(xtd::array<type_t>& array) const {copy_to(0, array, 0, count());}
 
         void copy_to(xtd::array<type_t>& array, xtd::size array_index) const override {copy_to(0, array, array_index, count());}
   
-        /// @brief Copies the entire List<T> to a compatible one-dimensional array, starting at the specified index of the target array.
-        /// @param index The zero-based index in the source List<T> at which copying begins.
+        /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
+        /// @param index The zero-based index in the source xtd::collections::generic::list <type_t> at which copying begins.
         /// @param array The one-dimensional Array that is the destination of the elements copied from ICollection. The Array must have zero-based indexing.
         /// @param arrayIndex The zero-based index in array at which copying begins;
         /// @param count The number of elements to copy.
         /// @exception ArgumentNullException array is null.
         /// @exception ArgumentOutOfRangeException The arrayIndex or count is less than 0.
-        /// @exception ArgumentException The number of elements in the source List<T> is greater than the number of elements that the destination array can contain.
+        /// @exception ArgumentException The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
         /// @remarks TThis method uses Array.Copy to copy the elements.
-        /// @remarks The elements are copied to the Array in the same order in which the enumerator iterates through the List<T>.
+        /// @remarks The elements are copied to the Array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is Count.
         /// @par Examples
-        /// The following code example demonstrates all three overloads of the CopyTo method. A List<T> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
+        /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
         virtual void copy_to(xtd::size index, xtd::array<type_t>& array, xtd::size array_index, xtd::size count) const {
           if (index + count > this->count() || array_index + count > array.size()) throw xtd::argument_exception {csf_};
@@ -588,7 +613,7 @@ namespace xtd {
           return false;
         }
         
-        /// @brief Removes the element at the specified index of the List<T>.
+        /// @brief Removes the element at the specified index of the xtd::collections::generic::list <type_t>.
         /// @param index The zero-based index of the item to remove
         /// @return None.
         /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than Count.
