@@ -7,7 +7,7 @@ var namespacextd_1_1collections_1_1generic =
     [ "ienumerable", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", "classxtd_1_1collections_1_1generic_1_1ienumerable" ],
     [ "ienumerator", "classxtd_1_1collections_1_1generic_1_1ienumerator.html", "classxtd_1_1collections_1_1generic_1_1ienumerator" ],
     [ "iequality_comparer", "classxtd_1_1collections_1_1generic_1_1iequality__comparer.html", "classxtd_1_1collections_1_1generic_1_1iequality__comparer" ],
-    [ "ilist", "classxtd_1_1collections_1_1generic_1_1ilist.html", null ],
+    [ "ilist", "classxtd_1_1collections_1_1generic_1_1ilist.html", "classxtd_1_1collections_1_1generic_1_1ilist" ],
     [ "list", "classxtd_1_1collections_1_1generic_1_1list.html", "classxtd_1_1collections_1_1generic_1_1list" ],
     [ "dictionary", "group__generic__collections_gabc6e9eab3efe7d40c7dd9c3287b36960.html#gabc6e9eab3efe7d40c7dd9c3287b36960", null ],
     [ "hash_set", "group__generic__collections_ga64eee1442dc5ab233c858fb9210538f0.html#ga64eee1442dc5ab233c858fb9210538f0", null ],
