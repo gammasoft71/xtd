@@ -9,4 +9,5 @@ add_projects(
   generic_ienumerator
   generic_ilist
   generic_list
+  generic_list2
 )
