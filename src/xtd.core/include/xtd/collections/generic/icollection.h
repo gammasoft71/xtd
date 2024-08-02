@@ -29,7 +29,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core interfaces
       /// @par Examples
-      /// The following example implements the xtd::collections::generic::icollection <type_t> interface to create a collection of custom `box` objects named `box_collection`. Each `box` has `height`, `length`, and `width` properties, which are used to define equality. Equality can be defined as all dimensions being the same or the volume being the same. The Box class implements the xtd::iequatable <type_t> interface to define the default equality as the dimensions being the same.
+      /// The following example implements the xtd::collections::generic::icollection <type_t> interface to create a collection of custom `box` objects named `box_collection`. Each `box` has `height`, `length`, and `width` properties, which are used to define equality. Equality can be defined as all dimensions being the same or the volume being the same. The `box` class implements the xtd::iequatable <type_t> interface to define the default equality as the dimensions being the same.
       ///
       /// The `box_collection` class implements the xtd::collections::generic::icollection::contains method to use the default equality to determine whether a `box` is in the collection. This method is used by the xtd::collections::generic::icollection::add method so that each `box` added to the collection has a unique set of dimensions. The `box_collection` class also provides an overload of the xtd::collections::generic::icollection::contains method that takes a specified xtd::collections::generic::iequality_comparer <type_t> interface, such as `b`ox_same_dimensions` and `box_same_volume` classes in the example.
       ///
