@@ -27,7 +27,7 @@ namespace xtd {
       /// xtd::collections::generic
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core
+      /// @ingroup xtd_core generic_collections
       /// @warning Internal use only for xtd::collections::generic::ienumerable interfece.
       template<typename type_t, typename enumerator_t>
       class enumerable_iterators {
