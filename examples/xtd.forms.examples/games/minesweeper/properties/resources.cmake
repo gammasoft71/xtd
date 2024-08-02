@@ -9,10 +9,10 @@ resource(minesweeper_ico "resources/minesweeper.ico")
 resource(minesweeper_png "resources/minesweeper.png")
 
 # Documentation
-resource(flag "resources/flag.png")
 resource(help_markdown "resources/help.md")
 
 # Pictures
+resource(flag "resources/flag.png")
 resource(mine "resources/mine.png")
 resource(smiley1 "resources/smiley1.png")
 resource(smiley2 "resources/smiley2.png")
