@@ -240,8 +240,9 @@ var hierarchy =
     [ "xtd::collections::generic::enumerable_iterators< type_t, ienumerable< type_t > >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
       [ "xtd::collections::generic::ienumerable< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
         [ "xtd::collections::generic::icollection< type_t >", "classxtd_1_1collections_1_1generic_1_1icollection.html", [
-          [ "xtd::collections::generic::ilist< type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", null ],
-          [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ]
+          [ "xtd::collections::generic::ilist< type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", [
+            [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ]
+          ] ]
         ] ]
       ] ]
     ] ],
