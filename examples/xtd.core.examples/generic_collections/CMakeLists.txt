@@ -7,4 +7,5 @@ add_projects(
   generic_icollection
   generic_ienumerable
   generic_ienumerator
+  generic_ilist
 )
