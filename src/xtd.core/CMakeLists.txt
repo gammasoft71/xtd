@@ -675,6 +675,8 @@ add_sources(
   include/xtd/internal/__format_stringer
   include/xtd/internal/__hasher.h
   include/xtd/internal/__hasher
+  include/xtd/internal/__hexfloat_formatter.h
+  include/xtd/internal/__hexfloat_formatter
   include/xtd/internal/__iformatable_formatter.h
   include/xtd/internal/__iformatable_formatter
   include/xtd/internal/__natural_formatter.h
