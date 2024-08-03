@@ -7,6 +7,7 @@
 #include "../../argument_exception.h"
 #include "../../argument_out_of_range_exception.h"
 #include "../../box_integer.h"
+#include "../../is.h"
 #include "../../literals.h"
 #include "../../object.h"
 #include "../../ustring.h"
@@ -22,7 +23,7 @@ namespace xtd {
       /// @brief Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.
       /// ```cpp
       /// template<typename type_t>
-      /// class list : public xtd::object, xtd::collections::generic::ilist<type_t>
+      /// class list : public xtd::object, xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t>>
       /// ```
       /// @par Header
       /// ```cpp
@@ -61,7 +62,7 @@ namespace xtd {
       /// Finally, the xtd::collections::generic::list::clear method is used to remove all items from the list, and the xtd::collections::generic::list::capacity and xtd::collections::generic::list::count properties are displayed.
       /// @include generic_list2.cpp
       template<typename type_t>
-      class list : public object, public ilist<type_t> {
+      class list : public xtd::object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t>> {
       public:
         /// @name Public Aliases
         
@@ -491,8 +492,9 @@ namespace xtd {
           return items_.emplace_back(std::forward<args_t>(args)...);
         }
         
-        //bool equals(const object& other) const noexcept override {return dynamic_cast<const list*>(&other) && static_cast<const list&>(other).items_ == items_ &&  static_cast<const list&>(other).operation_number_ == operation_number_;}
-        
+        bool equals(const object& obj) const noexcept override {return is<list<value_type>>(obj) && equals(static_cast<const list<value_type>&>(obj));}
+        bool equals(const list& rhs) const noexcept override {return items_ == rhs.items_ && operation_number_ == rhs.operation_number_;}
+
         /// @brief Erases the specified elements from the container.
         /// @param pos The iterator to the element to remove.
         /// @return Iterator following the last removed element.
