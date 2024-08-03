@@ -11,7 +11,7 @@
 #include "internal/__date_time_formatter.h"
 #include "internal/__duration_formatter.h"
 #include "internal/__iformatable_formatter.h"
-#include "internal/__fixed_point_formatter.h"
+#include "internal/__floating_point_formatter.h"
 #include "internal/__natural_formatter.h"
 #include "internal/__numeric_formatter.h"
 #include "internal/__format_stringer.h"
@@ -207,7 +207,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::string to_string(const float& value, const std::string& fmt, const std::locale& loc) {return __fixed_point_formatter(fmt, value, loc);}
+  inline std::string to_string(const float& value, const std::string& fmt, const std::locale& loc) {return __floating_point_formatter(fmt, value, loc);}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -220,7 +220,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::string to_string(const double& value, const std::string& fmt, const std::locale& loc) {return __fixed_point_formatter(fmt, value, loc);}
+  inline std::string to_string(const double& value, const std::string& fmt, const std::locale& loc) {return __floating_point_formatter(fmt, value, loc);}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -233,7 +233,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::string to_string(const long double& value, const std::string& fmt, const std::locale& loc) {return __fixed_point_formatter(fmt, value, loc);}
+  inline std::string to_string(const long double& value, const std::string& fmt, const std::locale& loc) {return __floating_point_formatter(fmt, value, loc);}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -677,7 +677,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::wstring to_string(const float& value, const std::wstring& fmt, const std::locale& loc) {return __fixed_point_formatter(fmt, value, loc);}
+  inline std::wstring to_string(const float& value, const std::wstring& fmt, const std::locale& loc) {return __floating_point_formatter(fmt, value, loc);}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -690,7 +690,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::wstring to_string(const double& value, const std::wstring& fmt, const std::locale& loc) {return __fixed_point_formatter(fmt, value, loc);}
+  inline std::wstring to_string(const double& value, const std::wstring& fmt, const std::locale& loc) {return __floating_point_formatter(fmt, value, loc);}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -703,7 +703,7 @@ namespace xtd {
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
-  inline std::wstring to_string(const long double& value, const std::wstring& fmt, const std::locale& loc) {return __fixed_point_formatter(fmt, value, loc);}
+  inline std::wstring to_string(const long double& value, const std::wstring& fmt, const std::locale& loc) {return __floating_point_formatter(fmt, value, loc);}
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace

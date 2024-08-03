@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __fixed_point_formatter method.
+/// @brief Contains __floating_point_formatter method.
 #pragma once
 /// @cond
 #if !defined(__XTD_CORE_INTERNAL__)
@@ -17,7 +17,7 @@
 
 /// @cond
 template<typename char_t, typename value_t>
-inline std::basic_string<char_t> __fixed_point_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
+inline std::basic_string<char_t> __floating_point_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};
   

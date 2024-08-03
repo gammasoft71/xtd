@@ -8,7 +8,7 @@
 /// @endcond
 
 #include "__binary_formatter.h"
-#include "__fixed_point_formatter.h"
+#include "__floating_point_formatter.h"
 #include "__format_exception.h"
 #include "__sprintf.h"
 #include <algorithm>
@@ -47,7 +47,7 @@ inline std::basic_string<char_t> __numeric_formatter(const std::basic_string<cha
     case 'O': return __sprintf((fmt_str + char_t('o')).c_str(), precision, static_cast<long long>(value));
     case 'x':
     case 'X': return __sprintf((fmt_str + format[0]).c_str(), precision, static_cast<long long>(value));
-    default: return __fixed_point_formatter(format, static_cast<long double>(value), loc);
+    default: return __floating_point_formatter(format, static_cast<long double>(value), loc);
   }
 }
 /// @endcond
