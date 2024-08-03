@@ -1,5 +1,13 @@
 var NAVTREEINDEX83 =
 {
+"uint64_8h_source.html":[22,1,0,0,223],
+"uint64__object_8h.html":[22,1,0,0,224],
+"uint64__object_8h_source.html":[22,1,0,0,224],
+"uintptr_8h.html":[22,1,0,0,225],
+"uintptr_8h_source.html":[22,1,0,0,225],
+"uintptr__object_8h.html":[22,1,0,0,226],
+"uintptr__object_8h_source.html":[22,1,0,0,226],
+"ulong_8h.html":[22,1,0,0,227],
 "ulong_8h_source.html":[22,1,0,0,227],
 "ulong__object_8h.html":[22,1,0,0,228],
 "ulong__object_8h_source.html":[22,1,0,0,228],

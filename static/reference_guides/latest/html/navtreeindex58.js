@@ -1,5 +1,13 @@
 var NAVTREEINDEX58 =
 {
+"dash__style_8h_source.html":[22,2,0,0,0,1,3],
+"data__received__event__args_8h.html":[22,1,0,0,2,5],
+"data__received__event__args_8h_source.html":[22,1,0,0,2,5],
+"data__received__event__handler_8h.html":[22,1,0,0,2,6],
+"data__received__event__handler_8h_source.html":[22,1,0,0,2,6],
+"date__range__event__args_8h.html":[22,3,0,0,0,81],
+"date__range__event__args_8h_source.html":[22,3,0,0,0,81],
+"date__range__event__handler_8h.html":[22,3,0,0,0,82],
 "date__range__event__handler_8h_source.html":[22,3,0,0,0,82],
 "date__time_8h.html":[22,1,0,0,76],
 "date__time_8h_source.html":[22,1,0,0,76],
@@ -241,13 +249,5 @@ var NAVTREEINDEX58 =
 "drawing__2d_2pen__alignment_8h.html#a94f841a7e4babb28efbf3141a41aa793":[22,2,0,0,0,1,19,0],
 "drawing__2d_2pen__alignment_8h_source.html":[22,2,0,0,0,1,19],
 "drawing__2d_2pen__type_8h.html":[22,2,0,0,0,1,20],
-"drawing__2d_2pen__type_8h.html#a8f2eac64e55d33f8685bffcd08eca6a5":[22,2,0,0,0,1,20,0],
-"drawing__2d_2pen__type_8h_source.html":[22,2,0,0,0,1,20],
-"drawing__export_8h.html":[22,2,0,0,1],
-"drawing__export_8h_source.html":[22,2,0,0,1],
-"drive__info_8h.html":[22,1,0,0,4,5],
-"drive__info_8h_source.html":[22,1,0,0,4,5],
-"drive__not__found__exception_8h.html":[22,1,0,0,4,6],
-"drive__not__found__exception_8h_source.html":[22,1,0,0,4,6],
-"drive__type_8h.html":[22,1,0,0,4,7]
+"drawing__2d_2pen__type_8h.html#a8f2eac64e55d33f8685bffcd08eca6a5":[22,2,0,0,0,1,20,0]
 };
