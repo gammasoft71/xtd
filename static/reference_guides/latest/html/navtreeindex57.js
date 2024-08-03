@@ -1,5 +1,13 @@
 var NAVTREEINDEX57 =
 {
+"collection__valid_8h_source.html":[22,4,0,0,0,13],
+"collection_assert_8cpp-example.html":[23,638],
+"collection_assert_all_items_are_instances_of_8cpp-example.html":[23,639],
+"collection_assert_all_items_are_not_null_8cpp-example.html":[23,640],
+"collection_assert_all_items_are_unique_8cpp-example.html":[23,641],
+"collection_assert_are_equal_8cpp-example.html":[23,642],
+"collection_assert_are_equivalent_8cpp-example.html":[23,643],
+"collection_assert_are_not_equal_8cpp-example.html":[23,644],
 "collection_assert_are_not_equivalent_8cpp-example.html":[23,645],
 "collection_assert_contains_8cpp-example.html":[23,646],
 "collection_assert_does_not_contain_8cpp-example.html":[23,647],
@@ -241,13 +249,5 @@ var NAVTREEINDEX57 =
 "cursors_8h_source.html":[22,3,0,0,0,80],
 "cyan__colors_8h.html":[22,2,0,0,0,24],
 "cyan__colors_8h_source.html":[22,2,0,0,0,24],
-"dash__style_8h.html":[22,2,0,0,0,1,3],
-"dash__style_8h_source.html":[22,2,0,0,0,1,3],
-"data__received__event__args_8h.html":[22,1,0,0,2,5],
-"data__received__event__args_8h_source.html":[22,1,0,0,2,5],
-"data__received__event__handler_8h.html":[22,1,0,0,2,6],
-"data__received__event__handler_8h_source.html":[22,1,0,0,2,6],
-"date__range__event__args_8h.html":[22,3,0,0,0,81],
-"date__range__event__args_8h_source.html":[22,3,0,0,0,81],
-"date__range__event__handler_8h.html":[22,3,0,0,0,82]
+"dash__style_8h.html":[22,2,0,0,0,1,3]
 };

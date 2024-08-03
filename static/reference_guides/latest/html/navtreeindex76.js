@@ -1,5 +1,13 @@
 var NAVTREEINDEX76 =
 {
+"group__xtd__forms_gac06dd62f5da1fa2f0e7c3ff5bfa6c94b.html#ggac06dd62f5da1fa2f0e7c3ff5bfa6c94ba6995c373523132a1006975baf4079aa0":[1,0,2,296,2],
+"group__xtd__forms_gac06dd62f5da1fa2f0e7c3ff5bfa6c94b.html#ggac06dd62f5da1fa2f0e7c3ff5bfa6c94ba7fa3b767c460b54a2be4d49030b349c7":[1,0,2,296,0],
+"group__xtd__forms_gac06dd62f5da1fa2f0e7c3ff5bfa6c94b.html#ggac06dd62f5da1fa2f0e7c3ff5bfa6c94baa6105c0a611b41b08f1209506350279e":[1,0,2,296,1],
+"group__xtd__forms_gac206a1ada657839832d5298b75c1cc9c.html#gac206a1ada657839832d5298b75c1cc9c":[1,0,2,246],
+"group__xtd__forms_gac206a1ada657839832d5298b75c1cc9c.html#ggac206a1ada657839832d5298b75c1cc9ca46c48bec0d282018b9d167eef7711b2c":[1,0,2,246,3],
+"group__xtd__forms_gac206a1ada657839832d5298b75c1cc9c.html#ggac206a1ada657839832d5298b75c1cc9ca74e8333ad11685ff3bdae589c8f6e34d":[1,0,2,246,0],
+"group__xtd__forms_gac206a1ada657839832d5298b75c1cc9c.html#ggac206a1ada657839832d5298b75c1cc9ca7c4f29407893c334a6cb7a87bf045c0d":[1,0,2,246,2],
+"group__xtd__forms_gac206a1ada657839832d5298b75c1cc9c.html#ggac206a1ada657839832d5298b75c1cc9ca811882fecd5c7618d7099ebbd39ea254":[1,0,2,246,1],
 "group__xtd__forms_gac490ea79fddd26e2c8354e1e58701019.html#gac490ea79fddd26e2c8354e1e58701019":[1,0,2,272],
 "group__xtd__forms_gac490ea79fddd26e2c8354e1e58701019.html#ggac490ea79fddd26e2c8354e1e58701019a1d62d632e72cd1ad6f2ff2369d5d2c68":[1,0,2,272,4],
 "group__xtd__forms_gac490ea79fddd26e2c8354e1e58701019.html#ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5":[1,0,2,272,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX76 =
 "image_cur_8cpp-example.html":[23,318],
 "image_emf_8cpp-example.html":[23,319],
 "image_gif_8cpp-example.html":[23,320],
-"image_icns_8cpp-example.html":[23,321],
-"image_ico_8cpp-example.html":[23,322],
-"image_iif_8cpp-example.html":[23,323],
-"image_jpeg_8cpp-example.html":[23,324],
-"image_list_8cpp-example.html":[23,352],
-"image_pcx_8cpp-example.html":[23,325],
-"image_png_8cpp-example.html":[23,326],
-"image_pnm_8cpp-example.html":[23,327],
-"image_tga_8cpp-example.html":[23,328]
+"image_icns_8cpp-example.html":[23,321]
 };

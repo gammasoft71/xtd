@@ -1,5 +1,13 @@
 var NAVTREEINDEX77 =
 {
+"image_ico_8cpp-example.html":[23,322],
+"image_iif_8cpp-example.html":[23,323],
+"image_jpeg_8cpp-example.html":[23,324],
+"image_list_8cpp-example.html":[23,352],
+"image_pcx_8cpp-example.html":[23,325],
+"image_png_8cpp-example.html":[23,326],
+"image_pnm_8cpp-example.html":[23,327],
+"image_tga_8cpp-example.html":[23,328],
 "image_tiff_8cpp-example.html":[23,329],
 "image_wmf_8cpp-example.html":[23,330],
 "image_xpm_8cpp-example.html":[23,331],
@@ -10,8 +18,8 @@ var NAVTREEINDEX77 =
 "images_8h_source.html":[22,3,0,0,0,150],
 "imessage__filter_8h.html":[22,3,0,0,0,151],
 "imessage__filter_8h_source.html":[22,3,0,0,0,151],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#DrawingSubSection":[0,1,1],
 "index.html#ExamplesConsoleBuildAndRunSubsubsection":[0,3,0,0],
 "index.html#ExamplesConsoleOutputSubsubsection":[0,3,0,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX77 =
 "main4_8cpp-example.html":[23,195],
 "main5_8cpp-example.html":[23,196],
 "main_8cpp-example.html":[23,191],
-"main__menu_8h.html":[22,3,0,0,0,183],
-"main__menu_8h_source.html":[22,3,0,0,0,183],
-"main_menu_8cpp-example.html":[23,493],
-"main_menu_create_standard_items_8cpp-example.html":[23,542],
-"make__any__object_8h.html":[22,1,0,0,146],
-"make__any__object_8h_source.html":[22,1,0,0,146],
-"manual__reset__event_8h.html":[22,1,0,0,10,14],
-"manual__reset__event_8h_source.html":[22,1,0,0,10,14],
-"manual_reset_event_8cpp-example.html":[23,287]
+"main__menu_8h.html":[22,3,0,0,0,183]
 };
