@@ -15,6 +15,7 @@
 #include "__natural_formatter.h"
 #include "__sprintf.h"
 #include <algorithm>
+#include <cstring>
 #include <vector>
 
 /// @cond
