@@ -665,8 +665,8 @@ add_sources(
   include/xtd/internal/__enum_introspection
   include/xtd/internal/__equator.h
   include/xtd/internal/__equator
-  include/xtd/internal/__fixed_point_formatter.h
-  include/xtd/internal/__fixed_point_formatter
+  include/xtd/internal/__floating_point_formatter.h
+  include/xtd/internal/__floating_point_formatter
   include/xtd/internal/__format_exception.h
   include/xtd/internal/__format_exception
   include/xtd/internal/__format_information.h
