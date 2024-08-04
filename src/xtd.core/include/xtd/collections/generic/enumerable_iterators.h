@@ -66,7 +66,7 @@ namespace xtd {
           /// @parem end true to specify the end iterotator; otherwise false.
           iterator(enumerator<type_t> enumerator, bool end) : enumerator_(enumerator) {
             enumerator_.reset();
-            pos_ = enumerator_.move_next() == false || end == true ? std::numeric_limits<xtd::size>::max() : 0;
+            pos_ = end == true || enumerator_.move_next() == false ? std::numeric_limits<xtd::size>::max() : 0;
           }
           /// @}
 

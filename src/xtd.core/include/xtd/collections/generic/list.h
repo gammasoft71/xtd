@@ -539,7 +539,7 @@ namespace xtd {
             const value_type& current() const override {
               if (version_ != items_.version_) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
               thread_local auto item = value_type {};
-              item = static_cast<value_type>(items_[index_]);
+              item = index_ == xtd::box_integer<xtd::size>::max_value ? value_type {} : static_cast<value_type>(items_[index_]);
               return item;
             }
             bool move_next() override {
