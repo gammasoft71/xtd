@@ -19,8 +19,6 @@ public:
   bool equals(const part& other) const noexcept override {return part_id == other.part_id;}
   
   size get_hash_code() const noexcept override {return object::get_hash_code();}
-
-  // Should also override == and != operators.
 };
 
 class example {
