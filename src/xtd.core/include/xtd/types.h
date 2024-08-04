@@ -2,7 +2,7 @@
 /// @brief Contains xtd fundamental types.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "bool.h"
+#include "boolean.h"
 #include "byte.h"
 #include "char.h"
 #include "char16.h"
