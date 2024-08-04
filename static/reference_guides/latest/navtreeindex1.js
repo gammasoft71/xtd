@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"_images_appearances_page.html#StatusContext":[14,9],
+"_images_appearances_page.html#xtdContext":[14,10],
 "_license_page.html":[15],
 "_menus_and_toolbars_appearances_page.html":[16],
 "_system_colors_page.html":[17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "beep_8h_source.html":[22,1,0,0,32],
 "binary__reader_8h.html":[22,1,0,0,4,0],
 "binary__reader_8h_source.html":[22,1,0,0,4,0],
-"binary__writer_8h.html":[22,1,0,0,4,1],
-"binary__writer_8h_source.html":[22,1,0,0,4,1],
-"binary_reader2_8cpp-example.html":[23,164]
+"binary__writer_8h.html":[22,1,0,0,4,1]
 };

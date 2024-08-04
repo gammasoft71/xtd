@@ -241,6 +241,9 @@ var hierarchy =
       [ "xtd::iequatable< box< type_t > >", "classxtd_1_1iequatable.html", [
         [ "xtd::box< type_t >", "classxtd_1_1box.html", null ]
       ] ],
+      [ "xtd::iequatable< xtd::collections::generic::list< type_t > >", "classxtd_1_1iequatable.html", [
+        [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ]
+      ] ],
       [ "xtd::iequatable< file_settings >", "classxtd_1_1iequatable.html", [
         [ "xtd::configuration::file_settings", "classxtd_1_1configuration_1_1file__settings.html", null ]
       ] ],
@@ -640,6 +643,7 @@ var hierarchy =
     [ "xtd::equality_operators< uri, iequatable< uri > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< version, iequatable< version > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::equality_operators< vertical_control_layout_style, iequatable< vertical_control_layout_style > >", "classxtd_1_1equality__operators.html", null ],
+    [ "xtd::equality_operators< xtd::collections::generic::list< type_t >, iequatable< xtd::collections::generic::list< type_t > > >", "classxtd_1_1equality__operators.html", null ],
     [ "xtd::collections::generic::helpers::equator< key_t >", "structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html", null ],
     [ "event_handler", null, [
       [ "xtd::event< xtd::forms::application_context, event_handler >", "classxtd_1_1event.html", null ],
@@ -781,6 +785,7 @@ var hierarchy =
       [ "xtd::icomparable< version >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::iequatable< any_object >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< box< type_t > >", "classxtd_1_1iequatable.html", null ],
+      [ "xtd::iequatable< xtd::collections::generic::list< type_t > >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< file_settings >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< console_key_info >", "classxtd_1_1iequatable.html", null ],
       [ "xtd::iequatable< date_time >", "classxtd_1_1iequatable.html", null ],
