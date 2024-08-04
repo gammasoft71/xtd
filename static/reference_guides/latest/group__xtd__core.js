@@ -214,7 +214,7 @@ var group__xtd__core =
       [ "list", "classxtd_1_1collections_1_1generic_1_1list_ad9a2466eae6fedb211b816e8934c32aa.html#ad9a2466eae6fedb211b816e8934c32aa", null ],
       [ "list", "classxtd_1_1collections_1_1generic_1_1list_a6e2adb2841645a57b6831a2dad0adabb.html#a6e2adb2841645a57b6831a2dad0adabb", null ],
       [ "list", "classxtd_1_1collections_1_1generic_1_1list_a69293cc12ef29f1daeb7b1e7a7077b55.html#a69293cc12ef29f1daeb7b1e7a7077b55", null ],
-      [ "list", "classxtd_1_1collections_1_1generic_1_1list_a00e9da0820cef6abdc5b2cc5c9b01123.html#a00e9da0820cef6abdc5b2cc5c9b01123", null ],
+      [ "list", "classxtd_1_1collections_1_1generic_1_1list_a7467a8f90e46cab559d83c43f1894f10.html#a7467a8f90e46cab559d83c43f1894f10", null ],
       [ "list", "classxtd_1_1collections_1_1generic_1_1list_a5a043acbdf64ac0164a3a87ce8e1d438.html#a5a043acbdf64ac0164a3a87ce8e1d438", null ],
       [ "list", "classxtd_1_1collections_1_1generic_1_1list_ac9ed2884ed190f469f155ced6e2e6614.html#ac9ed2884ed190f469f155ced6e2e6614", null ],
       [ "list", "classxtd_1_1collections_1_1generic_1_1list_ac04d6f1545b5e8038dd21bed83f6db93.html#ac04d6f1545b5e8038dd21bed83f6db93", null ],
