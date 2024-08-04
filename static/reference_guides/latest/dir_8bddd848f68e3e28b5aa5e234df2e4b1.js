@@ -35,7 +35,7 @@ var dir_8bddd848f68e3e28b5aa5e234df2e4b1 =
     [ "beep.h", "beep_8h.html", null ],
     [ "bit_converter.h", "bit__converter_8h.html", null ],
     [ "block_scope.h", "block__scope_8h.html", "block__scope_8h" ],
-    [ "bool.h", "bool_8h.html", "bool_8h" ],
+    [ "boolean.h", "boolean_8h.html", "boolean_8h" ],
     [ "boolean_object.h", "boolean__object_8h.html", "boolean__object_8h" ],
     [ "box.h", "box_8h.html", null ],
     [ "box_char.h", "box__char_8h.html", null ],

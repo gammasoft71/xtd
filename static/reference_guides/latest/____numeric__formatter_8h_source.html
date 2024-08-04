@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('____numeric__formatter_8h_source.html'
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="____binary__formatter_8h.html">__binary_formatter.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="____fixed__point__formatter_8h.html">__fixed_point_formatter.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="____floating__point__formatter_8h.html">__floating_point_formatter.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="____format__exception_8h.html">__format_exception.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="____sprintf_8h.html">__sprintf.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
@@ -147,11 +147,11 @@ $(document).ready(function(){initNavTree('____numeric__formatter_8h_source.html'
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;O&#39;</span>: <span class="keywordflow">return</span> __sprintf((fmt_str + char_t(<span class="charliteral">&#39;o&#39;</span>)).c_str(), precision, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>(value));</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;x&#39;</span>:</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;X&#39;</span>: <span class="keywordflow">return</span> __sprintf((fmt_str + format[0]).c_str(), precision, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>(value));</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">default</span>: <span class="keywordflow">return</span> __fixed_point_formatter(format, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">double</span><span class="keyword">&gt;</span>(value), loc);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">default</span>: <span class="keywordflow">return</span> __floating_point_formatter(format, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">double</span><span class="keyword">&gt;</span>(value), loc);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
 <div class="ttc" id="a____binary__formatter_8h_html"><div class="ttname"><a href="____binary__formatter_8h.html">__binary_formatter.h</a></div><div class="ttdoc">Contains __binary_formatter method.</div></div>
-<div class="ttc" id="a____fixed__point__formatter_8h_html"><div class="ttname"><a href="____fixed__point__formatter_8h.html">__fixed_point_formatter.h</a></div><div class="ttdoc">Contains __fixed_point_formatter method.</div></div>
+<div class="ttc" id="a____floating__point__formatter_8h_html"><div class="ttname"><a href="____floating__point__formatter_8h.html">__floating_point_formatter.h</a></div><div class="ttdoc">Contains __floating_point_formatter method.</div></div>
 <div class="ttc" id="a____format__exception_8h_html"><div class="ttname"><a href="____format__exception_8h.html">__format_exception.h</a></div><div class="ttdoc">Contains throw format exception method.</div></div>
 <div class="ttc" id="a____sprintf_8h_html"><div class="ttname"><a href="____sprintf_8h.html">__sprintf.h</a></div><div class="ttdoc">Contains __format method.</div></div>
 <div class="ttc" id="agroup__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div></div>
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('____numeric__formatter_8h_source.html'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="dir_618e153bd4f02720ed2e807a9fe886a0.html">internal</a></li><li class="navelem"><a class="el" href="____numeric__formatter_8h.html">__numeric_formatter.h</a></li>
-		<li class="footer">Generated on Fri Aug 2 2024 19:06:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Sun Aug 4 2024 14:27:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

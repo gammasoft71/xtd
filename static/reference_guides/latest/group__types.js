@@ -83,7 +83,7 @@ var group__types =
       [ "to_string", "classxtd_1_1type__object_a636cea8335f8209325da9f095adc6033.html#a636cea8335f8209325da9f095adc6033", null ],
       [ "equals", "classxtd_1_1type__object_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ]
     ] ],
-    [ "xtd::bool_", "group__types_ga092071ef1d950e637cea6709a6017fd0.html#ga092071ef1d950e637cea6709a6017fd0", null ],
+    [ "xtd::boolean", "group__types_gab7230dbe491f8bcef5e5f8bdaba5e27f.html#gab7230dbe491f8bcef5e5f8bdaba5e27f", null ],
     [ "xtd::byte", "group__types_gabb9d3031d62e3725b4265c7e5d2a98e1.html#gabb9d3031d62e3725b4265c7e5d2a98e1", null ],
     [ "xtd::byte_object", "group__types_ga94831211c5798071ff44bbe214d093ca.html#ga94831211c5798071ff44bbe214d093ca", null ],
     [ "xtd::char_", "group__types_ga025f760e2ae1e3355f64174f10671484.html#ga025f760e2ae1e3355f64174f10671484", null ],

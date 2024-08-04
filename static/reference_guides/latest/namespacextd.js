@@ -251,7 +251,7 @@ var namespacextd =
     [ "action", "group__xtd__core_ga53c721aac682a7ccf19ee17d92280e31.html#ga53c721aac682a7ccf19ee17d92280e31", null ],
     [ "array", "group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a", null ],
     [ "async_result", "group__xtd__core_ga1bc34012935a93e10b5dba765c8d0d5a.html#ga1bc34012935a93e10b5dba765c8d0d5a", null ],
-    [ "bool_", "group__types_ga092071ef1d950e637cea6709a6017fd0.html#ga092071ef1d950e637cea6709a6017fd0", null ],
+    [ "boolean", "group__types_gab7230dbe491f8bcef5e5f8bdaba5e27f.html#gab7230dbe491f8bcef5e5f8bdaba5e27f", null ],
     [ "boolean_object", "group__system_ga020fbeceaf011505de3ac30168375664.html#ga020fbeceaf011505de3ac30168375664", null ],
     [ "byte", "group__types_gabb9d3031d62e3725b4265c7e5d2a98e1.html#gabb9d3031d62e3725b4265c7e5d2a98e1", null ],
     [ "byte_object", "group__types_ga94831211c5798071ff44bbe214d093ca.html#ga94831211c5798071ff44bbe214d093ca", null ],
