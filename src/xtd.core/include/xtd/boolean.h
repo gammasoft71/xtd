@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::bool_ type.
+/// @brief Contains xtd::boolean type.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
@@ -12,7 +12,7 @@ namespace xtd {
   /// @brief Represents a boolean.
   /// @par Header
   /// ```cpp
-  /// #include <xtd/bool>
+  /// #include <xtd/boolean>
   /// ```
   /// @par Namespace
   /// xtd
@@ -20,6 +20,6 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
-  using bool_ = bool;
+  using boolean = bool;
   /// @}
 }

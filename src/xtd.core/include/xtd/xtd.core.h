@@ -232,7 +232,7 @@
 #include "beep.h"
 #include "bit_converter.h"
 #include "block_scope.h"
-#include "bool.h"
+#include "boolean.h"
 #include "boolean_object.h"
 #include "box.h"
 #include "box_char.h"
