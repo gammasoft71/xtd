@@ -7,6 +7,7 @@
 #include "../../argument_exception.h"
 #include "../../argument_out_of_range_exception.h"
 #include "../../box_integer.h"
+#include "../../invalid_operation_exception.h"
 #include "../../is.h"
 #include "../../literals.h"
 #include "../../object.h"
@@ -181,14 +182,14 @@ namespace xtd {
         
         /// @brief Move constructor with specified list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
-        list(list&& other) = default;
+        list(list&& other) : items_(std::move(other.items_)), version_(std::move(other.version_)) {other.version_= 0;}
         /// @brief Move constructor with specified base type list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
-        list(base_type&& other) : items_(other) {}
+        list(base_type&& other) : items_(std::move(other)) {}
         /// @brief Move constructor with specified list, and allocator.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(list&& other, const allocator_type& alloc) : items_(other.items_, alloc), operation_number_{std::move(other.operation_number_)} {}
+        list(list&& other, const allocator_type& alloc) : items_(other.items_, alloc), version_{std::move(other.version_)} {}
         /// @brief Move constructor with specified base tyoe list, and allocator.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
         /// @param alloc The allocator to use for all memory allocations of this container.
@@ -376,7 +377,7 @@ namespace xtd {
         /// @param count The new size of the container.
         /// @param value The value to initialize elements of the container with.
         void assign(size_type count, const type_t& value) {
-          ++operation_number_;
+          ++version_;
           items_.assign(count, value);
         }
         
@@ -386,14 +387,14 @@ namespace xtd {
         /// @warning The behavior is undefined if either argument is an iterator this current instance.
         template<typename input_iterator_t>
         void assign(input_iterator_t first, input_iterator_t last) {
-          ++operation_number_;
+          ++version_;
           items_.assign(first, last);
         }
         
         /// @brief Replaces the contents with the elements from the initializer list items_.
         /// @param items the initializer list to copy the values from.
         virtual void assign(std::initializer_list<type_t> items) {
-          ++operation_number_;
+          ++version_;
           clear();
           for (auto item : items)
             items_.push_back(item);
@@ -419,7 +420,7 @@ namespace xtd {
         }
         
         void clear() override {
-          ++operation_number_;
+          ++version_;
           items_.clear();
         }
         
@@ -478,7 +479,7 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         template<typename... args_t>
         iterator emplace(const_iterator pos, args_t&&... args) {
-          ++operation_number_;
+          ++version_;
           return items_.eplace(std::forward<args_t>(args)...);
         }
         
@@ -488,12 +489,12 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
         template<typename... args_t>
         reference emplace_back(args_t&&... args) {
-          ++operation_number_;
+          ++version_;
           return items_.emplace_back(std::forward<args_t>(args)...);
         }
         
         bool equals(const object& obj) const noexcept override {return is<list<value_type>>(obj) && equals(static_cast<const list<value_type>&>(obj));}
-        bool equals(const list& rhs) const noexcept override {return items_ == rhs.items_ && operation_number_ == rhs.operation_number_;}
+        bool equals(const list& rhs) const noexcept override {return items_ == rhs.items_ && version_ == rhs.version_;}
 
         /// @brief Erases the specified elements from the container.
         /// @param pos The iterator to the element to remove.
@@ -503,7 +504,7 @@ namespace xtd {
         /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::list::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos.
         /// @remarks If `pos` refers to the last element, then thextd::collections::generic::list:: end() iterator is returned.
         virtual iterator erase(const_iterator pos) {
-          ++operation_number_;
+          ++version_;
           return to_iterator(items_.erase(to_base_type_iterator(pos)));
         }
         /// @brief Erases the specified elements from the container.
@@ -515,7 +516,7 @@ namespace xtd {
         /// @remarks If `last == end()` prior to removal, then the updated xtd::collections::generic::list::end() iterator is returned.
         /// @remarks If [`first`, `last`) is an empty range, then `last` is returned.
         virtual iterator erase(const_iterator first, const_iterator last) {
-          ++operation_number_;
+          ++version_;
           return to_iterator(items_.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
         }
         
@@ -525,6 +526,7 @@ namespace xtd {
         
         /// @brief Returns the underlying base type.
         /// @return The underlying base type.
+        /// @warning Don't manipulate the xtd::collections::generic::list::base_type yourself, otherwise the expected result may be undefined.
         virtual base_type& get_base_type() noexcept {return items_;}
         /// @brief Returns the underlying base type.
         /// @return The underlying base type.
@@ -533,20 +535,25 @@ namespace xtd {
         enumerator<value_type> get_enumerator() const noexcept override {
           class list_enumerator : public ienumerator<value_type> {
           public:
-            explicit list_enumerator(const base_type& items) : items_(items) {}
+            explicit list_enumerator(const list& items, xtd::int64 version) : items_(items), version_(version) {}
             const value_type& current() const override {
+              if (version_ != items_.version_) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
               thread_local auto item = value_type {};
               item = static_cast<value_type>(items_[index_]);
               return item;
             }
-            bool move_next() override {return ++index_ < items_.size();}
+            bool move_next() override {
+              if (version_ != items_.version_) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
+              return ++index_ < items_.count();
+            }
             void reset() override {index_ = xtd::box_integer<xtd::size>::max_value;}
             
           protected:
-            const base_type& items_;
+            const list& items_;
             xtd::size index_ = xtd::box_integer<xtd::size>::max_value;
+            xtd::int64 version_ = 0;
           };
-          return {new_ptr<list_enumerator>(items_)};
+          return {new_ptr<list_enumerator>(*this, version_)};
         }
         
         /// @brief Determines the index of a specific item in the List.xtd::collections::generic::list <type_t>.
@@ -586,7 +593,7 @@ namespace xtd {
         /// @remarks Inserts `value` before pos.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, const type_t& value) {
-          ++operation_number_;
+          ++version_;
           return to_iterator(items_.insert(to_base_type_iterator(pos), value));
         }
         /// @brief Inserts elements at the specified location in the container.
@@ -596,7 +603,7 @@ namespace xtd {
         /// @remarks Inserts `value` before pos.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, const type_t&& value) {
-          ++operation_number_;
+          ++version_;
           return to_iterator(items_.insert(to_base_type_iterator(pos), value));
         }
         /// @brief Inserts elements at the specified location in the container.
@@ -607,7 +614,7 @@ namespace xtd {
         /// @remarks Iterator pointing to the first element inserted, or `pos` if `count == 0`.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, size_type count, const type_t& value) {
-          ++operation_number_;
+          ++version_;
           return to_iterator(items_.insert(to_base_type_iterator(pos), count, value));
         }
         /// @brief Inserts elements at the specified location in the container.
@@ -619,7 +626,7 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         template<typename input_iterator_t>
         iterator insert(const_iterator pos, input_iterator_t first, input_iterator_t last) {
-          ++operation_number_;
+          ++version_;
           return items_.insert(pos, first, last);
         }
         /// @brief Inserts elements at the specified location in the container.
@@ -629,7 +636,7 @@ namespace xtd {
         /// @remarks Inserts `value` before pos.
         /// @remarks Inserts elements from initializer list `items` before `pos`.
         virtual iterator insert(const_iterator pos, const std::initializer_list<type_t>& items) {
-          ++operation_number_;
+          ++version_;
           auto result = iterator {};
           auto base_pos = to_base_type_iterator(pos);
           for (auto item : items)
@@ -643,7 +650,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::collections::generic::list::count.
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         void insert(xtd::size index, const type_t& value) override {
-          ++operation_number_;
+          ++version_;
           if (index >= count()) throw xtd::argument_out_of_range_exception {csf_};
           items_.insert(items_.begin() + index, value);
         }
@@ -652,7 +659,7 @@ namespace xtd {
         /// @remarks Calling pop_back on an empty container results in undefined behavior.
         /// @remarks Iterators (including the xtd::collections::generic::list::end() iterator) and references to the last element are invalidated.
         virtual void pop_back() {
-          ++operation_number_;
+          ++version_;
           items_.pop_back();
         }
         
@@ -661,7 +668,7 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
         /// @remarks The new element is initialized as a copy of `value`.
         virtual void push_back(const type_t& value) {
-          ++operation_number_;
+          ++version_;
           items_.push_back(value);
         }
         /// @brief Appends the given element value to the end of the container.
@@ -669,7 +676,7 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
         /// @remarks `value` is moved into the new element.
         virtual void push_back(type_t&& value) {
-          ++operation_number_;
+          ++version_;
           items_.push_back(value);
         }
         
@@ -691,7 +698,7 @@ namespace xtd {
         void remove_at(xtd::size index) override {
           if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
 
-          ++operation_number_;
+          ++version_;
           if (index == count() - 1) pop_back();
           else items_.erase(items_.begin() + index);
         }
@@ -701,7 +708,7 @@ namespace xtd {
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
         virtual void resize(size_type count) {
-          ++operation_number_;
+          ++version_;
           items_.resize(count);
         }
         /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
@@ -710,7 +717,7 @@ namespace xtd {
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional copies of `value` are appended.
         virtual void resize(size_type count, const value_type& value) {
-          ++operation_number_;
+          ++version_;
           items_.resize(count, value);
         }
 
@@ -722,7 +729,7 @@ namespace xtd {
         /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
         /// @remarks All iterators and references remain valid. The xtd::collections::generic::list::end() iterator is invalidated.
         virtual void swap(list& other) noexcept {
-          ++operation_number_;
+          ++version_;
           items_.swap(other.items_);
         }
 
@@ -769,7 +776,7 @@ namespace xtd {
         /// @param other Another base type container to use as data source.
         /// @return This current instance.
         list& operator =(const list&& other) noexcept {
-          operation_number_ = std::move(other.operation_number_);
+          version_ = std::move(other.version_);
           items_ = std::move(other.items_);
           return *this;
         }
@@ -777,7 +784,7 @@ namespace xtd {
         /// @param items Initializer list to use as data source
         /// @return This current instance.
         list& operator =(std::initializer_list<type_t>& items) {
-          operation_number_ = 0;
+          version_ = 0;
           items_ = items;
           return *this;
         }
@@ -810,12 +817,14 @@ namespace xtd {
         /// @}
         
       private:
-        base_type::iterator to_base_type_iterator(iterator value) {return items_.begin() + (value - begin());}
-        iterator to_iterator(base_type::iterator value) {return begin() + (value - items_.begin());}
+        base_type::iterator to_base_type_iterator(const iterator& value) const noexcept {return items_.begin() + (value - begin());}
+        iterator to_iterator(const base_type::iterator& value) const noexcept {return begin() + (value - items_.begin());}
+        
         base_type items_;
-        xtd::int64 operation_number_ = 0;
+        xtd::int64 version_ = 0;
         xtd::object sync_root_;
       };
     }
+    
   }
 }
