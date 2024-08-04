@@ -1,6 +1,12 @@
 /// @file
 /// @brief Contains dark_mode methods
 /// @remarks Code from https://github.com/ysc3839/win32-darkmode
+#if defined(_WIN32)
+#define NOMINMAX
+#include <Windows.h>
+#include <Uxtheme.h>
+#endif
+
 #define TRACE
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
@@ -11,10 +17,6 @@
 using namespace xtd;
 
 #if defined(_WIN32)
-#define NOMINMAX
-#include <Windows.h>
-#include <Uxtheme.h>
-
 namespace {
   template <typename T, typename T1, typename T2>
   constexpr T RVA2VA(T1 base, T2 rva) {
