@@ -817,8 +817,8 @@ namespace xtd {
         /// @}
         
       private:
-        base_type::iterator to_base_type_iterator(const iterator& value) const noexcept {return items_.begin() + (value - begin());}
-        iterator to_iterator(const base_type::iterator& value) const noexcept {return begin() + (value - items_.begin());}
+        base_type::iterator to_base_type_iterator(iterator value) noexcept {return items_.begin() + (value - begin());}
+        iterator to_iterator(base_type::iterator value) noexcept {return begin() + (value - items_.begin());}
         
         base_type items_;
         xtd::int64 version_ = 0;
