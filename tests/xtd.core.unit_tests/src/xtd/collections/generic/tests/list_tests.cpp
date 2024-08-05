@@ -157,10 +157,90 @@ namespace xtd::collections::generic::tests {
       auto items = list {84, 42, 21};
       assert::throws<argument_out_of_range_exception>([&] {*items.cend();}, csf_);
     }
+    
+    void test_method_(count) {
+      auto items = list<int> {};
+      assert::is_zero(items.count(), csf_);
+      items.push_back(84);
+      items.push_back(42);
+      items.push_back(21);
+      assert::are_equal(3_z, items.count(), csf_);
+      items.resize(50);
+      assert::are_equal(50_z, items.count(), csf_);
+    }
 
+    void test_method_(crbegin) {
+      auto items = list {84, 42, 21};
+      assert::are_equal(21, *items.crbegin(), csf_);
+    }
+    
+    void test_method_(crend) {
+      auto items = list {84, 42, 21};
+      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
+      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
+      //assert::throws<argument_out_of_range_exception>([&] {*items.crend();}, csf_);
+    }
+    
+    void test_method_(data) {
+      auto items = list {84, 42, 21};
+      
+      auto ptr = items.data();
+      assert::are_equal(84, *ptr, csf_);
+      assert::are_equal(42, *(ptr + 1), csf_);
+      assert::are_equal(21, *(ptr + 2), csf_);
+      
+      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
+      //assert::are_equal(0, *(ptr + 3), csf_);
+      
+      *(ptr) = 63;
+      *(ptr + 1) = 31;
+      *(ptr + 2) = 10;
+      
+      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
+      //*(ptr + 3) = 6;
+      
+      collection_assert::are_equal({63, 31, 10}, items, csf_);
+
+    }
+
+    void test_method_(empty) {
+      assert::is_true(list<int> {}.empty(), csf_);
+      assert::is_false(list<int> {42}.empty(), csf_);
+
+      auto items = list<int> {};
+      assert::is_true(items.empty(), csf_);
+      items.capacity(42);
+      assert::is_true(items.empty(), csf_);
+      items.resize(1);
+      assert::is_false(items.empty(), csf_);
+      items.resize(0);
+      assert::is_true(items.empty(), csf_);
+      items.push_back(42);
+      assert::is_false(items.empty(), csf_);
+    }
+    
     void test_method_(end) {
       auto items = list {84, 42, 21};
       assert::throws<argument_out_of_range_exception>([&] {*items.end();}, csf_);
+    }
+    
+    void test_method_(front) {
+      auto items = list {84, 42, 21};
+      assert::are_equal(84, items.front(), csf_);
+
+      auto emtpy_items = list<int> {};
+      assert::throws<argument_out_of_range_exception>([&] {emtpy_items.front();}, csf_);
+    }
+
+    void test_method_(size) {
+      auto items = list<int> {};
+      assert::is_zero(items.size(), csf_);
+      items.push_back(84);
+      items.push_back(42);
+      items.push_back(21);
+      assert::are_equal(3_z, items.size(), csf_);
+      items.resize(50);
+      assert::are_equal(50_z, items.size(), csf_);
     }
   };
 }
