@@ -306,6 +306,15 @@ namespace xtd {
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
         const_reverse_iterator crend() const noexcept {return items_.crend();}
         
+        /// @brief Returns pointer to the underlying array serving as element storage.
+        /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
+        /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
+        virtual pointer data() noexcept {return (pointer)items_.data();}
+        /// @brief Returns pointer to the underlying array serving as element storage.
+        /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
+        /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
+        virtual const_pointer data() const noexcept {return (pointer)items_.data();}
+
         /// @brief Checks if the container has no elements, i.e. whether xtd::collections::generic::list::begin() == xtd::collections::generic::list::end().
         /// @return true if the container is empty, false otherwise.
         virtual bool empty() const noexcept {return items_.empty();}
@@ -316,15 +325,6 @@ namespace xtd {
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
         iterator end() noexcept override {return ienumerable<value_type>::end();}
-        
-        /// @brief Returns pointer to the underlying array serving as element storage.
-        /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
-        /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        virtual pointer data() noexcept {return (pointer)items_.data();}
-        /// @brief Returns pointer to the underlying array serving as element storage.
-        /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
-        /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        virtual const_pointer data() const noexcept {return (pointer)items_.data();}
         
         /// @brief Returns a reference to the first element in the container.
         /// @return Reference to the first element.
