@@ -582,7 +582,7 @@ namespace xtd {
           if (index + count > this->count()) throw xtd::argument_out_of_range_exception {csf_};
 
           for (auto i = index; i < index + count; ++i)
-            if (items_[i] == value) return i;
+            if ((*this)[i] == value) return i;
           return npos;
         }
 
@@ -682,11 +682,10 @@ namespace xtd {
         
         bool remove(const type_t& item) override {
           if (count() == 0)  return false;
-          for (typename base_type::iterator it = items_.begin(); it != items_.end() ; it++) {
-            if (*it == item) {
-              items_.erase(it);
-              return true;
-            }
+          for (auto iterator = begin(); iterator != end(); ++iterator) {
+            if (*iterator != item) continue;
+            items_.erase(to_base_type_iterator(iterator));
+            return true;
           }
           return false;
         }
@@ -696,7 +695,7 @@ namespace xtd {
         /// @return None.
         /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than Count.
         void remove_at(xtd::size index) override {
-          if (index > count()) throw xtd::argument_out_of_range_exception {csf_};
+          if (index >= count()) throw xtd::argument_out_of_range_exception {csf_};
 
           ++version_;
           if (index == count() - 1) pop_back();
