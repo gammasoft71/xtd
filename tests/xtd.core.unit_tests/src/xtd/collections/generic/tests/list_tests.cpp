@@ -155,7 +155,12 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(cend) {
       auto items = list {84, 42, 21};
-      assert::are_equal(0, *items.cend(), csf_);
+      assert::throws<argument_out_of_range_exception>([&] {*items.cend();}, csf_);
+    }
+
+    void test_method_(end) {
+      auto items = list {84, 42, 21};
+      assert::throws<argument_out_of_range_exception>([&] {*items.end();}, csf_);
     }
   };
 }
