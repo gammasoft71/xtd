@@ -202,11 +202,11 @@ namespace xtd {
         /// @brief Returns a reference to the last element in the container.
         /// @return Reference to the first element.
         /// @remarks Calling front on an empty container causes undefined behavior.
-        virtual reference back() {return (*this)[count() - 1];}
+        virtual reference back() {return at(count() - 1);}
         /// @brief Returns a reference to the last element in the container.
         /// @return Reference to the first element.
         /// @remarks Calling front on an empty container causes undefined behavior.
-        virtual const_reference back() const {return (*this)[count() - 1];}
+        virtual const_reference back() const {return at(count() - 1);}
         
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
@@ -214,7 +214,7 @@ namespace xtd {
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
         iterator begin() noexcept override {return ienumerable<value_type>::begin();}
-
+        
         /// @brief Gets the total number of elements the internal data structure can hold without resizing.
         /// @return Capacity of the currently allocated storage.
         /// @exceptions xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
@@ -262,9 +262,9 @@ namespace xtd {
         /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
         virtual void capacity(size_type value) {
           if (value < count()) throw argument_out_of_range_exception {csf_};
-          items_.reserve(value);
+          reserve(value);
         }
-
+        
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
         const_iterator cbegin() const noexcept override {return ienumerable<value_type>::cbegin();}
@@ -272,7 +272,7 @@ namespace xtd {
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
         const_iterator cend() const noexcept override {return ienumerable<value_type>::cend();}
-
+        
         /// @brief Gets the number of elements contained in the xtd::collections::generic::list <type_t>.
         /// @return The number of elements contained in the xtd::collections::generic::list <type_t>.
         /// @par Examples
@@ -294,7 +294,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list::capacity is always greater than or equal to xtd::collections::generic::list::count. If xtd::collections::generic::list::count exceeds xtd::collections::generic::list::capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
         /// @remarks If the capacity is significantly larger than the count and you want to reduce the memory used by the xtd::collections::generic::list <type_t>, you can decrease capacity by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly to a lower value. When the value of xtd::collections::generic::list::capacity is set explicitly, the internal array is also reallocated to accommodate the specified capacity, and all the elements are copied.
         /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
-        xtd::size count() const noexcept override {return items_.size();}
+        xtd::size count() const noexcept override {return size();}
         
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
@@ -305,18 +305,18 @@ namespace xtd {
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
         const_reverse_iterator crend() const noexcept {return items_.crend();}
-
+        
         /// @brief Checks if the container has no elements, i.e. whether xtd::collections::generic::list::begin() == xtd::collections::generic::list::end().
         /// @return true if the container is empty, false otherwise.
         virtual bool empty() const noexcept {return items_.empty();}
-
+        
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
         const_iterator end() const noexcept override {return ienumerable<value_type>::end();}
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
         iterator end() noexcept override {return ienumerable<value_type>::end();}
-
+        
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
@@ -324,16 +324,16 @@ namespace xtd {
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        virtual const_pointer data() const noexcept {return (const_pointer)items_.data();}
+        virtual const_pointer data() const noexcept {return (pointer)items_.data();}
         
         /// @brief Returns a reference to the first element in the container.
         /// @return Reference to the first element.
         /// @remarks Calling front on an empty container causes undefined behavior.
-        virtual reference front() {return (*this)[0];}
+        virtual reference front() {return at(0);}
         /// @brief Returns a reference to the first element in the container.
         /// @return Reference to the first element.
         /// @remarks Calling front on an empty container causes undefined behavior.
-        virtual const_reference front() const {return (*this)[0];}
+        virtual const_reference front() const {return at(0);}
         
         bool is_fixed_size() const noexcept override {return false;}
         bool is_read_only() const noexcept override {return false;}
@@ -360,18 +360,25 @@ namespace xtd {
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
         const_reverse_iterator rend() const noexcept {return items_.rend();}
-
+        
+        /// @brief Increase the capacity of the vector (the total number of elements that the vector can hold without requiring reallocation) to a value that's greater or equal to `new_cap`. If new_cap is greater than the current capacity(), new storage is allocated, otherwise the function does nothing.
+        /// @param new_cap The new capacity of the vector, in number of elements.
+        /// @remarks xtd::collections::generic::list::reserve does not change the size of the vector.
+        /// @remarks If `new_cap` is greater than xtd::collections::generic::list::capacity property, all iterators, including the xtd::collections::generic::list::end iterator, and all references to the elements are invalidated; otherwise, no iterators or references are invalidated.
+        /// @remarks After a call to xtd::collections::generic::list::reserve, insertions will not trigger reallocation unless the insertion would make the size of the vector greater than the value of xtd::collections::generic::list::capacity.
+        virtual void reserve(size_type new_cap) {items_.reserve(new_cap);}
+        
         /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()).
         /// @return The number of elements in the container.
         virtual size_type size() const noexcept {return items_.size();}
-
+        
         const xtd::object& sync_root() const noexcept override {return sync_root_;}
         /// @}
         
         /// @name Public Methods
         
         /// @{
-        void add(const type_t& item) override {items_.push_back(item);}
+        void add(const type_t& item) override {push_back(item);}
         
         /// @brief Replaces the contents with count copies of value value.
         /// @param count The new size of the container.
@@ -394,10 +401,9 @@ namespace xtd {
         /// @brief Replaces the contents with the elements from the initializer list items_.
         /// @param items the initializer list to copy the values from.
         virtual void assign(std::initializer_list<type_t> items) {
-          ++version_;
           clear();
           for (auto item : items)
-            items_.push_back(item);
+            push_back(item);
         }
         
         /// @brief Returns a reference to the element at specified location pos, with bounds checking.
@@ -414,9 +420,7 @@ namespace xtd {
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual const_reference at(size_type index) const {
           if (index >= count()) throw argument_out_of_range_exception {csf_};
-          thread_local auto item = value_type {};
-          item = static_cast<value_type>(items_.at(index));
-          return item;
+          return (reference)items_.at(index);
         }
         
         void clear() override {
@@ -429,7 +433,7 @@ namespace xtd {
             if (item == value) return true;
           return false;
         }
-
+        
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array.
         /// @param array The one-dimensional Array that is the destination of the elements copied from ICollection. The Array must have zero-based indexing.
         /// @exception ArgumentNullException array is null.
@@ -441,9 +445,9 @@ namespace xtd {
         /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
         virtual void copy_to(xtd::array<type_t>& array) const {copy_to(0, array, 0, count());}
-
+        
         void copy_to(xtd::array<type_t>& array, xtd::size array_index) const override {copy_to(0, array, array_index, count());}
-  
+        
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
         /// @param index The zero-based index in the source xtd::collections::generic::list <type_t> at which copying begins.
         /// @param array The one-dimensional Array that is the destination of the elements copied from ICollection. The Array must have zero-based indexing.
@@ -470,7 +474,7 @@ namespace xtd {
             i += 1;
           }
         }
-
+        
         /// @brief Inserts a new element into the container directly before `pos`.
         /// @param pos The iterator before which the new element will be constructed.
         /// @param args arguments to forward to the constructor of the element.
@@ -495,7 +499,7 @@ namespace xtd {
         
         bool equals(const object& obj) const noexcept override {return is<list<value_type>>(obj) && equals(static_cast<const list<value_type>&>(obj));}
         bool equals(const list& rhs) const noexcept override {return items_ == rhs.items_ && version_ == rhs.version_;}
-
+        
         /// @brief Erases the specified elements from the container.
         /// @param pos The iterator to the element to remove.
         /// @return Iterator following the last removed element.
@@ -531,16 +535,14 @@ namespace xtd {
         /// @brief Returns the underlying base type.
         /// @return The underlying base type.
         virtual const base_type& get_base_type() const noexcept {return items_;}
-
+        
         enumerator<value_type> get_enumerator() const noexcept override {
           class list_enumerator : public ienumerator<value_type> {
           public:
             explicit list_enumerator(const list& items, xtd::int64 version) : items_(items), version_(version) {}
             const value_type& current() const override {
               if (version_ != items_.version_) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
-              thread_local auto item = value_type {};
-              item = index_ == xtd::box_integer<xtd::size>::max_value ? value_type {} : static_cast<value_type>(items_[index_]);
-              return item;
+              return items_.at(index_);
             }
             bool move_next() override {
               if (version_ != items_.version_) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
@@ -563,7 +565,7 @@ namespace xtd {
           if (count() == 0)  return npos;
           return index_of(value, 0, count());
         }
-
+        
         /// @brief Determines the index of a specific item in the xtd::collections::generic::list <type_t>.
         /// @param value The object to locate in the xtd::collections::generic::list <type_t>.
         /// @param index The zero-based starting index of the search.
@@ -580,12 +582,12 @@ namespace xtd {
         virtual xtd::size index_of(const type_t& value, xtd::size index, xtd::size count) const {
           if (index >= this->count()) throw xtd::argument_out_of_range_exception {csf_};
           if (index + count > this->count()) throw xtd::argument_out_of_range_exception {csf_};
-
+          
           for (auto i = index; i < index + count; ++i)
-            if ((*this)[i] == value) return i;
+            if (at(i) == value) return i;
           return npos;
         }
-
+        
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
         /// @param value The element value to insert.
@@ -650,11 +652,10 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::collections::generic::list::count.
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         void insert(xtd::size index, const type_t& value) override {
-          ++version_;
           if (index >= count()) throw xtd::argument_out_of_range_exception {csf_};
-          items_.insert(items_.begin() + index, value);
+          insert(begin() + index, value);
         }
-
+        
         /// @brief Removes the last element of the container.
         /// @remarks Calling pop_back on an empty container results in undefined behavior.
         /// @remarks Iterators (including the xtd::collections::generic::list::end() iterator) and references to the last element are invalidated.
@@ -682,9 +683,9 @@ namespace xtd {
         
         bool remove(const type_t& item) override {
           if (count() == 0)  return false;
-          for (auto iterator = begin(); iterator != end(); ++iterator) {
-            if (*iterator != item) continue;
-            items_.erase(to_base_type_iterator(iterator));
+          for (auto index = 0_z; index < count(); ++index) {
+            if (at(index) != item) continue;
+            remove_at(index);
             return true;
           }
           return false;
@@ -697,11 +698,10 @@ namespace xtd {
         void remove_at(xtd::size index) override {
           if (index >= count()) throw xtd::argument_out_of_range_exception {csf_};
 
-          ++version_;
           if (index == count() - 1) pop_back();
-          else items_.erase(items_.begin() + index);
+          else erase(begin() + index);
         }
-
+        
         /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
         /// @param count The new size of the container.
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
@@ -719,26 +719,26 @@ namespace xtd {
           ++version_;
           items_.resize(count, value);
         }
-
+        
         /// @brief Requests the removal of unused capacity.
         /// @remarks It is a non-binding request to reduce xtd::collections::generic::list::capacity() to xtd::collections::generic::list::size(). It depends on the implementation whether the request is fulfilled.
         /// @remarks If reallocation occurs, all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. If no reallocation occurs, no iterators or references are invalidated.
         virtual void shrink_to_fit() {items_.shrink_to_fit();}
-
+        
         /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
         /// @remarks All iterators and references remain valid. The xtd::collections::generic::list::end() iterator is invalidated.
         virtual void swap(list& other) noexcept {
           ++version_;
           items_.swap(other.items_);
         }
-
+        
         ustring to_string() const noexcept override {return xtd::ustring::format("[{}]", xtd::ustring::join(", ", *this));}
         
         /// @brief Returns a reference to the underlying base type.
-        /// @return Reference to the underlyong base type.
+        /// @return Reference to the underlying base type.
         virtual const base_type& to_base_type() const noexcept {return items_;}
         /// @brief Returns a reference to the underlying base type.
-        /// @return Reference to the underlyong base type.
+        /// @return Reference to the underlying base type.
         virtual base_type& to_base_type() noexcept {return items_;}
         
         /// @brief Sets the capacity to the actual number of elements in the List<T>, if that number is less than a threshold value.
@@ -761,7 +761,7 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @remarks To reset a xtd::collections::generic::list <type_t> to its initial state, call the xtd::collections::generic::list::clear method before calling the xtd::collections::generic::list::trim_excess method. Trimming an empty xtd::collections::generic::list <type_t> sets the capacity of the xtd::collections::generic::list <type_t> to the default capacity.
         /// @remarks The capacity can also be set using the xtd::collections::generic::list::capacity property.
-        virtual void trim_excess() {items_.shrink_to_fit();}
+        virtual void trim_excess() {shrink_to_fit();}
         /// @}
         
         /// @name Public Operators
@@ -787,31 +787,23 @@ namespace xtd {
           items_ = items;
           return *this;
         }
-
+        
         /// @brief Returns a reference to the element at specified location pos.
         /// @param index The position of the element to return.
         /// @return Reference to the requested element.
-        ///@remarks  No bounds checking is performed.
-        const_reference operator [](size_type index) const override {
-          if (index >= count()) throw argument_out_of_range_exception {csf_};
-          thread_local auto item = value_type {};
-          item = static_cast<value_type>(items_[index]);
-          return item;
-        }
+        /// @remarks No bounds checking is performed.
+        const_reference operator [](size_type index) const override {return at(index);}
         /// @brief Returns a reference to the element at specified location pos.
         /// @param index The position of the element to return.
         /// @return Reference to the requested element.
-        ///@remarks  No bounds checking is performed.
-        reference operator [](size_type index) override {
-          if (index >= count()) throw argument_out_of_range_exception {csf_};
-          return (reference)items_[index];
-        }
-
+        /// @remarks No bounds checking is performed.
+        reference operator [](size_type index) override {return at(index);}
+        
         /// @brief Returns a reference to the underlying base type.
-        /// @return Reference to the underlyong base type.
+        /// @return Reference to the underlying base type.
         virtual operator const base_type&() const noexcept {return items_;}
         /// @brief Returns a reference to the underlying base type.
-        /// @return Reference to the underlyong base type.
+        /// @return Reference to the underlying base type.
         virtual operator base_type&() noexcept {return items_;}
         /// @}
         
@@ -824,6 +816,5 @@ namespace xtd {
         xtd::object sync_root_;
       };
     }
-    
   }
 }
