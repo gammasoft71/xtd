@@ -12,6 +12,8 @@
 #include "../../is.h"
 #include "../../literals.h"
 #include "../../object.h"
+#include "../../new_ptr.h"
+#include "../../ptr.h"
 #include "../../ustring.h"
 #include <utility>
 #include <vector>
@@ -120,22 +122,22 @@ namespace xtd {
         
         /// @brief Constructs an empty container with the given allocator.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        explicit list(const allocator_type& alloc) noexcept : items_(alloc) {}
+        explicit list(const allocator_type& alloc) noexcept : data_(xtd::new_ptr<struct data>(alloc)) {}
         /// @brief Constructs the container with specified count copies of elements with specified value.
         /// @param count The size of the container.
         /// @param value The value to initialize elements of the container with.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items_(count, value, alloc) {}
+        list(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(count, value, alloc)) {}
         /// @brief Constructs the container with specified count default-inserted instances of type_t. No copies are made.
         /// @param count The size of the container.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        explicit list(size_type count, const allocator_type& alloc = allocator_type()) : items_(count, alloc) {}
+        explicit list(size_type count, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(count, alloc)) {}
         /// @brief Constructs the container with the contents of the range [first, last).
         /// @param first The first iterator the range to copy the elements from.
         /// @param last The last iterator the range to copy the elements from.
         /// @param alloc The allocator to use for all memory allocations of this container.
         template<typename input_iterator_t>
-        list(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items_(first, last, alloc) {}
+        list(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(first, last, alloc)) {}
         /// @brief Initializes a new instance of the xtd::collections::generic::list <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new list.
         /// @param alloc The allocator to use for all memory allocations of this container.
@@ -144,41 +146,41 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
-        list(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : items_(collection.begin(), collection.end(), alloc) {}
+        list(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(collection, alloc)) {}
         
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
-        list(const list& list) = default;
+        list(const list& list) : data_(xtd::new_ptr<struct data>(list)) {}
         /// @brief Copy constructor with specified base type list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be inserted from.
-        list(const base_type& list) : items_(list) {}
+        list(const base_type& list) : data_(xtd::new_ptr<struct data>(list)) {}
         /// @brief Default copy constructor with specified list, and allocator.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(const list& list, const allocator_type& alloc) : items_(list.items_, alloc) {}
+        list(const list& list, const allocator_type& alloc) : data_(xtd::new_ptr<struct data>(list, alloc)) {}
         /// @brief Default copy constructor with specified base type list, and allocator.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(const base_type& list, const allocator_type& alloc) : items_(list, alloc) {}
+        list(const base_type& list, const allocator_type& alloc) : data_(xtd::new_ptr<struct data>(list, alloc)) {}
         /// @brief Constructs the container with the contents of the specified initializer list, and allocator.
         /// @param items The initializer list to initialize the elements of the container with.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : items_(alloc) {assign(items);}
+        list(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<struct data>(items, alloc)) {}
         
         /// @brief Move constructor with specified list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
-        list(list&& other) : items_(std::move(other.items_)), version_(std::move(other.version_)) {other.version_= 0;}
+        list(list&& other) : data_(xtd::new_ptr<struct data>(std::move(other))) {other.data_ = xtd::new_ptr<struct data>();}
         /// @brief Move constructor with specified base type list.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
-        list(base_type&& other) : items_(std::move(other)) {}
+        list(base_type&& other) : data_(xtd::new_ptr<struct data>(std::move(other))) {other.clear();}
         /// @brief Move constructor with specified list, and allocator.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(list&& other, const allocator_type& alloc) : items_(other.items_, alloc), version_{std::move(other.version_)} {}
+        list(list&& other, const allocator_type& alloc) : data_(xtd::new_ptr<struct data>(std::move(other)), alloc) {other.data_ = xtd::new_ptr<struct data>();}
         /// @brief Move constructor with specified base tyoe list, and allocator.
         /// @param list The xtd::collections::generic::list::base_type which elements will be moved from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        list(base_type&& other, const allocator_type& alloc) : items_(other, alloc) {}
+        list(base_type&& other, const allocator_type& alloc) : data_(xtd::new_ptr<struct data>(std::move(other), alloc)) {other.items.clear();}
         /// @}
         
         /// @name Public Properties
@@ -222,7 +224,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list::capacity is always greater than or equal to xtd::collections::generic::list::count. If xtd::collections::generic::list::count exceeds xtd::collections::generic::list::capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
         /// @remarks If the capacity is significantly larger than the count and you want to reduce the memory used by the xtd::collections::generic::list <type_t>, you can decrease capacity by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly to a lower value. When the value of xtd::collections::generic::list::capacity is set explicitly, the internal array is also reallocated to accommodate the specified capacity, and all the elements are copied.
         /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
-        virtual size_type capacity() const noexcept {return items_.capacity();}
+        virtual size_type capacity() const noexcept {return data_->items.capacity();}
         /// @brief Sets the total number of elements the internal data structure can hold without resizing.
         /// @return Capacity of the currently allocated storage.
         /// @exceptions xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
@@ -284,25 +286,25 @@ namespace xtd {
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
-        const_reverse_iterator crbegin() const noexcept {return items_.crbegin();}
+        const_reverse_iterator crbegin() const noexcept {return data_->items.crbegin();}
         
         /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        const_reverse_iterator crend() const noexcept {return items_.crend();}
+        const_reverse_iterator crend() const noexcept {return data_->items.crend();}
         
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        virtual pointer data() noexcept {return (pointer)items_.data();}
+        virtual pointer data() noexcept {return (pointer)data_->items.data();}
         /// @brief Returns pointer to the underlying array serving as element storage.
         /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
         /// @remarks The pointer is such that range [xtd::collections::generic::list::data(), xtd::collections::generic::list::data() + xtd::collections::generic::list::size()) is always a valid range, even if the container is empty (xtd::collections::generic::list::data() is not dereferenceable in that case).
-        virtual const_pointer data() const noexcept {return (pointer)items_.data();}
+        virtual const_pointer data() const noexcept {return (pointer)data_->items.data();}
 
         /// @brief Checks if the container has no elements, i.e. whether xtd::collections::generic::list::begin() == xtd::collections::generic::list::end().
         /// @return true if the container is empty, false otherwise.
-        virtual bool empty() const noexcept {return items_.empty();}
+        virtual bool empty() const noexcept {return data_->items.empty();}
         
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
@@ -326,31 +328,31 @@ namespace xtd {
         
         /// @brief Returns the maximum number of elements the container is able to hold due to system or library implementation limitations, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()) for the largest container.
         /// @return Maximum number of elements.
-        virtual size_type max_size() const noexcept {return items_.max_size();}
+        virtual size_type max_size() const noexcept {return data_->items.max_size();}
         
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
-        reverse_iterator rbegin() noexcept {return items_.rbegin();}
+        reverse_iterator rbegin() noexcept {return data_->items.rbegin();}
         /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::collections::generic::list::rend().
         /// @return Reverse iterator to the first element.
         /// @remarks If the vector is empty, the returned iterator will be equal to xtd::collections::generic::list::rend().
-        const_reverse_iterator rbegin() const noexcept {return items_.rbegin();}
+        const_reverse_iterator rbegin() const noexcept {return data_->items.rbegin();}
         
         /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        reverse_iterator rend() noexcept {return items_.rend();}
+        reverse_iterator rend() noexcept {return data_->items.rend();}
         /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
         /// @return Reverse iterator to the element following the last element.
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-        const_reverse_iterator rend() const noexcept {return items_.rend();}
+        const_reverse_iterator rend() const noexcept {return data_->items.rend();}
         
         /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()).
         /// @return The number of elements in the container.
-        virtual size_type size() const noexcept {return items_.size();}
+        virtual size_type size() const noexcept {return data_->items.size();}
         
-        const xtd::object& sync_root() const noexcept override {return sync_root_;}
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         /// @}
         
         /// @name Public Methods
@@ -400,8 +402,8 @@ namespace xtd {
         /// @param count The new size of the container.
         /// @param value The value to initialize elements of the container with.
         void assign(size_type count, const type_t& value) {
-          ++version_;
-          items_.assign(count, value);
+          ++data_->version;
+          data_->items.assign(count, value);
         }
         
         /// @brief Replaces the contents with copies of those in the range [first, last).
@@ -410,11 +412,11 @@ namespace xtd {
         /// @warning The behavior is undefined if either argument is an iterator this current instance.
         template<typename input_iterator_t>
         void assign(input_iterator_t first, input_iterator_t last) {
-          ++version_;
-          items_.assign(first, last);
+          ++data_->version;
+          data_->items.assign(first, last);
         }
         
-        /// @brief Replaces the contents with the elements from the initializer list items_.
+        /// @brief Replaces the contents with the elements from the initializer list items.
         /// @param items the initializer list to copy the values from.
         virtual void assign(std::initializer_list<type_t> items) {
           clear();
@@ -428,7 +430,7 @@ namespace xtd {
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual reference at(size_type index) {
           if (index >= count()) throw argument_out_of_range_exception {csf_};
-          return (reference)items_.at(index);
+          return (reference)data_->items.at(index);
         }
         /// @brief Returns a reference to the element at specified location pos, with bounds checking.
         /// @param index The position of the element to return.
@@ -436,16 +438,16 @@ namespace xtd {
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual const_reference at(size_type index) const {
           if (index >= count()) throw argument_out_of_range_exception {csf_};
-          return (reference)items_.at(index);
+          return (reference)data_->items.at(index);
         }
         
         void clear() override {
-          ++version_;
-          items_.clear();
+          ++data_->version;
+          data_->items.clear();
         }
         
         bool contains(const type_t& value) const noexcept override {
-          for (const type_t& item : items_)
+          for (const type_t& item : data_->items)
             if (item == value) return true;
           return false;
         }
@@ -499,8 +501,8 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         template<typename... args_t>
         iterator emplace(const_iterator pos, args_t&&... args) {
-          ++version_;
-          return items_.eplace(std::forward<args_t>(args)...);
+          ++data_->version;
+          return data_->items.eplace(std::forward<args_t>(args)...);
         }
         
         /// @brief Appends a new element to the end of the container. The element is constructed through [std::allocator_traits::construct](https://en.cppreference.com/w/cpp/memory/allocator_traits/construct), which typically uses placement-new to construct the element in-place at the location provided by the container. The arguments `args...` are forwarded to the constructor as `std::forward<Args>(args)...`.
@@ -509,12 +511,12 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
         template<typename... args_t>
         reference emplace_back(args_t&&... args) {
-          ++version_;
-          return items_.emplace_back(std::forward<args_t>(args)...);
+          ++data_->version;
+          return data_->items.emplace_back(std::forward<args_t>(args)...);
         }
         
         bool equals(const object& obj) const noexcept override {return is<list<value_type>>(obj) && equals(static_cast<const list<value_type>&>(obj));}
-        bool equals(const list& rhs) const noexcept override {return items_ == rhs.items_ && version_ == rhs.version_;}
+        bool equals(const list& rhs) const noexcept override {return data_->items == rhs.data_->items && data_->version == rhs.data_->version;}
         
         /// @brief Erases the specified elements from the container.
         /// @param pos The iterator to the element to remove.
@@ -524,8 +526,8 @@ namespace xtd {
         /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::list::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos.
         /// @remarks If `pos` refers to the last element, then thextd::collections::generic::list:: end() iterator is returned.
         virtual iterator erase(const_iterator pos) {
-          ++version_;
-          return to_iterator(items_.erase(to_base_type_iterator(pos)));
+          ++data_->version;
+          return to_iterator(data_->items.erase(to_base_type_iterator(pos)));
         }
         /// @brief Erases the specified elements from the container.
         /// @param pos The iterator to the element to remove.
@@ -536,21 +538,21 @@ namespace xtd {
         /// @remarks If `last == end()` prior to removal, then the updated xtd::collections::generic::list::end() iterator is returned.
         /// @remarks If [`first`, `last`) is an empty range, then `last` is returned.
         virtual iterator erase(const_iterator first, const_iterator last) {
-          ++version_;
-          return to_iterator(items_.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
+          ++data_->version;
+          return to_iterator(data_->items.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
         }
         
         /// @brief Returns the allocator associated with the container.
         /// @return The associated allocator.
-        virtual allocator_type get_allocator() const {return items_.get_allocator();}
+        virtual allocator_type get_allocator() const {return data_->items.get_allocator();}
         
         /// @brief Returns the underlying base type.
         /// @return The underlying base type.
         /// @warning Don't manipulate the xtd::collections::generic::list::base_type yourself, otherwise the expected result may be undefined.
-        virtual base_type& get_base_type() noexcept {return items_;}
+        virtual base_type& get_base_type() noexcept {return data_->items;}
         /// @brief Returns the underlying base type.
         /// @return The underlying base type.
-        virtual const base_type& get_base_type() const noexcept {return items_;}
+        virtual const base_type& get_base_type() const noexcept {return data_->items;}
         
         /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
         /// @param index The zero-based xtd::collections::generic::list <type_t> index at which the range starts.
@@ -576,17 +578,17 @@ namespace xtd {
             explicit list_enumerator(const list& items, xtd::int64 version) : items_(items), version_(version) {}
             
             const value_type& current() const override {
-              if (version_ != items_.version_) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
+              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
               return items_.at(index_);
             }
             
             bool move_next() override {
-              if (version_ != items_.version_) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
+              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
               return ++index_ < items_.count();
             }
             
             void reset() override {
-              version_ = items_.version_;
+              version_ = items_.data_->version;
               index_ = xtd::box_integer<xtd::size>::max_value;
             }
             
@@ -595,7 +597,7 @@ namespace xtd {
             xtd::size index_ = xtd::box_integer<xtd::size>::max_value;
             xtd::int64 version_ = 0;
           };
-          return {new_ptr<list_enumerator>(*this, version_)};
+          return {new_ptr<list_enumerator>(*this, data_->version)};
         }
         
         /// @brief Determines the index of a specific item in the List.xtd::collections::generic::list <type_t>.
@@ -635,8 +637,8 @@ namespace xtd {
         /// @remarks Inserts `value` before pos.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, const type_t& value) {
-          ++version_;
-          return to_iterator(items_.insert(to_base_type_iterator(pos), value));
+          ++data_->version;
+          return to_iterator(data_->items.insert(to_base_type_iterator(pos), value));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
@@ -645,8 +647,8 @@ namespace xtd {
         /// @remarks Inserts `value` before pos.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, const type_t&& value) {
-          ++version_;
-          return to_iterator(items_.insert(to_base_type_iterator(pos), value));
+          ++data_->version;
+          return to_iterator(data_->items.insert(to_base_type_iterator(pos), value));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
@@ -656,8 +658,8 @@ namespace xtd {
         /// @remarks Iterator pointing to the first element inserted, or `pos` if `count == 0`.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, size_type count, const type_t& value) {
-          ++version_;
-          return to_iterator(items_.insert(to_base_type_iterator(pos), count, value));
+          ++data_->version;
+          return to_iterator(data_->items.insert(to_base_type_iterator(pos), count, value));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param first The first range of elements to insert, cannot be iterators into container for which insert is called
@@ -668,8 +670,8 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         template<typename input_iterator_t>
         iterator insert(const_iterator pos, input_iterator_t first, input_iterator_t last) {
-          ++version_;
-          return to_iterator(items_.insert(to_base_type_iterator(pos), first, last));
+          ++data_->version;
+          return to_iterator(data_->items.insert(to_base_type_iterator(pos), first, last));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
@@ -678,12 +680,8 @@ namespace xtd {
         /// @remarks Inserts `value` before pos.
         /// @remarks Inserts elements from initializer list `items` before `pos`.
         virtual iterator insert(const_iterator pos, const std::initializer_list<type_t>& items) {
-          ++version_;
-          auto result = iterator {};
-          auto base_pos = to_base_type_iterator(pos);
-          for (auto item : items)
-            result = to_iterator(items_.insert(base_pos++, item));
-          return result;
+          ++data_->version;
+          return to_iterator(data_->items.insert(to_base_type_iterator(pos), items.begin(), items.end()));
         }
         
         /// @brief Inserts an element into the xtd::collections::generic::list <type_t> at the specified index.
@@ -752,8 +750,8 @@ namespace xtd {
         /// @remarks Calling pop_back on an empty container results in undefined behavior.
         /// @remarks Iterators (including the xtd::collections::generic::list::end() iterator) and references to the last element are invalidated.
         virtual void pop_back() {
-          ++version_;
-          items_.pop_back();
+          ++data_->version;
+          data_->items.pop_back();
         }
         
         /// @brief Appends the given element value to the end of the container.
@@ -761,16 +759,16 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
         /// @remarks The new element is initialized as a copy of `value`.
         virtual void push_back(const type_t& value) {
-          ++version_;
-          items_.push_back(value);
+          ++data_->version;
+          data_->items.push_back(value);
         }
         /// @brief Appends the given element value to the end of the container.
         /// @param value The value of the element to append.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
         /// @remarks `value` is moved into the new element.
         virtual void push_back(type_t&& value) {
-          ++version_;
-          items_.push_back(value);
+          ++data_->version;
+          data_->items.push_back(value);
         }
         
         bool remove(const type_t& item) override {
@@ -812,15 +810,15 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list::reserve does not change the size of the vector.
         /// @remarks If `new_cap` is greater than xtd::collections::generic::list::capacity property, all iterators, including the xtd::collections::generic::list::end iterator, and all references to the elements are invalidated; otherwise, no iterators or references are invalidated.
         /// @remarks After a call to xtd::collections::generic::list::reserve, insertions will not trigger reallocation unless the insertion would make the size of the vector greater than the value of xtd::collections::generic::list::capacity.
-        virtual void reserve(size_type new_cap) {items_.reserve(new_cap);}
+        virtual void reserve(size_type new_cap) {data_->items.reserve(new_cap);}
 
         /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
         /// @param count The new size of the container.
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
         virtual void resize(size_type count) {
-          ++version_;
-          items_.resize(count);
+          ++data_->version;
+          data_->items.resize(count);
         }
         /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
         /// @param count The new size of the container.
@@ -828,20 +826,20 @@ namespace xtd {
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional copies of `value` are appended.
         virtual void resize(size_type count, const value_type& value) {
-          ++version_;
-          items_.resize(count, value);
+          ++data_->version;
+          data_->items.resize(count, value);
         }
         
         /// @brief Requests the removal of unused capacity.
         /// @remarks It is a non-binding request to reduce xtd::collections::generic::list::capacity() to xtd::collections::generic::list::size(). It depends on the implementation whether the request is fulfilled.
         /// @remarks If reallocation occurs, all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. If no reallocation occurs, no iterators or references are invalidated.
-        virtual void shrink_to_fit() {items_.shrink_to_fit();}
+        virtual void shrink_to_fit() {data_->items.shrink_to_fit();}
         
         /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
         /// @remarks All iterators and references remain valid. The xtd::collections::generic::list::end() iterator is invalidated.
         virtual void swap(list& other) noexcept {
-          ++version_;
-          items_.swap(other.items_);
+          ++data_->version;
+          data_->items.swap(other.data_->items);
         }
         
         /// @brief Copies the elements of the xtd::collections::generic::list <type_t> to a new array.
@@ -857,10 +855,10 @@ namespace xtd {
         
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        virtual const base_type& to_base_type() const noexcept {return items_;}
+        virtual const base_type& to_base_type() const noexcept {return data_->items;}
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        virtual base_type& to_base_type() noexcept {return items_;}
+        virtual base_type& to_base_type() noexcept {return data_->items;}
         
         /// @brief Sets the capacity to the actual number of elements in the xtd::collections::generic::list <type_t>, if that number is less than a threshold value.
         /// @par Examples
@@ -896,16 +894,16 @@ namespace xtd {
         /// @param other Another base type container to use as data source.
         /// @return This current instance.
         list& operator =(const list&& other) noexcept {
-          version_ = std::move(other.version_);
-          items_ = std::move(other.items_);
+          data_->version = std::move(other.data_->version);
+          data_->items = std::move(other.data_->items);
           return *this;
         }
         /// @brief Replaces the contents with those identified by initializer list ilist.
         /// @param items Initializer list to use as data source
         /// @return This current instance.
         list& operator =(std::initializer_list<type_t>& items) {
-          version_ = 0;
-          items_ = items;
+          data_->version = 0;
+          data_->items = items;
           return *this;
         }
         
@@ -922,28 +920,52 @@ namespace xtd {
         
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        virtual operator const base_type&() const noexcept {return items_;}
+        virtual operator const base_type&() const noexcept {return data_->items;}
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        virtual operator base_type&() noexcept {return items_;}
+        virtual operator base_type&() noexcept {return data_->items;}
         /// @}
         
       private:
         base_type::iterator to_base_type_iterator(iterator value) noexcept {
-          if (value == begin()) return items_.begin();
-          if (value == end()) return items_.end();
-          return items_.begin() + (value - begin());
+          if (value == begin()) return data_->items.begin();
+          if (value == end()) return data_->items.end();
+          return data_->items.begin() + (value - begin());
         }
         
         iterator to_iterator(base_type::iterator value) noexcept {
-          if (value == items_.begin()) return begin();
-          if (value == items_.end()) return end();
-          return begin() + (value - items_.begin());
+          if (value == data_->items.begin()) return begin();
+          if (value == data_->items.end()) return end();
+          return begin() + (value - data_->items.begin());
         }
+
+        struct data {
+          data() = default;
+          explicit data(const allocator_type& alloc) noexcept : items(alloc) {}
+          data(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items(count, value, alloc) {}
+          explicit data(size_type count, const allocator_type& alloc = allocator_type()) : items(count, alloc) {}
+          template<typename input_iterator_t>
+          data(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items(first, last, alloc) {}
+          data(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : items(collection.begin(), collection.end(), alloc) {}
+          data(const list& list) : items(list.data_->items), version(list.data_->version) {}
+          data(const base_type& list) : items(list) {}
+          data(const list& list, const allocator_type& alloc) : items(list.data_->items, alloc), version(list.data_->version) {}
+          data(const base_type& list, const allocator_type& alloc) : items(list, alloc) {}
+          data(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : items(items.begin(), items.end(), alloc) {}
+          data(list&& other) : items(std::move(other.data_->items)), version(std::move(other.data_->version)) {other.data_->items.clear(); other.data_->version = 0;}
+          data(base_type&& other) : items(std::move(other)) {other.clear();}
+          data(list&& other, const allocator_type& alloc) : items(other.data_->items, alloc), version{std::move(other.data_->version)} {other.data_->items.clear(); other.data_->version = 0;}
+          data(base_type&& other, const allocator_type& alloc) : items(std::move(other), alloc) {}
+
+          data(const data&) = default;
+          data& operator =(const data&) = default;
+
+          base_type items;
+          xtd::int64 version = 0;
+          xtd::object sync_root;
+        };
         
-        base_type items_;
-        xtd::int64 version_ = 0;
-        xtd::object sync_root_;
+        xtd::ptr<struct data> data_ = xtd::new_ptr<struct data>();
       };
     }
   }
