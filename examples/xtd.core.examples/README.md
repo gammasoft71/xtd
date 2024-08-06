@@ -195,6 +195,7 @@
 * [generic_list](generic_Collections/generic_list/README.md) shows how to use [xtd::collections::generic::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
 * [generic_list2](generic_Collections/generic_list2/README.md) shows how to use [xtd::collections::generic::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
 * [generic_list3](generic_Collections/generic_list3/README.md) shows how to use [xtd::collections::generic::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
+* [generic_list4](generic_Collections/generic_list4/README.md) shows how to use [xtd::collections::generic::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
 
 ## [Guid](guid/README.md)
 
