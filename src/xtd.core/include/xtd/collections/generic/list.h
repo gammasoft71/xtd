@@ -118,31 +118,6 @@ namespace xtd {
         /// @include generic_list.cpp
         list() noexcept = default;
         
-        /// @brief Initializes a new instance of the xtd::collections::generic::list <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
-        /// @param collection The collection whose elements are copied to the new list.
-        /// @exception ArgumentNullException The parameters collection is null or element reference null in collection.
-        /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
-        /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
-        /// @par Examples
-        /// The following code example demonstrates the xtd::collections::generic::list <type_t> constructor and various methods of the xtd::collections::generic::list <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The sxtd::collections::generic::list::capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
-        /// @include List2.cpp
-        //list(const ienumerable<type_t>& collection) : {
-        //  for (const type_t& value : collection)
-        //    add(value);
-        //}
-        
-        /// @brief Initializes a new instance of the xtd::collections::generic::list <type_t> class that is empty and has the specified initial capacity.
-        /// @param capacity The number of elements that the new list can initially store.
-        /// @remarks The capacity of a xtd::collections::generic::list is the number of elements that the xtd::collections::generic::list can hold. As elements are added to a xtd::collections::generic::list, the capacity is automatically increased as required by reallocating the internal array.
-        /// @remarks If the size of the collection can be estimated, specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::list.
-        /// @remarks The capacity can be decreased by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::cpacity property explicitly. Decreasing the capacity reallocates memory and copies all the elements in the xtd::collections::generic::list.
-        /// @remarks This constructor is an O(n) operation, where n is capacity.
-        /// @remarks The following code example demonstrates the xtd::collections::generic::list::as_read_only method. A xtd::collections::generic::list of strings with a capacity of 4 is created, because the ultimate size of the list is known to be exactly 4. The list is populated with four strings, and the AsReadOnly method is used to get a read-only xtd::collections::generic::ilist generic interface implementation that wraps the original list.
-        /// @par Examples
-        /// An element of the original list is set to "Coelophysis" using the `item` property, and the contents of the read-only list are displayed again to demonstrate that it is just a wrapper for the original list.
-        /// @include generic_list3.cpp
-        //list(xtd::size capacity) {items_.reserve(capacity);}
-        
         /// @brief Constructs an empty container with the given allocator.
         /// @param alloc The allocator to use for all memory allocations of this container.
         explicit list(const allocator_type& alloc) noexcept : items_(alloc) {}
@@ -169,10 +144,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
-        list(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : items_(alloc) {
-          for (const auto& item : collection)
-            add(item);
-        }
+        list(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : items_(collection.begin(), collection.end(), alloc) {}
         
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
@@ -944,8 +916,17 @@ namespace xtd {
         /// @}
         
       private:
-        base_type::iterator to_base_type_iterator(iterator value) noexcept {return items_.begin() + (value - begin());}
-        iterator to_iterator(base_type::iterator value) noexcept {return begin() + (value - items_.begin());}
+        base_type::iterator to_base_type_iterator(iterator value) noexcept {
+          if (value == begin()) return items_.begin();
+          if (value == end()) return items_.end();
+          return items_.begin() + (value - begin());
+        }
+        
+        iterator to_iterator(base_type::iterator value) noexcept {
+          if (value == items_.begin()) return begin();
+          if (value == items_.end()) return end();
+          return begin() + (value - items_.begin());
+        }
         
         base_type items_;
         xtd::int64 version_ = 0;
