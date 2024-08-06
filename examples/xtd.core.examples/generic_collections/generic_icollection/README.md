@@ -1,6 +1,6 @@
 # generic_icollection
 
-Shows how to use [xtd::collections::generic::icollection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1 icollection.html) interface.
+Shows how to use [xtd::collections::generic::icollection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1icollection.html) interface.
 
 ## Sources
 

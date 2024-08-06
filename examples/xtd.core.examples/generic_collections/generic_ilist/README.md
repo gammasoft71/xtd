@@ -1,6 +1,6 @@
 # generic_ilist
 
-Shows how to use [xtd::collections::generic::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1 ilist.html) interface.
+Shows how to use [xtd::collections::generic::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1ilist.html) interface.
 
 ## Sources
 
