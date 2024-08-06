@@ -33,9 +33,10 @@ namespace xtd {
         
         /// @{
         enumerator() = default;
-        enumerator(ptr<ienumerator<type_t>>& enumerator) : enumerator_ {enumerator} {} // Can't be explicit by design.
-        enumerator(const ptr<ienumerator<type_t>>& enumerator) : enumerator_ {enumerator} {} // Can't be explicit by design.
-        enumerator(ptr<ienumerator<type_t>>&& enumerator) : enumerator_ {enumerator} {} // Can't be explicit by design.
+        enumerator(ptr<ienumerator<type_t>> enumerator) : enumerator_ {enumerator} {} // Can't be explicit by design.
+        enumerator(enumerator&& enumerator) = default;
+        enumerator(const enumerator& enumerator) = default;
+        enumerator& operator =(const enumerator& enumerator) = default;
         /// @}
         
         /// @{
