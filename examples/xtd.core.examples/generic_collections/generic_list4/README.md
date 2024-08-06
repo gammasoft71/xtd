@@ -4,7 +4,7 @@ Shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io
 
 ## Sources
 
-[src/generic_list3.cpp](src/generic_list3.cpp)
+[src/generic_list4.cpp](src/generic_list4.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
