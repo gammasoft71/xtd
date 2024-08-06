@@ -363,6 +363,7 @@ namespace xtd {
         /// @include generic_list4.cpp
         /// The following example demonstrates several properties and methods of the xtd::collections::generic::list <type_t> generic class, including the xtd::collections::generic::list::add method.
         /// The parameterless constructor is used to create a list of strings with a capacity of 0. The xtd::collections::generic::list::capacity property is displayed, and then the xtd::collections::generic::list::add method is used to add several items. The items are listed, and the xtd::collections::generic::list::capacity property is displayed again, along with the xtd::collections::generic::list::count property, to show that the capacity has been increased as needed.
+        ///
         /// Other properties and methods are used to search for, insert, and remove elements from the list, and finally to clear the list.
         /// @include generic_list2.cpp
         /// @remarks xtd::collections::generic::list <type_t>  allows duplicate elements.
