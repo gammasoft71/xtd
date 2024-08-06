@@ -1,7 +1,9 @@
 #include <xtd/collections/generic/list>
 #include <xtd/as>
 #include <xtd/boolean>
+#include <xtd/environment>
 #include <xtd/int64_object>
+#include <xtd/lock>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -249,7 +251,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(max_size) {
-      assert::are_equal(as<xtd::size>(int64_object::max_value) / 2, list<int> {}.max_size(), csf_);
+      assert::are_equal(as<xtd::size>(environment::os_version().is_linux() ? int64_object::max_value / 4 : int64_object::max_value / 2), list<int> {}.max_size(), csf_);
     }
     
     void test_method_(rbegin) {
@@ -279,6 +281,30 @@ namespace xtd::collections::generic::tests {
       auto a = list<int> {};
       auto b = list<int> {};
       assert::are_not_equal(a.sync_root(), b.sync_root(), csf_);
+      
+      auto synchronized_items = list<int> {};
+      
+      delegate<void()> {[&] {
+        lock_ (synchronized_items.sync_root()) {
+          synchronized_items.add(1);
+          threading::thread::sleep(2);
+          synchronized_items.add(2);
+          synchronized_items.add(3);
+        }
+      }}.begin_invoke();
+
+      delegate<void()> {[&] {
+        lock_ (synchronized_items.sync_root()) {
+          synchronized_items.add(4);
+          synchronized_items.add(5);
+          synchronized_items.add(6);
+        }
+      }}.begin_invoke();
+
+      threading::thread::sleep(10);
+      lock_ (synchronized_items.sync_root()) {
+        collection_assert::are_equal({1, 2, 3, 4, 5, 6}, synchronized_items);
+      }      
     }
   };
 }
