@@ -5,7 +5,7 @@
 #include "enumerator.h"
 #include "../../ptrdiff.h"
 #include "../../size.h"
-#include <limits>
+#include "../../size_object.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -53,22 +53,51 @@ namespace xtd {
           using reference = value_type&;
           /// @}
 
+          /// @brief Create begin xtd::collections::generic::iterator with specified enumerator.
+          /// @param enumerator The enumerator to iterate with.
+          /// @return The begin xtd::collections::generic::iterator.
+          static iterator begin(enumerator<type_t> enumerator) {
+            auto begin = iterator {};
+            begin.enumerator_ = enumerator;
+            begin.pos_ = 0;
+            begin.initial_pos_ = 0;
+            begin.reset();
+            return begin;
+          }
+          
+          /// @brief Create end xtd::collections::generic::iterator with specified enumerator.
+          /// @param enumerator The enumerator to iterate with.
+          /// @return The end xtd::collections::generic::iterator.
+          static iterator end(enumerator<type_t> enumerator) {
+            auto end = iterator {};
+            end.enumerator_ = enumerator;
+            end.pos_ = xtd::size_object::max_value;
+            end.initial_pos_ = xtd::size_object::max_value;
+            end.reset();
+            return end;
+          }
+          
           /// @name Public Constructors
           
           /// @{
           /// @brief Initializes a new instance of the xtd::collections::generic::iterator class.
           iterator() = default;
-          /// @brief Initializes a new instance of the xtd::collections::generic::iterator class with specified enumerator.
-          /// @param enumerator The enumerator to iterate with.
-          iterator(enumerator<type_t> enumerator) : iterator(enumerator, false) {}
-          /// @brief Initializes a new instance of the xtd::collections::generic::iterator class with specified enumerator and end.
-          /// @param enumerator The enumerator to iterate with.
-          /// @parem end true to specify the end iterotator; otherwise false.
-          iterator(enumerator<type_t> enumerator, bool end) : enumerator_(enumerator) {
-            enumerator_.reset();
-            pos_ = end == true || enumerator_.move_next() == false ? std::numeric_limits<xtd::size>::max() : 0;
+          /// @brief Initializes a new instance of the xtd::collections::generic::iterator class with specified iterator.
+          /// @param value The enumerator to iterate with.
+          iterator(const iterator& value) noexcept : enumerator_(value.enumerator_), pos_ {value.initial_pos_}, initial_pos_(value.initial_pos_) {
+            reset();
           }
           /// @}
+          
+          /// @cond
+          iterator& operator =(const iterator& value) noexcept {
+            enumerator_ = value.enumerator_;
+            pos_ = value.initial_pos_;
+            initial_pos_ = value.initial_pos_;
+            reset();
+            return *this;
+          }
+          /// @endcond
 
           /// @name Public Operators
           
@@ -83,40 +112,62 @@ namespace xtd {
           /// @brief Pre increments the underlying iterator.
           /// @return The underlying iterator.
           iterator& operator ++() {
-            if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
+            if (pos_ != xtd::size_object::max_value) pos_ = enumerator_.move_next() ? pos_ + 1 : xtd::size_object::max_value;
             return *this;
           }
           /// @brief Post increments the underlying iterator.
           /// @return The underlying iterator.
           iterator operator ++(int) {
             auto current = *this;
+            current.pos_ = pos_;
+            current.initial_pos_ = pos_;
             ++(*this);
             return current;
           }
           
+          /// @brief Add operator with specified value.
+          /// @param value The number to add to the underlying iterator.
+          /// @return The underlying iterator.
           template<typename value_t>
-          iterator& operator +(value_t value) {
-            for (auto index = xtd::size {}; index < static_cast<xtd::size>(value) && pos_ != std::numeric_limits<xtd::size>::max(); ++index)
-              if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
-            return *this;
-          }
+          iterator operator +(value_t value) const noexcept {return iterator {*this, value};}
           
+          /// @brief Subtract The specified iterator from the current iterator.
+          /// @param value The iterator to subtract from the current iterator.
+          /// @return The difference between current iterator and the specified iterator.
           difference_type operator -(iterator value) const noexcept {
-            if (pos_ == std::numeric_limits<xtd::size>::max()) return std::numeric_limits<xtd::size>::max();
+            if (pos_ == xtd::size_object::max_value) return xtd::size_object::max_value;
             return static_cast<difference_type>(pos_ - value.pos_);
           }
           
           /// @biref The equality operator of specified underlyig itertators.
           /// @return true if underlying iterators are equels; otherwise false.
-          friend bool operator ==(const iterator& a, const iterator& b) noexcept { return a.pos_ == b.pos_; }
+          friend bool operator ==(const iterator& a, const iterator& b) noexcept {return a.pos_ == b.pos_;}
           /// @biref The inequality operator of specified underlyig itertators.
           /// @return true if underlying iterators are not equels; otherwise false.
-          friend bool operator !=(const iterator& a, const iterator& b) noexcept { return !operator==(a, b); }
+          friend bool operator !=(const iterator& a, const iterator& b) noexcept {return !operator==(a, b);}
           /// @}
 
         private:
+          template<typename value_t>
+          iterator(const iterator& base, value_t value) noexcept : enumerator_(base.enumerator_), pos_ {base.initial_pos_ + value}, initial_pos_(base.initial_pos_ + value) {
+            reset();
+          }
+
+          void reset() {
+            enumerator_.reset();
+            if (pos_ == xtd::size_object::max_value) return;
+            
+            // Must be executed at least once
+            auto index = 0_z;
+            do {
+              if (enumerator_.move_next() == true) continue;
+              pos_ = xtd::size_object::max_value;
+              break;
+            } while (++index <= pos_);
+          }
           enumerator<type_t> enumerator_;
-          xtd::size pos_ = std::numeric_limits<xtd::size>::max();
+          xtd::size pos_ = 0;
+          xtd::size initial_pos_ = 0;
         };
         /// @}
 
@@ -132,25 +183,25 @@ namespace xtd {
         /// @{
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        virtual const_iterator begin() const noexcept {return iterator(enumerator_->get_enumerator());}
+        virtual const_iterator begin() const noexcept {return iterator::begin(enumerator_->get_enumerator());}
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        virtual iterator begin() noexcept {return iterator(enumerator_->get_enumerator());}
+        virtual iterator begin() noexcept {return iterator::begin(enumerator_->get_enumerator());}
 
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        virtual const_iterator cbegin() const noexcept {return iterator(enumerator_->get_enumerator());}
+        virtual const_iterator cbegin() const noexcept {return iterator::begin(enumerator_->get_enumerator());}
 
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        virtual const_iterator cend() const noexcept {return iterator(enumerator_->get_enumerator(), true);}
+        virtual const_iterator cend() const noexcept {return iterator::end(enumerator_->get_enumerator());}
 
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        virtual const_iterator end() const noexcept {return iterator(enumerator_->get_enumerator(), true);}
+        virtual const_iterator end() const noexcept {return iterator::end(enumerator_->get_enumerator());}
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        virtual iterator end() noexcept {return iterator(enumerator_->get_enumerator(), true);}
+        virtual iterator end() noexcept {return iterator::end(enumerator_->get_enumerator());}
         /// @}
         
       private:
