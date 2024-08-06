@@ -107,6 +107,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(constructor_with_list) {
       list l = {84, 42, 21};
       auto items = list(l);
+      l.add(10);
       assert::are_equal(3_z, items.count(), csf_);
       collection_assert::are_equal({84, 42, 21}, items, csf_);
     }
@@ -305,6 +306,32 @@ namespace xtd::collections::generic::tests {
       lock_ (synchronized_items.sync_root()) {
         collection_assert::are_equal({1, 2, 3, 4, 5, 6}, synchronized_items);
       }      
+    }
+    
+    void test_method_(add) {
+      auto items = list<int> {};
+
+      items.add(1);
+      collection_assert::are_equal({1}, items);
+      items.add(2);
+      collection_assert::are_equal({1, 2}, items);
+      items.add(3);
+      collection_assert::are_equal({1, 2, 3}, items);
+      items.add(4);
+      collection_assert::are_equal({1, 2, 3, 4}, items);
+    }
+    
+    void test_method_(add_range) {
+      auto items = list<int> {};
+
+      items.add_range({1, 2, 3, 4});
+      collection_assert::are_equal({1, 2, 3, 4}, items);
+
+      items.add_range(list {5, 6, 7, 8});
+      collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8}, items);
+
+      items.add_range(as<ienumerable<int>>(list {9, 10, 11, 12}));
+      collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, items);
     }
   };
 }
