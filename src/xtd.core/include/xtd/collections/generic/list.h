@@ -596,15 +596,21 @@ namespace xtd {
           class list_enumerator : public ienumerator<value_type> {
           public:
             explicit list_enumerator(const list& items, xtd::int64 version) : items_(items), version_(version) {}
+            
             const value_type& current() const override {
               if (version_ != items_.version_) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
               return items_.at(index_);
             }
+            
             bool move_next() override {
               if (version_ != items_.version_) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute.", csf_};
               return ++index_ < items_.count();
             }
-            void reset() override {index_ = xtd::box_integer<xtd::size>::max_value;}
+            
+            void reset() override {
+              version_ = items_.version_;
+              index_ = xtd::box_integer<xtd::size>::max_value;
+            }
             
           protected:
             const list& items_;
