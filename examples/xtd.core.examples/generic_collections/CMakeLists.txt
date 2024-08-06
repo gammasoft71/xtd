@@ -10,4 +10,5 @@ add_projects(
   generic_ilist
   generic_list
   generic_list2
+  generic_list3
 )
