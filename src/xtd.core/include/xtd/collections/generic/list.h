@@ -360,11 +360,11 @@ namespace xtd {
         /// @param item The object to be added to the end of the xtd::collections::generic::list <type_t>.
         /// @)ar Examples
         /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
-        /// @include genric_list4.cpp
+        /// @include generic_list4.cpp
         /// The following example demonstrates several properties and methods of the xtd::collections::generic::list <type_t> generic class, including the xtd::collections::generic::list::add method.
         /// The parameterless constructor is used to create a list of strings with a capacity of 0. The xtd::collections::generic::list::capacity property is displayed, and then the xtd::collections::generic::list::add method is used to add several items. The items are listed, and the xtd::collections::generic::list::capacity property is displayed again, along with the xtd::collections::generic::list::count property, to show that the capacity has been increased as needed.
         /// Other properties and methods are used to search for, insert, and remove elements from the list, and finally to clear the list.
-        /// @include genric_listZ.cpp
+        /// @include generic_list2.cpp
         /// @remarks xtd::collections::generic::list <type_t>  allows duplicate elements.
         /// @remarks If xtd::collections::generic::list::count already equals xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
         /// @remarks If xtd::collections::generic::list::count is less than xtd::collections::generic::list::capacity, this method is an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(n) operation, where n is xtd::collections::generic::list::count.
