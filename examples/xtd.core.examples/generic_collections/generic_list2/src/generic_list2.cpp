@@ -3,7 +3,6 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 
-
 class example {
 public:
   static auto main() -> void {
