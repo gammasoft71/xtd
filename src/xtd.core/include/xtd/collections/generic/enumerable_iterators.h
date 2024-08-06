@@ -49,8 +49,12 @@ namespace xtd {
           using difference_type = xtd::ptrdiff;
           /// @brief Represents the pointer of the value type.
           using pointer = value_type*;
+          /// @brief Represents the const pointer of the value type.
+          using const_pointer = const value_type*;
           /// @brief Represents the reference of the value type.
           using reference = value_type&;
+          /// @brief Represents the const reference of the value type.
+          using const_reference = const value_type&;
           /// @}
 
           /// @brief Create begin xtd::collections::generic::iterator with specified enumerator.
@@ -82,14 +86,10 @@ namespace xtd {
           /// @{
           /// @brief Initializes a new instance of the xtd::collections::generic::iterator class.
           iterator() = default;
-          /// @brief Initializes a new instance of the xtd::collections::generic::iterator class with specified iterator.
-          /// @param value The enumerator to iterate with.
-          iterator(const iterator& value) noexcept : enumerator_(value.enumerator_), pos_ {value.initial_pos_}, initial_pos_(value.initial_pos_) {
-            reset();
-          }
           /// @}
           
           /// @cond
+          iterator(const iterator& value) noexcept : enumerator_(value.enumerator_), pos_ {value.initial_pos_}, initial_pos_(value.initial_pos_) {reset();}
           iterator& operator =(const iterator& value) noexcept {
             enumerator_ = value.enumerator_;
             pos_ = value.initial_pos_;
@@ -104,20 +104,26 @@ namespace xtd {
           /// @{
           /// @brief Returns reference to the current element, or a proxy holding it.
           /// @return The reference to the current element.
-          reference operator *() const {return const_cast<reference>(enumerator_.current());}
+          const_reference operator *() const {return enumerator_.current();}
+          /// @brief Returns reference to the current element, or a proxy holding it.
+          /// @return The reference to the current element.
+          reference operator *() {return const_cast<reference>(enumerator_.current());}
+          /// @brief Returns pointer to the current element, or a proxy holding it.
+          /// @return The pointer to the current element.
+          const_pointer operator ->() const {return &operator*();}
           /// @brief Returns pointer to the current element, or a proxy holding it.
           /// @return The pointer to the current element.
           pointer operator ->() {return &operator*();}
-          
+
           /// @brief Pre increments the underlying iterator.
           /// @return The underlying iterator.
-          iterator& operator ++() {
+          iterator& operator ++() noexcept {
             if (pos_ != xtd::size_object::max_value) pos_ = enumerator_.move_next() ? pos_ + 1 : xtd::size_object::max_value;
             return *this;
           }
           /// @brief Post increments the underlying iterator.
           /// @return The underlying iterator.
-          iterator operator ++(int) {
+          iterator operator ++(int) const noexcept {
             auto current = *this;
             current.pos_ = pos_;
             current.initial_pos_ = pos_;
@@ -149,22 +155,15 @@ namespace xtd {
 
         private:
           template<typename value_t>
-          iterator(const iterator& base, value_t value) noexcept : enumerator_(base.enumerator_), pos_ {base.initial_pos_ + value}, initial_pos_(base.initial_pos_ + value) {
-            reset();
-          }
+          iterator(const iterator& base, value_t value) noexcept : enumerator_(base.enumerator_), pos_ {base.initial_pos_ + value}, initial_pos_(base.initial_pos_ + value) {reset();}
 
           void reset() {
             enumerator_.reset();
             if (pos_ == xtd::size_object::max_value) return;
-            
-            // Must be executed at least once
-            auto index = 0_z;
-            do {
-              if (enumerator_.move_next() == true) continue;
-              pos_ = xtd::size_object::max_value;
-              break;
-            } while (++index <= pos_);
+            for (auto index = 0_z; index <= pos_; ++index)
+              if (enumerator_.move_next() == false) break;
           }
+
           enumerator<type_t> enumerator_;
           xtd::size pos_ = 0;
           xtd::size initial_pos_ = 0;
