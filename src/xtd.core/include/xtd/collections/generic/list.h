@@ -346,13 +346,6 @@ namespace xtd {
         /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
         const_reverse_iterator rend() const noexcept {return items_.rend();}
         
-        /// @brief Increase the capacity of the vector (the total number of elements that the vector can hold without requiring reallocation) to a value that's greater or equal to `new_cap`. If new_cap is greater than the current capacity(), new storage is allocated, otherwise the function does nothing.
-        /// @param new_cap The new capacity of the vector, in number of elements.
-        /// @remarks xtd::collections::generic::list::reserve does not change the size of the vector.
-        /// @remarks If `new_cap` is greater than xtd::collections::generic::list::capacity property, all iterators, including the xtd::collections::generic::list::end iterator, and all references to the elements are invalidated; otherwise, no iterators or references are invalidated.
-        /// @remarks After a call to xtd::collections::generic::list::reserve, insertions will not trigger reallocation unless the insertion would make the size of the vector greater than the value of xtd::collections::generic::list::capacity.
-        virtual void reserve(size_type new_cap) {items_.reserve(new_cap);}
-        
         /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()).
         /// @return The number of elements in the container.
         virtual size_type size() const noexcept {return items_.size();}
@@ -800,6 +793,13 @@ namespace xtd {
           
           erase(begin() + index, begin() + index + count);
         }
+        
+        /// @brief Increase the capacity of the vector (the total number of elements that the vector can hold without requiring reallocation) to a value that's greater or equal to `new_cap`. If new_cap is greater than the current capacity(), new storage is allocated, otherwise the function does nothing.
+        /// @param new_cap The new capacity of the vector, in number of elements.
+        /// @remarks xtd::collections::generic::list::reserve does not change the size of the vector.
+        /// @remarks If `new_cap` is greater than xtd::collections::generic::list::capacity property, all iterators, including the xtd::collections::generic::list::end iterator, and all references to the elements are invalidated; otherwise, no iterators or references are invalidated.
+        /// @remarks After a call to xtd::collections::generic::list::reserve, insertions will not trigger reallocation unless the insertion would make the size of the vector greater than the value of xtd::collections::generic::list::capacity.
+        virtual void reserve(size_type new_cap) {items_.reserve(new_cap);}
 
         /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
         /// @param count The new size of the container.
