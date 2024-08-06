@@ -1,5 +1,7 @@
 #include <xtd/collections/generic/list>
+#include <xtd/as>
 #include <xtd/boolean>
+#include <xtd/int64_object>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -228,8 +230,38 @@ namespace xtd::collections::generic::tests {
       auto items = list {84, 42, 21};
       assert::are_equal(84, items.front(), csf_);
 
-      auto emtpy_items = list<int> {};
-      assert::throws<argument_out_of_range_exception>([&] {emtpy_items.front();}, csf_);
+      assert::throws<argument_out_of_range_exception>([&] {list<int> {}.front();}, csf_);
+    }
+
+    void test_method_(is_fixed_size) {
+      // Is always false;
+      assert::is_false(list<int> {}.is_fixed_size(), csf_);
+    }
+
+    void test_method_(is_read_only) {
+      // Is always false;
+      assert::is_false(list<int> {}.is_read_only(), csf_);
+    }
+
+    void test_method_(is_synchronized) {
+      // Is always false;
+      assert::is_false(list<int> {}.is_synchronized(), csf_);
+    }
+    
+    void test_method_(max_size) {
+      assert::are_equal(as<xtd::size>(int64_object::max_value) / 2, list<int> {}.max_size(), csf_);
+    }
+    
+    void test_method_(rbegin) {
+      auto items = list {84, 42, 21};
+      assert::are_equal(21, *items.rbegin(), csf_);
+    }
+    
+    void test_method_(rend) {
+      auto items = list {84, 42, 21};
+      // the rend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
+      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
+      //assert::throws<argument_out_of_range_exception>([&] {*items.rend();}, csf_);
     }
 
     void test_method_(size) {
@@ -241,6 +273,12 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(3_z, items.size(), csf_);
       items.resize(50);
       assert::are_equal(50_z, items.size(), csf_);
+    }
+    
+    void test_method_(sync_root) {
+      auto a = list<int> {};
+      auto b = list<int> {};
+      assert::are_not_equal(a.sync_root(), b.sync_root(), csf_);
     }
   };
 }
