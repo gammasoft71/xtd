@@ -295,6 +295,10 @@
 * [object_reference_equals](object/object_reference_equals/README.md) shows hows how to use [xtd::object::reference_equals](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a1ee13700465eead7934f450749b952d7) static method.
 * [object_to_string](object/object_to_string/README.md) shows hows how to use [xtd::object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method.
 
+## [object_model_Collections](object_model_Collections/README.md)
+
+* [read_only_collection](object_model_Collections/README.md) shows how to use [xtd::collections::object_model::read_only_collection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1object__model_1_1read__only__collection.html) class.
+
 ## [Parse](parse/README.md)
 
 * [parse_boolean](parse/parse_boolean/README.md) shows how to use [xtd::parse](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4) method with boolean value.
