@@ -2,7 +2,7 @@
 /// @brief Contains xtd::collections::iequality_comparer alias.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include "generic/ienumerator.h"
+#include "generic/iequality_comparer.h"
 #include "../as.h"
 #include "../any_object.h"
 
