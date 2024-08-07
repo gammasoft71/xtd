@@ -3,12 +3,14 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/generic/helpers/comparer.h"
+#include "collections/generic/helpers/equator.h"
 #include "convert_string.h"
 #include "icomparable.h"
 #include "iequatable.h"
 #include "invalid_cast_exception.h"
 #include "iequatable.h"
 #include "iformatable.h"
+#include "is.h"
 #include "enum.h"
 #include "object.h"
 #include "ustring.h"
@@ -101,19 +103,10 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
-    using object::equals;
-    bool equals(const box& value) const noexcept override {return value_ == value.value_;}
-    
     int32 compare_to(const box& value) const noexcept override {return equals(value) ? 0 : xtd::collections::generic::helpers::comparer<type_t> {}(value_, value.value_) ? -1 : 1;}
-    
-    xtd::ustring to_string() const noexcept override {
-      if (std::is_integral<type_t>::value) return xtd::ustring::format("{}", value_);
-      if (std::is_floating_point<type_t>::value) return xtd::ustring::format("{}", value_);
-      if (std::is_enum<type>::value) return xtd::ustring::format("{}", value_);
-      if (std::is_pointer<type>::value) return xtd::ustring::format("{}", value_);
-      if (std::is_base_of<xtd::object, type_t>::value) return xtd::ustring::format("{}", value_);
-      return typeof_<type_t>().full_name();
-    }
+    bool equals(const object& obj) const noexcept override {return is<box<type_t>>(obj) && equals(static_cast<const box<type_t>&>(obj));}
+    bool equals(const box& value) const noexcept override {return xtd::collections::generic::helpers::equator<type_t> {}(value_, value.value_);}
+    xtd::ustring to_string() const noexcept override {return std::is_integral<type_t>::value || std::is_floating_point<type_t>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::object, type_t>::value ? xtd::ustring::format("{}", value_) : typeof_<type_t>().full_name();}
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
     /// @return The string representation of the value of this instance as specified by format.
