@@ -4,6 +4,7 @@
 #pragma once
 #include "helpers/allocator.h"
 #include "ilist.h"
+#include "../object_model/read_only_collection.h"
 #include "../../argument_exception.h"
 #include "../../argument_out_of_range_exception.h"
 #include "../../box_integer.h"
@@ -31,7 +32,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/list
+      /// #include <xtd/collections/generic/list
       /// ```
       /// @par Namespace
       /// xtd::collections::generic
@@ -97,6 +98,8 @@ namespace xtd {
         using reverse_iterator = base_type::reverse_iterator;
         /// @brief Represents the const reverse iterator of list value type.
         using const_reverse_iterator = base_type::const_reverse_iterator;
+        /// @brief Represents the read only collection of of list.
+        using read_only_collection = xtd::collections::object_model::read_only_collection<value_type>;
         /// @}
         
         /// @name Public Fields
@@ -326,6 +329,13 @@ namespace xtd {
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
         
+        /// @brief Returns the underlying base type items.
+        /// @return The underlying base type items.
+        virtual const base_type& items() const noexcept {return data_->items;}
+        /// @brief Returns the underlying base type items.
+        /// @return The underlying base type items.
+        virtual base_type& items() noexcept {return data_->items;}
+        
         /// @brief Returns the maximum number of elements the container is able to hold due to system or library implementation limitations, i.e. std::distance(xtd::collections::generic::list::begin(), xtd::collections::generic::list::end()) for the largest container.
         /// @return Maximum number of elements.
         virtual size_type max_size() const noexcept {return data_->items.max_size();}
@@ -414,6 +424,16 @@ namespace xtd {
         void assign(input_iterator_t first, input_iterator_t last) {
           ++data_->version;
           data_->items.assign(first, last);
+        }
+        
+        /// @brief Returns a read-only xtd::collections::object_model::read_only_collection <type_t> wrapper for the current collection.
+        /// @return An object that acts as a read-only wrapper around the current xtd::collections::generic::list <type_t>.
+        /// @remarks To prevent any modifications to the xtd::collections::generic::list <type_t> object, expose it only through this wrapper. A xtd::collections::object_model::read_only_collection <type_t> object does not expose methods that modify the collection. However, if changes are made to the underlying xtd::collections::generic::list <type_t> object, the read-only collection reflects those changes.
+        /// @remarks This method is an O(1) operation.
+        read_only_collection as_read_only() const noexcept {
+          auto read_only_list = new_ptr<list<value_type>>();
+          read_only_list->data_ = data_;
+          return read_only_collection {read_only_list};
         }
         
         /// @brief Replaces the contents with the elements from the initializer list items.
@@ -553,24 +573,6 @@ namespace xtd {
         /// @brief Returns the underlying base type.
         /// @return The underlying base type.
         virtual const base_type& get_base_type() const noexcept {return data_->items;}
-        
-        /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
-        /// @param index The zero-based xtd::collections::generic::list <type_t> index at which the range starts.
-        /// @param count The number of elements in the range.
-        /// @return A shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
-        /// @exception xtd::argument_exception index and count do ! denote a valid range of elements in the xtd::collections::generic::list <type_t>.
-        /// @par Examples
-        /// The following code example demonstrates the xtd::collections::generic::list::get_range method and other methods of the xtd::collections::generic::list <type_t> class that act on ranges. At the end of the code example, the xtd::collections::generic::list::get_range method is used to get three items from the list, beginning with index location 2. The xtd::collections::generic::ist::to_array method is called on the resulting xtd::collections::generic::list <type_t>, creating an array of three elements. The elements of the array are displayed.
-        /// @include List3.cpp
-        /// @remarks A shallow copy of a collection of reference types, or a subset of that collection, contains only the references to the elements of the collection. The objects themselves are ! copied. The references in the new list point to the same objects as the references in the original list.
-        /// @remarks A shallow copy of a collection of value types, or a subset of that collection, contains the elements of the collection. However, if the elements of the collection contain references to other objects, those objects are ! copied. The references in the elements of the new collection point to the same objects as the references in the elements of the original collection.
-        /// @remarks In contrast, a deep copy of a collection copies the elements and everything directly or indirectly referenced by the elements.
-        /// @remarks This method is an O(n) operation, where n is count.
-        list get_range(xtd::size index, xtd::size count) {
-          if (index + count > this->count()) throw xtd::argument_exception {csf_};
-          
-          return list<type_t> {begin() + index, begin() + index + count};
-        }
 
         enumerator<value_type> get_enumerator() const noexcept override {
           class list_enumerator : public ienumerator<value_type> {
@@ -600,6 +602,24 @@ namespace xtd {
           return {new_ptr<list_enumerator>(*this, data_->version)};
         }
         
+        /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
+        /// @param index The zero-based xtd::collections::generic::list <type_t> index at which the range starts.
+        /// @param count The number of elements in the range.
+        /// @return A shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
+        /// @exception xtd::argument_exception index and count do ! denote a valid range of elements in the xtd::collections::generic::list <type_t>.
+        /// @par Examples
+        /// The following code example demonstrates the xtd::collections::generic::list::get_range method and other methods of the xtd::collections::generic::list <type_t> class that act on ranges. At the end of the code example, the xtd::collections::generic::list::get_range method is used to get three items from the list, beginning with index location 2. The xtd::collections::generic::ist::to_array method is called on the resulting xtd::collections::generic::list <type_t>, creating an array of three elements. The elements of the array are displayed.
+        /// @include List3.cpp
+        /// @remarks A shallow copy of a collection of reference types, or a subset of that collection, contains only the references to the elements of the collection. The objects themselves are ! copied. The references in the new list point to the same objects as the references in the original list.
+        /// @remarks A shallow copy of a collection of value types, or a subset of that collection, contains the elements of the collection. However, if the elements of the collection contain references to other objects, those objects are ! copied. The references in the elements of the new collection point to the same objects as the references in the elements of the original collection.
+        /// @remarks In contrast, a deep copy of a collection copies the elements and everything directly or indirectly referenced by the elements.
+        /// @remarks This method is an O(n) operation, where n is count.
+        list get_range(xtd::size index, xtd::size count) {
+          if (index + count > this->count()) throw xtd::argument_exception {csf_};
+          
+          return list<type_t> {begin() + index, begin() + index + count};
+        }
+
         /// @brief Determines the index of a specific item in the List.xtd::collections::generic::list <type_t>.
         /// @param value The object to locate in the List.
         /// @return The index of value if found in the list; otherwise, xtd::collections::generic::ilist::npos.
@@ -852,14 +872,7 @@ namespace xtd {
         xtd::array<value_type> to_array() const noexcept {return xtd::array<value_type>(begin(), end());}
         
         ustring to_string() const noexcept override {return xtd::ustring::format("[{}]", xtd::ustring::join(", ", *this));}
-        
-        /// @brief Returns a reference to the underlying base type.
-        /// @return Reference to the underlying base type.
-        virtual const base_type& to_base_type() const noexcept {return data_->items;}
-        /// @brief Returns a reference to the underlying base type.
-        /// @return Reference to the underlying base type.
-        virtual base_type& to_base_type() noexcept {return data_->items;}
-        
+                
         /// @brief Sets the capacity to the actual number of elements in the xtd::collections::generic::list <type_t>, if that number is less than a threshold value.
         /// @par Examples
         /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
