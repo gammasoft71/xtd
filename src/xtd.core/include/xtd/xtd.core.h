@@ -6,8 +6,12 @@
 
 #include "collections/any_pair.h"
 #include "collections/array_list.h"
+#include "collections/enumerator.h"
 #include "collections/hashtable.h"
+#include "collections/icollection.h"
+#include "collections/ienumerable.h"
 #include "collections/ienumerator.h"
+#include "collections/iequality_comparer.h"
 #include "collections/key_not_found_exception.h"
 #include "collections/generic/dictionary.h"
 #include "collections/generic/enumerator.h"
