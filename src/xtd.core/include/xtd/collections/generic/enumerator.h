@@ -26,18 +26,25 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
+      /// @remarks The xtc::collections::generic::enumerator <type_t> class is used to encapsulate an xtd::colections::generic::ienumerator <type_t>.
       template<typename type_t>
       class enumerator : public ienumerator<type_t> {
       public:
         /// @name Public Constructors
         
         /// @{
+        /// @brief Initializes a new instance of the xtc::collections::generic::enumerator <type_t> class.
         enumerator() = default;
+        /// @brief Initializes a new instance of the xtc::collections::generic::enumerator <type_t> class with specified enumerator.
+        /// @param enumerator The xtd::colections::generic::ienumerator <type_t> enumerator to encapsulate.
         enumerator(ptr<ienumerator<type_t>> enumerator) : enumerator_ {enumerator} {} // Can't be explicit by design.
+        /// @}
+        
+        /// @cond
         enumerator(enumerator&& enumerator) = default;
         enumerator(const enumerator& enumerator) = default;
         enumerator& operator =(const enumerator& enumerator) = default;
-        /// @}
+        /// @endcond
         
         /// @{
         /// @name Public Properties
