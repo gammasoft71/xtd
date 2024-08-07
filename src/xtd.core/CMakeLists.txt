@@ -524,6 +524,8 @@ add_sources(
   include/xtd/collections/generic/helpers/equator
   include/xtd/collections/generic/helpers/hasher.h
   include/xtd/collections/generic/helpers/hasher
+  include/xtd/collections/object_model/read_only_collection.h
+  include/xtd/collections/object_model/read_only_collection
   include/xtd/collections/specialized/string_collection.h
   include/xtd/collections/specialized/string_collection
   include/xtd/collections/specialized/string_dictionary.h
