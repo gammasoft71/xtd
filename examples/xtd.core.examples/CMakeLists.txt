@@ -30,6 +30,7 @@ add_projects(
   media
   network
   object
+  object_model_collections
   parse
   processes
   random
