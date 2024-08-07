@@ -25,7 +25,7 @@ namespace xtd {
       /// xtd::collections::generic
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core interfaces
+      /// @ingroup xtd_core generic_collections interfaces
       /// @remarks This interface allows the implementation of customized equality comparison for collections. That is, you can create your own definition of equality for type `type_t`, and specify that this definition be used with a collection type that accepts the xtd::collections::generic::iequality_comparer <type_t> generic interface. In the xtd framework, constructors of the xtd::collections::generic::dictionary <key_t, value_t> generic collection type accept this interface.
       /// @remarks A default implementation of this interface is provided by the xtd::collections::generic::equality_comparer::default_equality_comparer property of the xtd::collections::generic::equality_comparer <type_t> generic class. The xtd::string_comparer class implements xtd::collections::generic::iequality_comparer <type_t> of type xtd::ustring.
       /// @remarks This interface supports only equality comparisons. Customization of comparisons for sorting and ordering is provided by the xtd::collections::generic::icomparer <type_t> generic interface.
