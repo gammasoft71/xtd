@@ -484,8 +484,16 @@ add_sources(
   include/xtd/collections/array_list
   include/xtd/collections/hashtable.h
   include/xtd/collections/hashtable
+  include/xtd/collections/icollection.h
+  include/xtd/collections/icollection
+  include/xtd/collections/ienumerable.h
+  include/xtd/collections/ienumerable
   include/xtd/collections/ienumerator.h
   include/xtd/collections/ienumerator
+  include/xtd/collections/iequality_comparer.h
+  include/xtd/collections/iequality_comparer
+  include/xtd/collections/ilist.h
+  include/xtd/collections/ilist
   include/xtd/collections/key_not_found_exception.h
   include/xtd/collections/key_not_found_exception
   include/xtd/collections/vector_list.h
