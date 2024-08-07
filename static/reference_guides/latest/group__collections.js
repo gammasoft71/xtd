@@ -1,6 +1,7 @@
 var group__collections =
 [
     [ "generic", "group__generic__collections.html", "group__generic__collections" ],
+    [ "object model", "group__object__model__collections.html", "group__object__model__collections" ],
     [ "specialized", "group__specialized__collections.html", "group__specialized__collections" ],
     [ "xtd::forms::layout::arranged_element_collection< type_t, sorter_t >", "classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html", [
       [ "value_type", "classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html", null ],

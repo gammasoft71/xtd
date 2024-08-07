@@ -231,7 +231,8 @@ var hierarchy =
           [ "xtd::collections::generic::ilist< type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", [
             [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ]
           ] ]
-        ] ]
+        ] ],
+        [ "xtd::collections::object_model::read_only_collection< type_t >", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", null ]
       ] ]
     ] ],
     [ "xtd::equality_operators< type_t, equatable_t >", "classxtd_1_1equality__operators.html", [
@@ -1014,6 +1015,7 @@ var hierarchy =
       [ "xtd::beep", "classxtd_1_1beep.html", null ],
       [ "xtd::box< type_t >", "classxtd_1_1box.html", null ],
       [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ],
+      [ "xtd::collections::object_model::read_only_collection< type_t >", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", null ],
       [ "xtd::compiler", "classxtd_1_1compiler.html", null ],
       [ "xtd::configuration::file_settings", "classxtd_1_1configuration_1_1file__settings.html", null ],
       [ "xtd::configuration::settings", "classxtd_1_1configuration_1_1settings.html", null ],
