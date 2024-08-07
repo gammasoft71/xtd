@@ -25,7 +25,7 @@ namespace xtd {
       /// xtd::collections::generic
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core interfaces
+      /// @ingroup xtd_core generic_collections interfaces
       /// @par Examples
       /// The following example shows an implementation of the xtd::collections::generic::ienumerator <type_t> interface for a collection class of custom objects. The custom object is an instance of the type Box, and the collection class is BoxCollection. This code example is part of a larger example provided for the ICollection<T> interface.
       /// @code
