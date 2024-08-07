@@ -14,6 +14,10 @@ var namespacextd_1_1collections =
     [ "any_pair", "group__collections_ga8a76f3f05751df733bfba833f2016757.html#ga8a76f3f05751df733bfba833f2016757", null ],
     [ "array_list", "group__collections_gaf064333715d42a26e1ec3999ff384557.html#gaf064333715d42a26e1ec3999ff384557", null ],
     [ "hashtable", "group__collections_gaf94efa3cbd1251ed0a6bf8db67406922.html#gaf94efa3cbd1251ed0a6bf8db67406922", null ],
+    [ "icollection", "group__interfaces_gabb263b8f51a5edf07ad33b3355ae5eb2.html#gabb263b8f51a5edf07ad33b3355ae5eb2", null ],
+    [ "ienumerable", "group__interfaces_gad6394329e5e329f3fda6d45017ee1a7c.html#gad6394329e5e329f3fda6d45017ee1a7c", null ],
     [ "ienumerator", "group__interfaces_ga1871d17c4798e1f712e5c7f09ff36506.html#ga1871d17c4798e1f712e5c7f09ff36506", null ],
+    [ "iequality_comparer", "group__interfaces_ga1aae82a450c8deb3f3220a385b52ecf5.html#ga1aae82a450c8deb3f3220a385b52ecf5", null ],
+    [ "ilist", "group__interfaces_gaf2cca35e1002dd44cdfa244b0654d6b4.html#gaf2cca35e1002dd44cdfa244b0654d6b4", null ],
     [ "vector_list", "group__collections_ga3c07efce71e0899524aa31dfd0431817.html#ga3c07efce71e0899524aa31dfd0431817", null ]
 ];

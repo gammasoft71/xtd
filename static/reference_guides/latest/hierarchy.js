@@ -224,15 +224,20 @@ var hierarchy =
     ] ],
     [ "xtd::enum_register< enum_t >", "structxtd_1_1enum__register.html", null ],
     [ "xtd::enum_set_attribute< enum_t >", "structxtd_1_1enum__set__attribute.html", null ],
-    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerator_t >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", null ],
+    [ "xtd::collections::generic::enumerable_iterators< type_t, enumerator_t >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
+      [ "xtd::collections::generic::ienumerable< list_type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ]
+    ] ],
+    [ "xtd::collections::generic::enumerable_iterators< list_type_t, ienumerable< list_type_t > >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", null ],
     [ "xtd::collections::generic::enumerable_iterators< type_t, ienumerable< type_t > >", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators.html", [
       [ "xtd::collections::generic::ienumerable< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
+        [ "xtd::collections::generic::icollection< list_type_t >", "classxtd_1_1collections_1_1generic_1_1icollection.html", null ],
         [ "xtd::collections::generic::icollection< type_t >", "classxtd_1_1collections_1_1generic_1_1icollection.html", [
+          [ "xtd::collections::generic::ilist< list_type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", null ],
           [ "xtd::collections::generic::ilist< type_t >", "classxtd_1_1collections_1_1generic_1_1ilist.html", [
-            [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ]
+            [ "xtd::collections::generic::list< type_t >", "classxtd_1_1collections_1_1generic_1_1list.html", null ],
+            [ "xtd::collections::object_model::read_only_collection< type_t >", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", null ]
           ] ]
-        ] ],
-        [ "xtd::collections::object_model::read_only_collection< type_t >", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", null ]
+        ] ]
       ] ]
     ] ],
     [ "xtd::equality_operators< type_t, equatable_t >", "classxtd_1_1equality__operators.html", [
@@ -769,6 +774,7 @@ var hierarchy =
       [ "xtd::event< xtd::forms::message_dialog, help_event_handler >", "classxtd_1_1event.html", null ]
     ] ],
     [ "xtd::interface", "classxtd_1_1interface.html", [
+      [ "xtd::collections::generic::ienumerable< list_type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", null ],
       [ "xtd::icomparable< any_object >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< box< type_t > >", "classxtd_1_1icomparable.html", null ],
       [ "xtd::icomparable< date_time >", "classxtd_1_1icomparable.html", null ],

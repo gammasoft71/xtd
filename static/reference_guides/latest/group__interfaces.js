@@ -128,5 +128,9 @@ var group__interfaces =
       [ "white_space", "classxtd_1_1forms_1_1style__sheets_1_1itext__model_a277ae69a128e738986f31844133d37c2.html#a277ae69a128e738986f31844133d37c2", null ],
       [ "make_string_format", "classxtd_1_1forms_1_1style__sheets_1_1itext__model_a1e53a1e53bee2ab6b051164d10295ef5.html#a1e53a1e53bee2ab6b051164d10295ef5", null ]
     ] ],
-    [ "xtd::collections::ienumerator", "group__interfaces_ga1871d17c4798e1f712e5c7f09ff36506.html#ga1871d17c4798e1f712e5c7f09ff36506", null ]
+    [ "xtd::collections::icollection", "group__interfaces_gabb263b8f51a5edf07ad33b3355ae5eb2.html#gabb263b8f51a5edf07ad33b3355ae5eb2", null ],
+    [ "xtd::collections::ienumerable", "group__interfaces_gad6394329e5e329f3fda6d45017ee1a7c.html#gad6394329e5e329f3fda6d45017ee1a7c", null ],
+    [ "xtd::collections::ienumerator", "group__interfaces_ga1871d17c4798e1f712e5c7f09ff36506.html#ga1871d17c4798e1f712e5c7f09ff36506", null ],
+    [ "xtd::collections::iequality_comparer", "group__interfaces_ga1aae82a450c8deb3f3220a385b52ecf5.html#ga1aae82a450c8deb3f3220a385b52ecf5", null ],
+    [ "xtd::collections::ilist", "group__interfaces_gaf2cca35e1002dd44cdfa244b0654d6b4.html#gaf2cca35e1002dd44cdfa244b0654d6b4", null ]
 ];
