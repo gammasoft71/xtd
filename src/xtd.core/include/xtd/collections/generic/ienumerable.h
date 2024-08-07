@@ -24,7 +24,7 @@ namespace xtd {
       /// xtd::collections::generic
       /// @par Library
       /// xtd.core
-      /// @ingroup xtd_core interfaces
+      /// @ingroup xtd_core generic_collections interfaces
       template <typename type_t>
       class ienumerable : public interface, public enumerable_iterators<type_t, ienumerable<type_t>> {
       public:
