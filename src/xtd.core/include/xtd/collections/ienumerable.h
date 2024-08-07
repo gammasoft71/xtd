@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/ienumerable.h"
+#include "enumerator.h"
 #include "../as.h"
 #include "../any_object.h"
 
