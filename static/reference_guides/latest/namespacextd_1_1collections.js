@@ -1,6 +1,7 @@
 var namespacextd_1_1collections =
 [
     [ "generic", "namespacextd_1_1collections_1_1generic.html", "namespacextd_1_1collections_1_1generic" ],
+    [ "object_model", "namespacextd_1_1collections_1_1object__model.html", "namespacextd_1_1collections_1_1object__model" ],
     [ "specialized", "namespacextd_1_1collections_1_1specialized.html", [
       [ "string_collection", "group__specialized__collections_gaf251564b11f05da91a1237f8524ffe24.html#gaf251564b11f05da91a1237f8524ffe24", null ],
       [ "string_dictionary", "group__specialized__collections_ga2249ba8b2968b085d427898767c71a2b.html#ga2249ba8b2968b085d427898767c71a2b", null ],

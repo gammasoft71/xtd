@@ -17,6 +17,9 @@ var annotated_dup =
           [ "ilist", "classxtd_1_1collections_1_1generic_1_1ilist.html", "classxtd_1_1collections_1_1generic_1_1ilist" ],
           [ "list", "classxtd_1_1collections_1_1generic_1_1list.html", "classxtd_1_1collections_1_1generic_1_1list" ]
         ] ],
+        [ "object_model", "namespacextd_1_1collections_1_1object__model.html", [
+          [ "read_only_collection", "classxtd_1_1collections_1_1object__model_1_1read__only__collection.html", "classxtd_1_1collections_1_1object__model_1_1read__only__collection" ]
+        ] ],
         [ "key_not_found_exception", "classxtd_1_1collections_1_1key__not__found__exception.html", "classxtd_1_1collections_1_1key__not__found__exception" ]
       ] ],
       [ "configuration", "namespacextd_1_1configuration.html", [

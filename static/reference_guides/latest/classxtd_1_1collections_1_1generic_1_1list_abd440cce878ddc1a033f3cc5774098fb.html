@@ -151,7 +151,7 @@ template&lt;typename type_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The zero-based index in the source <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; at which copying begins. </td></tr>
-    <tr><td class="paramname">array</td><td>The one-dimensional Array that is the destination of the elements copied from ICollection. The Array must have zero-based indexing. </td></tr>
+    <tr><td class="paramname">array</td><td>The one-dimensional sxtd::array that is the destination of the elements copied from ICollection. The sxtd::array must have zero-based indexing. </td></tr>
     <tr><td class="paramname">arrayIndex</td><td>The zero-based index in array at which copying begins; </td></tr>
     <tr><td class="paramname">count</td><td>The number of elements to copy. </td></tr>
   </table>
@@ -165,11 +165,11 @@ template&lt;typename type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>TThis method uses Array.Copy to copy the elements. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>TThis method uses sxtd::array::copy to copy the elements. </dd>
 <dd>
-The elements are copied to the Array in the same order in which the enumerator iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd>
+The elements are copied to the sxtd::array in the same order in which the enumerator iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd>
 <dd>
-This method is an O(n) operation, where n is Count. </dd></dl>
+This method is an O(n) operation, where n is sxtd::collections::generic::list::count. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates all three overloads of the CopyTo method. A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(T[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(T[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, T[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
@@ -181,7 +181,7 @@ This method is an O(n) operation, where n is Count. </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1collections.html">collections</a></li><li class="navelem"><a class="el" href="namespacextd_1_1collections_1_1generic.html">generic</a></li><li class="navelem"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a></li>
-		<li class="footer">Generated on Sun Aug 4 2024 20:03:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 7 2024 09:59:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
