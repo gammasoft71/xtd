@@ -33,6 +33,7 @@
 * [Media](xtd.core.examples/media/README.md) contains media examples.
 * [Network](xtd.core.examples/network/README.md) contains network examples.
 * [Object](xtd.core.examples/object/README.md) contains object examples.
+* [Object model collections](xtd.core.examples/object_model_collections/README.md) contains object model collections examples.
 * [Parse](xtd.core.examples/parse/README.md) contains parse examples.
 * [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.
