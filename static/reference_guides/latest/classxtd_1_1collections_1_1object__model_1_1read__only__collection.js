@@ -8,11 +8,15 @@ var classxtd_1_1collections_1_1object__model_1_1read__only__collection =
     [ "const_reference", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_af5e30a3be0870185754e482751e9cee2.html#af5e30a3be0870185754e482751e9cee2", null ],
     [ "pointer", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_afc240e7e63f98fc6c983b22b75aae48c.html#afc240e7e63f98fc6c983b22b75aae48c", null ],
     [ "const_pointer", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a5d9b9942cd1007235928c3dd46fa38d0.html#a5d9b9942cd1007235928c3dd46fa38d0", null ],
-    [ "iterator", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a7bca4a5ed25d24f6dcbf369b53728845.html#a7bca4a5ed25d24f6dcbf369b53728845", null ],
-    [ "const_iterator", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a6930fc7a2ad1e422e1e2e9124e8f4400.html#a6930fc7a2ad1e422e1e2e9124e8f4400", null ],
+    [ "iterator", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a59fb479870a37f69f78c63231bfb6837.html#a59fb479870a37f69f78c63231bfb6837", null ],
+    [ "const_iterator", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_abed8f0681107cee862861dbe2597db63.html#abed8f0681107cee862861dbe2597db63", null ],
     [ "read_only_collection", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_abe763e6d97f3ceb877fff1c1332100a2.html#abe763e6d97f3ceb877fff1c1332100a2", null ],
-    [ "count", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a4ebd70893198e6979cb3eadf5648821a.html#a4ebd70893198e6979cb3eadf5648821a", null ],
+    [ "count", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_af9ec8fd3e0e447aa298acd5f507b30d5.html#af9ec8fd3e0e447aa298acd5f507b30d5", null ],
+    [ "sync_root", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_ae250e6a68d4c8347c13bc457acd4c0b7.html#ae250e6a68d4c8347c13bc457acd4c0b7", null ],
+    [ "contains", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a36476d09413911572fdaa6f9c98e1042.html#a36476d09413911572fdaa6f9c98e1042", null ],
+    [ "copy_to", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a49c79dbe2b8d0df791632e70e19bd5ef.html#a49c79dbe2b8d0df791632e70e19bd5ef", null ],
     [ "get_enumerator", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_acf07a951b6f78ad0b2531c9c374ba1ed.html#acf07a951b6f78ad0b2531c9c374ba1ed", null ],
-    [ "operator[]", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_ae4c3d20f882770ebfd6569d94cb5b006.html#ae4c3d20f882770ebfd6569d94cb5b006", null ],
-    [ "operator[]", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a02faadf5905e654b7f096e1c400b2568.html#a02faadf5905e654b7f096e1c400b2568", null ]
+    [ "index_of", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_ad291fb370d91e825ece79e3950077130.html#ad291fb370d91e825ece79e3950077130", null ],
+    [ "operator[]", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a4b2953f41e1cf176b6df3c550a7c081c.html#a4b2953f41e1cf176b6df3c550a7c081c", null ],
+    [ "items", "classxtd_1_1collections_1_1object__model_1_1read__only__collection_a8d9cccc175e413487b6b5b3f2aef0726.html#a8d9cccc175e413487b6b5b3f2aef0726", null ]
 ];
