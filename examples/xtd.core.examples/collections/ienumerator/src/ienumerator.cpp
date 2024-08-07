@@ -1,48 +1,70 @@
 #include <xtd/collections/array_list>
-#include <xtd/collections/ienumerator>
 #include <xtd/console>
+#include <xtd/startup>
 
 using namespace xtd;
 using namespace xtd::collections;
 
-struct box : public iequatable<::box>, public icomparable<::box> {
-  box() = default;
-  box(int l, int w, int h) : length{l}, width {w}, height {h} {}
-
-  int length = 0;
-  int width = 0;
-  int height = 0;
-
-  int32 compare_to(const ::box& o) const noexcept override {return 0;}
-  bool equals(const ::box& o) const noexcept override {return length == o.length && width == o.width && height == o.height;}
-  ustring to_string() const noexcept {return ustring::format("box [length={}, width={}, height={}]", length, width, height);}
-};
-
-using box_collection = array_list;
-
-class box_enumerator : public ienumerator {
+class program {
 public:
-  explicit box_enumerator(const box_collection& boxes) : boxes {boxes} {}
+  // Simple business object.
+  struct person : public object, public iequatable<person>, public icomparable<person> {
+  public:
+    person(const ustring& first_name, const ustring last_name) : first_name {first_name}, last_name {last_name} {}
+    
+    ustring first_name;
+    ustring last_name;
+
+    int32 compare_to(const person& o) const noexcept override {
+      if (first_name == o.first_name && last_name == o.last_name) return 0;
+      if (first_name > o.first_name || (first_name == o.first_name && last_name > o.last_name)) return 1;
+      return -1;
+    }
+    bool equals(const object& o) const noexcept override {return is<person>(o) && equals(as<person>(o));}
+    bool equals(const person& o) const noexcept override {return compare_to(o) == 0;}
+    ustring to_string() const noexcept override {return ustring::format("{} {}", first_name, last_name);}
+  };
   
-  const any_object& current() const override {return boxes[cur_index];}
-  bool move_next() override {return ++cur_index < boxes.size();}
-  void reset() override {cur_index = box_integer<size>::max_value;}
-  
-private:
-  const box_collection& boxes;
-  size cur_index = box_integer<size>::max_value;
+  // Collection of person objects. This class
+  // implements IEnumerable so that it can be used
+  // with ForEach syntax.
+  class people : public ienumerable {
+  private:
+    array_list people_;
+    
+  public:
+    people(const array<person>& p_array) {
+      people_ = array_list(p_array.size());
+      
+      for (auto i = 0_z; i < p_array.size(); ++i)
+        people_[i] = p_array[i];
+    }
+    
+    // Implementation for the GetEnumerator method.
+    enumerator get_enumerator() const noexcept override {
+      return people_.get_enumerator();
+    }
+  };
+
+  static auto main() -> void {
+    auto people_array = xtd::array<person> {
+      person {"John", "Smith"},
+      person {"Jim", "Johnson"},
+      person {"Sue", "Rabon"},
+    };
+    
+    auto people_list = people {people_array};
+    auto people_enum = people_list.get_enumerator();
+    while (people_enum.move_next())
+      console::write_line(people_enum.current());
+  }
 };
 
-auto main() -> int {
-  auto boxes = box_collection {::box {10, 20, 30}, ::box {20, 5, 10}, ::box {12, 3, 7}};
-  
-  auto enumerator = box_enumerator {boxes};
-  while(enumerator.move_next())
-    console::write_line(as<::box>(enumerator.current()).to_string());
-}
+startup_(program::main);
+
 
 // This code can produces the following output :
 //
-// box [length=10, width=20, height=30]
-// box [length=20, width=5, height=10]
-// box [length=12, width=3, height=7]
+// John Smith
+// Jim Johnson
+// Sue Rabon
