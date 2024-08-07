@@ -25,6 +25,7 @@
 #include "collections/generic/helpers/comparer.h"
 #include "collections/generic/helpers/equator.h"
 #include "collections/generic/helpers/hasher.h"
+#include "collections/object_model/read_only_collection.h"
 #include "collections/specialized/string_collection.h"
 #include "collections/specialized/string_dictionary.h"
 #include "collections/specialized/string_key_value_pair.h"
