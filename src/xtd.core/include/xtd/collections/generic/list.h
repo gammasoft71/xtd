@@ -6,7 +6,7 @@
 #include "ilist.h"
 #include "../object_model/read_only_collection.h"
 #include "../../argument_exception.h"
-#include "../../argument_out_of_range_exception.h"
+#include "../../index_out_of_range_exception.h"
 #include "../../box_integer.h"
 #include "../../invalid_operation_exception.h"
 #include "../../intptr.h"
@@ -449,7 +449,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual reference at(size_type index) {
-          if (index >= count()) throw argument_out_of_range_exception {csf_};
+          if (index >= count()) throw index_out_of_range_exception {csf_};
           return (reference)data_->items.at(index);
         }
         /// @brief Returns a reference to the element at specified location pos, with bounds checking.
@@ -457,7 +457,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual const_reference at(size_type index) const {
-          if (index >= count()) throw argument_out_of_range_exception {csf_};
+          if (index >= count()) throw index_out_of_range_exception {csf_};
           return (reference)data_->items.at(index);
         }
         
