@@ -4,7 +4,7 @@ Shows how to use [xtd::collections:: ilist](https://gammasoft71.github.io/xtd/re
 
 ## Sources
 
-[src/ienumerable.cpp](src/ienumerable.cpp)
+[src/ilist.cpp](src/ilist.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
