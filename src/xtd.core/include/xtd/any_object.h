@@ -79,7 +79,7 @@ namespace xtd {
     bool equals(const any_object& other) const noexcept override {
       if (!has_value() && !other.has_value()) return true;
       if (has_value() != other.has_value()) return false;
-      return value_->equals(other);
+      return value_->equals(*other.value_);
     }
     xtd::size get_hash_code() const noexcept override {return has_value() ? value_->get_hash_code() : 0;}
     ustring to_string() const noexcept override {return has_value() ? value_->to_string() : "(null)";}
@@ -200,6 +200,18 @@ namespace xtd {
   bool is(const any_object& o) {
     if (is<box<type_t>>(o.value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
+  }
+  
+  template<typename type_t>
+  bool is(any_object* o) {
+    if (is<box<type_t>>(o->value())) return true;
+    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(*o);
+  }
+  
+  template<typename type_t>
+  bool is(const any_object* o) {
+    if (is<box<type_t>>(o->value())) return true;
+    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(*o);
   }
   /// @endcond
 }
