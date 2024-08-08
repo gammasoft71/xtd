@@ -126,65 +126,65 @@ $(document).ready(function(){initNavTree('progress_dialog_8cpp-example.html','')
 <img src="progress_dialog_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/progress_dialog&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  form1() {</div>
-<div class="line">    text(<span class="stringliteral">&quot;Progress dialog example&quot;</span>);</div>
-<div class="line">    </div>
-<div class="line">    button_process.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    button_process.location({10, 10});</div>
-<div class="line">    button_process.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    button_process.text(<span class="stringliteral">&quot;Process...&quot;</span>);</div>
-<div class="line">    button_process.click += [<span class="keyword">this</span>] {</div>
-<div class="line">      <span class="keyword">auto</span> dialog = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1progress__dialog.html">progress_dialog</a> {};</div>
-<div class="line">      dialog.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1forms_1_1progress__dialog_ac7d1e038ad0e99e4cab86d8a03a412f9.html#ac7d1e038ad0e99e4cab86d8a03a412f9">text</a>(<span class="stringliteral">&quot;Process running&quot;</span>);</div>
-<div class="line">      dialog.show_skip_button(<span class="keyword">true</span>);</div>
-<div class="line">      dialog.show_remaining_time(<span class="keyword">true</span>);</div>
-<div class="line">      dialog.show_dialog(*<span class="keyword">this</span>);</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= dialog.maximum(); ++step) {</div>
-<div class="line">        dialog.value(step);</div>
-<div class="line">        dialog.message(ustring::format(<span class="stringliteral">&quot;Step {}/{} ==&gt; {}&quot;</span>, dialog.value(), dialog.maximum(), dialog.skipped() ? <span class="stringliteral">&quot;skipped&quot;</span> : <span class="stringliteral">&quot;done&quot;</span>));</div>
-<div class="line">        thread::sleep(100_ms);</div>
-<div class="line">      }</div>
-<div class="line">    };</div>
-<div class="line">    </div>
-<div class="line">    button_indeterminate_process.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    button_indeterminate_process.location({100, 10});</div>
-<div class="line">    button_indeterminate_process.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    button_indeterminate_process.text(<span class="stringliteral">&quot;Indeterminate process...&quot;</span>);</div>
-<div class="line">    button_indeterminate_process.click += [<span class="keyword">this</span>] {</div>
-<div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1progress__dialog.html">progress_dialog</a> {};</div>
-<div class="line">      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1progress__dialog_ac7d1e038ad0e99e4cab86d8a03a412f9.html#ac7d1e038ad0e99e4cab86d8a03a412f9">text</a>(<span class="stringliteral">&quot;Indeterminate process running&quot;</span>);</div>
-<div class="line">      dialog.message(<span class="stringliteral">&quot;Click \&quot;Cancel\&quot; to abort&quot;</span>);</div>
-<div class="line">      dialog.marquee(<span class="keyword">true</span>);</div>
-<div class="line">      dialog.show_cancel_button(<span class="keyword">true</span>);</div>
-<div class="line">      dialog.show_elapsed_time(<span class="keyword">true</span>);</div>
-<div class="line">      dialog.show_dialog(*<span class="keyword">this</span>);</div>
-<div class="line">      <span class="keywordflow">while</span> (!dialog.cancelled()) {</div>
-<div class="line">        application::do_events();</div>
-<div class="line">        thread::sleep(100_ms);</div>
-<div class="line">      }</div>
-<div class="line">    };</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_process;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_indeterminate_process;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  application::run(form1 {});</div>
-<div class="line">}</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;xtd/forms/progress_dialog&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  form1() {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    text(<span class="stringliteral">&quot;Progress dialog example&quot;</span>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    button_process.auto_size(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    button_process.location({10, 10});</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    button_process.parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    button_process.text(<span class="stringliteral">&quot;Process...&quot;</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    button_process.click += [<span class="keyword">this</span>] {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      <span class="keyword">auto</span> dialog = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1progress__dialog.html">progress_dialog</a> {};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      dialog.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1forms_1_1progress__dialog_ac7d1e038ad0e99e4cab86d8a03a412f9.html#ac7d1e038ad0e99e4cab86d8a03a412f9">text</a>(<span class="stringliteral">&quot;Process running&quot;</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      dialog.show_skip_button(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      dialog.show_remaining_time(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      dialog.show_dialog(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= dialog.maximum(); ++step) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        dialog.value(step);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        dialog.message(ustring::format(<span class="stringliteral">&quot;Step {}/{} ==&gt; {}&quot;</span>, dialog.value(), dialog.maximum(), dialog.skipped() ? <span class="stringliteral">&quot;skipped&quot;</span> : <span class="stringliteral">&quot;done&quot;</span>));</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        thread::sleep(100_ms);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    };</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    button_indeterminate_process.auto_size(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    button_indeterminate_process.location({100, 10});</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    button_indeterminate_process.parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    button_indeterminate_process.text(<span class="stringliteral">&quot;Indeterminate process...&quot;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    button_indeterminate_process.click += [<span class="keyword">this</span>] {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1progress__dialog.html">progress_dialog</a> {};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1progress__dialog_ac7d1e038ad0e99e4cab86d8a03a412f9.html#ac7d1e038ad0e99e4cab86d8a03a412f9">text</a>(<span class="stringliteral">&quot;Indeterminate process running&quot;</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      dialog.message(<span class="stringliteral">&quot;Click \&quot;Cancel\&quot; to abort&quot;</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      dialog.marquee(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      dialog.show_cancel_button(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      dialog.show_elapsed_time(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      dialog.show_dialog(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keywordflow">while</span> (!dialog.cancelled()) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        application::do_events();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        thread::sleep(100_ms);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    };</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_process;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_indeterminate_process;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  application::run(form1 {});</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.h:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1progress__dialog_ac7d1e038ad0e99e4cab86d8a03a412f9_html_ac7d1e038ad0e99e4cab86d8a03a412f9"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__dialog_ac7d1e038ad0e99e4cab86d8a03a412f9.html#ac7d1e038ad0e99e4cab86d8a03a412f9">xtd::forms::progress_dialog::text</a></div><div class="ttdeci">const xtd::ustring &amp; text() const noexcept</div><div class="ttdoc">Gets the dialog title.</div></div>
@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('progress_dialog_8cpp-example.html','')
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

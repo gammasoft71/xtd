@@ -103,59 +103,59 @@ $(document).ready(function(){initNavTree('console_info_8cpp-example.html',''); i
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1console.html" title="Represents the standard input, output, and error streams for console applications.">xtd::console</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;background_color = {}&quot;</span>, console::background_color());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;foreground_color = {}&quot;</span>, console::foreground_color());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;buffer_height = {}&quot;</span>, console::buffer_height());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;buffer_width = {}&quot;</span>, console::buffer_width());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;caps_lock = {}&quot;</span>, console::caps_lock());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;cursor_left = {}&quot;</span>, console::cursor_left());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;cursor_size = {}&quot;</span>, console::cursor_size());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;cursor_top = {}&quot;</span>, console::cursor_top());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;cursor_visible = {}&quot;</span>, console::cursor_visible());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;foreground_color = {}&quot;</span>, console::foreground_color());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;is_rrror_redirected = {}&quot;</span>, console::is_error_redirected());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;is_input_redirected = {}&quot;</span>, console::is_input_redirected());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;is_output_redirected = {}&quot;</span>, console::is_output_redirected());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;key_available = {}&quot;</span>, console::key_available());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;largest_window_height = {}&quot;</span>, console::largest_window_height());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;largest_window_width = {}&quot;</span>, console::largest_window_width());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;title = {}&quot;</span>, console::title());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;treat_control_c_as_input = {}&quot;</span>, console::treat_control_c_as_input());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;window_height = {}&quot;</span>, console::window_height());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;window_left = {}&quot;</span>, console::window_left());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;window_top = {}&quot;</span>, console::window_top());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;window_width = {}&quot;</span>, console::window_width());</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code can produce the following output:</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// background_color = black</span></div>
-<div class="line"><span class="comment">// foreground_color = white</span></div>
-<div class="line"><span class="comment">// buffer_height = 24</span></div>
-<div class="line"><span class="comment">// buffer_width = 80</span></div>
-<div class="line"><span class="comment">// caps_lock = false</span></div>
-<div class="line"><span class="comment">// cursor_left = 0</span></div>
-<div class="line"><span class="comment">// cursor_size = 100</span></div>
-<div class="line"><span class="comment">// cursor_top = 0</span></div>
-<div class="line"><span class="comment">// cursor_visible = true</span></div>
-<div class="line"><span class="comment">// foreground_color = white</span></div>
-<div class="line"><span class="comment">// is_rrror_redirected = false</span></div>
-<div class="line"><span class="comment">// is_input_redirected = false</span></div>
-<div class="line"><span class="comment">// is_output_redirected = false</span></div>
-<div class="line"><span class="comment">// key_available = false</span></div>
-<div class="line"><span class="comment">// largest_window_height = 1000</span></div>
-<div class="line"><span class="comment">// largest_window_width = 1000</span></div>
-<div class="line"><span class="comment">// title =</span></div>
-<div class="line"><span class="comment">// treat_control_c_as_input = false</span></div>
-<div class="line"><span class="comment">// window_height = 24</span></div>
-<div class="line"><span class="comment">// window_left = 0</span></div>
-<div class="line"><span class="comment">// window_top = 0</span></div>
-<div class="line"><span class="comment">// window_width = 80</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  console::write_line(<span class="stringliteral">&quot;background_color = {}&quot;</span>, console::background_color());</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  console::write_line(<span class="stringliteral">&quot;foreground_color = {}&quot;</span>, console::foreground_color());</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  console::write_line(<span class="stringliteral">&quot;buffer_height = {}&quot;</span>, console::buffer_height());</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  console::write_line(<span class="stringliteral">&quot;buffer_width = {}&quot;</span>, console::buffer_width());</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  console::write_line(<span class="stringliteral">&quot;caps_lock = {}&quot;</span>, console::caps_lock());</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  console::write_line(<span class="stringliteral">&quot;cursor_left = {}&quot;</span>, console::cursor_left());</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  console::write_line(<span class="stringliteral">&quot;cursor_size = {}&quot;</span>, console::cursor_size());</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  console::write_line(<span class="stringliteral">&quot;cursor_top = {}&quot;</span>, console::cursor_top());</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  console::write_line(<span class="stringliteral">&quot;cursor_visible = {}&quot;</span>, console::cursor_visible());</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  console::write_line(<span class="stringliteral">&quot;foreground_color = {}&quot;</span>, console::foreground_color());</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  console::write_line(<span class="stringliteral">&quot;is_rrror_redirected = {}&quot;</span>, console::is_error_redirected());</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  console::write_line(<span class="stringliteral">&quot;is_input_redirected = {}&quot;</span>, console::is_input_redirected());</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  console::write_line(<span class="stringliteral">&quot;is_output_redirected = {}&quot;</span>, console::is_output_redirected());</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  console::write_line(<span class="stringliteral">&quot;key_available = {}&quot;</span>, console::key_available());</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  console::write_line(<span class="stringliteral">&quot;largest_window_height = {}&quot;</span>, console::largest_window_height());</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  console::write_line(<span class="stringliteral">&quot;largest_window_width = {}&quot;</span>, console::largest_window_width());</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  console::write_line(<span class="stringliteral">&quot;title = {}&quot;</span>, console::title());</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  console::write_line(<span class="stringliteral">&quot;treat_control_c_as_input = {}&quot;</span>, console::treat_control_c_as_input());</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  console::write_line(<span class="stringliteral">&quot;window_height = {}&quot;</span>, console::window_height());</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  console::write_line(<span class="stringliteral">&quot;window_left = {}&quot;</span>, console::window_left());</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  console::write_line(<span class="stringliteral">&quot;window_top = {}&quot;</span>, console::window_top());</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  console::write_line(<span class="stringliteral">&quot;window_width = {}&quot;</span>, console::window_width());</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">// This code can produce the following output :</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// background_color = black</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// foreground_color = white</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// buffer_height = 24</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// buffer_width = 80</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// caps_lock = false</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// cursor_left = 0</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// cursor_size = 100</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// cursor_top = 0</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// cursor_visible = true</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// foreground_color = white</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// is_rrror_redirected = false</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// is_input_redirected = false</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// is_output_redirected = false</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// key_available = false</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">// largest_window_height = 1000</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">// largest_window_width = 1000</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// title =</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// treat_control_c_as_input = false</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">// window_height = 24</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// window_left = 0</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">// window_top = 0</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// window_width = 80</span></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('console_info_8cpp-example.html',''); i
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

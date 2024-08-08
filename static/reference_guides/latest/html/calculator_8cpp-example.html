@@ -126,223 +126,223 @@ $(document).ready(function(){initNavTree('calculator_8cpp-example.html',''); ini
 <img src="calculator_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>calculator {</div>
-<div class="line">  <span class="keyword">class </span>form_main : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
-<div class="line">    <span class="keyword">enum class</span> operators {</div>
-<div class="line">      none = -1,</div>
-<div class="line">      divide,</div>
-<div class="line">      multiply,</div>
-<div class="line">      subtract,</div>
-<div class="line">      add,</div>
-<div class="line">      equal</div>
-<div class="line">    };</div>
-<div class="line">    </div>
-<div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      application::run(form_main());</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    form_main() {</div>
-<div class="line">      text(<span class="stringliteral">&quot;Calculator&quot;</span>);</div>
-<div class="line">      back_color(drawing::color::from_argb(44, 44, 47));</div>
-<div class="line">      fore_color(drawing::color::white);</div>
-<div class="line">      font(<a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1font__family_a8bee18d4466485c306c17adf9e2565ca.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a>(), 15));</div>
-<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms_ga988a6abd919c15254f45a0bf9c2dcb17.html#ga988a6abd919c15254f45a0bf9c2dcb17">auto_size_mode</a>(forms::auto_size_mode::grow_and_shrink);</div>
-<div class="line">      auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      maximize_box(<span class="keyword">false</span>);</div>
-<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms_gae69a2e9fdce97075bf7642aed73e5907.html#gae69a2e9fdce97075bf7642aed73e5907">form_border_style</a>(forms::form_border_style::fixed_3d);</div>
-<div class="line">      key_press += <a class="code hl_typedef" href="group__events_gaacd8585e8139ce491fe44534f938d475.html#gaacd8585e8139ce491fe44534f938d475">key_press_event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::form_main_key_press);</div>
-<div class="line">      </div>
-<div class="line">      result.bounds({0, 0, 240, 60});</div>
-<div class="line">      result.font(<a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(font(), font().<a class="code hl_typedef" href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>() * 2));</div>
-<div class="line">      result.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      result.text_align(content_alignment::middle_right);</div>
-<div class="line">      result.text(<span class="stringliteral">&quot;0&quot;</span>);</div>
-<div class="line">      </div>
-<div class="line">      button_clear.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      button_clear.back_color(drawing::color::from_argb(64, 64, 64));</div>
-<div class="line">      button_clear.flat_appearance(<a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))</div>
-<div class="line">        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))</div>
-<div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
-<div class="line">        .border_radius(0)</div>
-<div class="line">        .border_size(0));</div>
-<div class="line">      button_clear.flat_style(<a id="a4" name="a4"></a><a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
-<div class="line">      button_clear.location({0, 60});</div>
-<div class="line">      button_clear.text(<span class="stringliteral">&quot;C&quot;</span>);</div>
-<div class="line">      button_clear.size({60, 50});</div>
-<div class="line">      button_clear.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_clear_click);</div>
-<div class="line">      </div>
-<div class="line">      button_plus_minus.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      button_plus_minus.back_color(drawing::color::from_argb(64, 64, 64));</div>
-<div class="line">      button_plus_minus.flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))</div>
-<div class="line">        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))</div>
-<div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
-<div class="line">        .border_radius(0)</div>
-<div class="line">        .border_size(0));</div>
-<div class="line">      button_plus_minus.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
-<div class="line">      button_plus_minus.location({61, 60});</div>
-<div class="line">      button_plus_minus.text(<span class="stringliteral">&quot;+/-&quot;</span>);</div>
-<div class="line">      button_plus_minus.size({60, 50});</div>
-<div class="line">      button_plus_minus.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_plus_minus_click);</div>
-<div class="line">      </div>
-<div class="line">      button_percent.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      button_percent.back_color(drawing::color::from_argb(64, 64, 64));</div>
-<div class="line">      button_percent.flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))</div>
-<div class="line">        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))</div>
-<div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
-<div class="line">        .border_radius(0)</div>
-<div class="line">        .border_size(0));</div>
-<div class="line">      button_percent.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
-<div class="line">      button_percent.location({122, 60});</div>
-<div class="line">      button_percent.text(<span class="stringliteral">&quot;%&quot;</span>);</div>
-<div class="line">      button_percent.size({60, 50});</div>
-<div class="line">      button_percent.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_percent_click);</div>
-<div class="line">      </div>
-<div class="line">      button_decimal.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      button_decimal.back_color(drawing::color::from_argb(102, 102, 102));</div>
-<div class="line">      button_decimal.flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(144, 144, 144))</div>
-<div class="line">        .mouse_over_back_color(drawing::color::from_argb(102, 102, 102))</div>
-<div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
-<div class="line">        .border_radius(0)</div>
-<div class="line">        .border_size(0));</div>
-<div class="line">      button_decimal.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
-<div class="line">      button_decimal.location({122, 264});</div>
-<div class="line">      button_decimal.text(<span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line">      button_decimal.size({60, 50});</div>
-<div class="line">      button_decimal.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
-<div class="line">      </div>
-<div class="line">      <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list&lt;xtd::drawing::point&gt;</a> button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
-<div class="line">        button_numbers[i].parent(*<span class="keyword">this</span>);</div>
-<div class="line">        button_numbers[i].back_color(drawing::color::from_argb(102, 102, 102));</div>
-<div class="line">        button_numbers[i].flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(144, 144, 144))</div>
-<div class="line">          .mouse_over_back_color(drawing::color::from_argb(102, 102, 102))</div>
-<div class="line">          .border_color(drawing::color::from_argb(44, 44, 47))</div>
-<div class="line">          .border_radius(0)</div>
-<div class="line">          .border_size(0));</div>
-<div class="line">        button_numbers[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
-<div class="line">        button_numbers[i].text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, i));</div>
-<div class="line">        button_numbers[i].location(button_number_locations[i]);</div>
-<div class="line">        button_numbers[i].<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d.html#adf57c611c0c54ae23e087ce5527aad3d">size</a>({60, 50});</div>
-<div class="line">        button_numbers[i].click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
-<div class="line">      }</div>
-<div class="line">      button_numbers[0].width(121);</div>
-<div class="line">      </div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list</a> button_operator_texts = {<span class="stringliteral">&quot;÷&quot;</span>, <span class="stringliteral">&quot;x&quot;</span>, <span class="stringliteral">&quot;-&quot;</span>, <span class="stringliteral">&quot;+&quot;</span>, <span class="stringliteral">&quot;=&quot;</span>};</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list&lt;xtd::drawing::point&gt;</a> button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) {</div>
-<div class="line">        button_operators[i].parent(*<span class="keyword">this</span>);</div>
-<div class="line">        button_operators[i].back_color(drawing::color::from_argb(255, 159, 11));</div>
-<div class="line">        button_operators[i].flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(234, 138, 0))</div>
-<div class="line">          .mouse_over_back_color(drawing::color::from_argb(255, 159, 11))</div>
-<div class="line">          .border_color(drawing::color::from_argb(44, 44, 47))</div>
-<div class="line">          .border_radius(0)</div>
-<div class="line">          .border_size(0));</div>
-<div class="line">        button_operators[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
-<div class="line">        button_operators[i].text(button_operator_texts[i]);</div>
-<div class="line">        button_operators[i].location(button_operator_locations[i]);</div>
-<div class="line">        button_operators[i].<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d.html#adf57c611c0c54ae23e087ce5527aad3d">size</a>({60, 50});</div>
-<div class="line">        button_operators[i].click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_operator_click);</div>
-<div class="line">      }</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> form_main_key_press(<span class="keywordtype">object</span>&amp; sender, <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1key__press__event__args.html">key_press_event_args</a>&amp; e) {</div>
-<div class="line">      <span class="keywordflow">if</span> (e.key_char() &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; e.key_char() &lt;= <span class="charliteral">&#39;9&#39;</span>) {</div>
-<div class="line">        button_numbers[e.key_char() - <span class="charliteral">&#39;0&#39;</span>].perform_click();</div>
-<div class="line">        e.handled(<span class="keyword">true</span>);</div>
-<div class="line">        <span class="keywordflow">return</span>;</div>
-<div class="line">      }</div>
-<div class="line">      <span class="keywordflow">switch</span> (e.key_char()) {</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span> : button_clear.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span> : button_clear.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;%&#39;</span> : button_percent.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;,&#39;</span> : button_decimal.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;.&#39;</span> : button_decimal.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;/&#39;</span> : button_operators[as&lt;int&gt;(operators::divide)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;*&#39;</span> : button_operators[as&lt;int&gt;(operators::multiply)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span> : button_operators[as&lt;int&gt;(operators::subtract)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;+&#39;</span> : button_operators[as&lt;int&gt;(operators::add)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;=&#39;</span> : button_operators[as&lt;int&gt;(operators::equal)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> 13 : button_operators[as&lt;int&gt;(operators::equal)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> 127 : back_space_key_press(sender, e); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">      }</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> back_space_key_press(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
-<div class="line">      <span class="keywordflow">if</span> (result.text().length() &gt; 0) result.text(as&lt;ustring&gt;(result.text()).remove(result.text().length() - 1));</div>
-<div class="line">      <span class="keywordflow">if</span> (result.text().length() == 0 || result.text() == <span class="stringliteral">&quot;-&quot;</span>) button_clear_click(sender, e);</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_clear_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
-<div class="line">      result.text(<span class="stringliteral">&quot;0&quot;</span>);</div>
-<div class="line">      first_operand.reset();</div>
-<div class="line">      second_operand.reset();</div>
-<div class="line">      operation = operators::none;</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_percent_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
-<div class="line">      result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, parse&lt;double&gt;(result.text()) / 100));</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_plus_minus_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
-<div class="line">      <span class="keywordflow">if</span> (result.text() != <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; result.text() != <span class="stringliteral">&quot;0.&quot;</span>) result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, -parse&lt;double&gt;(result.text())));</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_number_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
-<div class="line">      <span class="keywordflow">if</span> ((as&lt;control&gt;(sender).handle() == button_decimal.handle() &amp;&amp; as&lt;ustring&gt;(result.text()).contains(<span class="stringliteral">&quot;.&quot;</span>)) || (result.text() == <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; as&lt;control&gt;(sender).handle() == button_numbers[0].handle())) <span class="keywordflow">return</span>;</div>
-<div class="line">      <span class="keywordflow">if</span> ((first_operand.has_value() &amp;&amp; first_operand == parse&lt;double&gt;(result.text())) || (result.text() == <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; as&lt;control&gt;(sender).handle() != button_decimal.handle())) result.text(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">if</span> (second_operand.has_value()) second_operand.reset();</div>
-<div class="line">      result.text(result.text() + as&lt;control&gt;(sender).text());</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_operator_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
-<div class="line">      <span class="keywordflow">if</span> (!first_operand.has_value()) first_operand = parse&lt;double&gt;(result.text());</div>
-<div class="line">      <span class="keywordflow">else</span> {</div>
-<div class="line">        <span class="keywordflow">if</span> (!second_operand.has_value()) second_operand = parse&lt;double&gt;(result.text());</div>
-<div class="line">        <span class="keywordflow">switch</span> (operation) {</div>
-<div class="line">          <span class="keywordflow">case</span> operators::none: <span class="keywordflow">break</span>;</div>
-<div class="line">          <span class="keywordflow">case</span> operators::divide: result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() / second_operand.value())); <span class="keywordflow">break</span>;</div>
-<div class="line">          <span class="keywordflow">case</span> operators::multiply: result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() * second_operand.value())); <span class="keywordflow">break</span>;</div>
-<div class="line">          <span class="keywordflow">case</span> operators::subtract: result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() - second_operand.value())); <span class="keywordflow">break</span>;</div>
-<div class="line">          <span class="keywordflow">case</span> operators::add: result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() + second_operand.value())); <span class="keywordflow">break</span>;</div>
-<div class="line">          <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
-<div class="line">        }</div>
-<div class="line">        first_operand = parse&lt;double&gt;(result.text());</div>
-<div class="line">      }</div>
-<div class="line">      operation = map&lt;string, operators&gt; {{<span class="stringliteral">&quot;÷&quot;</span>, operators::divide}, {<span class="stringliteral">&quot;x&quot;</span>, operators::multiply}, {<span class="stringliteral">&quot;-&quot;</span>, operators::subtract}, {<span class="stringliteral">&quot;+&quot;</span>, operators::add}, {<span class="stringliteral">&quot;=&quot;</span>, operation}} [as&lt;control&gt;(sender).text()];</div>
-<div class="line">      <span class="keywordflow">if</span> (as&lt;control&gt;(sender).text() != <span class="stringliteral">&quot;=&quot;</span>) {</div>
-<div class="line">        <span class="keywordflow">if</span> (second_operand.has_value()) first_operand.reset();</div>
-<div class="line">        second_operand.reset();</div>
-<div class="line">      }</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a id="_a9" name="_a9"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> result;</div>
-<div class="line">    <a id="_a10" name="_a10"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_clear;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_plus_minus;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_percent;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_decimal;</div>
-<div class="line">    <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;button, 10&gt;</a> button_numbers;</div>
-<div class="line">    <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;button, 5&gt;</a> button_operators;</div>
-<div class="line">    optional&lt;double&gt; first_operand;</div>
-<div class="line">    optional&lt;double&gt; second_operand;</div>
-<div class="line">    operators operation = operators::none;</div>
-<div class="line">  };</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><a id="a11" name="a11"></a><a class="code hl_define" href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(calculator::form_main::main);</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>calculator {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">class </span>form_main : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">enum class</span> operators {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>      none = -1,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      divide,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>      multiply,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      subtract,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      add,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      equal</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    };</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      application::run(form_main());</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    form_main() {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      text(<span class="stringliteral">&quot;Calculator&quot;</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      back_color(drawing::color::from_argb(44, 44, 47));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      fore_color(drawing::color::white);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      font(<a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1font__family_a8bee18d4466485c306c17adf9e2565ca.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a>(), 15));</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <a class="code hl_enumeration" href="group__xtd__forms_ga988a6abd919c15254f45a0bf9c2dcb17.html#ga988a6abd919c15254f45a0bf9c2dcb17">auto_size_mode</a>(forms::auto_size_mode::grow_and_shrink);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      auto_size(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      maximize_box(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <a class="code hl_enumeration" href="group__xtd__forms_gae69a2e9fdce97075bf7642aed73e5907.html#gae69a2e9fdce97075bf7642aed73e5907">form_border_style</a>(forms::form_border_style::fixed_3d);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      key_press += <a class="code hl_typedef" href="group__events_gaacd8585e8139ce491fe44534f938d475.html#gaacd8585e8139ce491fe44534f938d475">key_press_event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::form_main_key_press);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      result.bounds({0, 0, 240, 60});</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      result.font(<a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(font(), font().<a class="code hl_typedef" href="group__types_ga92c4f59ae39104d31ce9c0c20810001d.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>() * 2));</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      result.parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      result.text_align(content_alignment::middle_right);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      result.text(<span class="stringliteral">&quot;0&quot;</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      button_clear.parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      button_clear.back_color(drawing::color::from_argb(64, 64, 64));</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      button_clear.flat_appearance(<a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        .border_color(drawing::color::from_argb(44, 44, 47))</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        .border_radius(0)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        .border_size(0));</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      button_clear.flat_style(<a id="a4" name="a4"></a><a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      button_clear.location({0, 60});</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      button_clear.text(<span class="stringliteral">&quot;C&quot;</span>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      button_clear.size({60, 50});</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      button_clear.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_clear_click);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      button_plus_minus.parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      button_plus_minus.back_color(drawing::color::from_argb(64, 64, 64));</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      button_plus_minus.flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        .border_color(drawing::color::from_argb(44, 44, 47))</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        .border_radius(0)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        .border_size(0));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      button_plus_minus.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      button_plus_minus.location({61, 60});</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      button_plus_minus.text(<span class="stringliteral">&quot;+/-&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      button_plus_minus.size({60, 50});</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      button_plus_minus.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_plus_minus_click);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      button_percent.parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      button_percent.back_color(drawing::color::from_argb(64, 64, 64));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      button_percent.flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        .border_color(drawing::color::from_argb(44, 44, 47))</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        .border_radius(0)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        .border_size(0));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      button_percent.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      button_percent.location({122, 60});</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      button_percent.text(<span class="stringliteral">&quot;%&quot;</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      button_percent.size({60, 50});</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      button_percent.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_percent_click);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      button_decimal.parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      button_decimal.back_color(drawing::color::from_argb(102, 102, 102));</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      button_decimal.flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(144, 144, 144))</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        .mouse_over_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        .border_color(drawing::color::from_argb(44, 44, 47))</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        .border_radius(0)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        .border_size(0));</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      button_decimal.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      button_decimal.location({122, 264});</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      button_decimal.text(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      button_decimal.size({60, 50});</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      button_decimal.click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list&lt;xtd::drawing::point&gt;</a> button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        button_numbers[i].parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        button_numbers[i].back_color(drawing::color::from_argb(102, 102, 102));</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        button_numbers[i].flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(144, 144, 144))</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>          .mouse_over_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>          .border_color(drawing::color::from_argb(44, 44, 47))</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>          .border_radius(0)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>          .border_size(0));</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        button_numbers[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        button_numbers[i].text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, i));</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        button_numbers[i].location(button_number_locations[i]);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        button_numbers[i].<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d.html#adf57c611c0c54ae23e087ce5527aad3d">size</a>({60, 50});</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        button_numbers[i].click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      button_numbers[0].width(121);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list</a> button_operator_texts = {<span class="stringliteral">&quot;÷&quot;</span>, <span class="stringliteral">&quot;x&quot;</span>, <span class="stringliteral">&quot;-&quot;</span>, <span class="stringliteral">&quot;+&quot;</span>, <span class="stringliteral">&quot;=&quot;</span>};</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list&lt;xtd::drawing::point&gt;</a> button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        button_operators[i].parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        button_operators[i].back_color(drawing::color::from_argb(255, 159, 11));</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        button_operators[i].flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(drawing::color::from_argb(234, 138, 0))</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>          .mouse_over_back_color(drawing::color::from_argb(255, 159, 11))</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>          .border_color(drawing::color::from_argb(44, 44, 47))</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>          .border_radius(0)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>          .border_size(0));</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        button_operators[i].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms_ga7cc15a089c6b538cb469caa2e9aba1a1.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        button_operators[i].text(button_operator_texts[i]);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        button_operators[i].location(button_operator_locations[i]);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        button_operators[i].<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d.html#adf57c611c0c54ae23e087ce5527aad3d">size</a>({60, 50});</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        button_operators[i].click += <a class="code hl_typedef" href="group__events_ga0b1801aa17fa22ddacfdcccd7b25316b.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a>(*<span class="keyword">this</span>, &amp;form_main::button_operator_click);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">void</span> form_main_key_press(<span class="keywordtype">object</span>&amp; sender, <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1key__press__event__args.html">key_press_event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordflow">if</span> (e.key_char() &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; e.key_char() &lt;= <span class="charliteral">&#39;9&#39;</span>) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        button_numbers[e.key_char() - <span class="charliteral">&#39;0&#39;</span>].perform_click();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        e.handled(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      <span class="keywordflow">switch</span> (e.key_char()) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span> : button_clear.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span> : button_clear.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;%&#39;</span> : button_percent.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;,&#39;</span> : button_decimal.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;.&#39;</span> : button_decimal.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;/&#39;</span> : button_operators[as&lt;int&gt;(operators::divide)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;*&#39;</span> : button_operators[as&lt;int&gt;(operators::multiply)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span> : button_operators[as&lt;int&gt;(operators::subtract)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;+&#39;</span> : button_operators[as&lt;int&gt;(operators::add)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">case</span> <span class="charliteral">&#39;=&#39;</span> : button_operators[as&lt;int&gt;(operators::equal)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">case</span> 13 : button_operators[as&lt;int&gt;(operators::equal)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">case</span> 127 : back_space_key_press(sender, e); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordtype">void</span> back_space_key_press(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      <span class="keywordflow">if</span> (result.text().length() &gt; 0) result.text(as&lt;ustring&gt;(result.text()).remove(result.text().length() - 1));</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <span class="keywordflow">if</span> (result.text().length() == 0 || result.text() == <span class="stringliteral">&quot;-&quot;</span>) button_clear_click(sender, e);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> button_clear_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      result.text(<span class="stringliteral">&quot;0&quot;</span>);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      first_operand.reset();</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      second_operand.reset();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      operation = operators::none;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordtype">void</span> button_percent_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, parse&lt;double&gt;(result.text()) / 100));</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordtype">void</span> button_plus_minus_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      <span class="keywordflow">if</span> (result.text() != <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; result.text() != <span class="stringliteral">&quot;0.&quot;</span>) result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, -parse&lt;double&gt;(result.text())));</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordtype">void</span> button_number_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      <span class="keywordflow">if</span> ((as&lt;control&gt;(sender).handle() == button_decimal.handle() &amp;&amp; as&lt;ustring&gt;(result.text()).contains(<span class="stringliteral">&quot;.&quot;</span>)) || (result.text() == <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; as&lt;control&gt;(sender).handle() == button_numbers[0].handle())) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      <span class="keywordflow">if</span> ((first_operand.has_value() &amp;&amp; first_operand == parse&lt;double&gt;(result.text())) || (result.text() == <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; as&lt;control&gt;(sender).handle() != button_decimal.handle())) result.text(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <span class="keywordflow">if</span> (second_operand.has_value()) second_operand.reset();</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      result.text(result.text() + as&lt;control&gt;(sender).text());</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordtype">void</span> button_operator_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      <span class="keywordflow">if</span> (!first_operand.has_value()) first_operand = parse&lt;double&gt;(result.text());</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>      <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">if</span> (!second_operand.has_value()) second_operand = parse&lt;double&gt;(result.text());</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keywordflow">switch</span> (operation) {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>          <span class="keywordflow">case</span> operators::none: <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>          <span class="keywordflow">case</span> operators::divide: result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() / second_operand.value())); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>          <span class="keywordflow">case</span> operators::multiply: result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() * second_operand.value())); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>          <span class="keywordflow">case</span> operators::subtract: result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() - second_operand.value())); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>          <span class="keywordflow">case</span> operators::add: result.text(ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() + second_operand.value())); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>          <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        first_operand = parse&lt;double&gt;(result.text());</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      operation = map&lt;string, operators&gt; {{<span class="stringliteral">&quot;÷&quot;</span>, operators::divide}, {<span class="stringliteral">&quot;x&quot;</span>, operators::multiply}, {<span class="stringliteral">&quot;-&quot;</span>, operators::subtract}, {<span class="stringliteral">&quot;+&quot;</span>, operators::add}, {<span class="stringliteral">&quot;=&quot;</span>, operation}} [as&lt;control&gt;(sender).text()];</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      <span class="keywordflow">if</span> (as&lt;control&gt;(sender).text() != <span class="stringliteral">&quot;=&quot;</span>) {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keywordflow">if</span> (second_operand.has_value()) first_operand.reset();</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        second_operand.reset();</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <a id="_a9" name="_a9"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> result;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <a id="_a10" name="_a10"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_clear;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_plus_minus;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_percent;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_decimal;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;button, 10&gt;</a> button_numbers;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <a class="code hl_typedef" href="group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a">array&lt;button, 5&gt;</a> button_operators;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    optional&lt;double&gt; first_operand;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    optional&lt;double&gt; second_operand;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    operators operation = operators::none;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  };</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><a id="a11" name="a11"></a><a class="code hl_define" href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(calculator::form_main::main);</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d_html_adf57c611c0c54ae23e087ce5527aad3d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d.html#adf57c611c0c54ae23e087ce5527aad3d">xtd::collections::generic::list::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::...</div><div class="ttdef"><b>Definition</b> list.h:363</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:70</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1font__family_a8bee18d4466485c306c17adf9e2565ca_html_a8bee18d4466485c306c17adf9e2565ca"><div class="ttname"><a href="classxtd_1_1drawing_1_1font__family_a8bee18d4466485c306c17adf9e2565ca.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a></div><div class="ttdeci">static font_family generic_sans_serif() noexcept</div><div class="ttdoc">Gets a generic sans serif font_family.</div></div>
@@ -370,7 +370,7 @@ $(document).ready(function(){initNavTree('calculator_8cpp-example.html',''); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

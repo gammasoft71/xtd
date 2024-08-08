@@ -126,43 +126,43 @@ $(document).ready(function(){initNavTree('replace_box_8cpp-example.html',''); in
 <img src="replace_box_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/debug_form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/replace_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  form1() {</div>
-<div class="line">    text(<span class="stringliteral">&quot;Replace box example&quot;</span>);</div>
-<div class="line">    </div>
-<div class="line">    find_button.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    find_button.text(<span class="stringliteral">&quot;replace...&quot;</span>);</div>
-<div class="line">    find_button.location({10, 10});</div>
-<div class="line">    find_button.click += [&amp;] {</div>
-<div class="line">      replace_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;xtd&quot;</span>, <span class="stringliteral">&quot;Replace&quot;</span>, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1find__event__args.html">find_event_args</a>&amp; e) {</div>
-<div class="line">        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Find next : find string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.match_case(), e.whole_word()));</div>
-<div class="line">      }, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1replace__event__args.html">replace_event_args</a>&amp; e) {</div>
-<div class="line">        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Replace : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
-<div class="line">      }, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1replace__event__args.html">replace_event_args</a>&amp; e) {</div>
-<div class="line">        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Replace all : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
-<div class="line">      });</div>
-<div class="line">    };</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> find_button;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> df = <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1debug__form.html">debug_form</a> {};</div>
-<div class="line">  application::run(form1 {});</div>
-<div class="line">}</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;xtd/forms/debug_form&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;xtd/forms/replace_box&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  form1() {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    text(<span class="stringliteral">&quot;Replace box example&quot;</span>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    find_button.parent(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    find_button.text(<span class="stringliteral">&quot;replace...&quot;</span>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    find_button.location({10, 10});</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    find_button.click += [&amp;] {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      replace_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Gammasoft&quot;</span>, <span class="stringliteral">&quot;xtd&quot;</span>, <span class="stringliteral">&quot;Replace&quot;</span>, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1find__event__args.html">find_event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Find next : find string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.match_case(), e.whole_word()));</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      }, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1replace__event__args.html">replace_event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Replace : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      }, [&amp;](<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1replace__event__args.html">replace_event_args</a>&amp; e) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        diagnostics::debug::write_line(ustring::format(<span class="stringliteral">&quot;Replace all : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      });</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> find_button;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">auto</span> df = <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1debug__form.html">debug_form</a> {};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  application::run(form1 {});</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.h:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1debug__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__form.html">xtd::forms::debug_form</a></div><div class="ttdoc">Represents a form that displays debug form. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> debug_form.h:36</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1find__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1find__event__args.html">xtd::forms::find_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::find_dialog::find_next and xtd::forms::replace_dialog::find_next ev...</div><div class="ttdef"><b>Definition</b> find_event_args.h:25</div></div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('replace_box_8cpp-example.html',''); in
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

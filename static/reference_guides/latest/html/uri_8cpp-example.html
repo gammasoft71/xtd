@@ -103,65 +103,65 @@ $(document).ready(function(){initNavTree('uri_8cpp-example.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <p>Demonstrates the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> various properties.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/uri&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>uri_example {</div>
-<div class="line">  <span class="keyword">class </span>program {</div>
-<div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="comment">// The main entry point for the application.</span></div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <span class="keyword">auto</span> uri = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1uri.html">xtd::uri</a> {<span class="stringliteral">&quot;https://user:password@www.contoso.com:80/Home/Index.htm?q1=v1&amp;q2=v2#FragmentName&quot;</span>};</div>
-<div class="line">      </div>
-<div class="line">      <a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;absolute_path: {}&quot;</span>, uri.absolute_path());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;absolute_uri: {}&quot;</span>, uri.absolute_uri());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;dns_safe_host: {}&quot;</span>, uri.dns_safe_host());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;fragment: {}&quot;</span>, uri.fragment());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;host: {}&quot;</span>, uri.host());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;host_name_type: {}&quot;</span>, uri.host_name_type());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;idn_host: {}&quot;</span>, uri.idn_host());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_absolute_uri: {}&quot;</span>, uri.is_absolute_uri());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_default_port: {}&quot;</span>, uri.is_default_port());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_file: {}&quot;</span>, uri.is_file());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_loopback: {}&quot;</span>, uri.is_loopback());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_unc: {}&quot;</span>, uri.is_unc());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;local_path: {}&quot;</span>, uri.local_path());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;original_string: {}&quot;</span>, uri.original_string());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;path_and_query: {}&quot;</span>, uri.path_and_query());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;port: {}&quot;</span>, uri.port());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;query: {}&quot;</span>, uri.query());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;scheme: {}&quot;</span>, uri.scheme());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;segments: {}&quot;</span>, <a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1ustring_a95694998a854ba65dde682b879eec355.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a>(<span class="stringliteral">&quot;, &quot;</span>, uri.segments()));</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;user_info: {}&quot;</span>, uri.user_info());</div>
-<div class="line">    }</div>
-<div class="line">  };</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><a id="a3" name="a3"></a><a class="code hl_define" href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(uri_example::program::main);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code can produce the following output:</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// absolute_path: /Home/Index.htm</span></div>
-<div class="line"><span class="comment">// absolute_uri: https://user:password@www.contoso.com:80/Home/Index.htm?q1=v1&amp;q2=v2#FragmentName</span></div>
-<div class="line"><span class="comment">// dns_safe_host: www.contoso.com</span></div>
-<div class="line"><span class="comment">// fragment: #FragmentName</span></div>
-<div class="line"><span class="comment">// host: www.contoso.com</span></div>
-<div class="line"><span class="comment">// host_name_type: Dns</span></div>
-<div class="line"><span class="comment">// idn_host: www.contoso.com</span></div>
-<div class="line"><span class="comment">// is_absolute_uri: true</span></div>
-<div class="line"><span class="comment">// is_default_port: false</span></div>
-<div class="line"><span class="comment">// is_file: false</span></div>
-<div class="line"><span class="comment">// is_loopback: false</span></div>
-<div class="line"><span class="comment">// is_unc: false</span></div>
-<div class="line"><span class="comment">// local_path: /Home/Index.htm</span></div>
-<div class="line"><span class="comment">// original_string: https://user:password@www.contoso.com:80/Home/Index.htm?q1=v1&amp;q2=v2#FragmentName</span></div>
-<div class="line"><span class="comment">// path_and_query: /Home/Index.htm?q1=v1&amp;q2=v2</span></div>
-<div class="line"><span class="comment">// port: 80</span></div>
-<div class="line"><span class="comment">// query: ?q1=v1&amp;q2=v2</span></div>
-<div class="line"><span class="comment">// scheme: https</span></div>
-<div class="line"><span class="comment">// segments: /, Home/, Index.htm</span></div>
-<div class="line"><span class="comment">// user_info: user:password</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;xtd/uri&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span>uri_example {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>  <span class="keyword">class </span>program {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="comment">// The main entry point for the application.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>      <span class="keyword">auto</span> uri = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1uri.html">xtd::uri</a> {<span class="stringliteral">&quot;https://user:password@www.contoso.com:80/Home/Index.htm?q1=v1&amp;q2=v2#FragmentName&quot;</span>};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>      </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>      <a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;absolute_path: {}&quot;</span>, uri.absolute_path());</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;absolute_uri: {}&quot;</span>, uri.absolute_uri());</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;dns_safe_host: {}&quot;</span>, uri.dns_safe_host());</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;fragment: {}&quot;</span>, uri.fragment());</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;host: {}&quot;</span>, uri.host());</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;host_name_type: {}&quot;</span>, uri.host_name_type());</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;idn_host: {}&quot;</span>, uri.idn_host());</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_absolute_uri: {}&quot;</span>, uri.is_absolute_uri());</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_default_port: {}&quot;</span>, uri.is_default_port());</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_file: {}&quot;</span>, uri.is_file());</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_loopback: {}&quot;</span>, uri.is_loopback());</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;is_unc: {}&quot;</span>, uri.is_unc());</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;local_path: {}&quot;</span>, uri.local_path());</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;original_string: {}&quot;</span>, uri.original_string());</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;path_and_query: {}&quot;</span>, uri.path_and_query());</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;port: {}&quot;</span>, uri.port());</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;query: {}&quot;</span>, uri.query());</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;scheme: {}&quot;</span>, uri.scheme());</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;segments: {}&quot;</span>, <a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1ustring_a95694998a854ba65dde682b879eec355.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a>(<span class="stringliteral">&quot;, &quot;</span>, uri.segments()));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      <a class="code hl_function" href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;user_info: {}&quot;</span>, uri.user_info());</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  };</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><a id="a3" name="a3"></a><a class="code hl_define" href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(uri_example::program::main);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// This code can produce the following output :</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// absolute_path: /Home/Index.htm</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// absolute_uri: https://user:password@www.contoso.com:80/Home/Index.htm?q1=v1&amp;q2=v2#FragmentName</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// dns_safe_host: www.contoso.com</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// fragment: #FragmentName</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// host: www.contoso.com</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// host_name_type: Dns</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">// idn_host: www.contoso.com</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">// is_absolute_uri: true</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// is_default_port: false</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// is_file: false</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">// is_loopback: false</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// is_unc: false</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">// local_path: /Home/Index.htm</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// original_string: https://user:password@www.contoso.com:80/Home/Index.htm?q1=v1&amp;q2=v2#FragmentName</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">// path_and_query: /Home/Index.htm?q1=v1&amp;q2=v2</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// port: 80</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">// query: ?q1=v1&amp;q2=v2</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// scheme: https</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// segments: /, Home/, Index.htm</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// user_info: user:password</span></div>
 <div class="ttc" id="aclassxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console_ae0ccd7fef284ccda33a88576c8a35a37.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1uri_html"><div class="ttname"><a href="classxtd_1_1uri.html">xtd::uri</a></div><div class="ttdoc">Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...</div><div class="ttdef"><b>Definition</b> uri.h:103</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_a95694998a854ba65dde682b879eec355_html_a95694998a854ba65dde682b879eec355"><div class="ttname"><a href="classxtd_1_1ustring_a95694998a854ba65dde682b879eec355.html#a95694998a854ba65dde682b879eec355">xtd::ustring::join</a></div><div class="ttdeci">static ustring join(const ustring separator, const collection_t &amp;values) noexcept</div><div class="ttdoc">Concatenates a specified separator string between each element of a specified object array,...</div><div class="ttdef"><b>Definition</b> ustring.h:1176</div></div>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('uri_8cpp-example.html',''); initResiza
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

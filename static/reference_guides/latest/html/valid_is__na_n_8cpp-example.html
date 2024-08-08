@@ -103,44 +103,44 @@ $(document).ready(function(){initNavTree('valid_is__na_n_8cpp-example.html','');
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1valid_afcd9ae5eef87fde316c19d2c47f631f7.html#afcd9ae5eef87fde316c19d2c47f631f7" title="that a value is NaN.">xtd::tunit::valid::is_NaN</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/double_object&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>unit_tests {</div>
-<div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
-<div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
-<div class="line">      <span class="keyword">auto</span> d = double_object::NaN;</div>
-<div class="line">      valid::is_NaN(d);</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_failed) {</div>
-<div class="line">      <span class="keyword">auto</span> d = 3.14159;</div>
-<div class="line">      valid::is_NaN(d);</div>
-<div class="line">    }</div>
-<div class="line">  };</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">return</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">run</a>();</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output:</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Start 2 tests from 1 test case</span></div>
-<div class="line"><span class="comment">// Run tests:</span></div>
-<div class="line"><span class="comment">//   SUCCEED unit_tests::test.test_case_succeed (0 ms total)</span></div>
-<div class="line"><span class="comment">//   FAILED  unit_tests::test.test_case_failed (0 ms total)</span></div>
-<div class="line"><span class="comment">//     Expected: NaN</span></div>
-<div class="line"><span class="comment">//     But was:  3.14159</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/valid_is_NaN.cpp:15</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Test results:</span></div>
-<div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
-<div class="line"><span class="comment">//   FAILED  1 test.</span></div>
-<div class="line"><span class="comment">// End 2 tests from 1 test case ran. (0 ms total)</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/double_object&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>unit_tests {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <span class="keyword">class </span>test_class_(test) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>      <span class="keyword">auto</span> d = double_object::NaN;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>      valid::is_NaN(d);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_failed) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      <span class="keyword">auto</span> d = 3.14159;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>      valid::is_NaN(d);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  };</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">return</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">run</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// Start 2 tests from 1 test case</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Run tests:</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//   SUCCEED unit_tests::test.test_case_succeed (0 ms total)</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//   FAILED  unit_tests::test.test_case_failed (0 ms total)</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//     Expected: NaN</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//     But was:  3.14159</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//     Stack Trace: in |---OMITTED---|/valid_is_NaN.cpp:15</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// Test results:</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//   SUCCEED 1 test.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">//   FAILED  1 test.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// End 2 tests from 1 test case ran. (0 ms total)</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test_a5af4f6910e81e2442af475ad838b5b9a.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
 <div class="ttc" id="agroup__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:89</div></div>
@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('valid_is__na_n_8cpp-example.html','');
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

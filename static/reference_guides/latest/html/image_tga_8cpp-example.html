@@ -103,20 +103,20 @@ $(document).ready(function(){initNavTree('image_tga_8cpp-example.html',''); init
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> class with tga image.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/drawing/bitmap&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;../properties/resources.h&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> bmp = image_tga::properties::resources::gammasoft_tga();</div>
-<div class="line">  bmp.save(path::combine(path::get_temp_path(), <span class="stringliteral">&quot;image_tga.png&quot;</span>));</div>
-<div class="line">  process::start(path::combine(path::get_temp_path(), <span class="stringliteral">&quot;image_tga.png&quot;</span>));</div>
-<div class="line">}</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;xtd/diagnostics/process&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/drawing/bitmap&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../properties/resources.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">auto</span> bmp = image_tga::properties::resources::gammasoft_tga();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  bmp.save(path::combine(path::get_temp_path(), <span class="stringliteral">&quot;image_tga.png&quot;</span>));</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  process::start(path::combine(path::get_temp_path(), <span class="stringliteral">&quot;image_tga.png&quot;</span>));</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.h:11</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:16</div></div>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('image_tga_8cpp-example.html',''); init
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

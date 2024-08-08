@@ -103,32 +103,32 @@ $(document).ready(function(){initNavTree('tunit_config_main_8cpp-example.html','
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use TUNIT_CONFIG_MAIN define to generate automatically entry point.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#define TUNIT_CONFIG_MAIN</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>unit_tests {</div>
-<div class="line">  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
-<div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
-<div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
-<div class="line">      <span class="keyword">auto</span> s = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;Hello&quot;</span>};</div>
-<div class="line">      assert::is_true(s == <span class="stringliteral">&quot;Hello&quot;</span>);</div>
-<div class="line">    }</div>
-<div class="line">  };</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code can produce the following output:</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Start 1 test from 1 test case</span></div>
-<div class="line"><span class="comment">// Run tests:</span></div>
-<div class="line"><span class="comment">//   SUCCEED unit_tests::test.test_case1 (0 ms total)</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Test results:</span></div>
-<div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
-<div class="line"><span class="comment">// End 1 test from 1 test case ran. (0 ms total)</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#define TUNIT_CONFIG_MAIN</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>unit_tests {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">class </span>test_class_(test) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>      <span class="keyword">auto</span> s = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;Hello&quot;</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      assert::is_true(s == <span class="stringliteral">&quot;Hello&quot;</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  };</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// This code can produce the following output :</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// Start 1 test from 1 test case</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Run tests:</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//   SUCCEED unit_tests::test.test_case1 (0 ms total)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// Test results:</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//   SUCCEED 1 test.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// End 1 test from 1 test case ran. (0 ms total)</span></div>
 <div class="ttc" id="agroup__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit_ga1fa6dc01b83d00ce9e92402c9694c6af.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.h:89</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('tunit_config_main_8cpp-example.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

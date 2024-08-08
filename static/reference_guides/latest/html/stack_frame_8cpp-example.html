@@ -103,67 +103,67 @@ $(document).ready(function(){initNavTree('stack_frame_8cpp-example.html',''); in
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html" title="Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...">xtd::diagnostics::stack_frame</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stack_frame&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/stack_trace&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> method2(<span class="keywordtype">int</span> count) {</div>
-<div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <span class="keywordflow">if</span> (count &lt; 5)</div>
-<div class="line">      <span class="keywordflow">throw</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1argument__exception.html">argument_exception</a>(<span class="stringliteral">&quot;count too large&quot;</span>, <span class="stringliteral">&quot;count&quot;</span>);</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
-<div class="line">    <span class="keyword">auto</span> st = <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
-<div class="line">    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {2, <span class="keyword">true</span>}};</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot; Stack trace for Method2: {0}&quot;</span>, st1.to_string());</div>
-<div class="line">    console::write_line(st.to_string());</div>
-<div class="line">    <span class="keywordflow">throw</span>;</div>
-<div class="line">  }</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> method1() {</div>
-<div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    method2(4);</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
-<div class="line">    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
-<div class="line">    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {<span class="keyword">true</span>}};</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot; Stack trace for Method1: {0}&quot;</span>, st1.to_string());</div>
-<div class="line">    console::write_line(st.to_string());</div>
-<div class="line">    <span class="comment">// Build a stack trace for the next frame.</span></div>
-<div class="line">    <span class="keyword">auto</span> st2 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {1, <span class="keyword">true</span>}};</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot; Stack trace for next level frame: {0}&quot;</span>, st2.to_string());</div>
-<div class="line">    <span class="keywordflow">throw</span>;</div>
-<div class="line">  }</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    method1();</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
-<div class="line">    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
-<div class="line">    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {<span class="keyword">true</span>}};</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot; Stack trace for Main: {0}&quot;</span>, st1.to_string());</div>
-<div class="line">    console::write_line(st.to_string());</div>
-<div class="line">  }</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Press Enter to exit.&quot;</span>);</div>
-<div class="line">  console::read_key();</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">//  Stack trace for Method2:    at main [0x000030B0] in /!---OMITTED---!/stack_frame:line 0</span></div>
-<div class="line"><span class="comment">//    at method2(int)</span></div>
-<div class="line"><span class="comment">//    at method1()</span></div>
-<div class="line"><span class="comment">//    at main</span></div>
-<div class="line"><span class="comment">//  Stack trace for Method1:    at method1() [0x00002D20] in /!---OMITTED---!/stack_frame:line 0</span></div>
-<div class="line"><span class="comment">//    at method1()</span></div>
-<div class="line"><span class="comment">//    at main</span></div>
-<div class="line"><span class="comment">//  Stack trace for next level frame:    at main [0x000030B0] in /!---OMITTED---!/stack_frame:line 0</span></div>
-<div class="line"><span class="comment">//  Stack trace for Main:    at main [0x000030B0] in /!---OMITTED---!/stack_frame:line 0</span></div>
-<div class="line"><span class="comment">//    at main</span></div>
-<div class="line"><span class="comment">// Press Enter to exit.</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;xtd/diagnostics/stack_frame&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/diagnostics/stack_trace&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">void</span> method2(<span class="keywordtype">int</span> count) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">if</span> (count &lt; 5)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>      <span class="keywordflow">throw</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1argument__exception.html">argument_exception</a>(<span class="stringliteral">&quot;count too large&quot;</span>, <span class="stringliteral">&quot;count&quot;</span>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">auto</span> st = <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {2, <span class="keyword">true</span>}};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    console::write_line(<span class="stringliteral">&quot; Stack trace for Method2: {0}&quot;</span>, st1.to_string());</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    console::write_line(st.to_string());</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">throw</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> method1() {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    method2(4);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {<span class="keyword">true</span>}};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    console::write_line(<span class="stringliteral">&quot; Stack trace for Method1: {0}&quot;</span>, st1.to_string());</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    console::write_line(st.to_string());</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// Build a stack trace for the next frame.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">auto</span> st2 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {1, <span class="keyword">true</span>}};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    console::write_line(<span class="stringliteral">&quot; Stack trace for next level frame: {0}&quot;</span>, st2.to_string());</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">throw</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    method1();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp;) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">auto</span> st = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">auto</span> st1 = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__trace.html">stack_trace</a> {<a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">stack_frame</a> {<span class="keyword">true</span>}};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    console::write_line(<span class="stringliteral">&quot; Stack trace for Main: {0}&quot;</span>, st1.to_string());</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    console::write_line(st.to_string());</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  console::write_line(<span class="stringliteral">&quot;Press Enter to exit.&quot;</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  console::read_key();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">//  Stack trace for Method2:    at main [0x000030B0] in /!---OMITTED---!/stack_frame:line 0</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">//    at method2(int)</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">//    at method1()</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">//    at main</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//  Stack trace for Method1:    at method1() [0x00002D20] in /!---OMITTED---!/stack_frame:line 0</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">//    at method1()</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">//    at main</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">//  Stack trace for next level frame:    at main [0x000030B0] in /!---OMITTED---!/stack_frame:line 0</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//  Stack trace for Main:    at main [0x000030B0] in /!---OMITTED---!/stack_frame:line 0</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">//    at main</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">// Press Enter to exit.</span></div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.h:23</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.h:40</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__trace.html">xtd::diagnostics::stack_trace</a></div><div class="ttdoc">Represents a stack trace, which is an ordered collection of one or more stack frames.</div><div class="ttdef"><b>Definition</b> stack_trace.h:40</div></div>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('stack_frame_8cpp-example.html',''); in
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
