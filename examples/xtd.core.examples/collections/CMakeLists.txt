@@ -9,4 +9,5 @@ add_projects(
   hashtable
   ienumerable
   ienumerator
+  ilist
 )
