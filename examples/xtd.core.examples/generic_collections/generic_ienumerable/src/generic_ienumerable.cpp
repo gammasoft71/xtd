@@ -38,7 +38,7 @@ public:
   public:
     box_collection(const std::initializer_list<program::box>& boxes) : boxes_(boxes) {}
     
-    enumerator<program::box> get_enumerator() const noexcept override {
+    enumerator<program::box> get_enumerator() const override {
       class box_enumerator : public ienumerator<program::box> {
       public:
         explicit box_enumerator(const list<program::box>& items) : items_(items) {}

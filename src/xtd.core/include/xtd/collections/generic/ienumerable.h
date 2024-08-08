@@ -42,7 +42,7 @@ namespace xtd {
         /// @{
         /// @brief Returns an enumerator that iterates through a collection.
         /// @return An xtd::collections::generic::enumerator object that can be used to iterate through the collection.
-        virtual enumerator<type_t> get_enumerator() const noexcept = 0;
+        virtual enumerator<type_t> get_enumerator() const = 0;
         /// @}
 
         /// @cond

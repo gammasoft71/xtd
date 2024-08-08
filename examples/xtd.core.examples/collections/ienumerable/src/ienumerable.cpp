@@ -39,7 +39,7 @@ public:
     }
     
     // Implementation for the xtd::collections::ienumerable::get_enumerator method.
-    enumerator get_enumerator() const noexcept override {
+    enumerator get_enumerator() const override {
       return enumerator {new_ptr<people_enumerator>(people_)};
     }
   };
