@@ -16,7 +16,7 @@ auto main() -> int {
     console::write_line("    * {}", alias);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // ip host entry for : www.github.com
 //   - host_name : github.com

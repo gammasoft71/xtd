@@ -38,7 +38,7 @@ auto main() -> int {
     console::write_line("Bad cast!");
 }
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // d = 41.6, convert::to_int32(d) = 42, as<int>(d) = 42
 // i = 42, convert::to_string(i) = 42, as<ustring>(i) = 42

@@ -27,7 +27,7 @@ auto main() -> int {
   console::write_line(stream.str());
 }
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // String stream :
 // ---------------

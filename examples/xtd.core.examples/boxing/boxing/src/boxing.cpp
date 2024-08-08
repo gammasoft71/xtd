@@ -59,7 +59,7 @@ auto main() -> int {
   console::write_line("result :{0}{0}{1}", environment::new_line(), serializer);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // result :
 //

@@ -12,6 +12,6 @@ auto main(int argc, char* argv[]) -> int {
   file::remove(file_name);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Hello, World!

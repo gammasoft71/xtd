@@ -39,7 +39,7 @@ auto main() -> int {
   console::write_line(get_boxed_info(foo(42)));
 }
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // [type = int, boxed type = xtd::box_integer<int>, value = 42]
 // [type = double, boxed type = xtd::box_floating_point<double>, value = 42.84]

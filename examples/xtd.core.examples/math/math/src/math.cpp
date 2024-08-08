@@ -75,7 +75,7 @@ namespace math_example {
 
 startup_(math_example::math_trapezoid_sample::main);
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // The trapezoid's bases are 20.0 and 10.0, the trapezoid's legs are 8.0 and 6.0
 // trapezoid height is: 4.8

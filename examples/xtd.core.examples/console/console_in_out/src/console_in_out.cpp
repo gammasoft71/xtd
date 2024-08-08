@@ -15,7 +15,7 @@ auto main() -> int {
   os << "Buenos Dias, " << name << endl;
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Ola Mundo!
 // What is your name: James

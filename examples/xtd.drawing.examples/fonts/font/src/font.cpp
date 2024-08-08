@@ -18,7 +18,7 @@ auto main() -> int {
   console::write_line("font2 {0} font3", font2 == font3 ? "==" : "!=");
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // font1 = [font: name=Courier, size=42, units=3, gdi_char_set=0, gdi_vertical_font=false]
 // font2 = [font: name=Times, size=24, units=3, gdi_char_set=0, gdi_vertical_font=false]

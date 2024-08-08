@@ -25,7 +25,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // Original date: 09/08/2014/16:00:00.0000000 (635457888000000000 ticks)
 //

@@ -25,7 +25,7 @@ auto main() -> int {
   console::write_line("(main) end");
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // (main) begin
 //   (thread_proc) call once 1 times

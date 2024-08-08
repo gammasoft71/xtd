@@ -168,7 +168,7 @@ auto main() -> int {
   operations_timer::time_operations();
 }
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // Operations timed using the system's high-resolution performance counter.
 //   Timer frequency in ticks per second = 1000000000

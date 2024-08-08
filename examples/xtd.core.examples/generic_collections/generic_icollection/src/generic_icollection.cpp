@@ -147,7 +147,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output :
+// This code can produce the following output :
 //
 // A box with 10x4x6 dimensions was already added to the collection.
 //

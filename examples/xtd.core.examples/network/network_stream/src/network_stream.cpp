@@ -46,7 +46,7 @@ auto main() -> int {
   client.join();
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // counter=1
 // counter=2

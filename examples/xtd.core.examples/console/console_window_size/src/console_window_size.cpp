@@ -31,7 +31,7 @@ auto main() -> int {
   console::set_window_size(orig_width, orig_height);
   console::write_line(m1, console::window_width(), console::window_height());}
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // The current window width is 100, and the current window height is 60.
 //   (Press any key to continue...)

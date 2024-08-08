@@ -54,7 +54,7 @@ auto main() -> int {
   write("Value to write");
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Value to write
 // Value to write

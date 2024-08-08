@@ -30,6 +30,6 @@ auto main() -> int {
   console::write_line("Item count: {}.", set.size());
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Item count: 2.

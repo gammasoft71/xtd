@@ -17,6 +17,6 @@ auto main() -> int {
   console::write_line(static_example::program::to_string());
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // program

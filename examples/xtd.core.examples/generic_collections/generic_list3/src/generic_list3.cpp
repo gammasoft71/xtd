@@ -49,7 +49,7 @@ public:
 
 startup_(example::main);
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 //
 // capacity: 3

@@ -20,7 +20,7 @@ auto main() -> int {
   }
 }
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]
 // items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]

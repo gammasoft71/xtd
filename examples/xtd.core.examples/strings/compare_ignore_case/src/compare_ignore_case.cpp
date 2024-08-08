@@ -13,6 +13,6 @@ auto main() -> int {
     console::write_line("Aaa == aaa");
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Aaa == aaa

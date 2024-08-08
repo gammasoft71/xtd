@@ -21,7 +21,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // Wed Jan 12 00:00:00 2022
 //

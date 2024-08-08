@@ -26,7 +26,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // Elapsed from the beginning of the century to Wed Aug 16 22:46:16 2023:
 //    713918776070706048 nanoseconds

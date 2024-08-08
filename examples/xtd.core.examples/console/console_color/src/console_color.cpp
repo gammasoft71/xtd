@@ -36,7 +36,7 @@ auto main() -> int {
   console::write_line("\nOriginal colors restored...");
 }
 
-// This code produces the following output with colors:
+// This code produces the following output with colors :
 //
 // All the foreground colors except black, the background color:
 //    The foreground color is dark_blue.

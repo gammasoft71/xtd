@@ -27,7 +27,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // en_US
 //    Local date and time: Sun Jan  2 09:50:36 2022, local

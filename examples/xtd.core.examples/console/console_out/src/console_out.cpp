@@ -13,7 +13,7 @@ auto main() -> int {
   console::out << "Duration = " << 23_h + 5_min + 24_s << environment::new_line;
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Hello, World!
 // Value = 42

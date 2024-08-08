@@ -36,7 +36,7 @@ namespace uri_example {
 
 startup_(uri_example::program::main);
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Wed Aug 18 13:30:30 2010 - Fri Jan  1 08:00:15 2010 = 229.05:30:15
 //    Value of Days Component:                             229

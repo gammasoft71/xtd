@@ -24,7 +24,7 @@ auto main() -> int {
   cout << ustring::format("{}", *uptr) << endl;
 }
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // (null)
 // 0x1007380f0

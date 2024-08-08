@@ -26,7 +26,7 @@ auto main() -> int {
   return console_unit_test().run();
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // Start 3 tests from 1 test case
 // Run tests:

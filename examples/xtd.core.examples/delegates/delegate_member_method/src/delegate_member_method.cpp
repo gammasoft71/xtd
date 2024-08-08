@@ -20,6 +20,6 @@ auto main() -> int {
   writer("String to write");
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // String to write

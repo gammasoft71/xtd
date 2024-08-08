@@ -26,7 +26,7 @@ This
 is Extra
 Text
 
-When you run this application a second time, you will see the following output:
+When you run this application a second time, you will see the following output :
 
 Hello
 And

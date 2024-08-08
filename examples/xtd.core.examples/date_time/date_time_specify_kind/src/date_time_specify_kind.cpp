@@ -89,7 +89,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // utc_now: ........... 2021-12-31 17:08:41, Kind = utc
 // now: ............... 2021-12-31 18:08:41, Kind = local

@@ -16,7 +16,7 @@ auto main() -> int {
   console::write_line("return = {}", d1.end_invoke(result));
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // (Thread 1) Hello xtd!
 // return = 42

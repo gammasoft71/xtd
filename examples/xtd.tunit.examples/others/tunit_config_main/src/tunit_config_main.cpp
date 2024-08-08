@@ -15,7 +15,7 @@ namespace unit_tests {
   };
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // Start 1 test from 1 test case
 // Run tests:

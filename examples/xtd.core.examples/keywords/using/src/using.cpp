@@ -11,6 +11,6 @@ auto main() -> int {
   // cout << ustring::join(", ", values) << endl;
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // 1, 2, 3, 4, 5

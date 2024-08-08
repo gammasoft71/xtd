@@ -39,7 +39,7 @@ auto main() -> int {
   console::write_line("z-index = {}", reader.selectors().at(".user_box").properties().at("z-index").to<int>());
 }
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // Write all selectors and all properties :
 // ----------------------------------------

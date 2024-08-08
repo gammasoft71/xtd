@@ -27,7 +27,7 @@ auto main() -> int {
   console::write_line("my_base_class b = my_derived: type is {}", typeof_(b));
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // my_base: type is my_base_class
 // my_derived: type is my_derived_class

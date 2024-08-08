@@ -74,7 +74,7 @@ public:
 
 startup_(example::main);
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 //
 // ID: 1234   Name: crank arm

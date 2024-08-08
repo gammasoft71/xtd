@@ -39,5 +39,5 @@ namespace system_sound_example {
 
 startup_(system_sound_example::program::main);
 
-// This code can produce the following output:
+// This code can produce the following output :
 //

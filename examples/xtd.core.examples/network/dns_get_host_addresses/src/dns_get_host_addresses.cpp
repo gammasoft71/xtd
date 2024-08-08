@@ -11,7 +11,7 @@ auto main() -> int {
     console::write_line("  * {}", address);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // www.google.com addresses:
 //   * 216.58.208.100

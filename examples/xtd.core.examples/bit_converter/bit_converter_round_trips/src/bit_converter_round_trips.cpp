@@ -25,7 +25,7 @@ namespace bit_converter_round_trips_example {
 
 startup_(bit_converter_round_trips_example::program::main);
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // -16 = -16: Round-trips
 // -16 = 4294967280: Round-trip

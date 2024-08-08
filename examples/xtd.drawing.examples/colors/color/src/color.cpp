@@ -15,7 +15,7 @@ auto main() -> int {
   console::write_line("color::from_name(\"dodgerblue\") = {}", color::from_name("dodgerblue"));
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // color::black = color [black]
 // color::withe = color [white]

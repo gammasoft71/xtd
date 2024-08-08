@@ -14,7 +14,7 @@ auto main() -> int {
   console::out << "!" << endl;
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Hello World!
 // Enter your name: James

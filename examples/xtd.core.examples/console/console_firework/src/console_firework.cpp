@@ -178,7 +178,7 @@ namespace console_firework_example {
 
 startup_(console_firework_example::program::main);
 
-// This code can produces the following output with colors:
+// This code can produce the following output with colors :
 //
 //
 //        # #

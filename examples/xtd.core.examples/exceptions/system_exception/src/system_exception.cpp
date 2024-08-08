@@ -26,7 +26,7 @@ auto main() -> int {
   }
 }
 
-// This code can produces the following output :
+// This code can produce the following output :
 //
 // Exception occured :
 // -------------------

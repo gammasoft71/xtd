@@ -24,7 +24,7 @@ auto main() -> int {
   file::remove(output_file_path);
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // Item1
 // Item2

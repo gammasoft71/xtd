@@ -55,7 +55,7 @@ auto main() -> int {
   button1.perform_click();
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // text_changed [text=button1]
 // click on button1

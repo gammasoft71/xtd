@@ -40,7 +40,7 @@ auto main() -> int {
     console::write_line(enumerator.current().to_string());
 }
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // box [length=10, width=20, height=30]
 // box [length=20, width=5, height=10]

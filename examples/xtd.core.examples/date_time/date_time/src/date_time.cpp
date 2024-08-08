@@ -48,7 +48,7 @@ private:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // d1 (Thu Dec 30 16:18:10 2021) ~= d1 (Thu Dec 30 16:18:10 2021): true
 // d1 (Thu Dec 30 16:18:10 2021) ~= d2 (Thu Dec 30 16:18:30 2021): false

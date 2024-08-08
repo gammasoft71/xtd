@@ -25,7 +25,7 @@ namespace version_example {
 
 startup_(version_example::program::main);
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // Standard version:
 //   major.minor.build.revision = 2.4.1128.2

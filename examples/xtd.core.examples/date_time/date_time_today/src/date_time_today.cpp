@@ -18,7 +18,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // Day: 01/12/2022 Time: 12:51:49
 // Day: 01/12/2022 Time: 12:51:49

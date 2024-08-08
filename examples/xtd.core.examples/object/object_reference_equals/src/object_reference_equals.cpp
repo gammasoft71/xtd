@@ -15,7 +15,7 @@ auto main() -> int {
   delete q;
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // true
 // true

@@ -50,7 +50,7 @@ namespace interlocked_decrement_example {
 
 startup_(interlocked_decrement_example::my_interlocked_decrement_class::main);
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // unsafe_instance_count: 253
 // safe_instance_count: 0
