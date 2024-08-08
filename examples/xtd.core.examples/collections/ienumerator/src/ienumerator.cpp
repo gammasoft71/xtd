@@ -14,7 +14,7 @@ public:
     
     ustring first_name;
     ustring last_name;
-
+    
     int32 compare_to(const person& o) const noexcept override {
       if (first_name == o.first_name && last_name == o.last_name) return 0;
       if (first_name > o.first_name || (first_name == o.first_name && last_name > o.last_name)) return 1;
@@ -25,45 +25,45 @@ public:
     ustring to_string() const noexcept override {return ustring::format("{} {}", first_name, last_name);}
   };
   
-  // Collection of person objects. This class
-  // implements IEnumerable so that it can be used
-  // with ForEach syntax.
-  class people : public ienumerable {
+  class people_enumerator : public ienumerator {
   private:
-    array_list people_;
+    const array_list& people_;
+    
+    // Enumerators are positioned before the first element until the first xtd::collections::ienumerator::move_next() call.
+    size position = npos;
     
   public:
-    people(const array<person>& p_array) {
-      people_ = array_list(p_array.size());
-      
-      for (auto i = 0_z; i < p_array.size(); ++i)
-        people_[i] = p_array[i];
-    }
+    inline static constexpr xtd::size npos = xtd::size_object::max_value;
     
-    // Implementation for the GetEnumerator method.
-    enumerator get_enumerator() const noexcept override {
-      return people_.get_enumerator();
+    people_enumerator(const array_list& list) : people_(list) {}
+    
+    bool move_next() override {return ++position < people_.count();}
+    
+    void reset() override {position = npos;}
+    
+    const any_object& current() const override {
+      if (position >= people_.size()) throw invalid_operation_exception {csf_};
+      return people_[position];
     }
   };
-
+  
   static auto main() -> void {
-    auto people_array = xtd::array<person> {
+    auto people_array = array_list {
       person {"John", "Smith"},
       person {"Jim", "Johnson"},
       person {"Sue", "Rabon"},
     };
     
-    auto people_list = people {people_array};
-    auto people_enum = people_list.get_enumerator();
-    while (people_enum.move_next())
-      console::write_line(people_enum.current());
+    auto enumerator = people_enumerator {people_array};
+    while (enumerator.move_next())
+      console::write_line(enumerator.current());
   }
 };
 
 startup_(program::main);
 
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // John Smith
 // Jim Johnson
