@@ -29,7 +29,7 @@ auto main() -> int {
   }
 }
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // First Series:
 //   104  222  250  126  113   23  137   65  199   68

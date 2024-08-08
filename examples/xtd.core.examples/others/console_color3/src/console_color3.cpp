@@ -54,7 +54,7 @@ auto main() -> int {
   console::out << u8" (c++, c#, objective-c, ...)." << reset_color() << environment::new_line;
 }
 
-// This code produces the following output with colors:
+// This code produces the following output with colors :
 //
 //        ████████████████████████████████████████████████████████████
 //      ██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████

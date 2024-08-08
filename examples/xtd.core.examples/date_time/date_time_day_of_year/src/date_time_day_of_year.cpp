@@ -17,7 +17,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // 12/31/2010: day 365 of 2010
 // 12/31/2011: day 365 of 2011

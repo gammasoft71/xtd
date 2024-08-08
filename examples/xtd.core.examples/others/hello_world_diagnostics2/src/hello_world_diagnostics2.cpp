@@ -8,6 +8,6 @@ auto main() -> int {
   ctrace << "Hello, World!" << endl;
 }
 
-// This code can produces the following output debug:
+// This code produces the following debug output :
 //
 // Hello, World!

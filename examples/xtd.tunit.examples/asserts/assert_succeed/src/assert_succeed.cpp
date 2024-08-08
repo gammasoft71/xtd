@@ -14,7 +14,7 @@ auto main() -> int {
   return console_unit_test().run();
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Start 1 test from 1 test case
 // Run tests:

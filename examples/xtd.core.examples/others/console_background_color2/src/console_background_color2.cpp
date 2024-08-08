@@ -31,7 +31,7 @@ auto main() -> int {
   console::out << environment::new_line;
 }
 
-// This code produces the following output with colors:
+// This code produces the following output with colors :
 //
 //
 //

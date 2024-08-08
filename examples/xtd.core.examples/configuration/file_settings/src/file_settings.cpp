@@ -38,7 +38,7 @@ auto main() -> int {
   read_file_settings();
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // ----------------------------------------
 // "exemple.ini" file content :

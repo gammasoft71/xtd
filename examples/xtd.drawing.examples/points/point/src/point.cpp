@@ -20,7 +20,7 @@ auto main() -> int {
   console::write_line("location = {}", location);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // location = {x=10, y=235}
 // location = {x=30, y=220}

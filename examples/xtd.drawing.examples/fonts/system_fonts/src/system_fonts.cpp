@@ -15,7 +15,7 @@ auto main() -> int {
   console::write_line("status_font        : {}", system_fonts::status_font());
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // caption_font       : [font: name=.AppleSystemUIFont, size=9, units=3, gdi_char_set=0, gdi_vertical_font=false]
 // default_font       : [font: name=.AppleSystemUIFont, size=9, units=3, gdi_char_set=0, gdi_vertical_font=false]

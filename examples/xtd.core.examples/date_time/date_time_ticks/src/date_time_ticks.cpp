@@ -30,7 +30,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // 1) The maximum date and time is 12/31/9999 23:59:59
 // 2) The minimum date and time is 01/01/0001 00:00:00

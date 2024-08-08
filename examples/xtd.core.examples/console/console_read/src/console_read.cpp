@@ -30,7 +30,7 @@ auto main() -> int {
   } while (ch != '+');
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Type a string of text then press Enter. Type '+' anywhere in the text to quit:
 //

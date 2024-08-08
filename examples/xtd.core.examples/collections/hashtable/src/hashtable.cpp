@@ -50,7 +50,7 @@ auto main() -> int {
     console::write_line("Key \"doc\" is not found.");
 }
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // For key = "rtf", value = wordpad.exe.
 // For key = "rtf", value = winword.exe.

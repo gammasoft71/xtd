@@ -53,7 +53,7 @@ auto main() -> int {
   terminate_app = true;
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // socket=4, counter=1
 // socket=5, counter=1

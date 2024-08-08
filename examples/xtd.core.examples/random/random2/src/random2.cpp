@@ -48,7 +48,7 @@ auto main() -> int {
   console::write_line();
 }
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // Five random byte values:
 //   150  243   92  141    0

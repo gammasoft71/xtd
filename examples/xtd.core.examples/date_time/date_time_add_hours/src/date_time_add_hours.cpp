@@ -18,7 +18,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // 2009-03-01 12:00:00 + 0.08333 hour(s) = 2009-03-01 12:04:59
 // 2009-03-01 12:00:00 + 0.16667 hour(s) = 2009-03-01 12:10:00

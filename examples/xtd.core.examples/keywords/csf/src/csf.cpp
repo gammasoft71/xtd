@@ -18,7 +18,7 @@ auto main() -> int {
   // trace_message("Something has happened.", {__FILE__, __LINE__, __func__});
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // stack_frame: /!---OMITTED---!/csf.cpp:15:0
 //

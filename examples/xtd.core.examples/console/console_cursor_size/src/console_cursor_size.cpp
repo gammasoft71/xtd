@@ -17,7 +17,7 @@ auto main() -> int {
   console::cursor_size(save_cursor_size);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // This example increments the cursor size from 1% to 100%:
 //

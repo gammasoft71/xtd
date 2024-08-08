@@ -20,7 +20,7 @@ auto main() -> int {
   console::write_line(obj3->to_string());
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // examples::object_test::object1
 // Tue Jan  5 23:05:00 1971

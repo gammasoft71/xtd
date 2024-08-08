@@ -24,7 +24,7 @@ auto main() -> int {
   console::write_line("object::equals(\"{0}\", \"{1}\") => {2}", s1, s2, object::equals(s1, s2));
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // object::equals("Tom", "Carol") => false
 // object::equals("Tom", "Tom") => true

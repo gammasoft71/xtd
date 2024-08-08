@@ -23,7 +23,7 @@ auto main() -> int {
   }
 }
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // Exception occured :
 // -------------------

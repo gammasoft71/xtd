@@ -46,7 +46,7 @@ auto main() -> int {
   console::reset_color();
 }
 
-// This code produces the following output with colors:
+// This code produces the following output with colors :
 //
 //
 //

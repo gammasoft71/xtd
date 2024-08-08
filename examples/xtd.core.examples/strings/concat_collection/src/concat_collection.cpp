@@ -8,6 +8,6 @@ auto main() -> int {
   console::write_line(ustring::concat(items));
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // One Two Three Four

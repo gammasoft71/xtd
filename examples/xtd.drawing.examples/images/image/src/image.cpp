@@ -17,7 +17,7 @@ auto main() -> int {
   console::write_line("pixel[50][100] = {}", bmp.get_pixel(50, 100));
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // handle = 0x101E61F10
 // horizontal resolution = 96

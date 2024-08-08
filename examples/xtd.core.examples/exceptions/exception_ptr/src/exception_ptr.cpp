@@ -28,7 +28,7 @@ auto main() -> int {
   }
 }
 
-// This code can produces the following output :
+// This code can produce the following output :
 //
 // xtd::invalid_operation_exception : Ouch there are an exception !
 //    at main::$_0::operator()() const [0x0000C1F0] in /|---OMITTED---|/exception_ptr/src/exception_ptr.cpp:line 13

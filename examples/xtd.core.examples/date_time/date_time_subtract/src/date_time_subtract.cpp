@@ -32,7 +32,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // date1 = 1996-06-03 22:15:00
 // date2 = 1996-12-06 13:02:00

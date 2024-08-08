@@ -11,7 +11,7 @@ auto main() -> int {
     console::write_line(string);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // strings.size = 5
 // One

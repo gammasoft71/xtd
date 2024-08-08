@@ -72,7 +72,7 @@ auto main() -> int {
   display_values(*p3);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Original values of p1 and p2:
 //    p1 instance values:

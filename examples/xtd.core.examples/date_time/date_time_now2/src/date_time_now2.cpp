@@ -24,7 +24,7 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // en_US: 01/02/2022 10:59:07
 // en_GB: 02/01/2022 10:59:07

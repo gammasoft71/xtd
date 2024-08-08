@@ -7,6 +7,6 @@ auto main() -> int {
   console::write_line(ustring::concat("Hello", ", ", "World", "!"));
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Hello, World!

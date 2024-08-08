@@ -57,7 +57,7 @@ auto main() -> int {
   console::write_line("p1's value is: {}", p1.to_string());
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // false
 // true

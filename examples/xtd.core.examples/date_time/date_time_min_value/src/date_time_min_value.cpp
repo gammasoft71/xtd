@@ -17,6 +17,6 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // 01/01/0001 00:00:00  (Equals date_time.min_value)

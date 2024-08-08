@@ -30,7 +30,7 @@ auto main() -> int {
   console::write_line(formatter, a_bool, bit_converter::to_string(bit_converter::get_bytes(a_bool)));
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // This example of methods of the BitConverter class
 // generates the following output.

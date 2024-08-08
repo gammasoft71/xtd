@@ -14,7 +14,7 @@ auto main() -> int {
   console::write_line(*object1 == *object3);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // false
 // false

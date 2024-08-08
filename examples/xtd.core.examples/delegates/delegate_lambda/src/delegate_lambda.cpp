@@ -13,6 +13,6 @@ auto main() -> int {
   writer("Value to write");
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Hello, World!

@@ -53,7 +53,7 @@ auto main() -> int {
   cout << " (c++, c#, objective-c, ...)." << reset_color() << endl;
 }
 
-// This code produces the following output with colors:
+// This code produces the following output with colors :
 //
 //        ████████████████████████████████████████████████████████████
 //      ██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████

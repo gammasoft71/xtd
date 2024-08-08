@@ -25,6 +25,6 @@ public:
 
 startup_(program::main);
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // 9223372036854775807 is greater than 3155378975999999999 ticks.

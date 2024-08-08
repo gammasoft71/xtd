@@ -19,6 +19,6 @@ auto main() -> int {
   console::write_line(ustring::join(", ", fibonacci_series(1000)));
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987

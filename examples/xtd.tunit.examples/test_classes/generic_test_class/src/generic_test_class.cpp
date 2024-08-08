@@ -52,7 +52,7 @@ auto main() -> int {
   return console_unit_test().run();
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // Start 5 tests from 5 test cases
 // Run tests:

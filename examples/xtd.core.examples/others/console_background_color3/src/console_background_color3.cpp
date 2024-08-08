@@ -31,7 +31,7 @@ auto main() -> int {
   cout << endl;
 }
 
-// This code produces the following output with colors:
+// This code produces the following output with colors :
 //
 //
 //

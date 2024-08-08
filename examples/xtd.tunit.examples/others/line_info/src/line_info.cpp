@@ -16,7 +16,7 @@ auto main() -> int {
   trace_message("Something happened.", csf_);
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // message: Something happened.
 // member name: main

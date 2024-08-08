@@ -19,6 +19,6 @@ namespace version_os_example {
 
 startup_(version_os_example::program::main);
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // Operating System: macOS 11.6.0 (11.6.0.0)

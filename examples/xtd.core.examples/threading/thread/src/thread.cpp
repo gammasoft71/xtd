@@ -48,7 +48,7 @@ public:
 
 startup_(thread_example::main);
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // Main thread: Start a second thread.
 // Main thread: Do some work.

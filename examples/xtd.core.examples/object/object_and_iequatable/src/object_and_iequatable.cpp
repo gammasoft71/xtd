@@ -53,7 +53,7 @@ auto main() -> int {
   console::write_line(user3.to_string());
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // user1 equals user2: true
 // user1 equals user3: false

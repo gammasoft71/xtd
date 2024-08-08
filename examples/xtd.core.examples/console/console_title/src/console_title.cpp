@@ -12,7 +12,7 @@ auto main() -> int {
   console::read_key(true);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // The current console title is: "Command Prompt - console_title"
 // (Press any key to change the console title.)

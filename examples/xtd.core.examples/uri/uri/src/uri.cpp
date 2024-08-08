@@ -35,7 +35,7 @@ namespace uri_example {
 
 startup_(uri_example::program::main);
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // absolute_path: /Home/Index.htm
 // absolute_uri: https://user:password@www.contoso.com:80/Home/Index.htm?q1=v1&q2=v2#FragmentName

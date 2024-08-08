@@ -149,7 +149,7 @@ auto main() -> int {
   // return unit_test(std::new_uptr<gtest_event_listener>()).run();
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // [==========] Running 3 tests from 1 test case.
 // [----------] Global test environment set-up.

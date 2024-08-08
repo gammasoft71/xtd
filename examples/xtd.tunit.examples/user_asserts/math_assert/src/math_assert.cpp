@@ -53,7 +53,7 @@ auto main() -> int {
   return xtd::tunit::console_unit_test().run();
 }
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // Start 2 tests from 1 test case
 // Run tests:

@@ -55,7 +55,7 @@ auto main() -> int {
   console::write_line("ustring::format(\"{{}}\", wstring_value)      = {}", ustring::format("{}", wstring_value));
 }
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // Convert int to ustring :
 // ------------------------

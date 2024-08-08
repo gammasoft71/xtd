@@ -58,7 +58,7 @@ namespace mixing_std_and_xtd_threads_example {
 
 startup_(mixing_std_and_xtd_threads_example::mixing_std_and_xtd_threads_class::main);
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // threads {
 //   thread={name=main, managed_thread_id=1, priority=normal, thread_id=0x20245e080, state=running}

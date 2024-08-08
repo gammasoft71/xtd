@@ -27,7 +27,7 @@ auto main() -> int {
   print_values(my_vl);
 }
 
-// This code can produces the following output :
+// This code produces the following output :
 //
 // my_vl
 //     size:    3

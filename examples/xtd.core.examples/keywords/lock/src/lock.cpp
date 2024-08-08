@@ -53,7 +53,7 @@ namespace examples {
 
 startup_(examples::program::main);
 
-// This code can produce the following output:
+// This code can produce the following output :
 //
 // Balance before Withdrawal :  1000
 // Amount to Withdraw        : -75

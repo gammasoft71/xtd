@@ -7,6 +7,6 @@ auto main() -> int {
   console::out << "Hello, " << environment::user_name() << "!" << environment::new_line;
 }
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // Hello, gammasoft71!

@@ -31,7 +31,7 @@ auto main() -> int {
   return 0;
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Hello, World
 // Goodbye, World

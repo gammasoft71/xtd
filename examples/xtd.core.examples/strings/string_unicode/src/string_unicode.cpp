@@ -29,7 +29,7 @@ auto main() -> int {
   console::write_line("Russian:        {}", russian);
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Arabic:         الكلمة العربية
 // Trad. Chinese:  中國的漢字

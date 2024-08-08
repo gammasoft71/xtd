@@ -19,7 +19,7 @@ auto main() -> int {
   console::write_line("   For a female:   {0}", female_pet_names[female_index]);
 }
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // Suggested pet name of the day:
 //    For a male:     Prince
