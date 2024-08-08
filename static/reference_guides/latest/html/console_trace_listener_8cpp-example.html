@@ -103,42 +103,42 @@ $(document).ready(function(){initNavTree('console_trace_listener_8cpp-example.ht
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1diagnostics_1_1console__trace__listener.html" title="Directs tracing or debugging output to either the standard output or the standard error stream.">xtd::diagnostics::console_trace_listener</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#define DEBUG </span><span class="comment">// Force debug mode even if example is builded in release.</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/console_trace_listener&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  debug::listeners({new_ptr&lt;console_trace_listener&gt;()});</div>
-<div class="line">  debug::write_line(<span class="stringliteral">&quot;Begin&quot;</span>);</div>
-<div class="line">  debug::indent();</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= 10; step++) {</div>
-<div class="line">    debug::write_line(<span class="stringliteral">&quot;working step {}...&quot;</span>, step);</div>
-<div class="line">    threading::thread::sleep(300_ms);</div>
-<div class="line">  }</div>
-<div class="line">  debug::unindent();</div>
-<div class="line">  debug::write_line(<span class="stringliteral">&quot;End&quot;</span>);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Begin</span></div>
-<div class="line"><span class="comment">//     working step 1...</span></div>
-<div class="line"><span class="comment">//     working step 2...</span></div>
-<div class="line"><span class="comment">//     working step 3...</span></div>
-<div class="line"><span class="comment">//     working step 4...</span></div>
-<div class="line"><span class="comment">//     working step 5...</span></div>
-<div class="line"><span class="comment">//     working step 6...</span></div>
-<div class="line"><span class="comment">//     working step 7...</span></div>
-<div class="line"><span class="comment">//     working step 8...</span></div>
-<div class="line"><span class="comment">//     working step 9...</span></div>
-<div class="line"><span class="comment">//     working step 10...</span></div>
-<div class="line"><span class="comment">// End</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#define DEBUG </span><span class="comment">// Force debug mode even if example is builded in release.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;xtd/diagnostics/console_trace_listener&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  debug::listeners({new_ptr&lt;console_trace_listener&gt;()});</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  debug::write_line(<span class="stringliteral">&quot;Begin&quot;</span>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  debug::indent();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= 10; step++) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    debug::write_line(<span class="stringliteral">&quot;working step {}...&quot;</span>, step);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    threading::thread::sleep(300_ms);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  debug::unindent();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  debug::write_line(<span class="stringliteral">&quot;End&quot;</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// Begin</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//     working step 1...</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//     working step 2...</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//     working step 3...</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//     working step 4...</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//     working step 5...</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//     working step 6...</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//     working step 7...</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//     working step 8...</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">//     working step 9...</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//     working step 10...</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// End</span></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.h:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('console_trace_listener_8cpp-example.ht
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

@@ -1,5 +1,8 @@
 var NAVTREEINDEX84 =
 {
+"vertical__control__layout__style__collection_8h.html":[22,3,0,0,0,319],
+"vertical__control__layout__style__collection_8h_source.html":[22,3,0,0,0,319],
+"vertical__layout__panel_8h.html":[22,3,0,0,0,320],
 "vertical__layout__panel_8h_source.html":[22,3,0,0,0,320],
 "vertical_layout_panel_8cpp-example.html":[23,368],
 "violet__colors_8h.html":[22,2,0,0,0,73],

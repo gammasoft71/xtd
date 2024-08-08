@@ -103,41 +103,41 @@ $(document).ready(function(){initNavTree('main1_8cpp-example.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1startup.html" title="Defines the xtd::startup object that can be used in the main method to safely call the application&#39;s ...">xtd::startup</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>main1_example {</div>
-<div class="line">  <span class="keyword">class </span>program {</div>
-<div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
-<div class="line">      <span class="comment">// Write arguments to the console output</span></div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : environment::get_command_line_args())</div>
-<div class="line">        console::write_line(arg);</div>
-<div class="line">        </div>
-<div class="line">      <span class="comment">// return 42</span></div>
-<div class="line">      environment::exit_code(42);</div>
-<div class="line">    }</div>
-<div class="line">  };</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main1_example::program::main);</div>
-<div class="line"><span class="comment">// Is the same as :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// auto main() -&gt; int {</span></div>
-<div class="line"><span class="comment">//   return startup::safe_run(main1_example::program::main);</span></div>
-<div class="line"><span class="comment">// }</span></div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output if one two &quot;three four&quot; five are entered on command line:</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// /!---OMITTED---!/main1</span></div>
-<div class="line"><span class="comment">// one</span></div>
-<div class="line"><span class="comment">// two</span></div>
-<div class="line"><span class="comment">// three four</span></div>
-<div class="line"><span class="comment">// five</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>main1_example {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <span class="keyword">class </span>program {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>      <span class="comment">// Write arguments to the console output</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : environment::get_command_line_args())</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        console::write_line(arg);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      <span class="comment">// return 42</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>      environment::exit_code(42);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  };</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main1_example::program::main);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// Is the same as :</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// auto main() -&gt; int {</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//   return startup::safe_run(main1_example::program::main);</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// }</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// This code produces the following output if one two &quot;three four&quot; five are entered on command line:</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// /!---OMITTED---!/main1</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// one</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// two</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// three four</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// five</span></div>
 <div class="ttc" id="agroup__keywords_ga44bd440a34d147923e428eacd1c8eedd_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:175</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('main1_8cpp-example.html',''); initResi
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 7 2024 17:46:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 8 2024 16:03:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
