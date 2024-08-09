@@ -55,6 +55,7 @@ add_sources(
   src/xtd/native/linux/file_system.cpp
   src/xtd/native/linux/guid.cpp
   src/xtd/native/linux/interlocked.cpp
+  src/xtd/native/linux/memory.cpp
   src/xtd/native/linux/named_event_wait_handle.cpp
   src/xtd/native/linux/named_mutex.cpp
   src/xtd/native/linux/named_semaphore.cpp

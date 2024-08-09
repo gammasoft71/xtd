@@ -53,6 +53,7 @@ add_sources(
   src/xtd/native/posix/file_system.cpp
   src/xtd/native/posix/guid.cpp
   src/xtd/native/posix/interlocked.cpp
+  src/xtd/native/posix/memory.cpp
   src/xtd/native/posix/named_event_wait_handle.cpp
   src/xtd/native/posix/named_mutex.cpp
   src/xtd/native/posix/named_semaphore.cpp

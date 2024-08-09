@@ -54,6 +54,7 @@ add_sources(
   include/xtd/native/guid
   include/xtd/native/interlocked.h
   include/xtd/native/interlocked
+  include/xtd/native/memory.h
   include/xtd/native/named_event_wait_handle.h
   include/xtd/native/named_event_wait_handle
   include/xtd/native/named_mutex.h

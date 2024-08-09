@@ -28,6 +28,7 @@ add_projects(
   mains
   math
   media
+  memory_information
   network
   object
   object_model_collections
