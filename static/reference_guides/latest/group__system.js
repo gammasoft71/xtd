@@ -282,6 +282,7 @@ var group__system =
       [ "to_hash_code", "classxtd_1_1hash__code_a386a3c74024d70d4e118a2dfd3fd9b3a.html#a386a3c74024d70d4e118a2dfd3fd9b3a", null ]
     ] ],
     [ "xtd::math", "classxtd_1_1math.html", null ],
+    [ "xtd::memory_information", "classxtd_1_1memory__information.html", null ],
     [ "xtd::object", "classxtd_1_1object.html", [
       [ "object", "classxtd_1_1object_ad2cab851376bb6ca085b567bf5da0f5f.html#ad2cab851376bb6ca085b567bf5da0f5f", null ],
       [ "equals", "classxtd_1_1object_a2743b6f75405882c28eebe2456f3837b.html#a2743b6f75405882c28eebe2456f3837b", null ],
