@@ -4,7 +4,7 @@
 
 #include <unistd.h>
 #include <sys/types.h>
-#include <sys/resource.h.h>
+#include <sys/resource.h>
 #include <sys/sysinfo.h>
 #include <cstdlib>
 #include <iostream>
