@@ -24,6 +24,9 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core collections interfaces
+    /// par Examples
+    /// The following example demonstrates the implementation of the xtd::collections::ilist interface to create a simple, fixed-size list.
+    /// @include ilist.cpp
     /// @remarks xtd::collections::ilist is a descendant of the xtd::collections::icollection interface and is the base interface of all non-generic lists. xtd::collections::ilist implementations fall into three categories: read-only, fixed-size, and variable-size. A read-only xtd::collections::ilist cannot be modified. A fixed-size xtd::collections::ilist does not allow the addition or removal of elements, but it allows the modification of existing elements. A variable-size xtd::collections::ilist allows the addition, removal, and modification of elements.
     /// @remarks For the generic version of this interface, see xtd::collections::generic::ilist <type_t>.
     using ilist = generic::ilist<xtd::any_object>;
