@@ -1,6 +1,6 @@
 # memory_information
 
-Shows how to use [xtd::memory_information](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1memory_information.html) class.
+Shows how to use [xtd::memory_information](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1memory__information.html) class.
 
 ## Sources
 

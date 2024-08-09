@@ -31,6 +31,7 @@
 * [Mains](xtd.core.examples/mains/README.md) contains main examples.
 * [Math](xtd.core.examples/math/README.md) contains math examples.
 * [Media](xtd.core.examples/media/README.md) contains media examples.
+* [Memory information](xtd.core.examples/memory_information/README.md) contains memory information examples.
 * [Network](xtd.core.examples/network/README.md) contains network examples.
 * [Object](xtd.core.examples/object/README.md) contains object examples.
 * [Object model collections](xtd.core.examples/object_model_collections/README.md) contains object model collections examples.
