@@ -41,7 +41,7 @@ inline std::basic_string<char_t> __floating_point_formatter(const std::basic_str
   std::basic_string<char_t> fmt_str({'%', '.', '*', 'L'});
   switch (fmt[0]) {
     case 'b':
-    case 'B': {double value_long_double = static_cast<double>(value); int64_t value_int64 = 0; memcpy(&value_int64, &value_long_double, sizeof(value_long_double)); return __binary_formatter<char_t>(value_int64, precision);}
+    case 'B': {double value_double = static_cast<double>(value); int64_t value_int64 = 0; memcpy(&value_int64, &value_double, sizeof(value_double)); return __binary_formatter<char_t>(value_int64, precision);}
     case 'c':
     case 'C': return __currency_formatter<char_t>(static_cast<long double>(value), loc);
     case 'e':
