@@ -193,25 +193,25 @@ namespace xtd {
         /// @{
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        virtual const_iterator begin() const noexcept {return iterator::begin(enumerator_->get_enumerator());}
+        virtual const_iterator begin() const {return iterator::begin(enumerator_->get_enumerator());}
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        virtual iterator begin() noexcept {return iterator::begin(enumerator_->get_enumerator());}
+        virtual iterator begin() {return iterator::begin(enumerator_->get_enumerator());}
 
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
-        virtual const_iterator cbegin() const noexcept {return iterator::begin(enumerator_->get_enumerator());}
+        virtual const_iterator cbegin() const {return iterator::begin(enumerator_->get_enumerator());}
 
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        virtual const_iterator cend() const noexcept {return iterator::end(enumerator_->get_enumerator());}
+        virtual const_iterator cend() const {return iterator::end(enumerator_->get_enumerator());}
 
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        virtual const_iterator end() const noexcept {return iterator::end(enumerator_->get_enumerator());}
+        virtual const_iterator end() const {return iterator::end(enumerator_->get_enumerator());}
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
-        virtual iterator end() noexcept {return iterator::end(enumerator_->get_enumerator());}
+        virtual iterator end() {return iterator::end(enumerator_->get_enumerator());}
         /// @}
         
       private:
