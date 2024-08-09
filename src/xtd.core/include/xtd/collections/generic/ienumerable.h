@@ -25,6 +25,9 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections interfaces
+      /// @par Examples
+      /// The following example demonstrates how to implement the xtd::collections::generic::ienumerable <type_t> interface. When you implement xtd::collections::generic::ienumerable <type_t>, you must also implement xtd::collections::generic::ienumerator <type_t>.
+      /// @include generic_ienumerable.cpp
       /// @remarks xtd::collections::generic::ienumerable <type_t> is the base interface for collections in the xtd::collections::generic namespace such as xtd::collections::generic::list <type_t>, xtd::collections::generic::dictionary <key_t, value_t>, and xtd::collections::generic::stack <type_t> and other generic collections such as xtd::collections::object_model::observable_collection <type_t> and xtd::collections::concurent::concurrent_stack <type_t>. Collections that implement xtd::collections::generic::ienumerable <type_t> can be enumerated by using the `for each` statement.
       /// @remarks For the non-generic version of this interface, see xtd::collections::ienumerable.
       /// @remarks xtd::collections::generic::ienumerable <type_t> contains a single method that you must implement when implementing this interface; xtd::collections::generic::ienumerable::get_enumerator, which returns an xtd::collections::generic::enumerator <type_t> object. The returned xtd::collections::generic::enumerator <type_t> provides the ability to iterate through the collection by exposing a xtd::collections::generic::enumerator::current property.
