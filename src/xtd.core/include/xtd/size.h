@@ -2,7 +2,7 @@
 /// @brief Contains xtd::size type.
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
-#include <cstdint>
+#include <cstddef>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
