@@ -36,6 +36,7 @@ add_sources(
   src/xtd/native/macos/file_system.mm
   src/xtd/native/macos/guid.mm
   src/xtd/native/macos/interlocked.mm
+  src/xtd/native/macos/memory.mm
   src/xtd/native/macos/named_event_wait_handle.mm
   src/xtd/native/macos/named_mutex.mm
   src/xtd/native/macos/named_semaphore.mm

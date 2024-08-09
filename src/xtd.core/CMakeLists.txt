@@ -268,6 +268,8 @@ add_sources(
   include/xtd/make_any_object
   include/xtd/math.h
   include/xtd/math
+  include/xtd/memory_information.h
+  include/xtd/memory_information
   include/xtd/month_of_year.h
   include/xtd/month_of_year
   include/xtd/nameof.h
@@ -1014,6 +1016,7 @@ add_sources(
   src/xtd/iformatable.cpp
   src/xtd/literals.cpp
   src/xtd/math.cpp
+  src/xtd/memory_information.cpp
   src/xtd/object.cpp
   src/xtd/operating_system.cpp
   src/xtd/processor.cpp

@@ -344,6 +344,7 @@
 #include "lock.h"
 #include "make_any_object.h"
 #include "math.h"
+#include "memory_information.h"
 #include "month_of_year.h"
 #include "nameof.h"
 #include "new_ptr.h"
