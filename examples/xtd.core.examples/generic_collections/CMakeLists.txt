@@ -6,6 +6,7 @@ find_package(xtd REQUIRED)
 add_projects(
   generic_icollection
   generic_ienumerable
+  generic_ienumerable2
   generic_ienumerator
   generic_ilist
   generic_list
