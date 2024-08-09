@@ -148,6 +148,7 @@ var dir_8bddd848f68e3e28b5aa5e234df2e4b1 =
     [ "lock.h", "lock_8h.html", "lock_8h" ],
     [ "make_any_object.h", "make__any__object_8h.html", "make__any__object_8h" ],
     [ "math.h", "math_8h.html", null ],
+    [ "memory_information.h", "memory__information_8h.html", null ],
     [ "month_of_year.h", "month__of__year_8h.html", "month__of__year_8h" ],
     [ "nameof.h", "nameof_8h.html", "nameof_8h" ],
     [ "new_ptr.h", "new__ptr_8h.html", "new__ptr_8h" ],

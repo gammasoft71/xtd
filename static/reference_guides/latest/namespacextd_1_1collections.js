@@ -13,6 +13,7 @@ var namespacextd_1_1collections =
     [ "key_not_found_exception", "classxtd_1_1collections_1_1key__not__found__exception.html", "classxtd_1_1collections_1_1key__not__found__exception" ],
     [ "any_pair", "group__collections_ga8a76f3f05751df733bfba833f2016757.html#ga8a76f3f05751df733bfba833f2016757", null ],
     [ "array_list", "group__collections_gaf064333715d42a26e1ec3999ff384557.html#gaf064333715d42a26e1ec3999ff384557", null ],
+    [ "enumerator", "group__collections_ga46ca5358d7207b976828dddad86adcf8.html#ga46ca5358d7207b976828dddad86adcf8", null ],
     [ "hashtable", "group__collections_gaf94efa3cbd1251ed0a6bf8db67406922.html#gaf94efa3cbd1251ed0a6bf8db67406922", null ],
     [ "icollection", "group__interfaces_gabb263b8f51a5edf07ad33b3355ae5eb2.html#gabb263b8f51a5edf07ad33b3355ae5eb2", null ],
     [ "ienumerable", "group__interfaces_gad6394329e5e329f3fda6d45017ee1a7c.html#gad6394329e5e329f3fda6d45017ee1a7c", null ],

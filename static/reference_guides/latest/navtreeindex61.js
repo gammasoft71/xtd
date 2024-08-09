@@ -1,5 +1,8 @@
 var NAVTREEINDEX61 =
 {
+"functions_vars_j.html":[21,3,2,9],
+"functions_vars_k.html":[21,3,2,10],
+"functions_vars_l.html":[21,3,2,11],
 "functions_vars_m.html":[21,3,2,12],
 "functions_vars_n.html":[21,3,2,13],
 "functions_vars_o.html":[21,3,2,14],
@@ -17,6 +20,8 @@ var NAVTREEINDEX61 =
 "functions_y.html":[21,3,0,24],
 "functions_z.html":[21,3,0,25],
 "game_of_life_8cpp-example.html":[23,481],
+"generic_2enumerator_8h.html":[22,1,0,0,0,0,3],
+"generic_2enumerator_8h_source.html":[22,1,0,0,0,0,3],
 "generic_2icollection_8h.html":[22,1,0,0,0,0,5],
 "generic_2icollection_8h_source.html":[22,1,0,0,0,0,5],
 "generic_2ienumerable_8h.html":[22,1,0,0,0,0,6],
@@ -65,10 +70,11 @@ var NAVTREEINDEX61 =
 "group__brushes_ga1af9e4c38fd8d7b0b54f5f695e98cb01.html#ga1af9e4c38fd8d7b0b54f5f695e98cb01":[1,2,0,10],
 "group__brushes_ga3e3401421137ea161f5c264746ae7c0d.html#ga3e3401421137ea161f5c264746ae7c0d":[1,2,0,9],
 "group__collections.html":[1,11,0],
-"group__collections_ga3c07efce71e0899524aa31dfd0431817.html#ga3c07efce71e0899524aa31dfd0431817":[1,11,0,7],
+"group__collections_ga3c07efce71e0899524aa31dfd0431817.html#ga3c07efce71e0899524aa31dfd0431817":[1,11,0,8],
+"group__collections_ga46ca5358d7207b976828dddad86adcf8.html#ga46ca5358d7207b976828dddad86adcf8":[1,11,0,6],
 "group__collections_ga8a76f3f05751df733bfba833f2016757.html#ga8a76f3f05751df733bfba833f2016757":[1,11,0,4],
 "group__collections_gaf064333715d42a26e1ec3999ff384557.html#gaf064333715d42a26e1ec3999ff384557":[1,11,0,5],
-"group__collections_gaf94efa3cbd1251ed0a6bf8db67406922.html#gaf94efa3cbd1251ed0a6bf8db67406922":[1,11,0,6],
+"group__collections_gaf94efa3cbd1251ed0a6bf8db67406922.html#gaf94efa3cbd1251ed0a6bf8db67406922":[1,11,0,7],
 "group__colors.html":[1,2,1],
 "group__colors_ga00b820083dc10635d0003659f19bea3f.html#ga00b820083dc10635d0003659f19bea3f":[1,2,1,21],
 "group__colors_ga93fe9c12f0db7ff77ce77110a1f0e430.html#ga93fe9c12f0db7ff77ce77110a1f0e430":[1,2,1,20],
@@ -243,11 +249,5 @@ var NAVTREEINDEX61 =
 "group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049bab4a6d8aeffb6fca3d37bafdfe905778e":[1,2,1,22,186],
 "group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049bab5bd346b77f564748d4d2743156ed6e8":[1,2,1,22,106],
 "group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049bab88072f7e28a64cfd1a36370be8450bb":[1,2,1,22,29],
-"group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049bab9c32d91096793974cdbdd4376e9008d":[1,2,1,22,218],
-"group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049baba0e826d75c6b294841ae3c396ee6439":[1,2,1,22,173],
-"group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049babb35c41d3e555fde70c305029637843a":[1,2,1,22,226],
-"group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049babb4111a5e022dae6ff18a3b8aec0ea51":[1,2,1,22,175],
-"group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049babb7aedfa61007447dd6efaf9f37641e3":[1,2,1,22,113],
-"group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049babc432826c5179d5332c28e32f2ff58a0":[1,2,1,22,18],
-"group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049babca51d13e304e17f34a3e7c598884ae8":[1,2,1,22,74]
+"group__colors_gabb6249e3fb8a4388778157257e99049b.html#ggabb6249e3fb8a4388778157257e99049bab9c32d91096793974cdbdd4376e9008d":[1,2,1,22,218]
 };

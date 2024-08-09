@@ -23,12 +23,12 @@ var group__generic__collections =
         [ "operator!=", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator.html#a24d77d626249061901432bfbcf448fef", null ]
       ] ],
       [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_a3fc39f63ed4deb910245c29b598806ab.html#a3fc39f63ed4deb910245c29b598806ab", null ],
-      [ "begin", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_a1729fcb53e04a0b08e0bc7f2e00ab848.html#a1729fcb53e04a0b08e0bc7f2e00ab848", null ],
-      [ "begin", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_a9c224329f8c7568b59201f54e92d672c.html#a9c224329f8c7568b59201f54e92d672c", null ],
-      [ "cbegin", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_a40a0c1b6a3b1a03c6089e0fbce0322c4.html#a40a0c1b6a3b1a03c6089e0fbce0322c4", null ],
-      [ "cend", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_ada22c18eb062d89c73414f7cea842671.html#ada22c18eb062d89c73414f7cea842671", null ],
-      [ "end", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_aabd591f7d7e747dcd24587f419497582.html#aabd591f7d7e747dcd24587f419497582", null ],
-      [ "end", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_aeb18d9d2878686f58f9566c7d16f6e28.html#aeb18d9d2878686f58f9566c7d16f6e28", null ]
+      [ "begin", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_a1282516969e5f25e6bdfa2b88569f3e1.html#a1282516969e5f25e6bdfa2b88569f3e1", null ],
+      [ "begin", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_a252f3c19c3a7567894822daaa6dba0e7.html#a252f3c19c3a7567894822daaa6dba0e7", null ],
+      [ "cbegin", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_aee5a51b0a73139dcdda84a7d6146e712.html#aee5a51b0a73139dcdda84a7d6146e712", null ],
+      [ "cend", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_a3ee9b07bb73639e813c37d33eb685a54.html#a3ee9b07bb73639e813c37d33eb685a54", null ],
+      [ "end", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_aa3e5b7725cff75dbb0375a45ed1494e5.html#aa3e5b7725cff75dbb0375a45ed1494e5", null ],
+      [ "end", "classxtd_1_1collections_1_1generic_1_1enumerable__iterators_a9f0f9765d49c987162d8f466a74f2c82.html#a9f0f9765d49c987162d8f466a74f2c82", null ]
     ] ],
     [ "xtd::collections::generic::enumerator< type_t >", "classxtd_1_1collections_1_1generic_1_1enumerator.html", [
       [ "enumerator", "classxtd_1_1collections_1_1generic_1_1enumerator_acba4550321d197cbfbb1f26ddf25ea3c.html#acba4550321d197cbfbb1f26ddf25ea3c", null ],
@@ -53,7 +53,7 @@ var group__generic__collections =
     [ "xtd::collections::generic::ienumerable< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerable.html", [
       [ "iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_ab7559e3d624ff28ff9e975b4836c20e1.html#ab7559e3d624ff28ff9e975b4836c20e1", null ],
       [ "const_iterator", "classxtd_1_1collections_1_1generic_1_1ienumerable_a0b6ff667de781839d1cad82e0d50f4a4.html#a0b6ff667de781839d1cad82e0d50f4a4", null ],
-      [ "get_enumerator", "classxtd_1_1collections_1_1generic_1_1ienumerable_a8993d0f1832c31cbb169bdef490fef90.html#a8993d0f1832c31cbb169bdef490fef90", null ]
+      [ "get_enumerator", "classxtd_1_1collections_1_1generic_1_1ienumerable_a16aefd65a94ba2edba5583e8bb8dc6dd.html#a16aefd65a94ba2edba5583e8bb8dc6dd", null ]
     ] ],
     [ "xtd::collections::generic::ienumerator< type_t >", "classxtd_1_1collections_1_1generic_1_1ienumerator.html", [
       [ "current", "classxtd_1_1collections_1_1generic_1_1ienumerator_a95c392a5abc71c0367d1459690ac240e.html#a95c392a5abc71c0367d1459690ac240e", null ],

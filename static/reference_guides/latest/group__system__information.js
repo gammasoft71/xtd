@@ -110,5 +110,6 @@ var group__system__information =
         [ "create", "classxtd_1_1environment_aa3283d0bed4263754162eb02707e90c1.html#aa3283d0bed4263754162eb02707e90c1a76ea0bebb3c22822b4f0dd9c9fd021c5", null ]
       ] ]
     ] ],
+    [ "xtd::memory_information", "classxtd_1_1memory__information.html", null ],
     [ "xtd::forms::system_information", "classxtd_1_1forms_1_1system__information.html", null ]
 ];

@@ -1401,6 +1401,7 @@ var hierarchy =
       [ "xtd::io::path", "classxtd_1_1io_1_1path.html", null ],
       [ "xtd::math", "classxtd_1_1math.html", null ],
       [ "xtd::media::system_sounds", "classxtd_1_1media_1_1system__sounds.html", null ],
+      [ "xtd::memory_information", "classxtd_1_1memory__information.html", null ],
       [ "xtd::net::dns", "classxtd_1_1net_1_1dns.html", null ],
       [ "xtd::startup", "classxtd_1_1startup.html", null ],
       [ "xtd::system_report", "classxtd_1_1system__report.html", null ],

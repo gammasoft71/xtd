@@ -207,6 +207,7 @@ var namespacextd =
     [ "isynchronize_invoke", "classxtd_1_1isynchronize__invoke.html", "classxtd_1_1isynchronize__invoke" ],
     [ "length_exception", "classxtd_1_1length__exception.html", "classxtd_1_1length__exception" ],
     [ "math", "classxtd_1_1math.html", null ],
+    [ "memory_information", "classxtd_1_1memory__information.html", null ],
     [ "non_const_overload", "structxtd_1_1non__const__overload.html", "structxtd_1_1non__const__overload" ],
     [ "not_finite_number_exception", "classxtd_1_1not__finite__number__exception.html", "classxtd_1_1not__finite__number__exception" ],
     [ "not_implemented_exception", "classxtd_1_1not__implemented__exception.html", "classxtd_1_1not__implemented__exception" ],

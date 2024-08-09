@@ -22,7 +22,7 @@ var searchData=
   ['enum_5fset_5fattribute_2eh_19',['enum_set_attribute.h',['../enum__set__attribute_8h.html',1,'']]],
   ['enum_5fstruct_2eh_20',['enum_struct.h',['../enum__struct_8h.html',1,'']]],
   ['enumerable_5fiterators_2eh_21',['enumerable_iterators.h',['../enumerable__iterators_8h.html',1,'']]],
-  ['enumerator_2eh_22',['enumerator.h',['../enumerator_8h.html',1,'']]],
+  ['enumerator_2eh_22',['enumerator.h',['../enumerator_8h.html',1,'(Global Namespace)'],['../generic_2enumerator_8h.html',1,'(Global Namespace)']]],
   ['environment_2eh_23',['environment.h',['../environment_8h.html',1,'']]],
   ['environment_5fvariable_5ftarget_2eh_24',['environment_variable_target.h',['../environment__variable__target_8h.html',1,'']]],
   ['equality_5foperators_2eh_25',['equality_operators.h',['../equality__operators_8h.html',1,'']]],
