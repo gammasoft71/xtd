@@ -6,7 +6,6 @@
 #include <xtd/as>
 #include <tuple>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
@@ -142,7 +141,7 @@ float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing
 }
 
 void linear_gradient_brush::recreate_handle() {
-  auto colors = vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
+  auto colors = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
   for_each(data_->linear_colors.begin(), data_->linear_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
   native::brush::linear_gradient(handle(), as<int32>(data_->rect.left()), as<int32>(data_->rect.top()), as<int32>(data_->rect.right()), as<int32>(data_->rect.bottom()), colors, data_->angle);
 }

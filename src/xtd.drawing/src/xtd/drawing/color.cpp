@@ -9,7 +9,6 @@
 #include <map>
 #include <sstream>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -549,7 +548,7 @@ color color::from_known_color(known_color color) {
 }
 
 color color::from_name(const ustring& name) noexcept {
-  static auto names = map<ustring, known_color> {};
+  static auto names = std::map<ustring, known_color> {};
   if (names.empty()) {
     for (auto entry : enum_object<>::get_entries<known_color>())
       names.insert({entry.second.replace("_", ustring::empty_string), entry.first});
