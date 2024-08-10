@@ -4,7 +4,6 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 

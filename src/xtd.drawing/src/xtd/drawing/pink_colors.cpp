@@ -1,6 +1,5 @@
 #include "../../../include/xtd/drawing/pink_colors.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 

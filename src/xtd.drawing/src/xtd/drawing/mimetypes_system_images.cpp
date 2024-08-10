@@ -1,6 +1,5 @@
 #include "../../../include/xtd/drawing/mimetypes_system_images.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -141,7 +140,7 @@ const std::vector<image>& mimetypes_system_images::get_images() noexcept {
   return images;
 }
 
-vector<image> mimetypes_system_images::get_images(const xtd::drawing::size& size) noexcept {
+std::vector<image> mimetypes_system_images::get_images(const xtd::drawing::size& size) noexcept {
   return std::vector {application_x_executable(size), audio_x_generic(size), font_x_generic(size), image_x_generic(size), package_x_generic(size), text_html(size), text_x_generic(size), text_x_generic_template(size), text_x_script(size), video_x_generic(size), x_office_address_book(size), x_office_calendar(size), x_office_contact(size), x_office_document(size), x_office_presentation(size), x_office_spreadsheet(size), };
 }
 

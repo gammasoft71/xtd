@@ -1,6 +1,5 @@
 #include "../../../include/xtd/drawing/status_system_images.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -469,7 +468,7 @@ const std::vector<image>& status_system_images::get_images() noexcept {
   return images;
 }
 
-vector<image> status_system_images::get_images(const xtd::drawing::size& size) noexcept {
+std::vector<image> status_system_images::get_images(const xtd::drawing::size& size) noexcept {
   return std::vector {appointment_missed(size), appointment_soon(size), audio_volume_high(size), audio_volume_low(size), audio_volume_medium(size), audio_volume_muted(size), battery_caution(size), battery_low(size), dialog_error(size), dialog_information(size), dialog_password(size), dialog_question(size), dialog_warning(size), folder_drag_accept(size), folder_open(size), folder_visiting(size), image_loading(size), image_missing(size), mail_attachment(size), mail_unread(size), mail_read(size), mail_replied(size), mail_signed(size), mail_signed_verified(size), media_playlist_repeat(size), media_playlist_shuffle(size), network_error(size), network_idle(size), network_offline(size), network_receive(size), network_transmit(size), network_transmit_receive(size), printer_error(size), printer_printing(size), security_high(size), security_medium(size), security_low(size), software_update_available(size), software_update_urgent(size), task_due(size), task_past_due(size), user_available(size), user_away(size), user_idle(size), user_offline(size), user_trash_full(size), weather_clear(size), weather_clear_night(size), weather_few_clouds(size), weather_few_clouds_night(size), weather_fog(size), weather_overcast(size), weather_severe_alert(size), weather_showers(size), weather_showers_scattered(size), weather_snow(size), weather_storm(size), };
 }
 

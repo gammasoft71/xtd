@@ -3,7 +3,6 @@
 #include <xtd/drawing/native/system_fonts>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 

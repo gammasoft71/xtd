@@ -1,6 +1,5 @@
 #include "../../../include/xtd/drawing/places_system_images.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -293,7 +292,7 @@ const std::vector<image>& places_system_images::get_images() noexcept {
   return images;
 }
 
-vector<image> places_system_images::get_images(const xtd::drawing::size& size) noexcept {
+std::vector<image> places_system_images::get_images(const xtd::drawing::size& size) noexcept {
   return std::vector {folder(size), folder_activities(size), folder_applications(size), folder_bookmark(size), folder_cloud(size), folder_desktop(size), folder_development(size), folder_documents(size), folder_download(size), folder_favorites(size), folder_games(size), folder_github(size), folder_home(size), folder_html(size), folder_images(size), folder_important(size), folder_locked(size), folder_music(size), folder_network(size), folder_print(size), folder_public(size), folder_remote(size), folder_system(size), folder_tar(size), folder_temp(size), folder_templates(size), folder_text(size), folder_videos(size), network_server(size), network_workgroup(size), start_here(size), user_bookmarks(size), user_desktop(size), user_home(size), user_trash(size), };
 }
 
