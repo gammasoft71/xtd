@@ -35,7 +35,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_string_with_string) {
-      assert::are_equal("string", ustring::format("{}", string("string")), csf_);
+      assert::are_equal("string", ustring::format("{}", std::string("string")), csf_);
     }
     
     void test_method_(format_string_with_ustring) {

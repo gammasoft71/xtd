@@ -2,7 +2,6 @@
 #include "../../../include/xtd/tunit/unit_test.h"
 #include <xtd/console>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -12,21 +11,21 @@ ostream_unit_test::ostream_unit_test(std::ostream& os) noexcept : unit_test(xtd:
 ostream_unit_test::ostream_unit_test(std::ostream& os, int argc, char* argv[]) noexcept : unit_test(xtd::new_uptr<ostream_event_listener>(os), argc, argv), os_(os) {
 }
 
-ostream& ostream_unit_test::ostream() {
+std::ostream& ostream_unit_test::ostream() {
   return os_;
 }
 
 int ostream_unit_test::count_tests(int32 count) {
-  os_ << count << endl;
+  os_ << count << std::endl;
   return unit_test::count_tests(count);
 }
 
-int ostream_unit_test::list_tests(const vector<ustring>& tests) {
+int ostream_unit_test::list_tests(const std::vector<ustring>& tests) {
   if (!settings::default_settings().gtest_compatibility()) {
     for (auto name : tests)
-      os_ << name << endl;
+      os_ << name << std::endl;
   } else {
-    map<string, vector<ustring>> lists;
+    std::map<std::string, std::vector<ustring>> lists;
     for (auto name : tests) {
       auto key_value = ustring(name).split({'.'});
       if (key_value.size() == 2) {
@@ -35,15 +34,15 @@ int ostream_unit_test::list_tests(const vector<ustring>& tests) {
       }
     }
     for (auto key_value : lists) {
-      os_ << key_value.first << "." << endl;
+      os_ << key_value.first << "." << std::endl;
       for (auto value : key_value.second)
-        os_ << "  " << value << endl;
+        os_ << "  " << value << std::endl;
     }
   }
   return unit_test::list_tests(tests);
 }
 
-bool ostream_unit_test::parse_arguments(const vector<ustring>& args) {
+bool ostream_unit_test::parse_arguments(const std::vector<ustring>& args) {
   for (auto arg : args)
     if (arg == "--help" || arg == "--gtest_help") {
       write_help();
@@ -53,95 +52,95 @@ bool ostream_unit_test::parse_arguments(const vector<ustring>& args) {
 }
 
 void ostream_unit_test::write_help() {
-  os_ << "This program contains tests written using xtd::tunit. You can use the" << endl;
-  os_ << "following command line flags to control its behavior:" << endl;
-  os_ << endl;
-  os_ << "Test selection:" << endl;
+  os_ << "This program contains tests written using xtd::tunit. You can use the" << std::endl;
+  os_ << "following command line flags to control its behavior:" << std::endl;
+  os_ << std::endl;
+  os_ << "Test selection:" << std::endl;
   console::foreground_color(console_color::dark_green);
-  os_ << "  --list_tests" << endl;
+  os_ << "  --list_tests" << std::endl;
   console::reset_color();
-  os_ << "      List the names of all tests instead of running them." << endl;
+  os_ << "      List the names of all tests instead of running them." << std::endl;
   console::foreground_color(console_color::dark_green);
   os_ << "  --filter_tests=";
   console::reset_color();
   console::foreground_color(console_color::dark_yellow);
-  os_ << "POSITIVE_PATTERN[-NEGATIVE_PATERN]" << endl;
+  os_ << "POSITIVE_PATTERN[-NEGATIVE_PATERN]" << std::endl;
   console::reset_color();
-  os_ << "      Run only the tests whose name matches one of the positive patterns but" << endl;
-  os_ << "      none of the negative patterns. '?' matches any single character; '*'" << endl;
-  os_ << "      matches any substring; '|' separates two patterns." << endl;
+  os_ << "      Run only the tests whose name matches one of the positive patterns but" << std::endl;
+  os_ << "      none of the negative patterns. '?' matches any single character; '*'" << std::endl;
+  os_ << "      matches any substring; '|' separates two patterns." << std::endl;
   console::foreground_color(console_color::dark_green);
-  os_ << "  --also_run_ignored_tests" << endl;
+  os_ << "  --also_run_ignored_tests" << std::endl;
   console::reset_color();
-  os_ << "      Run all ignored tests too." << endl;
-  os_ << endl;
-  os_ << "Test execution:" << endl;
+  os_ << "      Run all ignored tests too." << std::endl;
+  os_ << std::endl;
+  os_ << "Test execution:" << std::endl;
   console::foreground_color(console_color::dark_green);
   os_ << "  --repeat_tests=";
   console::reset_color();
   console::foreground_color(console_color::dark_yellow);
-  os_ << "[COUNT]" << endl;
+  os_ << "[COUNT]" << std::endl;
   console::reset_color();
-  os_ << "      Run the tests repeatedly; use a negative count to repeat forever." << endl;
+  os_ << "      Run the tests repeatedly; use a negative count to repeat forever." << std::endl;
   console::foreground_color(console_color::dark_green);
-  os_ << "  --shuffle_tests" << endl;
+  os_ << "  --shuffle_tests" << std::endl;
   console::reset_color();
-  os_ << "      Randomize tests' orders on every iteration." << endl;
+  os_ << "      Randomize tests' orders on every iteration." << std::endl;
   console::foreground_color(console_color::dark_green);
   os_ << "  --random_seed=";
   console::reset_color();
   console::foreground_color(console_color::dark_yellow);
-  os_ << "[NUMBER]" << endl;
+  os_ << "[NUMBER]" << std::endl;
   console::reset_color();
-  os_ << "      Random number seed to use for shuffling test order. (any number" << endl;
-  os_ << "      or 0 to use a seed based on the current time)." << endl;
+  os_ << "      Random number seed to use for shuffling test order. (any number" << std::endl;
+  os_ << "      or 0 to use a seed based on the current time)." << std::endl;
   console::foreground_color(console_color::dark_green);
   os_ << "  --enable_stack_trace=";
   console::reset_color();
   console::foreground_color(console_color::dark_yellow);
-  os_ << "(true|false)" << endl;
+  os_ << "(true|false)" << std::endl;
   console::reset_color();
-  os_ << "      Enable/disable stack trace (disable by default to speed up execution)." << endl;
-  os_ << endl;
-  os_ << "Test output:" << endl;
+  os_ << "      Enable/disable stack trace (disable by default to speed up execution)." << std::endl;
+  os_ << std::endl;
+  os_ << "Test output:" << std::endl;
   console::foreground_color(console_color::dark_green);
   os_ << "  --output_color=";
   console::reset_color();
   console::foreground_color(console_color::dark_yellow);
-  os_ << "(true|false)" << endl;
+  os_ << "(true|false)" << std::endl;
   console::reset_color();
-  os_ << "      Enable/disable colored output." << endl;
+  os_ << "      Enable/disable colored output." << std::endl;
   console::foreground_color(console_color::dark_green);
   os_ << "  --brief=";
   console::reset_color();
   console::foreground_color(console_color::dark_yellow);
-  os_ << "(true|false)" << endl;
+  os_ << "(true|false)" << std::endl;
   console::reset_color();
-  os_ << "      Enable/disable printing of test failures only." << endl;
+  os_ << "      Enable/disable printing of test failures only." << std::endl;
   console::foreground_color(console_color::dark_green);
   os_ << "  --show_duration=";
   console::reset_color();
   console::foreground_color(console_color::dark_yellow);
-  os_ << "(true|false)" << endl;
+  os_ << "(true|false)" << std::endl;
   console::reset_color();
-  os_ << "      Enable/disable the elapsed time of each test display." << endl;
+  os_ << "      Enable/disable the elapsed time of each test display." << std::endl;
   console::foreground_color(console_color::dark_green);
   os_ << "  --output=";
   console::reset_color();
   console::foreground_color(console_color::dark_yellow);
-  os_ << "(json|xml)[:PATH]" << endl;
+  os_ << "(json|xml)[:PATH]" << std::endl;
   console::reset_color();
-  os_ << "      Generate a JSON or XML report in the given directory or with the given" << endl;
-  os_ << "      file name. PATH defaults to tests.xml." << endl;
-  os_ << endl;
-  os_ << "Assertion Behavior:" << endl;
+  os_ << "      Generate a JSON or XML report in the given directory or with the given" << std::endl;
+  os_ << "      file name. PATH defaults to tests.xml." << std::endl;
+  os_ << std::endl;
+  os_ << "Assertion Behavior:" << std::endl;
   console::foreground_color(console_color::dark_green);
-  os_ << "  --break_on_failure" << endl;
+  os_ << "  --break_on_failure" << std::endl;
   console::reset_color();
-  os_ << "      Turn assertion failures into debugger break-points." << endl;
+  os_ << "      Turn assertion failures into debugger break-points." << std::endl;
   console::foreground_color(console_color::dark_green);
-  os_ << "  --throw_on_failure" << endl;
+  os_ << "  --throw_on_failure" << std::endl;
   console::reset_color();
-  os_ << "      Turn assertion failures into C++ exceptions for use by an external test framework." << endl;
-  os_ << endl;
+  os_ << "      Turn assertion failures into C++ exceptions for use by an external test framework." << std::endl;
+  os_ << std::endl;
 }

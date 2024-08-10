@@ -7,34 +7,33 @@
 #include "../../../include/xtd/io/stream_writer.h"
 #include "../../../include/xtd/diagnostics/debug.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
 stream_writer::stream_writer(const ustring& path) : stream_writer(path, false) {
 }
 
-stream_writer::stream_writer(ostream& stream) : stream_writer(stream, false) {
+stream_writer::stream_writer(std::ostream& stream) : stream_writer(stream, false) {
 }
 
-stream_writer::stream_writer(const ustring& path, bool append) : stream_(new ofstream(path, append ? ios::out | ios_base::app : ios::out | ios_base::trunc)), delete_when_destroy_(true) {
-  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
+stream_writer::stream_writer(const ustring& path, bool append) : stream_(new std::ofstream(path, append ? std::ios::out | std::ios_base::app : std::ios::out | std::ios_base::trunc)), delete_when_destroy_(true) {
+  if (path.index_of_any(path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (!file::exists(path)) throw file_not_found_exception {csf_};
   if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
-  if (!dynamic_cast<ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception {csf_};
+  if (!dynamic_cast<std::ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception {csf_};
 }
 
-stream_writer::stream_writer(ostream& stream, bool append) : stream_(&stream) {
+stream_writer::stream_writer(std::ostream& stream, bool append) : stream_(&stream) {
   if (!stream_->good()) throw io_exception {csf_};
-  if (append) stream_->seekp(0, ios_base::end);
+  if (append) stream_->seekp(0, std::ios_base::end);
   stream_->flush();
 }
 
 stream_writer::~stream_writer() {
   if (delete_when_destroy_ && stream_) {
     flush();
-    if (dynamic_cast<ofstream*>(stream_)) static_cast<ofstream*>(stream_)->close();
+    if (dynamic_cast<std::ofstream*>(stream_)) static_cast<std::ofstream*>(stream_)->close();
     delete stream_;
   }
 }
@@ -48,13 +47,13 @@ void stream_writer::auto_flush(bool auto_flush) {
   if (auto_flush_) flush();
 }
 
-optional<reference_wrapper<ostream>> stream_writer::base_stream() const {
-  return stream_ ? optional<reference_wrapper<ostream>>(*stream_) : optional<reference_wrapper<ostream>>();
+std::optional<std::reference_wrapper<std::ostream>> stream_writer::base_stream() const {
+  return stream_ ? std::optional<std::reference_wrapper<std::ostream>>(*stream_) : std::optional<std::reference_wrapper<std::ostream>>();
 }
 
 void stream_writer::close() {
   flush();
-  if (stream_ && dynamic_cast<ofstream*>(stream_)) static_cast<ofstream*>(stream_)->close();
+  if (stream_ && dynamic_cast<std::ofstream*>(stream_)) static_cast<std::ofstream*>(stream_)->close();
   if (delete_when_destroy_) delete stream_;
   stream_ = nullptr;
 }

@@ -4,7 +4,6 @@
 #include <xtd/native/dns>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -16,7 +15,7 @@ public:
   ~__using_dns__() {native::dns::cleanup();}
 };
 
-vector<ip_address> dns::get_host_addresses(const ustring& host_name_or_address) {
+std::vector<ip_address> dns::get_host_addresses(const ustring& host_name_or_address) {
   ip_host_entry host_entry = get_host_entry(host_name_or_address);
   return host_entry.address_list();
 }
@@ -51,7 +50,7 @@ ip_host_entry dns::get_host_entry(const ustring& host_name_or_address) {
 
 ustring dns::get_host_name() {
   __using_dns__ hotent;
-  string host_name;
+  std::string host_name;
   if (native::dns::get_host_name(host_name) != 0) throw invalid_operation_exception {csf_};
   return host_name;
 }

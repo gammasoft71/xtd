@@ -11,18 +11,17 @@
 #include <xtd/native/file_system>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace io;
 
-ofstream file::append_text(const ustring& path) {
+std::ofstream file::append_text(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) create_text(path);
   if ((get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
   
-  auto stream = ofstream {path, ios::out | ios::app};
+  auto stream = std::ofstream {path, std::ios::out | std::ios::app};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
@@ -50,24 +49,24 @@ void file::copy(const ustring& src, const ustring& dest, bool overwrite) {
   if (native::file::copy(src, dest) != 0) throw io_exception {csf_};
 }
 
-ofstream file::create(const ustring& path) {
+std::ofstream file::create(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (exists(path) && (get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
   
-  auto stream = ofstream {path, ios::binary | ios::out};
+  auto stream = std::ofstream {path, std::ios::binary | std::ios::out};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
 
-ofstream file::create_text(const ustring& path) {
+std::ofstream file::create_text(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (exists(path) && (get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
   
-  auto stream = ofstream {path};
+  auto stream = std::ofstream {path};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
@@ -151,68 +150,68 @@ void file::move(const ustring& src, const ustring& dest, bool overwrite) {
   if (native::file::move(src, dest) != 0) throw io_exception {csf_};
 }
 
-fstream file::open(const ustring& path, ios::openmode mode) {
+std::fstream file::open(const ustring& path, std::ios::openmode mode) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
-  if ((mode & ios::in) == ios::in && !exists(string(path))) throw file_not_found_exception {csf_};
-  if ((mode & ios::in) == ios::in && (get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
+  if ((mode & std::ios::in) == std::ios::in && !exists(ustring(path))) throw file_not_found_exception {csf_};
+  if ((mode & std::ios::in) == std::ios::in && (get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
   
-  auto stream = fstream {path, mode};
+  auto stream = std::fstream {path, mode};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
 
-ifstream file::open_read(const ustring& path) {
+std::ifstream file::open_read(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) throw file_not_found_exception {csf_};
   
-  auto stream = ifstream {path, ios::binary | ios::in};
+  auto stream = std::ifstream {path, std::ios::binary | std::ios::in};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
 
-ifstream file::open_text(const ustring& path) {
+std::ifstream file::open_text(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) throw file_not_found_exception {csf_};
   
-  auto stream = ifstream {path};
+  auto stream = std::ifstream {path};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
 
-ofstream file::open_write(const ustring& path) {
+std::ofstream file::open_write(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   
-  auto stream = ofstream {path, ios::binary | ios::out};
+  auto stream = std::ofstream {path, std::ios::binary | std::ios::out};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
 
-vector<xtd::byte> file::read_all_bytes(const ustring& path) {
+std::vector<xtd::byte> file::read_all_bytes(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) throw file_not_found_exception {csf_};
   
-  auto stream = ifstream {path, ios::binary};
+  auto stream = std::ifstream {path, std::ios::binary};
   if (!stream.good()) throw io_exception {csf_};
-  return vector<xtd::byte> {istreambuf_iterator<char>(stream), istreambuf_iterator<char>()};
+  return std::vector<xtd::byte> {std::istreambuf_iterator<char>(stream), std::istreambuf_iterator<char>()};
 }
 
-vector<ustring> file::read_all_lines(const ustring& path) {
+std::vector<ustring> file::read_all_lines(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   if (!exists(path)) throw file_not_found_exception {csf_};
   
-  auto contents = vector<ustring> {};
+  auto contents = std::vector<ustring> {};
   stream_reader sr(path);
   while (!sr.end_of_stream())
     contents.push_back(sr.read_line());
@@ -289,18 +288,18 @@ void file::set_permissions(const xtd::ustring& path, xtd::io::file_permissions p
   if (native::file_system::set_permissions(path, static_cast<int32>(permissions)) != 0) throw io_exception {csf_};
 }
 
-ofstream file::write_text(const ustring& path) {
+std::ofstream file::write_text(const ustring& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {csf_};
   
-  auto stream = ofstream {path};
+  auto stream = std::ofstream {path};
   if (!stream.good()) throw io_exception {csf_};
   return stream;
 }
 
-tuple<time_t, time_t, time_t> file::get_file_times(const ustring& path) {
+std::tuple<time_t, time_t, time_t> file::get_file_times(const ustring& path) {
   auto creation_time = time_t {}, last_access_time = time_t {}, last_write_time = time_t {};
   if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception {csf_};
-  return make_tuple(creation_time, last_access_time, last_write_time);
+  return std::make_tuple(creation_time, last_access_time, last_write_time);
 }

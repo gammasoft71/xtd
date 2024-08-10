@@ -4,20 +4,19 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(is_tests) {
     void test_method_(is_string_with_string) {
-      string v;
-      assert::is_true(is<string>(v), csf_);
+      std::string v;
+      assert::is_true(is<std::string>(v), csf_);
     }
     
     void test_method_(is_string_without_string) {
-      exception v;
-      assert::is_false(is<string>(v), csf_);
+      std::exception v;
+      assert::is_false(is<std::string>(v), csf_);
     }
     
     void test_method_(is_string_with_const_string) {
@@ -25,7 +24,7 @@ namespace xtd::tests {
     }
     
     void test_method_(is_string_without_const_string) {
-      assert::is_false(is<string>(exception()), csf_);
+      assert::is_false(is<std::string>(std::exception()), csf_);
     }
     
     void test_method_(is_bool_with_bool) {
