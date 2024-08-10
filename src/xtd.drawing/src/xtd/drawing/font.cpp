@@ -8,7 +8,6 @@
 #include <xtd/math>
 #include <memory>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 

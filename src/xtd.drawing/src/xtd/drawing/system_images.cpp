@@ -28,7 +28,7 @@ vector<ustring> system_images::contexts() noexcept {
   return system_images_base::contexts();
 }
 
-map<ustring, vector<ustring>> system_images::context_names() noexcept {
+map<ustring, std::vector<ustring>> system_images::context_names() noexcept {
   return system_images_base::context_names();
 }
 

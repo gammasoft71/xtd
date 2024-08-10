@@ -69,7 +69,7 @@ size_t unit_test::aborted_test_count() const noexcept {
 }
 
 vector<ustring> unit_test::aborted_test_names() const noexcept {
-  auto names = vector<ustring> {};
+  auto names = std::vector<ustring> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -90,7 +90,7 @@ size_t unit_test::ignored_test_count() const noexcept {
 }
 
 vector<ustring> unit_test::ignored_test_names() const noexcept {
-  auto names = vector<ustring> {};
+  auto names = std::vector<ustring> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -106,7 +106,7 @@ size_t unit_test::failed_test_count() const noexcept {
 }
 
 vector<ustring> unit_test::failed_test_names() const noexcept {
-  auto names = vector<ustring> {};
+  auto names = std::vector<ustring> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -122,7 +122,7 @@ size_t unit_test::succeed_test_count() const noexcept {
 }
 
 vector<ustring> unit_test::succeed_test_names() const noexcept {
-  auto names = vector<ustring> {};
+  auto names = std::vector<ustring> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -144,7 +144,7 @@ int32 unit_test::run() noexcept {
     }
     
     if (settings::default_settings().list_tests()) {
-      auto tests = vector<ustring> {};
+      auto tests = std::vector<ustring> {};
       for (auto test_class : test_classes())
         for (auto test : test_class.test()->tests())
           tests.push_back(test_class.test()->name() + '.' + test.name());
@@ -203,11 +203,11 @@ int32 unit_test::count_tests(int32 count) {
   return settings::default_settings().exit_status();
 }
 
-int32 unit_test::list_tests(const vector<ustring>& tests) {
+int32 unit_test::list_tests(const std::vector<ustring>& tests) {
   return settings::default_settings().exit_status();
 }
 
-bool unit_test::parse_arguments(const vector<ustring>& args) {
+bool unit_test::parse_arguments(const std::vector<ustring>& args) {
   auto gtest_compatibility = settings::default_settings().gtest_compatibility();
   for (auto arg : args) {
     if (arg == "--gtest_compatibility" || arg.find("--gtest") == 0) gtest_compatibility = true;
@@ -269,7 +269,7 @@ void unit_test::add(const registered_test_class& test_class) {
 }
 
 vector<registered_test_class>& unit_test::test_classes() {
-  static auto test_classes = vector<registered_test_class> {};
+  static auto test_classes = std::vector<registered_test_class> {};
   return test_classes;
 }
 

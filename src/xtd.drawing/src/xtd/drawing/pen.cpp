@@ -96,7 +96,7 @@ xtd::drawing::pen& pen::dash_pattern(const std::initializer_list<float>& value) 
   return dash_pattern(std::vector<float>(value));
 }
 
-pen& pen::dash_pattern(const vector<float>& value) {
+pen& pen::dash_pattern(const std::vector<float>& value) {
   if (data_->dash_pattern != value) {
     data_->dash_pattern = value;
     if (!data_->dash_pattern.empty()) data_->dash_style = drawing::drawing_2d::dash_style::custom;
@@ -213,7 +213,7 @@ void pen::recreate_handle() {
   native::pen::start_cap(data_->handle_, static_cast<int32>(data_->start_cap));
   native::pen::miter_limit(data_->handle_, data_->miter_limit);
   
-  vector<float> dashes;
+  std::vector<float> dashes;
   switch (data_->dash_style) {
     case drawing::drawing_2d::dash_style::solid: break;
     case drawing::drawing_2d::dash_style::dash: dashes = {3, 2};  break;

@@ -253,7 +253,7 @@ private:
   button show_modal_button;
   button show_sheet_button;
   button show_sheet_modal_button;
-  vector<xtd::sptr<form>> dialogs;
+  std::vector<xtd::sptr<form>> dialogs;
 };
 
 startup_(forms_form::main);

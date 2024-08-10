@@ -39,7 +39,7 @@ namespace {
     }
     
     if (recursive) {
-      vector<directory_info> dirs = dir.get_directories();
+      std::vector<directory_info> dirs = dir.get_directories();
       for (const directory_info& sub_dir : dirs) {
         ustring new_destination_dir = path::combine(destination_dir, sub_dir.name());
         copy_directory(sub_dir.full_name(), new_destination_dir, true);
@@ -705,7 +705,7 @@ void main_form::add_to_create_recent_projects(size_t create_project_items_index)
     create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
     
   create_recent_projects.push_front(std::to_string(create_project_items_index));
-  properties::settings::default_settings().create_recent_propjects(ustring::join(";", vector<ustring> {create_recent_projects.begin(), create_recent_projects.end()})).save();
+  properties::settings::default_settings().create_recent_propjects(ustring::join(";", std::vector<ustring> {create_recent_projects.begin(), create_recent_projects.end()})).save();
   
   init_create_create_recent_projects_list_box();
 }
@@ -717,7 +717,7 @@ void main_form::add_to_open_recent_projects(const ustring& project_path) {
     open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
     
   open_recent_projects.push_front(project_path);
-  properties::settings::default_settings().open_recent_propjects(ustring::join(";", vector<ustring> {open_recent_projects.begin(), open_recent_projects.end()})).open_propject_folder(project_path).save();
+  properties::settings::default_settings().open_recent_propjects(ustring::join(";", std::vector<ustring> {open_recent_projects.begin(), open_recent_projects.end()})).open_propject_folder(project_path).save();
   
   init_startup_open_recent_projects_list_box();
 }

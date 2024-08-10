@@ -519,36 +519,36 @@ namespace xtd::tests {
     }
     
     void test_method_(to_string) {
-      vector<xtd::byte> vectorOne = {0, 1, 2, 4, 8, 16, 32, 64, 128, 255};
+      std::vector<xtd::byte> vectorOne = {0, 1, 2, 4, 8, 16, 32, 64, 128, 255};
       assert::are_equal("00-01-02-04-08-10-20-40-80-FF", bit_converter::to_string(vectorOne), csf_);
       
-      vector<xtd::byte> vectorTwo = {32, 0, 0, 42, 0, 65, 0, 125, 0, 197, 0, 168, 3, 41, 4, 172, 32};
+      std::vector<xtd::byte> vectorTwo = {32, 0, 0, 42, 0, 65, 0, 125, 0, 197, 0, 168, 3, 41, 4, 172, 32};
       assert::are_equal("20-00-00-2A-00-41-00-7D-00-C5-00-A8-03-29-04-AC-20", bit_converter::to_string(vectorTwo), csf_);
       
-      vector<xtd::byte> vectorThree = {15, 0, 0, 128, 16, 39, 240, 216, 241, 255, 127};
+      std::vector<xtd::byte> vectorThree = {15, 0, 0, 128, 16, 39, 240, 216, 241, 255, 127};
       assert::are_equal("0F-00-00-80-10-27-F0-D8-F1-FF-7F", bit_converter::to_string(vectorThree), csf_);
       
-      vector<xtd::byte> vectorFour = {15, 0, 0, 0, 0, 16, 0, 255, 3, 0, 0, 202, 154, 59, 255, 255, 255, 255, 127};
+      std::vector<xtd::byte> vectorFour = {15, 0, 0, 0, 0, 16, 0, 255, 3, 0, 0, 202, 154, 59, 255, 255, 255, 255, 127};
       assert::are_equal("0F-00-00-00-00-10-00-FF-03-00-00-CA-9A-3B-FF-FF-FF-FF-7F", bit_converter::to_string(vectorFour), csf_);
       
-      vector<xtd::byte> vectorEmpty;
+      std::vector<xtd::byte> vectorEmpty;
       assert::is_empty(bit_converter::to_string(vectorEmpty), csf_);
     }
     
     void test_method_(to_string_with_start_index) {
-      vector<xtd::byte> vectorOne = {3, 6, 9};
+      std::vector<xtd::byte> vectorOne = {3, 6, 9};
       assert::are_equal("03-06-09", bit_converter::to_string(vectorOne, 0), csf_);
       assert::are_equal("06-09", bit_converter::to_string(vectorOne, 1), csf_);
       assert::are_equal("09", bit_converter::to_string(vectorOne, 2), csf_);
       assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 3);}, csf_);
       
-      vector<xtd::byte> vectorEmpty;
+      std::vector<xtd::byte> vectorEmpty;
       assert::is_empty(bit_converter::to_string(vectorEmpty, 0), csf_);
       assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorEmpty, 1);}, csf_);
     }
     
     void test_method_(to_string_with_start_index_and_length) {
-      vector<xtd::byte> vectorOne = {3, 6, 9};
+      std::vector<xtd::byte> vectorOne = {3, 6, 9};
       
       assert::is_empty(bit_converter::to_string(vectorOne, 0, 0), csf_);
       assert::are_equal("03", bit_converter::to_string(vectorOne, 0, 1), csf_);
@@ -567,7 +567,7 @@ namespace xtd::tests {
       
       assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 3, 1);}, csf_);
       
-      vector<xtd::byte> vectorEmpty;
+      std::vector<xtd::byte> vectorEmpty;
       assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorEmpty, 1);}, csf_);
     }
     

@@ -223,7 +223,7 @@ namespace xtd::tests {
     }
     
     void test_method_(get_values) {
-      auto expected_entries = vector<enum_object_with_unregistered_enum_struct_test> {};
+      auto expected_entries = std::vector<enum_object_with_unregistered_enum_struct_test> {};
       auto actual_entries = enum_object<>::get_values<enum_object_with_unregistered_enum_struct_test>();
       assert::is_true(std::equal(actual_entries.begin(), actual_entries.end(), expected_entries.begin(), expected_entries.end()), csf_);
     }

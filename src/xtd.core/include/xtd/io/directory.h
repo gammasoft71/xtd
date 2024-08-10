@@ -652,12 +652,12 @@ namespace xtd {
       ///   // that are found, and process the files they contain.
       ///   static void process_directory(const ustring& target_directory) {
       ///     // Process the list of files found in the directory.
-      ///     vector<ustring> file_entries = directory::get_files(target_directory);
+      ///     std::vector<ustring> file_entries = directory::get_files(target_directory);
       ///     for (ustring file_name : file_entries)
       ///       process_file(file_name);
       ///
       ///     // Recurse into subdirectories of this directory.
-      ///     vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
+      ///     std::vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
       ///     for (ustring subdirectory : subdirectory_entries)
       ///       process_directory(subdirectory);
       ///   }
@@ -787,7 +787,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static auto main(const vector<list>& args) {
+      ///   static auto main(const std::vector<list>& args) {
       ///     for (ustring path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
@@ -805,12 +805,12 @@ namespace xtd {
       ///   // that are found, and process the files they contain.
       ///   static void process_directory(const ustring& target_directory) {
       ///     // Process the list of files found in the directory.
-      ///     vector<ustring> file_entries = directory::get_files(target_directory);
+      ///     std::vector<ustring> file_entries = directory::get_files(target_directory);
       ///     for (ustring file_name : file_entries)
       ///       process_file(file_name);
       ///
       ///     // Recurse into subdirectories of this directory.
-      ///     vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
+      ///     std::vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
       ///     for (ustring subdirectory : subdirectory_entries)
       ///       process_directory(subdirectory);
       ///   }
