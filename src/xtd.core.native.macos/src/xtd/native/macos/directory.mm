@@ -8,11 +8,10 @@
 #include <sys/param.h>
 #include <sys/stat.h>
 
-using namespace std;
 using namespace xtd::native;
 
 namespace {
-  bool pattern_compare(const string& file_name, const string& pattern) {
+  bool pattern_compare(const std::string& file_name, const std::string& pattern) {
     if (pattern.empty()) return file_name.empty();
     if (file_name.empty()) return false;
     if (pattern == "*" || pattern == "*.*") return true;
@@ -27,17 +26,17 @@ struct directory::directory_iterator::data {
   std::string path_;
   std::string pattern_;
   DIR* handle_ = nullptr;
-  mutable string current_;
+  mutable std::string current_;
 };
 
 directory::directory_iterator::directory_iterator(const std::string& path, const std::string& pattern) {
-  data_ = make_shared<data>(path, pattern);
+  data_ = std::make_shared<data>(path, pattern);
   data_->handle_ = opendir(data_->path_.c_str());
   if (data_->handle_) ++(*this);
 }
 
 directory::directory_iterator::directory_iterator() {
-  data_ = make_shared<data>();
+  data_ = std::make_shared<data>();
 }
 
 directory::directory_iterator::~directory_iterator() {
@@ -53,7 +52,7 @@ directory::directory_iterator& directory::directory_iterator::operator ++() {
   do {
     if ((item = readdir(data_->handle_)) != nullptr)
       native::file_system::get_attributes(data_->path_ + '/' + item->d_name, attributes);
-  } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY || string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
+  } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) != FILE_ATTRIBUTE_DIRECTORY || std::string(item->d_name) == "." ||  std::string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
   
   if (item == nullptr) data_->current_ = "";
   else data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
@@ -97,7 +96,7 @@ struct directory::file_iterator::data {
   std::string path_;
   std::string pattern_;
   DIR* handle_ = nullptr;
-  mutable string current_;
+  mutable std::string current_;
 };
 
 directory::file_iterator::file_iterator(const std::string& path, const std::string& pattern) {
@@ -107,7 +106,7 @@ directory::file_iterator::file_iterator(const std::string& path, const std::stri
 }
 
 directory::file_iterator::file_iterator() {
-  data_ = make_shared<data>();
+  data_ = std::make_shared<data>();
 }
 
 directory::file_iterator::~file_iterator() {
@@ -123,7 +122,7 @@ directory::file_iterator& directory::file_iterator::operator ++() {
   do {
     if ((item = readdir(data_->handle_)) != nullptr)
       native::file_system::get_attributes(data_->path_ + '/' + item->d_name, attributes);
-  } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY || string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
+  } while (item != nullptr && ((attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY || std::string(item->d_name) == "." ||  std::string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
   
   if (item == nullptr) data_->current_ = "";
   else data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
@@ -167,7 +166,7 @@ struct directory::file_and_directory_iterator::data {
   std::string path_;
   std::string pattern_;
   DIR* handle_ = nullptr;
-  mutable string current_;
+  mutable std::string current_;
 };
 
 directory::file_and_directory_iterator::file_and_directory_iterator(const std::string& path, const std::string& pattern) {
@@ -177,7 +176,7 @@ directory::file_and_directory_iterator::file_and_directory_iterator(const std::s
 }
 
 directory::file_and_directory_iterator::file_and_directory_iterator() {
-  data_ = make_shared<data>();
+  data_ = std::make_shared<data>();
 }
 
 directory::file_and_directory_iterator::~file_and_directory_iterator() {
@@ -193,7 +192,7 @@ directory::file_and_directory_iterator& directory::file_and_directory_iterator::
   do {
     if ((item = readdir(data_->handle_)) != nullptr)
       native::file_system::get_attributes(data_->path_ + '/' + item->d_name, attributes);
-  } while (item != nullptr && (string(item->d_name) == "." ||  string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
+  } while (item != nullptr && (std::string(item->d_name) == "." ||  std::string(item->d_name) == ".."  || !pattern_compare(item->d_name, data_->pattern_)));
   
   if (item == nullptr) data_->current_ = "";
   else data_->current_ = data_->path_ + (data_->path_.rfind('/') == data_->path_.size() - 1 ? "" : "/") + item->d_name;
@@ -252,7 +251,7 @@ bool directory::exists(const std::string& path) {
   return file_system::get_attributes(path, attributes) == 0 && (attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY;
 }
 
-string directory::get_current_directory() {
+std::string directory::get_current_directory() {
   auto path = std::string(MAXPATHLEN + 1, 0);
   auto result = getcwd(path.data(), MAXPATHLEN);
   //path.shrink_to_fit();

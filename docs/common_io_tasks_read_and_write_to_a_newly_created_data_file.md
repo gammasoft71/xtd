@@ -11,10 +11,8 @@ The [binary_reader](https://gammasoft71.github.io/xtd/reference_guides/latest/cl
 ## Example
 
 ```cpp
-#include <fstream>
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
@@ -29,7 +27,7 @@ public:
       return;
     }
     
-    block_scope_(ofstream fs(FILE_NAME, ios::binary | ios::out)) {
+    block_scope_(std::ofstream fs(FILE_NAME, ios::binary | ios::out)) {
       block_scope_(binary_writer w(fs)) {
         for (int i = 0; i < 11; i++) {
           w.write(i);
@@ -37,7 +35,7 @@ public:
       }
     }
     
-    block_scope_(ifstream fs(FILE_NAME, ios::binary | ios::in)) {
+    block_scope_(std::ifstream fs(FILE_NAME, ios::binary | ios::in)) {
       block_scope_(binary_reader r(fs)) {
         for (int i = 0; i < 11; i++) {
           console::write_line(r.read_int32());

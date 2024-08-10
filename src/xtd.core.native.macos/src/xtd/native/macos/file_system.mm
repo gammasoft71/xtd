@@ -12,7 +12,6 @@
 #include <utime.h>
 #import <Foundation/Foundation.h>
 
-using namespace std;
 using namespace xtd::native;
 
 int32_t file_system::get_attributes(const std::string& path, int32_t& attributes) {
@@ -42,9 +41,9 @@ int32_t file_system::get_file_times(const std::string& path, time_t& creation_ti
   return 0;
 }
 
-string file_system::get_full_path(const string& relative_path) {
+std::string file_system::get_full_path(const std::string& relative_path) {
   auto directories = native::macos::strings::split(relative_path, {path::directory_separator_char()}, std::numeric_limits<size_t>::max(), true);
-  auto full_path = string {};
+  auto full_path = std::string {};
   
   if (relative_path[0] != path::directory_separator_char())
     full_path = directory::get_current_directory();

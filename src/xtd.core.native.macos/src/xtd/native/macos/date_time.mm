@@ -10,8 +10,6 @@
 #include <ctime>
 #include <map>
 
-using namespace std;
-//using namespace std::chrono;
 using namespace xtd::native;
 
 namespace {
@@ -67,7 +65,7 @@ namespace {
    */
   
   // Generate on Windows 10.0.19044.1415 at 27/12/2021
-  auto system_time_zones = vector<date_time::time_zone_info> {
+  auto system_time_zones = std::vector<date_time::time_zone_info> {
     {"Dateline Standard Time", -432000000000, "Dateline Daylight Time", "(UTC-12:00) International Date Line West", "Dateline Standard Time", false, {}},
     {"UTC-11", -396000000000, "UTC-11", "(UTC-11:00) Coordinated Universal Time-11", "UTC-11", false, {}},
     {"Aleutian Standard Time", -360000000000, "Aleutian Daylight Time", "(UTC-10:00) Aleutian Islands", "Aleutian Standard Time", true, {{1, 1, 1, 0, 0, 0, 2006, 12, 31, 0, 0, 0, 36000000000, {1, 0, false, 4, 2, 0, 0, 1}, {1, 0, false, 10, 2, 0, 0, 5}}, {2007, 1, 1, 0, 0, 0, 9999, 12, 31, 0, 0, 0, 36000000000, {1, 0, false, 3, 2, 0, 0, 2}, {1, 0, false, 11, 2, 0, 0, 1}}, }},
@@ -211,10 +209,10 @@ namespace {
     {"Line Islands Standard Time", 504000000000, "Line Islands Daylight Time", "(UTC+14:00) Kiritimati Island", "Line Islands Standard Time", false, {}},
   };
   
-  string string_printf(const char* fmt, ...) {
+  std::string string_printf(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
-    auto formatted_string = string {static_cast<char>(vsnprintf(nullptr, 0, fmt, args)), 0};
+    auto formatted_string = std::string {static_cast<char>(vsnprintf(nullptr, 0, fmt, args)), 0};
     va_end(args);
     va_start(args, fmt);
     vsnprintf(&formatted_string[0], formatted_string.size() + 1, fmt, args);
@@ -251,7 +249,7 @@ date_time::time_zone_info date_time::get_local_time_zone() {
   return local_time_zone;
 }
 
-vector<date_time::time_zone_info> date_time::get_system_time_zones() {
+std::vector<date_time::time_zone_info> date_time::get_system_time_zones() {
   return system_time_zones;
 }
 

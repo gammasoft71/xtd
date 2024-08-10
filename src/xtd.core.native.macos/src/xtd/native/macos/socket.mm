@@ -19,40 +19,39 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 
-using namespace std;
 using namespace xtd::native;
 
 namespace {
   static int32_t native_to_socket_error(int32_t error) {
-    static auto socket_errors = map<int32_t, int32_t> {{0, SOCKET_ERROR_SUCCESS}, {EINTR, SOCKET_ERROR_INTERRUPTED}, {EACCES, SOCKET_ERROR_ACCESS_DENIED}, {EFAULT, SOCKET_ERROR_FAULT}, {EINVAL, SOCKET_ERROR_INVALID_ARGUMENT}, {EMFILE, SOCKET_ERROR_TOO_MANY_OPEN_SOCKETS}, {EAGAIN, SOCKET_ERROR_WOULD_BLOCK}, {EINPROGRESS, SOCKET_ERROR_IN_PROGRESS}, {EALREADY, SOCKET_ERROR_ALREADY_IN_PROGRESS}, {ENOTSOCK, SOCKET_ERROR_NOT_SOCKET}, {EDESTADDRREQ, SOCKET_ERROR_DESTINATION_ADDRESS_REQUIRED}, {EMSGSIZE, SOCKET_ERROR_MESSAGE_SIZE}, {EPROTOTYPE, SOCKET_ERROR_PROTOCOL_TYPE}, {ENOPROTOOPT, SOCKET_ERROR_PROTOCOL_OPTION}, {EPROTONOSUPPORT, SOCKET_ERROR_PROTOCOL_NOT_SUPPORTED}, {ESOCKTNOSUPPORT, SOCKET_ERROR_SOCKET_NOT_SUPPORTED}, {ENOTSUP, SOCKET_ERROR_OPERATION_NOT_SUPPORTED}, {EPFNOSUPPORT, SOCKET_ERROR_PROTOCOL_FAMILY_NOT_SUPPORTED}, {EAFNOSUPPORT, SOCKET_ERROR_ADDRESS_FAMILY_NOT_SUPPORTED}, {EADDRINUSE, SOCKET_ERROR_ADDRESS_ALREADY_IN_USE}, {EADDRNOTAVAIL, SOCKET_ERROR_ADDRESS_NOT_AVAILABLE}, {ENETDOWN, SOCKET_ERROR_NETWORK_DOWN}, {ENETUNREACH, SOCKET_ERROR_NETWORK_UNREACHABLE}, {ENETRESET, SOCKET_ERROR_NETWORK_RESET}, {ECONNABORTED, SOCKET_ERROR_CONNECTION_ABORTED}, {ECONNRESET, SOCKET_ERROR_CONNECTION_RESET}, {ENOBUFS, SOCKET_ERROR_NO_BUFFER_SPACE_AVAILABLE}, {EISCONN, SOCKET_ERROR_IS_CONNECTED}, {ENOTCONN, SOCKET_ERROR_NOT_CONNECTED}, {ESHUTDOWN, SOCKET_ERROR_SHUTDOWN}, {ETIMEDOUT, SOCKET_ERROR_TIMED_OUT}, {ECONNREFUSED, SOCKET_ERROR_CONNECTION_REFUSED}, {EHOSTDOWN, SOCKET_ERROR_HOST_DOWN}, {EHOSTUNREACH, SOCKET_ERROR_HOST_UNREACHABLE}, {EPROCLIM, SOCKET_ERROR_PROCESS_LIMIT}, {ERPCMISMATCH, SOCKET_ERROR_VERSION_NOT_SUPPORTED}, {EOPNOTSUPP, SOCKET_ERROR_SOCKET_NOT_SUPPORTED}};
+    static auto socket_errors = std::map<int32_t, int32_t> {{0, SOCKET_ERROR_SUCCESS}, {EINTR, SOCKET_ERROR_INTERRUPTED}, {EACCES, SOCKET_ERROR_ACCESS_DENIED}, {EFAULT, SOCKET_ERROR_FAULT}, {EINVAL, SOCKET_ERROR_INVALID_ARGUMENT}, {EMFILE, SOCKET_ERROR_TOO_MANY_OPEN_SOCKETS}, {EAGAIN, SOCKET_ERROR_WOULD_BLOCK}, {EINPROGRESS, SOCKET_ERROR_IN_PROGRESS}, {EALREADY, SOCKET_ERROR_ALREADY_IN_PROGRESS}, {ENOTSOCK, SOCKET_ERROR_NOT_SOCKET}, {EDESTADDRREQ, SOCKET_ERROR_DESTINATION_ADDRESS_REQUIRED}, {EMSGSIZE, SOCKET_ERROR_MESSAGE_SIZE}, {EPROTOTYPE, SOCKET_ERROR_PROTOCOL_TYPE}, {ENOPROTOOPT, SOCKET_ERROR_PROTOCOL_OPTION}, {EPROTONOSUPPORT, SOCKET_ERROR_PROTOCOL_NOT_SUPPORTED}, {ESOCKTNOSUPPORT, SOCKET_ERROR_SOCKET_NOT_SUPPORTED}, {ENOTSUP, SOCKET_ERROR_OPERATION_NOT_SUPPORTED}, {EPFNOSUPPORT, SOCKET_ERROR_PROTOCOL_FAMILY_NOT_SUPPORTED}, {EAFNOSUPPORT, SOCKET_ERROR_ADDRESS_FAMILY_NOT_SUPPORTED}, {EADDRINUSE, SOCKET_ERROR_ADDRESS_ALREADY_IN_USE}, {EADDRNOTAVAIL, SOCKET_ERROR_ADDRESS_NOT_AVAILABLE}, {ENETDOWN, SOCKET_ERROR_NETWORK_DOWN}, {ENETUNREACH, SOCKET_ERROR_NETWORK_UNREACHABLE}, {ENETRESET, SOCKET_ERROR_NETWORK_RESET}, {ECONNABORTED, SOCKET_ERROR_CONNECTION_ABORTED}, {ECONNRESET, SOCKET_ERROR_CONNECTION_RESET}, {ENOBUFS, SOCKET_ERROR_NO_BUFFER_SPACE_AVAILABLE}, {EISCONN, SOCKET_ERROR_IS_CONNECTED}, {ENOTCONN, SOCKET_ERROR_NOT_CONNECTED}, {ESHUTDOWN, SOCKET_ERROR_SHUTDOWN}, {ETIMEDOUT, SOCKET_ERROR_TIMED_OUT}, {ECONNREFUSED, SOCKET_ERROR_CONNECTION_REFUSED}, {EHOSTDOWN, SOCKET_ERROR_HOST_DOWN}, {EHOSTUNREACH, SOCKET_ERROR_HOST_UNREACHABLE}, {EPROCLIM, SOCKET_ERROR_PROCESS_LIMIT}, {ERPCMISMATCH, SOCKET_ERROR_VERSION_NOT_SUPPORTED}, {EOPNOTSUPP, SOCKET_ERROR_SOCKET_NOT_SUPPORTED}};
     auto it = socket_errors.find(error);
     if (it == socket_errors.end()) return SOCKET_ERROR_SOCKET_ERROR;
     return it->second;
   }
   
   static int32_t protocol_type_to_native(int32_t protocol_type) {
-    static auto protocol_types = map<int32_t, int32_t> {/*{PROTOCOL_TYPE_UNKNOWN, IPPROTO_}, {PROTOCOL_TYPE_IP_V6_HOP_BY_HOP_OPTIONS, IPPROTO_}, {PROTOCOL_TYPE_UNSPECIFIED, IPPROTO_},*/ {PROTOCOL_TYPE_IP, IPPROTO_IP}, {PROTOCOL_TYPE_ICMP, IPPROTO_ICMP}, {PROTOCOL_TYPE_IGMP, IPPROTO_IGMP}, {PROTOCOL_TYPE_GGP, IPPROTO_GGP}, {PROTOCOL_TYPE_IP_V4, IPPROTO_IPV4}, {PROTOCOL_TYPE_TCP, IPPROTO_TCP}, {PROTOCOL_TYPE_PUP, IPPROTO_PUP}, {PROTOCOL_TYPE_UDP, IPPROTO_UDP}, {PROTOCOL_TYPE_IDP, IPPROTO_IDP}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_IP_V6_ROUTING_HEADER, IPPROTO_ROUTING}, {PROTOCOL_TYPE_IP_V6_FRAGMENT_HEADER, IPPROTO_FRAGMENT}, {PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD, IPPROTO_ESP}, {PROTOCOL_TYPE_IP_SEC_AUTHENTICATION_HEADER, IPPROTO_AH}, {PROTOCOL_TYPE_ICMP_V6, IPPROTO_ICMPV6}, {PROTOCOL_TYPE_IP_V6_NO_NEXT_HEADER, IPPROTO_NONE}, {PROTOCOL_TYPE_IP_V6_DESTINATION_OPTIONS, IPPROTO_DSTOPTS}, {PROTOCOL_TYPE_ND, IPPROTO_ND}, {PROTOCOL_TYPE_RAW, IPPROTO_RAW} /*{PROTOCOL_TYPE_IPX, IPPROTO_}, {PROTOCOL_TYPE_SPX, IPPROTO_IP}, {PROTOCOL_TYPE_SPX_2, IPPROTO_},*/};
+    static auto protocol_types = std::map<int32_t, int32_t> {/*{PROTOCOL_TYPE_UNKNOWN, IPPROTO_}, {PROTOCOL_TYPE_IP_V6_HOP_BY_HOP_OPTIONS, IPPROTO_}, {PROTOCOL_TYPE_UNSPECIFIED, IPPROTO_},*/ {PROTOCOL_TYPE_IP, IPPROTO_IP}, {PROTOCOL_TYPE_ICMP, IPPROTO_ICMP}, {PROTOCOL_TYPE_IGMP, IPPROTO_IGMP}, {PROTOCOL_TYPE_GGP, IPPROTO_GGP}, {PROTOCOL_TYPE_IP_V4, IPPROTO_IPV4}, {PROTOCOL_TYPE_TCP, IPPROTO_TCP}, {PROTOCOL_TYPE_PUP, IPPROTO_PUP}, {PROTOCOL_TYPE_UDP, IPPROTO_UDP}, {PROTOCOL_TYPE_IDP, IPPROTO_IDP}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_IP_V6_ROUTING_HEADER, IPPROTO_ROUTING}, {PROTOCOL_TYPE_IP_V6_FRAGMENT_HEADER, IPPROTO_FRAGMENT}, {PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD, IPPROTO_ESP}, {PROTOCOL_TYPE_IP_SEC_AUTHENTICATION_HEADER, IPPROTO_AH}, {PROTOCOL_TYPE_ICMP_V6, IPPROTO_ICMPV6}, {PROTOCOL_TYPE_IP_V6_NO_NEXT_HEADER, IPPROTO_NONE}, {PROTOCOL_TYPE_IP_V6_DESTINATION_OPTIONS, IPPROTO_DSTOPTS}, {PROTOCOL_TYPE_ND, IPPROTO_ND}, {PROTOCOL_TYPE_RAW, IPPROTO_RAW} /*{PROTOCOL_TYPE_IPX, IPPROTO_}, {PROTOCOL_TYPE_SPX, IPPROTO_IP}, {PROTOCOL_TYPE_SPX_2, IPPROTO_},*/};
     auto it = protocol_types.find(protocol_type);
     if (it == protocol_types.end()) return IPPROTO_IP;
     return it->second;
   }
   
   static int32_t socket_option_level_to_native(int32_t socket_option_level) {
-    static auto socket_option_levels = map<int32_t, int32_t> {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP}, {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6}, {SOCKET_OPTION_LEVEL_TCP, IPPROTO_TCP}, {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}};
+    static auto socket_option_levels = std::map<int32_t, int32_t> {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP}, {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6}, {SOCKET_OPTION_LEVEL_TCP, IPPROTO_TCP}, {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}};
     auto it = socket_option_levels.find(socket_option_level);
     if (it == socket_option_levels.end()) return SOL_SOCKET;
     return it->second;
   }
   
   static int32_t socket_option_name_to_native(int32_t socket_option_name) {
-    static auto socket_option_names = map<int32_t, int32_t> {{SOCKET_OPTION_NAME_DEBUG, SO_DEBUG}, {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN}, {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR}, {SOCKET_OPTION_NAME_KEEP_ALIVE, SO_KEEPALIVE}, {SOCKET_OPTION_NAME_DONT_ROUTE, SO_DONTROUTE}, {SOCKET_OPTION_NAME_BROADCAST, SO_BROADCAST}, {SOCKET_OPTION_NAME_USE_LOOPBACK, SO_USELOOPBACK}, {SOCKET_OPTION_NAME_LINGER, SO_LINGER}, {SOCKET_OPTION_NAME_EXCLUSIVE_ADDRESS_USE, SO_REUSEADDR}, {SOCKET_OPTION_NAME_OUT_OF_BAND_INLINE, SO_OOBINLINE}, {SOCKET_OPTION_NAME_SEND_BUFFER, SO_SNDBUF}, {SOCKET_OPTION_NAME_RECEIVE_BUFFER, SO_RCVBUF}, {SOCKET_OPTION_NAME_SEND_LOW_WATER, SO_SNDLOWAT}, {SOCKET_OPTION_NAME_RECEIVE_LOW_WATER, SO_RCVLOWAT}, {SOCKET_OPTION_NAME_SEND_TIMEOUT, SO_SNDTIMEO}, {SOCKET_OPTION_NAME_RECEIVE_TIMEOUT, SO_RCVTIMEO}, {SOCKET_OPTION_NAME_ERROR, SO_ERROR}, {SOCKET_OPTION_NAME_TYPE, SO_TYPE}, /*{SOCKET_OPTION_NAME_MAX_CONNECTION, SO_},*/ {SOCKET_OPTION_NAME_IP_OPTIONS, IP_OPTIONS}, {SOCKET_OPTION_NAME_HEADER_INCLUDED, IP_HDRINCL}, {SOCKET_OPTION_NAME_TYPE_OF_SERVICE, IP_TOS}, {SOCKET_OPTION_NAME_IP_TIME_TO_LIVE, IP_TTL}, {SOCKET_OPTION_NAME_MULTICAST_INTERFACE, IP_MULTICAST_IF}, {SOCKET_OPTION_NAME_MULTICAST_TIME_TO_LIVE, IP_MULTICAST_TTL}, {SOCKET_OPTION_NAME_MULTICAST_LOOPBACK, IP_MULTICAST_LOOP}, {SOCKET_OPTION_NAME_ADD_MEMBERSHIP, IP_ADD_MEMBERSHIP}, {SOCKET_OPTION_NAME_DROP_MEMBERSHIP, IP_DROP_MEMBERSHIP}, {SOCKET_OPTION_NAME_DONT_FRAGMENT, IP_DONTFRAG}, {SOCKET_OPTION_NAME_ADD_SOURCE_MEMBERSHIP, IP_ADD_SOURCE_MEMBERSHIP}, {SOCKET_OPTION_NAME_DROP_SOURCE_MEMBERSHIP, IP_DROP_SOURCE_MEMBERSHIP}, {SOCKET_OPTION_NAME_BLOCK_SOURCE, IP_BLOCK_SOURCE}, {SOCKET_OPTION_NAME_UNBLOCK_SOURCE, IP_UNBLOCK_SOURCE}, {SOCKET_OPTION_NAME_PACKET_INFORMATION, IP_PKTINFO}, {SOCKET_OPTION_NAME_HOP_LIMIT, IPV6_2292HOPLIMIT /*IPV6_HOPLIMIT*/}, /*{SOCKET_OPTION_NAME_IP_PROTECT_LEVEL, IPV6_},*/ {SOCKET_OPTION_NAME_IP_V6_ONLY, IPV6_V6ONLY}, /*{SOCKET_OPTION_NAME_NO_DELAY, TCP_}, {SOCKET_OPTION_NAME_BSD_URGENT, TCP_}, {SOCKET_OPTION_NAME_EXPEDITED, TCP_}, {SOCKET_OPTION_NAME_NO_CHECKSUM, UDP_}, {SOCKET_OPTION_NAME_CHECKSUM_COVERAGE, ...}, {SOCKET_OPTION_NAME_UPDATE_ACCEPT_CONTEXT, ...}, {SOCKET_OPTION_NAME_UPDATE_CONNECT_CONTEXT, ...},*/};
+    static auto socket_option_names = std::map<int32_t, int32_t> {{SOCKET_OPTION_NAME_DEBUG, SO_DEBUG}, {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN}, {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR}, {SOCKET_OPTION_NAME_KEEP_ALIVE, SO_KEEPALIVE}, {SOCKET_OPTION_NAME_DONT_ROUTE, SO_DONTROUTE}, {SOCKET_OPTION_NAME_BROADCAST, SO_BROADCAST}, {SOCKET_OPTION_NAME_USE_LOOPBACK, SO_USELOOPBACK}, {SOCKET_OPTION_NAME_LINGER, SO_LINGER}, {SOCKET_OPTION_NAME_EXCLUSIVE_ADDRESS_USE, SO_REUSEADDR}, {SOCKET_OPTION_NAME_OUT_OF_BAND_INLINE, SO_OOBINLINE}, {SOCKET_OPTION_NAME_SEND_BUFFER, SO_SNDBUF}, {SOCKET_OPTION_NAME_RECEIVE_BUFFER, SO_RCVBUF}, {SOCKET_OPTION_NAME_SEND_LOW_WATER, SO_SNDLOWAT}, {SOCKET_OPTION_NAME_RECEIVE_LOW_WATER, SO_RCVLOWAT}, {SOCKET_OPTION_NAME_SEND_TIMEOUT, SO_SNDTIMEO}, {SOCKET_OPTION_NAME_RECEIVE_TIMEOUT, SO_RCVTIMEO}, {SOCKET_OPTION_NAME_ERROR, SO_ERROR}, {SOCKET_OPTION_NAME_TYPE, SO_TYPE}, /*{SOCKET_OPTION_NAME_MAX_CONNECTION, SO_},*/ {SOCKET_OPTION_NAME_IP_OPTIONS, IP_OPTIONS}, {SOCKET_OPTION_NAME_HEADER_INCLUDED, IP_HDRINCL}, {SOCKET_OPTION_NAME_TYPE_OF_SERVICE, IP_TOS}, {SOCKET_OPTION_NAME_IP_TIME_TO_LIVE, IP_TTL}, {SOCKET_OPTION_NAME_MULTICAST_INTERFACE, IP_MULTICAST_IF}, {SOCKET_OPTION_NAME_MULTICAST_TIME_TO_LIVE, IP_MULTICAST_TTL}, {SOCKET_OPTION_NAME_MULTICAST_LOOPBACK, IP_MULTICAST_LOOP}, {SOCKET_OPTION_NAME_ADD_MEMBERSHIP, IP_ADD_MEMBERSHIP}, {SOCKET_OPTION_NAME_DROP_MEMBERSHIP, IP_DROP_MEMBERSHIP}, {SOCKET_OPTION_NAME_DONT_FRAGMENT, IP_DONTFRAG}, {SOCKET_OPTION_NAME_ADD_SOURCE_MEMBERSHIP, IP_ADD_SOURCE_MEMBERSHIP}, {SOCKET_OPTION_NAME_DROP_SOURCE_MEMBERSHIP, IP_DROP_SOURCE_MEMBERSHIP}, {SOCKET_OPTION_NAME_BLOCK_SOURCE, IP_BLOCK_SOURCE}, {SOCKET_OPTION_NAME_UNBLOCK_SOURCE, IP_UNBLOCK_SOURCE}, {SOCKET_OPTION_NAME_PACKET_INFORMATION, IP_PKTINFO}, {SOCKET_OPTION_NAME_HOP_LIMIT, IPV6_2292HOPLIMIT /*IPV6_HOPLIMIT*/}, /*{SOCKET_OPTION_NAME_IP_PROTECT_LEVEL, IPV6_},*/ {SOCKET_OPTION_NAME_IP_V6_ONLY, IPV6_V6ONLY}, /*{SOCKET_OPTION_NAME_NO_DELAY, TCP_}, {SOCKET_OPTION_NAME_BSD_URGENT, TCP_}, {SOCKET_OPTION_NAME_EXPEDITED, TCP_}, {SOCKET_OPTION_NAME_NO_CHECKSUM, UDP_}, {SOCKET_OPTION_NAME_CHECKSUM_COVERAGE, ...}, {SOCKET_OPTION_NAME_UPDATE_ACCEPT_CONTEXT, ...}, {SOCKET_OPTION_NAME_UPDATE_CONNECT_CONTEXT, ...},*/};
     auto it = socket_option_names.find(socket_option_name);
     if (it == socket_option_names.end()) return -1;
     return it->second;
   }
   
   static int32_t socket_type_to_native(int32_t socket_type) {
-    static auto socket_types = map<int32_t, int32_t> {{SOCKET_TYPE_UNKNOWN, SOCK_STREAM}, {SOCKET_TYPE_STREAM, SOCK_STREAM}, {SOCKET_TYPE_DGRAM, SOCK_DGRAM}, {SOCKET_TYPE_RAW, SOCK_RAW}, {SOCKET_TYPE_RDM, SOCK_RDM}, {SOCKET_TYPE_SEQPACKET, SOCK_SEQPACKET}};
+    static auto socket_types = std::map<int32_t, int32_t> {{SOCKET_TYPE_UNKNOWN, SOCK_STREAM}, {SOCKET_TYPE_STREAM, SOCK_STREAM}, {SOCKET_TYPE_DGRAM, SOCK_DGRAM}, {SOCKET_TYPE_RAW, SOCK_RAW}, {SOCKET_TYPE_RDM, SOCK_RDM}, {SOCKET_TYPE_SEQPACKET, SOCK_SEQPACKET}};
     auto it = socket_types.find(socket_type);
     if (it == socket_types.end()) return SOCK_STREAM;
     return it->second;
@@ -60,32 +59,32 @@ namespace {
 }
 
 int32_t socket::address_family_to_native(int32_t address_family) {
-  static auto address_families = map<int32_t, int32_t> {{ADDRESS_FAMILY_UNKNOWN, -1}, {ADDRESS_FAMILY_UNSPECIFIED, AF_UNSPEC}, {ADDRESS_FAMILY_UNIX, AF_UNIX}, {ADDRESS_FAMILY_INTER_NETWORK, AF_INET}, {ADDRESS_FAMILY_IMP_LINK, AF_IMPLINK}, {ADDRESS_FAMILY_PUP, AF_PUP}, {ADDRESS_FAMILY_CHAOS, AF_CHAOS}, {ADDRESS_FAMILY_NS, AF_NS}, /*{ADDRESS_FAMILY_IPX, AF_},*/ {ADDRESS_FAMILY_ISO, AF_ISO}, {ADDRESS_FAMILY_ECMA, AF_ECMA}, {ADDRESS_FAMILY_DATA_KIT, AF_DATAKIT}, {ADDRESS_FAMILY_CCITT, AF_CCITT}, {ADDRESS_FAMILY_SNA, AF_SNA}, {ADDRESS_FAMILY_DEC_NET, AF_DECnet}, {ADDRESS_FAMILY_DATA_LINK, AF_DLI}, {ADDRESS_FAMILY_LAT, AF_LAT}, {ADDRESS_FAMILY_HYPER_CHANNEL, AF_HYLINK}, {ADDRESS_FAMILY_APPLE_TALK, AF_APPLETALK}, {ADDRESS_FAMILY_NET_BIOS, AF_NETBIOS}, /*{ADDRESS_FAMILY_VOICE_VIEW, AF_}, {ADDRESS_FAMILY_FIRE_FOX, AF_}, {ADDRESS_FAMILY_BANYAN, AF_},*/ {ADDRESS_FAMILY_ATM, AF_NATM}, {ADDRESS_FAMILY_INTER_NETWORK_V6, AF_INET6}, /*{ADDRESS_FAMILY_CLUSTER, AF_}, {ADDRESS_FAMILY_IEEE12844, AF_}, {ADDRESS_FAMILY_IRDA, AF_}, {ADDRESS_FAMILY_NETWORK_DESIGNERS, AF_},*/ {ADDRESS_FAMILY_MAX, AF_MAX}};
+  static auto address_families = std::map<int32_t, int32_t> {{ADDRESS_FAMILY_UNKNOWN, -1}, {ADDRESS_FAMILY_UNSPECIFIED, AF_UNSPEC}, {ADDRESS_FAMILY_UNIX, AF_UNIX}, {ADDRESS_FAMILY_INTER_NETWORK, AF_INET}, {ADDRESS_FAMILY_IMP_LINK, AF_IMPLINK}, {ADDRESS_FAMILY_PUP, AF_PUP}, {ADDRESS_FAMILY_CHAOS, AF_CHAOS}, {ADDRESS_FAMILY_NS, AF_NS}, /*{ADDRESS_FAMILY_IPX, AF_},*/ {ADDRESS_FAMILY_ISO, AF_ISO}, {ADDRESS_FAMILY_ECMA, AF_ECMA}, {ADDRESS_FAMILY_DATA_KIT, AF_DATAKIT}, {ADDRESS_FAMILY_CCITT, AF_CCITT}, {ADDRESS_FAMILY_SNA, AF_SNA}, {ADDRESS_FAMILY_DEC_NET, AF_DECnet}, {ADDRESS_FAMILY_DATA_LINK, AF_DLI}, {ADDRESS_FAMILY_LAT, AF_LAT}, {ADDRESS_FAMILY_HYPER_CHANNEL, AF_HYLINK}, {ADDRESS_FAMILY_APPLE_TALK, AF_APPLETALK}, {ADDRESS_FAMILY_NET_BIOS, AF_NETBIOS}, /*{ADDRESS_FAMILY_VOICE_VIEW, AF_}, {ADDRESS_FAMILY_FIRE_FOX, AF_}, {ADDRESS_FAMILY_BANYAN, AF_},*/ {ADDRESS_FAMILY_ATM, AF_NATM}, {ADDRESS_FAMILY_INTER_NETWORK_V6, AF_INET6}, /*{ADDRESS_FAMILY_CLUSTER, AF_}, {ADDRESS_FAMILY_IEEE12844, AF_}, {ADDRESS_FAMILY_IRDA, AF_}, {ADDRESS_FAMILY_NETWORK_DESIGNERS, AF_},*/ {ADDRESS_FAMILY_MAX, AF_MAX}};
   auto it = address_families.find(address_family);
   if (it == address_families.end()) return AF_UNSPEC;
   return it->second;
 }
 
 int32_t socket::native_to_address_family(int32_t address_family) {
-  static auto address_families = map<int32_t, int32_t> {/*{-1, ADDRESS_FAMILY_UNKNOWN},*/ {AF_UNSPEC, ADDRESS_FAMILY_UNSPECIFIED}, {AF_UNIX, ADDRESS_FAMILY_UNIX}, {AF_INET, ADDRESS_FAMILY_INTER_NETWORK}, {AF_IMPLINK, ADDRESS_FAMILY_IMP_LINK}, {AF_PUP, ADDRESS_FAMILY_PUP}, {AF_CHAOS, ADDRESS_FAMILY_CHAOS}, {AF_NS, ADDRESS_FAMILY_NS}, {AF_ISO, ADDRESS_FAMILY_ISO}, /*{AF_, ADDRESS_FAMILY_IPX},*/ {AF_ECMA, ADDRESS_FAMILY_ECMA}, {AF_DATAKIT, ADDRESS_FAMILY_DATA_KIT}, {AF_CCITT, ADDRESS_FAMILY_CCITT}, {AF_SNA, ADDRESS_FAMILY_SNA}, {AF_DECnet, ADDRESS_FAMILY_DEC_NET}, {AF_DLI, ADDRESS_FAMILY_DATA_LINK}, {AF_LAT, ADDRESS_FAMILY_LAT}, {AF_HYLINK, ADDRESS_FAMILY_HYPER_CHANNEL}, {AF_APPLETALK, ADDRESS_FAMILY_APPLE_TALK}, {AF_NETBIOS, ADDRESS_FAMILY_NET_BIOS}, /*{AF_, ADDRESS_FAMILY_VOICE_VIEW}, {AF_, ADDRESS_FAMILY_FIRE_FOX}, {AF_, ADDRESS_FAMILY_BANYAN},*/ {AF_NATM, ADDRESS_FAMILY_ATM}, {AF_INET6, ADDRESS_FAMILY_INTER_NETWORK_V6}, /*{AF_, ADDRESS_FAMILY_CLUSTER}, {AF_, ADDRESS_FAMILY_IEEE12844}, {AF_, ADDRESS_FAMILY_IRDA}, {AF_, ADDRESS_FAMILY_NETWORK_DESIGNERS},*/ {AF_MAX, ADDRESS_FAMILY_MAX}};
+  static auto address_families = std::map<int32_t, int32_t> {/*{-1, ADDRESS_FAMILY_UNKNOWN},*/ {AF_UNSPEC, ADDRESS_FAMILY_UNSPECIFIED}, {AF_UNIX, ADDRESS_FAMILY_UNIX}, {AF_INET, ADDRESS_FAMILY_INTER_NETWORK}, {AF_IMPLINK, ADDRESS_FAMILY_IMP_LINK}, {AF_PUP, ADDRESS_FAMILY_PUP}, {AF_CHAOS, ADDRESS_FAMILY_CHAOS}, {AF_NS, ADDRESS_FAMILY_NS}, {AF_ISO, ADDRESS_FAMILY_ISO}, /*{AF_, ADDRESS_FAMILY_IPX},*/ {AF_ECMA, ADDRESS_FAMILY_ECMA}, {AF_DATAKIT, ADDRESS_FAMILY_DATA_KIT}, {AF_CCITT, ADDRESS_FAMILY_CCITT}, {AF_SNA, ADDRESS_FAMILY_SNA}, {AF_DECnet, ADDRESS_FAMILY_DEC_NET}, {AF_DLI, ADDRESS_FAMILY_DATA_LINK}, {AF_LAT, ADDRESS_FAMILY_LAT}, {AF_HYLINK, ADDRESS_FAMILY_HYPER_CHANNEL}, {AF_APPLETALK, ADDRESS_FAMILY_APPLE_TALK}, {AF_NETBIOS, ADDRESS_FAMILY_NET_BIOS}, /*{AF_, ADDRESS_FAMILY_VOICE_VIEW}, {AF_, ADDRESS_FAMILY_FIRE_FOX}, {AF_, ADDRESS_FAMILY_BANYAN},*/ {AF_NATM, ADDRESS_FAMILY_ATM}, {AF_INET6, ADDRESS_FAMILY_INTER_NETWORK_V6}, /*{AF_, ADDRESS_FAMILY_CLUSTER}, {AF_, ADDRESS_FAMILY_IEEE12844}, {AF_, ADDRESS_FAMILY_IRDA}, {AF_, ADDRESS_FAMILY_NETWORK_DESIGNERS},*/ {AF_MAX, ADDRESS_FAMILY_MAX}};
   auto it = address_families.find(address_family);
   if (it == address_families.end()) return ADDRESS_FAMILY_UNSPECIFIED;
   return it->second;
 }
 
-intmax_t socket::accept(intmax_t handle, vector<uint8_t>& socket_address) {
-  swap(socket_address[0], socket_address[1]);
+intmax_t socket::accept(intmax_t handle, std::vector<uint8_t>& socket_address) {
+  std::swap(socket_address[0], socket_address[1]);
   auto address_length = static_cast<socklen_t>(socket_address.size());
   auto socket = static_cast<intmax_t>(::accept(static_cast<int32_t>(handle), reinterpret_cast<sockaddr*>(socket_address.data()), &address_length));
   //if (socket_address.size() != address_length) socket_address.resize(address_length);
-  swap(socket_address[0], socket_address[1]);
+  std::swap(socket_address[0], socket_address[1]);
   return socket;
 }
 
-int32_t socket::bind(intmax_t handle, const vector<uint8_t>& socket_address) {
-  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
+int32_t socket::bind(intmax_t handle, const std::vector<uint8_t>& socket_address) {
+  std::swap(const_cast<std::vector<uint8_t>&>(socket_address)[0], const_cast<std::vector<uint8_t>&>(socket_address)[1]);
   auto result = ::bind(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(socket_address.data()), static_cast<socklen_t>(socket_address.size()));
-  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
+  std::swap(const_cast<std::vector<uint8_t>&>(socket_address)[0], const_cast<std::vector<uint8_t>&>(socket_address)[1]);
   return result;
 }
 
@@ -93,10 +92,10 @@ void socket::cleanup() {
   // Nothing to do on linux and macOS.
 }
 
-int32_t socket::connect(intmax_t handle, const vector<uint8_t>& socket_address) {
-  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
+int32_t socket::connect(intmax_t handle, const std::vector<uint8_t>& socket_address) {
+  std::swap(const_cast<std::vector<uint8_t>&>(socket_address)[0], const_cast<std::vector<uint8_t>&>(socket_address)[1]);
   auto result = ::connect(static_cast<int32_t>(handle), reinterpret_cast<const sockaddr*>(socket_address.data()), static_cast<socklen_t>(socket_address.size()));
-  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
+  std::swap(const_cast<std::vector<uint8_t>&>(socket_address)[0], const_cast<std::vector<uint8_t>&>(socket_address)[1]);
   return result;
 }
 
@@ -176,7 +175,7 @@ int32_t socket::get_socket_multicast_option(intmax_t handle, int32_t socket_opti
   return result;
 }
 
-int32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, vector<uint8_t>& multicast_address, uint32_t& interface_index) {
+int32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, std::vector<uint8_t>& multicast_address, uint32_t& interface_index) {
   struct multicast {
     uint8_t multicast_address[16];
     uint32_t interface_index;
@@ -191,7 +190,7 @@ int32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int32_t socke
   return result;
 }
 
-int32_t socket::io_control(intmax_t handle, int32_t io_control, vector<uint8_t>& option_in_value, vector<uint8_t>& option_out_value) {
+int32_t socket::io_control(intmax_t handle, int32_t io_control, std::vector<uint8_t>& option_in_value, std::vector<uint8_t>& option_out_value) {
   // Not implemented
   errno = ENOTSUP;
   return -1;
@@ -216,26 +215,26 @@ int32_t socket::poll(intmax_t handle, int32_t microseconds, int32_t mode) {
   return ::poll(&poll_fd, 1, microseconds);
 }
 
-int32_t socket::receive(intmax_t handle, vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
+int32_t socket::receive(intmax_t handle, std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
   auto result = static_cast<int32_t>(::recv(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags));
   if (result == -1 && errno == EBADF) errno = EINTR;
   if (result == -1 && errno == EAGAIN) errno = ETIMEDOUT;
   return result;
 }
 
-int32_t socket::receive_from(intmax_t handle, vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, vector<uint8_t>& socket_address) {
-  swap(socket_address[0], socket_address[1]);
+int32_t socket::receive_from(intmax_t handle, std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, std::vector<uint8_t>& socket_address) {
+  std::swap(socket_address[0], socket_address[1]);
   auto address_length = static_cast<socklen_t>(socket_address.size());
   auto result = static_cast<int32_t>(::recvfrom(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags, reinterpret_cast<sockaddr*>(socket_address.data()), &address_length));
   //if (socket_address.size() != address_length) socket_address.resize(address_length);
-  swap(socket_address[0], socket_address[1]);
+  std::swap(socket_address[0], socket_address[1]);
   
   if (result == -1 && errno == EBADF) errno = EINTR;
   if (result == -1 && errno == EAGAIN) errno = ETIMEDOUT;
   return result;
 }
 
-int32_t socket::select(vector<intmax_t>& check_read, vector<intmax_t>& check_write, vector<intmax_t>& check_error, int32_t microseconds) {
+int32_t socket::select(std::vector<intmax_t>& check_read, std::vector<intmax_t>& check_write, std::vector<intmax_t>& check_error, int32_t microseconds) {
   auto nfds = size_t {0};
   
   auto read_fds = fd_set {};
@@ -277,14 +276,14 @@ int32_t socket::select(vector<intmax_t>& check_read, vector<intmax_t>& check_wri
   return result;
 }
 
-int32_t socket::send(intmax_t handle, const vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
+int32_t socket::send(intmax_t handle, const std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags) {
   return static_cast<int32_t>(::send(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags));
 }
 
-int32_t socket::send_to(intmax_t handle, const vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, const vector<uint8_t>& socket_address) {
-  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
+int32_t socket::send_to(intmax_t handle, const std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, const std::vector<uint8_t>& socket_address) {
+  std::swap(const_cast<std::vector<uint8_t>&>(socket_address)[0], const_cast<std::vector<uint8_t>&>(socket_address)[1]);
   auto result = static_cast<int32_t>(::sendto(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags, reinterpret_cast<const sockaddr*>(socket_address.data()), static_cast<socklen_t>(socket_address.size())));
-  swap(const_cast<vector<uint8_t>&>(socket_address)[0], const_cast<vector<uint8_t>&>(socket_address)[1]);
+  std::swap(const_cast<std::vector<uint8_t>&>(socket_address)[0], const_cast<std::vector<uint8_t>&>(socket_address)[1]);
   return result;
 }
 
@@ -330,7 +329,7 @@ int32_t socket::set_socket_multicast_option(intmax_t handle, int32_t socket_opti
   return setsockopt(static_cast<int32_t>(handle), IPPROTO_TCP, socket_option_name_to_native(socket_option_name), &m, static_cast<socklen_t>(sizeof(multicast)));
 }
 
-int32_t socket::set_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, const vector<uint8_t>& multicast_address, uint32_t interface_index) {
+int32_t socket::set_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, const std::vector<uint8_t>& multicast_address, uint32_t interface_index) {
   struct multicast {
     uint8_t multicast_address[16];
     uint32_t interface_index;

@@ -45,8 +45,8 @@ The following example demonstates the different ways to display a [xtd::forms::f
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -135,7 +135,7 @@ namespace example {
     button button_modal;
     button button_sheet;
     button button_sheet_modal;
-    vector<shared_ptr<form>> dialogs;
+    list<shared_ptr<form>> dialogs;
   };
 }
 
@@ -250,7 +250,6 @@ The following example demontrates how to create your own dialog :
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

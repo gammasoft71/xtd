@@ -9,6 +9,7 @@
 #include <filesystem>
 #include <cstdlib>
 #include <functional>
+#include <string>
 #include <map>
 #include <set>
 #include <signal.h>
@@ -17,12 +18,11 @@
 #include <sys/wait.h>
 #include <TargetConditionals.h>
 
-using namespace std;
 using namespace std::filesystem;
 using namespace xtd::native;
 
 namespace {
-  class file_descriptor_streambuf : public streambuf {
+  class file_descriptor_streambuf : public std::streambuf {
   public:
     explicit file_descriptor_streambuf(int32_t file_descriptor) : file_descriptor_(file_descriptor) {}
     ~file_descriptor_streambuf() {close(file_descriptor_);}
@@ -33,7 +33,7 @@ namespace {
         this->setg(&value_, &value_, &value_ + 1);
         return value_;
       }
-      return streambuf::underflow(); // EOF
+      return std::streambuf::underflow(); // EOF
     }
     
     int32_t overflow(int32_t c) override {
@@ -42,74 +42,74 @@ namespace {
         this->setp(&value_, &value_);
         return 0;
       }
-      return streambuf::overflow(c); // EOF
+      return std::streambuf::overflow(c); // EOF
     }
     
     int32_t file_descriptor_ = 0;
     char value_ = EOF;
   };
   
-  class process_istream : public istream {
+  class process_istream : public std::istream {
   public:
-    explicit process_istream(int32_t file_descriptor) : istream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_istream(int32_t file_descriptor) : std::istream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
   };
   
-  class process_ostream : public ostream {
+  class process_ostream : public std::ostream {
   public:
-    explicit process_ostream(int32_t file_descriptor) : ostream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_ostream(int32_t file_descriptor) : std::ostream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
   };
   
-  string shell_execute_command() {
+  std::string shell_execute_command() {
     return "open";
   }
   
-  string get_full_file_name_with_extension(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& file_name, const string& working_directory = "") {
-    auto path_directories = string {getenv("PATH") == nullptr ? "" : getenv("PATH")};
+  std::string get_full_file_name_with_extension(std::function<std::vector<std::string>(const std::string& str, const std::vector<char>& separators, size_t count, bool)> splitter, const std::string& file_name, const std::string& working_directory = "") {
+    auto path_directories = std::string {getenv("PATH") == nullptr ? "" : getenv("PATH")};
     path_directories += ":/Applications:/Applications/Utilities:/System/Applications:/System/Applications/Utilities:/opt/homebrew/bin";
-    auto user = string {getenv("USER") != nullptr ? getenv("USER") : ""};
+    auto user = std::string {getenv("USER") != nullptr ? getenv("USER") : ""};
     if (user != "") path_directories += ":/Users/" + user + "/Applications";
     
-    static auto standard_extensions = set<string> {"", ".action", ".apk", ".app", ".bin", ".command", ".csh", ".ipa", ".ksh", ".osx", ".out", ".run", ".sh", ".workflow"};
-    auto extensions = path(file_name).has_extension() ? set<string> {""} : standard_extensions;
+    static auto standard_extensions = std::set<std::string> {"", ".action", ".apk", ".app", ".bin", ".command", ".csh", ".ipa", ".ksh", ".osx", ".out", ".run", ".sh", ".workflow"};
+    auto extensions = path(file_name).has_extension() ? std::set<std::string> {""} : standard_extensions;
     for (auto extension : extensions) {
       auto file_name_with_extension = file_name + extension;
       if (working_directory != "" && exists(path(working_directory) / file_name_with_extension)) return (path(working_directory) / file_name_with_extension).string();
       if (path(file_name_with_extension).has_root_directory()) return file_name_with_extension;
       if (exists(current_path() / file_name_with_extension)) return (current_path() / file_name_with_extension).string();
-      for (auto directory : splitter(path_directories, {':'}, numeric_limits<size_t>::max(), false))
+      for (auto directory : splitter(path_directories, {':'}, std::numeric_limits<size_t>::max(), false))
         if (exists(path(directory) / file_name_with_extension)) return (path(directory) / file_name_with_extension).string();
     }
     return file_name;
   }
   
-  bool is_valid_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& command_line, const string& working_directory) {
+  bool is_valid_process(std::function<std::vector<std::string>(const std::string& str, const std::vector<char>& separators, size_t count, bool)> splitter, const std::string& command_line, const std::string& working_directory) {
     auto full_file_name_with_extension = get_full_file_name_with_extension(splitter, command_line, working_directory);
     return exists(full_file_name_with_extension);
   }
   
-  bool is_valid_uri(const string& command_line) {
-    static auto schemes = vector<string> {"file", "ftp", "gopher", "http", "https", "mailto", "net.pipe", "net.tcp", "news", "nntp"};
+  bool is_valid_uri(const std::string& command_line) {
+    static auto schemes = std::vector<std::string> {"file", "ftp", "gopher", "http", "https", "mailto", "net.pipe", "net.tcp", "news", "nntp"};
     auto iterator = find_if(schemes.begin(), schemes.end(), [&](auto scheme) {return command_line.find(scheme + ":") == 0;});
     return iterator != schemes.end();
   }
   
-  bool is_valid_shell_execute_process(function<vector<string>(const string& str, const vector<char>& separators, size_t count, bool)> splitter, const string& command_line, const string& working_directory) {
+  bool is_valid_shell_execute_process(std::function<std::vector<std::string>(const std::string& str, const std::vector<char>& separators, size_t count, bool)> splitter, const std::string& command_line, const std::string& working_directory) {
     return command_line == "" || is_valid_process(splitter, command_line, working_directory) || is_valid_uri(command_line);
   }
   
-  vector<string> split_arguments(const string& line_argument) {
-    auto arguments = vector<string> {};
+  std::vector<std::string> split_arguments(const std::string& line_argument) {
+    auto arguments = std::vector<std::string> {};
     auto skip_next_space = false;
     auto quotes_empty = false;
     auto left_space_count = 0;
     auto right_space_count = 0;
-    auto argument = string {};
+    auto argument = std::string {};
     
     for (auto index = size_t {0}; index < line_argument.size(); ++index) {
       if (line_argument[index] == '\"') {
@@ -143,7 +143,7 @@ namespace {
   }
   
   bool compute_base_priority(int32_t priority, int32_t& base_priority) {
-    static auto base_priorities = map<int32_t, int32_t> {{IDLE_PRIORITY_CLASS, PRIO_MIN}, {BELOW_NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4}, {NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2}, {ABOVE_NORMAL_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4}, {HIGH_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8}, {REALTIME_PRIORITY_CLASS, PRIO_MAX}};
+    static auto base_priorities = std::map<int32_t, int32_t> {{IDLE_PRIORITY_CLASS, PRIO_MIN}, {BELOW_NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4}, {NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2}, {ABOVE_NORMAL_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4}, {HIGH_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8}, {REALTIME_PRIORITY_CLASS, PRIO_MAX}};
     auto it = base_priorities.find(priority);
     if (it == base_priorities.end()) return false;
     base_priority = it->second;
@@ -168,7 +168,7 @@ bool process::priority_class(intmax_t process, int32_t priority) {
   return setpriority(PRIO_PROCESS, static_cast<id_t>(process), base_priority) == 0;
 }
 
-intmax_t process::shell_execute(const std::string& verb, const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style) {
+intmax_t process::shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style) {
   auto process = fork();
   if (process == 0) {
     auto is_shell_execute = is_valid_shell_execute_process(&macos::strings::split, file_name, working_directory);
@@ -176,11 +176,11 @@ intmax_t process::shell_execute(const std::string& verb, const string& file_name
       for (auto arg : split_arguments(arguments))
         if (!(is_shell_execute = is_valid_shell_execute_process(&macos::strings::split, arg, working_directory))) break;
     }
-    auto command_line_args = vector<string> {};
+    auto command_line_args = std::vector<std::string> {};
     if (is_shell_execute) {
       if (verb == "runas") {
         if (file_name == "") return 0;
-        command_line_args.insert(command_line_args.begin(), string("do shell script \"") + file_name + (arguments != "" ? " " + arguments : "") + string("\" with administrator privileges"));
+        command_line_args.insert(command_line_args.begin(), std::string("do shell script \"") + file_name + (arguments != "" ? " " + arguments : "") + std::string("\" with administrator privileges"));
         command_line_args.insert(command_line_args.begin(), "-e");
         command_line_args.insert(command_line_args.begin(), "osascript");
       } else if (verb == "print") {
@@ -204,7 +204,7 @@ intmax_t process::shell_execute(const std::string& verb, const string& file_name
       if (working_directory != "") current_path(working_directory.c_str());
       command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&macos::strings::split, file_name));
     }
-    auto execvp_args = vector<char*>(command_line_args.size() + 1);
+    auto execvp_args = std::vector<char*>(command_line_args.size() + 1);
     for (size_t index = 0; index < command_line_args.size(); ++index)
       execvp_args[index] = command_line_args[index].data();
     execvp_args[execvp_args.size() - 1] = nullptr;
@@ -214,8 +214,8 @@ intmax_t process::shell_execute(const std::string& verb, const string& file_name
   return static_cast<intmax_t>(process);
 }
 
-process::started_process process::start(const string& file_name, const string& arguments, const string& working_directory, int32_t process_window_style, int32_t process_creation_flags, tuple<bool, bool, bool> redirect_standard_streams) {
-  if (!is_valid_process(&macos::strings::split, file_name, working_directory)) return make_tuple(0, 0, std::unique_ptr<std::ostream> {}, std::unique_ptr<std::istream> {}, std::unique_ptr<std::istream> {});
+process::started_process process::start(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style, int32_t process_creation_flags, std::tuple<bool, bool, bool> redirect_standard_streams) {
+  if (!is_valid_process(&macos::strings::split, file_name, working_directory)) return std::make_tuple(0, 0, std::unique_ptr<std::ostream> {}, std::unique_ptr<std::istream> {}, std::unique_ptr<std::istream> {});
 
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   auto pipe_result = 0;
@@ -244,11 +244,11 @@ process::started_process process::start(const string& file_name, const string& a
       dup2(pipe_stderr[1], STDERR_FILENO);
     }
     
-    auto command_line_args = vector<string> {};
+    auto command_line_args = std::vector<std::string> {};
     if (working_directory != "") current_path(working_directory.c_str());
     command_line_args = split_arguments(arguments);
     command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&macos::strings::split, file_name));
-    auto execvp_args = vector<char*>(command_line_args.size() + 1);
+    auto execvp_args = std::vector<char*>(command_line_args.size() + 1);
     for (auto index = size_t {0}; index < command_line_args.size(); ++index)
       execvp_args[index] = command_line_args[index].data();
     execvp_args[execvp_args.size() - 1] = nullptr;
@@ -260,7 +260,7 @@ process::started_process process::start(const string& file_name, const string& a
   if (redirect_standard_output) close(pipe_stdout[1]);
   if (redirect_standard_error) close(pipe_stderr[1]);
   
-  return make_tuple(static_cast<intmax_t>(process), static_cast<int32_t>(process), make_unique<process_ostream>(pipe_stdin[1]), make_unique<process_istream>(pipe_stdout[0]), make_unique<process_istream>(pipe_stderr[0]));
+  return std::make_tuple(static_cast<intmax_t>(process), static_cast<int32_t>(process), std::make_unique<process_ostream>(pipe_stdin[1]), std::make_unique<process_istream>(pipe_stdout[0]), std::make_unique<process_istream>(pipe_stderr[0]));
 }
 
 bool process::wait(intmax_t process, int32_t& exit_code) {

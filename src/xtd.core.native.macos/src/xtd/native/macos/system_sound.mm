@@ -7,13 +7,12 @@
 #include <TargetConditionals.h>
 #import <Cocoa/Cocoa.h>
 
-using namespace std;
 using namespace xtd::native;
 
 void system_sound::play(uint32_t sound) {
   if (sound == ST_BEEP || sound == ST_OK) NSBeep();
   else @autoreleasepool {
-    static auto sounds = map<uint32_t, string> {{ST_ICONERROR, "Funk"}, {ST_ICONQUESTION, "Purr"}, {ST_ICONWARNING, "Hero"}, {ST_ICONASTERISK, "Glass"}};
+    static auto sounds = std::map<uint32_t, std::string> {{ST_ICONERROR, "Funk"}, {ST_ICONQUESTION, "Purr"}, {ST_ICONWARNING, "Hero"}, {ST_ICONASTERISK, "Glass"}};
     [[NSSound soundNamed:[NSString stringWithUTF8String:sounds[sound].c_str()]] play];
   }
 }

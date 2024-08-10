@@ -11,10 +11,9 @@ As an alternative to this example, you could store the information as a single s
 ## Example
 
 ```cpp
-#include <fstream>
 #include <xtd/xtd>
+#include <fstream>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 

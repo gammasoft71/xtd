@@ -12,23 +12,22 @@
 #include <thread>
 #include <unistd.h>
 
-using namespace std;
 using namespace xtd::native;
 
 namespace {
   struct speech_synthesizer_data {
-    string say_cmd_file_name;
+    std::string say_cmd_file_name;
     intmax_t process_handle = 0;
   };
   
-  static string get_temp_path() {
+  static std::string get_temp_path() {
     auto tmp_path = getenv("TMPDIR");
     return tmp_path ? tmp_path : "/tmp/";
   }
   
-  static string get_unique_speak_cmd_file_name() {
+  static std::string get_unique_speak_cmd_file_name() {
     static auto cpt = 0;
-    auto ss = stringstream {};
+    auto ss = std::stringstream {};
     ss << get_temp_path() << "/__xtd_speech_synthesizer_speak_process_" << ++cpt << "__.cmd";
     return  ss.str();
   }
@@ -36,7 +35,7 @@ namespace {
 
 intmax_t speech_synthesizer::create() {
   speech_synthesizer_data* data = new speech_synthesizer_data {get_unique_speak_cmd_file_name(), 0};
-  auto cmd_file = ofstream {};
+  auto cmd_file = std::ofstream {};
   cmd_file.open(data->say_cmd_file_name);
   cmd_file << "say \"$*\"\n";
   cmd_file.close();
@@ -57,15 +56,15 @@ void speech_synthesizer::resume(intmax_t handle) {
 
 }
 
-void speech_synthesizer::speak(intmax_t handle, const string& text_to_speak) {
+void speech_synthesizer::speak(intmax_t handle, const std::string& text_to_speak) {
   speak_async(handle, text_to_speak, [] {});
   auto exit_code = 0;
   native::process::wait(reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle, exit_code);
 }
 
-void speech_synthesizer::speak_async(intmax_t handle, const string& text_to_speak, std::function<void()> on_speak_completed) {
+void speech_synthesizer::speak_async(intmax_t handle, const std::string& text_to_speak, std::function<void()> on_speak_completed) {
   reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle = native::process::shell_execute("", reinterpret_cast<speech_synthesizer_data*>(handle)->say_cmd_file_name, text_to_speak, "", PROCESS_WINDOW_STYLE_HIDDEN);
-  auto wait_process_thread = thread {[on_speak_completed, handle] {
+  auto wait_process_thread = std::thread {[on_speak_completed, handle] {
     int32_t exit_code = 0;
     native::process::wait(reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle, exit_code);
     on_speak_completed();

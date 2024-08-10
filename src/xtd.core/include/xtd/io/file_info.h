@@ -280,15 +280,15 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// auto main() -> int {
       ///   // Make a reference to a directory.
       ///   directory_info di("c:\\");
       ///   // Get a reference to each file in that directory.
-      ///   vector<file_info> fi_arr = di.get_files();
+      ///   lidt<file_info> fi_arr = di.get_files();
       ///   // Display the names and sizes of the files.
       ///   console::write_line("The directory {0} contains the following files:", di.name());
       ///   for (file_info f : fi_arr)
@@ -334,15 +334,15 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// auto main() -> int {
       ///   // Create a reference to the current directory.
       ///   directory_info di(environment::current_directory());
       ///   // Create an array representing the files in the current directory.
-      ///   vector<file_info> fi = di.get_files();
+      ///   list<file_info> fi = di.get_files();
       ///   console::write_line("The following files exist in the current directory:");
       ///   // Print out the names of the files in the current directory.
       ///   for (file_info fi_temp : fi)
@@ -375,7 +375,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -383,7 +382,7 @@ namespace xtd {
       /// /// public:
       ///   static auto main() {
       ///     file_info fi("temp.txt");
-      ///      // Create a writer, ready to add entries to the file.
+      ///     // Create a writer, ready to add entries to the file.
       ///     stream_writer sw = fi.append_text();
       ///     sw.write_line("Add as many lines as you like...");
       ///     sw.write_line("Add another line to the output...");
@@ -391,7 +390,7 @@ namespace xtd {
       ///     sw.close();
       ///     // Get the information out of the file and display it.
       ///     // Remember that the file might have other lines if it already existed.
-      ///     ifstream ifs(fi.open_read());
+      ///     std::ifstream ifs(fi.open_read());
       ///     stream_reader sr(ifs);
       ///     while (sr.peek() != -1)
       ///       console::write_line(sr.read_line());
@@ -422,7 +421,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -464,7 +462,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -476,7 +473,7 @@ namespace xtd {
       ///       // If it does not exist, it is not yet created.
       ///       file_info fi("temp.txt");
       ///       // Create a writer, ready to add entries to the file.
-      ///       ofstream ofs(fi.append_text());
+      ///       std::ofstream ofs(fi.append_text());
       ///       stream_writer sw(ofs);
       ///       sw.write_line("Add as many lines as you like...");
       ///       sw.write_line("Add another line to the output...");
@@ -534,7 +531,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -557,7 +553,7 @@ namespace xtd {
       ///       }
       ///
       ///       //Copy the file.f
-      ///    fi1.copy_to(path2);
+      ///       fi1.copy_to(path2);
       ///       console::write_line("{0} was copied to {1}.", path, path2);
       ///     } catch (const io_exception& ioex) {
       ///       console::write_line(ioex.message());
@@ -576,7 +572,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -587,14 +582,14 @@ namespace xtd {
       ///     // If it does not exist, it is not yet created.
       ///     file_info fi("temp.txt");
       ///     // Create a writer, ready to add entries to the file.
-      ///     ofstream ofs(fi.append_text());
+      ///     std::ofstream ofs(fi.append_text());
       ///     stream_writer sw(ofs);
       ///     sw.write_line("Add as many lines as you like...");
       ///     sw.write_line("Add another line to the output...");
       ///     sw.flush();
       ///     sw.close();
       ///     // Get the information out of the file and display it.
-      ///     ifstream ifs(fi.open_read());
+      ///     std::ifstream ifs(fi.open_read());
       ///     stream_reader sr(ifs);
       ///     console::write_line("This is the information in the first file:");
       ///     while (sr.peek() != -1)
@@ -638,7 +633,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -648,7 +642,7 @@ namespace xtd {
       ///     // Create a reference to a file.
       ///     file_info fi("temp.txt");
       ///     // Actually create the file.
-      ///     ofstream ofs( fi.create());
+      ///     std::ofstream ofs( fi.create());
       ///     // Modify the file as required, and then close the file.
       ///     ofs.close();
       ///     // Delete the file.
@@ -763,7 +757,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -807,7 +800,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd::io;
       ///
       /// class program {
@@ -816,7 +808,7 @@ namespace xtd {
       ///     // Create a reference to a file.
       ///     file_info fi("temp.txt");
       ///     // Actually create the file.
-      ///     ofstream ofs = fi.create();
+      ///     std::ofstream ofs = fi.create();
       ///     // Modify the file as required, and then close the file.
       ///     ofs.close();
       ///     // Delete the file.
