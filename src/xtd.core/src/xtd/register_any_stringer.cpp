@@ -4,7 +4,6 @@
 #include "../../include/xtd/date_time.h"
 #include "../../include/xtd/time_span.h"
 
-using namespace std;
 using namespace xtd;
 
 std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__ {

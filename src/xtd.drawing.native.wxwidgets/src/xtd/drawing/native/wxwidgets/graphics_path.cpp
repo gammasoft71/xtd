@@ -10,7 +10,6 @@
 #include <map>
 #include <vector>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing::native;
@@ -56,7 +55,7 @@ namespace {
     }
     
   private:
-    inline static std::map<wxGraphicsPath*, vector<bool>> figures_;
+    inline static std::map<wxGraphicsPath*, std::vector<bool>> figures_;
   };
 }
 

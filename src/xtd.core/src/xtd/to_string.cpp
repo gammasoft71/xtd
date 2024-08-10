@@ -1,8 +1,6 @@
 #include "../../include/xtd/to_string.h"
 #include "../../include/xtd/ustring.h"
 
-using namespace std;
-
 namespace xtd {
   std::string to_string(const char* value, const std::string& fmt, const std::locale& loc) {
     return __string_formatter(fmt, value, loc);
