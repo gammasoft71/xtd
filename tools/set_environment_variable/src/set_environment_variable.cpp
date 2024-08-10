@@ -10,13 +10,13 @@
 #include <Windows.h>
 #endif
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 namespace set_path {
   class program final static_ {
   public:
-    static auto main(const vector<ustring>& args) {
+    static auto main(const list<ustring>& args) {
       ustring key;
       ustring value;
       bool show_version = false;
@@ -67,12 +67,12 @@ namespace set_path {
     }
     
   private:
-    static string get_error() {
+    static ustring get_error() {
       return "set_environment_variable : invalid params\n"
         "Try 'set_environment_variable --help' for more information.";
     }
     
-    static string get_usage() {
+    static ustring get_usage() {
       return "Usage\n"
         "  set_environment_variable [options] key [value]\n"
         "\n"
@@ -86,11 +86,11 @@ namespace set_path {
         "(**) System option is valid only on Windows. You must in administrator mode.";
     }
     
-    static string get_version() {
+    static ustring get_version() {
       return ustring::format("set_environment_variable version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static bool process_arguments(const vector<ustring>& args, ustring& key, ustring& value, bool& add, bool& remove, bool& system_path, bool& show_version, bool& show_help) {
+    static bool process_arguments(const list<ustring>& args, ustring& key, ustring& value, bool& add, bool& remove, bool& system_path, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         if (args[index] == "-a" || args[index] == "--add") add = true;
         else if (args[index] == "-r" || args[index] == "--remove") remove = true;

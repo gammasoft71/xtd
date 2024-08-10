@@ -440,7 +440,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
@@ -453,7 +452,7 @@ namespace xtd {
       ///   p.start();
       ///
       ///   // To avoid deadlocks, always read the output stream first and then wait.
-      ///   string output = stream_reader(p.standard_error()).read_to_end();
+      ///   ustring output = stream_reader(p.standard_error()).read_to_end();
       ///   p.wait_for_exit();
       ///
       ///   console::write_line("\nError stream: {}", output);
@@ -465,7 +464,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
@@ -484,7 +482,7 @@ namespace xtd {
       ///
       ///   // To avoid deadlocks, always read the output stream first and then wait.
       ///   p.begin_error_read_line();
-      ///   string output = stream_reader(p.standard_error()).read_to_end();
+      ///   ustring output = stream_reader(p.standard_error()).read_to_end();
       ///   p.wait_for_exit();
       ///
       ///   console::write_line("\nError stream: {}", output);
@@ -509,7 +507,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
@@ -574,7 +571,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
@@ -630,7 +626,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;
@@ -655,7 +650,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
       /// using namespace xtd::diagnostics;
       /// using namespace xtd::io;

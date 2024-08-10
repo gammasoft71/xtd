@@ -14,7 +14,6 @@
 #include <xtd/typeof>
 #include <memory>
 
-using namespace std;
 using namespace xtd;
 using namespace forms;
 
@@ -22,7 +21,7 @@ namespace {
   using link_label = label;
   class exception_dialog_standard : public form {
   public:
-    exception_dialog_standard(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) : exception_(exception) {
+    exception_dialog_standard(const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) : exception_(exception) {
       panel_top_.location({0, 0});
       panel_top_.size({480, 150});
       panel_top_.controls().push_back_range({picture_box_error_, label_exception_, button_details_, button_continue_, button_quit_});
@@ -85,24 +84,24 @@ namespace {
     }
     
     using form::show_dialog;
-    static forms::dialog_result show_dialog(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+    static forms::dialog_result show_dialog(const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       return dialog.form::show_dialog();
     }
     
-    static forms::dialog_result show_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+    static forms::dialog_result show_dialog(const iwin32_window& owner, const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       return dialog.form::show_dialog(owner);
     }
     
     using form::show_sheet;
-    static void show_sheet(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+    static void show_sheet(const iwin32_window& owner, const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       dialog.form::show_sheet_dialog(owner);
     }
     
     using form::show_sheet_dialog;
-    static forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
+    static forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const std::exception* exception, const ustring& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) {
       auto dialog = exception_dialog_standard {exception, text, on_dialog_closed};
       return dialog.form::show_sheet_dialog(owner);
     }

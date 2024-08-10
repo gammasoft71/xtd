@@ -1,10 +1,9 @@
 #include "../../include/xtd/convert.h"
 #include "../../include/xtd/math.h"
 
-using namespace std;
 using namespace xtd;
 
-std::any convert::to_any(any value) noexcept {
+std::any convert::to_any(std::any value) noexcept {
   return value;
 }
 
@@ -91,25 +90,25 @@ std::any convert::to_any(const ustring& value) noexcept {
   return value;
 }
 
-std::any convert::to_any(const string& value) noexcept {
+std::any convert::to_any(const std::string& value) noexcept {
   return value;
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-std::any convert::to_any(const u8string& value) noexcept {
+std::any convert::to_any(const std::u8string& value) noexcept {
   return value;
 }
 #endif
 
-std::any convert::to_any(const u16string& value) noexcept {
+std::any convert::to_any(const std::u16string& value) noexcept {
   return value;
 }
 
-std::any convert::to_any(const u32string& value) noexcept {
+std::any convert::to_any(const std::u32string& value) noexcept {
   return value;
 }
 
-std::any convert::to_any(const wstring& value) noexcept {
+std::any convert::to_any(const std::wstring& value) noexcept {
   return value;
 }
 
@@ -157,7 +156,7 @@ std::any convert::to_any(wchar* value) noexcept {
   return value;
 }
 
-bool convert::to_boolean(any value) {
+bool convert::to_boolean(std::any value) {
   try {
     return any_cast<bool>(value);
   } catch (...) {
@@ -247,25 +246,25 @@ bool convert::to_boolean(const ustring& value) {
   return ustring::parse<bool>(value);
 }
 
-bool convert::to_boolean(const string& value) {
+bool convert::to_boolean(const std::string& value) {
   return ustring::parse<bool>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-bool convert::to_boolean(const u8string& value) {
+bool convert::to_boolean(const std::u8string& value) {
   return ustring::parse<bool>(value);
 }
 #endif
 
-bool convert::to_boolean(const u16string& value) {
+bool convert::to_boolean(const std::u16string& value) {
   return ustring::parse<bool>(value);
 }
 
-bool convert::to_boolean(const u32string& value) {
+bool convert::to_boolean(const std::u32string& value) {
   return ustring::parse<bool>(value);
 }
 
-bool convert::to_boolean(const wstring& value) {
+bool convert::to_boolean(const std::wstring& value) {
   return ustring::parse<bool>(value);
 }
 
@@ -311,7 +310,7 @@ bool convert::to_boolean(wchar* value) {
   return ustring::parse<bool>(value);
 }
 
-xtd::byte convert::to_byte(any value) {
+xtd::byte convert::to_byte(std::any value) {
   try {
     return any_cast<xtd::byte>(value);
   } catch (...) {
@@ -338,77 +337,77 @@ xtd::byte convert::to_byte(char8 value) noexcept {
 #endif
 
 xtd::byte convert::to_byte(char16 value) {
-  if (value > static_cast<char16>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<char16>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(char32 value) {
-  if (value > static_cast<char32>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<char32>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(wchar value) {
-  if (value > static_cast<wchar>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<wchar>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(decimal value) {
-  if (value < static_cast<decimal>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<decimal>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<decimal>(std::numeric_limits<xtd::byte>::lowest()) || value > static_cast<decimal>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(math::round(value));
 }
 
 xtd::byte convert::to_byte(double value) {
-  if (value < static_cast<double>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<double>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<double>(std::numeric_limits<xtd::byte>::lowest()) || value > static_cast<double>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(math::round(value));
 }
 
 xtd::byte convert::to_byte(float value) {
-  if (value < static_cast<float>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<float>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<float>(std::numeric_limits<xtd::byte>::lowest()) || value > static_cast<float>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(math::round(value));
 }
 
 xtd::byte convert::to_byte(int16 value) {
-  if (value < static_cast<int16>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<int16>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int16>(std::numeric_limits<xtd::byte>::lowest()) || value > static_cast<int16>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<int32>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int32>(std::numeric_limits<xtd::byte>::lowest()) || value > static_cast<int32>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<int64>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int64>(std::numeric_limits<xtd::byte>::lowest()) || value > static_cast<int64>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(slong value) {
-  if (value < static_cast<slong>(numeric_limits<xtd::byte>::lowest()) || value > static_cast<slong>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<slong>(std::numeric_limits<xtd::byte>::lowest()) || value > static_cast<slong>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(sbyte value) {
-  if (value < static_cast<sbyte>(numeric_limits<xtd::byte>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<sbyte>(std::numeric_limits<xtd::byte>::lowest())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(uint16 value) {
-  if (value > static_cast<uint16>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint16>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(uint32 value) {
-  if (value > static_cast<uint32>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint32>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint64>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
 xtd::byte convert::to_byte(xtd::ulong value) {
-  if (value > static_cast<xtd::ulong>(numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<xtd::ulong>(std::numeric_limits<xtd::byte>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::byte>(value);
 }
 
@@ -426,25 +425,25 @@ xtd::byte convert::to_byte(const ustring& value, xtd::byte from_base) {
   }
 }
 
-xtd::byte convert::to_byte(const string& value) {
+xtd::byte convert::to_byte(const std::string& value) {
   return ustring::parse<xtd::byte>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-xtd::byte convert::to_byte(const u8string& value) {
+xtd::byte convert::to_byte(const std::u8string& value) {
   return ustring::parse<xtd::byte>(value);
 }
 #endif
 
-xtd::byte convert::to_byte(const u16string& value) {
+xtd::byte convert::to_byte(const std::u16string& value) {
   return ustring::parse<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(const u32string& value) {
+xtd::byte convert::to_byte(const std::u32string& value) {
   return ustring::parse<xtd::byte>(value);
 }
 
-xtd::byte convert::to_byte(const wstring& value) {
+xtd::byte convert::to_byte(const std::wstring& value) {
   return ustring::parse<xtd::byte>(value);
 }
 
@@ -490,7 +489,7 @@ xtd::byte convert::to_byte(wchar* value) {
   return ustring::parse<xtd::byte>(value);
 }
 
-char convert::to_char(any value) {
+char convert::to_char(std::any value) {
   try {
     return any_cast<char>(value);
   } catch (...) {
@@ -596,29 +595,29 @@ char convert::to_char(const ustring& value) {
   return to_char(value[0]);
 }
 
-char convert::to_char(const string& value) {
+char convert::to_char(const std::string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-char convert::to_char(const u8string& value) {
+char convert::to_char(const std::u8string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 #endif
 
-char convert::to_char(const u16string& value) {
+char convert::to_char(const std::u16string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char convert::to_char(const u32string& value) {
+char convert::to_char(const std::u32string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char convert::to_char(const wstring& value) {
+char convert::to_char(const std::wstring& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -676,7 +675,7 @@ char convert::to_char(wchar* value) {
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-char8 convert::to_char8(any value) {
+char8 convert::to_char8(std::any value) {
   throw invalid_cast_exception {csf_};
 }
 
@@ -776,27 +775,27 @@ char8 convert::to_char8(const ustring& value) {
   return to_char(value[0]);
 }
 
-char8 convert::to_char8(const string& value) {
+char8 convert::to_char8(const std::string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char8 convert::to_char8(const u8string& value) {
+char8 convert::to_char8(const std::u8string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char8 convert::to_char8(const u16string& value) {
+char8 convert::to_char8(const std::u16string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char8 convert::to_char8(const u32string& value) {
+char8 convert::to_char8(const std::u32string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char8 convert::to_char8(const wstring& value) {
+char8 convert::to_char8(const std::wstring& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -852,7 +851,7 @@ char8 convert::to_char8(wchar* value) {
 }
 #endif
 
-char16 convert::to_char16(any value) {
+char16 convert::to_char16(std::any value) {
   try {
     return any_cast<char16>(value);
   } catch (...) {
@@ -959,29 +958,29 @@ char16 convert::to_char16(const ustring& value) {
   return to_char(value[0]);
 }
 
-char16 convert::to_char16(const string& value) {
+char16 convert::to_char16(const std::string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-char16 convert::to_char16(const u8string& value) {
+char16 convert::to_char16(const std::u8string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 #endif
 
-char16 convert::to_char16(const u16string& value) {
+char16 convert::to_char16(const std::u16string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char16 convert::to_char16(const u32string& value) {
+char16 convert::to_char16(const std::u32string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char16 convert::to_char16(const wstring& value) {
+char16 convert::to_char16(const std::wstring& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -1038,7 +1037,7 @@ char16 convert::to_char16(wchar* value) {
   return to_char(value[0]);
 }
 
-char32 convert::to_char32(any value) {
+char32 convert::to_char32(std::any value) {
   try {
     return any_cast<char32>(value);
   } catch (...) {
@@ -1143,29 +1142,29 @@ char32 convert::to_char32(const ustring& value) {
   return to_char(value[0]);
 }
 
-char32 convert::to_char32(const string& value) {
+char32 convert::to_char32(const std::string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-char32 convert::to_char32(const u8string& value) {
+char32 convert::to_char32(const std::u8string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 #endif
 
-char32 convert::to_char32(const u16string& value) {
+char32 convert::to_char32(const std::u16string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char32 convert::to_char32(const u32string& value) {
+char32 convert::to_char32(const std::u32string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-char32 convert::to_char32(const wstring& value) {
+char32 convert::to_char32(const std::wstring& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -1222,7 +1221,7 @@ char32 convert::to_char32(wchar* value) {
   return to_char(value[0]);
 }
 
-wchar convert::to_wchar(any value) {
+wchar convert::to_wchar(std::any value) {
   try {
     return any_cast<wchar>(value);
   } catch (...) {
@@ -1329,29 +1328,29 @@ wchar convert::to_wchar(const ustring& value) {
   return to_char(value[0]);
 }
 
-wchar convert::to_wchar(const string& value) {
+wchar convert::to_wchar(const std::string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-wchar convert::to_wchar(const u8string& value) {
+wchar convert::to_wchar(const std::u8string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 #endif
 
-wchar convert::to_wchar(const u16string& value) {
+wchar convert::to_wchar(const std::u16string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-wchar convert::to_wchar(const u32string& value) {
+wchar convert::to_wchar(const std::u32string& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
 
-wchar convert::to_wchar(const wstring& value) {
+wchar convert::to_wchar(const std::wstring& value) {
   if (value.size() != 1) throw format_exception {csf_};
   return to_char(value[0]);
 }
@@ -1408,7 +1407,7 @@ wchar convert::to_wchar(wchar* value) {
   return to_char(value[0]);
 }
 
-decimal convert::to_decimal(any value) {
+decimal convert::to_decimal(std::any value) {
   try {
     return any_cast<decimal>(value);
   } catch (...) {
@@ -1498,25 +1497,25 @@ decimal convert::to_decimal(const ustring& value) {
   return ustring::parse<decimal>(value);
 }
 
-decimal convert::to_decimal(const string& value) {
+decimal convert::to_decimal(const std::string& value) {
   return ustring::parse<decimal>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-decimal convert::to_decimal(const u8string& value) {
+decimal convert::to_decimal(const std::u8string& value) {
   return ustring::parse<decimal>(value);
 }
 #endif
 
-decimal convert::to_decimal(const u16string& value) {
+decimal convert::to_decimal(const std::u16string& value) {
   return ustring::parse<decimal>(value);
 }
 
-decimal convert::to_decimal(const u32string& value) {
+decimal convert::to_decimal(const std::u32string& value) {
   return ustring::parse<decimal>(value);
 }
 
-decimal convert::to_decimal(const wstring& value) {
+decimal convert::to_decimal(const std::wstring& value) {
   return ustring::parse<decimal>(value);
 }
 
@@ -1562,7 +1561,7 @@ decimal convert::to_decimal(wchar* value) {
   return ustring::parse<decimal>(value);
 }
 
-double convert::to_double(any value) {
+double convert::to_double(std::any value) {
   try {
     return any_cast<double>(value);
   } catch (...) {
@@ -1652,25 +1651,25 @@ double convert::to_double(const ustring& value) {
   return ustring::parse<double>(value);
 }
 
-double convert::to_double(const string& value) {
+double convert::to_double(const std::string& value) {
   return ustring::parse<double>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-double convert::to_double(const u8string& value) {
+double convert::to_double(const std::u8string& value) {
   return ustring::parse<double>(value);
 }
 #endif
 
-double convert::to_double(const u16string& value) {
+double convert::to_double(const std::u16string& value) {
   return ustring::parse<double>(value);
 }
 
-double convert::to_double(const u32string& value) {
+double convert::to_double(const std::u32string& value) {
   return ustring::parse<double>(value);
 }
 
-double convert::to_double(const wstring& value) {
+double convert::to_double(const std::wstring& value) {
   return ustring::parse<double>(value);
 }
 
@@ -1716,7 +1715,7 @@ double convert::to_double(wchar* value) {
   return ustring::parse<double>(value);
 }
 
-float convert::to_single(any value) {
+float convert::to_single(std::any value) {
   try {
     return any_cast<float>(value);
   } catch (...) {
@@ -1806,25 +1805,25 @@ float convert::to_single(const ustring& value) {
   return ustring::parse<float>(value);
 }
 
-float convert::to_single(const string& value) {
+float convert::to_single(const std::string& value) {
   return ustring::parse<float>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-float convert::to_single(const u8string& value) {
+float convert::to_single(const std::u8string& value) {
   return ustring::parse<float>(value);
 }
 #endif
 
-float convert::to_single(const u16string& value) {
+float convert::to_single(const std::u16string& value) {
   return ustring::parse<float>(value);
 }
 
-float convert::to_single(const u32string& value) {
+float convert::to_single(const std::u32string& value) {
   return ustring::parse<float>(value);
 }
 
-float convert::to_single(const wstring& value) {
+float convert::to_single(const std::wstring& value) {
   return ustring::parse<float>(value);
 }
 
@@ -1870,7 +1869,7 @@ float convert::to_single(wchar* value) {
   return ustring::parse<float>(value);
 }
 
-int16 convert::to_int16(any value) {
+int16 convert::to_int16(std::any value) {
   try {
     return any_cast<int16>(value);
   } catch (...) {
@@ -1910,17 +1909,17 @@ int16 convert::to_int16(wchar value) noexcept {
 }
 
 int16 convert::to_int16(decimal value) {
-  if (value < static_cast<decimal>(numeric_limits<int16>::lowest()) || value > static_cast<decimal>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<decimal>(std::numeric_limits<int16>::lowest()) || value > static_cast<decimal>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(math::round(value));
 }
 
 int16 convert::to_int16(double value) {
-  if (value < static_cast<double>(numeric_limits<int16>::lowest()) || value > static_cast<double>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<double>(std::numeric_limits<int16>::lowest()) || value > static_cast<double>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(math::round(value));
 }
 
 int16 convert::to_int16(float value) {
-  if (value < static_cast<float>(numeric_limits<int16>::lowest()) || value > static_cast<float>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<float>(std::numeric_limits<int16>::lowest()) || value > static_cast<float>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(math::round(value));
 }
 
@@ -1929,17 +1928,17 @@ int16 convert::to_int16(int16 value) noexcept {
 }
 
 int16 convert::to_int16(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<int16>::lowest()) || value > static_cast<int32>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int32>(std::numeric_limits<int16>::lowest()) || value > static_cast<int32>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(value);
 }
 
 int16 convert::to_int16(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<int16>::lowest()) || value > static_cast<int64>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int64>(std::numeric_limits<int16>::lowest()) || value > static_cast<int64>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(value);
 }
 
 int16 convert::to_int16(slong value) {
-  if (value < static_cast<slong>(numeric_limits<int16>::lowest()) || value > static_cast<slong>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<slong>(std::numeric_limits<int16>::lowest()) || value > static_cast<slong>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(value);
 }
 
@@ -1948,22 +1947,22 @@ int16 convert::to_int16(sbyte value) noexcept {
 }
 
 int16 convert::to_int16(uint16 value) {
-  if (value > static_cast<uint16>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint16>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(value);
 }
 
 int16 convert::to_int16(uint32 value) {
-  if (value > static_cast<uint32>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint32>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(value);
 }
 
 int16 convert::to_int16(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint64>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(value);
 }
 
 int16 convert::to_int16(xtd::ulong value) {
-  if (value > static_cast<xtd::ulong>(numeric_limits<int16>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<xtd::ulong>(std::numeric_limits<int16>::max())) throw overflow_exception {csf_};
   return static_cast<int16>(value);
 }
 
@@ -1981,25 +1980,25 @@ int16 convert::to_int16(const ustring& value, xtd::byte from_base) {
   }
 }
 
-int16 convert::to_int16(const string& value) {
+int16 convert::to_int16(const std::string& value) {
   return ustring::parse<int16>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-int16 convert::to_int16(const u8string& value) {
+int16 convert::to_int16(const std::u8string& value) {
   return ustring::parse<int16>(value);
 }
 #endif
 
-int16 convert::to_int16(const u16string& value) {
+int16 convert::to_int16(const std::u16string& value) {
   return ustring::parse<int16>(value);
 }
 
-int16 convert::to_int16(const u32string& value) {
+int16 convert::to_int16(const std::u32string& value) {
   return ustring::parse<int16>(value);
 }
 
-int16 convert::to_int16(const wstring& value) {
+int16 convert::to_int16(const std::wstring& value) {
   return ustring::parse<int16>(value);
 }
 
@@ -2045,7 +2044,7 @@ int16 convert::to_int16(wchar* value) {
   return ustring::parse<int16>(value);
 }
 
-int32 convert::to_int32(any value) {
+int32 convert::to_int32(std::any value) {
   try {
     return any_cast<int32>(value);
   } catch (...) {
@@ -2084,12 +2083,12 @@ int32 convert::to_int32(wchar value) noexcept {
 }
 
 int32 convert::to_int32(decimal value) {
-  if (value < static_cast<decimal>(numeric_limits<int32>::lowest()) || value > static_cast<decimal>(numeric_limits<int32>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<decimal>(std::numeric_limits<int32>::lowest()) || value > static_cast<decimal>(std::numeric_limits<int32>::max())) throw overflow_exception {csf_};
   return static_cast<int32>(math::round(value));
 }
 
 int32 convert::to_int32(double value) {
-  if (value < static_cast<double>(numeric_limits<int32>::lowest()) || value > static_cast<double>(numeric_limits<int32>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<double>(std::numeric_limits<int32>::lowest()) || value > static_cast<double>(std::numeric_limits<int32>::max())) throw overflow_exception {csf_};
   return static_cast<int32>(math::round(value));
 }
 
@@ -2106,12 +2105,12 @@ int32 convert::to_int32(int32 value) noexcept {
 }
 
 int32 convert::to_int32(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<int32>::lowest()) || value > static_cast<int64>(numeric_limits<int32>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int64>(std::numeric_limits<int32>::lowest()) || value > static_cast<int64>(std::numeric_limits<int32>::max())) throw overflow_exception {csf_};
   return static_cast<int32>(value);
 }
 
 int32 convert::to_int32(slong value) {
-  if (value < static_cast<slong>(numeric_limits<int32>::lowest()) || value > static_cast<slong>(numeric_limits<int32>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<slong>(std::numeric_limits<int32>::lowest()) || value > static_cast<slong>(std::numeric_limits<int32>::max())) throw overflow_exception {csf_};
   return static_cast<int32>(value);
 }
 
@@ -2124,17 +2123,17 @@ int32 convert::to_int32(uint16 value) noexcept {
 }
 
 int32 convert::to_int32(uint32 value) {
-  if (value > static_cast<uint32>(numeric_limits<int32>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint32>(std::numeric_limits<int32>::max())) throw overflow_exception {csf_};
   return static_cast<int32>(value);
 }
 
 int32 convert::to_int32(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<int32>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint64>(std::numeric_limits<int32>::max())) throw overflow_exception {csf_};
   return static_cast<int32>(value);
 }
 
 int32 convert::to_int32(xtd::ulong value) {
-  if (value > static_cast<xtd::ulong>(numeric_limits<int32>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<xtd::ulong>(std::numeric_limits<int32>::max())) throw overflow_exception {csf_};
   return static_cast<int32>(value);
 }
 
@@ -2152,25 +2151,25 @@ int32 convert::to_int32(const ustring& value, xtd::byte from_base) {
   }
 }
 
-int32 convert::to_int32(const string& value) {
+int32 convert::to_int32(const std::string& value) {
   return ustring::parse<int32>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-int32 convert::to_int32(const u8string& value) {
+int32 convert::to_int32(const std::u8string& value) {
   return ustring::parse<int32>(value);
 }
 #endif
 
-int32 convert::to_int32(const u16string& value) {
+int32 convert::to_int32(const std::u16string& value) {
   return ustring::parse<int32>(value);
 }
 
-int32 convert::to_int32(const u32string& value) {
+int32 convert::to_int32(const std::u32string& value) {
   return ustring::parse<int32>(value);
 }
 
-int32 convert::to_int32(const wstring& value) {
+int32 convert::to_int32(const std::wstring& value) {
   return ustring::parse<int32>(value);
 }
 
@@ -2216,7 +2215,7 @@ int32 convert::to_int32(wchar* value) {
   return ustring::parse<int32>(value);
 }
 
-int64 convert::to_int64(any value) {
+int64 convert::to_int64(std::any value) {
   try {
     return any_cast<int64>(value);
   } catch (...) {
@@ -2295,12 +2294,12 @@ int64 convert::to_int64(uint32 value) noexcept {
 }
 
 int64 convert::to_int64(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<int64>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint64>(std::numeric_limits<int64>::max())) throw overflow_exception {csf_};
   return static_cast<int64>(value);
 }
 
 int64 convert::to_int64(xtd::ulong value) {
-  if (value > static_cast<xtd::ulong>(numeric_limits<int64>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<xtd::ulong>(std::numeric_limits<int64>::max())) throw overflow_exception {csf_};
   return static_cast<int64>(value);
 }
 
@@ -2318,25 +2317,25 @@ int64 convert::to_int64(const ustring& value, xtd::byte from_base) {
   }
 }
 
-int64 convert::to_int64(const string& value) {
+int64 convert::to_int64(const std::string& value) {
   return ustring::parse<int64>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-int64 convert::to_int64(const u8string& value) {
+int64 convert::to_int64(const std::u8string& value) {
   return ustring::parse<int64>(value);
 }
 #endif
 
-int64 convert::to_int64(const u16string& value) {
+int64 convert::to_int64(const std::u16string& value) {
   return ustring::parse<int64>(value);
 }
 
-int64 convert::to_int64(const u32string& value) {
+int64 convert::to_int64(const std::u32string& value) {
   return ustring::parse<int64>(value);
 }
 
-int64 convert::to_int64(const wstring& value) {
+int64 convert::to_int64(const std::wstring& value) {
   return ustring::parse<int64>(value);
 }
 
@@ -2382,7 +2381,7 @@ int64 convert::to_int64(wchar* value) {
   return ustring::parse<int64>(value);
 }
 
-slong convert::to_llong(any value) {
+slong convert::to_llong(std::any value) {
   try {
     return any_cast<slong>(value);
   } catch (...) {
@@ -2461,12 +2460,12 @@ slong convert::to_llong(uint32 value) noexcept {
 }
 
 slong convert::to_llong(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<slong>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint64>(std::numeric_limits<slong>::max())) throw overflow_exception {csf_};
   return static_cast<slong>(value);
 }
 
 slong convert::to_llong(xtd::ulong value) {
-  if (value > static_cast<xtd::ulong>(numeric_limits<slong>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<xtd::ulong>(std::numeric_limits<slong>::max())) throw overflow_exception {csf_};
   return static_cast<slong>(value);
 }
 
@@ -2484,25 +2483,25 @@ slong convert::to_llong(const ustring& value, xtd::byte from_base) {
   }
 }
 
-slong convert::to_llong(const string& value) {
+slong convert::to_llong(const std::string& value) {
   return ustring::parse<slong>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-slong convert::to_llong(const u8string& value) {
+slong convert::to_llong(const std::u8string& value) {
   return ustring::parse<slong>(value);
 }
 #endif
 
-slong convert::to_llong(const u16string& value) {
+slong convert::to_llong(const std::u16string& value) {
   return ustring::parse<slong>(value);
 }
 
-slong convert::to_llong(const u32string& value) {
+slong convert::to_llong(const std::u32string& value) {
   return ustring::parse<slong>(value);
 }
 
-slong convert::to_llong(const wstring& value) {
+slong convert::to_llong(const std::wstring& value) {
   return ustring::parse<slong>(value);
 }
 
@@ -2548,7 +2547,7 @@ slong convert::to_llong(wchar* value) {
   return ustring::parse<slong>(value);
 }
 
-sbyte convert::to_sbyte(any value) {
+sbyte convert::to_sbyte(std::any value) {
   try {
     return any_cast<sbyte>(value);
   } catch (...) {
@@ -2575,52 +2574,52 @@ sbyte convert::to_sbyte(char8 value) noexcept {
 #endif
 
 sbyte convert::to_sbyte(char16 value) {
-  if (value > static_cast<char16>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<char16>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(char32 value) {
-  if (value > static_cast<char32>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<char32>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(wchar value) {
-  if (value > static_cast<wchar>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<wchar>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(decimal value) {
-  if (value < static_cast<decimal>(numeric_limits<sbyte>::lowest()) || value > static_cast<decimal>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<decimal>(std::numeric_limits<sbyte>::lowest()) || value > static_cast<decimal>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(math::round(value));
 }
 
 sbyte convert::to_sbyte(double value) {
-  if (value < static_cast<double>(numeric_limits<sbyte>::lowest()) || value > static_cast<double>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<double>(std::numeric_limits<sbyte>::lowest()) || value > static_cast<double>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(math::round(value));
 }
 
 sbyte convert::to_sbyte(float value) {
-  if (value < static_cast<float>(numeric_limits<sbyte>::lowest()) || value > static_cast<float>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<float>(std::numeric_limits<sbyte>::lowest()) || value > static_cast<float>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(math::round(value));
 }
 
 sbyte convert::to_sbyte(int16 value) {
-  if (value < static_cast<int16>(numeric_limits<sbyte>::lowest()) || value > static_cast<int16>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int16>(std::numeric_limits<sbyte>::lowest()) || value > static_cast<int16>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<sbyte>::lowest()) || value > static_cast<int32>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int32>(std::numeric_limits<sbyte>::lowest()) || value > static_cast<int32>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<sbyte>::lowest()) || value > static_cast<int64>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int64>(std::numeric_limits<sbyte>::lowest()) || value > static_cast<int64>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(slong value) {
-  if (value < static_cast<slong>(numeric_limits<sbyte>::lowest()) || value > static_cast<slong>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<slong>(std::numeric_limits<sbyte>::lowest()) || value > static_cast<slong>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
@@ -2629,22 +2628,22 @@ sbyte convert::to_sbyte(sbyte value) {
 }
 
 sbyte convert::to_sbyte(uint16 value) {
-  if (value > static_cast<uint16>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint16>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(uint32 value) {
-  if (value > static_cast<uint32>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint32>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint64>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
 sbyte convert::to_sbyte(xtd::ulong value) {
-  if (value > static_cast<xtd::ulong>(numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<xtd::ulong>(std::numeric_limits<sbyte>::max())) throw overflow_exception {csf_};
   return static_cast<sbyte>(value);
 }
 
@@ -2662,25 +2661,25 @@ sbyte convert::to_sbyte(const ustring& value, xtd::byte from_base) {
   }
 }
 
-sbyte convert::to_sbyte(const string& value) {
+sbyte convert::to_sbyte(const std::string& value) {
   return ustring::parse<sbyte>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-sbyte convert::to_sbyte(const u8string& value) {
+sbyte convert::to_sbyte(const std::u8string& value) {
   return ustring::parse<sbyte>(value);
 }
 #endif
 
-sbyte convert::to_sbyte(const u16string& value) {
+sbyte convert::to_sbyte(const std::u16string& value) {
   return ustring::parse<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(const u32string& value) {
+sbyte convert::to_sbyte(const std::u32string& value) {
   return ustring::parse<sbyte>(value);
 }
 
-sbyte convert::to_sbyte(const wstring& value) {
+sbyte convert::to_sbyte(const std::wstring& value) {
   return ustring::parse<sbyte>(value);
 }
 
@@ -2726,7 +2725,7 @@ sbyte convert::to_sbyte(wchar* value) {
   return ustring::parse<sbyte>(value);
 }
 
-uint16 convert::to_uint16(any value) {
+uint16 convert::to_uint16(std::any value) {
   try {
     return any_cast<uint16>(value);
   } catch (...) {
@@ -2757,7 +2756,7 @@ uint16 convert::to_uint16(char16 value) noexcept {
 }
 
 uint16 convert::to_uint16(char32 value) {
-  if (value > static_cast<char32>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<char32>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(value);
 }
 
@@ -2766,42 +2765,42 @@ uint16 convert::to_uint16(wchar value) noexcept {
 }
 
 uint16 convert::to_uint16(decimal value) {
-  if (value < static_cast<decimal>(numeric_limits<uint16>::lowest()) || value > static_cast<decimal>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<decimal>(std::numeric_limits<uint16>::lowest()) || value > static_cast<decimal>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(math::round(value));
 }
 
 uint16 convert::to_uint16(double value) {
-  if (value < static_cast<double>(numeric_limits<uint16>::lowest()) || value > static_cast<double>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<double>(std::numeric_limits<uint16>::lowest()) || value > static_cast<double>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(math::round(value));
 }
 
 uint16 convert::to_uint16(float value) {
-  if (value < static_cast<float>(numeric_limits<uint16>::lowest()) || value > static_cast<float>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<float>(std::numeric_limits<uint16>::lowest()) || value > static_cast<float>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(math::round(value));
 }
 
 uint16 convert::to_uint16(int16 value) {
-  if (value < static_cast<int16>(numeric_limits<uint16>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<int16>(std::numeric_limits<uint16>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint16>(value);
 }
 
 uint16 convert::to_uint16(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<uint16>::lowest()) || value > static_cast<int32>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int32>(std::numeric_limits<uint16>::lowest()) || value > static_cast<int32>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(value);
 }
 
 uint16 convert::to_uint16(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<uint16>::lowest()) || value > static_cast<int64>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int64>(std::numeric_limits<uint16>::lowest()) || value > static_cast<int64>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(value);
 }
 
 uint16 convert::to_uint16(slong value) {
-  if (value < static_cast<slong>(numeric_limits<uint16>::lowest()) || value > static_cast<slong>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<slong>(std::numeric_limits<uint16>::lowest()) || value > static_cast<slong>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(value);
 }
 
 uint16 convert::to_uint16(sbyte value) {
-  if (value < static_cast<sbyte>(numeric_limits<uint16>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<sbyte>(std::numeric_limits<uint16>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint16>(value);
 }
 
@@ -2810,17 +2809,17 @@ uint16 convert::to_uint16(uint16 value) noexcept {
 }
 
 uint16 convert::to_uint16(uint32 value) {
-  if (value > static_cast<uint32>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint32>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(value);
 }
 
 uint16 convert::to_uint16(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint64>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(value);
 }
 
 uint16 convert::to_uint16(xtd::ulong value) {
-  if (value > static_cast<xtd::ulong>(numeric_limits<uint16>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<xtd::ulong>(std::numeric_limits<uint16>::max())) throw overflow_exception {csf_};
   return static_cast<uint16>(value);
 }
 
@@ -2838,25 +2837,25 @@ uint16 convert::to_uint16(const ustring& value, xtd::byte from_base) {
   }
 }
 
-uint16 convert::to_uint16(const string& value) {
+uint16 convert::to_uint16(const std::string& value) {
   return ustring::parse<uint16>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-uint16 convert::to_uint16(const u8string& value) {
+uint16 convert::to_uint16(const std::u8string& value) {
   return ustring::parse<uint16>(value);
 }
 #endif
 
-uint16 convert::to_uint16(const u16string& value) {
+uint16 convert::to_uint16(const std::u16string& value) {
   return ustring::parse<uint16>(value);
 }
 
-uint16 convert::to_uint16(const u32string& value) {
+uint16 convert::to_uint16(const std::u32string& value) {
   return ustring::parse<uint16>(value);
 }
 
-uint16 convert::to_uint16(const wstring& value) {
+uint16 convert::to_uint16(const std::wstring& value) {
   return ustring::parse<uint16>(value);
 }
 
@@ -2902,7 +2901,7 @@ uint16 convert::to_uint16(wchar* value) {
   return ustring::parse<uint16>(value);
 }
 
-uint32 convert::to_uint32(any value) {
+uint32 convert::to_uint32(std::any value) {
   try {
     return any_cast<uint32>(value);
   } catch (...) {
@@ -2941,42 +2940,42 @@ uint32 convert::to_uint32(wchar value) noexcept {
 }
 
 uint32 convert::to_uint32(decimal value) {
-  if (value < static_cast<decimal>(numeric_limits<uint32>::lowest()) || value > static_cast<decimal>(numeric_limits<uint32>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<decimal>(std::numeric_limits<uint32>::lowest()) || value > static_cast<decimal>(std::numeric_limits<uint32>::max())) throw overflow_exception {csf_};
   return static_cast<uint32>(math::round(value));
 }
 
 uint32 convert::to_uint32(double value) {
-  if (value < static_cast<double>(numeric_limits<uint32>::lowest()) || value > static_cast<double>(numeric_limits<uint32>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<double>(std::numeric_limits<uint32>::lowest()) || value > static_cast<double>(std::numeric_limits<uint32>::max())) throw overflow_exception {csf_};
   return static_cast<uint32>(math::round(value));
 }
 
 uint32 convert::to_uint32(float value) {
-  if (value < static_cast<float>(numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<float>(std::numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint32>(math::round(value));
 }
 
 uint32 convert::to_uint32(int16 value) {
-  if (value < static_cast<int16>(numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<int16>(std::numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint32>(value);
 }
 
 uint32 convert::to_uint32(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<int32>(std::numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint32>(value);
 }
 
 uint32 convert::to_uint32(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<uint32>::lowest()) || value > static_cast<int64>(numeric_limits<uint32>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<int64>(std::numeric_limits<uint32>::lowest()) || value > static_cast<int64>(std::numeric_limits<uint32>::max())) throw overflow_exception {csf_};
   return static_cast<uint32>(value);
 }
 
 uint32 convert::to_uint32(slong value) {
-  if (value < static_cast<slong>(numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<slong>(std::numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint32>(value);
 }
 
 uint32 convert::to_uint32(sbyte value) {
-  if (value < static_cast<sbyte>(numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<sbyte>(std::numeric_limits<uint32>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint32>(value);
 }
 
@@ -2989,12 +2988,12 @@ uint32 convert::to_uint32(uint32 value) noexcept {
 }
 
 uint32 convert::to_uint32(uint64 value) {
-  if (value > static_cast<uint64>(numeric_limits<uint32>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<uint64>(std::numeric_limits<uint32>::max())) throw overflow_exception {csf_};
   return static_cast<uint32>(value);
 }
 
 uint32 convert::to_uint32(xtd::ulong value) {
-  if (value > static_cast<xtd::ulong>(numeric_limits<uint32>::max())) throw overflow_exception {csf_};
+  if (value > static_cast<xtd::ulong>(std::numeric_limits<uint32>::max())) throw overflow_exception {csf_};
   return static_cast<uint32>(value);
 }
 
@@ -3012,25 +3011,25 @@ uint32 convert::to_uint32(const ustring& value, xtd::byte from_base) {
   }
 }
 
-uint32 convert::to_uint32(const string& value) {
+uint32 convert::to_uint32(const std::string& value) {
   return ustring::parse<uint32>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-uint32 convert::to_uint32(const u8string& value) {
+uint32 convert::to_uint32(const std::u8string& value) {
   return ustring::parse<uint32>(value);
 }
 #endif
 
-uint32 convert::to_uint32(const u16string& value) {
+uint32 convert::to_uint32(const std::u16string& value) {
   return ustring::parse<uint32>(value);
 }
 
-uint32 convert::to_uint32(const u32string& value) {
+uint32 convert::to_uint32(const std::u32string& value) {
   return ustring::parse<uint32>(value);
 }
 
-uint32 convert::to_uint32(const wstring& value) {
+uint32 convert::to_uint32(const std::wstring& value) {
   return ustring::parse<uint32>(value);
 }
 
@@ -3076,7 +3075,7 @@ uint32 convert::to_uint32(wchar* value) {
   return ustring::parse<uint32>(value);
 }
 
-uint64 convert::to_uint64(any value) {
+uint64 convert::to_uint64(std::any value) {
   try {
     return any_cast<uint64>(value);
   } catch (...) {
@@ -3115,42 +3114,42 @@ uint64 convert::to_uint64(wchar value) noexcept {
 }
 
 uint64 convert::to_uint64(decimal value) {
-  if (value < static_cast<decimal>(numeric_limits<uint64>::lowest()) || value > static_cast<decimal>(numeric_limits<uint64>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<decimal>(std::numeric_limits<uint64>::lowest()) || value > static_cast<decimal>(std::numeric_limits<uint64>::max())) throw overflow_exception {csf_};
   return static_cast<uint64>(math::round(value));
 }
 
 uint64 convert::to_uint64(double value) {
-  if (value < static_cast<double>(numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<double>(std::numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint64>(math::round(value));
 }
 
 uint64 convert::to_uint64(float value) {
-  if (value < static_cast<float>(numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<float>(std::numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint64>(math::round(value));
 }
 
 uint64 convert::to_uint64(int16 value) {
-  if (value < static_cast<int16>(numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<int16>(std::numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint64>(value);
 }
 
 uint64 convert::to_uint64(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<int32>(std::numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint64>(value);
 }
 
 uint64 convert::to_uint64(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<int64>(std::numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint32>(value);
 }
 
 uint64 convert::to_uint64(slong value) {
-  if (value < static_cast<slong>(numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<slong>(std::numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint64>(value);
 }
 
 uint64 convert::to_uint64(sbyte value) {
-  if (value < static_cast<sbyte>(numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<sbyte>(std::numeric_limits<uint64>::lowest())) throw overflow_exception {csf_};
   return static_cast<uint64>(value);
 }
 
@@ -3174,7 +3173,7 @@ uint64 convert::to_uint64(const ustring& value) {
   return ustring::parse<uint64>(value);
 }
 
-uint64 convert::to_uint64(const string& value) {
+uint64 convert::to_uint64(const std::string& value) {
   return ustring::parse<uint64>(value);
 }
 
@@ -3189,20 +3188,20 @@ uint64 convert::to_uint64(const ustring& value, xtd::byte from_base) {
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-uint64 convert::to_uint64(const u8string& value) {
+uint64 convert::to_uint64(const std::u8string& value) {
   return ustring::parse<uint64>(value);
 }
 #endif
 
-uint64 convert::to_uint64(const u16string& value) {
+uint64 convert::to_uint64(const std::u16string& value) {
   return ustring::parse<uint64>(value);
 }
 
-uint64 convert::to_uint64(const u32string& value) {
+uint64 convert::to_uint64(const std::u32string& value) {
   return ustring::parse<uint64>(value);
 }
 
-uint64 convert::to_uint64(const wstring& value) {
+uint64 convert::to_uint64(const std::wstring& value) {
   return ustring::parse<uint64>(value);
 }
 
@@ -3248,7 +3247,7 @@ uint64 convert::to_uint64(wchar* value) {
   return ustring::parse<uint64>(value);
 }
 
-xtd::ulong convert::to_ullong(any value) {
+xtd::ulong convert::to_ullong(std::any value) {
   try {
     return any_cast<xtd::ulong>(value);
   } catch (...) {
@@ -3287,42 +3286,42 @@ xtd::ulong convert::to_ullong(wchar value) noexcept {
 }
 
 xtd::ulong convert::to_ullong(decimal value) {
-  if (value < static_cast<decimal>(numeric_limits<xtd::ulong>::lowest()) || value > static_cast<decimal>(numeric_limits<xtd::ulong>::max())) throw overflow_exception {csf_};
+  if (value < static_cast<decimal>(std::numeric_limits<xtd::ulong>::lowest()) || value > static_cast<decimal>(std::numeric_limits<xtd::ulong>::max())) throw overflow_exception {csf_};
   return static_cast<xtd::ulong>(math::round(value));
 }
 
 xtd::ulong convert::to_ullong(double value) {
-  if (value < static_cast<double>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<double>(std::numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
   return static_cast<xtd::ulong>(math::round(value));
 }
 
 xtd::ulong convert::to_ullong(float value) {
-  if (value < static_cast<float>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<float>(std::numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
   return static_cast<xtd::ulong>(math::round(value));
 }
 
 xtd::ulong convert::to_ullong(int16 value) {
-  if (value < static_cast<int16>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<int16>(std::numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
   return static_cast<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(int32 value) {
-  if (value < static_cast<int32>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<int32>(std::numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
   return static_cast<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(int64 value) {
-  if (value < static_cast<int64>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<int64>(std::numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
   return static_cast<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(slong value) {
-  if (value < static_cast<slong>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<slong>(std::numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
   return static_cast<xtd::ulong>(value);
 }
 
 xtd::ulong convert::to_ullong(sbyte value) {
-  if (value < static_cast<sbyte>(numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
+  if (value < static_cast<sbyte>(std::numeric_limits<xtd::ulong>::lowest())) throw overflow_exception {csf_};
   return static_cast<xtd::ulong>(value);
 }
 
@@ -3356,25 +3355,25 @@ xtd::ulong convert::to_ullong(const ustring& value, xtd::byte from_base) {
   }
 }
 
-xtd::ulong convert::to_ullong(const string& value) {
+xtd::ulong convert::to_ullong(const std::string& value) {
   return ustring::parse<xtd::ulong>(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-xtd::ulong convert::to_ullong(const u8string& value) {
+xtd::ulong convert::to_ullong(const std::u8string& value) {
   return ustring::parse<xtd::ulong>(value);
 }
 #endif
 
-xtd::ulong convert::to_ullong(const u16string& value) {
+xtd::ulong convert::to_ullong(const std::u16string& value) {
   return ustring::parse<xtd::ulong>(value);
 }
 
-xtd::ulong convert::to_ullong(const u32string& value) {
+xtd::ulong convert::to_ullong(const std::u32string& value) {
   return ustring::parse<xtd::ulong>(value);
 }
 
-xtd::ulong convert::to_ullong(const wstring& value) {
+xtd::ulong convert::to_ullong(const std::wstring& value) {
   return ustring::parse<xtd::ulong>(value);
 }
 
@@ -3420,7 +3419,7 @@ xtd::ulong convert::to_ullong(wchar* value) {
   return ustring::parse<xtd::ulong>(value);
 }
 
-ustring convert::to_string(any value) {
+ustring convert::to_string(std::any value) {
   return ustring::format("{}", value);
 }
 
@@ -3606,25 +3605,25 @@ ustring convert::to_string(const ustring& value) {
   return value;
 }
 
-ustring convert::to_string(const string& value) {
+ustring convert::to_string(const std::string& value) {
   return value;
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-ustring convert::to_string(const u8string& value) {
+ustring convert::to_string(const std::u8string& value) {
   return value;
 }
 #endif
 
-ustring convert::to_string(const u16string& value) {
+ustring convert::to_string(const std::u16string& value) {
   return value;
 }
 
-ustring convert::to_string(const u32string& value) {
+ustring convert::to_string(const std::u32string& value) {
   return value;
 }
 
-ustring convert::to_string(const wstring& value) {
+ustring convert::to_string(const std::wstring& value) {
   return value;
 }
 
@@ -3670,7 +3669,7 @@ ustring convert::to_string(wchar* value) {
   return value;
 }
 
-ustring convert::to_ustring(any value) {
+ustring convert::to_ustring(std::any value) {
   return to_string(value);
 }
 
@@ -3796,25 +3795,25 @@ ustring convert::to_ustring(const ustring& value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const string& value) {
+ustring convert::to_ustring(const std::string& value) {
   return to_string(value);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-ustring convert::to_ustring(const u8string& value) {
+ustring convert::to_ustring(const std::u8string& value) {
   return to_string(value);
 }
 #endif
 
-ustring convert::to_ustring(const u16string& value) {
+ustring convert::to_ustring(const std::u16string& value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const u32string& value) {
+ustring convert::to_ustring(const std::u32string& value) {
   return to_string(value);
 }
 
-ustring convert::to_ustring(const wstring& value) {
+ustring convert::to_ustring(const std::wstring& value) {
   return to_string(value);
 }
 
