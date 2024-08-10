@@ -16,7 +16,6 @@
 #include <xtd/native/file_system>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace io;
 
@@ -241,28 +240,28 @@ directory_info::file_system_info_iterator directory_info::enumerate_file_system_
   return file_system_info_iterator {full_path_, pattern};
 }
 
-vector<directory_info> directory_info::get_directories() const {
+std::vector<directory_info> directory_info::get_directories() const {
   return get_directories("*");
 }
 
-vector<directory_info> directory_info::get_directories(const ustring& pattern) const {
-  return {begin(enumerate_directories(pattern)), end(enumerate_directories(pattern))};
+std::vector<directory_info> directory_info::get_directories(const ustring& pattern) const {
+  return {std::begin(enumerate_directories(pattern)), std::end(enumerate_directories(pattern))};
 }
 
-vector<file_info> directory_info::get_files() const {
+std::vector<file_info> directory_info::get_files() const {
   return get_files("*");
 }
 
-vector<file_info> directory_info::get_files(const ustring& pattern) const {
-  return {begin(enumerate_files(pattern)), end(enumerate_files(pattern))};
+std::vector<file_info> directory_info::get_files(const ustring& pattern) const {
+  return {std::begin(enumerate_files(pattern)), std::end(enumerate_files(pattern))};
 }
 
-vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos() const {
+std::vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos() const {
   return get_file_system_infos("*");
 }
 
-vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos(const ustring& pattern) const {
-  return {begin(enumerate_file_system_infos(pattern)), end(enumerate_file_system_infos(pattern))};
+std::vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos(const ustring& pattern) const {
+  return {std::begin(enumerate_file_system_infos(pattern)), std::end(enumerate_file_system_infos(pattern))};
 }
 
 void directory_info::move_to(const ustring& dest_dir_name) {

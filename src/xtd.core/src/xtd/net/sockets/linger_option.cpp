@@ -1,6 +1,5 @@
 #include "../../../../include/xtd/net/sockets/linger_option.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;

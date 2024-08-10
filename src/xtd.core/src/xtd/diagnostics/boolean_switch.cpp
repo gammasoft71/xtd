@@ -2,7 +2,6 @@
 #include "../../../include/xtd/format_exception.h"
 #include "../../../include/xtd/as.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 

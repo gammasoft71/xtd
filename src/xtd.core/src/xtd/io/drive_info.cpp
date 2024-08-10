@@ -5,7 +5,6 @@
 #include <xtd/native/drive>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace io;
 
@@ -14,7 +13,7 @@ const drive_info drive_info::empty;
 drive_info::drive_info(const ustring& drive_name) : drive_name_(drive_name) {
   if (drive_name.empty()) throw argument_exception {csf_};
   auto drives = native::drive::get_drives();
-  if (find(drives.begin(), drives.end(), drive_name) == drives.end()) throw argument_exception {csf_};
+  if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) throw argument_exception {csf_};
 }
 
 size_t drive_info::available_free_space() const {
@@ -65,10 +64,10 @@ ustring drive_info::volume_label() const {
   return volume_name;
 }
 
-vector<drive_info> drive_info::get_drives() noexcept {
-  auto drives = vector<drive_info> {};
+std::vector<drive_info> drive_info::get_drives() noexcept {
+  auto drives = std::vector<drive_info> {};
   auto native_drives = native::drive::get_drives();
-  for_each(native_drives.begin(), native_drives.end(), [&](auto drive) {drives.emplace_back(drive_info(drive));});
+  std::for_each(native_drives.begin(), native_drives.end(), [&](auto drive) {drives.emplace_back(drive_info(drive));});
   return drives;
 }
 

@@ -18,8 +18,6 @@
 #include <xtd/native/file_system>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
-using namespace std::chrono;
 using namespace xtd;
 using namespace io;
 
@@ -227,32 +225,32 @@ ustring directory::get_current_directory() {
   return path;
 }
 
-vector<ustring> directory::get_directories(const ustring& path) {
+std::vector<ustring> directory::get_directories(const ustring& path) {
   return get_directories(path, "*");
 }
 
-vector<ustring> directory::get_directories(const ustring& path, const ustring& search_pattern) {
-  return {begin(enumerate_directories(path, search_pattern)), end(enumerate_directories(path, search_pattern))};
+std::vector<ustring> directory::get_directories(const ustring& path, const ustring& search_pattern) {
+  return {std::begin(enumerate_directories(path, search_pattern)), std::end(enumerate_directories(path, search_pattern))};
 }
 
 ustring directory::get_directory_root(const ustring& path) {
   return path::get_path_root(path);
 }
 
-vector<ustring> directory::get_files(const ustring& path) {
+std::vector<ustring> directory::get_files(const ustring& path) {
   return get_files(path, "*");
 }
 
-vector<ustring> directory::get_files(const ustring& path, const ustring& search_pattern) {
-  return {begin(enumerate_files(path, search_pattern)), end(enumerate_files(path, search_pattern))};
+std::vector<ustring> directory::get_files(const ustring& path, const ustring& search_pattern) {
+  return {std::begin(enumerate_files(path, search_pattern)), std::end(enumerate_files(path, search_pattern))};
 }
 
-vector<ustring> directory::get_file_system_entries(const ustring& path) {
+std::vector<ustring> directory::get_file_system_entries(const ustring& path) {
   return get_file_system_entries(path, "*");
 }
 
-vector<ustring> directory::get_file_system_entries(const ustring& path, const ustring& search_pattern) {
-  return {begin(enumerate_file_system_entries(path, search_pattern)), end(enumerate_file_system_entries(path, search_pattern))};
+std::vector<ustring> directory::get_file_system_entries(const ustring& path, const ustring& search_pattern) {
+  return {std::begin(enumerate_file_system_entries(path, search_pattern)), std::end(enumerate_file_system_entries(path, search_pattern))};
 }
 
 date_time directory::get_last_access_time(const ustring& path) {
@@ -277,10 +275,10 @@ date_time directory::get_last_write_time(const ustring& path) {
   return date_time::from_time_t(last_write_time, date_time_kind::local);
 }
 
-vector<ustring> directory::get_logical_drives() {
-  auto logical_drives = vector<ustring> {};
+std::vector<ustring> directory::get_logical_drives() {
+  auto logical_drives = std::vector<ustring> {};
   auto drives = drive_info::get_drives();
-  for_each(drives.begin(), drives.end(), [&](auto drive) {logical_drives.emplace_back(drive.name());});
+  std::for_each(drives.begin(), drives.end(), [&](auto drive) {logical_drives.emplace_back(drive.name());});
   return logical_drives;
 }
 
@@ -363,8 +361,8 @@ void directory::set_permissions(const xtd::ustring& path, xtd::io::file_permissi
   if (native::file_system::set_permissions(path, static_cast<int32>(permissions)) != 0) throw io_exception {csf_};
 }
 
-tuple<time_t, time_t, time_t> directory::get_file_times(const ustring& path) {
+std::tuple<time_t, time_t, time_t> directory::get_file_times(const ustring& path) {
   auto creation_time = time_t {}, last_access_time = time_t {}, last_write_time = time_t {};
   if (native::file_system::get_file_times(path, creation_time, last_access_time, last_write_time) != 0) throw io_exception {csf_};
-  return make_tuple(creation_time, last_access_time, last_write_time);
+  return std::make_tuple(creation_time, last_access_time, last_write_time);
 }

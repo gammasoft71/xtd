@@ -9,13 +9,12 @@
 #include <xtd/native/debugger>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::reflection;
 
 extern char** __diagnostics_argv;
-auto __debug_mutex__ = recursive_mutex {};
+auto __debug_mutex__ = std::recursive_mutex {};
 auto __listeners__ = trace_listener_collection {xtd::new_sptr<default_trace_listener>()};
 auto __debug_use_debug_global_lock__ = true;
 

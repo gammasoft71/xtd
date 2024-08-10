@@ -2,7 +2,6 @@
 #include "../../../include/xtd/io/io_exception.h"
 #include "../../../include/xtd/environment.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::configuration;
 using namespace xtd::io;
@@ -22,7 +21,7 @@ file_settings::file_settings(const ustring& file_path) : file_path_ {file_path !
   load(file_path_);
 }
 
-file_settings::file_settings(iostream& stream) : stream_ {&stream} {
+file_settings::file_settings(std::iostream& stream) : stream_ {&stream} {
   if (!stream.good() || stream_->peek() == EOF) return;
   load(*stream_);
 }
@@ -79,8 +78,8 @@ file_settings::string_collection file_settings::sections() const noexcept {
   return sections;
 }
 
-optional<reference_wrapper<iostream>> file_settings::stream() const noexcept {
-  return stream_ ? optional<reference_wrapper<iostream>> {*stream_} : optional<reference_wrapper<iostream>> {};
+std::optional<std::reference_wrapper<std::iostream>> file_settings::stream() const noexcept {
+  return stream_ ? std::optional<std::reference_wrapper<std::iostream>> {*stream_} : std::nullopt;
 }
 
 xtd::ustring file_settings::top_file_comment() const noexcept {
@@ -161,7 +160,7 @@ void file_settings::load(const xtd::ustring& file_path) {
   from_string(stream_reader {file_path_}.read_to_end());
 }
 
-void file_settings::load(istream& stream) {
+void file_settings::load(std::istream& stream) {
   if (!stream.good()) throw io_exception {csf_};
   from_string(stream_reader {stream}.read_to_end());
 }
@@ -209,7 +208,7 @@ void file_settings::save_as(const xtd::ustring& file_path) {
   sw.write(to_string());
 }
 
-void file_settings::save_as(ostream& stream) {
+void file_settings::save_as(std::ostream& stream) {
   auto sw = stream_writer {stream};
   sw.write(to_string());
 }

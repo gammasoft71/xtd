@@ -1,6 +1,5 @@
 #include "../../../include/xtd/io/string_reader.h"
 
-using namespace std;
 using namespace xtd::io;
 
 string_reader::string_reader(const ustring& input) : stream_(input) {

@@ -36,9 +36,6 @@ At the end of the main function we will execute the event loop until the window 
 #include <Windows.h>
 #include <CommCtrl.h>
 
-using namespace std;
-using namespace std::literals;
-
 // Handles of controls
 HWND window = nullptr;
 HWND button1 = nullptr;
@@ -56,7 +53,7 @@ LRESULT OnWindowClose(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 // button1 click event
 LRESULT OnButton1Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   static auto buttonClicked = 0;
-  auto result = L"button1 clicked "s + to_wstring(++buttonClicked) + L" times"s;
+  auto result = L"button1 clicked " + std::to_wstring(++buttonClicked) + L" times";
   SendMessage(staticText1, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(result.c_str()));
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
@@ -64,7 +61,7 @@ LRESULT OnButton1Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 // button2 click event
 LRESULT OnButton2Click(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
   static auto buttonClicked = 0;
-  auto result = L"button2 clicked "s + to_wstring(++buttonClicked) + L" times"s;
+  auto result = L"button2 clicked " + std::to_wstring(++buttonClicked) + L" times";
   SendMessage(staticText2, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(result.c_str()));
   return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);
 }
@@ -91,7 +88,7 @@ auto main() -> int {
   
   // Displays window
   ShowWindow(window, SW_SHOW);
-
+  
   // Run Windows loop message until window closed
   MSG message = {0};
   while (GetMessage(&message, nullptr, 0, 0)) {

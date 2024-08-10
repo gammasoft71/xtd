@@ -4,7 +4,6 @@
 #include <xtd/native/system_sound>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::media;
 

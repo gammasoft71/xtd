@@ -1,6 +1,5 @@
 #include "../../../include/xtd/io/string_writer.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
@@ -8,11 +7,11 @@ string_writer::string_writer(const ustring& str) {
   write(str);
 }
 
-const ostream& string_writer::base_stream() const noexcept {
+const std::ostream& string_writer::base_stream() const noexcept {
   return stream_;
 }
 
-ostream& string_writer::base_stream() noexcept {
+std::ostream& string_writer::base_stream() noexcept {
   return stream_;
 }
 
