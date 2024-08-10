@@ -160,7 +160,7 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(cend) {
       auto items = list {84, 42, 21};
-      assert::throws<argument_out_of_range_exception>([&] {*items.cend();}, csf_);
+      assert::throws<index_out_of_range_exception>([&] {*items.cend();}, csf_);
     }
     
     void test_method_(count) {
@@ -226,14 +226,14 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(end) {
       auto items = list {84, 42, 21};
-      assert::throws<argument_out_of_range_exception>([&] {*items.end();}, csf_);
+      assert::throws<index_out_of_range_exception>([&] {*items.end();}, csf_);
     }
     
     void test_method_(front) {
       auto items = list {84, 42, 21};
       assert::are_equal(84, items.front(), csf_);
 
-      assert::throws<argument_out_of_range_exception>([&] {list<int> {}.front();}, csf_);
+      assert::throws<index_out_of_range_exception>([&] {list<int> {}.front();}, csf_);
     }
 
     void test_method_(is_fixed_size) {
