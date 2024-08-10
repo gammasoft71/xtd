@@ -8,13 +8,12 @@
 #include <fstream>
 #include <sys/stat.h>
 
-using namespace std;
 using namespace xtd::native;
 
 int32_t file::copy(const std::string& source_file, const std::string& target_file) {
-  auto ifs = ifstream {source_file, ios::binary};
+  auto ifs = std::ifstream {source_file, std::ios::binary};
   if (!ifs) return -1;
-  auto ofs = ofstream {target_file, ios::trunc | ios::binary};
+  auto ofs = std::ofstream {target_file, std::ios::trunc | std::ios::binary};
   if (!ofs) return -2;
   ofs << ifs.rdbuf();
   ifs.close();

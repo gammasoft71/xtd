@@ -202,7 +202,7 @@ The following example shows how to get current informations with helper :
 #include <xtd/tunit>
 #include <iostream>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 void trace_message(const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
@@ -223,7 +223,7 @@ The following example shows how to get same current informations without helper 
 #include <xtd/tunit>
 #include <iostream>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 void trace_message(const string& message, const xtd::diagnostics::stack_frame& stack_frame) {

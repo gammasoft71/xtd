@@ -146,13 +146,13 @@ startup_(examples::program::main);
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 namespace examples {
   class program {
   public:
-    static void main(const vector<ustring>& args) {
+    static void main(const list<ustring>& args) {
       // Write arguments to the console output
       for (auto arg : args)
         console::write_line(arg);
@@ -171,13 +171,13 @@ startup_(examples::program::main);
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 namespace examples {
   class program {
   public:
-    static auto main(const vector<ustring>& args) -> int {
+    static auto main(const list<ustring>& args) -> int {
       // Write arguments to the console output
       for (auto arg : args)
         console::write_line(arg);
@@ -193,7 +193,6 @@ namespace examples {
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 
 namespace examples {
@@ -218,7 +217,6 @@ startup_(examples::program::main);
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 
 namespace examples {

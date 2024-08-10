@@ -45,7 +45,6 @@ The following code shows how to convert [xtd::ustring](https://gammasoft71.githu
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
@@ -75,7 +74,6 @@ The following code shows how to convert [std::u16string](https://en.cppreference
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {

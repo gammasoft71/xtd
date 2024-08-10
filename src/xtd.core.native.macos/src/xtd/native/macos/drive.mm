@@ -9,16 +9,15 @@
 #include <sys/mount.h>
 #include <sys/statvfs.h>
 
-using namespace std;
 using namespace xtd::native;
 
 namespace {
-  auto root_drive = string {"/"};
-  auto ram_drives = vector<string> {"/dev"};
-  auto amovible_mounteds = vector<string> {};
-  auto amovible_mounted_points = vector<string> {"/System/Volumes"};
-  auto network_drives = vector<string> {"/System/Volumes/Data/home"};
-  auto network_drive_points = vector<string> {"/Volumes"};
+  auto root_drive = std::string {"/"};
+  auto ram_drives = std::vector<std::string> {"/dev"};
+  auto amovible_mounteds = std::vector<std::string> {};
+  auto amovible_mounted_points = std::vector<std::string> {"/System/Volumes"};
+  auto network_drives = std::vector<std::string> {"/System/Volumes/Data/home"};
+  auto network_drive_points = std::vector<std::string> {"/Volumes"};
 }
 
 bool drive::get_available_free_space(const std::string& root_path_name, size_t& free_bytes, size_t& total_number_of_bytes, size_t& total_number_of_free_bytes) {
@@ -52,7 +51,7 @@ int32_t drive::get_drive_type(const std::string& root_path_name) {
 }
 
 std::vector<std::string> drive::get_drives() {
-  auto drives = vector<string> {};
+  auto drives = std::vector<std::string> {};
   drives.push_back(root_drive);
   drives.insert(drives.end(), ram_drives.begin(), ram_drives.end());
   
@@ -61,9 +60,9 @@ std::vector<std::string> drive::get_drives() {
   auto file_attributes = 0;
   for (auto amovible_mounted_point : amovible_mounted_points) {
     if ((file_system::get_attributes(amovible_mounted_point, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
-      for (string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {
+      for (std::string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {
         struct statfs stat;
-        if (statfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive)
+        if (statfs(drive.c_str(), &stat) == 0 && std::string(stat.f_mntonname) != root_drive)
           drives.push_back(drive);
       }
     }
@@ -75,7 +74,7 @@ std::vector<std::string> drive::get_drives() {
     if ((file_system::get_attributes(network_drive, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
       for (auto drive : directory::enumerate_directories(network_drive, "*")) {
         struct statfs stat;
-        if (statfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive  && !macos::strings::ends_with(drive, ".timemachine")  && !macos::strings::ends_with(drive, ".localsnapshots"))
+        if (statfs(drive.c_str(), &stat) == 0 && std::string(stat.f_mntonname) != root_drive  && !macos::strings::ends_with(drive, ".timemachine")  && !macos::strings::ends_with(drive, ".localsnapshots"))
           drives.push_back(drive);
       }
     }

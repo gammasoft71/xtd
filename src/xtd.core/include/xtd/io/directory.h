@@ -268,8 +268,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
@@ -279,7 +279,7 @@ namespace xtd {
       ///       // Set a variable to the My Documents path.
       ///       ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
       ///
-      ///       vector<ustring> dirs(begin(directory::enumerate_directories(doc_path)), end(directory::enumerate_directories(doc_path)));
+      ///       list<ustring> dirs(begin(directory::enumerate_directories(doc_path)), end(directory::enumerate_directories(doc_path)));
       ///
       ///       for (auto dir : dirs) {
       ///         console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
@@ -312,8 +312,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
@@ -323,7 +323,7 @@ namespace xtd {
       ///       ustring dir_path = R"(\\archives\2009\reports)";
       ///
       ///       // Create a List collection.
-      ///       auto dirs = vector<ustring>(begin(directory::enumerate_directories(dir_path, "dv_*")), end(directory::enumerate_directories(dir_path, "dv_*")));
+      ///       auto dirs = list<ustring>(begin(directory::enumerate_directories(dir_path, "dv_*")), end(directory::enumerate_directories(dir_path, "dv_*")));
       ///
       ///       // Show results.
       ///       for (auto dir : dirs) {
@@ -480,13 +480,13 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
       /// public:
-      ///   static auto main(const vector<ustring>& args) {
+      ///   static auto main(const list<ustring>& args) {
       ///     for (ustring path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
@@ -504,12 +504,12 @@ namespace xtd {
       ///   // that are found, and process the files they contain.
       ///   static void process_directory(const ustring& target_directory) {
       ///     // Process the list of files found in the directory.
-      ///     vector<ustring> file_entries = directory::get_files(target_directory);
+      ///     list<ustring> file_entries = directory::get_files(target_directory);
       ///     for (ustring file_name : file_entries)
       ///       process_file(file_name);
       ///
       ///     // Recurse into subdirectories of this directory.
-      ///     vector<ustring> subdirectory_entries = directory::get_directories(target_directory);
+      ///     list<ustring> subdirectory_entries = directory::get_directories(target_directory);
       ///     for (ustring subdirectory : subdirectory_entries)
       ///       process_directory(subdirectory);
       ///   }
@@ -628,13 +628,13 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
       /// public:
-      ///   static auto main(const vector<ustring>& args) {
+      ///   static auto main(const list<ustring>& args) {
       ///     for (ustring path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
@@ -691,8 +691,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
@@ -700,7 +700,7 @@ namespace xtd {
       ///   static auto main() {
       ///     try {
       ///       // Only get subdirectories that begin with the letter "p."
-      ///       vector<ustring> dirs = directory::get_directories(R"(c:\)", "p*");
+      ///       list<ustring> dirs = directory::get_directories(R"(c:\)", "p*");
       ///       console::write_line("The number of directories starting with p is {0}.", dirs.size());
       ///       for (ustring dir : dirs) {
       ///         console::write_line(dir);
@@ -781,13 +781,13 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
       /// public:
-      ///   static auto main(const vector<ustring>& args) {
+      ///   static auto main(const vector<list>& args) {
       ///     for (ustring path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
@@ -845,8 +845,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
@@ -854,7 +854,7 @@ namespace xtd {
       ///   static auto main() {
       ///     try {
       ///       // Only get files that begin with the letter "c".
-      ///       vector<ustring> dirs = directory::get_files(R"(c:\", "c*)");
+      ///       list<ustring> dirs = directory::get_files(R"(c:\", "c*)");
       ///       console::write_line("The number of files starting with c is {0}.", dirs.size());
       ///       for (ustring dir : dirs) {
       ///         console::write_line(dir);
@@ -899,8 +899,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       ///
       /// class program {
       /// public:
@@ -920,7 +920,7 @@ namespace xtd {
       ///   void print_file_system_entries(const ustring& path) {
       ///     try {
       ///       // Obtain the file system entries in the directory path.
-      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path);
       ///
       ///    for (xtd::ustring str : directory_entries) {
       ///         console::write_line(str);
@@ -937,7 +937,7 @@ namespace xtd {
       ///   void print_file_system_entries(string path, string pattern) {
       ///     try {
       ///       // Obtain the file system entries in the directory path that match the pattern.
-      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
       ///
       ///       for (ustring str : directory_entries) {
       ///         console::write_line(str);
@@ -954,7 +954,7 @@ namespace xtd {
       ///   // Print out all logical drives on the system.
       ///   void get_logical_drives() {
       ///     try {
-      ///       vector<ustring> drives = io::directory::get_logical_drives();
+      ///       list<ustring> drives = io::directory::get_logical_drives();
       ///
       ///       for (ustring str : drives) {
       ///         console::write_line(str);
@@ -1013,8 +1013,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       ///
       /// class program {
       /// public:
@@ -1034,7 +1034,7 @@ namespace xtd {
       ///   void print_file_system_entries(const ustring& path) {
       ///     try {
       ///       // Obtain the file system entries in the directory path.
-      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path);
       ///
       ///    for (xtd::ustring str : directory_entries) {
       ///         console::write_line(str);
@@ -1051,7 +1051,7 @@ namespace xtd {
       ///   void print_file_system_entries(string path, string pattern) {
       ///     try {
       ///       // Obtain the file system entries in the directory path that match the pattern.
-      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
       ///
       ///       for (ustring str : directory_entries) {
       ///         console::write_line(str);
@@ -1068,7 +1068,7 @@ namespace xtd {
       ///   // Print out all logical drives on the system.
       ///   void get_logical_drives() {
       ///     try {
-      ///       vector<ustring> drives = io::directory::get_logical_drives();
+      ///       list<ustring> drives = io::directory::get_logical_drives();
       ///
       ///       for (ustring str : drives) {
       ///         console::write_line(str);
@@ -1239,8 +1239,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       ///
       /// class program {
       /// public:
@@ -1260,7 +1260,7 @@ namespace xtd {
       ///   void print_file_system_entries(const ustring& path) {
       ///     try {
       ///       // Obtain the file system entries in the directory path.
-      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path);
       ///
       ///    for (xtd::ustring str : directory_entries) {
       ///         console::write_line(str);
@@ -1277,7 +1277,7 @@ namespace xtd {
       ///   void print_file_system_entries(string path, string pattern) {
       ///     try {
       ///       // Obtain the file system entries in the directory path that match the pattern.
-      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
       ///
       ///       for (ustring str : directory_entries) {
       ///         console::write_line(str);
@@ -1294,7 +1294,7 @@ namespace xtd {
       ///   // Print out all logical drives on the system.
       ///   void get_logical_drives() {
       ///     try {
-      ///       vector<ustring> drives = io::directory::get_logical_drives();
+      ///       list<ustring> drives = io::directory::get_logical_drives();
       ///
       ///       for (ustring str : drives) {
       ///         console::write_line(str);
@@ -1349,8 +1349,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       ///
       /// class program {
       /// public:
@@ -1370,7 +1370,7 @@ namespace xtd {
       ///   void print_file_system_entries(const ustring& path) {
       ///     try {
       ///       // Obtain the file system entries in the directory path.
-      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path);
+      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path);
       ///
       ///    for (xtd::ustring str : directory_entries) {
       ///         console::write_line(str);
@@ -1387,7 +1387,7 @@ namespace xtd {
       ///   void print_file_system_entries(string path, string pattern) {
       ///     try {
       ///       // Obtain the file system entries in the directory path that match the pattern.
-      ///       vector<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
+      ///       list<ustring> directory_entries = io::directory::get_file_system_entries(path, pattern);
       ///
       ///       for (ustring str : directory_entries) {
       ///         console::write_line(str);
@@ -1404,7 +1404,7 @@ namespace xtd {
       ///   // Print out all logical drives on the system.
       ///   void get_logical_drives() {
       ///     try {
-      ///       vector<ustring> drives = io::directory::get_logical_drives();
+      ///       list<ustring> drives = io::directory::get_logical_drives();
       ///
       ///       for (ustring str : drives) {
       ///         console::write_line(str);

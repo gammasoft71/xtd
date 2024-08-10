@@ -27,8 +27,8 @@ The following example uses the [directory::enumerate_directories(const ustring&)
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::io;
 
 class program {
@@ -39,7 +39,7 @@ public:
       ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
       
       auto dirs_iterator = directory::enumerate_directories(doc_path);
-      vector<ustring> dirs(dirs_iterator.begin(), dirs_iterator.end());
+      list<ustring> dirs(dirs_iterator.begin(), dirs_iterator.end());
       
       for (auto dir : dirs) {
         console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
@@ -63,8 +63,8 @@ The following example uses the [directory_info::enumerate_directories](https://g
  ```cpp
  #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::io;
 
 class program {
@@ -75,7 +75,7 @@ public:
     
     directory_info dir_programs(doc_path);
     date_time start_of_2021(2021, 1, 1);
-    vector<directory_info> dirs;
+    list<directory_info> dirs;
     
     for (auto dir : dir_programs.enumerate_directories()) {
       if (dir.creation_time() >= start_of_2021)
@@ -97,7 +97,6 @@ This example first enumerates the top-level directories, to catch possible unaut
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 

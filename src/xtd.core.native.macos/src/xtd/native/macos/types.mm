@@ -5,10 +5,9 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace abi;
-using namespace std;
 using namespace xtd::native;
 
-string types::demangle(const string& name) {
+std::string types::demangle(const std::string& name) {
   class auto_delete_char_pointer {
   public:
     explicit auto_delete_char_pointer(char* value) : value_(value) {}

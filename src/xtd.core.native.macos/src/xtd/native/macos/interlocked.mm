@@ -1,14 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/interlocked>
 #undef __XTD_CORE_NATIVE_LIBRARY__
-#include <cmath>
-#include <cstdarg>
-#include <cstdio>
-#include <cstdlib>
-#include <ctime>
-#include <map>
 
-using namespace std;
 using namespace xtd::native;
 
 int32_t interlocked::add(int32_t& location, int32_t value) {

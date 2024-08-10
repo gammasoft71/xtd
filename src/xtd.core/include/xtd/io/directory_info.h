@@ -295,8 +295,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
@@ -313,12 +313,12 @@ namespace xtd {
       ///       target.create();
       ///
       ///     //Copy files.
-      ///     vector<file_info> source_files = source.get_files();
+      ///     list<file_info> source_files = source.get_files();
       ///     for(size_t i = 0; i < source_files.size(); ++i)
       ///       file::copy(source_files[i].full_name(), target.full_name() +"\\" + source_files[i].name(), true);
       ///
       ///     //Copy directories.
-      ///     vector<directory_info> source_directories = source.get_directories();
+      ///     list<directory_info> source_directories = source.get_directories();
       ///     for(size_t j = 0; j < source_directories.size(); ++j)
       ///       copy_directory(source_directories[j].full_name(), target.full_name() + "\\" + source_directories[j].name());
       ///   }
@@ -818,8 +818,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
@@ -829,7 +829,7 @@ namespace xtd {
       ///     directory_info di("c:\\");
       ///
       ///     // Get a reference to each directory in that directory.
-      ///     vector<directory_info> di_arr = di.get_directories();
+      ///     list<directory_info> di_arr = di.get_directories();
       ///
       ///     // Display the names of the directories.
       ///     for (directory_info dri : di_arr)
@@ -857,8 +857,8 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std;
       /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
       /// using namespace xtd::io;
       ///
       /// class program {
@@ -868,7 +868,7 @@ namespace xtd {
       ///       directory_info di(R"(c:\)");
       ///
       ///       // Get only subdirectories that contain the letter "p."
-      ///       vector<directory_info> dirs = di.get_directories("*p*");
+      ///       list<directory_info> dirs = di.get_directories("*p*");
       ///       console::write_line("The number of directories containing the letter p is {0}.", dirs.size());
       ///
       ///       for (directory_info di_next : dirs) {

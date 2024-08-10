@@ -254,9 +254,8 @@ xtdc run
 
 ```cpp
 #include <xtd/xtd>
-#include <string>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
@@ -285,9 +284,8 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-#include <string>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {

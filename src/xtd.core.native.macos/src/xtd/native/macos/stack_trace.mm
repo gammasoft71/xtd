@@ -6,11 +6,10 @@
 #include <cxxabi.h>
 #import <Foundation/Foundation.h>
 
-using namespace std;
 using namespace xtd::native;
 
 namespace {
-  string demangle_string(const string& method) {
+  std::string demangle_string(const std::string& method) {
     auto result = method;
     auto status = 0;
     auto demangled = abi::__cxa_demangle(method.c_str(), nullptr, 0, &status);

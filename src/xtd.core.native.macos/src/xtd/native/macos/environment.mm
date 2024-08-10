@@ -14,7 +14,6 @@
 #include <sys/param.h>
 #include <unistd.h>
 
-using namespace std;
 using namespace std::literals;
 using namespace xtd::native;
 
@@ -28,7 +27,7 @@ namespace {
     __environment_argv = argv;
   }
   
-  tuple<string, string, string> macos_information() {
+  std::tuple<std::string, std::string, std::string> macos_information() {
     // https://en.wikipedia.org/wiki/MacOS_version_history
     static auto build_version = ""s;
     static auto codename = ""s;
@@ -77,10 +76,10 @@ namespace {
     if (major == 13) return make_tuple("macOS", "Ventura", version);
     if (major == 14) return make_tuple("macOS", "Sonoma", version);
     if (major == 15) return make_tuple("macOS", "Sequoia", version);
-    return make_tuple(name, codename, version);
+    return std::make_tuple(name, codename, version);
   }
   
-  using distribution_dictionary = map<string, string>;
+  using distribution_dictionary = std::map<std::string, std::string>;
   
   const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
@@ -110,56 +109,56 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
   return 0;
 }
 
-vector<string> environment::get_command_line_args() {
+std::vector<std::string> environment::get_command_line_args() {
   if (__environment_argc == 0) return {"a.out"};
   return {__environment_argv, __environment_argv + __environment_argc};
 }
 
-string environment::get_desktop_environment() {
+std::string environment::get_desktop_environment() {
   return "macos";
 }
 
-string environment::get_desktop_theme() {
+std::string environment::get_desktop_theme() {
   return macos::strings::contains(macos::shell_execute::run("defaults", "read -g AppleInterfaceStyle"), "Dark") ? "macos dark" : "macos";
 }
 
-string environment::get_distribution_bug_report() {
+std::string environment::get_distribution_bug_report() {
   auto name_it = get_distribution_key_values().find("BUG_REPORT_URL");
   if (name_it == get_distribution_key_values().end()) return "";
   return name_it->second;
 }
 
-string environment::get_distribution_code_name() {
+std::string environment::get_distribution_code_name() {
   auto iterator = get_distribution_key_values().find("VERSION_CODENAME");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-string environment::get_distribution_description() {
+std::string environment::get_distribution_description() {
   auto iterator = get_distribution_key_values().find("PRETTY_NAME");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-string environment::get_distribution_home() {
+std::string environment::get_distribution_home() {
   auto name_it = get_distribution_key_values().find("HOME_URL");
   if (name_it == get_distribution_key_values().end()) return "";
   return name_it->second;
 }
 
-string environment::get_distribution_id() {
+std::string environment::get_distribution_id() {
   auto iterator = get_distribution_key_values().find("ID");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-vector<string> environment::get_distribution_like_ids() {
+std::vector<std::string> environment::get_distribution_like_ids() {
   auto iterator = get_distribution_key_values().find("ID_LIKE");
   if (iterator == get_distribution_key_values().end()) return {};
   return macos::strings::split(iterator->second, {' '});
 }
 
-string environment::get_distribution_name() {
+std::string environment::get_distribution_name() {
   auto name_it = get_distribution_key_values().find("NAME");
   if (name_it == get_distribution_key_values().end()) return "Unknown";
   return name_it->second;
@@ -173,13 +172,13 @@ void environment::get_distribution_version(int32_t& major, int32_t& minor, int32
   if (versions.size() >= 2) minor = stoi(versions[1]);
 }
 
-string environment::get_distribution_version_string() {
+std::string environment::get_distribution_version_string() {
   auto iterator = get_distribution_key_values().find("VERSION");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-string environment::get_environment_variable(const string& variable, int32_t target) {
+std::string environment::get_environment_variable(const std::string& variable, int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     auto value = getenv(variable.c_str());
     return value ? value : "";
@@ -193,9 +192,9 @@ string environment::get_environment_variable(const string& variable, int32_t tar
   return "";
 }
 
-map<string, string>& environment::get_environment_variables(int32_t target) {
+std::map<std::string, std::string>& environment::get_environment_variables(int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
-    static auto envs = map<string, string> {};
+    static auto envs = std::map<std::string, std::string> {};
     if (envs.size() == 0) {
       for (auto index = size_t {0}; environ[index] != nullptr; index++) {
         auto key_value = macos::strings::split(environ[index], {'='});
@@ -207,7 +206,7 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
   }
   
   if (target == ENVIRONMENT_VARIABLE_TARGET_USER || target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
-    static auto envs = map<string, string> {};
+    static auto envs = std::map<std::string, std::string> {};
     envs.clear();
     //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
     //for (auto name : key.get_value_names())
@@ -215,18 +214,18 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
     return envs;
   }
   
-  static auto envs = map<string, string> {};
+  static auto envs = std::map<std::string, std::string> {};
   return envs;
 }
 
-string environment::get_know_folder_path(int32_t csidl) {
-  static auto special_folders = map<int32_t, string> {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_FAVORITES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Favorites"}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Movies"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Preferences"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_INTERNET_CACHE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Caches"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_SYSTEM, "/System"}, {CSIDL_PROGRAM_FILES, "/Applications"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
+std::string environment::get_know_folder_path(int32_t csidl) {
+  static auto special_folders = std::map<int32_t, std::string> {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_FAVORITES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Favorites"}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Movies"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Preferences"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_INTERNET_CACHE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Caches"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_SYSTEM, "/System"}, {CSIDL_PROGRAM_FILES, "/Applications"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
   auto it = special_folders.find(csidl);
   if (it == special_folders.end()) return "";
   return it->second;
 }
 
-string environment::get_machine_name() {
+std::string environment::get_machine_name() {
   return macos::strings::replace(macos::shell_execute::run("uname", "-n"), "\n", "");
 }
 
@@ -247,7 +246,7 @@ void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build,
 }
 
 uint32_t environment::get_processor_count() {
-  return thread::hardware_concurrency();
+  return std::thread::hardware_concurrency();
 }
 
 #if !defined(__XTD_CURRENT_TARGET_ID__)
@@ -260,7 +259,7 @@ std::string environment::get_resources_path(bool gui_app) {
   return (pos == app_path.npos ? "" : app_path.substr(0, pos) + '/') + (gui_app ? "../Resources" : "resources");
 }
 
-string environment::get_service_pack() {
+std::string environment::get_service_pack() {
   return "";
 }
 
@@ -285,11 +284,11 @@ bool environment::get_user_administrator() {
   return !getuid();
 }
 
-string environment::get_user_domain_name() {
+std::string environment::get_user_domain_name() {
   return macos::strings::trim_end(macos::shell_execute::run("uname", "-n"), {'\n'});
 }
 
-string environment::get_user_name() {
+std::string environment::get_user_name() {
   auto user_name = getenv("USER");
   return user_name ? user_name : "";
 }
@@ -308,7 +307,7 @@ bool environment::is_os_64_bit() {
   return macos::strings::contains(macos::shell_execute::run("uname", "-m"), "64");
 }
 
-string environment::new_line() {
+std::string environment::new_line() {
   return "\n";
 }
 
@@ -320,7 +319,7 @@ void environment::quick_exit(int32_t exit_code) noexcept {
   std::_Exit(exit_code);
 }
 
-void environment::set_environment_variable(const string& name, const string& value, int32_t target) {
+void environment::set_environment_variable(const std::string& name, const std::string& value, int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     setenv(name.c_str(), value.c_str(), 1);
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -330,7 +329,7 @@ void environment::set_environment_variable(const string& name, const string& val
   }
 }
 
-void environment::unset_environment_variable(const string& name, int32_t target) {
+void environment::unset_environment_variable(const std::string& name, int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     unsetenv(name.c_str());
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {

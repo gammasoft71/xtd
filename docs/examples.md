@@ -123,7 +123,7 @@ xtdc run
 #include <xtd/xtd>
 #include <string>
 
-using namespace std;
+using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
