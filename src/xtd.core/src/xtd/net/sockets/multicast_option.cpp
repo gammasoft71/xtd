@@ -1,7 +1,6 @@
 #include "../../../../include/xtd/net/sockets/multicast_option.h"
 #include "../../../../include/xtd/argument_out_of_range_exception.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;

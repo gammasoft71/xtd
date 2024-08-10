@@ -6,27 +6,26 @@
 #include "../../../include/xtd/argument_exception.h"
 #include "../../../include/xtd/bit_converter.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
-binary_reader::binary_reader(const ustring& path) : stream_(new ifstream(path, ios::binary)), delete_when_destroy_(true) {
+binary_reader::binary_reader(const ustring& path) : stream_(new std::ifstream(path, std::ios::binary)), delete_when_destroy_(true) {
   if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (!file::exists(path)) throw file_not_found_exception {csf_};
 }
 
-binary_reader::binary_reader(istream& stream) : stream_(&stream) {
+binary_reader::binary_reader(std::istream& stream) : stream_(&stream) {
 }
 
 binary_reader::~binary_reader() {
   if (delete_when_destroy_ && stream_) {
-    if (dynamic_cast<ifstream*>(stream_)) static_cast<ifstream*>(stream_)->close();
+    if (dynamic_cast<std::ifstream*>(stream_)) static_cast<std::ifstream*>(stream_)->close();
     delete stream_;
   }
 }
 
-optional<reference_wrapper<istream>> binary_reader::base_stream() const {
-  return stream_ ? optional<reference_wrapper<istream>>(*stream_) : optional<reference_wrapper<istream>>();
+std::optional<std::reference_wrapper<std::istream>> binary_reader::base_stream() const {
+  return stream_ ? std::optional<std::reference_wrapper<std::istream>>(*stream_) : std::nullopt;
 }
 
 bool binary_reader::end_of_stream() const {
@@ -34,7 +33,7 @@ bool binary_reader::end_of_stream() const {
 }
 
 void binary_reader::close() {
-  if (stream_ && dynamic_cast<ifstream*>(stream_)) static_cast<ifstream*>(stream_)->close();
+  if (stream_ && dynamic_cast<std::ifstream*>(stream_)) static_cast<std::ifstream*>(stream_)->close();
   if (delete_when_destroy_) delete stream_;
   stream_ = nullptr;
 }
@@ -92,7 +91,7 @@ xtd::byte binary_reader::read_byte() {
 }
 
 std::vector<xtd::byte> binary_reader::read_bytes(size_t count) {
-  auto result = vector<xtd::byte>(count);
+  auto result = std::vector<xtd::byte>(count);
   if (read(result, 0, count) != count)
     throw end_of_stream_exception {csf_};
   return result;
@@ -103,7 +102,7 @@ char binary_reader::read_char() {
 }
 
 std::vector<char> binary_reader::read_chars(size_t count) {
-  auto result = vector<char>(count);
+  auto result = std::vector<char>(count);
   if (read(result, 0, count) != count)
     throw end_of_stream_exception {csf_};
   return result;

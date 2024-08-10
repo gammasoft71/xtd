@@ -8,7 +8,6 @@
 #include <xtd/native/file_system>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace io;
 

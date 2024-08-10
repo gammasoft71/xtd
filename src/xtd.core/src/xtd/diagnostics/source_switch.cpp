@@ -1,6 +1,5 @@
 #include "../../../include/xtd/diagnostics/source_switch.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 

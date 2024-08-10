@@ -5,7 +5,6 @@
 #include "../../../include/xtd/lock.h"
 #include <mutex>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::reflection;

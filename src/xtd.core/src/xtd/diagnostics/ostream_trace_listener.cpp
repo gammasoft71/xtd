@@ -1,6 +1,5 @@
 #include "../../../include/xtd/diagnostics/ostream_trace_listener.h"
 
-using namespace std;
 using namespace xtd::diagnostics;
 
 ostream_trace_listener::ostream_trace_listener(const std::ostream& ostream) {
@@ -11,7 +10,7 @@ ostream_trace_listener::~ostream_trace_listener() {
   flush();
 }
 
-const ostream& ostream_trace_listener::ostream() const {
+const std::ostream& ostream_trace_listener::ostream() const {
   return ostream_;
 }
 

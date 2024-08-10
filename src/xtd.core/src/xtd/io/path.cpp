@@ -8,7 +8,6 @@
 #include <xtd/native/file_system>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace io;
 
@@ -36,7 +35,7 @@ ustring path::combine(const ustring& path1, const ustring& path2) {
   return result;
 }
 
-ustring path::combine(const initializer_list<ustring>& paths) noexcept {
+ustring path::combine(const std::initializer_list<ustring>& paths) noexcept {
   auto result = ustring::empty_string;
   for (auto path : paths)
     result = combine(result, path);
@@ -77,7 +76,7 @@ ustring path::get_full_path(const ustring& path) {
   return native::file_system::get_full_path(path);
 }
 
-vector<char> path::get_invalid_path_chars() noexcept {
+std::vector<char> path::get_invalid_path_chars() noexcept {
   return get_invalid_path_chars<char>();
 }
 

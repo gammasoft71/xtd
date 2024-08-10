@@ -1,6 +1,5 @@
 #include "../../../include/xtd/diagnostics/trace_listener_collection.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 

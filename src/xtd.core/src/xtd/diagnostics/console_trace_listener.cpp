@@ -1,7 +1,6 @@
 #include "../../../include/xtd/diagnostics/console_trace_listener.h"
 #include "../../../include/xtd/io/file.h"
 
-using namespace std;
 using namespace xtd::diagnostics;
 
 console_trace_listener::console_trace_listener() : console_trace_listener(false) {

@@ -11,7 +11,6 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <thread>
 
-using namespace std;
 using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::io;
@@ -30,7 +29,7 @@ struct process::data {
   xtd::uptr<std::ostream> standard_input_;
   xtd::uptr<std::istream> standard_output_;
   xtd::uptr<std::istream> standard_error_;
-  thread thread_;
+  std::thread thread_;
   xtd::date_time start_time_;
   xtd::date_time exit_time_;
   bool enable_raising_events_ = false;
@@ -149,7 +148,7 @@ process::~process() {
 
 int32 process::base_priority() const {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
-  static auto base_priorities = map<process_priority_class, int32> {{process_priority_class::idle, 4}, {process_priority_class::below_normal, 6}, {process_priority_class::normal, 8}, {process_priority_class::above_normal, 10}, {process_priority_class::high, 13}, {process_priority_class::real_time, 24}};
+  static auto base_priorities = std::map<process_priority_class, int32> {{process_priority_class::idle, 4}, {process_priority_class::below_normal, 6}, {process_priority_class::normal, 8}, {process_priority_class::above_normal, 10}, {process_priority_class::high, 13}, {process_priority_class::real_time, 24}};
   return base_priorities[priority_class()];
 }
 
@@ -200,7 +199,7 @@ process_priority_class process::priority_class() const {
 process& process::priority_class(process_priority_class value) {
   if (!data_->handle_.has_value()) throw xtd::invalid_operation_exception {csf_};
   data_->priority_class_ = value;
-  auto priorities = map<process_priority_class, int32> {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
+  auto priorities = std::map<process_priority_class, int32> {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
   auto it = priorities.find(value);
   if (it == priorities.end()) throw argument_exception {csf_};
   if (native::process::priority_class(data_->handle_.value(), it->second) == false) throw invalid_operation_exception {csf_};
@@ -266,7 +265,7 @@ bool process::start() {
   //if (data_->handle_.has_value() && !data_->exit_code_.has_value()) return false;
   if (data_->thread_.joinable()) return false;
   bool allow_to_continue = false;
-  data_->thread_ = thread {[](class process process, bool & allow_to_continue) {
+  data_->thread_ = std::thread {[](class process process, bool & allow_to_continue) {
     try {
       process.data_->handle_.reset();
       process.data_->exit_code_.reset();
@@ -278,7 +277,7 @@ bool process::start() {
       if (process.start_info().use_shell_execute())
         process.data_->handle_ = native::process::shell_execute(process.start_info().verb(), process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style);
       else {
-        auto [handle, id, standard_input, standard_output, standard_error] = native::process::start(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style, process_creation_flags, make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
+        auto [handle, id, standard_input, standard_output, standard_error] = native::process::start(process.start_info().file_name(), process.start_info().arguments(), process.start_info().working_directory(), process_window_style, process_creation_flags, std::make_tuple(process.data_->start_info_.redirect_standard_input(), process.data_->start_info_.redirect_standard_output(), process.data_->start_info_.redirect_standard_error()));
         process.data_->handle_ = handle;
         process.data_->id_ = id;
         process.data_->machine_name_ = ".";
@@ -300,7 +299,7 @@ bool process::start() {
       allow_to_continue = true;
     }
   }, *this, std::ref(allow_to_continue)};
-  while (!allow_to_continue) this_thread::yield();
+  while (!allow_to_continue) std::this_thread::yield();
   if (!data_->exception_pointer_) return true;
   if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());
   auto exception_pointer = data_->exception_pointer_;
