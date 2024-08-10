@@ -4,7 +4,6 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <functional>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::speech::synthesis;
 
@@ -53,7 +52,7 @@ xtd::speech::synthesis::prompt& speech_synthesizer::speak_async(const ustring& t
 void speech_synthesizer::speak_async(xtd::speech::synthesis::prompt& prompt) {
   data_->used_prompt = &prompt;
   on_speak_started();
-  native::speech_synthesizer::speak_async(data_->handle, data_->used_prompt->text_to_speak(), bind(&speech_synthesizer::on_speak_completed, this));
+  native::speech_synthesizer::speak_async(data_->handle, data_->used_prompt->text_to_speak(), std::bind(&speech_synthesizer::on_speak_completed, this));
   data_->used_prompt->synthesizer(this);
 }
 

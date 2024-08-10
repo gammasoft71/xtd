@@ -3,7 +3,6 @@
 #include "../../../include/xtd/io/path.h"
 #include "../../../include/xtd/environment.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::reflection;

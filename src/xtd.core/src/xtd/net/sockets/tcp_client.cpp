@@ -4,7 +4,6 @@
 #include "../../../../include/xtd/net/dns.h"
 #include <mutex>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;

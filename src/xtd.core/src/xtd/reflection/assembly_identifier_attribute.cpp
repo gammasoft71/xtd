@@ -1,6 +1,5 @@
 #include "../../../include/xtd/reflection/assembly_identifier_attribute.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::reflection;
 

@@ -1,6 +1,5 @@
 #include "../../../include/xtd/net/ip_host_entry.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;

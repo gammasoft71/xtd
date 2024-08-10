@@ -8,7 +8,6 @@
 #include <xtd/native/socket>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -22,7 +21,7 @@ socket_address::socket_address(sockets::address_family address_family, size_t bu
   bytes_[1] = 0;
 }
 
-socket_address::socket_address(const vector<xtd::byte>& buffer) : bytes_(buffer) {
+socket_address::socket_address(const std::vector<xtd::byte>& buffer) : bytes_(buffer) {
 }
 
 sockets::address_family socket_address::address_family() const {

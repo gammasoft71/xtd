@@ -5,15 +5,14 @@
 #include <xtd/native/cryptography>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::security;
 
 namespace {
-  vector<xtd::byte> encrypt(const xtd::guid& guid, const char value[], size_t length) {
+  std::vector<xtd::byte> encrypt(const xtd::guid& guid, const char value[], size_t length) {
     // https://www.programmingalgorithms.com/algorithm/xor-encryption/
     auto key = guid.to_string("D");
-    auto result = vector<xtd::byte> {};
+    auto result = std::vector<xtd::byte> {};
     for (auto index = 0_z; index < length; ++index)
       result.push_back(value[index] != key[index % key.size()] ? value[index] ^ key[index % key.size()] : value[index]);
     return result;

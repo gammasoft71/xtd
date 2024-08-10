@@ -6,16 +6,15 @@
 #include "../../../include/xtd/net/sockets/socket_error.h"
 #include "../../../include/xtd/net/sockets/socket_exception.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
 const ip_address ip_address::any {0x00000000LL};
 const ip_address ip_address::broadcast {0xFFFFFFFFLL};
-const ip_address ip_address::ip_v6_any {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-const ip_address ip_address::ip_v6_loopback {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
-const ip_address ip_address::ip_v6_none {vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+const ip_address ip_address::ip_v6_any {std::vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+const ip_address ip_address::ip_v6_loopback {std::vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
+const ip_address ip_address::ip_v6_none {std::vector<xtd::byte> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 const ip_address ip_address::loopback {0x0100007FLL};
 const ip_address ip_address::none {0xFFFFFFFFLL};
 
@@ -23,7 +22,7 @@ ip_address::ip_address(uint32 address) {
   address_ = static_cast<int32>(address);
 }
 
-ip_address::ip_address(const vector<xtd::byte>& address) {
+ip_address::ip_address(const std::vector<xtd::byte>& address) {
   if (address.size() != 4 && address.size() != 16) throw argument_exception {csf_};
   
   if (address.size() == 4) {
@@ -38,7 +37,7 @@ ip_address::ip_address(const vector<xtd::byte>& address) {
   }
 }
 
-ip_address::ip_address(const vector<xtd::byte>& address, uint32 scope_id) : address_family_(sockets::address_family::inter_network_v6) {
+ip_address::ip_address(const std::vector<xtd::byte>& address, uint32 scope_id) : address_family_(sockets::address_family::inter_network_v6) {
   if (address.size() != 16) throw argument_exception {csf_};
   
   scope_id_ = scope_id;
@@ -99,8 +98,8 @@ bool ip_address::equals(const ip_address& other) const noexcept {
   return address_ == other.address_ && numbers_ == other.numbers_ && scope_id_ == other.scope_id_ && address_family_ == other.address_family_;
 }
 
-vector<xtd::byte> ip_address::get_address_bytes() const {
-  vector<xtd::byte> bytes;
+std::vector<xtd::byte> ip_address::get_address_bytes() const {
+  std::vector<xtd::byte> bytes;
   if (address_family_ == sockets::address_family::inter_network) {
     bytes.push_back(static_cast<xtd::byte>(address_));
     bytes.push_back(static_cast<xtd::byte>(address_ >> 8));
@@ -166,7 +165,7 @@ ip_address ip_address::map_to_ip_v4() const noexcept {
 
 ip_address ip_address::map_to_ip_v6() const noexcept {
   if (address_family_ == sockets::address_family::inter_network_v6) return *this;
-  vector<uint16> numbers(number_of_numbers_);
+  std::vector<uint16> numbers(number_of_numbers_);
   numbers[5] = 0xFFFF;
   numbers[6] = static_cast<uint16>(((address_ & 0x0000FF00) >> 8) | ((address_ & 0x000000FF) << 8));
   numbers[7] = static_cast<uint16>(((address_ & 0xFF000000) >> 24) | ((address_ & 0x00FF0000) >> 8));
@@ -206,9 +205,9 @@ uint64 ip_address::network_to_host_order(uint64 network) {
 }
 
 ip_address ip_address::parse(const ustring& str) {
-  block_scope_(vector<ustring> address_parts = str.split({'.'})) {
+  block_scope_(std::vector<ustring> address_parts = str.split({'.'})) {
     if (address_parts.size() == 4) {
-      vector<xtd::byte> addresses(4);
+      std::vector<xtd::byte> addresses(4);
       for (auto index = 0_z; index < address_parts.size(); index++)
         addresses[index] = xtd::parse<xtd::byte>(address_parts[index]);
       return ip_address(addresses);
@@ -223,7 +222,7 @@ ip_address ip_address::parse(const ustring& str) {
     work_ip_string = work_ip_string.remove(work_ip_string.index_of('%'));
   };
   
-  block_scope_(vector<ustring> address_parts = work_ip_string.split({':'})) {
+  block_scope_(std::vector<ustring> address_parts = work_ip_string.split({':'})) {
     for (auto it = address_parts.begin(); it != address_parts.end(); ++it) {
       if (it->empty()) {
         *it = "0";

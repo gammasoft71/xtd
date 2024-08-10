@@ -1,6 +1,5 @@
 #include "../../../../include/xtd/net/sockets/socket_information.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;

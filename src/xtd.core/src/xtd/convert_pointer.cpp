@@ -3,6 +3,5 @@
 #include "../../include/xtd/convert_pointer.h"
 #include <cmath>
 
-using namespace std;
 using namespace xtd;
 

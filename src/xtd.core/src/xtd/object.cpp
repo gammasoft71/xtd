@@ -6,7 +6,6 @@
 #include "../../include/xtd/type_object.h"
 #include "../../include/xtd/ustring.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections::generic;
 
