@@ -108,10 +108,10 @@ xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme
   auto help_separator1_menu_item = xtd::new_sptr<menu_item>("-");
   auto help_about_menu_item = xtd::new_sptr<menu_item>(texts::about(), on_click);
   
-  auto file_menu_item = xtd::new_sptr<menu_item>(texts::file(), vector<menu_item_ref> {*file_new_menu_item, *file_open_menu_item, *file_separator1_menu_item, *file_save_menu_item, *file_save_as_menu_item, *file_separator2_menu_item, *file_print_menu_item, *file_print_preview_menu_item, *file_separator3_menu_item, *file_exit_menu_item});
-  auto edit_menu_item = xtd::new_sptr<menu_item>(texts::edit(), vector<menu_item_ref> {*edit_undo_menu_item, *edit_redo_menu_item, *edit_separator1_menu_item, *edit_cut_menu_item, *edit_copy_menu_item, *edit_paste_menu_item, *edit_separator2_menu_item, *edit_select_all_menu_item});
-  auto tools_menu_item = xtd::new_sptr<menu_item>(texts::tools(), vector<menu_item_ref> {*tools_customize_menu_item, *tools_options_menu_item});
-  auto help_menu_item = xtd::new_sptr<menu_item>(texts::help(), vector<menu_item_ref> {*help_contents_menu_item, *help_index_menu_item, *help_search_menu_item, *help_separator1_menu_item, *help_about_menu_item});
+  auto file_menu_item = xtd::new_sptr<menu_item>(texts::file(), std::vector<menu_item_ref> {*file_new_menu_item, *file_open_menu_item, *file_separator1_menu_item, *file_save_menu_item, *file_save_as_menu_item, *file_separator2_menu_item, *file_print_menu_item, *file_print_preview_menu_item, *file_separator3_menu_item, *file_exit_menu_item});
+  auto edit_menu_item = xtd::new_sptr<menu_item>(texts::edit(), std::vector<menu_item_ref> {*edit_undo_menu_item, *edit_redo_menu_item, *edit_separator1_menu_item, *edit_cut_menu_item, *edit_copy_menu_item, *edit_paste_menu_item, *edit_separator2_menu_item, *edit_select_all_menu_item});
+  auto tools_menu_item = xtd::new_sptr<menu_item>(texts::tools(), std::vector<menu_item_ref> {*tools_customize_menu_item, *tools_options_menu_item});
+  auto help_menu_item = xtd::new_sptr<menu_item>(texts::help(), std::vector<menu_item_ref> {*help_contents_menu_item, *help_index_menu_item, *help_search_menu_item, *help_separator1_menu_item, *help_about_menu_item});
   
   auto main_menu_with_standard_items = main_menu(vector<menu_item_ref> {*file_menu_item, *edit_menu_item, *tools_menu_item, *help_menu_item});
   

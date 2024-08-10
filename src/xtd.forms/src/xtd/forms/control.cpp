@@ -883,7 +883,7 @@ async_result control::begin_invoke(delegate<void()> method) {
   return begin_invoke(delegate<void(std::vector<std::any>)>(method), {});
 }
 
-async_result control::begin_invoke(delegate<void(vector<any>)> method, const vector<any>& args) {
+async_result control::begin_invoke(delegate<void(vector<any>)> method, const std::vector<any>& args) {
   xtd::sptr<async_result_invoke> async = xtd::new_sptr<async_result_invoke>(std::reference_wrapper(*this));
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_event, async->data_->is_completed);
   threading::thread::yield();

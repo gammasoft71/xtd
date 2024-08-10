@@ -37,7 +37,7 @@ menu::menu(const initializer_list<menu_item_ref>& items) : data_(xtd::new_sptr<d
   data_->menu_items.push_back_range(items);
 }
 
-menu::menu(const vector<menu_item_ref>& items) : data_(xtd::new_sptr<data>()) {
+menu::menu(const std::vector<menu_item_ref>& items) : data_(xtd::new_sptr<data>()) {
   //data_->mdi_list_item = xtd::new_uptr<menu_item>();
   data_->menu_items.item_added += {*this, &menu::on_item_added};
   data_->menu_items.item_removed += {*this, &menu::on_item_removed};
@@ -92,7 +92,7 @@ menu& menu::menu_items(const initializer_list<reference_wrapper<menu_item>>& val
   return *this;
 }
 
-menu& menu::menu_items(const vector<reference_wrapper<menu_item>>& value) {
+menu& menu::menu_items(const std::vector<reference_wrapper<menu_item>>& value) {
   data_->menu_items.clear();
   for (const auto& item : value)
     data_->menu_items.push_back(item);

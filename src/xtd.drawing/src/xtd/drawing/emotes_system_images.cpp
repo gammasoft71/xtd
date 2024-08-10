@@ -1,6 +1,5 @@
 #include "../../../include/xtd/drawing/emotes_system_images.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -176,16 +175,16 @@ image emotes_system_images::face_worried(const xtd::drawing::size& size) noexcep
   return system_images_base::from_name("face-worried", size);
 }
 
-const vector<image>& emotes_system_images::get_images() noexcept {
+const std::vector<image>& emotes_system_images::get_images() noexcept {
   static auto images = get_images(default_size());
   return images;
 }
 
-vector<image> emotes_system_images::get_images(const xtd::drawing::size& size) noexcept {
-  return vector {face_angel(size), face_angry(size), face_cool(size), face_crying(size), face_devilish(size), face_embarrassed(size), face_kiss(size), face_laugh(size), face_monkey(size), face_plain(size), face_raspberry(size), face_sad(size), face_sick(size), face_smile(size), face_smile_big(size), face_smirk(size), face_surprise(size), face_tired(size), face_uncertain(size), face_wink(size), face_worried(size), };
+std::vector<image> emotes_system_images::get_images(const xtd::drawing::size& size) noexcept {
+  return std::vector {face_angel(size), face_angry(size), face_cool(size), face_crying(size), face_devilish(size), face_embarrassed(size), face_kiss(size), face_laugh(size), face_monkey(size), face_plain(size), face_raspberry(size), face_sad(size), face_sick(size), face_smile(size), face_smile_big(size), face_smirk(size), face_surprise(size), face_tired(size), face_uncertain(size), face_wink(size), face_worried(size), };
 }
 
-const vector<ustring>& emotes_system_images::get_image_names() noexcept {
-  static auto names = vector {"face-angel"_s, "face-angry"_s, "face-cool"_s, "face-crying"_s, "face-devilish"_s, "face-embarrassed"_s, "face-kiss"_s, "face-laugh"_s, "face-monkey"_s, "face-plain"_s, "face-raspberry"_s, "face-sad"_s, "face-sick"_s, "face-smile"_s, "face-smile-big"_s, "face-smirk"_s, "face-surprise"_s, "face-tired"_s, "face-uncertain"_s, "face-wink"_s, "face-worried"_s, };
+const std::vector<ustring>& emotes_system_images::get_image_names() noexcept {
+  static auto names = std::vector {"face-angel"_s, "face-angry"_s, "face-cool"_s, "face-crying"_s, "face-devilish"_s, "face-embarrassed"_s, "face-kiss"_s, "face-laugh"_s, "face-monkey"_s, "face-plain"_s, "face-raspberry"_s, "face-sad"_s, "face-sick"_s, "face-smile"_s, "face-smile-big"_s, "face-smirk"_s, "face-surprise"_s, "face-tired"_s, "face-uncertain"_s, "face-wink"_s, "face-worried"_s, };
   return names;
 }

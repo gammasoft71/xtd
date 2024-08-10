@@ -6,7 +6,7 @@ using namespace xtd::forms;
 
 struct emoticon::data {
   xtd::ustring name;
-  vector<char32> codepoints;
+  std::vector<char32> codepoints;
 };
 
 const emoticon emoticon::empty() {
@@ -21,7 +21,7 @@ emoticon::emoticon(const xtd::ustring& name, initializer_list<char32> codepoints
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::ustring& name, const vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
+emoticon::emoticon(const xtd::ustring& name, const std::vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
@@ -35,7 +35,7 @@ emoticon::emoticon(initializer_list<char32> codepoints) : data_(xtd::new_sptr<da
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
+emoticon::emoticon(const std::vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
   data_->codepoints = codepoints;
 }
 
@@ -56,7 +56,7 @@ const xtd::ustring& emoticon::name() const noexcept {
   return data_->name;
 }
 
-const vector<char32>& emoticon::codepoints() const noexcept {
+const std::vector<char32>& emoticon::codepoints() const noexcept {
   return data_->codepoints;
 }
 

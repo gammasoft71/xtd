@@ -55,7 +55,7 @@ const date_time& test_class::start_time() const noexcept {
   return start_time_;
 }
 
-const vector<test>& test_class::tests() const noexcept {
+const std::vector<test>& test_class::tests() const noexcept {
   return tests_;
 }
 
@@ -95,7 +95,7 @@ const test& test_class::test_initialize() const noexcept {
   return test_initialize_;
 }
 
-const vector<test>& test_class::test_methods() const noexcept {
+const std::vector<test>& test_class::test_methods() const noexcept {
   return tests_;
 }
 

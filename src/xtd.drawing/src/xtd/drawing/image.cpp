@@ -49,8 +49,8 @@ struct image::data {
   imaging::color_palette palette_;
   imaging::pixel_format pixel_format_ = imaging::pixel_format::undefined;
   size_f physical_dimension_;
-  vector<int32> property_id_list_;
-  vector<imaging::property_item> property_items_;
+  std::vector<int32> property_id_list_;
+  std::vector<imaging::property_item> property_items_;
   imaging::image_format raw_format_;
   drawing::size size_;
   any tag_;
@@ -172,7 +172,7 @@ int32 image::flags() const noexcept {
 }
 
 vector<guid> image::frame_dimentions_list() const noexcept {
-  auto result = vector<guid> {};
+  auto result = std::vector<guid> {};
   for_each(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {result.push_back(frame.first);});
   return result;
 }
@@ -205,11 +205,11 @@ imaging::pixel_format image::pixel_format() const noexcept {
   return data_->pixel_format_;
 }
 
-const vector<int32>& image::property_id_list() const noexcept {
+const std::vector<int32>& image::property_id_list() const noexcept {
   return data_->property_id_list_;
 }
 
-const vector<imaging::property_item>& image::property_items() const noexcept {
+const std::vector<imaging::property_item>& image::property_items() const noexcept {
   return data_->property_items_;
 }
 
@@ -381,7 +381,7 @@ void image::update_properties() {
   
   data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
   
-  auto palette_entries = vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
+  auto palette_entries = std::vector<tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
   native::image::color_palette(data_->handle_, palette_entries, data_->palette_.flags_);
   for (auto [a, r, g, b] : palette_entries)
     data_->palette_.entries_.push_back(color::from_argb(a, r, g, b));

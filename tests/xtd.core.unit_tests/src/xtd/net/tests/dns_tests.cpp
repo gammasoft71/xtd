@@ -18,17 +18,17 @@ namespace xtd::net::tests {
     }
 
     void test_method_(get_host_addresses_from_local_host_addrress_strring) {
-      vector<ip_address> addresses = dns::get_host_addresses("127.0.0.1");
+      std::vector<ip_address> addresses = dns::get_host_addresses("127.0.0.1");
       collection_assert::are_equal({ip_address(127, 0, 0, 1)}, addresses, csf_);
     }
 
     void test_method_(get_host_addresses_from_local_host_name) {
-      vector<ip_address> addresses = dns::get_host_addresses("localhost");
+      std::vector<ip_address> addresses = dns::get_host_addresses("localhost");
       collection_assert::contains({ip_address(127, 0, 0, 1)}, addresses, csf_);
     }
 
     void test_method_(get_host_addresses_from_host_name) {
-      vector<ip_address> addresses = dns::get_host_addresses(dns::get_host_name());
+      std::vector<ip_address> addresses = dns::get_host_addresses(dns::get_host_name());
       assert::is_greater_or_equal(addresses.size(), 1u, csf_);
     }
 

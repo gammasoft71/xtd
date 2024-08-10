@@ -1322,8 +1322,8 @@ const xtd::forms::emoticon xtd::forms::emoticons::axe = {"axe", 0x0001FA93};
 const xtd::forms::emoticon xtd::forms::emoticons::diya_lamp = {"diya lamp", 0x0001FA94};
 const xtd::forms::emoticon xtd::forms::emoticons::banjo = {"banjo", 0x0001FA95};
 
-const vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
-  static auto emoticons = vector {
+const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
+  static auto emoticons = std::vector {
     copyright_sign, registered_sign,
     double_exclamation_mark, exclamation_question_mark,
     trade_mark_sign, information_source,

@@ -64,7 +64,7 @@ namespace xtd {
   ///   }
   ///
   /// private:
-  ///   vector<iobserver<location>*> observers_;
+  ///   std::vector<iobserver<location>*> observers_;
   /// };
   /// ```
   /// If the @p location value is @p nullopt, the @p tack_location method instantiates a @p location_unknown_exception object, which is shown in the following example. It then calls each observer's @p on_error method and passes it the @p location_unknown_exception object. Note that @p location_unknown_exception derives from xtd::system_exception, but does not add any new members.

@@ -114,7 +114,7 @@ namespace xtdc_command {
         "using namespace xtd;",
         xtd::ustring::format("using namespace {};", name),
         "",
-        "auto program::main(const vector<ustring>& args) -> void {",
+        "auto program::main(const std::vector<ustring>& args) -> void {",
         "  console::write_line(\"Hello, World!\");",
         "}",
       };

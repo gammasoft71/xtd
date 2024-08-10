@@ -56,7 +56,7 @@ size_t list_box::selected_index(intptr control) {
     return 0;
   }
   if (static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->HasMultipleSelection()) {
-    vector<size_t> indices = selected_indices(control);
+    std::vector<size_t> indices = selected_indices(control);
     if (indices.empty()) return std::numeric_limits<size_t>::max();
     return indices[0];
   }
@@ -78,7 +78,7 @@ vector<size_t> list_box::selected_indices(intptr control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return {};
   }
-  vector<size_t> indices;
+  std::vector<size_t> indices;
   wxArrayInt wx_indices;
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
   for_each(wx_indices.begin(), wx_indices.end(), [&](int32 index) {indices.push_back(index);});
