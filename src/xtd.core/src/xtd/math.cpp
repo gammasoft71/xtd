@@ -7,7 +7,6 @@
 #include <cstdlib>
 #include <limits>
 
-using namespace std;
 using namespace xtd;
 
 namespace {
@@ -26,27 +25,27 @@ float math::abs(float value) {
 }
 
 int16 math::abs(int16 value) {
-  if (value == numeric_limits<int16>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<int16>::lowest()) throw xtd::overflow_exception {csf_};
   return value < 0 ? -value : value;
 }
 
 int32 math::abs(int32 value) {
-  if (value == numeric_limits<int32>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<int32>::lowest()) throw xtd::overflow_exception {csf_};
   return value < 0 ? -value : value;
 }
 
 int64 math::abs(int64 value) {
-  if (value == numeric_limits<int64>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<int64>::lowest()) throw xtd::overflow_exception {csf_};
   return value < 0 ? -value : value;
 }
 
 sbyte math::abs(sbyte value) {
-  if (value == numeric_limits<sbyte>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<sbyte>::lowest()) throw xtd::overflow_exception {csf_};
   return value < 0 ? -value : value;
 }
 
 slong math::abs(slong value) {
-  if (value == numeric_limits<slong>::lowest()) throw xtd::overflow_exception {csf_};
+  if (value == std::numeric_limits<slong>::lowest()) throw xtd::overflow_exception {csf_};
   return value < 0 ? -value : value;
 }
 

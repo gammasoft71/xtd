@@ -5,7 +5,6 @@
 #include "../../../../include/xtd/is.h"
 #include <thread>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -59,14 +58,14 @@ xtd::net::sockets::tcp_client tcp_listener::accept_tcp_client() {
 
 xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callback callback, const std::any& state) {
   auto ar = xtd::new_sptr<async_result_accept_socket>(state);
-  auto operation_thread = thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_socket> ar, xtd::async_callback callback) {
+  auto operation_thread = std::thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_socket> ar, xtd::async_callback callback) {
     try {
       ar->socket_ = listener->accept_socket();
       ar->is_completed_ = true;
       as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
-      ar->exception_ = current_exception();
+      ar->exception_ = std::current_exception();
     }
   }, this, ar, callback};
   operation_thread.detach();
@@ -75,14 +74,14 @@ xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callb
 
 xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::async_callback callback, const std::any& state) {
   auto ar = xtd::new_sptr<async_result_accept_tcp_client>(state);
-  auto operation_thread = thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_tcp_client> ar, xtd::async_callback callback) {
+  auto operation_thread = std::thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_tcp_client> ar, xtd::async_callback callback) {
     try {
       ar->tcp_client_ = listener->accept_tcp_client();
       ar->is_completed_ = true;
       as<xtd::threading::manual_reset_event>(ar->async_wait_handle()).set();
       callback(ar);
     } catch (...) {
-      ar->exception_ = current_exception();
+      ar->exception_ = std::current_exception();
     }
   }, this, ar, callback};
   operation_thread.detach();

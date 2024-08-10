@@ -3,7 +3,6 @@
 #include "../../../include/xtd/net/ip_end_point.h"
 #include "../../../include/xtd/net/sockets/socket_exception.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -41,7 +40,7 @@ xtd::uptr<end_point> ip_end_point::create(const socket_address& socket_address) 
   uint16 current_port = ip_address::network_to_host_order(bit_converter::to_uint16(socket_address.bytes_, 2)); // static_cast<uint16>((socket_address[2] << 8 & 0xFF00) | (socket_address[3]));
   
   if (address_family_ == address_family::inter_network_v6) {
-    vector<xtd::byte> current_address(16);
+    std::vector<xtd::byte> current_address(16);
     for (auto i = 0_z; i < current_address.size(); i++)
       current_address[i] = socket_address[i + 8];
     //uint32 scope = ip_address::network_to_host_order(bit_converter::to_uint32(socket_address.bytes_, 24));

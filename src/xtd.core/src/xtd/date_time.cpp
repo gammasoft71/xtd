@@ -13,8 +13,6 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <tuple>
 
-using namespace std;
-using namespace std::chrono;
 using namespace xtd;
 
 namespace {
@@ -51,9 +49,9 @@ namespace {
   
   const ticks file_time_offset = ticks(days_to_1601* ticks_per_day);
   
-  constexpr seconds seconds_offset_1970 = seconds(seconds_per_day* days_to_1970);
+  constexpr std::chrono::seconds seconds_offset_1970 = std::chrono::seconds(seconds_per_day* days_to_1970);
   
-  static tuple<uint32, uint32> get_year_and_day_of_year(int64 days) {
+  static std::tuple<uint32, uint32> get_year_and_day_of_year(int64 days) {
     auto year = 1_s64;
     auto day_of_year = days;
 
@@ -83,7 +81,7 @@ namespace {
       day_of_year -= chunks * days_per_year;
     }
     
-    return make_tuple(as<uint32>(year), as<uint32>(day_of_year));
+    return std::make_tuple(as<uint32>(year), as<uint32>(day_of_year));
   }
   
   static uint32 get_year(int64 days) {
@@ -96,14 +94,14 @@ namespace {
     return day_of_year;
   }
   
-  static tuple<uint32, uint32> get_month_and_day(int64 day_of_year, uint32 year) {
+  static std::tuple<uint32, uint32> get_month_and_day(int64 day_of_year, uint32 year) {
     auto month = 1_u32;
     auto day = day_of_year;
     for (auto days_in_month = as<int64>(date_time::days_in_month(year, month)); day >= days_in_month; days_in_month = date_time::days_in_month(year, month)) {
       ++month;
       day -= days_in_month;
     }
-    return make_tuple(month, as<uint32>(day));
+    return std::make_tuple(month, as<uint32>(day));
   }
 
   static uint32 get_month(int64 day_of_year, uint32 year) {
@@ -186,7 +184,7 @@ date_time_kind date_time::kind() const noexcept {
 }
 
 uint32 date_time::millisecond() const noexcept {
-  return duration_cast<milliseconds>(value_).count() % 1000;
+  return duration_cast<std::chrono::milliseconds>(value_).count() % 1000;
 }
 
 uint32 date_time::minute() const noexcept {
@@ -200,9 +198,9 @@ uint32 date_time::month() const noexcept {
 }
 
 date_time date_time::now() noexcept {
-  system_clock::time_point now = system_clock::now();
+  std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
   auto now_ticks = duration_cast<xtd::ticks>(now.time_since_epoch()) % ticks_per_second;
-  return from_time_t(system_clock::to_time_t(now), date_time_kind::local).add(now_ticks);
+  return from_time_t(std::chrono::system_clock::to_time_t(now), date_time_kind::local).add(now_ticks);
 }
 
 uint32 date_time::second() const noexcept {
@@ -335,7 +333,7 @@ date_time date_time::from_time_t(std::time_t value) {
 }
 
 date_time date_time::from_time_t(std::time_t value, date_time_kind kind) {
-  return date_time::specify_kind(date_time(duration_cast<xtd::ticks>(seconds(value) + seconds_offset_1970), date_time_kind::utc), kind);
+  return date_time::specify_kind(date_time(duration_cast<xtd::ticks>(std::chrono::seconds(value) + seconds_offset_1970), date_time_kind::utc), kind);
 }
 
 date_time date_time::from_tm(const tm& value) {
@@ -346,8 +344,8 @@ date_time date_time::from_tm(const tm& value, date_time_kind kind) {
   return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, value.tm_sec, kind);
 }
 
-vector<ustring> date_time::get_date_time_formats() const noexcept {
-  auto date_time_formats = vector<ustring> {};
+std::vector<ustring> date_time::get_date_time_formats() const noexcept {
+  auto date_time_formats = std::vector<ustring> {};
   //for (auto format : formats)
   for (auto format = 'a'; format <= 'z'; ++format) {
     try {
@@ -364,7 +362,7 @@ vector<ustring> date_time::get_date_time_formats() const noexcept {
 
 bool date_time::is_daylight_saving_time() const noexcept {
   if (kind_ != date_time_kind::local) return false;
-  return native::date_time::is_daylight((duration_cast<seconds>(value_) - seconds_offset_1970).count());
+  return native::date_time::is_daylight((duration_cast<std::chrono::seconds>(value_) - seconds_offset_1970).count());
 }
 
 bool date_time::is_leap_year(uint32 year) {
@@ -385,7 +383,7 @@ date_time date_time::specify_kind(const date_time& value, date_time_kind kind) {
 
 ustring date_time::sprintf(const ustring& format, const date_time& value) {
   auto result = std::stringstream {};
-  result.imbue(locale());
+  result.imbue(std::locale());
   auto tm_value = value.to_tm();
   result << std::put_time(&tm_value, format.c_str());
   return result.str();
@@ -400,7 +398,7 @@ date_time date_time::subtract(const time_span& value) const {
 }
 
 int64 date_time::to_binary() const {
-  return (duration_cast<seconds>(value_).count() & 0x3FFFFFFFFFFFFFFFLL) + ((as<int64>(kind_) << 62) & 0xC000000000000000LL);
+  return (duration_cast<std::chrono::seconds>(value_).count() & 0x3FFFFFFFFFFFFFFFLL) + ((as<int64>(kind_) << 62) & 0xC000000000000000LL);
 }
 
 int64 date_time::to_file_time() const {
@@ -507,7 +505,7 @@ ustring date_time::to_string(const ustring& format, const std::locale& loc) cons
 }
 
 std::time_t date_time::to_time_t() const {
-  return (duration_cast<seconds>(date_time::specify_kind(*this, date_time_kind::utc).value_) - seconds_offset_1970).count();
+  return (duration_cast<std::chrono::seconds>(date_time::specify_kind(*this, date_time_kind::utc).value_) - seconds_offset_1970).count();
 }
 
 std::tm date_time::to_tm() const {
@@ -596,7 +594,7 @@ date_time date_time::operator --(int32) {
   return date_time {value_--, kind_};
 }
 
-tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> date_time::get_date_time() const {
+std::tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> date_time::get_date_time() const {
   auto days = value_.count() / ticks_per_day;
   auto day_of_year = get_day_of_year(days);
   
@@ -607,11 +605,11 @@ tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> date_time::
   auto minute = static_cast<uint32>(value_.count() / ticks_per_minute % 60);
   auto second = static_cast<uint32>(value_.count() / ticks_per_second % 60);
   auto day_of_week = (static_cast<int32>(value_.count() / ticks_per_day + 1) % 7);
-  return make_tuple(year, month, day + 1, hour, minute, second, day_of_year + 1, day_of_week);
+  return std::make_tuple(year, month, day + 1, hour, minute, second, day_of_year + 1, day_of_week);
 }
 
 xtd::ticks date_time::utc_offset() const {
-  return duration_cast<xtd::ticks>(seconds(native::date_time::utc_offset((duration_cast<seconds>(value_) - seconds_offset_1970).count())));
+  return duration_cast<xtd::ticks>(std::chrono::seconds(native::date_time::utc_offset((duration_cast<std::chrono::seconds>(value_) - seconds_offset_1970).count())));
 }
 
 void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond, date_time_kind kind) {

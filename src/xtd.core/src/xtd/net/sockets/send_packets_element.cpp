@@ -1,6 +1,5 @@
 #include "../../../../include/xtd/net/sockets/send_packets_element.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net::sockets;
 
@@ -32,7 +31,7 @@ send_packets_element::~send_packets_element() {
   if (delete_file_stream_when_destroy_) delete file_stream_;
 }
 
-vector<xtd::byte> send_packets_element::buffer() const noexcept {
+std::vector<xtd::byte> send_packets_element::buffer() const noexcept {
   return buffer_;
 }
 
@@ -48,8 +47,8 @@ const ustring& send_packets_element::file_path() const noexcept {
   return file_path_;
 }
 
-optional<send_packets_element::ifstream_ref> send_packets_element::file_stream() const noexcept {
-  return file_stream_ == nullptr ? optional<ifstream_ref>() : optional<ifstream_ref>(*file_stream_);
+std::optional<send_packets_element::ifstream_ref> send_packets_element::file_stream() const noexcept {
+  return file_stream_ ? std::optional<ifstream_ref>(*file_stream_) : std::nullopt;
 }
 
 size_t send_packets_element::offset() const noexcept {

@@ -6,7 +6,6 @@
 #include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::threading;
@@ -17,7 +16,8 @@ wait_handle::~wait_handle() {
   close();
 }
 
-void wait_handle::close() {}
+void wait_handle::close() {
+}
 
 bool wait_handle::signal_and_wait(wait_handle& to_signal, wait_handle& to_wait) {
   return signal_and_wait(to_signal, to_wait, timeout::infinite);
@@ -31,122 +31,122 @@ bool wait_handle::signal_and_wait(wait_handle& to_signal, wait_handle& to_wait, 
   return signal_and_wait(to_signal, to_wait, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool wait_handle::wait_all(const initializer_list<xtd::sptr<wait_handle>>& wait_handles){
+bool wait_handle::wait_all(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles){
   return wait_all(wait_handles, timeout::infinite);
 }
 
-bool wait_handle::wait_all(const initializer_list<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
-  auto wait_handle_pointers = vector<wait_handle*> {};
+bool wait_handle::wait_all(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+  auto wait_handle_pointers = std::vector<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
   return wait_all(wait_handle_pointers, milliseconds_timeout);
 }
 
-bool wait_handle::wait_all(const initializer_list<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) {
+bool wait_handle::wait_all(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool wait_handle::wait_all(const initializer_list<xtd::uptr<wait_handle>>& wait_handles){
+bool wait_handle::wait_all(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles){
   return wait_all(wait_handles, timeout::infinite);
 }
 
-bool wait_handle::wait_all(const initializer_list<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
-  auto wait_handle_pointers = vector<wait_handle*> {};
+bool wait_handle::wait_all(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+  auto wait_handle_pointers = std::vector<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
   return wait_all(wait_handle_pointers, milliseconds_timeout);
 }
 
-bool wait_handle::wait_all(const initializer_list<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) {
+bool wait_handle::wait_all(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool wait_handle::wait_all(const vector<xtd::sptr<wait_handle>>& wait_handles) {
+bool wait_handle::wait_all(const std::vector<xtd::sptr<wait_handle>>& wait_handles) {
   return wait_all(wait_handles, timeout::infinite);
 }
 
-bool wait_handle::wait_all(const vector<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
-  auto wait_handle_pointers = vector<wait_handle*> {};
+bool wait_handle::wait_all(const std::vector<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+  auto wait_handle_pointers = std::vector<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
   return wait_all(wait_handle_pointers, milliseconds_timeout);
 }
 
-bool wait_handle::wait_all(const vector<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) {
+bool wait_handle::wait_all(const std::vector<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool wait_handle::wait_all(const vector<xtd::uptr<wait_handle>>& wait_handles) {
+bool wait_handle::wait_all(const std::vector<xtd::uptr<wait_handle>>& wait_handles) {
   return wait_all(wait_handles, timeout::infinite);
 }
 
-bool wait_handle::wait_all(const vector<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
-  auto wait_handle_pointers = vector<wait_handle*> {};
+bool wait_handle::wait_all(const std::vector<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+  auto wait_handle_pointers = std::vector<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
   return wait_all(wait_handle_pointers, milliseconds_timeout);
 }
 
-bool wait_handle::wait_all(const vector<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) {
+bool wait_handle::wait_all(const std::vector<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-size_t wait_handle::wait_any(const initializer_list<xtd::sptr<wait_handle>>& wait_handles) {
+size_t wait_handle::wait_any(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles) {
   return wait_any(wait_handles, timeout::infinite);
 }
 
-size_t wait_handle::wait_any(const initializer_list<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
-  auto wait_handle_pointers = vector<wait_handle*> {};
+size_t wait_handle::wait_any(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+  auto wait_handle_pointers = std::vector<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
   return wait_any(wait_handle_pointers, milliseconds_timeout);
 }
 
-size_t wait_handle::wait_any(const initializer_list<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) {
+size_t wait_handle::wait_any(const std::initializer_list<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
-size_t wait_handle::wait_any(const initializer_list<xtd::uptr<wait_handle>>& wait_handles) {
+size_t wait_handle::wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles) {
   return wait_any(wait_handles, timeout::infinite);
 }
 
-size_t wait_handle::wait_any(const initializer_list<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
-  auto wait_handle_pointers = vector<wait_handle*> {};
+size_t wait_handle::wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+  auto wait_handle_pointers = std::vector<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
   return wait_any(wait_handle_pointers, milliseconds_timeout);
 }
 
-size_t wait_handle::wait_any(const initializer_list<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) {
-  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
-}
-
-size_t wait_handle::wait_any(const vector<xtd::sptr<wait_handle>>& wait_handles) {
-  return wait_any(wait_handles, timeout::infinite);
-}
-
-size_t wait_handle::wait_any(const vector<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
-  auto wait_handle_pointers = vector<wait_handle*> {};
-  for (auto& wait_handle : wait_handles)
-    wait_handle_pointers.push_back(wait_handle.get());
-  return wait_any(wait_handle_pointers, milliseconds_timeout);
-}
-
-size_t wait_handle::wait_any(const vector<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) {
+size_t wait_handle::wait_any(const std::initializer_list<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-size_t wait_handle::wait_any(const vector<xtd::uptr<wait_handle>>& wait_handles) {
+size_t wait_handle::wait_any(const std::vector<xtd::sptr<wait_handle>>& wait_handles) {
   return wait_any(wait_handles, timeout::infinite);
 }
 
-size_t wait_handle::wait_any(const vector<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
-  auto wait_handle_pointers = vector<wait_handle*> {};
+size_t wait_handle::wait_any(const std::vector<xtd::sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+  auto wait_handle_pointers = std::vector<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.push_back(wait_handle.get());
   return wait_any(wait_handle_pointers, milliseconds_timeout);
 }
 
-size_t wait_handle::wait_any(const vector<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) {
+size_t wait_handle::wait_any(const std::vector<xtd::sptr<wait_handle>>& wait_handles, const time_span& timeout) {
+  return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
+}
+
+size_t wait_handle::wait_any(const std::vector<xtd::uptr<wait_handle>>& wait_handles) {
+  return wait_any(wait_handles, timeout::infinite);
+}
+
+size_t wait_handle::wait_any(const std::vector<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+  auto wait_handle_pointers = std::vector<wait_handle*> {};
+  for (auto& wait_handle : wait_handles)
+    wait_handle_pointers.push_back(wait_handle.get());
+  return wait_any(wait_handle_pointers, milliseconds_timeout);
+}
+
+size_t wait_handle::wait_any(const std::vector<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
@@ -163,7 +163,7 @@ bool wait_handle::wait_one(const time_span& timeout) {
   return wait_one(as<int32>(timeout.total_milliseconds()));
 }
 
-bool wait_handle::wait_all(const vector<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
+bool wait_handle::wait_all(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception {csf_};
   
   if (milliseconds_timeout == timeout::infinite) {
@@ -178,7 +178,7 @@ bool wait_handle::wait_all(const vector<wait_handle*>& wait_handles, int32 milli
   return true;
 }
 
-size_t wait_handle::wait_any(const vector<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
+size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw argument_exception {csf_};
   
   if (milliseconds_timeout == timeout::infinite) {

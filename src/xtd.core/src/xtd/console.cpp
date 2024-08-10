@@ -12,7 +12,6 @@
 #include <iostream>
 #include <mutex>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::io;

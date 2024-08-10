@@ -1,7 +1,6 @@
 #include "../../../../include/xtd/net/sockets/socket_async_event_args.h"
 #include "../../../../include/xtd/argument_out_of_range_exception.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -15,15 +14,15 @@ socket_async_event_args& socket_async_event_args::accept_socket(const xtd::net::
   return *this;
 }
 
-const vector<xtd::byte>& socket_async_event_args::buffer() const noexcept {
+const std::vector<xtd::byte>& socket_async_event_args::buffer() const noexcept {
   return buffer_;
 }
 
-vector<xtd::byte>& socket_async_event_args::buffer() noexcept {
+std::vector<xtd::byte>& socket_async_event_args::buffer() noexcept {
   return buffer_;
 }
 
-void socket_async_event_args::set_buffer(const vector<xtd::byte>& memory_buffer) {
+void socket_async_event_args::set_buffer(const std::vector<xtd::byte>& memory_buffer) {
   memory_buffer_ = memory_buffer;
 }
 

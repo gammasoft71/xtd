@@ -1,6 +1,5 @@
 #include "../../../include/xtd/net/network_credential.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::security;
