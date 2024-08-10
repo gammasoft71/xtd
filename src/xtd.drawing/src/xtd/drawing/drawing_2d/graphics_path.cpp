@@ -7,7 +7,6 @@
 #include <xtd/as>
 #include <xtd/is>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing;
@@ -79,14 +78,14 @@ void graphics_path::add_bezier(float x1, float y1, float x2, float y2, float x3,
 }
 
 void graphics_path::add_beziers(const std::vector<xtd::drawing::point>& points) {
-  auto points_f = vector<point_f> {};
-  for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
+  auto points_f = std::vector<point_f> {};
+  std::for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
   add_beziers(points_f);
 }
 
 void graphics_path::add_beziers(const std::vector<xtd::drawing::point_f>& points) {
-  auto pair_points = vector<key_value_pair<float, float>> {};
-  for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
+  auto pair_points = std::vector<key_value_pair<float, float>> {};
+  std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
   native::graphics_path::add_beziers(handle(), pair_points);
 }
 
@@ -99,14 +98,14 @@ void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& p
 }
 
 void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& points, float tension) {
-  auto points_f = vector<point_f> {};
-  for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
+  auto points_f = std::vector<point_f> {};
+  std::for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
   add_closed_curve(points_f, tension);
 }
 
 void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& points, float tension) {
-  auto pair_points = vector<key_value_pair<float, float>> {};
-  for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
+  auto pair_points = std::vector<key_value_pair<float, float>> {};
+  std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
   native::graphics_path::add_closed_curve(handle(), pair_points, tension);
 }
 
@@ -127,14 +126,14 @@ void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, 
 }
 
 void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
-  auto points_f = vector<point_f> {};
-  for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
+  auto points_f = std::vector<point_f> {};
+  std::for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
   add_curve(points_f, offset, number_of_segments, tension);
 }
 
 void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
-  auto pair_points = vector<key_value_pair<float, float>> {};
-  for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
+  auto pair_points = std::vector<key_value_pair<float, float>> {};
+  std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
   native::graphics_path::add_curve(handle(), pair_points, offset, number_of_segments, tension);
 }
 

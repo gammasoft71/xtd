@@ -3,7 +3,6 @@
 #include <xtd/format_exception>
 #include <map>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 

@@ -10,7 +10,6 @@
 #include <map>
 #include <vector>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing::native;
 
@@ -19,8 +18,8 @@ intptr pen::create() {
   return reinterpret_cast<intptr>(new wx_pen());
 }
 
-void pen::solid_color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, vector<float> dashes) {
-  vector<xtd::sbyte> wx_dashes;
+void pen::solid_color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, std::vector<float> dashes) {
+  auto wx_dashes = std::vector<xtd::sbyte> {};
   for (auto dash : dashes)
     wx_dashes.push_back(static_cast<xtd::sbyte>(dash));
   reinterpret_cast<wx_pen*>(pen)->create_solid_color_pen({r, g, b, a}, width, dash_offset, wx_dashes);
