@@ -11,14 +11,13 @@
 #include <xtd/native/translator>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections::specialized;
 using namespace xtd::io;
 
-map<ustring, string_dictionary> translator::language_values_;
+std::map<ustring, string_dictionary> translator::language_values_;
 ustring translator::language_;
-set<ustring> translator::translated_languages_;
+std::set<ustring> translator::translated_languages_;
 
 xtd::ustring translator::language() {
   try {

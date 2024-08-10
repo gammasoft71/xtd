@@ -10,7 +10,6 @@
 #include "../../include/xtd/io/path.h"
 #include "../../include/xtd/net/ip_address.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::net;
@@ -151,11 +150,11 @@ ustring uri::scheme() const {
   return get_components(uri_components::scheme, uri_format::uri_escaped);
 }
 
-vector<ustring> uri::segments() const {
+std::vector<ustring> uri::segments() const {
   auto path = this->absolute_path();
   if (path.empty()) return {};
   
-  auto segments = vector<ustring> {};
+  auto segments = std::vector<ustring> {};
   auto start_index = 0_z;
   auto length = 1_z;
   
@@ -180,7 +179,7 @@ ustring uri::user_info() const {
 
 bool uri::check_scheme_name(const ustring& scheme) {
   auto first = true;
-  for (auto c : as<u32string>(scheme)) {
+  for (auto c : as<std::u32string>(scheme)) {
     if (first) {
       first = false;
       if (!char32_object::is_letter(c)) return false;

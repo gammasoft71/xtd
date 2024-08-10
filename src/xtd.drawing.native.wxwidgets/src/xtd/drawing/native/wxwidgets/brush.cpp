@@ -8,7 +8,6 @@
 #include <wx/colour.h>
 #include <algorithm>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing::native;
 
@@ -61,8 +60,8 @@ void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2
   
   if (angle == 0 || angle == 180) p2.y = p1.y;
   if (angle == 90 || angle == 270) p2.x = p1.x;
-  if (angle == 135 || angle == 315) swap(p1.x, p2.x);
-  if (angle == 180 || angle == 225 || angle == 270 || angle == 315) swap(p1, p2);
+  if (angle == 135 || angle == 315) std::swap(p1.x, p2.x);
+  if (angle == 180 || angle == 225 || angle == 270 || angle == 315) std::swap(p1, p2);
   
   reinterpret_cast<wx_brush*>(brush)->create_linear_gradiant_brush(p1, p2, colours);
 }

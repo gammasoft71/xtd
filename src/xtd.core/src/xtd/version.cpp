@@ -6,7 +6,6 @@
 #include "../../include/xtd/format_exception.h"
 #include <regex>
 
-using namespace std;
 using namespace xtd;
 
 version::version(const ustring& version) {
@@ -66,9 +65,9 @@ bool version::equals(const version& v) const noexcept {
 }
 
 version version::parse(const xtd::ustring& input) {
-  auto rgx = regex {"\\."};
+  auto rgx = std::regex {"\\."};
   auto versions = xtd::collections::specialized::string_collection {};
-  for (auto it = sregex_token_iterator {input.begin(), input.end(), rgx, -1}, end = sregex_token_iterator {}; it != end; ++it)
+  for (auto it = std::sregex_token_iterator {input.begin(), input.end(), rgx, -1}, end = std::sregex_token_iterator {}; it != end; ++it)
     versions.push_back(it->str());
     
   switch (versions.size()) {

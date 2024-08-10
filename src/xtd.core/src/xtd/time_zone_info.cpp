@@ -8,7 +8,6 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <list>
 
-using namespace std;
 using namespace std::chrono;
 using namespace xtd;
 
@@ -141,8 +140,8 @@ xtd::date_time time_zone_info::convert_time_to_utc(const xtd::date_time& date_ti
   return xtd::date_time::specify_kind(date_time.to_universal_time(), date_time_kind::utc);
 }
 
-const list<time_zone_info>& time_zone_info::get_system_time_zones() noexcept {
-  static auto system_time_zones = list<time_zone_info> {};
+const std::list<time_zone_info>& time_zone_info::get_system_time_zones() noexcept {
+  static auto system_time_zones = std::list<time_zone_info> {};
   if (system_time_zones.size()) return system_time_zones;
   auto stzs = native::date_time::get_system_time_zones();
   for_each(stzs.begin(), stzs.end(), [&](auto item) {system_time_zones.emplace_back(time_zone_info(item.id, ticks(item.base_utc_offset), item.daylight_name, item.display_name, item.standard_name, item.supports_daylight_saving_time));});

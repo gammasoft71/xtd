@@ -1,6 +1,5 @@
 #include "../../include/xtd/toolkit.h"
 
-using namespace std;
 using namespace xtd;
 
 xtd::toolkit::toolkit(const xtd::ustring& name, const xtd::version& version, const xtd::ustring& description) : description_(description), name_(name), version_(version) {
