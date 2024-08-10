@@ -1,6 +1,5 @@
 #include "../../../include/xtd/drawing/system_images.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -24,11 +23,11 @@ image system_images::image_missing(const xtd::drawing::size& size) noexcept {
   return from_name("image-missing", size);
 }
 
-vector<ustring> system_images::contexts() noexcept {
+std::vector<ustring> system_images::contexts() noexcept {
   return system_images_base::contexts();
 }
 
-map<ustring, std::vector<ustring>> system_images::context_names() noexcept {
+std::map<ustring, std::vector<ustring>> system_images::context_names() noexcept {
   return system_images_base::context_names();
 }
 

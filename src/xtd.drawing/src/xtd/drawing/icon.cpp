@@ -5,7 +5,6 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <iostream>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -29,15 +28,15 @@ icon::icon(const xtd::ustring& filename, int32 width, int32 height) : data_(xtd:
   data_->size = {width, height};
 }
 
-icon::icon(istream& stream) : data_(xtd::new_sptr<data>()) {
+icon::icon(std::istream& stream) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(stream);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
 
-icon::icon(istream& stream, const xtd::drawing::size& size) : icon(stream, size.width(), size.height()) {
+icon::icon(std::istream& stream, const xtd::drawing::size& size) : icon(stream, size.width(), size.height()) {
 }
 
-icon::icon(istream& stream, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
+icon::icon(std::istream& stream, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   data_->handle = native::icon::create(stream, width, height);
   data_->size = {native::icon::get_width(handle()), native::icon::get_height(handle())};
 }
@@ -112,7 +111,7 @@ void icon::save(const ustring& filename) const {
   native::icon::save(data_->handle, filename);
 }
 
-void icon::save(ostream& stream) const {
+void icon::save(std::ostream& stream) const {
   native::icon::save(data_->handle, stream, IFM_ICO);
 }
 

@@ -12,7 +12,6 @@
 #include <xtd/math>
 #include <vector>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing;
@@ -568,7 +567,7 @@ void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<x
 }
 
 void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle_f>& rects) {
-  auto rectangles = std::vector<tuple<float, float, float, float>> {};
+  auto rectangles = std::vector<std::tuple<float, float, float, float>> {};
   for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.emplace_back(to_pixels(rect.x()), to_pixels(rect.y()), to_pixels(rect.width()), to_pixels(rect.height()));});
   native::graphics::draw_rectangles(handle(), pen.handle(), rectangles);
 }
@@ -747,7 +746,7 @@ void graphics::fill_rectangles(const xtd::drawing::brush& brush, const std::vect
 }
 
 void graphics::fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle_f>& rects) {
-  auto rectangles = std::vector<tuple<float, float, float, float>> {};
+  auto rectangles = std::vector<std::tuple<float, float, float, float>> {};
   for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.emplace_back(to_pixels(rect.x()), to_pixels(rect.y()), to_pixels(rect.width()), to_pixels(rect.height()));});
   native::graphics::fill_rectangles(handle(), brush.handle(), rectangles);
 }
