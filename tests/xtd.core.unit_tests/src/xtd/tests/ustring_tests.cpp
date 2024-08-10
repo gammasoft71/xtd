@@ -5,7 +5,7 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
+using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -31,7 +31,7 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_string) {
-      string s1 = "test";
+      std::string s1 = "test";
       ustring s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
@@ -44,7 +44,7 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_wstring) {
-      wstring s1 = L"test";
+      std::wstring s1 = L"test";
       ustring s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
@@ -58,7 +58,7 @@ namespace xtd::tests {
     
 #if defined(__xtd__cpp_lib_char8_t)
     void test_method_(constructor_with_u8string) {
-      u8string s1 = u8"test";
+      std::u8string s1 = u8"test";
       ustring s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
@@ -72,7 +72,7 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_u16string) {
-      u16string s1 = u"test";
+      std::u16string s1 = u"test";
       ustring s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
@@ -85,7 +85,7 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_u32string) {
-      u32string s1 = U"test";
+      std::u32string s1 = U"test";
       ustring s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
       assert::are_equal("test", s2, csf_);
@@ -144,7 +144,7 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_equal_with_string) {
-      auto s1 = string {"test"};
+      auto s1 = std::string {"test"};
       ustring s2;
       s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -153,7 +153,7 @@ namespace xtd::tests {
     
 #if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_equal_with_u8string1) {
-      auto s1 = u8string {u8"test"};
+      auto s1 = std::u8string {u8"test"};
       ustring s2;
       s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -162,7 +162,7 @@ namespace xtd::tests {
 #endif
     
     void test_method_(operator_equal_with_u16string1) {
-      auto s1 = u16string {u"test"};
+      auto s1 = std::u16string {u"test"};
       ustring s2;
       s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -170,7 +170,7 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_equal_with_u32string1) {
-      auto s1 = u32string {U"test"};
+      auto s1 = std::u32string {U"test"};
       ustring s2;
       s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -186,7 +186,7 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_equal_with_wstring1) {
-      auto s1 = wstring {L"test"};
+      auto s1 = std::wstring {L"test"};
       ustring s2;
       s2 = s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -338,7 +338,7 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_plus_equal_with_string) {
-      auto s1 = string {"s1"};
+      auto s1 = std::string {"s1"};
       ustring s2 = "s2";
       s2 += s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -347,7 +347,7 @@ namespace xtd::tests {
     
 #if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_plus_equal_with_u8string) {
-      auto s1 = u8string {u8"s1"};
+      auto s1 = std::u8string {u8"s1"};
       ustring s2 = "s2";
       s2 += s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -356,7 +356,7 @@ namespace xtd::tests {
 #endif
     
     void test_method_(operator_plus_equal_with_u16string) {
-      auto s1 = u16string {u"s1"};
+      auto s1 = std::u16string {u"s1"};
       ustring s2 = "s2";
       s2 += s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -364,7 +364,7 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_plus_equal_with_u32string) {
-      auto s1 = u32string {U"s1"};
+      auto s1 = std::u32string {U"s1"};
       ustring s2 = "s2";
       s2 += s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -380,7 +380,7 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_plus_equal_with_wstring) {
-      auto s1 = wstring {L"s1"};
+      auto s1 = std::wstring {L"s1"};
       ustring s2 = "s2";
       s2 += s1;
       assert::are_equal(4_z, s2.length(), csf_);
@@ -532,7 +532,7 @@ namespace xtd::tests {
     }
 
     void test_method_(operator_plus_with_string) {
-      auto s1 = string {"s1"};
+      auto s1 = std::string {"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
       assert::are_equal(4_z, s3.length(), csf_);
@@ -541,7 +541,7 @@ namespace xtd::tests {
     
 #if defined(__xtd__cpp_lib_char8_t)
     void test_method_(operator_plus_with_u8string) {
-      auto s1 = u8string {u8"s1"};
+      auto s1 = std::u8string {u8"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
       assert::are_equal(4_z, s3.length(), csf_);
@@ -550,7 +550,7 @@ namespace xtd::tests {
 #endif
     
     void test_method_(operator_plus_with_u16string) {
-      auto s1 = u16string {u"s1"};
+      auto s1 = std::u16string {u"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
       assert::are_equal(4_z, s3.length(), csf_);
@@ -558,7 +558,7 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_plus_with_u32string) {
-      auto s1 = u32string {U"s1"};
+      auto s1 = std::u32string {U"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
       assert::are_equal(4_z, s3.length(), csf_);
@@ -574,7 +574,7 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_plus_with_wstring) {
-      auto s1 = wstring {L"s1"};
+      auto s1 = std::wstring {L"s1"};
       ustring s2 = "s2";
       ustring s3 = s2 + s1;
       assert::are_equal(4_z, s3.length(), csf_);

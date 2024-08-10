@@ -7,19 +7,18 @@
 #include "../../../include/xtd/io/path.h"
 #include "../../../include/xtd/io/binary_writer.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 
-binary_writer::binary_writer(const ustring& path) : stream_(new ofstream(path, ios::out | ios::binary | ios_base::trunc)), delete_when_destroy_(true) {
-  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception {csf_};
+binary_writer::binary_writer(const ustring& path) : stream_(new std::ofstream(path, std::ios::out | std::ios::binary | std::ios_base::trunc)), delete_when_destroy_(true) {
+  if (path.index_of_any(path::get_invalid_path_chars()) != ustring::npos) throw argument_exception {csf_};
   if (path.empty() || path.trim(' ').empty()) throw argument_exception {csf_};
   if (!file::exists(path)) throw file_not_found_exception {csf_};
   if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {csf_};
-  if (!dynamic_cast<ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception {csf_};
+  if (!dynamic_cast<std::ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception {csf_};
 }
 
-binary_writer::binary_writer(ostream& stream) : stream_(&stream) {
+binary_writer::binary_writer(std::ostream& stream) : stream_(&stream) {
   if (!stream_->good()) throw io_exception {csf_};
   stream_->flush();
 }
@@ -27,18 +26,18 @@ binary_writer::binary_writer(ostream& stream) : stream_(&stream) {
 binary_writer::~binary_writer() {
   if (delete_when_destroy_ && stream_) {
     flush();
-    if (stream_ && dynamic_cast<ofstream*>(stream_)) static_cast<ofstream*>(stream_)->close();
+    if (stream_ && dynamic_cast<std::ofstream*>(stream_)) static_cast<std::ofstream*>(stream_)->close();
     delete stream_;
   }
 }
 
-optional<reference_wrapper<ostream>> binary_writer::base_stream() const {
-  return stream_ ? optional<reference_wrapper<ostream>>(*stream_) : optional<reference_wrapper<ostream>>();
+std::optional<std::reference_wrapper<std::ostream>> binary_writer::base_stream() const {
+  return stream_ ? std::optional<std::reference_wrapper<std::ostream>>(*stream_) : std::optional<std::reference_wrapper<std::ostream>>();
 }
 
 void binary_writer::close() {
   flush();
-  if (stream_ && dynamic_cast<ofstream*>(stream_)) static_cast<ofstream*>(stream_)->close();
+  if (stream_ && dynamic_cast<std::ofstream*>(stream_)) static_cast<std::ofstream*>(stream_)->close();
   if (delete_when_destroy_) delete stream_;
   stream_ = nullptr;
 }

@@ -24,7 +24,7 @@ size_t drive_info::available_free_space() const {
 }
 
 ustring drive_info::drive_format() const {
-  auto volume_name = string {}, file_system_name = string {};
+  auto volume_name = ustring {}, file_system_name = ustring {};
   if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw io_exception {csf_};
   return file_system_name;
 }
@@ -35,7 +35,7 @@ drive_type drive_info::drive_type() const {
 }
 
 bool drive_info::is_ready() const noexcept {
-  auto volume_name = string {}, file_system_name = string {};
+  auto volume_name = ustring {}, file_system_name = ustring {};
   return native::drive::get_volume_information(drive_name_, volume_name, file_system_name);
 }
 
@@ -60,7 +60,7 @@ size_t drive_info::total_size() const {
 }
 
 ustring drive_info::volume_label() const {
-  auto volume_name = string {}, file_system_name = string {};
+  auto volume_name = ustring {}, file_system_name = ustring {};
   if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw io_exception {csf_};
   return volume_name;
 }
