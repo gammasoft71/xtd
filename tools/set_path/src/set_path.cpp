@@ -10,13 +10,13 @@
 #include <Windows.h>
 #endif
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 namespace set_path {
   class program final static_ {
   public:
-    static auto main(const vector<ustring>& args) {
+    static auto main(const list<ustring>& args) {
       ustring folder;
       bool show_version = false;
       bool show_help = false;
@@ -77,12 +77,12 @@ namespace set_path {
     }
     
   private:
-    static string get_error() {
+    static ustring get_error() {
       return "set_path : invalid params\n"
         "Try 'set_path --help' for more information.";
     }
     
-    static string get_usage() {
+    static ustring get_usage() {
       return "Usage\n"
         "  set_path [options] folder\n"
         "\n"
@@ -95,11 +95,11 @@ namespace set_path {
         "(*) System option is valid only on Windows. You must in administrator mode.";
     }
     
-    static string get_version() {
+    static ustring get_version() {
       return ustring::format("set_path version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static bool process_arguments(const vector<ustring>& args, ustring& folder, bool& add, bool& remove, bool& system_path, bool& show_version, bool& show_help) {
+    static bool process_arguments(const list<ustring>& args, ustring& folder, bool& add, bool& remove, bool& system_path, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         if (args[index] == "-a" || args[index] == "--add") add = true;
         else if (args[index] == "-r" || args[index] == "--remove") remove = true;

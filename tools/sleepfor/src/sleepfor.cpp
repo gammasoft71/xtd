@@ -5,9 +5,8 @@
 #include <xtd/chrono>
 #include <xtd/threading/thread>
 
-using namespace std;
-using namespace std::chrono;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::threading;
 
 namespace sleepfor {
@@ -15,7 +14,7 @@ namespace sleepfor {
     enum class period_type {nanoseconds, microseconds, milliseconds, seconds, minutes};
     
   public:
-    static auto main(const vector<ustring>& args) {
+    static auto main(const list<ustring>& args) {
       int duration = 0;
       period_type type = period_type::milliseconds;
       bool indefinitely = false;
@@ -28,21 +27,21 @@ namespace sleepfor {
       
       if (show_version) console::write_line(get_version());
       else if (show_help) console::write_line("{0}{1}{1}{2}", get_version(), environment::new_line(), get_usage());
-      else if (indefinitely) while (true) threading::thread::sleep(hours(numeric_limits<int32>::max()));
+      else if (indefinitely) while (true) threading::thread::sleep(std::chrono::hours(std::numeric_limits<int32>::max()));
       else if (type == period_type::nanoseconds) threading::thread::sleep(std::chrono::nanoseconds(duration));
-      else if (type == period_type::seconds) threading::thread::sleep(seconds(duration));
-      else if (type == period_type::minutes) threading::thread::sleep(minutes(duration));
-      else threading::thread::sleep(milliseconds(duration));
+      else if (type == period_type::seconds) threading::thread::sleep(std::chrono::seconds(duration));
+      else if (type == period_type::minutes) threading::thread::sleep(std::chrono::minutes(duration));
+      else threading::thread::sleep(std::chrono::milliseconds(duration));
       return 0;
     }
     
   private:
-    static string get_error() {
+    static ustring get_error() {
       return "sleepfor : invalid params\n"
         "Try 'sleepfor --help' for more information.";
     }
     
-    static string get_usage() {
+    static ustring get_usage() {
       return "Usage\n"
         "  sleepfor [duration] [--nanoseconds| -milliseconds| -seconds| -minutes|]\n"
         "\n"
@@ -55,11 +54,11 @@ namespace sleepfor {
         "-h, --help          : Shows this help page.";
     }
     
-    static string get_version() {
+    static ustring get_version() {
       return ustring::format("sleepfor version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static bool process_arguments(const vector<ustring>& args, int32& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
+    static bool process_arguments(const list<ustring>& args, int32& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
       for (size_t index = 0; index < args.size(); index += 1) {
         if (args[index] == "-ns" || args[index] == "--nanoseconds") type = period_type::nanoseconds;
         else if (args[index] == "-ms" || args[index] == "--milliseconds") type = period_type::milliseconds;

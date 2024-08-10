@@ -66,7 +66,7 @@ bool emoticon::equals(const emoticon& value) const noexcept {
 
 xtd::ustring emoticon::to_string() const noexcept {
   /// @todo Replace string with string_builder when implemented.
-  auto result = string {};
+  auto result = std::string {};
   for (auto codepoint : data_->codepoints) {
     if (codepoint < 0x80)
       result.push_back(static_cast<char>(codepoint));

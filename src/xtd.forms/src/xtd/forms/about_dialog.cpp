@@ -17,10 +17,9 @@
 #include <xtd/chrono>
 #include <xtd/literals>
 #include <memory>
-#include <vector>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::reflection;
@@ -38,7 +37,7 @@ namespace {
       auto_size(true);
     }
     
-    const string title() const {return title_;}
+    const ustring title() const {return title_;}
     credits_item_panel& title(const ustring& title) {
       if (title_ == title) return *this;
       title_ = title;
@@ -46,8 +45,8 @@ namespace {
       return *this;
     }
     
-    const vector<ustring>& names() const {return names_;}
-    credits_item_panel& names(const vector<ustring>& names) {
+    const list<ustring>& names() const {return names_;}
+    credits_item_panel& names(const list<ustring>& names) {
       if (names_ == names) return *this;
       names_ = names;
       names_label_.text(names_.size() ? names_[0] : "");
@@ -73,8 +72,8 @@ namespace {
   private:
     label title_label_;
     label names_label_;
-    vector<ustring> names_;
-    string title_;
+    list<ustring> names_;
+    ustring title_;
   };
   
   class about_dialog_standard : public form {

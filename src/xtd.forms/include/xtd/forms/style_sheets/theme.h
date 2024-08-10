@@ -105,8 +105,8 @@ namespace xtd {
         
         xtd::ustring to_string() const noexcept override;
         
-        /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
-        /// @return A xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
+        /// @brief Return a xtd::ustring that represents the css format of the current xtd::forms::style_sheets::theme object.
+        /// @return A xtd::ustring that represents the css format of the current xtd::forms::style_sheets::theme object.
         xtd::ustring to_css() const noexcept;
         /// @}
         

@@ -120,7 +120,7 @@ void binary_writer::write(const ustring& value) {
     write(c);
 }
 
-void binary_writer::write(const string& value) {
+void binary_writer::write(const std::string& value) {
   write(ustring(value));
 }
 

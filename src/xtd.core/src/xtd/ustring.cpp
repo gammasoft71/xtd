@@ -129,10 +129,10 @@ ustring::ustring(const ustring& str) noexcept : basic_string<value_type>(str) {
 ustring::ustring(const ustring& str, const allocator_type& allocator) noexcept : basic_string<value_type>(str, allocator) {
 }
 
-ustring::ustring(const string& str) noexcept : basic_string<value_type>(str) {
+ustring::ustring(const std::string& str) noexcept : basic_string<value_type>(str) {
 }
 
-ustring::ustring(const string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str()), allocator) {
+ustring::ustring(const std::string& str, const allocator_type& allocator) noexcept : basic_string<value_type>(reinterpret_cast<const value_type*>(str.c_str()), allocator) {
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
@@ -285,7 +285,7 @@ ustring& ustring::operator =(const ustring& str) noexcept {
   return *this;
 }
 
-ustring& ustring::operator =(const string& str) noexcept {
+ustring& ustring::operator =(const std::string& str) noexcept {
   assign(str.c_str());
   return *this;
 }
@@ -407,7 +407,7 @@ ustring& ustring::operator +=(const ustring& str) {
   return *this;
 }
 
-ustring& ustring::operator +=(const string& str) {
+ustring& ustring::operator +=(const std::string& str) {
   *this = *this + str;
   return *this;
 }
@@ -521,11 +521,11 @@ bool ustring::operator !=(const ustring& other) const {
   return !operator ==(other);
 }
 
-bool ustring::operator ==(const string& other) const {
+bool ustring::operator ==(const std::string& other) const {
   return *this == ustring(other);
 }
 
-bool ustring::operator !=(const string& other) const {
+bool ustring::operator !=(const std::string& other) const {
   return !operator ==(other);
 }
 
