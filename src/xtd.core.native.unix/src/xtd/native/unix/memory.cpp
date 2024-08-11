@@ -14,11 +14,19 @@
 
 using namespace xtd::native;
 
+namespace {
+  size_t page_size() {
+    auto length = sizeof(size_t);
+    auto page_size = size_t {};
+    if (sysctlbyname("hw.pagesize", &page_size, &length, nullptr, 0) == -1) return 0;
+    return page_size;
+  }
+}
+
 size_t memory::get_total_physical_memory() {
-  auto mib = std::array<int32_t, 2> {CTL_HW, HW_MEMSIZE};
-  auto total_physical_memory = size_t {};
   auto length = sizeof(size_t);
-  sysctl(mib.data(), 2, &total_physical_memory, &length, nullptr, 0);
+  auto total_physical_memory = size_t {};
+  if (sysctlbyname("hw.physmem", &total_physical_memory, &length, nullptr, 0) == -1) return 0;
   return total_physical_memory;
 }
 
@@ -29,24 +37,17 @@ size_t memory::get_total_process_memory() {
 }
 
 size_t memory::get_total_virtual_memory() {
-  auto meminfo_file = std::ifstream {"/proc/meminfo"};
-  auto line = std::string {};
-  auto total_memory = size_t {};
-  
-  while (std::getline(meminfo_file, line)) {
-    if (line.substr(0, 9) == "MemTotal:") {
-      total_memory = std::stoul(line.substr(9)) * 1024;
-      break;
-    }
-  }
-  return total_memory;
+  auto length = sizeof(size_t);
+  auto total_virtual_pages = size_t {};
+  if (sysctlbyname("vm.stats.vm.v_page_count", &total_virtual_pages, &length, nullptr, 0) == -1) return 0;
+  return total_virtual_pages * page_size();
 }
 
 size_t memory::get_used_physical_memory() {
-  auto mib = std::array<int32_t, 2> {CTL_HW, VM_FREE_COUNT};
-  auto free_physical_memory = size_t {};
   auto length = sizeof(size_t);
-  sysctl(mib.data(), 2, &free_physical_memory, &length, nullptr, 0);
+  auto free_physical_pages = size_t {};
+  if (sysctlbyname("vm.stats.vm.v_free_count", &free_physical_pages, &length, nullptr, 0) == -1) return 0;
+  auto free_physical_memory = free_physical_pages * page_size();
   return get_total_physical_memory() - free_physical_memory;
 }
 
@@ -65,18 +66,9 @@ size_t memory::get_used_process_memory() {
 }
 
 size_t memory::get_used_virtual_memory() {
-  auto meminfo_file = std::ifstream {"/proc/meminfo"};
-  auto line = std::string {};
-  auto total_memory = size_t {};
-  auto free_memory = size_t {};
-  auto buffers_memory = size_t {};
-  auto cached_memory = size_t {};
-  
-  while (std::getline(meminfo_file, line)) {
-    if (line.substr(0, 9) == "MemTotal:") total_memory = std::stoul(line.substr(9)) * 1024;
-    else if (line.substr(0, 8) == "MemFree:") free_memory = std::stoul(line.substr(8)) * 1024;
-    else if (line.substr(0, 8) == "Buffers:") buffers_memory = std::stoul(line.substr(8)) * 1024;
-    else if (line.substr(0, 7) == "Cached:") cached_memory = std::stoul(line.substr(7)) * 1024;
-  }
-  return total_memory - free_memory - buffers_memory - cached_memory;
+  auto length = sizeof(size_t);
+  auto free_virtual_pages = size_t {};
+  if (sysctlbyname("vm.stats.vm.v_free_count", &free_virtual_pages, &length, nullptr, 0) == -1) return 0;
+  auto free_virtual_memory = free_virtual_pages * page_size();
+  return get_total_virtual_memory() - free_virtual_memory;
 }
