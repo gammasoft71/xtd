@@ -11,7 +11,6 @@
 #include <wx/dcscreen.h>
 #include <wx/display.h>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;

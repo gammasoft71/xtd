@@ -8,7 +8,6 @@
 #include <xtd/convert_string>
 #include <limits>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
@@ -72,7 +71,7 @@ void list_box::selected_index(intptr control, size_t index) {
   return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32>(index));
 }
 
-vector<size_t> list_box::selected_indices(intptr control) {
+std::vector<size_t> list_box::selected_indices(intptr control) {
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
@@ -81,7 +80,7 @@ vector<size_t> list_box::selected_indices(intptr control) {
   std::vector<size_t> indices;
   wxArrayInt wx_indices;
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
-  for_each(wx_indices.begin(), wx_indices.end(), [&](int32 index) {indices.push_back(index);});
+  std::for_each(wx_indices.begin(), wx_indices.end(), [&](int32 index) {indices.push_back(index);});
   return indices;
 }
 

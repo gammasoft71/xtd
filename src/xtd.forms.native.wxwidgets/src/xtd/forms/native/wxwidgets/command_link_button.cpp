@@ -6,7 +6,6 @@
 #include <xtd/argument_exception>
 #include <xtd/convert_string.h>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms::native;
 

@@ -5,7 +5,6 @@
 #include <xtd/argument_exception>
 #include <xtd/unused>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing;
@@ -71,7 +70,7 @@ std::tuple<uint32, xtd::date_time> month_calendar::hit_test(intptr control, cons
   if (!control || !wxTheApp) throw argument_exception {csf_};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
-    return make_tuple(0, xtd::date_time());
+    return std::make_tuple(0, xtd::date_time());
   }
   
   wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxMonthCalendar*>(reinterpret_cast<control_handler*>(control)->control())->calendarCtrl;
@@ -90,7 +89,7 @@ std::tuple<uint32, xtd::date_time> month_calendar::hit_test(intptr control, cons
     default: hit_area = 0; break;
   }
   
-  return make_tuple(hit_area, date_time(time.GetYear(), static_cast<uint32>(time.GetMonth()) + 1, time.GetDay(), 0, 0, 0, date_time_kind::unspecified));
+  return std::make_tuple(hit_area, date_time(time.GetYear(), static_cast<uint32>(time.GetMonth()) + 1, time.GetDay(), 0, 0, 0, date_time_kind::unspecified));
 }
 
 void month_calendar::allowable_dates(intptr control, date_time min_date, date_time max_date) {
