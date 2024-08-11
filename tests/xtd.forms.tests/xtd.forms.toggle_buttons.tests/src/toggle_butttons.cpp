@@ -7,7 +7,6 @@
 #include <xtd/forms/toggle_button>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
