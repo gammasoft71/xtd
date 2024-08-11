@@ -8,7 +8,6 @@
 #include <xtd/forms/text_box>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
