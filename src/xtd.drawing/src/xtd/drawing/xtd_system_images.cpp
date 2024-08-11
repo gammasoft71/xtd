@@ -1,6 +1,5 @@
 #include "../../../include/xtd/drawing/xtd_system_images.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
@@ -109,7 +108,7 @@ const std::vector<image>& xtd_system_images::get_images() noexcept {
   return images;
 }
 
-vector<image> xtd_system_images::get_images(const xtd::drawing::size& size) noexcept {
+std::vector<image> xtd_system_images::get_images(const xtd::drawing::size& size) noexcept {
   return std::vector {gammasoft(size), xtd(size), xtd_console(size), xtd_forms(size), xtd_tunit(size), xtd_core(size), xtd_delegates(size), xtd_diagnostics(size), xtd_drawing(size), xtd_io(size), xtd_strings(size), xtd_cmake(size), };
 }
 
