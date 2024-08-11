@@ -5,13 +5,12 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/optional>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace {
-  auto current_cursor = optional<cursor> {};
+  auto current_cursor = std::optional<cursor> {};
 }
 
 struct cursor::data {
@@ -20,7 +19,7 @@ struct cursor::data {
   xtd::drawing::point hot_spot_;
   xtd::ustring name_;
   xtd::drawing::size size_;
-  any tag_;
+  std::any tag_;
 };
 
 cursor cursor::none(0, false, "none");
@@ -82,11 +81,11 @@ drawing::size cursor::size() const noexcept {
   return data_->size_;
 }
 
-any cursor::tag() const noexcept {
+std::any cursor::tag() const noexcept {
   return data_->tag_;
 }
 
-void cursor::tag(any tag) {
+void cursor::tag(std::any tag) {
   data_->tag_ = tag;
 }
 

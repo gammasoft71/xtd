@@ -34,7 +34,6 @@
 #include <queue>
 #include <set>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -47,10 +46,10 @@ namespace {
     static bool is_reentrant(control* do_layout) {return do_layouts.find(do_layout) != do_layouts.end(); }
   private:
     control* do_layout_ = nullptr;
-    static set<control*> do_layouts;
+    static std::set<control*> do_layouts;
   };
   
-  set<control*> reentrant_layout::do_layouts;
+  std::set<control*> reentrant_layout::do_layouts;
   
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
     if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON) return mouse_buttons::left;
@@ -89,7 +88,7 @@ bool control::async_result_invoke::is_completed() const noexcept {
 bool control::check_for_illegal_cross_thread_calls_ = diagnostics::debugger::is_attached();
 forms::keys control::modifier_keys_ = forms::keys::none;
 forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
-map<intptr, control*> control::handles_;
+std::map<intptr, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 
 std::vector<xtd::uptr<xtd::forms::control>> control::control_collection::controls_;
@@ -107,16 +106,16 @@ control::control_collection& control::control_collection::operator =(const contr
   return *this;
 }
 
-optional<control::control_collection::value_type> control::control_collection::operator [](const ustring& name) const {
+std::optional<control::control_collection::value_type> control::control_collection::operator [](const ustring& name) const {
   for (auto item : *this)
     if (item.get().name() == name) return item;
   return {};
 }
 
-optional<control::control_collection::value_type> control::control_collection::operator [](const ustring& name) {
+std::optional<control::control_collection::value_type> control::control_collection::operator [](const ustring& name) {
   for (auto item : *this)
     if (item.get().name() == name) return item;
-  return {};
+  return std::nullopt;
 }
 
 control::control_collection::iterator control::control_collection::insert(const_iterator pos, const value_type& value) {
@@ -329,7 +328,7 @@ bool control::can_focus() const noexcept {
   try {
     bool visible_and_enabled = handle() && get_state(state::visible) && get_state(state::enabled);
     
-    auto tlc = optional<control_ref> {const_cast<control&>(*this)};
+    auto tlc = std::optional<control_ref> {const_cast<control&>(*this)};
     while (visible_and_enabled && tlc.has_value() && !tlc.value().get().get_state(state::top_level)) {
       tlc = tlc.value().get().parent();
       if (tlc.has_value()) visible_and_enabled = tlc.value().get().get_state(state::visible) && get_state(state::enabled);
@@ -386,7 +385,7 @@ xtd::ustring control::company_name() const noexcept {
   return "Gammasoft";
 }
 
-optional<control::context_menu_ref> control::context_menu() const noexcept {
+std::optional<control::context_menu_ref> control::context_menu() const noexcept {
   return data_->context_menu;
 }
 
@@ -849,8 +848,8 @@ control& control::top(int32 top) {
   return *this;
 }
 
-optional<control_ref> control::top_level_control() const noexcept {
-  auto top_level_control = optional<control_ref> {const_cast<control&>(*this)};
+std::optional<control_ref> control::top_level_control() const noexcept {
+  auto top_level_control = std::optional<control_ref> {const_cast<control&>(*this)};
   while (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level))
     top_level_control = top_level_control.value().get().parent();
   if (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) top_level_control.reset();
@@ -883,7 +882,7 @@ async_result control::begin_invoke(delegate<void()> method) {
   return begin_invoke(delegate<void(std::vector<std::any>)>(method), {});
 }
 
-async_result control::begin_invoke(delegate<void(vector<any>)> method, const std::vector<any>& args) {
+async_result control::begin_invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) {
   xtd::sptr<async_result_invoke> async = xtd::new_sptr<async_result_invoke>(std::reference_wrapper(*this));
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_event, async->data_->is_completed);
   threading::thread::yield();
@@ -1000,25 +999,25 @@ bool control::focus() {
   return true;
 }
 
-optional<control_ref> control::from_child_handle(intptr handle) {
+std::optional<control_ref> control::from_child_handle(intptr handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
       return it->second->parent();
-    return nullopt;
+    return std::nullopt;
   } catch (...) {
-    return nullopt;
+    return std::nullopt;
   }
 }
 
-optional<control_ref> control::from_handle(intptr handle) {
+std::optional<control_ref> control::from_handle(intptr handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
       return *it->second;
-    return nullopt;
+    return std::nullopt;
   } catch (...) {
-    return nullopt;
+    return std::nullopt;
   }
 }
 

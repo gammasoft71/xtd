@@ -1,7 +1,6 @@
 #include "../../../include/xtd/forms/countries.h"
 #include <xtd/literals>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

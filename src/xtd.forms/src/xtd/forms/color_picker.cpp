@@ -8,7 +8,6 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/choose_color_flags>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

@@ -7,13 +7,12 @@
 #include "../../../include/xtd/forms/collapsible_panel.h"
 #include <optional>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 struct collapsible_panel::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  optional<forms::border_style> border_style;
+  std::optional<forms::border_style> border_style;
   bool expanded = false;
 };
 

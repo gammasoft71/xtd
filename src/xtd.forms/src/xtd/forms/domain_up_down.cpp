@@ -9,7 +9,6 @@
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/literals>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -26,7 +25,7 @@ const xtd::ustring& domain_up_down::item::value() const noexcept {
   return value_;
 }
 
-any domain_up_down::item::tag() const noexcept {
+std::any domain_up_down::item::tag() const noexcept {
   return tag_;
 }
 
