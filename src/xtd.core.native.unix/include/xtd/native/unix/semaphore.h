@@ -8,6 +8,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <semaphore.h>
+#include <time.h>
 
 inline static constexpr size_t PSEMNAMLEN = 31;
 
