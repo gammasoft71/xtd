@@ -6,7 +6,6 @@
 #include "../../../include/xtd/forms/system_information.h"
 #include <xtd/as>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;

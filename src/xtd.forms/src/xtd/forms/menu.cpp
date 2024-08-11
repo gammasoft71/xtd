@@ -11,11 +11,10 @@
 #include <xtd/as>
 #include <xtd/is>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-map<intptr, reference_wrapper<menu>> menu::handles_;
+std::map<intptr, std::reference_wrapper<menu>> menu::handles_;
 
 menu::menu() : data_(xtd::new_sptr<data>()) {
   //data_->mdi_list_item = xtd::new_uptr<menu_item>();
@@ -30,7 +29,7 @@ menu::menu(const menu_item_collection& items) : data_(xtd::new_sptr<data>()) {
   data_->menu_items.push_back_range(items);
 }
 
-menu::menu(const initializer_list<menu_item_ref>& items) : data_(xtd::new_sptr<data>()) {
+menu::menu(const std::initializer_list<menu_item_ref>& items) : data_(xtd::new_sptr<data>()) {
   //data_->mdi_list_item = xtd::new_uptr<menu_item>();
   data_->menu_items.item_added += {*this, &menu::on_item_added};
   data_->menu_items.item_removed += {*this, &menu::on_item_removed};
@@ -85,14 +84,14 @@ menu& menu::menu_items(const menu_item_collection& value) {
   return *this;
 }
 
-menu& menu::menu_items(const initializer_list<reference_wrapper<menu_item>>& value) {
+menu& menu::menu_items(const std::initializer_list<std::reference_wrapper<menu_item>>& value) {
   data_->menu_items.clear();
   for (const auto& item : value)
     data_->menu_items.push_back(item);
   return *this;
 }
 
-menu& menu::menu_items(const std::vector<reference_wrapper<menu_item>>& value) {
+menu& menu::menu_items(const std::vector<std::reference_wrapper<menu_item>>& value) {
   data_->menu_items.clear();
   for (const auto& item : value)
     data_->menu_items.push_back(item);
@@ -121,24 +120,24 @@ bool menu::equals(const menu& value) const noexcept {
   return data_ == value.data_;
 }
 
-optional<reference_wrapper<context_menu>> menu::get_context_menu() const noexcept {
+std::optional<std::reference_wrapper<context_menu>> menu::get_context_menu() const noexcept {
   auto item = const_cast<menu*>(this);
   while (item) {
     if (dynamic_cast<context_menu*>(item)) return static_cast<context_menu&>(*item);
     if (item->data_->parent.has_value())item = &item->data_->parent.value().get();
     else item = nullptr;
   }
-  return {};
+  return std::nullopt;
 }
 
-optional<reference_wrapper<main_menu>> menu::get_main_menu() const noexcept {
+std::optional<std::reference_wrapper<main_menu>> menu::get_main_menu() const noexcept {
   auto item = const_cast<menu*>(this);
   while (item) {
     if (dynamic_cast<main_menu*>(item)) return static_cast<main_menu&>(*item);
     if (item->data_->parent.has_value())item = &item->data_->parent.value().get();
     else item = nullptr;
   }
-  return {};
+  return std::nullopt;
 }
 
 ustring menu::to_string() const noexcept {

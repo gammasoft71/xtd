@@ -5,7 +5,6 @@
 #include <xtd/forms/native/mouse_key>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd::forms;
 
 namespace {

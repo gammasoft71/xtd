@@ -18,7 +18,6 @@
 #include <optional>
 #include <vector>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -26,7 +25,7 @@ using namespace xtd::forms;
 struct label::data {
   bool auto_ellipsis = false;
   xtd::forms::border_sides border_sides = xtd::forms::border_sides::all;
-  optional<xtd::forms::border_style> border_style;
+  std::optional<xtd::forms::border_style> border_style;
   xtd::drawing::image image = xtd::drawing::image::empty;
   xtd::forms::image_list image_list = xtd::forms::image_list::empty;
   int32 image_index = -1;

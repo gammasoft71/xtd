@@ -12,14 +12,13 @@
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/literals>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
 struct list_box::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  optional<forms::border_style> border_style;
+  std::optional<forms::border_style> border_style;
   object_collection items;
   item selected_item;
   forms::selection_mode selection_mode = forms::selection_mode::one;
@@ -104,7 +103,7 @@ list_control& list_box::selected_index(size_t selected_index) {
   return *this;
 }
 
-vector<size_t> list_box::selected_indices() const noexcept {
+std::vector<size_t> list_box::selected_indices() const noexcept {
   return is_handle_created() ? native::list_box::selected_indices(handle()) : std::vector<size_t> {};
 }
 
@@ -130,7 +129,7 @@ const list_box::item& list_box::selected_item() const noexcept {
   return data_->selected_item;
 }
 
-vector<list_box::item> list_box::selected_items() const noexcept {
+std::vector<list_box::item> list_box::selected_items() const noexcept {
   auto itms = std::vector<item> {};
   auto indices = selected_indices();
   for_each(indices.begin(), indices.end(), [&](size_t index) {itms.push_back(data_->items[index]);});

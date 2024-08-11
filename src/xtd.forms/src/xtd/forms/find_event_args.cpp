@@ -1,6 +1,5 @@
 #include "../../../include/xtd/forms/find_event_args.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

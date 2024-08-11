@@ -1,7 +1,6 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/horizontal_control_layout_style.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -74,7 +73,7 @@ horizontal_control_layout_style::horizontal_control_layout_style(float width, bo
 horizontal_control_layout_style::horizontal_control_layout_style(int32 width, bool expanded, xtd::forms::content_alignment align) : control_layout_style(expanded, align), width_(static_cast<float>(width)) {
 }
 
-optional<float> horizontal_control_layout_style::width() const noexcept {
+std::optional<float> horizontal_control_layout_style::width() const noexcept {
   return width_;
 }
 

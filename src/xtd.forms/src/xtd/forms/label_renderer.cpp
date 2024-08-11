@@ -8,7 +8,6 @@
 #include <xtd/drawing/color_converter>
 #include <xtd/unused>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
