@@ -1,7 +1,6 @@
 #include "../../../include/xtd/forms/color_box.h"
 #include "../../../include/xtd/forms/color_dialog.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -22,7 +21,7 @@ dialog_result color_box::show(drawing::color& color, const ustring& title, color
 
 dialog_result color_box::show(drawing::color& color, const ustring& title, color_box_styles styles, const std::vector<drawing::color>& custom_colors) {return show_color_box(color, nullptr, title, styles, custom_colors);}
 
-dialog_result color_box::show_color_box(drawing::color& color, const iwin32_window* owner, const ustring& title, color_box_styles styles, const optional<vector<drawing::color>>& custom_colors) {
+dialog_result color_box::show_color_box(drawing::color& color, const iwin32_window* owner, const ustring& title, color_box_styles styles, const std::optional<std::vector<drawing::color>>& custom_colors) {
   auto dialog = color_dialog {};
   dialog.color(color);
   dialog.alpha_color((styles & color_box_styles::alpha_color) == color_box_styles::alpha_color);

@@ -1,6 +1,5 @@
 #include "../../../include/xtd/forms/debug_form.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;

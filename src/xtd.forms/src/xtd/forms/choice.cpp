@@ -8,7 +8,6 @@
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/literals>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;

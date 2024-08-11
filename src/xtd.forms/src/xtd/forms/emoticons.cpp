@@ -1,7 +1,6 @@
 #include "../../../include/xtd/forms/emoticons.h"
 #include <xtd/call_once.h>
 
-using namespace std;
 using namespace xtd::forms;
 
 // 00080-00FF Latin 1 Supplement
@@ -1349,7 +1348,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     ballet_shoes, one_piece_swinsuit, briefs, shorts, drop_of_blood, adhesive_bandage, stethoscope, yo_yo, kite, parachute, ringed_planet, chair, razor, axe, diya_lamp, banjo,
   };
   call_once_ {
-    sort(emoticons.begin(), emoticons.end(), [](auto a, auto b)->bool {return a.name() < b.name();});
+    std::sort(emoticons.begin(), emoticons.end(), [](auto a, auto b)->bool {return a.name() < b.name();});
   };
   return emoticons;
 }

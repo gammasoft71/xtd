@@ -10,7 +10,6 @@
 #include <xtd/forms/native/menu_item>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
