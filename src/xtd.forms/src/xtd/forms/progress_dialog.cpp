@@ -6,7 +6,6 @@
 #include <xtd/forms/progress_dialog_flags>
 #include <memory>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

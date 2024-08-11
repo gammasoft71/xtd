@@ -13,7 +13,6 @@
 #include <xtd/char32_object.h>
 #include <xtd/convert_string>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;

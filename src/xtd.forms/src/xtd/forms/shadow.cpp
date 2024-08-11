@@ -1,7 +1,6 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/shadow.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;

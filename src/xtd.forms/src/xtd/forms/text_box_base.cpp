@@ -6,14 +6,13 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <optional>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 struct text_box_base::data {
   bool accepts_tab = false;
   forms::border_sides border_sides = xtd::forms::border_sides::all;
-  optional<forms::border_style> border_style;
+  std::optional<forms::border_style> border_style;
   bool multiline = false;
   bool read_only = false;
   bool word_wrap = true;

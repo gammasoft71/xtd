@@ -5,7 +5,6 @@
 #include "../../../include/xtd/forms/status_bar_panel_renderer.h"
 #include "../../../include/xtd/forms/text_renderer.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
@@ -13,7 +12,7 @@ using namespace xtd::forms;
 using namespace xtd::forms::visual_styles;
 using namespace xtd::forms::style_sheets;
 
-void status_bar_panel_renderer::draw_status_bar_panel(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, const optional<color>& back_color, const ustring& text, const optional<content_alignment>& text_align, const optional<color>& fore_color, const optional<font>& font, const xtd::drawing::image& image, const optional<content_alignment>& image_align) {
+void status_bar_panel_renderer::draw_status_bar_panel(const style_sheets::style_sheet& style_sheet, graphics& graphics, const rectangle& bounds, const std::optional<color>& back_color, const ustring& text, const std::optional<content_alignment>& text_align, const std::optional<color>& fore_color, const std::optional<font>& font, const xtd::drawing::image& image, const std::optional<content_alignment>& image_align) {
   auto pseudo_state_base = pseudo_state::standard;
   
   auto current_style_sheet = style_sheet.status_bar_panel(pseudo_state_base);
