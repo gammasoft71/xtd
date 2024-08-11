@@ -18,7 +18,6 @@
 #include <xtd/io/file_info>
 #include <xtd/io/path>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
@@ -591,7 +590,7 @@ main_form::main_form() {
   next_button_.click += [&] {
     if (create_panel_.visible()) {
       configure_project_type_title_label_.text(create_project_type_items_control_.project_type_items()[current_project_type_index_].name());
-      auto project_name = map<project_type, ustring> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}} [create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
+      auto project_name = std::map<project_type, ustring> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}} [create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
       auto index = 1;
       while (directory::exists(path::combine(configure_project_location_text_box_.text(), ustring::format("{}{}", project_name, index)))) index++;
       configure_project_name_text_box_.text(ustring::format("{}{}", project_name, index));
@@ -700,7 +699,7 @@ void main_form::init_startup_open_recent_projects_list_box() {
 
 void main_form::add_to_create_recent_projects(size_t create_project_items_index) {
   auto create_recent_projects_from_settings = properties::settings::default_settings().create_recent_propjects().split({';'});
-  list<ustring> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
+  std::list<ustring> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
   if (find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)) != create_recent_projects.end())
     create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
     
@@ -712,7 +711,7 @@ void main_form::add_to_create_recent_projects(size_t create_project_items_index)
 
 void main_form::add_to_open_recent_projects(const ustring& project_path) {
   auto open_recent_projects_from_settings = properties::settings::default_settings().open_recent_propjects().split({';'});
-  list<ustring> open_recent_projects {open_recent_projects_from_settings.begin(), open_recent_projects_from_settings.end()};
+  std::list<ustring> open_recent_projects {open_recent_projects_from_settings.begin(), open_recent_projects_from_settings.end()};
   if (find(open_recent_projects.begin(), open_recent_projects.end(), project_path) != open_recent_projects.end())
     open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
     
@@ -745,16 +744,16 @@ void main_form::new_project(const ustring& project_path, project_type type, proj
   add_to_open_recent_projects(project_path);
   background_worker_ = xtd::new_uptr<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
-    tuple<ustring, ustring, ustring> new_project = any_cast<tuple<ustring, ustring, ustring>>(e.argument());
+    std::tuple<ustring, ustring, ustring> new_project = any_cast<std::tuple<ustring, ustring, ustring>>(e.argument());
     begin_invoke([&] {
       progress_dialog_ = xtd::new_uptr<progress_dialog>();
-      progress_dialog_->text(ustring::format("Creating {} project", path::get_file_name(get<2>(new_project))));
+      progress_dialog_->text(ustring::format("Creating {} project", path::get_file_name(std::get<2>(new_project))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("new {} -s {} {}", get<0>(new_project), get<1>(new_project), get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
-    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(ustring::format("open {}", std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -764,7 +763,7 @@ void main_form::new_project(const ustring& project_path, project_type type, proj
       if (properties::settings::default_settings().auto_close()) close();
     });
   };
-  background_worker_->run_worker_async(make_tuple(map<project_type, ustring> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}} [type], (sdk == project_sdk::none ? map<project_language, ustring> {{project_language::xtd, "xtd"}, {project_language::xtd_c, "xtd_c"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}} [language] : map<project_sdk, ustring> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtk4, "gtk+4"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::qt6, "qt6"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}} [sdk]), project_path));
+  background_worker_->run_worker_async(std::make_tuple(std::map<project_type, ustring> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}} [type], (sdk == project_sdk::none ? std::map<project_language, ustring> {{project_language::xtd, "xtd"}, {project_language::xtd_c, "xtd_c"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}} [language] : std::map<project_sdk, ustring> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtk4, "gtk+4"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::qt6, "qt6"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}} [sdk]), project_path));
 }
 
 void main_form::open_project() {

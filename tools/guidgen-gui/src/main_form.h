@@ -12,7 +12,6 @@ namespace guidgen_gui {
   class main_form : public xtd::forms::form {
   public:
     main_form() {
-      using namespace std;
       using namespace xtd;
       using namespace xtd::drawing;
       using namespace xtd::forms;

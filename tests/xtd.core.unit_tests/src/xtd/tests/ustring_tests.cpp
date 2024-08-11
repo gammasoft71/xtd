@@ -5,7 +5,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -757,7 +756,7 @@ namespace xtd::tests {
     }
     
     void test_method_(concat_strings) {
-      assert::are_equal("abcd", ustring::concat("a"s, "b"s, "c"s, "d"s), csf_);
+      assert::are_equal("abcd", ustring::concat(std::string {"a"}, std::string {"b"}, std::string {"c"}, std::string {"d"}), csf_);
     }
     
     void test_method_(concat_ints) {
@@ -830,7 +829,7 @@ namespace xtd::tests {
     }
     
     void test_method_(string_sprintf_with_string_argument) {
-      assert::are_equal("str", ustring::sprintf("%s", "str"s), csf_);
+      assert::are_equal("str", ustring::sprintf("%s", std::string {"str"}), csf_);
     }
     
     /// @todo Debug on Windows
@@ -839,11 +838,11 @@ namespace xtd::tests {
     ///}
     
     void test_method_(string_sprintf_with_wstring_argument) {
-      assert::are_equal("str", ustring::sprintf("%ls", L"str"s), csf_);
+      assert::are_equal("str", ustring::sprintf("%ls", std::wstring {L"str"}), csf_);
     }
     
     void test_method_(wstring_sprintf_with_wstring_argument) {
-      assert::are_equal(L"str", ustring::sprintf(L"%ls", L"str"s), csf_);
+      assert::are_equal(L"str", ustring::sprintf(L"%ls", std::wstring {L"str"}), csf_);
     }
     
     void test_method_(get_hash_code) {

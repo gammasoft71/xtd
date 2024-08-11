@@ -60,7 +60,6 @@ namespace {
   #endif
   
   static xtd::ustring make_item_text(const xtd::ustring& text, size_t shortcut) {
-    using namespace std::literals;
 #if defined(__WXOSX__)
     if (is_about_item(text)) return "";
     if (is_quit_item(text, shortcut)) return "";

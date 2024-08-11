@@ -11,7 +11,6 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <thread>
 
-using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::diagnostics;

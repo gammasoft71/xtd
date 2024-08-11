@@ -14,7 +14,6 @@
 #include <sys/param.h>
 #include <unistd.h>
 
-using namespace std::literals;
 using namespace xtd::native;
 
 extern char** environ;
@@ -29,12 +28,12 @@ namespace {
   
   std::tuple<std::string, std::string, std::string> macos_information() {
     // https://en.wikipedia.org/wiki/MacOS_version_history
-    static auto build_version = ""s;
-    static auto codename = ""s;
+    static auto build_version = std::string {};
+    static auto codename = std::string {};
     static auto major = -1;
     static auto minor = -1;
-    static auto name = "macOS"s;
-    static auto version = ""s;
+    static auto name = std::string {"macOS"};
+    static auto version = std::string {};
     
     if (version.empty()) {
       try {

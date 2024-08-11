@@ -9,7 +9,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
@@ -479,11 +478,11 @@ namespace xtd::tests {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
       console::set_out(os);
-      console::write("Item1"s);
-      console::write(u8"Item2"s);
-      console::write(u"Item3"s);
-      console::write(U"Item4"s);
-      console::write(L"Item5"s);
+      console::write(std::string {"Item1"});
+      console::write(std::u8string {u8"Item2"});
+      console::write(std::u16string {u"Item3"});
+      console::write(std::u32string {U"Item4"});
+      console::write(std::wstring {L"Item5"});
       console::write("Item6"_s);
       os.close();
       assert::are_equal("Item1Item2Item3Item4Item5Item6", file::read_all_text(op), csf_);
@@ -550,11 +549,11 @@ namespace xtd::tests {
       auto op = path::combine(path::get_temp_path(), "xtd_console_test.txt");
       auto os = xtd::io::file::open_write(op);
       console::set_out(os);
-      console::write_line("Item1"s);
-      console::write_line(u8"Item2"s);
-      console::write_line(u"Item3"s);
-      console::write_line(U"Item4"s);
-      console::write_line(L"Item5"s);
+      console::write_line(std::string {"Item1"});
+      console::write_line(std::u8string {u8"Item2"});
+      console::write_line(std::u16string {u"Item3"});
+      console::write_line(std::u32string {U"Item4"});
+      console::write_line(std::wstring {L"Item5"});
       console::write_line(L"Item6"_s);
       os.close();
       collection_assert::are_equal({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6"}, file::read_all_lines(op), csf_);

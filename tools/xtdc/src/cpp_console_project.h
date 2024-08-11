@@ -56,11 +56,9 @@ namespace xtdc_command {
       std::vector<xtd::ustring> lines {
         "#include <iostream>",
         "",
-        "using namespace std;",
-        "",
         "// The main entry point for the application.",
         "auto main(int argc, char* argv[]) -> int {",
-        "  cout << \"Hello, World!\" << endl;",
+        "  std::cout << \"Hello, World!\" << std::endl;",
         "}",
       };
       

@@ -1138,7 +1138,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std::chrono;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -1191,7 +1190,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std::chrono;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -1757,7 +1755,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std::chrono;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///
@@ -1806,7 +1803,6 @@ namespace xtd {
       /// ```cpp
       /// #include <xtd/xtd>
       ///
-      /// using namespace std::chrono;
       /// using namespace xtd;
       /// using namespace xtd::io;
       ///

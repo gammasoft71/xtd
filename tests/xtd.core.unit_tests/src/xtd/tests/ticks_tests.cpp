@@ -3,8 +3,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std::chrono;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -22,12 +20,12 @@ namespace xtd::tests {
     
     void test_method_(cast_ticks_to_nanoseconds) {
       ticks t(42);
-      assert::are_equal(4200ns, duration_cast<nanoseconds>(t), csf_);
+      assert::are_equal(std::chrono::nanoseconds {4200}, duration_cast<std::chrono::nanoseconds>(t), csf_);
     }
     
     void test_method_(cast_ticks_to_milliseconds) {
       ticks t(423567);
-      assert::are_equal(42ms, duration_cast<milliseconds>(t), csf_);
+      assert::are_equal(std::chrono::milliseconds {42}, duration_cast<std::chrono::milliseconds>(t), csf_);
     }
   };
 }
