@@ -68,7 +68,6 @@ wxDEFINE_EVENT(wxEVT_ENTER_SIZEMOVE, wxCommandEvent);
 wxDEFINE_EVENT(wxEVT_EXIT_SIZEMOVE, wxCommandEvent);
 wxDEFINE_EVENT(wxEVT_RECREATE, wxCommandEvent);
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;

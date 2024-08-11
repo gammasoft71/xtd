@@ -10,7 +10,6 @@
 #include <wx/menuitem.h>
 #include <map>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
@@ -151,7 +150,7 @@ void menu_item::checked(intptr menu_item, bool checked) {
 }
 
 intptr menu_item::create(intptr menu, const ustring& text, const xtd::drawing::image& image, int32 kind, size_t shortcut) {
-  static auto kinds = map<int32, wxItemKind> {{MI_NORMAL, wxITEM_NORMAL}, {MI_CHECK, wxITEM_CHECK}, {MI_RADIO, wxITEM_RADIO}, {MI_DROPDOWN, wxITEM_DROPDOWN}, {MI_SEPARATOR, wxITEM_SEPARATOR}};
+  static auto kinds = std::map<int32, wxItemKind> {{MI_NORMAL, wxITEM_NORMAL}, {MI_CHECK, wxITEM_CHECK}, {MI_RADIO, wxITEM_RADIO}, {MI_DROPDOWN, wxITEM_DROPDOWN}, {MI_SEPARATOR, wxITEM_SEPARATOR}};
   auto wx_menu_item = new wxMenuItem(menu == 0 ? nullptr : reinterpret_cast<wxMenu*>(menu), make_window_id(text, shortcut), convert_string::to_wstring(make_item_text(text, shortcut)), wxEmptyString, kinds[kind]);
   if (image.handle() != 0) wx_menu_item->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
   return reinterpret_cast<intptr>(wx_menu_item);

@@ -7,7 +7,6 @@
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;

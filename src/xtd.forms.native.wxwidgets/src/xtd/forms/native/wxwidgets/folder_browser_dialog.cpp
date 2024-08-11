@@ -22,7 +22,6 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 #if defined(__WXMSW__)
-using namespace std;
 namespace {
   auto handle_hook = HHOOK {};
   LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
@@ -36,7 +35,7 @@ namespace {
   }
   
   INT CALLBACK OnBrowserCalllback(HWND hwnd, UINT message, LPARAM lParam, LPARAM data) {
-    if (message == BFFM_INITIALIZED && !wstring(reinterpret_cast<wchar*>(data)).empty())
+    if (message == BFFM_INITIALIZED && !std::wstring(reinterpret_cast<wchar*>(data)).empty())
       SendMessage(hwnd, BFFM_SETSELECTION, 1, data);
     return 0;
   }
