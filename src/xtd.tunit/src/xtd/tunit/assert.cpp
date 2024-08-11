@@ -1,7 +1,6 @@
 #include "../../../include/xtd/tunit/assert.h"
 #include <cstring>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
@@ -23,14 +22,14 @@ void assert::are_equal(const char8* expected, const char8* actual, const ustring
 #endif
 
 void assert::are_equal(const char16* expected, const char16* actual, const ustring& message, const stack_frame& stack_frame) {
-  if (u16string {actual} == u16string {expected})
+  if (std::u16string {actual} == std::u16string {expected})
     succeed(message, stack_frame);
   else
     fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(const char32* expected, const char32* actual, const ustring& message, const stack_frame& stack_frame) {
-  if (u32string {actual} == u32string {expected})
+  if (std::u32string {actual} == std::u32string {expected})
     succeed(message, stack_frame);
   else
     fail(to_string(expected), to_string(actual), message, stack_frame);
@@ -144,14 +143,14 @@ void assert::are_not_equal(const char8* expected, const char8* actual, const ust
 #endif
 
 void assert::are_not_equal(const char16* expected, const char16* actual, const ustring& message, const stack_frame& stack_frame) {
-  if (u16string {actual} != u16string {expected})
+  if (std::u16string {actual} != std::u16string {expected})
     succeed(message, stack_frame);
   else
     fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_not_equal(const char32* expected, const char32* actual, const ustring& message, const stack_frame& stack_frame) {
-  if (u32string {actual} != u32string {expected})
+  if (std::u32string {actual} != std::u32string {expected})
     succeed(message, stack_frame);
   else
     fail("not " + to_string(expected), to_string(actual), message, stack_frame);
@@ -175,7 +174,7 @@ void assert::contains(char item, const char* values, const ustring& message, con
 
 #if defined(__xtd__cpp_lib_char8_t)
 void assert::contains(char8 item, const char8* values, const ustring& message, const stack_frame& stack_frame) {
-  auto s = u8string {values};
+  auto s = std::u8string {values};
   auto result = find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
@@ -185,7 +184,7 @@ void assert::contains(char8 item, const char8* values, const ustring& message, c
 #endif
 
 void assert::contains(char16 item, const char16* values, const ustring& message, const stack_frame& stack_frame) {
-  auto s = u16string {values};
+  auto s = std::u16string {values};
   auto result = find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
@@ -194,7 +193,7 @@ void assert::contains(char16 item, const char16* values, const ustring& message,
 }
 
 void assert::contains(char32 item, const char32* values, const ustring& message, const stack_frame& stack_frame) {
-  auto s = u32string {values};
+  auto s = std::u32string {values};
   auto result = find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
@@ -203,7 +202,7 @@ void assert::contains(char32 item, const char32* values, const ustring& message,
 }
 
 void assert::contains(wchar_t item, const wchar_t* values, const ustring& message, const stack_frame& stack_frame) {
-  auto s = wstring {values};
+  auto s = std::wstring {values};
   auto result = find(s.begin(), s.end(), item);
   if (result != s.end())
     succeed(message, stack_frame);
@@ -211,23 +210,23 @@ void assert::contains(wchar_t item, const wchar_t* values, const ustring& messag
     fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
-void assert::does_not_throw(const function<void()>& statement) {
+void assert::does_not_throw(const std::function<void()>& statement) {
   does_not_throw(statement, ustring::empty_string, stack_frame::empty());
 }
 
-void assert::does_not_throw(const function<void()>& statement, const stack_frame& stack_frame) {
+void assert::does_not_throw(const std::function<void()>& statement, const stack_frame& stack_frame) {
   does_not_throw(statement, ustring::empty_string, stack_frame);
 }
 
-void assert::does_not_throw(const function<void()>& statement, const ustring& message) {
+void assert::does_not_throw(const std::function<void()>& statement, const ustring& message) {
   does_not_throw(statement, message, stack_frame::empty());
 }
 
-void assert::does_not_throw(const function<void()>& statement, const ustring& message, const stack_frame& stack_frame) {
+void assert::does_not_throw(const std::function<void()>& statement, const ustring& message, const stack_frame& stack_frame) {
   try {
     statement();
     succeed(message, stack_frame);
-  } catch (const exception& e) {
+  } catch (const std::exception& e) {
     fail("No Exception to be thrown", "<" + typeof_(e).full_name() + ">", message, stack_frame);
   } catch (...) {
     fail("No Exception to be thrown", "<exception>", message, stack_frame);
@@ -312,14 +311,14 @@ void assert::is_greater(const char8* val1, const char8* val2, const ustring& mes
 #endif
 
 void assert::is_greater(const char16* val1, const char16* val2, const ustring& message, const stack_frame& stack_frame) {
-  if (u16string {val1} > u16string {val2})
+  if (std::u16string {val1} > std::u16string {val2})
     succeed(message, stack_frame);
   else
     fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
-  if (u32string {val1} > u32string {val2})
+  if (std::u32string {val1} > std::u32string {val2})
     succeed(message, stack_frame);
   else
     fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
@@ -349,14 +348,14 @@ void assert::is_greater_or_equal(const char8* val1, const char8* val2, const ust
 #endif
 
 void assert::is_greater_or_equal(const char16* val1, const char16* val2, const ustring& message, const stack_frame& stack_frame) {
-  if (u16string {val1} >= u16string {val2})
+  if (std::u16string {val1} >= std::u16string {val2})
     succeed(message, stack_frame);
   else
     fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_greater_or_equal(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
-  if (u32string {val1} >= u32string {val2})
+  if (std::u32string {val1} >= std::u32string {val2})
     succeed(message, stack_frame);
   else
     fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
@@ -386,14 +385,14 @@ void assert::is_less(const char8* val1, const char8* val2, const ustring& messag
 #endif
 
 void assert::is_less(const char16* val1, const char16* val2, const ustring& message, const stack_frame& stack_frame) {
-  if (u16string {val1} < u16string {val2})
+  if (std::u16string {val1} < std::u16string {val2})
     succeed(message, stack_frame);
   else
     fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
-  if (u32string {val1} < u32string {val2})
+  if (std::u32string {val1} < std::u32string {val2})
     succeed(message, stack_frame);
   else
     fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
@@ -423,14 +422,14 @@ void assert::is_less_or_equal(const char8* val1, const char8* val2, const ustrin
 #endif
 
 void assert::is_less_or_equal(const char16* val1, const char16* val2, const ustring& message, const stack_frame& stack_frame) {
-  if (u16string {val1} <= u16string {val2})
+  if (std::u16string {val1} <= std::u16string {val2})
     succeed(message, stack_frame);
   else
     fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
 }
 
 void assert::is_less_or_equal(const char32* val1, const char32* val2, const ustring& message, const stack_frame& stack_frame) {
-  if (u32string {val1} <= u32string {val2})
+  if (std::u32string {val1} <= std::u32string {val2})
     succeed(message, stack_frame);
   else
     fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
@@ -588,19 +587,19 @@ void assert::is_true(bool condition, const ustring& message, const stack_frame& 
     fail("true", "false", message, stack_frame);
 }
 
-void assert::throws_any(const function<void()>& statement) {
+void assert::throws_any(const std::function<void()>& statement) {
   throws_any(statement, ustring::empty_string, stack_frame::empty());
 }
 
-void assert::throws_any(const function<void()>& statement, const stack_frame& stack_frame) {
+void assert::throws_any(const std::function<void()>& statement, const stack_frame& stack_frame) {
   throws_any(statement, ustring::empty_string, stack_frame);
 }
 
-void assert::throws_any(const function<void()>& statement, const ustring& message) {
+void assert::throws_any(const std::function<void()>& statement, const ustring& message) {
   throws_any(statement, message, stack_frame::empty());
 }
 
-void assert::throws_any(const function<void()>& statement, const ustring& message, const stack_frame& stack_frame) {
+void assert::throws_any(const std::function<void()>& statement, const ustring& message, const stack_frame& stack_frame) {
   try {
     statement();
     fail("<exception>", "<nothing>", message, stack_frame);

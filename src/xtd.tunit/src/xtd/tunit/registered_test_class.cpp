@@ -1,6 +1,5 @@
 #include "../../../include/xtd/tunit/registered_test_class.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 

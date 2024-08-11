@@ -2,7 +2,6 @@
 #include "../../../include/xtd/tunit/unit_test.h"
 #include <xtd/random>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 

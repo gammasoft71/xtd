@@ -5,7 +5,6 @@
 #include <xtd/drawing/system_fonts>
 #include <xtd/io/path>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 

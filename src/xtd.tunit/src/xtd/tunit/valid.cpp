@@ -1,6 +1,5 @@
 #include "../../../include/xtd/tunit/valid.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 

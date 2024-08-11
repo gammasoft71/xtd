@@ -1,6 +1,5 @@
 #include "../../../include/xtd/tunit/assume.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
@@ -215,19 +214,19 @@ void assume::contains(wchar_t item, const wchar_t* values, const ustring& messag
   }
 }
 
-void assume::does_not_throw(const function<void()>& statement) {
+void assume::does_not_throw(const std::function<void()>& statement) {
   does_not_throw(statement, ustring::empty_string, stack_frame::empty());
 }
 
-void assume::does_not_throw(const function<void()>& statement, const stack_frame& stack_frame) {
+void assume::does_not_throw(const std::function<void()>& statement, const stack_frame& stack_frame) {
   does_not_throw(statement, ustring::empty_string, stack_frame);
 }
 
-void assume::does_not_throw(const function<void()>& statement, const ustring& message) {
+void assume::does_not_throw(const std::function<void()>& statement, const ustring& message) {
   does_not_throw(statement, message, stack_frame::empty());
 }
 
-void assume::does_not_throw(const function<void()>& statement, const ustring& message, const stack_frame& stack_frame) {
+void assume::does_not_throw(const std::function<void()>& statement, const ustring& message, const stack_frame& stack_frame) {
   try {
     assert::does_not_throw(statement, message, stack_frame);
   } catch (...) {
@@ -618,19 +617,19 @@ void assume::is_true(bool condition, const ustring& message, const stack_frame& 
   }
 }
 
-void assume::throws_any(const function<void()>& statement) {
+void assume::throws_any(const std::function<void()>& statement) {
   throws_any(statement, ustring::empty_string, stack_frame::empty());
 }
 
-void assume::throws_any(const function<void()>& statement, const stack_frame& stack_frame) {
+void assume::throws_any(const std::function<void()>& statement, const stack_frame& stack_frame) {
   throws_any(statement, ustring::empty_string, stack_frame);
 }
 
-void assume::throws_any(const function<void()>& statement, const ustring& message) {
+void assume::throws_any(const std::function<void()>& statement, const ustring& message) {
   throws_any(statement, message, stack_frame::empty());
 }
 
-void assume::throws_any(const function<void()>& statement, const ustring& message, const stack_frame& stack_frame) {
+void assume::throws_any(const std::function<void()>& statement, const ustring& message, const stack_frame& stack_frame) {
   try {
     assert::throws_any(statement, message, stack_frame);
   } catch (...) {

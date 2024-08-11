@@ -3,7 +3,6 @@
 #include <xtd/diagnostics//debug_break>
 #include <exception>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
@@ -13,10 +12,10 @@ const test_class* test::current_test_class_ = nullptr;
 const unit_test* test::current_unit_test_ = nullptr;
 intptr test::__internal_tunit_unit_tests_mode__ = reinterpret_cast<intptr>("");
 
-test::test(const ustring& name, const function<void()>& method, const diagnostics::stack_frame& stack_frame) noexcept : test(name, method, false, stack_frame) {
+test::test(const ustring& name, const std::function<void()>& method, const diagnostics::stack_frame& stack_frame) noexcept : test(name, method, false, stack_frame) {
 }
 
-test::test(const ustring& name, const function<void()>& method, bool ignore, const diagnostics::stack_frame& stack_frame) noexcept : stack_frame_(stack_frame), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {
+test::test(const ustring& name, const std::function<void()>& method, bool ignore, const diagnostics::stack_frame& stack_frame) noexcept : stack_frame_(stack_frame), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {
 }
 
 bool test::aborted() const noexcept {
@@ -61,7 +60,7 @@ const xtd::date_time& test::start_time() const noexcept {
   return start_time_;
 }
 
-function<void()> test::method() const noexcept {
+std::function<void()> test::method() const noexcept {
   return method_;
 }
 
@@ -149,7 +148,7 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
           throw system_exception {csf_};
       } catch (const ignore_error&) {
         if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_ignored(test_event_args(*this, test_class, unit_test));
-      } catch (const exception& e) {
+      } catch (const std::exception& e) {
         settings::default_settings().exit_status(EXIT_FAILURE);
         test::current_test().message_ = "Exception <" + typeof_(e).full_name() + "> throws" + " (" + e.what() + ")";
         test::current_test().status_ = test::test_status::failed;
