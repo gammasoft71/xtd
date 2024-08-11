@@ -10,13 +10,12 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 struct user_control::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  optional<forms::border_style> border_style;
+  std::optional<forms::border_style> border_style;
 };
 
 user_control::user_control() : data_(xtd::new_sptr<data>()) {

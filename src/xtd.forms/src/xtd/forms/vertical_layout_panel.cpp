@@ -1,7 +1,6 @@
 #include "../../../include/xtd/forms/vertical_layout_panel.h"
 #include <xtd/argument_exception>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
