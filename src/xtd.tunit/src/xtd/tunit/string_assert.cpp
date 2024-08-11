@@ -1,6 +1,5 @@
 #include "../../../include/xtd/tunit/string_assert.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;

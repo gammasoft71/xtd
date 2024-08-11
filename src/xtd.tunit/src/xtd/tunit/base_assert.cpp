@@ -5,7 +5,6 @@
 #include <xtd/diagnostics/assert>
 #include <xtd/environment>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
