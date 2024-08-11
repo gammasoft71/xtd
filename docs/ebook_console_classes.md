@@ -60,12 +60,10 @@ This is the output
 #include <xtd/xtd.core>
 #include <xtd/xtd.console>
 
-using namespace std::literals;
-
 auto main(int argc, char* argv[]) -> int {
   auto str1 = xtd::environment::os_version().desktop_environment();
-  auto str2 = "desktop"s;
-  auto str3 = "environment"s;
+  auto str2 = "desktop"_s;
+  auto str3 = "environment"_s;
 
   xtd::console::write_line(xtd::strings::join(" ", {str1, str2, str3}));
 }
@@ -77,12 +75,10 @@ auto main(int argc, char* argv[]) -> int {
 #include <xtd/xtd.core>
 #include <xtd/xtd.console>
 
-using namespace std::literals;
-
 auto main(int argc, char* argv[]) -> int {
   auto str1 = xtd::environment::os_version().desktop_environment();
-  auto str2 = "desktop"s;
-  auto str3 = "environment"s;
+  auto str2 = "desktop"_s;
+  auto str3 = "environment"_s;
 
   xtd::console::write_line(xtd::strings::join(" ", {str1, str2, str3}));
 }

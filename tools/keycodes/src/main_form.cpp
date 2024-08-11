@@ -7,7 +7,6 @@
 #include <xtd/forms/button_images>
 #include <xtd/forms/window_messages>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 using namespace keycodes;

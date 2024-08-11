@@ -4,7 +4,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std::chrono;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -36,9 +35,9 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_ticks) {
-      date_time d(duration_cast<ticks>(seconds(42)));
+      date_time d(duration_cast<ticks>(std::chrono::seconds(42)));
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
-      assert::are_equal(duration_cast<ticks>(seconds(42)).count(), d.ticks(), csf_);
+      assert::are_equal(duration_cast<ticks>(std::chrono::seconds(42)).count(), d.ticks(), csf_);
       assert::are_equal(1u, d.year(), csf_);
       assert::are_equal(1u, d.month(), csf_);
       assert::are_equal(1u, d.day(), csf_);
@@ -50,9 +49,9 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_ticks_and_date_time_kind_unspecified) {
-      date_time d(duration_cast<ticks>(minutes(24)), date_time_kind::unspecified);
+      date_time d(duration_cast<ticks>(std::chrono::minutes(24)), date_time_kind::unspecified);
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
-      assert::are_equal(duration_cast<ticks>(minutes(24)).count(), d.ticks(), csf_);
+      assert::are_equal(duration_cast<ticks>(std::chrono::minutes(24)).count(), d.ticks(), csf_);
       assert::are_equal(1u, d.year(), csf_);
       assert::are_equal(1u, d.month(), csf_);
       assert::are_equal(1u, d.day(), csf_);
@@ -64,9 +63,9 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_ticks_and_date_time_kind_loacal) {
-      date_time d(duration_cast<ticks>(minutes(24)), date_time_kind::local);
+      date_time d(duration_cast<ticks>(std::chrono::minutes(24)), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind(), csf_);
-      assert::are_equal(duration_cast<ticks>(minutes(24)).count(), d.ticks(), csf_);
+      assert::are_equal(duration_cast<ticks>(std::chrono::minutes(24)).count(), d.ticks(), csf_);
       assert::are_equal(1u, d.year(), csf_);
       assert::are_equal(1u, d.month(), csf_);
       assert::are_equal(1u, d.day(), csf_);
@@ -78,9 +77,9 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_ticks_and_date_time_kind_utc) {
-      date_time d(duration_cast<ticks>(hours(12)), date_time_kind::utc);
+      date_time d(duration_cast<ticks>(std::chrono::hours(12)), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind(), csf_);
-      assert::are_equal(duration_cast<ticks>(hours(12)).count(), d.ticks(), csf_);
+      assert::are_equal(duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks(), csf_);
       assert::are_equal(1u, d.year(), csf_);
       assert::are_equal(1u, d.month(), csf_);
       assert::are_equal(1u, d.day(), csf_);
@@ -238,19 +237,19 @@ namespace xtd::tests {
     void test_method_(create_date_now) {
       assert::are_equal(date_time_kind::local, date_time::now().kind(), csf_);
       assert::is_not_zero(date_time::now().ticks(), csf_);
-      assert::are_equal(system_clock::to_time_t(system_clock::now()), date_time::now().to_time_t(), csf_);
+      assert::are_equal(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()), date_time::now().to_time_t(), csf_);
     }
     
     void test_method_(create_date_utc_now) {
       assert::are_equal(date_time_kind::utc, date_time::utc_now().kind(), csf_);
       assert::is_not_zero(date_time::utc_now().ticks(), csf_);
-      assert::are_equal(system_clock::to_time_t(system_clock::now()), date_time::utc_now().to_local_time().to_time_t(), csf_);
+      assert::are_equal(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()), date_time::utc_now().to_local_time().to_time_t(), csf_);
     }
     
     void test_method_(from_duration) {
-      date_time d = date_time::from_duration(hours(12));
+      date_time d = date_time::from_duration(std::chrono::hours(12));
       assert::are_equal(date_time_kind::unspecified, d.kind(), csf_);
-      assert::are_equal(duration_cast<ticks>(hours(12)).count(), d.ticks(), csf_);
+      assert::are_equal(duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks(), csf_);
       assert::are_equal(1u, d.year(), csf_);
       assert::are_equal(1u, d.month(), csf_);
       assert::are_equal(1u, d.day(), csf_);
@@ -262,9 +261,9 @@ namespace xtd::tests {
     }
     
     void test_method_(from_duration_local) {
-      date_time d = date_time::from_duration(hours(12), date_time_kind::local);
+      date_time d = date_time::from_duration(std::chrono::hours(12), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind(), csf_);
-      assert::are_equal(duration_cast<ticks>(hours(12)).count(), d.ticks(), csf_);
+      assert::are_equal(duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks(), csf_);
       assert::are_equal(1u, d.year(), csf_);
       assert::are_equal(1u, d.month(), csf_);
       assert::are_equal(1u, d.day(), csf_);
@@ -276,9 +275,9 @@ namespace xtd::tests {
     }
     
     void test_method_(from_duration_utc) {
-      date_time d = date_time::from_duration(hours(12), date_time_kind::utc);
+      date_time d = date_time::from_duration(std::chrono::hours(12), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind(), csf_);
-      assert::are_equal(duration_cast<ticks>(hours(12)).count(), d.ticks(), csf_);
+      assert::are_equal(duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks(), csf_);
       assert::are_equal(1u, d.year(), csf_);
       assert::are_equal(1u, d.month(), csf_);
       assert::are_equal(1u, d.day(), csf_);
@@ -350,9 +349,9 @@ namespace xtd::tests {
     }
     
     void test_method_(add_duration) {
-      date_time d1(seconds(20), date_time_kind::local);
-      date_time d2 = d1.add(seconds(22));
-      assert::are_equal(duration_cast<ticks>(seconds(42)).count(), d2.ticks(), csf_);
+      date_time d1(std::chrono::seconds(20), date_time_kind::local);
+      date_time d2 = d1.add(std::chrono::seconds(22));
+      assert::are_equal(duration_cast<ticks>(std::chrono::seconds(42)).count(), d2.ticks(), csf_);
       assert::are_equal(date_time_kind::local, d2.kind(), csf_);
       assert::are_equal(1u, d2.year(), csf_);
       assert::are_equal(1u, d2.month(), csf_);

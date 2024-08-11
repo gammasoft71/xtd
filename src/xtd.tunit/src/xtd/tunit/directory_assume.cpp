@@ -6,21 +6,19 @@ using namespace xtd::io;
 using namespace xtd::tunit;
 
 #if defined(__xtd__cpp_lib_filesystem)
-using namespace std::filesystem;
-
-void directory_assume::are_equal(const directory_entry& expected, const directory_entry& actual) {
+void directory_assume::are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {
   are_equal(expected, actual, ustring::empty_string, stack_frame::empty());
 }
 
-void directory_assume::are_equal(const directory_entry& expected, const directory_entry& actual, const stack_frame& stack_frame) {
+void directory_assume::are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const stack_frame& stack_frame) {
   are_equal(expected, actual, ustring::empty_string, stack_frame);
 }
 
-void directory_assume::are_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message) {
+void directory_assume::are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {
   are_equal(expected, actual, message, stack_frame::empty());
 }
 
-void directory_assume::are_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message, const stack_frame& stack_frame) {
+void directory_assume::are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const stack_frame& stack_frame) {
   try {
     directory_assert::are_equal(expected, actual, message, stack_frame);
   } catch (...) {
@@ -50,19 +48,19 @@ void directory_assume::are_equal(const directory_info& expected, const directory
 }
 
 #if defined(__xtd__cpp_lib_filesystem)
-void directory_assume::are_not_equal(const directory_entry& expected, const directory_entry& actual) {
+void directory_assume::are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {
   are_not_equal(expected, actual, ustring::empty_string, stack_frame::empty());
 }
 
-void directory_assume::are_not_equal(const directory_entry& expected, const directory_entry& actual, const stack_frame& stack_frame) {
+void directory_assume::are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const stack_frame& stack_frame) {
   are_not_equal(expected, actual, ustring::empty_string, stack_frame);
 }
 
-void directory_assume::are_not_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message) {
+void directory_assume::are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {
   are_not_equal(expected, actual, message, stack_frame::empty());
 }
 
-void directory_assume::are_not_equal(const directory_entry& expected, const directory_entry& actual, const std::string& message, const stack_frame& stack_frame) {
+void directory_assume::are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const stack_frame& stack_frame) {
   try {
     directory_assert::are_not_equal(expected, actual, message, stack_frame);
   } catch (...) {

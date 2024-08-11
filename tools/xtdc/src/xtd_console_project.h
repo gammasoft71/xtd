@@ -110,11 +110,11 @@ namespace xtdc_command {
         "#include \"program.h\"",
         "#include <xtd/console>",
         "",
-        "using namespace std;",
         "using namespace xtd;",
+        "using namespace xtd::collections::generic;",
         xtd::ustring::format("using namespace {};", name),
         "",
-        "auto program::main(const std::vector<ustring>& args) -> void {",
+        "auto program::main(const list<ustring>& args) -> void {",
         "  console::write_line(\"Hello, World!\");",
         "}",
       };

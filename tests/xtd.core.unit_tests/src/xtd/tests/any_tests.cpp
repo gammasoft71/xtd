@@ -3,7 +3,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -84,22 +83,22 @@ namespace xtd::tests {
     }
     
     void test_method_(format_string) {
-      std::any a = "string"s;
+      std::any a = std::string {"string"};
       assert::are_equal("string", ustring::format("{}", a), csf_);
     }
     
     void test_method_(format_string8) {
-      std::any a = u8"string"s;
+      std::any a = std::u8string {u8"string"};
       assert::are_equal(u8"string", ustring::format("{}", a), csf_);
     }
     
     void test_method_(format_string16) {
-      std::any a = u"string"s;
+      std::any a = std::u16string {u"string"};
       assert::are_equal(u"string", ustring::format("{}", a), csf_);
     }
     
     void test_method_(format_string32) {
-      std::any a = U"string"s;
+      std::any a = std::u32string {U"string"};
       assert::are_equal(U"string", ustring::format("{}", a), csf_);
     }
     
@@ -137,7 +136,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_wstring) {
-      std::any a = L"string"s;
+      std::any a = std::wstring {L"string"};
       assert::are_equal(L"string", ustring::format("{}", a), csf_);
     }
     

@@ -18,7 +18,6 @@
 #include <sys/wait.h>
 #include <TargetConditionals.h>
 
-using namespace std::filesystem;
 using namespace xtd::native;
 
 namespace {
@@ -76,21 +75,21 @@ namespace {
     if (user != "") path_directories += ":/Users/" + user + "/Applications";
     
     static auto standard_extensions = std::set<std::string> {"", ".action", ".apk", ".app", ".bin", ".command", ".csh", ".ipa", ".ksh", ".osx", ".out", ".run", ".sh", ".workflow"};
-    auto extensions = path(file_name).has_extension() ? std::set<std::string> {""} : standard_extensions;
+    auto extensions = std::filesystem::path(file_name).has_extension() ? std::set<std::string> {""} : standard_extensions;
     for (auto extension : extensions) {
       auto file_name_with_extension = file_name + extension;
-      if (working_directory != "" && exists(path(working_directory) / file_name_with_extension)) return (path(working_directory) / file_name_with_extension).string();
-      if (path(file_name_with_extension).has_root_directory()) return file_name_with_extension;
-      if (exists(current_path() / file_name_with_extension)) return (current_path() / file_name_with_extension).string();
+      if (working_directory != "" && exists(std::filesystem::path(working_directory) / file_name_with_extension)) return (std::filesystem::path(working_directory) / file_name_with_extension).string();
+      if (std::filesystem::path(file_name_with_extension).has_root_directory()) return file_name_with_extension;
+      if (std::filesystem::exists(std::filesystem::current_path() / file_name_with_extension)) return (std::filesystem::current_path() / file_name_with_extension).string();
       for (auto directory : splitter(path_directories, {':'}, std::numeric_limits<size_t>::max(), false))
-        if (exists(path(directory) / file_name_with_extension)) return (path(directory) / file_name_with_extension).string();
+        if (exists(std::filesystem::path(directory) / file_name_with_extension)) return (std::filesystem::path(directory) / file_name_with_extension).string();
     }
     return file_name;
   }
   
   bool is_valid_process(std::function<std::vector<std::string>(const std::string& str, const std::vector<char>& separators, size_t count, bool)> splitter, const std::string& command_line, const std::string& working_directory) {
     auto full_file_name_with_extension = get_full_file_name_with_extension(splitter, command_line, working_directory);
-    return exists(full_file_name_with_extension);
+    return std::filesystem::exists(full_file_name_with_extension);
   }
   
   bool is_valid_uri(const std::string& command_line) {
@@ -190,9 +189,9 @@ intmax_t process::shell_execute(const std::string& verb, const std::string& file
       } else if (verb == "" || verb == "open" || verb == "explore" || verb == "edit" || verb == "runas" || verb == "runasuser" || verb == "print") {
         if (verb == "") command_line_args = split_arguments(arguments);
         if ((verb == "open" || verb == "runas" || verb == "runasuser") && file_name == "") return 0;
-        if (verb == "explore" && (file_name == "" || !is_directory(file_name))) return 0;
-        if (verb == "edit" && (file_name == "" || !is_regular_file(file_name) || (status(file_name).permissions() & perms::owner_write) != perms::owner_write)) return 0;
-        if ((verb == "runas" || verb == "runasuser")  && (file_name == "" || (status(file_name).permissions() & perms::owner_exec) != perms::owner_exec)) return 0;
+        if (verb == "explore" && (file_name == "" || !std::filesystem::is_directory(file_name))) return 0;
+        if (verb == "edit" && (file_name == "" || !std::filesystem::is_regular_file(file_name) || (std::filesystem::status(file_name).permissions() & std::filesystem::perms::owner_write) != std::filesystem::perms::owner_write)) return 0;
+        if ((verb == "runas" || verb == "runasuser")  && (file_name == "" || (std::filesystem::status(file_name).permissions() & std::filesystem::perms::owner_exec) != std::filesystem::perms::owner_exec)) return 0;
         command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&macos::strings::split, file_name, working_directory));
         command_line_args.insert(command_line_args.begin(), shell_execute_command());
       } else {
@@ -201,7 +200,7 @@ intmax_t process::shell_execute(const std::string& verb, const std::string& file
       }
     } else {
       command_line_args = split_arguments(arguments);
-      if (working_directory != "") current_path(working_directory.c_str());
+      if (working_directory != "") std::filesystem::current_path(working_directory.c_str());
       command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&macos::strings::split, file_name));
     }
     auto execvp_args = std::vector<char*>(command_line_args.size() + 1);
@@ -245,7 +244,7 @@ process::started_process process::start(const std::string& file_name, const std:
     }
     
     auto command_line_args = std::vector<std::string> {};
-    if (working_directory != "") current_path(working_directory.c_str());
+    if (working_directory != "") std::filesystem::current_path(working_directory.c_str());
     command_line_args = split_arguments(arguments);
     command_line_args.insert(command_line_args.begin(), get_full_file_name_with_extension(&macos::strings::split, file_name));
     auto execvp_args = std::vector<char*>(command_line_args.size() + 1);
