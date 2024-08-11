@@ -3,6 +3,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 #include <unistd.h>
+#include <sys/sysctl.h>
 #include <sys/types.h>
 #include <sys/resource.h>
 #include <sys/sysinfo.h>
@@ -11,11 +12,14 @@
 #include <fstream>
 #include <string>
 
-
 using namespace xtd::native;
 
 size_t memory::get_total_physical_memory() {
-  return sysconf(_SC_PHYS_PAGES) * sysconf(_SC_PAGE_SIZE);
+  auto mib = std::array<int32_t, 2> {CTL_HW, HW_MEMSIZE};
+  auto total_physical_memory = size_t {};
+  auto length = sizeof(size_t);
+  sysctl(mib.data(), 2, &total_physical_memory, &length, nullptr, 0);
+  return total_physical_memory;
 }
 
 size_t memory::get_total_process_memory() {
@@ -39,7 +43,11 @@ size_t memory::get_total_virtual_memory() {
 }
 
 size_t memory::get_used_physical_memory() {
-  return get_total_physical_memory() - sysconf(_SC_AVPHYS_PAGES) * sysconf(_SC_PAGE_SIZE);
+  auto mib = std::array<int32_t, 2> {CTL_HW, VM_FREE_COUNT};
+  auto free_physical_memory = size_t {};
+  auto length = sizeof(size_t);
+  sysctl(mib.data(), 2, &free_physical_memory, &length, nullptr, 0);
+  return get_total_physical_memory() - free_physical_memory;
 }
 
 size_t memory::get_used_process_memory() {
