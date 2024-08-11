@@ -10,7 +10,6 @@
 #include <xtd/environment>
 #include "menu_data.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -113,7 +112,7 @@ xtd::forms::main_menu main_menu::create_standard_items(const xtd::ustring& theme
   auto tools_menu_item = xtd::new_sptr<menu_item>(texts::tools(), std::vector<menu_item_ref> {*tools_customize_menu_item, *tools_options_menu_item});
   auto help_menu_item = xtd::new_sptr<menu_item>(texts::help(), std::vector<menu_item_ref> {*help_contents_menu_item, *help_index_menu_item, *help_search_menu_item, *help_separator1_menu_item, *help_about_menu_item});
   
-  auto main_menu_with_standard_items = main_menu(vector<menu_item_ref> {*file_menu_item, *edit_menu_item, *tools_menu_item, *help_menu_item});
+  auto main_menu_with_standard_items = main_menu(std::vector<menu_item_ref> {*file_menu_item, *edit_menu_item, *tools_menu_item, *help_menu_item});
   
   main_menu_with_standard_items.standard_menu_items_.clear();
   main_menu_with_standard_items.standard_menu_items_.emplace_back(file_menu_item);

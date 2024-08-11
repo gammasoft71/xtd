@@ -1,6 +1,5 @@
 #include "../../../include/xtd/forms/link.h"
 
-using namespace std;
 using namespace xtd;
 
 struct xtd::forms::link::data {

@@ -1,6 +1,5 @@
 #include "../../../include/xtd/forms/find_box.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

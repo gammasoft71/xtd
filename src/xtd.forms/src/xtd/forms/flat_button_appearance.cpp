@@ -1,6 +1,5 @@
 #include "../../../include/xtd/forms/flat_button_appearance.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

@@ -3,7 +3,6 @@
 #include "../../../include/xtd/forms/style_sheets/style_sheet.h"
 #include "../../../include/xtd/forms/form_renderer.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
