@@ -1,7 +1,6 @@
 #include "../../../include/xtd/forms/animation.h"
 #include <xtd/math>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;

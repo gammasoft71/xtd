@@ -6,7 +6,6 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <memory>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

@@ -2,7 +2,6 @@
 #include <xtd/drawing/system_colors>
 
 /*
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
