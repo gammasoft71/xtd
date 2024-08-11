@@ -1,6 +1,5 @@
 #include "../../../include/xtd/forms/application_context.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -20,12 +19,12 @@ application_context::~application_context() {
   if (data_->main_form != nullptr) data_->main_form->handle_destroyed -= {*this, &application_context::on_main_form_closed};
 }
 
-optional<const_form_ref> application_context::main_form() const noexcept {
-  return data_->main_form ? optional<const_form_ref> {*data_->main_form} : nullopt;
+std::optional<const_form_ref> application_context::main_form() const noexcept {
+  return data_->main_form ? std::optional<const_form_ref> {*data_->main_form} : std::nullopt;
 }
 
-optional<form_ref> application_context::main_form() noexcept {
-  return data_->main_form ? optional<form_ref> {*data_->main_form} : nullopt;
+std::optional<form_ref> application_context::main_form() noexcept {
+  return data_->main_form ? std::optional<form_ref> {*data_->main_form} : std::nullopt;
 }
 
 void application_context::main_form(const form& main_form) {

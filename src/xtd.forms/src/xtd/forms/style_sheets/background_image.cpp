@@ -7,7 +7,6 @@
 #include <xtd/as>
 #include <xtd/not_supported_exception>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;

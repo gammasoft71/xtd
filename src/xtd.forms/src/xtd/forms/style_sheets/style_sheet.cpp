@@ -12,7 +12,6 @@
 #include <xtd/is>
 #include <xtd/environment>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing;
@@ -469,24 +468,24 @@ xtd::forms::style_sheets::theme style_sheet::theme_from_css(const ustring& css_t
 
 std::tuple<border_type, int32, int32> style_sheet::to_border_type(xtd::forms::border_style border) {
   switch (border) {
-    case xtd::forms::border_style::none: return make_tuple(border_type::none, 0, 0); break;
-    case xtd::forms::border_style::solid: return make_tuple(border_type::solid, 1, 0); break;
-    case xtd::forms::border_style::inset: return make_tuple(border_type::inset, 1, 0); break;
-    case xtd::forms::border_style::outset: return make_tuple(border_type::outset, 1, 0); break;
-    case xtd::forms::border_style::groove: return make_tuple(border_type::groove, 2, 0); break;
-    case xtd::forms::border_style::ridge: return make_tuple(border_type::ridge, 2, 0); break;
-    case xtd::forms::border_style::theme: return make_tuple(border_type::theme, 2, 0); break;
-    case xtd::forms::border_style::dashed: return make_tuple(border_type::dashed, 1, 0); break;
-    case xtd::forms::border_style::dot_dash: return make_tuple(border_type::dot_dash, 1, 0); break;
-    case xtd::forms::border_style::dot_dot_dash: return make_tuple(border_type::dot_dot_dash, 1, 0); break;
-    case xtd::forms::border_style::dotted: return make_tuple(border_type::dotted, 1, 0); break;
-    case xtd::forms::border_style::double_border: return make_tuple(border_type::double_border, 3, 0); break;
-    case xtd::forms::border_style::bevel_inset: return make_tuple(border_type::inset, 4, 0); break;
-    case xtd::forms::border_style::bevel_outset: return make_tuple(border_type::outset, 4, 0); break;
-    case xtd::forms::border_style::rounded: return make_tuple(border_type::solid, 1, 6); break;
+    case xtd::forms::border_style::none: return std::make_tuple(border_type::none, 0, 0); break;
+    case xtd::forms::border_style::solid: return std::make_tuple(border_type::solid, 1, 0); break;
+    case xtd::forms::border_style::inset: return std::make_tuple(border_type::inset, 1, 0); break;
+    case xtd::forms::border_style::outset: return std::make_tuple(border_type::outset, 1, 0); break;
+    case xtd::forms::border_style::groove: return std::make_tuple(border_type::groove, 2, 0); break;
+    case xtd::forms::border_style::ridge: return std::make_tuple(border_type::ridge, 2, 0); break;
+    case xtd::forms::border_style::theme: return std::make_tuple(border_type::theme, 2, 0); break;
+    case xtd::forms::border_style::dashed: return std::make_tuple(border_type::dashed, 1, 0); break;
+    case xtd::forms::border_style::dot_dash: return std::make_tuple(border_type::dot_dash, 1, 0); break;
+    case xtd::forms::border_style::dot_dot_dash: return std::make_tuple(border_type::dot_dot_dash, 1, 0); break;
+    case xtd::forms::border_style::dotted: return std::make_tuple(border_type::dotted, 1, 0); break;
+    case xtd::forms::border_style::double_border: return std::make_tuple(border_type::double_border, 3, 0); break;
+    case xtd::forms::border_style::bevel_inset: return std::make_tuple(border_type::inset, 4, 0); break;
+    case xtd::forms::border_style::bevel_outset: return std::make_tuple(border_type::outset, 4, 0); break;
+    case xtd::forms::border_style::rounded: return std::make_tuple(border_type::solid, 1, 6); break;
     default: break;
   }
-  return make_tuple(border_type::none, 0, 0);
+  return std::make_tuple(border_type::none, 0, 0);
 }
 
 color style_sheet::background_color_from_css(const ustring& css_text, const color& default_value) const noexcept {
@@ -515,7 +514,7 @@ border_color style_sheet::border_color_from_css(const ustring& css_text, const b
 
 style_sheets::border_style style_sheet::border_style_from_css(const ustring& css_text, const border_style& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  static auto border_types = map<ustring, xtd::forms::style_sheets::border_type> {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}, {"theme", border_type::theme}};
+  static auto border_types = std::map<ustring, xtd::forms::style_sheets::border_type> {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}, {"theme", border_type::theme}};
   if (values.size() < 1 || values.size() > 4) return default_value;
   
   auto result = border_style {};
@@ -725,14 +724,14 @@ content_alignment style_sheet::text_align_from_css(const ustring& css_text, cons
 }
 
 text_decoration style_sheet::text_decoration_from_css(const ustring& css_text, const text_decoration& default_value) const noexcept {
-  auto decorations = map<ustring, text_decoration> {{"none", text_decoration::none}, {"line-through", text_decoration::line_through}, {"overline", text_decoration::overline}, {"underline", text_decoration::underline}};
+  auto decorations = std::map<ustring, text_decoration> {{"none", text_decoration::none}, {"line-through", text_decoration::line_through}, {"overline", text_decoration::overline}, {"underline", text_decoration::underline}};
   auto it = decorations.find(css_text.to_lower());
   if (it == decorations.end()) return default_value;
   return it->second;
 }
 
 text_transformation style_sheet::text_transformation_from_css(const ustring& css_text, const text_transformation& default_value) const noexcept {
-  auto transformations = map<ustring, text_transformation> {{"none", text_transformation::none}, {"capitalize", text_transformation::capitalize}, {"lowercase", text_transformation::lowercase}, {"uppercase", text_transformation::uppercase}};
+  auto transformations = std::map<ustring, text_transformation> {{"none", text_transformation::none}, {"capitalize", text_transformation::capitalize}, {"lowercase", text_transformation::lowercase}, {"uppercase", text_transformation::uppercase}};
   auto it = transformations.find(css_text.to_lower());
   if (it == transformations.end()) return default_value;
   return it->second;
@@ -745,7 +744,7 @@ uri style_sheet::uri_from_css(const ustring& css_text, const uri& default_value)
 }
 
 white_space style_sheet::white_space_from_css(const ustring& css_text, const xtd::forms::style_sheets::white_space& default_value) const noexcept {
-  auto white_spaces = map<ustring, white_space> {{"normal", white_space::normal}, {"nowrap", white_space::no_wrap}, {"pre", white_space::pre}, {"pre-line", white_space::pre_line}, {"pre-wrap", white_space::pre_wrap}};
+  auto white_spaces = std::map<ustring, white_space> {{"normal", white_space::normal}, {"nowrap", white_space::no_wrap}, {"pre", white_space::pre}, {"pre-line", white_space::pre_line}, {"pre-wrap", white_space::pre_wrap}};
   auto it = white_spaces.find(css_text.to_lower());
   if (it == white_spaces.end()) return default_value;
   return it->second;
@@ -764,7 +763,7 @@ void style_sheet::on_system_colors_changed(const event_args& e) {
   } else system_style_sheet_ = style_sheet::empty;
 }
 
-vector<ustring> style_sheet::split_values_from_text(const ustring& text) const noexcept {
+std::vector<ustring> style_sheet::split_values_from_text(const ustring& text) const noexcept {
   static auto color_keywords = std::vector<ustring> {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
   auto string_starts_with_any = [](const ustring & text, const std::vector<ustring>& values)->ustring {
     for (auto value : values)
@@ -1268,7 +1267,7 @@ bool style_sheet::try_parse_named_color(const ustring& text, color& result) cons
 
 bool style_sheet::try_parse_system_color(const ustring& text, color& result) const noexcept {
   auto value = text.remove(text.size() - 1).replace("system-color(", ustring::empty_string);
-  map<ustring, drawing::color> colors {{"accent", system_colors().accent()}, {"accent-text", system_colors().accent_text()}, {"active-border", system_colors().active_border()}, {"active-caption", system_colors().active_caption()}, {"active-caption-text", system_colors().active_caption_text()}, {"app-workspace", system_colors().app_workspace()}, {"button-face", system_colors().button_face()}, {"button-highlight", system_colors().button_highlight()}, {"button-shadow", system_colors().button_shadow()}, {"control", system_colors().control()}, {"control-dark", system_colors().control_dark()}, {"control-dark-dark", system_colors().control_dark_dark()}, {"control-light", system_colors().control_light()}, {"control-light-light", system_colors().control_light_light()}, {"control-text", system_colors().control_text()}, {"desktop", system_colors().desktop()}, {"gradient-active-caption", system_colors().gradient_active_caption()}, {"gradient-inactive-caption", system_colors().gradient_inactive_caption()}, {"gray-text", system_colors().gray_text()}, {"highlight", system_colors().highlight()}, {"highlight-text", system_colors().highlight_text()}, {"hot-track", system_colors().hot_track()}, {"inactive-border", system_colors().inactive_border()}, {"inactive-caption", system_colors().inactive_caption()}, {"inactive-caption-text", system_colors().inactive_caption_text()}, {"info", system_colors().info()}, {"info-text", system_colors().info_text()}, {"menu", system_colors().menu()}, {"menu-bar", system_colors().menu_bar()}, {"menu-highlight", system_colors().menu_highlight()}, {"menu-text", system_colors().menu_text()}, {"scroll-bar", system_colors().scroll_bar()}, {"shadow-text", system_colors().shadow_text()}, {"text-box", system_colors().text_box()}, {"text-box-text", system_colors().text_box_text()}, {"window", system_colors().window()}, {"window-frame", system_colors().window_frame()}, {"window-text", system_colors().window_text()}};
+  auto colors = std::map<ustring, drawing::color> {{"accent", system_colors().accent()}, {"accent-text", system_colors().accent_text()}, {"active-border", system_colors().active_border()}, {"active-caption", system_colors().active_caption()}, {"active-caption-text", system_colors().active_caption_text()}, {"app-workspace", system_colors().app_workspace()}, {"button-face", system_colors().button_face()}, {"button-highlight", system_colors().button_highlight()}, {"button-shadow", system_colors().button_shadow()}, {"control", system_colors().control()}, {"control-dark", system_colors().control_dark()}, {"control-dark-dark", system_colors().control_dark_dark()}, {"control-light", system_colors().control_light()}, {"control-light-light", system_colors().control_light_light()}, {"control-text", system_colors().control_text()}, {"desktop", system_colors().desktop()}, {"gradient-active-caption", system_colors().gradient_active_caption()}, {"gradient-inactive-caption", system_colors().gradient_inactive_caption()}, {"gray-text", system_colors().gray_text()}, {"highlight", system_colors().highlight()}, {"highlight-text", system_colors().highlight_text()}, {"hot-track", system_colors().hot_track()}, {"inactive-border", system_colors().inactive_border()}, {"inactive-caption", system_colors().inactive_caption()}, {"inactive-caption-text", system_colors().inactive_caption_text()}, {"info", system_colors().info()}, {"info-text", system_colors().info_text()}, {"menu", system_colors().menu()}, {"menu-bar", system_colors().menu_bar()}, {"menu-highlight", system_colors().menu_highlight()}, {"menu-text", system_colors().menu_text()}, {"scroll-bar", system_colors().scroll_bar()}, {"shadow-text", system_colors().shadow_text()}, {"text-box", system_colors().text_box()}, {"text-box-text", system_colors().text_box_text()}, {"window", system_colors().window()}, {"window-frame", system_colors().window_frame()}, {"window-text", system_colors().window_text()}};
   auto it = colors.find(value);
   if (it == colors.end()) return false;
   result = it->second;

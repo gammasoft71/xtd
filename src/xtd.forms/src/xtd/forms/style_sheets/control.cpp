@@ -1,7 +1,6 @@
 #include "../../../../include/xtd/forms/style_sheets/control.h"
 #include "../../../../include/xtd/forms/style_sheets/style_sheet.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -70,7 +69,7 @@ style_sheets::control& style_sheets::control::border_width(xtd::forms::style_she
   return *this;
 }
 
-optional<length> style_sheets::control::height() const noexcept {
+std::optional<length> style_sheets::control::height() const noexcept {
   return height_;
 }
 
@@ -169,11 +168,11 @@ style_sheets::control& style_sheets::control::text_alignment(content_alignment v
   return *this;
 }
 
-optional<length> style_sheets::control::width() const noexcept {
+std::optional<length> style_sheets::control::width() const noexcept {
   return width_;
 }
 
-style_sheets::control& style_sheets::control::width(optional<length> value) noexcept {
+style_sheets::control& style_sheets::control::width(std::optional<length> value) noexcept {
   width_ = value;
   return *this;
 }
@@ -238,8 +237,8 @@ xtd::drawing::color style_sheets::control::get_solid_background_color() const no
 
 rectangle style_sheets::control::get_border_rectangle(const rectangle& bounds) const noexcept {
   auto bounds_rect = bounds;
-  if (width() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left().get_pixels(bounds) + (border_style().left() != border_type::none ? border_width().left().get_pixels(bounds) : 0) + padding().left().get_pixels(bounds) + width().value().get_pixels(bounds) + padding().right().get_pixels(bounds) + (border_style().right() != border_type::none ? border_width().right().get_pixels(bounds) : 0) + margin().right().get_pixels(bounds), bounds_rect.height());
-  if (height() != nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top().get_pixels(bounds) + (border_style().top() != border_type::none ? border_width().top().get_pixels(bounds) : 0) + padding().top().get_pixels(bounds) + height().value().get_pixels(bounds) + padding().bottom().get_pixels(bounds) + (border_style().bottom() != border_type::none ? border_width().bottom().get_pixels(bounds) : 0) + margin().bottom().get_pixels(bounds));
+  if (width() != std::nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), margin().left().get_pixels(bounds) + (border_style().left() != border_type::none ? border_width().left().get_pixels(bounds) : 0) + padding().left().get_pixels(bounds) + width().value().get_pixels(bounds) + padding().right().get_pixels(bounds) + (border_style().right() != border_type::none ? border_width().right().get_pixels(bounds) : 0) + margin().right().get_pixels(bounds), bounds_rect.height());
+  if (height() != std::nullopt) bounds_rect = rectangle(bounds_rect.x(), bounds_rect.y(), bounds_rect.width(), margin().top().get_pixels(bounds) + (border_style().top() != border_type::none ? border_width().top().get_pixels(bounds) : 0) + padding().top().get_pixels(bounds) + height().value().get_pixels(bounds) + padding().bottom().get_pixels(bounds) + (border_style().bottom() != border_type::none ? border_width().bottom().get_pixels(bounds) : 0) + margin().bottom().get_pixels(bounds));
   
   auto border_rect = rectangle::offset(bounds_rect, margin().left().get_pixels(bounds), margin().top().get_pixels(bounds));
   border_rect = rectangle::add(border_rect, -margin().right().get_pixels(bounds) - margin().left().get_pixels(bounds), -margin().bottom().get_pixels(bounds) - margin().top().get_pixels(bounds));

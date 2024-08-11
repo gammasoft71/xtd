@@ -6,7 +6,6 @@
 #include <xtd/is>
 #include <xtd/math>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;

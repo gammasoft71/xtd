@@ -1,8 +1,8 @@
 #include "../../../../include/xtd/forms/style_sheets/style_sheet.h"
 #include <xtd/drawing/system_colors>
+
 /*
-using namespace std;
-using namespace xtd;
+ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
