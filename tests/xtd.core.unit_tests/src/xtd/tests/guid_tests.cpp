@@ -4,7 +4,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -19,7 +18,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_guid_from_byte_array) {
-      assert::are_equal("10203040-5060-7080-90a0-b0c0d0e0f001", guid(vector<xtd::byte> {0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70, 0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0, 0xF0, 0x01}).to_string(), csf_);
+      assert::are_equal("10203040-5060-7080-90a0-b0c0d0e0f001", guid(std::vector<xtd::byte> {0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70, 0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0, 0xF0, 0x01}).to_string(), csf_);
     }
     
     void test_method_(constructor) {
@@ -49,7 +48,7 @@ namespace xtd::tests {
     }
     
     void test_method_(new_guid) {
-      map<guid, guid> guids;
+      std::map<guid, guid> guids;
       for (int32 i = 0; i < 1'000; i++) {
         xtd::guid guid = xtd::guid::new_guid();
         assert::is_true(guids.find(guid) == guids.end(), csf_);
