@@ -8,7 +8,6 @@
 #include <xtd/ustring>
 //#include "logo.xpm"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
