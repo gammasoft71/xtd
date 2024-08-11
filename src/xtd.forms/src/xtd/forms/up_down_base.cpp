@@ -5,13 +5,12 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <optional>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 struct up_down_base::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  optional<forms::border_style> border_style;
+  std::optional<forms::border_style> border_style;
 };
 
 forms::border_sides up_down_base::border_sides() const noexcept {

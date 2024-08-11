@@ -4,7 +4,6 @@
 #include <xtd/forms/native/scroll_bar_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;

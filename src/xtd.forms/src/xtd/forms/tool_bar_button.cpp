@@ -2,7 +2,6 @@
 #include "../../../include/xtd/forms/tool_bar.h"
 #include "tool_bar_button_data.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -13,8 +12,8 @@ tool_bar_button::tool_bar_button(const ustring& text) : data_(xtd::new_sptr<data
   data_->text = text;
 }
 
-optional<reference_wrapper<forms::control>> tool_bar_button::control() const noexcept {
-  return data_->control ? optional<reference_wrapper<forms::control>>(*data_->control) : nullopt;
+std::optional<std::reference_wrapper<forms::control>> tool_bar_button::control() const noexcept {
+  return data_->control ? std::optional<std::reference_wrapper<forms::control>>(*data_->control) : std::nullopt;
 }
 
 tool_bar_button& tool_bar_button::control(const xtd::forms::control& value) {
@@ -32,7 +31,7 @@ tool_bar_button& tool_bar_button::control(std::nullptr_t value) {
 }
 
 std::optional<std::reference_wrapper<xtd::forms::context_menu>> tool_bar_button::drop_down_menu() const noexcept {
-  return data_->drop_down_menu ? std::optional<std::reference_wrapper<xtd::forms::context_menu>>(*data_->drop_down_menu) : std::optional<std::reference_wrapper<xtd::forms::context_menu>>();
+  return data_->drop_down_menu ? std::optional<std::reference_wrapper<xtd::forms::context_menu>>(*data_->drop_down_menu) : std::nullopt;
 }
 
 tool_bar_button& tool_bar_button::drop_down_menu(const xtd::forms::context_menu& value) {
@@ -80,8 +79,8 @@ tool_bar_button& tool_bar_button::name(const xtd::ustring& value) {
   return *this;
 }
 
-optional<reference_wrapper<tool_bar>> tool_bar_button::parent() const noexcept {
-  return data_->parent ? optional<reference_wrapper<tool_bar>>(*data_->parent) : nullopt;
+std::optional<std::reference_wrapper<tool_bar>> tool_bar_button::parent() const noexcept {
+  return data_->parent ? std::optional<std::reference_wrapper<tool_bar>>(*data_->parent) : std::nullopt;
 }
 
 bool tool_bar_button::pushed() const noexcept {
