@@ -9,7 +9,6 @@
 #include <xtd/environment>
 #include <xtd/as>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::configuration;
 using namespace xtd::io;
@@ -228,7 +227,7 @@ namespace xtd::configuration::tests {
       "key5=value5\n";
       file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
-      auto stream = file::open(file_name, ios::in|ios::out);
+      auto stream = file::open(file_name, std::ios::in|std::ios::out);
       auto fs = file_settings {stream};
       assert::is_false(fs.auto_save(), csf_);
       assert::is_empty(fs.file_path(), csf_);
@@ -304,7 +303,7 @@ namespace xtd::configuration::tests {
       "key5=value5\n";
       file::write_all_text(file_name, file_content);
       file_assume::exists(file_name);
-      auto stream = file::open(file_name, ios::in|ios::out);
+      auto stream = file::open(file_name, std::ios::in|std::ios::out);
       auto fs = file_settings {stream};
       assert::is_empty(fs.file_path(), csf_);
       assert::is_empty(fs.key_values(), csf_);
@@ -321,7 +320,7 @@ namespace xtd::configuration::tests {
     }
 
     void test_method_(load_with_invalid_stream) {
-      auto stream = fstream {"non_existent_file_name.ini", ios::in|ios::out};
+      auto stream = std::fstream {"non_existent_file_name.ini", std::ios::in|std::ios::out};
       stream.close();
       assert::throws<io_exception>([&] {file_settings {}.load(stream);}, csf_);
     }

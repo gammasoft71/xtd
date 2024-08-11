@@ -9,7 +9,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
 using namespace std::literals;
 using namespace xtd;
 using namespace xtd::io;
@@ -300,9 +299,9 @@ namespace xtd::tests {
       auto [cursor_left, cursor_top] = console::get_cursor_position();
       console::cursor_left(20);
       console::cursor_top(10);
-      assert::are_equal(make_pair(20, 10), console::get_cursor_position(), csf_);
+      assert::are_equal(std::make_pair(20, 10), console::get_cursor_position(), csf_);
       console::set_cursor_position(cursor_left, cursor_top);
-      assert::are_equal(make_pair(cursor_left, cursor_top), console::get_cursor_position(), csf_);
+      assert::are_equal(std::make_pair(cursor_left, cursor_top), console::get_cursor_position(), csf_);
     }
     
     void test_method_(open_standard_error) {

@@ -5,7 +5,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -211,7 +210,7 @@ namespace xtd::tests {
     }
     
     void test_method_(ostream_operator) {
-      stringstream ss;
+      std::stringstream ss;
       ss << version(1, 2, 3, 4);
       assert::are_equal("1.2.3.4", ss.str(), csf_);
     }

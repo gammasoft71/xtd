@@ -4,7 +4,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
 using namespace std::chrono_literals;
 using namespace xtd;
 using namespace xtd::tunit;

@@ -4,7 +4,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::tunit;
@@ -12,7 +11,7 @@ using namespace xtd::tunit;
 namespace xtd::io::tests {
   class test_class_(stream_writer_tests) {
     void test_method_(create_stream_writer_from_stringstream) {
-      vector data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+      std::vector data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
       std::stringstream s;
       
       stream_writer sw(s);
@@ -27,7 +26,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(create_stream_writer_from_stringstream_without_append) {
-      vector data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+      std::vector data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
       std::stringstream s("abc");
       
       stream_writer sw(s);
@@ -42,7 +41,7 @@ namespace xtd::io::tests {
     }
     
     void test_method_(create_stream_writer_from_stringstream_with_append) {
-      vector data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+      std::vector data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
       std::stringstream s("abc");
       
       stream_writer sw(s, true);

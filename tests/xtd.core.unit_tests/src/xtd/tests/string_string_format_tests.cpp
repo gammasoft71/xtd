@@ -3,8 +3,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
-using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -44,20 +42,20 @@ namespace xtd::tests {
     
 #if defined(__xtd__cpp_lib_char8_t)
     void test_method_(format_string_with_u8string) {
-      assert::are_equal("string", ustring::format("{}", u8string(u8"string")), csf_);
+      assert::are_equal("string", ustring::format("{}", std::u8string(u8"string")), csf_);
     }
 #endif
     
     void test_method_(format_string_with_u16string) {
-      assert::are_equal("string", ustring::format("{}", u16string(u"string")), csf_);
+      assert::are_equal("string", ustring::format("{}", std::u16string(u"string")), csf_);
     }
     
     void test_method_(format_string_with_u32string) {
-      assert::are_equal("string", ustring::format("{}", u32string(U"string")), csf_);
+      assert::are_equal("string", ustring::format("{}", std::u32string(U"string")), csf_);
     }
     
     void test_method_(format_string_with_wstring) {
-      assert::are_equal("string", ustring::format("{}", wstring(L"string")), csf_);
+      assert::are_equal("string", ustring::format("{}", std::wstring(L"string")), csf_);
     }
   };
 }

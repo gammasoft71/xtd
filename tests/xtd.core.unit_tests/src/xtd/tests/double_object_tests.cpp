@@ -6,7 +6,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -17,11 +16,11 @@ namespace xtd::tests {
     }
     
     void test_method_(max_value) {
-      assert::are_equal(numeric_limits<double>::max(), double_object::max_value, csf_);
+      assert::are_equal(std::numeric_limits<double>::max(), double_object::max_value, csf_);
     }
     
     void test_method_(min_value) {
-      assert::are_equal(numeric_limits<double>::lowest(), double_object::min_value, csf_);
+      assert::are_equal(std::numeric_limits<double>::lowest(), double_object::min_value, csf_);
     }
     
     void test_method_(NaN) {
@@ -29,11 +28,11 @@ namespace xtd::tests {
     }
     
     void test_method_(negative_infinity) {
-      assert::are_equal(-numeric_limits<double>::infinity(), double_object::negative_infinity, csf_);
+      assert::are_equal(-std::numeric_limits<double>::infinity(), double_object::negative_infinity, csf_);
     }
     
     void test_method_(positive_infinity) {
-      assert::are_equal(numeric_limits<double>::infinity(), double_object::positive_infinity, csf_);
+      assert::are_equal(std::numeric_limits<double>::infinity(), double_object::positive_infinity, csf_);
     }
 
     void test_method_(is_infinity) {

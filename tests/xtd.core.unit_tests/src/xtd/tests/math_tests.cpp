@@ -7,7 +7,6 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -26,13 +25,13 @@ namespace xtd::tests {
     }
     
     void test_method_(abs_decimal) {
-      assert::are_equal(numeric_limits<decimal>::max(), math::abs(numeric_limits<decimal>::max()), csf_);
+      assert::are_equal(std::numeric_limits<decimal>::max(), math::abs(std::numeric_limits<decimal>::max()), csf_);
       assert::are_equal(1.6354E-16l, math::abs(1.6354E-16l), csf_);
       assert::are_equal(15.098123l, math::abs(15.098123l), csf_);
       assert::are_equal(.0l, math::abs(.0), csf_);
       assert::are_equal(19.069713l, math::abs(-19.069713l), csf_);
       assert::are_equal(15.058e18l, math::abs(-15.058e18l), csf_);
-      assert::are_equal(-numeric_limits<decimal>::lowest(), math::abs(numeric_limits<decimal>::lowest()), csf_);
+      assert::are_equal(-std::numeric_limits<decimal>::lowest(), math::abs(std::numeric_limits<decimal>::lowest()), csf_);
     }
     
     void test_method_(abs_double) {
@@ -46,53 +45,53 @@ namespace xtd::tests {
     }
     
     void test_method_(abs_single) {
-      assert::are_equal(numeric_limits<float>::max(), math::abs(numeric_limits<float>::max()), csf_);
+      assert::are_equal(std::numeric_limits<float>::max(), math::abs(std::numeric_limits<float>::max()), csf_);
       assert::are_equal(16.354e-12f, math::abs(16.354e-12f), csf_);
       assert::are_equal(15.098123f, math::abs(15.098123f), csf_);
       assert::are_equal(.0f, math::abs(.0f), csf_);
       assert::are_equal(19.069713f, math::abs(-19.069713f), csf_);
       assert::are_equal(15.058e17f, math::abs(-15.058e17f), csf_);
-      assert::are_equal(-numeric_limits<float>::lowest(), math::abs(numeric_limits<float>::lowest()), csf_);
+      assert::are_equal(-std::numeric_limits<float>::lowest(), math::abs(std::numeric_limits<float>::lowest()), csf_);
     }
     
     void test_method_(abs_int16) {
-      assert::are_equal(numeric_limits<int16>::max(), math::abs(numeric_limits<int16>::max()), csf_);
+      assert::are_equal(std::numeric_limits<int16>::max(), math::abs(std::numeric_limits<int16>::max()), csf_);
       assert::are_equal(as<int16>(10328), math::abs(as<int16>(10328)), csf_);
       assert::are_equal(as<int16>(0), math::abs(as<int16>(0)), csf_);
       assert::are_equal(as<int16>(1476), math::abs(as<int16>(-1476)), csf_);
-      assert::throws<overflow_exception>([] {math::abs(numeric_limits<int16>::lowest());}, csf_);
+      assert::throws<overflow_exception>([] {math::abs(std::numeric_limits<int16>::lowest());}, csf_);
     }
     
     void test_method_(abs_int32) {
-      assert::are_equal(numeric_limits<int32>::max(), math::abs(numeric_limits<int32>::max()), csf_);
+      assert::are_equal(std::numeric_limits<int32>::max(), math::abs(std::numeric_limits<int32>::max()), csf_);
       assert::are_equal(16921, math::abs(16921), csf_);
       assert::are_equal(0, math::abs(0), csf_);
       assert::are_equal(804128, math::abs(-804128), csf_);
-      assert::throws<overflow_exception>([] {math::abs(numeric_limits<int32>::lowest());}, csf_);
+      assert::throws<overflow_exception>([] {math::abs(std::numeric_limits<int32>::lowest());}, csf_);
     }
     
     void test_method_(abs_int64) {
-      assert::are_equal(numeric_limits<int64>::max(), math::abs(numeric_limits<int64>::max()), csf_);
+      assert::are_equal(std::numeric_limits<int64>::max(), math::abs(std::numeric_limits<int64>::max()), csf_);
       assert::are_equal(as<int64>(109013), math::abs(as<int64>(109013)), csf_);
       assert::are_equal(as<int64>(0), math::abs(as<int64>(0)), csf_);
       assert::are_equal(as<int64>(6871982), math::abs(as<int64>(-6871982)), csf_);
-      assert::throws<overflow_exception>([] {math::abs(numeric_limits<int64>::lowest());}, csf_);
+      assert::throws<overflow_exception>([] {math::abs(std::numeric_limits<int64>::lowest());}, csf_);
     }
     
     void test_method_(abs_sbyte) {
-      assert::are_equal(numeric_limits<sbyte>::max(), math::abs(numeric_limits<sbyte>::max()), csf_);
+      assert::are_equal(std::numeric_limits<sbyte>::max(), math::abs(std::numeric_limits<sbyte>::max()), csf_);
       assert::are_equal(as<sbyte>(98), math::abs(as<sbyte>(98)), csf_);
       assert::are_equal(as<sbyte>(0), math::abs(as<sbyte>(0)), csf_);
       assert::are_equal(as<sbyte>(32), math::abs(as<sbyte>(-32)), csf_);
-      assert::throws<overflow_exception>([] {math::abs(numeric_limits<sbyte>::lowest());}, csf_);
+      assert::throws<overflow_exception>([] {math::abs(std::numeric_limits<sbyte>::lowest());}, csf_);
     }
     
     void test_method_(abs_llong) {
-      assert::are_equal(numeric_limits<slong>::max(), math::abs(numeric_limits<slong>::max()), csf_);
+      assert::are_equal(std::numeric_limits<slong>::max(), math::abs(std::numeric_limits<slong>::max()), csf_);
       assert::are_equal(109013ll, math::abs(109013ll), csf_);
       assert::are_equal(0ll, math::abs(0ll), csf_);
       assert::are_equal(6871982ll, math::abs(-6871982ll), csf_);
-      assert::throws<overflow_exception>([] {math::abs(numeric_limits<slong>::lowest());}, csf_);
+      assert::throws<overflow_exception>([] {math::abs(std::numeric_limits<slong>::lowest());}, csf_);
     }
     
     void test_method_(acos) {
@@ -146,7 +145,7 @@ namespace xtd::tests {
     }
     
     void test_method_(big_mul) {
-      assert::are_equal(4611686014132420609LL, math::big_mul(numeric_limits<int32>::max(), numeric_limits<int32>::max()), csf_);
+      assert::are_equal(4611686014132420609LL, math::big_mul(std::numeric_limits<int32>::max(), std::numeric_limits<int32>::max()), csf_);
     }
     
     void test_method_(ceiling) {
@@ -189,7 +188,7 @@ namespace xtd::tests {
     
     void test_method_(div_rem_int32) {
       block_scope_(int32 remainder = 0) {
-        assert::are_equal(1073741, math::div_rem(numeric_limits<int32>::max(), as<int32>(2000), remainder), csf_);
+        assert::are_equal(1073741, math::div_rem(std::numeric_limits<int32>::max(), as<int32>(2000), remainder), csf_);
         assert::are_equal(1647, remainder, csf_);
       }
       
@@ -209,12 +208,12 @@ namespace xtd::tests {
       }
       
       block_scope_(int32 remainder = 0) {
-        assert::are_equal(-1073741, math::div_rem(numeric_limits<int32>::lowest(), as<int32>(2000), remainder), csf_);
+        assert::are_equal(-1073741, math::div_rem(std::numeric_limits<int32>::lowest(), as<int32>(2000), remainder), csf_);
         assert::are_equal(-1648, remainder, csf_);
       }
       
       block_scope_(int32 remainder = 0) {
-        assert::are_equal(-1073741, math::div_rem(numeric_limits<int32>::max(), as<int32>(-2000), remainder), csf_);
+        assert::are_equal(-1073741, math::div_rem(std::numeric_limits<int32>::max(), as<int32>(-2000), remainder), csf_);
         assert::are_equal(1647, remainder, csf_);
       }
       
@@ -234,14 +233,14 @@ namespace xtd::tests {
       }
       
       block_scope_(int32 remainder = 0) {
-        assert::are_equal(1073741, math::div_rem(numeric_limits<int32>::lowest(), as<int32>(-2000), remainder), csf_);
+        assert::are_equal(1073741, math::div_rem(std::numeric_limits<int32>::lowest(), as<int32>(-2000), remainder), csf_);
         assert::are_equal(-1648, remainder, csf_);
       }
     }
     
     void test_method_(div_rem_int64) {
       block_scope_(int64 remainder = 0) {
-        assert::are_equal(4611686018427387LL, math::div_rem(numeric_limits<int64>::max(), as<int64>(2000), remainder), csf_);
+        assert::are_equal(4611686018427387LL, math::div_rem(std::numeric_limits<int64>::max(), as<int64>(2000), remainder), csf_);
         assert::are_equal(1807, remainder, csf_);
       }
       
@@ -261,12 +260,12 @@ namespace xtd::tests {
       }
       
       block_scope_(int64 remainder = 0) {
-        assert::are_equal(-4611686018427387LL, math::div_rem(numeric_limits<int64>::lowest(), as<int64>(2000), remainder), csf_);
+        assert::are_equal(-4611686018427387LL, math::div_rem(std::numeric_limits<int64>::lowest(), as<int64>(2000), remainder), csf_);
         assert::are_equal(-1808, remainder, csf_);
       }
       
       block_scope_(int64 remainder = 0) {
-        assert::are_equal(-4611686018427387LL, math::div_rem(numeric_limits<int64>::max(), as<int64>(-2000), remainder), csf_);
+        assert::are_equal(-4611686018427387LL, math::div_rem(std::numeric_limits<int64>::max(), as<int64>(-2000), remainder), csf_);
         assert::are_equal(1807, remainder, csf_);
       }
       
@@ -286,7 +285,7 @@ namespace xtd::tests {
       }
       
       block_scope_(int64 remainder = 0) {
-        assert::are_equal(4611686018427387LL, math::div_rem(numeric_limits<int64>::lowest(), as<int64>(-2000), remainder), csf_);
+        assert::are_equal(4611686018427387LL, math::div_rem(std::numeric_limits<int64>::lowest(), as<int64>(-2000), remainder), csf_);
         assert::are_equal(-1808, remainder, csf_);
       }
     }
@@ -578,7 +577,7 @@ namespace xtd::tests {
       assert::are_equal(-1.0l, math::sign(-10.0l), csf_);
       assert::are_equal(0.0l, math::sign(0.0l), csf_);
       assert::are_equal(1.0l, math::sign(10.0l), csf_);
-      assert::throws<arithmetic_exception>([] {math::sign(numeric_limits<decimal>::quiet_NaN());}, csf_);
+      assert::throws<arithmetic_exception>([] {math::sign(std::numeric_limits<decimal>::quiet_NaN());}, csf_);
     }
     
     void test_method_(sign_double) {
@@ -616,7 +615,7 @@ namespace xtd::tests {
       assert::are_equal(-1.0f, math::sign(-10.0f), csf_);
       assert::are_equal(0.0f, math::sign(0.0f), csf_);
       assert::are_equal(1.0f, math::sign(10.0f), csf_);
-      assert::throws<arithmetic_exception>([] {math::sign(numeric_limits<float>::quiet_NaN());}, csf_);
+      assert::throws<arithmetic_exception>([] {math::sign(std::numeric_limits<float>::quiet_NaN());}, csf_);
     }
     
     void test_method_(sin) {

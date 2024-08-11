@@ -13,8 +13,6 @@ static time_t __make_utc_date_time(struct tm* tm) noexcept { return _mkgmtime(tm
 static time_t __make_utc_date_time(struct tm* tm) noexcept { return timegm(tm); }
 #endif
 
-using namespace std;
-using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
