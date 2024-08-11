@@ -43,7 +43,7 @@ void assert::are_equal(const wchar_t* expected, const wchar_t* actual, const ust
 }
 
 void assert::are_equal(float expected, float actual, const ustring& message, const stack_frame& stack_frame) {
-  if (isnan(actual) && isnan(expected))
+  if (std::isnan(actual) && std::isnan(expected))
     succeed(message, stack_frame);
   else if (actual == expected)
     succeed(message, stack_frame);
@@ -52,7 +52,7 @@ void assert::are_equal(float expected, float actual, const ustring& message, con
 }
 
 void assert::are_equal(double expected, double actual, const ustring& message, const stack_frame& stack_frame) {
-  if (isnan(actual) && isnan(expected))
+  if (std::isnan(actual) && std::isnan(expected))
     succeed(message, stack_frame);
   else if (actual == expected)
     succeed(message, stack_frame);
@@ -61,7 +61,7 @@ void assert::are_equal(double expected, double actual, const ustring& message, c
 }
 
 void assert::are_equal(long double expected, long double actual, const ustring& message, const stack_frame& stack_frame) {
-  if (isnan(actual) && isnan(expected))
+  if (std::isnan(actual) && std::isnan(expected))
     succeed(message, stack_frame);
   else if (actual == expected)
     succeed(message, stack_frame);
@@ -455,7 +455,7 @@ void assert::is_NaN(double value, const ustring& message) {
 }
 
 void assert::is_NaN(double value, const ustring& message, const stack_frame& stack_frame) {
-  if (isnan(value))
+  if (std::isnan(value))
     succeed(message, stack_frame);
   else
     fail("NaN", to_string(value), message, stack_frame);
@@ -474,7 +474,7 @@ void assert::is_NaN(long double value, const ustring& message) {
 }
 
 void assert::is_NaN(long double value, const ustring& message, const stack_frame& stack_frame) {
-  if (isnan(value))
+  if (std::isnan(value))
     succeed(message, stack_frame);
   else
     fail("NaN", to_string(value), message, stack_frame);
@@ -493,7 +493,7 @@ void assert::is_NaN(float value, const ustring& message) {
 }
 
 void assert::is_NaN(float value, const ustring& message, const stack_frame& stack_frame) {
-  if (isnan(value))
+  if (std::isnan(value))
     succeed(message, stack_frame);
   else
     fail("NaN", to_string(value), message, stack_frame);

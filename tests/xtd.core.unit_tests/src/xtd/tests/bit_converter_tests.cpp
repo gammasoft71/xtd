@@ -443,7 +443,7 @@ namespace xtd::tests {
       assert::are_equal(std::numeric_limits<double>::lowest(), bit_converter::to_double({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xEF, 0xFF}, 0), csf_);
       assert::are_equal(std::numeric_limits<double>::max(), bit_converter::to_double({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xEF, 0x7F}, 0), csf_);
       assert::are_equal(DBL_EPSILON, bit_converter::to_double({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xB0, 0x3C}, 0), csf_);
-      assert::is_true(isnan(bit_converter::to_double({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0x7F}, 0)), csf_);
+      assert::is_true(std::isnan(bit_converter::to_double({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0x7F}, 0)), csf_);
       assert::are_equal(-std::numeric_limits<double>::infinity(), bit_converter::to_double({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0xFF}, 0), csf_);
       assert::are_equal(std::numeric_limits<double>::infinity(), bit_converter::to_double({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0x7F}, 0), csf_);
     }
@@ -512,7 +512,7 @@ namespace xtd::tests {
       assert::are_equal(std::numeric_limits<float>::lowest(), bit_converter::to_single({0xFF, 0xFF, 0x7F, 0xFF}, 0), csf_);
       assert::are_equal(std::numeric_limits<float>::max(), bit_converter::to_single({0xFF, 0xFF, 0x7F, 0x7F}, 0), csf_);
       assert::are_equal(FLT_EPSILON, bit_converter::to_single({0x00, 0x00, 0x00, 0x34}, 0), csf_);
-      assert::is_true(isnan(bit_converter::to_single({0x00, 0x00, 0xC0, 0x7F}, 0)), csf_);
+      assert::is_true(std::isnan(bit_converter::to_single({0x00, 0x00, 0xC0, 0x7F}, 0)), csf_);
       assert::are_equal(-std::numeric_limits<float>::infinity(), bit_converter::to_single({0x00, 0x00, 0x80, 0xFF}, 0), csf_);
       assert::are_equal(std::numeric_limits<float>::infinity(), bit_converter::to_single({0x00, 0x00, 0x80, 0x7F}, 0), csf_);
     }
