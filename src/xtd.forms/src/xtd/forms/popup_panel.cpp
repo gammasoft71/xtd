@@ -8,7 +8,6 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

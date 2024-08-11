@@ -1,6 +1,5 @@
 #include "../../../include/xtd/forms/splitter_panel.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

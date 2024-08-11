@@ -13,7 +13,6 @@
 #include <xtd/environment>
 #include <xtd/is>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -73,13 +72,13 @@ void tab_control::tab_page_collection::push_back(const wchar* text) {
   push_back(text, ustring::empty_string);
 }
 
-optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const ustring& name) const {
+std::optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const ustring& name) const {
   for (auto item : *this)
     if (item.get().name() == name) return item;
   return {};
 }
 
-optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const ustring& name) {
+std::optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const ustring& name) {
   for (auto item : *this)
     if (item.get().name() == name) return item;
   return {};

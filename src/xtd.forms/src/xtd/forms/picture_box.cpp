@@ -9,7 +9,6 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <optional>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -28,8 +27,8 @@ namespace {
 
 struct picture_box::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  optional<forms::border_style> border_style;
-  optional<drawing::image> image;
+  std::optional<forms::border_style> border_style;
+  std::optional<drawing::image> image;
   picture_box_size_mode size_mode = picture_box_size_mode::normal;
 };
 

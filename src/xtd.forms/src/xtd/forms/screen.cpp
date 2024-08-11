@@ -4,12 +4,11 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <limits>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-vector<screen> screen::all_screens() {
+std::vector<screen> screen::all_screens() {
   auto screens = std::vector<screen> {};
   auto count = native::screen::count();
   for (auto index = 0_z; index < count; index++)

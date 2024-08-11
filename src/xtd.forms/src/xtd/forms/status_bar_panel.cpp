@@ -2,7 +2,6 @@
 #include "../../../include/xtd/forms/status_bar.h"
 #include "status_bar_panel_data.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -42,8 +41,8 @@ status_bar_panel& status_bar_panel::border_style(xtd::forms::status_bar_panel_bo
   return *this;
 }
 
-optional<reference_wrapper<forms::control>> status_bar_panel::control() const noexcept {
-  return data_->control ? optional<reference_wrapper<forms::control>>(*data_->control) : nullopt;
+std::optional<std::reference_wrapper<forms::control>> status_bar_panel::control() const noexcept {
+  return data_->control ? std::optional<std::reference_wrapper<forms::control>>(*data_->control) : std::nullopt;
 }
 
 status_bar_panel& status_bar_panel::control(const xtd::forms::control& value) {
@@ -91,8 +90,8 @@ status_bar_panel& status_bar_panel::name(const xtd::ustring& value) {
   return *this;
 }
 
-optional<reference_wrapper<status_bar>> status_bar_panel::parent() const noexcept {
-  return data_->parent ? optional<reference_wrapper<status_bar>>(*data_->parent) : nullopt;
+std::optional<std::reference_wrapper<status_bar>> status_bar_panel::parent() const noexcept {
+  return data_->parent ? std::optional<std::reference_wrapper<status_bar>>(*data_->parent) : std::nullopt;
 }
 
 xtd::forms::status_bar_panel_style status_bar_panel::style() const noexcept {

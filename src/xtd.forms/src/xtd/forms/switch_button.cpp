@@ -3,7 +3,6 @@
 #include "../../../include/xtd/forms/switch_button.h"
 #include <xtd/drawing/color_converter>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

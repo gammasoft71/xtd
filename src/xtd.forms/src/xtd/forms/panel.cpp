@@ -11,13 +11,12 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 struct panel::data {
   forms::border_sides border_sides = forms::border_sides::all;
-  optional<forms::border_style> border_style;
+  std::optional<forms::border_style> border_style;
 };
 
 panel::panel() : data_(xtd::new_sptr<data>()) {
@@ -157,6 +156,6 @@ void panel::on_layout(const event_args& e) {
 
 void panel::on_paint(paint_event_args& e) {
   auto style = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
-  if (control_appearance() == forms::control_appearance::standard) panel_renderer::draw_panel(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? optional<drawing::color> {back_color()} : nullopt, data_->border_style, data_->border_sides);
+  if (control_appearance() == forms::control_appearance::standard) panel_renderer::draw_panel(style, e.graphics(), e.clip_rectangle(), control_state(), back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, data_->border_style, data_->border_sides);
   scrollable_control::on_paint(e);
 }

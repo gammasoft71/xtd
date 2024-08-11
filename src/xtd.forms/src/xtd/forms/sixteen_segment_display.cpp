@@ -1,7 +1,6 @@
 #include "../../../include/xtd/forms/sixteen_segment_display.h"
 #include <xtd/drawing/color_converter>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

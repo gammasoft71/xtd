@@ -1,6 +1,5 @@
 #include "../../../include/xtd/forms/table_layout_panel.h"
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 

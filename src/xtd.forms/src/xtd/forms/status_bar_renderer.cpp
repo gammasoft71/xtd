@@ -6,7 +6,6 @@
 #include <xtd/drawing/color_converter>
 #include <tuple>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
