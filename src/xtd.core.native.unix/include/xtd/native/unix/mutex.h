@@ -8,6 +8,7 @@
 #include <errno.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <time.h>
 
 inline static const pthread_mutex_t* MUTEX_FAILED = reinterpret_cast<pthread_mutex_t *>(-1);
 
