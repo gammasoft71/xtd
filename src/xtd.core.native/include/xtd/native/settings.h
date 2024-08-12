@@ -9,7 +9,6 @@
 /// @endcond
 
 #include <cstdint>
-#include <xtd/static.h>
 #include <xtd/ustring.h>
 #include <xtd/core_native_export.h>
 
@@ -31,7 +30,7 @@ namespace xtd {
     /// xtd.forms.native
     /// @ingroup xtd_forms_native native
     /// @warning Internal use only
-    class core_native_export_ settings final static_ {
+    class core_native_export_ settings final {
       friend xtd::configuration::settings;
     protected:
       /// @name Protected Static Methods
