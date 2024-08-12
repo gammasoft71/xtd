@@ -151,6 +151,7 @@ namespace xtd {
 
 #include "type.h"
 
+/*
 /// @cond
 /// Needed for std::format
 #if defined(__xtd__cpp_lib_format)
@@ -161,3 +162,4 @@ struct std::formatter<xtd::object> : std::formatter<std::string> {
 };
 #endif
 /// @endcond
+*/
