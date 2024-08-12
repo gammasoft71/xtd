@@ -7,20 +7,24 @@
 
 /// @cond
 #if defined(major)
+/*
 #  if defined(_MSC_VER) && __cplusplus < 202302L
 #    pragma message("The macro `major` is defined. If you include the `sys/sysmacros.h` filev, please undef the 'major' macro before including `xtd/version`. xtd will undef the `major` macro.")
 #  else
 #    warning "The macro `major` is defined. If you include the `sys/sysmacros.h` file or other, please undef the 'major' macro before including `xtd/version`. xtd will undef the `major` macro."
 #  endif
+ */
 #  undef major
 #endif
 
 #if defined(minor)
+/*
 #  if defined(_MSC_VER) && __cplusplus < 202302L
 #    pragma message("The macro `minor` is defined. If you include the `sys/sysmacros.h` file or other, please undef the 'minor' macro before including `xtd/version`. xtd will undef the `minor` macro.")
 #  else
 #    warning "The macro `minor` is defined. If you include the `sys/sysmacros.h` file or other, please undef the 'minor' macro before including `xtd/version`. xtd will undef the `minor` macro."
 #  endif
+ */
 #  undef minor
 #endif
 /// @endcond
