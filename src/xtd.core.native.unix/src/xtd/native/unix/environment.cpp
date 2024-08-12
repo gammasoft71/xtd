@@ -211,7 +211,7 @@ size_t environment::get_system_page_size() {
 uint32_t environment::get_tick_count() {
   // https://stackoverflow.com/questions/1540627/what-api-do-i-call-to-get-the-system-uptime
   struct sysinfo info {};
-  sysinfo(&info);
+  ::sysinfo(&info);
   return info.uptime * 1000;
 }
 
