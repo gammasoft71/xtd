@@ -1132,6 +1132,7 @@ namespace xtd {
   /// @}
 }
 
+/*
 /// @cond
 /// Needed for std::format
 #if defined(__xtd__cpp_lib_format)
@@ -1153,3 +1154,4 @@ private:
 };
 #endif
 /// @endcond
+*/
