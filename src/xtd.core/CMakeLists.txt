@@ -252,6 +252,8 @@ add_sources(
   include/xtd/iprogress
   include/xtd/is.h
   include/xtd/is
+  include/xtd/istringable.h
+  include/xtd/istringable
   include/xtd/isynchronize_invoke.h
   include/xtd/isynchronize_invoke
   include/xtd/keywords.h
@@ -1014,6 +1016,7 @@ add_sources(
   src/xtd/guid.cpp
   src/xtd/hash_code.cpp
   src/xtd/iformatable.cpp
+  src/xtd/istringable.cpp
   src/xtd/literals.cpp
   src/xtd/math.cpp
   src/xtd/memory_information.cpp

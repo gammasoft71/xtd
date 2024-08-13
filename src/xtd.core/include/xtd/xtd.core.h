@@ -337,6 +337,7 @@
 #include "iobserver.h"
 #include "iprogress.h"
 #include "is.h"
+#include "istringable.h"
 #include "keywords.h"
 #include "language_id.h"
 #include "length_exception.h"

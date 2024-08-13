@@ -220,6 +220,7 @@
 * [iformatable_vs_to_string](interfaces/iformatable_vs_to_string/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iformatable.html) interface and [xtd::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gaceb0e0a25d04cce9beebad549c27c167) method.
 * [iobservable_iobserver](interfaces/iobservable_iobserver/README.md) shows how to use how to use [xtd::iobservable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iobservable.html) and [xtd::iobserver](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iobserver.html) interfaces.
 * [iprogress](interfaces/iprogress/README.md) shows how to use how to use [xtd::iprogress](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iprogress.html) interface.
+* [istringable](interfaces/istringable/README.md) shows how to use how to use [xtd::istringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1istringable.html) interface.
 
 ## [IO](io/README.md)
 

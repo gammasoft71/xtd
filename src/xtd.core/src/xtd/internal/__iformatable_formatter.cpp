@@ -7,3 +7,7 @@
 std::string __to_string_object_to_string(const xtd::object* obj) {
   return obj->to_string();
 }
+
+std::string __to_string_istringable_to_string(const xtd::istringable* obj) {
+  return obj->to_string();
+}

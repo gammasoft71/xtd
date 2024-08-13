@@ -12,5 +12,6 @@ add_projects(
   iformatable_vs_to_string
   iobservable_iobserver
   iprogress
+  istringable
 )
 
