@@ -49,7 +49,8 @@ public:
   note() = default;
   note(const note& note) = default;
   note& operator=(const note& note) = default;
-  
+  bool operator ==(const note& rhs) const noexcept {return tone_val == rhs.tone_val && dur_val == rhs.dur_val;}
+
   // Define properties to return the note's tone and duration.
   tone note_tone() const noexcept {return tone_val;}
   duration note_duration() const noexcept {return dur_val;}

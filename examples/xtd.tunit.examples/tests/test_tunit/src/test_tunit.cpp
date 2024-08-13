@@ -1,33 +1,31 @@
-#include <xtd/xtd.tunit>
+#define __XTD_EXPERIMENTAL_GTEST_HELPERS__
+#include <xtd/gtest>
 
-using namespace xtd::tunit;
+#define ASSERT_TRUE2(condition) \
+struct __TESTER__##__LINE__ { \
+  ~__TESTER__##__LINE__() {xtd::tunit::assume::is_true(condition, message_, csf_);} \
+  __TESTER__##__LINE__& operator <<(const xtd::ustring& message) {message_ = message; return *this;} \
+  xtd::ustring message_; \
+} __tester__##__LINE__; __tester__##__LINE__
 
-namespace unit_test_project2 {
-  class test_class_(unit_test1) {
-    void test_method_(test_method1) {
-      assert::is_true(true);
-    }
-    
-    void ignore_test_method_(test_method2) {
-      assert::is_true(true);
-    }
-    
-    void test_method_(test_method3) {
-      assert::is_true(false);
-    }
-  };
+namespace namespace1 {
   
-  class test_class_(unit_test2) {
-    void test_method_(test_method1) {
-      assert::is_true(true);
-    }
-    
-    void test_method_(test_method2) {
-      assert::is_true(true);
-    }
-  };
+  TEST(class1, method1) {ASSERT_TRUE2(true);}
+  TEST(class1, DISABLED_method2) {ASSERT_TRUE2(true);}
+  TEST(class1, method3) {//ASSERT_TRUE2(false) << "Invalid value";
+    struct __TESTER__ {
+      ~__TESTER__() {xtd::tunit::assume::is_true(false, message_, csf_);}
+      __TESTER__& operator <<(const xtd::ustring& message) {message_ = message; return *this;}
+      xtd::ustring message_;
+    } __tester__;
+    __tester__ << "Invalid value";
+  }
+  
+  TEST(class2, method1) {ASSERT_TRUE2(true);}
+  TEST(class2, method2) {ASSERT_TRUE2(true);}
 }
 
-auto main()->int {
-  return console_unit_test().run();
+auto main() -> int {
+  testing::InitGoogleTest();
+  return RUN_ALL_TESTS();
 }

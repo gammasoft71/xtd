@@ -1,7 +1,6 @@
 #include <xtd/xtd.tunit>
 #include <sstream>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -10,7 +9,7 @@ class gtest_event_listener final : public event_listener {
 private:
   void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const override {
     event_listener::on_unit_test_start(e);
-    cout << "[==========] Running " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case." << endl;
+    std::cout << "[==========] Running " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case." << std::endl;
   }
   
   //void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const override {
@@ -19,12 +18,12 @@ private:
   
   void on_unit_test_initialize_end(const xtd::tunit::tunit_event_args& e) const override {
     event_listener::on_unit_test_initialize_end(e);
-    cout << "[----------] Global test environment set-up." << endl;
+    std::cout << "[----------] Global test environment set-up." << std::endl;
   }
   
   void on_class_start(const xtd::tunit::class_event_args& e) const override {
     event_listener::on_class_start(e);
-    cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << endl;
+    std::cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << std::endl;
   }
   
   //void on_class_initialize_start(const xtd::tunit::class_event_args& e) const override {
@@ -45,12 +44,12 @@ private:
   
   void on_test_start(const xtd::tunit::test_event_args& e) const override {
     event_listener::on_test_start(e);
-    cout << "[ RUN      ] " << e.test_class().name() << "." << e.test().name() << endl;
+    std::cout << "[ RUN      ] " << e.test_class().name() << "." << e.test().name() << std::endl;
   }
   
   void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
     event_listener::on_test_succeed(e);
-    cout << "[       OK ] " << e.test_class().name() << "." << e.test().name() << " (" << as<int>(e.test().elapsed_time().total_microseconds()) << " ms)" << endl;
+    std::cout << "[       OK ] " << e.test_class().name() << "." << e.test().name() << " (" << as<int>(e.test().elapsed_time().total_microseconds()) << " ms)" << std::endl;
   }
   
   //void on_test_aborted(const xtd::tunit::test_event_args& e) const override {
@@ -59,11 +58,11 @@ private:
   
   void on_test_failed(const xtd::tunit::test_event_args& e) const override {
     event_listener::on_test_failed(e);
-    cout << e.test().stack_frame().get_file_name() << ":" << e.test().stack_frame().get_file_line_number() << ": Failure" << endl;
-    if (e.test().actual() != "") cout << "  Actual: " << e.test().actual() << endl;
-    if (e.test().expect() != "") cout << "Expected: " << e.test().expect() << endl;
-    if (e.test().message() != "") cout << e.test().message() << endl;
-    cout << "[  FAILED  ] " << e.test_class().name() << "." << e.test().name() << " (" << as<int>(e.test().elapsed_time().total_milliseconds()) << " ms)" << endl;
+    std::cout << e.test().stack_frame().get_file_name() << ":" << e.test().stack_frame().get_file_line_number() << ": Failure" << std::endl;
+    if (e.test().actual() != "") std::cout << "  Actual: " << e.test().actual() << std::endl;
+    if (e.test().expect() != "") std::cout << "Expected: " << e.test().expect() << std::endl;
+    if (e.test().message() != "") std::cout << e.test().message() << std::endl;
+    std::cout << "[  FAILED  ] " << e.test_class().name() << "." << e.test().name() << " (" << as<int>(e.test().elapsed_time().total_milliseconds()) << " ms)" << std::endl;
   }
   
   //void on_test_ignored(const xtd::tunit::test_event_args& e) const override {
@@ -92,7 +91,7 @@ private:
   
   void on_class_end(const xtd::tunit::class_event_args& e) const override {
     event_listener::on_class_end(e);
-    cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << as<int>(e.test_class().elapsed_time().total_milliseconds()) << " ms)" << endl;
+    std::cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << as<int>(e.test_class().elapsed_time().total_milliseconds()) << " ms)" << std::endl;
   }
   
   //void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const override {
@@ -101,22 +100,22 @@ private:
   
   void on_unit_test_cleanup_end(const xtd::tunit::tunit_event_args& e) const override {
     event_listener::on_unit_test_cleanup_end(e);
-    cout << endl << "[----------] Global test environment tear-down" << endl;
+    std::cout << std::endl << "[----------] Global test environment tear-down" << std::endl;
   }
   
   void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override {
     event_listener::on_unit_test_end(e);
-    cout << "[==========] " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case ran. (" << as<int>(e.unit_test().elapsed_time().total_milliseconds()) << " ms total)" << endl;
-    cout << "[  PASSED  ] " << e.unit_test().succeed_test_count() << " tests." << endl;
+    std::cout << "[==========] " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case ran. (" << as<int>(e.unit_test().elapsed_time().total_milliseconds()) << " ms total)" << std::endl;
+    std::cout << "[  PASSED  ] " << e.unit_test().succeed_test_count() << " tests." << std::endl;
     if (e.unit_test().failed_test_count()) {
-      cout << "[  FAILED  ] " << e.unit_test().failed_test_count() << " test, listed below:" << endl;
-      for (string name : e.unit_test().failed_test_names())
-        cout << "[  FAILED  ] " << name << endl;
-      cout << endl;
-      cout << " " << e.unit_test().failed_test_count() << " FAILED TEST" << endl;
+      std::cout << "[  FAILED  ] " << e.unit_test().failed_test_count() << " test, listed below:" << std::endl;
+      for (ustring name : e.unit_test().failed_test_names())
+        std::cout << "[  FAILED  ] " << name << std::endl;
+      std::cout << std::endl;
+      std::cout << " " << e.unit_test().failed_test_count() << " FAILED TEST" << std::endl;
     }
-    if (!e.unit_test().failed_test_count() && e.unit_test().ignored_test_count()) cout << endl;
-    if (e.unit_test().ignored_test_count()) cout << "  YOU HAVE " << e.unit_test().ignored_test_count() << " DISABLED TESTS" << endl << endl;
+    if (!e.unit_test().failed_test_count() && e.unit_test().ignored_test_count()) std::cout << std::endl;
+    if (e.unit_test().ignored_test_count()) std::cout << "  YOU HAVE " << e.unit_test().ignored_test_count() << " DISABLED TESTS" << std::endl << std::endl;
   }
 };
 

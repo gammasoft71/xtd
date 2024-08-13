@@ -69,7 +69,7 @@ namespace console_clear_example {
         console::write(msg);
         key_pressed = console::read_key();
         console::write_line();
-        if (find(valid_chars.begin(), valid_chars.end(), char32_object::to_upper(key_pressed.key_char())) != valid_chars.end())
+        if (std::find(valid_chars.begin(), valid_chars.end(), char32_object::to_upper(key_pressed.key_char())) != valid_chars.end())
           valid = true;
           
       } while (!valid);

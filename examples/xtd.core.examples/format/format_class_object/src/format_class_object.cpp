@@ -6,6 +6,7 @@ using namespace xtd::collections::generic;
 
 class character : public object {
 public:
+  character() = default;
   character(const ustring& name, const ustring& rank) noexcept : name_(name), rank_(rank) {}
   
   const ustring& name() const noexcept {return name_;}

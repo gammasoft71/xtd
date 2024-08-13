@@ -1,13 +1,12 @@
 #include <xtd/ustring>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  cout << ustring::format("{}", unordered_set<int> {1, 2, 3, 4}) << endl;
-  cout << ustring::format("{}", unordered_multiset<int> {1, 2, 3, 4}) << endl;
-  cout << ustring::format("{}", unordered_map<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}) << endl;
-  cout << ustring::format("{}", unordered_multimap<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}) << endl;
+  std::cout << ustring::format("{}", std::unordered_set<int> {1, 2, 3, 4}) << std::endl;
+  std::cout << ustring::format("{}", std::unordered_multiset<int> {1, 2, 3, 4}) << std::endl;
+  std::cout << ustring::format("{}", std::unordered_map<int, ustring> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}) << std::endl;
+  std::cout << ustring::format("{}", std::unordered_multimap<int, ustring> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}}) << std::endl;
 }
 
 // This code produces the following output :

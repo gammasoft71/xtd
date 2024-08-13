@@ -1,12 +1,11 @@
 #include <xtd/ustring>
 #include <optional>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  cout << ustring::format("{}", optional<string>()) << endl;
-  cout << ustring::format("{}", optional<string>("Optional string")) << endl;
+  std::cout << ustring::format("{}", std::optional<ustring>()) << std::endl;
+  std::cout << ustring::format("{}", std::optional<ustring>("Optional string")) << std::endl;
 }
 
 // This code produces the following output :
