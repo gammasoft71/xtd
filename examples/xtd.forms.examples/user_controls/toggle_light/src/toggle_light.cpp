@@ -3,7 +3,6 @@
 #include <xtd/forms/form>
 #include <xtd/forms/user_control>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -56,7 +55,7 @@ namespace toggle_light_example {
   private:
     static constexpr int num_x = 20;
     static constexpr int num_y = 20;
-    array<array<toggle_light, num_y>, num_x> toggle_lights;
+    std::array<std::array<toggle_light, num_y>, num_x> toggle_lights;
   };
 }
 

@@ -30,12 +30,12 @@ public:
   location_tracker() = default;
   
   void subscribe(iobserver<location>& observer) noexcept override {
-    if (find(observers_.begin(), observers_.end(), &observer) == observers_.end())
+    if (std::find(observers_.begin(), observers_.end(), &observer) == observers_.end())
       observers_.push_back(&observer);
   }
   
   void unsubscribe(iobserver<location>& observer) noexcept override {
-    auto iterator = find(observers_.begin(), observers_.end(), &observer);
+    auto iterator = std::find(observers_.begin(), observers_.end(), &observer);
     if (iterator != observers_.end())
       observers_.erase(iterator);
   }

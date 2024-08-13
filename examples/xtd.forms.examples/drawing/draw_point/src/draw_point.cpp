@@ -14,6 +14,8 @@ namespace draw_point_example {
       point location;
       xtd::drawing::color color;
       int width = 0;
+      
+      bool operator ==(const colored_point& rhs) const noexcept {return location == rhs.location && color == rhs.color && width == rhs.width;}
     };
     
   public:

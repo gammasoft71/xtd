@@ -5,7 +5,6 @@
 #include <xtd/startup>
 #include <array>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections;
 using namespace xtd::forms;
@@ -193,7 +192,7 @@ namespace calculator {
         }
         first_operand = parse<double>(result.text());
       }
-      operation = map<string, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}} [as<control>(sender).text()];
+      operation = std::map<ustring, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}} [as<control>(sender).text()];
       if (as<control>(sender).text() != "=") {
         if (second_operand.has_value()) first_operand.reset();
         second_operand.reset();
@@ -206,10 +205,10 @@ namespace calculator {
     button button_plus_minus;
     button button_percent;
     button button_decimal;
-    array<button, 10> button_numbers;
-    array<button, 5> button_operators;
-    optional<double> first_operand;
-    optional<double> second_operand;
+    std::array<button, 10> button_numbers;
+    std::array<button, 5> button_operators;
+    std::optional<double> first_operand;
+    std::optional<double> second_operand;
     operators operation = operators::none;
   };
 }

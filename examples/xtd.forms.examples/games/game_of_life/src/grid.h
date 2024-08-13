@@ -23,6 +23,7 @@ namespace game_of_life {
         int x = 0;
         int y = 0;
         cell state = cell::empty;
+        bool operator ==(const updated_cell& rhs) const noexcept {return x == rhs.x && y == rhs.y && state == rhs.state;}
       };
       xtd::collections::generic::list<updated_cell> updated_cells;
       

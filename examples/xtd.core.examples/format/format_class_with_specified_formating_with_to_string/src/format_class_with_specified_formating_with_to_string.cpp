@@ -1,7 +1,6 @@
 #include <xtd/format_exception>
 #include <xtd/ustring>
 
-using namespace std;
 using namespace xtd;
 
 class character {
@@ -11,8 +10,8 @@ public:
   const ustring& name() const noexcept {return name_;}
   const ustring& rank() const noexcept {return rank_;}
   
-  ustring to_string() const noexcept {return to_string("", locale {});}
-  ustring to_string(const ustring& format, const locale& loc) const {
+  ustring to_string() const noexcept {return to_string("", std::locale {});}
+  ustring to_string(const ustring& format, const std::locale& loc) const {
     auto fmt = ustring::is_empty(format) ? "F" : format;
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
@@ -26,15 +25,15 @@ private:
 };
 
 template<>
-string xtd::to_string(const character& value, const string& fmt, const locale& loc) {return value.to_string(fmt, loc);}
+std::string xtd::to_string(const character& value, const std::string& fmt, const std::locale& loc) {return value.to_string(fmt, loc);}
 
 auto main() -> int {
   auto c = character {"Jean-Luc Picard", "Captain"};
  
-  cout << ustring::format("{}", c) << endl;
-  cout << ustring::format("{:F}", c) << endl;
-  cout << ustring::format("{:N}", c) << endl;
-  cout << ustring::format("{:R}", c) << endl;
+  std::cout << ustring::format("{}", c) << std::endl;
+  std::cout << ustring::format("{:F}", c) << std::endl;
+  std::cout << ustring::format("{:N}", c) << std::endl;
+  std::cout << ustring::format("{:R}", c) << std::endl;
 }
 
 // This code produces the following output :

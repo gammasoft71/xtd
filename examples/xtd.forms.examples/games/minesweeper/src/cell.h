@@ -1,6 +1,7 @@
 #pragma once
 #include "cell_state.h"
 #include <xtd/drawing/size>
+#include <xtd/iequatable>
 
 /// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {
@@ -8,7 +9,7 @@ namespace minesweeper {
   /// @remarks the game contains 81 (9 x 9) cells and 10 mines for beginner level.
   /// @remarks the game contains 256 (16 x 16) cells and 40 mines for intermediate level.
   /// @remarks the game contains 480 (30 x 16 cells and 99 mines for expert and custom level.
-  class cell final {
+  class cell final : public xtd::iequatable<cell> {
   public:
     /// @name Public Properties
     
@@ -68,6 +69,8 @@ namespace minesweeper {
     /// | number_of_neighbouring_mines | 0                     |
     /// | state                        | cell_state::unchecked |
     void clear() noexcept;
+    
+    bool equals(const cell& rhs) const noexcept override {return has_mine_ == rhs.has_mine_ && number_of_neighboring_mines_ == rhs.number_of_neighboring_mines_ && state_ == rhs.state_ && size_ ==rhs.size_;}
     /// @}
 
   private:
