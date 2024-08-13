@@ -17,10 +17,10 @@
 /// Shows how to use bit_converter class.
 ///
 /// @example boxed_info.cpp
-/// Shows how to use how to use xtd::boxing methods.
+/// Shows how to use xtd::boxing methods.
 ///
 /// @example boxing.cpp
-/// Shows how to use how to use xtd::boxing methods.
+/// Shows how to use xtd::boxing methods.
 ///
 /// @example array_list.cpp
 /// Shows how to use array_list alias.
@@ -440,28 +440,28 @@
 /// The classic first application "Hello, World!" with xtd::ustring class.
 ///
 /// @example iasync_result.cpp
-/// Shows how to use how to use xtd:: iasync_result interface.
+/// Shows how to use xtd:: iasync_result interface.
 ///
 /// @example iclonable.cpp
-/// Shows how to use how to use xtd::iequatable interface.
+/// Shows how to use xtd::iequatable interface.
 ///
 /// @example icomparable.cpp
-/// Shows how to use how to use xtd::iequatable interface.
+/// Shows how to use xtd::iequatable interface.
 ///
 /// @example iequatable.cpp
-/// Shows how to use how to use xtd::iequatable interface.
+/// Shows how to use xtd::iequatable interface.
 ///
 /// @example iformatable.cpp
-/// Shows how to use how to use xtd::iformatable interface.
+/// Shows how to use xtd::iformatable interface.
 ///
 /// @example iformatable_vs_to_string.cpp
-/// Shows how to use how to use xtd::iformatable interface and xtd::to_string method.
+/// Shows how to use xtd::iformatable interface and xtd::to_string method.
 ///
 /// @example iobservable_iobserver.cpp
-/// Shows how to use how to use xtd::iobservable and xtd::iobserver interfaces.
+/// Shows how to use xtd::iobservable and xtd::iobserver interfaces.
 ///
 /// @example iprogress.cpp
-/// Shows how to use how to use xtd::iprogress interface.
+/// Shows how to use xtd::iprogress interface.
 ///
 /// @example binary_reader.cpp
 /// Show how to use xtd::io::binary_reader class.
