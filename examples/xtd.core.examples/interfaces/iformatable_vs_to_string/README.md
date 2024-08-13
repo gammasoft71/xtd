@@ -1,6 +1,6 @@
 # iformatable_vs_to_string
 
-Shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iformatable.html) interface and [xtd::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gaceb0e0a25d04cce9beebad549c27c167) method.
+Shows how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iformatable.html) interface and [xtd::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#gaceb0e0a25d04cce9beebad549c27c167) method.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # istringable
 
-Shows how to use how to use [xtd::istringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1istringable.html) interface.
+Shows how to use [xtd::istringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1istringable.html) interface.
 
 ## Sources
 

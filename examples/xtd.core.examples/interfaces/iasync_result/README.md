@@ -1,6 +1,6 @@
 # iasync_result
 
-Shows how to use how to use [xtd:: iasync_result](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iasync__result.html) interface.
+Shows how to use [xtd:: iasync_result](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iasync__result.html) interface.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # iclonable
 
-Shows how to use how to use [xtd::iequatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iclonable.html) interface.
+Shows how to use [xtd::iequatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iclonable.html) interface.
 
 ## Sources
 

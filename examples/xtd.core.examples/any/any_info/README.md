@@ -1,6 +1,6 @@
 # any_info
 
-Shows how to use how to use [xtd::any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
+Shows how to use [xtd::any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
 
 ## Sources
 
