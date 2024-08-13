@@ -25,7 +25,7 @@ elseif (UNIX)
   include_directories(${GTK_INCLUDE_DIRS})
   link_directories(${GTK_LIBRARY_DIRS})
 
-  add_references(dl execinfo rt asound uuid pthread ${GSOUND_LIBRARIES} ${GTK_LIBRARIES})
+  add_references(dl execinfo rt asound uuid pthread sysinfo ${GSOUND_LIBRARIES} ${GTK_LIBRARIES})
 endif ()
 
 add_references(xtd.core.native)
