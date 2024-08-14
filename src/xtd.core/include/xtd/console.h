@@ -182,10 +182,34 @@ namespace xtd {
     
     /// @brief Gets the code page the console uses to read input.
     /// @return The code page used to read console input.
+    /// @remarks The following table lists the encodings supported by xtd.
+    /// @remarks
+    /// | Code page | Name       | Display name                |
+    /// | --------- | ---------- | --------------------------- |
+    /// | 1200      | utf-16     | Unicode                     |
+    /// | 1201      | utf-16BE   | Unicode (Big endian)        |
+    /// | 12000     | utf-32     | Unicode (UTF-32)            |
+    /// | 12001     | utf-32BE   | Unicode (UTF-32 Big endian) |
+    /// | 20127     | us-ascii   | US-ASCII                    |
+    /// | 28591     | iso-8859-1 | Western European (ISO)      |
+    /// | 65000     | utf-7      | Unicode (UTF-7)             |
+    /// | 65001     | utf-8      | Unicode (UTF-8)             |
     static int32 input_code_page();
     /// @brief Sets the code page the console uses to read input.
     /// @param code_page The code page used to read console input.
     /// @return true if the code page changed; otherwise false.
+    /// @remarks The following table lists the encodings supported by xtd.
+    /// @remarks
+    /// | Code page | Name       | Display name                |
+    /// | --------- | ---------- | --------------------------- |
+    /// | 1200      | utf-16     | Unicode                     |
+    /// | 1201      | utf-16BE   | Unicode (Big endian)        |
+    /// | 12000     | utf-32     | Unicode (UTF-32)            |
+    /// | 12001     | utf-32BE   | Unicode (UTF-32 Big endian) |
+    /// | 20127     | us-ascii   | US-ASCII                    |
+    /// | 28591     | iso-8859-1 | Western European (ISO)      |
+    /// | 65000     | utf-7      | Unicode (UTF-7)             |
+    /// | 65001     | utf-8      | Unicode (UTF-8)             |
     static bool input_code_page(int32 code_page);
     
     /// @brief Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
@@ -217,10 +241,34 @@ namespace xtd {
     
     /// @brief Gets the code page the console uses to write output.
     /// @return The code page used to write console output.
+    /// @remarks The following table lists the encodings supported by xtd.
+    /// @remarks
+    /// | Code page | Name       | Display name                |
+    /// | --------- | ---------- | --------------------------- |
+    /// | 1200      | utf-16     | Unicode                     |
+    /// | 1201      | utf-16BE   | Unicode (Big endian)        |
+    /// | 12000     | utf-32     | Unicode (UTF-32)            |
+    /// | 12001     | utf-32BE   | Unicode (UTF-32 Big endian) |
+    /// | 20127     | us-ascii   | US-ASCII                    |
+    /// | 28591     | iso-8859-1 | Western European (ISO)      |
+    /// | 65000     | utf-7      | Unicode (UTF-7)             |
+    /// | 65001     | utf-8      | Unicode (UTF-8)             |
     static int32 output_code_page();
     /// @brief Sets the code page the console uses to write output.
     /// @param code_page The code page used to write console output.
     /// @return true if the code page changed; otherwise false.
+    /// @remarks The following table lists the encodings supported by xtd.
+    /// @remarks
+    /// | Code page | Name       | Display name                |
+    /// | --------- | ---------- | --------------------------- |
+    /// | 1200      | utf-16     | Unicode                     |
+    /// | 1201      | utf-16BE   | Unicode (Big endian)        |
+    /// | 12000     | utf-32     | Unicode (UTF-32)            |
+    /// | 12001     | utf-32BE   | Unicode (UTF-32 Big endian) |
+    /// | 20127     | us-ascii   | US-ASCII                    |
+    /// | 28591     | iso-8859-1 | Western European (ISO)      |
+    /// | 65000     | utf-7      | Unicode (UTF-7)             |
+    /// | 65001     | utf-8      | Unicode (UTF-8)             |
     static bool output_code_page(int32 code_page);
     
     /// @brief Gets the title to display in the console title bar.
