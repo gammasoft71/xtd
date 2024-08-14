@@ -140,6 +140,7 @@ var dir_8bddd848f68e3e28b5aa5e234df2e4b1 =
     [ "iobserver.h", "iobserver_8h.html", null ],
     [ "iprogress.h", "iprogress_8h.html", null ],
     [ "is.h", "is_8h.html", "is_8h" ],
+    [ "istringable.h", "istringable_8h.html", null ],
     [ "isynchronize_invoke.h", "isynchronize__invoke_8h.html", null ],
     [ "keywords.h", "keywords_8h.html", null ],
     [ "language_id.h", "language__id_8h.html", "language__id_8h" ],

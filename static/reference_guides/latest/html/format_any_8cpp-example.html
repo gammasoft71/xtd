@@ -103,7 +103,9 @@ $(document).ready(function(){initNavTree('format_any_8cpp-example.html',''); ini
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format xtd::format class with std::any.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/unregister_any_stringer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"> </div>
@@ -126,19 +128,19 @@ $(document).ready(function(){initNavTree('format_any_8cpp-example.html',''); ini
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> value = make_any&lt;int&gt;(42);</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
 <div class="line">  value = make_any&lt;ustring&gt;(<span class="stringliteral">&quot;Star Trek: The Next Generation&quot;</span>);</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
 <div class="line">  value = make_any&lt;character&gt;(<span class="stringliteral">&quot;Jean-Luc Picard&quot;</span>, <span class="stringliteral">&quot;Captain&quot;</span>);</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Before register_any_stringer : &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;Before register_any_stringer : &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
 <div class="line">  register_any_stringer&lt;character&gt;([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> value.to_string();});</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;After register_any_stringer : &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;After register_any_stringer : &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
 <div class="line">  unregister_any_stringer&lt;character&gt;();</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;After unregister_any_stringer : &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;After unregister_any_stringer : &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -156,7 +158,7 @@ $(document).ready(function(){initNavTree('format_any_8cpp-example.html',''); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

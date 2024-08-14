@@ -109,7 +109,6 @@ $(document).ready(function(){initNavTree('to_ustring_8cpp-example.html',''); ini
 <div class="line"><span class="preprocessor">#include &lt;xtd/convert_string&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;any&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -133,7 +132,7 @@ $(document).ready(function(){initNavTree('to_ustring_8cpp-example.html',''); ini
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Convert any to ustring :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;------------------------&quot;</span>);</div>
-<div class="line">  <span class="keyword">auto</span> any_value = make_any&lt;int&gt;(42);</div>
+<div class="line">  <span class="keyword">auto</span> any_value = std::make_any&lt;int&gt;(42);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(any_value)            = {}&quot;</span>, to_ustring(any_value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;ustring&gt;(any_value)           = {}&quot;</span>, as&lt;ustring&gt;(any_value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_ustring(any_value)   = {}&quot;</span>, convert::to_ustring(any_value));</div>
@@ -141,7 +140,7 @@ $(document).ready(function(){initNavTree('to_ustring_8cpp-example.html',''); ini
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Convert const char16 to ustring :&quot;</span>);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;-----------------------------------&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;---------------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> const_char16_value = u<span class="stringliteral">&quot;A string value&quot;</span>;</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(wstring_value)                      = {}&quot;</span>, to_ustring(const_char16_value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;ustring&gt;(const_char16_value)                = {}&quot;</span>, as&lt;ustring&gt;(const_char16_value));</div>
@@ -150,14 +149,14 @@ $(document).ready(function(){initNavTree('to_ustring_8cpp-example.html',''); ini
 <div class="line">  console::write_line(<span class="stringliteral">&quot;ustring::format(\&quot;{{}}\&quot;, const_char16_value)      = {}&quot;</span>, ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, const_char16_value));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert wstring to ustring :&quot;</span>);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;----------------------------&quot;</span>);</div>
-<div class="line">  wstring wstring_value = L<span class="stringliteral">&quot;A string value&quot;</span>;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(wstring_value)                 = {}&quot;</span>, to_ustring(wstring_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;ustring&gt;(wstring_value)                = {}&quot;</span>, as&lt;ustring&gt;(wstring_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_ustring(wstring_value)        = {}&quot;</span>, convert::to_ustring(wstring_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;convert_string::to_ustring(wstring_value) = {}&quot;</span>, convert_string::to_ustring(wstring_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;ustring::format(\&quot;{{}}\&quot;, wstring_value)      = {}&quot;</span>, ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, wstring_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert const wchar to ustring :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;--------------------------------&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> const_wchar_value = L<span class="stringliteral">&quot;A string value&quot;</span>;</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;to_ustring(const_wchar_value)                 = {}&quot;</span>, to_ustring(const_wchar_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;ustring&gt;(const_wchar_value)                = {}&quot;</span>, as&lt;ustring&gt;(const_wchar_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_ustring(const_wchar_value)        = {}&quot;</span>, convert::to_ustring(const_wchar_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert_string::to_ustring(const_wchar_value) = {}&quot;</span>, convert_string::to_ustring(const_wchar_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;ustring::format(\&quot;{{}}\&quot;, const_wchar_value)      = {}&quot;</span>, ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, const_wchar_value));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -184,20 +183,20 @@ $(document).ready(function(){initNavTree('to_ustring_8cpp-example.html',''); ini
 <div class="line"><span class="comment">// ustring::format(&quot;{}&quot;, any_value) = 42</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Convert const char16 to ustring :</span></div>
-<div class="line"><span class="comment">// -----------------------------------</span></div>
+<div class="line"><span class="comment">// ---------------------------------</span></div>
 <div class="line"><span class="comment">// to_ustring(wstring_value)                      = A string value</span></div>
 <div class="line"><span class="comment">// as&lt;ustring&gt;(const_char16_value)                = A string value</span></div>
 <div class="line"><span class="comment">// convert::to_ustring(const_char16_value)        = A string value</span></div>
 <div class="line"><span class="comment">// convert_string::to_ustring(const_char16_value) = A string value</span></div>
 <div class="line"><span class="comment">// ustring::format(&quot;{}&quot;, const_char16_value)      = A string value</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Convert wstring to ustring :</span></div>
-<div class="line"><span class="comment">// ----------------------------</span></div>
-<div class="line"><span class="comment">// to_ustring(wstring_value)                 = A string value</span></div>
-<div class="line"><span class="comment">// as&lt;ustring&gt;(wstring_value)                = A string value</span></div>
-<div class="line"><span class="comment">// convert::to_ustring(wstring_value)        = A string value</span></div>
-<div class="line"><span class="comment">// convert_string::to_ustring(wstring_value) = A string value</span></div>
-<div class="line"><span class="comment">// ustring::format(&quot;{}&quot;, wstring_value)      = A string value</span></div>
+<div class="line"><span class="comment">// Convert const wchar to ustring :</span></div>
+<div class="line"><span class="comment">// --------------------------------</span></div>
+<div class="line"><span class="comment">// to_ustring(const_wchar_value)                 = A string value</span></div>
+<div class="line"><span class="comment">// as&lt;ustring&gt;(const_wchar_value)                = A string value</span></div>
+<div class="line"><span class="comment">// convert::to_ustring(const_wchar_value)        = A string value</span></div>
+<div class="line"><span class="comment">// convert_string::to_ustring(const_wchar_value) = A string value</span></div>
+<div class="line"><span class="comment">// ustring::format(&quot;{}&quot;, const_wchar_value)      = A string value</span></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
@@ -205,7 +204,7 @@ $(document).ready(function(){initNavTree('to_ustring_8cpp-example.html',''); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

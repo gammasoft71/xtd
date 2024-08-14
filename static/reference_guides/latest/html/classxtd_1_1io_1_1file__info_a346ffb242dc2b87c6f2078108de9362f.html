@@ -118,7 +118,6 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a346ffb24
 <dl class="section return"><dt>Returns</dt><dd>A new file. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example creates a reference to a file, and then creates the file on disk using <a class="el" href="classxtd_1_1io_1_1file__info_a346ffb242dc2b87c6f2078108de9362f.html#a346ffb242dc2b87c6f2078108de9362f" title="Creates a file.">xtd::io::file_info.create()</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
@@ -128,7 +127,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a346ffb24
 <div class="line">    <span class="comment">// Create a reference to a file.</span></div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(<span class="stringliteral">&quot;temp.txt&quot;</span>);</div>
 <div class="line">    <span class="comment">// Actually create the file.</span></div>
-<div class="line">    ofstream ofs( fi.create());</div>
+<div class="line">    std::ofstream ofs( fi.create());</div>
 <div class="line">    <span class="comment">// Modify the file as required, and then close the file.</span></div>
 <div class="line">    ofs.close();</div>
 <div class="line">    <span class="comment">// Delete the file.</span></div>
@@ -202,7 +201,7 @@ This method is a wrapper for the functionality provided by <a class="el" href="c
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classxtd_1_1io_1_1file__info.html">file_info</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

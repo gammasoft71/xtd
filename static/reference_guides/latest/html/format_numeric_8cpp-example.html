@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('format_numeric_8cpp-example.html','');
 <div class="contents">
 <p>Show how to use format xtd::format class with numeric values.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
@@ -111,47 +112,48 @@ $(document).ready(function(){initNavTree('format_numeric_8cpp-example.html','');
 <div class="line"> </div>
 <div class="line"><span class="keyword">enum class</span> cap { title, middle, end };</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> print_number(<span class="keyword">const</span> <span class="keywordtype">char</span>* text, <span class="keywordtype">int</span> number, cap c) {</div>
-<div class="line">  <span class="keywordflow">if</span> (c == cap::title) {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;┌───────────┬────────────┬──────────────────────────────────┐&quot;</span>);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;│  number   │   format   │      representation              │&quot;</span>);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;├───────────┼────────────┼──────────────────────────────────┤&quot;</span>);</div>
-<div class="line">  }</div>
+<div class="line"><span class="keywordtype">void</span> print_number(<a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> text, <span class="keywordtype">int</span> value, cap c) {</div>
+<div class="line">  <span class="keywordflow">if</span> (c == cap::title)</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;┌───────────┬────────────┬──────────────────────────────────┐&quot;</span> &lt;&lt; environment::new_line</div>
+<div class="line">                 &lt;&lt; <span class="stringliteral">&quot;│  number   │   format   │      representation              │&quot;</span> &lt;&lt; environment::new_line</div>
+<div class="line">                 &lt;&lt; <span class="stringliteral">&quot;├───────────┼────────────┼──────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{}}         │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:b}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:b}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:b32}}     │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:b32}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:c}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:c}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:C}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:C}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:d}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:d}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:d16}}     │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:d16}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:D}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:D}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:D16}}     │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:D16}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:e}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:e}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:E}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:E}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:f}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:f}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:f4}}      │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:f4}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:F}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:F}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:F4}}      │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:F4}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:g}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:g}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:G}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:G}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:o}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:o}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:o16}}     │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:o16}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:O}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:O}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:O16}}     │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:O16}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:n}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:n}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:N}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:N}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:p}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:p}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:P}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:P}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:x}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:x}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:x16}}     │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:x16}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:X}}       │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:X}&quot;</span>, number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ {,-9} │ {{:X16}}     │ {,-32} │&quot;</span>, text, ustring::format(<span class="stringliteral">&quot;{:X16}&quot;</span>, number));</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {}         │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:b}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:b}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:b32}     │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:b32}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:B}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:B}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:B32}     │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:B32}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:c}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:c}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:C}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:C}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:d}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:d}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:d16}     │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:d16}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:D}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:D}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:D16}     │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:D16}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:e}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:e}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:E}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:E}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:f}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:f}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:f4}      │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:f4}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:F}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:F}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:F4}      │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:F4}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:g}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:g}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:G}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:G}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:o}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:o}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:o16}     │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:o16}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:O}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:O}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:O16}     │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:O16}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:n}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:n}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:N}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:N}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:p}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:p}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:P}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:P}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:x}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:x}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:x16}     │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:x16}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:X}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:X}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(9) &lt;&lt; <span class="stringliteral">&quot; │ {:X16}     │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:X16}&quot;</span>, value).pad_right(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (c != cap::end)</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;├───────────┼────────────┼──────────────────────────────────┤&quot;</span>);</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;├───────────┼────────────┼──────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  <span class="keywordflow">else</span></div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;└───────────┴────────────┴──────────────────────────────────┘&quot;</span>);</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;└───────────┴────────────┴──────────────────────────────────┘&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -170,6 +172,8 @@ $(document).ready(function(){initNavTree('format_numeric_8cpp-example.html','');
 <div class="line"><span class="comment">// │ 0         │ {}         │ 0                                │</span></div>
 <div class="line"><span class="comment">// │ 0         │ {:b}       │ 0                                │</span></div>
 <div class="line"><span class="comment">// │ 0         │ {:b32}     │ 00000000000000000000000000000000 │</span></div>
+<div class="line"><span class="comment">// │ 0         │ {:B}       │ 0                                │</span></div>
+<div class="line"><span class="comment">// │ 0         │ {:B32}     │ 00000000000000000000000000000000 │</span></div>
 <div class="line"><span class="comment">// │ 0         │ {:c}       │ $0.00                            │</span></div>
 <div class="line"><span class="comment">// │ 0         │ {:C}       │ $0.00                            │</span></div>
 <div class="line"><span class="comment">// │ 0         │ {:d}       │ 0                                │</span></div>
@@ -200,6 +204,8 @@ $(document).ready(function(){initNavTree('format_numeric_8cpp-example.html','');
 <div class="line"><span class="comment">// │ 42        │ {}         │ 42                               │</span></div>
 <div class="line"><span class="comment">// │ 42        │ {:b}       │ 101010                           │</span></div>
 <div class="line"><span class="comment">// │ 42        │ {:b32}     │ 00000000000000000000000000101010 │</span></div>
+<div class="line"><span class="comment">// │ 42        │ {:B}       │ 101010                           │</span></div>
+<div class="line"><span class="comment">// │ 42        │ {:B32}     │ 00000000000000000000000000101010 │</span></div>
 <div class="line"><span class="comment">// │ 42        │ {:c}       │ $42.00                           │</span></div>
 <div class="line"><span class="comment">// │ 42        │ {:C}       │ $42.00                           │</span></div>
 <div class="line"><span class="comment">// │ 42        │ {:d}       │ 42                               │</span></div>
@@ -230,6 +236,8 @@ $(document).ready(function(){initNavTree('format_numeric_8cpp-example.html','');
 <div class="line"><span class="comment">// │ 123456789 │ {}         │ 123456789                        │</span></div>
 <div class="line"><span class="comment">// │ 123456789 │ {:b}       │ 111010110111100110100010101      │</span></div>
 <div class="line"><span class="comment">// │ 123456789 │ {:b32}     │ 00000111010110111100110100010101 │</span></div>
+<div class="line"><span class="comment">// │ 123456789 │ {:B}       │ 111010110111100110100010101      │</span></div>
+<div class="line"><span class="comment">// │ 123456789 │ {:B32}     │ 00000111010110111100110100010101 │</span></div>
 <div class="line"><span class="comment">// │ 123456789 │ {:c}       │ $123,456,789.00                  │</span></div>
 <div class="line"><span class="comment">// │ 123456789 │ {:C}       │ $123,456,789.00                  │</span></div>
 <div class="line"><span class="comment">// │ 123456789 │ {:d}       │ 123456789                        │</span></div>
@@ -257,6 +265,7 @@ $(document).ready(function(){initNavTree('format_numeric_8cpp-example.html','');
 <div class="line"><span class="comment">// │ 123456789 │ {:X}       │ 75BCD15                          │</span></div>
 <div class="line"><span class="comment">// │ 123456789 │ {:X16}     │ 00000000075BCD15                 │</span></div>
 <div class="line"><span class="comment">// └───────────┴────────────┴──────────────────────────────────┘</span></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
@@ -264,7 +273,7 @@ $(document).ready(function(){initNavTree('format_numeric_8cpp-example.html','');
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

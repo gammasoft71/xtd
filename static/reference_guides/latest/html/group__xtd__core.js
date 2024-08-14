@@ -1521,6 +1521,9 @@ var group__xtd__core =
     [ "xtd::iprogress< type_t >", "classxtd_1_1iprogress.html", [
       [ "report", "classxtd_1_1iprogress_a38779f56847fb833d787c02248a7d94e.html#a38779f56847fb833d787c02248a7d94e", null ]
     ] ],
+    [ "xtd::istringable", "classxtd_1_1istringable.html", [
+      [ "to_string", "classxtd_1_1istringable_ab2b4f8d4ca5b6bbcd8cd6481988becf2.html#ab2b4f8d4ca5b6bbcd8cd6481988becf2", null ]
+    ] ],
     [ "xtd::isynchronize_invoke", "classxtd_1_1isynchronize__invoke.html", [
       [ "invoke_required", "classxtd_1_1isynchronize__invoke_a5434e03732b52c1b9b9861e1571a56a4.html#a5434e03732b52c1b9b9861e1571a56a4", null ],
       [ "begin_invoke", "classxtd_1_1isynchronize__invoke_a56dead9ccc70bff4b2f2401727a00530.html#a56dead9ccc70bff4b2f2401727a00530", null ],

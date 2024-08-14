@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('iobservable_iobserver_8cpp-example.htm
   <div class="headertitle"><div class="title">iobservable_iobserver.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use how to use <a class="el" href="classxtd_1_1iobservable.html" title="Provides a mechanism for receiving push-based notifications.">xtd::iobservable</a> and <a class="el" href="classxtd_1_1iobserver.html" title="Provides a mechanism for receiving push-based notifications.">xtd::iobserver</a> interfaces.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1iobservable.html" title="Provides a mechanism for receiving push-based notifications.">xtd::iobservable</a> and <a class="el" href="classxtd_1_1iobserver.html" title="Provides a mechanism for receiving push-based notifications.">xtd::iobserver</a> interfaces.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/iobservable&gt;</span></div>
@@ -135,12 +135,12 @@ $(document).ready(function(){initNavTree('iobservable_iobserver_8cpp-example.htm
 <div class="line">  location_tracker() = <span class="keywordflow">default</span>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> subscribe(<a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1iobserver.html">iobserver&lt;location&gt;</a>&amp; observer) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">    <span class="keywordflow">if</span> (find(observers_.begin(), observers_.end(), &amp;observer) == observers_.end())</div>
+<div class="line">    <span class="keywordflow">if</span> (std::find(observers_.begin(), observers_.end(), &amp;observer) == observers_.end())</div>
 <div class="line">      observers_.push_back(&amp;observer);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> unsubscribe(<a class="code hl_class" href="classxtd_1_1iobserver.html">iobserver&lt;location&gt;</a>&amp; observer) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">    <span class="keyword">auto</span> iterator = find(observers_.begin(), observers_.end(), &amp;observer);</div>
+<div class="line">    <span class="keyword">auto</span> iterator = std::find(observers_.begin(), observers_.end(), &amp;observer);</div>
 <div class="line">    <span class="keywordflow">if</span> (iterator != observers_.end())</div>
 <div class="line">      observers_.erase(iterator);</div>
 <div class="line">  }</div>
@@ -236,7 +236,7 @@ $(document).ready(function(){initNavTree('iobservable_iobserver_8cpp-example.htm
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

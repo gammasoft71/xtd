@@ -606,6 +606,7 @@ var annotated_dup =
       [ "iobservable", "classxtd_1_1iobservable.html", "classxtd_1_1iobservable" ],
       [ "iobserver", "classxtd_1_1iobserver.html", "classxtd_1_1iobserver" ],
       [ "iprogress", "classxtd_1_1iprogress.html", "classxtd_1_1iprogress" ],
+      [ "istringable", "classxtd_1_1istringable.html", "classxtd_1_1istringable" ],
       [ "isynchronize_invoke", "classxtd_1_1isynchronize__invoke.html", "classxtd_1_1isynchronize__invoke" ],
       [ "length_exception", "classxtd_1_1length__exception.html", "classxtd_1_1length__exception" ],
       [ "math", "classxtd_1_1math.html", null ],

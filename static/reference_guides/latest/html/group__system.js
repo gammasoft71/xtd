@@ -589,6 +589,7 @@ var group__system =
     [ "xtd::array", "group__system_ga23ad3a72b3c9da7418d0b2020076a40a.html#ga23ad3a72b3c9da7418d0b2020076a40a", null ],
     [ "xtd::boolean_object", "group__system_ga020fbeceaf011505de3ac30168375664.html#ga020fbeceaf011505de3ac30168375664", null ],
     [ "xtd::size_object", "group__system_ga38c2e723413a561059a0c53c07f167af.html#ga38c2e723413a561059a0c53c07f167af", null ],
+    [ "xtd::string", "group__system_ga5a3e8953f67b79fddd4d45475fb41eb0.html#ga5a3e8953f67b79fddd4d45475fb41eb0", null ],
     [ "xtd::boxing", "group__system_ga7352fcff0da12feb0aff421fc8c41d15.html#ga7352fcff0da12feb0aff421fc8c41d15", null ],
     [ "xtd::boxing", "group__system_gab155c2e1615c761866911598011c74b3.html#gab155c2e1615c761866911598011c74b3", null ],
     [ "xtd::register_any_stringer", "group__system_gad7c8890de68091b1a95110ec75c34e99.html#gad7c8890de68091b1a95110ec75c34e99", null ],

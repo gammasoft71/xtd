@@ -106,27 +106,26 @@ $(document).ready(function(){initNavTree('format_string_8cpp-example.html',''); 
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/literals&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span>std::literals;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u8<span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, L<span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u<span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, U<span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u8<span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, L<span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u<span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, U<span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u8<span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, L<span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u<span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, U<span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:anything}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u8<span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, L<span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u<span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, U<span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u8<span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, L<span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u<span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, U<span class="stringliteral">&quot;string&quot;</span>s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u8<span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, L<span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u<span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, U<span class="stringliteral">&quot;string&quot;</span>_s) &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:anything}&quot;</span>, <span class="stringliteral">&quot;string&quot;</span>) &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -154,7 +153,7 @@ $(document).ready(function(){initNavTree('format_string_8cpp-example.html',''); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

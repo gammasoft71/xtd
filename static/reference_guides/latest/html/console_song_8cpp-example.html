@@ -154,7 +154,8 @@ $(document).ready(function(){initNavTree('console_song_8cpp-example.html',''); i
 <div class="line">  note() = <span class="keywordflow">default</span>;</div>
 <div class="line">  note(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
 <div class="line">  note&amp; operator=(<span class="keyword">const</span> note&amp; note) = <span class="keywordflow">default</span>;</div>
-<div class="line">  </div>
+<div class="line">  <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> note&amp; rhs) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> tone_val == rhs.tone_val &amp;&amp; dur_val == rhs.dur_val;}</div>
+<div class="line"> </div>
 <div class="line">  <span class="comment">// Define properties to return the note&#39;s tone and duration.</span></div>
 <div class="line">  tone note_tone() const noexcept {<span class="keywordflow">return</span> tone_val;}</div>
 <div class="line">  duration note_duration() const noexcept {<span class="keywordflow">return</span> dur_val;}</div>
@@ -202,7 +203,7 @@ $(document).ready(function(){initNavTree('console_song_8cpp-example.html',''); i
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

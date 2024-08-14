@@ -137,7 +137,6 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a5b5a5354
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates both overloads of the <a class="el" href="classxtd_1_1io_1_1file__info_a5b5a5354ad631039eceea1e892a2085c.html#a5b5a5354ad631039eceea1e892a2085c" title="Copies an existing file to a new file, disallowing the overwriting of an existing file.">xtd::io::file_info::copy_to</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
@@ -186,7 +185,6 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a5b5a5354
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates copying one file to another file, throwing an exception if the destination file already exists. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
@@ -198,7 +196,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a5b5a5354
 <div class="line">      <span class="comment">// If it does not exist, it is not yet created.</span></div>
 <div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(<span class="stringliteral">&quot;temp.txt&quot;</span>);</div>
 <div class="line">      <span class="comment">// Create a writer, ready to add entries to the file.</span></div>
-<div class="line">      ofstream ofs(fi.append_text());</div>
+<div class="line">      std::ofstream ofs(fi.append_text());</div>
 <div class="line">      <a class="code hl_class" href="classxtd_1_1io_1_1stream__writer.html">stream_writer</a> sw(ofs);</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;Add as many lines as you like...&quot;</span>);</div>
 <div class="line">      sw.write_line(<span class="stringliteral">&quot;Add another line to the output...&quot;</span>);</div>
@@ -257,7 +255,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1file__info_a5b5a5354
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classxtd_1_1io_1_1file__info.html">file_info</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

@@ -931,6 +931,7 @@ var hierarchy =
       [ "xtd::iobservable< type_t >", "classxtd_1_1iobservable.html", null ],
       [ "xtd::iobserver< type_t >", "classxtd_1_1iobserver.html", null ],
       [ "xtd::iprogress< type_t >", "classxtd_1_1iprogress.html", null ],
+      [ "xtd::istringable", "classxtd_1_1istringable.html", null ],
       [ "xtd::isynchronize_invoke", "classxtd_1_1isynchronize__invoke.html", [
         [ "xtd::forms::control", "classxtd_1_1forms_1_1control.html", null ]
       ] ]

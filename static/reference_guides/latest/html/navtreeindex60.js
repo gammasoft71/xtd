@@ -1,5 +1,9 @@
 var NAVTREEINDEX60 =
 {
+"file__attributes_8h.html":[22,1,0,0,4,11],
+"file__attributes_8h_source.html":[22,1,0,0,4,11],
+"file__dialog_8h.html":[22,3,0,0,0,107],
+"file__dialog_8h_source.html":[22,3,0,0,0,107],
 "file__format__exception_8h.html":[22,1,0,0,4,12],
 "file__format__exception_8h_source.html":[22,1,0,0,4,12],
 "file__info_8h.html":[22,1,0,0,4,13],
@@ -195,8 +199,8 @@ var NAVTREEINDEX60 =
 "functions_e.html":[21,3,0,4],
 "functions_enum.html":[21,3,4],
 "functions_f.html":[21,3,0,5],
-"functions_func.html":[21,3,1,0],
 "functions_func.html":[21,3,1],
+"functions_func.html":[21,3,1,0],
 "functions_func_b.html":[21,3,1,1],
 "functions_func_c.html":[21,3,1,2],
 "functions_func_d.html":[21,3,1,3],
@@ -240,14 +244,10 @@ var NAVTREEINDEX60 =
 "functions_type.html":[21,3,3],
 "functions_u.html":[21,3,0,20],
 "functions_v.html":[21,3,0,21],
-"functions_vars.html":[21,3,2],
 "functions_vars.html":[21,3,2,0],
+"functions_vars.html":[21,3,2],
 "functions_vars_b.html":[21,3,2,1],
 "functions_vars_c.html":[21,3,2,2],
 "functions_vars_d.html":[21,3,2,3],
-"functions_vars_e.html":[21,3,2,4],
-"functions_vars_f.html":[21,3,2,5],
-"functions_vars_g.html":[21,3,2,6],
-"functions_vars_h.html":[21,3,2,7],
-"functions_vars_i.html":[21,3,2,8]
+"functions_vars_e.html":[21,3,2,4]
 };

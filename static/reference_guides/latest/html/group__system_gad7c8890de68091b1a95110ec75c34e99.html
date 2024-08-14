@@ -134,7 +134,9 @@ template&lt;class type_t , class function_t &gt; </div>
 </dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>Show how to register your own class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>Show how to register your own class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/unregister_any_stringer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"> </div>
@@ -157,19 +159,19 @@ template&lt;class type_t , class function_t &gt; </div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> value = make_any&lt;int&gt;(42);</div>
-<div class="line">  cout &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console_a923837ac84baf01726703e0474ca4888.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">environment::new_line</a>;</div>
 <div class="line">  </div>
 <div class="line">  value = make_any&lt;ustring&gt;(<span class="stringliteral">&quot;Star Trek: The Next Generation&quot;</span>);</div>
-<div class="line">  cout &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console_a923837ac84baf01726703e0474ca4888.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">environment::new_line</a>;</div>
 <div class="line">  </div>
 <div class="line">  value = make_any&lt;character&gt;(<span class="stringliteral">&quot;Jean-Luc Picard&quot;</span>, <span class="stringliteral">&quot;Captain&quot;</span>);</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Before register_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console_a923837ac84baf01726703e0474ca4888.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;Before register_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">environment::new_line</a>;</div>
 <div class="line">  </div>
 <div class="line">  register_any_stringer&lt;character&gt;([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> value.to_string();});</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;After register_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console_a923837ac84baf01726703e0474ca4888.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;After register_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">environment::new_line</a>;</div>
 <div class="line">  </div>
 <div class="line">  unregister_any_stringer&lt;character&gt;();</div>
-<div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;After unregister_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; endl;</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console_a923837ac84baf01726703e0474ca4888.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;After unregister_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">ustring::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">environment::new_line</a>;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -179,6 +181,8 @@ template&lt;class type_t , class function_t &gt; </div>
 <div class="line"><span class="comment">// Before register_any_stringer : (unregistered)</span></div>
 <div class="line"><span class="comment">// After register_any_stringer : Jean-Luc Picard (Captain)</span></div>
 <div class="line"><span class="comment">// After unregister_any_stringer : (unregistered)</span></div>
+<div class="ttc" id="aclassxtd_1_1console_a923837ac84baf01726703e0474ca4888_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console_a923837ac84baf01726703e0474ca4888.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.h:52</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f_html_a4b3f67dc9a3a0f67d13b60bf4f09386f"><div class="ttname"><a href="classxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::ustring new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
 <div class="ttc" id="agroup__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd_html_ga3afd6d163bc6391a48a1f84f28a68ffd"><div class="ttname"><a href="group__format__parse_ga3afd6d163bc6391a48a1f84f28a68ffd.html#ga3afd6d163bc6391a48a1f84f28a68ffd">xtd::ustring::format</a></div><div class="ttdeci">static ustring format(const ustring &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> ustring.h:1068</div></div>
 <div class="ttc" id="agroup__xtd__core_gaceb0e0a25d04cce9beebad549c27c167_html_gaceb0e0a25d04cce9beebad549c27c167"><div class="ttname"><a href="group__xtd__core_gaceb0e0a25d04cce9beebad549c27c167.html#gaceb0e0a25d04cce9beebad549c27c167">xtd::to_string</a></div><div class="ttdeci">std::string to_string(const value_t &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</div><div class="ttdoc">Convert a specified value into a string with specified format and locale.</div><div class="ttdef"><b>Definition</b> to_string.h:41</div></div>
@@ -194,7 +198,7 @@ template&lt;class type_t , class function_t &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
