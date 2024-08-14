@@ -1,4 +1,5 @@
 #include <xtd/console>
+#include <xtd/environment>
 #include <xtd/ustring>
 
 using namespace std;
@@ -6,47 +7,48 @@ using namespace xtd;
 
 enum class cap { title, middle, end };
 
-void print_number(const char* text, int number, cap c) {
-  if (c == cap::title) {
-    console::write_line("┌───────────┬────────────┬──────────────────────────────────┐");
-    console::write_line("│  number   │   format   │      representation              │");
-    console::write_line("├───────────┼────────────┼──────────────────────────────────┤");
-  }
+void print_number(ustring text, int value, cap c) {
+  if (c == cap::title)
+    console::out << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
+                 << "│  number   │   format   │      representation              │" << environment::new_line
+                 << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
   
-  console::write_line("│ {,-9} │ {{}}         │ {,-32} │", text, ustring::format("{}", number));
-  console::write_line("│ {,-9} │ {{:b}}       │ {,-32} │", text, ustring::format("{:b}", number));
-  console::write_line("│ {,-9} │ {{:b32}}     │ {,-32} │", text, ustring::format("{:b32}", number));
-  console::write_line("│ {,-9} │ {{:c}}       │ {,-32} │", text, ustring::format("{:c}", number));
-  console::write_line("│ {,-9} │ {{:C}}       │ {,-32} │", text, ustring::format("{:C}", number));
-  console::write_line("│ {,-9} │ {{:d}}       │ {,-32} │", text, ustring::format("{:d}", number));
-  console::write_line("│ {,-9} │ {{:d16}}     │ {,-32} │", text, ustring::format("{:d16}", number));
-  console::write_line("│ {,-9} │ {{:D}}       │ {,-32} │", text, ustring::format("{:D}", number));
-  console::write_line("│ {,-9} │ {{:D16}}     │ {,-32} │", text, ustring::format("{:D16}", number));
-  console::write_line("│ {,-9} │ {{:e}}       │ {,-32} │", text, ustring::format("{:e}", number));
-  console::write_line("│ {,-9} │ {{:E}}       │ {,-32} │", text, ustring::format("{:E}", number));
-  console::write_line("│ {,-9} │ {{:f}}       │ {,-32} │", text, ustring::format("{:f}", number));
-  console::write_line("│ {,-9} │ {{:f4}}      │ {,-32} │", text, ustring::format("{:f4}", number));
-  console::write_line("│ {,-9} │ {{:F}}       │ {,-32} │", text, ustring::format("{:F}", number));
-  console::write_line("│ {,-9} │ {{:F4}}      │ {,-32} │", text, ustring::format("{:F4}", number));
-  console::write_line("│ {,-9} │ {{:g}}       │ {,-32} │", text, ustring::format("{:g}", number));
-  console::write_line("│ {,-9} │ {{:G}}       │ {,-32} │", text, ustring::format("{:G}", number));
-  console::write_line("│ {,-9} │ {{:o}}       │ {,-32} │", text, ustring::format("{:o}", number));
-  console::write_line("│ {,-9} │ {{:o16}}     │ {,-32} │", text, ustring::format("{:o16}", number));
-  console::write_line("│ {,-9} │ {{:O}}       │ {,-32} │", text, ustring::format("{:O}", number));
-  console::write_line("│ {,-9} │ {{:O16}}     │ {,-32} │", text, ustring::format("{:O16}", number));
-  console::write_line("│ {,-9} │ {{:n}}       │ {,-32} │", text, ustring::format("{:n}", number));
-  console::write_line("│ {,-9} │ {{:N}}       │ {,-32} │", text, ustring::format("{:N}", number));
-  console::write_line("│ {,-9} │ {{:p}}       │ {,-32} │", text, ustring::format("{:p}", number));
-  console::write_line("│ {,-9} │ {{:P}}       │ {,-32} │", text, ustring::format("{:P}", number));
-  console::write_line("│ {,-9} │ {{:x}}       │ {,-32} │", text, ustring::format("{:x}", number));
-  console::write_line("│ {,-9} │ {{:x16}}     │ {,-32} │", text, ustring::format("{:x16}", number));
-  console::write_line("│ {,-9} │ {{:X}}       │ {,-32} │", text, ustring::format("{:X}", number));
-  console::write_line("│ {,-9} │ {{:X16}}     │ {,-32} │", text, ustring::format("{:X16}", number));
+  console::out << "│ " << text.pad_right(9) << " │ {}         │ " << ustring::format("{}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:b}       │ " << ustring::format("{:b}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:b32}     │ " << ustring::format("{:b32}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:B}       │ " << ustring::format("{:B}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:B32}     │ " << ustring::format("{:B32}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:c}       │ " << ustring::format("{:c}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:C}       │ " << ustring::format("{:C}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:d}       │ " << ustring::format("{:d}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:d16}     │ " << ustring::format("{:d16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:D}       │ " << ustring::format("{:D}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:D16}     │ " << ustring::format("{:D16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:e}       │ " << ustring::format("{:e}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:E}       │ " << ustring::format("{:E}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:f}       │ " << ustring::format("{:f}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:f4}      │ " << ustring::format("{:f4}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:F}       │ " << ustring::format("{:F}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:F4}      │ " << ustring::format("{:F4}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:g}       │ " << ustring::format("{:g}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:G}       │ " << ustring::format("{:G}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:o}       │ " << ustring::format("{:o}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:o16}     │ " << ustring::format("{:o16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:O}       │ " << ustring::format("{:O}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:O16}     │ " << ustring::format("{:O16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:n}       │ " << ustring::format("{:n}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:N}       │ " << ustring::format("{:N}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:p}       │ " << ustring::format("{:p}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:P}       │ " << ustring::format("{:P}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:x}       │ " << ustring::format("{:x}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:x16}     │ " << ustring::format("{:x16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:X}       │ " << ustring::format("{:X}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:X16}     │ " << ustring::format("{:X16}", value).pad_right(32) << " |" << environment::new_line;
 
   if (c != cap::end)
-    console::write_line("├───────────┼────────────┼──────────────────────────────────┤");
+    console::out << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
   else
-    console::write_line("└───────────┴────────────┴──────────────────────────────────┘");
+    console::out << "└───────────┴────────────┴──────────────────────────────────┘" << environment::new_line;
 }
 
 
@@ -65,6 +67,8 @@ auto main() -> int {
 // │ 0         │ {}         │ 0                                │
 // │ 0         │ {:b}       │ 0                                │
 // │ 0         │ {:b32}     │ 00000000000000000000000000000000 │
+// │ 0         │ {:B}       │ 0                                │
+// │ 0         │ {:B32}     │ 00000000000000000000000000000000 │
 // │ 0         │ {:c}       │ $0.00                            │
 // │ 0         │ {:C}       │ $0.00                            │
 // │ 0         │ {:d}       │ 0                                │
@@ -95,6 +99,8 @@ auto main() -> int {
 // │ 42        │ {}         │ 42                               │
 // │ 42        │ {:b}       │ 101010                           │
 // │ 42        │ {:b32}     │ 00000000000000000000000000101010 │
+// │ 42        │ {:B}       │ 101010                           │
+// │ 42        │ {:B32}     │ 00000000000000000000000000101010 │
 // │ 42        │ {:c}       │ $42.00                           │
 // │ 42        │ {:C}       │ $42.00                           │
 // │ 42        │ {:d}       │ 42                               │
@@ -125,6 +131,8 @@ auto main() -> int {
 // │ 123456789 │ {}         │ 123456789                        │
 // │ 123456789 │ {:b}       │ 111010110111100110100010101      │
 // │ 123456789 │ {:b32}     │ 00000111010110111100110100010101 │
+// │ 123456789 │ {:B}       │ 111010110111100110100010101      │
+// │ 123456789 │ {:B32}     │ 00000111010110111100110100010101 │
 // │ 123456789 │ {:c}       │ $123,456,789.00                  │
 // │ 123456789 │ {:C}       │ $123,456,789.00                  │
 // │ 123456789 │ {:d}       │ 123456789                        │
