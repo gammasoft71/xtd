@@ -3,7 +3,6 @@
 #include <xtd/convert>
 #include <any>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
@@ -25,7 +24,7 @@ auto main() -> int {
   
   console::write_line("Convert any to byte :");
   console::write_line("---------------------");
-  auto any_value = make_any<unsigned char>(42);
+  auto any_value = std::make_any<unsigned char>(42);
   console::write_line("any_cast<unsigned char>(any_value) = {}", any_cast<unsigned char>(any_value));
   console::write_line("as<unsigned char>(any_value)       = {}", as<unsigned char>(any_value));
   console::write_line("convert::to_byte(any_value)        = {}", convert::to_byte(any_value));

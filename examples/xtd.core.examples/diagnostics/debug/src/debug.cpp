@@ -4,7 +4,6 @@
 #include <xtd/diagnostics/ostream_trace_listener>
 #include <xtd/console>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 

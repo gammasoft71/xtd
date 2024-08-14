@@ -4,7 +4,6 @@
 #include <xtd/threading/thread>
 #include <memory>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 

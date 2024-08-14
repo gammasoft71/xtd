@@ -1,7 +1,6 @@
 #include <xtd/collections/array_list>
 #include <xtd/console>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::collections;
 

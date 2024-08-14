@@ -3,7 +3,6 @@
 #include <xtd/startup>
 #include <xtd/ustring>
 
-using namespace std;
 using namespace xtd;
 
 class program {

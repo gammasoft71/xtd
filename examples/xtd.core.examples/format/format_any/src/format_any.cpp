@@ -1,3 +1,5 @@
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/register_any_stringer>
 #include <xtd/unregister_any_stringer>
 #include <xtd/ustring>
@@ -21,19 +23,19 @@ private:
 
 auto main() -> int {
   auto value = make_any<int>(42);
-  cout << ustring::format("{}", value) << endl;
+  console::out << ustring::format("{}", value) << environment::new_line;
   
   value = make_any<ustring>("Star Trek: The Next Generation");
-  cout << ustring::format("{}", value) << endl;
+  console::out << ustring::format("{}", value) << environment::new_line;
   
   value = make_any<character>("Jean-Luc Picard", "Captain");
-  cout << "Before register_any_stringer : " << ustring::format("{}", value) << endl;
+  console::out << "Before register_any_stringer : " << ustring::format("{}", value) << environment::new_line;
   
   register_any_stringer<character>([](auto value) {return value.to_string();});
-  cout << "After register_any_stringer : " << ustring::format("{}", value) << endl;
+  console::out << "After register_any_stringer : " << ustring::format("{}", value) << environment::new_line;
   
   unregister_any_stringer<character>();
-  cout << "After unregister_any_stringer : " << ustring::format("{}", value) << endl;
+  console::out << "After unregister_any_stringer : " << ustring::format("{}", value) << environment::new_line;
 }
 
 // This code produces the following output :

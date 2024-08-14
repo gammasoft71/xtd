@@ -4,7 +4,6 @@
 #include <xtd/convert_string>
 #include <any>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
@@ -28,7 +27,7 @@ auto main() -> int {
   
   console::write_line("Convert any to ustring :");
   console::write_line("------------------------");
-  auto any_value = make_any<int>(42);
+  auto any_value = std::make_any<int>(42);
   console::write_line("to_ustring(any_value)            = {}", to_ustring(any_value));
   console::write_line("as<ustring>(any_value)           = {}", as<ustring>(any_value));
   console::write_line("convert::to_ustring(any_value)   = {}", convert::to_ustring(any_value));
@@ -36,7 +35,7 @@ auto main() -> int {
   console::write_line();
   
   console::write_line("Convert const char16 to ustring :");
-  console::write_line("-----------------------------------");
+  console::write_line("---------------------------------");
   auto const_char16_value = u"A string value";
   console::write_line("to_ustring(wstring_value)                      = {}", to_ustring(const_char16_value));
   console::write_line("as<ustring>(const_char16_value)                = {}", as<ustring>(const_char16_value));
@@ -45,14 +44,14 @@ auto main() -> int {
   console::write_line("ustring::format(\"{{}}\", const_char16_value)      = {}", ustring::format("{}", const_char16_value));
   console::write_line();
   
-  console::write_line("Convert wstring to ustring :");
-  console::write_line("----------------------------");
-  wstring wstring_value = L"A string value";
-  console::write_line("to_ustring(wstring_value)                 = {}", to_ustring(wstring_value));
-  console::write_line("as<ustring>(wstring_value)                = {}", as<ustring>(wstring_value));
-  console::write_line("convert::to_ustring(wstring_value)        = {}", convert::to_ustring(wstring_value));
-  console::write_line("convert_string::to_ustring(wstring_value) = {}", convert_string::to_ustring(wstring_value));
-  console::write_line("ustring::format(\"{{}}\", wstring_value)      = {}", ustring::format("{}", wstring_value));
+  console::write_line("Convert const wchar to ustring :");
+  console::write_line("--------------------------------");
+  auto const_wchar_value = L"A string value";
+  console::write_line("to_ustring(const_wchar_value)                 = {}", to_ustring(const_wchar_value));
+  console::write_line("as<ustring>(const_wchar_value)                = {}", as<ustring>(const_wchar_value));
+  console::write_line("convert::to_ustring(const_wchar_value)        = {}", convert::to_ustring(const_wchar_value));
+  console::write_line("convert_string::to_ustring(const_wchar_value) = {}", convert_string::to_ustring(const_wchar_value));
+  console::write_line("ustring::format(\"{{}}\", const_wchar_value)      = {}", ustring::format("{}", const_wchar_value));
 }
 
 // This code produces the following output :
@@ -79,17 +78,17 @@ auto main() -> int {
 // ustring::format("{}", any_value) = 42
 //
 // Convert const char16 to ustring :
-// -----------------------------------
+// ---------------------------------
 // to_ustring(wstring_value)                      = A string value
 // as<ustring>(const_char16_value)                = A string value
 // convert::to_ustring(const_char16_value)        = A string value
 // convert_string::to_ustring(const_char16_value) = A string value
 // ustring::format("{}", const_char16_value)      = A string value
 //
-// Convert wstring to ustring :
-// ----------------------------
-// to_ustring(wstring_value)                 = A string value
-// as<ustring>(wstring_value)                = A string value
-// convert::to_ustring(wstring_value)        = A string value
-// convert_string::to_ustring(wstring_value) = A string value
-// ustring::format("{}", wstring_value)      = A string value
+// Convert const wchar to ustring :
+// --------------------------------
+// to_ustring(const_wchar_value)                 = A string value
+// as<ustring>(const_wchar_value)                = A string value
+// convert::to_ustring(const_wchar_value)        = A string value
+// convert_string::to_ustring(const_wchar_value) = A string value
+// ustring::format("{}", const_wchar_value)      = A string value
