@@ -156,10 +156,11 @@ var searchData=
   ['ip_5fpacket_5finformation_153',['ip_packet_information',['../classxtd_1_1net_1_1sockets_1_1ip__packet__information.html',1,'xtd::net::sockets']]],
   ['ip_5fv6_5fmulticast_5foption_154',['ip_v6_multicast_option',['../classxtd_1_1net_1_1sockets_1_1ip__v6__multicast__option.html',1,'xtd::net::sockets']]],
   ['iprogress_155',['iprogress',['../classxtd_1_1iprogress.html',1,'xtd']]],
-  ['isynchronize_5finvoke_156',['isynchronize_invoke',['../classxtd_1_1isynchronize__invoke.html',1,'xtd']]],
-  ['item_157',['item',['../classxtd_1_1forms_1_1checked__list__box_1_1item.html',1,'xtd::forms::checked_list_box::item'],['../classxtd_1_1forms_1_1domain__up__down_1_1item.html',1,'xtd::forms::domain_up_down::item'],['../classxtd_1_1forms_1_1list__control_1_1item.html',1,'xtd::forms::list_control::item']]],
-  ['item_5fcheck_5fevent_5fargs_158',['item_check_event_args',['../classxtd_1_1forms_1_1item__check__event__args.html',1,'xtd::forms']]],
-  ['iterator_159',['iterator',['../classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator.html',1,'xtd::collections::generic::enumerable_iterators']]],
-  ['itext_5fmodel_160',['itext_model',['../classxtd_1_1forms_1_1style__sheets_1_1itext__model.html',1,'xtd::forms::style_sheets']]],
-  ['iwin32_5fwindow_161',['iwin32_window',['../classxtd_1_1forms_1_1iwin32__window.html',1,'xtd::forms']]]
+  ['istringable_156',['istringable',['../classxtd_1_1istringable.html',1,'xtd']]],
+  ['isynchronize_5finvoke_157',['isynchronize_invoke',['../classxtd_1_1isynchronize__invoke.html',1,'xtd']]],
+  ['item_158',['item',['../classxtd_1_1forms_1_1checked__list__box_1_1item.html',1,'xtd::forms::checked_list_box::item'],['../classxtd_1_1forms_1_1domain__up__down_1_1item.html',1,'xtd::forms::domain_up_down::item'],['../classxtd_1_1forms_1_1list__control_1_1item.html',1,'xtd::forms::list_control::item']]],
+  ['item_5fcheck_5fevent_5fargs_159',['item_check_event_args',['../classxtd_1_1forms_1_1item__check__event__args.html',1,'xtd::forms']]],
+  ['iterator_160',['iterator',['../classxtd_1_1collections_1_1generic_1_1enumerable__iterators_1_1iterator.html',1,'xtd::collections::generic::enumerable_iterators']]],
+  ['itext_5fmodel_161',['itext_model',['../classxtd_1_1forms_1_1style__sheets_1_1itext__model.html',1,'xtd::forms::style_sheets']]],
+  ['iwin32_5fwindow_162',['iwin32_window',['../classxtd_1_1forms_1_1iwin32__window.html',1,'xtd::forms']]]
 ];

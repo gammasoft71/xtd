@@ -1,5 +1,9 @@
 var NAVTREEINDEX58 =
 {
+"console_color4_8cpp-example.html":[23,226],
+"console_color_8cpp-example.html":[23,25],
+"console_cursor_8cpp-example.html":[23,26],
+"console_cursor_size_8cpp-example.html":[23,27],
 "console_cursor_visible_8cpp-example.html":[23,28],
 "console_firework_8cpp-example.html":[23,29],
 "console_in_out_8cpp-example.html":[23,30],
@@ -245,9 +249,5 @@ var NAVTREEINDEX58 =
 "dir_8fe232b51ecccf15f24d9a0841dd9c75.html":[22,4,0],
 "dir_94985abd7ce76a434742fce249483c3e.html":[22,1,0,0,6,0],
 "dir_aa0f393c5a6f85c29b7a1e1833a93460.html":[22,0],
-"dir_aa77d23de97486efa1c7a168e7e86b99.html":[22,3,0,0,0,2],
-"dir_b7babae538aa394250269909bdf2cd22.html":[22,2,0,0,0,1],
-"dir_b9306ad9f757b5b63585630c898f2040.html":[22,1,0,0,4],
-"dir_c00f62ab1f0e172d5b99b3a26f8d581f.html":[22,1,0,0,12,0],
-"dir_c52e9d94cdf6381ff7513773ffbb764c.html":[22,1,0,0,12]
+"dir_aa77d23de97486efa1c7a168e7e86b99.html":[22,3,0,0,0,2]
 };

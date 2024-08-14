@@ -126,8 +126,8 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1directory__info_a709
 <dl class="section return"><dt>Returns</dt><dd>true if the directory exists; otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates a use of the Exists property in the context of copying a source directory to a target directory. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
@@ -144,13 +144,13 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1directory__info_a709
 <div class="line">      target.create();</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">//Copy files.</span></div>
-<div class="line">    vector&lt;file_info&gt; source_files = source.get_files();</div>
-<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; source_files.size(); ++<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;file_info&gt;</a> source_files = source.get_files();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; source_files.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d.html#adf57c611c0c54ae23e087ce5527aad3d">size</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">      file::copy(source_files[i].full_name(), target.full_name() +<span class="stringliteral">&quot;\\&quot;</span> + source_files[i].name(), <span class="keyword">true</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">//Copy directories.</span></div>
-<div class="line">    vector&lt;directory_info&gt; source_directories = source.get_directories();</div>
-<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; <a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a> &lt; source_directories.size(); ++<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a>)</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;directory_info&gt;</a> source_directories = source.get_directories();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; <a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a> &lt; source_directories.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d.html#adf57c611c0c54ae23e087ce5527aad3d">size</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a>)</div>
 <div class="line">      copy_directory(source_directories[j].full_name(), target.full_name() + <span class="stringliteral">&quot;\\&quot;</span> + source_directories[j].name());</div>
 <div class="line">  }</div>
 <div class="line"> </div>
@@ -161,11 +161,14 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1directory__info_a709
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d_html_adf57c611c0c54ae23e087ce5527aad3d"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list_adf57c611c0c54ae23e087ce5527aad3d.html#adf57c611c0c54ae23e087ce5527aad3d">xtd::collections::generic::list::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::...</div><div class="ttdef"><b>Definition</b> list.h:363</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.h:70</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.h:129</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:52</div></div>
 <div class="ttc" id="agroup__keywords_ga44bd440a34d147923e428eacd1c8eedd_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords_ga44bd440a34d147923e428eacd1c8eedd.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.h:175</div></div>
 <div class="ttc" id="agroup__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2_html_ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515"><div class="ttname"><a href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">xtd::console_key::j</a></div><div class="ttdeci">@ j</div><div class="ttdoc">The J key.</div></div>
 <div class="ttc" id="agroup__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> dictionary.h:15</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.h:16</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -182,7 +185,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1io_1_1directory__info_a709
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classxtd_1_1io_1_1directory__info.html">directory_info</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

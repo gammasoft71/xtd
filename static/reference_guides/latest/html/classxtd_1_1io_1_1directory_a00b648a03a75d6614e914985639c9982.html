@@ -143,13 +143,13 @@ The following example demonstrates how to use the GetFiles method to return file
 @icode{cpp} 
 #include &lt;xtd/xtd&gt;
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::io;
 
 class program {
 public:
-  static auto main(const vector&lt;ustring&gt;&amp; args) {
+  static auto main(const std::vector&lt;list&gt;&amp; args) {
     for (ustring path : args) {
       if (file::exists(path)) {
         // This path is a file
@@ -167,12 +167,12 @@ public:
   // that are found, and process the files they contain.
   static void process_directory(const ustring&amp; target_directory) {
     // Process the list of files found in the directory.
-    vector&lt;ustring&gt; file_entries = directory::get_files(target_directory);
+    std::vector&lt;ustring&gt; file_entries = directory::get_files(target_directory);
     for (ustring file_name : file_entries)
       process_file(file_name);
 
     // Recurse into subdirectories of this directory.
-    vector&lt;ustring&gt; subdirectory_entries = directory::get_directories(target_directory);
+    std::vector&lt;ustring&gt; subdirectory_entries = directory::get_directories(target_directory);
     for (ustring subdirectory : subdirectory_entries)
       process_directory(subdirectory);
   }
@@ -205,7 +205,7 @@ startup_(program::main);
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classxtd_1_1io_1_1directory.html">directory</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

@@ -121,20 +121,20 @@ $(document).ready(function(){initNavTree('classxtd_1_1console_a923837ac84baf0172
 
 <p>Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output stream. </p>
 <dl class="section user"><dt>Examples</dt><dd>The following sample illustrates the use of the out property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core_ga52ae9030016acf7d943cd428e943dc02.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = <a class="code hl_variable" href="classxtd_1_1console_a7c103233b3e74cb63538b48616b7fd02.html#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="classxtd_1_1console_a923837ac84baf01726703e0474ca4888.html#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; endl;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> name = <a class="code hl_variable" href="classxtd_1_1ustring_ad2a9ab2b0dea8ef1ad59d47a49647d5b.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">ustring::empty_string</a>;</div>
+<div class="line">  <span class="keyword">auto</span> name = <a class="code hl_variable" href="classxtd_1_1ustring_ad2a9ab2b0dea8ef1ad59d47a49647d5b.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">string::empty_string</a>;</div>
 <div class="line">  <a class="code hl_function" href="group__xtd__core_ga52ae9030016acf7d943cd428e943dc02.html#ga52ae9030016acf7d943cd428e943dc02">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; endl;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">environment::new_line</a>;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -144,6 +144,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1console_a923837ac84baf0172
 <div class="line"><span class="comment">// Buenos Dias, James!</span></div>
 <div class="ttc" id="aclassxtd_1_1console_a7c103233b3e74cb63538b48616b7fd02_html_a7c103233b3e74cb63538b48616b7fd02"><div class="ttname"><a href="classxtd_1_1console_a7c103233b3e74cb63538b48616b7fd02.html#a7c103233b3e74cb63538b48616b7fd02">xtd::console::in</a></div><div class="ttdeci">static std::istream in</div><div class="ttdoc">Gets the standard input stream. A std::basic_istream&lt;char_t&gt; that represents the standard input strea...</div><div class="ttdef"><b>Definition</b> console.h:47</div></div>
 <div class="ttc" id="aclassxtd_1_1console_a923837ac84baf01726703e0474ca4888_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console_a923837ac84baf01726703e0474ca4888.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.h:52</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f_html_a4b3f67dc9a3a0f67d13b60bf4f09386f"><div class="ttname"><a href="classxtd_1_1environment_a4b3f67dc9a3a0f67d13b60bf4f09386f.html#a4b3f67dc9a3a0f67d13b60bf4f09386f">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::ustring new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="aclassxtd_1_1ustring_ad2a9ab2b0dea8ef1ad59d47a49647d5b_html_ad2a9ab2b0dea8ef1ad59d47a49647d5b"><div class="ttname"><a href="classxtd_1_1ustring_ad2a9ab2b0dea8ef1ad59d47a49647d5b.html#ad2a9ab2b0dea8ef1ad59d47a49647d5b">xtd::ustring::empty_string</a></div><div class="ttdeci">static const ustring empty_string</div><div class="ttdoc">Represents the empty string.</div><div class="ttdef"><b>Definition</b> ustring.h:59</div></div>
 <div class="ttc" id="agroup__xtd__core_ga52ae9030016acf7d943cd428e943dc02_html_ga52ae9030016acf7d943cd428e943dc02"><div class="ttname"><a href="group__xtd__core_ga52ae9030016acf7d943cd428e943dc02.html#ga52ae9030016acf7d943cd428e943dc02">xtd::is</a></div><div class="ttdeci">bool is(std::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.h:365</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
@@ -160,7 +161,7 @@ $(document).ready(function(){initNavTree('classxtd_1_1console_a923837ac84baf0172
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="classxtd_1_1console.html">console</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>

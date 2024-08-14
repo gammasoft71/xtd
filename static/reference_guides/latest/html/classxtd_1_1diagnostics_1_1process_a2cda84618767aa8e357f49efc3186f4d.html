@@ -124,7 +124,6 @@ $(document).ready(function(){initNavTree('classxtd_1_1diagnostics_1_1process_a2c
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example runs the ipconfig.exe command and redirects its standard output to the example's console window. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -196,7 +195,6 @@ The last two examples in this section use the xtd::diagnostics:process::start me
 <dd>
 The following example shows how to read from a redirected error stream and wait for the child process to exit. It avoids a deadlock condition by calling stream_reader(p.standard_error()).read_to_end() before p.wait_for_exit. A deadlock condition can result if the parent process calls p.wait_for_exit before stream_reader(p.standard_error()).read_to_end() and the child process writes enough text to fill the redirected stream. The parent process would wait indefinitely for the child process to exit. The child process would wait indefinitely for the parent to read from the full <a class="el" href="classxtd_1_1diagnostics_1_1process_a9e09a8c158d401459b4ab4aa37a6f06e.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -223,7 +221,6 @@ The following example shows how to read from a redirected error stream and wait 
 <dd>
 There is a similar issue when you read all text from both the standard output and standard error streams. The following example performs a read operation on both streams. It avoids the deadlock condition by performing asynchronous read operations on the <a class="el" href="classxtd_1_1diagnostics_1_1process_a9e09a8c158d401459b4ab4aa37a6f06e.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream. A deadlock condition results if the parent process calls stream_reader(p.standard_output()).read_to_end() followed by stream_reader(p.standard_error()).read_to_end() and the child process writes enough text to fill its error stream. The parent process would wait indefinitely for the child process to close its <a class="el" href="classxtd_1_1diagnostics_1_1process_a2cda84618767aa8e357f49efc3186f4d.html#a2cda84618767aa8e357f49efc3186f4d" title="Gets a stream used to read the textual output of the application.">xtd::diagnostics::process::standard_output</a> stream. The child process would wait indefinitely for the parent to read from the full <a class="el" href="classxtd_1_1diagnostics_1_1process_a9e09a8c158d401459b4ab4aa37a6f06e.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -270,7 +267,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1diagnostics.html">diagnostics</a></li><li class="navelem"><a class="el" href="classxtd_1_1diagnostics_1_1process.html">process</a></li>
-		<li class="footer">Generated on Fri Aug 9 2024 20:34:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Wed Aug 14 2024 19:07:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
