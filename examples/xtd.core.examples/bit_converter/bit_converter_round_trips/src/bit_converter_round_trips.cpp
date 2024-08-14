@@ -2,7 +2,6 @@
 #include <xtd/console>
 #include <xtd/startup>
 
-using namespace std;
 using namespace xtd;
 
 namespace bit_converter_round_trips_example {
