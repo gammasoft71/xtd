@@ -877,22 +877,19 @@ size_t ustring::last_index_of_any(const std::initializer_list<value_type>& value
 }
 
 ustring ustring::pad_left(size_t total_width) const noexcept {
-  return pad_left(total_width, static_cast<value_type>(0x20));
+  return pad_left(total_width, ' ');
 }
 
 ustring ustring::pad_left(size_t total_width, value_type padding_char) const noexcept {
-  if (total_width < size()) return *this;
-  return ustring(total_width - size(), padding_char).append(*this);
+  return total_width < size() ? *this : ustring(total_width - size(), padding_char) + *this;
 }
 
 ustring ustring::pad_right(size_t total_width) const noexcept {
-  return pad_right(total_width, static_cast<value_type>(0x20));
+  return pad_right(total_width, ' ');
 }
 
 ustring ustring::pad_right(size_t total_width, value_type padding_char) const noexcept {
-  if (total_width < size()) return *this;
-  ustring result(*this);
-  return result.append(total_width - size(), padding_char);
+  return total_width < size() ? *this : *this + ustring(total_width - size(), padding_char);
 }
 
 ustring ustring::quoted() const {
@@ -911,8 +908,7 @@ ustring ustring::remove(size_t start_index) const noexcept {
 
 ustring ustring::remove(size_t start_index, size_t count) const noexcept {
   if (start_index > size()) return *this;
-  ustring result(*this);
-  return result.erase(start_index, count);
+  return ustring(*this).erase(start_index, count);
 }
 
 ustring ustring::replace(value_type old_char, value_type new_char) const noexcept {
