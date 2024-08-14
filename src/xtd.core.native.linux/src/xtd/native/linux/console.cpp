@@ -722,12 +722,14 @@ bool console::foreground_color(int32_t color) {
 }
 
 int32_t console::input_code_page() {
-  /// @todo console input code page status on linux and macOS
+  // There is no way to define the console input code page under linux.
+  // By default, the console input code page is in UTF-8.
   return ::input_code_page;
 }
 
 bool console::input_code_page(int32_t code_page) {
-  /// @todo set console input code page on linux and macOS
+  // There is no way to define the console input code page under linux.
+  // By default, the console input code page is in UTF-8.
   ::input_code_page = code_page;
   return true;
 }
@@ -750,12 +752,14 @@ bool console::number_lock() {
 }
 
 int32_t console::output_code_page() {
-  /// @todo console output code page status on linux and macOS
+  // There is no way to define the console output code page under linux.
+  // By default, the console output code page is in UTF-8.
   return ::output_code_page;
 }
 
 bool console::output_code_page(int32_t code_page) {
-  /// @todo set console output code page on linux and macOS
+  // There is no way to define the console output code page under linux.
+  // By default, the console output code page is in UTF-8.
   ::output_code_page = code_page;
   return true;
 }
