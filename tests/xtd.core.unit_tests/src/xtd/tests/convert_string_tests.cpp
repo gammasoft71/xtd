@@ -1,5 +1,5 @@
 #include <xtd/convert_string>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/test_class_attribute>

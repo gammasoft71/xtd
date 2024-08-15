@@ -5,7 +5,7 @@
 #include "component.h"
 #include "dialog_appearance.h"
 #include "iwin32_window.h"
-#include <xtd/ustring>
+#include <xtd/string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

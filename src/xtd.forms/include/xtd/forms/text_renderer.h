@@ -7,7 +7,7 @@
 #include <xtd/drawing/graphics>
 #include <xtd/drawing/rectangle>
 #include <xtd/static>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <memory>
 #include <vector>
 

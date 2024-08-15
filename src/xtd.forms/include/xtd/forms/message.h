@@ -4,7 +4,7 @@
 #pragma once
 #include "../forms_export.h"
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <cstdint>
 #include <iomanip>
 #include <sstream>

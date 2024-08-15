@@ -30,7 +30,7 @@
 #include <vector>
 #include <xtd/optional.h>
 #include <xtd/target_id>
-#include <xtd/ustring>
+#include <xtd/string>
 
 /// @cond
 template<class type_t> struct __tunit_is_printable : std::false_type {};

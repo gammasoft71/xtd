@@ -1814,7 +1814,7 @@ macro(write_resources_file_header)
     "#include <xtd/io/path>\n"
     "#include <xtd/environment>\n"
     "#include <xtd/not_implemented_exception>\n"
-    "#include <xtd/ustring>\n"
+    "#include <xtd/string>\n"
     "\n"
     "namespace ${TARGET_DEFAULT_NAMESPACE}::properties {\n"
     "  /// @brief A strongly-typed resource class, for looking up localized strings, etc.\n"

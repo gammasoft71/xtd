@@ -7,7 +7,7 @@
 #include <xtd/forms/native/screen>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/convert_string>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <wx/dcscreen.h>
 #include <wx/display.h>
 

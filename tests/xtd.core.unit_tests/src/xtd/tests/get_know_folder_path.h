@@ -30,7 +30,7 @@ inline xtd::ustring __get_know_folder_path__(xtd::int32 id) {
   return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path.data()) == S_OK ? path.data() : L"";
 }
 #else
-#include <xtd/ustring>
+#include <xtd/string>
 
 inline xtd::ustring __get_know_folder_path__(xtd::int32 id) {
   return "";

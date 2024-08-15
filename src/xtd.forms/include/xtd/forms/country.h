@@ -6,7 +6,7 @@
 #include <xtd/drawing/bitmap>
 #include <xtd/iequatable>
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/convert_string>
 #include <xtd/static>
 

@@ -22,7 +22,7 @@
 #include <xtd/as>
 #include <xtd/convert_string>
 #include <xtd/math>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <wx/app.h>
 #include <wx/dcgraph.h>
 #include <wx/dcmemory.h>

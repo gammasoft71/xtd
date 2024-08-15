@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/format_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>

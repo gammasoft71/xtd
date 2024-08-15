@@ -11,7 +11,7 @@
 #include "iwin32_window.h"
 #include <xtd/drawing/point>
 #include <xtd/event>
-#include <xtd/ustring>
+#include <xtd/string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

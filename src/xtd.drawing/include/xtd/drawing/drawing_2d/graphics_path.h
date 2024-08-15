@@ -10,7 +10,7 @@
 #include "../string_format.h"
 #include "fill_mode.h"
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <cstdint>
 #include <memory>
 #include <ostream>

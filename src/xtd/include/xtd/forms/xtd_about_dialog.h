@@ -8,7 +8,7 @@
 #include <xtd/forms/iwin32_window>
 #include <xtd/drawing/icon>
 #include <xtd/delegate>
-#include <xtd/ustring>
+#include <xtd/string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

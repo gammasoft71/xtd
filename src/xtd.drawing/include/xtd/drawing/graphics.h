@@ -30,7 +30,7 @@
 #include "string_format.h"
 #include "size_f.h"
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <cstdint>
 #include <limits>
 #include <ostream>

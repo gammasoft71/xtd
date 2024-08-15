@@ -6,7 +6,7 @@
 #include <xtd/drawing/color>
 #include <xtd/iequatable>
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <memory>
 #include <vector>
 

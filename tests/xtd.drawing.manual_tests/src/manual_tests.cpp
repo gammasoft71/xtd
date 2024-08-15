@@ -5,7 +5,7 @@
 #include <xtd/io/file>
 #include <xtd/io/path>
 #include <xtd/console>
-#include <xtd/ustring>
+#include <xtd/string>
 //#include "logo.xpm"
 
 using namespace xtd;

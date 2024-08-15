@@ -9,7 +9,7 @@
 #include <tuple>
 #include <xtd/collections/generic/key_value_pair>
 #include <xtd/static>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <xtd/drawing_native_export.h>
 #include "hot_key_prefixes.h"
 #include "path_fill_modes.h"

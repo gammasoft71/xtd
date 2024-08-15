@@ -13,7 +13,7 @@
 #include "test_cleanup_attribute.h"
 #include "test_method_attribute.h"
 #include <xtd/date_time>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

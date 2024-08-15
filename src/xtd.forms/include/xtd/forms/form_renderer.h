@@ -7,7 +7,7 @@
 #include "box_renderer.h"
 #include <xtd/drawing/graphics>
 #include <xtd/static>
-#include <xtd/ustring>
+#include <xtd/string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

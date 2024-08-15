@@ -12,7 +12,7 @@
 #include "color.h"
 #include <xtd/iequatable>
 #include <xtd/object>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <cstdint>
 #include <memory>
 #include <ostream>

@@ -4,7 +4,7 @@
 #include <xtd/drawing/point>
 #include <xtd/io/path>
 #include <xtd/environment>
-#include <xtd/ustring>
+#include <xtd/string>
 #include <wx/cursor.h>
 #include <wx/image.h>
 
