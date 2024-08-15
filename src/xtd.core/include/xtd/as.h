@@ -25,11 +25,11 @@
 #include "internal/__as_int64.h"
 #include "internal/__as_sbyte.h"
 #include "internal/__as_slong.h"
+#include "internal/__as_string.h"
 #include "internal/__as_uint16.h"
 #include "internal/__as_uint32.h"
 #include "internal/__as_uint64.h"
 #include "internal/__as_ulong.h"
-#include "internal/__as_ustring.h"
 #include "internal/__as_wchar.h"
 #undef __XTD_CORE_INTERNAL__
 #include "convert_pointer.h"
@@ -38,7 +38,7 @@
 #undef __XTD_CORE_INTERNAL__
 #include "convert_string.h"
 #define __XTD_CORE_INTERNAL__
-#include "internal/__as_string.h"
+#include "internal/__as_std_string.h"
 #undef __XTD_CORE_INTERNAL__
 #include "any_object.h"
 #define __XTD_CORE_INTERNAL__
