@@ -1,26 +1,27 @@
-#include <xtd/literals>
-#include <xtd/ustring>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/string>
 
 using namespace std::literals;
 using namespace xtd;
 
 auto main() -> int {
-  std::cout << ustring::format("{}", "string") << std::endl;
-  std::cout << ustring::format("{}", u8"string") << std::endl;
-  std::cout << ustring::format("{}", L"string") << std::endl;
-  std::cout << ustring::format("{}", u"string") << std::endl;
-  std::cout << ustring::format("{}", U"string") << std::endl;
-  std::cout << ustring::format("{}", "string"s) << std::endl;
-  std::cout << ustring::format("{}", u8"string"s) << std::endl;
-  std::cout << ustring::format("{}", L"string"s) << std::endl;
-  std::cout << ustring::format("{}", u"string"s) << std::endl;
-  std::cout << ustring::format("{}", U"string"s) << std::endl;
-  std::cout << ustring::format("{}", "string"_s) << std::endl;
-  std::cout << ustring::format("{}", u8"string"_s) << std::endl;
-  std::cout << ustring::format("{}", L"string"_s) << std::endl;
-  std::cout << ustring::format("{}", u"string"_s) << std::endl;
-  std::cout << ustring::format("{}", U"string"_s) << std::endl;
-  std::cout << ustring::format("{:anything}", "string") << std::endl;
+  console::out << ustring::format("{}", "string") << environment::new_line;
+  console::out << ustring::format("{}", u8"string") << environment::new_line;
+  console::out << ustring::format("{}", L"string") << environment::new_line;
+  console::out << ustring::format("{}", u"string") << environment::new_line;
+  console::out << ustring::format("{}", U"string") << environment::new_line;
+  console::out << ustring::format("{}", "string"s) << environment::new_line;
+  console::out << ustring::format("{}", u8"string"s) << environment::new_line;
+  console::out << ustring::format("{}", L"string"s) << environment::new_line;
+  console::out << ustring::format("{}", u"string"s) << environment::new_line;
+  console::out << ustring::format("{}", U"string"s) << environment::new_line;
+  console::out << ustring::format("{}", "string"_s) << environment::new_line;
+  console::out << ustring::format("{}", u8"string"_s) << environment::new_line;
+  console::out << ustring::format("{}", L"string"_s) << environment::new_line;
+  console::out << ustring::format("{}", u"string"_s) << environment::new_line;
+  console::out << ustring::format("{}", U"string"_s) << environment::new_line;
+  console::out << ustring::format("{:anything}", "string") << environment::new_line;
 }
 
 // This code produces the following output :

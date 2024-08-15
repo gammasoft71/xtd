@@ -63,7 +63,7 @@ void play(const list<note>& tune) {
     if (n.note_tone() == tone::rest)
       threading::thread::sleep(as<int>(n.note_duration()));
     else
-      std::cout << beep(as<unsigned int>(n.note_tone()), as<unsigned int>(n.note_duration()));
+      console::out << beep(as<unsigned int>(n.note_tone()), as<unsigned int>(n.note_duration()));
   }
 }
 

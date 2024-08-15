@@ -3,7 +3,7 @@
 #include <xtd/environment>
 #include <xtd/event>
 #include <xtd/event_handler>
-#include <xtd/ustring>
+#include <xtd/string>
 
 class control : public xtd::object {
 public:
