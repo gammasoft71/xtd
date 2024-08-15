@@ -1,5 +1,6 @@
 /// @file
 /// @brief Contains xtd::string class.
+/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #define __XTD_CORE_INTERNAL__
