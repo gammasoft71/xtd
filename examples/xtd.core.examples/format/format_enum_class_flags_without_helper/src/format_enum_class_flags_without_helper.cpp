@@ -1,8 +1,9 @@
 #include <xtd/as>
+#include <xtd/console>
 #include <xtd/enum_class>
+#include <xtd/environment>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 enum class text_styles {
@@ -27,17 +28,17 @@ template<> struct xtd::enum_register<text_styles> {
 };
 
 auto main() -> int {
-  cout << ustring::format("{}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("0b{:b}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("0b{:B}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("{:d}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("{:D}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("{:g}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("{:G}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("0{:o}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("0{:O}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("0x{:x}", text_styles::bold | text_styles::italic) << endl;
-  cout << ustring::format("0x{:X}", text_styles::bold | text_styles::italic) << endl;
+  console::out << ustring::format("{}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("0b{:b}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("0b{:B}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("{:d}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("{:D}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("{:g}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("{:G}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("0{:o}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("0{:O}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("0x{:x}", text_styles::bold | text_styles::italic) << environment::new_line;
+  console::out << ustring::format("0x{:X}", text_styles::bold | text_styles::italic) << environment::new_line;
 }
 
 // This code produces the following output :

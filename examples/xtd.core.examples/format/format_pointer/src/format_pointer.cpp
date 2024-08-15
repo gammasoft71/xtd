@@ -1,27 +1,28 @@
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
   auto ptr = static_cast<int*>(nullptr);
-  cout << ustring::format("{}", ptr) << endl;
+  console::out << ustring::format("{}", ptr) << environment::new_line;
   ptr = new int(42);
-  cout << ustring::format("0x{:x}", ptr) << endl;
-  cout << ustring::format("{}", *ptr) << endl;
+  console::out << ustring::format("0x{:x}", ptr) << environment::new_line;
+  console::out << ustring::format("{}", *ptr) << environment::new_line;
   delete ptr;
   
   auto sptr = xtd::sptr<int> {};
-  cout << ustring::format("{}", sptr) << endl;
+  console::out << ustring::format("{}", sptr) << environment::new_line;
   sptr = new_sptr<int>(42);
-  cout << ustring::format("0x{:x}", sptr) << endl;
-  cout << ustring::format("{}", *sptr) << endl;
+  console::out << ustring::format("0x{:x}", sptr) << environment::new_line;
+  console::out << ustring::format("{}", *sptr) << environment::new_line;
   
   auto uptr = xtd::uptr<int> {};
-  cout << ustring::format("{}", uptr) << endl;
+  console::out << ustring::format("{}", uptr) << environment::new_line;
   uptr = new_uptr<int>(42);
-  cout << ustring::format("0x{:x}", uptr) << endl;
-  cout << ustring::format("{}", *uptr) << endl;
+  console::out << ustring::format("0x{:x}", uptr) << environment::new_line;
+  console::out << ustring::format("{}", *uptr) << environment::new_line;
 }
 
 // This code produces the following output :

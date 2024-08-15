@@ -1,11 +1,12 @@
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/string>
 #include <utility>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  cout << ustring::format("{}", make_pair(1, "one")) << endl;
+  console::out << ustring::format("{}", make_pair(1, "one")) << environment::new_line;
 }
 
 // This code produces the following output :
