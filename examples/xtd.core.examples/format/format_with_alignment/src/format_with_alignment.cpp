@@ -1,12 +1,13 @@
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  cout << ustring::format("[{,10}]", 42) << endl;
-  cout << ustring::format("[{,-10}]", 42) << endl;
-  cout << ustring::format("[{:D10}]", 42) << endl;
+  console::out << ustring::format("[{,10}]", 42) << environment::new_line;
+  console::out << ustring::format("[{,-10}]", 42) << environment::new_line;
+  console::out << ustring::format("[{:D10}]", 42) << environment::new_line;
 }
 
 // This code produces the following output :

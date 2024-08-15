@@ -1,17 +1,17 @@
 #include <xtd/console>
+#include <xtd/environment>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
   console::out << L"Hello ";
-  console::out << L"World!" << endl;
+  console::out << L"World!" << environment::new_line;
   console::out << L"Enter your name: ";
-  ustring name;
+  string name;
   console::in >> name;
   console::out << L"Good day, ";
   console::out << name;
-  console::out << L"!" << endl;
+  console::out << L"!" << environment::new_line;
 }
 
 // This code produces the following output :

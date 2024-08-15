@@ -2,48 +2,47 @@
 #include <xtd/environment>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 enum class cap { title, middle, end };
 
-void print_number(ustring text, int value, cap c) {
+void print_number(string text, int value, cap c) {
   if (c == cap::title)
     console::out << "┌───────────┬────────────┬──────────────────────────────────┐" << environment::new_line
                  << "│  number   │   format   │      representation              │" << environment::new_line
                  << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
   
-  console::out << "│ " << text.pad_right(9) << " │ {}         │ " << ustring::format("{}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:b}       │ " << ustring::format("{:b}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:b32}     │ " << ustring::format("{:b32}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:B}       │ " << ustring::format("{:B}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:B32}     │ " << ustring::format("{:B32}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:c}       │ " << ustring::format("{:c}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:C}       │ " << ustring::format("{:C}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:d}       │ " << ustring::format("{:d}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:d16}     │ " << ustring::format("{:d16}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:D}       │ " << ustring::format("{:D}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:D16}     │ " << ustring::format("{:D16}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:e}       │ " << ustring::format("{:e}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:E}       │ " << ustring::format("{:E}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:f}       │ " << ustring::format("{:f}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:f4}      │ " << ustring::format("{:f4}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:F}       │ " << ustring::format("{:F}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:F4}      │ " << ustring::format("{:F4}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:g}       │ " << ustring::format("{:g}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:G}       │ " << ustring::format("{:G}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:o}       │ " << ustring::format("{:o}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:o16}     │ " << ustring::format("{:o16}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:O}       │ " << ustring::format("{:O}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:O16}     │ " << ustring::format("{:O16}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:n}       │ " << ustring::format("{:n}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:N}       │ " << ustring::format("{:N}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:p}       │ " << ustring::format("{:p}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:P}       │ " << ustring::format("{:P}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:x}       │ " << ustring::format("{:x}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:x16}     │ " << ustring::format("{:x16}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:X}       │ " << ustring::format("{:X}", value).pad_right(32) << " |" << environment::new_line;
-  console::out << "│ " << text.pad_right(9) << " │ {:X16}     │ " << ustring::format("{:X16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {}         │ " << string::format("{}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:b}       │ " << string::format("{:b}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:b32}     │ " << string::format("{:b32}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:B}       │ " << string::format("{:B}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:B32}     │ " << string::format("{:B32}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:c}       │ " << string::format("{:c}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:C}       │ " << string::format("{:C}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:d}       │ " << string::format("{:d}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:d16}     │ " << string::format("{:d16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:D}       │ " << string::format("{:D}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:D16}     │ " << string::format("{:D16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:e}       │ " << string::format("{:e}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:E}       │ " << string::format("{:E}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:f}       │ " << string::format("{:f}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:f4}      │ " << string::format("{:f4}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:F}       │ " << string::format("{:F}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:F4}      │ " << string::format("{:F4}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:g}       │ " << string::format("{:g}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:G}       │ " << string::format("{:G}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:o}       │ " << string::format("{:o}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:o16}     │ " << string::format("{:o16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:O}       │ " << string::format("{:O}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:O16}     │ " << string::format("{:O16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:n}       │ " << string::format("{:n}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:N}       │ " << string::format("{:N}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:p}       │ " << string::format("{:p}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:P}       │ " << string::format("{:P}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:x}       │ " << string::format("{:x}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:x16}     │ " << string::format("{:x16}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:X}       │ " << string::format("{:X}", value).pad_right(32) << " |" << environment::new_line;
+  console::out << "│ " << text.pad_right(9) << " │ {:X16}     │ " << string::format("{:X16}", value).pad_right(32) << " |" << environment::new_line;
 
   if (c != cap::end)
     console::out << "├───────────┼────────────┼──────────────────────────────────┤" << environment::new_line;
@@ -53,7 +52,7 @@ void print_number(ustring text, int value, cap c) {
 
 
 auto main() -> int {
-  locale::global(locale {"en_US.UTF-8"}); // change to us for currency
+  std::locale::global(std::locale {"en_US.UTF-8"}); // change to us for currency
   print_number("0", 0, cap::title);
   print_number("42", 42, cap::middle);
   print_number("123456789", 123456789, cap::end);

@@ -2,7 +2,6 @@
 #include <xtd/environment>
 #include <xtd/string>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {

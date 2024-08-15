@@ -1,11 +1,11 @@
+#include <xtd/console>
+#include <xtd/environment>
 #include <xtd/string>
-#include <xtd/literals>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  cout << ustring::format("{0} {1} {2:D} {3} {0}", "string", "literal"_s, 42, 'a') << endl;
+  console::out << ustring::format("{0} {1} {2:D} {3} {0}", "string", "literal"_s, 42, 'a') << environment::new_line;
 }
 
 // This code produces the following output :

@@ -1,11 +1,10 @@
 #include <xtd/console>
 #include <xtd/parse>
 
-using namespace std;
 using namespace xtd;
 
 auto main() -> int {
-  locale::global(locale {"en_US.UTF-8"}); // change to us for currency
+  std::locale::global(std::locale {"en_US.UTF-8"}); // change to us for currency
   auto i1 = xtd::parse<int>("42");
   console::write_line(i1);
   auto i2 = xtd::parse<int>("+42.8", number_styles::number);

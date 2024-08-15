@@ -2,7 +2,6 @@
 #include <xtd/block_scope>
 #include <xtd/console>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::diagnostics;
 
@@ -19,7 +18,7 @@ auto main() -> int {
       // on the desktop, it must terminate itself or you can do it programmatically
       // from this application using the kill method.
     }
-  } catch (const exception& e) {
+  } catch (const std::exception& e) {
     console::write_line(e.what());
   }
 }
