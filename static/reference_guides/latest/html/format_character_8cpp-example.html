@@ -103,27 +103,98 @@ $(document).ready(function(){initNavTree('format_character_8cpp-example.html',''
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format xtd::format class with characters.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/ustring&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">enum class</span> cap {title, middle, end};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> print_character(<a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> text, <a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a> value, cap c) {</div>
+<div class="line">  <span class="keywordflow">if</span> (c == cap::title)</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;┌───────────┬────────────┬──────────────────────────────────┐&quot;</span> &lt;&lt; environment::new_line</div>
+<div class="line">                 &lt;&lt; <span class="stringliteral">&quot;│  char     │   format   │      representation              │&quot;</span> &lt;&lt; environment::new_line</div>
+<div class="line">                 &lt;&lt; <span class="stringliteral">&quot;├───────────┼────────────┼──────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  </div>
+<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(9) &lt;&lt; <span class="stringliteral">&quot; │ {}         │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, value).pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(9) &lt;&lt; <span class="stringliteral">&quot; │ {:g}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:g}&quot;</span>, value).pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(9) &lt;&lt; <span class="stringliteral">&quot; │ {:G}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:G}&quot;</span>, value).pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(9) &lt;&lt; <span class="stringliteral">&quot; │ {:d}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:d}&quot;</span>, value).pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(9) &lt;&lt; <span class="stringliteral">&quot; │ {:D}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:D}&quot;</span>, value).pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(9) &lt;&lt; <span class="stringliteral">&quot; │ {:x}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:x}&quot;</span>, value).pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(9) &lt;&lt; <span class="stringliteral">&quot; │ {:X}       │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:X}&quot;</span>, value).pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(9) &lt;&lt; <span class="stringliteral">&quot; │ {:ANY_FMT} │ &quot;</span> &lt;&lt; ustring::format(<span class="stringliteral">&quot;{:ANY_FMT}&quot;</span>, value).pad_right&lt;<a class="code hl_typedef" href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">char32</a>&gt;(32) &lt;&lt; <span class="stringliteral">&quot; |&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">if</span> (c != cap::end)</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;├───────────┼────────────┼──────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  <span class="keywordflow">else</span></div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;└───────────┴────────────┴──────────────────────────────────┘&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">}</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, <span class="charliteral">&#39;a&#39;</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, L<span class="stringliteral">&#39;\u4eb0&#39;</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u8<span class="charliteral">&#39;a&#39;</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, u<span class="stringliteral">&#39;\u4eb0&#39;</span>) &lt;&lt; endl;</div>
-<div class="line">  cout &lt;&lt; ustring::format(<span class="stringliteral">&quot;{}&quot;</span>, U<span class="stringliteral">&#39;\U0001F428&#39;</span>) &lt;&lt; endl;</div>
+<div class="line">  console::output_code_page(65001);</div>
+<div class="line">  </div>
+<div class="line">  print_character(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> {<span class="charliteral">&#39;a&#39;</span>}, <span class="charliteral">&#39;a&#39;</span>, cap::title);</div>
+<div class="line">  print_character(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> {u8<span class="charliteral">&#39;1&#39;</span>}, u8<span class="charliteral">&#39;1&#39;</span>, cap::middle);</div>
+<div class="line">  print_character(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> {L<span class="stringliteral">&#39;\x1F603&#39;</span>}, L<span class="stringliteral">&#39;\x1F603&#39;</span>, cap::middle);</div>
+<div class="line">  print_character(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> {<a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c">u</a><span class="stringliteral">&#39;\u4eb0&#39;</span>}, <a class="code hl_enumvalue" href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c">u</a><span class="stringliteral">&#39;\u4eb0&#39;</span>, cap::middle);</div>
+<div class="line">  print_character(<a class="code hl_class" href="classxtd_1_1ustring.html">ustring</a> {U<span class="stringliteral">&#39;\U0001F428&#39;</span>}, U<span class="stringliteral">&#39;\U0001F428&#39;</span>, cap::end);</div>
 <div class="line">}</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// This code produces the following output :</span></div>
-<div class="line">  <span class="comment">//</span></div>
-<div class="line">  <span class="comment">// a</span></div>
-<div class="line">  <span class="comment">// 亰</span></div>
-<div class="line">  <span class="comment">// a</span></div>
-<div class="line">  <span class="comment">// 亰</span></div>
-<div class="line">  <span class="comment">// 🐨</span></div>
-<div class="line">  </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// ┌───────────┬────────────┬──────────────────────────────────┐</span></div>
+<div class="line"><span class="comment">// │  char     │   format   │      representation              │</span></div>
+<div class="line"><span class="comment">// ├───────────┼────────────┼──────────────────────────────────┤</span></div>
+<div class="line"><span class="comment">// │ a         │ {}         │ a                                |</span></div>
+<div class="line"><span class="comment">// │ a         │ {:g}       │ a                                |</span></div>
+<div class="line"><span class="comment">// │ a         │ {:G}       │ a                                |</span></div>
+<div class="line"><span class="comment">// │ a         │ {:d}       │ a                                |</span></div>
+<div class="line"><span class="comment">// │ a         │ {:D}       │ a                                |</span></div>
+<div class="line"><span class="comment">// │ a         │ {:x}       │ a                                |</span></div>
+<div class="line"><span class="comment">// │ a         │ {:X}       │ a                                |</span></div>
+<div class="line"><span class="comment">// │ a         │ {:ANY_FMT} │ a                                |</span></div>
+<div class="line"><span class="comment">// ├───────────┼────────────┼──────────────────────────────────┤</span></div>
+<div class="line"><span class="comment">// │ 1         │ {}         │ 1                                |</span></div>
+<div class="line"><span class="comment">// │ 1         │ {:g}       │ 1                                |</span></div>
+<div class="line"><span class="comment">// │ 1         │ {:G}       │ 1                                |</span></div>
+<div class="line"><span class="comment">// │ 1         │ {:d}       │ 1                                |</span></div>
+<div class="line"><span class="comment">// │ 1         │ {:D}       │ 1                                |</span></div>
+<div class="line"><span class="comment">// │ 1         │ {:x}       │ 1                                |</span></div>
+<div class="line"><span class="comment">// │ 1         │ {:X}       │ 1                                |</span></div>
+<div class="line"><span class="comment">// │ 1         │ {:ANY_FMT} │ 1                                |</span></div>
+<div class="line"><span class="comment">// ├───────────┼────────────┼──────────────────────────────────┤</span></div>
+<div class="line"><span class="comment">// │ 😃         │ {}         │ 😃                                |</span></div>
+<div class="line"><span class="comment">// │ 😃         │ {:g}       │ 😃                                |</span></div>
+<div class="line"><span class="comment">// │ 😃         │ {:G}       │ 😃                                |</span></div>
+<div class="line"><span class="comment">// │ 😃         │ {:d}       │ 😃                                |</span></div>
+<div class="line"><span class="comment">// │ 😃         │ {:D}       │ 😃                                |</span></div>
+<div class="line"><span class="comment">// │ 😃         │ {:x}       │ 😃                                |</span></div>
+<div class="line"><span class="comment">// │ 😃         │ {:X}       │ 😃                                |</span></div>
+<div class="line"><span class="comment">// │ 😃         │ {:ANY_FMT} │ 😃                                |</span></div>
+<div class="line"><span class="comment">// ├───────────┼────────────┼──────────────────────────────────┤</span></div>
+<div class="line"><span class="comment">// │ 亰         │ {}         │ 亰                                |</span></div>
+<div class="line"><span class="comment">// │ 亰         │ {:g}       │ 亰                                |</span></div>
+<div class="line"><span class="comment">// │ 亰         │ {:G}       │ 亰                                |</span></div>
+<div class="line"><span class="comment">// │ 亰         │ {:d}       │ 亰                                |</span></div>
+<div class="line"><span class="comment">// │ 亰         │ {:D}       │ 亰                                |</span></div>
+<div class="line"><span class="comment">// │ 亰         │ {:x}       │ 亰                                |</span></div>
+<div class="line"><span class="comment">// │ 亰         │ {:X}       │ 亰                                |</span></div>
+<div class="line"><span class="comment">// │ 亰         │ {:ANY_FMT} │ 亰                                |</span></div>
+<div class="line"><span class="comment">// ├───────────┼────────────┼──────────────────────────────────┤</span></div>
+<div class="line"><span class="comment">// │ 🐨         │ {}         │ 🐨                                |</span></div>
+<div class="line"><span class="comment">// │ 🐨         │ {:g}       │ 🐨                                |</span></div>
+<div class="line"><span class="comment">// │ 🐨         │ {:G}       │ 🐨                                |</span></div>
+<div class="line"><span class="comment">// │ 🐨         │ {:d}       │ 🐨                                |</span></div>
+<div class="line"><span class="comment">// │ 🐨         │ {:D}       │ 🐨                                |</span></div>
+<div class="line"><span class="comment">// │ 🐨         │ {:x}       │ 🐨                                |</span></div>
+<div class="line"><span class="comment">// │ 🐨         │ {:X}       │ 🐨                                |</span></div>
+<div class="line"><span class="comment">// │ 🐨         │ {:ANY_FMT} │ 🐨                                |</span></div>
+<div class="line"><span class="comment">// └───────────┴────────────┴──────────────────────────────────┘</span></div>
+<div class="ttc" id="aclassxtd_1_1ustring_html"><div class="ttname"><a href="classxtd_1_1ustring.html">xtd::ustring</a></div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> ustring.h:53</div></div>
+<div class="ttc" id="agroup__types_ga989a1148b6ff15567dca430966b17c92_html_ga989a1148b6ff15567dca430966b17c92"><div class="ttname"><a href="group__types_ga989a1148b6ff15567dca430966b17c92.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> char32.h:26</div></div>
+<div class="ttc" id="agroup__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c"><div class="ttname"><a href="group__xtd__core_gad94b2f43c7550180321e0ac4b02a4ff2.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c">xtd::console_key::u</a></div><div class="ttdeci">@ u</div><div class="ttdoc">The U key.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.h:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
@@ -131,7 +202,7 @@ $(document).ready(function(){initNavTree('format_character_8cpp-example.html',''
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-		<li class="footer">Generated on Wed Aug 14 2024 19:07:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
+		<li class="footer">Generated on Thu Aug 15 2024 14:28:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.</li>
   </ul>
 </div>
 </body>
