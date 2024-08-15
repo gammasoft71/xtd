@@ -5,11 +5,10 @@
 #undef max
 #undef min
 
-using namespace std;
 using namespace std::literals;
 using namespace xtd::native;
 
-string types::demangle(const string& name) {
+std::string types::demangle(const std::string& name) {
   auto result = name;
   for (auto& item : {"enum "s, "class "s, "union "s, "struct "s}) {
     auto index = size_t {};
