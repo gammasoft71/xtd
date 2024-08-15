@@ -7,7 +7,7 @@
 #include <string>
 #include <xtd/delegate.h>
 #include <xtd/static.h>
-#include <xtd/ustring.h>
+#include <xtd/string.h>
 #include <xtd/forms_native_export.h>
 #include <xtd/drawing/icon.h>
 #include <xtd/guid.h>

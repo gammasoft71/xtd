@@ -12,7 +12,7 @@
 #include <xtd/optional.h>
 #include <xtd/static.h>
 #include <xtd/delegate.h>
-#include <xtd/ustring.h>
+#include <xtd/string.h>
 #include <xtd/drawing/point.h>
 #include <xtd/forms_native_export.h>
 

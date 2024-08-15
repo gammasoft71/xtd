@@ -466,8 +466,6 @@ add_sources(
   include/xtd/uri_template_match_exception
   include/xtd/using.h
   include/xtd/using
-  include/xtd/string.h
-  include/xtd/ustring
   include/xtd/va_args_comma.h
   include/xtd/va_args_comma
   include/xtd/version.h
